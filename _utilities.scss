@@ -1,0 +1,217 @@
+/*************************************
+General Utility Classes
+**************************************/
+.fade { opacity: .7 }
+.bold{ font-weight: bold }
+.regular{ font-weight: normal }
+.italic{ font-style: italic }
+.uppercase{ text-transform: uppercase }
+.lowercase{ text-transform: lowercase }
+.capitalize{ text-transform: capitalize }
+.pointer { cursor: pointer }
+.rounded{ border-radius: 3px }
+.circle{ border-radius: 50% }
+.relative{ position: relative }
+.absolute{ position: absolute }
+.sticky{ position: sticky; top: 0 }
+.fixed{ position: fixed }
+.top-0{ top: 0 }
+.right-0{ right: 0 }
+.bottom-0{ bottom: 0 }
+.left-0{ left: 0 }
+.h-100 { height: 100% }
+.w-100 { width: 100% }
+.index-1 { z-index: 1 }
+.index-2 { z-index: 2 }
+.index-3 { z-index: 3 }
+.border{ border: 1px solid map-get($colors, 'grey') }
+.truncate{
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/****************************************************************************
+Layout Utility Classes - Can include Grid Prefix Ex. .sm-left .md-right, etc
+****************************************************************************/
+// Text
+.left{ text-align: left }
+.center{ text-align: center }
+.right{ text-align: right }
+.justify{ text-align: justify }
+.nowrap{ white-space: nowrap }
+.pre-wrap{ white-space: pre-wrap }
+.break-word{ word-wrap: break-word }
+// Display
+.inline{ display: inline; width: auto }
+.flex{ display: flex }
+.block{ display: block; width: 100% }
+.none{ display: none }
+.inline-block{ display: inline-block }
+.table{ display: table }
+.table-cell{ display: table-cell }
+// Vertical Align
+.align-baseline{ vertical-align: baseline }
+.align-top{ vertical-align: top }
+.align-middle{ vertical-align: middle }
+.align-bottom{ vertical-align: bottom }
+// Overflow
+.overflow-hidden{ overflow: hidden }
+.overflow-scroll{ overflow: scroll }
+.overflow-auto{ overflow: auto }
+// Order
+.order-first{ order:-1 }
+.order-0{ order:0 }
+.order-1{ order:1 }
+.order-2{ order:2 }
+.order-3{ order:3 }
+.order-last{ order:99999 }
+
+/*************************************
+Flex Utility Classes
+**************************************/
+.align-items-start{ align-items: flex-start }
+.align-items-end{ align-items: flex-end }
+.align-items-center{ align-items: center }
+.align-items-stretch{ align-items: stretch }
+.align-content-start{ align-content: flex-start }
+.align-content-end{ align-content: flex-end }
+.align-content-center{ align-content: center }
+.align-content-between{ align-content: space-between }
+.align-content-around{ align-content: space-around }
+.align-content-stretch{ align-content: stretch }
+.justify-content-start{ justify-content: flex-start }
+.justify-content-end{ justify-content: flex-end }
+.justify-content-center{ justify-content: center }
+.justify-content-between{ justify-content: space-between }
+.justify-content-around{ justify-content: space-around }
+.flex-wrap{ flex-wrap: wrap }
+.flex-direction-column{ flex-direction: column }
+
+/*************************************
+Padding and Margin Utility Classes
+**************************************/
+.m-auto {
+	margin: auto;
+}
+.my-auto {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.mx-auto {
+	margin-right: auto;
+	margin-left: auto;
+    display: block;
+}
+@each $i, $space in $spacing {
+	@each $prop in (padding, margin) {
+		.#{str-slice($prop, 0, 1)}-#{$i} {
+			#{$prop}: #{$space}rem;
+		}
+		.#{str-slice($prop, 0, 1)}x-#{$i} {
+			#{$prop}-right: #{$space}rem;
+			#{$prop}-left: #{$space}rem;
+		}
+		.#{str-slice($prop, 0, 1)}y-#{$i} {
+			#{$prop}-top: #{$space}rem;
+			#{$prop}-bottom: #{$space}rem;
+		}
+		@if $prop == margin and $i > 0 {
+			.#{str-slice($prop, 0, 1)}-n#{$i} {
+				#{$prop}: -#{$space}rem;
+			}
+			.#{str-slice($prop, 0, 1)}x-n#{$i} {
+				#{$prop}-right: -#{$space}rem;
+				#{$prop}-left: -#{$space}rem;
+			}
+			.#{str-slice($prop, 0, 1)}y-n#{$i} {
+				#{$prop}-top: -#{$space}rem;
+				#{$prop}-bottom: -#{$space}rem;
+			}
+		}
+		@each $side in (top, bottom, left, right){	
+			.#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i} {
+				#{$prop}-#{$side}: #{$space}rem;
+			}
+			@if $prop == margin and $i > 0 {
+				.#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-n#{$i} {
+					#{$prop}-#{$side}: -#{$space}rem;
+				}
+			}
+		}
+	}
+}
+@each $breakpoint, $breakpoint_width in $breakpoints {
+	@media screen and (min-width: $breakpoint_width) {
+
+		.#{$breakpoint} {
+			&-left{ text-align: left }
+			&-center{ text-align: center }
+			&-right{ text-align: right }
+			&-justify{ text-align: justify }
+			&-nowrap{ white-space: nowrap }
+            &-pre-wrap{ white-space: pre-wrap }
+			&-break-word{ word-wrap: break-word }
+			&-inline{ display: inline; width: auto }
+			&-flex{ display: flex }
+			&-block{ display: block }
+			&-none{ display: none }
+			&-inline-block{ display: inline-block }
+			&-table{ display: table }
+			&-table-cell{ display: table-cell }
+			&-align-baseline{ vertical-align: baseline }
+			&-align-top{ vertical-align: top }
+			&-align-middle{ vertical-align: middle }
+			&-align-bottom{ vertical-align: bottom }
+			&-overflow-hidden{ overflow: hidden }
+			&-overflow-scroll{ overflow: scroll }
+			&-overflow-auto{ overflow: auto }
+			&-order-first{ order:-1 }
+			&-order-0{ order:0 }
+			&-order-1{ order:1 }
+			&-order-2{ order:2 }
+			&-order-3{ order:3 }
+			&-order-last{ order:99999 }
+		}
+		
+		@each $i, $space in $spacing {
+			@each $prop in (padding, margin) {
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}-#{$i} {
+					#{$prop}: #{$space}rem;
+				}
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-#{$i} {
+					#{$prop}-right: #{$space}rem;
+					#{$prop}-left: #{$space}rem;
+				}
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}y-#{$i} {
+					#{$prop}-top: #{$space}rem;
+					#{$prop}-bottom: #{$space}rem;
+				}
+				@if $prop == margin and $i > 0 {
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}-n#{$i} {
+						#{$prop}: -#{$space}rem;
+					}
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-n#{$i} {
+						#{$prop}-right: -#{$space}rem;
+						#{$prop}-left: -#{$space}rem;
+					}
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}y-n#{$i} {
+						#{$prop}-top: -#{$space}rem;
+						#{$prop}-bottom: -#{$space}rem;
+					}
+				}
+				@each $side in (top, bottom, left, right){	
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i} {
+						#{$prop}-#{$side}: #{$space}rem;
+					}
+					@if $prop == margin and $i > 0 {
+						.#{$breakpoint}-#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-n#{$i} {
+							#{$prop}-#{$side}: -#{$space}rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}

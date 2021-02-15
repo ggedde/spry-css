@@ -1,0 +1,274 @@
+.btn,
+input,
+textarea,
+select, 
+fieldset {
+	transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color 0.2s ease-in-out;
+	appearance: none;
+	border: 1px solid map-get($colors, 'grey');
+	color: inherit;
+	border-radius: 3px;
+	padding: 0 1rem;
+	background: transparent;
+	height: 40px;
+	line-height: 40px;
+	width: 100%;
+	display: inline-block;
+	text-decoration: none;
+	outline: none;
+	::placeholder {
+		color: #999;
+	}
+	&:focus,
+	&:hover {
+		border-color: map-get($colors, 'primary');
+	}
+	&.small {
+		height: 26px;
+		line-height: 26px;
+		font-size: 85%;
+		padding: 0 1rem;
+	}
+}
+
+textarea {
+	min-height: 100px;
+	padding: .75rem;
+	max-width: 100%;
+	line-height: 1.2;
+}
+
+.btn,
+input[type="submit"] {
+	background-color: transparent;
+	cursor: pointer;
+	font-size: 1.2rem;
+	text-align: center;
+	text-transform: uppercase;
+	width: auto;
+	min-width: 220px;
+	&:hover,
+	&:focus {
+		background-color: map-get($colors, 'primary');
+		color: map-get($colors, 'white');
+		border-color: map-get($colors, 'primary');
+	}
+	&:active {
+		background-color: darken(map-get($colors, 'primary'), 5%);
+		transition: none;
+	}
+	&:disabled {
+		opacity: .4;
+		cursor: not-allowed;
+	}
+	&.small {
+		min-width: 0;
+	}
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: block;
+	width: 16px;
+	height: 16px;
+	padding: 0;
+	margin: 4px .6rem 0 .4rem;
+	border: 0;
+	box-shadow: 0 0 0 1px map-get($colors, 'grey');
+	position: relative;
+	border-radius: 2px;
+	float: left;
+	&:focus {
+		box-shadow: 0 0 0 1px map-get($colors, 'primary');
+	}
+	&:checked {
+		box-shadow: 0 0 0 1px map-get($colors, 'primary');
+		&::after {
+			content: '';
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			bottom: 2px;
+			right: 2px;
+			background-color: map-get($colors, 'primary');
+			border-radius: 2px;
+		}
+	}
+	+ span {
+		float: left;
+		display: block;
+		width: calc(100% - 40px);
+	}
+}
+input[type="radio"] {
+	&,
+	&:checked::after {
+		border-radius: 50%;
+	}
+}
+
+.is-select {
+	position: relative;
+	display: block;
+	&::before {
+		content: '';
+		display: block;
+		width: 9px;
+		height: 9px;
+		border: 1px solid map-get($colors, 'grey');
+		border-top: 0;
+		border-left: 0;
+		position: absolute;
+		bottom: 18px;
+		right: 1rem;
+		transform: rotate(45deg);
+	}
+}
+
+fieldset {
+	padding: 0;
+	line-height: 1.4;
+	position: relative;
+	transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+	legend {
+		display: block;
+		position: relative;
+		height: 0;
+		max-width: 0;
+		white-space: nowrap;
+		transform: translate(4px, 9px);
+		user-select: none;
+		transition: transform 0.2s ease-in-out, max-width 0.2s ease-in-out;
+		margin-left: 5px;
+		padding: 0;
+		@media screen and (min-width: map-get($breakpoints, "sm")) {
+			transform: translate(4px, 7px);
+		}
+		label {
+			display: block;
+			transform: scale(1);
+			transition: all 0.2s ease-in-out;
+			pointer-events: none;
+			opacity: .6;
+		}
+	}
+	input,
+	select,
+	textarea {
+		border: 0 !important;
+		border-radius: 3px !important;
+		min-height: 34px;
+		padding-left: 10px;
+		padding-bottom: 1px;
+		display: block;
+		margin: 0;
+	}
+	&.active legend,
+	&:focus-within legend {
+		transform: translateY(-11px);
+		max-width: 300px;
+		label {
+			padding: 0 .5rem;
+			font-size: .9rem;
+			opacity: 1;
+		}
+	}
+	&:focus-within {
+		border-color: map-get($colors, 'primary');
+		legend label {
+			color: map-get($colors, 'primary');
+		}
+	}
+}
+@keyframes spinner {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.has-loader {
+	position: relative;
+	&::before {
+		content: '';
+		box-sizing: border-box;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		border: 2px solid transparent;
+		border-top-color: #fff;
+		border-right-color: #fff;
+		animation: spinner 0.7s ease infinite;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s ease-in-out 0.1s;
+	}
+	&.loading {
+		pointer-events: none;
+		user-select: none;
+		cursor: default;
+		color: transparent !important;
+		&::before {
+			opacity: 1;
+		}
+	}
+}
+
+table {
+	width: 100%;
+	margin-top: 1rem;
+	border-collapse: collapse;
+	td,
+	th {
+		padding: .6rem .2rem;
+		text-align: left;
+	}
+	thead th {
+		font-weight: 500;
+	}
+	tbody tr {
+		&:hover td {
+			background-color: rgba(map-get($colors, 'primary'),0.04);
+		}
+		td {
+			border-top: 2px solid map-get($colors, 'light');
+		}
+		&:first-child td {
+			border-color: darken(map-get($colors, 'light'), 10%);
+		}
+	}
+
+}
+
+@each $color_name, $color_value in $colors {
+	.color-#{$color_name} {
+		color: $color_value;
+	}
+	.bg-#{$color_name} {
+		background-color: $color_value;
+		&.btn:hover {
+			background-color: darken($color_value, 10%);
+			border-color: darken($color_value, 10%);
+		}
+	}
+	.border-#{$color_name} {
+		border-color: $color_value;
+	}
+	.btn-#{$color_name} {
+		border-color: $color_value;
+		color: $color_value;
+		&.filled {
+			background-color: $color_value;
+			color: white;
+		}
+	}
+}
+
+nav ul li {
+	display: inline-block;
+}

@@ -1,0 +1,48 @@
+$breakpoints: (
+    sm: 600px,
+    md: 900px,
+    lg: 1200px,
+);
+
+$row-width: 65rem;
+$gutter-width: 2rem;
+
+$colors: (
+    "white":      #ffffff,
+    "light":      #e1e1e1,
+    "grey-light": #cccccc,
+    "grey":       #aaaaaa,
+    "grey-dark":  #777777,
+    "dark":       #333333,
+    "black":      #000000,
+    "blue":       #2277ff,
+    "primary":    #4488ff,
+    "text":       #606c76,
+);
+
+/*************************************
+Sizing
+**************************************/
+
+// This will also create classes like .h3 etc. Mobile size will be 10% smaller
+$headings: (
+    h1: ( font: 3.4rem, color: map-get($colors, 'text'), line-height: 1.20, letter-spacing: 0 ),
+    h2: ( font: 2.8rem, color: map-get($colors, 'text'), line-height: 1.25, letter-spacing: 0 ),
+    h3: ( font: 2.2rem, color: map-get($colors, 'text'), line-height: 1.30, letter-spacing: 0 ),
+    h4: ( font: 1.5rem, color: map-get($colors, 'text'), line-height: 1.35, letter-spacing: -.08rem ),
+    h5: ( font: 1.2rem, color: map-get($colors, 'text'), line-height: 1.5, letter-spacing: -.05rem ),
+    h6: ( font: 1.0rem, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+);
+
+// Applies to Margin and Padding.  Ex .m0, .m1, .mx3, .pt3, .mtn3, etc
+$spacing: (
+    0: 0, 
+    1: .25, 
+    2: .5, 
+    3: 1, 
+    4: 2, 
+    5: 3, 
+    6: 5
+);
+
+$section-padding: 4rem;
