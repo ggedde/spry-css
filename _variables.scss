@@ -2,10 +2,10 @@ $breakpoints: (
     sm: 600px,
     md: 900px,
     lg: 1200px,
-);
+) !default;
 
-$row-width: 65rem;
-$gutter-width: 2rem;
+$row-width: 65rem !default;
+$gutter-width: 2rem !default;
 
 $colors: (
     "white":      #ffffff,
@@ -18,7 +18,7 @@ $colors: (
     "blue":       #2277ff,
     "primary":    #4488ff,
     "text":       #606c76,
-);
+) !default;
 
 /*************************************
 Sizing
@@ -32,7 +32,7 @@ $headings: (
     h4: ( font: 1.5rem, color: map-get($colors, 'text'), line-height: 1.35, letter-spacing: -.08rem ),
     h5: ( font: 1.2rem, color: map-get($colors, 'text'), line-height: 1.5, letter-spacing: -.05rem ),
     h6: ( font: 1.0rem, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
-);
+) !default;
 
 // Applies to Margin and Padding.  Ex .m0, .m1, .mx3, .pt3, .mtn3, etc
 $spacing: (
@@ -43,6 +43,6 @@ $spacing: (
     4: 2, 
     5: 3, 
     6: 5
-);
+) !default;
 
-$section-padding: 4rem;
+$section-padding: 4rem !default;
