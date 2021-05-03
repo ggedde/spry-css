@@ -1,0 +1,19 @@
+{
+  "name": "@ggedde/spry-css",
+  "version": "1.0.0",
+  "description": "Lightweight Mini Utility CSS Framework",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ggedde/spry-css.git"
+  },
+  "keywords": [
+    "CSS",
+    "Utilities"
+  ],
+  "author": "ggedde",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ggedde/spry-css/issues"
+  },
+  "homepage": "https://github.com/ggedde/spry-css#readme"
+}
