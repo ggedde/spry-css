@@ -23,9 +23,9 @@ General Utility Classes
 .bottom-0{ bottom: 0 }
 .left-0{ left: 0 }
 .h-100{ height: 100% }
-.h-100vh{ height: 100vh }
+.vh-100{ height: 100vh }
 .w-100{ width: 100% }
-.w-100vw{ width: 100vw }
+.vw-100{ width: 100vw }
 .index-1{ z-index: 1 }
 .index-2{ z-index: 2 }
 .index-3{ z-index: 3 }
@@ -77,21 +77,22 @@ Layout Utility Classes - Can include Grid Prefix Ex. .sm-left .md-right, etc
 /*************************************
 Flex Utility Classes
 **************************************/
-.align-items-start{ align-items: flex-start }
-.align-items-end{ align-items: flex-end }
-.align-items-center{ align-items: center }
-.align-items-stretch{ align-items: stretch }
-.align-content-start{ align-content: flex-start }
-.align-content-end{ align-content: flex-end }
-.align-content-center{ align-content: center }
-.align-content-between{ align-content: space-between }
-.align-content-around{ align-content: space-around }
-.align-content-stretch{ align-content: stretch }
-.justify-content-start{ justify-content: flex-start }
-.justify-content-end{ justify-content: flex-end }
-.justify-content-center{ justify-content: center }
-.justify-content-between{ justify-content: space-between }
-.justify-content-around{ justify-content: space-around }
+.ai-start{ align-items: flex-start }
+.ai-end{ align-items: flex-end }
+.ai-center{ align-items: center }
+.ai-stretch{ align-items: stretch }
+.ac-start{ align-content: flex-start }
+.ac-end{ align-content: flex-end }
+.ac-center{ align-content: center }
+.ac-between{ align-content: space-between }
+.ac-around{ align-content: space-around }
+.ac-stretch{ align-content: stretch }
+.jc-start{ justify-content: flex-start }
+.jc-end{ justify-content: flex-end }
+.jc-center{ justify-content: center }
+.jc-between{ justify-content: space-between }
+.jc-around{ justify-content: space-around }
+.flex-center{ display: flex; align-items: center; justify-content: center }
 .flex-wrap{ flex-wrap: wrap }
 .flex-direction-column{ flex-direction: column }
 
@@ -111,6 +112,17 @@ Padding and Margin Utility Classes
     display: block;
 }
 @each $i, $space in $spacing {
+	.pad-#{$i} > * {
+		margin: #{$space}rem;
+	}
+	.padx-#{$i} > * {
+		margin-left: #{$space}rem;
+		margin-right: #{$space}rem;
+	}
+	.pady-#{$i} > * {
+		margin-top: #{$space}rem;
+		margin-bottom: #{$space}rem;
+	}
 	@each $prop in (padding, margin) {
 		.#{str-slice($prop, 0, 1)}-#{$i} {
 			#{$prop}: #{$space}rem;
@@ -137,6 +149,9 @@ Padding and Margin Utility Classes
 			}
 		}
 		@each $side in (top, bottom, left, right){	
+			.pad#{str-slice($side, 0, 1)}-#{$i} > * {
+				margin-#{$side}: #{$space}rem;
+			}
 			.#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i} {
 				#{$prop}-#{$side}: #{$space}rem;
 			}
@@ -179,9 +194,38 @@ Padding and Margin Utility Classes
 			&-order-2{ order:2 }
 			&-order-3{ order:3 }
 			&-order-last{ order:99999 }
+			&-ai-start{ align-items: flex-start }
+			&-ai-end{ align-items: flex-end }
+			&-ai-center{ align-items: center }
+			&-ai-stretch{ align-items: stretch }
+			&-ac-start{ align-content: flex-start }
+			&-ac-end{ align-content: flex-end }
+			&-ac-center{ align-content: center }
+			&-ac-between{ align-content: space-between }
+			&-ac-around{ align-content: space-around }
+			&-ac-stretch{ align-content: stretch }
+			&-jc-start{ justify-content: flex-start }
+			&-jc-end{ justify-content: flex-end }
+			&-jc-center{ justify-content: center }
+			&-jc-between{ justify-content: space-between }
+			&-jc-around{ justify-content: space-around }
+			&-flex-center{ display: flex; align-items: center; justify-content: center }
+			&-flex-wrap{ flex-wrap: wrap }
+			&-flex-direction-column{ flex-direction: column }
 		}
 		
 		@each $i, $space in $spacing {
+			.#{$breakpoint}-pad-#{$i} > * {
+				margin: #{$space}rem;
+			}
+			.#{$breakpoint}-padx-#{$i} > * {
+				margin-left: #{$space}rem;
+				margin-right: #{$space}rem;
+			}
+			.#{$breakpoint}-pady-#{$i} > * {
+				margin-top: #{$space}rem;
+				margin-bottom: #{$space}rem;
+			}
 			@each $prop in (padding, margin) {
 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}-#{$i} {
 					#{$prop}: #{$space}rem;
@@ -207,7 +251,10 @@ Padding and Margin Utility Classes
 						#{$prop}-bottom: -#{$space}rem;
 					}
 				}
-				@each $side in (top, bottom, left, right){	
+				@each $side in (top, bottom, left, right){
+					.#{$breakpoint}-pad#{str-slice($side, 0, 1)}-#{$i} > * {
+						margin-#{$side}: #{$space}rem;
+					}	
 					.#{$breakpoint}-#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i} {
 						#{$prop}-#{$side}: #{$space}rem;
 					}

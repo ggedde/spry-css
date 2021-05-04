@@ -25,7 +25,10 @@ ul {
 
 ol,
 ul {
-    list-style: none;
+    list-style: circle inside;
+    nav > & {
+        list-style: none;
+    }
 }
 
 img {

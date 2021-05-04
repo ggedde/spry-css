@@ -1,0 +1,33 @@
+@each $color_name, $color_value in $colors {
+	.color-#{$color_name} {
+		color: $color_value !important;
+	}
+	.bg-#{$color_name} {
+		background-color: $color_value;
+	}
+	.border-#{$color_name} {
+		border-color: $color_value;
+	}
+	.btn-#{$color_name} {
+		background-color: $color_value;
+		border-color: $color_value;
+		&:hover,
+		&:focus {
+			background-color: darken($color_value, 10%);
+			border-color: darken($color_value, 10%);
+		}
+		&.btn-outline {
+			color: $color_value;
+			&:hover,
+			&:focus {
+				background-color: $color_value;
+				border-color: $color_value;
+			}
+		}
+		&.btn-outline:active,
+		&:active {
+			background-color: darken($color_value, 5%);
+			border-color: darken($color_value, 5%);
+		}
+	}
+}

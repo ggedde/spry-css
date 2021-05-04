@@ -25,9 +25,9 @@ fieldset {
 		border-color: map-get($colors, 'primary');
 	}
 	&.small {
-		height: 30px;
-		line-height: 30px;
-		min-width: 30px;
+		height: 28px;
+		line-height: 28px;
+		min-width: 28px;
 	}
 	&.large {
 		height: 50px;
@@ -50,8 +50,7 @@ input[type="submit"] {
 	color: white;
 	cursor: pointer;
 	font-size: 1.2rem;
-	
-	padding: 0 2.5rem;
+	padding: 0 1.5rem;
 	text-align: center;
 	text-transform: uppercase;
 	width: auto;
@@ -79,6 +78,22 @@ input[type="submit"] {
 	&:disabled {
 		opacity: .4;
 		cursor: not-allowed;
+	}
+	svg {
+		width: 24px;
+		height: 24px;
+	}
+	&.small {
+		svg {
+			width: 18px;
+			height: 18px;
+		}
+	}
+	&.large {
+		svg {
+			width: 32px;
+			height: 32px;
+		}
 	}
 }
 
@@ -268,40 +283,6 @@ hr {
 	margin: ($gutter-width / 2);
 	@media screen and (min-width: map-get($breakpoints, 'md')) {
 		margin: $gutter-width;
-	}
-}
-
-@each $color_name, $color_value in $colors {
-	.color-#{$color_name} {
-		color: $color_value !important;
-	}
-	.bg-#{$color_name} {
-		background-color: $color_value;
-	}
-	.border-#{$color_name} {
-		border-color: $color_value;
-	}
-	.btn-#{$color_name} {
-		background-color: $color_value;
-		border-color: $color_value;
-		&:hover,
-		&:focus {
-			background-color: darken($color_value, 10%);
-			border-color: darken($color_value, 10%);
-		}
-		&.btn-outline {
-			color: $color_value;
-			&:hover,
-			&:focus {
-				background-color: $color_value;
-				border-color: $color_value;
-			}
-		}
-		&.btn-outline:active,
-		&:active {
-			background-color: darken($color_value, 5%);
-			border-color: darken($color_value, 5%);
-		}
 	}
 }
 
