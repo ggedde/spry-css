@@ -4,18 +4,14 @@ $breakpoints: (
     lg: 1200px,
 ) !default;
 
-$row-width: 65rem !default;
+$row-max-width: map-get($breakpoints, 'lg') !default;
 $gutter-width: 2rem !default;
 
 $colors: (
     "white":      #ffffff,
-    "light":      #e1e1e1,
-    "grey-light": #cccccc,
+    "light":      #efefef,
     "grey":       #aaaaaa,
-    "grey-dark":  #777777,
     "dark":       #333333,
-    "black":      #000000,
-    "blue":       #2277ff,
     "primary":    #4488ff,
     "text":       #606c76,
 ) !default;
@@ -25,13 +21,15 @@ Sizing
 **************************************/
 
 // This will also create classes like .h3 etc. Mobile size will be 10% smaller
-$headings: (
-    h1: ( font: 3.4rem, color: map-get($colors, 'text'), line-height: 1.20, letter-spacing: 0 ),
-    h2: ( font: 2.8rem, color: map-get($colors, 'text'), line-height: 1.25, letter-spacing: 0 ),
-    h3: ( font: 2.2rem, color: map-get($colors, 'text'), line-height: 1.30, letter-spacing: 0 ),
-    h4: ( font: 1.5rem, color: map-get($colors, 'text'), line-height: 1.35, letter-spacing: -.08rem ),
-    h5: ( font: 1.2rem, color: map-get($colors, 'text'), line-height: 1.5, letter-spacing: -.05rem ),
-    h6: ( font: 1.0rem, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+$types: (
+    h1:     ( size: 3.4rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.20, letter-spacing: 0 ),
+    h2:     ( size: 2.8rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.25, letter-spacing: 0 ),
+    h3:     ( size: 2.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.30, letter-spacing: 0 ),
+    h4:     ( size: 1.5rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.35, letter-spacing: 0 ),
+    h5:     ( size: 1.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.5, letter-spacing: 0 ),
+    h6:     ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+    p:      ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+    label:  ( size: 1.0rem, weight: 600, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
 ) !default;
 
 // Applies to Margin and Padding.  Ex .m0, .m1, .mx3, .pt3, .mtn3, etc
