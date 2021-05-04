@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spry CSS</title>
+    <link rel="stylesheet" href="../dist/spry.min.css">
+</head>
+
+<body>
+    <div class="flex">
+    <ul class="sticky index-1 shadow bg-light p-3 ml-0 h-100vh" style="width: 20%; max-width: 200px;">
+        <li><a class="btn btn-outline small block my-2 px-0 sm-px-3" href="#typography">T<span class="none sm-inline">ypography</span></a></li>
+        <li><a class="btn btn-outline small block my-2 px-0 sm-px-3" href="#colors">C<span class="none sm-inline">olors</span></a></li>
+        <li><a class="btn btn-outline small block my-2 px-0 sm-px-3" href="#buttons">B<span class="none sm-inline">uttons</span></a></li>
+        <li><a class="btn btn-outline small block my-2 px-0 sm-px-3" href="#grid">G<span class="none sm-inline">rid</span></a></li>
+        <li><a class="btn btn-outline small block my-2 px-0 sm-px-3" href="#forms">F<span class="none sm-inline">orms</span></a></li>
+    </ul>
+    <main>
+        <section id="typography">
+            <h3 class="mb-5">Typography</h3>
+            <h1>Heading H1</h1>
+            <h2>Heading H2</h2>
+            <h3>Heading H3</h3>
+            <h4>Heading H4</h4>
+            <h5>Heading H5</h5>
+            <h6>Heading H6</h6>
+            <div class="my-3">
+                <a class="px-3">Anchor</a>
+                <em class="px-3">Emphasis</em>
+                <small class="px-3">Small</small>
+                <strong class="px-3">Strong</strong>
+                <u class="px-3">Underline</u>
+            </div>
+            <p class="justify mb-3 lg-mw">Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p class="justify mb-3 lg-mw large">Paragraph Large - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p class="justify mb-3 lg-mw small">Paragraph Small - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <blockquote class="h3 mt-4">Blockquote - At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</blockquote>
+            <cite class="ml-3"> - Blockquote, Cite</cite>
+            <code class="block border bg-light p-3 pre-wrap small">
+// SCSS Variable
+$types: (
+    h1:     ( size: 3.4rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.20, letter-spacing: 0 ),
+    h2:     ( size: 2.8rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.25, letter-spacing: 0 ),
+    h3:     ( size: 2.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.30, letter-spacing: 0 ),
+    h4:     ( size: 1.5rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.35, letter-spacing: 0 ),
+    h5:     ( size: 1.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.5, letter-spacing: 0 ),
+    h6:     ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+    p:      ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+    label:  ( size: 1.0rem, weight: 600, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+);
+            </code>
+        </section>
+        <hr>
+        <section id="colors">
+            <h3>Colors</h3>
+            <h4 class="mt-4">Text Colors</h4>
+            <code class="block italic small mt-2 color-primary">.color-[color]</code>
+            <h4 class="mt-4">Background Colors</h4>
+            <code class="block italic small mt-2 bg-dark color-light">.bg-[color] .color-light</code>
+        </section>
+        <hr>
+        <section id="buttons">
+            <h3 class="mb-4">Buttons</h3>
+            <code class="block italic small mt-3">.btn .btn-[color]</code>
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-light color-text">Light</button>
+            <button class="btn btn-dark">Dark</button>
+
+            <code class="block italic small mt-3">.btn .btn-outline</code>
+            <button class="btn btn-outline">Primary</button>
+            <button class="btn btn-grey btn-outline">Grey</button>
+            <button class="btn btn-dark btn-outline">Dark</button>
+
+            <code class="block italic small mt-3">.btn .large</code>
+            <button class="btn large">Primary</button>
+            <button class="btn btn-grey large">Grey</button>
+            <button class="btn btn-dark large">Dark</button>
+
+            <code class="block italic small mt-3">.btn .small</code>
+            <button class="btn small">Primary</button>
+            <button class="btn btn-grey small">Grey</button>
+            <button class="btn btn-dark small">Dark</button>
+        </section>
+        <hr>
+        <section id="grid">
+            <h3 class="mb-4">Grid</h3>
+            <h4 class="mb-4">Equal Columns Single Row <span class="small fade italic">.row > *</span></h4>
+            <div class="row lg-mw border">
+                <div class="my-3">
+                    <div class="bg-light rounded p-2">
+                        Auto
+                    </div>
+                </div>
+                <div class="my-3">
+                    <div class="bg-light rounded p-2">
+                        Auto
+                    </div>
+                </div>
+                <div class="my-3">
+                    <div class="bg-light rounded p-2">
+                        Auto
+                    </div>
+                </div>
+                <div class="my-3">
+                    <div class="bg-light rounded p-2">
+                        Auto
+                    </div>
+                </div>
+            </div>
+    
+            <h4 class="mt-5 mb-4 center">Columns Multi Row <span class="small fade italic">.row .col-*</span></h4>
+            <div class="row lg-mw border">
+                <div class="col-6 my-3">
+                    <div class="bg-light rounded p-2">
+                        .col-6
+                    </div>
+                </div>
+                <div class="col-6 my-3">
+                    <div class="bg-light rounded p-2">
+                        .col-6
+                    </div>
+                </div>
+                <div class="col-3 my-3">
+                    <div class="bg-light rounded p-2">
+                        .col-3
+                    </div>
+                </div>
+                <div class="col-6 my-3">
+                    <div class="bg-light rounded p-2">
+                        .col-6
+                    </div>
+                </div>
+                <div class="col-3 my-3">
+                    <div class="bg-light rounded p-2">
+                        .col-3
+                    </div>
+                </div>
+            </div>
+    
+            <h4 class="mt-5 mb-4 center">Responsive Columns on Small and Up <span class="small fade italic">.sm-row .col-*</span></h4>
+            <div class="sm-row lg-mw border">
+                <div class="col-6 my-3">
+                    <div class="bg-light rounded p-2">
+                        .col-6
+                    </div>
+                </div>
+                <div class="col-6 my-3">
+                    <div class="bg-light rounded p-2">
+                        .col-6
+                    </div>
+                </div>
+                <div class="col-6 md-col-3 my-3">
+                    <div class="bg-light rounded p-2">
+                        .col-6 .md-col-3
+                    </div>
+                </div>
+                <div class="col-6 my-3">
+                    <div class="bg-light rounded p-2">
+                        .col-6
+                    </div>
+                </div>
+                <div class="col-6 md-col-3 my-3">
+                    <div class="bg-light rounded p-2">
+                        .col-6 .md-col-3
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section id="forms">
+            <div class="row lg-mw mx-n3">
+                <h3 class="col-12 mb-4">Forms</h3>
+                <div class="mb-4 col-12 sm-col-4">
+                    <label class="h5">Name
+                        <input type="text" />
+                    </label>
+                </div>
+                <div class="mb-4 col-12 sm-col-4">
+                    <label class="h5">Name
+                        <input type="text" />
+                    </label>
+                </div>
+                <div class="mb-4 col-12 sm-col-4">
+                    <label class="h5">Name
+                        <input type="text" />
+                    </label>
+                </div>
+                <div class="mb-4 col-12 sm-col-6">
+                    <label class="h5 is-select">State
+                        <select>
+                            <option value="" disabled>Select</option>
+                            <option>One</option>
+                            <option>Two</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="mb-4 col-12 sm-col-6">
+                    <label class="h5 is-select">Country
+                        <select>
+                            <option value="" disabled>Select</option>
+                            <option>One</option>
+                            <option>Two</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="mb-4 col-12 sm-col-6">
+                    <h5>Choose all that Apply</h5>
+                    <label class="block m-2"><input type="checkbox">Red</label>
+                    <label class="block m-2"><input type="checkbox">Green</label>
+                    <label class="block m-2"><input type="checkbox">None</label>
+                </div>
+                <div class="mb-4 col-12 sm-col-6">
+                    <h5>Choose One</h5>
+                    <label class="block m-2"><input type="radio" name="rad">Why</label>
+                    <label class="block m-2"><input type="radio" name="rad">When</label>
+                    <label class="block m-2"><input type="radio" name="rad">Where</label>
+                </div>
+                <div class="mb-4 col-12">
+                    <label>Message
+                        <textarea></textarea>
+                    </label>
+                    <button class="btn mx-auto mt-4 has-loader" type="button" onclick="this.classList.add('loading');">Submit with Loading Icon</button>
+                </div>
+            </div>
+            <div class="row lg-mw">
+                <h4 class="col-12 mt-4 mb-3">Responsive Labels</h4>
+                <div class="mb-4 col-12 sm-col-4">
+                    <fieldset>
+                        <legend><label>Email</label></legend>
+                        <input type="text" onblur="if (this.value){ this.parentElement.classList.add('active')}" />
+                    </fieldset>
+                </div>
+                <div class="mb-4 col-12 sm-col-4">
+                    <fieldset>
+                        <legend><label>Email</label></legend>
+                        <input type="text" onblur="if (this.value){ this.parentElement.classList.add('active')}" />
+                    </fieldset>
+                </div>
+                <div class="mb-4 col-12 sm-col-4">
+                    <fieldset class="is-select">
+                        <legend><label>Email</label></legend>
+                        <select onchange="if (this.value){ this.parentElement.classList.add('active')}">
+                            <option value="" selected disabled></option>
+                            <option>Two</option>
+                            <option>Three</option>
+                        </select>
+                    </fieldset>
+                </div>
+                <div class="mb-4 col-12">
+                    <fieldset>
+                        <legend><label>Message</label></legend>
+                        <textarea onblur="if (this.value){ this.parentElement.classList.add('active')}"></textarea>
+                    </fieldset>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <div class="lg-mw">
+                <h2 class="center">Table</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Size</th>
+                            <th>Color</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tier 1</td>
+                            <td>200</td>
+                            <td>Red</td>
+                            <td class="right"><button class="btn small inline" type="button">Learn More</button></td>
+                        </tr>
+                        <tr>
+                            <td>Tier 2</td>
+                            <td>400</td>
+                            <td>Blue</td>
+                            <td class="right"><button class="btn small inline" type="button">Learn More</button></td>
+                        </tr>
+                        <tr>
+                            <td>Tier 3</td>
+                            <td>500</td>
+                            <td>Gold</td>
+                            <td class="right"><button class="btn small inline" type="button">Learn More</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn mt-4 mx-auto btn-primary" type="button">Signup</button>
+            </div>
+    
+        </section>
+    </main>
+    </div>
+    <footer class="bg-dark color-light p-3 center">
+        &copy; Footer Content Here
+    </footer>
+</body>
+
+</html>
