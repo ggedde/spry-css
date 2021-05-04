@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spry CSS</title>
     <link rel="stylesheet" href="spry.min.css">
+    <link rel="stylesheet" href="highlight.css">
 </head>
 
 <body>
@@ -40,25 +41,19 @@
                 <p class="justify mb-3 lg-mw small">Paragraph Small - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                 <blockquote class="h3 mt-4">Blockquote - At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</blockquote>
                 <cite class="ml-3"> - Blockquote, Cite</cite>
-                <div class="language-scss highlighter-rouge">
-                    <div class="highlight pr-2 overflow-hidden w-100">
-                        <pre class="highlight">
-                            <code style="border-left: 3px solid #4488ff; max-width: 75vw;" class="block p-3 bg-light border-primary overflow-scroll">
-    // SCSS Variable
-    $types: (
-        h1:     ( size: 3.4rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.20, letter-spacing: 0 ),
-        h2:     ( size: 2.8rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.25, letter-spacing: 0 ),
-        h3:     ( size: 2.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.30, letter-spacing: 0 ),
-        h4:     ( size: 1.5rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.35, letter-spacing: 0 ),
-        h5:     ( size: 1.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.5, letter-spacing: 0 ),
-        h6:     ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
-        p:      ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
-        label:  ( size: 1.0rem, weight: 600, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
-    );
-                            </code>
-                        </pre>
-                    </div>
-                </div>
+                {% highlight scss %}
+                // SCSS Variable
+                $types: (
+                    h1:     ( size: 3.4rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.20, letter-spacing: 0 ),
+                    h2:     ( size: 2.8rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.25, letter-spacing: 0 ),
+                    h3:     ( size: 2.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.30, letter-spacing: 0 ),
+                    h4:     ( size: 1.5rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.35, letter-spacing: 0 ),
+                    h5:     ( size: 1.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.5, letter-spacing: 0 ),
+                    h6:     ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+                    p:      ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+                    label:  ( size: 1.0rem, weight: 600, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+                );
+                {% endhighlight %}
             </section>
             <hr>
             <section id="colors">
