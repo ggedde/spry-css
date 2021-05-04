@@ -13,7 +13,13 @@
 <body>
     <div class="flex">
         <nav class="sticky index-1 bg-light p-3 pt-5 vh-100" style="width: 30%; max-width: 200px;">
-            <h5 class="mb-3">Spry CSS V1.0</h5>
+            <h5 class="mb-3">Spry CSS <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases"></h5>
+            <a class="btn btn-outline small flex ai-center jc-center sm-jc-start my-2 nowrap px-0 sm-px-2 left" href="#installation">
+                <svg class="sm-mr-1" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M13,3H11V13H13V3M17.83,5.17L16.41,6.59C18.05,7.91 19,9.9 19,12A7,7 0 0,1 12,19C8.14,19 5,15.88 5,12C5,9.91 5.95,7.91 7.58,6.58L6.17,5.17C2.38,8.39 1.92,14.07 5.14,17.86C8.36,21.64 14.04,22.1 17.83,18.88C19.85,17.17 21,14.65 21,12C21,9.37 19.84,6.87 17.83,5.17Z" />
+                </svg>
+                <span class="none sm-inline">Installation</span>
+            </a>
             <a class="btn btn-outline small flex ai-center jc-center sm-jc-start my-2 nowrap px-0 sm-px-2 left" href="#typography">
                 <svg class="sm-mr-1" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M2 4V7H7V19H10V7H15V4H2M21 9H12V12H15V19H18V12H21V9Z" />
@@ -56,8 +62,82 @@
                 </svg>
                 <span class="none sm-inline">Utilities</span>
             </a>
+            <a class="btn btn-dark btn-outline small flex ai-center jc-center sm-jc-start my-4 px-0 sm-px-2 left" href="https://github.com/ggedde/spry-css">
+                <svg class="sm-mr-1" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+                </svg>
+                <span class="none sm-inline">View on Github</span>
+            </a>
         </nav>
         <main>
+            <section id="installation">
+                <h1 class="h2 mb-4">Getting Started and Installation</h1>
+                <h4>Using the CDN:</h4>
+                <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css/dist/spry.min.css"&gt;</code></pre>
+
+                <h4 class="mt-5">Using NPM and SCSS:</h4>
+                <pre><code class="language-bash">npm install @ggedde/spry-css</code></pre>
+                <p>Then in your scss file import Spry Css:</p>
+                <pre><code class="language-scss">@import 'node_modules/@ggedde/spry-css/spry.scss';</code></pre>
+                <cite>Note: you may need to change the path to match your project's node_modules folder</cite>
+
+                <h4 class="mt-5">Overriding SCSS Variabls:</h4>
+                <p>To override the Spry Variables just declare the variables before you import the file.
+                <pre><code class="language-scss">@import 'your_variables.scss';
+@import 'node_modules/@ggedde/spry-css/spry.scss';</code></pre>
+
+                <h4 class="mt-5">Example Variables File:</h4>
+                <pre><code class="language-scss">// Breakpoints
+$breakpoints: (
+    sm: 600px,
+    md: 900px,
+    lg: 1200px,
+);
+
+// Add Max width to .row
+$row-max-width: map-get($breakpoints, 'lg');
+
+// Width between Columns
+$gutter-width: 2rem;
+
+// Colors
+$colors: (
+    "white":       #ffffff,
+    "light":       #efefef,
+    "grey":        #aaaaaa,
+    "dark":        #333333,
+    "primary":     #4488ff,
+    "text":        #606c76,
+    "transparent": transparent,
+);
+
+// Typography - This will also create classes like .h3 etc. Mobile size will be 10% smaller
+$types: (
+    h1: ( size: 3.4rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.20, letter-spacing: 0 ),
+    h2: ( size: 2.8rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.25, letter-spacing: 0 ),
+    h3: ( size: 2.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.30, letter-spacing: 0 ),
+    h4: ( size: 1.5rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.35, letter-spacing: 0 ),
+    h5: ( size: 1.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.5, letter-spacing: 0 ),
+    h6: ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+    p:  ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+);
+
+// Spacing - Applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, .pad-2, etc
+$spacing: (
+    0: 0, 
+    1: .25, 
+    2: .5, 
+    3: 1, 
+    4: 2, 
+    5: 3, 
+    6: 5
+);
+
+// Add padding to &lt;section&gt; tags
+$section-padding: 4rem;</code></pre>
+
+            </section>
+            <hr>
             <section id="typography">
                 <h2 class="mb-5">Typography</h2>
                 <h1>Heading H1</h1>
