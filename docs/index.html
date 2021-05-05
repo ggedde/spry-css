@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spry CSS</title>
-    <link rel="stylesheet" href="spry.min.css">
+    <link rel="stylesheet" href="../dist/spry.min.css">
     <link rel="stylesheet" href="prism.css">
 </head>
 
@@ -56,6 +56,12 @@
                 </svg>
                 <span class="none sm-inline">Tables</span>
             </a>
+            <a class="btn btn-outline small flex ai-center jc-center sm-jc-start my-2 px-0 sm-px-2 left" href="#modals">
+                <svg class="sm-mr-1" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M4,4H20V20H4V4M6,8V18H18V8H6Z" />
+                </svg>
+                <span class="none sm-inline">Modals</span>
+            </a>
             <a class="btn btn-outline small flex ai-center jc-center sm-jc-start my-2 px-0 sm-px-2 left" href="#utilities">
                 <svg class="sm-mr-1" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M16.06 13.09L21.69 18.68L18.37 21.96L12.78 16.37V15.45L15.14 13.09H16.06M16.97 10.56L16 9.6L11.21 14.4V16.37L5.58 22L2.3 18.68L7.89 13.09H9.86L10.64 12.31L6.8 8.46H5.5L2.69 5.62L5.31 3L8.11 5.8V7.11L12 10.95L14.66 8.29L13.7 7.28L15 5.97H12.34L11.69 5.32L15 2L15.66 2.66V5.32L16.97 4L20.25 7.28C21.34 8.38 21.34 10.17 20.25 11.26L18.28 9.25L16.97 10.56Z" />
@@ -69,7 +75,7 @@
                 <span class="none sm-inline">View Github</span>
             </a>
         </nav>
-        <main>
+        <main class="lg-mw">
             <section id="installation">
                 <h1 class="h2 mb-4">Getting Started and Installation</h1>
                 <h4>Using the CDN:</h4>
@@ -97,8 +103,8 @@ $breakpoints: (
 // Add Max width to .row
 $row-max-width: map-get($breakpoints, 'lg');
 
-// Width between Columns
-$gutter-width: 2rem;
+// Width between Columns and Section Padding on Left and Right
+$gap: 2rem;
 
 // Colors
 $colors: (
@@ -197,264 +203,391 @@ to an H4, etc</cite>
             <hr>
             <section id="buttons">
                 <h2 class="mb-4">Buttons</h2>
-                <code class="block italic small mt-3">.btn .btn-{color}</code>
+                
+
                 <button class="btn btn-primary">Primary</button>
                 <button class="btn btn-light color-text">Light</button>
                 <button class="btn btn-dark">Dark</button>
+                <pre><code class="language-html">&lt;button class="btn"&gt;Label&lt;/button&gt;
+&lt;a href="#" class="btn"&gt;Link Button&lt;/a&gt;</code></pre>
 
-                <code class="block italic small mt-3">.btn .btn-outline</code>
+                <h4 class="mt-4">Outline</h4>
                 <button class="btn btn-outline">Primary</button>
                 <button class="btn btn-grey btn-outline">Grey</button>
                 <button class="btn btn-dark btn-outline">Dark</button>
 
-                <code class="block italic small mt-3">.btn .large .px-5</code>
+                <h4 class="mt-4">Large</h4>
                 <button class="btn large px-5">Primary</button>
                 <button class="btn btn-grey large px-5">Grey</button>
                 <button class="btn btn-dark large px-5">Dark</button>
 
-                <code class="block italic small mt-3">.btn .small</code>
+                <h4 class="mt-4">Small</h4>
                 <button class="btn small">Primary</button>
                 <button class="btn btn-grey small">Grey</button>
                 <button class="btn btn-dark small">Dark</button>
 
                 <h4 class="mt-4">With Icons</h4>
-                <div class="sm-flex ai-center pad-2">
-                    <button class="btn btn-primary flex ai-center pr-3 m-2 large">Send
+                <div class="md-flex ai-center pad-2">
+                    <button class="btn btn-primary flex ai-center pr-3 ml-0 large">After
                         <svg class="ml-3" viewBox="0 0 24 24"><path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" /></svg>
                     </button>
                     <button class="btn btn-primary flex-center p-0 large">
                         <svg viewBox="0 0 24 24"><path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" /></svg>
                     </button>
-                    <button class="btn btn-primary flex ai-center pr-3 m-2">Send
-                        <svg class="ml-3" viewBox="0 0 24 24">
+                    <button class="btn btn-primary flex ai-center pl-3 m-2">
+                        <svg class="mr-3" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
-                        </svg>
+                        </svg>Before
                     </button>
                     <button class="btn btn-primary flex-center btn-outline circle p-0">
                         <svg viewBox="0 0 24 24">
                             <path fill="currentColor" d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
                         </svg>
                     </button>
-                    <button class="btn btn-primary flex ai-center pr-3 m-2 small">Send
-                        <svg class="ml-3" viewBox="0 0 24 24">
+                    <button class="btn btn-outline flex-center small border-transparent bg-transparent p-0 circle">
+                        <svg viewBox="0 0 24 24">
                             <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12S17.5 2 12 2M7.7 15.5L7 14.2L11 11.9V7H12.5V12.8L7.7 15.5Z" />
                         </svg>
                     </button>
+
                 </div>
+                <h4 class="mt-4">With Loader</h4>
+                <button class="btn has-loader" type="button" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">Click for Loading</button>
             </section>
             <hr>
             <section id="grid">
                 <h2 class="mb-4">Grid</h2>
-                <h4 class="mb-4">Equal Columns Single Row <span class="small fade italic">.row > *</span></h4>
-                <div class="row lg-mw border">
-                    <div class="my-3">
-                        <cite class="bg-light block rounded p-2">
-                            auto
-                        </cite>
+                <p>The Grid uses a 12 column flexbox grid system</p>
+                <h4>Classes</h4>
+                <dl class="ml-3">
+                    <dt><code class="color-primary inline-block" style="width: 40px;">row</code> Row containing columns, Uses variable <code class="color-primary">$row-max-width</code> witih margin auto</dt> 
+                    <dt><code class="color-primary inline-block" style="width: 40px;">col</code> Column in row</dt> 
+                    <dt><code class="color-primary inline-block" style="width: 40px;">g</code> Gap for columns in row.  Default is variable <code class="color-primary">$gap</code></dt>
+                </dl>
+                <p>for breakpoints use <code class="color-primary">{breakpoint}-row {breakpoint}-col-{size} {breakpoint}-g-{size}</code></p>
+
+                <h4 class="mb-4">Equal Columns Single Row</h4>
+                <div class="row">
+                    <div class="bg-light rounded p-2">
+                        fixed auto
                     </div>
-                    <div class="my-3">
-                        <cite class="bg-light block rounded p-2">
-                            auto
-                        </cite>
+                    <div class="bg-light rounded p-2">
+                        fixed auto
                     </div>
-                    <div class="my-3">
-                        <cite class="bg-light block rounded p-2">
-                            auto
-                        </cite>
+                    <div class="bg-light rounded p-2">
+                        fixed auto
                     </div>
-                    <div class="my-3">
-                        <cite class="bg-light block rounded p-2">
-                            auto
-                        </cite>
+                    <div class="bg-light rounded p-2">
+                        fixed auto
+                    </div>
+                </div>
+                <pre class="mt-4"><code class="language-html">&lt;div class="row"&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        
+                <h4 class="mt-5 mb-4">Columns Multi Row</h4>
+                <div class="row">
+                    <div class="col-6 bg-light rounded p-2">
+                        .col-6
+                    </div>
+                    <div class="col-6 bg-light rounded p-2">
+                        .col-6
+                    </div>
+                    <div class="col-3 bg-light rounded p-2">
+                        .col-3
+                    </div>
+                    <div class="col-6 bg-light rounded p-2">
+                        .col-6
+                    </div>
+                    <div class="col-3 bg-light rounded p-2">
+                        .col-3
                     </div>
                 </div>
 
-                <pre class="mt-1"><code class="language-html">&lt;div class="row"&gt;
-    &lt;div&gt;auto&lt;/div&gt;
-    &lt;div&gt;auto&lt;/div&gt;
-    &lt;div&gt;auto&lt;/div&gt;
-    &lt;div&gt;auto&lt;/div&gt;
+                <pre class="mt-4"><code class="language-html">&lt;div class="row"&gt;
+    &lt;div class="col-6"&gt;&lt;/div&gt;
+    &lt;div class="col-6"&gt;&lt;/div&gt;
+    &lt;div class="col-3"&gt;&lt;/div&gt;
+    &lt;div class="col-6"&gt;&lt;/div&gt;
+    &lt;div class="col-3"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
         
-                <h4 class="mt-5 mb-4">Columns Multi Row <span class="small fade italic">.row .col-*</span></h4>
-                <div class="row lg-mw border">
-                    <div class="col-6 my-3">
-                        <div class="bg-light rounded p-2">
-                            .col-6
+                <h4 class="mt-5 mb-4">Responsive with smaller gap and nested row with an auto fill column</h4>
+                <div class="sm-row g-2">
+                    <div class="col-6 bg-light rounded p-2">
+                        .col-6
+                    </div>
+                    <div class="col-6 bg-light rounded p-2">
+                        .col-6
+                    </div>
+                    <div class="col-6 md-col-3 bg-light rounded p-2">
+                        .col-6 .md-col-3
+                    </div>
+                    <div class="col-6">
+                        <div class="sm-row">
+                            <div class="bg-light rounded p-2">
+                                auto
+                            </div>
+                            <div class="col-auto bg-light rounded p-2">
+                                auto fill by content
+                            </div>
+                            <div class="bg-light rounded p-2">
+                                auto
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6 my-3">
-                        <div class="bg-light rounded p-2">
-                            .col-6
-                        </div>
-                    </div>
-                    <div class="col-3 my-3">
-                        <div class="bg-light rounded p-2">
-                            .col-3
-                        </div>
-                    </div>
-                    <div class="col-6 my-3">
-                        <div class="bg-light rounded p-2">
-                            .col-6
-                        </div>
-                    </div>
-                    <div class="col-3 my-3">
-                        <div class="bg-light rounded p-2">
-                            .col-3
-                        </div>
-                    </div>
-                </div>
-
-                <pre class="mt-1"><code class="language-html">&lt;div class="row"&gt;
-    &lt;div class="col-6 my-3"&gt;
-        .col-6
-    &lt;/div&gt;
-    &lt;div class="col-6 my-3"&gt;
-        .col-6
-    &lt;/div&gt;
-    &lt;div class="col-3 my-3"&gt;
-        .col-3
-    &lt;/div&gt;
-    &lt;div class="col-6 my-3"&gt;
-        .col-6
-    &lt;/div&gt;
-    &lt;div class="col-3 my-3"&gt;
-        .col-3
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-        
-                <h4 class="mt-5 mb-4">Responsive Columns on Small and Up <span class="small fade italic">.sm-row .col-*</span></h4>
-                <div class="sm-row lg-mw border">
-                    <div class="col-6 my-3">
-                        <div class="bg-light rounded p-2">
-                            .col-6
-                        </div>
-                    </div>
-                    <div class="col-6 my-3">
-                        <div class="bg-light rounded p-2">
-                            .col-6
-                        </div>
-                    </div>
-                    <div class="col-6 md-col-3 my-3">
-                        <div class="bg-light rounded p-2">
-                            .col-6 .md-col-3
-                        </div>
-                    </div>
-                    <div class="col-6 my-3">
-                        <div class="bg-light rounded p-2">
-                            .col-6
-                        </div>
-                    </div>
-                    <div class="col-6 md-col-3 my-3">
+                    <div class="col-6 md-col-3">
                         <div class="bg-light rounded p-2">
                             .col-6 .md-col-3
                         </div>
                     </div>
                 </div>
-                <pre class="mt-1"><code class="language-html">&lt;div class="sm-row"&gt;
-    &lt;div class="col-6 my-3"&gt;
-        .col-6
+                <pre class="mt-4"><code class="language-html">&lt;div class="sm-row g-2"&gt;
+    &lt;div class="col-6"&gt;&lt;/div&gt;
+    &lt;div class="col-6"&gt;&lt;/div&gt;
+    &lt;div class="col-6 md-col-3"&gt;&lt;/div&gt;
+    &lt;div class="col-6"&gt;
+        &lt;div class="sm-row"&gt;
+            &lt;div&gt;&lt;/div&gt;
+            &lt;div class="col-auto"&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;/div&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="col-6 my-3"&gt;
-        .col-6
+    &lt;div class="col-6 md-col-3"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                
+            <h4 class="mt-5 mb-4">Row spanning with auto height</h4>
+            <div class="sm-row">
+                <div class="col-4 bg-light rounded p-2">
+                    .col-4
+                </div>
+                <div>
+                    <div class="sm-row mb-4">
+                        <div class="bg-light rounded p-2">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitrsed diam nonumy.
+                        </div>
+                        <div class="bg-light rounded p-2">
+                            auto
+                        </div>
+                        <div class="bg-light rounded p-2">
+                            auto
+                        </div>
+                    </div>
+                    <div class="sm-row">
+                        <div class="bg-light rounded p-2">
+                            auto
+                        </div>
+                        <div class="bg-light rounded p-2">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <pre class="mt-4"><code class="language-html">&lt;div class="sm-row"&gt;
+    &lt;div class="col-4"&gt;
+        .col-4
     &lt;/div&gt;
-    &lt;div class="col-6 md-col-3 my-3"&gt;
-        .col-6 .md-col-3
-    &lt;/div&gt;
-    &lt;div class="col-6 my-3"&gt;
-        .col-6
-    &lt;/div&gt;
-    &lt;div class="col-6 md-col-3 my-3"&gt;
-        .col-6 .md-col-3
+    &lt;div&gt;
+        &lt;div class="sm-row mb-4"&gt;
+            &lt;div&gt;
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitrsed diam nonumy.
+            &lt;/div&gt;
+            &lt;div&gt;
+                auto
+            &lt;/div&gt;
+            &lt;div&gt;
+                auto
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="sm-row"&gt;
+            &lt;div&gt;
+                auto
+            &lt;/div&gt;
+            &lt;div&gt;
+                Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+            &lt;/div&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </section>
             <hr>
             <section id="forms">
-                <div class="row lg-mw mx-n3">
-                    <h2 class="col-12 mb-4">Forms</h2>
-                    <div class="mb-4 col-12 sm-col-4">
-                        <label class="h5">Name
-                            <input type="text" />
-                        </label>
-                    </div>
-                    <div class="mb-4 col-12 sm-col-4">
-                        <label class="h5">Name
-                            <input type="text" />
-                        </label>
-                    </div>
-                    <div class="mb-4 col-12 sm-col-4">
-                        <label class="h5">Name
-                            <input type="text" />
-                        </label>
-                    </div>
-                    <div class="mb-4 col-12 sm-col-6">
-                        <label class="h5 is-select">State
-                            <select>
-                                <option value="" disabled>Select</option>
-                                <option>One</option>
-                                <option>Two</option>
-                            </select>
-                        </label>
-                    </div>
-                    <div class="mb-4 col-12 sm-col-6">
-                        <label class="h5 is-select">Country
-                            <select>
-                                <option value="" disabled>Select</option>
-                                <option>One</option>
-                                <option>Two</option>
-                            </select>
-                        </label>
-                    </div>
-                    <div class="mb-4 col-12 sm-col-6">
-                        <h5>Choose all that Apply</h5>
-                        <label class="block m-2"><input type="checkbox">Red</label>
-                        <label class="block m-2"><input type="checkbox">Green</label>
-                        <label class="block m-2"><input type="checkbox">None</label>
-                    </div>
-                    <div class="mb-4 col-12 sm-col-6">
-                        <h5>Choose One</h5>
-                        <label class="block m-2"><input type="radio" name="rad">Why</label>
-                        <label class="block m-2"><input type="radio" name="rad">When</label>
-                        <label class="block m-2"><input type="radio" name="rad">Where</label>
-                    </div>
-                    <div class="mb-4 col-12">
-                        <label class="h5">Message
-                            <textarea></textarea>
-                        </label>
-                    </div>
+                <div class="lg-mw">
+                    <h2 class="mb-4">Forms</h2>
+                    <h4 class="mb-2">Simple form with some Required Fields</h4>
+                    <form action="">
+                        <div class="sm-row py-4">
+                            <div>
+                                <label class="h5">Text Field *
+                                    <input type="text" required />
+                                </label>
+                            </div>
+                            <div>
+                                <label class="h5">Email *
+                                    <input type="email" required />
+                                </label>
+                            </div>
+                            <div>
+                                <label class="h5 is-select">Select *
+                                    <select required>
+                                        <option value="" disabled>Select</option>
+                                        <option>One</option>
+                                        <option>Two</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sm-row">
+                            <div class="pady-2">
+                                <h5>Vertical Checkboxes</h5>
+                                <label class="block"><input type="checkbox">Red</label>
+                                <label class="block"><input type="checkbox">Green</label>
+                                <label class="block"><input type="checkbox">None</label>
+                            </div>
+                            <div class="pady-2">
+                                <h5>Horizontal Radios *</h5>
+                                <label><input type="radio" name="rad" required>Why</label>
+                                <label><input type="radio" name="rad" required>When</label>
+                                <label><input type="radio" name="rad" required>Where</label>
+                            </div>
+                        </div>
+                        <div class="pady-4">
+                            <div>
+                                <label class="h5">Message
+                                    <textarea></textarea>
+                                </label>
+                            </div>
+                            <div>
+                                <button class="btn mx-auto" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    <pre><code class="language-html">&lt;form action=""&gt;
+    &lt;div class="sm-row py-4"&gt;
+        &lt;div&gt;
+            &lt;label class="h5">Text Field &gt;
+                &lt;input type="text" required /&gt;
+            &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label class="h5">Email &gt;
+                &lt;input type="email" required /&gt;
+            &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label class="h5 is-select">Select &gt;
+                &lt;select required&gt;
+                    &lt;option value="" disabled>Select&lt;/option&gt;
+                    &lt;option>One&lt;/option&gt;
+                    &lt;option>Two&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="sm-row"&gt;
+        &lt;div class="pady-2"&gt;
+            &lt;h5>Vertical Checkboxes&lt;/h5&gt;
+            &lt;label class="block">&lt;input type="checkbox">Red&lt;/label&gt;
+            &lt;label class="block">&lt;input type="checkbox">Green&lt;/label&gt;
+            &lt;label class="block">&lt;input type="checkbox">None&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="pady-2"&gt;
+            &lt;h5>Horizontal Radios *&lt;/h5&gt;
+            &lt;label>&lt;input type="radio" name="rad" required>Why&lt;/label&gt;
+            &lt;label>&lt;input type="radio" name="rad" required>When&lt;/label&gt;
+            &lt;label>&lt;input type="radio" name="rad" required>Where&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="pady-4"&gt;
+        &lt;div&gt;
+            &lt;label class="h5">Messag&gt;
+                &lt;textarea>&lt;/textarea&gt;
+            &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;button class="btn mx-auto" type="submit">Submit&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
                 </div>
-                <div class="row lg-mw mx-n3">
-                    <h4 class="col-12 mt-1 mb-3">Responsive Labels</h4>
-                    <div class="mb-4 col-12 sm-col-4">
+                <form action="/" class="sm-row lg-mw mb-4 jc-center" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.querySelectorAll('fieldset,button').forEach(elem => {elem.setAttribute('disabled', 'disabled');});setTimeout(() => {this.submit()}, 2000)">
+                    <h4 class="col-12 mt-4">Responsive labels with loading button and disabled fields on submit</h4>
+                    <fieldset>
+                        <legend><label>Name *</label></legend>
+                        <input type="text" required onblur="if (this.value){ this.parentElement.classList.add('active')}" />
+                    </fieldset>
+                    <fieldset>
+                        <legend><label>Email</label></legend>
+                        <input type="email" onblur="if (this.value){ this.parentElement.classList.add('active')}" />
+                    </fieldset>
+                    <fieldset class="is-select">
+                        <legend><label>Select</label></legend>
+                        <select onchange="if (this.value){ this.parentElement.classList.add('active')}">
+                            <option value="" selected disabled></option>
+                            <option>Two</option>
+                            <option>Three</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="col-12 pt-2">
+                        <legend><label>Message</label></legend>
+                        <textarea onblur="if (this.value){ this.parentElement.classList.add('active')}"></textarea>
+                    </fieldset>
+                    <button  class="col-4 btn has-loader" type="submit">Submit with Loading Icon</button>
+                </form>
+
+                <pre><code class="language-html">&lt;form action="/" class="sm-row lg-mw mb-4 jc-center" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.querySelectorAll('fieldset,button').forEach(elem => {elem.setAttribute('disabled', 'disabled');});setTimeout(() => {this.submit()}, 2000)"&gt;
+    &lt;h4 class="col-12 mt-4"&gt;Responsive labels with loading button and disabled fields on submit&lt;/h4&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;&lt;label&gt;Name *&lt;/label&gt;&lt;/legend&gt;
+        &lt;input type="text" required onblur="if (this.value){ this.parentElement.classList.add('active')}" /&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;&lt;label&gt;Email&lt;/label&gt;&lt;/legend&gt;
+        &lt;input type="email" onblur="if (this.value){ this.parentElement.classList.add('active')}" /&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset class="is-select"&gt;
+        &lt;legend&gt;&lt;label&gt;Select&lt;/label&gt;&lt;/legend&gt;
+        &lt;select onchange="if (this.value){ this.parentElement.classList.add('active')}"&gt;
+            &lt;option value="" selected disabled&gt;&lt;/option&gt;
+            &lt;option&gt;Two&lt;/option&gt;
+            &lt;option&gt;Three&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset class="col-12 pt-2"&gt;
+        &lt;legend&gt;&lt;label&gt;Message&lt;/label&gt;&lt;/legend&gt;
+        &lt;textarea onblur="if (this.value){ this.parentElement.classList.add('active')}"&gt;&lt;/textarea&gt;
+    &lt;/fieldset&gt;
+    &lt;button  class="col-4 btn has-loader" type="submit"&gt;Submit with Loading Icon&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+                <div class="sm-row lg-mw">
+                    <h4 class="col-12 mt-4">Dense Fields using <code class="color-primary small">form.small</code></h4>
+                    <form class="small sm-row jc-center">
                         <fieldset>
-                            <legend><label>Email</label></legend>
+                            <legend><label>Name</label></legend>
                             <input type="text" onblur="if (this.value){ this.parentElement.classList.add('active')}" />
                         </fieldset>
-                    </div>
-                    <div class="mb-4 col-12 sm-col-4">
                         <fieldset>
                             <legend><label>Email</label></legend>
-                            <input type="text" onblur="if (this.value){ this.parentElement.classList.add('active')}" />
+                            <input type="email" onblur="if (this.value){ this.parentElement.classList.add('active')}" />
                         </fieldset>
-                    </div>
-                    <div class="mb-4 col-12 sm-col-4">
                         <fieldset class="is-select">
-                            <legend><label>Email</label></legend>
+                            <legend><label>Select</label></legend>
                             <select onchange="if (this.value){ this.parentElement.classList.add('active')}">
                                 <option value="" selected disabled></option>
                                 <option>Two</option>
                                 <option>Three</option>
                             </select>
                         </fieldset>
-                    </div>
-                    <div class="mb-4 col-12">
-                        <fieldset>
+                        <fieldset class="col-12 pt-2">
                             <legend><label>Message</label></legend>
                             <textarea onblur="if (this.value){ this.parentElement.classList.add('active')}"></textarea>
                         </fieldset>
-                        <button class="btn mx-auto mt-4 has-loader" type="button" onclick="this.classList.add('loading');">Submit with Loading Icon</button>
-                    </div>
+                        <button class="col-4 btn has-loader" type="submit">Submit</button>
+                    </form>
                 </div>
             </section>
             <hr>
@@ -475,19 +608,19 @@ to an H4, etc</cite>
                                 <td>Tier 1</td>
                                 <td>200</td>
                                 <td>Red</td>
-                                <td class="right"><button class="btn small inline" type="button">Learn More</button></td>
+                                <td class="right"><button class="btn px-3 small inline" type="button">Learn More</button></td>
                             </tr>
                             <tr>
                                 <td>Tier 2</td>
                                 <td>400</td>
                                 <td>Blue</td>
-                                <td class="right"><button class="btn small inline" type="button">Learn More</button></td>
+                                <td class="right"><button class="btn px-3 small inline" type="button">Learn More</button></td>
                             </tr>
                             <tr>
                                 <td>Tier 3</td>
                                 <td>500</td>
                                 <td>Gold</td>
-                                <td class="right"><button class="btn small inline" type="button">Learn More</button></td>
+                                <td class="right"><button class="btn px-3 small inline" type="button">Learn More</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -495,10 +628,117 @@ to an H4, etc</cite>
                 </div>
             </section>
             <hr>
+            <section id="modals">
+                <div class="lg-mw">
+                    <h2 class="mb-4">Modals</h2>
+                    <button class="btn" onclick="document.getElementById('login-modal').classList.add('show'); document.getElementById('login-email').focus();">Open Login Modal</button>
+                    
+                    <div id="login-modal" class="modal" onclick="if(event.target.id === 'login-modal') document.getElementById('login-modal').classList.remove('show');">
+                        <div class="modal-container rounded" style="max-width: 400px;">
+                            <div class="modal-heading">
+                                <h3>Login</h3>
+                                <button type="button" class="modal-close" onclick="document.getElementById('login-modal').classList.remove('show');" ></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="">
+                                    <fieldset>
+                                        <legend><label>Email</label></legend>
+                                        <input id="login-email" type="email" required onblur="if (this.value){ this.parentElement.classList.add('active')}" />
+                                    </fieldset>
+                                    
+                                    <fieldset class="my-3">
+                                        <legend><label>Password</label></legend>
+                                        <input type="password" required onblur="if (this.value){ this.parentElement.classList.add('active')}" />
+                                    </fieldset>
+                                    
+                                    <a href="#" class="mt-3">Forgot Password?</a>
+                                    <button class="btn block mt-3" type="submit">Login</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <pre><code class="language-html">&lt;button class="btn" onclick="document.getElementById('login-modal').classList.add('show'); document.getElementById('login-email').focus();"&gt;Open Login Modal&lt;/button&gt;
+
+&lt;div id="login-modal" class="modal" onclick="if(event.target.id === 'login-modal') document.getElementById('login-modal').classList.remove('show');"&gt;
+    &lt;div class="modal-container rounded" style="max-width: 400px;"&gt;
+        &lt;div class="modal-heading"&gt;
+            &lt;h3&gt;Login&lt;/h3&gt;
+            &lt;button type="button" class="modal-close" onclick="document.getElementById('login-modal').classList.remove('show');" &gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="modal-body"&gt;
+            &lt;form action=""&gt;
+                &lt;fieldset&gt;
+                    &lt;legend&gt;&lt;label&gt;Email&lt;/label&gt;&lt;/legend&gt;
+                    &lt;input id="login-email" type="email" required onblur="if (this.value){ this.parentElement.classList.add('active')}" /&gt;
+                &lt;/fieldset&gt;
+                
+                &lt;fieldset class="my-3"&gt;
+                    &lt;legend&gt;&lt;label&gt;Password&lt;/label&gt;&lt;/legend&gt;
+                    &lt;input type="password" required onblur="if (this.value){ this.parentElement.classList.add('active')}" /&gt;
+                &lt;/fieldset&gt;
+                
+                &lt;a href="#" class="mt-3"&gt;Forgot Password?&lt;/a&gt;
+                &lt;button class="btn block mt-3" type="submit"&gt;Login&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h4 class="mt-4">Large Model with Long content and forced buttons</h4>
+                    <button class="btn" onclick="document.getElementById('large-modal').classList.add('show');">Open Large Modal</button>
+                    <div id="large-modal" class="modal" onclick="if(event.target.id === 'large-modal') this.classList.add('bounce');">
+                        <div class="modal-container rounded lg-mw">
+                            <div class="modal-heading bg-light">
+                                <h4>This is the Modal Heading</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="modal-content">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer bg-light right">
+                                <button type="button" class="btn small btn-outline btn-dark" onclick="document.getElementById('large-modal').classList.remove('show','bounce');" >Cancel</button>
+                                <button type="button" class="btn small ml-3" onclick="document.getElementById('large-modal').classList.remove('show','bounce');" >Accept</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <pre><code class="language-html">&lt;button class="btn" onclick="document.getElementById('large-modal').classList.add('show');"&gt;Open Large Modal&lt;/button&gt;
+
+&lt;div id="large-modal" class="modal" onclick="if(event.target.id === 'large-modal') this.classList.add('bounce');"&gt;
+    &lt;div class="modal-container rounded"&gt;
+        &lt;div class="modal-heading bg-light"&gt;
+            &lt;h4&gt;This is the Modal Heading&lt;/h4&gt;
+        &lt;/div&gt;
+        &lt;div class="modal-body"&gt;
+            &lt;div class="modal-content"&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
+                &lt;p&gt;Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
+                &lt;p&gt;At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
+                &lt;p&gt;Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
+                &lt;p&gt;At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="modal-footer bg-light right"&gt;
+            &lt;button type="button" class="btn small btn-outline btn-dark" onclick="document.getElementById('large-modal').classList.remove('show','bounce');" &gt;Cancel&lt;/button&gt;
+            &lt;button type="button" class="btn small ml-3" onclick="document.getElementById('large-modal').classList.remove('show','bounce');" &gt;Accept&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </section>
+            <hr>
             <section id="utilities">
                 <div class="lg-mw">
                     <h2>Utilities</h2>
-                    <h3 class="center mt-3">Spacing</h3>
+                    <h3 class="mt-4">Spacing</h3>
                     <p>The classes are named using the format <code class="color-primary">{property}{sides}-{size}</code> for breakpoints use <code class="color-primary">{breakpoints}-{property}{sides}-{size}</code></p>
                     <p>There are 3 Spacing properties: 
                         <dl class="ml-3 my-2">
@@ -529,54 +769,56 @@ $spacing: (
     6: 5
 );</code></pre>
 <h5>Negative Margin</h5>
-<p>For a negative margin you can include a negative value by placing a <code class="color-primary">n</code> in front of the value. Ex. <code class="color-primary">mx-n2</code></p>
+<p>For a negative margin you can include a negative value by placing a <code class="color-primary">n</code> in front of the value. ex <code class="color-primary">mx-n2</code></p>
                 </div>
-                <h3 class="center mt-5">General Utility Classes</h3>
-                <dl>
-                    <dt class="ml-4"><code class="color-primary">bold</code> <code>{ font-weight: bold }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">regular</code> <code>{ font-weight: normal }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">italic</code> <code>{ font-style: italic }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">uppercase</code> <code>{ text-transform: uppercase }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">lowercase</code> <code>{ text-transform: lowercase }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">capitalize</code> <code>{ text-transform: capitalize }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">pointer </code> <code>{ cursor: pointer }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">rounded</code> <code>{ border-radius: 3px }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">circle</code> <code>{ border-radius: 50% }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">relative</code> <code>{ position: relative }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">absolute</code> <code>{ position: absolute }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">sticky</code> <code>{ position: sticky; top: 0 }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">fixed</code> <code>{ position: fixed }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">float-left</code> <code>{ float: left }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">float-right</code> <code>{ float: right }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">clear</code> <code>{ clear: both }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">top-0</code> <code>{ top: 0 }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">right-0</code> <code>{ right: 0 }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">bottom-0</code> <code>{ bottom: 0 }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">left-0</code> <code>{ left: 0 }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">h-100</code> <code>{ height: 100% }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">vh-100</code> <code>{ height: 100vh }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">w-100</code> <code>{ width: 100% }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">vw-100</code> <code>{ width: 100vw }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">index-1</code> <code>{ z-index: 1 }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">index-2</code> <code>{ z-index: 2 }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">index-3</code> <code>{ z-index: 3 }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">fade</code> <code>{ opacity: .7 }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">border</code> <code>{ border: 1px solid map-get($colors, 'grey') }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">shadow</code> <code>{ box-shadow: 0px 2px 4px rgba(0,0,0,0.1) }</code></dt>
-                    <dt class="ml-4"><code class="color-primary">truncate</code> <code>{
+                <h3 class="mt-4">General Utility Classes</h3>
+                <dl class="padl-2">
+                    <dt><code class="color-primary">bold</code> <code>{ font-weight: bold }</code></dt>
+                    <dt><code class="color-primary">regular</code> <code>{ font-weight: normal }</code></dt>
+                    <dt><code class="color-primary">italic</code> <code>{ font-style: italic }</code></dt>
+                    <dt><code class="color-primary">uppercase</code> <code>{ text-transform: uppercase }</code></dt>
+                    <dt><code class="color-primary">lowercase</code> <code>{ text-transform: lowercase }</code></dt>
+                    <dt><code class="color-primary">capitalize</code> <code>{ text-transform: capitalize }</code></dt>
+                    <dt><code class="color-primary">pointer </code> <code>{ cursor: pointer }</code></dt>
+                    <dt><code class="color-primary">rounded</code> <code>{ border-radius: 3px }</code></dt>
+                    <dt><code class="color-primary">circle</code> <code>{ border-radius: 50% }</code></dt>
+                    <dt><code class="color-primary">relative</code> <code>{ position: relative }</code></dt>
+                    <dt><code class="color-primary">absolute</code> <code>{ position: absolute }</code></dt>
+                    <dt><code class="color-primary">sticky</code> <code>{ position: sticky; top: 0 }</code></dt>
+                    <dt><code class="color-primary">fixed</code> <code>{ position: fixed }</code></dt>
+                    <dt><code class="color-primary">float-left</code> <code>{ float: left }</code></dt>
+                    <dt><code class="color-primary">float-right</code> <code>{ float: right }</code></dt>
+                    <dt><code class="color-primary">clear</code> <code>{ clear: both }</code></dt>
+                    <dt><code class="color-primary">top-0</code> <code>{ top: 0 }</code></dt>
+                    <dt><code class="color-primary">right-0</code> <code>{ right: 0 }</code></dt>
+                    <dt><code class="color-primary">bottom-0</code> <code>{ bottom: 0 }</code></dt>
+                    <dt><code class="color-primary">left-0</code> <code>{ left: 0 }</code></dt>
+                    <dt><code class="color-primary">h-100</code> <code>{ height: 100% }</code></dt>
+                    <dt><code class="color-primary">vh-100</code> <code>{ height: 100vh }</code></dt>
+                    <dt><code class="color-primary">w-100</code> <code>{ width: 100% }</code></dt>
+                    <dt><code class="color-primary">vw-100</code> <code>{ width: 100vw }</code></dt>
+                    <dt><code class="color-primary">index-1</code> <code>{ z-index: 1 }</code></dt>
+                    <dt><code class="color-primary">index-2</code> <code>{ z-index: 2 }</code></dt>
+                    <dt><code class="color-primary">index-3</code> <code>{ z-index: 3 }</code></dt>
+                    <dt><code class="color-primary">fade</code> <code>{ opacity: .7 }</code></dt>
+                    <dt><code class="color-primary">border</code> <code>{ border: 1px solid map-get($colors, 'grey') }</code></dt>
+                    <dt><code class="color-primary">shadow</code> <code>{ box-shadow: 0px 2px 4px rgba(0,0,0,0.1) }</code></dt>
+                    <dt><code class="color-primary">truncate</code> <code>{
                         max-width: 100%;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
                     }</code></dt>
                 </dl>
-                <h3 class="center mt-5">Layout Utility Classes</h3>
-                <p>* All layout Utility classes can be used with breakpoints Ex.<code class="color-primary">{breakpoint}-{layoutclass}</code></p>
-                <p>Ex. Hide on All</p>
+                <h3 class="mt-4">Max Width Classes</h3>
+                <p>This requires a breakpoint. ex <code class="color-primary">{breakpoint}-mw</code></p>
+                <h3 class="mt-4">Layout Utility Classes</h3>
+                <p>* All Layout Utility Classes can be used with breakpoints ex <code class="color-primary">{breakpoint}-{layoutclass}</code></p>
+                <p>Example Hide on All</p>
                 <pre><code class="language-css">none</code></pre>
-                <p>Ex. Hide on Mobile</p>
+                <p>Example Hide on Mobile</p>
                 <pre><code class="language-css">none sm-block</code></pre>
-                <p>Ex. Hide on Tablets</p>
+                <p>Example Hide on Tablets</p>
                 <pre><code class="language-css">sm-none lg-block</code></pre>
                     <dl>
                     <dt class="mt-3"><h5>Text</h5></dt>

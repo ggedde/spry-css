@@ -149,13 +149,16 @@ Padding and Margin Utility Classes
 			}
 		}
 		@each $side in (top, bottom, left, right){	
+			[class*="#{str-slice($prop, 0, 1)}"].pad#{str-slice($side, 0, 1)}-#{$i} > *,
 			.pad#{str-slice($side, 0, 1)}-#{$i} > * {
 				margin-#{$side}: #{$space}rem;
 			}
+			[class*="#{str-slice($prop, 0, 1)}"].#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i},
 			.#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i} {
 				#{$prop}-#{$side}: #{$space}rem;
 			}
 			@if $prop == margin and $i > 0 {
+				[class*="#{str-slice($prop, 0, 1)}"].#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-n#{$i},
 				.#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-n#{$i} {
 					#{$prop}-#{$side}: -#{$space}rem;
 				}
@@ -252,13 +255,16 @@ Padding and Margin Utility Classes
 					}
 				}
 				@each $side in (top, bottom, left, right){
+					[class*="#{str-slice($prop, 0, 1)}"].#{$breakpoint}-pad#{str-slice($side, 0, 1)}-#{$i} > *,
 					.#{$breakpoint}-pad#{str-slice($side, 0, 1)}-#{$i} > * {
 						margin-#{$side}: #{$space}rem;
-					}	
+					}
+					[class*="#{str-slice($prop, 0, 1)}"].#{$breakpoint}-#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i},
 					.#{$breakpoint}-#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i} {
 						#{$prop}-#{$side}: #{$space}rem;
 					}
 					@if $prop == margin and $i > 0 {
+						[class*="#{str-slice($prop, 0, 1)}"].#{$breakpoint}-#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-n#{$i},
 						.#{$breakpoint}-#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-n#{$i} {
 							#{$prop}-#{$side}: -#{$space}rem;
 						}

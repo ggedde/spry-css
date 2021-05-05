@@ -5,14 +5,14 @@ $breakpoints: (
 ) !default;
 
 $row-max-width: map-get($breakpoints, 'lg') !default;
-$gutter-width: 2rem !default;
+$gap: 2rem !default;
 
 $colors: (
     "white":       #ffffff,
     "light":       #efefef,
     "grey":        #aaaaaa,
     "dark":        #333333,
-    "primary":     #4488ff,
+    "primary":     #0D7FBF,
     "text":        #606c76,
     "transparent": transparent,
 ) !default;

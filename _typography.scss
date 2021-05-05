@@ -27,9 +27,9 @@ body, input, textarea, select {
 }
 
 section {
-	padding: $section-padding 1rem;
+	padding: $section-padding $gap;
 	@media screen and (min-width: map-get($breakpoints, 'md')) {
-		padding: $section-padding $gutter-width;   
+		padding: $section-padding $gap;   
 	}
     h1 {
         margin-top: -0.7rem;
@@ -81,9 +81,11 @@ blockquote {
 	}
 }
 
-.small {
+.small,
+form.small.btn {
     font-size: 85%;
 }
-.large {
+.large,
+form.large.btn {
     font-size: 130%;
 }

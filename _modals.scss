@@ -1,0 +1,106 @@
+@keyframes modalAlert {
+	20% {
+		transform: scale(1.03);
+	}
+	40% {
+		transform: scale(1);
+	}
+	60% {
+		transform: scale(1.03);
+	}
+	80% {
+		transform: none;
+	}
+}
+.modal {
+	align-items: center;
+	background-color: rgba(0, 0, 0, .7);
+	bottom: 0;
+	justify-content: center;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transition: opacity .2s ease-in-out;
+	z-index: 1000;
+	display: flex;
+	.modal-container {
+		background: white;
+		box-shadow: 0 2px 4px 0px rgba(0,0,0,0.3);
+		box-sizing: border-box;
+		display: block;
+		overflow: hidden;
+		top: 50%;
+		transform: scale(0.5) translateY(-50%);
+		transition: transform .4s cubic-bezier(1, 0, 0, 1);
+		width: 90%;
+		.modal-heading,
+		.modal-body,
+		.modal-footer {
+			padding: .6rem 1rem;
+		}
+		.modal-body{
+			padding: 2.5rem 1rem;
+			.modal-content {
+				display: block;
+				max-height: 50vh;
+				overflow: auto;
+			}
+		}
+		.modal-heading,
+		.modal-footer {
+			position: relative;
+			.modal-close {
+				background: transparent;
+				border: none;
+				cursor: pointer;
+				height: 24px;
+				margin-top: 0;
+				opacity: .7;
+				position: absolute;
+				right: 22px;
+				top: 12px;
+				transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+				width: 24px;
+				&:hover {
+					opacity: 1;
+					transform: scale(1.05);
+				}
+				&::before, &::after {
+					background-color: map-get($colors, 'dark');
+					content: '';
+					height: 90%;
+					position: absolute;
+					right: 6px;
+					top: 0;
+					width: 2px;
+				}
+				&::before {
+					transform: rotate(45deg);
+				}
+				&::after {
+					transform: rotate(-45deg);
+				}
+				&:hover {
+					&::before, &::after {
+						background-color: lighten(map-get($colors, 'dark'), 10%);
+					}
+				}
+			}
+		}
+	}
+	&.bounce {
+		animation-name: modalAlert;
+  		animation-duration: .4s;
+	}
+	&.show {
+		opacity: 1;
+		pointer-events: all;
+		.modal-container {
+			transition: transform .3s cubic-bezier(0, 1, 0, 1);
+			transform: none;
+		}
+	}
+}
