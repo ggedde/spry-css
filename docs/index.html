@@ -15,7 +15,7 @@
 <body>
     <div class="flex">
         <nav class="sticky index-1 bg-light p-2 sm-p-3 pt-4 vh-100" style="width: 30%; max-width: 200px;">
-            <h5 class="mb-3">Spry CSS <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases"></h5>
+            <h5 class="mb-3">Spry CSS <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases" alt="Release"></h5>
             <a class="btn btn-outline small flex ai-center jc-center sm-jc-start my-1 nowrap px-0 sm-px-1 left" href="#installation">
                 <svg class="sm-mr-1" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M13,3H11V13H13V3M17.83,5.17L16.41,6.59C18.05,7.91 19,9.9 19,12A7,7 0 0,1 12,19C8.14,19 5,15.88 5,12C5,9.91 5.95,7.91 7.58,6.58L6.17,5.17C2.38,8.39 1.92,14.07 5.14,17.86C8.36,21.64 14.04,22.1 17.83,18.88C19.85,17.17 21,14.65 21,12C21,9.37 19.84,6.87 17.83,5.17Z" />
@@ -261,20 +261,20 @@ to an H4, etc</cite>
                 <h2 class="mb-3">Grid</h2>
                 <p class="large">You can either use a 12 column css grid or flexbox grid system</p>
                 <h4>Classes</h4>
-                <dl class="ml-3">
-                    <dt><code class="color-primary inline-block" style="width: 50px;">grid</code> Grid of columns, Uses variable <code class="color-primary">$gap</code> for spacing</dt> 
-                    <dt><code class="color-primary inline-block" style="width: 50px;">row</code> Flex row of columns, Uses variable <code class="color-primary">$row-max-width</code> witih margin auto</dt> 
-                    <dt><code class="color-primary inline-block" style="width: 50px;">col</code> Number of columns on <code class="color-primary">grid</code> and <code class="color-primary">row</code> or column span within <code class="color-primary">row</code></dt> 
-                    <dt><code class="color-primary inline-block" style="width: 50px;">g</code> Gap for columns in row.  Default is variable <code class="color-primary">$gap</code></dt>
-                </dl>
+                <div class="ml-3">
+                    <div><code class="color-primary inline-block" style="width: 50px;">grid</code> Grid of columns, Uses variable <code class="color-primary">$gap</code> for spacing</div> 
+                    <div><code class="color-primary inline-block" style="width: 50px;">row</code> Flex row of columns, Uses variable <code class="color-primary">$row-max-width</code> witih margin auto</div> 
+                    <div><code class="color-primary inline-block" style="width: 50px;">col</code> Number of columns on <code class="color-primary">grid</code> and <code class="color-primary">row</code> or column span within <code class="color-primary">row</code></div> 
+                    <div><code class="color-primary inline-block" style="width: 50px;">g</code> Gap for columns in row.  Default is variable <code class="color-primary">$gap</code></div>
+                </div>
                 <p>for breakpoints use:</p>
-                <dl class="ml-3">
-                    <dt><code class="color-primary">grid</code><code class="color-grey">-{size}00</code></dt>
-                    <dt><code class="color-grey">{breakpoint}-</code><code class="color-primary">row</code></dt>
-                    <dt><code class="color-grey">{breakpoint}-</code><code class="color-primary">col-{size}</code></dt>
-                    <dt><code class="color-grey">{breakpoint}-</code><code class="color-primary">g-{size}</code></dt>
-                    <cite class="small fade mt-1 block">* Custom gaps will not always work correctly with <code class="color-primary">row</code>. It is best with <code class="color-primary">grid</code></cite>
-                </dl>
+                <div class="ml-3">
+                    <div><code class="color-primary">grid</code><code class="color-grey">-{size}00</code></div>
+                    <div><code class="color-grey">{breakpoint}-</code><code class="color-primary">row</code></div>
+                    <div><code class="color-grey">{breakpoint}-</code><code class="color-primary">col-{size}</code></div>
+                    <div><code class="color-grey">{breakpoint}-</code><code class="color-primary">g-{size}</code></div>
+                </div>
+                <cite class="small fade mt-1 block">* Custom gaps will not always work correctly with <code class="color-primary">row</code>. It is best with <code class="color-primary">grid</code></cite>
                     
                 <h4 class="mt-4 mb-3">CSS Grid</h4>
                 <h5 class="my-1">Auto Fit minimum 300px</h5>
@@ -490,7 +490,7 @@ to an H4, etc</cite>
             <section id="forms">
                 <h2 class="mb-4">Forms</h2>
                 <h4 class="mb-1">Simple form with some Required Fields</h4>
-                <form action="">
+                <form>
                     <div class="sm-row py-3 g-3">
                         <div>
                             <label class="h5">Text Field *
@@ -537,7 +537,7 @@ to an H4, etc</cite>
                         </div>
                     </div>
                 </form>
-                <pre><code class="language-html">&lt;form action=""&gt;
+                <pre><code class="language-html">&lt;form&gt;
     &lt;div class="sm-row py-3 g-3"&gt;
         &lt;div&gt;
             &lt;label class="h5">Text Field &gt;
@@ -584,7 +584,7 @@ to an H4, etc</cite>
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/form&gt;</code></pre>
-                <form action="" class="sm-row jc-center" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.querySelectorAll('fieldset,button').forEach(elem => {elem.setAttribute('disabled', 'disabled');});setTimeout(() => {this.submit()}, 2000)">
+                <form class="sm-row jc-center" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.querySelectorAll('fieldset,button').forEach(elem => {elem.setAttribute('disabled', 'disabled');});setTimeout(() => {this.submit()}, 2000)">
                     <h4 class="col-12 mt-4">Responsive labels with loading button and disabled fields on submit</h4>
                     <fieldset>
                         <legend><label>Name *</label></legend>
@@ -609,7 +609,7 @@ to an H4, etc</cite>
                     <button  class="col-6 btn has-loader" type="submit">Submit with Loading Icon</button>
                 </form>
 
-                <pre class="mt-3"><code class="language-html">&lt;form action="/" class="sm-row jc-center" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.querySelectorAll('fieldset,button').forEach(elem => {elem.setAttribute('disabled', 'disabled');});setTimeout(() => {this.submit()}, 2000)"&gt;
+                <pre class="mt-3"><code class="language-html">&lt;form class="sm-row jc-center" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.querySelectorAll('fieldset,button').forEach(elem => {elem.setAttribute('disabled', 'disabled');});setTimeout(() => {this.submit()}, 2000)"&gt;
     &lt;h4 class="col-12 mt-4"&gt;Responsive labels with loading button and disabled fields on submit&lt;/h4&gt;
     &lt;fieldset&gt;
         &lt;legend&gt;&lt;label&gt;Name *&lt;/label&gt;&lt;/legend&gt;
@@ -705,7 +705,7 @@ to an H4, etc</cite>
                             <button type="button" class="modal-close" onclick="document.getElementById('login-modal').classList.remove('show');" ></button>
                         </div>
                         <div class="modal-body">
-                            <form action="">
+                            <form>
                                 <fieldset>
                                     <legend><label>Email</label></legend>
                                     <input id="login-email" type="email" required onblur="if (this.value){ this.parentElement.classList.add('active')}" />
@@ -732,7 +732,7 @@ to an H4, etc</cite>
             &lt;button type="button" class="modal-close" onclick="document.getElementById('login-modal').classList.remove('show');" &gt;&lt;/button&gt;
         &lt;/div&gt;
         &lt;div class="modal-body"&gt;
-            &lt;form action=""&gt;
+            &lt;form&gt;
                 &lt;fieldset&gt;
                     &lt;legend&gt;&lt;label&gt;Email&lt;/label&gt;&lt;/legend&gt;
                     &lt;input id="login-email" type="email" required onblur="if (this.value){ this.parentElement.classList.add('active')}" /&gt;
@@ -802,22 +802,20 @@ to an H4, etc</cite>
                 <h2>Utilities</h2>
                 <h3 class="mt-4">Spacing</h3>
                 <p>The classes are named using the format <code class="color-primary">{property}{sides}-{size}</code> for breakpoints use <code class="color-primary">{breakpoints}-{property}{sides}-{size}</code></p>
-                <p>There are 3 Spacing properties: 
-                    <dl class="ml-3 my-2">
-                        <dt><code class="color-primary">p</code> = padding</dt>
-                        <dt><code class="color-primary">m</code> = margin</dt>
-                    </dl>
-                </p>
-                <p>There are 6 sides: 
-                    <dl class="ml-3 my-2">
-                        <dt><code class="color-primary">t</code> = top</dt>
-                        <dt><code class="color-primary">r</code> = right</dt>
-                        <dt><code class="color-primary">b</code> = bottom</dt>
-                        <dt><code class="color-primary">l</code> = left</dt>
-                        <dt><code class="color-primary">y</code> = top and bottom</dt>
-                        <dt><code class="color-primary">x</code> = left and right</dt>
-                    </dl>
-                </p>
+                <p>There are 3 Spacing properties:</p>
+                <div class="ml-3 my-2">
+                    <div><code class="color-primary">p</code> = padding</div>
+                    <div><code class="color-primary">m</code> = margin</div>
+                </div>
+                <p>There are 6 sides:</p>
+                <div class="ml-3 my-2">
+                    <div><code class="color-primary">t</code> = top</div>
+                    <div><code class="color-primary">r</code> = right</div>
+                    <div><code class="color-primary">b</code> = bottom</div>
+                    <div><code class="color-primary">l</code> = left</div>
+                    <div><code class="color-primary">y</code> = top and bottom</div>
+                    <div><code class="color-primary">x</code> = left and right</div>
+                </div>
                 <p>The sizes are used from the scss variable.</p>
                 <pre><code class="language-scss">// SCSS Variable
 $spacing: (
@@ -832,44 +830,44 @@ $spacing: (
 <h5>Negative Margin</h5>
 <p>For a negative margin you can include a negative value by placing a <code class="color-primary">n</code> in front of the value. ex <code class="color-primary">mx-n2</code></p>
                 <h3 class="mt-4">General Utility Classes</h3>
-                <dl class="ml-2">
-                    <dt><code class="color-primary">bold</code> <code>{ font-weight: bold }</code></dt>
-                    <dt><code class="color-primary">regular</code> <code>{ font-weight: normal }</code></dt>
-                    <dt><code class="color-primary">italic</code> <code>{ font-style: italic }</code></dt>
-                    <dt><code class="color-primary">uppercase</code> <code>{ text-transform: uppercase }</code></dt>
-                    <dt><code class="color-primary">lowercase</code> <code>{ text-transform: lowercase }</code></dt>
-                    <dt><code class="color-primary">capitalize</code> <code>{ text-transform: capitalize }</code></dt>
-                    <dt><code class="color-primary">pointer </code> <code>{ cursor: pointer }</code></dt>
-                    <dt><code class="color-primary">rounded</code> <code>{ border-radius: 3px }</code></dt>
-                    <dt><code class="color-primary">circle</code> <code>{ border-radius: 50% }</code></dt>
-                    <dt><code class="color-primary">relative</code> <code>{ position: relative }</code></dt>
-                    <dt><code class="color-primary">absolute</code> <code>{ position: absolute }</code></dt>
-                    <dt><code class="color-primary">sticky</code> <code>{ position: sticky; top: 0 }</code></dt>
-                    <dt><code class="color-primary">fixed</code> <code>{ position: fixed }</code></dt>
-                    <dt><code class="color-primary">float-left</code> <code>{ float: left }</code></dt>
-                    <dt><code class="color-primary">float-right</code> <code>{ float: right }</code></dt>
-                    <dt><code class="color-primary">clear</code> <code>{ clear: both }</code></dt>
-                    <dt><code class="color-primary">top-0</code> <code>{ top: 0 }</code></dt>
-                    <dt><code class="color-primary">right-0</code> <code>{ right: 0 }</code></dt>
-                    <dt><code class="color-primary">bottom-0</code> <code>{ bottom: 0 }</code></dt>
-                    <dt><code class="color-primary">left-0</code> <code>{ left: 0 }</code></dt>
-                    <dt><code class="color-primary">h-100</code> <code>{ height: 100% }</code></dt>
-                    <dt><code class="color-primary">vh-100</code> <code>{ height: 100vh }</code></dt>
-                    <dt><code class="color-primary">w-100</code> <code>{ width: 100% }</code></dt>
-                    <dt><code class="color-primary">vw-100</code> <code>{ width: 100vw }</code></dt>
-                    <dt><code class="color-primary">index-1</code> <code>{ z-index: 1 }</code></dt>
-                    <dt><code class="color-primary">index-2</code> <code>{ z-index: 2 }</code></dt>
-                    <dt><code class="color-primary">index-3</code> <code>{ z-index: 3 }</code></dt>
-                    <dt><code class="color-primary">fade</code> <code>{ opacity: .7 }</code></dt>
-                    <dt><code class="color-primary">border</code> <code>{ border: 1px solid map-get($colors, 'grey') }</code></dt>
-                    <dt><code class="color-primary">shadow</code> <code>{ box-shadow: 0px 2px 4px rgba(0,0,0,0.1) }</code></dt>
-                    <dt><code class="color-primary">truncate</code> <code>{
+                <div class="ml-2">
+                    <div><code class="color-primary">bold</code> <code>{ font-weight: bold }</code></div>
+                    <div><code class="color-primary">regular</code> <code>{ font-weight: normal }</code></div>
+                    <div><code class="color-primary">italic</code> <code>{ font-style: italic }</code></div>
+                    <div><code class="color-primary">uppercase</code> <code>{ text-transform: uppercase }</code></div>
+                    <div><code class="color-primary">lowercase</code> <code>{ text-transform: lowercase }</code></div>
+                    <div><code class="color-primary">capitalize</code> <code>{ text-transform: capitalize }</code></div>
+                    <div><code class="color-primary">pointer </code> <code>{ cursor: pointer }</code></div>
+                    <div><code class="color-primary">rounded</code> <code>{ border-radius: 3px }</code></div>
+                    <div><code class="color-primary">circle</code> <code>{ border-radius: 50% }</code></div>
+                    <div><code class="color-primary">relative</code> <code>{ position: relative }</code></div>
+                    <div><code class="color-primary">absolute</code> <code>{ position: absolute }</code></div>
+                    <div><code class="color-primary">sticky</code> <code>{ position: sticky; top: 0 }</code></div>
+                    <div><code class="color-primary">fixed</code> <code>{ position: fixed }</code></div>
+                    <div><code class="color-primary">float-left</code> <code>{ float: left }</code></div>
+                    <div><code class="color-primary">float-right</code> <code>{ float: right }</code></div>
+                    <div><code class="color-primary">clear</code> <code>{ clear: both }</code></div>
+                    <div><code class="color-primary">top-0</code> <code>{ top: 0 }</code></div>
+                    <div><code class="color-primary">right-0</code> <code>{ right: 0 }</code></div>
+                    <div><code class="color-primary">bottom-0</code> <code>{ bottom: 0 }</code></div>
+                    <div><code class="color-primary">left-0</code> <code>{ left: 0 }</code></div>
+                    <div><code class="color-primary">h-100</code> <code>{ height: 100% }</code></div>
+                    <div><code class="color-primary">vh-100</code> <code>{ height: 100vh }</code></div>
+                    <div><code class="color-primary">w-100</code> <code>{ width: 100% }</code></div>
+                    <div><code class="color-primary">vw-100</code> <code>{ width: 100vw }</code></div>
+                    <div><code class="color-primary">index-1</code> <code>{ z-index: 1 }</code></div>
+                    <div><code class="color-primary">index-2</code> <code>{ z-index: 2 }</code></div>
+                    <div><code class="color-primary">index-3</code> <code>{ z-index: 3 }</code></div>
+                    <div><code class="color-primary">fade</code> <code>{ opacity: .7 }</code></div>
+                    <div><code class="color-primary">border</code> <code>{ border: 1px solid map-get($colors, 'grey') }</code></div>
+                    <div><code class="color-primary">shadow</code> <code>{ box-shadow: 0px 2px 4px rgba(0,0,0,0.1) }</code></div>
+                    <div><code class="color-primary">truncate</code> <code>{
                         max-width: 100%;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
-                    }</code></dt>
-                </dl>
+                    }</code></div>
+                </div>
                 <h3 class="mt-4">Max Width Classes</h3>
                 <p>This requires a breakpoint. ex <code class="color-primary">{breakpoint}-mw</code></p>
                 <h3 class="mt-4">Layout Utility Classes</h3>
@@ -880,52 +878,51 @@ $spacing: (
                 <pre><code class="language-css">none sm-block</code></pre>
                 <p>Example Hide on Tablets</p>
                 <pre><code class="language-css">sm-none lg-block</code></pre>
-                    <dl>
-                    <dt class="mt-3"><h5>Text</h5></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">left</code> <code>{ text-align: left }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">center</code> <code>{ text-align: center }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">right</code> <code>{ text-align: right }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify</code> <code>{ text-align: justify }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">nowrap</code> <code>{ white-space: nowrap }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">pre-wrap</code> <code>{ white-space: pre-wrap }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">break-word</code> <code>{ word-wrap: break-word }</code></dt>
-                    <dt class="mt-3"><h5>Display</h5></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline</code> <code>{ display: inline; width: auto }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex</code> <code>{ display: flex }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">block</code> <code>{ display: block; width: 100% }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">none</code> <code>{ display: none }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline-block</code> <code>{ display: inline-block }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">table</code> <code>{ display: table }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">table-cell</code> <code>{ display: table-cell }</code></dt>
-                    <dt class="mt-3"><h5>Vertical Align</h5></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-baseline</code> <code>{ vertical-align: baseline }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-top</code> <code>{ vertical-align: top }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-middle</code> <code>{ vertical-align: middle }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-bottom</code> <code>{ vertical-align: bottom }</code></dt>
-                    <dt class="mt-3"><h5>Overflow</h5></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-hidden</code> <code>{ overflow: hidden }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-scroll</code> <code>{ overflow: scroll }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-auto</code> <code>{ overflow: auto }</code></dt>
-                    <dt class="mt-3"><h5>Order</h5></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-first</code> <code>{ order:-1 }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-0</code> <code>{ order:0 }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-1</code> <code>{ order:1 }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-2</code> <code>{ order:2 }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-3</code> <code>{ order:3 }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-last</code> <code>{ order:99999 }</code></dt>
-                    <dt class="mt-3"><h5>Flex Utility Classes</h5></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">ai-start</code> <code>{ align-items: flex-start }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">ai-end</code> <code>{ align-items: flex-end }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">ai-center</code> <code>{ align-items: center }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">ai-stretch</code> <code>{ align-items: stretch }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">jc-start</code> <code>{ justify-content: flex-start }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">jc-end</code> <code>{ justify-content: flex-end }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">jc-center</code> <code>{ justify-content: center }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">jc-between</code> <code>{ justify-content: space-between }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">jc-around</code> <code>{ justify-content: space-around }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-center</code> <code>{ display: flex; align-items: center; justify-content: center }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-wrap</code> <code>{ flex-wrap: wrap }</code></dt>
-                    <dt class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-column</code> <code>{ flex-direction: column }</code></dt>
+                <div class="mt-3"><h5>Text</h5></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">left</code> <code>{ text-align: left }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">center</code> <code>{ text-align: center }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">right</code> <code>{ text-align: right }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify</code> <code>{ text-align: justify }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">nowrap</code> <code>{ white-space: nowrap }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">pre-wrap</code> <code>{ white-space: pre-wrap }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">break-word</code> <code>{ word-wrap: break-word }</code></div>
+                <div class="mt-3"><h5>Display</h5></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline</code> <code>{ display: inline; width: auto }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex</code> <code>{ display: flex }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">block</code> <code>{ display: block; width: 100% }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">none</code> <code>{ display: none }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline-block</code> <code>{ display: inline-block }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">table</code> <code>{ display: table }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">table-cell</code> <code>{ display: table-cell }</code></div>
+                <div class="mt-3"><h5>Vertical Align</h5></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-baseline</code> <code>{ vertical-align: baseline }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-top</code> <code>{ vertical-align: top }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-middle</code> <code>{ vertical-align: middle }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-bottom</code> <code>{ vertical-align: bottom }</code></div>
+                <div class="mt-3"><h5>Overflow</h5></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-hidden</code> <code>{ overflow: hidden }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-scroll</code> <code>{ overflow: scroll }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-auto</code> <code>{ overflow: auto }</code></div>
+                <div class="mt-3"><h5>Order</h5></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-first</code> <code>{ order:-1 }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-0</code> <code>{ order:0 }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-1</code> <code>{ order:1 }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-2</code> <code>{ order:2 }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-3</code> <code>{ order:3 }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-last</code> <code>{ order:99999 }</code></div>
+                <div class="mt-3"><h5>Flex Utility Classes</h5></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">ai-start</code> <code>{ align-items: flex-start }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">ai-end</code> <code>{ align-items: flex-end }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">ai-center</code> <code>{ align-items: center }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">ai-stretch</code> <code>{ align-items: stretch }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">jc-start</code> <code>{ justify-content: flex-start }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">jc-end</code> <code>{ justify-content: flex-end }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">jc-center</code> <code>{ justify-content: center }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">jc-between</code> <code>{ justify-content: space-between }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">jc-around</code> <code>{ justify-content: space-around }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-center</code> <code>{ display: flex; align-items: center; justify-content: center }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-wrap</code> <code>{ flex-wrap: wrap }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-column</code> <code>{ flex-direction: column }</code></div>
             </section>
         </main>
     </div>
