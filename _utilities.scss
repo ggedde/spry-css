@@ -81,12 +81,6 @@ Flex Utility Classes
 .ai-end{ align-items: flex-end }
 .ai-center{ align-items: center }
 .ai-stretch{ align-items: stretch }
-.ac-start{ align-content: flex-start }
-.ac-end{ align-content: flex-end }
-.ac-center{ align-content: center }
-.ac-between{ align-content: space-between }
-.ac-around{ align-content: space-around }
-.ac-stretch{ align-content: stretch }
 .jc-start{ justify-content: flex-start }
 .jc-end{ justify-content: flex-end }
 .jc-center{ justify-content: center }
@@ -94,78 +88,8 @@ Flex Utility Classes
 .jc-around{ justify-content: space-around }
 .flex-center{ display: flex; align-items: center; justify-content: center }
 .flex-wrap{ flex-wrap: wrap }
-.flex-direction-column{ flex-direction: column }
+.flex-column{ flex-direction: column }
 
-/*************************************
-Padding and Margin Utility Classes
-**************************************/
-.m-auto {
-	margin: auto;
-}
-.my-auto {
-	margin-top: auto;
-	margin-bottom: auto;
-}
-.mx-auto {
-	margin-right: auto;
-	margin-left: auto;
-    display: block;
-}
-@each $i, $space in $spacing {
-	.pad-#{$i} > * {
-		margin: #{$space}rem;
-	}
-	.padx-#{$i} > * {
-		margin-left: #{$space}rem;
-		margin-right: #{$space}rem;
-	}
-	.pady-#{$i} > * {
-		margin-top: #{$space}rem;
-		margin-bottom: #{$space}rem;
-	}
-	@each $prop in (padding, margin) {
-		.#{str-slice($prop, 0, 1)}-#{$i} {
-			#{$prop}: #{$space}rem;
-		}
-		.#{str-slice($prop, 0, 1)}x-#{$i} {
-			#{$prop}-right: #{$space}rem;
-			#{$prop}-left: #{$space}rem;
-		}
-		.#{str-slice($prop, 0, 1)}y-#{$i} {
-			#{$prop}-top: #{$space}rem;
-			#{$prop}-bottom: #{$space}rem;
-		}
-		@if $prop == margin and $i > 0 {
-			.#{str-slice($prop, 0, 1)}-n#{$i} {
-				#{$prop}: -#{$space}rem;
-			}
-			.#{str-slice($prop, 0, 1)}x-n#{$i} {
-				#{$prop}-right: -#{$space}rem;
-				#{$prop}-left: -#{$space}rem;
-			}
-			.#{str-slice($prop, 0, 1)}y-n#{$i} {
-				#{$prop}-top: -#{$space}rem;
-				#{$prop}-bottom: -#{$space}rem;
-			}
-		}
-		@each $side in (top, bottom, left, right){	
-			[class*="#{str-slice($prop, 0, 1)}"].pad#{str-slice($side, 0, 1)}-#{$i} > *,
-			.pad#{str-slice($side, 0, 1)}-#{$i} > * {
-				margin-#{$side}: #{$space}rem;
-			}
-			[class*="#{str-slice($prop, 0, 1)}"].#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i},
-			.#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i} {
-				#{$prop}-#{$side}: #{$space}rem;
-			}
-			@if $prop == margin and $i > 0 {
-				[class*="#{str-slice($prop, 0, 1)}"].#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-n#{$i},
-				.#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-n#{$i} {
-					#{$prop}-#{$side}: -#{$space}rem;
-				}
-			}
-		}
-	}
-}
 @each $breakpoint, $breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
 
@@ -201,12 +125,6 @@ Padding and Margin Utility Classes
 			&-ai-end{ align-items: flex-end }
 			&-ai-center{ align-items: center }
 			&-ai-stretch{ align-items: stretch }
-			&-ac-start{ align-content: flex-start }
-			&-ac-end{ align-content: flex-end }
-			&-ac-center{ align-content: center }
-			&-ac-between{ align-content: space-between }
-			&-ac-around{ align-content: space-around }
-			&-ac-stretch{ align-content: stretch }
 			&-jc-start{ justify-content: flex-start }
 			&-jc-end{ justify-content: flex-end }
 			&-jc-center{ justify-content: center }
@@ -214,63 +132,7 @@ Padding and Margin Utility Classes
 			&-jc-around{ justify-content: space-around }
 			&-flex-center{ display: flex; align-items: center; justify-content: center }
 			&-flex-wrap{ flex-wrap: wrap }
-			&-flex-direction-column{ flex-direction: column }
-		}
-		
-		@each $i, $space in $spacing {
-			.#{$breakpoint}-pad-#{$i} > * {
-				margin: #{$space}rem;
-			}
-			.#{$breakpoint}-padx-#{$i} > * {
-				margin-left: #{$space}rem;
-				margin-right: #{$space}rem;
-			}
-			.#{$breakpoint}-pady-#{$i} > * {
-				margin-top: #{$space}rem;
-				margin-bottom: #{$space}rem;
-			}
-			@each $prop in (padding, margin) {
-				.#{$breakpoint}-#{str-slice($prop, 0, 1)}-#{$i} {
-					#{$prop}: #{$space}rem;
-				}
-				.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-#{$i} {
-					#{$prop}-right: #{$space}rem;
-					#{$prop}-left: #{$space}rem;
-				}
-				.#{$breakpoint}-#{str-slice($prop, 0, 1)}y-#{$i} {
-					#{$prop}-top: #{$space}rem;
-					#{$prop}-bottom: #{$space}rem;
-				}
-				@if $prop == margin and $i > 0 {
-					.#{$breakpoint}-#{str-slice($prop, 0, 1)}-n#{$i} {
-						#{$prop}: -#{$space}rem;
-					}
-					.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-n#{$i} {
-						#{$prop}-right: -#{$space}rem;
-						#{$prop}-left: -#{$space}rem;
-					}
-					.#{$breakpoint}-#{str-slice($prop, 0, 1)}y-n#{$i} {
-						#{$prop}-top: -#{$space}rem;
-						#{$prop}-bottom: -#{$space}rem;
-					}
-				}
-				@each $side in (top, bottom, left, right){
-					[class*="#{str-slice($prop, 0, 1)}"].#{$breakpoint}-pad#{str-slice($side, 0, 1)}-#{$i} > *,
-					.#{$breakpoint}-pad#{str-slice($side, 0, 1)}-#{$i} > * {
-						margin-#{$side}: #{$space}rem;
-					}
-					[class*="#{str-slice($prop, 0, 1)}"].#{$breakpoint}-#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i},
-					.#{$breakpoint}-#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-#{$i} {
-						#{$prop}-#{$side}: #{$space}rem;
-					}
-					@if $prop == margin and $i > 0 {
-						[class*="#{str-slice($prop, 0, 1)}"].#{$breakpoint}-#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-n#{$i},
-						.#{$breakpoint}-#{str-slice($prop, 0, 1)}#{str-slice($side, 0, 1)}-n#{$i} {
-							#{$prop}-#{$side}: -#{$space}rem;
-						}
-					}
-				}
-			}
+			&-flex-column{ flex-direction: column }
 		}
 	}
 }

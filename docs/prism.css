@@ -52,6 +52,12 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 /* Code blocks */
 pre[class*="language-"] {
 	overflow: auto;
+	max-width: calc(100vw - 130px);
+}
+@media screen and (min-width: 600px) {
+	pre[class*="language-"] {
+		max-width: calc(100vw - 264px);
+	}
 }
 
 :not(pre) > code[class*="language-"],
@@ -67,7 +73,6 @@ pre[class*="language-"] {
 }
 code[class*="language-"] {
 	border-left: 3px solid #0D7FBF; 
-	max-width: 75vw;
 	overflow: scroll;
 	display: block;
 	padding: 1rem 1.5rem;

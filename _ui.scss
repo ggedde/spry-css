@@ -48,7 +48,7 @@ input[type="submit"] {
 	border-color: map-get($colors, 'primary');
 	color: white;
 	cursor: pointer;
-	font-size: 1.15em;
+	font-size: 1.15rem;
 	padding: 0 1.5rem;
 	text-align: center;
 	text-transform: uppercase;
@@ -91,6 +91,14 @@ input[type="submit"] {
 			width: 32px;
 			height: 32px;
 		}
+	}
+	&.small,
+	.small & {
+		font-size: .85rem;
+	}
+	&.large,
+	.large & {
+		font-size: 1.3rem;
 	}
 }
 

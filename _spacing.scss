@@ -1,0 +1,104 @@
+/*************************************
+Spacing Utility Classes
+**************************************/
+section {
+	padding: $section-padding;
+}
+.m-auto {
+	margin: auto;
+}
+.my-auto {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.mx-auto {
+	margin-right: auto;
+	margin-left: auto;
+    display: block;
+}
+@each $s, $space in $spacing {
+	@each $prop in (padding, margin) {
+		.#{str-slice($prop, 0, 1)}-#{$s} {
+			#{$prop}: #{$space};
+		}
+		.#{str-slice($prop, 0, 1)}x-#{$s},
+		.#{str-slice($prop, 0, 1)}l-#{$s} {
+			#{$prop}-left: #{$space};
+		}
+		.#{str-slice($prop, 0, 1)}x-#{$s},
+		.#{str-slice($prop, 0, 1)}r-#{$s} {
+			#{$prop}-right: #{$space};
+		}
+		.#{str-slice($prop, 0, 1)}y-#{$s},
+		.#{str-slice($prop, 0, 1)}t-#{$s} {
+			#{$prop}-top: #{$space};
+		}
+		.#{str-slice($prop, 0, 1)}y-#{$s},
+		.#{str-slice($prop, 0, 1)}b-#{$s} {
+			#{$prop}-bottom: #{$space};
+		}
+		@if $prop == margin and $s {
+			.#{str-slice($prop, 0, 1)}x-n#{$s},
+			.#{str-slice($prop, 0, 1)}l-n#{$s} {
+				#{$prop}-left: -#{$space};
+			}
+			.#{str-slice($prop, 0, 1)}x-n#{$s},
+			.#{str-slice($prop, 0, 1)}r-n#{$s} {
+				#{$prop}-right: -#{$space};
+			}
+			.#{str-slice($prop, 0, 1)}y-n#{$s},
+			.#{str-slice($prop, 0, 1)}t-n#{$s} {
+				#{$prop}-top: -#{$space};
+			}
+			.#{str-slice($prop, 0, 1)}y-n#{$s},
+			.#{str-slice($prop, 0, 1)}b-n#{$s} {
+				#{$prop}-bottom: -#{$space};
+			}
+		}
+	}
+}
+@each $breakpoint, $breakpoint_width in $breakpoints {
+	@media screen and (min-width: $breakpoint_width) {
+		@each $s, $space in $spacing {
+			@each $prop in (padding, margin) {
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}-#{$s} {
+					#{$prop}: #{$space};
+				}
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-#{$s},
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}l-#{$s} {
+					#{$prop}-left: #{$space};
+				}
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-#{$s},
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}r-#{$s} {
+					#{$prop}-right: #{$space};
+				}
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}y-#{$s},
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}t-#{$s} {
+					#{$prop}-top: #{$space};
+				}
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}y-#{$s},
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}b-#{$s} {
+					#{$prop}-bottom: #{$space};
+				}
+				@if $prop == margin and $s {
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-n#{$s},
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}l-n#{$s} {
+						#{$prop}-left: -#{$space};
+					}
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-n#{$s},
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}r-n#{$s} {
+						#{$prop}-right: -#{$space};
+					}
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}y-n#{$s},
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}t-n#{$s} {
+						#{$prop}-top: -#{$space};
+					}
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}y-n#{$s},
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}b-n#{$s} {
+						#{$prop}-bottom: -#{$space};
+					}
+				}
+			}
+		}
+	}
+}
