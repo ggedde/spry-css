@@ -16,8 +16,13 @@
     "url": "https://github.com/ggedde/spry-css/issues"
   },
   "homepage": "https://github.com/ggedde/spry-css#readme",
+  "scripts": {
+    "dev": "node_modules/.bin/chokidar *.scss -c 'npm run build'",
+    "build": "sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use postcss-combine-media-query -o ./dist/spry.min.css"
+  },
   "dependencies": {
     "autoprefixer": "^10.2.5",
+    "chokidar-cli": "^2.1.0",
     "postcss": "^8.2.15",
     "postcss-cli": "^8.3.1",
     "postcss-combine-media-query": "^1.0.1"
