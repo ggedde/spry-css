@@ -14,12 +14,11 @@ body, input, textarea, select {
 }
 
 // Heading Font Sizes and Classes
-@each $type, $type_value in $types {
-    .#{$type}, #{$type} {
-        font-size: #{map-get($type_value, 'size')};
-        font-weight: #{map-get($type_value, 'weight')};
-        line-height: #{map-get($type_value, 'line-height')};
-        letter-spacing: #{map-get($type_value, 'letter-spacing')};
+@each $type_name, $type in $types {
+    .#{$type_name}, #{$type_name} {
+        @each $type_field, $type_value in $type {
+            #{$type_field}: $type_value;
+        }
         p + & {
             margin-top: 2rem;
         }
@@ -52,6 +51,12 @@ section {
 }
 
 p, h1, h2, h3, h4, h5, h6 {
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6,
     & + p,
     & + .btn {
         margin-top: 1rem;

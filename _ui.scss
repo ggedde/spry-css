@@ -331,9 +331,32 @@ hr {
 	height: 1px;
 	border: 0;
 	background-color: map-get($colors, 'grey' );
-	margin: $gap;
+	margin: map-get($gaps, 'default');
 }
 
 nav ul li {
 	display: inline-block;
+}
+
+section {
+	padding-top: (map-get($gaps, 'default') * 2);
+	padding-bottom: (map-get($gaps, 'default') * 2);
+	padding-left: map-get($gaps, 'default');
+	padding-right: map-get($gaps, 'default');
+}
+
+@each $breakpoint, $breakpoint_width in $breakpoints {
+	@if map-get($gaps, $breakpoint) {
+		@media screen and (min-width: $breakpoint_width) {
+			hr {
+				margin: map-get($gaps, $breakpoint);
+			}
+			section {
+				padding-top: (map-get($gaps, $breakpoint) * 2);
+				padding-bottom: (map-get($gaps, $breakpoint) * 2);
+				padding-left: map-get($gaps, $breakpoint);
+				padding-right: map-get($gaps, $breakpoint);
+			}
+		}
+	}
 }

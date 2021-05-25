@@ -52,11 +52,21 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 /* Code blocks */
 pre[class*="language-"] {
 	overflow: auto;
-	max-width: calc(100vw - 130px);
+	max-width: calc(100vw - 108px);
 }
 @media screen and (min-width: 600px) {
 	pre[class*="language-"] {
-		max-width: calc(100vw - 264px);
+		max-width: calc(100vw - 256px);
+	}
+}
+@media screen and (min-width: 900px) {
+	pre[class*="language-"] {
+		max-width: calc(100vw - 265px);
+	}
+}
+@media screen and (min-width: 1200px) {
+	pre[class*="language-"] {
+		max-width: calc(100vw - 274px);
 	}
 }
 
@@ -77,6 +87,7 @@ code[class*="language-"] {
 	display: block;
 	padding: 1rem 1.5rem;
 }
+
 
 .token.comment,
 .token.prolog,
@@ -154,6 +165,17 @@ code[class*="language-"] {
 div.code-toolbar {
 	position: relative;
 }
+div.code-toolbar::after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-shadow: inset -10px 0px 10px rgba(245, 242, 240, 1);
+	pointer-events: none;
+}
 
 div.code-toolbar > .toolbar {
 	position: absolute;
@@ -175,6 +197,7 @@ div.code-toolbar:focus-within > .toolbar {
 
 div.code-toolbar > .toolbar .toolbar-item {
 	display: inline-block;
+	margin-right: 1rem;
 }
 
 div.code-toolbar > .toolbar a {

@@ -7,14 +7,36 @@
     <meta name="description" content="SpryCSS is a lightweight toolkit to help jumpstart your project."/>
     <meta name="robots" content="index, follow" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="spry.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <link rel="stylesheet" href="../dist/spry.min.css">
     <link rel="stylesheet" href="prism.css">
+    <style>
+        .resizable {
+            position: relative;
+            user-select: none;
+        }
+        .resizable::after {
+            content: '';
+            background-color: #eee;
+            position: absolute;
+            right: 0;
+            width: 6px;
+            height: 100%;
+            cursor: w-resize;
+            border-right: 1px solid #aaa;
+            border-left: 1px solid #aaa;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+        }
+        .resizable:hover::after {
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body>
     <div class="flex">
-        <nav class="sticky index-1 bg-light p-2 sm-p-3 pt-4 vh-100" style="width: 30%; max-width: 200px;">
+        <nav class="sticky index-1 bg-light p-2 sm-p-3 vh-100" style="width: 30%; max-width: 200px;">
             <h5 class="mb-3">Spry CSS <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases" alt="Release"></h5>
             <a class="btn btn-outline small flex ai-center jc-center sm-jc-start my-1 nowrap px-0 sm-px-1 left" href="#installation">
                 <svg class="sm-mr-1" viewBox="0 0 24 24">
@@ -33,6 +55,12 @@
                     <path fill="currentColor" d="M17.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,9A1.5,1.5 0 0,1 19,10.5A1.5,1.5 0 0,1 17.5,12M14.5,8A1.5,1.5 0 0,1 13,6.5A1.5,1.5 0 0,1 14.5,5A1.5,1.5 0 0,1 16,6.5A1.5,1.5 0 0,1 14.5,8M9.5,8A1.5,1.5 0 0,1 8,6.5A1.5,1.5 0 0,1 9.5,5A1.5,1.5 0 0,1 11,6.5A1.5,1.5 0 0,1 9.5,8M6.5,12A1.5,1.5 0 0,1 5,10.5A1.5,1.5 0 0,1 6.5,9A1.5,1.5 0 0,1 8,10.5A1.5,1.5 0 0,1 6.5,12M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A1.5,1.5 0 0,0 13.5,19.5C13.5,19.11 13.35,18.76 13.11,18.5C12.88,18.23 12.73,17.88 12.73,17.5A1.5,1.5 0 0,1 14.23,16H16A5,5 0 0,0 21,11C21,6.58 16.97,3 12,3Z" />
                 </svg>
                 <span class="none sm-inline">Colors</span>
+            </a>
+            <a class="btn btn-outline small flex ai-center jc-center sm-jc-start my-1 px-0 sm-px-1 left" href="#icons">
+                <svg class="sm-mr-1" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M14 7v2h-1v6h1v2h-4v-2h1V9h-1V7h4M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2m0 2v14h14V5H5z" />
+                </svg>
+                <span class="none sm-inline">Icons</span>
             </a>
             <a class="btn btn-outline small flex ai-center jc-center sm-jc-start my-1 px-0 sm-px-1 left" href="#buttons">
                 <svg class="sm-mr-1" viewBox="0 0 24 24">
@@ -201,6 +229,45 @@ to an H4, etc</cite>
 <cite>You can add as many colors as you want, but each color will be added to all 4 types above. If you only need it for a small thing then it would be better to create a custom variable for it.</cite>
             </section>
             <hr>
+            <section id="icons">
+                <h2 class="mb-3">Icons</h2>
+                <h5>Spry CSS doesn't come with its own icon package. You can use whatever ican package or icon webfont you want, but icon webfonts can greatly increase the size of your projects. A recommended alternative is to use direct svg code within your project. This produces the smallest file size while producing high resolution icons and allowing you the most flexibility to style the icons within your css.</h5>
+                <h5>A great option for this is <a target="_blank" href="https://materialdesignicons.com/">Material Design Icons</a>. You can search for icons and view the SVG code by clicking on the Code dropdown and click on 'View SVG'. Then copy and paste the code in your html.</h5>
+                <h5>If your using Visual Studio Code you can install the extension <a target="_blank" href="https://github.com/r3volution11/vscode-materialdesignicons-svg">vscode-materialdesignicons-svg</a> that provides code snippets to quickly add the SVG code. 
+                <cite class="block small fade mt-1">* Note that the extension currently does not add <code class="color-primary">fill="currentColor"</code> to the paths so you will need to add that manually.</cite>
+                <h5>Ex.</h5>
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
+                </svg>
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+                </svg>
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                </svg>
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
+                </svg>
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+                </svg>
+                <pre class="mt-1"><code class="language-html">&lt;svg style="width:24px;height:24px" viewBox="0 0 24 24"&gt;
+    &lt;path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /&gt;
+&lt;/svg&gt;
+&lt;svg style="width:24px;height:24px" viewBox="0 0 24 24"&gt;
+    &lt;path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" /&gt;
+&lt;/svg&gt;
+&lt;svg style="width:24px;height:24px" viewBox="0 0 24 24"&gt;
+    &lt;path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /&gt;
+&lt;/svg&gt;
+&lt;svg style="width:24px;height:24px" viewBox="0 0 24 24"&gt;
+    &lt;path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" /&gt;
+&lt;/svg&gt;
+&lt;svg style="width:24px;height:24px" viewBox="0 0 24 24"&gt;
+    &lt;path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /&gt;
+&lt;/svg&gt;</code></pre>
+            </section>
+            <hr>
             <section id="buttons">
                 <h2 class="mb-4">Buttons</h2>
                 
@@ -258,46 +325,58 @@ to an H4, etc</cite>
             <section id="grid">
                 <h2 class="mb-3">Grid</h2>
                 <p class="large">You can either use a 12 column css grid or flexbox grid system</p>
-                <h4>Classes</h4>
-                <div class="ml-3">
-                    <div><code class="color-primary inline-block" style="width: 50px;">grid</code> Grid of columns, Uses variable <code class="color-primary">$gap</code> for spacing</div> 
-                    <div><code class="color-primary inline-block" style="width: 50px;">row</code> Flex row of columns, Uses variable <code class="color-primary">$row-max-width</code> witih margin auto</div> 
-                    <div><code class="color-primary inline-block" style="width: 50px;">col</code> Number of columns on <code class="color-primary">grid</code> and <code class="color-primary">row</code> or column span within <code class="color-primary">row</code></div> 
-                    <div><code class="color-primary inline-block" style="width: 50px;">g</code> Gap for columns in row.  Default is variable <code class="color-primary">$gap</code></div>
+                <h5>Container Classes</h5>
+                <div class="ml-1 md-ml-3 mt-1">
+                    <div><code class="color-primary block mt-2 md-mt-0 md-inline-block" style="width: 100px;">grid</code> Grid of columns, Uses variable <code class="color-primary">$gaps</code> for spacing</div> 
+                    <div><code class="color-primary block mt-2 md-mt-0 md-inline-block" style="width: 100px;">row</code> Flex row of columns, Uses variable <code class="color-primary">$gaps</code> for spacing</div>
+                    <div><code class="color-primary block mt-2 md-mt-0 md-inline-block" style="width: 100px;">columns</code> Number of columns within <code class="color-primary">grid</code> or <code class="color-primary">row</code></div> 
+                    <div><code class="color-primary block mt-2 md-mt-0 md-inline-block" style="width: 100px;">g</code> Gap for columns within <code class="color-primary">grid</code> or <code class="color-primary">row</code>. Default is variable <code class="color-primary">$gaps</code></div>
                 </div>
-                <p>for breakpoints use:</p>
-                <div class="ml-3">
-                    <div><code class="color-primary">grid</code><code class="color-grey">-{size}00</code></div>
-                    <div><code class="color-grey">{breakpoint}-</code><code class="color-primary">row</code></div>
-                    <div><code class="color-grey">{breakpoint}-</code><code class="color-primary">col-{size}</code></div>
-                    <div><code class="color-grey">{breakpoint}-</code><code class="color-primary">g-{size}</code></div>
+                <h5 class="mt-2">Column Classes</h5>
+                <div class="ml-1 md-ml-3 mt-1">
+                    <div><code class="color-primary block mt-2 md-mt-0 md-inline-block" style="width: 100px;">col</code> Number of columns to span within <code class="color-primary">grid</code> or <code class="color-primary">row</code></div> 
                 </div>
-                <cite class="small fade mt-1 block">* Custom gaps will not always work correctly with <code class="color-primary">row</code>. It is best with <code class="color-primary">grid</code></cite>
+                <h5 class="mt-2">Breakpoint Classes</h5>
+                <div class="ml-1 md-ml-3 mt-1">
+                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-primary">grid</code><code class="color-grey">-{size}00</code></span> <cite class="block mb-2 md-inline">Min width in px of child elements within container</cite></div>
+                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-grey">{breakpoint}-</code><code class="color-primary">columns-{size}</code></span> <cite class="block mb-2 md-inline">Number of columns per container</cite></div>
+                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-grey">{breakpoint}-</code><code class="color-primary">col-{size}</code></span> <cite class="block mb-2 md-inline">Column span within container</cite></div>
+                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-grey">{breakpoint}-</code><code class="color-primary">g-{spacing}</code></span> <cite class="block mb-2 md-inline">Gap size for container</cite></div>
+                </div>
+                <cite class="small fade mt-2 block"><code class="color-primary">{size}</code> is 1-12</cite>
+                <cite class="small fade mt-1 block"><code class="color-primary">{spacing}</code> is defined by the $spacing variable. See <a href="#spacing">Spacing</a> for more details</cite>
+                <cite class="small fade mt-1 block">* <code class="color-primary">gap</code> for flexbox is not supported on older browsers. Also, custom gaps will not always work correctly with <code class="color-primary">row</code> when setting specific column sizes. It works best with <code class="color-primary">grid</code></cite>
                     
                 <h4 class="mt-4 mb-3">CSS Grid</h4>
-                <h5 class="my-1">Auto Fit minimum 300px</h5>
-                <div class="grid-300">
-                    <div class="bg-light rounded p-1">
-                        col
-                    </div>
-                    <div class="bg-light rounded p-1">
-                        col
-                    </div>
-                    <div class="bg-light rounded p-1">
-                        col
-                    </div>
-                    <div class="bg-light rounded p-1">
-                        col
+                <h5 class="my-1">Auto Fit minimum 200px</h5>
+                <div class="">
+                    <div class="grid-200 resizable">
+                        <div class="bg-light rounded p-1">
+                            col
+                        </div>
+                        <div class="bg-light rounded p-1">
+                            col
+                        </div>
+                        <div class="bg-light rounded p-1">
+                            col
+                        </div>
+                        <div class="bg-light rounded p-1">
+                            col
+                        </div>
+                        <div class="bg-light rounded p-1">
+                            col
+                        </div>
                     </div>
                 </div>
-                <pre class="mt-3"><code class="language-html">&lt;div class="grid-300"&gt;
+                <pre class="mt-3"><code class="language-html">&lt;div class="grid-200"&gt;
+    &lt;div&gt;&lt;/div&gt;
     &lt;div&gt;&lt;/div&gt;
     &lt;div&gt;&lt;/div&gt;
     &lt;div&gt;&lt;/div&gt;
     &lt;div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
                 <h5 class="mt-4 mb-1">Specify number of columns</h5>
-                <div class="grid sm-col-2 md-col-3">
+                <div class="grid sm-columns-2 md-columns-3 resizable">
                     <div class="bg-light rounded p-1">
                         col
                     </div>
@@ -311,7 +390,7 @@ to an H4, etc</cite>
                         col
                     </div>
                 </div>
-                <pre class="mt-3"><code class="language-html">&lt;div class="grid sm-col-2 md-col-3"&gt;
+                <pre class="mt-3"><code class="language-html">&lt;div class="grid sm-columns-2 md-columns-3"&gt;
     &lt;div&gt;&lt;/div&gt;
     &lt;div&gt;&lt;/div&gt;
     &lt;div&gt;&lt;/div&gt;
@@ -319,50 +398,51 @@ to an H4, etc</cite>
 &lt;/div&gt;</code></pre>
 
                 <h4 class="mt-4 mb-3">CSS Flexbox</h4>
-                <h5 class="mb-1">Specify number of columns centered</h5>
-                <div class="row sm-col-2 md-col-3 jc-center">
+                <h5 class="mb-2 mt-2">Equal Columns Single Row</h5>
+                <div class="row resizable">
                     <div class="bg-light rounded p-1">
-                        col
+                        fixed
                     </div>
                     <div class="bg-light rounded p-1">
-                        col
+                        fixed
                     </div>
                     <div class="bg-light rounded p-1">
-                        col
+                        fixed
                     </div>
                     <div class="bg-light rounded p-1">
-                        col
+                        fixed
                     </div>
                 </div>
-                <pre class="mt-3"><code class="language-html">&lt;div class="row sm-col-2 md-col-3 jc-center"&gt;
+                <pre class="mt-3"><code class="language-html">&lt;div class="row"&gt;
     &lt;div&gt;&lt;/div&gt;
     &lt;div&gt;&lt;/div&gt;
     &lt;div&gt;&lt;/div&gt;
     &lt;div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                <h5 class="mb-2 mt-4">Equal Columns Single Row</h5>
-                <div class="row col-fixed">
+                <h5 class="mb-1 mt-4">Specify number of columns centered</h5>
+                <cite class="small fade mb-1 block">(For gapping to work correctly you will need to specify all breakpoints)</cite>
+                <div class="row sm-columns-2 md-columns-3 lg-columns-3 jc-center resizable">
                     <div class="bg-light rounded p-1">
-                        fixed
+                        col
                     </div>
                     <div class="bg-light rounded p-1">
-                        fixed
+                        col
                     </div>
                     <div class="bg-light rounded p-1">
-                        fixed
+                        col
                     </div>
                     <div class="bg-light rounded p-1">
-                        fixed
+                        col
                     </div>
                 </div>
-                <pre class="mt-3"><code class="language-html">&lt;div class="row col-fixed"&gt;
-                    &lt;div&gt;&lt;/div&gt;
-                    &lt;div&gt;&lt;/div&gt;
-                    &lt;div&gt;&lt;/div&gt;
-                    &lt;div&gt;&lt;/div&gt;
-                &lt;/div&gt;</code></pre>
-                <h5 class="mt-4 mb-1">Columns Multi Row</h5>
-                <div class="row">
+                <pre class="mt-3"><code class="language-html">&lt;div class="row sm-columns-2 md-columns-3 lg-columns-3 jc-center"&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <h5 class="mt-4 mb-1">Columns multi row with column spanning</h5>
+                <div class="row resizable">
                     <div class="col-6 bg-light rounded p-1">
                         .col-6
                     </div>
@@ -389,7 +469,7 @@ to an H4, etc</cite>
 &lt;/div&gt;</code></pre>
         
                 <h5 class="mt-4 mb-1">Responsive with smaller gap and nested row with an auto fill column</h5>
-                <div class="sm-row g-2">
+                <div class="row g-1 md-g-2 lg-g-4 resizable">
                     <div class="col-6 bg-light rounded p-1">
                         .col-6
                     </div>
@@ -399,55 +479,51 @@ to an H4, etc</cite>
                     <div class="col-6 md-col-3 bg-light rounded p-1">
                         .col-6 .md-col-3
                     </div>
-                    <div class="col-6">
-                        <div class="sm-row g-2">
-                            <div class="bg-light rounded p-1">
-                                auto
-                            </div>
-                            <div class="col-auto bg-light rounded p-1">
-                                auto fill by content
-                            </div>
-                            <div class="bg-light rounded p-1">
-                                auto
-                            </div>
+
+                    <div class="col-6 row g-1 md-g-2 lg-g-4">
+                        <div class="bg-light rounded p-1">
+                            auto
+                        </div>
+                        <div class="col-auto bg-light rounded p-1">
+                            auto fill by content
+                        </div>
+                        <div class="bg-light rounded p-1">
+                            auto
                         </div>
                     </div>
+
                     <div class="col-6 md-col-3 bg-light rounded p-1">
                         .col-6 .md-col-3
                     </div>
                 </div>
-                <pre class="mt-4"><code class="language-html">&lt;div class="sm-row g-2"&gt;
+                <pre class="mt-3"><code class="language-html">&lt;div class="row g-2"&gt;
     &lt;div class="col-6"&gt;&lt;/div&gt;
     &lt;div class="col-6"&gt;&lt;/div&gt;
     &lt;div class="col-6 md-col-3"&gt;&lt;/div&gt;
-    &lt;div class="col-6"&gt;
-        &lt;div class="sm-row g-2"&gt;
-            &lt;div&gt;&lt;/div&gt;
-            &lt;div class="col-auto"&gt;&lt;/div&gt;
-            &lt;div&gt;&lt;/div&gt;
-        &lt;/div&gt;
+    &lt;div class="col-6 row"&gt;
+        &lt;div&gt;&lt;/div&gt;
+        &lt;div class="col-auto"&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;/div&gt;
     &lt;/div&gt;
     &lt;div class="col-6 md-col-3"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
                 
-            <h5 class="mt-4 mb-1">Row spanning with auto height</h5>
-            <div class="sm-row">
-                <div class="col-4 bg-light rounded p-1">
-                    .col-4
+            <h5 class="mt-4 mb-1">Row spanning with nested rows and auto height</h5>
+            <div class="row resizable">
+                <div class="sm-col-4 bg-light rounded p-1">
+                    .sm-col-4
                 </div>
-                <div>
-                    <div class="sm-row mb-3">
-                        <div class="bg-light rounded p-1">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitrsed diam nonumy.
-                        </div>
-                        <div class="bg-light rounded p-1">
-                            auto
-                        </div>
-                        <div class="bg-light rounded p-1">
-                            auto
-                        </div>
+                <div class="row sm-col-8">
+                    <div class="bg-light rounded p-1">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitrsed diam nonumy.
                     </div>
-                    <div class="sm-row">
+                    <div class="bg-light rounded p-1">
+                        auto
+                    </div>
+                    <div class="bg-light rounded p-1">
+                        auto
+                    </div>
+                    <div class="row col-12">
                         <div class="bg-light rounded p-1">
                             auto
                         </div>
@@ -457,28 +533,26 @@ to an H4, etc</cite>
                     </div>
                 </div>
             </div>
-            <pre class="mt-3"><code class="language-html">&lt;div class="sm-row"&gt;
-    &lt;div class="col-4"&gt;
-        .col-4
+            <pre class="mt-3"><code class="language-html">&lt;div class="row"&gt;
+    &lt;div class="sm-col-4 bg-light rounded p-1"&gt;
+        .sm-col-4
     &lt;/div&gt;
-    &lt;div&gt;
-        &lt;div class="sm-row mb-4"&gt;
-            &lt;div&gt;
-                Lorem ipsum...
-            &lt;/div&gt;
-            &lt;div&gt;
-                auto
-            &lt;/div&gt;
-            &lt;div&gt;
-                auto
-            &lt;/div&gt;
+    &lt;div class="row sm-col-8"&gt;
+        &lt;div class="bg-light rounded p-1"&gt;
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitrsed diam nonumy.
         &lt;/div&gt;
-        &lt;div class="sm-row"&gt;
-            &lt;div&gt;
+        &lt;div class="bg-light rounded p-1"&gt;
+            auto
+        &lt;/div&gt;
+        &lt;div class="bg-light rounded p-1"&gt;
+            auto
+        &lt;/div&gt;
+        &lt;div class="row col-12"&gt;
+            &lt;div class="bg-light rounded p-1"&gt;
                 auto
             &lt;/div&gt;
-            &lt;div&gt;
-                Lorem ipsum...
+            &lt;div class="bg-light rounded p-1"&gt;
+                Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
@@ -488,8 +562,8 @@ to an H4, etc</cite>
             <section id="forms">
                 <h2 class="mb-4">Forms</h2>
                 <h4 class="mb-1">Simple form with some Required Fields</h4>
-                <form>
-                    <div class="sm-row py-3 g-3">
+                <form class="resizable">
+                    <div class="row py-3 g-3">
                         <div>
                             <label class="h5">Text Field *
                                 <input type="text" required />
@@ -510,7 +584,7 @@ to an H4, etc</cite>
                             </label>
                         </div>
                     </div>
-                    <div class="sm-row g-3">
+                    <div class="row g-3">
                         <div>
                             <h5>Vertical Checkboxes</h5>
                             <label class="block my-1"><input type="checkbox">Red</label>
@@ -536,7 +610,7 @@ to an H4, etc</cite>
                     </div>
                 </form>
                 <pre><code class="language-html">&lt;form&gt;
-    &lt;div class="sm-row py-3 g-3"&gt;
+    &lt;div class="row py-3 g-3"&gt;
         &lt;div&gt;
             &lt;label class="h5">Text Field &gt;
                 &lt;input type="text" required /&gt;
@@ -557,7 +631,7 @@ to an H4, etc</cite>
             &lt;/label&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="sm-row"&gt;
+    &lt;div class="row"&gt;
         &lt;div&gt;
             &lt;h5>Vertical Checkboxes&lt;/h5&gt;
             &lt;label class="block my-1">&lt;input type="checkbox">Red&lt;/label&gt;
@@ -582,7 +656,7 @@ to an H4, etc</cite>
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/form&gt;</code></pre>
-                <form class="sm-row jc-center" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.querySelectorAll('fieldset,button').forEach(elem => {elem.setAttribute('disabled', 'disabled');});setTimeout(() => {this.submit()}, 2000)">
+                <form class="row jc-center" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.querySelectorAll('fieldset,button').forEach(elem => {elem.setAttribute('disabled', 'disabled');});setTimeout(() => {this.submit()}, 2000)">
                     <h4 class="col-12 mt-4">Responsive labels with loading button and disabled fields on submit</h4>
                     <fieldset>
                         <legend><label>Name *</label></legend>
@@ -607,7 +681,7 @@ to an H4, etc</cite>
                     <button  class="col-6 btn has-loader" type="submit">Submit with Loading Icon</button>
                 </form>
 
-                <pre class="mt-3"><code class="language-html">&lt;form class="sm-row jc-center" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.querySelectorAll('fieldset,button').forEach(elem => {elem.setAttribute('disabled', 'disabled');});setTimeout(() => {this.submit()}, 2000)"&gt;
+                <pre class="mt-3"><code class="language-html">&lt;form class="row jc-center" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.querySelectorAll('fieldset,button').forEach(elem => {elem.setAttribute('disabled', 'disabled');});setTimeout(() => {this.submit()}, 2000)"&gt;
     &lt;h4 class="col-12 mt-4"&gt;Responsive labels with loading button and disabled fields on submit&lt;/h4&gt;
     &lt;fieldset&gt;
         &lt;legend&gt;&lt;label&gt;Name *&lt;/label&gt;&lt;/legend&gt;
@@ -632,7 +706,7 @@ to an H4, etc</cite>
     &lt;button  class="col-6 btn has-loader" type="submit"&gt;Submit with Loading Icon&lt;/button&gt;
 &lt;/form&gt;</code></pre>
                 <h4 class="col-12 mb-2 mt-3">Dense Fields using <code class="color-primary small">form.small</code></h4>
-                <form class="small sm-row g-2 jc-center">
+                <form class="small row g-2 jc-center">
                     <fieldset>
                         <legend><label>Name</label></legend>
                         <input type="text" onblur="if (this.value){ this.parentElement.classList.add('active')}" />
@@ -702,19 +776,19 @@ to an H4, etc</cite>
                             <h3>Login</h3>
                             <button type="button" class="modal-close" onclick="document.getElementById('login-modal').classList.remove('show');" ></button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body mt-n1">
                             <form>
                                 <fieldset>
                                     <legend><label>Email</label></legend>
                                     <input id="login-email" type="email" required onblur="if (this.value){ this.parentElement.classList.add('active')}" />
                                 </fieldset>
                                 
-                                <fieldset class="my-3">
+                                <fieldset class="my-2">
                                     <legend><label>Password</label></legend>
                                     <input type="password" required onblur="if (this.value){ this.parentElement.classList.add('active')}" />
                                 </fieldset>
                                 
-                                <a href="#" class="mt-3">Forgot Password?</a>
+                                <a href="#" class="mt-1 block">Forgot Password?</a>
                                 <button class="btn block mt-3" type="submit">Login</button>
                             </form>
                         </div>
@@ -766,7 +840,7 @@ to an H4, etc</cite>
                         </div>
                         <div class="modal-footer bg-light right">
                             <button type="button" class="btn small btn-outline btn-dark" onclick="document.getElementById('large-modal').classList.remove('show','bounce');" >Cancel</button>
-                            <button type="button" class="btn small ml-3" onclick="document.getElementById('large-modal').classList.remove('show','bounce');" >Accept</button>
+                            <button type="button" class="btn small ml-1 md-ml-3" onclick="document.getElementById('large-modal').classList.remove('show','bounce');" >Accept</button>
                         </div>
                     </div>
                 </div>
@@ -798,33 +872,6 @@ to an H4, etc</cite>
             <hr>
             <section id="utilities">
                 <h2>Utilities</h2>
-                <h3 class="mt-4">Spacing</h3>
-                <p>The classes are named using the format <code class="color-primary">{property}{sides}-{size}</code> for breakpoints use <code class="color-primary">{breakpoints}-{property}{sides}-{size}</code></p>
-                <p>There are 3 Spacing properties:</p>
-                <div class="ml-3 my-2">
-                    <div><code class="color-primary">p</code> = padding</div>
-                    <div><code class="color-primary">m</code> = margin</div>
-                </div>
-                <p>There are 6 sides:</p>
-                <div class="ml-3 my-2">
-                    <div><code class="color-primary">t</code> = top</div>
-                    <div><code class="color-primary">r</code> = right</div>
-                    <div><code class="color-primary">b</code> = bottom</div>
-                    <div><code class="color-primary">l</code> = left</div>
-                    <div><code class="color-primary">y</code> = top and bottom</div>
-                    <div><code class="color-primary">x</code> = left and right</div>
-                </div>
-                <p>The sizes are used from the scss variable.</p>
-                <pre><code class="language-scss">// SCSS Variable
-$spacing: (
-    0: 0,
-    1: .5rem,
-    2: 1rem,
-    3: 2rem,
-    4: 4rem
-);</code></pre>
-<h5>Negative Margin</h5>
-<p>For a negative margin you can include a negative value by placing a <code class="color-primary">n</code> in front of the value. ex <code class="color-primary">mx-n2</code></p>
                 <h3 class="mt-4">General Utility Classes</h3>
                 <div class="ml-2">
                     <div><code class="color-primary">bold</code> <code>{ font-weight: bold }</code></div>
@@ -866,6 +913,34 @@ $spacing: (
                 </div>
                 <h3 class="mt-4">Max Width Classes</h3>
                 <p>This requires a breakpoint. ex <code class="color-primary">{breakpoint}-mw</code></p>
+                <h3 id="spacing" class="mt-4">Spacing</h3>
+                <p>The classes are named using the format</p>
+                <code class="color-grey">{breakpoint}-</code><code class="color-primary">{property}{sides}-{spacing}</code></p>
+                <p>There are 3 Spacing properties:</p>
+                <div class="ml-3 my-2">
+                    <div><code class="color-primary">p</code> = padding</div>
+                    <div><code class="color-primary">m</code> = margin</div>
+                </div>
+                <p>There are 6 sides:</p>
+                <div class="ml-3 my-2">
+                    <div><code class="color-primary">t</code> = top</div>
+                    <div><code class="color-primary">r</code> = right</div>
+                    <div><code class="color-primary">b</code> = bottom</div>
+                    <div><code class="color-primary">l</code> = left</div>
+                    <div><code class="color-primary">y</code> = top and bottom</div>
+                    <div><code class="color-primary">x</code> = left and right</div>
+                </div>
+                <p>The sizes are used from the scss variable.</p>
+                <pre><code class="language-scss">// SCSS Variable
+$spacing: (
+    0: 0,
+    1: .5rem,
+    2: 1rem,
+    3: 2rem,
+    4: 4rem
+);</code></pre>
+<h5>Negative Margin</h5>
+<p>For a negative margin you can include a negative value by placing a <code class="color-primary">n</code> in front of the value. ex <code class="color-primary">mx-n2</code></p>
                 <h3 class="mt-4">Layout Utility Classes</h3>
                 <p>* All Layout Utility Classes can be used with breakpoints ex <code class="color-primary">{breakpoint}-{layoutclass}</code></p>
                 <p>Example Hide on All</p>
@@ -926,6 +1001,44 @@ $spacing: (
         &copy; 2021
     </footer>
     <script src="prism.js"></script>
+    <script>
+        var resizableElement = null;
+        var resizableElementWidth = null;
+        function resize(e){
+            const ogw = parseInt(resizableElement.getAttribute('data-width'));
+            let width = 0;
+            if (e.x && resizableElement.offsetLeft) {
+                width = parseInt(e.x) - parseInt(resizableElement.offsetLeft);
+                if (width < 0) {
+                    width = 0;
+                }
+
+                if (width > ogw) {
+                    width = ogw;
+                }
+            } else {
+                width = ogw;
+            }
+            resizableElement.style.width = width + "px";
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('.resizable').forEach(elem => {
+
+                elem.setAttribute('data-width', parseInt(elem.offsetWidth));
+                elem.addEventListener("mousedown", function(e){
+                    resizableElement = e.target;
+                    if (e.offsetX > ( resizableElement.offsetWidth - 10 ) && e.offsetX < ( resizableElement.offsetWidth ) ) {
+                        document.addEventListener("mousemove", resize, false);
+                    }
+                }, false);
+            });
+
+            document.addEventListener("mouseup", function(){
+                document.removeEventListener("mousemove", resize, false);
+            }, false);
+        });
+    </script>
 </body>
 
 </html>

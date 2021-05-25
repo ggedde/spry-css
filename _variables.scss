@@ -1,12 +1,19 @@
+// Specify each breakpoint size
 $breakpoints: (
     sm: 600px,
     md: 900px,
     lg: 1200px,
 ) !default;
 
-$row-max-width: map-get($breakpoints, 'lg') !default;
-$gap: 2rem !default;
+// Specify each breakpoint gap size. <section> tags with get padding based on gap size.
+$gaps: (
+    default: 1.5rem,
+    sm: 1.75rem,
+    md: 2rem,
+    lg: 2.25rem,
+) !default;
 
+// Specify each color used in color-, bg-, border-, btn-
 $colors: (
     "white":       #ffffff,
     "light":       #efefef,
@@ -17,22 +24,18 @@ $colors: (
     "transparent": transparent,
 ) !default;
 
-/*************************************
-Sizing
-**************************************/
-
-// This will also create classes like .h3 etc. Mobile size will be 10% smaller
+// Specify each type tag and class like <h3> and .h3 etc.
 $types: (
-    h1: ( size: 3.4rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.20, letter-spacing: 0 ),
-    h2: ( size: 2.8rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.25, letter-spacing: 0 ),
-    h3: ( size: 2.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.30, letter-spacing: 0 ),
-    h4: ( size: 1.5rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.35, letter-spacing: 0 ),
-    h5: ( size: 1.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.5, letter-spacing: 0 ),
-    h6: ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
-    p:  ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+    h1: ( font-size: 3.4rem, font-weight: 400, color: map-get($colors, 'text'), line-height: 1.20, letter-spacing: 0 ),
+    h2: ( font-size: 2.8rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.25, letter-spacing: 0 ),
+    h3: ( font-size: 2.2rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.30, letter-spacing: 0 ),
+    h4: ( font-size: 1.5rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.35, letter-spacing: 0 ),
+    h5: ( font-size: 1.2rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.5, letter-spacing: 0 ),
+    h6: ( font-size: 1.0rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+    p:  ( font-size: 1.0rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
 ) !default;
 
-// Applies to Margin and Padding.  Ex .m0, .m1, .mx3, .pt3, .mtn3, etc
+// Specify each spacing that applies to Margin and Padding.  Ex .m0, .m1, .mx3, .pt3, .mtn3, etc
 $spacing: (
     0: 0rem,
     1: .5rem, 
@@ -40,5 +43,3 @@ $spacing: (
     3: 2rem, 
     4: 4rem
 ) !default;
-
-$section-padding: 4rem $gap !default;
