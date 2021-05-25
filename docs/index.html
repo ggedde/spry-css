@@ -16,7 +16,7 @@
 <body>
     <div class="flex">
         <nav class="sticky index-1 bg-light p-2 sm-p-3 vh-100" style="width: 30%; max-width: 200px;">
-            <h5 class="mb-3">SpryCSS <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases" alt="Release"></h5>
+            <h5 class="mb-3">Spry<span class="sm-none"> </span>CSS <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases" alt="Release"></h5>
             <a class="btn btn-outline small flex ai-center jc-center sm-jc-start my-1 nowrap px-0 sm-px-1 left" href="#installation">
                 <svg class="sm-mr-1" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M13,3H11V13H13V3M17.83,5.17L16.41,6.59C18.05,7.91 19,9.9 19,12A7,7 0 0,1 12,19C8.14,19 5,15.88 5,12C5,9.91 5.95,7.91 7.58,6.58L6.17,5.17C2.38,8.39 1.92,14.07 5.14,17.86C8.36,21.64 14.04,22.1 17.83,18.88C19.85,17.17 21,14.65 21,12C21,9.37 19.84,6.87 17.83,5.17Z" />
@@ -323,7 +323,7 @@ to an H4, etc</cite>
                 </div>
                 <cite class="small fade mt-2 block"><code class="color-primary">{size}</code> is 1-12</cite>
                 <cite class="small fade mt-1 block"><code class="color-primary">{spacing}</code> is defined by the $spacing variable. See <a href="#spacing">Spacing</a> for more details</cite>
-                <cite class="small fade mt-1 block">* <code class="color-primary">gap</code> for flexbox is not supported on older browsers. Also, custom gaps will not always work correctly with <code class="color-primary">row</code> when setting specific column sizes. It works best with <code class="color-primary">grid</code></cite>
+                <cite class="small fade mt-1 block">* <code class="color-primary">gap</code> for flexbox is not supported on older browsers. Also, custom gaps will not always work correctly with <code class="color-primary">row</code> when setting specific column sizes. It works best if you specify all breakpoint column sizes or use it with <code class="color-primary">grid</code> instead</cite>
                     
                 <h4 class="mt-4 mb-3">CSS Grid</h4>
                 <h5 class="my-1">Auto Fit minimum 200px</h5>
@@ -419,6 +419,23 @@ to an H4, etc</cite>
     &lt;div&gt;&lt;/div&gt;
     &lt;div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
+                <h5 class="mt-4 mb-1">Custom Ordering with Space between <cite class="small sm-ml-2 block sm-inline-block">See <a href="#layout">Layout Classes</a> for more details</cite></h5>
+                <div class="row jc-between">
+                    <div class="sm-col-2 bg-light md-order-1 rounded p-1">
+                        col C
+                    </div>
+                    <div class="sm-col-2 bg-light rounded p-1">
+                        col B
+                    </div>
+                    <div class="sm-col-2 bg-light sm-order-first rounded p-1">
+                        col A
+                    </div>
+                </div>
+                <pre class="mt-3"><code class="language-html">&lt;div class="row jc-between"&gt;
+    &lt;div class="sm-col-2 md-order-1"&gt;&lt;/div&gt;
+    &lt;div class="sm-col-2"&gt;&lt;/div&gt;
+    &lt;div class="sm-col-2 sm-order-first"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
                 <h5 class="mt-4 mb-1">Columns multi row with column spanning</h5>
                 <div class="row">
                     <div class="col-6 bg-light rounded p-1">
@@ -446,7 +463,7 @@ to an H4, etc</cite>
     &lt;div class="col-3"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
         
-                <h5 class="mt-4 mb-1">Responsive with smaller gap and nested row with an auto fill column</h5>
+                <h5 class="mt-4 mb-1">Responsive with different gap sizing and nested row with an auto fill column</h5>
                 <div class="row g-1 md-g-2 lg-g-4">
                     <div class="col-6 bg-light rounded p-1">
                         .col-6
@@ -454,8 +471,8 @@ to an H4, etc</cite>
                     <div class="col-6 bg-light rounded p-1">
                         .col-6
                     </div>
-                    <div class="col-6 md-col-3 bg-light rounded p-1">
-                        .col-6 .md-col-3
+                    <div class="col-6 md-col-3 lg-col-3 bg-light rounded p-1">
+                        .col-6 .md-col-3 .lg-col-3
                     </div>
 
                     <div class="col-6 row g-1 md-g-2 lg-g-4">
@@ -470,20 +487,20 @@ to an H4, etc</cite>
                         </div>
                     </div>
 
-                    <div class="col-6 md-col-3 bg-light rounded p-1">
-                        .col-6 .md-col-3
+                    <div class="col-6 md-col-3 lg-col-3 bg-light rounded p-1">
+                        .col-6 .md-col-3 .lg-col-3
                     </div>
                 </div>
                 <pre class="mt-3"><code class="language-html">&lt;div class="row g-2"&gt;
     &lt;div class="col-6"&gt;&lt;/div&gt;
     &lt;div class="col-6"&gt;&lt;/div&gt;
-    &lt;div class="col-6 md-col-3"&gt;&lt;/div&gt;
+    &lt;div class="col-6 md-col-3 lg-col-3"&gt;&lt;/div&gt;
     &lt;div class="col-6 row"&gt;
         &lt;div&gt;&lt;/div&gt;
         &lt;div class="col-auto"&gt;&lt;/div&gt;
         &lt;div&gt;&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="col-6 md-col-3"&gt;&lt;/div&gt;
+    &lt;div class="col-6 md-col-3 lg-col-3"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
                 
             <h5 class="mt-4 mb-1">Row spanning with nested rows and auto height</h5>
@@ -919,7 +936,7 @@ $spacing: (
 );</code></pre>
 <h5>Negative Margin</h5>
 <p>For a negative margin you can include a negative value by placing a <code class="color-primary">n</code> in front of the value. ex <code class="color-primary">mx-n2</code></p>
-                <h3 class="mt-4">Layout Utility Classes</h3>
+                <h3 id="layout" class="mt-4">Layout Utility Classes</h3>
                 <p>* All Layout Utility Classes can be used with breakpoints ex <code class="color-primary">{breakpoint}-{layoutclass}</code></p>
                 <p>Example Hide on All</p>
                 <pre><code class="language-css">none</code></pre>
@@ -952,7 +969,7 @@ $spacing: (
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-hidden</code> <code>{ overflow: hidden }</code></div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-scroll</code> <code>{ overflow: scroll }</code></div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-auto</code> <code>{ overflow: auto }</code></div>
-                <div class="mt-3"><h5>Order</h5></div>
+                <div class="mt-3"><h5 id="order">Order</h5></div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-first</code> <code>{ order:-1 }</code></div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-0</code> <code>{ order:0 }</code></div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-1</code> <code>{ order:1 }</code></div>
