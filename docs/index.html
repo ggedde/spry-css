@@ -10,28 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <link rel="stylesheet" href="../dist/spry.min.css">
     <link rel="stylesheet" href="prism.css">
-    <style>
-        .resizable {
-            position: relative;
-            user-select: none;
-        }
-        .resizable::after {
-            content: '';
-            background-color: #eee;
-            position: absolute;
-            right: 0;
-            width: 6px;
-            height: 100%;
-            cursor: w-resize;
-            border-right: 1px solid #aaa;
-            border-left: 1px solid #aaa;
-            opacity: 0;
-            transition: opacity .3s ease-in-out;
-        }
-        .resizable:hover::after {
-            opacity: 1;
-        }
-    </style>
 </head>
 
 <body>
@@ -123,52 +101,51 @@
 @import 'node_modules/@ggedde/spry-css/spry.scss';</code></pre>
 
                 <h4 class="mt-4">Example Variables File:</h4>
-                <pre><code class="language-scss">// Breakpoints
+                <pre><code class="language-scss">// Specify each breakpoint size
 $breakpoints: (
     sm: 600px,
     md: 900px,
     lg: 1200px,
-);
+) !default;
 
-// Add Max width to .row
-$row-max-width: map-get($breakpoints, 'lg');
+// Specify each breakpoint gap size. &lt;section&gt; tags with get padding based on gap size.
+$gaps: (
+    default: 1.5rem,
+    sm: 1.75rem,
+    md: 2rem,
+    lg: 2.25rem,
+) !default;
 
-// Width between Columns and Section Padding on Left and Right
-$gap: 2rem;
-
-// Colors
+// Specify each color used in color-, bg-, border-, btn-
 $colors: (
     "white":       #ffffff,
     "light":       #efefef,
     "grey":        #aaaaaa,
     "dark":        #333333,
-    "primary":     #4488ff,
+    "primary":     #0D7FBF,
     "text":        #606c76,
     "transparent": transparent,
-);
+) !default;
 
-// Typography - This will also create classes like .h3 etc. Mobile size will be 10% smaller
+// Specify each type tag and class like &lt;h3&gt; and .h3 etc.
 $types: (
-    h1: ( size: 3.4rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.20, letter-spacing: 0 ),
-    h2: ( size: 2.8rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.25, letter-spacing: 0 ),
-    h3: ( size: 2.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.30, letter-spacing: 0 ),
-    h4: ( size: 1.5rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.35, letter-spacing: 0 ),
-    h5: ( size: 1.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.5, letter-spacing: 0 ),
-    h6: ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
-    p:  ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
-);
+    h1: ( font-size: 3.4rem, font-weight: 400, color: map-get($colors, 'text'), line-height: 1.20 ),
+    h2: ( font-size: 2.8rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.25 ),
+    h3: ( font-size: 2.2rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.30 ),
+    h4: ( font-size: 1.5rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.35 ),
+    h5: ( font-size: 1.2rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.5 ),
+    h6: ( font-size: 1.0rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    p:  ( font-size: 1.0rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+) !default;
 
-// Spacing - Applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc
+// Specify each spacing that applies to Margin and Padding.  Ex .m0, .m1, .mx3, .pt3, .mtn3, etc
 $spacing: (
-    0: 0, 
-    1: .5rem,
-    2: 1rem,
-    3: 2rem,
+    0: 0rem,
+    1: .5rem, 
+    2: 1rem, 
+    3: 2rem, 
     4: 4rem
-);
-
-// Add padding to &lt;section&gt; tags
-$section-padding: 4rem;</code></pre>
+) !default;</code></pre>
 
             </section>
             <hr>
@@ -194,13 +171,13 @@ $section-padding: 4rem;</code></pre>
                 <cite class="ml-3"> - Blockquote, Cite</cite>
                 <h4 class="mt-4">SCSS Variable</h4>
                 <pre class="mt-1"><code class="language-scss">$types: (
-    h1:     ( size: 3.4rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.20, letter-spacing: 0 ),
-    h2:     ( size: 2.8rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.25, letter-spacing: 0 ),
-    h3:     ( size: 2.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.30, letter-spacing: 0 ),
-    h4:     ( size: 1.5rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.35, letter-spacing: 0 ),
-    h5:     ( size: 1.2rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.5, letter-spacing: 0 ),
-    h6:     ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
-    p:      ( size: 1.0rem, weight: 300, color: map-get($colors, 'text'), line-height: 1.4, letter-spacing: 0 ),
+    h1:     ( font-size: 3.4rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.20 ),
+    h2:     ( font-size: 2.8rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.25 ),
+    h3:     ( font-size: 2.2rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.30 ),
+    h4:     ( font-size: 1.5rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.35 ),
+    h5:     ( font-size: 1.2rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.5 ),
+    h6:     ( font-size: 1.0rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    p:      ( font-size: 1.0rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
 );</code></pre>
 <cite>You can add as many types as you want. Each type will be assigned to the tag along with a custom class so if needed you can apply <code class="color-primary">.h2</code>
 to an H4, etc</cite>
@@ -231,11 +208,11 @@ to an H4, etc</cite>
             <hr>
             <section id="icons">
                 <h2 class="mb-3">Icons</h2>
-                <h5>Spry CSS doesn't come with its own icon package. You can use whatever ican package or icon webfont you want, but icon webfonts can greatly increase the size of your projects. A recommended alternative is to use direct svg code within your project. This produces the smallest file size while producing high resolution icons and allowing you the most flexibility to style the icons within your css.</h5>
-                <h5>A great option for this is <a target="_blank" href="https://materialdesignicons.com/">Material Design Icons</a>. You can search for icons and view the SVG code by clicking on the Code dropdown and click on 'View SVG'. Then copy and paste the code in your html.</h5>
-                <h5>If your using Visual Studio Code you can install the extension <a target="_blank" href="https://github.com/r3volution11/vscode-materialdesignicons-svg">vscode-materialdesignicons-svg</a> that provides code snippets to quickly add the SVG code. 
+                <p>Spry CSS doesn't come with its own icon package. You can use whatever ican package or icon webfont you want, but icon webfonts can greatly increase the size of your projects. A recommended alternative is to use direct svg code within your project. This produces the smallest file size while producing high resolution icons and allowing you the most flexibility to style the icons within your css.</p>
+                <p>A great option for this is <a target="_blank" href="https://materialdesignicons.com/">Material Design Icons</a>. You can search for icons and view the SVG code by clicking on the Code dropdown and click on 'View SVG'. Then copy and paste the code in your html.</p>
+                <p>If your using Visual Studio Code you can install the extension <a target="_blank" href="https://github.com/r3volution11/vscode-materialdesignicons-svg">vscode-materialdesignicons-svg</a> that provides code snippets to quickly add the SVG code.</p>
                 <cite class="block small fade mt-1">* Note that the extension currently does not add <code class="color-primary">fill="currentColor"</code> to the paths so you will need to add that manually.</cite>
-                <h5>Ex.</h5>
+                <h5 class="mt-2">Ex.</h5>
                 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
                 </svg>
@@ -350,7 +327,7 @@ to an H4, etc</cite>
                 <h4 class="mt-4 mb-3">CSS Grid</h4>
                 <h5 class="my-1">Auto Fit minimum 200px</h5>
                 <div class="">
-                    <div class="grid-200 resizable">
+                    <div class="grid-200">
                         <div class="bg-light rounded p-1">
                             col
                         </div>
@@ -376,7 +353,7 @@ to an H4, etc</cite>
     &lt;div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
                 <h5 class="mt-4 mb-1">Specify number of columns</h5>
-                <div class="grid sm-columns-2 md-columns-3 resizable">
+                <div class="grid sm-columns-2 md-columns-3">
                     <div class="bg-light rounded p-1">
                         col
                     </div>
@@ -399,7 +376,7 @@ to an H4, etc</cite>
 
                 <h4 class="mt-4 mb-3">CSS Flexbox</h4>
                 <h5 class="mb-2 mt-2">Equal Columns Single Row</h5>
-                <div class="row resizable">
+                <div class="row">
                     <div class="bg-light rounded p-1">
                         fixed
                     </div>
@@ -421,7 +398,7 @@ to an H4, etc</cite>
 &lt;/div&gt;</code></pre>
                 <h5 class="mb-1 mt-4">Specify number of columns centered</h5>
                 <cite class="small fade mb-1 block">(For gapping to work correctly you will need to specify all breakpoints)</cite>
-                <div class="row sm-columns-2 md-columns-3 lg-columns-3 jc-center resizable">
+                <div class="row sm-columns-2 md-columns-3 lg-columns-3 jc-center">
                     <div class="bg-light rounded p-1">
                         col
                     </div>
@@ -442,7 +419,7 @@ to an H4, etc</cite>
     &lt;div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
                 <h5 class="mt-4 mb-1">Columns multi row with column spanning</h5>
-                <div class="row resizable">
+                <div class="row">
                     <div class="col-6 bg-light rounded p-1">
                         .col-6
                     </div>
@@ -469,7 +446,7 @@ to an H4, etc</cite>
 &lt;/div&gt;</code></pre>
         
                 <h5 class="mt-4 mb-1">Responsive with smaller gap and nested row with an auto fill column</h5>
-                <div class="row g-1 md-g-2 lg-g-4 resizable">
+                <div class="row g-1 md-g-2 lg-g-4">
                     <div class="col-6 bg-light rounded p-1">
                         .col-6
                     </div>
@@ -509,7 +486,7 @@ to an H4, etc</cite>
 &lt;/div&gt;</code></pre>
                 
             <h5 class="mt-4 mb-1">Row spanning with nested rows and auto height</h5>
-            <div class="row resizable">
+            <div class="row">
                 <div class="sm-col-4 bg-light rounded p-1">
                     .sm-col-4
                 </div>
@@ -562,7 +539,7 @@ to an H4, etc</cite>
             <section id="forms">
                 <h2 class="mb-4">Forms</h2>
                 <h4 class="mb-1">Simple form with some Required Fields</h4>
-                <form class="resizable">
+                <form>
                     <div class="row py-3 g-3">
                         <div>
                             <label class="h5">Text Field *
@@ -915,7 +892,7 @@ to an H4, etc</cite>
                 <p>This requires a breakpoint. ex <code class="color-primary">{breakpoint}-mw</code></p>
                 <h3 id="spacing" class="mt-4">Spacing</h3>
                 <p>The classes are named using the format</p>
-                <code class="color-grey">{breakpoint}-</code><code class="color-primary">{property}{sides}-{spacing}</code></p>
+                <code class="color-grey">{breakpoint}-</code><code class="color-primary">{property}{sides}-{spacing}</code>
                 <p>There are 3 Spacing properties:</p>
                 <div class="ml-3 my-2">
                     <div><code class="color-primary">p</code> = padding</div>
@@ -1001,44 +978,6 @@ $spacing: (
         &copy; 2021
     </footer>
     <script src="prism.js"></script>
-    <script>
-        var resizableElement = null;
-        var resizableElementWidth = null;
-        function resize(e){
-            const ogw = parseInt(resizableElement.getAttribute('data-width'));
-            let width = 0;
-            if (e.x && resizableElement.offsetLeft) {
-                width = parseInt(e.x) - parseInt(resizableElement.offsetLeft);
-                if (width < 0) {
-                    width = 0;
-                }
-
-                if (width > ogw) {
-                    width = ogw;
-                }
-            } else {
-                width = ogw;
-            }
-            resizableElement.style.width = width + "px";
-        }
-
-        document.addEventListener('DOMContentLoaded', (event) => {
-            document.querySelectorAll('.resizable').forEach(elem => {
-
-                elem.setAttribute('data-width', parseInt(elem.offsetWidth));
-                elem.addEventListener("mousedown", function(e){
-                    resizableElement = e.target;
-                    if (e.offsetX > ( resizableElement.offsetWidth - 10 ) && e.offsetX < ( resizableElement.offsetWidth ) ) {
-                        document.addEventListener("mousemove", resize, false);
-                    }
-                }, false);
-            });
-
-            document.addEventListener("mouseup", function(){
-                document.removeEventListener("mousemove", resize, false);
-            }, false);
-        });
-    </script>
 </body>
 
 </html>

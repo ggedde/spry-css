@@ -147,6 +147,7 @@
 	
 	@for $i from 1 through 12 {
 		.row.g-#{$s} > .col-#{$i} {
+			flex: calc(#{(round(percentage($i / 12) * 1000) / 1000)} - #{$space});
 			@if $i < 12 {
 				max-width: calc(#{(round(percentage($i / 12) * 1000) / 1000)} - #{(round(($space / (12 / $i)) * 1000) / 1000)});
 			}
@@ -159,7 +160,9 @@
 		@each $s, $space in $spacing {
 			@for $i from 1 through 12 {
 				.row.#{$breakpoint}-g-#{$s} > .col-#{$i},
-				.row.#{$breakpoint}-g-#{$s} > .#{$breakpoint}-col-#{$i} {
+				.row.#{$breakpoint}-g-#{$s} > .#{$breakpoint}-col-#{$i},
+				.row.#{$breakpoint}-g-#{$s} > [class*="col-"].#{$breakpoint}-col-#{$i} {
+					flex: calc(#{(round(percentage($i / 12) * 1000) / 1000)} - #{$space});
 					@if $i < 12 {
 						max-width: calc(#{(round(percentage($i / 12) * 1000) / 1000)} - #{(round(($space / (12 / $i)) * 1000) / 1000)});
 					}
