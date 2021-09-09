@@ -1,6 +1,6 @@
 {
   "name": "@ggedde/spry-css",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Lightweight Mini Utility CSS Framework",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   "homepage": "https://github.com/ggedde/spry-css#readme",
   "scripts": {
     "dev": "node_modules/.bin/chokidar *.scss -c 'npm run build'",
-    "build": "sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use postcss-combine-media-query -o ./dist/spry.min.css"
+    "build": "sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use postcss-combine-media-query -o ./dist/spry.min.css; sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use postcss-combine-media-query -o ./docs/spry.min.css"
   },
   "dependencies": {
     "autoprefixer": "^10.2.5",

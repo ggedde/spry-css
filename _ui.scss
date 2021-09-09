@@ -3,7 +3,7 @@ input,
 textarea,
 select, 
 fieldset {
-	transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color 0.2s ease-in-out;
+	transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
 	appearance: none;
 	border: 1px solid map-get($colors, 'grey');
 	color: inherit;

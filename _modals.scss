@@ -15,15 +15,15 @@
 .modal {
 	align-items: center;
 	background-color: rgba(0, 0, 0, .7);
-	bottom: 0;
 	justify-content: center;
-	left: 0;
 	opacity: 0;
 	pointer-events: none;
 	position: fixed;
-	right: 0;
 	top: 0;
-	transition: opacity .2s ease-in-out;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: opacity .15s cubic-bezier(.25,.8,.25,1);
 	z-index: 1000;
 	display: flex;
 	.modal-container {
@@ -32,9 +32,8 @@
 		box-sizing: border-box;
 		display: block;
 		overflow: hidden;
-		top: 50%;
-		transform: scale(0.5) translateY(-50%);
-		transition: transform .4s cubic-bezier(1, 0, 0, 1);
+		transform: scale(0.6);
+		transition: transform .2s cubic-bezier(.25,.8,.25,1);
 		width: 90%;
 		.modal-heading,
 		.modal-body,
@@ -116,7 +115,6 @@
 		opacity: 1;
 		pointer-events: all;
 		.modal-container {
-			transition: transform .3s cubic-bezier(0, 1, 0, 1);
 			transform: none;
 		}
 	}
