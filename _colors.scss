@@ -1,6 +1,6 @@
 @each $color_name, $color_value in $colors {
 	.color-#{$color_name} {
-		color: $color_value !important;
+		color: $color_value;
 	}
 	.bg-#{$color_name} {
 		background-color: $color_value;

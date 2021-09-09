@@ -199,8 +199,8 @@ fieldset {
 	input,
 	select,
 	textarea {
-		border: 0 !important;
-		border-radius: 3px !important;
+		border: 0;
+		border-radius: 3px;
 		padding-left: 10px;
 		padding-bottom: 1px;
 		display: block;
@@ -288,7 +288,7 @@ textarea {
 		pointer-events: none;
 		user-select: none;
 		cursor: default;
-		color: transparent !important;
+		color: transparent;
 		&::before {
 			opacity: 1;
 		}
