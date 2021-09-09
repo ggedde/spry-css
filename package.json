@@ -1,7 +1,7 @@
 {
   "name": "@ggedde/spry-css",
   "version": "1.4.2",
-  "description": "A minimal CSS Toolkit",
+  "description": "A simple and customizable CSS Toolkit while being as lightweight as possible",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/ggedde/spry-css.git"
