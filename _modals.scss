@@ -19,94 +19,10 @@
 	opacity: 0;
 	pointer-events: none;
 	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	inset: 0;
 	transition: opacity .15s cubic-bezier(.25,.8,.25,1);
 	z-index: 1000;
 	display: flex;
-	.modal-container {
-		background: white;
-		box-shadow: 0 2px 4px 0px rgba(0,0,0,0.3);
-		box-sizing: border-box;
-		display: block;
-		overflow: hidden;
-		transform: scale(0.6);
-		transition: transform .2s cubic-bezier(.25,.8,.25,1);
-		width: 90%;
-		.modal-heading,
-		.modal-body,
-		.modal-footer {
-			padding: .9rem map-get($gaps, 'default');
-		}
-		.modal-body{
-			padding-top: map-get($gaps, 'default');
-			padding-bottom: map-get($gaps, 'default');
-		}
-		@each $breakpoint, $breakpoint_width in $breakpoints {
-			@if map-get($gaps, $breakpoint) {
-				@media screen and (min-width: $breakpoint_width) {
-					.modal-heading,
-					.modal-body,
-					.modal-footer {
-						padding-left: map-get($gaps, $breakpoint);
-						padding-right: map-get($gaps, $breakpoint);
-					}
-					.modal-body{
-						padding-top: map-get($gaps, $breakpoint);
-						padding-bottom: map-get($gaps, $breakpoint);
-					}
-				}
-			}
-		}
-		.modal-content {
-			display: block;
-			max-height: 50vh;
-			overflow: auto;
-		}
-		.modal-heading,
-		.modal-footer {
-			position: relative;
-			.modal-close {
-				background: transparent;
-				border: none;
-				cursor: pointer;
-				height: 24px;
-				margin-top: 0;
-				opacity: .7;
-				position: absolute;
-				right: 22px;
-				top: 15px;
-				transition: opacity .2s ease-in-out, transform .2s ease-in-out;
-				width: 24px;
-				&:hover {
-					opacity: 1;
-					transform: scale(1.05);
-				}
-				&::before, &::after {
-					background-color: map-get($colors, 'dark');
-					content: '';
-					height: 90%;
-					position: absolute;
-					right: 6px;
-					top: 0;
-					width: 2px;
-				}
-				&::before {
-					transform: rotate(45deg);
-				}
-				&::after {
-					transform: rotate(-45deg);
-				}
-				&:hover {
-					&::before, &::after {
-						background-color: lighten(map-get($colors, 'dark'), 10%);
-					}
-				}
-			}
-		}
-	}
 	&.bounce {
 		animation-name: modalAlert;
   		animation-duration: .4s;
@@ -114,8 +30,90 @@
 	&.show {
 		opacity: 1;
 		pointer-events: all;
-		.modal-container {
-			transform: none;
+	}
+}
+
+.modal-container {
+	background: white;
+	box-shadow: 0 2px 4px 0px rgba(0,0,0,.3);
+	box-sizing: border-box;
+	display: block;
+	overflow: hidden;
+	transform: scale(.6);
+	transition: transform .2s cubic-bezier(.25,.8,.25,1);
+	width: 90%;
+	.modal.show & {
+		transform: none;
+	}
+}
+.modal-heading,
+.modal-body,
+.modal-footer {
+	padding: .9rem map-get($gaps, 'default');
+}
+.modal-body{
+	padding-top: map-get($gaps, 'default');
+	padding-bottom: map-get($gaps, 'default');
+}
+@each $breakpoint, $breakpoint_width in $breakpoints {
+	@if map-get($gaps, $breakpoint) {
+		@media screen and (min-width: $breakpoint_width) {
+			.modal-heading,
+			.modal-body,
+			.modal-footer {
+				padding-left: map-get($gaps, $breakpoint);
+				padding-right: map-get($gaps, $breakpoint);
+			}
+			.modal-body{
+				padding-top: map-get($gaps, $breakpoint);
+				padding-bottom: map-get($gaps, $breakpoint);
+			}
+		}
+	}
+}
+.modal-content {
+	display: block;
+	max-height: 50vh;
+	overflow: auto;
+}
+.modal-heading,
+.modal-footer {
+	position: relative;
+}
+.modal-close {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	height: 24px;
+	margin-top: 0;
+	opacity: .7;
+	position: absolute;
+	right: 22px;
+	top: 15px;
+	transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+	width: 24px;
+	&:hover {
+		opacity: 1;
+		transform: scale(1.05);
+	}
+	&::before, &::after {
+		background-color: map-get($colors, 'dark');
+		content: '';
+		height: 90%;
+		position: absolute;
+		right: 6px;
+		top: 0;
+		width: 2px;
+	}
+	&::before {
+		transform: rotate(45deg);
+	}
+	&::after {
+		transform: rotate(-45deg);
+	}
+	&:hover {
+		&::before, &::after {
+			background-color: lighten(map-get($colors, 'dark'), 10%);
 		}
 	}
 }

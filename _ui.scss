@@ -173,7 +173,7 @@ fieldset {
 	line-height: 1.6;
 	position: relative;
 	height: auto;
-	transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+	transition: color .2s ease-in-out, border-color .2s ease-in-out;
 	legend {
 		display: block;
 		position: relative;
@@ -182,16 +182,16 @@ fieldset {
 		white-space: nowrap;
 		transform: translate(4px, 9px);
 		user-select: none;
-		transition: transform 0.2s ease-in-out, max-width 0.2s ease-in-out;
+		transition: transform .2s ease-in-out, max-width .2s ease-in-out;
 		margin-left: 5px;
 		padding: 0;
-		@media screen and (min-width: map-get($breakpoints, "sm")) {
+		@media screen and (min-width: map-get($breakpoints, 'md')) {
 			transform: translate(4px, 7px);
 		}
 		label {
 			display: block;
 			transform: scale(1);
-			transition: all 0.2s ease-in-out;
+			transition: all .2s ease-in-out;
 			pointer-events: none;
 			opacity: .6;
 		}
@@ -200,7 +200,6 @@ fieldset {
 	select,
 	textarea {
 		border: 0;
-		border-radius: 3px;
 		padding-left: 10px;
 		padding-bottom: 1px;
 		display: block;
@@ -268,10 +267,7 @@ textarea {
 		content: '';
 		box-sizing: border-box;
 		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
+		inset: 0;
 		margin: auto;
 		width: 20px;
 		height: 20px;
@@ -279,10 +275,10 @@ textarea {
 		border: 2px solid transparent;
 		border-top-color: #fff;
 		border-right-color: #fff;
-		animation: spinner 0.7s ease infinite;
+		animation: spinner .7s ease infinite;
 		opacity: 0;
 		pointer-events: none;
-		transition: opacity 0.3s ease-in-out 0.1s;
+		transition: opacity .3s ease-in-out .1s;
 	}
 	&.loading {
 		pointer-events: none;
@@ -316,7 +312,7 @@ table {
 	}
 	tbody tr {
 		&:hover td {
-			background-color: rgba(map-get($colors, 'primary'),0.04);
+			background-color: rgba(map-get($colors, 'primary'),.04);
 		}
 		td {
 			border-top: 1px solid map-get($colors, 'light');
@@ -327,6 +323,10 @@ table {
 	}
 }
 
+nav ul li {
+	display: inline-block;
+}
+
 hr {
 	height: 1px;
 	border: 0;
@@ -334,15 +334,8 @@ hr {
 	margin: map-get($gaps, 'default');
 }
 
-nav ul li {
-	display: inline-block;
-}
-
 section {
-	padding-top: (map-get($gaps, 'default') * 2);
-	padding-bottom: (map-get($gaps, 'default') * 2);
-	padding-left: map-get($gaps, 'default');
-	padding-right: map-get($gaps, 'default');
+	padding: (map-get($gaps, 'default') * 2) map-get($gaps, 'default');
 }
 
 @each $breakpoint, $breakpoint_width in $breakpoints {
@@ -352,11 +345,14 @@ section {
 				margin: map-get($gaps, $breakpoint);
 			}
 			section {
-				padding-top: (map-get($gaps, $breakpoint) * 2);
-				padding-bottom: (map-get($gaps, $breakpoint) * 2);
-				padding-left: map-get($gaps, $breakpoint);
-				padding-right: map-get($gaps, $breakpoint);
+				padding: (map-get($gaps, $breakpoint) * 2) map-get($gaps, $breakpoint);
 			}
 		}
+	}
+}
+
+@each $color_name, $color_value in $colors {
+	section.bg-#{$color_name} + section.bg-#{$color_name} {
+		padding-top: 0;
 	}
 }

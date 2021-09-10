@@ -1,7 +1,6 @@
 // Specify each breakpoint size
 $breakpoints: (
-    sm: 600px,
-    md: 900px,
+    md: 600px,
     lg: 1200px,
 ) !default;
 
@@ -9,7 +8,6 @@ $breakpoints: (
 // You must include one for each Breakpoint otherwise it will result in a Compile Error.
 $gaps: (
     default: 1.5rem,
-    sm: 1.75rem,
     md: 2rem,
     lg: 2.25rem,
 ) !default;

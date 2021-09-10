@@ -56,7 +56,7 @@ pre[class*="language-"] {
 }
 @media screen and (min-width: 600px) {
 	pre[class*="language-"] {
-		max-width: calc(100vw - 256px);
+		max-width: calc(100vw - 266px);
 	}
 }
 @media screen and (min-width: 900px) {

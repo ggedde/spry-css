@@ -1,15 +1,12 @@
 html {
     font-size: 90%;
-    @media screen and (min-width: map-get($breakpoints, 'sm')) {
+    @media screen and (min-width: map-get($breakpoints, 'md')) {
         font-size: 100%;
     }
 }
 body, input, textarea, select {
-    font-size: 1rem;
-    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-weight: 300;
-    letter-spacing: 0.01em;
-    line-height: 1.4;
+    font: 300 1rem/1.4 Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    letter-spacing: .01em;
     color: map-get($colors, 'text');
 }
 
@@ -34,20 +31,14 @@ body, input, textarea, select {
 
 section {
     h1 {
-        margin-top: -0.7rem;
+        margin-top: -.7rem;
     }
     h2 {
-        margin-top: -0.6rem;
+        margin-top: -.6rem;
     }
     h3 {
-        margin-top: -0.5rem;
+        margin-top: -.5rem;
     }
-}
-
-@each $color_name, $color_value in $colors {
-	section.bg-#{$color_name} + section.bg-#{$color_name} {
-		padding-top: 0;
-	}
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -67,7 +58,7 @@ a:not(.btn) {
     cursor: pointer;
     color: map-get($colors, 'primary');
     text-decoration: none;
-    transition: color 0.2s ease-in-out;
+    transition: color .2s ease-in-out;
     &:hover {
         text-decoration: none;
         color: lighten(map-get($colors, 'primary'), 10%);

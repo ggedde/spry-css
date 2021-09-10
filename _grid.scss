@@ -62,29 +62,20 @@
 
 @each $breakpoint, $breakpoint_width in $breakpoints {
 
-	@if map-get($gaps, $breakpoint) {
-		@media screen and (min-width: $breakpoint_width) {
-			[class*="grid-"] {
-				gap: map-get($gaps, $breakpoint);
-			}
-		}
-	}
-
 	.#{$breakpoint}-mw {
 		max-width: $breakpoint_width;
 	}
 
 	@media screen and (min-width: $breakpoint_width) {
-		.grid {
-			display: grid;
-			gap: map-get($gaps, $breakpoint);
+
+		@if map-get($gaps, $breakpoint) {
+			.grid, .row, [class*="grid-"] {
+				gap: map-get($gaps, $breakpoint);
+			}
 		}
 
-		.row {
-			gap: map-get($gaps, $breakpoint);
-			> * {
-				flex: 1;
-			}
+		.row > * {
+			flex: 1;
 		}
 
 		.row.#{$breakpoint}-columns-fixed > *,
@@ -140,8 +131,7 @@
 }
 @each $s, $space in $spacing {
 
-	.grid.g-#{$s},
-	.row.g-#{$s} {
+	.g-#{$s} {
 		gap: #{$space};
 	}
 	
