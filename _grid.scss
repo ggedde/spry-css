@@ -30,26 +30,26 @@
 		grid-template-columns: repeat( auto-fit, minmax(#{$i}00px, 1fr));
 	}
 	.row.columns-#{$i} > * {
-		flex: 0 calc(#{(round(percentage(1 / $i) * 1000) / 1000)} - #{(map-get($gaps, 'default') - (round((map-get($gaps, 'default') / $i) * 1000) / 1000))});
+		flex: 0 calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - #{(map-get($gaps, 'default') - calc(round(calc(map-get($gaps, 'default') / $i) * 1000) / 1000))});
 	}
 	@if $i > 1 {
 		.row.g-0.columns-#{$i} > * {
-			max-width: #{(round(percentage(1 / $i) * 1000) / 1000)};
-			flex: 0 #{(round(percentage(1 / $i) * 1000) / 1000)};
+			max-width: #{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)};
+			flex: 0 #{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)};
 		}
 	}
 
 	.row > .col-#{$i} {
-		flex: calc(#{(round(percentage($i / 12) * 1000) / 1000)} - #{map-get($gaps, 'default')});
+		flex: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{map-get($gaps, 'default')});
 		@if $i < 12 {
-			max-width: calc(#{(round(percentage($i / 12) * 1000) / 1000)} - #{(round((map-get($gaps, 'default') / $i) * 1000) / 1000)});
+			max-width: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{calc(round(calc(map-get($gaps, 'default') / $i) * 1000) / 1000)});
 		}
 	}
 
 	.row.g-0 > .col-#{$i} {
-		flex: 0 #{(round(percentage($i / 12) * 1000) / 1000)};
+		flex: 0 #{calc(round(percentage(calc($i / 12)) * 1000) / 1000)};
 		@if $i < 12 {
-			max-width: #{(round(percentage($i / 12) * 1000) / 1000)};
+			max-width: #{calc(round(percentage(calc($i / 12)) * 1000) / 1000)};
 		}
 	}
 
@@ -92,26 +92,26 @@
 				grid-template-columns: repeat($i, 1fr)
 			}
 			.row.#{$breakpoint}-columns-#{$i} > * {
-				flex: 0 calc(#{(round(percentage(1 / $i) * 1000) / 1000)} - #{(map-get($gaps, $breakpoint) - (round((map-get($gaps, $breakpoint) / $i) * 1000) / 1000))});
+				flex: 0 calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - #{(map-get($gaps, $breakpoint) - calc(round(calc(map-get($gaps, $breakpoint) / $i) * 1000) / 1000))});
 			}
 			@if $i > 1 {
 				.row.g-0.#{$breakpoint}-columns-#{$i} > * {
-					max-width: #{(round(percentage(1 / $i) * 1000) / 1000)};
-					flex: 0 #{(round(percentage(1 / $i) * 1000) / 1000)};
+					max-width: #{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)};
+					flex: 0 #{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)};
 				}
 			}
 
 			.row > .#{$breakpoint}-col-#{$i} {
-				flex: calc(#{(round(percentage($i / 12) * 1000) / 1000)} - #{map-get($gaps, $breakpoint)});
+				flex: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{map-get($gaps, $breakpoint)});
 				@if $i < 12 {
-					max-width: calc(#{(round(percentage($i / 12) * 1000) / 1000)} - #{(round((map-get($gaps, $breakpoint) / $i) * 1000) / 1000)});
+					max-width: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{calc(round(calc(map-get($gaps, $breakpoint) / $i) * 1000) / 1000)});
 				}
 			}
 
 			.row.g-0 > .#{$breakpoint}-col-#{$i} {
-				flex: 0 #{(round(percentage($i / 12) * 1000) / 1000)};
+				flex: 0 #{calc(round(percentage(calc($i / 12)) * 1000) / 1000)};
 				@if $i < 12 {
-					max-width: #{(round(percentage($i / 12) * 1000) / 1000)};
+					max-width: #{calc(round(percentage(calc($i / 12)) * 1000) / 1000)};
 				}
 			}
 
@@ -137,9 +137,9 @@
 	
 	@for $i from 1 through 12 {
 		.row.g-#{$s} > .col-#{$i} {
-			flex: calc(#{(round(percentage($i / 12) * 1000) / 1000)} - #{$space});
+			flex: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{$space});
 			@if $i < 12 {
-				max-width: calc(#{(round(percentage($i / 12) * 1000) / 1000)} - #{(round(($space / (12 / $i)) * 1000) / 1000)});
+				max-width: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{calc(round(calc($space / (12 / $i)) * 1000) / 1000)});
 			}
 		}
 	}
@@ -152,9 +152,9 @@
 				.row.#{$breakpoint}-g-#{$s} > .col-#{$i},
 				.row.#{$breakpoint}-g-#{$s} > .#{$breakpoint}-col-#{$i},
 				.row.#{$breakpoint}-g-#{$s} > [class*="col-"].#{$breakpoint}-col-#{$i} {
-					flex: calc(#{(round(percentage($i / 12) * 1000) / 1000)} - #{$space});
+					flex: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{$space});
 					@if $i < 12 {
-						max-width: calc(#{(round(percentage($i / 12) * 1000) / 1000)} - #{(round(($space / (12 / $i)) * 1000) / 1000)});
+						max-width: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{calc(round(calc($space / (12 / $i)) * 1000) / 1000)});
 					}
 				}
 			}

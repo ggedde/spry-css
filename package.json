@@ -1,6 +1,6 @@
 {
   "name": "@ggedde/spry-css",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "A simple and customizable CSS Toolkit while being as lightweight as possible",
   "repository": {
     "type": "git",
@@ -18,13 +18,14 @@
   "homepage": "https://github.com/ggedde/spry-css#readme",
   "scripts": {
     "dev": "node_modules/.bin/chokidar *.scss -c 'npm run build'",
-    "build": "sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use postcss-combine-media-query -o ./dist/spry.min.css; sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use postcss-combine-media-query -o ./docs/spry.min.css"
+    "build": "node_modules/.bin/sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use postcss-combine-media-query -o ./dist/spry.min.css; sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use postcss-combine-media-query -o ./docs/spry.min.css"
   },
   "dependencies": {
     "autoprefixer": "^10.2.5",
     "chokidar-cli": "^2.1.0",
     "postcss": "^8.2.15",
     "postcss-cli": "^8.3.1",
-    "postcss-combine-media-query": "^1.0.1"
+    "postcss-combine-media-query": "^1.0.1",
+    "sass": "^1.46.0"
   }
 }
