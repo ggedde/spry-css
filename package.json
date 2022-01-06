@@ -21,10 +21,10 @@
     "build": "node_modules/.bin/sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use postcss-combine-media-query -o ./dist/spry.min.css; sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use postcss-combine-media-query -o ./docs/spry.min.css"
   },
   "dependencies": {
-    "autoprefixer": "^10.2.5",
-    "chokidar-cli": "^2.1.0",
-    "postcss": "^8.2.15",
-    "postcss-cli": "^8.3.1",
+    "autoprefixer": "^10.4.1",
+    "chokidar-cli": "^3.0.0",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
     "postcss-combine-media-query": "^1.0.1",
     "sass": "^1.46.0"
   }
