@@ -72,8 +72,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .w{ width: 100% }
 .vw{ width: 100vw }
 @for $i from 1 through 12 {
-	.h-#{$i}00{ height: #{$i}00px }
-	.w-#{$i}00{ width: #{$i}00px }
+	.h-#{$i}00{ max-height: #{$i}00px; min-height: #{$i}00px }
+	.w-#{$i}00{ max-width: #{$i}00px; min-width: #{$i}00px }
 }
 
 /*************************************
@@ -140,8 +140,8 @@ Flex Utility Classes
 			&-w{ width: 100% }
 			&-vw{ width: 100vw }
 			@for $i from 1 through 12 {
-				&-h-#{$i}00{ height: #{$i}00px }
-				&-w-#{$i}00{ width: #{$i}00px }
+				&-h-#{$i}00{ max-height: #{$i}00px; min-height: #{$i}00px }
+				&-w-#{$i}00{ max-width: #{$i}00px; min-width: #{$i}00px }
 			}
 		}
 	}

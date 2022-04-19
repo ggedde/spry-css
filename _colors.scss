@@ -1,21 +1,30 @@
 @each $color_name, $color_value in $colors {
 	.btn-#{$color_name}.btn-outline,
-	.color-#{$color_name} {
+	.accent-#{$color_name} .btn.btn-outline:not(:hover),
+	.color-#{$color_name},
+	.color-#{$color_name} * {
 		color: $color_value;
 	}
 	.btn-#{$color_name},
+	.accent-#{$color_name} .btn:not(.btn-outline),
 	.btn-#{$color_name}.btn-outline:hover,
+	.accent-#{$color_name} .btn.btn-outline:hover,
 	.btn-#{$color_name}.btn-outline:focus,
+	.accent-#{$color_name} .btn.btn-outline:focus,
 	.bg-#{$color_name} {
 		background-color: $color_value;
 	}
 	.btn-#{$color_name},
+	.accent-#{$color_name} .btn,
 	.btn-#{$color_name}.btn-outline:hover,
+	.accent-#{$color_name} .btn.btn-outline:hover,
 	.btn-#{$color_name}.btn-outline:focus,
+	.accent-#{$color_name} .btn.btn-outline:focus,
 	.border-#{$color_name} {
 		border-color: $color_value;
 	}
-	.btn-#{$color_name} {
+	.btn-#{$color_name},
+	.accent-#{$color_name} .btn {
 		&:hover,
 		&:focus {
 			background-color: darken($color_value, 10%);
@@ -25,6 +34,24 @@
 		&:active {
 			background-color: darken($color_value, 5%);
 			border-color: darken($color_value, 5%);
+		}
+	}
+	.accent-#{$color_name} {
+		select, input, textarea {
+			&:hover,
+			&:focus,
+			&:checked {
+				border-color: $color_value;
+			}
+			&:checked::after {
+				background-color: $color_value;
+			}
+		}
+		fieldset {
+			border-color: $color_value;
+			&:focus-within legend label {
+				color: $color_value;
+			}
 		}
 	}
 }

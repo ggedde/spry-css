@@ -131,7 +131,10 @@
 }
 @each $s, $space in $spacing {
 
-	.g-#{$s} {
+	.g-#{$s},
+	.grid.g-#{$s}, 
+	.row.g-#{$s}, 
+	[class*="grid-"].g-#{$s} {
 		gap: #{$space};
 	}
 	

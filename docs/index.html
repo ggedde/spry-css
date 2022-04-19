@@ -96,7 +96,7 @@
             <section id="installation">
                 <h1 class="mb-3">SpryCSS</h1>
                 <p>SpryCSS aims to be a simple and customizable CSS Toolkit while being as 
-                    lightweight as possible (Only 9kb gzipped).</p>
+                    lightweight as possible (Only 11kb gzipped).</p>
                 <p>The goal is to remove the messy and tedious task of coming up with class names 
                     for elements that just need simple layout styles and provide basic components to help you get up and running fast, 
                     but not try to do everything which can bloat your project. 
@@ -218,13 +218,33 @@ to an H4, etc</cite>
             <section id="colors">
                 <h2>Colors</h2>
                 <h4 class="mt-3">Text Colors</h4>
-                <code class="block italic small mt-2 color-primary">.color-{color}</code>
+                <div><code class="color-grey italic small">.color-{color}</code></div>
+                <div class="block mt-2 color-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</div>
+                <div class="block mt-2 color-error">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</div>
+                <div class="block mt-2 color-success">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</div>
+                <div class="block mt-2 color-grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</div>
                 <h4 class="mt-3">Background Colors</h4>
-                <code class="block italic small mt-2 bg-dark color-light">.bg-{color} .color-light</code>
+                <div><code class="color-grey italic small">.bg-{color} .color-light</code></div>
+                <div class="block mt-2 bg-primary color-light">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</div>
                 <h4 class="mt-3">Border Colors</h4>
-                <code class="block italic small mt-2 border border-primary">.border .border-{color}</code>
+                <div><code class="color-grey italic small">.border .border-{color}</code></div>
+                <div class="block mt-2 border border-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</div>
                 <h4 class="mt-3">Button Colors</h4>
-                <code class="btn btn-primary italic small mt-2">.btn .btn-{color}</code>
+                <div><code class="color-grey italic small">.btn .btn-{color}</code></div>
+                <button class="btn btn-primary mt-2">Lorem Ipsum</button>
+                <h4 class="mt-3">Accent Colors</h4>
+                <div class="small mb-1">You can wrap elements with an accent color to change and override all the accent colors within that container.</div>
+                <div><code class="color-grey italic small">.accent-{color}</code></div>
+                <div class="accent-error p-2 mt-1 border">
+                    <button class="btn mt-2">Lorem Ipsum</button>
+                    <button class="btn btn-outline mt-2">Lorem Ipsum</button>
+                    <div class="mt-2">
+                        Inputs
+                    </div>
+                    <input type="text" />
+                    <input type="checkbox" />
+                    <input type="radio" />
+                </div>
                 <h4 class="mt-4">SCSS Variable</h4>
                 <pre class="mt-1"><code class="language-scss">$colors: (
     "white":       #fff,
@@ -232,6 +252,8 @@ to an H4, etc</cite>
     "grey":        #aaa,
     "dark":        #333,
     "primary":     #4488ff,
+    "error":       #d52929,
+    "success":     #04ad3c,
     "text":        #606c76,
     "transparent": transparent,
 )</code></pre>
@@ -450,6 +472,19 @@ to an H4, etc</cite>
     &lt;div&gt;&lt;/div&gt;
     &lt;div&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
+                <h5 class="mb-2 mt-4">Set Sidebar width with Auto Content Column</h5>
+                <div class="row g-0">
+                    <div class="bg-light rounded p-1 w-300">
+                        w-300
+                    </div>
+                    <div class="bg-light rounded p-1">
+                        auto
+                    </div>
+                </div>
+                <pre class="mt-3"><code class="language-html">&lt;div class="row"&gt;
+    &lt;div class="w-300"&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
                 <h5 class="mt-4 mb-1">Custom Ordering with Space between <cite class="small md-ml-2 block md-inline-block">See <a href="#layout">Layout Classes</a> for more details</cite></h5>
                 <div class="row jc-between">
                     <div class="md-col-2 bg-light md-order-1 rounded p-1">
@@ -601,7 +636,7 @@ to an H4, etc</cite>
                             </label>
                         </div>
                         <div>
-                            <label class="h5 is-select">Select *
+                            <label class="h5">Select *
                                 <select required>
                                     <option value="" disabled>Select</option>
                                     <option>One</option>
@@ -648,7 +683,7 @@ to an H4, etc</cite>
             &lt;/label&gt;
         &lt;/div&gt;
         &lt;div&gt;
-            &lt;label class="h5 is-select">Select &gt;
+            &lt;label class="h5">Select &gt;
                 &lt;select required&gt;
                     &lt;option value="" disabled>Select&lt;/option&gt;
                     &lt;option>One&lt;/option&gt;
@@ -692,7 +727,7 @@ to an H4, etc</cite>
                         <legend><label>Email</label></legend>
                         <input type="email" onblur="if (this.value) this.parentElement.classList.add('active')" />
                     </fieldset>
-                    <fieldset class="is-select">
+                    <fieldset>
                         <legend><label>Select</label></legend>
                         <select onchange="if (this.value) this.parentElement.classList.add('active')">
                             <option value="" selected disabled></option>
@@ -717,7 +752,7 @@ to an H4, etc</cite>
         &lt;legend&gt;&lt;label&gt;Email&lt;/label&gt;&lt;/legend&gt;
         &lt;input type="email" onblur="if (this.value) this.parentElement.classList.add('active')" /&gt;
     &lt;/fieldset&gt;
-    &lt;fieldset class="is-select"&gt;
+    &lt;fieldset&gt;
         &lt;legend&gt;&lt;label&gt;Select&lt;/label&gt;&lt;/legend&gt;
         &lt;select onchange="if (this.value) this.parentElement.classList.add('active')"&gt;
             &lt;option value="" selected disabled&gt;&lt;/option&gt;
@@ -973,30 +1008,30 @@ $spacing: (
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">vh</code> <code>{ height: 100vh }</code></div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w</code> <code>{ width: 100% }</code></div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">vw</code> <code>{ width: 100vw }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-100</code> <code>{ width: 100px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-200</code> <code>{ width: 200px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-300</code> <code>{ width: 300px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-400</code> <code>{ width: 400px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-500</code> <code>{ width: 500px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-600</code> <code>{ width: 600px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-700</code> <code>{ width: 700px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-800</code> <code>{ width: 800px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-900</code> <code>{ width: 900px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-1000</code> <code>{ width: 1000px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-1100</code> <code>{ width: 1100px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-1200</code> <code>{ width: 1200px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-100</code> <code>{ height: 100px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-200</code> <code>{ height: 200px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-300</code> <code>{ height: 300px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-400</code> <code>{ height: 400px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-500</code> <code>{ height: 500px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-600</code> <code>{ height: 600px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-700</code> <code>{ height: 700px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-800</code> <code>{ height: 800px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-900</code> <code>{ height: 900px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-1000</code> <code>{ height: 1000px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-1100</code> <code>{ height: 1100px }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-1200</code> <code>{ height: 1200px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-100</code> <code>{ width: 100px; min-width: 100px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-200</code> <code>{ width: 200px; min-width: 200px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-300</code> <code>{ width: 300px; min-width: 300px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-400</code> <code>{ width: 400px; min-width: 400px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-500</code> <code>{ width: 500px; min-width: 500px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-600</code> <code>{ width: 600px; min-width: 600px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-700</code> <code>{ width: 700px; min-width: 700px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-800</code> <code>{ width: 800px; min-width: 800px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-900</code> <code>{ width: 900px; min-width: 900px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-1000</code> <code>{ width: 1000px; min-width: 1000px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-1100</code> <code>{ width: 1100px; min-width: 1100px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-1200</code> <code>{ width: 1200px; min-width: 1200px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-100</code> <code>{ height: 100px; min-height: 100px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-200</code> <code>{ height: 200px; min-height: 200px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-300</code> <code>{ height: 300px; min-height: 300px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-400</code> <code>{ height: 400px; min-height: 400px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-500</code> <code>{ height: 500px; min-height: 500px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-600</code> <code>{ height: 600px; min-height: 600px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-700</code> <code>{ height: 700px; min-height: 700px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-800</code> <code>{ height: 800px; min-height: 800px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-900</code> <code>{ height: 900px; min-height: 900px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-1000</code> <code>{ height: 1000px; min-height: 1000px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-1100</code> <code>{ height: 1100px; min-height: 1100px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-1200</code> <code>{ height: 1200px; min-height: 1200px }</code></div>
                 <div class="mt-3"><h5>Text</h5></div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">left</code> <code>{ text-align: left }</code></div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">center</code> <code>{ text-align: center }</code></div>
