@@ -22,7 +22,7 @@
 
 @for $i from 1 through 12 {
 	.grid.columns-#{$i} {
-		grid-template-columns: repeat($i, 1fr)
+		grid-template-columns: repeat($i, minmax(0, 1fr));
 	}
 	.grid-#{$i}00 {
 		display: grid;
@@ -89,7 +89,7 @@
 		
 		@for $i from 1 through 12 {
 			.grid.#{$breakpoint}-columns-#{$i} {
-				grid-template-columns: repeat($i, 1fr)
+				grid-template-columns: repeat($i, minmax(0, 1fr))
 			}
 			.row.#{$breakpoint}-columns-#{$i} > * {
 				flex: 0 calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - #{(map-get($gaps, $breakpoint) - calc(round(calc(map-get($gaps, $breakpoint) / $i) * 1000) / 1000))});

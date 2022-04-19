@@ -15,8 +15,8 @@
 </head>
 <body>
     <div class="flex">
-        <nav class="sticky index-1 bg-light vh-100" style="width: 30%; max-width: 200px;">
-            <div class="overflow-auto h-100 p-2 md-p-3">
+        <nav class="sticky index-1 bg-light vh">
+            <div class="overflow-auto h p-2 md-p-3">
                 <h5 class="mb-3">Spry<span class="md-none"> </span>CSS <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases" alt="Release"></h5>
                 <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 nowrap px-0 md-px-1 left" href="#installation">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
@@ -304,23 +304,23 @@ to an H4, etc</cite>
 
                 <h4 class="mt-4">With Icons</h4>
                 <div class="flex flex-wrap g-2 ai-center">
-                    <button class="btn btn-primary flex ai-center pr-3 large">After
+                    <button class="btn btn-primary pr-3 large">After
                         <svg class="ml-3" viewBox="0 0 24 24"><path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" /></svg>
                     </button>
                     <button class="btn btn-primary flex-center p-0 large">
                         <svg viewBox="0 0 24 24"><path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" /></svg>
                     </button>
-                    <button class="btn btn-primary flex ai-center pl-2">
+                    <button class="btn btn-primary pl-2">
                         <svg class="mr-2" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
                         </svg>Before
                     </button>
-                    <button class="btn btn-primary flex-center btn-outline circle p-0">
+                    <button class="btn btn-primary btn-outline circle p-0">
                         <svg viewBox="0 0 24 24">
                             <path fill="currentColor" d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
                         </svg>
                     </button>
-                    <button class="btn btn-outline flex-center small border-transparent bg-transparent p-0 circle">
+                    <button class="btn btn-outline small border-transparent bg-transparent p-0 circle">
                         <svg viewBox="0 0 24 24">
                             <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12S17.5 2 12 2M7.7 15.5L7 14.2L11 11.9V7H12.5V12.8L7.7 15.5Z" />
                         </svg>
@@ -741,7 +741,7 @@ to an H4, etc</cite>
                         <legend><label>Email</label></legend>
                         <input type="email" onblur="if (this.value) this.parentElement.classList.add('active')" />
                     </fieldset>
-                    <fieldset class="is-select">
+                    <fieldset>
                         <legend><label>Select</label></legend>
                         <select onchange="if (this.value) this.parentElement.classList.add('active')">
                             <option value="" selected disabled></option>
@@ -749,7 +749,7 @@ to an H4, etc</cite>
                             <option>Three</option>
                         </select>
                     </fieldset>
-                    <fieldset class="col-12 pt-2">
+                    <fieldset class="col-12">
                         <legend><label>Message</label></legend>
                         <textarea onblur="if (this.value) this.parentElement.classList.add('active')"></textarea>
                     </fieldset>
@@ -917,10 +917,6 @@ to an H4, etc</cite>
                     <div><code class="color-primary">float-right</code> <code>{ float: right }</code></div>
                     <div><code class="color-primary">clear</code> <code>{ clear: both }</code></div>
                     <div><code class="color-primary">inset</code> <code>{ inset: 0 }</code></div>
-                    <div><code class="color-primary">h-100</code> <code>{ height: 100% }</code></div>
-                    <div><code class="color-primary">vh-100</code> <code>{ height: 100vh }</code></div>
-                    <div><code class="color-primary">w-100</code> <code>{ width: 100% }</code></div>
-                    <div><code class="color-primary">vw-100</code> <code>{ width: 100vw }</code></div>
                     <div><code class="color-primary">index-1</code> <code>{ z-index: 1 }</code></div>
                     <div><code class="color-primary">index-2</code> <code>{ z-index: 2 }</code></div>
                     <div><code class="color-primary">index-3</code> <code>{ z-index: 3 }</code></div>
@@ -972,6 +968,35 @@ $spacing: (
                 <pre><code class="language-css">none md-block</code></pre>
                 <p>Example Hide on Tablets</p>
                 <pre><code class="language-css">md-none lg-block</code></pre>
+                <div class="mt-3"><h5>Sizing</h5></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h</code> <code>{ height: 100% }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">vh</code> <code>{ height: 100vh }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w</code> <code>{ width: 100% }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">vw</code> <code>{ width: 100vw }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-100</code> <code>{ width: 100px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-200</code> <code>{ width: 200px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-300</code> <code>{ width: 300px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-400</code> <code>{ width: 400px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-500</code> <code>{ width: 500px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-600</code> <code>{ width: 600px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-700</code> <code>{ width: 700px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-800</code> <code>{ width: 800px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-900</code> <code>{ width: 900px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-1000</code> <code>{ width: 1000px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-1100</code> <code>{ width: 1100px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-1200</code> <code>{ width: 1200px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-100</code> <code>{ height: 100px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-200</code> <code>{ height: 200px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-300</code> <code>{ height: 300px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-400</code> <code>{ height: 400px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-500</code> <code>{ height: 500px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-600</code> <code>{ height: 600px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-700</code> <code>{ height: 700px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-800</code> <code>{ height: 800px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-900</code> <code>{ height: 900px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-1000</code> <code>{ height: 1000px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-1100</code> <code>{ height: 1100px }</code></div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-1200</code> <code>{ height: 1200px }</code></div>
                 <div class="mt-3"><h5>Text</h5></div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">left</code> <code>{ text-align: left }</code></div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">center</code> <code>{ text-align: center }</code></div>

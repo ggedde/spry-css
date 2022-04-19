@@ -12,9 +12,11 @@ fieldset {
 	background: transparent;
 	height: 40px;
 	min-width: 40px;
-	line-height: 40px;
+	// line-height: 40px;
 	width: 100%;
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	text-decoration: none;
 	outline: none;
 	::placeholder {
@@ -31,13 +33,14 @@ fieldset {
 	&.small,
 	.small & {
 		height: 30px;
-		line-height: 30px;
+		// line-height: 30px;
 		min-width: 30px;
+		font-size: 100%;
 	}
 	&.large,
 	.large & {
 		height: 50px;
-		line-height: 50px;
+		// line-height: 50px;
 		min-width: 50px;
 	}
 }
@@ -104,28 +107,19 @@ input[type="submit"] {
 
 input[type="checkbox"],
 input[type="radio"] {
-	width: 16px;
-	height: 16px;
+	width: 1rem;
+	height: 1rem;
 	padding: 0;
 	margin: 4px .6rem 0 .4rem;
-	border: 0;
-	box-shadow: 0 0 0 1px map-get($colors, 'grey');
 	position: relative;
-	border-radius: 2px;
 	min-width: 0;
 	vertical-align: text-bottom;
-	&:focus {
-		box-shadow: 0 0 0 1px map-get($colors, 'primary');
-	}
 	&:checked {
-		box-shadow: 0 0 0 1px map-get($colors, 'primary');
+		border-color: map-get($colors, 'primary');
 		&::after {
 			content: '';
 			position: absolute;
-			top: 2px;
-			left: 2px;
-			bottom: 2px;
-			right: 2px;
+			inset: 2px;
 			background-color: map-get($colors, 'primary');
 			border-radius: 2px;
 		}
@@ -143,29 +137,14 @@ input[type="radio"] {
 	}
 }
 
-.is-select {
-	position: relative;
-	display: block;
-	&::before {
-		content: '';
-		display: block;
-		width: 9px;
-		height: 9px;
-		border: 1px solid map-get($colors, 'grey');
-		border-top: 0;
-		border-left: 0;
-		position: absolute;
-		bottom: 18px;
-		right: 1rem;
-		transform: rotate(45deg);
-		.small & {
-			bottom: 12px;
-		}
-		.large & {
-			bottom: 24px;
-		}
-	}
+select {
+	background-image     : url("data:image/svg+xml;utf8,<svg fill='gray' xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><path d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+	background-repeat    : no-repeat;
+	background-position-x: 95%;
+	background-position-y: 52%;
 }
+
+
 
 fieldset {
 	display: block;
