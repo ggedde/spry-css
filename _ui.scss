@@ -242,7 +242,7 @@ textarea {
 
 .has-loader {
 	position: relative;
-	&::before {
+	&::after {
 		content: '';
 		box-sizing: border-box;
 		position: absolute;
@@ -264,13 +264,13 @@ textarea {
 		user-select: none;
 		cursor: default;
 		color: transparent;
-		&::before {
+		&::after {
 			opacity: 1;
 		}
 	}
 	.small &,
 	&.small {
-		&::before {
+		&::after {
 			width: 16px;
 			height: 16px;
 		}
