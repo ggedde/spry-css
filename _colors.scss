@@ -1,7 +1,12 @@
 @each $color_name, $color_value in $colors {
 	.btn-#{$color_name}.btn-outline,
+	.btn-#{$color_name}.btn-link,
 	.accent-#{$color_name} .btn.btn-outline:not(:hover),
 	.color-#{$color_name},
+	a.color-#{$color_name},
+	button.color-#{$color_name},
+	a.color-#{$color_name}:hover,
+	button.color-#{$color_name}:hover,
 	.color-#{$color_name} * {
 		color: $color_value;
 	}
@@ -10,30 +15,64 @@
 	.btn-#{$color_name}.btn-outline:hover,
 	.accent-#{$color_name} .btn.btn-outline:hover,
 	.btn-#{$color_name}.btn-outline:focus,
+	.btn-#{$color_name}.btn-outline:focus-within,
 	.accent-#{$color_name} .btn.btn-outline:focus,
 	.bg-#{$color_name} {
 		background-color: $color_value;
 	}
+	.btn-#{$color_name}.btn-link:hover,
+	.accent-#{$color_name} .btn.btn-link:hover,
+	.btn-#{$color_name}.btn-link:focus,
+	.btn-#{$color_name}.btn-link:focus-within,
+	.accent-#{$color_name} .btn.btn-link:focus {
+		@if $color_value != transparent {
+			background-color: rgba($color_value, 10%);
+		} @else {
+			background-color: $color_value;
+		}
+		color: $color_value;
+	}
 	.btn-#{$color_name},
 	.accent-#{$color_name} .btn,
+	.accent-#{$color_name} .border,
 	.btn-#{$color_name}.btn-outline:hover,
 	.accent-#{$color_name} .btn.btn-outline:hover,
 	.btn-#{$color_name}.btn-outline:focus,
+	.btn-#{$color_name}.btn-outline:focus-within,
 	.accent-#{$color_name} .btn.btn-outline:focus,
+	.btn-#{$color_name}.btn-toggle::after,
 	.border-#{$color_name} {
 		border-color: $color_value;
 	}
 	.btn-#{$color_name},
 	.accent-#{$color_name} .btn {
 		&:hover,
-		&:focus {
-			background-color: darken($color_value, 10%);
-			border-color: darken($color_value, 10%);
+		&:focus,
+		&:focus-within {
+			@if $color_value != transparent {
+				background-color: darken($color_value, 10%);
+				border-color: darken($color_value, 10%);
+			} @else {
+				background-color: $color_value;
+				border-color: $color_value;
+			}
 		}
 		&.btn-outline:active,
 		&:active {
-			background-color: darken($color_value, 5%);
-			border-color: darken($color_value, 5%);
+			@if $color_value != transparent {
+				background-color: darken($color_value, 5%);
+				border-color: darken($color_value, 5%);
+			} @else {
+				background-color: $color_value;
+				border-color: $color_value;
+			}
+		}
+		&.btn-link:active {
+			@if $color_value != transparent {
+				background-color: rgba($color_value, 20%);
+			} @else {
+				background-color: $color_value;
+			}
 		}
 	}
 	.accent-#{$color_name} {

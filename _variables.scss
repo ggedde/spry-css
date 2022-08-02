@@ -1,6 +1,6 @@
 // Specify each breakpoint size
 $breakpoints: (
-    md: 40rem,
+    md: 50rem,
     lg: 80rem,
 ) !default;
 
@@ -16,12 +16,12 @@ $gaps: (
 $colors: (
     "white":       #ffffff,
     "light":       #efefef,
-    "grey":        #aaaaaa,
-    "dark":        #333333,
+    "grey":        #999999,
+    "dark":        #444444,
     "primary":     #0D7FBF,
     "error":       #d52929,
     "success":     #04ad3c,
-    "text":        #606c76,
+    "text":        #566067,
     "transparent": transparent,
 ) !default;
 

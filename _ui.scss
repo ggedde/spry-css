@@ -1,136 +1,573 @@
 .btn,
 input,
 textarea,
-select, 
+select,
+nav>a,
+.toolbar,
+nav li>a,
 fieldset {
-	transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
-	appearance: none;
-	border: 1px solid map-get($colors, 'grey');
-	color: inherit;
-	border-radius: 3px;
-	padding: 0 1rem;
-	background: transparent;
-	height: 40px;
-	min-width: 40px;
-	// line-height: 40px;
-	width: 100%;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+	appearance     : none;
+	color          : inherit;
+	background     : transparent;
+	min-height     : 40px;
+	min-width      : 40px;
+	padding        : 0 1rem;
+	width          : 100%;
+	display        : inline-flex;
+	align-items    : center;
 	text-decoration: none;
-	outline: none;
+	outline        : none;
+	vertical-align : middle;
+}
+
+.btn,
+input,
+textarea,
+select,
+nav>a,
+nav li,
+.toolbar,
+fieldset {
+
+	&.small,
+	&.small a,
+	&.small button,
+	.small & {
+		min-height: 34px;
+		min-width : 34px;
+	}
+
+	&.large,
+	&.large a,
+	&.large button,
+	.large & {
+		min-height: 50px;
+		min-width : 50px;
+	}
+}
+
+.btn,
+input,
+textarea,
+select,
+nav>a,
+nav li,
+fieldset {
+
+	&.small,
+	.small & {
+		font-size: 100%;
+	}
+}
+
+.btn,
+input,
+textarea,
+select,
+nav.list li>a,
+nav.list li>button,
+fieldset {
+	transition     : color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+	border         : 1px solid map-get($colors, 'grey');
+	color          : inherit;
+	border-radius  : 3px;
+	padding        : 0 1rem;
+	justify-content: center;
+
 	::placeholder {
 		color: #999;
 	}
+
 	&:disabled {
 		opacity: .6;
-		cursor: not-allowed;
+		cursor : not-allowed;
 	}
+
 	&:focus,
+	&:focus-within,
 	&:hover {
 		border-color: map-get($colors, 'primary');
+		color       : inherit;
 	}
+}
+
+input.toggle {
+	appearance: none;
+	display   : none;
+	border    : 0 !important;
+}
+
+nav>ul>li>ul,
+input.toggle.collapsed+label+* {
+	max-height: 0;
+}
+
+label.toggle+*,
+nav>ul>li>ul,
+.toggle+label+* {
+	opacity         : 0;
+	pointer-events  : none;
+	transform       : scaleY(.8) translateY(-4px);
+	transform-origin: top;
+	transition      : transform .2s .05s ease-in-out, opacity .2s .05s ease-in-out, max-height .3s ease-in-out;
+	position        : relative;
+	z-index         : 1;
+}
+
+.toggle:checked+label+*,
+label.toggle.hoverable:hover+*,
+label.hoverable:hover+*,
+nav.horizontal>ul>li:hover>ul,
+nav li>ul:focus-within {
+	opacity       : 1;
+	pointer-events: all;
+	transform     : scaleY(1);
+}
+
+@each $breakpoint, $breakpoint_width in $breakpoints {
+	@media screen and (min-width: $breakpoint_width) {
+		nav.#{$breakpoint}-horizontal>ul>li:hover>ul {
+			opacity       : 1;
+			pointer-events: all;
+			transform     : scaleY(1);
+		}
+	}
+}
+
+.toggle.collapsed:checked+label+*,
+label.toggle.hoverable:hover+*,
+nav li>ul:focus-within,
+nav.horizontal>ul>li:hover>ul,
+nav li input.toggle.collapsed+label+ul:focus-within {
+	max-height: 2000px;
+}
+
+@each $breakpoint, $breakpoint_width in $breakpoints {
+	@media screen and (min-width: $breakpoint_width) {
+		nav.#{$breakpoint}-horizontal>ul>li:hover>ul {
+			max-height: 2000px;
+		}
+	}
+}
+
+.btn,
+nav.list li>a,
+nav.list li>button,
+input[type="submit"] {
+	background-color: map-get($colors, 'primary');
+	border-color    : map-get($colors, 'primary');
+	color           : white;
+	cursor          : pointer;
+	padding         : 0 1.5rem;
+	text-align      : center;
+	text-transform  : uppercase;
+	width           : auto;
+
+	&:hover,
+	&:focus,
+	&:focus-within {
+		background-color: darken(map-get($colors, 'primary'), 10%);
+		border-color    : darken(map-get($colors, 'primary'), 10%);
+		color           : white;
+	}
+
+	&.btn-outline {
+		color           : map-get($colors, 'primary');
+		background-color: transparent;
+
+		&:hover,
+		&:focus,
+		&:focus-within {
+			background-color: map-get($colors, 'primary');
+			border-color    : map-get($colors, 'primary');
+			color           : white;
+		}
+	}
+
+	&.btn-outline:active,
+	&:active {
+		background-color: darken(map-get($colors, 'primary'), 5%);
+		border-color    : darken(map-get($colors, 'primary'), 5%);
+		transition      : none;
+	}
+
+	svg {
+		width : 24px;
+		height: 24px;
+	}
+
 	&.small,
 	.small & {
-		height: 30px;
-		// line-height: 30px;
-		min-width: 30px;
-		font-size: 100%;
+		svg {
+			width : 18px;
+			height: 18px;
+		}
 	}
+
 	&.large,
 	.large & {
-		height: 50px;
-		// line-height: 50px;
-		min-width: 50px;
+		svg {
+			width : 32px;
+			height: 32px;
+		}
 	}
 }
 
 .btn,
 input[type="submit"] {
-	background-color: map-get($colors, 'primary');
-	border-color: map-get($colors, 'primary');
-	color: white;
-	cursor: pointer;
+	font-weight: normal;
+}
+
+.btn,
+nav.list li,
+input[type="submit"] {
 	font-size: 1.15rem;
-	padding: 0 1.5rem;
-	text-align: center;
-	text-transform: uppercase;
-	width: auto;
-	&:hover,
-	&:focus {
-		background-color: darken(map-get($colors, 'primary'), 10%);
-		border-color: darken(map-get($colors, 'primary'), 10%);
-	}
-	&.btn-outline {
-		color: map-get($colors, 'primary');
-		background-color: transparent;
-		&:hover,
-		&:focus {
-			background-color: map-get($colors, 'primary');
-			border-color: map-get($colors, 'primary');
-			color: white;
-		}
-	}
-	&.btn-outline:active,
-	&:active {
-		background-color: darken(map-get($colors, 'primary'), 5%);
-		border-color: darken(map-get($colors, 'primary'), 5%);
-		transition: none;
-	}
-	svg {
-		width: 24px;
-		height: 24px;
-	}
-	&.small,
-	.small & {
-		svg {
-			width: 18px;
-			height: 18px;
-		}
-	}
-	&.large,
-	.large & {
-		svg {
-			width: 32px;
-			height: 32px;
-		}
-	}
+
 	&.small,
 	.small & {
 		font-size: .85rem;
 	}
+
 	&.large,
 	.large & {
 		font-size: 1.3rem;
 	}
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-	width: 1rem;
-	height: 1rem;
-	padding: 0;
-	margin: 4px .6rem 0 .4rem;
-	position: relative;
-	min-width: 0;
-	vertical-align: text-bottom;
-	&:checked {
-		border-color: map-get($colors, 'primary');
-		&::after {
-			content: '';
-			position: absolute;
-			inset: 2px;
-			background-color: map-get($colors, 'primary');
-			border-radius: 2px;
-		}
+.btn.btn-link,
+nav.list li>a,
+nav.list li>button {
+	color           : map-get($colors, 'primary');
+	background-color: transparent;
+	border-color    : transparent;
+	text-transform  : capitalize;
+
+	&:hover,
+	&:focus,
+	&:focus-within {
+		background-color: rgba(map-get($colors, 'primary'), 10%);
+		border-color    : transparent;
+		color           : map-get($colors, 'primary');
 	}
-	+ span {
-		float: left;
-		display: block;
-		width: calc(100% - 40px);
+
+	&:active {
+		background-color: rgba(map-get($colors, 'primary'), 20%);
+		transition      : none;
 	}
 }
+
+nav {
+	li {
+		position: relative;
+		width   : 100%;
+		display : block;
+		border  : 0;
+	}
+
+	&.horizontal {
+
+		>a,
+		>ul {
+			display  : flex;
+			flex-wrap: wrap;
+
+			>li {
+				display: inline-flex;
+				width  : auto;
+
+				>a {
+					padding: 0 1rem;
+				}
+
+				>.btn-toggle {
+					position      : relative;
+					display       : inline-block;
+					width         : 34px;
+					height        : 34px;
+					margin-left   : 8px;
+					pointer-events: none;
+				}
+
+				>ul {
+					position : absolute;
+					top      : 100%;
+					min-width: 220px;
+					max-width: 300px;
+
+					ul {
+						padding-left: 1rem;
+					}
+				}
+			}
+		}
+	}
+
+	@each $breakpoint, $breakpoint_width in $breakpoints {
+		@media screen and (min-width: $breakpoint_width) {
+			&.#{$breakpoint}-horizontal {
+
+				>a,
+				>ul {
+					display  : flex;
+					flex-wrap: wrap;
+		
+					>li {
+						display: inline-flex;
+						width  : auto;
+		
+						>a {
+							padding: 0 1rem;
+						}
+		
+						>.btn-toggle {
+							position      : relative;
+							display       : inline-block;
+							width         : 34px;
+							height        : 34px;
+							margin-left   : 8px;
+							pointer-events: none;
+						}
+		
+						>ul {
+							position : absolute;
+							top      : 100%;
+							min-width: 220px;
+							max-width: 300px;
+		
+							ul {
+								padding-left: 1rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.list {
+
+		&,
+		>a,
+		>button,
+		li>a,
+		li>button {
+			width          : 100%;
+			border         : 0;
+			text-align     : left;
+			justify-content: flex-start;
+		}
+	}
+}
+
+nav li>a,
+nav li>button,
+nav.list li>button,
+nav.list li>a {
+	line-height  : 1.2;
+	padding-right: 3rem;
+
+	&.truncate {
+		line-height: 40px;
+		display    : block;
+	}
+}
+
+nav li.small>a {
+	padding-right: 2rem;
+
+	&.truncate {
+		line-height: 30px;
+	}
+}
+
+.btn-menu {
+	position: relative;
+
+	span {
+		background-color: map-get($colors, 'dark');
+		width           : 80%;
+		position        : relative;
+
+		&,
+		&::before,
+		&::after {
+			border-radius: 3px;
+			bottom       : 0;
+			color        : transparent !important;
+			display      : block;
+			height       : 3px;
+			margin       : auto;
+			inset        : 0;
+			transition   : transform .15s ease-in-out;
+		}
+
+		&::before,
+		&::after {
+			content         : '';
+			position        : absolute;
+			transform       : translateY(-8px);
+			background-color: inherit;
+			width           : 100%;
+		}
+
+		&::after {
+			transform: translateY(8px);
+		}
+
+		:checked+& {
+			transform: rotate(45deg);
+
+			&::before,
+			&::after {
+				transform: rotate(0deg);
+			}
+
+			&::after {
+				transform: rotate(-90deg);
+			}
+		}
+	}
+
+	&.small {
+		span {
+
+			&,
+			&::before,
+			&::after {
+				height: 2px;
+			}
+
+			&::before,
+			&::after {
+				transform: translateY(-7px);
+			}
+
+			&::after {
+				transform: translateY(7px);
+			}
+		}
+
+		:checked+& {
+			span {
+				transform: rotate(45deg);
+
+				&::before,
+				&::after {
+					transform: rotate(0deg);
+				}
+
+				&::after {
+					transform: rotate(-90deg);
+				}
+			}
+		}
+	}
+
+	&.large {
+		span {
+
+			&::before,
+			&::after {
+				transform: translateY(-12px);
+			}
+
+			&::after {
+				transform: translateY(12px);
+			}
+		}
+
+		:checked+& {
+			span {
+				transform: rotate(45deg);
+
+				&::before,
+				&::after {
+					transform: rotate(0deg);
+				}
+
+				&::after {
+					transform: rotate(-90deg);
+				}
+			}
+		}
+	}
+}
+
+.btn-toggle {
+	position  : absolute;
+	right     : 4px;
+	top       : 4px;
+	min-height: 34px;
+	min-width : 34px;
+
+	&.relative {
+		top   : auto;
+		bottom: auto;
+	}
+
+	&::after {
+		content      : '';
+		display      : block;
+		position     : absolute;
+		inset        : 0;
+		margin       : auto;
+		border       : 2px solid map-get($colors, 'primary');
+		border-left  : 0;
+		border-bottom: 0;
+		width        : 30%;
+		height       : 30%;
+		transition   : transform .2s ease-in-out;
+		transform    : rotate(135deg) translate(-2px, 1px);
+	}
+
+	&.small,
+	.small & {
+		min-height: 28px;
+		min-width : 28px;
+	}
+
+	&.large,
+	.large & {
+		min-height: 40px;
+		min-width : 40px;
+	}
+}
+
+.toggle:checked+.btn-toggle::after {
+	transform: rotate(-45deg) translate(-1px, 2px);
+}
+
+input[type="checkbox"],
 input[type="radio"] {
+	width         : 1rem;
+	min-height    : 1rem;
+	padding       : 0;
+	margin        : 4px .6rem 0 .4rem;
+	position      : relative;
+	min-width     : 0;
+	vertical-align: text-bottom;
+
+	&:checked {
+		border-color: map-get($colors, 'primary');
+
+		&::after {
+			content         : '';
+			position        : absolute;
+			inset           : 2px;
+			background-color: map-get($colors, 'primary');
+			border-radius   : 2px;
+		}
+	}
+
+	+span {
+		float  : left;
+		display: block;
+		width  : calc(100% - 40px);
+	}
+}
+
+input[type="radio"] {
+
 	&,
 	&:checked::after {
 		border-radius: 50%;
@@ -144,73 +581,82 @@ select {
 	background-position-y: 52%;
 }
 
-
-
 fieldset {
-	display: block;
-	padding: 0;
+	display    : block;
+	padding    : 0;
 	line-height: 1.6;
-	position: relative;
-	height: auto;
-	transition: color .2s ease-in-out, border-color .2s ease-in-out;
+	position   : relative;
+	height     : auto;
+	transition : color .2s ease-in-out, border-color .2s ease-in-out;
+
 	legend {
-		display: block;
-		position: relative;
-		height: 0;
-		max-width: 0;
+		display    : block;
+		position   : relative;
+		height     : 0;
+		max-width  : 0;
 		white-space: nowrap;
-		transform: translate(4px, 9px);
+		transform  : translate(4px, 9px);
 		user-select: none;
-		transition: transform .2s ease-in-out, max-width .2s ease-in-out;
+		transition : transform .2s ease-in-out, max-width .2s ease-in-out;
 		margin-left: 5px;
-		padding: 0;
+		padding    : 0;
+
 		@media screen and (min-width: map-get($breakpoints, 'md')) {
 			transform: translate(4px, 7px);
 		}
+
 		label {
-			display: block;
-			transform: scale(1);
-			transition: all .2s ease-in-out;
+			display       : block;
+			transform     : scale(1);
+			transition    : all .2s ease-in-out;
 			pointer-events: none;
-			opacity: .6;
+			opacity       : .6;
 		}
 	}
+
 	input,
 	select,
 	textarea {
-		border: 0;
-		padding-left: 10px;
+		border        : 0;
+		padding-left  : 10px;
 		padding-bottom: 1px;
-		display: block;
-		margin: 0;
+		display       : block;
+		margin        : 0;
 	}
+
 	&.active legend,
 	&:focus-within legend {
 		transform: translateY(-11px);
 		max-width: 300px;
+
 		label {
-			padding: 0 .5rem;
+			padding  : 0 .5rem;
 			font-size: .9rem;
-			opacity: 1;
+			opacity  : 1;
 		}
 	}
+
 	&:focus-within {
 		border-color: map-get($colors, 'primary');
+
 		legend label {
 			color: map-get($colors, 'primary');
 		}
 	}
+
 	&.small,
 	.small &,
 	&.large,
 	.large & {
-		height: auto;
+		height    : auto;
 		min-height: 0;
 	}
+
 	&.small,
 	.small & {
 		line-height: 1.3;
 	}
+
 	&.large,
 	.large & {
 		line-height: 1.8;
@@ -218,18 +664,20 @@ fieldset {
 }
 
 textarea {
-	min-height: 100px;
-	padding: .75rem;
-	max-width: 100%;
+	min-height : 100px;
+	padding    : .75rem;
+	max-width  : 100%;
 	line-height: 1.2;
+
 	.small &,
 	&.small {
-		min-height: 60px;
+		min-height : 60px;
 		line-height: 1.2;
 	}
+
 	.large &,
 	&.large {
-		min-height: 200px;
+		min-height : 200px;
 		line-height: 1.2;
 	}
 }
@@ -242,87 +690,102 @@ textarea {
 
 .has-loader {
 	position: relative;
+
 	&::after {
-		content: '';
-		box-sizing: border-box;
-		position: absolute;
-		inset: 0;
-		margin: auto;
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
-		border: 2px solid transparent;
-		border-top-color: #fff;
+		content           : '';
+		box-sizing        : border-box;
+		position          : absolute;
+		inset             : 0;
+		margin            : auto;
+		width             : 20px;
+		height            : 20px;
+		border-radius     : 50%;
+		border            : 2px solid transparent;
+		border-top-color  : #fff;
 		border-right-color: #fff;
-		animation: spinner .7s ease infinite;
-		opacity: 0;
-		pointer-events: none;
-		transition: opacity .3s ease-in-out .1s;
+		animation         : spinner .7s ease infinite;
+		opacity           : 0;
+		pointer-events    : none;
+		transition        : opacity .3s ease-in-out .1s;
 	}
+
 	&.loading {
 		pointer-events: none;
-		user-select: none;
-		cursor: default;
-		color: transparent;
+		user-select   : none;
+		cursor        : default;
+		color         : transparent;
+
 		&::after {
 			opacity: 1;
 		}
 	}
+
 	.small &,
 	&.small {
 		&::after {
-			width: 16px;
+			width : 16px;
 			height: 16px;
+		}
+	}
+
+	.large &,
+	&.large {
+		&::after {
+			width : 26px;
+			height: 26px;
 		}
 	}
 }
 
 table {
-	width: 100%;
-	margin-top: 1rem;
+	width          : 100%;
+	margin-top     : 1rem;
 	border-collapse: collapse;
+
 	td,
 	th {
-		padding: .6rem .2rem;
+		padding   : .6rem .2rem;
 		text-align: left;
 	}
+
 	thead th {
 		font-weight: 500;
 	}
+
 	tbody tr {
 		&:hover td {
-			background-color: rgba(map-get($colors, 'primary'),.04);
+			background-color: rgba(map-get($colors, 'primary'), .04);
 		}
+
 		td {
 			border-top: 1px solid map-get($colors, 'light');
 		}
+
 		&:first-child td {
 			border-color: darken(map-get($colors, 'light'), 10%);
 		}
 	}
 }
 
-nav ul li {
-	display: inline-block;
-}
-
 hr {
-	height: 1px;
-	border: 0;
-	background-color: map-get($colors, 'grey' );
-	margin: map-get($gaps, 'default');
+	height          : 1px;
+	border          : 0;
+	background-color: map-get($colors, 'grey');
+	margin          : map-get($gaps, 'default');
 }
 
 section {
 	padding: (map-get($gaps, 'default') * 2) map-get($gaps, 'default');
 }
 
-@each $breakpoint, $breakpoint_width in $breakpoints {
+@each $breakpoint,
+$breakpoint_width in $breakpoints {
 	@if map-get($gaps, $breakpoint) {
 		@media screen and (min-width: $breakpoint_width) {
 			hr {
 				margin: map-get($gaps, $breakpoint);
 			}
+
 			section {
 				padding: (map-get($gaps, $breakpoint) * 2) map-get($gaps, $breakpoint);
 			}
@@ -330,8 +793,9 @@ section {
 	}
 }
 
-@each $color_name, $color_value in $colors {
-	section.bg-#{$color_name} + section.bg-#{$color_name} {
+@each $color_name,
+$color_value in $colors {
+	section.bg-#{$color_name}+section.bg-#{$color_name} {
 		padding-top: 0;
 	}
 }

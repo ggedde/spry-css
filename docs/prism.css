@@ -19,6 +19,7 @@ pre[class*="language-"] {
 	word-break: normal;
 	word-wrap: normal;
 	line-height: 1.5;
+	margin-top: 0;
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
@@ -54,12 +55,12 @@ pre[class*="language-"] {
 	overflow: auto;
 	max-width: calc(100vw - 108px);
 }
-@media screen and (min-width: 600px) {
+/* @media screen and (min-width: 600px) {
 	pre[class*="language-"] {
 		max-width: calc(100vw - 266px);
 	}
-}
-@media screen and (min-width: 900px) {
+} */
+@media screen and (min-width: 960px) {
 	pre[class*="language-"] {
 		max-width: calc(100vw - 265px);
 	}
@@ -183,6 +184,7 @@ div.code-toolbar > .toolbar {
 	right: .2em;
 	transition: opacity 0.3s ease-in-out;
 	opacity: 0;
+	justify-content: flex-end;
 }
 
 div.code-toolbar:hover > .toolbar {

@@ -11,19 +11,15 @@ General Utility Classes
 .pointer { cursor: pointer }
 .rounded{ border-radius: 3px }
 .circle{ border-radius: 50% }
-.relative{ position: relative }
-.absolute{ position: absolute }
-.sticky{ position: sticky; top: 0 }
-.fixed{ position: fixed }
 .float-left{ float: left }
 .float-right{ float: right }
 .clear{ clear: both }
-.inset { inset: 0 }
 .index-1{ z-index: 1 }
 .index-2{ z-index: 2 }
 .index-3{ z-index: 3 }
 .border{ border: 1px solid map-get($colors, 'grey') }
 .shadow{ box-shadow: 0px 2px 4px rgba(0,0,0,.1) }
+.note { font-style: italic; font-size: 90%; opacity: 0.8; }
 .truncate{
 	max-width: 100%;
 	overflow: hidden;
@@ -48,8 +44,25 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .block{ display: block; width: 100% }
 .none{ display: none }
 .inline-block{ display: inline-block; width: auto }
+.inline-flex{ display: inline-flex; width: auto }
 .table{ display: table }
 .table-cell{ display: table-cell }
+// Positioning
+.relative{ position: relative }
+.absolute{ position: absolute }
+.sticky{ position: sticky; top: 0 }
+.fixed{ position: fixed }
+.inset { position: absolute; inset: 0 }
+.inset-top { position: absolute; top: 0; bottom: auto; }
+.inset-right { position: absolute; right: 0; left: auto; }
+.inset-bottom { position: absolute; bottom: 0; }
+.inset-left { position: absolute; left: 0; right: auto; }
+.outset-top { position: absolute; top: -100%; bottom: auto; }
+.outset-right { position: absolute; right: -100%; left: auto; }
+.outset-bottom { position: absolute; bottom: -100%; top: auto; }
+.outset-left { position: absolute; left: -100%; right: auto; }
+// No Pointer Events 
+.pointer-none { pointer-events: none; }
 // Vertical Align
 .align-baseline{ vertical-align: baseline }
 .align-top{ vertical-align: top }
@@ -71,9 +84,15 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .vh{ height: 100vh }
 .w{ width: 100% }
 .vw{ width: 100vw }
+.h-0{ height: 0 }
+.w-0{ width: 0 }
 @for $i from 1 through 12 {
 	.h-#{$i}00{ max-height: #{$i}00px; min-height: #{$i}00px }
+	.mh-#{$i}00{ height: 100%; max-height: #{$i}00px }
+	.vh-#{$i}0{ height: #{$i}0vh; }
 	.w-#{$i}00{ max-width: #{$i}00px; min-width: #{$i}00px }
+	.mw-#{$i}00{ width: 100%; max-width: #{$i}00px }
+	.vw-#{$i}0{ width: #{$i}0vw; }
 }
 
 /*************************************
@@ -107,9 +126,25 @@ Flex Utility Classes
 			&-flex{ display: flex }
 			&-block{ display: block }
 			&-none{ display: none }
+			&-open.toggle + label + * {opacity: 1; pointer-events: all; transform: scaleY(1) }
 			&-inline-block{ display: inline-block; width: auto }
+			&-inline-flex{ display: inline-flex; width: auto }
 			&-table{ display: table }
 			&-table-cell{ display: table-cell }
+			&-relative{ position: relative }
+			&-absolute{ position: absolute }
+			&-sticky{ position: sticky; top: 0 }
+			&-fixed{ position: fixed }
+			&-inset { position: absolute; inset: 0 }
+			&-inset-top { position: absolute; top: 0; bottom: auto }
+			&-inset-right { position: absolute; right: 0; left: auto }
+			&-inset-bottom { position: absolute; bottom: 0; top: auto }
+			&-inset-left { position: absolute; left: 0; right: auto }
+			&-outset-top { position: absolute; top: -100%; bottom: auto }
+			&-outset-right { position: absolute; right: -100%; left: auto; }
+			&-outset-bottom { position: absolute; bottom: -100%; top: auto }
+			&-outset-left { position: absolute; left: -100%; right: auto }
+			&-pointer-none { pointer-events: none; }
 			&-align-baseline{ vertical-align: baseline }
 			&-align-top{ vertical-align: top }
 			&-align-middle{ vertical-align: middle }
@@ -136,12 +171,18 @@ Flex Utility Classes
 			&-flex-wrap{ flex-wrap: wrap }
 			&-flex-column{ flex-direction: column }
 			&-h{ height: 100% }
+			&-h-0{ height: 0 }
 			&-vh{ height: 100vh }
 			&-w{ width: 100% }
+			&-w-0{ width: 0 }
 			&-vw{ width: 100vw }
 			@for $i from 1 through 12 {
 				&-h-#{$i}00{ max-height: #{$i}00px; min-height: #{$i}00px }
+				&-mh-#{$i}00{ height: 100%; max-height: #{$i}00px }
+				&-vh-#{$i}0{ height: #{$i}0vh; }
 				&-w-#{$i}00{ max-width: #{$i}00px; min-width: #{$i}00px }
+				&-mw-#{$i}00{ width: 100%; max-width: #{$i}00px }
+				&-vw-#{$i}0{ width: #{$i}0vw; }
 			}
 		}
 	}
