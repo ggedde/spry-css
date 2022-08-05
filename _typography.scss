@@ -82,3 +82,13 @@ blockquote {
 		color: inherit;
 	}
 }
+ul {
+    list-style: disc;
+}
+ul, ol {
+    margin-left: 1rem;
+    li {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+}
