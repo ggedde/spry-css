@@ -290,6 +290,9 @@ nav.list li>button {
 }
 
 nav {
+	ul {
+		min-width: 200px;
+	}
 	li {
 		position: relative;
 		width   : 100%;
@@ -321,12 +324,7 @@ nav {
 			>ul {
 				position : absolute;
 				top      : 100%;
-				min-width: 220px;
 				max-width: 300px;
-
-				ul {
-					padding-left: 1rem;
-				}
 			}
 		}
 	}
@@ -360,10 +358,6 @@ nav {
 						top      : 100%;
 						min-width: 220px;
 						max-width: 300px;
-
-						ul {
-							padding-left: 1rem;
-						}
 					}
 				}
 			}

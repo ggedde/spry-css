@@ -24,11 +24,27 @@ ul {
     padding: 0;
 }
 
+ul {
+    list-style: disc;
+}
+ul, ol {
+    li {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+}
+
 ol,
 ul {
-    list-style: circle inside;
-    nav > & {
+    margin-left: 1.5rem;
+    nav & {
         list-style: none;
+        margin-left: 0;
+        li {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
     }
 }
 
