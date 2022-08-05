@@ -1,4 +1,5 @@
 .btn,
+button,
 input,
 textarea,
 select,
@@ -6,11 +7,13 @@ nav>a,
 .toolbar,
 nav li>a,
 fieldset {
+	position       : relative;
 	appearance     : none;
 	color          : inherit;
 	background     : transparent;
 	min-height     : 40px;
 	min-width      : 40px;
+	height         : auto;
 	padding        : 0 1rem;
 	width          : 100%;
 	display        : inline-flex;
@@ -18,6 +21,11 @@ fieldset {
 	text-decoration: none;
 	outline        : none;
 	vertical-align : middle;
+	border         : 0;
+}
+
+button {
+	width: auto;
 }
 
 .btn,
@@ -28,14 +36,6 @@ nav>a,
 nav li,
 .toolbar,
 fieldset {
-
-	&.small,
-	&.small a,
-	&.small button,
-	.small & {
-		min-height: 34px;
-		min-width : 34px;
-	}
 
 	&.large,
 	&.large a,
@@ -44,6 +44,24 @@ fieldset {
 		min-height: 50px;
 		min-width : 50px;
 	}
+
+	&.small,
+	&.small a,
+	&.small button,
+	.small & {
+		min-height: 30px;
+		min-width : 30px;
+	}
+
+	&.tiny,
+	&.tiny a,
+	&.tiny button,
+	.tiny & {
+		min-height: 24px;
+		min-width : 24px;
+	}
+
+	
 }
 
 .btn,
@@ -55,7 +73,9 @@ nav li,
 fieldset {
 
 	&.small,
-	.small & {
+	.small &,
+	&.tiny,
+	.tiny & {
 		font-size: 100%;
 	}
 }
@@ -71,7 +91,6 @@ fieldset {
 	border         : 1px solid map-get($colors, 'grey');
 	color          : inherit;
 	border-radius  : 3px;
-	padding        : 0 1rem;
 	justify-content: center;
 
 	::placeholder {
@@ -99,14 +118,19 @@ input.toggle {
 
 nav>ul>li>ul,
 input.toggle.collapsed+label+* {
-	max-height: 0;
+	max-height    : 0;
+	pointer-events: none;
+}
+
+label.toggle,
+.toggle+label {
+	cursor: pointer;
 }
 
 label.toggle+*,
 nav>ul>li>ul,
 .toggle+label+* {
 	opacity         : 0;
-	pointer-events  : none;
 	transform       : scaleY(.8) translateY(-4px);
 	transform-origin: top;
 	transition      : transform .2s .05s ease-in-out, opacity .2s .05s ease-in-out, max-height .3s ease-in-out;
@@ -115,6 +139,7 @@ nav>ul>li>ul,
 }
 
 .toggle:checked+label+*,
+.toggle.collapsed:checked+label+*,
 label.toggle.hoverable:hover+*,
 label.hoverable:hover+*,
 nav.horizontal>ul>li:hover>ul,
@@ -124,9 +149,10 @@ nav li>ul:focus-within {
 	transform     : scaleY(1);
 }
 
-@each $breakpoint, $breakpoint_width in $breakpoints {
+@each $breakpoint,
+$breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
-		nav.#{$breakpoint}-horizontal>ul>li:hover>ul {
+		nav.#{$breakpoint}-hoverable>ul>li:hover>ul {
 			opacity       : 1;
 			pointer-events: all;
 			transform     : scaleY(1);
@@ -142,9 +168,10 @@ nav li input.toggle.collapsed+label+ul:focus-within {
 	max-height: 2000px;
 }
 
-@each $breakpoint, $breakpoint_width in $breakpoints {
+@each $breakpoint,
+$breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
-		nav.#{$breakpoint}-horizontal>ul>li:hover>ul {
+		nav.#{$breakpoint}-hoverable>ul>li:hover>ul {
 			max-height: 2000px;
 		}
 	}
@@ -158,7 +185,6 @@ input[type="submit"] {
 	border-color    : map-get($colors, 'primary');
 	color           : white;
 	cursor          : pointer;
-	padding         : 0 1.5rem;
 	text-align      : center;
 	text-transform  : uppercase;
 	width           : auto;
@@ -196,19 +222,21 @@ input[type="submit"] {
 		height: 24px;
 	}
 
-	&.small,
-	.small & {
-		svg {
-			width : 18px;
-			height: 18px;
-		}
-	}
-
 	&.large,
 	.large & {
 		svg {
 			width : 32px;
 			height: 32px;
+		}
+	}
+
+	&.small,
+	.small &,
+	&.tiny,
+	.tiny & {
+		svg {
+			width : 18px;
+			height: 18px;
 		}
 	}
 }
@@ -226,6 +254,11 @@ input[type="submit"] {
 	&.small,
 	.small & {
 		font-size: .85rem;
+	}
+
+	&.tiny,
+	.tiny & {
+		font-size: .80rem;
 	}
 
 	&.large,
@@ -266,77 +299,70 @@ nav {
 
 	&.horizontal {
 
-		>a,
 		>ul {
 			display  : flex;
 			flex-wrap: wrap;
+		}
 
-			>li {
-				display: inline-flex;
-				width  : auto;
+		>a,
+		>ul>li {
 
-				>a {
-					padding: 0 1rem;
-				}
+			display    : inline-flex;
+			align-items: center;
+			width      : auto;
 
-				>.btn-toggle {
-					position      : relative;
-					display       : inline-block;
-					width         : 34px;
-					height        : 34px;
-					margin-left   : 8px;
-					pointer-events: none;
-				}
+			>.btn-toggle {
+				position      : relative;
+				display       : inline-block;
+				margin-left   : 6px;
+				pointer-events: none;
+			}
 
-				>ul {
-					position : absolute;
-					top      : 100%;
-					min-width: 220px;
-					max-width: 300px;
+			>ul {
+				position : absolute;
+				top      : 100%;
+				min-width: 220px;
+				max-width: 300px;
 
-					ul {
-						padding-left: 1rem;
-					}
+				ul {
+					padding-left: 1rem;
 				}
 			}
 		}
 	}
 
-	@each $breakpoint, $breakpoint_width in $breakpoints {
+	@each $breakpoint,
+	$breakpoint_width in $breakpoints {
 		@media screen and (min-width: $breakpoint_width) {
 			&.#{$breakpoint}-horizontal {
 
-				>a,
 				>ul {
 					display  : flex;
 					flex-wrap: wrap;
-		
-					>li {
-						display: inline-flex;
-						width  : auto;
-		
-						>a {
-							padding: 0 1rem;
-						}
-		
-						>.btn-toggle {
-							position      : relative;
-							display       : inline-block;
-							width         : 34px;
-							height        : 34px;
-							margin-left   : 8px;
-							pointer-events: none;
-						}
-		
-						>ul {
-							position : absolute;
-							top      : 100%;
-							min-width: 220px;
-							max-width: 300px;
-		
-							ul {
-								padding-left: 1rem;
-							}
+				}
+
+				>a,
+				>ul>li {
+
+					display    : inline-flex;
+					align-items: center;
+					width      : auto;
+
+					>.btn-toggle {
+						position      : relative;
+						display       : inline-block;
+						margin-left   : 6px;
+						pointer-events: none;
+					}
+
+					>ul {
+						position : absolute;
+						top      : 100%;
+						min-width: 220px;
+						max-width: 300px;
+
+						ul {
+							padding-left: 1rem;
 						}
 					}
 				}
@@ -363,8 +389,7 @@ nav li>a,
 nav li>button,
 nav.list li>button,
 nav.list li>a {
-	line-height  : 1.2;
-	padding-right: 3rem;
+	line-height: 1.2;
 
 	&.truncate {
 		line-height: 40px;
@@ -372,7 +397,8 @@ nav.list li>a {
 	}
 }
 
-nav li.small>a {
+nav li.small>a,
+nav li.tiny>a {
 	padding-right: 2rem;
 
 	&.truncate {
@@ -382,11 +408,12 @@ nav li.small>a {
 
 .btn-menu {
 	position: relative;
+	padding : 0;
 
 	span {
-		background-color: map-get($colors, 'dark');
-		width           : 80%;
-		position        : relative;
+		background-color: map-get($colors, 'light');
+		width           : 60%;
+		position        : absolute;
 
 		&,
 		&::before,
@@ -395,7 +422,7 @@ nav li.small>a {
 			bottom       : 0;
 			color        : transparent !important;
 			display      : block;
-			height       : 3px;
+			height       : 2px;
 			margin       : auto;
 			inset        : 0;
 			transition   : transform .15s ease-in-out;
@@ -405,105 +432,83 @@ nav li.small>a {
 		&::after {
 			content         : '';
 			position        : absolute;
-			transform       : translateY(-8px);
+			transform       : translateY(-6px);
 			background-color: inherit;
 			width           : 100%;
 		}
 
 		&::after {
-			transform: translateY(8px);
-		}
-
-		:checked+& {
-			transform: rotate(45deg);
-
-			&::before,
-			&::after {
-				transform: rotate(0deg);
-			}
-
-			&::after {
-				transform: rotate(-90deg);
-			}
+			transform: translateY(6px);
 		}
 	}
 
-	&.small {
-		span {
+	&.small span {
 
-			&,
-			&::before,
-			&::after {
-				height: 2px;
-			}
-
-			&::before,
-			&::after {
-				transform: translateY(-7px);
-			}
-
-			&::after {
-				transform: translateY(7px);
-			}
+		&::before,
+		&::after {
+			transform: translateY(-5px);
 		}
 
-		:checked+& {
-			span {
-				transform: rotate(45deg);
-
-				&::before,
-				&::after {
-					transform: rotate(0deg);
-				}
-
-				&::after {
-					transform: rotate(-90deg);
-				}
-			}
+		&::after {
+			transform: translateY(5px);
 		}
 	}
 
-	&.large {
-		span {
+	&.tiny span {
 
-			&::before,
-			&::after {
-				transform: translateY(-12px);
-			}
-
-			&::after {
-				transform: translateY(12px);
-			}
+		&::before,
+		&::after {
+			transform: translateY(-4px);
 		}
 
-		:checked+& {
-			span {
-				transform: rotate(45deg);
+		&::after {
+			transform: translateY(4px);
+		}
+	}
 
-				&::before,
-				&::after {
-					transform: rotate(0deg);
-				}
+	&.large span {
 
-				&::after {
-					transform: rotate(-90deg);
-				}
-			}
+		&,
+		&::before,
+		&::after {
+			height: 3px;
+		}
+
+		&::before,
+		&::after {
+			transform: translateY(-9px);
+		}
+
+		&::after {
+			transform: translateY(9px);
+		}
+	}
+
+	&.btn-link {
+		span {
+			background-color: map-get($colors, 'primary');
+		}
+	}
+}
+
+:checked+.btn-menu,
+.btn-menu.open {
+	span {
+		transform: rotate(45deg);
+
+		&::before,
+		&::after {
+			transform: rotate(0deg);
+		}
+
+		&::after {
+			transform: rotate(-90deg);
 		}
 	}
 }
 
 .btn-toggle {
-	position  : absolute;
-	right     : 4px;
-	top       : 4px;
-	min-height: 34px;
-	min-width : 34px;
-
-	&.relative {
-		top   : auto;
-		bottom: auto;
-	}
+	padding: 0;
 
 	&::after {
 		content      : '';
@@ -511,30 +516,64 @@ nav li.small>a {
 		position     : absolute;
 		inset        : 0;
 		margin       : auto;
-		border       : 2px solid map-get($colors, 'primary');
+		border       : 2px solid map-get($colors, 'light');
 		border-left  : 0;
 		border-bottom: 0;
-		width        : 30%;
-		height       : 30%;
+		width        : 32%;
+		height       : 32%;
 		transition   : transform .2s ease-in-out;
-		transform    : rotate(135deg) translate(-2px, 1px);
+		transform    : rotate(135deg) translate(-14%, 16%);
 	}
 
-	&.small,
-	.small & {
-		min-height: 28px;
-		min-width : 28px;
+	&.btn-link {
+		&::after {
+			border-color: map-get($colors, 'primary');
+		}
 	}
 
-	&.large,
-	.large & {
-		min-height: 40px;
-		min-width : 40px;
+	nav li>& {
+		position: absolute;
+		right   : 2px;
+		top     : 0;
 	}
 }
 
-.toggle:checked+.btn-toggle::after {
-	transform: rotate(-45deg) translate(-1px, 2px);
+.btn-close {
+	padding: 0;
+	margin: 0;
+
+	&::before,
+	&::after {
+		background-color: map-get($colors, 'light');
+		content         : '';
+		height          : 60%;
+		position        : absolute;
+		inset           : 0;
+		margin          : auto;
+		width           : 2px;
+	}
+
+	&::before {
+		transform: rotate(45deg);
+	}
+
+	&::after {
+		transform: rotate(-45deg);
+	}
+
+	&.btn-link {
+
+		&::before,
+		&::after {
+			background-color: map-get($colors, 'primary');
+		}
+	}
+}
+
+.toggle:checked+.btn-toggle::after,
+.toggle:checked+label .btn-toggle::after,
+.btn-toggle.open::after {
+	transform: rotate(-45deg) translate(-14%, 16%);
 }
 
 input[type="checkbox"],
@@ -644,12 +683,19 @@ fieldset {
 		}
 	}
 
+	&.tiny,
+	.tiny &,
 	&.small,
 	.small &,
 	&.large,
 	.large & {
 		height    : auto;
 		min-height: 0;
+	}
+
+	&.tiny,
+	.tiny & {
+		line-height: 1;
 	}
 
 	&.small,
@@ -670,7 +716,9 @@ textarea {
 	line-height: 1.2;
 
 	.small &,
-	&.small {
+	&.small,
+	.tiny &,
+	&.tiny {
 		min-height : 60px;
 		line-height: 1.2;
 	}
@@ -683,30 +731,33 @@ textarea {
 }
 
 @keyframes spinner {
-	to {
-		transform: rotate(360deg);
+	0% {
+		transform: rotate(0deg)
+	}
+
+	90%,
+	100% {
+		transform: rotate(360deg)
 	}
 }
 
-.has-loader {
+.loader {
 	position: relative;
 
 	&::after {
-		content           : '';
-		box-sizing        : border-box;
-		position          : absolute;
-		inset             : 0;
-		margin            : auto;
-		width             : 20px;
-		height            : 20px;
-		border-radius     : 50%;
-		border            : 2px solid transparent;
-		border-top-color  : #fff;
-		border-right-color: #fff;
-		animation         : spinner .7s ease infinite;
-		opacity           : 0;
-		pointer-events    : none;
-		transition        : opacity .3s ease-in-out .1s;
+		content       : '';
+		box-sizing    : border-box;
+		position      : absolute;
+		inset         : 0;
+		margin        : auto;
+		width         : 20px;
+		height        : 20px;
+		border-radius : 50%;
+		border        : 2px solid transparent;
+		border-color  : map-get($colors, 'primary') map-get($colors, 'primary') transparent transparent;
+		opacity       : 0;
+		pointer-events: none;
+		transition    : opacity .3s ease-in-out .1s;
 	}
 
 	&.loading {
@@ -716,7 +767,16 @@ textarea {
 		color         : transparent;
 
 		&::after {
-			opacity: 1;
+			opacity  : 1;
+			animation: spinner .8s ease infinite;
+		}
+	}
+
+	.tiny &,
+	&.tiny {
+		&::after {
+			width : 12px;
+			height: 12px;
 		}
 	}
 
@@ -735,6 +795,10 @@ textarea {
 			height: 26px;
 		}
 	}
+}
+
+.btn.loader::after {
+	border-color: white white transparent transparent;
 }
 
 table {
@@ -797,5 +861,22 @@ $breakpoint_width in $breakpoints {
 $color_value in $colors {
 	section.bg-#{$color_name}+section.bg-#{$color_name} {
 		padding-top: 0;
+	}
+}
+
+.card {
+	position: relative;
+	background-color: map-get($colors, 'white');
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	> header,
+	> footer {
+		display: flex;
+		align-items: center;
+	}
+	> article {
+		flex: auto;
+		overflow: auto;
 	}
 }

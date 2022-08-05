@@ -85,16 +85,26 @@
                     </svg>
                     <span class="none md-inline">Forms</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left" href="#toggle">
+                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
+                    href="#loader">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M7,10L12,15L17,10H7Z" />
+                        <path fill="currentColor" d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" />
+                    </svg>
+                    <span class="none md-inline">Loader</span>
+                </a>
+                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
+                    href="#toggle">
+                    <svg class="md-mr-1" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M7,10L12,15L17,10H7Z" />
                     </svg>
                     <span class="none md-inline">Toggle</span>
                 </a>
                 <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
                     href="#navigation">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M16,12A2,2 0 0,1 18,10A2,2 0 0,1 20,12A2,2 0 0,1 18,14A2,2 0 0,1 16,12M10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12M4,12A2,2 0 0,1 6,10A2,2 0 0,1 8,12A2,2 0 0,1 6,14A2,2 0 0,1 4,12Z" />
+                        <path fill="currentColor"
+                            d="M16,12A2,2 0 0,1 18,10A2,2 0 0,1 20,12A2,2 0 0,1 18,14A2,2 0 0,1 16,12M10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12M4,12A2,2 0 0,1 6,10A2,2 0 0,1 8,12A2,2 0 0,1 6,14A2,2 0 0,1 4,12Z" />
                     </svg>
                     <span class="none md-inline">Navigation</span>
                 </a>
@@ -106,7 +116,8 @@
                     </svg>
                     <span class="none md-inline">Lists</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left" href="#menus">
+                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
+                    href="#menus">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
                     </svg>
@@ -119,6 +130,14 @@
                             d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z" />
                     </svg>
                     <span class="none md-inline">Tables</span>
+                </a>
+                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
+                    href="#cards">
+                    <svg class="md-mr-1" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M18 2H6C4.89 2 4 2.9 4 4V20C4 21.11 4.89 22 6 22H18C19.11 22 20 21.11 20 20V4C20 2.9 19.11 2 18 2M18 20H6V16H18V20M18 8H6V4H18V8Z" />
+                    </svg>
+                    <span class="none md-inline">Cards</span>
                 </a>
                 <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
                     href="#modals">
@@ -163,7 +182,7 @@
                     So if a SpryCSS class is not working then chances are you have already set that style in a css file
                     and therefore you should update the style there instead of overriding it in the html.
                 </p>
-                <h2 class="my-3">Getting Started and Installation</h2>
+                <h2 class="border-bottom pb-1 mb-3">Getting Started and Installation</h2>
                 <h4>Using the CDN:</h4>
                 <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css/dist/spry.min.css"&gt;</code></pre>
 
@@ -185,12 +204,11 @@
 @import 'node_modules/@ggedde/spry-css/spry.scss';</code></pre>
 
             </section>
-            <hr class="mt-0">
             <!------------------------------------
             ---------   SCSS VARIABLES   ---------
             ------------------------------------->
             <section id="scss">
-                <h2>SCSS Variables</h2>
+                <h2 class="border-bottom pb-1 mb-3">SCSS Variables</h2>
                 <h4 class="mt-3">Example Variables File:</h4>
                 <pre><code class="language-scss">// Specify each breakpoint size
 $breakpoints: (
@@ -247,12 +265,11 @@ $spacing: (
 }
 </code></pre>
             </section>
-            <hr class="mt-0">
             <!------------------------------------
             ----------    TYPOGRAPHY    ----------
             ------------------------------------->
             <section id="typography">
-                <h2 class="mb-4">Typography</h2>
+                <h2 class="border-bottom pb-1 mb-3">Typography</h2>
                 <h1>Heading H1</h1>
                 <h2>Heading H2</h2>
                 <h3>Heading H3</h3>
@@ -304,12 +321,11 @@ $spacing: (
                     class so if needed you can apply <code class="color-primary">.h2</code>
                     to an H4, etc</cite>
             </section>
-            <hr>
             <!------------------------------------
             ------------    COLORS    ------------
             ------------------------------------->
             <section id="colors">
-                <h2>Colors</h2>
+                <h2 class="border-bottom pb-1 mb-3">Colors</h2>
                 <h4 class="mt-3">Text Colors</h4>
                 <p class="my-1"><code class="color-grey italic small">.color-{color}</code></p>
                 <div class="show-code">
@@ -338,7 +354,8 @@ $spacing: (
                 </div>
 
                 <h4 class="mt-3">Accent Colors</h4>
-                <div class="small mb-1">You can wrap elements with an accent color to change and override all the accent colors within that container.</div>
+                <div class="small mb-1">You can wrap elements with an accent color to change and override all the accent
+                    colors within that container.</div>
                 <div><code class="color-grey italic small">.accent-{color}</code></div>
                 <div class="show-code">
                     <div class="accent-error p-2 mt-1 border">
@@ -375,12 +392,11 @@ $spacing: (
                 <cite>You can add as many colors as you want, but each color will be added to all 4 types above. If you
                     only need it for a small thing then it would be better to create a custom variable for it.</cite>
             </section>
-            <hr>
             <!------------------------------------
             -------------    ICONS    ------------
             ------------------------------------->
             <section id="icons">
-                <h2 class="mb-3">Icons</h2>
+                <h2 class="border-bottom pb-1 mb-3">Icons</h2>
                 <p>SpryCSS doesn't come with its own icon package. You can use whatever ican package or icon webfont you
                     want, but icon webfonts can greatly increase the size of your projects. A recommended alternative is
                     to use direct svg code within your project. This produces the smallest file size while producing
@@ -415,15 +431,14 @@ $spacing: (
                             d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
                     </svg>
                 </div>
-                
+
             </section>
-            <hr>
             <!------------------------------------
             -----------    BUTTONS    ------------
             ------------------------------------->
             <section id="buttons">
 
-                <h2 class="mb-4">Buttons</h2>
+                <h2 class="border-bottom pb-1 mb-3">Buttons</h2>
                 <div class="show-code">
                     <button class="btn btn-primary">Primary</button>
                     <button class="btn btn-light color-text">Light</button>
@@ -458,6 +473,48 @@ $spacing: (
                     <button class="btn small">Primary</button>
                     <button class="btn btn-grey small">Grey</button>
                     <button class="btn btn-dark small">Dark</button>
+                </div>
+
+                <h4 class="mt-4">Tiny</h4>
+                <div class="show-code">
+                    <button class="btn tiny">Primary</button>
+                    <button class="btn btn-grey tiny">Grey</button>
+                    <button class="btn btn-dark tiny">Dark</button>
+                </div>
+
+                <h4 class="mt-4 mb-1">Custom Classes</h4>
+                <div class="show-code">
+                    <p>
+                        <button class="btn btn-close"></button>
+                        <button class="btn btn-toggle" onclick="this.classList.toggle('open')"></button>
+                        <button class="btn btn-menu" onclick="this.classList.toggle('open')"><span></span></button>
+                        <button class="btn btn-close btn-link p-0 circle"></button>
+                        <button class="btn btn-toggle btn-link p-0 circle"
+                            onclick="this.classList.toggle('open')"></button>
+                        <button class="btn btn-menu btn-link p-0 circle"
+                            onclick="this.classList.toggle('open')"><span></span></button>
+                    </p>
+                    <p>
+                        <button class="btn small btn-error btn-close"></button>
+                        <button class="btn small btn-error btn-toggle" onclick="this.classList.toggle('open')"></button>
+                        <button class="btn small btn-error btn-menu"
+                            onclick="this.classList.toggle('open')"><span></span></button>
+                        <button class="btn small btn-error btn-close btn-link p-0 circle"></button>
+                        <button class="btn small btn-error btn-toggle btn-link p-0 circle"
+                            onclick="this.classList.toggle('open')"></button>
+                        <button class="btn small btn-error btn-menu btn-link p-0 circle"
+                            onclick="this.classList.toggle('open')"><span></span></button>
+                    </p>
+                    <p>
+                        <button class="btn tiny btn-close"></button>
+                        <button class="btn tiny btn-toggle" onclick="this.classList.toggle('open')"></button>
+                        <button class="btn tiny btn-menu" onclick="this.classList.toggle('open')"><span></span></button>
+                        <button class="btn tiny btn-close btn-link p-0 circle"></button>
+                        <button class="btn tiny btn-toggle btn-link p-0 circle"
+                            onclick="this.classList.toggle('open')"></button>
+                        <button class="btn tiny btn-menu btn-link p-0 circle"
+                            onclick="this.classList.toggle('open')"><span></span></button>
+                    </p>
                 </div>
 
                 <h4 class="mt-4">With Icons</h4>
@@ -496,15 +553,16 @@ $spacing: (
 
                 <h4 class="mt-4">With Loader</h4>
                 <div class="show-code">
-                    <button class="btn has-loader" type="button" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">Click for Loading</button>
+                    <button class="btn loader" type="button"
+                        onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">Click
+                        for Loading</button>
                 </div>
             </section>
-            <hr>
             <!------------------------------------
             -------------    GRID    -------------
             ------------------------------------->
             <section id="grid">
-                <h2 class="mb-3">Grid</h2>
+                <h2 class="border-bottom pb-1 mb-3">Grid</h2>
                 <p class="large">You can either use a 12 column css grid or flexbox grid system</p>
                 <h5>Container Classes</h5>
                 <div class="ml-1 md-ml-3 mt-1">
@@ -614,7 +672,8 @@ $spacing: (
                 </div>
 
                 <h5 class="mb-1 mt-4">Specify number of columns centered</h5>
-                <cite class="small fade mb-1 block">(For gapping to work correctly you will need to specify all breakpoints)</cite>
+                <cite class="small fade mb-1 block">(For gapping to work correctly you will need to specify all
+                    breakpoints)</cite>
 
                 <div class="show-code">
                     <div class="row md-columns-2 lg-columns-3 jc-center">
@@ -733,7 +792,8 @@ $spacing: (
                                     fixed
                                 </div>
                                 <div class="bg-light rounded p-1">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam
+                                    erat.
                                 </div>
                             </div>
                         </div>
@@ -741,12 +801,11 @@ $spacing: (
                 </div>
 
             </section>
-            <hr>
             <!------------------------------------
             -------------    FORMS    ------------
             ------------------------------------->
             <section id="forms">
-                <h2 class="mb-4">Forms</h2>
+                <h2 class="border-bottom pb-1 mb-3">Forms</h2>
                 <h4 class="mb-1">Simple form with some Required Fields</h4>
                 <div class="show-code">
                     <form>
@@ -799,11 +858,13 @@ $spacing: (
                 </div>
 
                 <div class="show-code">
-                    <form class="row jc-center" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.querySelectorAll('fieldset,button').forEach(elem => {elem.setAttribute('disabled', 'disabled');});setTimeout(() => {this.submit()}, 2000)">
+                    <form class="row jc-center"
+                        onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.querySelectorAll('fieldset,button').forEach(elem => {elem.setAttribute('disabled', 'disabled');});setTimeout(() => {this.submit()}, 2000)">
                         <h4 class="col-12 mt-4">Responsive labels with loading button and disabled fields on submit</h4>
                         <fieldset>
                             <legend><label>Name *</label></legend>
-                            <input type="text" required onblur="if (this.value) this.parentElement.classList.add('active')" />
+                            <input type="text" required
+                                onblur="if (this.value) this.parentElement.classList.add('active')" />
                         </fieldset>
                         <fieldset>
                             <legend><label>Email</label></legend>
@@ -821,7 +882,7 @@ $spacing: (
                             <legend><label>Message</label></legend>
                             <textarea onblur="if (this.value) this.parentElement.classList.add('active')"></textarea>
                         </fieldset>
-                        <button class="col-6 btn has-loader" type="submit">Submit with Loading Icon</button>
+                        <button class="col-6 btn loader" type="submit">Submit with Loading Icon</button>
                     </form>
                 </div>
 
@@ -848,166 +909,250 @@ $spacing: (
                             <legend><label>Message</label></legend>
                             <textarea onblur="if (this.value) this.parentElement.classList.add('active')"></textarea>
                         </fieldset>
-                        <button class="col-4 btn has-loader" type="submit">Submit</button>
+                        <button class="col-4 btn loader" type="submit">Submit</button>
                     </form>
                 </div>
             </section>
-            <hr>
+            <!------------------------------------
+            ------------    LOADER    ------------
+            ------------------------------------->
+            <section id="loader">
+                <h2 class="border-bottom pb-1 mb-3">Loader</h2>
+                <div class="show-code">
+                    <button class="loader loading small"></button>
+                    <button class="loader loading color-success"></button>
+                    <button class="loader loading large color-error"></button>
+                    <button class="btn loader loading p-0"></button>
+                    <button class="btn loader" type="button"
+                        onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">Click
+                        for Loading</button>
+                </div>
+            </section>
             <!------------------------------------
             -----------    TOGGLES    ------------
             ------------------------------------->
             <section id="toggle">
-                <h2>Toggle</h2>
+                <h2 class="border-bottom pb-1 mb-3">Toggle</h2>
                 <p class="mt-2">Toggles are used to open and close content, menus, etc</p>
-                <p class="mb-2">You can create a toggle group by adding a <code class="color-grey italic small">&lt;input class="toggle" type="checkbox"&gt;</code> followed by a <code class="color-grey italic small">&lt;label&gt;</code> then followed by your container of choice. The order of these elements matter. To bind the Label to the Checkbox you will need to give the checkbox an <code class="color-grey italic small">id</code> and set the <code class="color-grey italic small">for</code> on the label to match the checkbox id<code class="color-grey italic small">id</code>.</p>
+                <p class="mb-2">You can create a toggle group by adding a <code
+                        class="color-grey italic small">&lt;input class="toggle" type="checkbox"&gt;</code> followed by
+                    a <code class="color-grey italic small">&lt;label&gt;</code> then followed by your container of
+                    choice. The order of these elements matter. To bind the Label to the Checkbox you will need to give
+                    the checkbox an <code class="color-grey italic small">id</code> and set the <code
+                        class="color-grey italic small">for</code> on the label to match the checkbox id<code
+                        class="color-grey italic small">id</code>.</p>
+                <pre><code class="language-html">&lt;input id="toggle-custom-id" class="toggle" type="checkbox" /&gt;
+&lt;label for="toggle-custom-id"&gt;Toggle Handle&lt;/label&gt;
+&lt;p&gt;Toggle Content&lt;/p&gt;</code></pre>
+                <h4 class="mt-4 mb-1">General Toggle Example</h4>
                 <div class="show-code">
                     <input id="toggle-1" class="toggle" type="checkbox" />
                     <label for="toggle-1" class="btn">Toggle Content</label>
-                    <p class="border p-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <p class="border p-1">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                        justo duo
+                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                        sit amet.
+                    </p>
                 </div>
 
-                <h4 class="mt-3">Collapsing Toggle</h4>
-                <p class="mb-2">Add the <code class="color-grey italic small">.collapsed</code> class to the toggle checkbox</p>
+                <h4 class="mt-3">Collapsing Toggle (Accordion)</h4>
+                <p class="mb-2">Add the <code class="color-grey italic small">.collapsed</code> class to the toggle
+                    checkbox</p>
                 <div class="show-code">
                     <input id="toggle-2" class="toggle collapsed" type="checkbox" />
-                    <label for="toggle-2" class="btn">Toggle Content</label>
-                    <p class="border p-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <label for="toggle-2">
+                        <h4 class="flex-middle"><span class="btn btn-toggle btn-link"></span>Question 1</h4>
+                    </label>
+                    <div>
+                        <p class="border p-1">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                            justo duo
+                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                            sit amet.
+                        </p>
+                    </div>
+                    <input id="toggle-2b" class="toggle collapsed" type="checkbox" />
+                    <label for="toggle-2b">
+                        <h4 class="flex-middle"><span class="btn btn-toggle btn-link"></span>Question 2</h4>
+                    </label>
+                    <div>
+                        <p class="border p-1">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                            justo duo
+                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                            sit amet.
+                        </p>
+                    </div>
                 </div>
 
                 <h4 class="mt-3">Overflown Toggle</h4>
-                <p class="mb-2">Wrap your container in a relative and absolute containers <code class="color-grey italic small">.collapsed</code> to the toggle checkbox</p>
+                <p class="mb-2">Wrap your container in a relative and absolute containers <code
+                        class="color-grey italic small">.collapsed</code> to the toggle checkbox</p>
                 <div class="show-code">
                     <input id="toggle-3" class="toggle collapsed" type="checkbox" />
-                    <label for="toggle-3" class="btn">Toggle Content</label>
+                    <label for="toggle-3" class="btn pr-1">
+                        Toggle Content
+                        <span class="btn btn-toggle btn-link color-white pointer-none"></span>
+                    </label>
                     <div class="relative">
                         <div class="absolute inset">
-                            <p class="border p-1 bg-light">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                            <p class="border p-1 bg-light">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                                sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                                sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                                rebum.
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <h4 class="mt-3">Activate on Hover or Click Toggle</h4>
                 <p class="mb-2">Add the <code class="color-grey italic small">.hoverable</code> class to the label</p>
-                <p class="mb-2 note">* To Remove the click option then just remove the checkbox and add the <code class="color-grey italic small">.toggle</code> class to the label</p>
+                <p class="mb-2 note">* To Remove the click option then just remove the checkbox and add the <code
+                        class="color-grey italic small">.toggle</code> class to the label</p>
                 <div class="show-code">
-                    <span>Tooltip Example</span>
-                        <span class="relative inline-block" style="width: 30px;">
-                            <input id="toggle-4" class="toggle" type="checkbox" />
-                            <label for="toggle-4" class="btn small btn-grey btn-link hoverable p-0 circle">
-                                <svg viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
-                                </svg>
-                            </label>
-                            <span class="relative">
-                                <div class="absolute inset vw-30">
-                                    <p class="border p-1 bg-light">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </span>
+                    <span>Tooltip Example on Hover and Click to stay</span>
+                    <span class="relative inline-block" style="width: 30px;">
+                        <input id="toggle-4" class="toggle" type="checkbox" />
+                        <label for="toggle-4" class="btn small btn-grey btn-link hoverable p-0 circle">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
+                            </svg>
+                        </label>
+                        <span class="relative">
+                            <div class="absolute inset vw-30">
+                                <p class="rounded shadow fade py-1 px-2 bg-dark color-light">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                    accusam
+                                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                                    est
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                            </div>
                         </span>
+                    </span>
+                    <br />
+                    <span>Tooltip Example on Hover Only</span>
+                    <span class="relative inline-block" style="width: 30px;">
+                        <label class="btn small btn-grey btn-link toggle hoverable p-0 circle">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
+                            </svg>
+                        </label>
+                        <span class="relative">
+                            <div class="absolute inset vw-30">
+                                <p class="rounded shadow fade py-1 px-2 bg-dark color-light">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                    accusam
+                                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                                    est
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                            </div>
+                        </span>
+                    </span>
                 </div>
             </section>
-            <hr>
             <!------------------------------------
             ----------    NAVIGATION    ----------
             ------------------------------------->
             <section id="navigation">
-                <h2 class="mb-2">Navigation</h2>
+                <h2 class="border-bottom pb-1 mb-3">Navigation</h2>
+                <p class="my-2"><code class="color-grey italic">&lt;nav&gt;</code></p>
+
+                <h5 class="mt-2">Classes</h5>
+                <div class="ml-1 md-ml-3 mt-1">
+                    <div><span style="width: 270px;" class="md-inline-block"><code
+                                class="color-grey">{breakpoint}-</code><code
+                                class="color-primary">horizontal</code></span> <cite class="block mb-2 md-inline">Change
+                            Layout to Horizontal Menu</cite></div>
+                    <div><span style="width: 270px;" class="md-inline-block"><code
+                                class="color-grey">{breakpoint}-</code><code
+                                class="color-primary">hoverable</code></span> <cite class="block mb-2 md-inline">Allows
+                            sub menus to open on Hover</cite></div>
+                </div>
+
                 <h4 class="mt-4">Standard Navigation Menu</h4>
                 <div class="show-code">
-                    <nav class="bg-light">
+                    <nav class="bg-light md-horizontal">
                         <a href="#navigation">Link 1</a>
                         <a href="#navigation">Link 2</a>
                         <a href="#navigation">Link 3</a>
                         <a href="#navigation">Link 4</a>
                     </nav>
                 </div>
-                
+
                 <h4 class="mt-4">Drop down Navigation Menu Right Aligned</h4>
                 <div class="show-code">
-                    <nav class="bg-light horizontal hoverable px-2">
+                    <nav class="bg-light md-horizontal md-hoverable">
                         <ul class="jc-end">
                             <li>
-                                <a href="#navigation">Link with Dropdown <button class="small ml-1 btn btn-dark btn-link bg-transparent pointer-none p-0 btn-toggle relative"></button></a>
-                                <ul class="bg-light rounded">
-                                    <li>
-                                        <a href="#navigation">Sub Link 1</a>
-                                    </li>
+                                <a href="#navigation" class="pr-0">Link with Dropdown</a>
+                                <input id="toggle-nav-1" class="toggle collapsed" type="checkbox">
+                                <label for="toggle-nav-1" class="btn btn-link btn-toggle btn-text circle"></label>
+                                <ul class="bg-light rounded-bottom md-shadow">
+                                    <li><a href="#navigation">Sub Link 1</a></li>
                                     <li>
                                         <a href="#navigation">Sub Link with Menu</a>
                                         <input id="toggle-nav-2" class="toggle collapsed" type="checkbox">
-                                        <label for="toggle-nav-2" class="btn btn-link btn-dark p-0 btn-toggle circle"></label>
+                                        <label for="toggle-nav-2" class="btn btn-link btn-toggle btn-text circle"></label>
                                         <ul class="bg-light rounded">
-                                            <li>
-                                                <a href="#navigation">Sub Sub Link 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="#navigation">Sub Sub Link 2</a>
-                                            </li>
-                                            <li>
-                                                <a href="#navigation">Sub Sub Link 3</a>
-                                            </li>
-                                            <li>
-                                                <a href="#navigation">Sub Sub Link 4</a>
-                                            </li>
+                                            <li><a href="#navigation">Sub Sub Link 1</a></li>
+                                            <li><a href="#navigation">Sub Sub Link 2</a></li>
+                                            <li><a href="#navigation">Sub Sub Link 3</a></li>
+                                            <li><a href="#navigation">Sub Sub Link 4</a></li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="#navigation">Sub Link 3</a>
-                                    </li>
-                                    <li>
-                                        <a href="#navigation">Sub Link 4</a>
-                                    </li>
+                                    <li><a href="#navigation">Sub Link 3</a></li>
+                                    <li><a href="#navigation">Sub Link 4</a></li>
                                 </ul>
                             </li>
+                            <li><a href="#navigation">Link 2</a></li>
+                            <li><a href="#navigation">Link 3</a></li>
+                            <li><a href="#navigation">Link 4</a></li>
                             <li>
-                                <a href="#navigation">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#navigation">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#navigation">Link 4</a>
-                            </li>
-                            <li>
-                                <a href="#navigation">Link with Dropdown <button class="small ml-1 btn btn-dark btn-link bg-transparent pointer-none p-0 btn-toggle relative"></button></a>
-                                <ul class="bg-light rounded">
-                                    <li>
-                                        <a href="#navigation">Sub Link 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#navigation">Sub Link 2</a>
-                                    </li>
+                                <a href="#navigation">Link with Dropdown</a>
+                                <input id="toggle-nav-3" class="toggle collapsed" type="checkbox">
+                                <label for="toggle-nav-3" class="btn btn-link btn-toggle btn-text circle"></label>
+                                <ul class="bg-light rounded-bottom md-shadow">
+                                    <li><a href="#navigation">Sub Link 1</a></li>
+                                    <li><a href="#navigation">Sub Link 2</a></li>
                                     <li>
                                         <a href="#navigation">Sub Link with Menu</a>
                                         <input id="toggle-nav-4" class="toggle collapsed" type="checkbox">
-                                        <label for="toggle-nav-4" class="btn btn-link btn-dark p-0 btn-toggle circle"></label>
+                                        <label for="toggle-nav-4"
+                                            class="btn btn-link btn-toggle btn-text circle"></label>
                                         <ul class="bg-light rounded">
-                                            <li>
-                                                <a href="#navigation">Sub Sub Link 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="#navigation">Sub Sub Link 2</a>
-                                            </li>
-                                            <li>
-                                                <a href="#navigation">Sub Sub Link 3</a>
-                                            </li>
+                                            <li><a href="#navigation">Sub Sub Link 1</a></li>
+                                            <li><a href="#navigation">Sub Sub Link 2</a></li>
+                                            <li><a href="#navigation">Sub Sub Link 3</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#navigation">Link 5</a>
-                            </li>
+                            <li><a href="#navigation">Link 5</a></li>
                         </ul>
                     </nav>
                 </div>
             </section>
-            <hr>
             <!------------------------------------
             ------------    LISTS    -------------
             ------------------------------------->
             <section id="lists">
-                <h2 class="mb-2">Lists</h2>
+                <h2 class="border-bottom pb-1 mb-3">Lists</h2>
                 <p class="my-2"><code class="color-grey italic small">&lt;nav class="list"&gt;</code></p>
                 <div class="show-code">
                     <nav class="bg-light rounded shadow vertical w-200 list">
@@ -1018,7 +1163,7 @@ $spacing: (
                             <li>
                                 <a href="#lists">List Item 2</a>
                                 <input id="toggle-list-2" class="toggle collapsed" type="checkbox">
-                                <label for="toggle-list-2" class="btn btn-link p-0 btn-toggle circle"></label>
+                                <label for="toggle-list-2" class="btn btn-link btn-toggle circle"></label>
                                 <ul class="bg-light rounded">
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1034,7 +1179,7 @@ $spacing: (
                             <li>
                                 <a href="#lists">List Item 3</a>
                                 <input id="toggle-list-3" class="toggle collapsed" type="checkbox">
-                                <label for="toggle-list-3" class="btn btn-link p-0 btn-toggle circle"></label>
+                                <label for="toggle-list-3" class="btn btn-link btn-toggle circle"></label>
                                 <ul class="bg-light rounded">
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1048,9 +1193,9 @@ $spacing: (
                                 </ul>
                             </li>
                             <li>
-                                <a href="#lists">List Item 4 With a very long text</a>
+                                <a href="#lists" class="pr-3">List Item 4 With a very long text</a>
                                 <input id="toggle-list-4" class="toggle collapsed" type="checkbox">
-                                <label for="toggle-list-4" class="btn btn-link p-0 btn-toggle circle"></label>
+                                <label for="toggle-list-4" class="btn btn-link btn-toggle circle"></label>
                                 <ul class="bg-light rounded">
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1064,9 +1209,9 @@ $spacing: (
                                 </ul>
                             </li>
                             <li>
-                                <a href="#lists" class="truncate">List Item 5 Truncated Text</a>
+                                <a href="#lists" class="truncate pr-3">List Item 5 Truncated Text</a>
                                 <input id="toggle-list-5" class="toggle collapsed" type="checkbox">
-                                <label for="toggle-list-5" class="btn btn-link p-0 btn-toggle circle"></label>
+                                <label for="toggle-list-5" class="btn btn-link btn-toggle circle"></label>
                                 <ul class="bg-light rounded">
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1082,7 +1227,8 @@ $spacing: (
                             <li>
                                 <a href="#lists">
                                     <svg class="mr-2" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
+                                        <path fill="currentColor"
+                                            d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
                                     </svg>
                                     With Icon
                                 </a>
@@ -1091,7 +1237,7 @@ $spacing: (
                             <li class="small">
                                 <a href="#lists">Small List Item 1</a>
                                 <input id="toggle-mm" class="toggle collapsed" type="checkbox">
-                                <label for="toggle-mm" class="btn btn-link p-0 btn-toggle circle"></label>
+                                <label for="toggle-mm" class="btn btn-link btn-toggle circle"></label>
                                 <ul class="bg-light rounded">
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1099,7 +1245,7 @@ $spacing: (
                                     <li>
                                         <a href="#lists">Sub Link 2</a>
                                         <input id="toggle-mm2" class="toggle collapsed" type="checkbox">
-                                        <label for="toggle-mm2" class="btn btn-link p-0 btn-toggle circle"></label>
+                                        <label for="toggle-mm2" class="btn btn-link btn-toggle circle"></label>
                                         <ul class="bg-light rounded">
                                             <li>
                                                 <a href="#lists">Sub Link 1</a>
@@ -1129,7 +1275,8 @@ $spacing: (
                     <nav class="bg-light jc-end list horizontal hoverable">
                         <ul class="jc-end">
                             <li>
-                                <a href="#lists">Link 1 <button class="small ml-1 mr-n2 btn btn-link bg-transparent pointer-none p-0 btn-toggle relative"></button></a>
+                                <a href="#lists">Link 1 <button
+                                        class="small ml-1 mr-n2 btn btn-link bg-transparent pointer-none btn-toggle relative"></button></a>
                                 <ul class="bg-light rounded">
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1137,7 +1284,8 @@ $spacing: (
                                     <li>
                                         <a href="#lists">Sub Link 2</a>
                                         <input id="toggle-toolbar-2" class="toggle collapsed" type="checkbox">
-                                        <label for="toggle-toolbar-2" class="btn btn-link btn-dark p-0 btn-toggle circle"></label>
+                                        <label for="toggle-toolbar-2"
+                                            class="btn btn-link btn-toggle circle"></label>
                                         <ul class="bg-light rounded">
                                             <li>
                                                 <a href="#lists">Sub Sub Link 1</a>
@@ -1165,7 +1313,8 @@ $spacing: (
                                 <a href="#lists">Link 2</a>
                             </li>
                             <li>
-                                <a href="#lists">Link 3 <button class="small ml-1 mr-n2 btn btn-link bg-transparent pointer-none p-0 btn-toggle relative"></button></a>
+                                <a href="#lists">Link 3 <button
+                                        class="small ml-1 mr-n2 btn btn-link bg-transparent pointer-none btn-toggle relative"></button></a>
                                 <ul class="bg-light right rounded">
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1176,7 +1325,8 @@ $spacing: (
                                     <li>
                                         <a href="#lists">Sub Link 3</a>
                                         <input id="toggle-toolbar-4" class="toggle collapsed" type="checkbox">
-                                        <label for="toggle-toolbar-4" class="btn btn-link btn-dark p-0 btn-toggle circle"></label>
+                                        <label for="toggle-toolbar-4"
+                                            class="btn btn-link btn-toggle circle"></label>
                                         <ul class="bg-light left rounded">
                                             <li>
                                                 <a href="#lists">Sub Sub Link 1</a>
@@ -1224,112 +1374,118 @@ $spacing: (
                     </nav>
                 </div>
             </section>
-            <hr>
             <!------------------------------------
             ------------    MENUS    -------------
             ------------------------------------->
             <section id="menus">
-                <h2>Menus</h2>
+                <h2 class="border-bottom pb-1 mb-3">Menus</h2>
                 <div class="row">
                     <div>
                         <h5 class="mt-3">Left Align</h4>
-                        <div class="show-code">
-                            <input id="toggle-menu-1" class="toggle" type="checkbox" />
-                            <label for="toggle-menu-1" class="btn btn-transparent btn-link p-0 btn-menu"><span></span></label>
-                            <div class="relative">
-                                <div class="absolute inset">
-                                    <nav class="bg-light rounded shadow vertical w-200 list">
-                                        <ul>
-                                            <li>
-                                                <a href="#menus">Link 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="#menus">Link 2 with a very long text</a>
-                                                <input id="toggle-sub-menu-1" class="toggle collapsed" type="checkbox">
-                                                <label for="toggle-sub-menu-1" class="btn btn-link p-0 btn-toggle circle"></label>
-                                                <ul class="bg-light rounded">
-                                                    <li>
-                                                        <a href="#menus">Sub Link 1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#menus">Sub Link 2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#menus">Sub Link 3</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#menus">Link 3</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
+                            <div class="show-code">
+                                <input id="toggle-menu-1" class="toggle" type="checkbox" />
+                                <label for="toggle-menu-1"
+                                    class="btn btn-link p-0 btn-menu"><span></span></label>
+                                <div class="relative">
+                                    <div class="absolute inset">
+                                        <nav class="bg-light rounded shadow vertical w-200 list">
+                                            <ul>
+                                                <li>
+                                                    <a href="#menus">Link 1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#menus" class="pr-3">Link 2 with a very long text</a>
+                                                    <input id="toggle-sub-menu-1" class="toggle collapsed"
+                                                        type="checkbox">
+                                                    <label for="toggle-sub-menu-1"
+                                                        class="btn btn-link btn-toggle circle"></label>
+                                                    <ul class="bg-light rounded">
+                                                        <li>
+                                                            <a href="#menus">Sub Link 1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#menus">Sub Link 2</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#menus">Sub Link 3</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#menus">Link 3</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                     <div class="right">
                         <h5 class="mt-3">Right Align</h4>
-                        <div class="show-code">
-                            <input id="toggle-menu-2" class="toggle" type="checkbox" />
-                            <label for="toggle-menu-2" class="btn btn-transparent btn-link p-0 btn-menu"><span></span></label>
-                            <div class="relative">
-                                <div class="absolute inset-right">
-                                    <nav class="bg-light rounded shadow vertical w-200 list">
-                                        <ul>
-                                            <li>
-                                                <a href="#menus">Link 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="#menus">Link 2</a>
-                                                <input id="toggle-sub-menu-2" class="toggle collapsed" type="checkbox">
-                                                <label for="toggle-sub-menu-2" class="btn btn-link p-0 btn-toggle circle"></label>
-                                                <ul class="bg-light left rounded">
-                                                    <li>
-                                                        <a href="#menus">Sub Link 1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#menus">Sub Link 2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#menus">Sub Link 3</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#menus">Link 3</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
+                            <div class="show-code">
+                                <input id="toggle-menu-2" class="toggle" type="checkbox" />
+                                <label for="toggle-menu-2"
+                                    class="btn btn-link p-0 btn-menu"><span></span></label>
+                                <div class="relative">
+                                    <div class="absolute inset-right">
+                                        <nav class="bg-light rounded shadow vertical w-200 list">
+                                            <ul>
+                                                <li>
+                                                    <a href="#menus">Link 1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#menus">Link 2</a>
+                                                    <input id="toggle-sub-menu-2" class="toggle collapsed" type="checkbox">
+                                                    <label for="toggle-sub-menu-2" class="btn btn-link btn-toggle circle"></label>
+                                                    <ul class="bg-light left rounded">
+                                                        <li>
+                                                            <a href="#menus">Sub Link 1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#menus">Sub Link 2</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#menus">Sub Link 3</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#menus">Link 3</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
 
                 <h4 class="mt-4">Responsive Toolbar Navigation Menu</h4>
-                <p class="my-2">Add the <code class="color-grey italic small">.responsive</code> class to the <code class="color-grey italic small">&lt;nav&gt;</code></p>
+                <p class="my-2">Add the <code class="color-grey italic small">.responsive</code> class to the <code
+                        class="color-grey italic small">&lt;nav&gt;</code></p>
                 <div class="show-code">
                     <div class="bg-light flex ai-center jc-between px-1 relative toolbar">
                         <h4 class="flex-center">
                             <svg style="width:24px;height:24px" class="mx-1" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M19.07,4.93C17.22,3 14.66,1.96 12,2C9.34,1.96 6.79,3 4.94,4.93C3,6.78 1.96,9.34 2,12C1.96,14.66 3,17.21 4.93,19.06C6.78,21 9.34,22.04 12,22C14.66,22.04 17.21,21 19.06,19.07C21,17.22 22.04,14.66 22,12C22.04,9.34 21,6.78 19.07,4.93M17,12V18H13.5V13H10.5V18H7V12H5L12,5L19.5,12H17Z" />
+                                <path fill="currentColor"
+                                    d="M19.07,4.93C17.22,3 14.66,1.96 12,2C9.34,1.96 6.79,3 4.94,4.93C3,6.78 1.96,9.34 2,12C1.96,14.66 3,17.21 4.93,19.06C6.78,21 9.34,22.04 12,22C14.66,22.04 17.21,21 19.06,19.07C21,17.22 22.04,14.66 22,12C22.04,9.34 21,6.78 19.07,4.93M17,12V18H13.5V13H10.5V18H7V12H5L12,5L19.5,12H17Z" />
                             </svg>
                             Logo
                         </h4>
                         <div class="absolute inset-top inset-right">
                             <input id="toggle-menu-responsive" class="toggle md-open" type="checkbox" />
-                            <label for="toggle-menu-responsive" class="btn btn-transparent btn-link p-0 btn-menu md-none"><span></span></label>
+                            <label for="toggle-menu-responsive"
+                                class="btn btn-transparent btn-link p-0 btn-menu md-none"><span></span></label>
                             <div class="absolute inset-top inset-right">
-                                <nav class="bg-light vertical md-horizontal inset-right md-relative">
+                                <nav class="bg-light vertical md-horizontal md-hoverable inset-right md-relative">
                                     <ul>
                                         <li>
                                             <a href="#menus">Link 1</a>
                                         </li>
                                         <li>
-                                            <a href="#menus">Link 2</a>
+                                            <a href="#menus" class="pr-0">Link 2</a>
                                             <input id="toggle-responsive-menu-1" class="toggle collapsed" type="checkbox">
-                                            <label for="toggle-responsive-menu-1" class="btn btn-link p-0 btn-toggle circle"></label>
+                                            <label for="toggle-responsive-menu-1" class="btn btn-link btn-text btn-toggle circle"></label>
                                             <ul class="bg-light rounded">
                                                 <li>
                                                     <a href="#menus">Sub Link 1</a>
@@ -1362,12 +1518,11 @@ $spacing: (
                 </div>
 
             </section>
-            <hr>
             <!------------------------------------
             ------------    TABLES    ------------
             ------------------------------------->
             <section id="tables">
-                <h2>Tables</h2>
+                <h2 class="border-bottom pb-1 mb-3">Tables</h2>
                 <div class="show-code">
                     <table>
                         <thead>
@@ -1402,33 +1557,130 @@ $spacing: (
                     <button class="btn mt-4 mx-auto btn-primary" type="button">Signup</button>
                 </div>
             </section>
-            <hr>
+            <!------------------------------------
+            ----------       CARDS      ----------
+            ------------------------------------->
+            <section id="cards">
+                <h2 class="border-bottom pb-1 mb-3">Cards</h2>
+                <div class="show-code">
+                    <div class="card border border-light rounded shadow p-3 g-3 mw-400">
+                        <header>
+                            <h3>Lorem ipsum dolor</h3>
+                        </header>
+                        <img src="http://via.placeholder.com/600x200" />
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <footer>
+                            <a href="#cards" class="btn">Learn More</a>
+                        </footer>
+                    </div>
+                </div>
+
+                <h4>Variations</h4>
+                <div class="show-code">
+                    <div class="row">
+
+                        <div class="card card-light shadow color-text border rounded g-3">
+                            <header>
+                                <h4 class="px-2">Lorem ipsum dolor</h4>
+                            </header>
+                            <article>
+                                <p class="p-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                </p>
+                            </article>
+                            <footer class="px-2">
+                                <a href="#cards" class="btn small">Learn More</a>
+                            </footer>
+                        </div>
+
+                        <div class="card card-light shadow color-text border rounded g-3">
+                            <img src="http://via.placeholder.com/600x300" />
+                            <article class="px-3">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                <p class="note">- Meta Data</p>
+                            </article>
+                            <footer class="px-2 jc-end g-2">
+                                <a href="#cards" class="btn btn-grey small">Cancel</a>
+                                <a href="#cards" class="btn small">Submit</a>
+                            </footer>
+                        </div>
+
+                        <div class="card card-primary border rounded p-0 shadow">
+                            <header class="px-2">
+                                <h4>This is the Title</h4>
+                            </header>
+                            <article>
+                                <p class="p-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                </p>
+                            </article>
+                            <footer class="px-2">
+                                <a href="#cards" class="btn btn-primary border-light small">Learn More</a>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <!------------------------------------
             ---------       MODALS      ----------
             ------------------------------------->
             <section id="modals">
-                <h2 class="mb-4">Modals</h2>
+                <h2 class="border-bottom pb-1 mb-3">Modals</h2>
+                <h5 class="mt-2">Classes</h5>
+                <div class="ml-1 md-ml-3 mt-1 mb-3">
+                    <div><span style="width: 270px;" class="md-inline-block"><code
+                                class="color-grey">modal</code></span> <cite class="block mb-2 md-inline">Main Modal
+                            Class</cite></div>
+                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-grey">show</code></span>
+                        <cite class="block mb-2 md-inline">Shows the Modal</cite></div>
+                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-grey">blur</code></span>
+                        <cite class="block mb-2 md-inline">Adds blur to background</cite></div>
+                    <div><span style="width: 270px;" class="md-inline-block"><code
+                                class="color-grey">bounce</code></span> <cite class="block mb-2 md-inline">Adds bounce
+                            animation. Only occurs once.</cite></div>
+                    <p class="note mt-2">Add max-width to modal-content to change size</p>
+                </div>
                 <div class="show-code">
-                    <button class="btn" onclick="document.getElementById('login-modal').classList.add('show'); document.getElementById('login-email').focus();">Open Login Modal</button>
-                    <div id="login-modal" class="modal" onclick="if(event.target.id === 'login-modal') document.getElementById('login-modal').classList.remove('show');">
-                        <div class="modal-container rounded" style="max-width: 400px;">
-                            <div class="modal-heading">
-                                <h3>Login</h3>
-                                <button type="button" class="modal-close" onclick="document.getElementById('login-modal').classList.remove('show');"></button>
-                            </div>
-                            <div class="modal-body mt-n1">
-                                <form>
-                                    <fieldset>
-                                        <legend><label>Email</label></legend>
-                                        <input id="login-email" type="email" required onblur="if (this.value) this.parentElement.classList.add('active')" />
-                                    </fieldset>
-                                    <fieldset class="my-2">
-                                        <legend><label>Password</label></legend>
-                                        <input type="password" required onblur="if (this.value) this.parentElement.classList.add('active')" />
-                                    </fieldset>
-                                    <a href="#" class="mt-1 block">Forgot Password?</a>
-                                    <button class="btn block mt-3" type="submit">Login</button>
-                                </form>
+                    <div class="modal blur">
+                        <div class="modal-content" style="max-width: 400px;">
+                            Content Here
+                        </div>
+                    </div>
+                </div>
+                <h4 class="my-1 mt-3">Login Form Example</h4>
+                <div class="show-code">
+                    <button class="btn"
+                        onclick="document.getElementById('login-modal').classList.add('show'); document.getElementById('login-email').focus();">Open
+                        Login Modal</button>
+                    <div id="login-modal" class="modal blur"
+                        onclick="if(event.target.id === 'login-modal') document.getElementById('login-modal').classList.remove('show');">
+                        <div class="modal-content" style="max-width: 400px;">
+                            <div class="card card-light shadow color-text border rounded g-3">
+                                <header>
+                                    <button type="button"
+                                        class="btn btn-link btn-close circle mr-1 mt-1 inset-top inset-right"
+                                        onclick="document.getElementById('login-modal').classList.remove('show');"></button>
+                                    <h4 class="px-2 pr-3">Lorem ipsum dolor as</h4>
+                                </header>
+                                <article class="px-3 pb-3 pt-1">
+                                    <form>
+                                        <fieldset>
+                                            <legend><label>Email</label></legend>
+                                            <input id="login-email" type="email" required
+                                                onblur="if (this.value) this.parentElement.classList.add('active')" />
+                                        </fieldset>
+                                        <fieldset class="my-2">
+                                            <legend><label>Password</label></legend>
+                                            <input type="password" required
+                                                onblur="if (this.value) this.parentElement.classList.add('active')" />
+                                        </fieldset>
+                                        <a href="#" class="mt-1 block">Forgot Password?</a>
+                                        <button class="btn block mt-3" type="submit">Login</button>
+                                    </form>
+                                </article>
                             </div>
                         </div>
                     </div>
@@ -1436,73 +1688,105 @@ $spacing: (
 
                 <h4 class="mt-4">Large Model with Long content and forced buttons</h4>
                 <div class="show-code">
-                    <button class="btn" onclick="document.getElementById('large-modal').classList.add('show');">Open Large Modal</button>
-                    <div id="large-modal" class="modal" onclick="if(event.target.id === 'large-modal') this.classList.add('bounce');">
-                        <div class="modal-container rounded lg-mw">
-                            <div class="modal-heading bg-light">
-                                <h4>This is the Modal Heading</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="modal-content">
+                    <button class="btn" onclick="document.getElementById('large-modal').classList.add('show');">Open
+                        Large Modal</button>
+                    <div id="large-modal" class="modal"
+                        onclick="if(event.target.id === 'large-modal') this.classList.add('bounce');">
+                        <div class="modal-content rounded lg-mw">
+                            <div class="card card-light shadow color-text border rounded">
+                                <header>
+                                    <h4 class="px-2">Lorem ipsum dolor</h4>
+                                </header>
+                                <article class="p-3 mh-500">
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-                                        eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                                        vero
+                                        eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                                        sea
                                         takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
                                         consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+                                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                                        duo
+                                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                        Lorem
                                         ipsum dolor sit amet.</p>
-                                    <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-                                        kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                                        dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                                    <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                                        sed
+                                        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                                        clita
+                                        kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+                                        ipsum
+                                        dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                        invidunt
+                                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                        accusam
+                                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                                        sanctus
                                         est Lorem ipsum dolor sit amet.</p>
-                                    <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                                    <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                                        gubergren,
+                                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                                        amet,
                                         consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+                                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                                        duo
+                                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                        Lorem
                                         ipsum dolor sit amet.</p>
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
-                                        eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                                        vero
+                                        eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                                        sea
                                         takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
                                         consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+                                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                                        duo
+                                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                        Lorem
                                         ipsum dolor sit amet.</p>
-                                    <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                                        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-                                        kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                                        dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                                    <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                                        sed
+                                        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                                        clita
+                                        kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+                                        ipsum
+                                        dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                        invidunt
+                                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                        accusam
+                                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                                        sanctus
                                         est Lorem ipsum dolor sit amet.</p>
-                                    <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                                    <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                                        gubergren,
+                                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                                        amet,
                                         consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+                                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                                        duo
+                                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                        Lorem
                                         ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
-                            <div class="modal-footer bg-light right">
-                                <button type="button" class="btn small btn-outline btn-dark" onclick="document.getElementById('large-modal').classList.remove('show','bounce');">Cancel</button>
-                                <button type="button" class="btn small ml-1 md-ml-3" onclick="document.getElementById('large-modal').classList.remove('show','bounce');">Accept</button>
+                                </article>
+                                <footer class="px-2 jc-end">
+                                    <button type="button" class="btn small btn-outline btn-dark"
+                                        onclick="document.getElementById('large-modal').classList.remove('show','bounce');">Cancel</button>
+                                    <button type="button" class="btn small ml-1 md-ml-3"
+                                        onclick="document.getElementById('large-modal').classList.remove('show','bounce');">Accept</button>
+                                </footer>
                             </div>
                         </div>
                     </div>
                 </div>
 
+
             </section>
-            <hr>
             <!------------------------------------
             ----------    UTILITIES    -----------
             ------------------------------------->
             <section id="utilities">
-                <h2>Utilities</h2>
+                <h2 class="border-bottom pb-1 mb-3">Utilities</h2>
                 <h3 class="mt-4">General Utility Classes</h3>
                 <div class="ml-2">
                     <div><code class="color-primary">bold</code> <code>{ font-weight: bold }</code></div>
@@ -1570,8 +1854,8 @@ $spacing: (
 );</code></pre>
                 <h5>Negative Margin</h5>
                 <p>For a negative margin you can include a negative value by placing a <code
-                        class="color-primary">n</code> in front of the value. ex <code
-                        class="color-primary">mx-n2</code></p>
+                        class="color-primary">n</code> in
+                    front of the value. ex <code class="color-primary">mx-n2</code></p>
                 <h3 id="layout" class="mt-4">Layout Utility Classes</h3>
                 <p>* All Layout Utility Classes can be used with breakpoints ex <code
                         class="color-primary">{breakpoint}-{layoutclass}</code></p>
@@ -1681,14 +1965,20 @@ $spacing: (
                     <code>{ text-align: right }</code>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">justify</code> <code>{ text-align: justify }</code></div>
+                        class="color-primary">justify</code>
+                    <code>{ text-align: justify }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">nowrap</code>
                     <code>{ white-space: nowrap }</code>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">pre-wrap</code> <code>{ white-space: pre-wrap }</code></div>
+                        class="color-primary">pre-wrap</code>
+                    <code>{ white-space: pre-wrap }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">break-word</code> <code>{ word-wrap: break-word }</code></div>
+                        class="color-primary">break-word</code>
+                    <code>{ word-wrap: break-word }</code>
+                </div>
                 <div class="mt-3">
                     <h5>Display</h5>
                 </div>
@@ -1705,23 +1995,35 @@ $spacing: (
                     <code>{ display: none }</code>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">inline-block</code> <code>{ display: inline-block }</code></div>
+                        class="color-primary">inline-block</code>
+                    <code>{ display: inline-block }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">table</code>
                     <code>{ display: table }</code>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">table-cell</code> <code>{ display: table-cell }</code></div>
+                        class="color-primary">table-cell</code>
+                    <code>{ display: table-cell }</code>
+                </div>
                 <div class="mt-3">
                     <h5>Vertical Align</h5>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">align-baseline</code> <code>{ vertical-align: baseline }</code></div>
+                        class="color-primary">align-baseline</code>
+                    <code>{ vertical-align: baseline }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">align-top</code> <code>{ vertical-align: top }</code></div>
+                        class="color-primary">align-top</code>
+                    <code>{ vertical-align: top }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">align-middle</code> <code>{ vertical-align: middle }</code></div>
+                        class="color-primary">align-middle</code>
+                    <code>{ vertical-align: middle }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">align-bottom</code> <code>{ vertical-align: bottom }</code></div>
+                        class="color-primary">align-bottom</code>
+                    <code>{ vertical-align: bottom }</code>
+                </div>
                 <div class="mt-3">
                     <h5>Overflow</h5>
                 </div>
@@ -1730,53 +2032,85 @@ $spacing: (
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
                         class="color-primary">overflow-scroll</code> <code>{ overflow: scroll }</code></div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">overflow-auto</code> <code>{ overflow: auto }</code></div>
+                        class="color-primary">overflow-auto</code>
+                    <code>{ overflow: auto }</code>
+                </div>
                 <div class="mt-3">
                     <h5 id="order">Order</h5>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">order-first</code> <code>{ order:-1 }</code></div>
+                        class="color-primary">order-first</code>
+                    <code>{ order:-1 }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">order-0</code> <code>{ order:0 }</code></div>
+                        class="color-primary">order-0</code>
+                    <code>{ order:0 }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">order-1</code> <code>{ order:1 }</code></div>
+                        class="color-primary">order-1</code>
+                    <code>{ order:1 }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">order-2</code> <code>{ order:2 }</code></div>
+                        class="color-primary">order-2</code>
+                    <code>{ order:2 }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">order-3</code> <code>{ order:3 }</code></div>
+                        class="color-primary">order-3</code>
+                    <code>{ order:3 }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">order-last</code> <code>{ order:99999 }</code></div>
+                        class="color-primary">order-last</code>
+                    <code>{ order:99999 }</code>
+                </div>
                 <div class="mt-3">
                     <h5>Flex Utility Classes</h5>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">ai-start</code> <code>{ align-items: flex-start }</code></div>
+                        class="color-primary">ai-start</code>
+                    <code>{ align-items: flex-start }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">ai-end</code>
                     <code>{ align-items: flex-end }</code>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">ai-center</code> <code>{ align-items: center }</code></div>
+                        class="color-primary">ai-center</code>
+                    <code>{ align-items: center }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">ai-stretch</code> <code>{ align-items: stretch }</code></div>
+                        class="color-primary">ai-stretch</code>
+                    <code>{ align-items: stretch }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">jc-start</code> <code>{ justify-content: flex-start }</code></div>
+                        class="color-primary">jc-start</code>
+                    <code>{ justify-content: flex-start }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">jc-end</code>
                     <code>{ justify-content: flex-end }</code>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">jc-center</code> <code>{ justify-content: center }</code></div>
+                        class="color-primary">jc-center</code>
+                    <code>{ justify-content: center }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">jc-between</code> <code>{ justify-content: space-between }</code></div>
+                        class="color-primary">jc-between</code>
+                    <code>{ justify-content: space-between }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">jc-around</code> <code>{ justify-content: space-around }</code></div>
+                        class="color-primary">jc-around</code>
+                    <code>{ justify-content: space-around }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
                         class="color-primary">flex-center</code>
                     <code>{ display: flex; align-items: center; justify-content: center }</code>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">flex-wrap</code> <code>{ flex-wrap: wrap }</code></div>
+                        class="color-primary">flex-wrap</code>
+                    <code>{ flex-wrap: wrap }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">flex-column</code> <code>{ flex-direction: column }</code></div>
+                        class="color-primary">flex-column</code>
+                    <code>{ flex-direction: column }</code>
+                </div>
             </section>
         </main>
     </div>
@@ -1792,6 +2126,7 @@ $spacing: (
             html = html.replaceAll('bg-light rounded p-1 ', '');
             html = html.replaceAll(' bg-light rounded p-1', '');
             html = html.replaceAll('#lists', '');
+            html = html.replaceAll('#cards', '');
             html = html.replaceAll('#tables', '');
             html = html.replaceAll('#navigation', '');
             html = html.replaceAll('#menus', '');
@@ -1821,7 +2156,7 @@ $spacing: (
                 html = html.replaceAll("\n                " + item + "\n            ", '');
             })
             // elem.insertAdjacentHTML('beforeend', '<div><input id="' + id + '" class="toggle" type="checkbox" /><label for="' + id + '" class="btn btn-grey btn-link p-0 btn-menu small mt-1"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" /></svg></label><div class="toggle-collapsed"><pre><code class="language-html">' + html + '</code></pre></div></div>');
-            elem.insertAdjacentHTML('beforeend', '<div class="mt-1"><pre><code class="language-html">' + html + '</code></pre></div>');
+            elem.insertAdjacentHTML('beforeend', '<div class="mt-2"><pre><code class="language-html">' + html + '</code></pre></div>');
         });
     </script>
 </body>

@@ -1,4 +1,6 @@
-@each $color_name, $color_value in $colors {
+@each $color_name,
+$color_value in $colors {
+
 	.btn-#{$color_name}.btn-outline,
 	.btn-#{$color_name}.btn-link,
 	.accent-#{$color_name} .btn.btn-outline:not(:hover),
@@ -7,9 +9,40 @@
 	button.color-#{$color_name},
 	a.color-#{$color_name}:hover,
 	button.color-#{$color_name}:hover,
-	.color-#{$color_name} * {
+	.card.color-#{$color_name} header,
+	.color-#{$color_name} *:not(.btn) {
 		color: $color_value;
 	}
+
+	.color-#{$color_name}.loader::after {
+		border-color: $color_value $color_value transparent transparent;
+	}
+	.color-#{$color_name}.btn-toggle::after {
+		border-color: $color_value;
+	}
+	.color-#{$color_name}.btn-menu span {
+		background-color: $color_value;
+	}
+
+	.card-#{$color_name} {
+		border-color: $color_value;
+		header,
+		footer {
+			padding-top: .80rem;
+			padding-bottom: .80rem;
+			background-color: $color_value;
+			color: white;
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				color: inherit;
+			}
+		}
+	}
+
 	.btn-#{$color_name},
 	.accent-#{$color_name} .btn:not(.btn-outline),
 	.btn-#{$color_name}.btn-outline:hover,
@@ -17,21 +50,29 @@
 	.btn-#{$color_name}.btn-outline:focus,
 	.btn-#{$color_name}.btn-outline:focus-within,
 	.accent-#{$color_name} .btn.btn-outline:focus,
+	.btn-#{$color_name}.btn-link.btn-close::after,
+	.btn-#{$color_name}.btn-link.btn-close::before,
+	.btn-#{$color_name}.btn-link.btn-menu span,
 	.bg-#{$color_name} {
 		background-color: $color_value;
 	}
+
 	.btn-#{$color_name}.btn-link:hover,
 	.accent-#{$color_name} .btn.btn-link:hover,
 	.btn-#{$color_name}.btn-link:focus,
 	.btn-#{$color_name}.btn-link:focus-within,
 	.accent-#{$color_name} .btn.btn-link:focus {
-		@if $color_value != transparent {
+		@if $color_value !=transparent {
 			background-color: rgba($color_value, 10%);
-		} @else {
+		}
+
+		@else {
 			background-color: $color_value;
 		}
+
 		color: $color_value;
 	}
+
 	.btn-#{$color_name},
 	.accent-#{$color_name} .btn,
 	.accent-#{$color_name} .border,
@@ -40,54 +81,74 @@
 	.btn-#{$color_name}.btn-outline:focus,
 	.btn-#{$color_name}.btn-outline:focus-within,
 	.accent-#{$color_name} .btn.btn-outline:focus,
-	.btn-#{$color_name}.btn-toggle::after,
+	.btn-#{$color_name}.btn-link.btn-toggle::after,
+	.btn.border-#{$color_name},
+	.btn.border-#{$color_name}:hover,
 	.border-#{$color_name} {
 		border-color: $color_value;
 	}
+
 	.btn-#{$color_name},
 	.accent-#{$color_name} .btn {
+
 		&:hover,
 		&:focus,
 		&:focus-within {
-			@if $color_value != transparent {
+			@if $color_value !=transparent {
 				background-color: darken($color_value, 10%);
-				border-color: darken($color_value, 10%);
-			} @else {
+				border-color    : darken($color_value, 10%);
+			}
+
+			@else {
 				background-color: $color_value;
-				border-color: $color_value;
+				border-color    : $color_value;
 			}
 		}
+
 		&.btn-outline:active,
 		&:active {
-			@if $color_value != transparent {
+			@if $color_value !=transparent {
 				background-color: darken($color_value, 5%);
-				border-color: darken($color_value, 5%);
-			} @else {
+				border-color    : darken($color_value, 5%);
+			}
+
+			@else {
 				background-color: $color_value;
-				border-color: $color_value;
+				border-color    : $color_value;
 			}
 		}
+
 		&.btn-link:active {
-			@if $color_value != transparent {
+			@if $color_value !=transparent {
 				background-color: rgba($color_value, 20%);
-			} @else {
+			}
+
+			@else {
 				background-color: $color_value;
 			}
 		}
 	}
+
 	.accent-#{$color_name} {
-		select, input, textarea {
+
+		select,
+		input,
+		textarea {
+
 			&:hover,
 			&:focus,
 			&:checked {
 				border-color: $color_value;
 			}
+
 			&:checked::after {
 				background-color: $color_value;
 			}
 		}
+
 		fieldset {
 			border-color: $color_value;
+
 			&:focus-within legend label {
 				color: $color_value;
 			}
