@@ -1,8 +1,7 @@
 @each $color_name,
 $color_value in $colors {
 
-	a.color-#{$color_name}:hover,
-	.color-#{$color_name} a:hover {
+	a.color-#{$color_name}:hover {
 		color: lighten($color_value, 10%);
 	}
 }
@@ -13,26 +12,71 @@ $color_value in $colors {
 	.btn-#{$color_name}.btn-link,
 	.accent-#{$color_name} .btn.btn-outline:not(:hover),
 	.color-#{$color_name},
-	nav.list.accent-#{$color_name} li>a,
-	.accent-#{$color_name} nav.list li>a,
+	nav.list.accent-#{$color_name} li>a:hover,
+	.accent-#{$color_name} nav.list li>a:hover,
 	a.color-#{$color_name},
 	button.color-#{$color_name},
 	a.color-#{$color_name}:hover,
 	.accent-#{$color_name} a:hover,
 	button.color-#{$color_name}:hover,
-	.card.color-#{$color_name} header,
-	.color-#{$color_name} *:not(.btn) {
+	.card.color-#{$color_name} header {
+		color: $color_value;
+	}
+
+	.btn-#{$color_name},
+	.color-#{$color_name}.btn-menu span,
+	.accent-#{$color_name} .btn:not(.btn-outline):not(.btn-link),
+	.btn-#{$color_name}.btn-outline:hover,
+	.accent-#{$color_name} .btn.btn-outline:hover,
+	.btn-#{$color_name}.btn-outline:focus,
+	.btn-#{$color_name}.btn-outline:focus-within,
+	.accent-#{$color_name} .btn.btn-outline:focus,
+	.btn-#{$color_name}.btn-link.btn-close::after,
+	.btn-#{$color_name}.btn-link.btn-close::before,
+	.btn-#{$color_name}.btn-link.btn-menu span,
+	.bg-#{$color_name},
+	.btn.bg-#{$color_name}:hover {
+		background-color: $color_value;
+	}
+
+	.btn-#{$color_name},
+	.color-#{$color_name}.btn-toggle::after,
+	.accent-#{$color_name} .btn:not(.btn-link),
+	.accent-#{$color_name} .border,
+	.btn-#{$color_name}.btn-outline:hover,
+	.accent-#{$color_name} .btn.btn-outline:hover,
+	.btn-#{$color_name}.btn-outline:focus,
+	.btn-#{$color_name}.btn-outline:focus-within,
+	.accent-#{$color_name} .btn.btn-outline:focus,
+	.color-#{$color_name} .btn.btn-link.btn-toggle::after,
+	.accent-#{$color_name} .btn.btn-link.btn-toggle:hover::after,
+	.btn-#{$color_name}.btn-link.btn-toggle::after,
+	.btn.border-#{$color_name},
+	.btn.border-#{$color_name}:hover,
+	.border-#{$color_name} {
+		border-color: $color_value;
+	}
+
+	.btn-#{$color_name}.btn-link:hover,
+	.accent-#{$color_name} .btn.btn-link:hover,
+	nav.list.accent-#{$color_name} li>a:hover,
+	.accent-#{$color_name} nav.list li>a:hover,
+	.btn-#{$color_name}.btn-link:focus,
+	.btn-#{$color_name}.btn-link:focus-within,
+	.accent-#{$color_name} .btn.btn-link:focus {
+		@if $color_value !=transparent {
+			background-color: rgba($color_value, 10%);
+		}
+
+		@else {
+			background-color: $color_value;
+		}
+
 		color: $color_value;
 	}
 
 	.color-#{$color_name}.loader::after {
 		border-color: $color_value $color_value transparent transparent;
-	}
-	.color-#{$color_name}.btn-toggle::after {
-		border-color: $color_value;
-	}
-	.color-#{$color_name}.btn-menu span {
-		background-color: $color_value;
 	}
 
 	.card-#{$color_name} {
@@ -55,55 +99,6 @@ $color_value in $colors {
 	}
 
 	.btn-#{$color_name},
-	.accent-#{$color_name} .btn:not(.btn-outline):not(.btn-link),
-	.btn-#{$color_name}.btn-outline:hover,
-	.accent-#{$color_name} .btn.btn-outline:hover,
-	.btn-#{$color_name}.btn-outline:focus,
-	.btn-#{$color_name}.btn-outline:focus-within,
-	.accent-#{$color_name} .btn.btn-outline:focus,
-	.btn-#{$color_name}.btn-link.btn-close::after,
-	.btn-#{$color_name}.btn-link.btn-close::before,
-	.btn-#{$color_name}.btn-link.btn-menu span,
-	.bg-#{$color_name} {
-		background-color: $color_value;
-	}
-
-	.btn-#{$color_name}.btn-link:hover,
-	.accent-#{$color_name} .btn.btn-link:hover,
-	nav.list.accent-#{$color_name} li>a:hover,
-	.accent-#{$color_name} nav.list li>a:hover,
-	.btn-#{$color_name}.btn-link:focus,
-	.btn-#{$color_name}.btn-link:focus-within,
-	.accent-#{$color_name} .btn.btn-link:focus {
-		@if $color_value !=transparent {
-			background-color: rgba($color_value, 10%);
-		}
-
-		@else {
-			background-color: $color_value;
-		}
-
-		color: $color_value;
-	}
-
-	.btn-#{$color_name},
-	.accent-#{$color_name} .btn:not(.btn-link),
-	.accent-#{$color_name} .border,
-	.btn-#{$color_name}.btn-outline:hover,
-	.accent-#{$color_name} .btn.btn-outline:hover,
-	.btn-#{$color_name}.btn-outline:focus,
-	.btn-#{$color_name}.btn-outline:focus-within,
-	.accent-#{$color_name} .btn.btn-outline:focus,
-	.color-#{$color_name} .btn.btn-link.btn-toggle::after,
-	.accent-#{$color_name} .btn.btn-link.btn-toggle:hover::after,
-	.btn-#{$color_name}.btn-link.btn-toggle::after,
-	.btn.border-#{$color_name},
-	.btn.border-#{$color_name}:hover,
-	.border-#{$color_name} {
-		border-color: $color_value;
-	}
-
-	.btn-#{$color_name}:not(.btn-link),
 	.accent-#{$color_name} .btn:not(.btn-link) {
 
 		&:hover,

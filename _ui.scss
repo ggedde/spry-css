@@ -184,7 +184,6 @@ nav.list li>button,
 input[type="submit"] {
 	background-color: map-get($colors, 'primary');
 	border-color    : map-get($colors, 'primary');
-	color           : white;
 	cursor          : pointer;
 	text-align      : center;
 	text-transform  : uppercase;
@@ -246,6 +245,7 @@ input[type="submit"] {
 input[type="submit"] {
 	font-weight: normal;
 	font-size  : 115%;
+	color      : map-get($colors, 'white');
 
 	&.small,
 	.small & {
@@ -266,7 +266,6 @@ input[type="submit"] {
 .btn.btn-link,
 nav.list li>a,
 nav.list li>button {
-	color           : map-get($colors, 'primary');
 	background-color: transparent;
 	border-color    : transparent;
 	text-transform  : capitalize;
@@ -285,6 +284,10 @@ nav.list li>button {
 		background-color: rgba(map-get($colors, 'primary'), 20%);
 		transition      : none;
 	}
+}
+
+.btn.btn-link {
+	color: map-get($colors, 'primary');
 }
 
 nav {
