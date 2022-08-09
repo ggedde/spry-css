@@ -33,7 +33,6 @@ $types: (
     h4: ( font-size: clamp(1rem, 6.5vw, 1.6rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.35 ),
     h5: ( font-size: clamp(.8rem, 6vw, 1.2rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.5 ),
     h6: ( font-size: clamp(.7rem, 6vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
-    // body: ( font-size: clamp(.7rem, 6vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
 ) !default;
 
 // Specify each spacing that applies to Margin and Padding.  Ex .m0, .m1, .mx3, .pt3, .mtn3, etc

@@ -236,13 +236,12 @@ $colors: (
 
 // Specify each type tag and class like &lt;h3&gt; and .h3 etc.
 $types: (
-    h1: ( font-size: 3.4rem, font-weight: 400, color: map-get($colors, 'text'), line-height: 1.20 ),
-    h2: ( font-size: 2.8rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.25 ),
-    h3: ( font-size: 2.2rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.30 ),
-    h4: ( font-size: 1.5rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.35 ),
-    h5: ( font-size: 1.2rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.5 ),
-    h6: ( font-size: 1.0rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
-    p:  ( font-size: 1.0rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    h1: ( font-size: clamp(1.9rem, 8vw, 3.4rem), font-weight: 400, color: map-get($colors, 'text'), line-height: 1.20 ),
+    h2: ( font-size: clamp(1.5rem, 7.5vw, 2.7rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.25 ),
+    h3: ( font-size: clamp(1.2rem, 7vw, 2.2rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.30 ),
+    h4: ( font-size: clamp(1rem, 6.5vw, 1.6rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.35 ),
+    h5: ( font-size: clamp(.8rem, 6vw, 1.2rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.5 ),
+    h6: ( font-size: clamp(.7rem, 6vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
 );
 
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc
@@ -326,13 +325,12 @@ $spacing: (
                 <cite class="ml-3"> - Blockquote, Cite</cite>
                 <h4 class="mt-4">SCSS Variable</h4>
                 <pre class="mt-1"><code class="language-scss">$types: (
-    h1:     ( font-size: 3.4rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.20 ),
-    h2:     ( font-size: 2.8rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.25 ),
-    h3:     ( font-size: 2.2rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.30 ),
-    h4:     ( font-size: 1.5rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.35 ),
-    h5:     ( font-size: 1.2rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.5 ),
-    h6:     ( font-size: 1.0rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
-    p:      ( font-size: 1.0rem, font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    h1: ( font-size: clamp(1.9rem, 8vw, 3.4rem), font-weight: 400, color: map-get($colors, 'text'), line-height: 1.20 ),
+    h2: ( font-size: clamp(1.5rem, 7.5vw, 2.7rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.25 ),
+    h3: ( font-size: clamp(1.2rem, 7vw, 2.2rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.30 ),
+    h4: ( font-size: clamp(1rem, 6.5vw, 1.6rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.35 ),
+    h5: ( font-size: clamp(.8rem, 6vw, 1.2rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.5 ),
+    h6: ( font-size: clamp(.7rem, 6vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
 );</code></pre>
                 <cite>You can add as many types as you want. Each type will be assigned to the tag along with a custom
                     class so if needed you can apply <code class="color-primary">.h2</code>
