@@ -64,21 +64,21 @@ fieldset {
 
 }
 
-.btn,
-input,
-textarea,
-select,
-nav>a,
-nav li,
-fieldset {
+// .btn,
+// input,
+// textarea,
+// select,
+// nav>a,
+// nav li,
+// fieldset {
 
-	&.small,
-	.small &,
-	&.tiny,
-	.tiny & {
-		font-size: 100%;
-	}
-}
+// 	&.small,
+// 	.small &,
+// 	&.tiny,
+// 	.tiny & {
+// 		font-size: 100%;
+// 	}
+// }
 
 .btn,
 input,
@@ -245,12 +245,7 @@ input[type="submit"] {
 .btn,
 input[type="submit"] {
 	font-weight: normal;
-}
-
-.btn,
-nav.list li,
-input[type="submit"] {
-	font-size: 115%;
+	font-size  : 115%;
 
 	&.small,
 	.small & {
@@ -259,7 +254,7 @@ input[type="submit"] {
 
 	&.tiny,
 	.tiny & {
-		font-size: 90%;
+		font-size: 85%;
 	}
 
 	&.large,
@@ -275,6 +270,8 @@ nav.list li>button {
 	background-color: transparent;
 	border-color    : transparent;
 	text-transform  : capitalize;
+	padding-top     : 0.5rem;
+	padding-bottom  : 0.5rem;
 
 	&:hover,
 	&:focus,
@@ -378,6 +375,25 @@ nav {
 			text-align     : left;
 			justify-content: flex-start;
 		}
+
+		li {
+			font-size: 1.15rem;
+
+			&.small,
+			.small & {
+				font-size: 1rem;
+			}
+
+			&.tiny,
+			.tiny & {
+				font-size: .85rem;
+			}
+
+			&.large,
+			.large & {
+				font-size: 1.3rem;
+			}
+		}
 	}
 }
 
@@ -388,18 +404,13 @@ nav.list li>a {
 	line-height: 1.2;
 
 	&.truncate {
-		line-height: 40px;
-		display    : block;
+		display: block;
 	}
 }
 
 nav li.small>a,
 nav li.tiny>a {
 	padding-right: 2rem;
-
-	&.truncate {
-		line-height: 30px;
-	}
 }
 
 .btn-menu {
@@ -532,6 +543,10 @@ nav li.tiny>a {
 		right   : 2px;
 		top     : 0;
 	}
+
+	nav.list li>& {
+		top: 2px;
+	}
 }
 
 .btn-close {
@@ -617,11 +632,11 @@ select {
 }
 
 fieldset {
-	display    : block;
-	padding    : 0;
-	position   : relative;
-	height     : auto;
-	transition : color .2s ease-in-out, border-color .2s ease-in-out;
+	display   : block;
+	padding   : 0;
+	position  : relative;
+	height    : auto;
+	transition: color .2s ease-in-out, border-color .2s ease-in-out;
 
 	legend {
 		display    : block;

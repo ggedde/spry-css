@@ -146,9 +146,9 @@ div.code-toolbar {
 	position: relative;
 	max-width: 70vw;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 800px) and (max-width: 880px) {
 	div.code-toolbar {
-		max-width: 60vw;
+		max-width: 67vw;
 	}
 }
 div.code-toolbar::after {

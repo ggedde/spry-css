@@ -1,13 +1,10 @@
-html {
-    font-size: 90%;
-    @media screen and (min-width: map-get($breakpoints, 'md')) {
-        font-size: 100%;
-    }
-}
 body, input, textarea, select {
-    font: 300 clamp(12px, 5vw, 1rem)/1.4 Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     letter-spacing: .01em;
-    color: map-get($colors, 'text');
+}
+
+input, textarea, select {
+    font-size: 100%;
 }
 
 // Heading Font Sizes and Classes

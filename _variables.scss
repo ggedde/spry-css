@@ -19,6 +19,7 @@ $colors: (
     "grey":        #999999,
     "dark":        #444444,
     "primary":     #0D7FBF,
+    "warning":     #df8a22,
     "error":       #d52929,
     "success":     #04ad3c,
     "text":        #566067,
@@ -27,10 +28,11 @@ $colors: (
 
 // Specify each type tag and class like <h3> and .h3 etc.
 $types: (
-    h1: ( font-size: clamp(1.9rem, 8vw, 3.4rem), font-weight: 400, color: map-get($colors, 'text'), line-height: 1.20 ),
+    body: ( font-size: clamp(.8rem, 4vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    h1: ( font-size: clamp(1.9rem, 9vw, 3.4rem), font-weight: 400, color: map-get($colors, 'text'), line-height: 1.20 ),
     h2: ( font-size: clamp(1.5rem, 7.5vw, 2.7rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.25 ),
-    h3: ( font-size: clamp(1.2rem, 7vw, 2.2rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.30 ),
-    h4: ( font-size: clamp(1rem, 6.5vw, 1.6rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.35 ),
+    h3: ( font-size: clamp(1.2rem, 6.8vw, 2.2rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.30 ),
+    h4: ( font-size: clamp(1rem, 6.3vw, 1.6rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.35 ),
     h5: ( font-size: clamp(.8rem, 6vw, 1.2rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.5 ),
     h6: ( font-size: clamp(.7rem, 6vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
 ) !default;
