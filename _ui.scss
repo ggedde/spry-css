@@ -577,7 +577,7 @@ input[type="radio"] {
 	width         : 1rem;
 	min-height    : 1rem;
 	padding       : 0;
-	margin        : 4px .6rem 0 .4rem;
+	margin        : 0 .6rem 0 .4rem;
 	position      : relative;
 	min-width     : 0;
 	vertical-align: text-bottom;
@@ -619,7 +619,6 @@ select {
 fieldset {
 	display    : block;
 	padding    : 0;
-	line-height: 1.6;
 	position   : relative;
 	height     : auto;
 	transition : color .2s ease-in-out, border-color .2s ease-in-out;
@@ -630,14 +629,14 @@ fieldset {
 		height     : 0;
 		max-width  : 0;
 		white-space: nowrap;
-		transform  : translate(4px, 9px);
+		transform  : translate(4px, 7px);
 		user-select: none;
 		transition : transform .2s ease-in-out, max-width .2s ease-in-out;
 		margin-left: 5px;
 		padding    : 0;
 
 		@media screen and (min-width: map-get($breakpoints, 'md')) {
-			transform: translate(4px, 7px);
+			transform: translate(4px, 8px);
 		}
 
 		label {
