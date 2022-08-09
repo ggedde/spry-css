@@ -50,27 +50,6 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	}
 }
 
-/* Code blocks */
-pre[class*="language-"] {
-	overflow: auto;
-	max-width: calc(100vw - 108px);
-}
-/* @media screen and (min-width: 600px) {
-	pre[class*="language-"] {
-		max-width: calc(100vw - 266px);
-	}
-} */
-@media screen and (min-width: 960px) {
-	pre[class*="language-"] {
-		max-width: calc(100vw - 265px);
-	}
-}
-@media screen and (min-width: 1200px) {
-	pre[class*="language-"] {
-		max-width: calc(100vw - 274px);
-	}
-}
-
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	background: #f5f2f0;
@@ -165,6 +144,12 @@ code[class*="language-"] {
 
 div.code-toolbar {
 	position: relative;
+	max-width: 70vw;
+}
+@media screen and (min-width: 800px) {
+	div.code-toolbar {
+		max-width: 60vw;
+	}
 }
 div.code-toolbar::after {
 	content: '';
@@ -185,6 +170,13 @@ div.code-toolbar > .toolbar {
 	transition: opacity 0.3s ease-in-out;
 	opacity: 0;
 	justify-content: flex-end;
+	height: 20px;
+	width: 40px;
+	min-height: 20px;
+}
+div.code-toolbar > .toolbar button {
+	height: 20px;
+	min-height: 20px;
 }
 
 div.code-toolbar:hover > .toolbar {
@@ -244,3 +236,6 @@ div.code-toolbar > .toolbar button:active {
 	background: #777 !important;
 }
 
+.code-container {
+	overflow-x: hidden;
+}

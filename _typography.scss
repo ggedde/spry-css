@@ -5,7 +5,7 @@ html {
     }
 }
 body, input, textarea, select {
-    font: 300 1rem/1.4 Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font: 300 clamp(12px, 5vw, 1rem)/1.4 Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     letter-spacing: .01em;
     color: map-get($colors, 'text');
 }
@@ -23,13 +23,13 @@ body, input, textarea, select {
 }
 
 .tiny {
-    font-size: .80rem;
+    font-size: 80%;
 }
 .small {
-    font-size: .85rem;
+    font-size: 90%;
 }
 .large {
-    font-size: 1.15rem;
+    font-size: 115%;
 }
 
 section {

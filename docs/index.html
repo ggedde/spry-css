@@ -16,10 +16,10 @@
 </head>
 
 <body>
-    <div class="flex">
-        <nav class="sticky index-1 bg-light vh">
-            <div class="overflow-auto h p-2 md-p-3">
-                <h5 class="mb-3">Spry<span class="md-none"> </span>CSS <img
+    <div class="row g-0">
+        <nav class="sticky index-1 bg-light vh md-w-200 col-2">
+            <div class="overflow-auto h p-2 lg-p-3">
+                <h5 class="mb-3"><a href="https://ggedde.github.io/spry-css">Spry<span class="md-none"> </span>CSS</a> <img
                         src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases" alt="Release">
                 </h5>
                 <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 nowrap px-0 md-px-1 left"
@@ -164,7 +164,7 @@
                 </a>
             </div>
         </nav>
-        <main class="lg-mw">
+        <main class="lg-mw col-fixed">
             <!------------------------------------
             ---------    INSTALLATION    ---------
             ------------------------------------->
@@ -299,7 +299,7 @@ $spacing: (
                     <li>List Item 3 lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                         nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
                 </ol>
-                <br/>
+                <br />
                 <p class="small">Paragraph Small - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                     nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
                     eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
@@ -434,18 +434,21 @@ $spacing: (
                             d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
                     </svg>
                     <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+                        <path fill="currentColor" d="M15.41 16.58L10.83 12L15.41 7.41L14 6L8 12L14 18L15.41 16.58Z" />
                     </svg>
                     <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+                        <path fill="currentColor" d="M8.59 16.58L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.58Z" />
+                    </svg>
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 
+                            21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 
+                            5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 
+                            13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 
+                            10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
                     </svg>
                     <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                         <path fill="currentColor"
-                            d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
-                    </svg>
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+                            d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
                     </svg>
                 </div>
 
@@ -713,8 +716,8 @@ $spacing: (
 
                 <div class="show-code">
                     <div class="row">
-                        <div class="bg-light rounded p-1 md-w-300">
-                            md-w-300
+                        <div class="bg-light rounded p-1 md-mw-300">
+                            md-mw-300
                         </div>
                         <div class="bg-light rounded p-1">
                             auto
@@ -975,58 +978,61 @@ $spacing: (
                 </div>
 
                 <h4 class="mt-3">Collapsing Toggle (Accordion)</h4>
-                <p class="mb-2">Add the <code class="color-grey italic small">.collapsed</code> class to the toggle
+                <p class="mb-2">Add the <code class="color-grey italic small">.collapse</code> class to the toggle
                     checkbox</p>
                 <div class="show-code">
-                    <input id="toggle-2" class="toggle collapsed" type="checkbox" />
+                    <input id="toggle-2" class="toggle collapse" type="checkbox" />
                     <label for="toggle-2">
                         <h4 class="flex-middle"><span class="btn btn-toggle btn-link"></span>Question 1</h4>
                     </label>
                     <div>
                         <p class="border p-1">
                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                            et
                             justo duo
-                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                            dolor
                             sit amet.
                         </p>
                     </div>
-                    <input id="toggle-2b" class="toggle collapsed" type="checkbox" />
+                    <input id="toggle-2b" class="toggle collapse" type="checkbox" />
                     <label for="toggle-2b">
                         <h4 class="flex-middle"><span class="btn btn-toggle btn-link"></span>Question 2</h4>
                     </label>
                     <div>
                         <p class="border p-1">
                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                            et
                             justo duo
-                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                            dolor
                             sit amet.
                         </p>
                     </div>
                 </div>
 
                 <h4 class="mt-3">Overflown Toggle</h4>
-                <p class="mb-2">Wrap your container in a relative and absolute containers <code
-                        class="color-grey italic small">.collapsed</code> to the toggle checkbox</p>
+                <p class="mb-2">Add <code class="color-grey italic small">.collapse</code> to your container and add
+                    <code class="color-grey italic small">.collapse</code> to the toggle checkbox
+                </p>
                 <div class="show-code">
-                    <input id="toggle-3" class="toggle collapsed" type="checkbox" />
+                    <input id="toggle-3" class="toggle collapse" type="checkbox" />
                     <label for="toggle-3" class="btn pr-1">
                         Toggle Content
                         <span class="btn btn-toggle btn-link color-white pointer-none"></span>
                     </label>
-                    <div class="relative">
-                        <div class="absolute inset">
-                            <p class="border p-1 bg-light">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                                sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                                sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                                rebum.
-                            </p>
-                        </div>
+                    <div class="collapse">
+                        <p class="border p-1 bg-light">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                            rebum.
+                        </p>
                     </div>
                 </div>
 
@@ -1044,18 +1050,17 @@ $spacing: (
                                     d="M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
                             </svg>
                         </label>
-                        <span class="relative">
-                            <div class="absolute inset vw-30">
-                                <p class="rounded shadow fade py-1 px-2 bg-dark color-light">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                    tempor
-                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                    accusam
-                                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                                    est
-                                    Lorem ipsum dolor sit amet.
-                                </p>
-                            </div>
+                        <span class="collapse">
+                            <p
+                                class="rounded shadow fade py-1 px-2 bg-dark color-light vw-50 mw-300 outset-left md-inset-left">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                accusam
+                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                                est
+                                Lorem ipsum dolor sit amet.
+                            </p>
                         </span>
                     </span>
                     <br />
@@ -1067,18 +1072,16 @@ $spacing: (
                                     d="M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
                             </svg>
                         </label>
-                        <span class="relative">
-                            <div class="absolute inset vw-30">
-                                <p class="rounded shadow fade py-1 px-2 bg-dark color-light">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                    tempor
-                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                    accusam
-                                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                                    est
-                                    Lorem ipsum dolor sit amet.
-                                </p>
-                            </div>
+                        <span class="collapse">
+                            <p class="rounded shadow fade py-1 px-2 bg-dark color-light vw-30">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                accusam
+                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                                est
+                                Lorem ipsum dolor sit amet.
+                            </p>
                         </span>
                     </span>
                 </div>
@@ -1118,14 +1121,15 @@ $spacing: (
                         <ul class="jc-end">
                             <li>
                                 <a href="#navigation" class="pr-0">Link with Dropdown</a>
-                                <input id="toggle-nav-1" class="toggle collapsed" type="checkbox">
+                                <input id="toggle-nav-1" class="toggle collapse" type="checkbox">
                                 <label for="toggle-nav-1" class="btn btn-link btn-toggle btn-text circle"></label>
                                 <ul class="bg-light rounded-bottom md-shadow">
                                     <li><a href="#navigation">Sub Link 1</a></li>
                                     <li>
                                         <a href="#navigation">Sub Link with Menu</a>
-                                        <input id="toggle-nav-2" class="toggle collapsed" type="checkbox">
-                                        <label for="toggle-nav-2" class="btn btn-link btn-toggle btn-text circle"></label>
+                                        <input id="toggle-nav-2" class="toggle collapse" type="checkbox">
+                                        <label for="toggle-nav-2"
+                                            class="btn btn-link btn-toggle btn-text circle"></label>
                                         <ul class="bg-light rounded">
                                             <li><a href="#navigation">Sub Sub Link 1</a></li>
                                             <li><a href="#navigation">Sub Sub Link 2</a></li>
@@ -1142,14 +1146,14 @@ $spacing: (
                             <li><a href="#navigation">Link 4</a></li>
                             <li>
                                 <a href="#navigation">Link with Dropdown</a>
-                                <input id="toggle-nav-3" class="toggle collapsed" type="checkbox">
+                                <input id="toggle-nav-3" class="toggle collapse" type="checkbox">
                                 <label for="toggle-nav-3" class="btn btn-link btn-toggle btn-text circle"></label>
                                 <ul class="bg-light rounded-bottom md-shadow">
                                     <li><a href="#navigation">Sub Link 1</a></li>
                                     <li><a href="#navigation">Sub Link 2</a></li>
                                     <li>
                                         <a href="#navigation">Sub Link with Menu</a>
-                                        <input id="toggle-nav-4" class="toggle collapsed" type="checkbox">
+                                        <input id="toggle-nav-4" class="toggle collapse" type="checkbox">
                                         <label for="toggle-nav-4"
                                             class="btn btn-link btn-toggle btn-text circle"></label>
                                         <ul class="bg-light rounded">
@@ -1179,7 +1183,7 @@ $spacing: (
                             </li>
                             <li>
                                 <a href="#lists">List Item 2</a>
-                                <input id="toggle-list-2" class="toggle collapsed" type="checkbox">
+                                <input id="toggle-list-2" class="toggle collapse" type="checkbox">
                                 <label for="toggle-list-2" class="btn btn-link btn-toggle circle"></label>
                                 <ul class="bg-light rounded">
                                     <li>
@@ -1195,7 +1199,7 @@ $spacing: (
                             </li>
                             <li>
                                 <a href="#lists">List Item 3</a>
-                                <input id="toggle-list-3" class="toggle collapsed" type="checkbox">
+                                <input id="toggle-list-3" class="toggle collapse" type="checkbox">
                                 <label for="toggle-list-3" class="btn btn-link btn-toggle circle"></label>
                                 <ul class="bg-light rounded">
                                     <li>
@@ -1211,7 +1215,7 @@ $spacing: (
                             </li>
                             <li>
                                 <a href="#lists" class="pr-3">List Item 4 With a very long text</a>
-                                <input id="toggle-list-4" class="toggle collapsed" type="checkbox">
+                                <input id="toggle-list-4" class="toggle collapse" type="checkbox">
                                 <label for="toggle-list-4" class="btn btn-link btn-toggle circle"></label>
                                 <ul class="bg-light rounded">
                                     <li>
@@ -1227,7 +1231,7 @@ $spacing: (
                             </li>
                             <li>
                                 <a href="#lists" class="truncate pr-3">List Item 5 Truncated Text</a>
-                                <input id="toggle-list-5" class="toggle collapsed" type="checkbox">
+                                <input id="toggle-list-5" class="toggle collapse" type="checkbox">
                                 <label for="toggle-list-5" class="btn btn-link btn-toggle circle"></label>
                                 <ul class="bg-light rounded">
                                     <li>
@@ -1253,7 +1257,7 @@ $spacing: (
                             <hr class="bg-primary my-0 mx-1" />
                             <li class="small">
                                 <a href="#lists">Small List Item 1</a>
-                                <input id="toggle-mm" class="toggle collapsed" type="checkbox">
+                                <input id="toggle-mm" class="toggle collapse" type="checkbox">
                                 <label for="toggle-mm" class="btn btn-link btn-toggle circle"></label>
                                 <ul class="bg-light rounded">
                                     <li>
@@ -1261,7 +1265,7 @@ $spacing: (
                                     </li>
                                     <li>
                                         <a href="#lists">Sub Link 2</a>
-                                        <input id="toggle-mm2" class="toggle collapsed" type="checkbox">
+                                        <input id="toggle-mm2" class="toggle collapse" type="checkbox">
                                         <label for="toggle-mm2" class="btn btn-link btn-toggle circle"></label>
                                         <ul class="bg-light rounded">
                                             <li>
@@ -1300,9 +1304,8 @@ $spacing: (
                                     </li>
                                     <li>
                                         <a href="#lists">Sub Link 2</a>
-                                        <input id="toggle-toolbar-2" class="toggle collapsed" type="checkbox">
-                                        <label for="toggle-toolbar-2"
-                                            class="btn btn-link btn-toggle circle"></label>
+                                        <input id="toggle-toolbar-2" class="toggle collapse" type="checkbox">
+                                        <label for="toggle-toolbar-2" class="btn btn-link btn-toggle circle"></label>
                                         <ul class="bg-light rounded">
                                             <li>
                                                 <a href="#lists">Sub Sub Link 1</a>
@@ -1341,9 +1344,8 @@ $spacing: (
                                     </li>
                                     <li>
                                         <a href="#lists">Sub Link 3</a>
-                                        <input id="toggle-toolbar-4" class="toggle collapsed" type="checkbox">
-                                        <label for="toggle-toolbar-4"
-                                            class="btn btn-link btn-toggle circle"></label>
+                                        <input id="toggle-toolbar-4" class="toggle collapse" type="checkbox">
+                                        <label for="toggle-toolbar-4" class="btn btn-link btn-toggle circle"></label>
                                         <ul class="bg-light left rounded">
                                             <li>
                                                 <a href="#lists">Sub Sub Link 1</a>
@@ -1401,39 +1403,35 @@ $spacing: (
                         <h5 class="mt-3">Left Align</h4>
                             <div class="show-code">
                                 <input id="toggle-menu-1" class="toggle" type="checkbox" />
-                                <label for="toggle-menu-1"
-                                    class="btn btn-link p-0 btn-menu"><span></span></label>
-                                <div class="relative">
-                                    <div class="absolute inset">
-                                        <nav class="bg-light rounded shadow vertical w-200 list">
-                                            <ul>
-                                                <li>
-                                                    <a href="#menus">Link 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#menus" class="pr-3">Link 2 with a very long text</a>
-                                                    <input id="toggle-sub-menu-1" class="toggle collapsed"
-                                                        type="checkbox">
-                                                    <label for="toggle-sub-menu-1"
-                                                        class="btn btn-link btn-toggle circle"></label>
-                                                    <ul class="bg-light rounded">
-                                                        <li>
-                                                            <a href="#menus">Sub Link 1</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#menus">Sub Link 2</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#menus">Sub Link 3</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="#menus">Link 3</a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
+                                <label for="toggle-menu-1" class="btn btn-link p-0 btn-menu"><span></span></label>
+                                <div class="collapse">
+                                    <nav class="bg-light rounded shadow vertical w-200 list">
+                                        <ul>
+                                            <li>
+                                                <a href="#menus">Link 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#menus" class="pr-3">Link 2 with a very long text</a>
+                                                <input id="toggle-sub-menu-1" class="toggle collapse" type="checkbox">
+                                                <label for="toggle-sub-menu-1"
+                                                    class="btn btn-link btn-toggle circle"></label>
+                                                <ul class="bg-light rounded">
+                                                    <li>
+                                                        <a href="#menus">Sub Link 1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#menus">Sub Link 2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#menus">Sub Link 3</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#menus">Link 3</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
                                 </div>
                             </div>
                     </div>
@@ -1441,37 +1439,35 @@ $spacing: (
                         <h5 class="mt-3">Right Align</h4>
                             <div class="show-code">
                                 <input id="toggle-menu-2" class="toggle" type="checkbox" />
-                                <label for="toggle-menu-2"
-                                    class="btn btn-link p-0 btn-menu"><span></span></label>
-                                <div class="relative">
-                                    <div class="absolute inset-right">
-                                        <nav class="bg-light rounded shadow vertical w-200 list">
-                                            <ul>
-                                                <li>
-                                                    <a href="#menus">Link 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#menus">Link 2</a>
-                                                    <input id="toggle-sub-menu-2" class="toggle collapsed" type="checkbox">
-                                                    <label for="toggle-sub-menu-2" class="btn btn-link btn-toggle circle"></label>
-                                                    <ul class="bg-light left rounded">
-                                                        <li>
-                                                            <a href="#menus">Sub Link 1</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#menus">Sub Link 2</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#menus">Sub Link 3</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="#menus">Link 3</a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
+                                <label for="toggle-menu-2" class="btn btn-link p-0 btn-menu"><span></span></label>
+                                <div class="collapse">
+                                    <nav class="bg-light rounded shadow vertical w-200 inset-right list">
+                                        <ul>
+                                            <li>
+                                                <a href="#menus">Link 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#menus">Link 2</a>
+                                                <input id="toggle-sub-menu-2" class="toggle collapse" type="checkbox">
+                                                <label for="toggle-sub-menu-2"
+                                                    class="btn btn-link btn-toggle circle"></label>
+                                                <ul class="bg-light left rounded">
+                                                    <li>
+                                                        <a href="#menus">Sub Link 1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#menus">Sub Link 2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#menus">Sub Link 3</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#menus">Link 3</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
                                 </div>
                             </div>
                     </div>
@@ -1501,8 +1497,10 @@ $spacing: (
                                         </li>
                                         <li>
                                             <a href="#menus" class="pr-0">Link 2</a>
-                                            <input id="toggle-responsive-menu-1" class="toggle collapsed" type="checkbox">
-                                            <label for="toggle-responsive-menu-1" class="btn btn-link btn-text btn-toggle circle"></label>
+                                            <input id="toggle-responsive-menu-1" class="toggle collapse"
+                                                type="checkbox">
+                                            <label for="toggle-responsive-menu-1"
+                                                class="btn btn-link btn-text btn-toggle circle"></label>
                                             <ul class="bg-light rounded">
                                                 <li>
                                                     <a href="#menus">Sub Link 1</a>
@@ -1584,25 +1582,27 @@ $spacing: (
                         <header>
                             <h3>Lorem ipsum dolor</h3>
                         </header>
-                        <img src="/placeholder.jpg" />
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <img src="placeholder.jpg" />
+                        <article>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        </article>
                         <footer>
                             <a href="#cards" class="btn">Learn More</a>
                         </footer>
                     </div>
                 </div>
 
-                <h4>Variations</h4>
+                <h4 class="mt-4 mb-1">Variations</h4>
                 <div class="show-code">
                     <div class="row">
 
-                        <div class="card card-light shadow color-text border rounded g-3">
+                        <div class="card card-light shadow color-text border rounded g-2">
                             <header>
                                 <h4 class="px-2">Lorem ipsum dolor</h4>
                             </header>
                             <article>
-                                <p class="p-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                <p class="px-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                                     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                                 </p>
                             </article>
@@ -1612,7 +1612,7 @@ $spacing: (
                         </div>
 
                         <div class="card card-light shadow color-text border rounded g-3">
-                            <img src="/placeholder.jpg" />
+                            <img src="placeholder.jpg" />
                             <article class="px-3">
                                 <h3>Lorem ipsum dolor sit amet</h3>
                                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
@@ -1625,12 +1625,12 @@ $spacing: (
                             </footer>
                         </div>
 
-                        <div class="card card-primary border rounded p-0 shadow">
+                        <div class="card card-primary border rounded p-0 shadow g-2">
                             <header class="px-2">
                                 <h4>This is the Title</h4>
                             </header>
                             <article>
-                                <p class="p-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                <p class="px-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                                     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                                 </p>
                             </article>
@@ -1638,6 +1638,7 @@ $spacing: (
                                 <a href="#cards" class="btn btn-primary border-light small">Learn More</a>
                             </footer>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -1652,9 +1653,11 @@ $spacing: (
                                 class="color-grey">modal</code></span> <cite class="block mb-2 md-inline">Main Modal
                             Class</cite></div>
                     <div><span style="width: 270px;" class="md-inline-block"><code class="color-grey">show</code></span>
-                        <cite class="block mb-2 md-inline">Shows the Modal</cite></div>
+                        <cite class="block mb-2 md-inline">Shows the Modal</cite>
+                    </div>
                     <div><span style="width: 270px;" class="md-inline-block"><code class="color-grey">blur</code></span>
-                        <cite class="block mb-2 md-inline">Adds blur to background</cite></div>
+                        <cite class="block mb-2 md-inline">Adds blur to background</cite>
+                    </div>
                     <div><span style="width: 270px;" class="md-inline-block"><code
                                 class="color-grey">bounce</code></span> <cite class="block mb-2 md-inline">Adds bounce
                             animation. Only occurs once.</cite></div>
@@ -1813,66 +1816,40 @@ $spacing: (
                     <div><code class="color-primary">lowercase</code> <code>{ text-transform: lowercase }</code></div>
                     <div><code class="color-primary">capitalize</code> <code>{ text-transform: capitalize }</code></div>
                     <div><code class="color-primary">pointer </code> <code>{ cursor: pointer }</code></div>
-                    <div><code class="color-primary">rounded</code> <code>{ border-radius: 3px }</code></div>
+                    <div><code class="color-primary">rounded</code>
+                        <code>{ border-radius: 5px; overflow: hidden }</code>
+                    </div>
+                    <div><code class="color-primary">rounded-bottom</code> <code>{ border-radius: 0 0 5px 5px }</code>
+                    </div>
                     <div><code class="color-primary">circle</code> <code>{ border-radius: 50% }</code></div>
-                    <div><code class="color-primary">relative</code> <code>{ position: relative }</code></div>
-                    <div><code class="color-primary">absolute</code> <code>{ position: absolute }</code></div>
-                    <div><code class="color-primary">sticky</code> <code>{ position: sticky; top: 0 }</code></div>
-                    <div><code class="color-primary">fixed</code> <code>{ position: fixed }</code></div>
                     <div><code class="color-primary">float-left</code> <code>{ float: left }</code></div>
                     <div><code class="color-primary">float-right</code> <code>{ float: right }</code></div>
                     <div><code class="color-primary">clear</code> <code>{ clear: both }</code></div>
-                    <div><code class="color-primary">inset</code> <code>{ inset: 0 }</code></div>
                     <div><code class="color-primary">index-1</code> <code>{ z-index: 1 }</code></div>
                     <div><code class="color-primary">index-2</code> <code>{ z-index: 2 }</code></div>
                     <div><code class="color-primary">index-3</code> <code>{ z-index: 3 }</code></div>
-                    <div><code class="color-primary">fade</code> <code>{ opacity: .7 }</code></div>
                     <div><code class="color-primary">border</code>
                         <code>{ border: 1px solid map-get($colors, 'grey') }</code>
                     </div>
-                    <div><code class="color-primary">shadow</code>
-                        <code>{ box-shadow: 0px 2px 4px rgba(0,0,0,0.1) }</code>
+                    <div><code class="color-primary">border-top</code>
+                        <code>{ border-top: 1px solid map-get($colors, 'grey') }</code>
                     </div>
-                    <div><code class="color-primary">truncate</code> <code>{
-                        max-width: 100%;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                    }</code></div>
+                    <div><code class="color-primary">border-right</code>
+                        <code>{ border-right: 1px solid map-get($colors, 'grey') }</code>
+                    </div>
+                    <div><code class="color-primary">border-bottom</code>
+                        <code>{ border-bottom: 1px solid map-get($colors, 'grey') }</code>
+                    </div>
+                    <div><code class="color-primary">border-left</code>
+                        <code>{ border-left: 1px solid map-get($colors, 'grey') }</code>
+                    </div>
+                    <div><code class="color-primary">note </code>
+                        <code>{ font-style: italic; font-size: 90%; opacity: 0.8 }</code>
+                    </div>
+                    <div><code class="color-primary">truncate</code>
+                        <code>{ max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }</code>
+                    </div>
                 </div>
-                <h3 class="mt-4">Max Width Classes</h3>
-                <p>This requires a breakpoint. ex <code class="color-primary">{breakpoint}-mw</code></p>
-                <h3 id="spacing" class="mt-4">Spacing</h3>
-                <p>The classes are named using the format</p>
-                <code class="color-grey">{breakpoint}-</code><code
-                    class="color-primary">{property}{sides}-{spacing}</code>
-                <p>There are 3 Spacing properties:</p>
-                <div class="ml-3 my-2">
-                    <div><code class="color-primary">p</code> = padding</div>
-                    <div><code class="color-primary">m</code> = margin</div>
-                </div>
-                <p>There are 6 sides:</p>
-                <div class="ml-3 my-2">
-                    <div><code class="color-primary">t</code> = top</div>
-                    <div><code class="color-primary">r</code> = right</div>
-                    <div><code class="color-primary">b</code> = bottom</div>
-                    <div><code class="color-primary">l</code> = left</div>
-                    <div><code class="color-primary">y</code> = top and bottom</div>
-                    <div><code class="color-primary">x</code> = left and right</div>
-                </div>
-                <p>The sizes are used from the scss variable.</p>
-                <pre><code class="language-scss">// SCSS Variable
-$spacing: (
-    0: 0,
-    1: .5rem,
-    2: 1rem,
-    3: 2rem,
-    4: 4rem
-);</code></pre>
-                <h5>Negative Margin</h5>
-                <p>For a negative margin you can include a negative value by placing a <code
-                        class="color-primary">n</code> in
-                    front of the value. ex <code class="color-primary">mx-n2</code></p>
                 <h3 id="layout" class="mt-4">Layout Utility Classes</h3>
                 <p>* All Layout Utility Classes can be used with breakpoints ex <code
                         class="color-primary">{breakpoint}-{layoutclass}</code></p>
@@ -1882,96 +1859,12 @@ $spacing: (
                 <pre><code class="language-css">none md-block</code></pre>
                 <p>Example Hide on Tablets</p>
                 <pre><code class="language-css">md-none lg-block</code></pre>
-                <div class="mt-3">
-                    <h5>Sizing</h5>
+
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">jc-between</code>
+                    <code>{ justify-content: space-between }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h</code>
-                    <code>{ height: 100% }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">vh</code>
-                    <code>{ height: 100vh }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w</code>
-                    <code>{ width: 100% }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">vw</code>
-                    <code>{ width: 100vw }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-100</code>
-                    <code>{ width: 100px; min-width: 100px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-200</code>
-                    <code>{ width: 200px; min-width: 200px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-300</code>
-                    <code>{ width: 300px; min-width: 300px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-400</code>
-                    <code>{ width: 400px; min-width: 400px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-500</code>
-                    <code>{ width: 500px; min-width: 500px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-600</code>
-                    <code>{ width: 600px; min-width: 600px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-700</code>
-                    <code>{ width: 700px; min-width: 700px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-800</code>
-                    <code>{ width: 800px; min-width: 800px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-900</code>
-                    <code>{ width: 900px; min-width: 900px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-1000</code>
-                    <code>{ width: 1000px; min-width: 1000px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-1100</code>
-                    <code>{ width: 1100px; min-width: 1100px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-1200</code>
-                    <code>{ width: 1200px; min-width: 1200px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-100</code>
-                    <code>{ height: 100px; min-height: 100px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-200</code>
-                    <code>{ height: 200px; min-height: 200px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-300</code>
-                    <code>{ height: 300px; min-height: 300px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-400</code>
-                    <code>{ height: 400px; min-height: 400px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-500</code>
-                    <code>{ height: 500px; min-height: 500px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-600</code>
-                    <code>{ height: 600px; min-height: 600px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-700</code>
-                    <code>{ height: 700px; min-height: 700px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-800</code>
-                    <code>{ height: 800px; min-height: 800px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-900</code>
-                    <code>{ height: 900px; min-height: 900px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-1000</code>
-                    <code>{ height: 1000px; min-height: 1000px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-1100</code>
-                    <code>{ height: 1100px; min-height: 1100px }</code>
-                </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-1200</code>
-                    <code>{ height: 1200px; min-height: 1200px }</code>
-                </div>
-                <div class="mt-3">
-                    <h5>Text</h5>
-                </div>
+
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">left</code>
                     <code>{ text-align: left }</code>
                 </div>
@@ -1996,9 +1889,6 @@ $spacing: (
                         class="color-primary">break-word</code>
                     <code>{ word-wrap: break-word }</code>
                 </div>
-                <div class="mt-3">
-                    <h5>Display</h5>
-                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline</code>
                     <code>{ display: inline; width: auto }</code>
                 </div>
@@ -2006,14 +1896,21 @@ $spacing: (
                     <code>{ display: flex }</code>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">block</code>
-                    <code>{ display: block; width: 100% }</code>
+                    <code>{ display: block }</code>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">none</code>
                     <code>{ display: none }</code>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">open.toggle + label + * {opacity: 1; pointer-events: all; transform: scaleY(1) }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
                         class="color-primary">inline-block</code>
-                    <code>{ display: inline-block }</code>
+                    <code>{ display: inline-block; width: auto }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">inline-flex</code>
+                    <code>{ display: inline-flex; width: auto }</code>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">table</code>
                     <code>{ display: table }</code>
@@ -2022,8 +1919,66 @@ $spacing: (
                         class="color-primary">table-cell</code>
                     <code>{ display: table-cell }</code>
                 </div>
-                <div class="mt-3">
-                    <h5>Vertical Align</h5>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">relative</code>
+                    <code>{ position: relative }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">absolute</code>
+                    <code>{ position: absolute }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">collapse</code>
+                    <code>{ position: relative }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">collapse > *</code>
+                    <code>{ position: absolute }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">sticky</code>
+                    <code>{ position: sticky; top: 0 }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">fixed</code>
+                    <code>{ position: fixed }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inset </code>
+                    <code>{ position: absolute; inset: 0 }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">inset-top </code>
+                    <code>{ position: absolute; top: 0; bottom: auto }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">inset-right </code>
+                    <code>{ position: absolute; right: 0; left: auto }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">inset-bottom </code>
+                    <code>{ position: absolute; bottom: 0; top: auto }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">inset-left </code>
+                    <code>{ position: absolute; left: 0; right: auto }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">outset-top </code>
+                    <code>{ position: absolute; bottom: 100%; top: auto }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">outset-right </code>
+                    <code>{ position: absolute; left: 100%; right: auto }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">outset-bottom </code>
+                    <code>{ position: absolute; top: 100%; bottom: auto }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">outset-left </code>
+                    <code>{ position: absolute; right: 100%; left: auto }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">pointer-none </code>
+                    <code>{ pointer-events: none }</code>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
                         class="color-primary">align-baseline</code>
@@ -2041,19 +1996,17 @@ $spacing: (
                         class="color-primary">align-bottom</code>
                     <code>{ vertical-align: bottom }</code>
                 </div>
-                <div class="mt-3">
-                    <h5>Overflow</h5>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">overflow-hidden</code>
+                    <code>{ overflow: hidden }</code>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">overflow-hidden</code> <code>{ overflow: hidden }</code></div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
-                        class="color-primary">overflow-scroll</code> <code>{ overflow: scroll }</code></div>
+                        class="color-primary">overflow-scroll</code>
+                    <code>{ overflow: scroll }</code>
+                </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
                         class="color-primary">overflow-auto</code>
                     <code>{ overflow: auto }</code>
-                </div>
-                <div class="mt-3">
-                    <h5 id="order">Order</h5>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
                         class="color-primary">order-first</code>
@@ -2078,9 +2031,6 @@ $spacing: (
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
                         class="color-primary">order-last</code>
                     <code>{ order:99999 }</code>
-                </div>
-                <div class="mt-3">
-                    <h5>Flex Utility Classes</h5>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
                         class="color-primary">ai-start</code>
@@ -2117,6 +2067,10 @@ $spacing: (
                     <code>{ justify-content: space-around }</code>
                 </div>
                 <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">flex-middle</code>
+                    <code>{ display: flex; align-items: center }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
                         class="color-primary">flex-center</code>
                     <code>{ display: flex; align-items: center; justify-content: center }</code>
                 </div>
@@ -2128,6 +2082,89 @@ $spacing: (
                         class="color-primary">flex-column</code>
                     <code>{ flex-direction: column }</code>
                 </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">shadow</code>
+                    <code>{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">h-***</code>
+                    <code>{ height: ***px; min-height: ***px; max-height: ***px }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">mh-***</code>
+                    <code>{ max-height: ***px }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">vh-**</code>
+                    <code>{ height: **vh }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">mvh-**</code>
+                    <code>{ max-height: **vh }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">w-***</code>
+                    <code>{ width: ***px; min-width: ***px; max-width: ***px }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">mw-***</code>
+                    <code>{ max-width: ***px }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">vw-**</code>
+                    <code>{ width: **vw }</code>
+                </div>
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                        class="color-primary">mvw-**</code>
+                    <code>{ max-width: **vw }</code>
+                </div>
+
+                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">o-**</code>
+                    <code>{ opacity: .** }</code>
+                </div>
+
+                <p class="pt-3 pl-2 note">** = 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100</p>
+                <p class="pt-0 pl-2 note">*** = 0, 100, 200, 300, 400, 500, 600, 700, 800, 900</p>
+
+
+
+
+
+
+
+                <h3 class="mt-4">Max Width Classes</h3>
+                <p>This requires a breakpoint. ex <code class="color-primary">{breakpoint}-mw</code></p>
+                <h3 id="spacing" class="mt-4">Spacing</h3>
+                <p>The classes are named using the format</p>
+                <code class="color-grey">{breakpoint}-</code><code
+                    class="color-primary">{property}{sides}-{spacing}</code>
+                <p>There are 3 Spacing properties:</p>
+                <div class="ml-3 my-2">
+                    <div><code class="color-primary">p</code> = padding</div>
+                    <div><code class="color-primary">m</code> = margin</div>
+                </div>
+                <p>There are 6 sides:</p>
+                <div class="ml-3 my-2">
+                    <div><code class="color-primary">t</code> = top</div>
+                    <div><code class="color-primary">r</code> = right</div>
+                    <div><code class="color-primary">b</code> = bottom</div>
+                    <div><code class="color-primary">l</code> = left</div>
+                    <div><code class="color-primary">y</code> = top and bottom</div>
+                    <div><code class="color-primary">x</code> = left and right</div>
+                </div>
+                <p>The sizes are used from the scss variable.</p>
+                <pre><code class="language-scss">// SCSS Variable
+$spacing: (
+    0: 0,
+    1: .5rem,
+    2: 1rem,
+    3: 2rem,
+    4: 4rem
+);</code></pre>
+                <h5>Negative Margin</h5>
+                <p>For a negative margin you can include a negative value by placing a <code
+                        class="color-primary">n</code> in
+                    front of the value. ex <code class="color-primary">mx-n2</code></p>
+
             </section>
         </main>
     </div>
@@ -2172,8 +2209,8 @@ $spacing: (
                 html = html.replaceAll("\n            " + item + "\n        ", '');
                 html = html.replaceAll("\n                " + item + "\n            ", '');
             })
-            // elem.insertAdjacentHTML('beforeend', '<div><input id="' + id + '" class="toggle" type="checkbox" /><label for="' + id + '" class="btn btn-grey btn-link p-0 btn-menu small mt-1"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" /></svg></label><div class="toggle-collapsed"><pre><code class="language-html">' + html + '</code></pre></div></div>');
-            elem.insertAdjacentHTML('beforeend', '<div class="mt-2"><pre><code class="language-html">' + html + '</code></pre></div>');
+            // elem.insertAdjacentHTML('beforeend', '<div><input id="' + id + '" class="toggle" type="checkbox" /><label for="' + id + '" class="btn btn-grey btn-link p-0 btn-menu small mt-1"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" /></svg></label><div class="toggle-collapse"><pre><code class="language-html">' + html + '</code></pre></div></div>');
+            elem.insertAdjacentHTML('beforeend', '<div class="mt-2 code-container"><pre><code class="language-html">' + html + '</code></pre></div>');
         });
     </script>
 </body>
