@@ -17,11 +17,6 @@ General Utility Classes
 .index-1{ z-index: 1 }
 .index-2{ z-index: 2 }
 .index-3{ z-index: 3 }
-.border{ border: 1px solid map-get($colors, 'grey') }
-.border-top{ border-top: 1px solid map-get($colors, 'grey') }
-.border-right{ border-right: 1px solid map-get($colors, 'grey') }
-.border-bottom{ border-bottom: 1px solid map-get($colors, 'grey') }
-.border-left{ border-left: 1px solid map-get($colors, 'grey') }
 .note { font-style: italic; font-size: 90%; opacity: 0.8 }
 .truncate{ max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
 
@@ -32,7 +27,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .center{ text-align: center }
 .right{ text-align: right }
 .justify{ text-align: justify }
-.nowrap{ white-space: nowrap }
+.no-wrap{ white-space: nowrap }
 .pre-wrap{ white-space: pre-wrap }
 .break-word{ word-wrap: break-word }
 .inline{ display: inline; width: auto }
@@ -85,7 +80,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .order-2{ order:2 }
 .order-3{ order:3 }
 .order-last{ order:99999 }
+.border{ border: 1px solid map-get($colors, 'grey') }
+.border-top{ border-top: 1px solid map-get($colors, 'grey') }
+.border-right{ border-right: 1px solid map-get($colors, 'grey') }
+.border-bottom{ border-bottom: 1px solid map-get($colors, 'grey') }
+.border-left{ border-left: 1px solid map-get($colors, 'grey') }
+.no-border{ border: 0 }
 .shadow{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }
+.no-shadow{ box-shadow: none }
 .h{ height: 100% }
 .vh{ height: 100vh }
 .w{ width: 100% }
@@ -115,7 +117,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 			&-center{ text-align: center }
 			&-right{ text-align: right }
 			&-justify{ text-align: justify }
-			&-nowrap{ white-space: nowrap }
+			&-no-wrap{ white-space: nowrap }
             &-pre-wrap{ white-space: pre-wrap }
 			&-break-word{ word-wrap: break-word }
 			&-inline{ display: inline; width: auto }
@@ -175,7 +177,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 			&-w{ width: 100% }
 			&-w-0{ width: 0 }
 			&-vw{ width: 100vw }
+			&-border{ border: 1px solid map-get($colors, 'grey') }
+			&-border-top{ border-top: 1px solid map-get($colors, 'grey') }
+			&-border-right{ border-right: 1px solid map-get($colors, 'grey') }
+			&-border-bottom{ border-bottom: 1px solid map-get($colors, 'grey') }
+			&-border-left{ border-left: 1px solid map-get($colors, 'grey') }
+			&-no-border{ border: 0 }
 			&-shadow{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }
+			&-no-shadow{ box-shadow: none }
 			@for $i from 1 through 12 {
 				&-h-#{$i}00{ height: #{$i}00px; min-height: #{$i}00px; max-height: #{$i}00px }
 				&-mh-#{$i}00{ max-height: #{$i}00px }

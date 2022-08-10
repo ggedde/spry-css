@@ -29,56 +29,58 @@ button {
 }
 
 .btn,
+.toolbar,
 input,
 textarea,
 select,
 nav>a,
-nav li,
-.toolbar,
 fieldset {
 
 	&.large,
-	&.large a,
-	&.large button,
 	.large & {
 		min-height: clamp(44px, 5vw, 50px);
 		min-width : clamp(44px, 5vw, 50px);
 	}
 
 	&.small,
-	&.small a,
-	&.small button,
 	.small & {
 		min-height: clamp(26px, 5vw, 30px);
 		min-width : clamp(26px, 5vw, 30px);
 	}
 
 	&.tiny,
-	&.tiny a,
-	&.tiny button,
 	.tiny & {
 		min-height: 24px;
 		min-width : 24px;
 	}
-
-
 }
 
-// .btn,
-// input,
-// textarea,
-// select,
-// nav>a,
-// nav li,
-// fieldset {
+nav {
 
-// 	&.small,
-// 	.small &,
-// 	&.tiny,
-// 	.tiny & {
-// 		font-size: 100%;
-// 	}
-// }
+	& li.large > a,
+	& li.large li > a,
+	&.large li > a,
+	&.large li > button {
+		min-height: clamp(44px, 5vw, 50px);
+		min-width : clamp(44px, 5vw, 50px);
+	}
+
+	& li.small > a,
+	& li.small li > a,
+	&.small li > a,
+	&.small li > button {
+		min-height: clamp(26px, 5vw, 30px);
+		min-width : clamp(26px, 5vw, 30px);
+	}
+
+	& li.tiny > a,
+	& li.tiny li > a,
+	&.tiny li > a,
+	&.tiny li > button {
+		min-height: 24px;
+		min-width : 24px;
+	}
+}
 
 .btn,
 input,
@@ -366,6 +368,8 @@ nav {
 
 	&.list {
 
+		font-size: 1.15rem;
+
 		&,
 		>a,
 		>button,
@@ -384,24 +388,27 @@ nav {
 			padding-bottom  : 0.5rem;
 		}
 
-		li {
-			font-size: 1.15rem;
+		// li {
+		// 	font-size: 1.15rem;
 
 			&.small,
+			// &.small li,
 			.small & {
 				font-size: 1rem;
 			}
 
 			&.tiny,
+			// &.tiny li,
 			.tiny & {
 				font-size: .85rem;
 			}
 
 			&.large,
+			// &.large li,
 			.large & {
 				font-size: 1.3rem;
 			}
-		}
+		// }
 	}
 }
 
@@ -552,8 +559,14 @@ nav li.tiny>a {
 		top     : 0;
 	}
 
-	nav.list li>& {
+	nav.list li.small>&,
+	nav.list.small li>& {
 		top: 2px;
+	}
+	nav.list.large li.small>&,
+	nav.list li.tiny>&,
+	nav.list.tiny li>& {
+		top: 4px;
 	}
 }
 

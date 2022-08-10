@@ -39,6 +39,12 @@ $color_value in $colors {
 		background-color: $color_value;
 	}
 
+	@each $breakpoint, $breakpoint_width in $breakpoints {
+		.#{$breakpoint}-bg-#{$color_name}{
+			background-color: $color_value;
+		}
+	}
+
 	.btn-#{$color_name},
 	.color-#{$color_name}.btn-toggle::after,
 	.accent-#{$color_name} .btn:not(.btn-link),
