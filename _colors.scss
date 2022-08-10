@@ -1,12 +1,10 @@
-@each $color_name,
-$color_value in $colors {
+@each $color_name, $color_value in $colors {
 
 	a.color-#{$color_name}:hover {
 		color: lighten($color_value, 10%);
 	}
 }
-@each $color_name,
-$color_value in $colors {
+@each $color_name, $color_value in $colors {
 
 	.btn-#{$color_name}.btn-outline,
 	.btn-#{$color_name}.btn-link,
@@ -37,12 +35,6 @@ $color_value in $colors {
 	.bg-#{$color_name},
 	.btn.bg-#{$color_name}:hover {
 		background-color: $color_value;
-	}
-
-	@each $breakpoint, $breakpoint_width in $breakpoints {
-		.#{$breakpoint}-bg-#{$color_name}{
-			background-color: $color_value;
-		}
 	}
 
 	.btn-#{$color_name},
@@ -168,6 +160,14 @@ $color_value in $colors {
 			&:focus-within legend label {
 				color: $color_value;
 			}
+		}
+	}
+}
+
+@each $color_name, $color_value in $colors {
+	@each $breakpoint, $breakpoint_width in $breakpoints {
+		.#{$breakpoint}-bg-#{$color_name}{
+			background-color: $color_value;
 		}
 	}
 }
