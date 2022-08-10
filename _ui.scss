@@ -269,8 +269,6 @@ nav.list li>button {
 	background-color: transparent;
 	border-color    : transparent;
 	text-transform  : capitalize;
-	padding-top     : 0.5rem;
-	padding-bottom  : 0.5rem;
 
 	&:hover,
 	&:focus,
@@ -377,6 +375,13 @@ nav {
 			border         : 0;
 			text-align     : left;
 			justify-content: flex-start;
+		}
+		>a,
+		>button,
+		li>a,
+		li>button {
+			padding-top     : 0.5rem;
+			padding-bottom  : 0.5rem;
 		}
 
 		li {
