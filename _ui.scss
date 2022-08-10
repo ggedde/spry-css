@@ -57,26 +57,26 @@ fieldset {
 
 nav {
 
-	& li.large > a,
-	& li.large li > a,
-	&.large li > a,
-	&.large li > button {
+	& li.large>a,
+	& li.large li>a,
+	&.large li>a,
+	&.large li>button {
 		min-height: clamp(44px, 5vw, 50px);
 		min-width : clamp(44px, 5vw, 50px);
 	}
 
-	& li.small > a,
-	& li.small li > a,
-	&.small li > a,
-	&.small li > button {
+	& li.small>a,
+	& li.small li>a,
+	&.small li>a,
+	&.small li>button {
 		min-height: clamp(26px, 5vw, 30px);
 		min-width : clamp(26px, 5vw, 30px);
 	}
 
-	& li.tiny > a,
-	& li.tiny li > a,
-	&.tiny li > a,
-	&.tiny li > button {
+	& li.tiny>a,
+	& li.tiny li>a,
+	&.tiny li>a,
+	&.tiny li>button {
 		min-height: 24px;
 		min-width : 24px;
 	}
@@ -376,16 +376,17 @@ nav {
 		li>a,
 		li>button {
 			width          : 100%;
-			border         : 0;
 			text-align     : left;
 			justify-content: flex-start;
 		}
+
 		>a,
 		>button,
 		li>a,
 		li>button {
-			padding-top     : 0.5rem;
-			padding-bottom  : 0.5rem;
+			padding-top   : 0.5rem;
+			padding-bottom: 0.5rem;
+			border        : 0;
 		}
 
 		&.large,
@@ -556,6 +557,7 @@ nav li.tiny>a {
 	nav.list.small li>& {
 		top: 2px;
 	}
+
 	nav.list.large li.small>&,
 	nav.list li.tiny>&,
 	nav.list.tiny li>& {
