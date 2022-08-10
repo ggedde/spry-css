@@ -388,27 +388,20 @@ nav {
 			padding-bottom  : 0.5rem;
 		}
 
-		// li {
-		// 	font-size: 1.15rem;
+		&.large,
+		.large & {
+			font-size: 1.3rem;
+		}
 
-			&.small,
-			// &.small li,
-			.small & {
-				font-size: 1rem;
-			}
+		&.small,
+		.small & {
+			font-size: 1rem;
+		}
 
-			&.tiny,
-			// &.tiny li,
-			.tiny & {
-				font-size: .85rem;
-			}
-
-			&.large,
-			// &.large li,
-			.large & {
-				font-size: 1.3rem;
-			}
-		// }
+		&.tiny,
+		.tiny & {
+			font-size: .85rem;
+		}
 	}
 }
 
