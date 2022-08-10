@@ -218,30 +218,52 @@ input[type="submit"] {
 		border-color    : darken(map-get($colors, 'primary'), 5%);
 		transition      : none;
 	}
+}
 
+
+.btn svg,
+nav.list li>a svg,
+nav.list li>button svg {
+	width : 24px;
+	height: 24px;
+}
+
+.btn.large,
+.large .btn,
+nav.list.large li>a,
+nav.list.large li>button,
+.large nav.list li>a,
+.large nav.list li>button {
 	svg {
-		width : 24px;
-		height: 24px;
-	}
-
-	&.large,
-	.large & {
-		svg {
-			width : 32px;
-			height: 32px;
-		}
-	}
-
-	&.small,
-	.small &,
-	&.tiny,
-	.tiny & {
-		svg {
-			width : 18px;
-			height: 18px;
-		}
+		width : 32px;
+		height: 32px;
 	}
 }
+
+.btn.small,
+.small .btn,
+nav.list.small li>a,
+nav.list.small li>button,
+.small nav.list li>a,
+.small nav.list li>button {
+	svg {
+		width : 18px;
+		height: 18px;
+	}
+}
+
+.btn.tiny,
+.tiny .btn,
+nav.list.tiny li>a,
+nav.list.tiny li>button,
+.tiny nav.list li>a,
+.tiny nav.list li>button {
+	svg {
+		width : 16px;
+		height: 16px;
+	}
+}
+
 
 .btn,
 input[type="submit"] {
@@ -272,18 +294,23 @@ nav.list li>button {
 	border-color    : transparent;
 	text-transform  : capitalize;
 
-	&:hover,
-	&:focus,
-	&:focus-within {
-		background-color: rgba(map-get($colors, 'primary'), 10%);
-		border-color    : transparent;
-		color           : map-get($colors, 'primary');
-	}
-
 	&:active {
 		background-color: rgba(map-get($colors, 'primary'), 20%);
 		transition      : none;
 	}
+}
+
+.btn.btn-link:hover,
+.btn.btn-link:focus,
+nav.list li.active>a,
+nav.list li>a:hover,
+nav.list li>a:focus,
+nav.list li>a:focus-within,
+nav.list li>button:hover
+nav.list li>button:focus {
+	background-color: rgba(map-get($colors, 'primary'), 10%);
+	border-color    : transparent;
+	color           : map-get($colors, 'primary');
 }
 
 .btn.btn-link {
@@ -368,7 +395,7 @@ nav {
 
 	&.list {
 
-		font-size: 1.15rem;
+		font-size: 115%;
 
 		&,
 		>a,
@@ -387,21 +414,6 @@ nav {
 			padding-top   : 0.5rem;
 			padding-bottom: 0.5rem;
 			border        : 0;
-		}
-
-		&.large,
-		.large & {
-			font-size: 1.3rem;
-		}
-
-		&.small,
-		.small & {
-			font-size: 1rem;
-		}
-
-		&.tiny,
-		.tiny & {
-			font-size: .85rem;
 		}
 	}
 }
