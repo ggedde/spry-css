@@ -137,6 +137,7 @@ nav>ul>li>ul,
 	transform       : scaleY(.8) translateY(-4px);
 	transform-origin: top;
 	transition      : transform .2s .05s ease-in-out, opacity .2s .05s ease-in-out, max-height .3s ease-in-out;
+	transition-delay: .1s; // This prevents page load transitions
 	position        : relative;
 	z-index         : 1;
 }
