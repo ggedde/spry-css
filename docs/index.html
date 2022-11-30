@@ -325,7 +325,7 @@ $spacing: (
                     invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
                     duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
                     sit amet.</p>
-                <p class="large">Paragraph Large - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                <p class="lg">Paragraph Large - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                     nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
                     eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
                     est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -499,31 +499,38 @@ $spacing: (
                 <h2 class="border-bottom pb-1 mb-3">Buttons</h2>
                 <div class="show-code">
                     <button class="btn btn-primary">Primary</button>
+                    <button class="btn btn-error">Error</button>
+                    <button class="btn btn-success">Success</button>
+                    <button class="btn btn-warning">Warning</button>
                     <button class="btn btn-light">Light</button>
-                    <a href="#buttons" class="btn btn-light">Light Anchor</a>
-                    <a href="#buttons" class="btn btn-dark">Dark Anchor</a>
+                    <a href="#buttons" class="btn btn-medium">Medium</a>
+                    <a href="#buttons" class="btn btn-dark">Dark</a>
                 </div>
 
                 <h4 class="mt-4">Outline</h4>
                 <div class="show-code">
                     <button class="btn btn-outline">Primary</button>
+                    <button class="btn btn-outline btn-error">Error</button>
+                    <button class="btn btn-outline btn-success">Success</button>
+                    <button class="btn btn-outline btn-warning">Warning</button>
                     <button class="btn btn-outline btn-medium">Grey</button>
-                    <a href="#buttons" class="btn btn-outline btn-medium">Grey</a>
                     <a href="#buttons" class="btn btn-outline btn-dark">Dark</a>
                 </div>
 
                 <h4 class="mt-4">As Link</h4>
                 <div class="show-code">
                     <a href="#buttons" class="btn btn-link">Primary</a>
+                    <a href="#buttons" class="btn btn-link btn-error">Error</a>
+                    <a href="#buttons" class="btn btn-link btn-success">Success</a>
                     <a href="#buttons" class="btn btn-link btn-medium">Grey</a>
                     <a href="#buttons" class="btn btn-link btn-dark">Dark</a>
                 </div>
 
                 <h4 class="mt-4">Large</h4>
                 <div class="show-code">
-                    <button class="btn large px-4">Primary</button>
-                    <button class="btn btn-medium large px-4">Grey</button>
-                    <button class="btn btn-dark large px-4">Dark</button>
+                    <button class="btn lg px-4">Primary</button>
+                    <button class="btn btn-medium lg px-4">Grey</button>
+                    <button class="btn btn-dark lg px-4">Dark</button>
                 </div>
 
                 <h4 class="mt-4">Small</h4>
@@ -601,12 +608,12 @@ $spacing: (
                 <h4 class="mt-4">With Icons</h4>
                 <div class="show-code">
                     <div class="flex flex-wrap g-2 ai-center">
-                        <button class="btn btn-primary pr-3 large">After
+                        <button class="btn btn-primary pr-3 lg">After
                             <svg class="ml-3" viewBox="0 0 24 24">
                                 <path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
                             </svg>
                         </button>
-                        <button class="btn btn-primary p-0 large">
+                        <button class="btn btn-primary p-0 lg">
                             <svg viewBox="0 0 24 24" width="24" height="24">
                                 <path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
                             </svg>
@@ -644,7 +651,7 @@ $spacing: (
             ------------------------------------->
             <section id="grid">
                 <h2 class="border-bottom pb-1 mb-3">Grid</h2>
-                <p class="large">You can either use a 12 column css grid or flexbox grid system</p>
+                <p class="lg">You can either use a 12 column css grid or flexbox grid system</p>
                 <h5>Container Classes</h5>
                 <div class="ml-1 md-ml-3 mt-1">
                     <div><code class="color-primary block mt-2 md-mt-0 md-inline-block"
@@ -1003,7 +1010,7 @@ $spacing: (
                 <div class="show-code">
                     <button class="loader loading sm"></button>
                     <button class="loader loading color-success"></button>
-                    <button class="loader loading large color-error"></button>
+                    <button class="loader loading lg color-error"></button>
                     <button class="btn loader loading p-0"></button>
                     <button class="btn loader" type="button"
                         onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">Click
