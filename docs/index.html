@@ -1024,15 +1024,12 @@ $spacing: (
                 <h2 class="border-bottom pb-1 mb-3">Toggle</h2>
                 <p class="mt-2">Toggles are used to open and close content, menus, etc</p>
                 <p class="mb-2">You can create a toggle group by adding a <code
-                        class="color-medium italic sm">&lt;input class="toggle" type="checkbox"&gt;</code> followed
-                    by
-                    a <code class="color-medium italic sm">&lt;label&gt;</code> then followed by your container of
-                    choice. The order of these elements matter. To bind the Label to the Checkbox you will need to give
-                    the checkbox an <code class="color-medium italic sm">id</code> and set the <code
-                        class="color-medium italic sm">for</code> on the label to match the checkbox id<code
-                        class="color-medium italic sm">id</code>.</p>
-                <pre><code class="language-html">&lt;input id="toggle-custom-id" class="toggle" type="checkbox" /&gt;
-&lt;label for="toggle-custom-id"&gt;Toggle Handle&lt;/label&gt;
+                        class="color-medium italic sm">&lt;input type="checkbox" /&gt;</code> inside
+                    a <code class="color-medium italic sm">&lt;label class="toggle"&gt;</code> then followed by your container of
+                    your choice.</p>
+                <pre><code class="language-html">&lt;label class="toggle"&gt;Toggle Handle
+    &lt;input type="checkbox" /&gt;
+&lt;/label&gt;
 &lt;p&gt;Toggle Content&lt;/p&gt;</code></pre>
                 <h4 class="mt-4 mb-1">General Toggle Example</h4>
                 <div class="show-code">
@@ -1138,6 +1135,8 @@ $spacing: (
             ------------------------------------->
             <section id="tooltip">
                 <h2 class="border-bottom pb-1 mb-3">ToolTips</h2>
+                <p class="mb-2">You can create a tooltip by adding any tag with the class 
+                    <code class="color-medium italic sm">tooltip</code> inside a container of your choice.</p>
                 <div class="show-code">
                     <div>
                         Tooltip Example
