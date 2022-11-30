@@ -18,11 +18,12 @@
   "homepage": "https://github.com/ggedde/spry-css#readme",
   "scripts": {
     "dev": "node_modules/.bin/chokidar *.scss -c 'npm run build'",
-    "build": "node_modules/.bin/sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer -o ./dist/spry.min.css; sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer -o ./docs/spry.min.css; gzip -c ./dist/spry.min.css > ./dist/spry.min.css.gz"
+    "build": "node_modules/.bin/sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use cssnano -o ./dist/spry.min.css; sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use cssnano -o ./docs/spry.min.css; gzip -c ./dist/spry.min.css > ./dist/spry.min.css.gz"
   },
   "dependencies": {
     "autoprefixer": "^10.4.1",
     "chokidar-cli": "^3.0.0",
+    "cssnano": "^5.1.14",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
     "sass": "^1.56.1"
