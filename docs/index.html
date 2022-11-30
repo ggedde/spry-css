@@ -109,7 +109,12 @@
                         <path fill="currentColor"
                             d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M7,10L12,15L17,10H7Z" />
                     </svg>
-                    <span class="none md-inline">Toggle</span>
+                    <span class="none md-inline">Toggles</span>
+                </a>
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
+                    href="#tooltip">
+                    <svg class="md-mr-1" viewBox="0 0 24 24"><path fill="currentColor" d="M9 22a1 1 0 0 1-1-1v-3H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6.1l-3.7 3.71c-.2.19-.45.29-.7.29H9m1-6v3.08L13.08 16H20V4H4v12h6z" /></svg>
+                    <span class="none md-inline">Tooltips</span>
                 </a>
                 <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
                     href="#navigation">
@@ -1139,6 +1144,11 @@ $spacing: (
                     <code class="color-medium italic sm">tooltip</code> inside a container of your choice.</p>
                 <div class="show-code">
                     <div>
+                        <button class="btn">Tooltip Example
+                            <span class="tooltip rounded shadow o-80 p-2 bg-dark color-light mw-300 sm outset-top inset-left left text-transform" style="text-transform: none" >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</span>
+                        </button>
+                    </div>
+                    <div class="my-2">
                         Tooltip Example
                         <label class="btn sm btn-medium btn-link p-0 circle mt-n1">
                             <svg viewBox="0 0 24 24">
@@ -1148,10 +1158,7 @@ $spacing: (
                             <p
                                 class="tooltip rounded shadow o-80 p-2 bg-dark color-light mw-300 sm outset-top inset-left left">
                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                accusam
-                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                                Lorem ipsum dolor sit amet.
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                             </p>
                         </label>
                     </div>
