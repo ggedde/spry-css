@@ -15,14 +15,28 @@
     <link rel="stylesheet" href="prism.css">
 </head>
 
-<body>
-    <div class="row g-0">
-        <nav class="sticky index-1 bg-light vh md-w-200 col-2">
+<body id="body">
+    <div class="row" style="gap: 0">
+        <nav class="sticky index-1 bg-light vh col-2" style="max-width: 220px;">
             <div class="overflow-auto h p-2 lg-p-3">
-                <h5 class="mb-3"><a href="https://ggedde.github.io/spry-css">Spry<span class="md-none"> </span>CSS</a> <img
-                        src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases" alt="Release">
-                </h5>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 nowrap px-0 md-px-1 left"
+                <div class="row g-0 ai-center">
+                    <h5 class="mb-2"><a href="https://ggedde.github.io/spry-css">Spry<span class="md-none">
+                            </span>CSS</a>
+                        <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases"
+                            alt="Release">
+                    </h5>
+                    <div class="center md-right">
+                        <button class="btn btn-outline circle p-0 sm"
+                            onclick="document.getElementById('body').classList.toggle('dark');">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 nowrap px-0 md-px-1 left"
                     href="#installation">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor"
@@ -30,7 +44,7 @@
                     </svg>
                     <span class="none md-inline">Installation</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 nowrap px-0 md-px-1 left"
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 nowrap px-0 md-px-1 left"
                     href="#scss">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor"
@@ -38,14 +52,14 @@
                     </svg>
                     <span class="none md-inline">SCSS</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 nowrap px-0 md-px-1 left"
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 nowrap px-0 md-px-1 left"
                     href="#typography">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M2 4V7H7V19H10V7H15V4H2M21 9H12V12H15V19H18V12H21V9Z" />
                     </svg>
                     <span class="none md-inline">Typography</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
                     href="#colors">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor"
@@ -53,15 +67,14 @@
                     </svg>
                     <span class="none md-inline">Colors</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
-                    href="#icons">
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left" href="#icons">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M14 7v2h-1v6h1v2h-4v-2h1V9h-1V7h4M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2m0 2v14h14V5H5z" />
                     </svg>
                     <span class="none md-inline">Icons</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
                     href="#buttons">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor"
@@ -69,30 +82,28 @@
                     </svg>
                     <span class="none md-inline">Buttons</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
-                    href="#grid">
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left" href="#grid">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M12 16C13.1 16 14 16.9 14 18S13.1 20 12 20 10 19.1 10 18 10.9 16 12 16M12 10C13.1 10 14 10.9 14 12S13.1 14 12 14 10 13.1 10 12 10.9 10 12 10M12 4C13.1 4 14 4.9 14 6S13.1 8 12 8 10 7.1 10 6 10.9 4 12 4M6 16C7.1 16 8 16.9 8 18S7.1 20 6 20 4 19.1 4 18 4.9 16 6 16M6 10C7.1 10 8 10.9 8 12S7.1 14 6 14 4 13.1 4 12 4.9 10 6 10M6 4C7.1 4 8 4.9 8 6S7.1 8 6 8 4 7.1 4 6 4.9 4 6 4M18 16C19.1 16 20 16.9 20 18S19.1 20 18 20 16 19.1 16 18 16.9 16 18 16M18 10C19.1 10 20 10.9 20 12S19.1 14 18 14 16 13.1 16 12 16.9 10 18 10M18 4C19.1 4 20 4.9 20 6S19.1 8 18 8 16 7.1 16 6 16.9 4 18 4Z" />
                     </svg>
                     <span class="none md-inline">Grid</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
-                    href="#forms">
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left" href="#forms">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M15 5H18L16.5 7L15 5M5 2H19C20.11 2 21 2.9 21 4V20C21 21.11 20.11 22 19 22H5C3.9 22 3 21.11 3 20V4C3 2.9 3.9 2 5 2M5 4V8H19V4H5M5 20H19V10H5V20M7 12H17V14H7V12M7 16H17V18H7V16Z" />
                     </svg>
                     <span class="none md-inline">Forms</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
                     href="#loader">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" />
                     </svg>
                     <span class="none md-inline">Loader</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
                     href="#toggle">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor"
@@ -100,7 +111,7 @@
                     </svg>
                     <span class="none md-inline">Toggle</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
                     href="#navigation">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor"
@@ -108,22 +119,20 @@
                     </svg>
                     <span class="none md-inline">Navigation</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
-                    href="#lists">
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left" href="#lists">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M7,5H21V7H7V5M7,13V11H21V13H7M4,4.5A1.5,1.5 0 0,1 5.5,6A1.5,1.5 0 0,1 4,7.5A1.5,1.5 0 0,1 2.5,6A1.5,1.5 0 0,1 4,4.5M4,10.5A1.5,1.5 0 0,1 5.5,12A1.5,1.5 0 0,1 4,13.5A1.5,1.5 0 0,1 2.5,12A1.5,1.5 0 0,1 4,10.5M7,19V17H21V19H7M4,16.5A1.5,1.5 0 0,1 5.5,18A1.5,1.5 0 0,1 4,19.5A1.5,1.5 0 0,1 2.5,18A1.5,1.5 0 0,1 4,16.5Z" />
                     </svg>
                     <span class="none md-inline">Lists</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
-                    href="#menus">
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left" href="#menus">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
                     </svg>
                     <span class="none md-inline">Menus</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
                     href="#tables">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor"
@@ -131,22 +140,21 @@
                     </svg>
                     <span class="none md-inline">Tables</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
-                    href="#cards">
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left" href="#cards">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M18 2H6C4.89 2 4 2.9 4 4V20C4 21.11 4.89 22 6 22H18C19.11 22 20 21.11 20 20V4C20 2.9 19.11 2 18 2M18 20H6V16H18V20M18 8H6V4H18V8Z" />
                     </svg>
                     <span class="none md-inline">Cards</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
                     href="#modals">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor" d="M4,4H20V20H4V4M6,8V18H18V8H6Z" />
                     </svg>
                     <span class="none md-inline">Modals</span>
                 </a>
-                <a class="btn btn-outline small flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
+                <a class="btn btn-outline sm flex ai-center jc-center md-jc-start my-1 px-0 md-px-1 left"
                     href="#utilities">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor"
@@ -154,13 +162,13 @@
                     </svg>
                     <span class="none md-inline">Utilities</span>
                 </a>
-                <a class="btn btn-dark btn-outline small flex ai-center jc-center md-jc-start my-3 px-0 md-px-1 left"
+                <a class="btn btn-dark btn-outline sm flex ai-center jc-center md-jc-start my-3 px-0 md-px-1 left"
                     href="https://github.com/ggedde/spry-css">
                     <svg class="md-mr-1" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
                     </svg>
-                    <span class="none md-inline small truncate">View Github</span>
+                    <span class="none md-inline sm truncate">View Github</span>
                 </a>
             </div>
         </nav>
@@ -171,7 +179,7 @@
             <section id="installation">
                 <h1 class="mb-3">SpryCSS</h1>
                 <p>SpryCSS aims to be a simple and customizable CSS Toolkit while being as
-                    lightweight as possible (Only 16kb gzipped).</p>
+                    lightweight as possible (Only 10kb gzipped).</p>
                 <p>The goal is to remove the messy and tedious task of coming up with class names
                     for elements that just need simple layout styles and provide basic components to help you get up and
                     running fast,
@@ -239,12 +247,13 @@ $colors: (
 
 // Specify each type tag and class like &lt;h3&gt; and .h3 etc.
 $types: (
-    h1: ( font-size: clamp(1.9rem, 8vw, 3.4rem), font-weight: 400, color: map-get($colors, 'text'), line-height: 1.20 ),
-    h2: ( font-size: clamp(1.5rem, 7.5vw, 2.7rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.25 ),
-    h3: ( font-size: clamp(1.2rem, 7vw, 2.2rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.30 ),
-    h4: ( font-size: clamp(1rem, 6.5vw, 1.6rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.35 ),
-    h5: ( font-size: clamp(.8rem, 6vw, 1.2rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.5 ),
-    h6: ( font-size: clamp(.7rem, 6vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    body: ( font-size: clamp(.8rem, 4vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    h1: ( font-size: clamp(1.9rem, 8vw, 3.4rem), font-weight: 400, line-height: 1.20 ),
+    h2: ( font-size: clamp(1.5rem, 7.5vw, 2.7rem), font-weight: 300, line-height: 1.25 ),
+    h3: ( font-size: clamp(1.2rem, 7vw, 2.2rem), font-weight: 300, line-height: 1.30 ),
+    h4: ( font-size: clamp(1rem, 6.5vw, 1.6rem), font-weight: 300, line-height: 1.35 ),
+    h5: ( font-size: clamp(.8rem, 6vw, 1.2rem), font-weight: 300, line-height: 1.5 ),
+    h6: ( font-size: clamp(.7rem, 6vw, 1.0rem), font-weight: 300, line-height: 1.4 ),
 );
 
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc
@@ -283,7 +292,7 @@ $spacing: (
                     <strong>Strong</strong>
                     <u>Underline</u>
                     <small>Small</small>
-                    <a href="">Anchor</a>
+                    <a href="#">Anchor</a>
                 </div>
                 <h5>Unordered List</h5>
                 <ul>
@@ -302,7 +311,7 @@ $spacing: (
                         nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
                 </ol>
                 <br />
-                <p class="small">Paragraph Small - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                <p class="sm">Paragraph Small - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                     nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
                     eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
                     est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -328,12 +337,13 @@ $spacing: (
                 <cite class="ml-3"> - Blockquote, Cite</cite>
                 <h4 class="mt-4">SCSS Variable</h4>
                 <pre class="mt-1"><code class="language-scss">$types: (
-    h1: ( font-size: clamp(1.9rem, 8vw, 3.4rem), font-weight: 400, color: map-get($colors, 'text'), line-height: 1.20 ),
-    h2: ( font-size: clamp(1.5rem, 7.5vw, 2.7rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.25 ),
-    h3: ( font-size: clamp(1.2rem, 7vw, 2.2rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.30 ),
-    h4: ( font-size: clamp(1rem, 6.5vw, 1.6rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.35 ),
-    h5: ( font-size: clamp(.8rem, 6vw, 1.2rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.5 ),
-    h6: ( font-size: clamp(.7rem, 6vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    body: ( font-size: clamp(.8rem, 4vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    h1: ( font-size: clamp(1.9rem, 8vw, 3.4rem), font-weight: 400, line-height: 1.20 ),
+    h2: ( font-size: clamp(1.5rem, 7.5vw, 2.7rem), font-weight: 300, line-height: 1.25 ),
+    h3: ( font-size: clamp(1.2rem, 7vw, 2.2rem), font-weight: 300, line-height: 1.30 ),
+    h4: ( font-size: clamp(1rem, 6.5vw, 1.6rem), font-weight: 300, line-height: 1.35 ),
+    h5: ( font-size: clamp(.8rem, 6vw, 1.2rem), font-weight: 300, line-height: 1.5 ),
+    h6: ( font-size: clamp(.7rem, 6vw, 1.0rem), font-weight: 300, line-height: 1.4 ),
 );</code></pre>
                 <cite>You can add as many types as you want. Each type will be assigned to the tag along with a custom
                     class so if needed you can apply <code class="color-primary">.h2</code>
@@ -345,38 +355,64 @@ $spacing: (
             <section id="colors">
                 <h2 class="border-bottom pb-1 mb-3">Colors</h2>
                 <h4 class="mt-3">Text Colors</h4>
-                <p class="my-1"><code class="color-grey italic small">.color-{color}</code></p>
+                <p class="my-1"><code class="color-medium italic sm">.color-{color}</code></p>
                 <div class="show-code">
                     <p class="color-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                     <p class="color-error">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                     <p class="color-success">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                    <p class="color-grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="color-medium">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                 </div>
 
                 <h4 class="mt-3">Background Colors</h4>
-                <p class="my-1"><code class="color-grey italic small">.bg-{color} .color-light</code></p>
+                <p class="my-1"><code class="color-medium italic sm">.bg-{color} .color-white</code></p>
                 <div class="show-code">
-                    <p class="p-1 bg-primary color-light">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="p-1 bg-primary color-white">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                 </div>
 
                 <h4 class="mt-3">Border Colors</h4>
-                <p class="my-1"><code class="color-grey italic small">.border .border-{color}</code></p>
+                <p class="my-1"><code class="color-medium italic sm">.border .border-{color}</code></p>
                 <div class="show-code">
                     <p class="border border-primary p-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                 </div>
 
                 <h4 class="mt-3">Button Colors</h4>
-                <p class="my-1"><code class="color-grey italic small">.btn .btn-{color}</code></p>
+                <p class="my-1"><code class="color-medium italic sm">.btn .btn-{color}</code></p>
                 <div class="show-code">
                     <button class="btn btn-primary">Lorem Ipsum</button>
                 </div>
 
                 <h4 class="mt-3">Accent Colors</h4>
-                <div class="small mb-1">You can wrap elements with an accent color to change and override all the accent
+                <div class="sm mb-1">You can wrap elements with an accent color to change and override all the accent
                     colors within that container.</div>
-                <div><code class="color-grey italic small">.accent-{color}</code></div>
+                <div><code class="color-medium italic sm">.accent-{color}</code></div>
                 <div class="show-code">
                     <div class="accent-error p-2 mt-1 border">
+                        <button class="btn mt-2">Lorem Ipsum</button>
+                        <button class="btn btn-outline mt-2">Lorem Ipsum</button>
+                        <p class="border my-2 p-1 rounded">Text with Border</p>
+                        <div class="mt-2">
+                            Inputs
+                        </div>
+                        <input type="text" />
+                        <div class="my-2">
+                            <input type="checkbox" checked />
+                            <input type="checkbox" />
+                        </div>
+                        <div class="my-2">
+                            <input type="radio" name="accent-radio" checked />
+                            <input type="radio" name="accent-radio" />
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mt-3">Dark Mode</h4>
+                <div class="sm mb-1">You can add the class <code class="color-medium italic sm">.dark</code> to any
+                    element to invert the "light" and "dark" color names.</div>
+                <div class="sm mb-1">* This means that you will need to use "light" and "dark" color values in your
+                    $color variables.</div>
+                <div class="sm mb-1">* This will apply to all child elements.</div>
+                <div class="show-code">
+                    <div class="dark p-2 mt-1 border">
                         <button class="btn mt-2">Lorem Ipsum</button>
                         <button class="btn btn-outline mt-2">Lorem Ipsum</button>
                         <p class="border my-2 p-1 rounded">Text with Border</p>
@@ -426,7 +462,7 @@ $spacing: (
                 <p>If your using Visual Studio Code you can install the extension <a target="_blank"
                         href="https://github.com/r3volution11/vscode-materialdesignicons-svg">vscode-materialdesignicons-svg</a>
                     that provides code snippets to quickly add the SVG code.</p>
-                <cite class="block small fade mt-1">* Note that the extension currently does not add <code
+                <cite class="block sm fade mt-1">* Note that the extension currently does not add <code
                         class="color-primary">fill="currentColor"</code> to the paths so you will need to add that
                     manually.</cite>
                 <h5 class="mt-2">Ex.</h5>
@@ -463,79 +499,102 @@ $spacing: (
                 <h2 class="border-bottom pb-1 mb-3">Buttons</h2>
                 <div class="show-code">
                     <button class="btn btn-primary">Primary</button>
-                    <button class="btn btn-light color-text">Light</button>
-                    <a href="" class="btn btn-light color-text">Light Anchor</a>
-                    <a href="" class="btn btn-dark">Dark Anchor</a>
+                    <button class="btn btn-light">Light</button>
+                    <a href="#buttons" class="btn btn-light">Light Anchor</a>
+                    <a href="#buttons" class="btn btn-dark">Dark Anchor</a>
                 </div>
 
                 <h4 class="mt-4">Outline</h4>
                 <div class="show-code">
                     <button class="btn btn-outline">Primary</button>
-                    <button class="btn btn-outline btn-grey">Grey</button>
-                    <a href="" class="btn btn-outline btn-grey">Grey</a>
-                    <a href="" class="btn btn-outline btn-dark">Dark</a>
+                    <button class="btn btn-outline btn-medium">Grey</button>
+                    <a href="#buttons" class="btn btn-outline btn-medium">Grey</a>
+                    <a href="#buttons" class="btn btn-outline btn-dark">Dark</a>
                 </div>
 
                 <h4 class="mt-4">As Link</h4>
                 <div class="show-code">
-                    <a href="" class="btn btn-link">Primary</a>
-                    <a href="" class="btn btn-link btn-grey">Grey</a>
-                    <a href="" class="btn btn-link btn-dark">Dark</a>
+                    <a href="#buttons" class="btn btn-link">Primary</a>
+                    <a href="#buttons" class="btn btn-link btn-medium">Grey</a>
+                    <a href="#buttons" class="btn btn-link btn-dark">Dark</a>
                 </div>
 
                 <h4 class="mt-4">Large</h4>
                 <div class="show-code">
                     <button class="btn large px-4">Primary</button>
-                    <button class="btn btn-grey large px-4">Grey</button>
+                    <button class="btn btn-medium large px-4">Grey</button>
                     <button class="btn btn-dark large px-4">Dark</button>
                 </div>
 
                 <h4 class="mt-4">Small</h4>
                 <div class="show-code">
-                    <button class="btn small">Primary</button>
-                    <button class="btn btn-grey small">Grey</button>
-                    <button class="btn btn-dark small">Dark</button>
+                    <button class="btn sm">Primary</button>
+                    <button class="btn btn-medium sm">Grey</button>
+                    <button class="btn btn-dark sm">Dark</button>
                 </div>
 
-                <h4 class="mt-4">Tiny</h4>
+                <h4 class="mt-4">Extra Small</h4>
                 <div class="show-code">
-                    <button class="btn tiny">Primary</button>
-                    <button class="btn btn-grey tiny">Grey</button>
-                    <button class="btn btn-dark tiny">Dark</button>
+                    <button class="btn xs">Primary</button>
+                    <button class="btn btn-medium xs">Grey</button>
+                    <button class="btn btn-dark xs">Dark</button>
                 </div>
 
                 <h4 class="mt-4 mb-1">Custom Classes</h4>
                 <div class="show-code">
                     <p>
                         <button class="btn btn-close"></button>
-                        <button class="btn btn-toggle" onclick="this.classList.toggle('open')"></button>
-                        <button class="btn btn-menu" onclick="this.classList.toggle('open')"><span></span></button>
-                        <button class="btn btn-close btn-link p-0 circle"></button>
-                        <button class="btn btn-toggle btn-link p-0 circle"
-                            onclick="this.classList.toggle('open')"></button>
-                        <button class="btn btn-menu btn-link p-0 circle"
-                            onclick="this.classList.toggle('open')"><span></span></button>
+                        <label class="btn btn-toggle">
+                            <input type="checkbox">
+                        </label>
+                        <button class="btn btn-toggle rotate-90"></button>
+                        <button class="btn btn-toggle rotate-180"></button>
+                        <button class="btn btn-toggle rotate-270"></button>
+                        <label class="btn btn-menu">
+                            <input type="checkbox">
+                        </label>
+                        <button class="btn btn-close btn-link circle"></button>
+                        <label class="btn btn-toggle btn-link circle">
+                            <input type="checkbox">
+                        </label>
+                        <button class="btn btn-toggle rotate-90 btn-link circle"></button>
+                        <button class="btn btn-toggle rotate-180 btn-link circle"></button>
+                        <button class="btn btn-toggle rotate-270 btn-link circle"></button>
+                        <label class="btn btn-menu btn-link circle">
+                            <input type="checkbox">
+                        </label>
                     </p>
                     <p>
-                        <button class="btn small btn-error btn-close"></button>
-                        <button class="btn small btn-error btn-toggle" onclick="this.classList.toggle('open')"></button>
-                        <button class="btn small btn-error btn-menu"
-                            onclick="this.classList.toggle('open')"><span></span></button>
-                        <button class="btn small btn-error btn-close btn-link p-0 circle"></button>
-                        <button class="btn small btn-error btn-toggle btn-link p-0 circle"
-                            onclick="this.classList.toggle('open')"></button>
-                        <button class="btn small btn-error btn-menu btn-link p-0 circle"
-                            onclick="this.classList.toggle('open')"><span></span></button>
+                        <button class="btn sm btn-error btn-close"></button>
+                        <label class="btn sm btn-error btn-toggle">
+                            <input type="checkbox">
+                        </label>
+                        <label class="btn sm btn-error btn-menu">
+                            <input type="checkbox">
+                        </label>
+                        <button class="btn sm btn-close btn-link btn-error circle"></button>
+                        <label class="btn sm btn-error btn-toggle btn-link circle">
+                            <input type="checkbox">
+                        </label>
+                        <label class="btn sm btn-error btn-menu btn-link circle">
+                            <input type="checkbox">
+                        </label>
                     </p>
                     <p>
-                        <button class="btn tiny btn-close"></button>
-                        <button class="btn tiny btn-toggle" onclick="this.classList.toggle('open')"></button>
-                        <button class="btn tiny btn-menu" onclick="this.classList.toggle('open')"><span></span></button>
-                        <button class="btn tiny btn-close btn-link p-0 circle"></button>
-                        <button class="btn tiny btn-toggle btn-link p-0 circle"
-                            onclick="this.classList.toggle('open')"></button>
-                        <button class="btn tiny btn-menu btn-link p-0 circle"
-                            onclick="this.classList.toggle('open')"><span></span></button>
+                        <button class="btn xs btn-medium btn-close"></button>
+                        <label class="btn xs btn-medium btn-toggle">
+                            <input type="checkbox">
+                        </label>
+                        <label class="btn xs btn-medium btn-menu">
+                            <input type="checkbox">
+                        </label>
+                        <button class="btn xs btn-close btn-link btn-medium circle"></button>
+                        <label class="btn xs btn-medium btn-toggle btn-link circle">
+                            <input type="checkbox">
+                        </label>
+                        <label class="btn xs btn-medium btn-menu btn-link circle">
+                            <input type="checkbox">
+                        </label>
                     </p>
                 </div>
 
@@ -548,7 +607,7 @@ $spacing: (
                             </svg>
                         </button>
                         <button class="btn btn-primary p-0 large">
-                            <svg viewBox="0 0 24 24">
+                            <svg viewBox="0 0 24 24" width="24" height="24">
                                 <path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
                             </svg>
                         </button>
@@ -564,7 +623,7 @@ $spacing: (
                                     d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
                             </svg>
                         </button>
-                        <button class="btn btn-outline small border-transparent bg-transparent p-0 circle">
+                        <button class="btn btn-outline sm border-transparent bg-transparent p-0 circle">
                             <svg viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12S17.5 2 12 2M7.7 15.5L7 14.2L11 11.9V7H12.5V12.8L7.7 15.5Z" />
@@ -610,25 +669,26 @@ $spacing: (
                 <h5 class="mt-2">Breakpoint Classes</h5>
                 <div class="ml-1 md-ml-3 mt-1">
                     <div><span style="width: 270px;" class="md-inline-block"><code
-                                class="color-primary">grid</code><code class="color-grey">-{size}00</code></span> <cite
-                            class="block mb-2 md-inline">Min width in px of child elements within container</cite></div>
+                                class="color-primary">grid</code><code class="color-medium">-{size}00</code></span>
+                        <cite class="block mb-2 md-inline">Min width in px of child elements within container</cite>
+                    </div>
                     <div><span style="width: 270px;" class="md-inline-block"><code
-                                class="color-grey">{breakpoint}-</code><code
+                                class="color-medium">{breakpoint}-</code><code
                                 class="color-primary">columns-{size}</code></span> <cite
                             class="block mb-2 md-inline">Number of columns per container</cite></div>
                     <div><span style="width: 270px;" class="md-inline-block"><code
-                                class="color-grey">{breakpoint}-</code><code
+                                class="color-medium">{breakpoint}-</code><code
                                 class="color-primary">col-{size}</code></span> <cite class="block mb-2 md-inline">Column
                             span within container</cite></div>
                     <div><span style="width: 270px;" class="md-inline-block"><code
-                                class="color-grey">{breakpoint}-</code><code
+                                class="color-medium">{breakpoint}-</code><code
                                 class="color-primary">g-{spacing}</code></span> <cite class="block mb-2 md-inline">Gap
                             size for container</cite></div>
                 </div>
-                <cite class="small fade mt-2 block"><code class="color-primary">{size}</code> is 1-12</cite>
-                <cite class="small fade mt-1 block"><code class="color-primary">{spacing}</code> is defined by the
+                <cite class="sm fade mt-2 block"><code class="color-primary">{size}</code> is 1-12</cite>
+                <cite class="sm fade mt-1 block"><code class="color-primary">{spacing}</code> is defined by the
                     $spacing variable. See <a href="#spacing">Spacing</a> for more details</cite>
-                <cite class="small fade mt-1 block">* <code class="color-primary">gap</code> for flexbox is not
+                <cite class="sm fade mt-1 block">* <code class="color-primary">gap</code> for flexbox is not
                     supported on older browsers. Also, custom gaps will not always work correctly with <code
                         class="color-primary">row</code> when setting specific column sizes. It works best if you
                     specify all breakpoint column sizes or use it with <code class="color-primary">grid</code>
@@ -694,7 +754,7 @@ $spacing: (
                 </div>
 
                 <h5 class="mb-1 mt-4">Specify number of columns centered</h5>
-                <cite class="small fade mb-1 block">(For gapping to work correctly you will need to specify all
+                <cite class="sm fade mb-1 block">(For gapping to work correctly you will need to specify all
                     breakpoints)</cite>
 
                 <div class="show-code">
@@ -728,7 +788,7 @@ $spacing: (
                 </div>
 
                 <h5 class="mt-4 mb-1">Custom Ordering with Space between <cite
-                        class="small md-ml-2 block md-inline-block">See <a href="#layout">Layout Classes</a> for more
+                        class="sm md-ml-2 block md-inline-block">See <a href="#layout">Layout Classes</a> for more
                         details</cite></h5>
                 <div class="show-code">
                     <div class="row jc-between">
@@ -776,7 +836,7 @@ $spacing: (
                         <div class="col-6 md-col-3 lg-col-3 bg-light rounded p-1">
                             .col-6 .md-col-3 .lg-col-3
                         </div>
-                        <div class="col-6 row md-columns-auto g-1 md-g-2 lg-g-4">
+                        <div class="col-6 row md-columns-auto">
                             <div class="bg-light rounded p-1">
                                 auto
                             </div>
@@ -908,9 +968,9 @@ $spacing: (
                     </form>
                 </div>
 
-                <h4 class="col-12 mb-2 mt-3">Dense Fields using <code class="color-primary small">form.small</code></h4>
+                <h4 class="col-12 mb-2 mt-3">Dense Fields using <code class="color-primary sm">form.sm</code></h4>
                 <div class="show-code">
-                    <form class="small row g-2 jc-center">
+                    <form class="sm row g-2 jc-center">
                         <fieldset>
                             <legend><label>Name</label></legend>
                             <input type="text" onblur="if (this.value) this.parentElement.classList.add('active')" />
@@ -941,7 +1001,7 @@ $spacing: (
             <section id="loader">
                 <h2 class="border-bottom pb-1 mb-3">Loader</h2>
                 <div class="show-code">
-                    <button class="loader loading small"></button>
+                    <button class="loader loading sm"></button>
                     <button class="loader loading color-success"></button>
                     <button class="loader loading large color-error"></button>
                     <button class="btn loader loading p-0"></button>
@@ -957,19 +1017,21 @@ $spacing: (
                 <h2 class="border-bottom pb-1 mb-3">Toggle</h2>
                 <p class="mt-2">Toggles are used to open and close content, menus, etc</p>
                 <p class="mb-2">You can create a toggle group by adding a <code
-                        class="color-grey italic small">&lt;input class="toggle" type="checkbox"&gt;</code> followed by
-                    a <code class="color-grey italic small">&lt;label&gt;</code> then followed by your container of
+                        class="color-medium italic sm">&lt;input class="toggle" type="checkbox"&gt;</code> followed
+                    by
+                    a <code class="color-medium italic sm">&lt;label&gt;</code> then followed by your container of
                     choice. The order of these elements matter. To bind the Label to the Checkbox you will need to give
-                    the checkbox an <code class="color-grey italic small">id</code> and set the <code
-                        class="color-grey italic small">for</code> on the label to match the checkbox id<code
-                        class="color-grey italic small">id</code>.</p>
+                    the checkbox an <code class="color-medium italic sm">id</code> and set the <code
+                        class="color-medium italic sm">for</code> on the label to match the checkbox id<code
+                        class="color-medium italic sm">id</code>.</p>
                 <pre><code class="language-html">&lt;input id="toggle-custom-id" class="toggle" type="checkbox" /&gt;
 &lt;label for="toggle-custom-id"&gt;Toggle Handle&lt;/label&gt;
 &lt;p&gt;Toggle Content&lt;/p&gt;</code></pre>
                 <h4 class="mt-4 mb-1">General Toggle Example</h4>
                 <div class="show-code">
-                    <input id="toggle-1" class="toggle" type="checkbox" />
-                    <label for="toggle-1" class="btn">Toggle Content</label>
+                    <label class="btn toggle">Toggle Content
+                        <input type="checkbox" />
+                    </label>
                     <p class="border p-1">
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                         invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
@@ -980,11 +1042,11 @@ $spacing: (
                 </div>
 
                 <h4 class="mt-3">Collapsing Toggle (Accordion)</h4>
-                <p class="mb-2">Add the <code class="color-grey italic small">.collapse</code> class to the toggle
+                <p class="mb-2">Add the <code class="color-medium italic sm">.collapse</code> class to the toggle
                     checkbox</p>
                 <div class="show-code">
-                    <input id="toggle-2" class="toggle collapse" type="checkbox" />
-                    <label for="toggle-2">
+                    <label class="toggle">
+                        <input type="checkbox" />
                         <h4 class="flex-middle"><span class="btn btn-toggle btn-link"></span>Question 1</h4>
                     </label>
                     <div>
@@ -998,8 +1060,8 @@ $spacing: (
                             sit amet.
                         </p>
                     </div>
-                    <input id="toggle-2b" class="toggle collapse" type="checkbox" />
-                    <label for="toggle-2b">
+                    <label class="toggle">
+                        <input type="checkbox" />
                         <h4 class="flex-middle"><span class="btn btn-toggle btn-link"></span>Question 2</h4>
                     </label>
                     <div>
@@ -1016,14 +1078,14 @@ $spacing: (
                 </div>
 
                 <h4 class="mt-3">Overflown Toggle</h4>
-                <p class="mb-2">Add <code class="color-grey italic small">.collapse</code> to your container and add
-                    <code class="color-grey italic small">.collapse</code> to the toggle checkbox
+                <p class="mb-2">Add <code class="color-medium italic sm">.collapse</code> to your container and add
+                    <code class="color-medium italic sm">.collapse</code> to the toggle checkbox
                 </p>
                 <div class="show-code">
-                    <input id="toggle-3" class="toggle collapse" type="checkbox" />
-                    <label for="toggle-3" class="btn pr-1">
+                    <label class="btn pr-1 toggle">
+                        <input type="checkbox" />
                         Toggle Content
-                        <span class="btn btn-toggle btn-link color-white pointer-none"></span>
+                        <span class="btn btn-toggle btn-link btn-white pointer-none"></span>
                     </label>
                     <div class="collapse">
                         <p class="border p-1 bg-light">
@@ -1038,54 +1100,75 @@ $spacing: (
                     </div>
                 </div>
 
-                <h4 class="mt-3">Activate on Hover or Click Toggle</h4>
-                <p class="mb-2">Add the <code class="color-grey italic small">.hoverable</code> class to the label</p>
-                <p class="mb-2 note">* To Remove the click option then just remove the checkbox and add the <code
-                        class="color-grey italic small">.toggle</code> class to the label</p>
+                <h4 class="mt-3">Activate on Hover</h4>
+                <p class="mb-2">Add the <code class="color-medium italic sm">.hoverable</code> class to the label</p>
+                <p class="mb-2 note">
+                    * To Remove the click option then just remove the checkbox and add the
+                    <code class="color-medium italic sm">.toggle</code> class to the label
+                </p>
+
                 <div class="show-code">
-                    <span>Tooltip Example on Hover and Click to stay</span>
-                    <span class="relative inline-block" style="width: 30px;">
-                        <input id="toggle-4" class="toggle" type="checkbox" />
-                        <label for="toggle-4" class="btn small btn-grey btn-link hoverable p-0 circle">
+                    <label class="btn pr-1 toggle hoverable">
+                        Toggle on Hover
+                        <span class="btn btn-toggle btn-link btn-white pointer-none"></span>
+                    </label>
+                    <div class="collapse">
+                        <p class="border p-1 bg-light">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                            rebum.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+            <!------------------------------------
+            -----------    TOOLTIPS    -----------
+            ------------------------------------->
+            <section id="tooltip">
+                <h2 class="border-bottom pb-1 mb-3">ToolTips</h2>
+                <div class="show-code">
+                    <div>
+                        Tooltip Example
+                        <label class="btn sm btn-medium btn-link p-0 circle mt-n1">
                             <svg viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
                             </svg>
-                        </label>
-                        <span class="collapse">
                             <p
-                                class="rounded shadow fade py-1 px-2 bg-dark color-light vw-50 mw-300 outset-left md-inset-left">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                tempor
+                                class="tooltip rounded shadow o-80 p-2 bg-dark color-light mw-300 sm outset-top inset-left left">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                 invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
                                 accusam
-                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                                est
+                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
                                 Lorem ipsum dolor sit amet.
                             </p>
-                        </span>
-                    </span>
-                    <br />
-                    <span>Tooltip Example on Hover Only</span>
-                    <span class="relative inline-block" style="width: 30px;">
-                        <label class="btn small btn-grey btn-link toggle hoverable p-0 circle">
+                        </label>
+                    </div>
+
+                    <div>
+                        Tooltip with scrollable content (Bottom Left)
+                        <label class="btn sm btn-medium btn-link p-0 circle mt-n1">
                             <svg viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
                             </svg>
-                        </label>
-                        <span class="collapse">
-                            <p class="rounded shadow fade py-1 px-2 bg-dark color-light vw-30">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                tempor
+                            <p
+                                class="tooltip rounded shadow o-80 p-2 bg-dark color-light mw-300 sm outset-bottom inset-right left mh-200 overflow-auto">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                 invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
                                 accusam
+                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                Lorem ipsum dolor sit amet. At vero eos et accusam
                                 et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                                est
-                                Lorem ipsum dolor sit amet.
+                                est Lorem ipsum dolor sit amet.
                             </p>
-                        </span>
-                    </span>
+                        </label>
+                    </div>
                 </div>
             </section>
             <!------------------------------------
@@ -1093,16 +1176,16 @@ $spacing: (
             ------------------------------------->
             <section id="navigation">
                 <h2 class="border-bottom pb-1 mb-3">Navigation</h2>
-                <p class="my-2"><code class="color-grey italic">&lt;nav&gt;</code></p>
+                <p class="my-2"><code class="color-medium italic">&lt;nav&gt;</code></p>
 
                 <h5 class="mt-2">Classes</h5>
                 <div class="ml-1 md-ml-3 mt-1">
                     <div><span style="width: 270px;" class="md-inline-block"><code
-                                class="color-grey">{breakpoint}-</code><code
+                                class="color-medium">{breakpoint}-</code><code
                                 class="color-primary">horizontal</code></span> <cite class="block mb-2 md-inline">Change
                             Layout to Horizontal Menu</cite></div>
                     <div><span style="width: 270px;" class="md-inline-block"><code
-                                class="color-grey">{breakpoint}-</code><code
+                                class="color-medium">{breakpoint}-</code><code
                                 class="color-primary">hoverable</code></span> <cite class="block mb-2 md-inline">Allows
                             sub menus to open on Hover</cite></div>
                 </div>
@@ -1123,15 +1206,16 @@ $spacing: (
                         <ul class="jc-end">
                             <li>
                                 <a href="#navigation" class="pr-0">Link with Dropdown</a>
-                                <input id="toggle-nav-1" class="toggle collapse" type="checkbox">
-                                <label for="toggle-nav-1" class="btn btn-link btn-toggle btn-text circle"></label>
+                                <label class="toggle btn btn-link btn-toggle btn-text circle">
+                                    <input type="checkbox" />
+                                </label>
                                 <ul class="bg-light rounded-bottom md-shadow">
                                     <li><a href="#navigation">Sub Link 1</a></li>
                                     <li>
                                         <a href="#navigation">Sub Link with Menu</a>
-                                        <input id="toggle-nav-2" class="toggle collapse" type="checkbox">
-                                        <label for="toggle-nav-2"
-                                            class="btn btn-link btn-toggle btn-text circle"></label>
+                                        <label class="toggle btn btn-link btn-toggle btn-text circle">
+                                            <input type="checkbox" />
+                                        </label>
                                         <ul class="bg-light rounded">
                                             <li><a href="#navigation">Sub Sub Link 1</a></li>
                                             <li><a href="#navigation">Sub Sub Link 2</a></li>
@@ -1148,16 +1232,17 @@ $spacing: (
                             <li><a href="#navigation">Link 4</a></li>
                             <li>
                                 <a href="#navigation">Link with Dropdown</a>
-                                <input id="toggle-nav-3" class="toggle collapse" type="checkbox">
-                                <label for="toggle-nav-3" class="btn btn-link btn-toggle btn-text circle"></label>
+                                <label class="toggle btn btn-link btn-toggle btn-text circle">
+                                    <input type="checkbox">
+                                </label>
                                 <ul class="bg-light rounded-bottom md-shadow">
                                     <li><a href="#navigation">Sub Link 1</a></li>
                                     <li><a href="#navigation">Sub Link 2</a></li>
                                     <li>
                                         <a href="#navigation">Sub Link with Menu</a>
-                                        <input id="toggle-nav-4" class="toggle collapse" type="checkbox">
-                                        <label for="toggle-nav-4"
-                                            class="btn btn-link btn-toggle btn-text circle"></label>
+                                        <label class="toggle btn btn-link btn-toggle btn-text circle">
+                                            <input type="checkbox">
+                                        </label>
                                         <ul class="bg-light rounded">
                                             <li><a href="#navigation">Sub Sub Link 1</a></li>
                                             <li><a href="#navigation">Sub Sub Link 2</a></li>
@@ -1176,7 +1261,7 @@ $spacing: (
             ------------------------------------->
             <section id="lists">
                 <h2 class="border-bottom pb-1 mb-3">Lists</h2>
-                <p class="my-2"><code class="color-grey italic small">&lt;nav class="list"&gt;</code></p>
+                <p class="my-2"><code class="color-medium italic sm">&lt;nav class="list"&gt;</code></p>
                 <div class="show-code">
                     <nav class="bg-light rounded shadow vertical w-200 list color-text accent-primary">
                         <ul>
@@ -1185,8 +1270,9 @@ $spacing: (
                             </li>
                             <li>
                                 <a href="#lists">List Item 2</a>
-                                <input id="toggle-list-2" class="toggle collapse" type="checkbox">
-                                <label for="toggle-list-2" class="btn btn-link btn-toggle circle"></label>
+                                <label class="toggle btn btn-link btn-toggle circle">
+                                    <input type="checkbox">
+                                </label>
                                 <ul>
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1201,8 +1287,9 @@ $spacing: (
                             </li>
                             <li>
                                 <a href="#lists">List Item 3</a>
-                                <input id="toggle-list-3" class="toggle collapse" type="checkbox">
-                                <label for="toggle-list-3" class="btn btn-link btn-toggle circle"></label>
+                                <label class="toggle btn btn-link btn-toggle circle">
+                                    <input type="checkbox">
+                                </label>
                                 <ul>
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1217,8 +1304,9 @@ $spacing: (
                             </li>
                             <li>
                                 <a href="#lists" class="pr-3">List Item 4 With a very long text</a>
-                                <input id="toggle-list-4" class="toggle collapse" type="checkbox">
-                                <label for="toggle-list-4" class="btn btn-link btn-toggle circle"></label>
+                                <label class="toggle btn btn-link btn-toggle circle">
+                                    <input type="checkbox">
+                                </label>
                                 <ul>
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1233,8 +1321,9 @@ $spacing: (
                             </li>
                             <li>
                                 <a href="#lists" class="truncate pr-3">List Item 5 Truncated Text</a>
-                                <input id="toggle-list-5" class="toggle collapse" type="checkbox">
-                                <label for="toggle-list-5" class="btn btn-link btn-toggle circle"></label>
+                                <label class="toggle btn btn-link btn-toggle circle">
+                                    <input type="checkbox">
+                                </label>
                                 <ul>
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1257,18 +1346,20 @@ $spacing: (
                                 </a>
                             </li>
                             <hr class="bg-primary my-0 mx-1" />
-                            <li class="small">
+                            <li class="sm">
                                 <a href="#lists">Small List Item 1</a>
-                                <input id="toggle-mm" class="toggle collapse" type="checkbox">
-                                <label for="toggle-mm" class="btn btn-link btn-toggle circle"></label>
+                                <label class="toggle btn btn-link btn-toggle circle">
+                                    <input type="checkbox">
+                                </label>
                                 <ul>
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
                                     </li>
                                     <li>
                                         <a href="#lists">Sub Link 2</a>
-                                        <input id="toggle-mm2" class="toggle collapse" type="checkbox">
-                                        <label for="toggle-mm2" class="btn btn-link btn-toggle circle"></label>
+                                        <label class="toggle btn btn-link btn-toggle circle">
+                                            <input type="checkbox">
+                                        </label>
                                         <ul>
                                             <li>
                                                 <a href="#lists">Sub Link 1</a>
@@ -1286,28 +1377,29 @@ $spacing: (
                                     </li>
                                 </ul>
                             </li>
-                            <li class="small">
+                            <li class="sm">
                                 <a href="#lists">Small List Item 2</a>
                             </li>
                         </ul>
                     </nav>
                 </div>
 
-                <h4 class="mt-4">Toolbar - Navigation with <code class="color-grey italic">.list</code></h4>
+                <h4 class="mt-4">Toolbar - Navigation with <code class="color-medium italic">.list</code></h4>
                 <div class="show-code">
                     <nav class="bg-light jc-end list horizontal hoverable">
                         <ul class="jc-end">
                             <li>
                                 <a href="#lists">Link 1 <button
-                                        class="small ml-1 mr-n2 btn btn-link bg-transparent pointer-none btn-toggle relative"></button></a>
+                                        class="sm ml-1 mr-n2 btn btn-link bg-transparent pointer-none btn-toggle relative"></button></a>
                                 <ul class="bg-light rounded">
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
                                     </li>
                                     <li>
                                         <a href="#lists">Sub Link 2</a>
-                                        <input id="toggle-toolbar-2" class="toggle collapse" type="checkbox">
-                                        <label for="toggle-toolbar-2" class="btn btn-link btn-toggle circle"></label>
+                                        <label class="toggle btn btn-link btn-toggle circle">
+                                            <input type="checkbox">
+                                        </label>
                                         <ul class="bg-light rounded">
                                             <li>
                                                 <a href="#lists">Sub Sub Link 1</a>
@@ -1336,7 +1428,7 @@ $spacing: (
                             </li>
                             <li>
                                 <a href="#lists">Link 3 <button
-                                        class="small ml-1 mr-n2 btn btn-link bg-transparent pointer-none btn-toggle relative"></button></a>
+                                        class="sm ml-1 mr-n2 btn btn-link bg-transparent pointer-none btn-toggle relative"></button></a>
                                 <ul class="bg-light right rounded">
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1346,8 +1438,9 @@ $spacing: (
                                     </li>
                                     <li>
                                         <a href="#lists">Sub Link 3</a>
-                                        <input id="toggle-toolbar-4" class="toggle collapse" type="checkbox">
-                                        <label for="toggle-toolbar-4" class="btn btn-link btn-toggle circle"></label>
+                                        <label class="toggle btn btn-link btn-toggle circle">
+                                            <input type="checkbox">
+                                        </label>
                                         <ul class="bg-light left rounded">
                                             <li>
                                                 <a href="#lists">Sub Sub Link 1</a>
@@ -1404,8 +1497,9 @@ $spacing: (
                     <div>
                         <h5 class="mt-3">Left Align</h4>
                             <div class="show-code">
-                                <input id="toggle-menu-1" class="toggle" type="checkbox" />
-                                <label for="toggle-menu-1" class="btn btn-link p-0 btn-menu"><span></span></label>
+                                <label class="toggle btn btn-link btn-menu">
+                                    <input type="checkbox" />
+                                </label>
                                 <div class="collapse">
                                     <nav class="bg-light rounded shadow vertical w-200 list">
                                         <ul>
@@ -1414,9 +1508,9 @@ $spacing: (
                                             </li>
                                             <li>
                                                 <a href="#menus" class="pr-3">Link 2 with a very long text</a>
-                                                <input id="toggle-sub-menu-1" class="toggle collapse" type="checkbox">
-                                                <label for="toggle-sub-menu-1"
-                                                    class="btn btn-link btn-toggle circle"></label>
+                                                <label class="toggle btn btn-link btn-toggle circle">
+                                                    <input type="checkbox">
+                                                </label>
                                                 <ul class="bg-light rounded">
                                                     <li>
                                                         <a href="#menus">Sub Link 1</a>
@@ -1440,8 +1534,9 @@ $spacing: (
                     <div class="right">
                         <h5 class="mt-3">Right Align</h4>
                             <div class="show-code">
-                                <input id="toggle-menu-2" class="toggle" type="checkbox" />
-                                <label for="toggle-menu-2" class="btn btn-link p-0 btn-menu"><span></span></label>
+                                <label class="toggle btn btn-link p-0 btn-menu">
+                                    <input type="checkbox" />
+                                </label>
                                 <div class="collapse">
                                     <nav class="bg-light rounded shadow vertical w-200 inset-right list">
                                         <ul>
@@ -1450,9 +1545,9 @@ $spacing: (
                                             </li>
                                             <li>
                                                 <a href="#menus">Link 2</a>
-                                                <input id="toggle-sub-menu-2" class="toggle collapse" type="checkbox">
-                                                <label for="toggle-sub-menu-2"
-                                                    class="btn btn-link btn-toggle circle"></label>
+                                                <label class="toggle btn btn-link btn-toggle circle">
+                                                    <input type="checkbox">
+                                                </label>
                                                 <ul class="bg-light left rounded">
                                                     <li>
                                                         <a href="#menus">Sub Link 1</a>
@@ -1476,8 +1571,8 @@ $spacing: (
                 </div>
 
                 <h4 class="mt-4">Responsive Toolbar Navigation Menu</h4>
-                <p class="my-2">Add the <code class="color-grey italic small">.responsive</code> class to the <code
-                        class="color-grey italic small">&lt;nav&gt;</code></p>
+                <p class="my-2">Add the <code class="color-medium italic sm">.responsive</code> class to the <code
+                        class="color-medium italic sm">&lt;nav&gt;</code></p>
                 <div class="show-code">
                     <div class="bg-light flex ai-center jc-between px-1 relative toolbar">
                         <h4 class="flex-center">
@@ -1488,9 +1583,10 @@ $spacing: (
                             Logo
                         </h4>
                         <div class="absolute inset-top inset-right">
-                            <input id="toggle-menu-responsive" class="toggle md-open" type="checkbox" />
-                            <label for="toggle-menu-responsive" class="btn btn-link p-0 btn-menu md-none"><span></span></label>
-                            <div>
+                            <label class="toggle btn btn-link p-0 btn-menu md-none">
+                                <input type="checkbox" />
+                            </label>
+                            <div class="md-open">
                                 <nav class="bg-light vertical md-horizontal md-hoverable inset-right md-relative">
                                     <ul>
                                         <li>
@@ -1498,11 +1594,10 @@ $spacing: (
                                         </li>
                                         <li>
                                             <a href="#menus" class="pr-0">Link 2</a>
-                                            <input id="toggle-responsive-menu-1" class="toggle collapse"
-                                                type="checkbox">
-                                            <label for="toggle-responsive-menu-1"
-                                                class="btn btn-link btn-text btn-toggle circle"></label>
-                                            <ul class="bg-light rounded">
+                                            <label class="toggle btn btn-link btn-text btn-toggle circle">
+                                                <input type="checkbox">
+                                            </label>
+                                            <ul class="bg-light rounded md-shadow">
                                                 <li>
                                                     <a href="#menus">Sub Link 1</a>
                                                 </li>
@@ -1554,19 +1649,19 @@ $spacing: (
                                 <td>Tier 1</td>
                                 <td>200</td>
                                 <td>Red</td>
-                                <td class="right"><a href="#tables" class="btn px-2 small">Learn More</a></td>
+                                <td class="right"><a href="#tables" class="btn px-2 xs">Learn More</a></td>
                             </tr>
                             <tr>
                                 <td>Tier 2</td>
                                 <td>400</td>
                                 <td>Blue</td>
-                                <td class="right"><a href="#tables" class="btn px-2 small">Learn More</a></td>
+                                <td class="right"><a href="#tables" class="btn px-2 xs">Learn More</a></td>
                             </tr>
                             <tr>
                                 <td>Tier 3</td>
                                 <td>500</td>
                                 <td>Gold</td>
-                                <td class="right"><a href="#tables" class="btn px-2 small">Learn More</a></td>
+                                <td class="right"><a href="#tables" class="btn px-2 xs">Learn More</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1608,7 +1703,7 @@ $spacing: (
                                 </p>
                             </article>
                             <footer class="px-2">
-                                <a href="#cards" class="btn small">Learn More</a>
+                                <a href="#cards" class="btn sm">Learn More</a>
                             </footer>
                         </div>
 
@@ -1621,8 +1716,8 @@ $spacing: (
                                 <p class="note">- Meta Data</p>
                             </article>
                             <footer class="px-2 jc-end g-2">
-                                <a href="#cards" class="btn btn-grey small">Cancel</a>
-                                <a href="#cards" class="btn small">Submit</a>
+                                <a href="#cards" class="btn btn-medium sm">Cancel</a>
+                                <a href="#cards" class="btn sm">Submit</a>
                             </footer>
                         </div>
 
@@ -1636,7 +1731,7 @@ $spacing: (
                                 </p>
                             </article>
                             <footer class="px-2">
-                                <a href="#cards" class="btn btn-primary border-light small">Learn More</a>
+                                <a href="#cards" class="btn btn-primary border-light sm">Learn More</a>
                             </footer>
                         </div>
 
@@ -1651,16 +1746,18 @@ $spacing: (
                 <h5 class="mt-2">Classes</h5>
                 <div class="ml-1 md-ml-3 mt-1 mb-3">
                     <div><span style="width: 270px;" class="md-inline-block"><code
-                                class="color-grey">modal</code></span> <cite class="block mb-2 md-inline">Main Modal
+                                class="color-medium">modal</code></span> <cite class="block mb-2 md-inline">Main Modal
                             Class</cite></div>
-                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-grey">show</code></span>
+                    <div><span style="width: 270px;" class="md-inline-block"><code
+                                class="color-medium">show</code></span>
                         <cite class="block mb-2 md-inline">Shows the Modal</cite>
                     </div>
-                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-grey">blur</code></span>
+                    <div><span style="width: 270px;" class="md-inline-block"><code
+                                class="color-medium">blur</code></span>
                         <cite class="block mb-2 md-inline">Adds blur to background</cite>
                     </div>
                     <div><span style="width: 270px;" class="md-inline-block"><code
-                                class="color-grey">bounce</code></span> <cite class="block mb-2 md-inline">Adds bounce
+                                class="color-medium">bounce</code></span> <cite class="block mb-2 md-inline">Adds bounce
                             animation. Only occurs once.</cite></div>
                     <p class="note mt-2">Add max-width to modal-content to change size</p>
                 </div>
@@ -1791,9 +1888,9 @@ $spacing: (
                                         ipsum dolor sit amet.</p>
                                 </article>
                                 <footer class="px-2 jc-end">
-                                    <button type="button" class="btn small btn-outline btn-dark"
+                                    <button type="button" class="btn sm btn-outline btn-dark"
                                         onclick="document.getElementById('large-modal').classList.remove('show','bounce');">Cancel</button>
-                                    <button type="button" class="btn small ml-1 md-ml-3"
+                                    <button type="button" class="btn sm ml-1 md-ml-3"
                                         onclick="document.getElementById('large-modal').classList.remove('show','bounce');">Accept</button>
                                 </footer>
                             </div>
@@ -1830,19 +1927,19 @@ $spacing: (
                     <div><code class="color-primary">index-2</code> <code>{ z-index: 2 }</code></div>
                     <div><code class="color-primary">index-3</code> <code>{ z-index: 3 }</code></div>
                     <div><code class="color-primary">border</code>
-                        <code>{ border: 1px solid map-get($colors, 'grey') }</code>
+                        <code>{ border: 1px solid map-get($colors, 'medium') }</code>
                     </div>
                     <div><code class="color-primary">border-top</code>
-                        <code>{ border-top: 1px solid map-get($colors, 'grey') }</code>
+                        <code>{ border-top: 1px solid map-get($colors, 'medium') }</code>
                     </div>
                     <div><code class="color-primary">border-right</code>
-                        <code>{ border-right: 1px solid map-get($colors, 'grey') }</code>
+                        <code>{ border-right: 1px solid map-get($colors, 'medium') }</code>
                     </div>
                     <div><code class="color-primary">border-bottom</code>
-                        <code>{ border-bottom: 1px solid map-get($colors, 'grey') }</code>
+                        <code>{ border-bottom: 1px solid map-get($colors, 'medium') }</code>
                     </div>
                     <div><code class="color-primary">border-left</code>
-                        <code>{ border-left: 1px solid map-get($colors, 'grey') }</code>
+                        <code>{ border-left: 1px solid map-get($colors, 'medium') }</code>
                     </div>
                     <div><code class="color-primary">note </code>
                         <code>{ font-style: italic; font-size: 90%; opacity: 0.8 }</code>
@@ -1861,265 +1958,277 @@ $spacing: (
                 <p>Example Hide on Tablets</p>
                 <pre><code class="language-css">md-none lg-block</code></pre>
 
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">jc-between</code>
                     <code>{ justify-content: space-between }</code>
                 </div>
 
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">left</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code class="color-primary">left</code>
                     <code>{ text-align: left }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">center</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
+                        class="color-primary">center</code>
                     <code>{ text-align: center }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">right</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
+                        class="color-primary">right</code>
                     <code>{ text-align: right }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">justify</code>
                     <code>{ text-align: justify }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">nowrap</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
+                        class="color-primary">nowrap</code>
                     <code>{ white-space: nowrap }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">pre-wrap</code>
                     <code>{ white-space: pre-wrap }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">break-word</code>
                     <code>{ word-wrap: break-word }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
+                        class="color-primary">inline</code>
                     <code>{ display: inline; width: auto }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code class="color-primary">flex</code>
                     <code>{ display: flex }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">block</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
+                        class="color-primary">block</code>
                     <code>{ display: block }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">none</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code class="color-primary">none</code>
                     <code>{ display: none }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">open.toggle + label + * {opacity: 1; pointer-events: all; transform: scaleY(1) }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">inline-block</code>
                     <code>{ display: inline-block; width: auto }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">inline-flex</code>
                     <code>{ display: inline-flex; width: auto }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">table</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
+                        class="color-primary">table</code>
                     <code>{ display: table }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">table-cell</code>
                     <code>{ display: table-cell }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">relative</code>
                     <code>{ position: relative }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">absolute</code>
                     <code>{ position: absolute }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">collapse</code>
                     <code>{ position: relative }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">collapse > *</code>
                     <code>{ position: absolute }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">sticky</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
+                        class="color-primary">sticky</code>
                     <code>{ position: sticky; top: 0 }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">fixed</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
+                        class="color-primary">fixed</code>
                     <code>{ position: fixed }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inset </code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
+                        class="color-primary">inset </code>
                     <code>{ position: absolute; inset: 0 }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">inset-top </code>
                     <code>{ position: absolute; top: 0; bottom: auto }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">inset-right </code>
                     <code>{ position: absolute; right: 0; left: auto }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">inset-bottom </code>
                     <code>{ position: absolute; bottom: 0; top: auto }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">inset-left </code>
                     <code>{ position: absolute; left: 0; right: auto }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">outset-top </code>
                     <code>{ position: absolute; bottom: 100%; top: auto }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">outset-right </code>
                     <code>{ position: absolute; left: 100%; right: auto }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">outset-bottom </code>
                     <code>{ position: absolute; top: 100%; bottom: auto }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">outset-left </code>
                     <code>{ position: absolute; right: 100%; left: auto }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">pointer-none </code>
                     <code>{ pointer-events: none }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">align-baseline</code>
                     <code>{ vertical-align: baseline }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">align-top</code>
                     <code>{ vertical-align: top }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">align-middle</code>
                     <code>{ vertical-align: middle }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">align-bottom</code>
                     <code>{ vertical-align: bottom }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">overflow-hidden</code>
                     <code>{ overflow: hidden }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">overflow-scroll</code>
                     <code>{ overflow: scroll }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">overflow-auto</code>
                     <code>{ overflow: auto }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">order-first</code>
                     <code>{ order:-1 }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">order-0</code>
                     <code>{ order:0 }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">order-1</code>
                     <code>{ order:1 }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">order-2</code>
                     <code>{ order:2 }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">order-3</code>
                     <code>{ order:3 }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">order-last</code>
                     <code>{ order:99999 }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">ai-start</code>
                     <code>{ align-items: flex-start }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">ai-end</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
+                        class="color-primary">ai-end</code>
                     <code>{ align-items: flex-end }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">ai-center</code>
                     <code>{ align-items: center }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">ai-stretch</code>
                     <code>{ align-items: stretch }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">jc-start</code>
                     <code>{ justify-content: flex-start }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">jc-end</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
+                        class="color-primary">jc-end</code>
                     <code>{ justify-content: flex-end }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">jc-center</code>
                     <code>{ justify-content: center }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">jc-between</code>
                     <code>{ justify-content: space-between }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">jc-around</code>
                     <code>{ justify-content: space-around }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">flex-middle</code>
                     <code>{ display: flex; align-items: center }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">flex-center</code>
                     <code>{ display: flex; align-items: center; justify-content: center }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">flex-wrap</code>
                     <code>{ flex-wrap: wrap }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">flex-column</code>
                     <code>{ flex-direction: column }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">shadow</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
+                        class="color-primary">shadow</code>
                     <code>{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">h-***</code>
                     <code>{ height: ***px; min-height: ***px; max-height: ***px }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">mh-***</code>
                     <code>{ max-height: ***px }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">vh-**</code>
                     <code>{ height: **vh }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">mvh-**</code>
                     <code>{ max-height: **vh }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">w-***</code>
                     <code>{ width: ***px; min-width: ***px; max-width: ***px }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">mw-***</code>
                     <code>{ max-width: ***px }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">vw-**</code>
                     <code>{ width: **vw }</code>
                 </div>
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code
                         class="color-primary">mvw-**</code>
                     <code>{ max-width: **vw }</code>
                 </div>
 
-                <div class="ml-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">o-**</code>
+                <div class="ml-2"><code class="color-medium">{breakpoint}-</code><code class="color-primary">o-**</code>
                     <code>{ opacity: .** }</code>
                 </div>
 
@@ -2136,7 +2245,7 @@ $spacing: (
                 <p>This requires a breakpoint. ex <code class="color-primary">{breakpoint}-mw</code></p>
                 <h3 id="spacing" class="mt-4">Spacing</h3>
                 <p>The classes are named using the format</p>
-                <code class="color-grey">{breakpoint}-</code><code
+                <code class="color-medium">{breakpoint}-</code><code
                     class="color-primary">{property}{sides}-{spacing}</code>
                 <p>There are 3 Spacing properties:</p>
                 <div class="ml-3 my-2">
@@ -2210,7 +2319,7 @@ $spacing: (
                 html = html.replaceAll("\n            " + item + "\n        ", '');
                 html = html.replaceAll("\n                " + item + "\n            ", '');
             })
-            // elem.insertAdjacentHTML('beforeend', '<div><input id="' + id + '" class="toggle" type="checkbox" /><label for="' + id + '" class="btn btn-grey btn-link p-0 btn-menu small mt-1"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" /></svg></label><div class="toggle-collapse"><pre><code class="language-html">' + html + '</code></pre></div></div>');
+            // elem.insertAdjacentHTML('beforeend', '<div><input id="' + id + '" class="toggle" type="checkbox" /><label for="' + id + '" class="btn btn-medium btn-link p-0 btn-menu sm mt-1"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" /></svg></label><div class="toggle-collapse"><pre><code class="language-html">' + html + '</code></pre></div></div>');
             elem.insertAdjacentHTML('beforeend', '<div class="mt-2 code-container"><pre><code class="language-html">' + html + '</code></pre></div>');
         });
     </script>

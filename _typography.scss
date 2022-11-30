@@ -1,3 +1,6 @@
+/*! 
+* Spry Typography
+*/
 body, input, textarea, select {
     font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     letter-spacing: .01em;
@@ -19,13 +22,13 @@ input, textarea, select {
     }
 }
 
-.tiny {
+.xs {
     font-size: 80%;
 }
-.small {
+.sm {
     font-size: 90%;
 }
-.large {
+.lg {
     font-size: 115%;
 }
 

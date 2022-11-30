@@ -7,7 +7,7 @@ $breakpoints: (
 // Specify each breakpoint gap size. <section> tags with get padding based on gap size.
 // You must include one for each Breakpoint otherwise it will result in a Compile Error.
 $gaps: (
-    default: 1.5rem,
+    default: 1.25rem,
     md: 2rem,
     lg: 2.25rem,
 ) !default;
@@ -16,12 +16,12 @@ $gaps: (
 $colors: (
     "white":       #ffffff,
     "light":       #efefef,
-    "grey":        #999999,
+    "medium":      #999999,
     "dark":        #444444,
-    "primary":     #0D7FBF,
+    "primary":     #1494df,
     "warning":     #df8a22,
     "error":       #d52929,
-    "success":     #04ad3c,
+    "success":     #09c347,
     "text":        #566067,
     "transparent": transparent,
 ) !default;

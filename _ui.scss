@@ -1,3 +1,15 @@
+/*! 
+* Spry UI
+*/
+:root {
+	--btn-color       : #{map-get($colors, 'primary')};
+	--btn-color-text  : #{map-get($colors, 'white')};
+	--btn-color-hover : #{darken(map-get($colors, 'primary'), 10%)};
+	--btn-color-opaque: #{rgba(map-get($colors, 'primary'), 10%)};
+	--accent-color    : #{map-get($colors, 'primary')};
+	--card-color      : transparent;
+}
+
 .btn,
 button,
 input,
@@ -14,7 +26,7 @@ fieldset {
 	min-height     : clamp(34px, 5vw, 40px);
 	min-width      : clamp(34px, 5vw, 40px);
 	height         : auto;
-	padding        : 0 1rem;
+	padding        : .2rem 1rem;
 	width          : 100%;
 	display        : inline-flex;
 	align-items    : center;
@@ -36,20 +48,20 @@ select,
 nav>a,
 fieldset {
 
-	&.large,
-	.large & {
+	&.lg,
+	.lg & {
 		min-height: clamp(44px, 5vw, 50px);
 		min-width : clamp(44px, 5vw, 50px);
 	}
 
-	&.small,
-	.small & {
+	&.sm,
+	.sm & {
 		min-height: clamp(26px, 5vw, 30px);
 		min-width : clamp(26px, 5vw, 30px);
 	}
 
-	&.tiny,
-	.tiny & {
+	&.xs,
+	.xs & {
 		min-height: 24px;
 		min-width : 24px;
 	}
@@ -57,26 +69,26 @@ fieldset {
 
 nav {
 
-	& li.large>a,
-	& li.large li>a,
-	&.large li>a,
-	&.large li>button {
+	& li.lg>a,
+	& li.lg li>a,
+	&.lg li>a,
+	&.lg li>button {
 		min-height: clamp(44px, 5vw, 50px);
 		min-width : clamp(44px, 5vw, 50px);
 	}
 
-	& li.small>a,
-	& li.small li>a,
-	&.small li>a,
-	&.small li>button {
+	& li.sm>a,
+	& li.sm li>a,
+	&.sm li>a,
+	&.sm li>button {
 		min-height: clamp(26px, 5vw, 30px);
 		min-width : clamp(26px, 5vw, 30px);
 	}
 
-	& li.tiny>a,
-	& li.tiny li>a,
-	&.tiny li>a,
-	&.tiny li>button {
+	& li.xs>a,
+	& li.xs li>a,
+	&.xs li>a,
+	&.xs li>button {
 		min-height: 24px;
 		min-width : 24px;
 	}
@@ -90,7 +102,7 @@ nav.list li>a,
 nav.list li>button,
 fieldset {
 	transition     : color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
-	border         : 1px solid map-get($colors, 'grey');
+	border         : 1px solid map-get($colors, 'medium');
 	color          : inherit;
 	border-radius  : 3px;
 	justify-content: center;
@@ -107,31 +119,69 @@ fieldset {
 	&:focus,
 	&:focus-within,
 	&:hover {
-		border-color: map-get($colors, 'primary');
+		border-color: var(--accent-color);
 		color       : inherit;
 	}
 }
 
-input.toggle {
-	appearance: none;
-	display   : none;
-	border    : 0 !important;
+input[type="checkbox"],
+input[type="radio"] {
+	width         : 1rem;
+	min-height    : 1rem;
+	padding       : 0;
+	margin        : 0 .6rem 0 .4rem;
+	position      : relative;
+	min-width     : 0;
+	vertical-align: text-bottom;
+
+	&:checked {
+		border-color: var(--accent-color);
+
+		&::after {
+			content         : '';
+			position        : absolute;
+			inset           : 2px;
+			background-color: var(--accent-color);
+			border-radius   : 2px;
+		}
+	}
+}
+
+input[type="radio"] {
+
+	&,
+	&:checked::after {
+		border-radius: 50%;
+	}
+}
+
+label.toggle {
+	cursor: pointer;
+
+	input[type="checkbox"] {
+		appearance: none;
+		border    : 0 !important;
+	}
+
+	&:not(.btn-menu) input[type="checkbox"] {
+		display: none;
+		&::after {
+			display: none;
+		}
+	}
 }
 
 nav>ul>li>ul,
-input.toggle.collapse+label+* {
+label.toggle+*,
+label.toggle .collapse {
 	max-height    : 0;
 	pointer-events: none;
 }
 
-label.toggle,
-.toggle+label {
-	cursor: pointer;
-}
+
 
 label.toggle+*,
-nav>ul>li>ul,
-.toggle+label+* {
+nav>ul>li>ul {
 	opacity         : 0;
 	pointer-events  : none;
 	transform       : scaleY(.8) translateY(-4px);
@@ -142,9 +192,10 @@ nav>ul>li>ul,
 	z-index         : 1;
 }
 
-.toggle:checked+label+*,
-.toggle.collapse:checked+label+*,
+label.toggle:has(:checked)+*,
+label.toggle.collapse:has(:checked)+*,
 label.toggle.hoverable:hover+*,
+label.toggle.hoverable:hover .collapse,
 label.hoverable:hover+*,
 nav.horizontal>ul>li:hover>ul,
 nav li>ul:focus-within {
@@ -164,20 +215,31 @@ $breakpoint_width in $breakpoints {
 	}
 }
 
-.toggle.collapse:checked+label+*,
+label.toggle:has(:checked)+*,
 label.toggle.hoverable:hover+*,
+label.toggle.hoverable:hover .collapse,
 nav li>ul:focus-within,
 nav.horizontal>ul>li:hover>ul,
 nav li input.toggle.collapse+label+ul:focus-within {
-	max-height: 2000px;
+	max-height: 100vh;
 }
 
 @each $breakpoint,
 $breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
 		nav.#{$breakpoint}-hoverable>ul>li:hover>ul {
-			max-height: 2000px;
+			max-height: 100vh;
 		}
+	}
+}
+
+.btn,
+input[type="submit"] {
+
+	&:not(.btn-link):not([class*="color-"]),
+	&:not(.btn-link):not([class*="color-"]):hover,
+	&:not(.btn-link):not([class*="color-"]):focus {
+		color: var(--btn-color-text);
 	}
 }
 
@@ -185,8 +247,8 @@ $breakpoint_width in $breakpoints {
 nav.list li>a,
 nav.list li>button,
 input[type="submit"] {
-	background-color: map-get($colors, 'primary');
-	border-color    : map-get($colors, 'primary');
+	background-color: var(--btn-color);
+	border-color    : var(--btn-color);
 	cursor          : pointer;
 	text-align      : center;
 	text-transform  : uppercase;
@@ -195,29 +257,36 @@ input[type="submit"] {
 	&:hover,
 	&:focus,
 	&:focus-within {
-		background-color: darken(map-get($colors, 'primary'), 10%);
-		border-color    : darken(map-get($colors, 'primary'), 10%);
-		color           : white;
+		background-color: var(--btn-color-hover);
+		border-color    : var(--btn-color-hover);
 	}
 
-	&.btn-outline {
-		color           : map-get($colors, 'primary');
+	&.btn-outline:not([class*="color-"]),
+	&.btn-link:not([class*="color-"]) {
+		color: var(--btn-color);
+	}
+
+	&.btn-outline:active,
+	&:active {
+		background-color: var(--btn-color);
+		border-color    : var(--btn-color);
+		transition      : none;
+	}
+
+	&.btn-outline:not([class*="color-"]) {
 		background-color: transparent;
 
 		&:hover,
 		&:focus,
 		&:focus-within {
-			background-color: map-get($colors, 'primary');
-			border-color    : map-get($colors, 'primary');
-			color           : white;
+			background-color: var(--btn-color);
+			border-color    : var(--btn-color);
 		}
-	}
 
-	&.btn-outline:active,
-	&:active {
-		background-color: darken(map-get($colors, 'primary'), 5%);
-		border-color    : darken(map-get($colors, 'primary'), 5%);
-		transition      : none;
+		&:active {
+			background-color: var(--btn-color-hover);
+			border-color    : var(--btn-color-hover);
+		}
 	}
 }
 
@@ -229,36 +298,36 @@ nav.list li>button svg {
 	height: 24px;
 }
 
-.btn.large,
-.large .btn,
-nav.list.large li>a,
-nav.list.large li>button,
-.large nav.list li>a,
-.large nav.list li>button {
+.btn.lg,
+.lg .btn,
+nav.list.lg li>a,
+nav.list.lg li>button,
+.lg nav.list li>a,
+.lg nav.list li>button {
 	svg {
 		width : 32px;
 		height: 32px;
 	}
 }
 
-.btn.small,
-.small .btn,
-nav.list.small li>a,
-nav.list.small li>button,
-.small nav.list li>a,
-.small nav.list li>button {
+.btn.sm,
+.sm .btn,
+nav.list.sm li>a,
+nav.list.sm li>button,
+.sm nav.list li>a,
+.sm nav.list li>button {
 	svg {
 		width : 18px;
 		height: 18px;
 	}
 }
 
-.btn.tiny,
-.tiny .btn,
-nav.list.tiny li>a,
-nav.list.tiny li>button,
-.tiny nav.list li>a,
-.tiny nav.list li>button {
+.btn.xs,
+.xs .btn,
+nav.list.xs li>a,
+nav.list.xs li>button,
+.xs nav.list li>a,
+.xs nav.list li>button {
 	svg {
 		width : 16px;
 		height: 16px;
@@ -270,52 +339,38 @@ nav.list.tiny li>button,
 input[type="submit"] {
 	font-weight: normal;
 	font-size  : 115%;
-	color      : map-get($colors, 'white');
 
-	&.small,
-	.small & {
+	&.sm,
+	.sm & {
 		font-size: 100%;
 	}
 
-	&.tiny,
-	.tiny & {
+	&.xs,
+	.xs & {
 		font-size: 85%;
 	}
 
-	&.large,
-	.large & {
+	&.lg,
+	.lg & {
 		font-size: 130%;
 	}
 }
 
 .btn.btn-link,
+button.btn-link,
+input[type="submit"].btn-link,
 nav.list li>a,
 nav.list li>button {
 	background-color: transparent;
 	border-color    : transparent;
 	text-transform  : capitalize;
 
-	&:active {
-		background-color: rgba(map-get($colors, 'primary'), 20%);
+	&:active,
+	&:focus,
+	&:hover {
+		background-color: var(--btn-color-opaque);
 		transition      : none;
 	}
-}
-
-.btn.btn-link:hover,
-.btn.btn-link:focus,
-nav.list li.active>a,
-nav.list li>a:hover,
-nav.list li>a:focus,
-nav.list li>a:focus-within,
-nav.list li>button:hover
-nav.list li>button:focus {
-	background-color: rgba(map-get($colors, 'primary'), 10%);
-	border-color    : transparent;
-	color           : map-get($colors, 'primary');
-}
-
-.btn.btn-link {
-	color: map-get($colors, 'primary');
 }
 
 nav {
@@ -417,32 +472,37 @@ nav {
 			border        : 0;
 		}
 	}
-}
 
-nav li>a,
-nav li>button,
-nav.list li>button,
-nav.list li>a {
-	line-height: 1.2;
+	li>a,
+	li>button,
+	.list li>button,
+	.list li>a {
+		line-height: 1.2;
 
-	&.truncate {
-		display: block;
+		&.truncate {
+			display: block;
+		}
+	}
+
+	li.sm>a,
+	li.xs>a {
+		padding-right: 2rem;
 	}
 }
 
-nav li.small>a,
-nav li.tiny>a {
-	padding-right: 2rem;
-}
+
 
 .btn-menu {
 	position: relative;
 	padding : 0;
 
-	span {
-		background-color: map-get($colors, 'light');
+	input {
+		background-color: var(--btn-color-text);
 		width           : 60%;
 		position        : absolute;
+		border          : 0;
+		min-height      : auto;
+		pointer-events  : none;
 
 		&,
 		&::before,
@@ -471,7 +531,7 @@ nav li.tiny>a {
 		}
 	}
 
-	&.small span {
+	&.sm input {
 
 		&::before,
 		&::after {
@@ -483,7 +543,7 @@ nav li.tiny>a {
 		}
 	}
 
-	&.tiny span {
+	&.xs input {
 
 		&::before,
 		&::after {
@@ -495,7 +555,7 @@ nav li.tiny>a {
 		}
 	}
 
-	&.large span {
+	&.lg input {
 
 		&,
 		&::before,
@@ -514,15 +574,14 @@ nav li.tiny>a {
 	}
 
 	&.btn-link {
-		span {
-			background-color: map-get($colors, 'primary');
+		input {
+			background-color: var(--btn-color);
 		}
 	}
 }
 
-:checked+.btn-menu,
-.btn-menu.open {
-	span {
+.btn-menu:has(:checked) {
+	input {
 		transform: rotate(45deg);
 
 		&::before,
@@ -531,7 +590,9 @@ nav li.tiny>a {
 		}
 
 		&::after {
-			transform: rotate(-90deg);
+			transform       : rotate(-90deg);
+			background-color: inherit;
+			inset           : 0;
 		}
 	}
 }
@@ -539,13 +600,19 @@ nav li.tiny>a {
 .btn-toggle {
 	padding: 0;
 
+	input {
+		border        : 0;
+		pointer-events: none;
+		display       : none;
+	}
+
 	&::after {
 		content      : '';
 		display      : block;
 		position     : absolute;
 		inset        : 0;
 		margin       : auto;
-		border       : 2px solid map-get($colors, 'light');
+		border       : 2px solid var(--btn-color-text);
 		border-left  : 0;
 		border-bottom: 0;
 		width        : 32%;
@@ -556,7 +623,7 @@ nav li.tiny>a {
 
 	&.btn-link {
 		&::after {
-			border-color: map-get($colors, 'primary');
+			border-color: var(--btn-color);
 		}
 	}
 
@@ -566,14 +633,14 @@ nav li.tiny>a {
 		top     : 0;
 	}
 
-	nav.list li.small>&,
-	nav.list.small li>& {
+	nav.list li.sm>&,
+	nav.list.sm li>& {
 		top: 2px;
 	}
 
-	nav.list.large li.small>&,
-	nav.list li.tiny>&,
-	nav.list.tiny li>& {
+	nav.list.lg li.sm>&,
+	nav.list li.xs>&,
+	nav.list.xs li>& {
 		top: 4px;
 	}
 }
@@ -584,7 +651,7 @@ nav li.tiny>a {
 
 	&::before,
 	&::after {
-		background-color: map-get($colors, 'light');
+		background-color: var(--btn-color-text);
 		content         : '';
 		height          : 60%;
 		position        : absolute;
@@ -605,52 +672,14 @@ nav li.tiny>a {
 
 		&::before,
 		&::after {
-			background-color: map-get($colors, 'primary');
+			background-color: var(--btn-color);
 		}
 	}
 }
 
-.toggle:checked+.btn-toggle::after,
-.toggle:checked+label .btn-toggle::after,
-.btn-toggle.open::after {
+label.toggle:has(:checked).btn-toggle::after,
+.btn-toggle:has(:checked)::after {
 	transform: rotate(-45deg) translate(-14%, 16%);
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-	width         : 1rem;
-	min-height    : 1rem;
-	padding       : 0;
-	margin        : 0 .6rem 0 .4rem;
-	position      : relative;
-	min-width     : 0;
-	vertical-align: text-bottom;
-
-	&:checked {
-		border-color: map-get($colors, 'primary');
-
-		&::after {
-			content         : '';
-			position        : absolute;
-			inset           : 2px;
-			background-color: map-get($colors, 'primary');
-			border-radius   : 2px;
-		}
-	}
-
-	+span {
-		float  : left;
-		display: block;
-		width  : calc(100% - 40px);
-	}
-}
-
-input[type="radio"] {
-
-	&,
-	&:checked::after {
-		border-radius: 50%;
-	}
 }
 
 select {
@@ -678,10 +707,6 @@ fieldset {
 		transition : transform .2s ease-in-out, max-width .2s ease-in-out;
 		margin-left: 5px;
 		padding    : 0;
-
-		@media screen and (min-width: map-get($breakpoints, 'md')) {
-			transform: translate(4px, 8px);
-		}
 
 		label {
 			display       : block;
@@ -715,35 +740,35 @@ fieldset {
 	}
 
 	&:focus-within {
-		border-color: map-get($colors, 'primary');
+		border-color: var(--accent-color);
 
 		legend label {
-			color: map-get($colors, 'primary');
+			color: var(--accent-color);
 		}
 	}
 
-	&.tiny,
-	.tiny &,
-	&.small,
-	.small &,
-	&.large,
-	.large & {
+	&.xs,
+	.xs &,
+	&.sm,
+	.sm &,
+	&.lg,
+	.lg & {
 		height    : auto;
 		min-height: 0;
 	}
 
-	&.tiny,
-	.tiny & {
+	&.xs,
+	.xs & {
 		line-height: 1;
 	}
 
-	&.small,
-	.small & {
+	&.sm,
+	.sm & {
 		line-height: 1;
 	}
 
-	&.large,
-	.large & {
+	&.lg,
+	.lg & {
 		line-height: 1.8;
 	}
 }
@@ -754,16 +779,16 @@ textarea {
 	max-width  : 100%;
 	line-height: 1.2;
 
-	.small &,
-	&.small,
-	.tiny &,
-	&.tiny {
+	.sm &,
+	&.sm,
+	.xs &,
+	&.xs {
 		min-height : 60px;
 		line-height: 1.2;
 	}
 
-	.large &,
-	&.large {
+	.lg &,
+	&.lg {
 		min-height : 200px;
 		line-height: 1.2;
 	}
@@ -793,17 +818,18 @@ textarea {
 		height        : 20px;
 		border-radius : 50%;
 		border        : 2px solid transparent;
-		border-color  : map-get($colors, 'primary') map-get($colors, 'primary') transparent transparent;
+		border-color  : var(--accent-color) var(--accent-color) transparent transparent;
 		opacity       : 0;
 		pointer-events: none;
 		transition    : opacity .3s ease-in-out .1s;
 	}
 
 	&.loading {
-		pointer-events: none;
-		user-select   : none;
-		cursor        : default;
-		color         : transparent;
+		pointer-events  : none;
+		user-select     : none;
+		cursor          : default;
+		--btn-color-text: transparent;
+		color           : transparent;
 
 		&::after {
 			opacity  : 1;
@@ -811,24 +837,24 @@ textarea {
 		}
 	}
 
-	.tiny &,
-	&.tiny {
+	.xs &,
+	&.xs {
 		&::after {
 			width : 12px;
 			height: 12px;
 		}
 	}
 
-	.small &,
-	&.small {
+	.sm &,
+	&.sm {
 		&::after {
 			width : 16px;
 			height: 16px;
 		}
 	}
 
-	.large &,
-	&.large {
+	.lg &,
+	&.lg {
 		&::after {
 			width : 26px;
 			height: 26px;
@@ -857,7 +883,7 @@ table {
 
 	tbody tr {
 		&:hover td {
-			background-color: rgba(map-get($colors, 'primary'), .04);
+			background-color: rgba(var(--accent-color), .04);
 		}
 
 		td {
@@ -873,7 +899,7 @@ table {
 hr {
 	height          : 1px;
 	border          : 0;
-	background-color: map-get($colors, 'grey');
+	background-color: map-get($colors, 'medium');
 	margin          : map-get($gaps, 'default');
 }
 
@@ -909,15 +935,44 @@ $color_value in $colors {
 	overflow        : hidden;
 	display         : flex;
 	flex-direction  : column;
+	border-color    : var(--card-color);
 
 	>header,
 	>footer {
-		display    : flex;
-		align-items: center;
+		background-color: var(--card-color);
+		color           : var(--card-color-text);
+		display         : flex;
+		align-items     : center;
+	}
+
+	&[class*="card-"] {
+
+		>header,
+		>footer {
+			padding-top   : .80rem;
+			padding-bottom: .80rem;
+		}
 	}
 
 	>article {
 		flex    : auto;
 		overflow: auto;
+	}
+}
+
+:has(>.tooltip) {
+	position: relative;
+
+	.tooltip {
+		width     : 90vw;
+		position  : absolute;
+		z-index   : 1;
+		transition: opacity .2s ease-in-out;
+		cursor    : auto;
+	}
+
+	&:not(:hover) .tooltip {
+		opacity       : 0;
+		pointer-events: none;
 	}
 }

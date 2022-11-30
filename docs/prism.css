@@ -10,7 +10,6 @@ code[class*="language-"],
 pre[class*="language-"] {
 	color: black;
 	background: none;
-	text-shadow: 0 1px white;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	font-size: 0.9em;
 	text-align: left;
@@ -31,16 +30,33 @@ pre[class*="language-"] {
 	hyphens: none;
 }
 
+.dark code[class*="language-"],
+.dark pre[class*="language-"] {
+	color: white;
+}
+
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	text-shadow: none;
 	background: #b3d4fc;
 }
 
+.dark pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+.dark code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #111111;
+}
+
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow: none;
 	background: #b3d4fc;
+}
+
+.dark pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+.dark code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #111111;
 }
 
 @media print {
@@ -53,6 +69,11 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	background: #f5f2f0;
+}
+
+.dark :not(pre) > code[class*="language-"],
+.dark pre[class*="language-"] {
+	background: #111111;
 }
 
 /* Inline code */
@@ -91,7 +112,7 @@ code[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #905;
+	color: rgb(184, 4, 103);
 }
 
 .token.selector,
@@ -159,7 +180,7 @@ div.code-toolbar::after {
 	position: absolute;
 	top: 0;
 	left: 0;
-	box-shadow: inset -10px 0px 10px rgba(245, 242, 240, 1);
+	/* box-shadow: inset -10px 0px 10px rgba(245, 242, 240, 1); */
 	pointer-events: none;
 }
 

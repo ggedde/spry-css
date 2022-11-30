@@ -1,3 +1,6 @@
+/*! 
+* Spry Utilities
+*/
 /*************************************
 General Utility Classes
 **************************************/
@@ -19,6 +22,9 @@ General Utility Classes
 .index-3{ z-index: 3 }
 .note { font-style: italic; font-size: 90%; opacity: 0.8 }
 .truncate{ max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.rotate-90 { transform: rotate(90deg) }
+.rotate-180 { transform: rotate(180deg) }
+.rotate-270 { transform: rotate(270deg) }
 
 /****************************************************************************
 Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
@@ -34,6 +40,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .flex{ display: flex }
 .block{ display: block; width: 100% }
 .none{ display: none }
+label.toggle + .open {opacity: 1; pointer-events: all; transform: scaleY(1) }
 .inline-block{ display: inline-block; width: auto }
 .inline-flex{ display: inline-flex; width: auto }
 .table{ display: table }
@@ -80,11 +87,11 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .order-2{ order:2 }
 .order-3{ order:3 }
 .order-last{ order:99999 }
-.border{ border: 1px solid map-get($colors, 'grey') }
-.border-top{ border-top: 1px solid map-get($colors, 'grey') }
-.border-right{ border-right: 1px solid map-get($colors, 'grey') }
-.border-bottom{ border-bottom: 1px solid map-get($colors, 'grey') }
-.border-left{ border-left: 1px solid map-get($colors, 'grey') }
+.border{ border: 1px solid map-get($colors, 'medium') }
+.border-top{ border-top: 1px solid map-get($colors, 'medium') }
+.border-right{ border-right: 1px solid map-get($colors, 'medium') }
+.border-bottom{ border-bottom: 1px solid map-get($colors, 'medium') }
+.border-left{ border-left: 1px solid map-get($colors, 'medium') }
 .no-border{ border: 0 }
 .shadow{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }
 .no-shadow{ box-shadow: none }
@@ -99,10 +106,10 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 	.mh-#{$i}00{ max-height: #{$i}00px }
 	.vh-#{$i}0{ height: #{$i}0vh }
 	.mvh-#{$i}0{ max-height: #{$i}0vh }
-	.w-#{$i}00{ width: #{$i}00px; min-width: #{$i}00px; max-width: #{$i}00px }
-	.mw-#{$i}00{ max-width: #{$i}00px }
+	.w-#{$i}00,.row>.w-#{$i}00{ width: #{$i}00px; min-width: #{$i}00px; max-width: #{$i}00px }
+	.mw-#{$i}00,.row>.mw-#{$i}00{ max-width: #{$i}00px }
 	.vw-#{$i}0{ width: #{$i}0vw }
-	.mvw-#{$i}0{ max-width: #{$i}0vw }
+	.mvw-#{$i}0,.row>.mvw-#{$i}0{ max-width: #{$i}0vw }
 }
 .o-0{ opacity: 0 }
 @for $i from 1 through 10 {
@@ -124,7 +131,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 			&-flex{ display: flex }
 			&-block{ display: block }
 			&-none{ display: none }
-			&-open.toggle + label + * {opacity: 1; pointer-events: all; transform: scaleY(1) }
+			label.toggle + &-open {opacity: 1; pointer-events: all; transform: scaleY(1) }
 			&-inline-block{ display: inline-block; width: auto }
 			&-inline-flex{ display: inline-flex; width: auto }
 			&-table{ display: table }
@@ -177,11 +184,11 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 			&-w{ width: 100% }
 			&-w-0{ width: 0 }
 			&-vw{ width: 100vw }
-			&-border{ border: 1px solid map-get($colors, 'grey') }
-			&-border-top{ border-top: 1px solid map-get($colors, 'grey') }
-			&-border-right{ border-right: 1px solid map-get($colors, 'grey') }
-			&-border-bottom{ border-bottom: 1px solid map-get($colors, 'grey') }
-			&-border-left{ border-left: 1px solid map-get($colors, 'grey') }
+			&-border{ border: 1px solid map-get($colors, 'medium') }
+			&-border-top{ border-top: 1px solid map-get($colors, 'medium') }
+			&-border-right{ border-right: 1px solid map-get($colors, 'medium') }
+			&-border-bottom{ border-bottom: 1px solid map-get($colors, 'medium') }
+			&-border-left{ border-left: 1px solid map-get($colors, 'medium') }
 			&-no-border{ border: 0 }
 			&-shadow{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }
 			&-no-shadow{ box-shadow: none }
@@ -190,10 +197,10 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 				&-mh-#{$i}00{ max-height: #{$i}00px }
 				&-vh-#{$i}0{ height: #{$i}0vh }
 				&-mvh-#{$i}0{ max-height: #{$i}0vh }
-				&-w-#{$i}00{ width: #{$i}00px; min-width: #{$i}00px; max-width: #{$i}00px }
-				&-mw-#{$i}00{ max-width: #{$i}00px }
+				&-w-#{$i}00,.row>&-w-#{$i}00{ width: #{$i}00px; min-width: #{$i}00px; max-width: #{$i}00px }
+				&-mw-#{$i}00,.row>&-mw-#{$i}00{ max-width: #{$i}00px }
 				&-vw-#{$i}0{ width: #{$i}0vw }
-				&-mvw-#{$i}0{ max-width: #{$i}0vw }
+				&-mvw-#{$i}0,.row>&-mvw-#{$i}0{ max-width: #{$i}0vw }
 			}
 			&-o-0{ opacity: 0 }
 			@for $i from 1 through 10 {

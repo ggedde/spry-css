@@ -1,12 +1,24 @@
+/*! 
+* Spry Grid
+*/
+:root {
+	--gap: #{map-get($gaps, 'default')};
+	@each $breakpoint, $breakpoint_width in $breakpoints {
+		@media screen and (min-width: $breakpoint_width) {
+			--gap: #{map-get($gaps, $breakpoint)};
+		}
+	}
+}
+
 .grid {
 	display: grid;
-	gap: map-get($gaps, 'default');
+	gap: var(--gap);
 }
 
 .row {
 	display: flex;
 	flex-wrap: wrap;
-	gap: map-get($gaps, 'default');
+	gap: var(--gap);
 	> * {
 		flex: 0 100%;
 	}
@@ -26,34 +38,19 @@
 	}
 	.grid-#{$i}00 {
 		display: grid;
-		gap: map-get($gaps, 'default');
 		grid-template-columns: repeat( auto-fit, minmax(#{$i}00px, 1fr));
+		gap: var(--gap);
 	}
-	.row.columns-#{$i} > * {
-		flex: 0 calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - #{(map-get($gaps, 'default') - calc(round(calc(map-get($gaps, 'default') / $i) * 1000) / 1000))});
-	}
-	@if $i > 1 {
-		.row.g-0.columns-#{$i} > * {
-			max-width: #{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)};
-			flex: 0 #{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)};
-		}
+	.row.columns-#{$i}>* {
+		flex: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - var(--gap));
 	}
 
-	.row > .col-#{$i} {
-		flex: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{map-get($gaps, 'default')});
-		@if $i < 12 {
-			max-width: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{calc(round(calc(map-get($gaps, 'default') / $i) * 1000) / 1000)});
-		}
+	.row>.col-#{$i} {
+		flex: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - var(--gap));
+		max-width: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - (((var(--gap) * (#{$i} / 12)) - var(--gap)) / (#{$i} / 12)));
 	}
 
-	.row.g-0 > .col-#{$i} {
-		flex: 0 #{calc(round(percentage(calc($i / 12)) * 1000) / 1000)};
-		@if $i < 12 {
-			max-width: #{calc(round(percentage(calc($i / 12)) * 1000) / 1000)};
-		}
-	}
-
-	.grid > .col-#{$i} {
+	.grid>.col-#{$i} {
 		@if $i > 1 {
 			grid-column: 1 / span #{$i};
 		}
@@ -67,12 +64,6 @@
 	}
 
 	@media screen and (min-width: $breakpoint_width) {
-
-		@if map-get($gaps, $breakpoint) {
-			.grid, .row, [class*="grid-"] {
-				gap: map-get($gaps, $breakpoint);
-			}
-		}
 
 		.row > *,
 		.row.#{$breakpoint}-columns-fixed > *,
@@ -89,27 +80,13 @@
 				grid-template-columns: repeat($i, minmax(0, 1fr))
 			}
 			.row.#{$breakpoint}-columns-#{$i} > * {
-				flex: 0 calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - #{(map-get($gaps, $breakpoint) - calc(round(calc(map-get($gaps, $breakpoint) / $i) * 1000) / 1000))});
-			}
-			@if $i > 1 {
-				.row.g-0.#{$breakpoint}-columns-#{$i} > * {
-					max-width: #{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)};
-					flex: 0 #{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)};
-				}
+				flex: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - var(--gap));
 			}
 
 			.row > .#{$breakpoint}-col-#{$i} {
-				flex: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{map-get($gaps, $breakpoint)});
-				@if $i < 12 {
-					max-width: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{calc(round(calc(map-get($gaps, $breakpoint) / $i) * 1000) / 1000)});
-				}
-			}
+				flex: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - var(--gap));
+				max-width: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - (((var(--gap) * (#{$i} / 12)) - var(--gap)) / (#{$i} / 12)));
 
-			.row.g-0 > .#{$breakpoint}-col-#{$i} {
-				flex: 0 #{calc(round(percentage(calc($i / 12)) * 1000) / 1000)};
-				@if $i < 12 {
-					max-width: #{calc(round(percentage(calc($i / 12)) * 1000) / 1000)};
-				}
 			}
 
 			.grid > .#{$breakpoint}-col-#{$i} {
@@ -118,45 +95,20 @@
 				}
 			}
 		}
-		@each $s, $space in $spacing {
-			.grid.#{$breakpoint}-g-#{$s},
-			.row.#{$breakpoint}-g-#{$s} {
-				gap: #{$space};
-			}
-		}
 	}
 }
 @each $s, $space in $spacing {
 
-	.g-#{$s},
-	.grid.g-#{$s}, 
-	.row.g-#{$s}, 
-	[class*="grid-"].g-#{$s} {
-		gap: #{$space};
+	.g-#{$s} {
+		gap: var(--gap);
+		--gap: #{$space};
 	}
-	
-	@for $i from 1 through 12 {
-		.row.g-#{$s} > .col-#{$i} {
-			flex: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{$space});
-			@if $i < 12 {
-				max-width: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{calc(round(calc($space / (12 / $i)) * 1000) / 1000)});
-			}
-		}
-	}
-}
 
-@each $breakpoint, $breakpoint_width in $breakpoints {
-	@media screen and (min-width: $breakpoint_width) {
-		@each $s, $space in $spacing {
-			@for $i from 1 through 12 {
-				.row.#{$breakpoint}-g-#{$s} > .col-#{$i},
-				.row.#{$breakpoint}-g-#{$s} > .#{$breakpoint}-col-#{$i},
-				.row.#{$breakpoint}-g-#{$s} > [class*="col-"].#{$breakpoint}-col-#{$i} {
-					flex: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{$space});
-					@if $i < 12 {
-						max-width: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - #{calc(round(calc($space / (12 / $i)) * 1000) / 1000)});
-					}
-				}
+	@each $breakpoint, $breakpoint_width in $breakpoints {
+		@media screen and (min-width: $breakpoint_width) {
+			.#{$breakpoint}-g-#{$s} {
+				gap: var(--gap);
+				--gap: #{$space};
 			}
 		}
 	}
