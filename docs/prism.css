@@ -8,19 +8,19 @@ https://prismjs.com/download.html#themes=prism&languages=css+scss&plugins=toolba
 
 .show-code,
 div.code-toolbar {
-	max-width: calc(100vw - 40px);
+	max-width: calc(100vw - 60px);
 }
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 620px) {
 	.show-code,
 	div.code-toolbar {
-		max-width: calc(100vw - 265px);
+		max-width: calc(100vw - 285px);
 	}
 }
 
-@media screen and (min-width: 1270px) {
+@media screen and (min-width: 1250px) {
 	.show-code,
 	div.code-toolbar {
-		max-width: calc(100vw - 280px);
+		max-width: calc(100vw - 300px);
 	}
 }
 
