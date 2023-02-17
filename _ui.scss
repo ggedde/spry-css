@@ -996,12 +996,14 @@ $color_value in $colors {
 
 :has(>.tooltip) {
 	position: relative;
-	z-index : 1;
+
+	&:hover {
+		z-index : 2;
+	}
 
 	.tooltip {
 		width     : 90vw;
 		position  : absolute;
-		z-index   : 1;
 		transition: opacity .2s ease-in-out;
 		cursor    : auto;
 	}
