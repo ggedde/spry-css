@@ -6,6 +6,24 @@ https://prismjs.com/download.html#themes=prism&languages=css+scss&plugins=toolba
  * @author Lea Verou
  */
 
+.show-code,
+div.code-toolbar {
+	max-width: calc(100vw - 40px);
+}
+@media screen and (min-width: 640px) {
+	.show-code,
+	div.code-toolbar {
+		max-width: calc(100vw - 265px);
+	}
+}
+
+@media screen and (min-width: 1270px) {
+	.show-code,
+	div.code-toolbar {
+		max-width: calc(100vw - 280px);
+	}
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
 	color: black;
@@ -162,15 +180,8 @@ code[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
-
 div.code-toolbar {
 	position: relative;
-	max-width: 70vw;
-}
-@media screen and (min-width: 800px) and (max-width: 880px) {
-	div.code-toolbar {
-		max-width: 67vw;
-	}
 }
 div.code-toolbar::after {
 	content: '';

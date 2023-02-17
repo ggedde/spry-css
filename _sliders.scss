@@ -1,0 +1,54 @@
+/*! 
+* Spry Sliders
+*/
+.slider {
+	position: relative;
+
+	&-slides {
+		display           : flex;
+		overflow-x        : scroll;
+		scroll-behavior   : smooth;
+		scroll-snap-type  : x mandatory;
+		-ms-overflow-style: none;
+		flex-wrap         : nowrap;
+
+		&::-webkit-scrollbar {
+			width  : 0;
+			display: none;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: transparent;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: transparent;
+			border    : none;
+		}
+
+		>* {
+			display          : flex;
+			flex-direction   : column;
+			position         : relative;
+			flex             : 0 0 100%;
+			width            : 100%;
+			scroll-snap-align: start;
+			justify-content  : center;
+		}
+	}
+
+	.slider-prev,
+	.slider-next {
+		content  : '';
+		z-index  : 1;
+		position : absolute;
+		top      : 50%;
+		left     : 0;
+		transform: translateY(-50%);
+	}
+
+	.slider-next {
+		right: 0;
+		left : auto;
+	}
+}

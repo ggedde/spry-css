@@ -43,6 +43,8 @@
 	}
 	.row.columns-#{$i}>* {
 		flex: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - var(--gap));
+		min-width: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - ((var(--gap) * (#{$i} - 1)) / #{$i}));
+		max-width: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - ((var(--gap) * (#{$i} - 1)) / #{$i}));
 	}
 
 	.row>.col-#{$i} {
@@ -81,6 +83,8 @@
 			}
 			.row.#{$breakpoint}-columns-#{$i} > * {
 				flex: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - var(--gap));
+				min-width: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - ((var(--gap) * (#{$i} - 1)) / #{$i}));
+				max-width: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - ((var(--gap) * (#{$i} - 1)) / #{$i}));
 			}
 
 			.row > .#{$breakpoint}-col-#{$i} {

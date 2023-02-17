@@ -29,18 +29,17 @@ General Utility Classes
 /****************************************************************************
 Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 ****************************************************************************/
-.left{ text-align: left }
-.center{ text-align: center }
-.right{ text-align: right }
+.text-left{ text-align: left }
+.text-center{ text-align: center }
+.text-right{ text-align: right }
 .justify{ text-align: justify }
-.no-wrap{ white-space: nowrap }
+.no-wrap{ white-space: nowrap; flex-wrap: nowrap; }
 .pre-wrap{ white-space: pre-wrap }
 .break-word{ word-wrap: break-word }
 .inline{ display: inline; width: auto }
 .flex{ display: flex }
 .block{ display: block; width: 100% }
 .none{ display: none }
-label.toggle + .open {opacity: 1; pointer-events: all; transform: scaleY(1) }
 .inline-block{ display: inline-block; width: auto }
 .inline-flex{ display: inline-flex; width: auto }
 .table{ display: table }
@@ -79,6 +78,8 @@ label.toggle + .open {opacity: 1; pointer-events: all; transform: scaleY(1) }
 .align-middle{ vertical-align: middle }
 .align-bottom{ vertical-align: bottom }
 .overflow-hidden{ overflow: hidden }
+.overflow-y-hidden{ overflow-y: hidden }
+.overflow-x-hidden{ overflow-x: hidden }
 .overflow-scroll{ overflow: scroll }
 .overflow-auto{ overflow: auto }
 .order-first{ order:-1 }
@@ -120,18 +121,17 @@ label.toggle + .open {opacity: 1; pointer-events: all; transform: scaleY(1) }
 	@media screen and (min-width: $breakpoint_width) {
 
 		.#{$breakpoint} {
-			&-left{ text-align: left }
-			&-center{ text-align: center }
-			&-right{ text-align: right }
+			&-text-left{ text-align: left }
+			&-text-center{ text-align: center }
+			&-text-right{ text-align: right }
 			&-justify{ text-align: justify }
-			&-no-wrap{ white-space: nowrap }
+			&-no-wrap{ white-space: nowrap; flex-wrap: nowrap; }
             &-pre-wrap{ white-space: pre-wrap }
 			&-break-word{ word-wrap: break-word }
 			&-inline{ display: inline; width: auto }
 			&-flex{ display: flex }
 			&-block{ display: block }
 			&-none{ display: none }
-			label.toggle + &-open {opacity: 1; pointer-events: all; transform: scaleY(1) }
 			&-inline-block{ display: inline-block; width: auto }
 			&-inline-flex{ display: inline-flex; width: auto }
 			&-table{ display: table }

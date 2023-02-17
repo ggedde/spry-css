@@ -5,6 +5,7 @@
 	@each $color_name, $color_value in $colors {
 		--color-#{$color_name}: #{$color_value};
 	}
+	--accent-color: #{map-get($colors, 'primary')};
 }
 
 .dark {
@@ -23,6 +24,7 @@
 	.border-#{$color_name},
 	.border-#{$color_name}:hover,
 	.border-#{$color_name}:focus,
+	.card-#{$color_name},
 	.accent-#{$color_name} .border:not([class*="border-"]):hover,
 	.accent-#{$color_name} .border:not([class*="border-"]) {
 		border-color: var(--color-#{$color_name});
@@ -30,21 +32,26 @@
 	.accent-#{$color_name},
 	.btn-#{$color_name} {
 		--btn-color: var(--color-#{$color_name});
-		--btn-color-hover: #{darken($color_value, 10%)};
 		--btn-color-opaque: #{rgba($color_value, 10%)};
-		@if $color_name ==light {
-			--btn-color-text: map-get($colors, 'text');
-		}
+		// @if $color_name ==light {
+			--btn-color-text: #{map-get($colors, 'white')};
+		// }
+	}
+	.btn-outline,
+	.btn-link {
+		--btn-color-text: var(--btn-color);
 	}
 	.accent-#{$color_name} {
 		--accent-color: var(--color-#{$color_name});
+		tbody tr:hover td {
+			background-color: rgba($color_value, .04);
+		}
 	}
 	.card-#{$color_name} {
 		--card-color: var(--color-#{$color_name});
 		@if $color_name !=light {
 		--card-color-text: white;
 		}
-		border-color:  var(--color-#{$color_name});
 	}
 	a.color-#{$color_name}:hover {
 		color: lighten($color_value, 10%);
@@ -66,18 +73,14 @@
 	.btn-dark {
 		--btn-color: #{darken(map-get($colors, 'dark' ), 5%)};
 		--btn-color-text: #{map-get($colors, 'light' )};
-		--btn-color-hover: #{darken(map-get($colors, 'dark' ), 5%)};
 	}
-	.btn-light {
-		--btn-color-hover: #{darken(map-get($colors, 'dark' ), 5%)};
-	}
-	.btn-dark.btn-outline {
-		background-color: map-get($colors, 'dark' );
+	.btn.btn-dark.btn-outline {
 		border-color: map-get($colors, 'light' );
 		color: map-get($colors, 'light' );
 		&:hover {
 			background-color: darken(map-get($colors, 'dark' ), 10%);
 			border-color: map-get($colors, 'light' );
+			color: map-get($colors, 'light' );
 		}
 	}
 	.btn-dark.btn-link {

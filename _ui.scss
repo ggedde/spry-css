@@ -4,7 +4,6 @@
 :root {
 	--btn-color       : #{map-get($colors, 'primary')};
 	--btn-color-text  : #{map-get($colors, 'white')};
-	--btn-color-hover : #{darken(map-get($colors, 'primary'), 10%)};
 	--btn-color-opaque: #{rgba(map-get($colors, 'primary'), 10%)};
 	--accent-color    : #{map-get($colors, 'primary')};
 	--card-color      : transparent;
@@ -26,7 +25,7 @@ fieldset {
 	min-height     : clamp(34px, 5vw, 40px);
 	min-width      : clamp(34px, 5vw, 40px);
 	height         : auto;
-	padding        : .2rem 1rem;
+	padding        : 0 1rem;
 	width          : 100%;
 	display        : inline-flex;
 	align-items    : center;
@@ -98,10 +97,10 @@ nav {
 input,
 textarea,
 select,
-nav.list li>a,
-nav.list li>button,
+.list li>a,
+.list li>button,
 fieldset {
-	transition     : color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+	transition     : color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out, filter .1s ease-in-out;
 	border         : 1px solid map-get($colors, 'medium');
 	color          : inherit;
 	border-radius  : 3px;
@@ -114,13 +113,6 @@ fieldset {
 	&:disabled {
 		opacity: .6;
 		cursor : not-allowed;
-	}
-
-	&:focus,
-	&:focus-within,
-	&:hover {
-		border-color: var(--accent-color);
-		color       : inherit;
 	}
 }
 
@@ -155,7 +147,7 @@ input[type="radio"] {
 	}
 }
 
-label.toggle {
+.toggle {
 	cursor: pointer;
 
 	input[type="checkbox"] {
@@ -165,145 +157,102 @@ label.toggle {
 
 	&:not(.btn-menu) input[type="checkbox"] {
 		display: none;
+
 		&::after {
 			display: none;
 		}
 	}
 }
 
-nav>ul>li>ul,
-label.toggle+*,
-label.toggle .collapse {
-	max-height    : 0;
-	pointer-events: none;
-}
-
-
-
-label.toggle+*,
+.toggle+*,
 nav>ul>li>ul {
+	max-height      : 1px;
 	opacity         : 0;
 	pointer-events  : none;
+	position        : relative;
 	transform       : scaleY(.8) translateY(-4px);
 	transform-origin: top;
-	transition      : transform .2s .05s ease-in-out, opacity .2s .05s ease-in-out, max-height .3s ease-in-out;
-	transition-delay: .1s; // This prevents page load transitions
-	position        : relative;
+	transition      : transform .1s ease-in-out, opacity .05s ease-in-out, max-height .3s cubic-bezier(0, 1, 0, 1); // Out
+	transition-delay: .1s;
 	z-index         : 1;
 }
 
-label.toggle:has(:checked)+*,
-label.toggle.collapse:has(:checked)+*,
-label.toggle.hoverable:hover+*,
-label.toggle.hoverable:hover .collapse,
-label.hoverable:hover+*,
-nav.horizontal>ul>li:hover>ul,
+.toggle:has(:checked)+*,
+.toggle.hoverable:hover+*,
+.toggle+.open,
+.hoverable>ul>li:hover>ul,
 nav li>ul:focus-within {
+	max-height    : 100vh;
 	opacity       : 1;
 	pointer-events: all;
-	transform     : scaleY(1);
+	transform     : scaleY(1.000001);
 }
 
 @each $breakpoint,
 $breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
-		nav.#{$breakpoint}-hoverable>ul>li:hover>ul {
+
+		.toggle.#{$breakpoint}-hoverable:hover+*,
+		.toggle+.#{$breakpoint}-open,
+		.#{$breakpoint}-hoverable>ul>li:hover>ul {
+			max-height    : 100vh;
 			opacity       : 1;
 			pointer-events: all;
-			transform     : scaleY(1);
-		}
-	}
-}
-
-label.toggle:has(:checked)+*,
-label.toggle.hoverable:hover+*,
-label.toggle.hoverable:hover .collapse,
-nav li>ul:focus-within,
-nav.horizontal>ul>li:hover>ul,
-nav li input.toggle.collapse+label+ul:focus-within {
-	max-height: 100vh;
-}
-
-@each $breakpoint,
-$breakpoint_width in $breakpoints {
-	@media screen and (min-width: $breakpoint_width) {
-		nav.#{$breakpoint}-hoverable>ul>li:hover>ul {
-			max-height: 100vh;
+			transform     : scaleY(1.000001);
 		}
 	}
 }
 
 .btn,
-input[type="submit"] {
-
-	&:not(.btn-link):not([class*="color-"]),
-	&:not(.btn-link):not([class*="color-"]):hover,
-	&:not(.btn-link):not([class*="color-"]):focus {
-		color: var(--btn-color-text);
-	}
-}
-
-.btn,
-nav.list li>a,
-nav.list li>button,
 input[type="submit"] {
 	background-color: var(--btn-color);
 	border-color    : var(--btn-color);
-	cursor          : pointer;
-	text-align      : center;
-	text-transform  : uppercase;
-	width           : auto;
+}
 
-	&:hover,
-	&:focus,
-	&:focus-within {
-		background-color: var(--btn-color-hover);
-		border-color    : var(--btn-color-hover);
-	}
+.btn,
+a.btn:hover,
+input[type="submit"] {
+	color: var(--btn-color-text);
 
 	&.btn-outline:not([class*="color-"]),
 	&.btn-link:not([class*="color-"]) {
-		color: var(--btn-color);
+		color: var(--btn-color-text);
 	}
 
-	&.btn-outline:active,
-	&:active {
-		background-color: var(--btn-color);
-		border-color    : var(--btn-color);
-		transition      : none;
+	&.btn-link {
+		border-color: transparent;
 	}
 
-	&.btn-outline:not([class*="color-"]) {
-		background-color: transparent;
-
-		&:hover,
-		&:focus,
-		&:focus-within {
-			background-color: var(--btn-color);
-			border-color    : var(--btn-color);
-		}
-
-		&:active {
-			background-color: var(--btn-color-hover);
-			border-color    : var(--btn-color-hover);
-		}
+	&:hover:not(:active),
+	&:focus:not(:active) {
+		filter: brightness(1.15);
 	}
+}
+
+.btn,
+.list li>a,
+.list li>button,
+input[type="submit"] {
+	cursor        : pointer;
+	text-align    : center;
+	text-transform: uppercase;
+	width         : auto;
 }
 
 
 .btn svg,
-nav.list li>a svg,
-nav.list li>button svg {
+.list li>a svg,
+.list li>button svg {
 	width : 24px;
 	height: 24px;
 }
 
 .btn.lg,
 .lg .btn,
-nav.list.lg li>a,
-nav.list.lg li>button,
-.lg nav.list li>a,
-.lg nav.list li>button {
+.list.lg li>a,
+.list.lg li>button,
+.lg .list li>a,
+.lg .list li>button {
 	svg {
 		width : 32px;
 		height: 32px;
@@ -312,10 +261,10 @@ nav.list.lg li>button,
 
 .btn.sm,
 .sm .btn,
-nav.list.sm li>a,
-nav.list.sm li>button,
-.sm nav.list li>a,
-.sm nav.list li>button {
+.list.sm li>a,
+.list.sm li>button,
+.sm .list li>a,
+.sm .list li>button {
 	svg {
 		width : 18px;
 		height: 18px;
@@ -324,10 +273,10 @@ nav.list.sm li>button,
 
 .btn.xs,
 .xs .btn,
-nav.list.xs li>a,
-nav.list.xs li>button,
-.xs nav.list li>a,
-.xs nav.list li>button {
+.list.xs li>a,
+.list.xs li>button,
+.xs .list li>a,
+.xs .list li>button {
 	svg {
 		width : 16px;
 		height: 16px;
@@ -356,14 +305,25 @@ input[type="submit"] {
 	}
 }
 
-.btn.btn-link,
-button.btn-link,
-input[type="submit"].btn-link,
-nav.list li>a,
-nav.list li>button {
+.btn-outline,
+.btn-link,
+.list li>a,
+.list li>button {
 	background-color: transparent;
-	border-color    : transparent;
-	text-transform  : capitalize;
+
+	&:active,
+	&:focus,
+	&:hover {
+		background-color: var(--btn-color-opaque);
+		transition      : none;
+	}
+}
+
+.btn-link,
+.list li>a,
+.list li>button {
+	border-color  : transparent;
+	text-transform: capitalize;
 
 	&:active,
 	&:focus,
@@ -383,10 +343,13 @@ nav {
 		width   : 100%;
 		display : block;
 		border  : 0;
+		>.btn-toggle::after {
+			border-width: 1.7px;
+		}
 	}
 
 	&.horizontal {
-
+		position: relative;
 		>ul {
 			display  : flex;
 			flex-wrap: wrap;
@@ -404,6 +367,8 @@ nav {
 				display       : inline-block;
 				margin-left   : 6px;
 				pointer-events: none;
+				top           : auto;
+				transform     : translateY(0);
 			}
 
 			>ul {
@@ -418,7 +383,7 @@ nav {
 	$breakpoint_width in $breakpoints {
 		@media screen and (min-width: $breakpoint_width) {
 			&.#{$breakpoint}-horizontal {
-
+				position: relative;
 				>ul {
 					display  : flex;
 					flex-wrap: wrap;
@@ -436,6 +401,8 @@ nav {
 						display       : inline-block;
 						margin-left   : 6px;
 						pointer-events: none;
+						top           : auto;
+						transform     : translateY(0);
 					}
 
 					>ul {
@@ -498,7 +465,7 @@ nav {
 
 	input {
 		background-color: var(--btn-color-text);
-		width           : 60%;
+		width           : 22px;
 		position        : absolute;
 		border          : 0;
 		min-height      : auto;
@@ -531,31 +498,8 @@ nav {
 		}
 	}
 
-	&.sm input {
-
-		&::before,
-		&::after {
-			transform: translateY(-5px);
-		}
-
-		&::after {
-			transform: translateY(5px);
-		}
-	}
-
-	&.xs input {
-
-		&::before,
-		&::after {
-			transform: translateY(-4px);
-		}
-
-		&::after {
-			transform: translateY(4px);
-		}
-	}
-
 	&.lg input {
+		width: 26px;
 
 		&,
 		&::before,
@@ -573,7 +517,34 @@ nav {
 		}
 	}
 
-	&.btn-link {
+	&.sm input {
+		width: 16px;
+
+		&::before,
+		&::after {
+			transform: translateY(-5px);
+		}
+
+		&::after {
+			transform: translateY(5px);
+		}
+	}
+
+	&.xs input {
+		width: 12px;
+
+		&::before,
+		&::after {
+			transform: translateY(-4px);
+		}
+
+		&::after {
+			transform: translateY(4px);
+		}
+	}
+
+	&.btn-link,
+	&.btn-outline {
 		input {
 			background-color: var(--btn-color);
 		}
@@ -597,6 +568,10 @@ nav {
 	}
 }
 
+.btn-up,
+.btn-right,
+.btn-down,
+.btn-left,
 .btn-toggle {
 	padding: 0;
 
@@ -615,39 +590,74 @@ nav {
 		border       : 2px solid var(--btn-color-text);
 		border-left  : 0;
 		border-bottom: 0;
-		width        : 32%;
-		height       : 32%;
+		width        : 12px;
+		height       : 12px;
 		transition   : transform .2s ease-in-out;
 		transform    : rotate(135deg) translate(-14%, 16%);
 	}
 
-	&.btn-link {
+	&.btn-link,
+	&.btn-outline {
 		&::after {
 			border-color: var(--btn-color);
 		}
 	}
 
+	&.lg::after,
+	.lg &::after {
+		height: 16px;
+		width : 16px;
+	}
+
+	&.sm::after,
+	.sm &::after {
+		height: 10px;
+		width : 10px;
+	}
+
+	&.xs::after,
+	.xs &::after {
+		height: 8px;
+		width : 8px;
+	}
+
 	nav li>& {
-		position: absolute;
-		right   : 2px;
-		top     : 0;
-	}
+		position : absolute;
+		right    : 2px;
+		top      : 20px;
+		transform: translateY(-50%);
 
-	nav.list li.sm>&,
-	nav.list.sm li>& {
-		top: 2px;
-	}
+		// &.lg,
+		// .lg & {
+		// 	top: 24px;
+		// }
 
-	nav.list.lg li.sm>&,
-	nav.list li.xs>&,
-	nav.list.xs li>& {
-		top: 4px;
+		// &.sm,
+		// .sm & {
+		// 	top: 16px;
+		// }
+
+		// &.xs,
+		// .xs & {
+		// 	top: 13px;
+		// }
 	}
+}
+
+.btn-up::after {
+	transform: rotate(315deg) translate(-14%, 16%);
+}
+
+.btn-right::after {
+	transform: rotate(45deg) translate(-14%, 16%);
+}
+
+.btn-left::after {
+	transform: rotate(225deg) translate(-14%, 16%);
 }
 
 .btn-close {
 	padding: 0;
-	margin : 0;
 
 	&::before,
 	&::after {
@@ -668,7 +678,8 @@ nav {
 		transform: rotate(-45deg);
 	}
 
-	&.btn-link {
+	&.btn-link,
+	&.btn-outline {
 
 		&::before,
 		&::after {
@@ -677,7 +688,30 @@ nav {
 	}
 }
 
-label.toggle:has(:checked).btn-toggle::after,
+.btn-close,
+.btn-menu,
+.btn-toggle,
+.btn-down,
+.btn-up,
+.btn-left,
+.btn-right {
+
+	&.text-right input,
+	&.text-right::before,
+	&.text-right::after {
+		right: auto;
+		left : 18px;
+	}
+
+	&.text-left input,
+	&.text-left::before,
+	&.text-left::after {
+		right: 18px;
+		left : auto;
+	}
+}
+
+.toggle:has(:checked).btn-toggle::after,
 .btn-toggle:has(:checked)::after {
 	transform: rotate(-45deg) translate(-14%, 16%);
 }
@@ -883,7 +917,7 @@ table {
 
 	tbody tr {
 		&:hover td {
-			background-color: rgba(var(--accent-color), .04);
+			background-color: rgba(map-get($colors, 'primary'), .04);
 		}
 
 		td {
@@ -962,6 +996,7 @@ $color_value in $colors {
 
 :has(>.tooltip) {
 	position: relative;
+	z-index : 1;
 
 	.tooltip {
 		width     : 90vw;
