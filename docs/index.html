@@ -50,6 +50,9 @@
                                     </label>
                                     <ul class="sm">
                                         <li>
+                                            <a class="pl-3" href="#support">Support</a>
+                                        </li>
+                                        <li>
                                             <a class="pl-3" href="#installation">Installation</a>
                                         </li>
                                         <li>
@@ -350,8 +353,8 @@
                     <a class="mr-2" href="https://ggedde.github.io/spry-css">SpryCSS</a>
                     <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases" alt="Release">
                 </h5>
-                <div class="center ml-2">
-                    <button class="btn btn-outline circle p-0 xs" onclick="document.getElementById('body').classList.toggle('dark');">
+                <div class="center ml-2 flex ai-center">
+                    <button class="btn btn-outline circle p-0 xs mr-2" onclick="document.getElementById('body').classList.toggle('dark');">
                         <svg viewBox="0 0 24 24">
                             <path fill="currentColor"
                                 d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" />
@@ -385,7 +388,15 @@
                     and therefore you should update the style there instead of overriding it in the html.
                 </p>
 
-                <h6 id="firefox-warning" class="my-3 flex ai-center border border-medium rounded p-2 color-medium">
+                <h4 id="support" class="mt-3">Support</h4>
+                <div class="pt-2 flex g-1">
+                    <a class="github-button" href="https://github.com/ggedde/spry-css" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-show-count="true" aria-label="Star ggedde/spry-css on GitHub">Star</a>
+                    <a class="github-button" href="https://github.com/ggedde/spry-css/issues" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-issue-opened" data-show-count="true" aria-label="Issue ggedde/spry-css on GitHub">Issue</a>
+                    <a class="github-button" href="https://github.com/ggedde/spry-css/subscription" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-eye" aria-label="Watch ggedde/spry-css on GitHub">Watch</a>
+                </div>
+
+                <h6 class="mt-3">Compatibility</h6>
+                <h6 class="mb-3 flex ai-center border border-medium rounded p-2 color-medium">
                     <svg class="mr-1" style="width: 16px; height: 16px;" viewBox="0 0 24 24"><path fill="currentColor" d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
                     <span>SpryCss uses :has() property which is not supported by all browsers yet. Find out which browsers support it <a target="_blank" href="https://caniuse.com/css-has">here</a></span>
                 </h6>
@@ -2628,6 +2639,7 @@ $spacing: (
             }
         })
     </script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 
 </html>
