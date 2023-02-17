@@ -28,7 +28,7 @@
                     <label class="toggle btn lg btn-link btn-menu md-none">
                         <input type="checkbox">
                     </label>
-                    <div class="collapse md-open sticky w-200" onclick="this.previousSibling.previousSibling.click();">
+                    <div id="header-nav" class="collapse md-open sticky w-200">
                         <nav class="bg-light list md-mt-2 md-mb-n3 pb-0 vh overflow-auto">
                             <ul class="sm pt-2">
                                 <li>
@@ -2562,6 +2562,12 @@ $spacing: (
             // elem.insertAdjacentHTML('beforeend', '<div><input id="' + id + '" class="toggle" type="checkbox" /><label for="' + id + '" class="btn btn-medium btn-link p-0 btn-menu sm mt-1"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" /></svg></label><div class="toggle-collapse"><pre><code class="language-html">' + html + '</code></pre></div></div>');
             elem.insertAdjacentHTML('beforeend', '<div class="mt-2 code-container"><pre><code class="language-html">' + html + '</code></pre></div>');
         });
+
+        document.getElementById('header-nav').addEventListener('click', event => {
+            if (!event.target.classList.contains('btn-toggle') && event.target.tagName !== 'INPUT') {
+                document.getElementById('header-nav').previousSibling.previousSibling.click();
+            }
+        })
     </script>
 </body>
 
