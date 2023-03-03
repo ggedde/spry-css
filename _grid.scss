@@ -29,6 +29,8 @@
 	&.columns-auto > *,
 	> .col-auto {
 		flex: auto;
+		min-width: auto;
+		max-width: none;
 	}
 }
 
@@ -75,6 +77,8 @@
 		.row.#{$breakpoint}-columns-auto > *,
 		.row > .#{$breakpoint}-col-auto {
 			flex: auto;
+			min-width: auto;
+			max-width: none;
 		}
 		
 		@for $i from 1 through 12 {
