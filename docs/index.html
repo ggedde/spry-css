@@ -2261,6 +2261,7 @@ $spacing: (
                     <script>
                         document.querySelectorAll('.slider').forEach(s => {
                             var a = parseInt(s.getAttribute('data-autoplay'));
+                            var sl = s.querySelector('.slider-slides');
                             if (a) {
                                 setInterval(() => {
                                     if (!s.matches(':hover')) {
@@ -2269,12 +2270,10 @@ $spacing: (
                                 }, a);
                             }
                             s.querySelector('.slider-prev').addEventListener('click', () => {
-                                var sl = s.querySelector('.slider-slides');
                                 var w = sl.offsetWidth;
                                 sl.scrollBy(sl.scrollLeft ? -w : w * sl.childElementCount, 0);
                             });
                             s.querySelector('.slider-next').addEventListener('click', () => {
-                                var sl = s.querySelector('.slider-slides');
                                 var w = s.offsetWidth;
                                 ((sl.scrollLeft + 2 + w >= sl.scrollWidth) ? sl.scrollTo(0, 0) : sl.scrollBy(w, 0));
                             });
