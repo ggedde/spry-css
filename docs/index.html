@@ -45,7 +45,7 @@
                                         </svg>
                                         Get Started
                                     </a>
-                                    <label class="toggle btn btn-link btn-medium btn-toggle circle mr-1">
+                                    <label class="toggle btn btn-link btn-toggle circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -75,7 +75,7 @@
                                         </svg>
                                         Colors
                                     </a>
-                                    <label class="toggle btn btn-link btn-medium btn-toggle circle mr-1">
+                                    <label class="toggle btn btn-link btn-toggle circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -120,7 +120,7 @@
                                         </svg>
                                         Buttons
                                     </a>
-                                    <label class="toggle btn btn-link btn-medium btn-toggle circle mr-1">
+                                    <label class="toggle btn btn-link btn-toggle circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -154,7 +154,7 @@
                                         </svg>
                                         Grid
                                     </a>
-                                    <label class="toggle btn btn-link btn-medium btn-toggle circle mr-1">
+                                    <label class="toggle btn btn-link btn-toggle circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -191,7 +191,7 @@
                                         </svg>
                                         Forms
                                     </a>
-                                    <label class="toggle btn btn-link btn-medium btn-toggle circle mr-1">
+                                    <label class="toggle btn btn-link btn-toggle circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -221,7 +221,7 @@
                                         </svg>
                                         Toggles
                                     </a>
-                                    <label class="toggle btn btn-link btn-medium btn-toggle circle mr-1">
+                                    <label class="toggle btn btn-link btn-toggle circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -254,7 +254,7 @@
                                         </svg>
                                         Navigation
                                     </a>
-                                    <label class="toggle btn btn-link btn-medium btn-toggle circle mr-1">
+                                    <label class="toggle btn btn-link btn-toggle circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -300,7 +300,7 @@
                                         </svg>
                                         Sliders
                                     </a>
-                                    <label class="toggle btn btn-link btn-medium btn-toggle circle mr-1">
+                                    <label class="toggle btn btn-link btn-toggle circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -319,7 +319,7 @@
                                         </svg>
                                         Utilities
                                     </a>
-                                    <label class="toggle btn btn-link btn-medium btn-toggle circle mr-1">
+                                    <label class="toggle btn btn-link btn-toggle circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -458,7 +458,7 @@ $colors: (
     
 // Specify each type tag and class like &lt;h3&gt; and .h3 etc.
 $types: (
-    body: ( font-size: clamp(.8rem, 4vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    body: ( font-family: Helvetica, font-size: clamp(.8rem, 4vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
     h1: ( font-size: clamp(1.9rem, 8vw, 3.4rem), font-weight: 400, line-height: 1.20 ),
     h2: ( font-size: clamp(1.5rem, 7.5vw, 2.7rem), font-weight: 300, line-height: 1.25 ),
     h3: ( font-size: clamp(1.2rem, 7vw, 2.2rem), font-weight: 300, line-height: 1.30 ),
@@ -549,7 +549,7 @@ $spacing: (
                 <cite class="ml-3"> - Blockquote, Cite</cite>
                 <h4 class="mt-4">SCSS Variable</h4>
                 <pre class="mt-1"><code class="language-scss">$types: (
-    body: ( font-size: clamp(.8rem, 4vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    body: ( font-family: Helvetica, font-size: clamp(.8rem, 4vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
     h1: ( font-size: clamp(1.9rem, 8vw, 3.4rem), font-weight: 400, line-height: 1.20 ),
     h2: ( font-size: clamp(1.5rem, 7.5vw, 2.7rem), font-weight: 300, line-height: 1.25 ),
     h3: ( font-size: clamp(1.2rem, 7vw, 2.2rem), font-weight: 300, line-height: 1.30 ),
@@ -658,7 +658,7 @@ $spacing: (
                     $color variables.</div>
                 <div class="sm mb-1">* This will apply to all child elements.</div>
                 <div class="show-code">
-                    <div class="dark p-2 mt-1 border">
+                    <div class="dark p-2 mt-1 border accent-primary">
                         <button class="btn mt-2">Lorem Ipsum</button>
                         <button class="btn btn-outline mt-2">Lorem Ipsum</button>
                         <p class="border my-2 p-1 rounded">Text with Border</p>
@@ -744,6 +744,7 @@ $spacing: (
     
                 <h2 class="border-bottom pb-1 mb-3">Buttons</h2>
                 <div class="show-code">
+                    <button class="btn">Default</button>
                     <button class="btn btn-primary">Primary</button>
                     <button class="btn btn-error">Error</button>
                     <button class="btn btn-success">Success</button>
@@ -755,7 +756,8 @@ $spacing: (
     
                 <h4 id="buttons-outline" class="mt-4">Outline</h4>
                 <div class="show-code">
-                    <button class="btn btn-outline">Primary</button>
+                    <button class="btn btn-outline">Default</button>
+                    <button class="btn btn-outline btn-primary">Primary</button>
                     <button class="btn btn-outline btn-error">Error</button>
                     <button class="btn btn-outline btn-success">Success</button>
                     <button class="btn btn-outline btn-warning">Warning</button>
@@ -1193,26 +1195,26 @@ $spacing: (
                 <div class="show-code">
                     <form class="row jc-center"
                         onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.querySelectorAll('fieldset,button').forEach(elem => {elem.setAttribute('disabled', 'disabled');});setTimeout(() => {this.submit()}, 2000)">
-                        <fieldset>
-                            <legend><label>Name *</label></legend>
+                        <label>
+                            <span class="responsive-label">Name *</span>
                             <input type="text" required onblur="this.parentElement.classList.toggle('active', this.value)" />
-                        </fieldset>
-                        <fieldset>
-                            <legend><label>Email</label></legend>
+                        </label>
+                        <label>
+                            <span class="responsive-label">Email</span>
                             <input type="email" onblur="this.parentElement.classList.toggle('active', this.value)" />
-                        </fieldset>
-                        <fieldset>
-                            <legend><label>Select</label></legend>
+                        </label>
+                        <label>
+                            <span class="responsive-label">Select</span>
                             <select onchange="this.parentElement.classList.toggle('active', this.value)">
                                 <option value="" selected disabled></option>
                                 <option>Two</option>
                                 <option>Three</option>
                             </select>
-                        </fieldset>
-                        <fieldset class="col-12 pt-2">
-                            <legend><label>Message</label></legend>
+                        </label>
+                        <label class="col-12">
+                            <span class="responsive-label">Message</span>
                             <textarea onblur="this.parentElement.classList.toggle('active', this.value)"></textarea>
-                        </fieldset>
+                        </label>
                         <button class="col-6 btn loader" type="submit">Submit with Loading Icon</button>
                     </form>
                 </div>
@@ -1221,26 +1223,26 @@ $spacing: (
                 
                 <div class="show-code">
                     <form class="sm row g-2 jc-center">
-                        <fieldset>
-                            <legend><label>Name</label></legend>
+                        <label>
+                            <span class="responsive-label">Name</span>
                             <input type="text" onblur="this.parentElement.classList.toggle('active', this.value)" />
-                        </fieldset>
-                        <fieldset>
-                            <legend><label>Email</label></legend>
+                        </label>
+                        <label>
+                            <span class="responsive-label">Email</span>
                             <input type="email" onblur="this.parentElement.classList.toggle('active', this.value)" />
-                        </fieldset>
-                        <fieldset>
-                            <legend><label>Select</label></legend>
+                        </label>
+                        <label>
+                            <span class="responsive-label">Select</span>
                             <select onchange="this.parentElement.classList.toggle('active', this.value)">
                                 <option value="" selected disabled></option>
                                 <option>Two</option>
                                 <option>Three</option>
                             </select>
-                        </fieldset>
-                        <fieldset class="col-12">
-                            <legend><label>Message</label></legend>
+                        </label>
+                        <label class="col-12">
+                            <span class="responsive-label">Message</span>
                             <textarea onblur="this.parentElement.classList.toggle('active', this.value)"></textarea>
-                        </fieldset>
+                        </label>
                         <button class="col-4 btn loader" type="submit">Submit</button>
                     </form>
                 </div>
@@ -1368,9 +1370,8 @@ $spacing: (
                 </p>
     
                 <div class="show-code">
-                    <label class="btn pr-1 py-0 toggle hoverable">
+                    <label class="btn pr-4 pl-2 toggle btn-toggle hoverable text-left">
                         Toggle on Hover
-                        <span class="btn btn-toggle btn-link btn-white pointer-none"></span>
                     </label>
                     <div class="collapse">
                         <p class="border p-1 bg-light">
@@ -1480,15 +1481,15 @@ $spacing: (
                     <nav class="bg-light md-horizontal md-hoverable">
                         <ul class="jc-end">
                             <li>
-                                <a href="#navigation" class="pr-0">Link with Dropdown</a>
-                                <label class="toggle btn btn-link btn-toggle btn-text circle">
+                                <a href="#navigation">Link with Dropdown</a>
+                                <label class="toggle btn btn-link btn-toggle circle">
                                     <input type="checkbox" />
                                 </label>
                                 <ul class="bg-light rounded-bottom md-shadow">
                                     <li><a href="#navigation">Sub Link 1</a></li>
                                     <li>
                                         <a href="#navigation">Sub Link with Menu</a>
-                                        <label class="toggle btn btn-link btn-toggle btn-text circle">
+                                        <label class="toggle btn btn-link btn-toggle circle">
                                             <input type="checkbox" />
                                         </label>
                                         <ul class="bg-light rounded">
@@ -1507,7 +1508,7 @@ $spacing: (
                             <li><a href="#navigation">Link 4</a></li>
                             <li>
                                 <a href="#navigation">Link with Dropdown</a>
-                                <label class="toggle btn btn-link btn-toggle btn-text circle">
+                                <label class="toggle btn btn-link btn-toggle circle">
                                     <input type="checkbox">
                                 </label>
                                 <ul class="bg-light rounded-bottom md-shadow">
@@ -1515,7 +1516,7 @@ $spacing: (
                                     <li><a href="#navigation">Sub Link 2</a></li>
                                     <li>
                                         <a href="#navigation">Sub Link with Menu</a>
-                                        <label class="toggle btn btn-link btn-toggle btn-text circle">
+                                        <label class="toggle btn btn-link btn-toggle circle">
                                             <input type="checkbox">
                                         </label>
                                         <ul class="bg-light rounded">
@@ -1538,25 +1539,25 @@ $spacing: (
                 <h2 class="border-bottom pb-1 mb-3">Lists</h2>
                 <p class="my-2"><code class="color-medium italic sm">&lt;nav class="list"&gt;</code></p>
                 <div class="show-code">
-                    <nav class="bg-light rounded shadow w-200 list color-text accent-primary">
+                    <nav class="bg-light rounded shadow w-200 list">
                         <ul>
                             <li>
                                 <a href="#lists">List Item 1</a>
                             </li>
                             <li>
                                 <a href="#lists">List Item 2</a>
-                                <label class="toggle sm btn btn-link btn-toggle circle">
+                                <label class="toggle btn btn-link btn-toggle circle">
                                     <input type="checkbox">
                                 </label>
-                                <ul>
+                                <ul class="sm">
                                     <li>
-                                        <a href="#lists">Sub Link 1</a>
+                                        <a class="pl-3" href="#lists">Sub Link 1</a>
                                     </li>
                                     <li>
-                                        <a href="#lists">Sub Link 2</a>
+                                        <a class="pl-3" href="#lists">Sub Link 2</a>
                                     </li>
                                     <li>
-                                        <a href="#lists">Sub Link 3</a>
+                                        <a class="pl-3" href="#lists">Sub Link 3</a>
                                     </li>
                                 </ul>
                             </li>
@@ -1578,7 +1579,7 @@ $spacing: (
                                 </ul>
                             </li>
                             <li>
-                                <a href="#lists" class="pr-3">List Item 4 With a very long text</a>
+                                <a href="#lists" class="pr-4">List Item 4 With a very long text</a>
                                 <label class="toggle btn btn-link btn-toggle circle">
                                     <input type="checkbox">
                                 </label>
@@ -1595,7 +1596,7 @@ $spacing: (
                                 </ul>
                             </li>
                             <li>
-                                <a href="#lists" class="truncate pr-3">List Item 5 Truncated Text</a>
+                                <a href="#lists" class="truncate pr-4">List Item 5 Truncated Text</a>
                                 <label class="toggle btn btn-link btn-toggle circle">
                                     <input type="checkbox">
                                 </label>
@@ -1977,7 +1978,7 @@ $spacing: (
                                 </p>
                             </article>
                             <footer class="px-2">
-                                <a href="#cards" class="btn sm">Learn More</a>
+                                <a href="#cards" class="btn btn-primary sm">Learn More</a>
                             </footer>
                         </div>
     
@@ -1991,7 +1992,7 @@ $spacing: (
                             </article>
                             <footer class="px-2 jc-end g-2">
                                 <a href="#cards" class="btn btn-medium sm">Cancel</a>
-                                <a href="#cards" class="btn sm">Submit</a>
+                                <a href="#cards" class="btn btn-primary sm">Submit</a>
                             </footer>
                         </div>
     
@@ -2005,7 +2006,7 @@ $spacing: (
                                 </p>
                             </article>
                             <footer class="px-2">
-                                <a href="#cards" class="btn btn-outline btn-light border-light sm">Learn More</a>
+                                <a href="#cards" class="btn btn-outline btn-white sm">Learn More</a>
                             </footer>
                         </div>
     
@@ -2301,6 +2302,7 @@ $spacing: (
                     <div><code class="color-primary">rounded-bottom</code> <code>{ border-radius: 0 0 5px 5px }</code>
                     </div>
                     <div><code class="color-primary">circle</code> <code>{ border-radius: 50% }</code></div>
+                    <div><code class="color-primary">square</code> <code>{ border-radius: 0 }</code></div>
                     <div><code class="color-primary">float-left</code> <code>{ float: left }</code></div>
                     <div><code class="color-primary">float-right</code> <code>{ float: right }</code></div>
                     <div><code class="color-primary">clear</code> <code>{ clear: both }</code></div>

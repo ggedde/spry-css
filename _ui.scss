@@ -1,14 +1,6 @@
 /*! 
 * Spry UI
 */
-:root {
-	--btn-color       : #{map-get($colors, 'primary')};
-	--btn-color-text  : #{map-get($colors, 'white')};
-	--btn-color-opaque: #{rgba(map-get($colors, 'primary'), 10%)};
-	--accent-color    : #{map-get($colors, 'primary')};
-	--card-color      : transparent;
-}
-
 .btn,
 button,
 input,
@@ -16,8 +8,7 @@ textarea,
 select,
 nav>a,
 .toolbar,
-nav li>a,
-fieldset {
+nav li>a {
 	position       : relative;
 	appearance     : none;
 	color          : inherit;
@@ -44,8 +35,7 @@ button {
 input,
 textarea,
 select,
-nav>a,
-fieldset {
+nav>a {
 
 	&.lg,
 	.lg & {
@@ -93,13 +83,24 @@ nav {
 	}
 }
 
+input,
+textarea,
+select {
+	&:hover,
+	&:focus {
+		border-color: var(--spry-accent-color);
+	}
+	&:focus {
+		box-shadow: inset 0 0 0 1px var(--spry-accent-color);
+	}
+}
+
 .btn,
 input,
 textarea,
 select,
 .list li>a,
-.list li>button,
-fieldset {
+.list li>button {
 	transition     : color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out, filter .1s ease-in-out;
 	border         : 1px solid map-get($colors, 'medium');
 	color          : inherit;
@@ -116,6 +117,20 @@ fieldset {
 	}
 }
 
+a, 
+.btn,
+button,
+input,
+textarea,
+select,
+form {
+	&:disabled,
+	&.disabled {
+		opacity: .6;
+		pointer-events: none;
+	}
+}
+
 input[type="checkbox"],
 input[type="radio"] {
 	width         : 1rem;
@@ -127,13 +142,13 @@ input[type="radio"] {
 	vertical-align: text-bottom;
 
 	&:checked {
-		border-color: var(--accent-color);
+		border-color: var(--spry-accent-color);
 
 		&::after {
 			content         : '';
 			position        : absolute;
 			inset           : 2px;
-			background-color: var(--accent-color);
+			background-color: var(--spry-accent-color);
 			border-radius   : 2px;
 		}
 	}
@@ -205,18 +220,18 @@ $breakpoint_width in $breakpoints {
 
 .btn,
 input[type="submit"] {
-	background-color: var(--btn-color);
-	border-color    : var(--btn-color);
+	background-color: var(--spry-btn-color);
+	border-color    : var(--spry-btn-color);
 }
 
 .btn,
 a.btn:hover,
 input[type="submit"] {
-	color: var(--btn-color-text);
+	color: var(--spry-btn-color-text);
 
 	&.btn-outline:not([class*="color-"]),
 	&.btn-link:not([class*="color-"]) {
-		color: var(--btn-color-text);
+		color: var(--spry-btn-color-text);
 	}
 
 	&.btn-link {
@@ -314,7 +329,7 @@ input[type="submit"] {
 	&:active,
 	&:focus,
 	&:hover {
-		background-color: var(--btn-color-opaque);
+		background-color: var(--spry-btn-color-opaque);
 		transition      : none;
 	}
 }
@@ -325,12 +340,12 @@ input[type="submit"] {
 	border-color  : transparent;
 	text-transform: capitalize;
 
-	&:active,
-	&:focus,
-	&:hover {
-		background-color: var(--btn-color-opaque);
-		transition      : none;
-	}
+	// &:active,
+	// &:focus,
+	// &:hover {
+	// 	background-color: var(--spry-btn-color-opaque);
+	// 	transition      : none;
+	// }
 }
 
 nav {
@@ -365,7 +380,7 @@ nav {
 			>.btn-toggle {
 				position      : relative;
 				display       : inline-block;
-				margin-left   : 6px;
+				// margin-left   : 6px;
 				pointer-events: none;
 				top           : auto;
 				transform     : translateY(0);
@@ -399,7 +414,7 @@ nav {
 					>.btn-toggle {
 						position      : relative;
 						display       : inline-block;
-						margin-left   : 6px;
+						// margin-left   : 6px;
 						pointer-events: none;
 						top           : auto;
 						transform     : translateY(0);
@@ -464,7 +479,7 @@ nav {
 	padding : 0;
 
 	input {
-		background-color: var(--btn-color-text);
+		background-color: var(--spry-btn-color-text);
 		width           : 22px;
 		position        : absolute;
 		border          : 0;
@@ -546,7 +561,7 @@ nav {
 	&.btn-link,
 	&.btn-outline {
 		input {
-			background-color: var(--btn-color);
+			background-color: var(--spry-btn-color);
 		}
 	}
 }
@@ -587,7 +602,7 @@ nav {
 		position     : absolute;
 		inset        : 0;
 		margin       : auto;
-		border       : 2px solid var(--btn-color-text);
+		border       : 2px solid var(--spry-btn-color-text);
 		border-left  : 0;
 		border-bottom: 0;
 		width        : 12px;
@@ -599,7 +614,7 @@ nav {
 	&.btn-link,
 	&.btn-outline {
 		&::after {
-			border-color: var(--btn-color);
+			border-color: var(--spry-btn-color);
 		}
 	}
 
@@ -623,24 +638,9 @@ nav {
 
 	nav li>& {
 		position : absolute;
-		right    : 2px;
+		right    : .5rem;
 		top      : 20px;
 		transform: translateY(-50%);
-
-		// &.lg,
-		// .lg & {
-		// 	top: 24px;
-		// }
-
-		// &.sm,
-		// .sm & {
-		// 	top: 16px;
-		// }
-
-		// &.xs,
-		// .xs & {
-		// 	top: 13px;
-		// }
 	}
 }
 
@@ -661,7 +661,7 @@ nav {
 
 	&::before,
 	&::after {
-		background-color: var(--btn-color-text);
+		background-color: var(--spry-btn-color-text);
 		content         : '';
 		height          : 60%;
 		position        : absolute;
@@ -683,7 +683,7 @@ nav {
 
 		&::before,
 		&::after {
-			background-color: var(--btn-color);
+			background-color: var(--spry-btn-color);
 		}
 	}
 }
@@ -723,90 +723,6 @@ select {
 	background-position-y: 52%;
 }
 
-fieldset {
-	display   : block;
-	padding   : 0;
-	position  : relative;
-	height    : auto;
-	transition: color .2s ease-in-out, border-color .2s ease-in-out;
-
-	legend {
-		display    : block;
-		position   : relative;
-		height     : 0;
-		max-width  : 0;
-		white-space: nowrap;
-		transform  : translate(4px, 7px);
-		user-select: none;
-		transition : transform .2s ease-in-out, max-width .2s ease-in-out;
-		margin-left: 5px;
-		padding    : 0;
-
-		label {
-			display       : block;
-			transform     : scale(1);
-			transition    : all .2s ease-in-out;
-			pointer-events: none;
-			opacity       : .6;
-		}
-	}
-
-	input,
-	select,
-	textarea {
-		border        : 0;
-		padding-left  : 10px;
-		padding-bottom: 1px;
-		display       : block;
-		margin        : 0;
-	}
-
-	&.active legend,
-	&:focus-within legend {
-		transform: translateY(-11px);
-		max-width: 300px;
-
-		label {
-			padding  : 0 .5rem;
-			font-size: .9rem;
-			opacity  : 1;
-		}
-	}
-
-	&:focus-within {
-		border-color: var(--accent-color);
-
-		legend label {
-			color: var(--accent-color);
-		}
-	}
-
-	&.xs,
-	.xs &,
-	&.sm,
-	.sm &,
-	&.lg,
-	.lg & {
-		height    : auto;
-		min-height: 0;
-	}
-
-	&.xs,
-	.xs & {
-		line-height: 1;
-	}
-
-	&.sm,
-	.sm & {
-		line-height: 1;
-	}
-
-	&.lg,
-	.lg & {
-		line-height: 1.8;
-	}
-}
-
 textarea {
 	min-height : 100px;
 	padding    : .75rem;
@@ -825,6 +741,44 @@ textarea {
 	&.lg {
 		min-height : 200px;
 		line-height: 1.2;
+	}
+}
+
+label {
+	position: relative;
+	.responsive-label {
+		position: absolute;
+		transform: translate(10px, calc(156% - 27px));
+		transition: all .2s ease-in-out;
+		transform-origin: left;
+		animation: none;
+	}
+	&:focus-within,
+	&.active {
+		.responsive-label {
+			transform: translate(3px, -100%) scale(0.85);
+			opacity: .8;
+			font-weight: 500;
+		}
+	}
+	&:focus-within .responsive-label {
+		color: var(--spry-accent-color);
+		animation: labll .2s forwards ease;
+	}
+	&:has(.responsive-label) {
+		margin-top: 1rem;
+	}
+}
+
+@keyframes labll {
+	0% {
+		opacity: 1,
+	}
+	50% {
+		opacity: .4;
+	}
+	100% {
+		opacity: .8;
 	}
 }
 
@@ -852,7 +806,7 @@ textarea {
 		height        : 20px;
 		border-radius : 50%;
 		border        : 2px solid transparent;
-		border-color  : var(--accent-color) var(--accent-color) transparent transparent;
+		border-color  : var(--spry-accent-color) var(--spry-accent-color) transparent transparent;
 		opacity       : 0;
 		pointer-events: none;
 		transition    : opacity .3s ease-in-out .1s;
@@ -862,7 +816,7 @@ textarea {
 		pointer-events  : none;
 		user-select     : none;
 		cursor          : default;
-		--btn-color-text: transparent;
+		--spry-btn-color-text: transparent;
 		color           : transparent;
 
 		&::after {
@@ -969,12 +923,12 @@ $color_value in $colors {
 	overflow        : hidden;
 	display         : flex;
 	flex-direction  : column;
-	border-color    : var(--card-color);
+	border-color    : var(--spry-card-color);
 
 	>header,
 	>footer {
-		background-color: var(--card-color);
-		color           : var(--card-color-text);
+		background-color: var(--spry-card-color);
+		color           : var(--spry-card-color-text);
 		display         : flex;
 		align-items     : center;
 	}

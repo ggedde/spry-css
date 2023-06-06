@@ -1,25 +1,18 @@
 /*! 
 * Spry Colors
 */
-:root {
-	@each $color_name, $color_value in $colors {
-		--color-#{$color_name}: #{$color_value};
-	}
-	--accent-color: #{map-get($colors, 'primary')};
-}
-
 .dark {
-	--color-light: #{map-get($colors, 'dark')};
-	--color-dark: #{map-get($colors, 'light')};
-	--color-text: #{map-get($colors, 'light')};
+	--spry-color-light: #{map-get($colors, 'dark')};
+	--spry-color-dark: #{map-get($colors, 'light')};
+	--spry-color-text: #{map-get($colors, 'light')};
 }
 
 @each $color_name, $color_value in $colors {
 	.bg-#{$color_name} {
-		background-color: var(--color-#{$color_name});
+		background-color: var(--spry-color-#{$color_name});
 	}
 	.color-#{$color_name} {
-		color: var(--color-#{$color_name});
+		color: var(--spry-color-#{$color_name});
 	}
 	.border-#{$color_name},
 	.border-#{$color_name}:hover,
@@ -27,30 +20,30 @@
 	.card-#{$color_name},
 	.accent-#{$color_name} .border:not([class*="border-"]):hover,
 	.accent-#{$color_name} .border:not([class*="border-"]) {
-		border-color: var(--color-#{$color_name});
+		border-color: var(--spry-color-#{$color_name});
 	}
 	.accent-#{$color_name},
 	.btn-#{$color_name} {
-		--btn-color: var(--color-#{$color_name});
-		--btn-color-opaque: #{rgba($color_value, 10%)};
+		--spry-btn-color: var(--spry-color-#{$color_name});
+		--spry-btn-color-opaque: #{rgba($color_value, 10%)};
 		// @if $color_name ==light {
-			--btn-color-text: #{map-get($colors, 'white')};
+			--spry-btn-color-text: #{map-get($colors, 'white')};
 		// }
 	}
 	.btn-outline,
 	.btn-link {
-		--btn-color-text: var(--btn-color);
+		--spry-btn-color-text: var(--spry-btn-color);
 	}
 	.accent-#{$color_name} {
-		--accent-color: var(--color-#{$color_name});
+		--spry-accent-color: var(--spry-color-#{$color_name});
 		tbody tr:hover td {
 			background-color: rgba($color_value, .04);
 		}
 	}
 	.card-#{$color_name} {
-		--card-color: var(--color-#{$color_name});
+		--spry-card-color: var(--spry-color-#{$color_name});
 		@if $color_name !=light {
-		--card-color-text: white;
+		--spry-card-color-text: white;
 		}
 	}
 	a.color-#{$color_name}:hover {
@@ -71,8 +64,8 @@
 		color: map-get($colors, 'light' );
 	}
 	.btn-dark {
-		--btn-color: #{darken(map-get($colors, 'dark' ), 5%)};
-		--btn-color-text: #{map-get($colors, 'light' )};
+		--spry-btn-color: #{darken(map-get($colors, 'dark' ), 5%)};
+		--spry-btn-color-text: #{map-get($colors, 'light' )};
 	}
 	.btn.btn-dark.btn-outline {
 		border-color: map-get($colors, 'light' );

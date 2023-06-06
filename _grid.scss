@@ -1,24 +1,15 @@
 /*! 
 * Spry Grid
 */
-:root {
-	--gap: #{map-get($gaps, 'default')};
-	@each $breakpoint, $breakpoint_width in $breakpoints {
-		@media screen and (min-width: $breakpoint_width) {
-			--gap: #{map-get($gaps, $breakpoint)};
-		}
-	}
-}
-
 .grid {
 	display: grid;
-	gap: var(--gap);
+	gap: var(--spry-gap);
 }
 
 .row {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--gap);
+	gap: var(--spry-gap);
 	> * {
 		flex: 0 100%;
 	}
@@ -41,17 +32,16 @@
 	.grid-#{$i}00 {
 		display: grid;
 		grid-template-columns: repeat( auto-fit, minmax(#{$i}00px, 1fr));
-		gap: var(--gap);
+		gap: var(--spry-gap);
 	}
 	.row.columns-#{$i}>* {
-		flex: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - var(--gap));
-		min-width: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - ((var(--gap) * (#{$i} - 1)) / #{$i}));
-		max-width: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - ((var(--gap) * (#{$i} - 1)) / #{$i}));
+		flex: none;
+		flex-basis: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - ((var(--spry-gap) * (#{$i} - 1)) / #{$i}));
 	}
 
 	.row>.col-#{$i} {
-		flex: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - var(--gap));
-		max-width: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - (((var(--gap) * (#{$i} / 12)) - var(--gap)) / (#{$i} / 12)));
+		flex: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - var(--spry-gap));
+		max-width: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - (((var(--spry-gap) * (#{$i} / 12)) - var(--spry-gap)) / (#{$i} / 12)));
 	}
 
 	.grid>.col-#{$i} {
@@ -86,14 +76,13 @@
 				grid-template-columns: repeat($i, minmax(0, 1fr))
 			}
 			.row.#{$breakpoint}-columns-#{$i} > * {
-				flex: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - var(--gap));
-				min-width: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - ((var(--gap) * (#{$i} - 1)) / #{$i}));
-				max-width: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - ((var(--gap) * (#{$i} - 1)) / #{$i}));
+				flex: none;
+				flex-basis: calc(#{calc(round(percentage(calc(1 / $i)) * 1000) / 1000)} - ((var(--spry-gap) * (#{$i} - 1)) / #{$i}));
 			}
 
 			.row > .#{$breakpoint}-col-#{$i} {
-				flex: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - var(--gap));
-				max-width: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - (((var(--gap) * (#{$i} / 12)) - var(--gap)) / (#{$i} / 12)));
+				flex: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - var(--spry-gap));
+				max-width: calc(#{calc(round(percentage(calc($i / 12)) * 1000) / 1000)} - (((var(--spry-gap) * (#{$i} / 12)) - var(--spry-gap)) / (#{$i} / 12)));
 
 			}
 
@@ -108,15 +97,15 @@
 @each $s, $space in $spacing {
 
 	.g-#{$s} {
-		gap: var(--gap);
-		--gap: #{$space};
+		gap: var(--spry-gap);
+		--spry-gap: #{$space};
 	}
 
 	@each $breakpoint, $breakpoint_width in $breakpoints {
 		@media screen and (min-width: $breakpoint_width) {
 			.#{$breakpoint}-g-#{$s} {
-				gap: var(--gap);
-				--gap: #{$space};
+				gap: var(--spry-gap);
+				--spry-gap: #{$space};
 			}
 		}
 	}

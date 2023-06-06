@@ -16,7 +16,7 @@ $gaps: (
 $colors: (
     "white":       #ffffff,
     "light":       #efefef,
-    "medium":      #999999,
+    "medium":      #888888,
     "dark":        #444444,
     "primary":     #1494df,
     "warning":     #df8a22,
@@ -28,7 +28,7 @@ $colors: (
 
 // Specify each type tag and class like <h3> and .h3 etc.
 $types: (
-    body: ( font-size: clamp(.8rem, 4vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    body: ( font-family: Helvetica, font-size: clamp(.8rem, 4vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
     h1: ( font-size: clamp(1.9rem, 9vw, 3.4rem), font-weight: 400, line-height: 1.20 ),
     h2: ( font-size: clamp(1.5rem, 7.5vw, 2.7rem), font-weight: 300, line-height: 1.25 ),
     h3: ( font-size: clamp(1.2rem, 6.8vw, 2.2rem), font-weight: 300, line-height: 1.30 ),
@@ -46,3 +46,20 @@ $spacing: (
     4: 3rem,
     5: 4rem,
 ) !default;
+
+:root {
+    --spry-btn-color       : #{map-get($colors, 'medium')};
+	--spry-btn-color-text  : #{map-get($colors, 'white')};
+	--spry-btn-color-opaque: #{rgba(map-get($colors, 'medium'), 10%)};
+	--spry-accent-color    : #{map-get($colors, 'medium')};
+	--spry-gap             : #{map-get($gaps, 'default')};
+	--spry-card-color      : transparent;
+	@each $color_name, $color_value in $colors {
+		--spry-color-#{$color_name}: #{$color_value};
+	}
+	@each $breakpoint, $breakpoint_width in $breakpoints {
+		@media screen and (min-width: $breakpoint_width) {
+			--spry-gap: #{map-get($gaps, $breakpoint)};
+		}
+	}
+}
