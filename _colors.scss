@@ -11,13 +11,14 @@
 	.bg-#{$color_name} {
 		background-color: var(--spry-color-#{$color_name});
 	}
+	.alert-#{$color_name},
 	.color-#{$color_name} {
 		color: var(--spry-color-#{$color_name});
 	}
 	.border-#{$color_name},
 	.border-#{$color_name}:hover,
 	.border-#{$color_name}:focus,
-	.card-#{$color_name},
+	.alert-#{$color_name},
 	.accent-#{$color_name} .border:not([class*="border-"]):hover,
 	.accent-#{$color_name} .border:not([class*="border-"]) {
 		border-color: var(--spry-color-#{$color_name});
@@ -36,17 +37,15 @@
 	}
 	.accent-#{$color_name} {
 		--spry-accent-color: var(--spry-color-#{$color_name});
+		@if $color_name !=light {
+			--spry-card-accent-text: white;
+		}
 		tbody tr:hover td {
 			background-color: rgba($color_value, .04);
 		}
 	}
-	.card-#{$color_name} {
-		--spry-card-color: var(--spry-color-#{$color_name});
-		@if $color_name !=light {
-		--spry-card-color-text: white;
-		}
-	}
-	a.color-#{$color_name}:hover {
+	a.color-#{$color_name}:hover,
+	a.color-#{$color_name}:focus {
 		color: lighten($color_value, 10%);
 	}
 }
@@ -54,7 +53,7 @@
 .dark {
 	background-color: darken(map-get($colors, 'dark' ), 15%);
 	color: map-get($colors, 'light' );
-	.card,
+	article,
 	.bg-light {
 		background-color: darken(map-get($colors, 'dark' ), 7%);
 		color: map-get($colors, 'light' );

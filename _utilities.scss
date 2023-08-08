@@ -89,11 +89,11 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .order-2{ order:2 }
 .order-3{ order:3 }
 .order-last{ order:99999 }
-.border{ border: 1px solid map-get($colors, 'medium') }
-.border-top{ border-top: 1px solid map-get($colors, 'medium') }
-.border-right{ border-right: 1px solid map-get($colors, 'medium') }
-.border-bottom{ border-bottom: 1px solid map-get($colors, 'medium') }
-.border-left{ border-left: 1px solid map-get($colors, 'medium') }
+.border{ border: 1px solid var(--spry-accent-color) }
+.border-top{ border-top: 1px solid var(--spry-accent-color) }
+.border-right{ border-right: 1px solid var(--spry-accent-color) }
+.border-bottom{ border-bottom: 1px solid var(--spry-accent-color) }
+.border-left{ border-left: 1px solid var(--spry-accent-color) }
 .no-border{ border: 0 }
 .shadow{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }
 .no-shadow{ box-shadow: none }
@@ -116,6 +116,13 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .o-0{ opacity: 0 }
 @for $i from 1 through 10 {
 	.o-#{$i}0{ opacity: calc($i / 10) }
+}
+
+@each $size_name,
+$size_value in $sizes {
+	.#{$size_name} {
+		font-size: $size_value;
+	}
 }
 
 @each $breakpoint, $breakpoint_width in $breakpoints {
@@ -185,11 +192,11 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 			&-w{ width: 100% }
 			&-w-0{ width: 0 }
 			&-vw{ width: 100vw }
-			&-border{ border: 1px solid map-get($colors, 'medium') }
-			&-border-top{ border-top: 1px solid map-get($colors, 'medium') }
-			&-border-right{ border-right: 1px solid map-get($colors, 'medium') }
-			&-border-bottom{ border-bottom: 1px solid map-get($colors, 'medium') }
-			&-border-left{ border-left: 1px solid map-get($colors, 'medium') }
+			&-border{ border: 1px solid var(--spry-accent-color) }
+			&-border-top{ border-top: 1px solid var(--spry-accent-color) }
+			&-border-right{ border-right: 1px solid var(--spry-accent-color) }
+			&-border-bottom{ border-bottom: 1px solid var(--spry-accent-color) }
+			&-border-left{ border-left: 1px solid var(--spry-accent-color) }
 			&-no-border{ border: 0 }
 			&-shadow{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }
 			&-no-shadow{ box-shadow: none }
@@ -206,6 +213,13 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 			&-o-0{ opacity: 0 }
 			@for $i from 1 through 10 {
 				&-o-#{$i}0{ opacity: calc($i / 10) }
+			}
+
+			@each $size_name,
+			$size_value in $sizes {
+				&-#{$size_name} {
+					font-size: $size_value;
+				}
 			}
 		}
 	}

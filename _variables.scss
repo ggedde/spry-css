@@ -1,15 +1,15 @@
 // Specify each breakpoint size
 $breakpoints: (
-    md: 40rem,
-    lg: 80rem,
+    md: 40em,
+    lg: 80em,
 ) !default;
 
 // Specify each breakpoint gap size. <section> tags with get padding based on gap size.
 // You must include one for each Breakpoint otherwise it will result in a Compile Error.
 $gaps: (
-    default: 1.25rem,
-    md: 2rem,
-    lg: 2.25rem,
+    default: 1.25em,
+    md: 2em,
+    lg: 2.25em,
 ) !default;
 
 // Specify each color used in color-, bg-, border-, btn-
@@ -28,23 +28,32 @@ $colors: (
 
 // Specify each type tag and class like <h3> and .h3 etc.
 $types: (
-    body: ( font-family: Helvetica, font-size: clamp(.8rem, 4vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
-    h1: ( font-size: clamp(1.9rem, 9vw, 3.4rem), font-weight: 400, line-height: 1.20 ),
-    h2: ( font-size: clamp(1.5rem, 7.5vw, 2.7rem), font-weight: 300, line-height: 1.25 ),
-    h3: ( font-size: clamp(1.2rem, 6.8vw, 2.2rem), font-weight: 300, line-height: 1.30 ),
-    h4: ( font-size: clamp(1rem, 6.3vw, 1.6rem), font-weight: 300, line-height: 1.35 ),
-    h5: ( font-size: clamp(.8rem, 6vw, 1.2rem), font-weight: 300, line-height: 1.5 ),
-    h6: ( font-size: clamp(.7rem, 6vw, 1.0rem), font-weight: 300, line-height: 1.4 ),
+    body: ( font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    h1: ( font-size: 3.4em, font-weight: 400, line-height: 1.20 ),
+    h2: ( font-size: 2.7em, font-weight: 300, line-height: 1.25 ),
+    h3: ( font-size: 2.2em, font-weight: 300, line-height: 1.30 ),
+    h4: ( font-size: 1.6em, font-weight: 300, line-height: 1.35 ),
+    h5: ( font-size: 1.2em, font-weight: 300, line-height: 1.5 ),
+    h6: ( font-size: 1.0em, font-weight: 300, line-height: 1.4 ),
 ) !default;
 
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc
 $spacing: (
-    0: 0rem,
-    1: .5rem, 
-    2: 1rem, 
-    3: 2rem, 
-    4: 3rem,
-    5: 4rem,
+    0: 0em,
+    1: .5em, 
+    2: 1em, 
+    3: 2em, 
+    4: 3em,
+    5: 4em,
+) !default;
+
+// Specify each size that applies font-size and all elements using "em".
+$sizes: (
+    xl: 140%,
+    lg: 120%, 
+    md: 100%, 
+    sm: 90%, 
+    xs: 75%,
 ) !default;
 
 :root {

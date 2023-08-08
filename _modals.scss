@@ -37,6 +37,17 @@
 	&.blur {
 		backdrop-filter: blur(2px);
 	}
+	&.no-backdrop {
+		background-color: transparent;
+		backdrop-filter: none;
+		min-width: 300px;
+	}
+	&.no-backdrop.show {
+		pointer-events: none;
+		.modal-content {
+			pointer-events: all;
+		}
+	}
 }
 
 .modal-content {
@@ -49,9 +60,5 @@
 	width: 90%;
 	.modal.show & {
 		transform: none;
-	}
-	.card article {
-		max-height: 50vh;
-		overflow: auto;
 	}
 }

@@ -11,8 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="spry.min.css?v=2.2.2">
-    <link rel="stylesheet" href="prism.css?v=2.2.2">
+    <link rel="stylesheet" href="spry.min.css?v=2.3.0">
+    <link rel="stylesheet" href="prism.css?v=2.3.0">
 </head>
 
 <body id="body" class="overflow-x-hidden">
@@ -21,13 +21,6 @@
             document.body.classList.add('dark');
         }
     </script>
-    <style>
-        @supports selector(:has(*)) {
-            .has-support-warning {
-                display: none;
-            }
-        }
-    </style>
     <div class="row">
         <div class="w-200 index-2">
             <div class="fixed index-1 bg-light flex ai-center w py-1">
@@ -36,8 +29,8 @@
                         <input type="checkbox">
                     </label>
                     <div id="header-nav" class="collapse md-open sticky w-200">
-                        <nav class="bg-light list md-mt-2 md-mb-n3 pb-0 vh overflow-auto">
-                            <ul class="sm pt-2">
+                        <nav class="bg-light list lg md-mt-2 md-mb-n3 pb-0 vh overflow-auto">
+                            <ul class="pt-2">
                                 <li>
                                     <a href="#start">
                                         <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
@@ -58,59 +51,27 @@
                                         <li>
                                             <a class="pl-3" href="#scss">SCSS</a>
                                         </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#typography">
-                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M2 4V7H7V19H10V7H15V4H2M21 9H12V12H15V19H18V12H21V9Z" />
-                                        </svg>
-                                        Typography
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#colors">
-                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M17.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,9A1.5,1.5 0 0,1 19,10.5A1.5,1.5 0 0,1 17.5,12M14.5,8A1.5,1.5 0 0,1 13,6.5A1.5,1.5 0 0,1 14.5,5A1.5,1.5 0 0,1 16,6.5A1.5,1.5 0 0,1 14.5,8M9.5,8A1.5,1.5 0 0,1 8,6.5A1.5,1.5 0 0,1 9.5,5A1.5,1.5 0 0,1 11,6.5A1.5,1.5 0 0,1 9.5,8M6.5,12A1.5,1.5 0 0,1 5,10.5A1.5,1.5 0 0,1 6.5,9A1.5,1.5 0 0,1 8,10.5A1.5,1.5 0 0,1 6.5,12M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A1.5,1.5 0 0,0 13.5,19.5C13.5,19.11 13.35,18.76 13.11,18.5C12.88,18.23 12.73,17.88 12.73,17.5A1.5,1.5 0 0,1 14.23,16H16A5,5 0 0,0 21,11C21,6.58 16.97,3 12,3Z" />
-                                        </svg>
-                                        Colors
-                                    </a>
-                                    <label class="toggle btn btn-link btn-toggle circle">
-                                        <input type="checkbox">
-                                    </label>
-                                    <ul class="sm">
                                         <li>
-                                            <a class="pl-3" href="#colors-text">Text</a>
+                                            <a class="pl-3" href="#typography">Typography</a>
                                         </li>
                                         <li>
-                                            <a class="pl-3" href="#colors-backgrounds">Backgrounds</a>
+                                            <a class="pl-3" href="#sizes">Sizes</a>
                                         </li>
                                         <li>
-                                            <a class="pl-3" href="#colors-borders">Borders</a>
+                                            <a class="pl-3" href="#colors">Colors</a>
                                         </li>
                                         <li>
-                                            <a class="pl-3" href="#colors-buttons">Buttons</a>
+                                            <a class="pl-3" href="#dark-mode">Dark Mode</a>
                                         </li>
                                         <li>
-                                            <a class="pl-3" href="#colors-accents">Accents</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#alerts">Alerts</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#colors-dark-mode">Dark Mode</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#colors-vars">SCSS Variables</a>
+                                            <a class="pl-3" href="#icons">Icons</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#icons">
-                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M14 7v2h-1v6h1v2h-4v-2h1V9h-1V7h4M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2m0 2v14h14V5H5z" />
-                                        </svg>
-                                        Icons
+                                    <a href="#alerts">
+                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24"><path fill="currentColor" d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
+                                        Alerts
                                     </a>
                                 </li>
                                 <li>
@@ -144,6 +105,36 @@
                                         </li>
                                         <li>
                                             <a class="pl-3" href="#buttons-loader">With Loader</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#cards">
+                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M18 2H6C4.89 2 4 2.9 4 4V20C4 21.11 4.89 22 6 22H18C19.11 22 20 21.11 20 20V4C20 2.9 19.11 2 18 2M18 20H6V16H18V20M18 8H6V4H18V8Z" />
+                                        </svg>
+                                        Cards
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#forms">
+                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M15 5H18L16.5 7L15 5M5 2H19C20.11 2 21 2.9 21 4V20C21 21.11 20.11 22 19 22H5C3.9 22 3 21.11 3 20V4C3 2.9 3.9 2 5 2M5 4V8H19V4H5M5 20H19V10H5V20M7 12H17V14H7V12M7 16H17V18H7V16Z" />
+                                        </svg>
+                                        Forms
+                                    </a>
+                                    <label class="toggle btn btn-link btn-toggle circle">
+                                        <input type="checkbox">
+                                    </label>
+                                    <ul class="sm">
+                                        <li>
+                                            <a class="pl-3" href="#forms">Simple Form</a>
+                                        </li>
+                                        <li>
+                                            <a class="pl-3" href="#forms-responsive-labels">Responsive Labels</a>
+                                        </li>
+                                        <li>
+                                            <a class="pl-3" href="#forms-resize">Sizing</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -185,26 +176,10 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#forms">
-                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M15 5H18L16.5 7L15 5M5 2H19C20.11 2 21 2.9 21 4V20C21 21.11 20.11 22 19 22H5C3.9 22 3 21.11 3 20V4C3 2.9 3.9 2 5 2M5 4V8H19V4H5M5 20H19V10H5V20M7 12H17V14H7V12M7 16H17V18H7V16Z" />
-                                        </svg>
-                                        Forms
+                                    <a href="#lists">
+                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24"><path fill="currentColor" d="M11 15H17V17H11V15M9 7H7V9H9V7M11 13H17V11H11V13M11 9H17V7H11V9M9 11H7V13H9V11M21 5V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3H19C20.1 3 21 3.9 21 5M19 5H5V19H19V5M9 15H7V17H9V15Z" /></svg>
+                                        Lists
                                     </a>
-                                    <label class="toggle btn btn-link btn-toggle circle">
-                                        <input type="checkbox">
-                                    </label>
-                                    <ul class="sm">
-                                        <li>
-                                            <a class="pl-3" href="#forms">Simple Form</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#forms-responsive-labels">Responsive Labels</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#forms-resize">Sizing</a>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li>
                                     <a href="#loader">
@@ -212,6 +187,57 @@
                                             <path fill="currentColor" d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" />
                                         </svg>
                                         Loader
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#menus">
+                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" />
+                                        </svg>
+                                        Menus
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#modals">
+                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M4,4H20V20H4V4M6,8V18H18V8H6Z" />
+                                        </svg>
+                                        Modals
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#navigation">
+                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M16,12A2,2 0 0,1 18,10A2,2 0 0,1 20,12A2,2 0 0,1 18,14A2,2 0 0,1 16,12M10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12M4,12A2,2 0 0,1 6,10A2,2 0 0,1 8,12A2,2 0 0,1 6,14A2,2 0 0,1 4,12Z" />
+                                        </svg>
+                                        Navigation
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#sliders">
+                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M9,11H15V8L19,12L15,16V13H9V16L5,12L9,8V11M2,20V4H4V20H2M20,20V4H22V20H20Z" />
+                                        </svg>
+                                        Sliders
+                                    </a>
+                                    <label class="toggle btn btn-link btn-toggle circle">
+                                        <input type="checkbox">
+                                    </label>
+                                    <ul class="sm">
+                                        <li>
+                                            <a class="pl-3" href="#sliders-image">Image Slider</a>
+                                        </li>
+                                        <li>
+                                            <a class="pl-3" href="#sliders-breakpoints">Breakpoints</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#tables">
+                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
+                                            <path fill="currentColor" d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z" />
+                                        </svg>
+                                        Tables
                                     </a>
                                 </li>
                                 <li>
@@ -246,71 +272,6 @@
                                         </svg>
                                         Tooltips
                                     </a>
-                                </li>
-                                <li>
-                                    <a href="#navigation">
-                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M16,12A2,2 0 0,1 18,10A2,2 0 0,1 20,12A2,2 0 0,1 18,14A2,2 0 0,1 16,12M10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12M4,12A2,2 0 0,1 6,10A2,2 0 0,1 8,12A2,2 0 0,1 6,14A2,2 0 0,1 4,12Z" />
-                                        </svg>
-                                        Navigation
-                                    </a>
-                                    <label class="toggle btn btn-link btn-toggle circle">
-                                        <input type="checkbox">
-                                    </label>
-                                    <ul class="sm">
-                                        <li>
-                                            <a class="pl-3" href="#navigation">Default</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#lists">Lists</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#menus">Menus</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#tables">
-                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z" />
-                                        </svg>
-                                        Tables
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#cards">
-                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M18 2H6C4.89 2 4 2.9 4 4V20C4 21.11 4.89 22 6 22H18C19.11 22 20 21.11 20 20V4C20 2.9 19.11 2 18 2M18 20H6V16H18V20M18 8H6V4H18V8Z" />
-                                        </svg>
-                                        Cards
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#modals">
-                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M4,4H20V20H4V4M6,8V18H18V8H6Z" />
-                                        </svg>
-                                        Modals
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#sliders">
-                                        <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
-                                            <path fill="currentColor" d="M9,11H15V8L19,12L15,16V13H9V16L5,12L9,8V11M2,20V4H4V20H2M20,20V4H22V20H20Z" />
-                                        </svg>
-                                        Sliders
-                                    </a>
-                                    <label class="toggle btn btn-link btn-toggle circle">
-                                        <input type="checkbox">
-                                    </label>
-                                    <ul class="sm">
-                                        <li>
-                                            <a class="pl-3" href="#sliders-image">Image Slider</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#sliders-breakpoints">Breakpoints</a>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li>
                                     <a href="#utilities">
@@ -369,10 +330,6 @@
             ---------    INSTALLATION    ---------
             ------------------------------------->
             <section id="start">
-                <h5 class="has-support-warning mt-2 flex ai-center border border-warning rounded p-2 color-warning">
-                    <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
-                    <span>Warning: You are currently using a browser which currently doesn't support css :has() property. So some components will not work unto it supports it. You can track the progress <a target="_blank" href="https://caniuse.com/css-has">here</a></span>
-                </h5>
                 
                 <h1 class="mb-3">SpryCSS</h1>
                 <p>SpryCSS aims to be a simple and customizable CSS Toolkit while being as
@@ -396,14 +353,32 @@
                 </div>
 
                 <h6 class="mt-3">Compatibility</h6>
-                <h6 class="mb-3 flex ai-center border border-medium rounded p-2 color-medium">
+                <div class="alert alert-warning">
                     <svg class="mr-1" style="width: 16px; height: 16px;" viewBox="0 0 24 24"><path fill="currentColor" d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
                     <span>SpryCss uses :has() property which is not supported by all browsers yet. Find out which browsers support it <a target="_blank" href="https://caniuse.com/css-has">here</a></span>
-                </h6>
+                </div>
+                <div>
+                    You can use this Polyfill to add support until the browser supports it nativaly:
+                    <div class="show-code">
+                        <script>
+                        document.addEventListener("DOMContentLoaded", () => {
+                            document.querySelectorAll('input[type="checkbox"]').forEach(checkBox => {
+                                checkBox.addEventListener('click', event => {
+                                    event.target.parentElement.classList.toggle('has-checked', event.target.checked);
+                                });
+                            });
+
+                            document.querySelectorAll('.tooltip').forEach(tooltip => {
+                                tooltip.parentElement.classList.add('has-tooltip');
+                            });
+                        });
+                        </script>
+                    </div>
+                </div>
 
                 <h2 id="installation" class="border-bottom pb-1 mb-3">Getting Started and Installation</h2>
                 <h4>Using the CDN:</h4>
-                <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css@2.2.2/dist/spry.min.css"&gt;</code></pre>
+                <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css@2.3.0/dist/spry.min.css"&gt;</code></pre>
     
                 <h4 class="mt-4">Using NPM and SCSS:</h4>
                 <pre><code class="language-bash">npm install @ggedde/spry-css</code></pre>
@@ -475,7 +450,17 @@ $spacing: (
     3: 2rem, 
     4: 3rem,
     5: 4rem,
-);</code></pre>
+);
+
+// Specify each size that applies font-size and all elements using "em".
+$sizes: (
+    xl: 140%,
+    lg: 120%, 
+    md: 100%, 
+    sm: 90%, 
+    xs: 75%,
+) !default;
+</code></pre>
                 <h4 class="mt-4 mb-1">Accessing Variables in SCSS</h4>
                 <p>You can access variables using <code>map-get()</code></p>
                 Examples:
@@ -547,19 +532,58 @@ $spacing: (
                 <blockquote class="h3 mt-4">Blockquote - At vero eos et accusam et justo duo dolores et ea rebum. Stet
                     clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</blockquote>
                 <cite class="ml-3"> - Blockquote, Cite</cite>
-                <h4 class="mt-4">SCSS Variable</h4>
+                <h4 class="mt-3">SCSS Variable</h4>
                 <pre class="mt-1"><code class="language-scss">$types: (
-    body: ( font-family: Helvetica, font-size: clamp(.8rem, 4vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
-    h1: ( font-size: clamp(1.9rem, 8vw, 3.4rem), font-weight: 400, line-height: 1.20 ),
-    h2: ( font-size: clamp(1.5rem, 7.5vw, 2.7rem), font-weight: 300, line-height: 1.25 ),
-    h3: ( font-size: clamp(1.2rem, 7vw, 2.2rem), font-weight: 300, line-height: 1.30 ),
-    h4: ( font-size: clamp(1rem, 6.5vw, 1.6rem), font-weight: 300, line-height: 1.35 ),
-    h5: ( font-size: clamp(.8rem, 6vw, 1.2rem), font-weight: 300, line-height: 1.5 ),
-    h6: ( font-size: clamp(.7rem, 6vw, 1.0rem), font-weight: 300, line-height: 1.4 ),
+    body: ( font-family: Helvetica, font-size: clamp(.9rem, 3vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    h1: ( font-size: 3.4em, font-weight: 400, line-height: 1.20 ),
+    h2: ( font-size: 2.7em, font-weight: 300, line-height: 1.25 ),
+    h3: ( font-size: 2.2em, font-weight: 300, line-height: 1.30 ),
+    h4: ( font-size: 1.6em, font-weight: 300, line-height: 1.35 ),
+    h5: ( font-size: 1.2em, font-weight: 300, line-height: 1.5 ),
+    h6: ( font-size: 1.0em, font-weight: 300, line-height: 1.4 ),
 );</code></pre>
                 <cite>You can add as many types as you want. Each type will be assigned to the tag along with a custom
                     class so if needed you can apply <code class="color-primary">.h2</code>
                     to an H4, etc</cite>
+            </section>
+            <!------------------------------------
+            ------------    SIZES    ------------
+            ------------------------------------->
+            <section id="sizes">
+                <h2 class="border-bottom pb-1 mb-2">Sizes</h2>
+                <p>By Default SpryCss uses <code class="color-primary">em</code> to set font sizes, padding, heights, etc. So you can alter the sizes using the size classes.</p>
+                <h6 class="mt-2">Ex.</h6>
+                <div class="show-code">
+                    <p class="xs">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="sm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="md">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="lg">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="xl">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                </div>
+                <p>The size classes are applied to all child elements so you can assign it to the parent.</p>
+                <h6 class="mt-2">Ex.</h6>
+                <div class="show-code">
+                    <div class="xs">
+                        <button class="btn">Button</button>
+                        <button class="btn">Button</button>
+                        <button class="btn">Button</button>
+                    </div>
+                    <div class="lg">
+                        <button class="btn">Button</button>
+                        <button class="btn">Button</button>
+                        <button class="btn">Button</button>
+                    </div>
+                </div>
+
+                <h4 class="mt-3">SCSS Variable</h4>
+                <pre class="mt-1"><code class="language-scss">$sizes: (
+    xl: 140%,
+    lg: 120%, 
+    md: 100%, 
+    sm: 90%, 
+    xs: 75%,
+);</code></pre>
+
             </section>
             <!------------------------------------
             ------------    COLORS    ------------
@@ -616,42 +640,8 @@ $spacing: (
                         </div>
                     </div>
                 </div>
-
-                <h4 id="alerts" class="mt-3 mb-2">Alerts</h4>
-                <div class="show-code">
-                    <h5 class="flex ai-center border rounded p-2">
-                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg>
-                        <span>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
-                        </span>
-                    </h5>
-                    <h5 class="flex ai-center border border-warning rounded p-2 color-warning">
-                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
-                        <span>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
-                        </span>
-                    </h5>
-                    <h5 class="flex ai-center border border-error rounded p-2 color-error">
-                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
-                        <span>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
-                        </span>
-                    </h5>
-                    <h5 class="flex ai-center border border-primary rounded p-2 color-primary">
-                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8 12h2v2h-2v-2m0-8h2v6h-2V7" /></svg>
-                        <span>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
-                        </span>
-                    </h5>
-                    <h5 class="flex ai-center border border-success rounded p-2 color-success">
-                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
-                        <span>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
-                        </span>
-                    </h5>
-                </div>
     
-                <h4 id="colors-dark-mode" class="mt-3">Dark Mode</h4>
+                <h4 id="dark-mode" class="mt-3">Dark Mode</h4>
                 <div class="sm mb-1">You can add the class <code class="color-medium italic sm">.dark</code> to any
                     element to invert the "light" and "dark" color names.</div>
                 <div class="sm mb-1">* This means that you will need to use "light" and "dark" color values in your
@@ -738,6 +728,78 @@ $spacing: (
     
             </section>
             <!------------------------------------
+            -----------    ALERTS    ------------
+            ------------------------------------->
+            <section id="alerts">
+
+                <h2 class="border-bottom pb-1 mb-3">Alerts</h2>
+                <div class="show-code">
+                    <div class="alert">
+                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
+                    <div class="alert alert-warning">
+                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
+                    <div class="alert alert-error">
+                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
+                    <div class="alert alert-primary">
+                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8 12h2v2h-2v-2m0-8h2v6h-2V7" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
+                    <div class="alert alert-success">
+                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
+                </div>
+
+                <h4 class="pb-1 mt-3 mb-3">Closable Large Alert</h2>
+                <div class="show-code">
+                    <div class="alert alert-error lg">
+                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                        <button class="btn btn-close btn-link xs circle inset-right inset-top" onclick="this.parentElement.remove();"></button>
+                    </div>
+                </div>
+
+                <h4 class="my-1 mt-3">Popup Alert Example</h4>
+                <div class="show-code">
+                    <button class="btn" onclick="document.getElementById('alert-modal').classList.add('show');">Show Alert Popup</button>
+                    <div id="alert-modal" class="modal">
+                        <div class="modal-content" style="max-width: 400px;">
+                            <div class="alert bg-error color-white border-transparent lg py-1 px-4">
+                                <svg class="m-1 inset-top inset-left" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
+                                <div>
+                                    <h5 class="bold">Error!</h5>
+                                    Please Try again.
+                                </div>
+                                <button class="btn btn-close btn-link btn-white xs circle inset-right inset-top m-1" onclick="document.getElementById('alert-modal').classList.remove('show');"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="my-1 mt-3">Popup Alert Top Right with No Backdrop and Autoclose</h4>
+                <div class="show-code">
+                    <button class="btn" onclick="document.getElementById('alert2-modal').classList.add('show'); setTimeout(() => {document.getElementById('alert2-modal').classList.remove('show');}, 3000);">Show Alert Popup</button>
+                    <div id="alert2-modal" class="modal no-backdrop m-1"">
+                        <div class="modal-content inset-top inset-right" style="max-width: 400px;">
+                            <div class="alert bg-success color-white border-transparent lg py-1 pl-4">
+                                <svg class="m-1 inset-top inset-left" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
+                                <div>
+                                    <h5 class="bold">Success!</h5>
+                                    This message will Autoclose.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!------------------------------------
             -----------    BUTTONS    ------------
             ------------------------------------->
             <section id="buttons">
@@ -799,6 +861,28 @@ $spacing: (
     
                 <h4 id="buttons-custom" class="mt-4 mb-1">Custom Classes</h4>
                 <div class="show-code">
+                    <p class="lg">
+                        <button class="btn btn-close"></button>
+                        <label class="btn btn-toggle">
+                            <input type="checkbox">
+                        </label>
+                        <button class="btn btn-left"></button>
+                        <button class="btn btn-up"></button>
+                        <button class="btn btn-right"></button>
+                        <label class="btn btn-menu">
+                            <input type="checkbox">
+                        </label>
+                        <button class="btn btn-close btn-link circle"></button>
+                        <label class="btn btn-toggle btn-link circle">
+                            <input type="checkbox">
+                        </label>
+                        <button class="btn btn-left btn-link circle"></button>
+                        <button class="btn btn-up btn-link circle"></button>
+                        <button class="btn btn-right btn-link circle"></button>
+                        <label class="btn btn-menu btn-link circle">
+                            <input type="checkbox">
+                        </label>
+                    </p>
                     <p>
                         <button class="btn btn-close"></button>
                         <label class="btn btn-toggle">
@@ -858,17 +942,17 @@ $spacing: (
                 <h4 id="buttons-icons" class="mt-4">With Icons</h4>
                 <div class="show-code">
                     <div class="flex flex-wrap g-2 ai-center">
-                        <button class="btn btn-primary pr-3 lg">After
+                        <button class="btn btn-primary lg">After
                             <svg class="ml-3" viewBox="0 0 24 24">
                                 <path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
                             </svg>
                         </button>
-                        <button class="btn btn-primary p-0 lg">
+                        <button class="btn btn-success p-0 lg">
                             <svg viewBox="0 0 24 24" width="24" height="24">
                                 <path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
                             </svg>
                         </button>
-                        <button class="btn btn-primary pl-2">
+                        <button class="btn pl-2">
                             <svg class="mr-2" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
@@ -894,6 +978,233 @@ $spacing: (
                     <button class="btn loader" type="button"
                         onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">Click
                         for Loading</button>
+                </div>
+            </section>
+            <!------------------------------------
+            ----------       CARDS      ----------
+            ------------------------------------->
+            <section id="cards">
+                <h2 class="border-bottom pb-1 mb-3">Cards</h2>
+                <div class="show-code">
+                    <article class="mw-400">
+                        <h3>Lorem ipsum dolor</h3>
+                        <img src="placeholder.jpg" />
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod temporinvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <a href="#cards" class="btn">Learn More</a>
+                    </article>
+                </div>
+    
+                <h4 class="mt-4 mb-1">Variations</h4>
+                <div class="show-code">
+                    <div class="row">
+    
+                        <article class="accent-light shadow color-text border rounded p-0">
+                            <header>
+                                <h4 class="px-2">Lorem ipsum dolor</h4>
+                            </header>
+                            <p class="px-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            </p>
+                            <footer class="px-2">
+                                <a href="#cards" class="btn btn-primary sm">Learn More</a>
+                            </footer>
+                        </article>
+    
+                        <article class="accent-light shadow border rounded p-0">
+                            <img src="placeholder.jpg" />
+                            <div class="px-3">
+                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                <p class="note">- Meta Data</p>
+                            </div>
+                            <footer class="px-2 jc-end g-2">
+                                <a href="#cards" class="btn btn-medium sm">Cancel</a>
+                                <a href="#cards" class="btn btn-primary sm">Submit</a>
+                            </footer>
+                        </article>
+    
+                        <article class="accent-primary border rounded p-0 shadow g-2">
+                            <header class="px-2">
+                                <h4>This is the Title</h4>
+                            </header>
+                            <p class="px-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            </p>
+                            <footer class="px-2">
+                                <a href="#cards" class="btn btn-outline btn-white sm">Learn More</a>
+                            </footer>
+                        </article>
+    
+                    </div>
+                </div>
+            </section>
+            <!------------------------------------
+            -------------    FORMS    ------------
+            ------------------------------------->
+            <section id="forms">
+                <h2 class="border-bottom pb-1 mb-3">Forms</h2>
+                <h4 class="mb-1">Simple form with some Required Fields</h4>
+                <div class="show-code">
+                    <form>
+                        <div class="row py-3 g-3">
+                            <div>
+                                <label><h5>Text Field *</h5>
+                                    <input type="text" required />
+                                </label>
+                            </div>
+                            <div>
+                                <label><h5>Email *</h5>
+                                    <input type="email" required />
+                                </label>
+                            </div>
+                            <div>
+                                <label><h5>Select *</h5>
+                                    <select required>
+                                        <option value="" disabled>Select</option>
+                                        <option>One</option>
+                                        <option>Two</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div>
+                                <h5>Vertical Checkboxes</h5>
+                                <label class="my-1"><input type="checkbox">Red</label>
+                                <label class="my-1"><input type="checkbox">Green</label>
+                                <label class="my-1"><input type="checkbox">None</label>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Horizontal Radios *</h5>
+                                <label class="inline mr-1"><input type="radio" name="rad" required>Why</label>
+                                <label class="inline mr-1"><input type="radio" name="rad" required>When</label>
+                                <label class="inline mr-1"><input type="radio" name="rad" required>Where</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mt-3">
+                                <label><h5>Message</h5>
+                                    <textarea></textarea>
+                                </label>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn mx-auto" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <h4 class="mb-1 mt-3">Simple form with Accent Color</h4>
+                <div class="show-code">
+                    <form class="accent-primary">
+                        <div class="row py-3 g-3">
+                            <div>
+                                <label>
+                                    <h5>Text Field *</h5>
+                                    <input type="text" required />
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <h5>Email *</h5>
+                                    <input type="email" required />
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <h5>Select *</h5>
+                                    <select required>
+                                        <option value="" disabled>Select</option>
+                                        <option>One</option>
+                                        <option>Two</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div>
+                                <h5>Vertical Checkboxes</h5>
+                                <label class="my-1"><input type="checkbox">Red</label>
+                                <label class="my-1"><input type="checkbox">Green</label>
+                                <label class="my-1"><input type="checkbox">None</label>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Horizontal Radios *</h5>
+                                <label class="inline mr-1"><input type="radio" name="rad" required>Why</label>
+                                <label class="inline mr-1"><input type="radio" name="rad" required>When</label>
+                                <label class="inline mr-1"><input type="radio" name="rad" required>Where</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mt-3">
+                                <label>
+                                    <h5>Message</h5>
+                                    <textarea></textarea>
+                                </label>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn mx-auto" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+    
+                <h4 id="forms-responsive-labels" class="col-12 mt-4">Responsive labels with loading button and disabled fields on submit</h4>
+                <p class="mb-3">Use <code class="color-primary">sup</code> for Upper Labels and <code class="color-primary">sub</code> for Below Labels</p>
+
+                <div class="show-code">
+                    <form class="row jc-center" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.classList.add('disabled'); setTimeout(() => {this.submit()}, 2000)">
+                        <label>
+                            <sup>Name *</sup>
+                            <input type="text" required onblur="this.parentElement.classList.toggle('active', this.value)" />
+                        </label>
+                        <label>
+                            <sup>Email</sup>
+                            <input type="email" onblur="this.parentElement.classList.toggle('active', this.value)" />
+                        </label>
+                        <label>
+                            <sup>Select</sup>
+                            <select onchange="this.parentElement.classList.toggle('active', this.value)">
+                                <option value="" selected disabled></option>
+                                <option>Two</option>
+                                <option>Three</option>
+                            </select>
+                        </label>
+                        <label class="col-12">
+                            <sup>Message</sup>
+                            <textarea onblur="this.parentElement.classList.toggle('active', this.value)"></textarea>
+                        </label>
+                        <button class="col-6 btn loader" type="submit">Submit with Loading Icon</button>
+                    </form>
+                </div>
+    
+                <h4 id="forms-resize" class="col-12 mb-2 mt-3">Resize Fields using <code class="color-primary sm">form.sm</code> or <code class="color-primary sm">form.lg</code></h4>
+                
+                <div class="show-code">
+                    <form class="sm row g-2 jc-center">
+                        <label class="has-sub">
+                            <sub>Name</sub>
+                            <input type="text" onblur="this.parentElement.classList.toggle('active', this.value)" />
+                        </label>
+                        <label class="has-sub">
+                            <sub>Email</sub>
+                            <input type="email" onblur="this.parentElement.classList.toggle('active', this.value)" />
+                        </label>
+                        <label class="has-sub">
+                            <sub>Select</sub>
+                            <select onchange="this.parentElement.classList.toggle('active', this.value)">
+                                <option value="" selected disabled></option>
+                                <option>Two</option>
+                                <option>Three</option>
+                            </select>
+                        </label>
+                        <label class="col-12 has-sub">
+                            <sub>Message</sub>
+                            <textarea onblur="this.parentElement.classList.toggle('active', this.value)"></textarea>
+                        </label>
+                        <button class="col-4 btn loader" type="submit">Submit</button>
+                    </form>
                 </div>
             </section>
             <!------------------------------------
@@ -1135,404 +1446,6 @@ $spacing: (
     
             </section>
             <!------------------------------------
-            -------------    FORMS    ------------
-            ------------------------------------->
-            <section id="forms">
-                <h2 class="border-bottom pb-1 mb-3">Forms</h2>
-                <h4 class="mb-1">Simple form with some Required Fields</h4>
-                <div class="show-code">
-                    <form>
-                        <div class="row py-3 g-3">
-                            <div>
-                                <label class="h5">Text Field *
-                                    <input type="text" required />
-                                </label>
-                            </div>
-                            <div>
-                                <label class="h5">Email *
-                                    <input type="email" required />
-                                </label>
-                            </div>
-                            <div>
-                                <label class="h5">Select *
-                                    <select required>
-                                        <option value="" disabled>Select</option>
-                                        <option>One</option>
-                                        <option>Two</option>
-                                    </select>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row g-3">
-                            <div>
-                                <h5>Vertical Checkboxes</h5>
-                                <label class="block my-1"><input type="checkbox">Red</label>
-                                <label class="block my-1"><input type="checkbox">Green</label>
-                                <label class="block my-1"><input type="checkbox">None</label>
-                            </div>
-                            <div>
-                                <h5 class="mb-1">Horizontal Radios *</h5>
-                                <label class="mr-1"><input type="radio" name="rad" required>Why</label>
-                                <label class="mr-1"><input type="radio" name="rad" required>When</label>
-                                <label class="mr-1"><input type="radio" name="rad" required>Where</label>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="mt-3">
-                                <label class="h5">Message
-                                    <textarea></textarea>
-                                </label>
-                            </div>
-                            <div class="mt-3">
-                                <button class="btn mx-auto" type="submit">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-    
-                <h4 id="forms-responsive-labels" class="col-12 mt-4 mb-3">Responsive labels with loading button and disabled fields on submit</h4>
-
-                <div class="show-code">
-                    <form class="row jc-center"
-                        onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.querySelectorAll('fieldset,button').forEach(elem => {elem.setAttribute('disabled', 'disabled');});setTimeout(() => {this.submit()}, 2000)">
-                        <label>
-                            <span class="responsive-label">Name *</span>
-                            <input type="text" required onblur="this.parentElement.classList.toggle('active', this.value)" />
-                        </label>
-                        <label>
-                            <span class="responsive-label">Email</span>
-                            <input type="email" onblur="this.parentElement.classList.toggle('active', this.value)" />
-                        </label>
-                        <label>
-                            <span class="responsive-label">Select</span>
-                            <select onchange="this.parentElement.classList.toggle('active', this.value)">
-                                <option value="" selected disabled></option>
-                                <option>Two</option>
-                                <option>Three</option>
-                            </select>
-                        </label>
-                        <label class="col-12">
-                            <span class="responsive-label">Message</span>
-                            <textarea onblur="this.parentElement.classList.toggle('active', this.value)"></textarea>
-                        </label>
-                        <button class="col-6 btn loader" type="submit">Submit with Loading Icon</button>
-                    </form>
-                </div>
-    
-                <h4 id="forms-resize" class="col-12 mb-2 mt-3">Resize Fields using <code class="color-primary sm">form.sm</code></h4>
-                
-                <div class="show-code">
-                    <form class="sm row g-2 jc-center">
-                        <label>
-                            <span class="responsive-label">Name</span>
-                            <input type="text" onblur="this.parentElement.classList.toggle('active', this.value)" />
-                        </label>
-                        <label>
-                            <span class="responsive-label">Email</span>
-                            <input type="email" onblur="this.parentElement.classList.toggle('active', this.value)" />
-                        </label>
-                        <label>
-                            <span class="responsive-label">Select</span>
-                            <select onchange="this.parentElement.classList.toggle('active', this.value)">
-                                <option value="" selected disabled></option>
-                                <option>Two</option>
-                                <option>Three</option>
-                            </select>
-                        </label>
-                        <label class="col-12">
-                            <span class="responsive-label">Message</span>
-                            <textarea onblur="this.parentElement.classList.toggle('active', this.value)"></textarea>
-                        </label>
-                        <button class="col-4 btn loader" type="submit">Submit</button>
-                    </form>
-                </div>
-            </section>
-            <!------------------------------------
-            ------------    LOADER    ------------
-            ------------------------------------->
-            <section id="loader">
-                <h2 class="border-bottom pb-1 mb-3">Loader</h2>
-                <div class="show-code">
-                    <button class="loader loading sm"></button>
-                    <button class="loader loading color-success"></button>
-                    <button class="loader loading lg color-error"></button>
-                    <button class="btn loader loading p-0"></button>
-                    <button class="btn loader" type="button"
-                        onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">Click
-                        for Loading</button>
-                </div>
-            </section>
-            <!------------------------------------
-            -----------    TOGGLES    ------------
-            ------------------------------------->
-            <section id="toggle">
-                <h2 class="border-bottom pb-1 mb-3">Toggles</h2>
-                <p class="mt-2">Toggles are used to open and close content, menus, etc</p>
-                <p class="mb-2">You can create a toggle group by adding a <code
-                        class="color-medium italic sm">&lt;input type="checkbox" /&gt;</code> inside
-                    a <code class="color-medium italic sm">&lt;label class="toggle"&gt;</code> then followed by your container of
-                    your choice.</p>
-<pre><code class="language-html">&lt;label class="toggle"&gt;Toggle Handle
-    &lt;input type="checkbox" /&gt;
-&lt;/label&gt;
-&lt;p&gt;Toggle Content&lt;/p&gt;</code></pre>
-                <h4 class="mt-4 mb-1">General Toggle Example</h4>
-                <div class="show-code">
-                    <label class="btn toggle">Toggle Content
-                        <input type="checkbox" />
-                    </label>
-                    <p class="border p-1">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                        justo duo
-                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                        sit amet.
-                    </p>
-                </div>
-    
-                <h4 id="toggle-accordion" class="mt-3 mb-2">Collapsing Toggle (Accordion)</h4>
-                <div class="show-code">
-                    <label class="btn btn-link btn-text pl-4 pr-2 toggle btn-toggle text-right w jc-start">
-                        <input type="checkbox" />
-                        <h4>Question 1</h4>
-                    </label>
-                    <div>
-                        <p class="border p-1">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                            et
-                            justo duo
-                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-                            dolor
-                            sit amet.
-                        </p>
-                    </div>
-                    <label class="btn btn-link btn-text pl-4 pr-2 toggle btn-toggle text-right w jc-start">
-                        <input type="checkbox" />
-                        <h4>Question 2</h4>
-                    </label>
-                    <div>
-                        <p class="border p-1">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                            et
-                            justo duo
-                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-                            dolor
-                            sit amet.
-                        </p>
-                    </div>
-                </div>
-    
-                <h4 id="toggle-overflown" class="mt-3">Overflown Toggle</h4>
-                <p class="mb-2">Add <code class="color-medium italic sm">.collapse</code> to your container</p>
-                <div class="show-code">
-                    <label class="btn pl-2 pr-4 toggle btn-toggle text-left">
-                        <input type="checkbox" />
-                        Toggle Content
-                    </label>
-                    <div class="collapse">
-                        <p class="border p-1 bg-light">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                            rebum.
-                        </p>
-                    </div>
-                </div>
-    
-                <div class="show-code">
-                    <label class="btn pl-4 pr-2 toggle btn-toggle text-right">
-                        <input type="checkbox" />
-                        Toggle Content
-                    </label>
-                    <div class="collapse">
-                        <p class="border p-1 bg-light">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                            rebum.
-                        </p>
-                    </div>
-                </div>
-    
-                <h4 id="toggle-hover" class="mt-3">Activate on Hover</h4>
-                <p class="mb-2">Add the <code class="color-medium italic sm">.hoverable</code> class to the label</p>
-                <p class="mb-2 note">
-                    * To Remove the click option then just remove the checkbox and add the
-                    <code class="color-medium italic sm">.toggle</code> class to the label
-                </p>
-    
-                <div class="show-code">
-                    <label class="btn pr-4 pl-2 toggle btn-toggle hoverable text-left">
-                        Toggle on Hover
-                    </label>
-                    <div class="collapse">
-                        <p class="border p-1 bg-light">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                            rebum.
-                        </p>
-                    </div>
-                </div>
-    
-            </section>
-            <!------------------------------------
-            -----------    TOOLTIPS    -----------
-            ------------------------------------->
-            <section id="tooltip">
-                <h2 class="border-bottom pb-1 mb-3">ToolTips</h2>
-                <p class="mb-2">You can create a tooltip by adding any tag with the class
-                    <code class="color-medium italic sm">tooltip</code> inside a container of your choice.
-                </p>
-                <div class="show-code">
-                    <div>
-                        <button class="btn mb-2">Tooltip Top
-                            <small class="tooltip rounded shadow o-90 p-2 bg-dark color-light mw-300 sm outset-top inset-left text-left"
-                                style="text-transform: none">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                tempor</small>
-                        </button>
-                        <br/>
-                        <button class="btn mb-2">Tooltip Bottom
-                            <small class="tooltip rounded shadow o-90 p-2 bg-dark color-light mw-300 sm outset-bottom inset-left text-left"
-                                style="text-transform: none">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                tempor</small>
-                        </button>
-                        <br/>
-                        <button class="btn mb-2">Tooltip Right
-                            <small class="tooltip rounded shadow o-90 p-1 bg-dark color-light mw-100 sm outset-right inset-right"
-                                style="text-transform: none">Lorem ipsum <br>dolor sit</small>
-                        </button>
-                    </div>
-                    <div class="my-2">
-                        Tooltip Example
-                        <label class="btn sm btn-medium btn-link p-0 circle mt-n1">
-                            <svg viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
-                            </svg>
-                            <p class="tooltip rounded shadow o-90 p-2 bg-dark color-light mw-300 sm outset-top inset-left text-left">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                            </p>
-                        </label>
-                    </div>
-    
-                    <div>
-                        Tooltip with scrollable content (Bottom Left)
-                        <label class="btn sm btn-medium btn-link p-0 circle mt-n1">
-                            <svg viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
-                            </svg>
-                            <p
-                                class="tooltip rounded shadow o-90 p-2 bg-dark color-light mw-300 sm outset-bottom inset-right text-left mh-200 overflow-auto">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                accusam
-                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                                Lorem ipsum dolor sit amet. At vero eos et accusam
-                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                                est Lorem ipsum dolor sit amet.
-                            </p>
-                        </label>
-                    </div>
-                </div>
-            </section>
-            <!------------------------------------
-            ----------    NAVIGATION    ----------
-            ------------------------------------->
-            <section id="navigation">
-                <h2 class="border-bottom pb-1 mb-3">Navigation</h2>
-                <p class="my-2"><code class="color-medium italic">&lt;nav&gt;</code></p>
-    
-                <h5 class="mt-2">Classes</h5>
-                <div class="ml-1 md-ml-3 mt-1">
-                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-medium">{breakpoint}-</code><code
-                                class="color-primary">horizontal</code></span> <cite class="block mb-2 md-inline">Change
-                            Layout to Horizontal Menu</cite></div>
-                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-medium">{breakpoint}-</code><code
-                                class="color-primary">hoverable</code></span> <cite class="block mb-2 md-inline">Allows
-                            sub menus to open on Hover</cite></div>
-                </div>
-    
-                <h4 class="mt-4">Standard Navigation Menu</h4>
-                <div class="show-code">
-                    <nav class="bg-light md-horizontal">
-                        <a href="#navigation">Link 1</a>
-                        <a href="#navigation">Link 2</a>
-                        <a href="#navigation">Link 3</a>
-                        <a href="#navigation">Link 4</a>
-                    </nav>
-                </div>
-    
-                <h4 class="mt-4">Drop down Navigation Menu Right Aligned</h4>
-                <div class="show-code">
-                    <nav class="bg-light md-horizontal md-hoverable">
-                        <ul class="jc-end">
-                            <li>
-                                <a href="#navigation">Link with Dropdown</a>
-                                <label class="toggle btn btn-link btn-toggle circle">
-                                    <input type="checkbox" />
-                                </label>
-                                <ul class="bg-light rounded-bottom md-shadow">
-                                    <li><a href="#navigation">Sub Link 1</a></li>
-                                    <li>
-                                        <a href="#navigation">Sub Link with Menu</a>
-                                        <label class="toggle btn btn-link btn-toggle circle">
-                                            <input type="checkbox" />
-                                        </label>
-                                        <ul class="bg-light rounded">
-                                            <li><a href="#navigation">Sub Sub Link 1</a></li>
-                                            <li><a href="#navigation">Sub Sub Link 2</a></li>
-                                            <li><a href="#navigation">Sub Sub Link 3</a></li>
-                                            <li><a href="#navigation">Sub Sub Link 4</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#navigation">Sub Link 3</a></li>
-                                    <li><a href="#navigation">Sub Link 4</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#navigation">Link 2</a></li>
-                            <li><a href="#navigation">Link 3</a></li>
-                            <li><a href="#navigation">Link 4</a></li>
-                            <li>
-                                <a href="#navigation">Link with Dropdown</a>
-                                <label class="toggle btn btn-link btn-toggle circle">
-                                    <input type="checkbox">
-                                </label>
-                                <ul class="bg-light rounded-bottom md-shadow">
-                                    <li><a href="#navigation">Sub Link 1</a></li>
-                                    <li><a href="#navigation">Sub Link 2</a></li>
-                                    <li>
-                                        <a href="#navigation">Sub Link with Menu</a>
-                                        <label class="toggle btn btn-link btn-toggle circle">
-                                            <input type="checkbox">
-                                        </label>
-                                        <ul class="bg-light rounded">
-                                            <li><a href="#navigation">Sub Sub Link 1</a></li>
-                                            <li><a href="#navigation">Sub Sub Link 2</a></li>
-                                            <li><a href="#navigation">Sub Sub Link 3</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="#navigation">Link 5</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </section>
-            <!------------------------------------
             ------------    LISTS    -------------
             ------------------------------------->
             <section id="lists">
@@ -1765,6 +1678,21 @@ $spacing: (
                 </div>
             </section>
             <!------------------------------------
+            ------------    LOADER    ------------
+            ------------------------------------->
+            <section id="loader">
+                <h2 class="border-bottom pb-1 mb-3">Loader</h2>
+                <div class="show-code">
+                    <button class="loader loading sm"></button>
+                    <button class="loader loading color-success"></button>
+                    <button class="loader loading lg color-error"></button>
+                    <button class="btn loader loading p-0"></button>
+                    <button class="btn loader" type="button"
+                        onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">Click
+                        for Loading</button>
+                </div>
+            </section>
+            <!------------------------------------
             ------------    MENUS    -------------
             ------------------------------------->
             <section id="menus">
@@ -1905,138 +1833,37 @@ $spacing: (
     
             </section>
             <!------------------------------------
-            ------------    TABLES    ------------
-            ------------------------------------->
-            <section id="tables">
-                <h2 class="border-bottom pb-1 mb-3">Tables</h2>
-                <div class="show-code">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Size</th>
-                                <th>Color</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Tier 1</td>
-                                <td>200</td>
-                                <td>Red</td>
-                                <td class="text-right"><a href="#tables" class="btn px-2 xs">Learn More</a></td>
-                            </tr>
-                            <tr>
-                                <td>Tier 2</td>
-                                <td>400</td>
-                                <td>Blue</td>
-                                <td class="text-right"><a href="#tables" class="btn px-2 xs">Learn More</a></td>
-                            </tr>
-                            <tr>
-                                <td>Tier 3</td>
-                                <td>500</td>
-                                <td>Gold</td>
-                                <td class="text-right"><a href="#tables" class="btn px-2 xs">Learn More</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button class="btn mt-4 mx-auto btn-primary" type="button">Signup</button>
-                </div>
-            </section>
-            <!------------------------------------
-            ----------       CARDS      ----------
-            ------------------------------------->
-            <section id="cards">
-                <h2 class="border-bottom pb-1 mb-3">Cards</h2>
-                <div class="show-code">
-                    <div class="card border border-light rounded shadow p-3 g-3 mw-400">
-                        <header>
-                            <h3>Lorem ipsum dolor</h3>
-                        </header>
-                        <img src="placeholder.jpg" />
-                        <article>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                        </article>
-                        <footer>
-                            <a href="#cards" class="btn">Learn More</a>
-                        </footer>
-                    </div>
-                </div>
-    
-                <h4 class="mt-4 mb-1">Variations</h4>
-                <div class="show-code">
-                    <div class="row">
-    
-                        <div class="card card-light shadow color-text border rounded g-2">
-                            <header>
-                                <h4 class="px-2">Lorem ipsum dolor</h4>
-                            </header>
-                            <article>
-                                <p class="px-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                                </p>
-                            </article>
-                            <footer class="px-2">
-                                <a href="#cards" class="btn btn-primary sm">Learn More</a>
-                            </footer>
-                        </div>
-    
-                        <div class="card card-light shadow color-text border rounded g-3">
-                            <img src="placeholder.jpg" />
-                            <article class="px-3">
-                                <h3>Lorem ipsum dolor sit amet</h3>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                                <p class="note">- Meta Data</p>
-                            </article>
-                            <footer class="px-2 jc-end g-2">
-                                <a href="#cards" class="btn btn-medium sm">Cancel</a>
-                                <a href="#cards" class="btn btn-primary sm">Submit</a>
-                            </footer>
-                        </div>
-    
-                        <div class="card card-primary border rounded p-0 shadow g-2">
-                            <header class="px-2">
-                                <h4>This is the Title</h4>
-                            </header>
-                            <article>
-                                <p class="px-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                                </p>
-                            </article>
-                            <footer class="px-2">
-                                <a href="#cards" class="btn btn-outline btn-white sm">Learn More</a>
-                            </footer>
-                        </div>
-    
-                    </div>
-                </div>
-            </section>
-            <!------------------------------------
             ---------       MODALS      ----------
             ------------------------------------->
             <section id="modals">
                 <h2 class="border-bottom pb-1 mb-3">Modals</h2>
                 <h5 class="mt-2">Classes</h5>
                 <div class="ml-1 md-ml-3 mt-1 mb-3">
-                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-medium">modal</code></span> <cite
+                    <div>
+                        <span style="width: 270px;" class="md-inline-block"><code class="color-medium">modal</code></span> <cite
                             class="block mb-2 md-inline">Main Modal
                             Class</cite></div>
-                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-medium">show</code></span>
+                    <div>
+                        <span style="width: 270px;" class="md-inline-block"><code class="color-medium">show</code></span>
                         <cite class="block mb-2 md-inline">Shows the Modal</cite>
                     </div>
-                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-medium">blur</code></span>
+                    <div>
+                        <span style="width: 270px;" class="md-inline-block"><code class="color-medium">blur</code></span>
                         <cite class="block mb-2 md-inline">Adds blur to background</cite>
                     </div>
-                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-medium">bounce</code></span> <cite
-                            class="block mb-2 md-inline">Adds bounce
-                            animation. Only occurs once.</cite></div>
+                    <div>
+                        <span style="width: 270px;" class="md-inline-block"><code class="color-medium">bounce</code></span>
+                        <cite class="block mb-2 md-inline">Adds bounce animation. Only occurs once.</cite>
+                    </div>
+                    <div>
+                        <span style="width: 270px;" class="md-inline-block"><code class="color-medium">no-backdrop</code></span>
+                        <cite class="block mb-2 md-inline">Removes the Backdrop and allows to click through the background.</cite>
+                    </div>
                     <p class="note mt-2">Add max-width to modal-content to change size</p>
                 </div>
                 <div class="show-code">
                     <div class="modal blur">
-                        <div class="modal-content" style="max-width: 400px;">
+                        <div class="modal-content">
                             Content Here
                         </div>
                     </div>
@@ -2048,30 +1875,27 @@ $spacing: (
                         Login Modal</button>
                     <div id="login-modal" class="modal blur"
                         onclick="if(event.target.id === 'login-modal') document.getElementById('login-modal').classList.remove('show');">
-                        <div class="modal-content" style="max-width: 400px;">
-                            <div class="card card-light shadow color-text border rounded g-3">
+                        <div class="modal-content mw-400">
+                            <article class="shadow accent-light border rounded p-0">
                                 <header>
-                                    <button type="button" class="btn btn-link btn-close circle mr-1 mt-1 inset-top inset-right"
-                                        onclick="document.getElementById('login-modal').classList.remove('show');"></button>
+                                    <button type="button" class="btn btn-link btn-medium btn-close circle mr-1 mt-1 inset-top inset-right" onclick="document.getElementById('login-modal').classList.remove('show');"></button>
                                     <h4 class="px-2 pr-3">Lorem ipsum dolor as</h4>
                                 </header>
-                                <article class="px-3 pb-3 pt-1">
-                                    <form>
-                                        <fieldset>
-                                            <legend><label>Email</label></legend>
-                                            <input id="login-email" type="email" required
-                                                onblur="this.parentElement.classList.toggle('active', this.value)" />
-                                        </fieldset>
-                                        <fieldset class="my-2">
-                                            <legend><label>Password</label></legend>
-                                            <input type="password" required
-                                                onblur="this.parentElement.classList.toggle('active', this.value)" />
-                                        </fieldset>
+                                <div class="px-3 pb-3 pt-1">
+                                    <form class="accent-primary grid g-2">
+                                        <label>
+                                            <sup>Email</sup>
+                                            <input id="login-email" type="email" required onblur="this.parentElement.classList.toggle('active', this.value)" />
+                                        </label>
+                                        <label>
+                                            <sup>Password</sup>
+                                            <input type="password" required onblur="this.parentElement.classList.toggle('active', this.value)" />
+                                        </label>
                                         <a href="#" class="mt-1 block">Forgot Password?</a>
                                         <button class="btn block mt-3" type="submit">Login</button>
                                     </form>
-                                </article>
-                            </div>
+                                </div>
+                            </article>
                         </div>
                     </div>
                 </div>
@@ -2082,11 +1906,11 @@ $spacing: (
                         Large Modal</button>
                     <div id="large-modal" class="modal" onclick="if(event.target.id === 'large-modal') this.classList.add('bounce');">
                         <div class="modal-content rounded lg-mw">
-                            <div class="card card-light shadow color-text border rounded">
+                            <article class="accent-light shadow border rounded p-0">
                                 <header>
                                     <h4 class="px-2">Lorem ipsum dolor</h4>
                                 </header>
-                                <article class="p-3 mh-500">
+                                <div class="p-3 mh-500 overflow-auto">
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                                         tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
                                         vero
@@ -2157,19 +1981,101 @@ $spacing: (
                                         dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
                                         Lorem
                                         ipsum dolor sit amet.</p>
-                                </article>
+                                </div>
                                 <footer class="px-2 jc-end">
                                     <button type="button" class="btn sm btn-outline btn-dark"
                                         onclick="document.getElementById('large-modal').classList.remove('show','bounce');">Cancel</button>
-                                    <button type="button" class="btn sm ml-1 md-ml-3"
+                                    <button type="button" class="btn btn-primary sm ml-1 md-ml-3"
                                         onclick="document.getElementById('large-modal').classList.remove('show','bounce');">Accept</button>
                                 </footer>
-                            </div>
+                            </article>
                         </div>
                     </div>
                 </div>
+
+            </section>
+            <!------------------------------------
+            ----------    NAVIGATION    ----------
+            ------------------------------------->
+            <section id="navigation">
+                <h2 class="border-bottom pb-1 mb-3">Navigation</h2>
+                <p class="my-2"><code class="color-medium italic">&lt;nav&gt;</code></p>
     
+                <h5 class="mt-2">Classes</h5>
+                <div class="ml-1 md-ml-3 mt-1">
+                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-medium">{breakpoint}-</code><code
+                                class="color-primary">horizontal</code></span> <cite class="block mb-2 md-inline">Change
+                            Layout to Horizontal Menu</cite></div>
+                    <div><span style="width: 270px;" class="md-inline-block"><code class="color-medium">{breakpoint}-</code><code
+                                class="color-primary">hoverable</code></span> <cite class="block mb-2 md-inline">Allows
+                            sub menus to open on Hover</cite></div>
+                </div>
     
+                <h4 class="mt-4">Standard Navigation Menu</h4>
+                <div class="show-code">
+                    <nav class="bg-light md-horizontal">
+                        <a href="#navigation">Link 1</a>
+                        <a href="#navigation">Link 2</a>
+                        <a href="#navigation">Link 3</a>
+                        <a href="#navigation">Link 4</a>
+                    </nav>
+                </div>
+    
+                <h4 class="mt-4">Drop down Navigation Menu Right Aligned</h4>
+                <div class="show-code">
+                    <nav class="bg-light md-horizontal md-hoverable">
+                        <ul class="jc-end">
+                            <li>
+                                <a href="#navigation">Link with Dropdown</a>
+                                <label class="toggle btn btn-link btn-toggle circle">
+                                    <input type="checkbox" />
+                                </label>
+                                <ul class="bg-light rounded-bottom md-shadow">
+                                    <li><a href="#navigation">Sub Link 1</a></li>
+                                    <li>
+                                        <a href="#navigation">Sub Link with Menu</a>
+                                        <label class="toggle btn btn-link btn-toggle circle">
+                                            <input type="checkbox" />
+                                        </label>
+                                        <ul class="bg-light rounded">
+                                            <li><a href="#navigation">Sub Sub Link 1</a></li>
+                                            <li><a href="#navigation">Sub Sub Link 2</a></li>
+                                            <li><a href="#navigation">Sub Sub Link 3</a></li>
+                                            <li><a href="#navigation">Sub Sub Link 4</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#navigation">Sub Link 3</a></li>
+                                    <li><a href="#navigation">Sub Link 4</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#navigation">Link 2</a></li>
+                            <li><a href="#navigation">Link 3</a></li>
+                            <li><a href="#navigation">Link 4</a></li>
+                            <li>
+                                <a href="#navigation">Link with Dropdown</a>
+                                <label class="toggle btn btn-link btn-toggle circle">
+                                    <input type="checkbox">
+                                </label>
+                                <ul class="bg-light rounded-bottom md-shadow">
+                                    <li><a href="#navigation">Sub Link 1</a></li>
+                                    <li><a href="#navigation">Sub Link 2</a></li>
+                                    <li>
+                                        <a href="#navigation">Sub Link with Menu</a>
+                                        <label class="toggle btn btn-link btn-toggle circle">
+                                            <input type="checkbox">
+                                        </label>
+                                        <ul class="bg-light rounded">
+                                            <li><a href="#navigation">Sub Sub Link 1</a></li>
+                                            <li><a href="#navigation">Sub Sub Link 2</a></li>
+                                            <li><a href="#navigation">Sub Sub Link 3</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#navigation">Link 5</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </section>
             <!------------------------------------
             ---------       SLIDERS      ---------
@@ -2280,6 +2186,232 @@ $spacing: (
                             });
                         });
                     </script>
+                </div>
+            </section>
+            <!------------------------------------
+            ------------    TABLES    ------------
+            ------------------------------------->
+            <section id="tables">
+                <h2 class="border-bottom pb-1 mb-3">Tables</h2>
+                <div class="show-code">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Size</th>
+                                <th>Color</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tier 1</td>
+                                <td>200</td>
+                                <td>Red</td>
+                                <td class="text-right"><a href="#tables" class="btn px-2 xs">Learn More</a></td>
+                            </tr>
+                            <tr>
+                                <td>Tier 2</td>
+                                <td>400</td>
+                                <td>Blue</td>
+                                <td class="text-right"><a href="#tables" class="btn px-2 xs">Learn More</a></td>
+                            </tr>
+                            <tr>
+                                <td>Tier 3</td>
+                                <td>500</td>
+                                <td>Gold</td>
+                                <td class="text-right"><a href="#tables" class="btn px-2 xs">Learn More</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn mt-4 mx-auto btn-primary" type="button">Signup</button>
+                </div>
+            </section>
+            <!------------------------------------
+            -----------    TOGGLES    ------------
+            ------------------------------------->
+            <section id="toggle">
+                <h2 class="border-bottom pb-1 mb-3">Toggles</h2>
+                <p class="mt-2">Toggles are used to open and close content, menus, etc</p>
+                <p class="mb-2">You can create a toggle group by adding a <code
+                        class="color-medium italic sm">&lt;input type="checkbox" /&gt;</code> inside
+                    a <code class="color-medium italic sm">&lt;label class="toggle"&gt;</code> then followed by your container of
+                    your choice.</p>
+<pre><code class="language-html">&lt;label class="toggle"&gt;Toggle Handle
+    &lt;input type="checkbox" /&gt;
+&lt;/label&gt;
+&lt;p&gt;Toggle Content&lt;/p&gt;</code></pre>
+                <h4 class="mt-4 mb-1">General Toggle Example</h4>
+                <div class="show-code">
+                    <label class="btn toggle">Toggle Content
+                        <input type="checkbox" />
+                    </label>
+                    <p class="border p-1">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                        justo duo
+                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                        sit amet.
+                    </p>
+                </div>
+    
+                <h4 id="toggle-accordion" class="mt-3 mb-2">Collapsing Toggle (Accordion)</h4>
+                <div class="show-code">
+                    <label class="btn btn-link btn-text pl-4 pr-2 toggle btn-toggle text-right w jc-start">
+                        <input type="checkbox" />
+                        <h4>Question 1</h4>
+                    </label>
+                    <div>
+                        <p class="border p-1">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                            et
+                            justo duo
+                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                            dolor
+                            sit amet.
+                        </p>
+                    </div>
+                    <label class="btn btn-link btn-text pl-4 pr-2 toggle btn-toggle text-right w jc-start">
+                        <input type="checkbox" />
+                        <h4>Question 2</h4>
+                    </label>
+                    <div>
+                        <p class="border p-1">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                            et
+                            justo duo
+                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                            dolor
+                            sit amet.
+                        </p>
+                    </div>
+                </div>
+    
+                <h4 id="toggle-overflown" class="mt-3">Overflown Toggle</h4>
+                <p class="mb-2">Add <code class="color-medium italic sm">.collapse</code> to your container</p>
+                <div class="show-code">
+                    <label class="btn pl-2 pr-4 toggle btn-toggle text-left">
+                        <input type="checkbox" />
+                        Toggle Content
+                    </label>
+                    <div class="collapse">
+                        <p class="border p-1 bg-light">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                            rebum.
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="show-code">
+                    <label class="btn pl-4 pr-2 toggle btn-toggle text-right">
+                        <input type="checkbox" />
+                        Toggle Content
+                    </label>
+                    <div class="collapse">
+                        <p class="border p-1 bg-light">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                            rebum.
+                        </p>
+                    </div>
+                </div>
+    
+                <h4 id="toggle-hover" class="mt-3">Activate on Hover</h4>
+                <p class="mb-2">Add the <code class="color-medium italic sm">.hoverable</code> class to the label</p>
+                <p class="mb-2 note">
+                    * To Remove the click option then just remove the checkbox and add the
+                    <code class="color-medium italic sm">.toggle</code> class to the label
+                </p>
+    
+                <div class="show-code">
+                    <label class="btn pr-4 pl-2 toggle btn-toggle hoverable text-left">
+                        Toggle on Hover
+                    </label>
+                    <div class="collapse">
+                        <p class="border p-1 bg-light">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                            rebum.
+                        </p>
+                    </div>
+                </div>
+    
+            </section>
+            <!------------------------------------
+            -----------    TOOLTIPS    -----------
+            ------------------------------------->
+            <section id="tooltip">
+                <h2 class="border-bottom pb-1 mb-3">ToolTips</h2>
+                <p class="mb-2">You can create a tooltip by adding any tag with the class
+                    <code class="color-medium italic sm">tooltip</code> inside a container of your choice.
+                </p>
+                <div class="show-code">
+                    <div>
+                        <button class="btn mb-2">Tooltip Top
+                            <small class="tooltip rounded shadow o-90 p-2 bg-dark color-light mw-300 sm outset-top inset-left text-left"
+                                style="text-transform: none">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor</small>
+                        </button>
+                        <br/>
+                        <button class="btn mb-2">Tooltip Bottom
+                            <small class="tooltip rounded shadow o-90 p-2 bg-dark color-light mw-300 sm outset-bottom inset-left text-left"
+                                style="text-transform: none">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor</small>
+                        </button>
+                        <br/>
+                        <button class="btn mb-2">Tooltip Right
+                            <small class="tooltip rounded shadow o-90 p-1 bg-dark color-light mw-100 sm outset-right inset-right"
+                                style="text-transform: none">Lorem ipsum <br>dolor sit</small>
+                        </button>
+                    </div>
+                    <div class="my-2">
+                        Tooltip Example
+                        <label class="btn sm btn-medium btn-link p-0 circle mt-n1">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
+                            </svg>
+                            <p class="tooltip rounded shadow o-90 p-2 bg-dark color-light mw-300 sm outset-top inset-left text-left">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            </p>
+                        </label>
+                    </div>
+    
+                    <div>
+                        Tooltip with scrollable content (Bottom Left)
+                        <label class="btn sm btn-medium btn-link p-0 circle mt-n1">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
+                            </svg>
+                            <p
+                                class="tooltip rounded shadow o-90 p-2 bg-dark color-light mw-300 sm outset-bottom inset-right text-left mh-200 overflow-auto">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                accusam
+                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                Lorem ipsum dolor sit amet. At vero eos et accusam
+                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                                est Lorem ipsum dolor sit amet.
+                            </p>
+                        </label>
+                    </div>
                 </div>
             </section>
             <!------------------------------------
@@ -2590,7 +2722,7 @@ $spacing: (
     <footer class="bg-dark color-light p-2 center">
         &copy; 2021
     </footer>
-    <script src="prism.js?v=2.2.2"></script>
+    <script src="prism.js?v=2.3.0"></script>
     <script>
         document.querySelectorAll('.show-code').forEach(function (elem) {
             var id = 'toggle-' + Math.random();
@@ -2636,7 +2768,8 @@ $spacing: (
             if (!event.target.classList.contains('btn-toggle') && event.target.tagName !== 'INPUT') {
                 document.getElementById('header-nav').previousSibling.previousSibling.click();
             }
-        })
+        });
+
     </script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
