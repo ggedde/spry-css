@@ -1,5 +1,5 @@
 /*! 
- * SpryCss v2.3.0
+ * SpryCss v2.3.2
  * license: MIT
  * author: https://github.com/ggedde/spry-css
  */:root{--spry-btn-color:#888;--spry-btn-color-text:#fff;--spry-btn-color-opaque:hsla(0,0%,53%,.1);--spry-accent-color:#888;--spry-gap:1.25em;--spry-card-color:transparent;--spry-color-white:#fff;--spry-color-light:#efefef;--spry-color-medium:#888;--spry-color-dark:#444;--spry-color-primary:#1494df;--spry-color-warning:#df8a22;--spry-color-error:#d52929;--spry-color-success:#09c347;--spry-color-text:#566067;--spry-color-transparent:transparent}@media screen and (min-width:40em){:root{--spry-gap:2em}}@media screen and (min-width:80em){:root{--spry-gap:2.25em}}/*! 
