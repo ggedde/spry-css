@@ -65,7 +65,7 @@ label.btn:has(:focus-visible) {
 }
 
 .btn-menu input {
-	outline: none !important;
+	outline: none;
 }
 
 input[type="checkbox"],
@@ -185,7 +185,7 @@ form:disabled {
 
 	input[type="checkbox"] {
 		appearance: none;
-		border    : 0 !important;
+		border    : 0;
 	}
 
 	&:not(.btn-menu) input[type="checkbox"] {
@@ -453,7 +453,7 @@ nav {
 		&::after {
 			border-radius: 3px;
 			bottom       : 0;
-			color        : transparent !important;
+			color        : transparent;
 			display      : block;
 			height       : 2px;
 			margin       : auto;
