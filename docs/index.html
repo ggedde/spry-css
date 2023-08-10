@@ -11,8 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="spry.min.css?v=2.3.2">
-    <link rel="stylesheet" href="prism.css?v=2.3.2">
+    <link rel="stylesheet" href="spry.min.css?v=2.3.3">
+    <link rel="stylesheet" href="prism.css?v=2.3.3">
 </head>
 
 <body id="body" class="overflow-x-hidden">
@@ -378,7 +378,7 @@
 
                 <h2 id="installation" class="border-bottom pb-1 mb-3">Getting Started and Installation</h2>
                 <h4>Using the CDN:</h4>
-                <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css@2.3.2/dist/spry.min.css"&gt;</code></pre>
+                <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css@2.3.3/dist/spry.min.css"&gt;</code></pre>
     
                 <h4 class="mt-4">Using NPM and SCSS:</h4>
                 <pre><code class="language-bash">npm install @ggedde/spry-css</code></pre>
@@ -406,50 +406,51 @@
                 <h4 class="mt-3">Example Variables File:</h4>
                 <pre><code class="language-scss">// Specify each breakpoint size
 $breakpoints: (
-    md: 40rem,
-    lg: 80rem,
+    md: 40em,
+    lg: 80em,
 );
-    
+
 // Specify each breakpoint gap size. &lt;section&gt; tags with get padding based on gap size.
+// You must include one for each Breakpoint otherwise it will result in a Compile Error.
 $gaps: (
-    default: 1.5rem,
-    md: 2rem,
-    lg: 2.25rem,
+    default: 1.25em,
+    md: 2em,
+    lg: 2.25em,
 );
-    
+
 // Specify each color used in color-, bg-, border-, btn-
 $colors: (
     "white":       #ffffff,
     "light":       #efefef,
-    "grey":        #999999,
+    "medium":      #888888,
     "dark":        #444444,
-    "primary":     #0D7FBF,
+    "primary":     #1494df,
     "warning":     #df8a22,
     "error":       #d52929,
-    "success":     #04ad3c,
+    "success":     #09c347,
     "text":        #566067,
     "transparent": transparent,
 );
-    
+
 // Specify each type tag and class like &lt;h3&gt; and .h3 etc.
 $types: (
-    body: ( font-family: Helvetica, font-size: clamp(.8rem, 4vw, 1.0rem), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
-    h1: ( font-size: clamp(1.9rem, 8vw, 3.4rem), font-weight: 400, line-height: 1.20 ),
-    h2: ( font-size: clamp(1.5rem, 7.5vw, 2.7rem), font-weight: 300, line-height: 1.25 ),
-    h3: ( font-size: clamp(1.2rem, 7vw, 2.2rem), font-weight: 300, line-height: 1.30 ),
-    h4: ( font-size: clamp(1rem, 6.5vw, 1.6rem), font-weight: 300, line-height: 1.35 ),
-    h5: ( font-size: clamp(.8rem, 6vw, 1.2rem), font-weight: 300, line-height: 1.5 ),
-    h6: ( font-size: clamp(.7rem, 6vw, 1.0rem), font-weight: 300, line-height: 1.4 ),
+    body: ( font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4 ),
+    h1: ( font-size: 3.4em, font-weight: 400, line-height: 1.20 ),
+    h2: ( font-size: 2.7em, font-weight: 300, line-height: 1.25 ),
+    h3: ( font-size: 2.2em, font-weight: 300, line-height: 1.30 ),
+    h4: ( font-size: 1.6em, font-weight: 300, line-height: 1.35 ),
+    h5: ( font-size: 1.2em, font-weight: 300, line-height: 1.5 ),
+    h6: ( font-size: 1.0em, font-weight: 300, line-height: 1.4 ),
 );
-    
+
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc
 $spacing: (
-    0: 0,
-    1: .5rem, 
-    2: 1rem, 
-    3: 2rem, 
-    4: 3rem,
-    5: 4rem,
+    0: 0em,
+    1: .5em, 
+    2: 1em, 
+    3: 2em, 
+    4: 3em,
+    5: 4em,
 );
 
 // Specify each size that applies font-size and all elements using "em".
@@ -459,7 +460,7 @@ $sizes: (
     md: 100%, 
     sm: 90%, 
     xs: 75%,
-) !default;
+);
 </code></pre>
                 <h4 class="mt-4 mb-1">Accessing Variables in SCSS</h4>
                 <p>You can access variables using <code>map-get()</code></p>
@@ -597,6 +598,15 @@ $sizes: (
                     <p class="color-error">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                     <p class="color-success">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                     <p class="color-medium">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                </div>
+
+                <h4 id="colors-text" class="mt-3">Hover/Focus Colors</h4>
+                <p class="my-1"><code class="color-medium italic sm">.color-hover-{color}</code></p>
+                <div class="show-code">
+                    <a href="#" class="block color-white color-hover-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
+                    <a href="#" class="block color-white color-hover-error">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
+                    <a href="#" class="block color-white color-hover-success">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
+                    <a href="#" class="block color-white color-hover-medium">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                 </div>
     
                 <h4 id="colors-backgrounds" class="mt-3">Background Colors</h4>
@@ -2722,7 +2732,7 @@ $sizes: (
     <footer class="bg-dark color-light p-2 center">
         &copy; 2021
     </footer>
-    <script src="prism.js?v=2.3.2"></script>
+    <script src="prism.js?v=2.3.3"></script>
     <script>
         document.querySelectorAll('.show-code').forEach(function (elem) {
             var id = 'toggle-' + Math.random();

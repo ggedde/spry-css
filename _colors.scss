@@ -15,6 +15,10 @@
 	.color-#{$color_name} {
 		color: var(--spry-color-#{$color_name});
 	}
+	.color-hover-#{$color_name}:hover,
+	.color-hover-#{$color_name}:focus {
+		color: var(--spry-color-#{$color_name});
+	}
 	.border-#{$color_name},
 	.border-#{$color_name}:hover,
 	.border-#{$color_name}:focus,
@@ -47,6 +51,10 @@
 	a.color-#{$color_name}:hover,
 	a.color-#{$color_name}:focus {
 		color: lighten($color_value, 10%);
+	}
+	a.color-hover-#{$color_name}:hover,
+	a.color-hover-#{$color_name}:focus {
+		color: $color_value;
 	}
 }
 

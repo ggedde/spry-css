@@ -64,7 +64,7 @@ label.btn:has(:focus-visible) {
 	outline-offset: 2px;
 }
 
-.btn-menu input {
+.btn-menu input[type="checkbox"] {
 	outline: none;
 }
 
@@ -72,12 +72,6 @@ input[type="checkbox"],
 input[type="radio"] {
 	&:focus-visible:not(:hover) {
 		outline-width: 4px;
-	}
-}
-
-a {
-	&:focus-visible:not(:hover) {
-		border-radius: 2px;
 	}
 }
 
