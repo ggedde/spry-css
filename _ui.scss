@@ -82,11 +82,20 @@ select,
 .alert,
 .list li>a,
 .list li>button {
-	transition     : color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out, filter .1s ease-in-out;
-	border         : 1px solid map-get($colors, 'medium');
-	color          : inherit;
-	border-radius  : 3px;
-	justify-content: center;
+	border            : 1px solid map-get($colors, 'medium');
+	border-radius     : 3px;
+	justify-content   : center;
+}
+
+a:not(.btn),
+.btn,
+input,
+textarea,
+select,
+.alert,
+.list li>a,
+.list li>button {
+	transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out, filter .2s ease-in-out;
 }
 
 .btn,
@@ -109,6 +118,7 @@ select,
 	justify-content: flex-start;
 	margin-bottom  : 1rem;
 	padding        : .5em 1em;
+
 	svg {
 		min-width: 1em;
 	}
@@ -245,16 +255,12 @@ input[type="submit"] {
 	border-color    : var(--spry-btn-color);
 }
 
+a:not(.btn),
 .btn,
+a.btn,
 a.btn:hover,
 a.btn:focus,
 input[type="submit"] {
-	color: var(--spry-btn-color-text);
-
-	&.btn-outline:not([class*="color-"]),
-	&.btn-link:not([class*="color-"]) {
-		color: var(--spry-btn-color-text);
-	}
 
 	&.btn-link {
 		border-color: transparent;
@@ -296,7 +302,7 @@ input[type="submit"] {
 	&:focus-within,
 	&:hover {
 		background-color: var(--spry-btn-color-opaque);
-		transition      : none;
+		// transition      : none;
 	}
 }
 
@@ -555,7 +561,8 @@ nav {
 	nav li>& {
 		position : absolute;
 		right    : .5em;
-		top      : 0;
+		top      : .25em;
+		font-size: 80%;
 	}
 }
 
@@ -655,7 +662,7 @@ textarea {
 
 label {
 	position: relative;
-	display: block;
+	display : block;
 
 	sup,
 	sub {
@@ -665,7 +672,7 @@ label {
 		transition      : all .2s ease-in-out;
 		transform-origin: left;
 		animation       : none;
-		opacity: 0.7;
+		opacity         : 0.7;
 	}
 
 	&.has-textarea {
@@ -859,7 +866,7 @@ article {
 	position        : relative;
 
 	&.border {
-		border-color    : var(--spry-accent-color);
+		border-color: var(--spry-accent-color);
 	}
 
 	>header,
@@ -868,8 +875,8 @@ article {
 		color           : var(--spry-accent-color-text);
 		display         : flex;
 		align-items     : center;
-		padding-top: 1em;
-		padding-bottom: 1em;
+		padding-top     : 1em;
+		padding-bottom  : 1em;
 	}
 
 	>p {

@@ -12,11 +12,11 @@
 		background-color: var(--spry-color-#{$color_name});
 	}
 	.alert-#{$color_name},
-	.color-#{$color_name} {
+	.link-color-#{$color_name} a {
 		color: var(--spry-color-#{$color_name});
 	}
-	.color-hover-#{$color_name}:hover,
-	.color-hover-#{$color_name}:focus {
+	.link-color-hover-#{$color_name} a:not(.btn):not([class*="color-hover-"]):hover,
+	.link-color-hover-#{$color_name} a:not(.btn):not([class*="color-hover-"]):focus {
 		color: var(--spry-color-#{$color_name});
 	}
 	.border-#{$color_name},
@@ -27,13 +27,13 @@
 	.accent-#{$color_name} .border:not([class*="border-"]) {
 		border-color: var(--spry-color-#{$color_name});
 	}
-	.accent-#{$color_name},
-	.btn-#{$color_name} {
-		--spry-btn-color: var(--spry-color-#{$color_name});
-		--spry-btn-color-opaque: #{rgba($color_value, 10%)};
-		// @if $color_name ==light {
+	@if $color_name !=inherit {
+		.accent-#{$color_name},
+		.btn-#{$color_name} {
+			--spry-btn-color: var(--spry-color-#{$color_name});
+			--spry-btn-color-opaque: #{rgba($color_value, 10%)};
 			--spry-btn-color-text: #{map-get($colors, 'white')};
-		// }
+		}
 	}
 	.btn-outline,
 	.btn-link {
@@ -44,17 +44,11 @@
 		@if $color_name !=light {
 			--spry-card-accent-text: white;
 		}
-		tbody tr:hover td {
-			background-color: rgba($color_value, .04);
+		@if $color_name !=inherit {
+			tbody tr:hover td {
+				background-color: rgba($color_value, .04);
+			}
 		}
-	}
-	a.color-#{$color_name}:hover,
-	a.color-#{$color_name}:focus {
-		color: lighten($color_value, 10%);
-	}
-	a.color-hover-#{$color_name}:hover,
-	a.color-hover-#{$color_name}:focus {
-		color: $color_value;
 	}
 }
 
@@ -70,7 +64,8 @@
 		background-color: darken(map-get($colors, 'dark' ), 5%);
 		color: map-get($colors, 'light' );
 	}
-	.btn-dark {
+	.btn-dark,
+	a.btn-dark {
 		--spry-btn-color: #{darken(map-get($colors, 'dark' ), 5%)};
 		--spry-btn-color-text: #{map-get($colors, 'light' )};
 	}
@@ -85,5 +80,35 @@
 	}
 	.btn-dark.btn-link {
 		color: map-get($colors, 'light' );
+	}
+}
+
+.btn,
+a.btn,
+a.btn:hover,
+a.btn:focus,
+input[type="submit"] {
+	color: var(--spry-btn-color-text);
+
+	&.btn-outline:not([class*="color-"]),
+	&.btn-link:not([class*="color-"]) {
+		color: var(--spry-btn-color-text);
+	}
+}
+
+@each $color_name, $color_value in $colors {
+	.color-#{$color_name},
+	a.color-#{$color_name},
+	a.btn.color-#{$color_name},
+	.color-hover-#{$color_name}:hover,
+	.color-hover-#{$color_name}:focus,
+	a.color-hover-#{$color_name}:hover,
+	a.color-hover-#{$color_name}:focus,
+	a.btn.color-hover-#{$color_name}:hover,
+	a.btn.color-hover-#{$color_name}:focus,
+	button.color-#{$color_name},
+	button.color-hover-#{$color_name}:hover,
+	button.color-hover-#{$color_name}:focus {
+		color: var(--spry-color-#{$color_name});
 	}
 }

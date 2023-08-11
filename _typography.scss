@@ -43,7 +43,7 @@ a {
     &:hover,
     &:focus {
         text-decoration: none;
-        color: lighten(map-get($colors, 'primary'), 10%);
+        // color: lighten(map-get($colors, 'primary'), 10%);
     }
 }
 
