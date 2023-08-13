@@ -2118,9 +2118,9 @@ $sizes: (
                         <button class="slider-prev btn btn-link btn-light btn-left circle"></button>
                         <button class="slider-next btn btn-link btn-light btn-right circle"></button>
                         <div class="slider-slides">
-                            <img src="placeholder-wide.jpg">
-                            <img src="placeholder-wide.jpg">
-                            <img src="placeholder-wide.jpg">
+                            <img src="https://via.placeholder.com/640x361">
+                            <img src="https://via.placeholder.com/640x362">
+                            <img src="https://via.placeholder.com/640x363">
                         </div>
                     </div>
                 </div>
@@ -2189,23 +2189,57 @@ $sizes: (
                     have been created.</p>
                 <div class="show-code">
                     <script>
-                        document.querySelectorAll('.slider').forEach(s => {
-                            var a = parseInt(s.getAttribute('data-autoplay'));
-                            var sl = s.querySelector('.slider-slides');
-                            if (a) {
-                                setInterval(() => {
-                                    if (!s.matches(':hover')) {
-                                        s.querySelector('.slider-next').click();
-                                    }
-                                }, a);
-                            }
-                            s.querySelector('.slider-prev').addEventListener('click', () => {
-                                var w = sl.offsetWidth;
-                                sl.scrollBy(sl.scrollLeft ? -w : w * sl.childElementCount, 0);
-                            });
-                            s.querySelector('.slider-next').addEventListener('click', () => {
-                                var w = s.offsetWidth;
-                                ((sl.scrollLeft + 2 + w >= sl.scrollWidth) ? sl.scrollTo(0, 0) : sl.scrollBy(w, 0));
+                        window.addEventListener('load', () => {
+                            document.querySelectorAll('.slider').forEach(slider => {
+                                var autoplay = parseInt(slider.getAttribute('data-autoplay'));
+                                var loop = slider.hasAttribute('data-loop');
+                                var slides = slider.querySelector('.slider-slides');
+                                var slidesWidth = slides.scrollWidth;
+                                var block = slides.innerHTML;
+                                var scrollTimeout = null;
+                                if (loop) {
+                                    slides.innerHTML += block + block;
+                                    slides.scrollTo({left: slidesWidth, behavior: 'instant'});
+                                    slides.addEventListener('scroll', () => {
+                                        slider.setAttribute('data-sliding', '');
+                                        if (scrollTimeout) clearTimeout(scrollTimeout);
+                                        scrollTimeout = setTimeout(function(){
+                                            slider.removeAttribute('data-sliding');
+                                            
+
+                                            var blockWidth = (slides.scrollWidth/3);
+                                            if (slides.scrollLeft < blockWidth) {
+                                                var offset = blockWidth - slides.scrollLeft;
+                                                slides.scrollTo({left: (((blockWidth*2) - offset)), behavior: 'instant'});
+                                            }
+                                            if (slides.scrollLeft >= (blockWidth*2)) {
+                                                var offset = slides.scrollLeft - (blockWidth*2);
+                                                slides.scrollTo({left: blockWidth + offset, behavior: 'instant'});
+                                            }
+
+                                            if (!slides.scrollLeft) {
+                                                slider.setAttribute('data-slider-position', 'start');
+                                            }
+
+
+                                        },100);
+                                    });
+                                } else {
+                                    slider.setAttribute('data-slider-position', 'start');
+                                }
+                                if (autoplay) {
+                                    setInterval(() => {
+                                        if (!slider.matches(':hover')) {
+                                            slider.querySelector('.slider-next').click();
+                                        }
+                                    }, autoplay);
+                                }
+                                slider.querySelector('.slider-prev').addEventListener('click', () => {
+                                    slides.scrollBy(-(slides.offsetWidth), 0);
+                                });
+                                slider.querySelector('.slider-next').addEventListener('click', () => {
+                                    slides.scrollBy(slider.offsetWidth, 0);
+                                });
                             });
                         });
                     </script>
