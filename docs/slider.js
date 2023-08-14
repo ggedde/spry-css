@@ -1,7 +1,7 @@
 /**
  * Spry Slider JS
  *
- * Version: 2.0
+ * Version: 2.0.1
  * Author: gedde.dev
  * Github: https://github.com/ggedde/spry-css
  */
@@ -9,10 +9,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.slider').forEach(slider => {
         var autoplay = parseInt(slider.getAttribute('data-autoplay'));
         var loop = slider.hasAttribute('data-loop');
+        var hover = slider.hasAttribute('data-hover');
         var slides = slider.querySelector('.slider-slides');
         var slidesWidth = slides.scrollWidth;
         var block = slides.innerHTML;
-        var scrollTimeout = null;
+        var scrollTimer = null;
+        var autoplayTimer = null;
+        var resetAutoplay = () => {
+            if (autoplayTimer) clearInterval(autoplayTimer);
+            if (autoplay) {
+                autoplayTimer = setInterval(() => {
+                    if (!hover || !slider.matches(':hover')) {
+                        slider.querySelector('.slider-next').click();
+                    }
+                }, autoplay);
+            }
+        }
         slider.querySelector('.slider-prev').addEventListener('click', () => {
             slides.scrollBy(-(slides.offsetWidth), 0);
         });
@@ -22,9 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
         slides.addEventListener('scroll', () => {
             slider.setAttribute('data-sliding', '');
             slider.removeAttribute('data-position');
-            if (scrollTimeout) clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(function(){
+            if (scrollTimer) clearTimeout(scrollTimer);
+            if (autoplayTimer) clearInterval(autoplayTimer);
+            scrollTimer = setTimeout(function(){
                 slider.removeAttribute('data-sliding');
+                resetAutoplay();
                 if (loop) {
                     var blockWidth = (slides.scrollWidth/3);
                     if (slides.scrollLeft < blockWidth) {
@@ -84,12 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
             slides.dispatchEvent(new CustomEvent('scroll'));
             slider.setAttribute('data-position', 'start');
         }
-        if (autoplay) {
-            setInterval(() => {
-                if (!slider.matches(':hover')) {
-                    slider.querySelector('.slider-next').click();
-                }
-            }, autoplay);
+        resetAutoplay();
+        if (hover) {
+            slider.addEventListener('mouseout', () => {
+                resetAutoplay();
+            });
+            slider.addEventListener('mouseover', () => {
+                if (autoplayTimer) clearInterval(autoplayTimer);
+            });
         }
     });
 });
