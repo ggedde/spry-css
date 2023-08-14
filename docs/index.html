@@ -230,6 +230,9 @@
                                         <li>
                                             <a class="pl-3" href="#sliders-breakpoints">Breakpoints</a>
                                         </li>
+                                        <li>
+                                            <a class="pl-3" href="#slider-js">Javascript</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
@@ -379,6 +382,8 @@
                 <h2 id="installation" class="border-bottom pb-1 mb-3">Getting Started and Installation</h2>
                 <h4>Using the CDN:</h4>
                 <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css@2.3.7/dist/spry.min.css"&gt;</code></pre>
+                <p class="mt-2">JS Only needed for Sliders</p>
+                <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@2.3.7/dist/spry-slider.min.js"&gt;&lt;/script&gt;</code></pre>
     
                 <h4 class="mt-4">Using NPM and SCSS:</h4>
                 <pre><code class="language-bash">npm install @ggedde/spry-css</code></pre>
@@ -2109,6 +2114,9 @@ $sizes: (
                     make them more robust if you like. If your looking for something more robust, you might want to check out <a
                         target="_blank" href="https://swiperjs.com">Swiper</a> or <a target="_blank" href="https://glidejs.com">Glide</a>
                 </p>
+                <h4 id="slider-js" class="mt-3">Required Javascript</h4>
+                <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@2.3.7/dist/spry-slider.min.js"&gt;&lt;/script&gt;</code></pre>
+                <p>View full <a href="slider.js">slider.js</a></p>
                 <p>You can add <code class="color-primary">loading="lazy"</code> to the images, but it may be a little choppy when scrolling on some browsers. The Slider will detect the lazy loading images and pre load them on the next and previous slides. If you want a smooth transition it is best to load all the images initially.</p>
                 <p>Data Options:</p>
                 <div><code class="color-primary">data-autoplay="xxxx"</code> to enable autoplay in miliseconds</div>
@@ -2188,23 +2196,6 @@ $sizes: (
                         </div>
                     </div>
                 </div>
-    
-                <h4 id="slider-js" class="mt-3">Required Javascript</h4>
-                <p>This javascript is only needed once as it will control all sliders on the page.</p>
-                <p class="mb-n2">Minified:</p>
-                <div class="show-code">
-                    <script>
-                    /**
-                     * Spry Slider JS (Minified)
-                     *
-                     * Version: 2.0
-                     * Author: gedde.dev
-                     * Github: https://github.com/ggedde/spry-css
-                     */
-                     document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".slider").forEach(r=>{var t=parseInt(r.getAttribute("data-autoplay")),l=r.hasAttribute("data-loop"),i=r.querySelector(".slider-slides"),e=i.scrollWidth,o=i.innerHTML,a=null;r.querySelector(".slider-prev").addEventListener("click",()=>{i.scrollBy(-i.offsetWidth,0)}),r.querySelector(".slider-next").addEventListener("click",()=>{i.scrollBy(r.offsetWidth,0)}),i.addEventListener("scroll",()=>{r.setAttribute("data-sliding",""),r.removeAttribute("data-position"),a&&clearTimeout(a),a=setTimeout(function(){r.removeAttribute("data-sliding"),l?(e=i.scrollWidth/3,i.scrollLeft<e&&(t=e-i.scrollLeft,i.scrollTo({left:2*e-t,behavior:"instant"})),i.scrollLeft>=2*e&&(t=i.scrollLeft-2*e,i.scrollTo({left:e+t,behavior:"instant"}))):i.scrollLeft?i.scrollLeft+r.offsetWidth>=i.scrollWidth-2&&r.setAttribute("data-position","end"):r.setAttribute("data-position","start"),r.querySelectorAll(".slider-slides > *").forEach(t=>{t.removeAttribute("data-first"),t.removeAttribute("data-last");var e=t.getBoundingClientRect();t.toggleAttribute("data-showing",0<=e.left&&e.right<=(window.innerWidth||document.documentElement.clientWidth))});var t,e=r.querySelectorAll("[data-showing]");e.length&&(e[0].setAttribute("data-first",""),e[e.length-1].setAttribute("data-last",""),(t=function(t,e,r){for(var l=0,i=[];t="next"===e?t.nextSibling:t.previousSibling;)r<=l||!t.nodeType||3===t.nodeType||("IMG"===t.tagName&&"lazy"===t.getAttribute("loading").toLowerCase()?i.push(t.src):t.querySelectorAll('img[loading="lazy"]').forEach(t=>{i.push(t.src)}),l++);i.forEach(t=>{(new Image).src=t})})(r.querySelector("[data-last]"),"next",e.length),t(r.querySelector("[data-last]"),"prev",e.length))},100)}),l?(i.innerHTML+=o+o,i.scrollTo({left:e,behavior:"instant"})):(i.dispatchEvent(new CustomEvent("scroll")),r.setAttribute("data-position","start")),t&&setInterval(()=>{r.matches(":hover")||r.querySelector(".slider-next").click()},t)})});
-                    </script>
-                </div>
-                <p>View full <a href="slider.js">slider.js</a></p>
             </section>
             <!------------------------------------
             ------------    TABLES    ------------
