@@ -48,6 +48,11 @@ pre[class*="language-"] {
 	hyphens: none;
 }
 
+code[class*="language-"].pre-wrap,
+pre[class*="language-"].pre-wrap {
+	white-space: pre-wrap;
+}
+
 .dark code[class*="language-"],
 .dark pre[class*="language-"] {
 	color: white;
