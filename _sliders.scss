@@ -36,7 +36,7 @@
 			justify-content  : center;
 		}
 	}
-	&[data-stop] .slider-slides > * {
+	&[data-snap] .slider-slides > * {
 		scroll-snap-stop: always;
 	}
 	.grid img[loading="lazy"],

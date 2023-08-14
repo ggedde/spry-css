@@ -1,28 +1,34 @@
 /**
  * Spry Slider JS
  *
- * Version: 2.0.1
+ * Version: 2.0.2
  * Author: gedde.dev
  * Github: https://github.com/ggedde/spry-css
  */
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.slider').forEach(slider => {
-        var autoplay = parseInt(slider.getAttribute('data-autoplay'));
+        var play = parseInt(slider.getAttribute('data-play'));
         var loop = slider.hasAttribute('data-loop');
-        var hover = slider.hasAttribute('data-hover');
+        var stop = slider.getAttribute('data-stop');
         var slides = slider.querySelector('.slider-slides');
         var slidesWidth = slides.scrollWidth;
         var block = slides.innerHTML;
         var scrollTimer = null;
-        var autoplayTimer = null;
-        var resetAutoplay = () => {
-            if (autoplayTimer) clearInterval(autoplayTimer);
-            if (autoplay) {
-                autoplayTimer = setInterval(() => {
-                    if (!hover || !slider.matches(':hover')) {
+        var playTimer = null;
+        var isSelecting = false;
+        var resetPlay = () => {
+            if (playTimer) {
+                clearInterval(playTimer);
+                playTimer = null;
+            }
+            if (play) {
+                playTimer = setInterval(() => {
+                    var hasAction = stop === 'action' && (slider.querySelector('a:hover') || slider.querySelector('button:hover'));
+                    var hasHover = stop === 'hover' && slider.matches(':hover');
+                    if (!hasAction && !hasHover) {
                         slider.querySelector('.slider-next').click();
                     }
-                }, autoplay);
+                }, play);
             }
         }
         slider.querySelector('.slider-prev').addEventListener('click', () => {
@@ -35,10 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
             slider.setAttribute('data-sliding', '');
             slider.removeAttribute('data-position');
             if (scrollTimer) clearTimeout(scrollTimer);
-            if (autoplayTimer) clearInterval(autoplayTimer);
+            if (playTimer) {
+                clearInterval(playTimer);
+                playTimer = null;
+            }
             scrollTimer = setTimeout(function(){
                 slider.removeAttribute('data-sliding');
-                resetAutoplay();
+                resetPlay();
                 if (loop) {
                     var blockWidth = (slides.scrollWidth/3);
                     if (slides.scrollLeft < blockWidth) {
@@ -98,14 +107,38 @@ document.addEventListener('DOMContentLoaded', () => {
             slides.dispatchEvent(new CustomEvent('scroll'));
             slider.setAttribute('data-position', 'start');
         }
-        resetAutoplay();
-        if (hover) {
-            slider.addEventListener('mouseout', () => {
-                resetAutoplay();
-            });
-            slider.addEventListener('mouseover', () => {
-                if (autoplayTimer) clearInterval(autoplayTimer);
-            });
+        resetPlay();
+        if (play) {
+            if (stop === 'hover') {
+                slider.addEventListener('mouseout', () => {
+                    resetPlay();
+                });
+                slider.addEventListener('mouseover', () => {
+                    if (playTimer) {
+                        clearInterval(playTimer);
+                        playTimer = null;
+                    }
+                });
+            }
+            if (stop === 'action') {
+                document.addEventListener('selectionchange', () => {
+                    if (isSelecting && document.getSelection().toString()) {
+                        if (playTimer) {
+                            clearInterval(playTimer);
+                            playTimer = null;
+                        }
+                    }
+                    if (!isSelecting && !document.getSelection().toString() && !playTimer) {
+                        resetPlay();
+                    }
+                });
+                slider.addEventListener('selectstart', () => {
+                    isSelecting = true;
+                });
+                slider.addEventListener('mouseup', () => {
+                    isSelecting = false;
+                });
+            }
         }
     });
 });
