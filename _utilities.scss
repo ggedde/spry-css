@@ -97,6 +97,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .no-border{ border: 0 }
 .shadow{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }
 .no-shadow{ box-shadow: none }
+.cover { background-size: cover }
+.contain { background-size: contain }
 .h{ height: 100% }
 .vh{ height: 100vh }
 .w{ width: 100% }
@@ -200,6 +202,8 @@ $size_value in $sizes {
 			&-no-border{ border: 0 }
 			&-shadow{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }
 			&-no-shadow{ box-shadow: none }
+			&-cover { background-size: cover }
+			&-contain { background-size: contain }
 			@for $i from 1 through 12 {
 				&-h-#{$i}00{ height: #{$i}00px; min-height: #{$i}00px; max-height: #{$i}00px }
 				&-mh-#{$i}00{ max-height: #{$i}00px }
