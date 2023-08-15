@@ -17,9 +17,13 @@
 	> .col-fixed {
 		flex: 1;
 	}
-	&.columns-auto > *,
-	> .col-auto {
+	&.columns-auto > *{
 		flex: auto;
+		min-width: auto;
+		max-width: none;
+	}
+	> .col-auto {
+		flex: 0 auto;
 		min-width: auto;
 		max-width: none;
 	}
@@ -64,9 +68,13 @@
 		.row > .#{$breakpoint}-col-fixed {
 			flex: 1;
 		}
-		.row.#{$breakpoint}-columns-auto > *,
-		.row > .#{$breakpoint}-col-auto {
+		.row.#{$breakpoint}-columns-auto > * {
 			flex: auto;
+			min-width: auto;
+			max-width: none;
+		}
+		.row > .#{$breakpoint}-col-auto {
+			flex: 0 auto;
 			min-width: auto;
 			max-width: none;
 		}
