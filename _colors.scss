@@ -31,8 +31,7 @@
 		.accent-#{$color_name},
 		.btn-#{$color_name} {
 			--spry-btn-color: var(--spry-color-#{$color_name});
-			--spry-btn-color-hazy: #{rgba($color_value, 10%)};
-			--spry-btn-color-hazier: #{rgba($color_value, 20%)};
+			--spry-btn-color-rgb: var(--spry-color-#{$color_name}-rgb);
 			--spry-btn-color-text: #{map-get($colors, 'white')};
 		}
 	}
@@ -69,6 +68,7 @@
 	.btn-dark,
 	a.btn-dark {
 		--spry-btn-color: #{darken(map-get($colors, 'dark' ), 5%)};
+		--spry-btn-color-rgb: #{red(darken(map-get($colors, 'dark' ), 5%)), green(darken(map-get($colors, 'dark' ), 5%)), blue(darken(map-get($colors, 'dark' ), 5%))};
 		--spry-btn-color-text: #{map-get($colors, 'light' )};
 	}
 	.btn.btn-dark.btn-outline {

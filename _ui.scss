@@ -297,17 +297,17 @@ input[type="submit"] {
 	&:focus,
 	&:focus-within,
 	&:hover {
-		background-color: var(--spry-btn-color-hazy);
+		background-color: rgba(var(--spry-btn-color-rgb), 0.1);
 	}
 }
 
 .btn.btn-hazy,
 a.btn.btn-hazy {
-	background-color: var(--spry-btn-color-hazy);
+	background-color: rgba(var(--spry-btn-color-rgb), 0.1);
 	&:hover:not(:active),
 	&:focus:not(:active),
 	&:focus-within:not(:active) {
-		background-color: var(--spry-btn-color-hazier);
+		background-color: rgba(var(--spry-btn-color-rgb), 0.2);
 	}
 }
 

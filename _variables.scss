@@ -59,9 +59,8 @@ $sizes: (
 
 :root {
     --spry-btn-color        : #{map-get($colors, 'medium')};
+    --spry-btn-color-rgb    : #{red(map-get($colors, 'medium')), green(map-get($colors, 'medium')), blue(map-get($colors, 'medium'))};
     --spry-btn-color-text   : #{map-get($colors, 'white')};
-    --spry-btn-color-hazy   : #{rgba(map-get($colors, 'medium'), 10%)};
-    --spry-btn-color-hazier : #{rgba(map-get($colors, 'medium'), 20%)};
     --spry-accent-color     : #{map-get($colors, 'medium')};
     --spry-gap              : #{map-get($gaps, 'default')};
     --spry-card-color       : transparent;
@@ -69,6 +68,9 @@ $sizes: (
     @each $color_name,
     $color_value in $colors {
         --spry-color-#{$color_name}: #{$color_value};
+        @if $color_name !=inherit {
+        --spry-color-#{$color_name}-rgb: #{red($color_value), green($color_value), blue($color_value)};
+        }
     }
 
     @each $breakpoint,
