@@ -31,11 +31,13 @@
 		.accent-#{$color_name},
 		.btn-#{$color_name} {
 			--spry-btn-color: var(--spry-color-#{$color_name});
-			--spry-btn-color-opaque: #{rgba($color_value, 10%)};
+			--spry-btn-color-hazy: #{rgba($color_value, 10%)};
+			--spry-btn-color-hazier: #{rgba($color_value, 20%)};
 			--spry-btn-color-text: #{map-get($colors, 'white')};
 		}
 	}
 	.btn-outline,
+	.btn-hazy,
 	.btn-link {
 		--spry-btn-color-text: var(--spry-btn-color);
 	}
@@ -78,6 +80,7 @@
 			color: map-get($colors, 'light' );
 		}
 	}
+	.btn-dark.btn-hazy,
 	.btn-dark.btn-link {
 		color: map-get($colors, 'light' );
 	}
@@ -91,6 +94,7 @@ input[type="submit"] {
 	color: var(--spry-btn-color-text);
 
 	&.btn-outline:not([class*="color-"]),
+	&.btn-hazy:not([class*="color-"]),
 	&.btn-link:not([class*="color-"]) {
 		color: var(--spry-btn-color-text);
 	}

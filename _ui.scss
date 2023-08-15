@@ -82,9 +82,9 @@ select,
 .alert,
 .list li>a,
 .list li>button {
-	border            : 1px solid map-get($colors, 'medium');
-	border-radius     : 3px;
-	justify-content   : center;
+	border         : 1px solid map-get($colors, 'medium');
+	border-radius  : 3px;
+	justify-content: center;
 }
 
 a:not(.btn),
@@ -261,11 +261,6 @@ a.btn,
 a.btn:hover,
 a.btn:focus,
 input[type="submit"] {
-
-	&.btn-link {
-		border-color: transparent;
-	}
-
 	&:hover:not(:active),
 	&:focus:not(:active),
 	&:focus-within:not(:active) {
@@ -293,6 +288,7 @@ input[type="submit"] {
 
 .btn-outline,
 .btn-link,
+.btn-hazy,
 .list li>a,
 .list li>button {
 	background-color: transparent;
@@ -301,15 +297,30 @@ input[type="submit"] {
 	&:focus,
 	&:focus-within,
 	&:hover {
-		background-color: var(--spry-btn-color-opaque);
-		// transition      : none;
+		background-color: var(--spry-btn-color-hazy);
 	}
+}
+
+.btn.btn-hazy,
+a.btn.btn-hazy {
+	background-color: var(--spry-btn-color-hazy);
+	&:hover:not(:active),
+	&:focus:not(:active),
+	&:focus-within:not(:active) {
+		background-color: var(--spry-btn-color-hazier);
+	}
+}
+
+.btn-link:not(.btn-outline),
+.btn-hazy:not(.btn-outline),
+.list li>a,
+.list li>button {
+	border-color: transparent;
 }
 
 .btn-link,
 .list li>a,
 .list li>button {
-	border-color  : transparent;
 	text-transform: capitalize;
 }
 
@@ -480,6 +491,7 @@ nav {
 	}
 
 	&.btn-link,
+	&.btn-hazy,
 	&.btn-outline {
 		input {
 			background-color: var(--spry-btn-color);
@@ -552,6 +564,7 @@ nav {
 	}
 
 	&.btn-link,
+	&.btn-hazy,
 	&.btn-outline {
 		&::after {
 			border-color: var(--spry-btn-color);
@@ -601,6 +614,7 @@ nav {
 	}
 
 	&.btn-link,
+	&.btn-hazy,
 	&.btn-outline {
 
 		&::before,
