@@ -261,6 +261,7 @@ a.btn,
 a.btn:hover,
 a.btn:focus,
 input[type="submit"] {
+
 	&:hover:not(:active),
 	&:focus:not(:active),
 	&:focus-within:not(:active) {
@@ -304,6 +305,7 @@ input[type="submit"] {
 .btn.btn-hazy,
 a.btn.btn-hazy {
 	background-color: rgba(var(--spry-btn-color-rgb), 0.1);
+
 	&:hover:not(:active),
 	&:focus:not(:active),
 	&:focus-within:not(:active) {
@@ -663,6 +665,19 @@ select {
 	background-position-x: 95%;
 	background-position-y: 52%;
 	line-height          : 2.1em;
+	padding-right        : 1.7em;
+
+	option {
+		background: #eee;
+		color     : #333;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		option {
+			background: #333;
+			color     : #eee;
+		}
+	}
 }
 
 textarea {
