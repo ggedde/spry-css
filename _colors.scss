@@ -3,22 +3,26 @@
 */
 .dark {
 	--spry-color-light: #{map-get($colors, 'dark')};
-	--spry-color-dark: #{map-get($colors, 'light')};
-	--spry-color-text: #{map-get($colors, 'light')};
+	--spry-color-dark : #{map-get($colors, 'light')};
+	--spry-color-text : #{map-get($colors, 'light')};
 }
 
-@each $color_name, $color_value in $colors {
+@each $color_name,
+$color_value in $colors {
 	.bg-#{$color_name} {
 		background-color: var(--spry-color-#{$color_name});
 	}
+
 	.alert-#{$color_name},
 	.link-color-#{$color_name} a {
 		color: var(--spry-color-#{$color_name});
 	}
+
 	.link-color-hover-#{$color_name} a:not(.btn):not([class*="color-hover-"]):hover,
 	.link-color-hover-#{$color_name} a:not(.btn):not([class*="color-hover-"]):focus {
 		color: var(--spry-color-#{$color_name});
 	}
+
 	.border-#{$color_name},
 	.border-#{$color_name}:hover,
 	.border-#{$color_name}:focus,
@@ -27,24 +31,30 @@
 	.accent-#{$color_name} .border:not([class*="border-"]) {
 		border-color: var(--spry-color-#{$color_name});
 	}
+
 	@if $color_name !=inherit {
+
 		.accent-#{$color_name},
 		.btn-#{$color_name} {
-			--spry-btn-color: var(--spry-color-#{$color_name});
-			--spry-btn-color-rgb: var(--spry-color-#{$color_name}-rgb);
+			--spry-btn-color     : var(--spry-color-#{$color_name});
+			--spry-btn-color-rgb : var(--spry-color-#{$color_name}-rgb);
 			--spry-btn-color-text: #{map-get($colors, 'white')};
 		}
 	}
+
 	.btn-outline,
 	.btn-hazy,
 	.btn-link {
 		--spry-btn-color-text: var(--spry-btn-color);
 	}
+
 	.accent-#{$color_name} {
 		--spry-accent-color: var(--spry-color-#{$color_name});
+
 		@if $color_name !=light {
 			--spry-card-accent-text: white;
 		}
+
 		@if $color_name !=inherit {
 			tbody tr:hover td {
 				background-color: rgba($color_value, .04);
@@ -54,35 +64,46 @@
 }
 
 .dark {
-	background-color: darken(map-get($colors, 'dark' ), 15%);
-	color: map-get($colors, 'light' );
+	background-color: darken(map-get($colors, 'dark'), 15%);
+	color           : map-get($colors, 'light');
+
 	article,
 	.bg-light {
-		background-color: darken(map-get($colors, 'dark' ), 7%);
-		color: map-get($colors, 'light' );
+		background-color: darken(map-get($colors, 'dark'), 7%);
+		color           : map-get($colors, 'light');
 	}
+
 	.bg-dark {
-		background-color: darken(map-get($colors, 'dark' ), 5%);
-		color: map-get($colors, 'light' );
+		background-color: darken(map-get($colors, 'dark'), 5%);
+		color           : map-get($colors, 'light');
 	}
+
 	.btn-dark,
 	a.btn-dark {
-		--spry-btn-color: #{darken(map-get($colors, 'dark' ), 5%)};
-		--spry-btn-color-rgb: #{red(darken(map-get($colors, 'dark' ), 5%)), green(darken(map-get($colors, 'dark' ), 5%)), blue(darken(map-get($colors, 'dark' ), 5%))};
+		--spry-btn-color     : #{darken(map-get($colors, 'dark' ), 5%)};
+		--spry-btn-color-rgb : #{red(darken(map-get($colors, 'dark' ), 5%)), green(darken(map-get($colors, 'dark' ), 5%)), blue(darken(map-get($colors, 'dark' ), 5%))};
 		--spry-btn-color-text: #{map-get($colors, 'light' )};
 	}
+
 	.btn.btn-dark.btn-outline {
-		border-color: map-get($colors, 'light' );
-		color: map-get($colors, 'light' );
+		border-color: map-get($colors, 'light');
+		color       : map-get($colors, 'light');
+
 		&:hover {
-			background-color: darken(map-get($colors, 'dark' ), 10%);
-			border-color: map-get($colors, 'light' );
-			color: map-get($colors, 'light' );
+			background-color: darken(map-get($colors, 'dark'), 10%);
+			border-color    : map-get($colors, 'light');
+			color           : map-get($colors, 'light');
 		}
 	}
+
 	.btn-dark.btn-hazy,
 	.btn-dark.btn-link {
-		color: map-get($colors, 'light' );
+		color: map-get($colors, 'light');
+	}
+
+	select option {
+		background: #333;
+		color     : #eee;
 	}
 }
 
@@ -100,7 +121,9 @@ input[type="submit"] {
 	}
 }
 
-@each $color_name, $color_value in $colors {
+@each $color_name,
+$color_value in $colors {
+
 	.color-#{$color_name},
 	a.color-#{$color_name},
 	a.btn.color-#{$color_name},
