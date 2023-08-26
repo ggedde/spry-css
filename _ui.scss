@@ -80,6 +80,7 @@ input,
 textarea,
 select,
 .alert,
+article,
 .list li>a,
 .list li>button {
 	border         : 1px solid map-get($colors, 'medium');
@@ -889,13 +890,24 @@ article {
 	border-color    : var(--spry-accent-color);
 	display         : flex;
 	flex-direction  : column;
+	align-items     : flex-start;
+	justify-content : flex-start;
 	gap             : 2em;
 	overflow        : hidden;
 	padding         : 2em;
 	position        : relative;
 
-	&.border {
-		border-color: var(--spry-accent-color);
+	&:has(>header),
+	&:has(>footer) {
+		padding: 0;
+
+		>header,
+		>footer,
+		>p,
+		>div {
+			padding-left : 2rem;
+			padding-right: 2rem;
+		}
 	}
 
 	>header,
@@ -908,9 +920,21 @@ article {
 		padding-bottom  : 1em;
 	}
 
-	>p {
-		flex    : auto;
-		overflow: auto;
+	>footer {
+		margin-top: auto;
+	}
+
+	>header,
+	>footer,
+	>div,
+	>p,
+	>h1,
+	>h2,
+	>h3,
+	>h4,
+	>h5,
+	>h6 {
+		width: 100%;
 	}
 }
 

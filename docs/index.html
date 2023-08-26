@@ -23,7 +23,7 @@
         }
     </script>
     <div class="row">
-        <div class="w-200 index-2">
+        <aside class="mw-200 index-2">
             <div class="fixed index-1 bg-light flex ai-center w py-1">
                 <div class="absolute">
                     <label class="toggle btn lg btn-link btn-menu md-none">
@@ -327,7 +327,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </aside>
         <main class="lg-mw md-ml-n3" onmouseup="if(this.previousSibling.previousSibling.querySelector('.btn-menu input').checked){this.previousSibling.previousSibling.querySelector('.btn-menu input').click();}">
 
             <!------------------------------------
@@ -1029,7 +1029,7 @@ $sizes: (
                         <h3>Lorem ipsum dolor</h3>
                         <img src="placeholder.jpg" />
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod temporinvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                        <a href="#cards" class="btn">Learn More</a>
+                        <a href="#cards">Learn More</a>
                     </article>
                 </div>
     
@@ -1037,41 +1037,39 @@ $sizes: (
                 <div class="show-code">
                     <div class="row">
     
-                        <article class="accent-light shadow color-text border rounded p-0">
+                        <article class="shadow">
                             <header>
-                                <h4 class="px-2">Lorem ipsum dolor</h4>
+                                <h4>Lorem ipsum dolor</h4>
                             </header>
-                            <p class="px-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                                 eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                             </p>
-                            <footer class="px-2">
+                            <footer>
                                 <a href="#cards" class="btn btn-primary sm">Learn More</a>
                             </footer>
                         </article>
     
-                        <article class="accent-light shadow border rounded p-0">
-                            <img src="placeholder.jpg" />
-                            <div class="px-3">
-                                <h3>Lorem ipsum dolor sit amet</h3>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                                <p class="note">- Meta Data</p>
-                            </div>
-                            <footer class="px-2 jc-end g-2">
-                                <a href="#cards" class="btn btn-medium sm">Cancel</a>
-                                <a href="#cards" class="btn btn-primary sm">Submit</a>
-                            </footer>
-                        </article>
-    
-                        <article class="accent-primary border rounded p-0 shadow g-2">
-                            <header class="px-2">
+                        <article class="accent-primary shadow">
+                            <header class="color-white">
                                 <h4>This is the Title</h4>
                             </header>
-                            <p class="px-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                                 eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                             </p>
-                            <footer class="px-2">
+                            <footer>
                                 <a href="#cards" class="btn btn-outline btn-white sm">Learn More</a>
+                            </footer>
+                        </article>
+
+                        <article class="shadow">
+                            <img src="placeholder.jpg" />
+                            <div>
+                                <h4>Lorem Ipsum Dolor</h4>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                                <cite>- Meta Data</cite>
+                            </div>
+                            <footer class="g-2 bg-transparent">
+                                <a href="#cards" class="btn btn-link color-primary sm">Learn More</a>
                             </footer>
                         </article>
     
@@ -1964,7 +1962,7 @@ $sizes: (
                     <div id="login-modal" class="modal blur"
                         onclick="if(event.target.id === 'login-modal') document.getElementById('login-modal').classList.remove('show');">
                         <div class="modal-content mw-400">
-                            <article class="shadow accent-light border rounded p-0">
+                            <article class="shadow accent-light">
                                 <header>
                                     <button type="button" class="btn btn-link btn-medium btn-close circle mr-1 mt-1 inset-top inset-right" onclick="document.getElementById('login-modal').classList.remove('show');"></button>
                                     <h4 class="px-2 pr-3">Lorem ipsum dolor as</h4>
@@ -1994,7 +1992,7 @@ $sizes: (
                         Large Modal</button>
                     <div id="large-modal" class="modal" onclick="if(event.target.id === 'large-modal') this.classList.add('bounce');">
                         <div class="modal-content rounded lg-mw">
-                            <article class="accent-light shadow border rounded p-0">
+                            <article class="accent-light shadow">
                                 <header>
                                     <h4 class="px-2">Lorem ipsum dolor</h4>
                                 </header>

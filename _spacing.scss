@@ -4,13 +4,22 @@
 .m-auto {
 	margin: auto;
 }
-.my-auto {
+.my-auto,
+.mt-auto {
 	margin-top: auto;
+}
+.my-auto,
+.mb-auto {
 	margin-bottom: auto;
 }
-.mx-auto {
-	margin-right: auto;
+.mx-auto,
+.ml-auto {
 	margin-left: auto;
+    display: block;
+}
+.mx-auto,
+.mr-auto {
+	margin-right: auto;
     display: block;
 }
 @each $s, $space in $spacing {
@@ -56,6 +65,27 @@
 }
 @each $breakpoint, $breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
+		.#{$breakpoint}-m-auto {
+			margin: auto;
+		}
+		.#{$breakpoint}-my-auto,
+		.#{$breakpoint}-mt-auto {
+			margin-top: auto;
+		}
+		.#{$breakpoint}-my-auto,
+		.#{$breakpoint}-mb-auto {
+			margin-bottom: auto;
+		}
+		.#{$breakpoint}-mx-auto,
+		.#{$breakpoint}-ml-auto {
+			margin-left: auto;
+			display: block;
+		}
+		.#{$breakpoint}-mx-auto,
+		.#{$breakpoint}-mr-auto {
+			margin-right: auto;
+			display: block;
+		}
 		@each $s, $space in $spacing {
 			@each $prop in (padding, margin) {
 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}-#{$s} {

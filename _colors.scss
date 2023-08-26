@@ -23,12 +23,12 @@ $color_value in $colors {
 		color: var(--spry-color-#{$color_name});
 	}
 
-	.border-#{$color_name},
-	.border-#{$color_name}:hover,
-	.border-#{$color_name}:focus,
 	.alert-#{$color_name},
+	article.accent-#{$color_name},
 	.accent-#{$color_name} .border:not([class*="border-"]):hover,
-	.accent-#{$color_name} .border:not([class*="border-"]) {
+	.accent-#{$color_name} .border:not([class*="border-"]),
+	.alert.border-#{$color_name},
+	[class*="accent-"].border-#{$color_name} {
 		border-color: var(--spry-color-#{$color_name});
 	}
 
@@ -63,14 +63,21 @@ $color_value in $colors {
 	}
 }
 
+article {
+	--spry-accent-color  : var(--spry-color-light);
+	--spry-btn-color     : var(--spry-color-light);
+	--spry-btn-color-text: #{map-get($colors, 'text')};
+}
+
 .dark {
 	background-color: darken(map-get($colors, 'dark'), 15%);
 	color           : map-get($colors, 'light');
 
 	article,
 	.bg-light {
-		background-color: darken(map-get($colors, 'dark'), 7%);
-		color           : map-get($colors, 'light');
+		background-color     : darken(map-get($colors, 'dark'), 7%);
+		color                : map-get($colors, 'light');
+		--spry-btn-color-text: #{map-get($colors, 'light')};
 	}
 
 	.bg-dark {
