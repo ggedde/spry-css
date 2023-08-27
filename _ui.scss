@@ -1,8 +1,8 @@
 /*! 
 * Spry UI
 */
-.btn,
 button,
+[role=button],
 input,
 textarea,
 select,
@@ -32,9 +32,7 @@ button {
 	width: auto;
 }
 
-input,
-textarea,
-select {
+:is(input,textarea,select) {
 
 	&:hover,
 	&:focus {
@@ -46,11 +44,7 @@ select {
 	}
 }
 
-input,
-textarea,
-select,
-a,
-button {
+:is(input,textarea,select,a,button) {
 	outline: none;
 
 	&:focus-visible:not(:hover) {
@@ -64,18 +58,17 @@ label.btn:has(:focus-visible) {
 	outline-offset: 2px;
 }
 
-.btn-menu input[type="checkbox"] {
+button.menu input[type="checkbox"],
+[role=button].menu input[type="checkbox"] {
 	outline: none;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-	&:focus-visible:not(:hover) {
-		outline-width: 4px;
-	}
+:is(input[type="checkbox"],input[type="radio"]):focus-visible:not(:hover) {
+	outline-width: 4px;
 }
 
-.btn,
+button,
+[role=button],
 input,
 textarea,
 select,
@@ -88,8 +81,9 @@ article,
 	justify-content: center;
 }
 
-a:not(.btn),
-.btn,
+a:not([role=button]),
+button,
+[role=button],
 input,
 textarea,
 select,
@@ -99,12 +93,7 @@ select,
 	transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out, filter .2s ease-in-out;
 }
 
-.btn,
-input,
-textarea,
-select,
-.list li>a,
-.list li>button {
+:is(button,[role=button],input,textarea,select,.list li>a,.list li>button) {
 	::placeholder {
 		color: #999;
 	}
@@ -125,24 +114,12 @@ select,
 	}
 
 }
-
-a,
-.btn,
-button,
-input,
-textarea,
-select,
-form {
-
-	&:disabled,
-	&.disabled {
-		opacity       : .6;
-		pointer-events: none;
-	}
+:is(a,button,[role=button],input,textarea,select,form):disabled {
+	opacity       : .6;
+	pointer-events: none;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+:is(input[type="checkbox"],input[type="radio"]) {
 	width         : 1rem;
 	min-height    : 1rem;
 	padding       : 0;
@@ -175,11 +152,7 @@ input[type="radio"] {
 form.disabled,
 form:disabled {
 
-	input,
-	select,
-	textarea,
-	label,
-	button {
+	:is(input,select,textarea,label,button) {
 		pointer-events: none;
 		opacity       : 0.8;
 	}
@@ -193,7 +166,7 @@ form:disabled {
 		border    : 0;
 	}
 
-	&:not(.btn-menu) input[type="checkbox"] {
+	&:not(.menu) input[type="checkbox"] {
 		opacity: 0;
 		width  : 0;
 		height : 0;
@@ -250,78 +223,104 @@ $breakpoint_width in $breakpoints {
 	}
 }
 
-.btn,
-input[type="submit"] {
-	background-color: var(--spry-btn-color);
-	border-color    : var(--spry-btn-color);
+:is(button,[role=button],input[type="submit"]) {
+	cursor           : pointer;
+	background-color : var(--spry-accent-color);
+	border-color     : var(--spry-accent-color);
+	--spry-text-color: #{map-get($colors, 'light')};
+	color            : var(--spry-text-color);
+
+	&.outline,
+	&.hazy,
+	&.link {
+		color: var(--spry-accent-color);
+	}
+
+	&.link,
+	&.hazy {
+		border-color: transparent;
+	}
+
+	&.link,
+	&.outline {
+		background: none;
+
+		&:hover:not(:active),
+		&:focus:not(:active) {
+			background-color: rgba(var(--spry-accent-color-rgb), 0.1);
+		}
+	}
+
+	&.hazy {
+		background-color: rgba(var(--spry-accent-color-rgb), .1);
+
+		&:hover:not(:active),
+		&:focus:not(:active) {
+			background-color: rgba(var(--spry-accent-color-rgb), 0.2);
+		}
+	}
+
+	&.outline {
+		border-width: 1px;
+		border-style: solid;
+		border-color: var(--spry-accent-color);
+	}
 }
 
-a:not(.btn),
-.btn,
-a.btn,
-a.btn:hover,
-a.btn:focus,
-input[type="submit"] {
-
+:is(button,[role=button],a:not([role=button]),input[type="submit"]) {
 	&:hover:not(:active),
-	&:focus:not(:active),
-	&:focus-within:not(:active) {
+	&:focus:not(:active) {
 		filter: brightness(1.15);
 	}
 }
 
-.btn,
+button,
 .list li>a,
-.list li>button,
+[role=button],
 input[type="submit"] {
-	cursor        : pointer;
 	text-align    : center;
 	text-transform: uppercase;
 	width         : auto;
 }
 
 
-.btn svg,
-.list li>a svg,
-.list li>button svg {
+button svg,
+[role=button] svg,
+.list li>a svg {
 	width : 1.5em;
 	height: 1.5em;
 }
 
-.btn-outline,
-.btn-link,
-.btn-hazy,
-.list li>a,
-.list li>button {
+:is(.list li>a,.list li>button) {
 	background-color: transparent;
 
-	&:active,
 	&:focus,
 	&:focus-within,
 	&:hover {
-		background-color: rgba(var(--spry-btn-color-rgb), 0.1);
+		background-color: rgba(var(--spry-accent-color-rgb), 0.1);
 	}
 }
 
-.btn.btn-hazy,
-a.btn.btn-hazy {
-	background-color: rgba(var(--spry-btn-color-rgb), 0.1);
+// .btn.btn-hazy,
+// a.btn.btn-hazy {
+// 	background-color: rgba(var(--spry-btn-color-rgb), 0.1);
 
-	&:hover:not(:active),
-	&:focus:not(:active),
-	&:focus-within:not(:active) {
-		background-color: rgba(var(--spry-btn-color-rgb), 0.2);
-	}
-}
+// 	&:hover:not(:active),
+// 	&:focus:not(:active),
+// 	&:focus-within:not(:active) {
+// 		background-color: rgba(var(--spry-btn-color-rgb), 0.2);
+// 	}
+// }
 
-.btn-link:not(.btn-outline),
-.btn-hazy:not(.btn-outline),
-.list li>a,
-.list li>button {
-	border-color: transparent;
-}
+// .btn-link:not(.outline),
+// .btn-hazy:not(.outline),
+// .list li>a,
+// .list li>button {
+// 	border-color: transparent;
+// }
 
-.btn-link,
+button.link,
+[role=button].link,
 .list li>a,
 .list li>button {
 	text-transform: capitalize;
@@ -338,7 +337,8 @@ nav {
 		display : block;
 		border  : 0;
 
-		>.btn-toggle::after {
+		>button.toggle::after,
+		>[role=button].toggle::after {
 			border-width: 1.7px;
 		}
 	}
@@ -358,7 +358,8 @@ nav {
 			align-items: center;
 			width      : auto;
 
-			>.btn-toggle {
+			>button.toggle,
+			>[role=button].toggle {
 				position      : relative;
 				pointer-events: none;
 				top           : auto;
@@ -391,7 +392,8 @@ nav {
 					align-items: center;
 					width      : auto;
 
-					>.btn-toggle {
+					>button.toggle,
+					>[role=button].toggle {
 						position      : relative;
 						pointer-events: none;
 						top           : auto;
@@ -450,12 +452,13 @@ nav {
 
 
 
-.btn-menu {
+button.menu,
+[role=button].menu {
 	position: relative;
 	padding : 0;
 
 	input {
-		background-color: var(--spry-btn-color-text);
+		background-color: var(--spry-text-color);
 		width           : 1.5em;
 		position        : absolute;
 		border          : 0;
@@ -493,16 +496,16 @@ nav {
 		}
 	}
 
-	&.btn-link,
-	&.btn-hazy,
-	&.btn-outline {
+	&.link,
+	&.hazy,
+	&.outline {
 		input {
-			background-color: var(--spry-btn-color);
+			background-color: var(--spry-accent-color);
 		}
 	}
 }
 
-.btn-menu.has-checked {
+:is(button.menu.has-checked,[role=button].menu.has-checked) {
 	input {
 		transform: rotate(45deg);
 
@@ -519,7 +522,8 @@ nav {
 	}
 }
 
-.btn-menu:has(:checked) {
+button.menu:has(:checked),
+[role=button].menu:has(:checked) {
 	input {
 		transform: rotate(45deg);
 
@@ -536,11 +540,7 @@ nav {
 	}
 }
 
-.btn-up,
-.btn-right,
-.btn-down,
-.btn-left,
-.btn-toggle {
+:is(button.up,[role=button].up,button.right,[role=button].right,button.down,[role=button].down,button.left,[role=button].left,button.toggle,[role=button].toggle) {
 	padding: 0;
 
 	input {
@@ -557,7 +557,7 @@ nav {
 		position     : absolute;
 		inset        : 0;
 		margin       : auto;
-		border       : 2px solid var(--spry-btn-color-text);
+		border       : 2px solid var(--spry-text-color);
 		border-left  : 0;
 		border-bottom: 0;
 		width        : .7em;
@@ -566,11 +566,11 @@ nav {
 		transform    : rotate(135deg) translate(-14%, 16%);
 	}
 
-	&.btn-link,
-	&.btn-hazy,
-	&.btn-outline {
+	&.link,
+	&.hazy,
+	&.outline {
 		&::after {
-			border-color: var(--spry-btn-color);
+			border-color: var(--spry-accent-color);
 		}
 	}
 
@@ -582,24 +582,25 @@ nav {
 	}
 }
 
-.btn-up::after {
+:is(button.up,[role=button].up)::after {
 	transform: rotate(315deg) translate(-14%, 16%);
 }
 
-.btn-right::after {
+:is(button.right,[role=button].right)::after {
 	transform: rotate(45deg) translate(-14%, 16%);
 }
 
-.btn-left::after {
+:is(button.left,[role=button].left)::after {
 	transform: rotate(225deg) translate(-14%, 16%);
 }
 
-.btn-close {
+button.close,
+[role=button].close {
 	padding: 0;
 
 	&::before,
 	&::after {
-		background-color: var(--spry-btn-color-text);
+		background-color: var(--spry-text-color);
 		content         : '';
 		height          : 60%;
 		position        : absolute;
@@ -618,22 +619,16 @@ nav {
 
 	&.btn-link,
 	&.btn-hazy,
-	&.btn-outline {
+	&.outline {
 
 		&::before,
 		&::after {
-			background-color: var(--spry-btn-color);
+			background-color: var(--spry-accent-color);
 		}
 	}
 }
 
-.btn-close,
-.btn-menu,
-.btn-toggle,
-.btn-down,
-.btn-up,
-.btn-left,
-.btn-right {
+:is(button.close,[role=button].close,button.menu,[role=button].menu,button.toggle,[role=button].toggle,button.up,[role=button].up,button.right,[role=button].right,button.down,[role=button].down,button.left,[role=button].left) {
 
 	&.text-right input,
 	&.text-right::before,
@@ -650,13 +645,17 @@ nav {
 	}
 }
 
-.toggle.has-checked.btn-toggle::after,
-.btn-toggle.has-checked::after {
+button.toggle.has-checked::after,
+[role=button].toggle.has-checked::after,
+button.toggle.has-checked::after,
+[role=button].toggle.has-checked::after {
 	transform: rotate(-45deg) translate(-14%, 16%);
 }
 
-.toggle:has(:checked).btn-toggle::after,
-.btn-toggle:has(:checked)::after {
+button.toggle:has(:checked)::after,
+[role=button].toggle:has(:checked)::after,
+button.toggle:has(:checked)::after,
+[role=button].toggle:has(:checked)::after {
 	transform: rotate(-45deg) translate(-14%, 16%);
 }
 
@@ -808,7 +807,7 @@ label {
 		pointer-events       : none;
 		user-select          : none;
 		cursor               : default;
-		--spry-btn-color-text: transparent;
+		--spry-text-color: transparent;
 		color                : transparent;
 
 		&::after {
@@ -839,7 +838,7 @@ table {
 
 	tbody tr {
 		&:hover td {
-			background-color: rgba(map-get($colors, 'primary'), .04);
+			background-color: rgba(var(--spry-accent-color-rgb), .04);
 		}
 
 		td {

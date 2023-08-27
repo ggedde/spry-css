@@ -53,8 +53,8 @@ pre[class*="language-"].pre-wrap {
 	white-space: pre-wrap;
 }
 
-.dark code[class*="language-"],
-.dark pre[class*="language-"] {
+[data-theme-dark] code[class*="language-"],
+[data-theme-dark] pre[class*="language-"] {
 	color: white;
 }
 
@@ -64,8 +64,8 @@ code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-select
 	background: #b3d4fc;
 }
 
-.dark pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-.dark code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+[data-theme-dark] pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+[data-theme-dark] code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	text-shadow: none;
 	background: rgba(150,150,150,0.2);
 }
@@ -76,8 +76,8 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	background: #b3d4fc;
 }
 
-.dark pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-.dark code[class*="language-"]::selection, code[class*="language-"] ::selection {
+[data-theme-dark] pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+[data-theme-dark] code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow: none;
 	background: rgba(150,150,150,0.2);
 }
@@ -94,8 +94,8 @@ pre[class*="language-"] {
 	background: #f5f2f0;
 }
 
-.dark :not(pre) > code[class*="language-"],
-.dark pre[class*="language-"] {
+[data-theme-dark] :not(pre) > code[class*="language-"],
+[data-theme-dark] pre[class*="language-"] {
 	background: #111111;
 }
 

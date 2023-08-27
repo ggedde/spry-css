@@ -1,20 +1,17 @@
 // Specify each breakpoint size
-$breakpoints: (
-    md: 40em,
+$breakpoints: (md: 40em,
     lg: 80em,
 ) !default;
 
 // Specify each breakpoint gap size. <section> tags with get padding based on gap size.
 // You must include one for each Breakpoint otherwise it will result in a Compile Error.
-$gaps: (
-    default: 1.25em,
+$gaps: (default: 1.25em,
     md: 2em,
     lg: 2.25em,
 ) !default;
 
 // Specify each color used in color-, bg-, border-, btn-
-$colors: (
-    "white": #ffffff,
+$colors: ("white": #ffffff,
     "light": #efefef,
     "medium": #888888,
     "dark": #444444,
@@ -28,8 +25,7 @@ $colors: (
 ) !default;
 
 // Specify each type tag and class like <h3> and .h3 etc.
-$types: (
-    body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, color: map-get($colors, 'text'), line-height: 1.4),
+$types: (body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, color: var(--spry-text-color), line-height: 1.4),
     h1: (font-size: 3.4em, font-weight: 400, line-height: 1.20),
     h2: (font-size: 2.7em, font-weight: 300, line-height: 1.25),
     h3: (font-size: 2.2em, font-weight: 300, line-height: 1.30),
@@ -39,8 +35,7 @@ $types: (
 ) !default;
 
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc
-$spacing: (
-    0: 0em,
+$spacing: (0: 0em,
     1: .5em,
     2: 1em,
     3: 2em,
@@ -49,8 +44,7 @@ $spacing: (
 ) !default;
 
 // Specify each size that applies font-size and all elements using "em".
-$sizes: (
-    xl: 140%,
+$sizes: (xl: 140%,
     lg: 120%,
     md: 100%,
     sm: 90%,
@@ -58,18 +52,17 @@ $sizes: (
 ) !default;
 
 :root {
-    --spry-btn-color        : #{map-get($colors, 'medium')};
-    --spry-btn-color-rgb    : #{red(map-get($colors, 'medium')), green(map-get($colors, 'medium')), blue(map-get($colors, 'medium'))};
-    --spry-btn-color-text   : #{map-get($colors, 'white')};
     --spry-accent-color     : #{map-get($colors, 'medium')};
+    --spry-accent-color-rgb : #{red(map-get($colors, 'medium')), green(map-get($colors, 'medium')), blue(map-get($colors, 'medium'))};
+    --spry-text-color       : #{map-get($colors, 'text')};
     --spry-gap              : #{map-get($gaps, 'default')};
-    --spry-card-color       : transparent;
 
     @each $color_name,
     $color_value in $colors {
         --spry-color-#{$color_name}: #{$color_value};
+
         @if $color_name !=inherit {
-        --spry-color-#{$color_name}-rgb: #{red($color_value), green($color_value), blue($color_value)};
+            --spry-color-#{$color_name}-rgb: #{red($color_value), green($color_value), blue($color_value)};
         }
     }
 

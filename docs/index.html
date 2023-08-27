@@ -11,15 +11,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="spry.min.css?v=2.3.16">
+    <link rel="stylesheet" href="spry.min.css?v=3.0.0">
     <script defer src="slider.js?v=2.0.0"></script>
-    <link rel="stylesheet" href="prism.css?v=2.3.16">
+    <link rel="stylesheet" href="prism.css?v=3.0.0">
 </head>
 
 <body id="body" class="overflow-x-hidden">
     <script>
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.classList.add('dark');
+            document.body.setAttribute('data-theme-dark', '');
         }
     </script>
     <div class="row">
@@ -39,7 +39,7 @@
                                         </svg>
                                         Get Started
                                     </a>
-                                    <label class="toggle btn btn-link btn-toggle circle">
+                                    <label role="button" class="toggle link circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -82,7 +82,7 @@
                                         </svg>
                                         Buttons
                                     </a>
-                                    <label class="toggle btn btn-link btn-toggle circle">
+                                    <label role="button" class="toggle link circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -124,7 +124,7 @@
                                         </svg>
                                         Forms
                                     </a>
-                                    <label class="toggle btn btn-link btn-toggle circle">
+                                    <label role="button" class="toggle link circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -146,7 +146,7 @@
                                         </svg>
                                         Grid
                                     </a>
-                                    <label class="toggle btn btn-link btn-toggle circle">
+                                    <label role="button" class="toggle link circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -221,7 +221,7 @@
                                         </svg>
                                         Sliders
                                     </a>
-                                    <label class="toggle btn btn-link btn-toggle circle">
+                                    <label role="button" class="toggle link circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -251,7 +251,7 @@
                                         </svg>
                                         Toggles
                                     </a>
-                                    <label class="toggle btn btn-link btn-toggle circle">
+                                    <label role="button" class="toggle link circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -284,7 +284,7 @@
                                         </svg>
                                         Utilities
                                     </a>
-                                    <label class="toggle btn btn-link btn-toggle circle">
+                                    <label role="button" class="toggle link circle">
                                         <input type="checkbox">
                                     </label>
                                     <ul class="sm">
@@ -319,7 +319,7 @@
                     <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases" alt="Release">
                 </h5>
                 <div class="center ml-2 flex ai-center">
-                    <button class="btn btn-outline circle p-0 xs mr-2" onclick="document.getElementById('body').classList.toggle('dark');">
+                    <button class="outline circle p-0 xs mr-2" onclick="document.getElementById('body').toggleAttribute('data-theme-dark');">
                         <svg viewBox="0 0 24 24">
                             <path fill="currentColor"
                                 d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" />
@@ -382,9 +382,9 @@
 
                 <h2 id="installation" class="border-bottom pb-1 mb-3">Getting Started and Installation</h2>
                 <h4>Using the CDN:</h4>
-                <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css@2.3.16/dist/spry.min.css"&gt;</code></pre>
+                <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0/dist/spry.min.css"&gt;</code></pre>
                 <p class="mt-2">JS Only needed for Sliders</p>
-                <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@2.3.16/dist/spry-slider.min.js"&gt;&lt;/script&gt;</code></pre>
+                <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0/dist/spry-slider.min.js"&gt;&lt;/script&gt;</code></pre>
     
                 <h4 class="mt-4">Using NPM and SCSS:</h4>
                 <pre><code class="language-bash">npm install @ggedde/spry-css</code></pre>
@@ -600,25 +600,26 @@ $sizes: (
                 <h4 id="colors-text" class="mt-3">Text Colors</h4>
                 <p class="my-1"><code class="color-medium italic sm">.color-{color}</code></p>
                 <div class="show-code">
-                    <p class="color-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                    <p class="color-error">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                    <p class="color-success">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                    <p class="color-medium">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="error">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="success">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="medium">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="contrast">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                 </div>
 
                 <h4 id="colors-text" class="mt-3">Hover/Focus Colors</h4>
-                <p class="my-1"><code class="color-medium italic sm">.color-hover-{color}</code></p>
+                <p class="my-1"><code class="medium italic sm">.hover-{color}</code></p>
                 <div class="show-code">
-                    <a href="#" class="block color-white color-hover-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
-                    <a href="#" class="block color-white color-hover-error">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
-                    <a href="#" class="block color-white color-hover-success">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
-                    <a href="#" class="block color-white color-hover-medium">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
+                    <a href="#" class="block hover-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
+                    <a href="#" class="block hover-error">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
+                    <a href="#" class="block hover-success">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
+                    <a href="#" class="block hover-medium">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                 </div>
 
                 <h4 id="colors-text" class="mt-3">Change Child Link Colors and Link Hover Colors</h4>
-                <p class="my-1"><code class="color-medium italic sm">.link-color-{color}</code> <code class="color-medium italic sm">.link-color-hover-{color}</code></p>
+                <p class="my-1"><code class="medium italic sm">.link-{color}</code> <code class="medium italic sm">.link-hover-{color}</code></p>
                 <div class="show-code">
-                    <div class="link-color-success link-color-hover-error grid g-1">
+                    <div class="link-success link-hover-error grid g-1">
                         <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                         <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                         <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
@@ -639,9 +640,9 @@ $sizes: (
                 </div>
     
                 <h4 id="colors-buttons" class="mt-3">Button Colors</h4>
-                <p class="my-1"><code class="color-medium italic sm">.btn .btn-{color}</code></p>
+                <p class="my-1"><code class="color-medium italic sm">.{color}</code></p>
                 <div class="show-code">
-                    <button class="btn btn-primary">Lorem Ipsum</button>
+                    <button class="primary">Lorem Ipsum</button>
                 </div>
     
                 <h4 id="colors-accents" class="mt-3">Accent Colors</h4>
@@ -650,8 +651,8 @@ $sizes: (
                 <div><code class="color-medium italic sm">.accent-{color}</code></div>
                 <div class="show-code">
                     <div class="accent-error p-2 mt-1 border">
-                        <button class="btn mt-2">Lorem Ipsum</button>
-                        <button class="btn btn-outline mt-2">Lorem Ipsum</button>
+                        <button class="mt-2">Lorem Ipsum</button>
+                        <button class="outline mt-2">Lorem Ipsum</button>
                         <p class="border my-2 p-1 rounded">Text with Border</p>
                         <div class="mt-2">
                             Inputs
@@ -669,15 +670,15 @@ $sizes: (
                 </div>
     
                 <h4 id="dark-mode" class="mt-3">Dark Mode</h4>
-                <div class="sm mb-1">You can add the class <code class="color-medium italic sm">.dark</code> to any
+                <div class="sm mb-1">You can add the data attribute <code class="color-medium italic sm">data-theme-dark</code> to any
                     element to invert the "light" and "dark" color names.</div>
                 <div class="sm mb-1">* This means that you will need to use "light" and "dark" color values in your
                     $color variables.</div>
                 <div class="sm mb-1">* This will apply to all child elements.</div>
                 <div class="show-code">
-                    <div class="dark p-2 mt-1 border accent-primary">
-                        <button class="btn mt-2">Lorem Ipsum</button>
-                        <button class="btn btn-outline mt-2">Lorem Ipsum</button>
+                    <div data-theme-dark class="p-2 mt-1 border accent-primary">
+                        <button class="mt-2">Lorem Ipsum</button>
+                        <button class="outline mt-2">Lorem Ipsum</button>
                         <p class="border my-2 p-1 rounded">Text with Border</p>
                         <div class="mt-2">
                             Inputs
@@ -788,7 +789,7 @@ $sizes: (
                     <div class="alert alert-error lg">
                         <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
-                        <button class="btn btn-close btn-link xs circle inset-right inset-top" onclick="this.parentElement.remove();"></button>
+                        <button class="close link xs circle inset-right inset-top" onclick="this.parentElement.remove();"></button>
                     </div>
                 </div>
 
@@ -803,7 +804,7 @@ $sizes: (
                                     <h5 class="bold">Error!</h5>
                                     Please Try again.
                                 </div>
-                                <button class="btn btn-close btn-link btn-white xs circle inset-right inset-top m-1" onclick="document.getElementById('alert-modal').classList.remove('show');"></button>
+                                <button class="close link white xs circle inset-right inset-top m-1" onclick="document.getElementById('alert-modal').classList.remove('show');"></button>
                             </div>
                         </div>
                     </div>
@@ -833,146 +834,148 @@ $sizes: (
     
                 <h2 class="border-bottom pb-1 mb-3">Buttons</h2>
                 <div class="show-code">
-                    <button class="btn">Default</button>
-                    <button class="btn btn-primary">Primary</button>
-                    <button class="btn btn-error">Error</button>
-                    <button class="btn btn-success">Success</button>
-                    <button class="btn btn-warning">Warning</button>
-                    <button class="btn btn-light color-text">Light</button>
-                    <a href="#buttons" class="btn btn-medium">Medium</a>
-                    <a href="#buttons" class="btn btn-dark">Dark</a>
+                    <button>Default</button>
+                    <button class="primary">Primary</button>
+                    <button class="error">Error</button>
+                    <button class="success">Success</button>
+                    <button class="warning">Warning</button>
+                    <button class="light">Light</button>
+                    <a href="#" onclick="event.preventDefault()" role="button">Medium</a>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="dark">Dark</a>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="contrast">Contrast</a>
                 </div>
     
                 <h4 id="buttons-outline" class="mt-4">Outline</h4>
                 <div class="show-code">
-                    <button class="btn btn-outline">Default</button>
-                    <button class="btn btn-outline btn-primary">Primary</button>
-                    <button class="btn btn-outline btn-error">Error</button>
-                    <button class="btn btn-outline btn-success">Success</button>
-                    <button class="btn btn-outline btn-warning">Warning</button>
-                    <button class="btn btn-outline btn-light color-text">Light</button>
-                    <button class="btn btn-outline btn-medium">Grey</button>
-                    <a href="#buttons" class="btn btn-outline btn-dark">Dark</a>
+                    <button class="outline">Default</button>
+                    <button class="outline primary">Primary</button>
+                    <button class="outline error">Error</button>
+                    <button class="outline success">Success</button>
+                    <button class="outline warning">Warning</button>
+                    <button class="outline light">Light</button>
+                    <button class="outline medium">Grey</button>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="outline dark">Dark</a>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="outline contrast">Dark</a>
                 </div>
 
                 <h4 id="buttons-link" class="mt-4">Hazy</h4>
                 <div class="show-code">
-                    <button class="btn btn-hazy">Default</button>
-                    <button class="btn btn-hazy btn-primary">Primary</button>
-                    <button class="btn btn-hazy btn-error">Error</button>
-                    <a href="#buttons-link" class="btn btn-hazy btn-success">Success</a>
-                    <a href="#buttons-link" class="btn btn-hazy btn-light color-text">Light</a>
-                    <a href="#buttons-link" class="btn btn-hazy btn-medium">Grey</a>
-                    <a href="#buttons-link" class="btn btn-hazy btn-dark">Dark</a>
+                    <button class="hazy">Default</button>
+                    <button class="hazy primary">Primary</button>
+                    <button class="hazy error">Error</button>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="hazy success">Success</a>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="hazy light">Light</a>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="hazy medium">Grey</a>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="hazy dark">Dark</a>
                 </div>
     
                 <h4 id="buttons-link" class="mt-4">Link</h4>
                 <div class="show-code">
-                    <a href="#buttons-link" class="btn btn-link">Default</a>
-                    <a href="#buttons-link" class="btn btn-link btn-primary">Primary</a>
-                    <a href="#buttons-link" class="btn btn-link btn-error">Error</a>
-                    <a href="#buttons-link" class="btn btn-link btn-success">Success</a>
-                    <a href="#buttons-link" class="btn btn-link btn-light color-text">Light</a>
-                    <a href="#buttons-link" class="btn btn-link btn-medium">Grey</a>
-                    <a href="#buttons-link" class="btn btn-link btn-dark">Dark</a>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="link">Default</a>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="link primary">Primary</a>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="link error">Error</a>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="link success">Success</a>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="link light">Light</a>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="link medium">Grey</a>
+                    <a href="#" onclick="event.preventDefault()" role="button" class="link dark">Dark</a>
                 </div>
     
                 <h4 id="buttons-sizes" class="mt-4">Large</h4>
                 <div class="show-code">
-                    <button class="btn lg px-4">Primary</button>
-                    <button class="btn btn-medium lg px-4">Grey</button>
-                    <button class="btn btn-dark lg px-4">Dark</button>
+                    <button class="lg px-4">Primary</button>
+                    <button class="medium lg px-4">Grey</button>
+                    <button class="dark lg px-4">Dark</button>
                 </div>
     
                 <h4 class="mt-4">Small</h4>
                 <div class="show-code">
-                    <button class="btn sm">Primary</button>
-                    <button class="btn btn-medium sm">Grey</button>
-                    <button class="btn btn-dark sm">Dark</button>
+                    <button class="sm">Primary</button>
+                    <button class="medium sm">Grey</button>
+                    <button class="dark sm">Dark</button>
                 </div>
     
                 <h4 class="mt-4">Extra Small</h4>
                 <div class="show-code">
-                    <button class="btn xs">Primary</button>
-                    <button class="btn btn-medium xs">Grey</button>
-                    <button class="btn btn-dark xs">Dark</button>
+                    <button class="xs">Primary</button>
+                    <button class="medium xs">Grey</button>
+                    <button class="dark xs">Dark</button>
                 </div>
     
                 <h4 id="buttons-custom" class="mt-4 mb-1">Custom Classes</h4>
                 <div class="show-code">
                     <p class="lg">
-                        <button class="btn btn-close"></button>
-                        <label class="btn btn-toggle">
+                        <button class="close"></button>
+                        <label role="button" class="toggle">
                             <input type="checkbox">
                         </label>
-                        <button class="btn btn-left"></button>
-                        <button class="btn btn-up"></button>
-                        <button class="btn btn-right"></button>
-                        <label class="btn btn-menu">
+                        <button class="left"></button>
+                        <button class="up"></button>
+                        <button class="right"></button>
+                        <label role="button" class="menu">
                             <input type="checkbox">
                         </label>
-                        <button class="btn btn-close btn-link circle"></button>
-                        <label class="btn btn-toggle btn-link circle">
+                        <button class="close link circle"></button>
+                        <label role="button" class="toggle link circle">
                             <input type="checkbox">
                         </label>
-                        <button class="btn btn-left btn-link circle"></button>
-                        <button class="btn btn-up btn-link circle"></button>
-                        <button class="btn btn-right btn-link circle"></button>
-                        <label class="btn btn-menu btn-link circle">
-                            <input type="checkbox">
-                        </label>
-                    </p>
-                    <p>
-                        <button class="btn btn-close"></button>
-                        <label class="btn btn-toggle">
-                            <input type="checkbox">
-                        </label>
-                        <button class="btn btn-left"></button>
-                        <button class="btn btn-up"></button>
-                        <button class="btn btn-right"></button>
-                        <label class="btn btn-menu">
-                            <input type="checkbox">
-                        </label>
-                        <button class="btn btn-close btn-link circle"></button>
-                        <label class="btn btn-toggle btn-link circle">
-                            <input type="checkbox">
-                        </label>
-                        <button class="btn btn-left btn-link circle"></button>
-                        <button class="btn btn-up btn-link circle"></button>
-                        <button class="btn btn-right btn-link circle"></button>
-                        <label class="btn btn-menu btn-link circle">
+                        <button class="left link circle"></button>
+                        <button class="up link circle"></button>
+                        <button class="right link circle"></button>
+                        <label role="button" class="menu link circle">
                             <input type="checkbox">
                         </label>
                     </p>
                     <p>
-                        <button class="btn sm btn-error btn-close"></button>
-                        <label class="btn sm btn-error btn-toggle">
+                        <button class="close"></button>
+                        <label role="button" class="toggle">
                             <input type="checkbox">
                         </label>
-                        <label class="btn sm btn-error btn-menu">
+                        <button class="left"></button>
+                        <button class="up"></button>
+                        <button class="right"></button>
+                        <label role="button" class="menu">
                             <input type="checkbox">
                         </label>
-                        <button class="btn sm btn-close btn-link btn-error circle"></button>
-                        <label class="btn sm btn-error btn-toggle btn-link circle">
+                        <button class="close link circle"></button>
+                        <label role="button" class="toggle link circle">
                             <input type="checkbox">
                         </label>
-                        <label class="btn sm btn-error btn-menu btn-link circle">
+                        <button class="left link circle"></button>
+                        <button class="up link circle"></button>
+                        <button class="right link circle"></button>
+                        <label role="button" class="menu link circle">
                             <input type="checkbox">
                         </label>
                     </p>
                     <p>
-                        <button class="btn xs btn-medium btn-close"></button>
-                        <label class="btn xs btn-medium btn-toggle">
+                        <button class="sm error close"></button>
+                        <label class="sm error toggle">
                             <input type="checkbox">
                         </label>
-                        <label class="btn xs btn-medium btn-menu">
+                        <label class="sm error menu">
                             <input type="checkbox">
                         </label>
-                        <button class="btn xs btn-close btn-link btn-medium circle"></button>
-                        <label class="btn xs btn-medium btn-toggle btn-link circle">
+                        <button class="sm close link error circle"></button>
+                        <label class="sm error toggle link circle">
                             <input type="checkbox">
                         </label>
-                        <label class="btn xs btn-medium btn-menu btn-link circle">
+                        <label class="sm error menu link circle">
+                            <input type="checkbox">
+                        </label>
+                    </p>
+                    <p>
+                        <button class="xs medium close"></button>
+                        <label class="xs medium toggle">
+                            <input type="checkbox">
+                        </label>
+                        <label class="xs medium menu">
+                            <input type="checkbox">
+                        </label>
+                        <button class="xs close link medium circle"></button>
+                        <label class="xs medium toggle link circle">
+                            <input type="checkbox">
+                        </label>
+                        <label class="xs medium menu link circle">
                             <input type="checkbox">
                         </label>
                     </p>
@@ -981,29 +984,29 @@ $sizes: (
                 <h4 id="buttons-icons" class="mt-4">With Icons</h4>
                 <div class="show-code">
                     <div class="flex flex-wrap g-2 ai-center">
-                        <button class="btn btn-primary lg">After
+                        <button class="primary lg">After
                             <svg class="ml-3" viewBox="0 0 24 24">
                                 <path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
                             </svg>
                         </button>
-                        <button class="btn btn-success p-0 lg">
+                        <button class="success p-0 lg">
                             <svg viewBox="0 0 24 24" width="24" height="24">
                                 <path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
                             </svg>
                         </button>
-                        <button class="btn pl-2">
+                        <button class="pl-2">
                             <svg class="mr-2" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
                             </svg>Before
                         </button>
-                        <button class="btn btn-primary btn-outline circle p-0">
+                        <button class="primary outline circle p-0">
                             <svg viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
                             </svg>
                         </button>
-                        <button class="btn btn-outline sm border-transparent bg-transparent p-0 circle">
+                        <button class="outline sm border-transparent bg-transparent p-0 circle">
                             <svg viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12S17.5 2 12 2M7.7 15.5L7 14.2L11 11.9V7H12.5V12.8L7.7 15.5Z" />
@@ -1014,7 +1017,7 @@ $sizes: (
     
                 <h4 id="buttons-loader" class="mt-4">With Loader</h4>
                 <div class="show-code">
-                    <button class="btn loader" type="button"
+                    <button class="loader" type="button"
                         onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">Click
                         for Loading</button>
                 </div>
@@ -1545,7 +1548,7 @@ $sizes: (
                             </li>
                             <li>
                                 <a href="#lists">List Item 2</a>
-                                <label class="toggle btn btn-link btn-toggle circle">
+                                <label role="button" class="toggle link circle">
                                     <input type="checkbox">
                                 </label>
                                 <ul class="sm">
@@ -1562,7 +1565,7 @@ $sizes: (
                             </li>
                             <li>
                                 <a href="#lists">List Item 3</a>
-                                <label class="toggle btn btn-link btn-toggle circle">
+                                <label role="button" class="toggle link circle">
                                     <input type="checkbox">
                                 </label>
                                 <ul>
@@ -1579,7 +1582,7 @@ $sizes: (
                             </li>
                             <li>
                                 <a href="#lists" class="pr-4">List Item 4 With a very long text</a>
-                                <label class="toggle btn btn-link btn-toggle circle">
+                                <label role="button" class="toggle link circle">
                                     <input type="checkbox">
                                 </label>
                                 <ul>
@@ -1596,7 +1599,7 @@ $sizes: (
                             </li>
                             <li>
                                 <a href="#lists" class="truncate pr-4">List Item 5 Truncated Text</a>
-                                <label class="toggle btn btn-link btn-toggle circle">
+                                <label role="button" class="toggle link circle">
                                     <input type="checkbox">
                                 </label>
                                 <ul>
@@ -1623,7 +1626,7 @@ $sizes: (
                             <hr class="bg-primary my-0 mx-1" />
                             <li class="sm">
                                 <a href="#lists">Small List Item 1</a>
-                                <label class="toggle btn btn-link btn-toggle circle">
+                                <label role="button" class="toggle link circle">
                                     <input type="checkbox">
                                 </label>
                                 <ul>
@@ -1632,7 +1635,7 @@ $sizes: (
                                     </li>
                                     <li>
                                         <a href="#lists">Sub Link 2</a>
-                                        <label class="toggle btn btn-link btn-toggle circle">
+                                        <label role="button" class="toggle link circle">
                                             <input type="checkbox">
                                         </label>
                                         <ul>
@@ -1672,7 +1675,7 @@ $sizes: (
                                     </li>
                                     <li>
                                         <a href="#lists">Sub Link 2</a>
-                                        <label class="toggle btn btn-link btn-toggle circle">
+                                        <label role="button" class="toggle link circle">
                                             <input type="checkbox">
                                         </label>
                                         <ul class="bg-light rounded">
@@ -1713,7 +1716,7 @@ $sizes: (
                                     </li>
                                     <li>
                                         <a href="#lists">Sub Link 3</a>
-                                        <label class="toggle btn btn-link btn-toggle circle">
+                                        <label role="button" class="toggle link circle">
                                             <input type="checkbox">
                                         </label>
                                         <ul class="bg-light left rounded">
@@ -1787,7 +1790,7 @@ $sizes: (
                     <div>
                         <h5 class="mt-3">Left Align</h4>
                             <div class="show-code">
-                                <label class="toggle btn btn-link btn-menu">
+                                <label role="button" class="toggle link menu">
                                     <input type="checkbox" />
                                 </label>
                                 <div class="collapse">
@@ -1798,7 +1801,7 @@ $sizes: (
                                             </li>
                                             <li>
                                                 <a href="#menus" class="pr-3">Link 2 with a very long text</a>
-                                                <label class="toggle btn btn-link btn-toggle circle">
+                                                <label role="button" class="toggle link circle">
                                                     <input type="checkbox">
                                                 </label>
                                                 <ul class="bg-light rounded">
@@ -1835,7 +1838,7 @@ $sizes: (
                                             </li>
                                             <li>
                                                 <a href="#menus">Link 2</a>
-                                                <label class="toggle btn btn-link btn-toggle circle">
+                                                <label role="button" class="toggle link circle">
                                                     <input type="checkbox">
                                                 </label>
                                                 <ul class="bg-light left rounded">
@@ -2113,14 +2116,14 @@ $sizes: (
                         <ul class="jc-end">
                             <li>
                                 <a href="#navigation">Link with Dropdown</a>
-                                <label class="toggle btn btn-link btn-toggle circle">
+                                <label role="button" class="toggle link circle">
                                     <input type="checkbox" />
                                 </label>
                                 <ul class="bg-light rounded-bottom md-shadow">
                                     <li><a href="#navigation">Sub Link 1</a></li>
                                     <li>
                                         <a href="#navigation">Sub Link with Menu</a>
-                                        <label class="toggle btn btn-link btn-toggle circle">
+                                        <label role="button" class="toggle link circle">
                                             <input type="checkbox" />
                                         </label>
                                         <ul class="bg-light rounded">
@@ -2139,7 +2142,7 @@ $sizes: (
                             <li><a href="#navigation">Link 4</a></li>
                             <li>
                                 <a href="#navigation">Link with Dropdown</a>
-                                <label class="toggle btn btn-link btn-toggle circle">
+                                <label role="button" class="toggle link circle">
                                     <input type="checkbox">
                                 </label>
                                 <ul class="bg-light rounded-bottom md-shadow">
@@ -2147,7 +2150,7 @@ $sizes: (
                                     <li><a href="#navigation">Sub Link 2</a></li>
                                     <li>
                                         <a href="#navigation">Sub Link with Menu</a>
-                                        <label class="toggle btn btn-link btn-toggle circle">
+                                        <label role="button" class="toggle link circle">
                                             <input type="checkbox">
                                         </label>
                                         <ul class="bg-light rounded">
@@ -2173,7 +2176,7 @@ $sizes: (
                         target="_blank" href="https://swiperjs.com">Swiper</a> or <a target="_blank" href="https://glidejs.com">Glide</a>
                 </p>
                 <h4 id="slider-js" class="mt-3">Required Javascript</h4>
-                <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@2.3.16/dist/spry-slider.min.js"&gt;&lt;/script&gt;</code></pre>
+                <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0/dist/spry-slider.min.js"&gt;&lt;/script&gt;</code></pre>
                 <p>View full <a href="slider.js">slider.js</a></p>
                 <p>You can add <code class="color-primary">loading="lazy"</code> to the images, but it may be a little choppy when scrolling on some browsers. The Slider will detect the lazy loading images and pre load them on the next and previous slides. If you want a smooth transition it is best to load all the images initially.</p>
                 <p>Data Options:</p>
@@ -2787,12 +2790,13 @@ $sizes: (
     <footer class="bg-dark color-light p-2 center">
         &copy; 2021
     </footer>
-    <script src="prism.js?v=2.3.16"></script>
+    <script src="prism.js?v=3.0.0"></script>
     <script>
         document.querySelectorAll('.show-code').forEach(function (elem) {
             var id = 'toggle-' + Math.random();
             var html = elem.innerHTML.replaceAll('<', '&lt').replaceAll('>', '&gt');
             html = html.replaceAll(' class="bg-light rounded p-1"', '');
+            html = html.replaceAll(' onclick="event.preventDefault()"', '');
             html = html.replaceAll('bg-light rounded p-1 ', '');
             html = html.replaceAll(' bg-light rounded p-1', '');
             html = html.replaceAll('#lists', '');

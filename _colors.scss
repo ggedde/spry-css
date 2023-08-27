@@ -1,26 +1,78 @@
 /*! 
 * Spry Colors
 */
-.dark {
-	--spry-color-light: #{map-get($colors, 'dark')};
-	--spry-color-dark : #{map-get($colors, 'light')};
-	--spry-color-text : #{map-get($colors, 'light')};
+
+.bg-contrast {
+	background-color: var(--spry-color-dark);
 }
+.contrast {
+	--spry-text-color: var(--spry-color-dark);
+	color: --spry-text-color;
+}
+button.contrast,
+[role=button].contrast {
+	--spry-accent-color: var(--spry-color-dark);
+	--spry-text-color: var(--spry-color-light);
+}
+
+[data-theme-dark] {
+	// --spry-color-light: #{map-get($colors, 'dark')};
+	// --spry-color-dark : #{map-get($colors, 'light')};
+	// --spry-color-text : #{map-get($colors, 'light')};
+
+	.bg-contrast {
+		background-color: var(--spry-color-light);
+	}
+	.contrast {
+		--spry-text-color: var(--spry-color-light);
+		color: --spry-text-color;
+	}
+	button.contrast,
+	[role=button].contrast {
+		--spry-accent-color: var(--spry-color-light);
+		--spry-text-color: var(--spry-color-dark);
+	}
+}
+
+
 
 @each $color_name,
 $color_value in $colors {
+
+	.#{$color_name},
+	.alert-#{$color_name},
+	.link-#{$color_name} a,
+	.link-hover-#{$color_name} a:not([role=button]):not([class*="hover-"]):hover,
+	.link-hover-#{$color_name} a:not([role=button]):not([class*="hover-"]):focus {
+		--spry-accent-color: var(--spry-color-#{$color_name});
+		--spry-accent-color-rgb: var(--spry-color-#{$color_name}-rgb);
+		--spry-text-color: var(--spry-color-#{$color_name});
+		color: var(--spry-text-color);
+	}
+
+	button.#{$color_name},
+	[role=button].#{$color_name} {
+		--spry-accent-color: var(--spry-color-#{$color_name});
+		--spry-accent-color-rgb: var(--spry-color-#{$color_name}-rgb);
+		@if $color_name !=inherit {
+			@if (lightness($color_value) > 70) {
+				--spry-text-color: #{map-get($colors, 'dark')};
+			} @else {
+				--spry-text-color: #{map-get($colors, 'light')};
+			}
+		}
+	}
+
 	.bg-#{$color_name} {
 		background-color: var(--spry-color-#{$color_name});
-	}
-
-	.alert-#{$color_name},
-	.link-color-#{$color_name} a {
-		color: var(--spry-color-#{$color_name});
-	}
-
-	.link-color-hover-#{$color_name} a:not(.btn):not([class*="color-hover-"]):hover,
-	.link-color-hover-#{$color_name} a:not(.btn):not([class*="color-hover-"]):focus {
-		color: var(--spry-color-#{$color_name});
+		@if $color_name !=inherit {
+			@if (lightness($color_value) > 70) {
+				--spry-text-color: #{map-get($colors, 'text')};
+			} @else {
+				--spry-text-color: #{map-get($colors, 'light')};
+			}
+			color: var(--spry-text-color);
+		}
 	}
 
 	.alert-#{$color_name},
@@ -33,32 +85,9 @@ $color_value in $colors {
 	}
 
 	@if $color_name !=inherit {
-
-		.accent-#{$color_name},
-		.btn-#{$color_name} {
-			--spry-btn-color     : var(--spry-color-#{$color_name});
-			--spry-btn-color-rgb : var(--spry-color-#{$color_name}-rgb);
-			--spry-btn-color-text: #{map-get($colors, 'white')};
-		}
-	}
-
-	.btn-outline,
-	.btn-hazy,
-	.btn-link {
-		--spry-btn-color-text: var(--spry-btn-color);
-	}
-
-	.accent-#{$color_name} {
-		--spry-accent-color: var(--spry-color-#{$color_name});
-
-		@if $color_name !=light {
-			--spry-card-accent-text: white;
-		}
-
-		@if $color_name !=inherit {
-			tbody tr:hover td {
-				background-color: rgba($color_value, .04);
-			}
+		.accent-#{$color_name} {
+			--spry-accent-color: var(--spry-color-#{$color_name});
+			--spry-accent-color-rgb: var(--spry-color-#{$color_name}-rgb);
 		}
 	}
 }
@@ -69,7 +98,7 @@ article {
 	--spry-btn-color-text: #{map-get($colors, 'text')};
 }
 
-.dark {
+[data-theme-dark] {
 	background-color: darken(map-get($colors, 'dark'), 15%);
 	color           : map-get($colors, 'light');
 
@@ -114,35 +143,32 @@ article {
 	}
 }
 
-.btn,
-a.btn,
-a.btn:hover,
-a.btn:focus,
-input[type="submit"] {
-	color: var(--spry-btn-color-text);
+// button:not([class*="color-"]),
+// a[role=button]:not([class*="color-"]),
+// a[role=button]:not([class*="color-"]):hover,
+// a[role=button]:not([class*="color-"]):focus,
+// input[type="submit"]:not([class*="color-"]) {
+// 	color: var(--spry-btn-color-text);
 
-	&.btn-outline:not([class*="color-"]),
-	&.btn-hazy:not([class*="color-"]),
-	&.btn-link:not([class*="color-"]) {
-		color: var(--spry-btn-color-text);
-	}
-}
+// 	&.outline:not([class*="color-"]),
+// 	&.hazy:not([class*="color-"]),
+// 	&.link:not([class*="color-"]) {
+// 		color: var(--spry-btn-color-text);
+// 	}
+// }
 
 @each $color_name,
 $color_value in $colors {
 
-	.color-#{$color_name},
-	a.color-#{$color_name},
-	a.btn.color-#{$color_name},
-	.color-hover-#{$color_name}:hover,
-	.color-hover-#{$color_name}:focus,
-	a.color-hover-#{$color_name}:hover,
-	a.color-hover-#{$color_name}:focus,
-	a.btn.color-hover-#{$color_name}:hover,
-	a.btn.color-hover-#{$color_name}:focus,
-	button.color-#{$color_name},
-	button.color-hover-#{$color_name}:hover,
-	button.color-hover-#{$color_name}:focus {
-		color: var(--spry-color-#{$color_name});
+	a.#{$color_name},
+	.hover-#{$color_name}:hover,
+	.hover-#{$color_name}:focus,
+	a.hover-#{$color_name}:hover,
+	a.hover-#{$color_name}:focus,
+	a[role=button].hover-#{$color_name}:hover,
+	a[role=button].hover-#{$color_name}:focus,
+	button.hover-#{$color_name}:hover,
+	button.hover-#{$color_name}:focus {
+		--spry-text-color: var(--spry-color-#{$color_name});
 	}
 }
