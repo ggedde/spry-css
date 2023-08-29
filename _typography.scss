@@ -13,21 +13,6 @@ input, textarea, select {
         @each $type_field, $type_value in $type {
             #{$type_field}: $type_value;
         }
-        p + & {
-            margin-top: 2rem;
-        }
-    }
-}
-
-section {
-    h1 {
-        margin-top: -.7rem;
-    }
-    h2 {
-        margin-top: -.6rem;
-    }
-    h3 {
-        margin-top: -.5rem;
     }
 }
 
@@ -43,7 +28,6 @@ a {
     &:hover,
     &:focus {
         text-decoration: none;
-        // color: lighten(map-get($colors, 'primary'), 10%);
     }
 }
 
