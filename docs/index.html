@@ -23,12 +23,10 @@
         }
     </script>
     <div class="row">
-        <aside class="mw-200 index-2">
+        <aside role="banner" class="mw-200 index-2">
             <div class="fixed index-1 bg-light flex ai-center w py-1">
                 <div class="absolute">
-                    <label class="toggle btn lg btn-link btn-menu md-none">
-                        <input type="checkbox">
-                    </label>
+                    <input role="button" type="checkbox" class="toggle link icon menu md-none">
                     <div id="header-nav" class="collapse md-open sticky w-200">
                         <nav class="bg-light list lg md-mt-2 md-mb-n3 pb-0 vh overflow-auto">
                             <ul class="pt-2">
@@ -39,9 +37,7 @@
                                         </svg>
                                         Get Started
                                     </a>
-                                    <label role="button" class="toggle link circle icon-down">
-                                        <input type="checkbox">
-                                    </label>
+                                    <input role="button" type="checkbox" class="toggle link icon down circle">
                                     <ul class="sm">
                                         <li>
                                             <a class="pl-3" href="#support">Support</a>
@@ -64,9 +60,6 @@
                                         <li>
                                             <a class="pl-3" href="#dark-mode">Dark Mode</a>
                                         </li>
-                                        <li>
-                                            <a class="pl-3" href="#icons">Icons</a>
-                                        </li>
                                     </ul>
                                 </li>
                                 <li>
@@ -82,9 +75,7 @@
                                         </svg>
                                         Buttons
                                     </a>
-                                    <label role="button" class="toggle down link circle">
-                                        <input type="checkbox">
-                                    </label>
+                                    <input role="button" type="checkbox" class="toggle link icon down circle">
                                     <ul class="sm">
                                         <li>
                                             <a class="pl-3" href="#buttons">Default</a>
@@ -124,9 +115,7 @@
                                         </svg>
                                         Forms
                                     </a>
-                                    <label role="button" class="toggle down link circle">
-                                        <input type="checkbox">
-                                    </label>
+                                    <input role="button" type="checkbox" class="toggle link icon down circle">
                                     <ul class="sm">
                                         <li>
                                             <a class="pl-3" href="#forms">Simple Form</a>
@@ -146,9 +135,7 @@
                                         </svg>
                                         Grid
                                     </a>
-                                    <label role="button" class="toggle down link circle">
-                                        <input type="checkbox">
-                                    </label>
+                                    <input role="button" type="checkbox" class="toggle link icon down circle">
                                     <ul class="sm">
                                         <li>
                                             <a class="pl-3" href="#grid">Classes</a>
@@ -175,6 +162,12 @@
                                             <a class="pl-3" href="#grid-gap">Gap Sizing</a>
                                         </li>
                                     </ul>
+                                </li>
+                                <li>
+                                    <a href="#icons">
+                                        <svg class="mr-1" style="width: 18px; height: 18px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M14,7V9H13V15H14V17H10V15H11V9H10V7H14M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M5,5V19H19V5H5Z" /></svg>
+                                        Icons
+                                    </a>
                                 </li>
                                 <li>
                                     <a href="#lists">
@@ -221,9 +214,7 @@
                                         </svg>
                                         Sliders
                                     </a>
-                                    <label role="button" class="toggle down link circle">
-                                        <input type="checkbox">
-                                    </label>
+                                    <input role="button" type="checkbox" class="toggle link icon down circle">
                                     <ul class="sm">
                                         <li>
                                             <a class="pl-3" href="#slider-js">Javascript</a>
@@ -251,9 +242,7 @@
                                         </svg>
                                         Toggles
                                     </a>
-                                    <label role="button" class="toggle down link circle">
-                                        <input type="checkbox">
-                                    </label>
+                                    <input role="button" type="checkbox" class="toggle link icon down circle">
                                     <ul class="sm">
                                         <li>
                                             <a class="pl-3" href="#toggle">Default</a>
@@ -284,9 +273,7 @@
                                         </svg>
                                         Utilities
                                     </a>
-                                    <label role="button" class="toggle down link circle">
-                                        <input type="checkbox">
-                                    </label>
+                                    <input role="button" type="checkbox" class="toggle link icon down circle">
                                     <ul class="sm">
                                         <li>
                                             <a class="pl-3" href="#utilities-general">General Classes</a>
@@ -303,7 +290,7 @@
                                     </ul>
                                 </li>
                                 <li class="mt-2">
-                                    <a target="_blank" class="btn btn-outline btn-dark xs" href="https://github.com/ggedde/spry-css">
+                                    <a target="_blank" class="outline contrast xs" href="https://github.com/ggedde/spry-css">
                                         <svg class="mr-1" style="width: 18px; height: 18px;" viewBox="0 0 24 24">
                                             <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
                                         </svg>
@@ -328,7 +315,7 @@
                 </div>
             </div>
         </aside>
-        <main class="lg-mw md-ml-n3" onmouseup="if(this.previousSibling.previousSibling.querySelector('.btn-menu input').checked){this.previousSibling.previousSibling.querySelector('.btn-menu input').click();}">
+        <main class="lg-mw md-ml-n3" onmouseup="if(this.previousSibling.previousSibling.querySelector('button menu input').checked){this.previousSibling.previousSibling.querySelector('buttonmenu input').click();}">
 
             <!------------------------------------
             ---------    INSTALLATION    ---------
@@ -357,27 +344,9 @@
                 </div>
 
                 <h6 class="mt-3">Compatibility</h6>
-                <div class="alert alert-warning">
+                <div role="alert" class="secondary outline">
                     <svg class="mr-1" style="width: 16px; height: 16px;" viewBox="0 0 24 24"><path fill="currentColor" d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
                     <span>SpryCss uses :has() property which is not supported by all browsers yet. Find out which browsers support it <a target="_blank" href="https://caniuse.com/css-has">here</a></span>
-                </div>
-                <div>
-                    You can use this Polyfill to add support until the browser supports it nativaly:
-                    <div class="show-code">
-                        <script>
-                        document.addEventListener("DOMContentLoaded", () => {
-                            document.querySelectorAll('input[type="checkbox"]').forEach(checkBox => {
-                                checkBox.addEventListener('click', event => {
-                                    event.target.parentElement.classList.toggle('has-checked', event.target.checked);
-                                });
-                            });
-
-                            document.querySelectorAll('.tooltip').forEach(tooltip => {
-                                tooltip.parentElement.classList.add('has-tooltip');
-                            });
-                        });
-                        </script>
-                    </div>
                 </div>
 
                 <h2 id="installation" class="border-bottom pb-1 mb-3">Getting Started and Installation</h2>
@@ -424,7 +393,7 @@ $gaps: (
     lg: 2.25em,
 );
 
-// Specify each color used in color-, bg-, border-, btn-
+// Specify each color
 $colors: (
     "white":       #ffffff,
     "light":       #efefef,
@@ -571,14 +540,14 @@ $sizes: (
                 <h6 class="mt-2">Ex.</h6>
                 <div class="show-code">
                     <div class="xs">
-                        <button class="btn">Button</button>
-                        <button class="btn">Button</button>
-                        <button class="btn">Button</button>
+                        <button>Button</button>
+                        <button>Button</button>
+                        <button>Button</button>
                     </div>
                     <div class="lg">
-                        <button class="btn">Button</button>
-                        <button class="btn">Button</button>
-                        <button class="btn">Button</button>
+                        <button>Button</button>
+                        <button>Button</button>
+                        <button>Button</button>
                     </div>
                 </div>
 
@@ -716,7 +685,45 @@ $sizes: (
             ------------------------------------->
             <section id="icons">
                 <h2 class="border-bottom pb-1 mb-3">Icons</h2>
-                <p>SpryCSS doesn't come with its own icon package. You can use whatever ican package or icon webfont you
+                <p class="mb-2">SpryCSS comes with a small set of custom icons. You can either use <code class="primary">&lt;i&gt;</code> or class <code class="primary">.icon</code></p>
+                <div class="show-code">
+                    <i class="left"></i>
+                    <i class="right"></i>
+                    <i class="down"></i>
+                    <i class="up"></i>
+                    <i class="search"></i>
+                    <i class="menu"></i>
+                    <i class="dots"></i>
+                    <i class="close"></i>
+                    <i class="question"></i>
+                    <i class="info"></i>
+                </div>
+                <h5 class="my-2">Variations</h5>
+                <div class="show-code">
+                    <span class="icon primary left"></span>
+                    <span class="icon secondary right"></span>
+                    <span class="icon medium sm down"></span>
+                    <span class="icon dark sm up"></span>
+                    <span class="icon light sm search"></span>
+                    <span class="icon lg menu"></span>
+                    <span class="icon lg dots"></span>
+                    <span class="icon lg close"></span>
+                </div>
+
+                <h5 class="my-2">Toggle Icons</h5>
+                <div class="show-code">
+                    <input type="checkbox" class="icon left"></span>
+                    <input type="checkbox" class="icon right"></span>
+                    <input type="checkbox" class="icon down"></span>
+                    <input type="checkbox" class="icon up"></span>
+                    <input type="checkbox" class="icon search"></span>
+                    <input type="checkbox" class="icon menu"></span>
+                    <input type="checkbox" class="icon dots"></span>
+                </div>
+
+                <h4 class="mt-2">Need More Icons?</h4>
+                
+                <p class="mt-3">You can use whatever ican package or icon webfont you
                     want, but icon webfonts can greatly increase the size of your projects. A recommended alternative is
                     to use direct svg code within your project. This produces the smallest file size while producing
                     high resolution icons and allowing you the most flexibility to style the icons within your css.</p>
@@ -726,32 +733,37 @@ $sizes: (
                 <p>If your using Visual Studio Code you can install the extension <a target="_blank"
                         href="https://github.com/r3volution11/vscode-materialdesignicons-svg">vscode-materialdesignicons-svg</a>
                     that provides code snippets to quickly add the SVG code.</p>
-                <cite class="block sm fade mt-1">* Note that the extension currently does not add <code
-                        class="color-primary">fill="currentColor"</code> to the paths so you will need to add that
-                    manually.</cite>
                 <h5 class="mt-2">Ex.</h5>
                 <div class="show-code">
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
-                    </svg>
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M15.41 16.58L10.83 12L15.41 7.41L14 6L8 12L14 18L15.41 16.58Z" />
-                    </svg>
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M8.59 16.58L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.58Z" />
-                    </svg>
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 
-                            21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 
-                            5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 
-                            13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 
-                            10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
-                    </svg>
-                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
-                    </svg>
+                    <i>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15.41 16.58L10.83 12L15.41 7.41L14 6L8 12L14 18L15.41 16.58Z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8.59 16.58L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.58Z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 
+                                21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 
+                                5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 
+                                13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 
+                                10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
+                        </svg>
+                    </i>
+                    <i>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
+                        </svg>
+                    </i>
                 </div>
     
             </section>
@@ -762,65 +774,85 @@ $sizes: (
 
                 <h2 class="border-bottom pb-1 mb-3">Alerts</h2>
                 <div class="show-code">
-                    <div class="alert">
+                    <div role="alert">
                         <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
-                    <div class="alert alert-warning">
-                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
-                    </div>
-                    <div class="alert alert-error">
-                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
-                    </div>
-                    <div class="alert alert-primary">
+                    <div role="alert" class="primary">
                         <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8 12h2v2h-2v-2m0-8h2v6h-2V7" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
-                    <div class="alert alert-success">
-                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
+                    <div role="alert" class="secondary">
+                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
+                </div>
+
+                <h4 class="border-bottom pb-1 mb-3">Outline</h4>
+                <div class="show-code">
+                    <div role="alert" class="outline">
+                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
+                    <div role="alert" class="primary outline">
+                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8 12h2v2h-2v-2m0-8h2v6h-2V7" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
+                    <div role="alert" class="secondary outline">
+                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
+                </div>
+
+                <h4 class="border-bottom pb-1 mb-3">Hazy</h4>
+                <div class="show-code">
+                    <div role="alert" class="hazy">
+                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
+                    <div role="alert" class="primary hazy">
+                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8 12h2v2h-2v-2m0-8h2v6h-2V7" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
+                    <div role="alert" class="secondary hazy">
+                        <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
                 </div>
 
                 <h4 class="pb-1 mt-3 mb-3">Closable Large Alert</h2>
                 <div class="show-code">
-                    <div class="alert alert-error lg">
+                    <div role="alert" class="secondary lg">
                         <svg class="mr-2" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
-                        <button class="close link xs circle inset-right inset-top" onclick="this.parentElement.remove();"></button>
+                        <button class="icon close light hazy xs circle inset-right inset-top m-1" onclick="this.parentElement.remove();"></button>
                     </div>
                 </div>
 
                 <h4 class="my-1 mt-3">Popup Alert Example</h4>
                 <div class="show-code">
-                    <button class="btn" onclick="document.getElementById('alert-modal').classList.add('show');">Show Alert Popup</button>
-                    <div id="alert-modal" class="modal">
-                        <div class="modal-content" style="max-width: 400px;">
-                            <div class="alert bg-error color-white border-transparent lg py-1 px-4">
-                                <svg class="m-1 inset-top inset-left" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
-                                <div>
-                                    <h5 class="bold">Error!</h5>
-                                    Please Try again.
-                                </div>
-                                <button class="close link white xs circle inset-right inset-top m-1" onclick="document.getElementById('alert-modal').classList.remove('show');"></button>
+                    <button class="white" onclick="document.getElementById('alert-modal').classList.add('show');">Show Alert Popup</button>
+                    <div id="alert-modal" role="dialog">
+                        <div role="alert" class="primary lg py-1 px-4 mw-400">
+                            <svg class="m-1 inset-top inset-left" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
+                            <div>
+                                <h5 class="bold">Info</h5>
+                                Please Try again.
                             </div>
+                            <button class="icon close hazy light xs circle inset-right inset-top m-1" onclick="document.getElementById('alert-modal').classList.remove('show');"></button>
                         </div>
                     </div>
                 </div>
 
                 <h4 class="my-1 mt-3">Popup Alert Top Right with No Backdrop and Autoclose</h4>
                 <div class="show-code">
-                    <button class="btn" onclick="document.getElementById('alert2-modal').classList.add('show'); setTimeout(() => {document.getElementById('alert2-modal').classList.remove('show');}, 3000);">Show Alert Popup</button>
-                    <div id="alert2-modal" class="modal no-backdrop m-1"">
-                        <div class="modal-content inset-top inset-right" style="max-width: 400px;">
-                            <div class="alert bg-success color-white border-transparent lg py-1 pl-4">
-                                <svg class="m-1 inset-top inset-left" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
-                                <div>
-                                    <h5 class="bold">Success!</h5>
-                                    This message will Autoclose.
-                                </div>
+                    <button onclick="document.getElementById('alert2-modal').classList.add('show'); setTimeout(() => {document.getElementById('alert2-modal').classList.remove('show');}, 3000);">Show Alert Popup</button>
+                    <div id="alert2-modal" role="dialog" class="no-backdrop m-1"">
+                        <div role="alert" class="primary lg py-1 pl-4 inset-top inset-right mw-400">
+                            <svg class="m-1 inset-top inset-left" style="width: 24px; height: 24px;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
+                            <div>
+                                <h5 class="bold">Info!</h5>
+                                This message will Autoclose.
                             </div>
                         </div>
                     </div>
@@ -901,28 +933,36 @@ $sizes: (
                     <button class="dark xs">Dark</button>
                 </div>
     
-                <h4 id="buttons-custom" class="mt-4 mb-1">Custom Classes</h4>
+                <h4 id="buttons-custom" class="mt-4 mb-1">With Custom Icon Classes</h4>
                 <div class="show-code">
                     <p>
-                        <button>Close
-                            <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                        </button>
-                        <button>
-                            <svg viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                        </button>
-                        <button class="icon-left"></button>
-                        <button class="icon-right"></button>
-                        <button class="icon-down"></button>
-                        <button class="icon-search"></button>
-                        <button class="icon-menu"></button>
-                        <button class="icon-close"></button>
-                        <label role="button">
-                            <input type="checkbox" class="icon-menu" />
-                        </label>
+                        <button class="icon left"></button>
+                        <button class="icon right"></button>
+                        <button class="icon down"></button>
+                        <button class="icon up"></button>
+                        <button class="icon search"></button>
+                        <button class="icon menu"></button>
+                        <button class="icon dots"></button>
+                        <button class="icon close"></button>
+                        <button class="icon question"></button>
+                        <button class="icon info"></button>
+                    </p>
+
+                    <p>
+                        <button class="primary circle icon left"></button>
+                        <button class="primary circle hazy icon right"></button>
+                        <button class="secondary outline circle icon down"></button>
+                        <button class="secondary link circle icon up"></button>
+                        <button class="contrast icon link search"></button>
+                        <button class="primary icon circle menu xs hazy"></button>
+                        <button class="primary icon circle dots xs hazy"></button>
+                        <button class="icon secondary outline xs close"></button>
+                        <button class="icon circle outline question xs"></button>
+                        <button class="icon circle outline info xs"></button>
                     </p>
                 </div>
 
-                <h4 id="buttons-custom" class="mt-4 mb-1">Custom Classes With Toggles</h4>
+                <h4 id="buttons-custom" class="mt-4 mb-1">Custom Icon Classes With Toggles</h4>
                 <div class="show-code">
                     <p>
                         <label role="button" class="icon">
@@ -931,56 +971,75 @@ $sizes: (
                             <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                         </label>
                         <label role="button">
-                            <input type="checkbox" class="icon-up mr-2" />
                             Toggle
+                            <input type="checkbox" class="icon up ml-2" />
                         </label>
-                        <label role="button">
-                            <input type="checkbox" class="icon-down" />
+                        <label role="button" class="icon down">
+                            <input type="checkbox" />
                         </label>
-                        <label role="button">
-                            <input type="checkbox" class="icon-left" />
+                        <label role="button" class="icon up">
+                            <input type="checkbox" />
                         </label>
-                        <label role="button">
-                            <input type="checkbox" class="icon-right" />
+                        <label role="button" class="icon left">
+                            <input type="checkbox" />
                         </label>
-                        <label role="button" class="menu">
-                            <input type="checkbox" class="icon-menu" />
+                        <label role="button" class="icon right">
+                            <input type="checkbox" />
+                        </label>
+                        <label role="button" class="icon menu">
+                            <input type="checkbox" />
+                        </label>
+                        <label role="button" class="icon dots">
+                            <input type="checkbox" />
+                        </label>
+                        <label role="button" class="icon search">
+                            <input type="checkbox" />
                         </label>
                     </p>
                 </div>
     
                 <h4 id="buttons-icons" class="mt-4">With Icons</h4>
                 <div class="show-code">
-                    <div class="flex flex-wrap g-2 ai-center">
-                        <button class="primary lg">After
-                            <svg class="ml-3" viewBox="0 0 24 24">
-                                <path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
-                            </svg>
-                        </button>
-                        <button class="success p-0 lg">
-                            <svg viewBox="0 0 24 24" width="24" height="24">
-                                <path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
-                            </svg>
-                        </button>
-                        <button class="pl-2">
-                            <svg class="mr-2" viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
-                            </svg>Before
-                        </button>
-                        <button class="primary outline circle p-0">
-                            <svg viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
-                            </svg>
-                        </button>
-                        <button class="outline sm border-transparent bg-transparent p-0 circle">
-                            <svg viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12S17.5 2 12 2M7.7 15.5L7 14.2L11 11.9V7H12.5V12.8L7.7 15.5Z" />
-                            </svg>
-                        </button>
-                    </div>
+                    <button class="primary lg">After
+                        <svg class="ml-3" viewBox="0 0 24 24">
+                            <path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+                        </svg>
+                    </button>
+                    <button class="success p-0 lg">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="#fff" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+                        </svg>
+                    </button>
+                    <button class="pl-2">
+                        <svg class="mr-2" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
+                        </svg>Before
+                    </button>
+                    <button class="primary icon outline circle">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
+                        </svg>
+                    </button>
+                    <button class="outline icon circle">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12S17.5 2 12 2M7.7 15.5L7 14.2L11 11.9V7H12.5V12.8L7.7 15.5Z" />
+                        </svg>
+                    </button>
+                    <button class="primary icon hazy circle">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
+                        </svg>
+                    </button>
+                    <button class="hazy icon circle">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12S17.5 2 12 2M7.7 15.5L7 14.2L11 11.9V7H12.5V12.8L7.7 15.5Z" />
+                        </svg>
+                    </button>
                 </div>
     
                 <h4 id="buttons-loader" class="mt-4">With Loader</h4>
@@ -1024,19 +1083,19 @@ $sizes: (
                                 eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                             </p>
                             <footer>
-                                <a href="#cards" class="btn btn-primary sm">Learn More</a>
+                                <a href="#cards" role="button" class="primary sm">Learn More</a>
                             </footer>
                         </article>
     
                         <article class="accent-primary shadow">
-                            <header class="color-white">
+                            <header class="light">
                                 <h4>This is the Title</h4>
                             </header>
                             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                                 eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                             </p>
                             <footer>
-                                <a href="#cards" class="btn btn-outline btn-white sm">Learn More</a>
+                                <a href="#cards" role="button" class="outline light sm">Learn More</a>
                             </footer>
                         </article>
 
@@ -1048,7 +1107,7 @@ $sizes: (
                                 <cite>- Meta Data</cite>
                             </div>
                             <footer class="g-2 bg-transparent">
-                                <a href="#cards" class="btn btn-link color-primary sm">Learn More</a>
+                                <a href="#cards" role="button" class="link primary sm">Learn More</a>
                             </footer>
                         </article>
     
@@ -1902,159 +1961,155 @@ $sizes: (
             ------------------------------------->
             <section id="modals">
                 <h2 class="border-bottom pb-1 mb-3">Modals</h2>
+                <h5 class="mt-2">Modals are created with <code class="primary">role="dialog"</code></h5>
+                <p>The first element within the modal will be considered as the modal box.</p>
                 <h5 class="mt-2">Classes</h5>
                 <div class="ml-1 md-ml-3 mt-1 mb-3">
                     <div>
-                        <span style="width: 270px;" class="md-inline-block"><code class="color-medium">modal</code></span> <cite
-                            class="block mb-2 md-inline">Main Modal
-                            Class</cite></div>
+                        <span style="width: 270px;" class="md-inline-block">
+                            <code class="primary">role="dialog"</code>
+                        </span>
+                        <cite class="block mb-2 md-inline">Main Modal Element</cite>
+                    </div>
                     <div>
-                        <span style="width: 270px;" class="md-inline-block"><code class="color-medium">show</code></span>
+                        <span style="width: 270px;" class="md-inline-block"><code class="primary">show</code></span>
                         <cite class="block mb-2 md-inline">Shows the Modal</cite>
                     </div>
                     <div>
-                        <span style="width: 270px;" class="md-inline-block"><code class="color-medium">blur</code></span>
+                        <span style="width: 270px;" class="md-inline-block"><code class="primary">blur</code></span>
                         <cite class="block mb-2 md-inline">Adds blur to background</cite>
                     </div>
                     <div>
-                        <span style="width: 270px;" class="md-inline-block"><code class="color-medium">bounce</code></span>
+                        <span style="width: 270px;" class="md-inline-block"><code class="primary">bounce</code></span>
                         <cite class="block mb-2 md-inline">Adds bounce animation. Only occurs once.</cite>
                     </div>
                     <div>
-                        <span style="width: 270px;" class="md-inline-block"><code class="color-medium">no-backdrop</code></span>
+                        <span style="width: 270px;" class="md-inline-block"><code class="primary">no-backdrop</code></span>
                         <cite class="block mb-2 md-inline">Removes the Backdrop and allows to click through the background.</cite>
                     </div>
                     <p class="note mt-2">Add max-width to modal-content to change size</p>
                 </div>
                 <div class="show-code">
-                    <div class="modal blur">
-                        <div class="modal-content">
+                    <div role="dialog" class="blur">
+                        <div>
                             Content Here
                         </div>
                     </div>
                 </div>
                 <h4 class="my-1 mt-3">Login Form Example</h4>
                 <div class="show-code">
-                    <button class="btn"
-                        onclick="document.getElementById('login-modal').classList.add('show'); document.getElementById('login-email').focus();">Open
-                        Login Modal</button>
-                    <div id="login-modal" class="modal blur"
-                        onclick="if(event.target.id === 'login-modal') document.getElementById('login-modal').classList.remove('show');">
-                        <div class="modal-content mw-400">
-                            <article class="shadow accent-light">
-                                <header>
-                                    <button type="button" class="btn btn-link btn-medium btn-close circle mr-1 mt-1 inset-top inset-right" onclick="document.getElementById('login-modal').classList.remove('show');"></button>
-                                    <h4 class="px-2 pr-3">Lorem ipsum dolor as</h4>
-                                </header>
-                                <div class="px-3 pb-3 pt-1">
-                                    <form class="accent-primary grid g-2">
-                                        <label>
-                                            <sup>Email</sup>
-                                            <input id="login-email" type="email" required onblur="this.parentElement.classList.toggle('active', this.value)" />
-                                        </label>
-                                        <label>
-                                            <sup>Password</sup>
-                                            <input type="password" required onblur="this.parentElement.classList.toggle('active', this.value)" />
-                                        </label>
-                                        <a href="#" class="mt-1 block">Forgot Password?</a>
-                                        <button class="btn block mt-3" type="submit">Login</button>
-                                    </form>
-                                </div>
-                            </article>
-                        </div>
+                    <button class="btn" onclick="document.getElementById('login-modal').classList.add('show'); document.getElementById('login-email').focus();">Open Login Modal</button>
+                    <div id="login-modal" role="dialog" class="blur" onclick="if(event.target.id === 'login-modal') document.getElementById('login-modal').classList.remove('show');">
+                        <article class="shadow accent-light mw-400">
+                            <header>
+                                <button type="button" class="btn btn-link btn-medium btn-close circle mr-1 mt-1 inset-top inset-right" onclick="document.getElementById('login-modal').classList.remove('show');"></button>
+                                <h4 class="px-2 pr-3">Lorem ipsum dolor as</h4>
+                            </header>
+                            <div class="px-3 pb-3 pt-1">
+                                <form class="accent-primary grid g-2">
+                                    <label>
+                                        <sup>Email</sup>
+                                        <input id="login-email" type="email" required onblur="this.parentElement.classList.toggle('active', this.value)" />
+                                    </label>
+                                    <label>
+                                        <sup>Password</sup>
+                                        <input type="password" required onblur="this.parentElement.classList.toggle('active', this.value)" />
+                                    </label>
+                                    <a href="#" class="mt-1 block">Forgot Password?</a>
+                                    <button class="btn block mt-3" type="submit">Login</button>
+                                </form>
+                            </div>
+                        </article>
                     </div>
                 </div>
     
                 <h4 class="mt-4">Large Model with Long content and forced buttons</h4>
                 <div class="show-code">
-                    <button class="btn" onclick="document.getElementById('large-modal').classList.add('show');">Open
-                        Large Modal</button>
-                    <div id="large-modal" class="modal" onclick="if(event.target.id === 'large-modal') this.classList.add('bounce');">
-                        <div class="modal-content rounded lg-mw">
-                            <article class="accent-light shadow">
-                                <header>
-                                    <h4 class="px-2">Lorem ipsum dolor</h4>
-                                </header>
-                                <div class="p-3 mh-500 overflow-auto">
-                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                                        vero
-                                        eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-                                        sea
-                                        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                                        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                                        duo
-                                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                                        Lorem
-                                        ipsum dolor sit amet.</p>
-                                    <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                                        sed
-                                        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-                                        clita
-                                        kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-                                        ipsum
-                                        dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                        invidunt
-                                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                        accusam
-                                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                                        sanctus
-                                        est Lorem ipsum dolor sit amet.</p>
-                                    <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                                        gubergren,
-                                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                                        amet,
-                                        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                                        duo
-                                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                                        Lorem
-                                        ipsum dolor sit amet.</p>
-                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-                                        vero
-                                        eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-                                        sea
-                                        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                                        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                                        duo
-                                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                                        Lorem
-                                        ipsum dolor sit amet.</p>
-                                    <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                                        sed
-                                        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-                                        clita
-                                        kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-                                        ipsum
-                                        dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                        invidunt
-                                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                        accusam
-                                        et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                                        sanctus
-                                        est Lorem ipsum dolor sit amet.</p>
-                                    <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-                                        gubergren,
-                                        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-                                        amet,
-                                        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                                        duo
-                                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                                        Lorem
-                                        ipsum dolor sit amet.</p>
-                                </div>
-                                <footer class="px-2 jc-end">
-                                    <button type="button" class="btn sm btn-outline btn-dark"
-                                        onclick="document.getElementById('large-modal').classList.remove('show','bounce');">Cancel</button>
-                                    <button type="button" class="btn btn-primary sm ml-1 md-ml-3"
-                                        onclick="document.getElementById('large-modal').classList.remove('show','bounce');">Accept</button>
-                                </footer>
-                            </article>
-                        </div>
+                    <button class="btn" onclick="document.getElementById('large-modal').classList.add('show');">Open Large Modal</button>
+                    <div id="large-modal" role="dialog" onclick="if(event.target.id === 'large-modal') this.classList.add('bounce');">
+                        <article class="accent-light shadow lg-mw">
+                            <header>
+                                <h4 class="px-2">Lorem ipsum dolor</h4>
+                            </header>
+                            <div class="p-3 mh-500 overflow-auto">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                                    vero
+                                    eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                                    sea
+                                    takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                                    duo
+                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                    Lorem
+                                    ipsum dolor sit amet.</p>
+                                <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                                    sed
+                                    diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                                    clita
+                                    kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+                                    ipsum
+                                    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                    invidunt
+                                    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                    accusam
+                                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                                    sanctus
+                                    est Lorem ipsum dolor sit amet.</p>
+                                <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                                    gubergren,
+                                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                                    amet,
+                                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                                    duo
+                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                    Lorem
+                                    ipsum dolor sit amet.</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+                                    vero
+                                    eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                                    sea
+                                    takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                                    duo
+                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                    Lorem
+                                    ipsum dolor sit amet.</p>
+                                <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                                    sed
+                                    diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                                    clita
+                                    kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+                                    ipsum
+                                    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                    invidunt
+                                    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                    accusam
+                                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                                    sanctus
+                                    est Lorem ipsum dolor sit amet.</p>
+                                <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                                    gubergren,
+                                    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                                    amet,
+                                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                                    duo
+                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                    Lorem
+                                    ipsum dolor sit amet.</p>
+                            </div>
+                            <footer class="px-2 jc-end">
+                                <button type="button" class="btn sm btn-outline btn-dark"
+                                    onclick="document.getElementById('large-modal').classList.remove('show','bounce');">Cancel</button>
+                                <button type="button" class="btn btn-primary sm ml-1 md-ml-3"
+                                    onclick="document.getElementById('large-modal').classList.remove('show','bounce');">Accept</button>
+                            </footer>
+                        </article>
                     </div>
                 </div>
 
@@ -2228,6 +2283,41 @@ $sizes: (
                                 <h5>Image 12</h5>
                                 <img src="https://via.placeholder.com/640x312" loading="lazy">
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 id="sliders-image" class="pb-1">Slider with Pagination Slider</h4>
+                <div class="show-code">
+                    <div class="slider" data-snap>
+                        <button class="slider-prev btn btn-link btn-light btn-left circle"></button>
+                        <button class="slider-next btn btn-link btn-light btn-right circle"></button>
+                        <div class="slider-slides" id="featured-slides">
+                            <img src="https://via.placeholder.com/641x350" loading="lazy">
+                            <img src="https://via.placeholder.com/642x350" loading="lazy">
+                            <img src="https://via.placeholder.com/643x350" loading="lazy">
+                            <img src="https://via.placeholder.com/644x350" loading="lazy">
+                            <img src="https://via.placeholder.com/645x350" loading="lazy">
+                            <img src="https://via.placeholder.com/646x350" loading="lazy">
+                            <img src="https://via.placeholder.com/647x350" loading="lazy">
+                            <img src="https://via.placeholder.com/648x350" loading="lazy">
+                            <img src="https://via.placeholder.com/649x350" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="slider mt-2" data-snap>
+                        <button class="slider-prev btn btn-link btn-light btn-left circle"></button>
+                        <button class="slider-next btn btn-link btn-light btn-right circle"></button>
+                        <div class="slider-slides row md-columns-5 lg-columns-7 md-g-2">
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(1)').offsetLeft, 0);"><img src="https://via.placeholder.com/641x350" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(2)').offsetLeft, 0);"><img src="https://via.placeholder.com/642x350" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(3)').offsetLeft, 0);"><img src="https://via.placeholder.com/643x350" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(4)').offsetLeft, 0);"><img src="https://via.placeholder.com/644x350" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(5)').offsetLeft, 0);"><img src="https://via.placeholder.com/645x350" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(6)').offsetLeft, 0);"><img src="https://via.placeholder.com/646x350" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(7)').offsetLeft, 0);"><img src="https://via.placeholder.com/647x350" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(8)').offsetLeft, 0);"><img src="https://via.placeholder.com/648x350" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(9)').offsetLeft, 0);"><img src="https://via.placeholder.com/649x350" loading="lazy"></a>
                         </div>
                     </div>
                 </div>
@@ -2479,9 +2569,6 @@ $sizes: (
                     </div>
                     <div><code class="color-primary">circle</code> <code>{ border-radius: 50% }</code></div>
                     <div><code class="color-primary">square</code> <code>{ border-radius: 0 }</code></div>
-                    <div><code class="color-primary">float-left</code> <code>{ float: left }</code></div>
-                    <div><code class="color-primary">float-right</code> <code>{ float: right }</code></div>
-                    <div><code class="color-primary">clear</code> <code>{ clear: both }</code></div>
                     <div><code class="color-primary">index-1</code> <code>{ z-index: 1 }</code></div>
                     <div><code class="color-primary">index-2</code> <code>{ z-index: 2 }</code></div>
                     <div><code class="color-primary">index-3</code> <code>{ z-index: 3 }</code></div>
@@ -2805,7 +2892,7 @@ $sizes: (
                 html = html.replaceAll("\n            " + item + "\n        ", '');
                 html = html.replaceAll("\n                " + item + "\n            ", '');
                 html = html.replaceAll('data-loop=""', 'data-loop');
-                html = html.replaceAll('data-stop=""', 'data-stop');
+                html = html.replaceAll('data-snap=""', 'data-snap');
                 html = html.replaceAll('data-over=""', 'data-over');
                 html = html.replaceAll('data-wait=""', 'data-wait');
             })

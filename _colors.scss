@@ -1,18 +1,22 @@
-/*! 
+/*
 * Spry Colors
 */
+
+@use "variables" as *;
 
 .bg-contrast {
 	background-color: var(--spry-color-dark);
 }
 .contrast {
 	--spry-text-color: var(--spry-color-dark);
+	--spry-text-color-rgb: var(--spry-color-dark-rgb);
 	color: --spry-text-color;
 }
 button.contrast,
 [role=button].contrast {
 	--spry-accent-color: var(--spry-color-dark);
 	--spry-text-color: var(--spry-color-light);
+	--spry-text-color-rgb: var(--spry-color-light-rgb);
 }
 
 [data-theme-dark] {
@@ -25,12 +29,14 @@ button.contrast,
 	}
 	.contrast {
 		--spry-text-color: var(--spry-color-light);
+		--spry-text-color-rgb: var(--spry-color-light-rgb);
 		color: --spry-text-color;
 	}
 	button.contrast,
 	[role=button].contrast {
 		--spry-accent-color: var(--spry-color-light);
 		--spry-text-color: var(--spry-color-dark);
+		--spry-text-color-rgb: var(--spry-color-dark-rgb);
 	}
 }
 
@@ -47,11 +53,13 @@ $color_value in $colors {
 		--spry-accent-color: var(--spry-color-#{$color_name});
 		--spry-accent-color-rgb: var(--spry-color-#{$color_name}-rgb);
 		--spry-text-color: var(--spry-color-#{$color_name});
+		--spry-text-color-rgb: var(--spry-color-#{$color_name}-rgb);
 		color: var(--spry-text-color);
 	}
 
 	button.#{$color_name},
-	[role=button].#{$color_name} {
+	[role=button].#{$color_name},
+	[role=alert].#{$color_name} {
 		--spry-accent-color: var(--spry-color-#{$color_name});
 		--spry-accent-color-rgb: var(--spry-color-#{$color_name}-rgb);
 		@if $color_name !=inherit {
@@ -100,7 +108,9 @@ article {
 
 [data-theme-dark] {
 	background-color: darken(map-get($colors, 'dark'), 15%);
-	color           : map-get($colors, 'light');
+	--spry-text-color: var(--spry-color-light);
+	--spry-text-color-rgb: var(--spry-color-light-rgb);
+	color           : var(--spry-text-color);
 
 	article,
 	.bg-light {
@@ -170,5 +180,16 @@ $color_value in $colors {
 	button.hover-#{$color_name}:hover,
 	button.hover-#{$color_name}:focus {
 		--spry-text-color: var(--spry-color-#{$color_name});
+		--spry-text-color-rgb: var(--spry-color-#{$color_name}-rgb);
+	}
+}
+
+@each $color_name,
+$color_value in $colors {
+
+	.icon.#{$color_name},
+	a.#{$color_name} {
+		--spry-accent-color: var(--spry-color-#{$color_name});
+		--spry-accent-color-rgb: var(--spry-color-#{$color_name}-rgb);
 	}
 }

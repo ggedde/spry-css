@@ -18,7 +18,7 @@ $colors: (
     "medium": #888888,
     "dark": #444444,
     "primary": #1494df,
-    // "warning": #df8a22,
+    "secondary": #df8a22,
     // "error": #d52929,
     // "success": #09c347,
     "text": #566067,
@@ -47,17 +47,18 @@ $spacing: (0: 0em,
 
 // Specify each size that applies font-size and all elements using "em".
 $sizes: (
-    // xl: 140%,
+    xl: 140%,
     lg: 120%,
     md: 100%,
     sm: 90%,
-    // xs: 75%,
+    xs: 75%,
 ) !default;
 
 :root {
     --spry-accent-color     : #{map-get($colors, 'medium')};
     --spry-accent-color-rgb : #{red(map-get($colors, 'medium')), green(map-get($colors, 'medium')), blue(map-get($colors, 'medium'))};
     --spry-text-color       : #{map-get($colors, 'text')};
+    --spry-text-color-rgb : #{red(map-get($colors, 'text')), green(map-get($colors, 'text')), blue(map-get($colors, 'text'))};
     --spry-gap              : #{map-get($gaps, 'default')};
 
     @each $color_name,

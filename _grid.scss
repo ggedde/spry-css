@@ -1,6 +1,8 @@
-/*! 
+/*
 * Spry Grid
 */
+@use "variables" as *;
+
 .grid {
 	display: grid;
 	gap: var(--spry-gap);

@@ -4,13 +4,12 @@
  * author: https://github.com/ggedde/spry-css
  */
 
-@import "variables";
-@import "reset";
-@import "typography";
-@import "ui";
-@import "modals";
-@import "grid";
-@import "sliders";
-@import "utilities";
-@import "colors";
-@import "spacing";
+@use "reset";
+@use "typography";
+@use "ui";
+@use "modals";
+@use "grid";
+@use "sliders";
+@use "utilities";
+@use "colors";
+@use "spacing";

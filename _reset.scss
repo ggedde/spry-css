@@ -1,4 +1,4 @@
-/*! 
+/*
 * Spry Reset
 */
 html {
@@ -29,25 +29,24 @@ ul {
 ul {
     list-style: disc;
 }
-ul, ol {
-    li {
-        margin-top: .5rem;
-        margin-bottom: .5rem;
-    }
+
+ol, ul {
+    margin-left: 1.5em; 
 }
 
-ol,
-ul {
-    margin-left: 1.5rem;
-    nav & {
-        list-style: none;
-        margin-left: 0;
-        li {
-            margin-top: 0;
-            margin-bottom: 0;
-        }
+ol li, ul li {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
 
-    }
+nav :is(ol, ul) {
+    list-style: none;
+    margin-left: 0;
+}
+
+nav :is(ol, ul) li {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 img {
