@@ -26,15 +26,22 @@
 	transition: opacity .25s cubic-bezier(.25,.8,.25,1);
 	z-index: 1000;
 	display: flex;
-	> * {
-		position: relative;
+	> :not([type=checkbox],label) {
 		box-sizing: border-box;
-		display: block;
 		overflow: hidden;
 		scale: .6;
 		transition: scale .3s cubic-bezier(.25,.8,.25,1);
 		width: 90%;
 	}
+	> label {
+		position: absolute;
+		inset: 0;
+		width: 110%;
+	}
+	> [type=checkbox] {
+		display: none;
+	}
+	&:has(>[type=checkbox]:checked),
 	&.show {
 		opacity: 1;
 		pointer-events: all;

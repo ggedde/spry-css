@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "node_modules/.bin/chokidar *.scss -c 'npm run build'",
     "build": "node_modules/.bin/sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use cssnano -o ./dist/spry.min.css; sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use cssnano -o ./docs/spry.min.css; gzip -c ./dist/spry.min.css > ./dist/spry.min.css.gz; stat -f%z ./dist/spry.min.css.gz",
-    "build-full": "node_modules/.bin/sass ./spry.scss | node_modules/.bin/postcss --map false -o ./dist/spry.min.css; sass ./spry.scss | node_modules/.bin/postcss --map false -o ./docs/spry.min.css; gzip -c ./dist/spry.min.css > ./dist/spry.min.css.gz; stat -f%z ./dist/spry.min.css.gz"
+    "build-full": "node_modules/.bin/sass ./spry.scss:./dist/spry.min.css; sass ./spry.scss:./docs/spry.min.css; gzip -c ./dist/spry.min.css > ./dist/spry.min.css.gz; stat -f%z ./dist/spry.min.css.gz"
 
   },
   "dependencies": {

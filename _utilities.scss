@@ -115,8 +115,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 	.mh-#{$i}00{ max-height: #{$i}00px }
 	// .vh-#{$i}0{ height: #{$i}0vh }
 	// .mvh-#{$i}0{ max-height: #{$i}0vh }
-	.w-#{$i}00,.row>.w-#{$i}00{ width: #{$i}00px; min-width: #{$i}00px; max-width: #{$i}00px }
-	.mw-#{$i}00,.row>.mw-#{$i}00{ max-width: #{$i}00px }
+	// .w-#{$i}00,.row>.w-#{$i}00{ width: #{$i}00px; min-width: #{$i}00px; max-width: #{$i}00px }
+	.mw-#{$i}00,.row>.mw-#{$i}00{ width: 100%; max-width: #{$i}00px }
 	// .vw-#{$i}0{ width: #{$i}0vw }
 	// .mvw-#{$i}0,.row>.mvw-#{$i}0{ max-width: #{$i}0vw }
 }
@@ -223,8 +223,8 @@ $size_value in $sizes {
 				&-mh-#{$i}00{ max-height: #{$i}00px }
 				// &-vh-#{$i}0{ height: #{$i}0vh }
 				// &-mvh-#{$i}0{ max-height: #{$i}0vh }
-				&-w-#{$i}00,.row>&-w-#{$i}00{ width: #{$i}00px; min-width: #{$i}00px; max-width: #{$i}00px }
-				&-mw-#{$i}00,.row>&-mw-#{$i}00{ max-width: #{$i}00px }
+				// &-w-#{$i}00,.row>&-w-#{$i}00{ width: #{$i}00px; min-width: #{$i}00px; max-width: #{$i}00px }
+				&-mw-#{$i}00,.row>&-mw-#{$i}00{ width: 100%; max-width: #{$i}00px }
 				// &-vw-#{$i}0{ width: #{$i}0vw }
 				// &-mvw-#{$i}0,.row>&-mvw-#{$i}0{ max-width: #{$i}0vw }
 			}

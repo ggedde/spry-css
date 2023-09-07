@@ -23,6 +23,7 @@ button.contrast,
 	// --spry-color-light: #{map-get($colors, 'dark')};
 	// --spry-color-dark : #{map-get($colors, 'light')};
 	// --spry-color-text : #{map-get($colors, 'light')};
+	// --spry-text-color : #{map-get($colors, 'light')};
 
 	.bg-contrast {
 		background-color: var(--spry-color-light);
@@ -37,32 +38,29 @@ button.contrast,
 		--spry-accent-color: var(--spry-color-light);
 		--spry-text-color: var(--spry-color-dark);
 		--spry-text-color-rgb: var(--spry-color-dark-rgb);
+		&:is(.outline,.hazy,.link) {
+			--spry-text-color: var(--spry-accent-color);
+			--spry-text-color-rgb: var(--spry-accent-color-rgb);
+		}
 	}
 }
 
-
+@media (prefers-color-scheme: dark) {
+	select option {
+		background: var(--spry-color-dark);
+		color     : var(--spry-color-light);
+	}
+}
 
 @each $color_name,
 $color_value in $colors {
-
-	.#{$color_name},
-	.alert-#{$color_name},
-	.link-#{$color_name} a,
-	.link-hover-#{$color_name} a:not([role=button]):not([class*="hover-"]):hover,
-	.link-hover-#{$color_name} a:not([role=button]):not([class*="hover-"]):focus {
-		--spry-accent-color: var(--spry-color-#{$color_name});
-		--spry-accent-color-rgb: var(--spry-color-#{$color_name}-rgb);
-		--spry-text-color: var(--spry-color-#{$color_name});
-		--spry-text-color-rgb: var(--spry-color-#{$color_name}-rgb);
-		color: var(--spry-text-color);
-	}
 
 	button.#{$color_name},
 	[role=button].#{$color_name},
 	[role=alert].#{$color_name} {
 		--spry-accent-color: var(--spry-color-#{$color_name});
 		--spry-accent-color-rgb: var(--spry-color-#{$color_name}-rgb);
-		@if $color_name !=inherit {
+		@if $color_value !=inherit {
 			@if (lightness($color_value) > 70) {
 				--spry-text-color: #{map-get($colors, 'dark')};
 			} @else {
@@ -73,21 +71,20 @@ $color_value in $colors {
 
 	.bg-#{$color_name} {
 		background-color: var(--spry-color-#{$color_name});
-		@if $color_name !=inherit {
-			@if (lightness($color_value) > 70) {
-				--spry-text-color: #{map-get($colors, 'text')};
-			} @else {
-				--spry-text-color: #{map-get($colors, 'light')};
-			}
-			color: var(--spry-text-color);
-		}
+		// @if $color_name !=inherit {
+		// 	@if (lightness($color_value) > 70) {
+		// 		--spry-text-color: #{map-get($colors, 'text')};
+		// 	} @else {
+		// 		--spry-text-color: #{map-get($colors, 'light')};
+		// 	}
+		// 	color: var(--spry-text-color);
+		// }
 	}
 
-	.alert-#{$color_name},
 	article.accent-#{$color_name},
+	.border-#{$color_name},
 	.accent-#{$color_name} .border:not([class*="border-"]):hover,
 	.accent-#{$color_name} .border:not([class*="border-"]),
-	.alert.border-#{$color_name},
 	[class*="accent-"].border-#{$color_name} {
 		border-color: var(--spry-color-#{$color_name});
 	}
@@ -102,8 +99,6 @@ $color_value in $colors {
 
 article {
 	--spry-accent-color  : var(--spry-color-light);
-	--spry-btn-color     : var(--spry-color-light);
-	--spry-btn-color-text: #{map-get($colors, 'text')};
 }
 
 [data-theme-dark] {
@@ -112,39 +107,25 @@ article {
 	--spry-text-color-rgb: var(--spry-color-light-rgb);
 	color           : var(--spry-text-color);
 
+	select option {
+		background: var(--spry-color-dark);
+		color     : var(--spry-color-light);
+	}
+
+	[role=tooltip] {
+		background: var(--spry-color-dark);
+		color     : var(--spry-color-light);
+	}
+
 	article,
 	.bg-light {
 		background-color     : darken(map-get($colors, 'dark'), 7%);
-		color                : map-get($colors, 'light');
-		--spry-btn-color-text: #{map-get($colors, 'light')};
+		// color                : map-get($colors, 'light');
 	}
 
 	.bg-dark {
 		background-color: darken(map-get($colors, 'dark'), 5%);
-		color           : map-get($colors, 'light');
-	}
-
-	.btn-dark,
-	a.btn-dark {
-		--spry-btn-color     : #{darken(map-get($colors, 'dark' ), 5%)};
-		--spry-btn-color-rgb : #{red(darken(map-get($colors, 'dark' ), 5%)), green(darken(map-get($colors, 'dark' ), 5%)), blue(darken(map-get($colors, 'dark' ), 5%))};
-		--spry-btn-color-text: #{map-get($colors, 'light' )};
-	}
-
-	.btn.btn-dark.btn-outline {
-		border-color: map-get($colors, 'light');
-		color       : map-get($colors, 'light');
-
-		&:hover {
-			background-color: darken(map-get($colors, 'dark'), 10%);
-			border-color    : map-get($colors, 'light');
-			color           : map-get($colors, 'light');
-		}
-	}
-
-	.btn-dark.btn-hazy,
-	.btn-dark.btn-link {
-		color: map-get($colors, 'light');
+		// color           : map-get($colors, 'light');
 	}
 
 	select option {
@@ -152,20 +133,6 @@ article {
 		color     : #eee;
 	}
 }
-
-// button:not([class*="color-"]),
-// a[role=button]:not([class*="color-"]),
-// a[role=button]:not([class*="color-"]):hover,
-// a[role=button]:not([class*="color-"]):focus,
-// input[type="submit"]:not([class*="color-"]) {
-// 	color: var(--spry-btn-color-text);
-
-// 	&.outline:not([class*="color-"]),
-// 	&.hazy:not([class*="color-"]),
-// 	&.link:not([class*="color-"]) {
-// 		color: var(--spry-btn-color-text);
-// 	}
-// }
 
 @each $color_name,
 $color_value in $colors {
@@ -182,6 +149,9 @@ $color_value in $colors {
 		--spry-text-color: var(--spry-color-#{$color_name});
 		--spry-text-color-rgb: var(--spry-color-#{$color_name}-rgb);
 	}
+	[role=tooltip].bg-#{$color_name} {
+		background: var(--spry-color-#{$color_name});
+	}
 }
 
 @each $color_name,
@@ -189,7 +159,19 @@ $color_value in $colors {
 
 	.icon.#{$color_name},
 	a.#{$color_name} {
+		--spry-text-color: var(--spry-color-#{$color_name});
+		--spry-text-color-rgb: var(--spry-color-#{$color_name}-rgb);
+	}
+
+	.#{$color_name},
+	[class*=color-#{$color_name}],
+	.link-#{$color_name} a,
+	.link-hover-#{$color_name} a:not([role=button]):not([class*="hover-"]):hover,
+	.link-hover-#{$color_name} a:not([role=button]):not([class*="hover-"]):focus {
 		--spry-accent-color: var(--spry-color-#{$color_name});
 		--spry-accent-color-rgb: var(--spry-color-#{$color_name}-rgb);
+		--spry-text-color: var(--spry-color-#{$color_name});
+		--spry-text-color-rgb: var(--spry-color-#{$color_name}-rgb);
+		color: var(--spry-text-color);
 	}
 }

@@ -42,16 +42,16 @@ $spacing: (0: 0em,
     2: 1em,
     3: 2em,
     4: 4em,
-    // 5: 4em,
+    5: 4em,
 ) !default;
 
 // Specify each size that applies font-size and all elements using "em".
 $sizes: (
-    xl: 140%,
+    xl: 150%,
     lg: 120%,
     md: 100%,
-    sm: 90%,
-    xs: 75%,
+    sm: 80%,
+    xs: 60%,
 ) !default;
 
 :root {
