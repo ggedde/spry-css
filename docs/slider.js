@@ -1,7 +1,7 @@
 /**
  * Spry Slider JS
  *
- * Version: 2.0.2
+ * Version: 2.1.0
  * Author: gedde.dev
  * Github: https://github.com/ggedde/spry-css
  */
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         var loop = slider.hasAttribute('data-loop');
         var stop = slider.getAttribute('data-stop');
         var slides = slider.querySelector('.slider-slides');
+        var pagination = slider.querySelector('.slider-pagination');
         var slidesWidth = slides.scrollWidth;
         var block = slides.innerHTML;
         var scrollTimer = null;
@@ -37,6 +38,20 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.querySelector('.slider-next').addEventListener('click', () => {
             slides.scrollBy(slider.offsetWidth, 0);
         });
+        if ( pagination && slides && slides.childElementCount ) {
+            var offsetSlides = loop ? slides.childElementCount : 0;
+            for (let index = 0; index < slides.childElementCount; index++) {
+                let div = document.createElement("div");
+                div.onclick = () => {
+                    slides.scrollTo(slides.querySelector(':nth-child('+(index+1+offsetSlides)+')').offsetLeft, 0);
+                    pagination.childNodes.forEach(pagination => {
+                        pagination.classList.remove('active');
+                    });
+                    div.classList.add('active');
+                }
+                pagination.append(div);
+            }
+        }
         slides.addEventListener('scroll', () => {
             slider.setAttribute('data-sliding', '');
             slider.removeAttribute('data-position');

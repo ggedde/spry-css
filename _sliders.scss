@@ -63,4 +63,23 @@
 	&[data-position="end"] .slider-next {
 		opacity: 0;
 	}
+
+	.slider-pagination {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+		& > * {
+			cursor: pointer;
+			border-radius: 50%;
+			background-color: var(--spry-accent-color);
+			width: 1em;
+			height: 1em;
+			transition: filter .2s ease-in-out;
+			&:hover,
+			&.active {
+				filter: brightness(1.15);
+			}
+		}
+	}
 }
