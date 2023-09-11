@@ -6,6 +6,7 @@
 button,
 [role=button],
 [role=alert],
+[role=tab],
 input,
 textarea,
 select,
@@ -34,6 +35,7 @@ nav li>a {
 
 button,
 [role=button],
+[role=tab],
 input[type=submit] {
 	width : auto;
 	cursor: pointer;
@@ -61,7 +63,8 @@ input[type=submit] {
 	}
 }
 
-[role=button]:has(:focus-visible) {
+[role=button]:has(:focus-visible),
+[role=tab]:has(:focus-visible) {
 	outline       : 2px solid rgba(140, 140, 140, 0.25);
 	outline-offset: 2px;
 }
@@ -77,6 +80,7 @@ input[type=submit] {
 button,
 [role=button],
 [role=alert],
+[role=tab],
 input,
 textarea,
 select,
@@ -89,7 +93,7 @@ article,
 	transition     : all .2s ease-in-out;
 }
 
-:is(button, [role=button], input, textarea, select, .list li>a, .list li>button) {
+:is(input, textarea, select) {
 	::placeholder {
 		opacity: .7;
 	}
@@ -118,7 +122,7 @@ article,
 	}
 }
 
-:is(button, [role=button], input, textarea, select, form, .list li>a, .list li>button):disabled {
+:is(button, [role=button], [role=tab], input, textarea, select, form, .list li>a, .list li>button):disabled {
 	opacity       : .6;
 	pointer-events: none;
 }
@@ -209,12 +213,12 @@ $breakpoint_width in $breakpoints {
 		}
 	}
 }
-:is(button, [role=button], [role=alert], input[type=submit]) {
+:is(button, [role=button], [role=tab], [role=alert], input[type=submit]) {
 	background-color : var(--spry-accent-color);
 	border-color     : var(--spry-accent-color);
 }
 
-:is(button, [role=button], [role=alert], i:empty, .icon, input[type=submit]) {
+:is(button, [role=button], [role=tab], [role=alert], i:empty, .icon, input[type=submit]) {
 	--spry-text-color: #{map-get($colors, 'light')};
 	color            : var(--spry-text-color);
 
@@ -254,7 +258,7 @@ $breakpoint_width in $breakpoints {
 	height: 2em;
 }
 
-:is(button, [role=button], input[type=submit]) {
+:is(button, [role=button], [role=tab], input[type=submit]) {
 
 	&:is(.link, .outline) {
 
@@ -275,7 +279,7 @@ $breakpoint_width in $breakpoints {
 	}
 }
 
-:is(button, [role=button], a:not([role=button]), input[type=submit]) {
+:is(button, [role=button], [role=tab], a:not([role=button]), input[type=submit]) {
 
 	&:hover:not(:active),
 	&:focus:not(:active),
@@ -287,6 +291,7 @@ $breakpoint_width in $breakpoints {
 button,
 .list li>a,
 [role=button],
+[role=tab],
 input[type=submit] {
 	text-align    : center;
 	text-transform: uppercase;
@@ -296,6 +301,7 @@ input[type=submit] {
 
 button svg,
 [role=button] svg,
+[role=tab] svg,
 [role=alert] svg,
 .list li>a svg,
 i svg,
@@ -316,6 +322,7 @@ i svg,
 
 button.link,
 [role=button].link,
+[role=tab].link,
 .list li>a,
 .list li>button {
 	text-transform: capitalize;
@@ -438,28 +445,30 @@ nav {
 	}
 }
 
-:is(button, [role=button]) {
+:is(button, [role=button], [role=tab]) {
 	position: relative;
 
 	input:not([role=button]):not(.icon) {
 		padding: 0;
 		margin : 0;
 		width  : 0;
+		height  : 0;
+		min-height  : 0;
 		z-index: -1;
 	}
 }
 
-[role=button]:has(input) svg:nth-of-type(2) {
+:is([role=button],[role=tab]):has(input) svg:nth-of-type(2) {
 	opacity  : 0;
 	transform: scale(.5);
 }
 
-[role=button]:has(:checked) svg:nth-of-type(1) {
+:is([role=button],[role=tab]):has(:checked) svg:nth-of-type(1) {
 	opacity  : 0;
 	transform: scale(.5);
 }
 
-[role=button]:has(:checked) svg:nth-of-type(2) {
+:is([role=button],[role=tab]):has(:checked) svg:nth-of-type(2) {
 	opacity  : 1;
 	transform: scale(1);
 }
@@ -644,7 +653,7 @@ i:empty {
 	position: relative;
 }
 
-:is(button, [role=button]) :is(.icon, i:empty) {
+:is(button, [role=button], [role=tab]) :is(.icon, i:empty) {
 	border-color: transparent;
 	min-height  : 0;
 	min-width   : 0;
@@ -779,7 +788,7 @@ label {
 }
 
 [aria-busy=true],
-:is(button, [role=button], input[type=submit])[aria-busy=true] {
+:is(button, [role=button], [role=tab], input[type=submit])[aria-busy=true] {
 	pointer-events: none;
 	user-select   : none;
 	cursor        : default;
@@ -931,44 +940,88 @@ $breakpoint_width in $breakpoints {
 	}
 }
 
+[role=tab] {
+	// width: 30%;
+	display: flex;
+	input {
+		opacity: 0;
+	}
+	&:has(:checked) {
+		box-shadow: inset 0 -2px 0 var(--spry-accent-color);
+	}
+	.slider & {
+		white-space: nowrap;
+	}
+}
+
+// [role=tablist] {
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	flex-direction: column;
+// 	&.horizontal {
+// 		flex-direction: row;
+// 		[role=tab]:has(:checked) {
+// 			box-shadow: inset 0px -2px 0px var(--spry-accent-color);
+// 		}
+// 	}
+// 	@each $breakpoint,
+// 	$breakpoint_width in $breakpoints {
+// 		@media screen and (min-width: $breakpoint_width) {
+// 			&.#{$breakpoint}-horizontal {
+// 				flex-direction: row;
+// 				[role=tab]:has(:checked) {
+// 					box-shadow: inset 0px -2px 0px var(--spry-accent-color);
+// 				}
+// 			}
+// 		}
+// 	}
+// 	> * {
+// 		flex: auto;
+// 	}
+// }
+
 [role=tabpanel] {
 	transition: none;
-	transform: scale(0.99);
+	transform: translateY(3px);
 	max-height: 0;
 	opacity: 0;
+	order: 9999;
 }
 
-[role=tablist] [role=button]:has(:checked) {
-	box-shadow: inset 2px 0px 0px var(--spry-accent-color);
-}
-[role=tablist].horizontal [role=button]:has(:checked) {
-	box-shadow: inset 2px 0px 0px var(--spry-accent-color);
-}
+// [role=tab]:has(:checked) + [role=tabpanel] {
+// 	max-height: 100vh;
+// 	opacity: 1;
+// 	transform: none;
+// 	transition: opacity .2s ease-in-out, transform .3s ease-out;
+// 	padding: 2em;
+// }
 
-[role=tablist]:has(:nth-child(1) :checked) + * [role=tabpanel]:nth-child(1),
-[role=tablist]:has(:nth-child(2) :checked) + * [role=tabpanel]:nth-child(2),
-[role=tablist]:has(:nth-child(3) :checked) + * [role=tabpanel]:nth-child(3),
-[role=tablist]:has(:nth-child(4) :checked) + * [role=tabpanel]:nth-child(4),
-[role=tablist]:has(:nth-child(5) :checked) + * [role=tabpanel]:nth-child(5),
-[role=tablist]:has(:nth-child(6) :checked) + * [role=tabpanel]:nth-child(6),
-[role=tablist]:has(:nth-child(7) :checked) + * [role=tabpanel]:nth-child(7),
-[role=tablist]:has(:nth-child(8) :checked) + * [role=tabpanel]:nth-child(8),
-[role=tablist]:has(:nth-child(9) :checked) + * [role=tabpanel]:nth-child(9),
-[role=tablist]:has(:nth-child(10) :checked) + * [role=tabpanel]:nth-child(10),
-[role=tablist]:has(:nth-child(11) :checked) + * [role=tabpanel]:nth-child(11),
-[role=tablist]:has(:nth-child(12) :checked) + * [role=tabpanel]:nth-child(12),
-[role=tablist]:has(:nth-child(13) :checked) + * [role=tabpanel]:nth-child(13),
-[role=tablist]:has(:nth-child(14) :checked) + * [role=tabpanel]:nth-child(14),
-[role=tablist]:has(:nth-child(15) :checked) + * [role=tabpanel]:nth-child(15),
-[role=tablist]:has(:nth-child(16) :checked) + * [role=tabpanel]:nth-child(16),
-[role=tablist]:has(:nth-child(17) :checked) + * [role=tabpanel]:nth-child(17),
-[role=tablist]:has(:nth-child(18) :checked) + * [role=tabpanel]:nth-child(18),
-[role=tablist]:has(:nth-child(19) :checked) + * [role=tabpanel]:nth-child(19),
-[role=tablist]:has(:nth-child(20) :checked) + * [role=tabpanel]:nth-child(20) {
+[role=tab]:has(:checked) + [role=tabpanel],
+[role=tablist]:has([role=tab]:nth-child(1) :checked) + * [role=tabpanel]:nth-child(1),
+[role=tablist]:has([role=tab]:nth-child(2) :checked) + * [role=tabpanel]:nth-child(2),
+[role=tablist]:has([role=tab]:nth-child(3) :checked) + * [role=tabpanel]:nth-child(3),
+[role=tablist]:has([role=tab]:nth-child(4) :checked) + * [role=tabpanel]:nth-child(4),
+[role=tablist]:has([role=tab]:nth-child(5) :checked) + * [role=tabpanel]:nth-child(5),
+[role=tablist]:has([role=tab]:nth-child(6) :checked) + * [role=tabpanel]:nth-child(6),
+[role=tablist]:has([role=tab]:nth-child(7) :checked) + * [role=tabpanel]:nth-child(7),
+[role=tablist]:has([role=tab]:nth-child(8) :checked) + * [role=tabpanel]:nth-child(8),
+[role=tablist]:has([role=tab]:nth-child(9) :checked) + * [role=tabpanel]:nth-child(9),
+[role=tablist]:has([role=tab]:nth-child(10) :checked) + * [role=tabpanel]:nth-child(10),
+[role=tablist]:has([role=tab]:nth-child(11) :checked) + * [role=tabpanel]:nth-child(11),
+[role=tablist]:has([role=tab]:nth-child(12) :checked) + * [role=tabpanel]:nth-child(12),
+[role=tablist]:has([role=tab]:nth-child(13) :checked) + * [role=tabpanel]:nth-child(13),
+[role=tablist]:has([role=tab]:nth-child(14) :checked) + * [role=tabpanel]:nth-child(14),
+[role=tablist]:has([role=tab]:nth-child(15) :checked) + * [role=tabpanel]:nth-child(15),
+[role=tablist]:has([role=tab]:nth-child(16) :checked) + * [role=tabpanel]:nth-child(16),
+[role=tablist]:has([role=tab]:nth-child(17) :checked) + * [role=tabpanel]:nth-child(17),
+[role=tablist]:has([role=tab]:nth-child(18) :checked) + * [role=tabpanel]:nth-child(18),
+[role=tablist]:has([role=tab]:nth-child(19) :checked) + * [role=tabpanel]:nth-child(19),
+[role=tablist]:has([role=tab]:nth-child(20) :checked) + * [role=tabpanel]:nth-child(20) {
 	max-height: 100vh;
 	opacity: 1;
 	transform: none;
 	transition: opacity .2s ease-in-out, transform .3s ease-out;
+	padding: 2em;
 }
 
 
