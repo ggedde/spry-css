@@ -75,10 +75,11 @@
 			background-color: var(--spry-accent-color);
 			width: 1em;
 			height: 1em;
-			transition: filter .2s ease-in-out;
+			transition: opacity .2s ease-in-out;
+			opacity: .4;
 			&:hover,
 			&.active {
-				filter: brightness(1.15);
+				opacity: 1;
 			}
 		}
 	}

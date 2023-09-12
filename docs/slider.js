@@ -1,16 +1,20 @@
 /**
  * Spry Slider JS
  *
- * Version: 2.1.0
+ * Version: 2.1.2
  * Author: gedde.dev
  * Github: https://github.com/ggedde/spry-css
  */
-document.addEventListener('DOMContentLoaded', () => {
+function spryJsLoadSliders() {
     document.querySelectorAll('.slider').forEach(slider => {
+        if(slider.hasAttribute('data-loaded')) return;
         var play = parseInt(slider.getAttribute('data-play'));
         var loop = slider.hasAttribute('data-loop');
         var stop = slider.getAttribute('data-stop');
         var slides = slider.querySelector('.slider-slides');
+        var slideCount = slides.childElementCount;
+        var next = slider.querySelector('.slider-next');
+        var prev = slider.querySelector('.slider-prev');
         var pagination = slider.querySelector('.slider-pagination');
         var slidesWidth = slides.scrollWidth;
         var block = slides.innerHTML;
@@ -32,18 +36,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, play);
             }
         }
-        slider.querySelector('.slider-prev').addEventListener('click', () => {
-            slides.scrollBy(-(slides.offsetWidth), 0);
-        });
-        slider.querySelector('.slider-next').addEventListener('click', () => {
-            slides.scrollBy(slider.offsetWidth, 0);
-        });
-        if ( pagination && slides && slides.childElementCount ) {
-            var offsetSlides = loop ? slides.childElementCount : 0;
-            for (let index = 0; index < slides.childElementCount; index++) {
+        if(prev) {
+            prev.addEventListener('click', () => {
+                slides.scrollBy(-(slides.offsetWidth), 0);
+            });
+        }
+        if(next) {
+            next.addEventListener('click', () => {
+                slides.scrollBy(slider.offsetWidth, 0);
+            });
+        }
+        if ( pagination && slides && slideCount ) {
+            var offsetSlides = loop ? slideCount : 0;
+            for (let index = 1; index <= slideCount; index++) {
                 let div = document.createElement("div");
+                if (index === 1) div.classList.add('active');
                 div.onclick = () => {
-                    slides.scrollTo(slides.querySelector(':nth-child('+(index+1+offsetSlides)+')').offsetLeft, 0);
+                    slides.scrollTo(slides.querySelector(':nth-child('+(index+offsetSlides)+')').offsetLeft, 0);
                     pagination.childNodes.forEach(pagination => {
                         pagination.classList.remove('active');
                     });
@@ -89,6 +98,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 var showing = slider.querySelectorAll('[data-showing]');
                 if (showing.length) {
+                    if (pagination) {
+                        pagination.querySelectorAll('.active').forEach(active => {
+                            active.classList.remove('active');
+                        });
+                        var childIndex = Array.from(slides.children).indexOf(showing[0]);
+                        if (loop) {
+                            childIndex = (childIndex === slideCount*2) ? 0 : (childIndex - slideCount); 
+                        }
+                        if (childIndex !== undefined) {
+                            pagination.querySelector(':nth-child('+(childIndex+1)+')').classList.add('active');
+                        }
+                    }
                     showing[0].setAttribute('data-first', '');
                     showing[showing.length-1].setAttribute('data-last', '');
                     var preLoadImages = function(elem, type, total) {
@@ -155,5 +176,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         }
+        slider.setAttribute('data-loaded', '');
     });
-});
+}
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    spryJsLoadSliders();
+} else {
+    document.addEventListener('DOMContentLoaded', 'spryJsLoadSliders');
+}
