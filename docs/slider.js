@@ -1,7 +1,7 @@
 /**
  * Spry Slider JS
  *
- * Version: 2.1.2
+ * Version: 2.1.3
  * Author: gedde.dev
  * Github: https://github.com/ggedde/spry-css
  */
@@ -182,5 +182,5 @@ function spryJsLoadSliders() {
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
     spryJsLoadSliders();
 } else {
-    document.addEventListener('DOMContentLoaded', 'spryJsLoadSliders');
+    document.addEventListener('DOMContentLoaded', spryJsLoadSliders);
 }
