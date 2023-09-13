@@ -1,5 +1,5 @@
 /*! 
- * SpryCss v2.3.21
+ * SpryCss v2.3.22
  * license: MIT
  * author: https://github.com/ggedde/spry-css
  */:root{--spry-btn-color:#888;--spry-btn-color-rgb:136,136,136;--spry-btn-color-text:#fff;--spry-accent-color:#888;--spry-gap:1.25em;--spry-card-color:transparent;--spry-color-white:#fff;--spry-color-white-rgb:255,255,255;--spry-color-light:#efefef;--spry-color-light-rgb:239,239,239;--spry-color-medium:#888;--spry-color-medium-rgb:136,136,136;--spry-color-dark:#444;--spry-color-dark-rgb:68,68,68;--spry-color-primary:#1494df;--spry-color-primary-rgb:20,148,223;--spry-color-warning:#df8a22;--spry-color-warning-rgb:223,138,34;--spry-color-error:#d52929;--spry-color-error-rgb:213,41,41;--spry-color-success:#09c347;--spry-color-success-rgb:9,195,71;--spry-color-text:#566067;--spry-color-text-rgb:86,96,103;--spry-color-inherit:inherit;--spry-color-transparent:transparent;--spry-color-transparent-rgb:0,0,0}@media screen and (min-width:40em){:root{--spry-gap:2em}}@media screen and (min-width:80em){:root{--spry-gap:2.25em}}/*! 

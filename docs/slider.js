@@ -1,7 +1,7 @@
 /**
  * Spry Slider JS
  *
- * Version: 2.1.4
+ * Version: 2.1.5
  * Author: gedde.dev
  * Github: https://github.com/ggedde/spry-css
  */
@@ -21,6 +21,16 @@ function spryJsLoadSliders() {
         var scrollTimer = null;
         var playTimer = null;
         var isSelecting = false;
+        var goTo = (to, instant) => {
+            var offsetSlides = loop ? slideCount : 0;
+            if (to === 'next') {
+                slides.scrollBy(slider.offsetWidth, 0);
+            } else if (to === 'prev') {
+                slides.scrollBy(-(slides.offsetWidth), 0);
+            } else {
+                slides.scrollTo({left: slides.children[(to+offsetSlides)].offsetLeft, behavior: instant ? 'instant' : 'smooth'});
+            }
+        };
         var resetPlay = () => {
             if (playTimer) {
                 clearInterval(playTimer);
@@ -31,28 +41,27 @@ function spryJsLoadSliders() {
                     var hasAction = stop === 'action' && (slider.querySelector('a:hover') || slider.querySelector('button:hover'));
                     var hasHover = stop === 'hover' && slider.matches(':hover');
                     if (!hasAction && !hasHover) {
-                        slider.querySelector('.slider-next').click();
+                        goTo('next');
                     }
                 }, play);
             }
         }
-        if(prev) {
-            prev.addEventListener('click', () => {
-                slides.scrollBy(-(slides.offsetWidth), 0);
-            });
-        }
         if(next) {
             next.addEventListener('click', () => {
-                slides.scrollBy(slider.offsetWidth, 0);
+                goTo('next');
+            });
+        }
+        if(prev) {
+            prev.addEventListener('click', () => {
+                goTo('prev');
             });
         }
         if ( pagination && slides && slideCount ) {
-            var offsetSlides = loop ? slideCount : 0;
             for (let index = 0; index < slideCount; index++) {
                 let div = document.createElement("div");
                 if (index === 0) div.classList.add('active');
                 div.onclick = () => {
-                    slides.scrollTo(slides.children[(index+offsetSlides)].offsetLeft, 0);
+                    goTo(index);
                     pagination.childNodes.forEach(pagination => {
                         pagination.classList.remove('active');
                     });
