@@ -1,7 +1,7 @@
 /**
  * Spry Slider JS
  *
- * Version: 2.1.3
+ * Version: 2.1.4
  * Author: gedde.dev
  * Github: https://github.com/ggedde/spry-css
  */
@@ -48,11 +48,11 @@ function spryJsLoadSliders() {
         }
         if ( pagination && slides && slideCount ) {
             var offsetSlides = loop ? slideCount : 0;
-            for (let index = 1; index <= slideCount; index++) {
+            for (let index = 0; index < slideCount; index++) {
                 let div = document.createElement("div");
-                if (index === 1) div.classList.add('active');
+                if (index === 0) div.classList.add('active');
                 div.onclick = () => {
-                    slides.scrollTo(slides.querySelector(':nth-child('+(index+offsetSlides)+')').offsetLeft, 0);
+                    slides.scrollTo(slides.children[(index+offsetSlides)].offsetLeft, 0);
                     pagination.childNodes.forEach(pagination => {
                         pagination.classList.remove('active');
                     });
@@ -93,8 +93,8 @@ function spryJsLoadSliders() {
                 slider.querySelectorAll('.slider-slides > *').forEach(element => {
                     element.removeAttribute('data-first');
                     element.removeAttribute('data-last');
-                    const rect = element.getBoundingClientRect();
-                    element.toggleAttribute('data-showing', (rect.left >= 0 && rect.right <= (window.innerWidth || document.documentElement.clientWidth)));
+                    var left = Math.round(element.getBoundingClientRect().left - slider.getBoundingClientRect().left);
+                    element.toggleAttribute('data-showing', (left >= 0 && left < slider.clientWidth));
                 });
                 var showing = slider.querySelectorAll('[data-showing]');
                 if (showing.length) {
@@ -107,7 +107,7 @@ function spryJsLoadSliders() {
                             childIndex = (childIndex === slideCount*2) ? 0 : (childIndex - slideCount); 
                         }
                         if (childIndex !== undefined) {
-                            pagination.querySelector(':nth-child('+(childIndex+1)+')').classList.add('active');
+                            pagination.children[childIndex].classList.add('active');
                         }
                     }
                     showing[0].setAttribute('data-first', '');
