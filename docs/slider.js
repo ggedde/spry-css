@@ -1,21 +1,36 @@
 /**
  * Spry Slider JS
  *
- * Version: 2.0.2
+ * Version: 2.1.6
  * Author: gedde.dev
  * Github: https://github.com/ggedde/spry-css
  */
-document.addEventListener('DOMContentLoaded', () => {
+function spryJsLoadSliders() {
     document.querySelectorAll('.slider').forEach(slider => {
+        if(slider.hasAttribute('data-loaded')) return;
         var play = parseInt(slider.getAttribute('data-play'));
         var loop = slider.hasAttribute('data-loop');
         var stop = slider.getAttribute('data-stop');
         var slides = slider.querySelector('.slider-slides');
+        var slideCount = slides.childElementCount;
+        var next = slider.querySelector('.slider-next');
+        var prev = slider.querySelector('.slider-prev');
+        var pagination = slider.querySelector('.slider-pagination');
         var slidesWidth = slides.scrollWidth;
         var block = slides.innerHTML;
         var scrollTimer = null;
         var playTimer = null;
         var isSelecting = false;
+        var goTo = (to, instant) => {
+            var offsetSlides = loop ? slideCount : 0;
+            if (to === 'next') {
+                slides.scrollBy(slider.offsetWidth, 0);
+            } else if (to === 'prev') {
+                slides.scrollBy(-(slides.offsetWidth), 0);
+            } else {
+                slides.scrollTo({left: slides.children[(to+offsetSlides)].offsetLeft, behavior: instant ? 'instant' : 'smooth'});
+            }
+        };
         var resetPlay = () => {
             if (playTimer) {
                 clearInterval(playTimer);
@@ -26,17 +41,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     var hasAction = stop === 'action' && (slider.querySelector('a:hover') || slider.querySelector('button:hover'));
                     var hasHover = stop === 'hover' && slider.matches(':hover');
                     if (!hasAction && !hasHover) {
-                        slider.querySelector('.slider-next').click();
+                        goTo('next');
                     }
                 }, play);
             }
         }
-        slider.querySelector('.slider-prev').addEventListener('click', () => {
-            slides.scrollBy(-(slides.offsetWidth), 0);
-        });
-        slider.querySelector('.slider-next').addEventListener('click', () => {
-            slides.scrollBy(slider.offsetWidth, 0);
-        });
+        if(next) {
+            next.addEventListener('click', () => {
+                goTo('next');
+            });
+        }
+        if(prev) {
+            prev.addEventListener('click', () => {
+                goTo('prev');
+            });
+        }
+        if ( pagination && slides && slideCount ) {
+            for (let index = 0; index < slideCount; index++) {
+                let div = document.createElement("div");
+                if (index === 0) div.classList.add('active');
+                div.onclick = () => {
+                    goTo(index);
+                    pagination.childNodes.forEach(pagination => {
+                        pagination.classList.remove('active');
+                    });
+                    div.classList.add('active');
+                }
+                pagination.append(div);
+            }
+        }
         slides.addEventListener('scroll', () => {
             slider.setAttribute('data-sliding', '');
             slider.removeAttribute('data-position');
@@ -69,11 +102,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 slider.querySelectorAll('.slider-slides > *').forEach(element => {
                     element.removeAttribute('data-first');
                     element.removeAttribute('data-last');
-                    const rect = element.getBoundingClientRect();
-                    element.toggleAttribute('data-showing', (rect.left >= 0 && rect.right <= (window.innerWidth || document.documentElement.clientWidth)));
+                    var left = Math.round(element.getBoundingClientRect().left - slider.getBoundingClientRect().left);
+                    element.toggleAttribute('data-showing', (left >= 0 && left < slider.clientWidth));
                 });
                 var showing = slider.querySelectorAll('[data-showing]');
                 if (showing.length) {
+                    if (pagination) {
+                        pagination.querySelectorAll('.active').forEach(active => {
+                            active.classList.remove('active');
+                        });
+                        var childIndex = Array.from(slides.children).indexOf(showing[0]);
+                        if (loop) {
+                            childIndex = (childIndex === slideCount*2) ? 0 : (childIndex - slideCount); 
+                        }
+                        if (childIndex !== undefined) {
+                            pagination.children[childIndex].classList.add('active');
+                        }
+                    }
                     showing[0].setAttribute('data-first', '');
                     showing[showing.length-1].setAttribute('data-last', '');
                     var preLoadImages = function(elem, type, total) {
@@ -140,5 +185,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         }
+        slider.setAttribute('data-loaded', '');
     });
-});
+}
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    spryJsLoadSliders();
+} else {
+    document.addEventListener('DOMContentLoaded', spryJsLoadSliders);
+}
