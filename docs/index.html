@@ -83,10 +83,13 @@
                                             <a class="pl-3" href="#buttons">Default</a>
                                         </li>
                                         <li>
-                                            <a class="pl-3" href="#buttons-outline">Style Outline</a>
+                                            <a class="pl-3" href="#buttons-outline">Outline</a>
                                         </li>
                                         <li>
-                                            <a class="pl-3" href="#buttons-link">Style Link</a>
+                                            <a class="pl-3" href="#buttons-hazy">Hazy</a>
+                                        </li>
+                                        <li>
+                                            <a class="pl-3" href="#buttons-link">Link</a>
                                         </li>
                                         <li>
                                             <a class="pl-3" href="#buttons-sizes">Sizes</a>
@@ -232,6 +235,14 @@
                                             <a class="pl-3" href="#sliders-breakpoints">Breakpoints</a>
                                         </li>
                                     </ul>
+                                </li>
+                                <li>
+                                    <a href="#tabs">
+                                        <i class="sm mr-2">
+                                            <svg viewBox="0 0 24 24"><path d="M21 3H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H3V5h10v4h8v10z" /></svg>
+                                        </i>
+                                        Tabs
+                                    </a>
                                 </li>
                                 <li>
                                     <a href="#tables">
@@ -469,6 +480,8 @@ $sizes: (
                     <u>Underline</u>
                     <small>Small</small>
                     <a href="#">Anchor</a>
+                    hr
+                    <hr>
                 </div>
                 <h5>Unordered List</h5>
                 <ul>
@@ -572,30 +585,28 @@ $sizes: (
                 <h4 id="colors-text" class="mt-3">Text Colors</h4>
                 <p class="my-1"><code class="color-medium italic sm">.color-{color}</code></p>
                 <div class="show-code">
-                    <p class="primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                    <p class="error">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                    <p class="success">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                    <p class="medium">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                    <p class="contrast">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="color-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="color-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="color-default">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="color-contrast">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                 </div>
 
                 <h4 id="colors-text" class="mt-3">Hover/Focus Colors</h4>
                 <p class="my-1"><code class="medium italic sm">.hover-{color}</code></p>
                 <div class="show-code">
-                    <a href="#" class="block hover-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
-                    <a href="#" class="block hover-error">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
-                    <a href="#" class="block hover-success">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
-                    <a href="#" class="block hover-medium">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
+                    <a href="#" class="hover-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a><br>
+                    <a href="#" class="hover-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a><br>
+                    <a href="#" class="hover-default">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a><br>
+                    <a href="#" class="hover-contrast">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                 </div>
 
                 <h4 id="colors-text" class="mt-3">Change Child Link Colors and Link Hover Colors</h4>
                 <p class="my-1"><code class="medium italic sm">.link-{color}</code> <code class="medium italic sm">.link-hover-{color}</code></p>
                 <div class="show-code">
-                    <div class="link-success link-hover-error grid g-1">
+                    <div class="link-default link-hover-secondary grid g-1">
                         <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                         <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                         <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
-                        
                     </div>
                 </div>
     
@@ -620,9 +631,9 @@ $sizes: (
                 <h4 id="colors-accents" class="mt-3">Accent Colors</h4>
                 <div class="sm mb-1">You can wrap elements with an accent color to change and override all the accent
                     colors within that container.</div>
-                <div><code class="color-medium italic sm">.accent-{color}</code></div>
+                <div><code class="color-medium italic sm">.{color}</code></div>
                 <div class="show-code">
-                    <div class="accent-error p-2 mt-1 border">
+                    <div class="secondary p-2 mt-1 border">
                         <button class="mt-2">Lorem Ipsum</button>
                         <button class="outline mt-2">Lorem Ipsum</button>
                         <p class="border my-2 p-1 rounded">Text with Border</p>
@@ -648,7 +659,7 @@ $sizes: (
                     $color variables.</div>
                 <div class="sm mb-1">* This will apply to all child elements.</div>
                 <div class="show-code">
-                    <div data-theme-dark class="p-2 mt-1 border accent-primary">
+                    <div class="p-2 mt-1 border accent-primary" data-theme-dark>
                         <button class="mt-2">Lorem Ipsum</button>
                         <button class="outline mt-2">Lorem Ipsum</button>
                         <p class="border my-2 p-1 rounded">Text with Border</p>
@@ -665,6 +676,13 @@ $sizes: (
                             <input type="radio" name="accent-radio" />
                         </div>
                     </div>
+                </div>
+
+                <h4 id="dark-mode" class="mt-3 mb-2">Contrast Colors</h4>
+                <div class="mb-1">The <code class="color-primary italic">.contrast</code> class is auto generated from your <code class="color-primary italic">dark</code> and <code class="color-primary italic">light</code> colors. It will switch from dark to light depending on the theme.</div>
+                <div class="show-code">
+                    <p class="contrast">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <button class="contrast">Contrast Button</button>
                 </div>
     
                 <h4 id="colors-vars" class="mt-4">SCSS Variable</h4>
@@ -789,6 +807,10 @@ $sizes: (
                         <i class="mr-2"><svg  viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg></i>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
+                    <div role="alert" class="contrast">
+                        <i class="mr-2"><svg  viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg></i>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
                 </div>
 
                 <h4 class="border-bottom pb-1 mb-3">Outline</h4>
@@ -805,6 +827,10 @@ $sizes: (
                         <i class="mr-2"><svg  viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg></i>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
+                    <div role="alert" class="contrast outline">
+                        <i class="mr-2"><svg  viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg></i>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
                 </div>
 
                 <h4 class="border-bottom pb-1 mb-3">Hazy</h4>
@@ -818,6 +844,10 @@ $sizes: (
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
                     <div role="alert" class="secondary hazy">
+                        <svg class="mr-2" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
+                    <div role="alert" class="contrast hazy">
                         <svg class="mr-2" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
@@ -899,7 +929,7 @@ $sizes: (
                     <button class="outline contrast">Contrast</button>
                 </div>
 
-                <h4 id="buttons-link" class="mt-4">Hazy</h4>
+                <h4 id="buttons-hazy" class="mt-4">Hazy</h4>
                 <div class="show-code">
                     <button class="hazy">Default</button>
                     <button class="hazy primary">Primary</button>
@@ -1101,8 +1131,8 @@ $sizes: (
                             </footer>
                         </article>
     
-                        <article class="accent-primary shadow">
-                            <header class="light">
+                        <article class="primary shadow">
+                            <header class="color-light">
                                 <h4>This is the Title</h4>
                             </header>
                             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -1186,7 +1216,7 @@ $sizes: (
 
                 <h4 class="mb-1 mt-3">Simple form with Accent Color</h4>
                 <div class="show-code">
-                    <form class="accent-primary">
+                    <form class="primary">
                         <div class="row py-3 g-3">
                             <div>
                                 <label>
@@ -1441,7 +1471,7 @@ $sizes: (
                         <div class="bg-light rounded p-1">
                             fixed
                         </div>
-                        <div class="col-auto bg-light rounded p-1">
+                        <div class="md-col-auto bg-light rounded p-1">
                             auto fit content
                         </div>
                         <div class="bg-light rounded p-1">
@@ -1590,16 +1620,14 @@ $sizes: (
                 <h2 class="border-bottom pb-1 mb-3">Lists</h2>
                 <p class="my-2"><code class="color-medium italic sm">&lt;nav class="list"&gt;</code></p>
                 <div class="show-code">
-                    <nav class="bg-light rounded shadow w-200 list">
+                    <nav class="bg-light rounded shadow mw-200 list">
                         <ul>
                             <li>
                                 <a href="#lists">List Item 1</a>
                             </li>
                             <li>
                                 <a href="#lists">List Item 2</a>
-                                <label role="button" class="toggle down link circle">
-                                    <input type="checkbox">
-                                </label>
+                                <input type="checkbox" role="button" class="toggle icon down link circle">
                                 <ul class="sm">
                                     <li>
                                         <a class="pl-3" href="#lists">Sub Link 1</a>
@@ -1614,9 +1642,7 @@ $sizes: (
                             </li>
                             <li>
                                 <a href="#lists">List Item 3</a>
-                                <label role="button" class="toggle down link circle">
-                                    <input type="checkbox">
-                                </label>
+                                <input type="checkbox" role="button" class="toggle icon down link circle">
                                 <ul>
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1631,9 +1657,7 @@ $sizes: (
                             </li>
                             <li>
                                 <a href="#lists" class="pr-4">List Item 4 With a very long text</a>
-                                <label role="button" class="toggle down link circle">
-                                    <input type="checkbox">
-                                </label>
+                                <input type="checkbox" role="button" class="toggle icon down link circle">
                                 <ul>
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1647,10 +1671,8 @@ $sizes: (
                                 </ul>
                             </li>
                             <li>
-                                <a href="#lists" class="truncate pr-4">List Item 5 Truncated Text</a>
-                                <label role="button" class="toggle down link circle">
-                                    <input type="checkbox">
-                                </label>
+                                <a href="#lists" class="truncate pr-3">List Item 5 Truncated Text</a>
+                                <input type="checkbox" role="button" class="toggle icon down link circle">
                                 <ul>
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
@@ -1675,16 +1697,14 @@ $sizes: (
                             <hr class="bg-primary my-0 mx-1" />
                             <li class="sm">
                                 <a href="#lists">Small List Item 1</a>
-                                <label role="button" class="toggle down link circle">
-                                    <input type="checkbox">
-                                </label>
+                                <input type="checkbox" role="button" class="toggle icon down link circle">
                                 <ul>
                                     <li>
                                         <a href="#lists">Sub Link 1</a>
                                     </li>
                                     <li>
                                         <a href="#lists">Sub Link 2</a>
-                                        <label role="button" class="toggle down link circle">
+                                        <label role="button" class="toggle icon down link circle">
                                             <input type="checkbox">
                                         </label>
                                         <ul>
@@ -2240,6 +2260,7 @@ $sizes: (
                             <img src="/placeholder-2.jpg" loading="lazy">
                             <img src="/placeholder-3.jpg" loading="lazy">
                         </div>
+                        <div class="slider-pagination p-3"></div>
                     </div>
                 </div>
     
@@ -2322,7 +2343,7 @@ $sizes: (
                     <div class="slider mt-2" data-snap>
                         <button class="slider-prev btn btn-link btn-light btn-left circle"></button>
                         <button class="slider-next btn btn-link btn-light btn-right circle"></button>
-                        <div class="slider-slides row md-columns-5 lg-columns-7 md-g-2">
+                        <div class="slider-slides row columns-3 md-columns-5 lg-columns-7 md-g-2">
                             <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(1)').offsetLeft, 0);"><img src="/placeholder-1.jpg" loading="lazy"></a>
                             <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(2)').offsetLeft, 0);"><img src="/placeholder-2.jpg" loading="lazy"></a>
                             <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(3)').offsetLeft, 0);"><img src="/placeholder-3.jpg" loading="lazy"></a>
@@ -2383,129 +2404,156 @@ $sizes: (
                 <h5 class="mb-1">Basic Responsive Tabs</h5>
                 <div class="show-code">
                     <div class="bg-light rounded">
-                        <div class="rowa">
-                            <div role="tablist">
-                                <div class="slider">
-                                    <button class="slider-prev link contrast icon left circle sm"></button>
-                                    <button class="slider-next link contrast icon right circle sm"></button>
-                                    <div class="slider-slides row g-0 columns-auto lg">
-                                        <label class="square link hazy contrast px-3" role="tab">
-                                            Tab 1
-                                            <input name="tablist1" type="radio" checked>
-                                        </label>
-                                        <label class="square link hazy contrast px-3" role="tab">
-                                            Tab 2
-                                            <input name="tablist1" type="radio">
-                                        </label>
-                                        <label class="square link hazy contrast px-3" role="tab">
-                                            Tab 3
-                                            <input name="tablist1" type="radio">
-                                        </label>
-                                        <label class="square link hazy contrast px-3" role="tab">
-                                            Tab 4
-                                            <input name="tablist1" type="radio">
-                                        </label>
-                                        <label class="square link hazy contrast px-3" role="tab">
-                                            Tab 5
-                                            <input name="tablist1" type="radio">
-                                        </label>
-                                        <label class="square link hazy contrast px-3" role="tab">
-                                            Tab 6
-                                            <input name="tablist1" type="radio">
-                                        </label>
-                                        <label class="square link hazy contrast px-3" role="tab">
-                                            Tab 7
-                                            <input name="tablist1" type="radio">
-                                        </label>
-                                        <label class="square link hazy contrast px-3" role="tab">
-                                            Tab 8
-                                            <input name="tablist1" type="radio">
-                                        </label>
-                                        <label class="square link hazy contrast px-3" role="tab">
-                                            Tab 9
-                                            <input name="tablist1" type="radio">
-                                        </label>
-                                        <label class="square link hazy contrast px-3" role="tab">
-                                            Tab 10
-                                            <input name="tablist1" type="radio">
-                                        </label>
-                                        
-                                    </div>
-                                </div>
+                        <div role="tablist" class="md-horizontal">
+                            <label role="tab">
+                                Tab 1
+                                <input name="tablist" type="radio" checked>
+                            </label>
+                            <div role="tabpanel">
+                                Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                             </div>
-                            <div>
-                                <div role="tabpanel">
-                                    Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                </div>
-                                <div role="tabpanel">
-                                    Tab 2 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                </div>
-                                <div role="tabpanel">
-                                    Tab 3 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                </div>
+                            <label role="tab">
+                                Tab 2 with long label and large content
+                                <input name="tablist" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                <p>Tab 2 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
                             </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <h5 class="mb-1">Side Tabs</h5>
-
-
-                <div class="bg-light rounded">
-                    <div role="tablist" class="md-horizontal">
-                        <label class="square hazy contrast" role="tab">
-                            Tab 1
-                            <input name="tablist3" type="radio" checked>
-                        </label>
-                        <div role="tabpanel">
-                            Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
-                        <label class="square hazy contrast" role="tab">
-                            Tab 2
-                            <input name="tablist3" type="radio">
-                        </label>
-                        <div role="tabpanel">
-                            Tab 2 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
-                        <label class="square hazy contrast" role="tab">
-                            Tab 3
-                            <input name="tablist3" type="radio">
-                        </label>
-                        <div role="tabpanel">
-                            Tab 3 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            <label role="tab">
+                                Tab 3
+                                <input name="tablist" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                Tab 3 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
+                            <label role="tab">
+                                Tab 4
+                                <input name="tablist" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                Tab 4 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
+                            <label role="tab">
+                                Tab 5
+                                <input name="tablist" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                Tab 5 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
+                            <label role="tab">
+                                Tab 6 with longer label
+                                <input name="tablist" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                Tab 6 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
                         </div>
                     </div>
                 </div>
 
-
+                <h5 class="my-2">Vertical Tabs</h5>
                 <div class="show-code">
-                    <article role="tablist">
-                        <label class="square hazy contrast lg" role="tab">
-                            Tab 1
-                            <input name="tablist2" type="radio" checked>
-                        </label>
-                        <div role="tabpanel">
-                            Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    <div class="bg-light rounded">
+                        <div role="tablist" class="vertical">
+                            <label role="tab">
+                                Tab 1
+                                <input name="tablist2" type="radio" checked>
+                            </label>
+                            <div role="tabpanel">
+                                Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
+                            <label role="tab">
+                                Tab 2 with long label and content
+                                <input name="tablist2" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                <p>Tab 2 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                            </div>
+                            <label role="tab">
+                                Tab 3
+                                <input name="tablist2" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                Tab 3 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
+                            <label role="tab">
+                                Tab 4
+                                <input name="tablist2" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                Tab 4 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
+                            <label role="tab">
+                                Tab 5
+                                <input name="tablist2" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                Tab 5 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
+                            <label role="tab">
+                                Tab 6 with longer label
+                                <input name="tablist2" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                Tab 6 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
                         </div>
-                        <label class="square hazy contrast lg" role="tab">
-                            Tab 2
-                            <input name="tablist2" type="radio">
-                        </label>
-                        <div role="tabpanel">
-                            Tab 2 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
-                        <label class="square hazy contrast lg" role="tab">
-                            Tab 3
-                            <input name="tablist2" type="radio">
-                        </label>
-                        <div role="tabpanel">
-                            Tab 3 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
-                    </article>
+                    </div>
                 </div>
-                
 
+                <h5 class="my-2">Vertical Tabs Right</h5>
+                <div class="show-code">
+                    <div class="bg-light rounded">
+                        <div role="tablist" class="vertical tabs-right">
+                            <label role="tab">
+                                Tab 1
+                                <input name="tablist3" type="radio" checked>
+                            </label>
+                            <div role="tabpanel">
+                                Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
+                            <label role="tab">
+                                Tab 2 with long label
+                                <input name="tablist3" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                Tab 2 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
+                            <label role="tab">
+                                Tab 3
+                                <input name="tablist3" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                Tab 3 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
+                            <label role="tab">
+                                Tab 4
+                                <input name="tablist3" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                Tab 4 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
+                            <label role="tab">
+                                Tab 5
+                                <input name="tablist3" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                Tab 5 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
+                            <label role="tab">
+                                Tab 6 with longer label
+                                <input name="tablist3" type="radio">
+                            </label>
+                            <div role="tabpanel">
+                                Tab 6 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <!------------------------------------
             -----------    TOGGLES    ------------
@@ -3030,6 +3078,7 @@ $sizes: (
                 html = html.replaceAll('data-snap=""', 'data-snap');
                 html = html.replaceAll('data-over=""', 'data-over');
                 html = html.replaceAll('data-wait=""', 'data-wait');
+                html = html.replaceAll('data-theme-dark=""', 'data-theme-dark');
             })
             // elem.insertAdjacentHTML('beforeend', '<div><input id="' + id + '" class="toggle" type="checkbox" /><label for="' + id + '" class="btn btn-medium btn-link p-0 btn-menu sm mt-1"><svg viewBox="0 0 24 24"><path d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" /></svg></label><div class="toggle-collapse"><pre><code class="language-html">' + html + '</code></pre></div></div>');
             elem.insertAdjacentHTML('beforeend', '<div class="mt-2 code-container"><pre><code class="language-html'+(elem.classList.contains('with-wrap')?' pre-wrap':'')+'">' + html + '</code></pre></div>');

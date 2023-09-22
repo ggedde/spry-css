@@ -1,6 +1,5 @@
 // Specify each breakpoint size
-$breakpoints: (
-    md: 40em,
+$breakpoints: (md: 40em,
     // lg: 80em,
 ) !default;
 
@@ -11,23 +10,16 @@ $gaps: (default: 1.25em,
     // lg: 2.25em,
 ) !default;
 
-// Specify each color used in color-, bg-, border-, btn-
-$colors: (
-    // "white": #ffffff,
+// Specify each color used in color-, bg-, border-, and in accents.
+$colors: ("default": #888888,
     "light": #efefef,
-    "medium": #888888,
-    "dark": #444444,
+    "dark": #494949,
     "primary": #1494df,
     "secondary": #df8a22,
-    // "error": #d52929,
-    // "success": #09c347,
-    "text": #566067,
-    // "inherit": inherit,
-    // "transparent": transparent,
 ) !default;
 
 // Specify each type tag and class like <h3> and .h3 etc.
-$types: (body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, color: var(--spry-text-color), line-height: 1.4),
+$types: (body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, color: var(--dark), line-height: 1.4),
     h1: (font-size: 3.4em, font-weight: 400, line-height: 1.20),
     h2: (font-size: 2.7em, font-weight: 300, line-height: 1.25),
     h3: (font-size: 2.2em, font-weight: 300, line-height: 1.30),
@@ -42,12 +34,11 @@ $spacing: (0: 0em,
     2: 1em,
     3: 2em,
     4: 4em,
-    5: 4em,
+    5: 6em,
 ) !default;
 
 // Specify each size that applies font-size and all elements using "em".
-$sizes: (
-    xl: 150%,
+$sizes: (xl: 150%,
     lg: 120%,
     md: 100%,
     sm: 80%,
@@ -55,25 +46,32 @@ $sizes: (
 ) !default;
 
 :root {
-    --spry-accent-color     : #{map-get($colors, 'medium')};
-    --spry-accent-color-rgb : #{red(map-get($colors, 'medium')), green(map-get($colors, 'medium')), blue(map-get($colors, 'medium'))};
-    --spry-text-color       : #{map-get($colors, 'text')};
-    --spry-text-color-rgb : #{red(map-get($colors, 'text')), green(map-get($colors, 'text')), blue(map-get($colors, 'text'))};
-    --spry-gap              : #{map-get($gaps, 'default')};
+
+    --gap: #{map-get($gaps, 'default')};
+    --col: 1;
 
     @each $color_name,
     $color_value in $colors {
-        --spry-color-#{$color_name}: #{$color_value};
+        --#{$color_name}    : #{$color_value};
+        --#{$color_name}-rgb: #{red($color_value), green($color_value), blue($color_value)};
 
-        @if $color_name !=inherit {
-            --spry-color-#{$color_name}-rgb: #{red($color_value), green($color_value), blue($color_value)};
+        @if $color_name==dark {
+            --contrast    : #{$color_value};
+            --contrast-rgb: #{red($color_value), green($color_value), blue($color_value)};
+        }
+
+        @if $color_name==default {
+            --color          : #{$color_value};
+            --color-rgb      : #{red($color_value), green($color_value), blue($color_value)};
+            --text-color     : #{$color_value};
+            --text-color-rgb : #{red($color_value), green($color_value), blue($color_value)};
         }
     }
 
     @each $breakpoint,
     $breakpoint_width in $breakpoints {
         @media screen and (min-width: $breakpoint_width) {
-            --spry-gap: #{map-get($gaps, $breakpoint)};
+            --gap: #{map-get($gaps, $breakpoint)};
         }
     }
 }

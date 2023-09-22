@@ -63,4 +63,24 @@
 	&[data-position="end"] .slider-next {
 		opacity: 0;
 	}
+
+	.slider-pagination {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 2%;
+		& > * {
+			cursor: pointer;
+			border-radius: 50%;
+			background-color: var(--color);
+			width: 1em;
+			height: 1em;
+			transition: opacity .2s ease-in-out;
+			opacity: .4;
+			&:hover,
+			&.active {
+				opacity: 1;
+			}
+		}
+	}
 }

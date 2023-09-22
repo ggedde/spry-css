@@ -20,7 +20,7 @@ General Utility Classes
 .index-1{ z-index: 1 }
 .index-2{ z-index: 2 }
 .index-3{ z-index: 3 }
-.truncate{ max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.truncate{ max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block; }
 .rotate-90 { rotate: 90deg }
 .rotate-180 { rotate: 180deg }
 .rotate-270 { rotate: 270deg }
@@ -41,8 +41,6 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .none{ display: none }
 .inline-block{ display: inline-block; width: auto }
 .inline-flex{ display: inline-flex; width: auto }
-.table{ display: table }
-.table-cell{ display: table-cell }
 .flex{ display: flex }
 .flex-middle{ display: flex; align-items: center }
 .flex-center{ display: flex; align-items: center; justify-content: center }
@@ -86,6 +84,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .overflow-hidden{ overflow: hidden }
 .overflow-y-hidden{ overflow-y: hidden }
 .overflow-x-hidden{ overflow-x: hidden }
+.overflow-y-clip{ overflow-y: clip }
+.overflow-x-clip{ overflow-x: clip }
 .overflow-scroll{ overflow: scroll }
 .overflow-auto{ overflow: auto }
 .order-first{ order:-1 }
@@ -94,11 +94,11 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .order-2{ order:2 }
 .order-3{ order:3 }
 .order-last{ order:99999 }
-.border{ border: 1px solid var(--spry-accent-color) }
-.border-top{ border-top: 1px solid var(--spry-accent-color) }
-.border-right{ border-right: 1px solid var(--spry-accent-color) }
-.border-bottom{ border-bottom: 1px solid var(--spry-accent-color) }
-.border-left{ border-left: 1px solid var(--spry-accent-color) }
+.border{ border: 1px solid var(--color) }
+.border-top{ border-top: 1px solid var(--color) }
+.border-right{ border-right: 1px solid var(--color) }
+.border-bottom{ border-bottom: 1px solid var(--color) }
+.border-left{ border-left: 1px solid var(--color) }
 .no-border{ border: 0 }
 .shadow{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }
 .no-shadow{ box-shadow: none }
@@ -149,8 +149,6 @@ $size_value in $sizes {
 			&-none{ display: none }
 			&-inline-block{ display: inline-block; width: auto }
 			&-inline-flex{ display: inline-flex; width: auto }
-			&-table{ display: table }
-			&-table-cell{ display: table-cell }
 			&-flex{ display: flex }
 			&-flex-middle{ display: flex; align-items: center }
 			&-flex-center{ display: flex; align-items: center; justify-content: center }
@@ -194,6 +192,8 @@ $size_value in $sizes {
 			&-overflow-hidden{ overflow: hidden }
 			&-overflow-y-hidden{ overflow-y: hidden }
 			&-overflow-x-hidden{ overflow-x: hidden }
+			&-overflow-y-clip{ overflow-y: clip }
+			&-overflow-x-clip{ overflow-x: clip }
 			&-overflow-scroll{ overflow: scroll }
 			&-overflow-auto{ overflow: auto }
 			&-order-first{ order:-1 }
@@ -202,11 +202,11 @@ $size_value in $sizes {
 			&-order-2{ order:2 }
 			&-order-3{ order:3 }
 			&-order-last{ order:99999 }
-			&-border{ border: 1px solid var(--spry-accent-color) }
-			&-border-top{ border-top: 1px solid var(--spry-accent-color) }
-			&-border-right{ border-right: 1px solid var(--spry-accent-color) }
-			&-border-bottom{ border-bottom: 1px solid var(--spry-accent-color) }
-			&-border-left{ border-left: 1px solid var(--spry-accent-color) }
+			&-border{ border: 1px solid var(--color) }
+			&-border-top{ border-top: 1px solid var(--color) }
+			&-border-right{ border-right: 1px solid var(--color) }
+			&-border-bottom{ border-bottom: 1px solid var(--color) }
+			&-border-left{ border-left: 1px solid var(--color) }
 			&-no-border{ border: 0 }
 			&-shadow{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }
 			&-no-shadow{ box-shadow: none }
