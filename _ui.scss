@@ -105,8 +105,11 @@ article,
 
 [role=alert] {
 	justify-content: flex-start;
-	margin-bottom  : 1rem;
 	padding        : .5em 1em;
+
+	+[role=alert] {
+		margin-top: 1rem;
+	}
 
 	svg {
 		min-width: 1em;
@@ -186,15 +189,20 @@ form.disabled :is(input, select, textarea, label, button) {
 .toggle+*,
 .toggle>[role=tooltip],
 nav>ul>li>ul {
-	max-height         : 1px;
-	opacity            : 0;
-	pointer-events     : none;
-	// position        : relative;
-	transform          : scaleY(.8) translateY(-4px);
-	transform-origin   : top;
-	transition         : transform .1s ease-in-out, opacity .05s ease-in-out, max-height .3s cubic-bezier(0, 1, 0, 1); // Out
+	transform-origin: top;
+	transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
+}
+
+.toggle:not(:checked)+*,
+.toggle:not(:checked)>[role=tooltip],
+nav>ul>li>ul {
+	max-height            : 1px;
+	min-height            : 0;
+	opacity               : 0;
+	padding-block         : 0;
+	pointer-events        : none;
+	transform             : scaleY(.8) translateY(-4px);
 	transition-delay   : .1s;
-	z-index            : 1;
 }
 
 .toggle:has(:checked)+*,
@@ -208,6 +216,7 @@ nav li>ul:focus-within {
 	opacity       : 1;
 	pointer-events: all;
 	transform     : scaleY(1.000001);
+	z-index: 2;
 }
 
 @each $breakpoint,
@@ -231,7 +240,6 @@ $breakpoint_width in $breakpoints {
 }
 
 :is(button, [role=button], [role=tab], [role=alert], i:empty, .icon, input[type=submit]) {
-	// --text-color: #{map-get($colors, 'light')};
 	color: var(--text-color);
 
 	&:is(.outline, .hazy, .link) {
@@ -330,6 +338,8 @@ button.link,
 }
 
 nav {
+	position: relative;
+
 	ul {
 		min-width: 200px;
 	}
@@ -341,16 +351,14 @@ nav {
 		border  : 0;
 	}
 
-	&.horizontal {
-		position: relative;
+	&.horizontal ul {
 
-		>ul {
-			display  : flex;
-			flex-wrap: wrap;
-		}
+		display  : flex;
+		flex-wrap: wrap;
+		position : relative;
 
 		>a,
-		>ul>li {
+		>li {
 
 			display    : inline-flex;
 			align-items: center;
@@ -374,16 +382,14 @@ nav {
 	@each $breakpoint,
 	$breakpoint_width in $breakpoints {
 		@media screen and (min-width: $breakpoint_width) {
-			&.#{$breakpoint}-horizontal {
-				position: relative;
+			&.#{$breakpoint}-horizontal ul {
 
-				>ul {
-					display  : flex;
-					flex-wrap: wrap;
-				}
+				display  : flex;
+				flex-wrap: wrap;
+				position : relative;
 
 				>a,
-				>ul>li {
+				>li {
 
 					display    : inline-flex;
 					align-items: center;
@@ -399,7 +405,6 @@ nav {
 					>ul {
 						position : absolute;
 						top      : 100%;
-						min-width: 220px;
 						max-width: 300px;
 					}
 				}
@@ -487,7 +492,7 @@ i svg {
 		padding       : 0;
 	}
 
-	&:is(.up, .down, .left, .right, .close, .search, .menu, .dots)::after {
+	&:is(.up, .down, .left, .right, .close, .search, .copy, .checkmark, .menu, .dots)::after {
 		border       : .15em solid var(--text-color);
 		border-left  : 0;
 		border-bottom: 0;
@@ -553,7 +558,6 @@ i svg {
 			margin          : auto;
 			width           : .12em;
 			box-shadow      : none;
-
 		}
 
 		&::before {
@@ -582,6 +586,38 @@ i svg {
 			height          : 0.15em;
 			width           : 0.5em;
 			transform       : translate(.3em, .3em) rotate(45deg);
+		}
+	}
+
+	&.copy,
+	&.checkmark:not(:checked, :has(:checked)) {
+		&::after {
+			border-width: .12em;
+			width       : 1.1em;
+			height      : 0.6em;
+			transform   : rotate(130deg) translate(-0.1em, 0.1em);
+		}
+	}
+
+	&.copy:checked {
+		transform: rotate(180deg);
+	}
+
+	&.copy:not(:checked, :has(:checked)) {
+
+		&::before,
+		&::after {
+			background-color: transparent;
+			border          : .12em solid var(--text-color);
+			height          : 0.8em;
+			width           : 0.7em;
+			transform       : translate(.1em, .1em);
+		}
+
+		&::before {
+			border-right : 0;
+			border-bottom: 0;
+			transform    : translate(-.1em, -.1em);
 		}
 	}
 
@@ -628,10 +664,14 @@ i:empty {
 	position: relative;
 }
 
-:is(button, [role=button], [role=tab]) :is(.icon, i:empty) {
+:is(button, [role=button], [role=tab]) :is(.icon, i:empty),
+input.toggle:not(.icon) {
 	border-color: transparent;
 	min-height  : 0;
 	min-width   : 0;
+	padding     : 0;
+	border      : 0;
+	display     : block;
 }
 
 select {
@@ -768,13 +808,12 @@ label {
 
 article {
 	background-color: map-get($colors, 'white');
-	border-color    : var(--color);
+	border-color    : var(--card-color);
 	display         : flex;
 	flex-direction  : column;
 	align-items     : flex-start;
 	justify-content : flex-start;
 	gap             : 2em;
-	overflow        : hidden;
 	padding         : 2em;
 	position        : relative;
 
@@ -786,19 +825,19 @@ article {
 		>footer,
 		>p,
 		>div {
-			padding-left : 2rem;
-			padding-right: 2rem;
+			padding-left : 1em;
+			padding-right: 1em;
 		}
 	}
 
 	>header,
 	>footer {
-		background-color: var(--color);
+		background-color: var(--card-color);
 		color           : var(--color-text);
 		display         : flex;
 		align-items     : center;
-		padding-top     : 1em;
-		padding-bottom  : 1em;
+		padding-top     : .5em;
+		padding-bottom  : .5em;
 	}
 
 	>footer {

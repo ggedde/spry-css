@@ -20,6 +20,7 @@ General Utility Classes
 .index-1{ z-index: 1 }
 .index-2{ z-index: 2 }
 .index-3{ z-index: 3 }
+.index-4{ z-index: 4 }
 .truncate{ max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block; }
 .rotate-90 { rotate: 90deg }
 .rotate-180 { rotate: 180deg }
@@ -105,9 +106,9 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .cover { background-size: cover; object-fit: cover }
 .contain { background-size: contain; object-fit: contain }
 .h{ height: 100% }
-.vh{ height: 100vh }
+.vh{ height: 100dvh }
 .w{ width: 100% }
-.vw{ width: 100vw }
+.vw{ width: 100dvw }
 .h-0{ height: 0 }
 .w-0{ width: 0 }
 @for $i from 1 through 12 {
@@ -117,7 +118,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 	// .mvh-#{$i}0{ max-height: #{$i}0vh }
 	// .w-#{$i}00,.row>.w-#{$i}00{ width: #{$i}00px; min-width: #{$i}00px; max-width: #{$i}00px }
 	.mw-#{$i}00,.row>.mw-#{$i}00{ width: 100%; max-width: #{$i}00px }
-	// .vw-#{$i}0{ width: #{$i}0vw }
+	.vw-#{$i}0{ width: #{$i}0vw }
 	// .mvw-#{$i}0,.row>.mvw-#{$i}0{ max-width: #{$i}0vw }
 }
 .o-0{ opacity: 0 }
@@ -134,7 +135,6 @@ $size_value in $sizes {
 
 @each $breakpoint, $breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
-
 		.#{$breakpoint} {
 			&-text-left{ text-align: left }
 			&-text-center{ text-align: center }
@@ -213,9 +213,9 @@ $size_value in $sizes {
 			&-cover { background-size: cover; object-fit: cover }
 			&-contain { background-size: contain; object-fit: contain }
 			&-h{ height: 100% }
-			&-vh{ height: 100vh }
+			&-vh{ height: 100dvh }
 			&-w{ width: 100% }
-			&-vw{ width: 100vw }
+			&-vw{ width: 100dvw }
 			&-h-0{ height: 0 }
 			&-w-0{ width: 0 }
 			@for $i from 1 through 12 {

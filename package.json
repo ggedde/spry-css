@@ -18,9 +18,8 @@
   "homepage": "https://github.com/ggedde/spry-css#readme",
   "scripts": {
     "dev": "node_modules/.bin/chokidar *.scss -c 'npm run build'",
-    "build": "node_modules/.bin/sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use cssnano -o ./dist/spry.min.css; sass --style=compressed ./spry.scss | node_modules/.bin/postcss --map false --use autoprefixer --use cssnano -o ./docs/spry.min.css; gzip -c -v4 ./dist/spry.min.css > ./dist/spry.min.css.gz; stat -f%z ./dist/spry.min.css.gz",
+    "build": "node_modules/.bin/sass --style=compressed --no-source-map ./spry.scss | node_modules/.bin/postcss --map false --use cssnano -o ./dist/spry.min.css; sass --style=compressed --no-source-map ./spry.scss | node_modules/.bin/postcss --map false --use cssnano -o ./docs/spry.min.css; gzip -c -v4 ./dist/spry.min.css > ./dist/spry.min.css.gz; stat -f%z ./dist/spry.min.css.gz",
     "build-full": "node_modules/.bin/sass ./spry.scss:./dist/spry.min.css; sass ./spry.scss:./docs/spry.min.css; gzip -c ./dist/spry.min.css > ./dist/spry.min.css.gz; stat -f%z ./dist/spry.min.css.gz"
-
   },
   "dependencies": {
     "autoprefixer": "^10.4.1",
@@ -28,6 +27,7 @@
     "cssnano": "^5.1.14",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
+    "postcss-combine-media-query": "^1.0.1",
     "sass": "^1.56.1"
   }
 }

@@ -36,15 +36,13 @@
 }
 
 .row[class^=columns-]>*,
-.row[class*=" columns-"]>*,
-.row[class*="-columns-"]>* {
+.row[class*=" columns-"]>* {
 	flex      : none;
 	flex-basis: calc((100% / var(--col)) - ((var(--gap) * (var(--col) - 1)) / var(--col)));
 }
 
 .row>[class^=col-],
-.row>[class*=" col-"],
-.row>[class*="-col-"] {
+.row>[class*=" col-"] {
 	flex     : calc(((var(--col) / 12) * 100%) - var(--gap));
 	max-width: calc(((var(--col) / 12) * 100%) - (((var(--gap) * (var(--col) / 12)) - var(--gap)) / (var(--col) / 12)));
 }
@@ -109,6 +107,16 @@ $breakpoint_width in $breakpoints {
 			.row>.#{$breakpoint}-col-#{$i} {
 				--col: #{$i};
 			}
+		}
+
+		.row[class*="-columns-"]>* {
+			flex      : none;
+			flex-basis: calc((100% / var(--col)) - ((var(--gap) * (var(--col) - 1)) / var(--col)));
+		}
+
+		.row>[class*="-col-"] {
+			flex     : calc(((var(--col) / 12) * 100%) - var(--gap));
+			max-width: calc(((var(--col) / 12) * 100%) - (((var(--gap) * (var(--col) / 12)) - var(--gap)) / (var(--col) / 12)));
 		}
 
 		.row>*,

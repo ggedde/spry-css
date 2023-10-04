@@ -10,19 +10,61 @@ https://prismjs.com/download.html#themes=prism&languages=css+scss&plugins=toolba
 div.code-toolbar {
 	max-width: calc(100vw - 60px);
 }
+.show-code {
+	position: relative;
+}
+section > h2.border-bottom {
+	position: sticky;
+	top: 43px;
+	background-color: white;
+	padding-block: .2em !important;
+	z-index: 3;
+}
+[data-theme-dark] section > h2.border-bottom {
+	background-color: #232323;
+}
+/* .show-code::after {
+    content: '';
+    position: absolute;
+	border: 1px solid rgba(160,160,160,0.6);
+	border-top: 0;
+	border-bottom: 0;
+    top: 2px;
+    bottom: 2px;
+    right: 1px;
+    width: 5px;
+    height: calc(100% - 4px);
+    cursor: ew-resize;
+} */
+/* .show-code .code-container {
+	padding: 0;
+	max-height: 0;
+	opacity: 0;
+	transition: all .4s ease-in-out;
+} */
+
+.show-code.open .code-container {
+	max-height: 300px;
+	opacity: 1;
+}
+
+.show-code > article { 
+	background: rgba(230,230,230,0.02);
+	gap: 0;
+}
 @media screen and (min-width: 620px) {
 	.show-code,
 	div.code-toolbar {
-		max-width: calc(100vw - 285px);
+		max-width: calc(100vw - 280px);
 	}
 }
 
-@media screen and (min-width: 1250px) {
+/* @media screen and (min-width: 1250px) {
 	.show-code,
 	div.code-toolbar {
 		max-width: calc(100vw - 300px);
 	}
-}
+} */
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -106,7 +148,7 @@ pre[class*="language-"] {
 	white-space: normal;
 }
 code[class*="language-"] {
-	border-left: 3px solid #0D7FBF; 
+	/* border-left: 3px solid #0D7FBF;  */
 	overflow: scroll;
 	display: block;
 	padding: 1rem 1.5rem;

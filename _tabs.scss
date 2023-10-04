@@ -61,17 +61,6 @@
 		}
 	}
 
-	&.tabs-right {
-		[role=tabpanel] {
-			grid-column: 1;
-			grid-row   : 1 / 9999;
-		}
-
-		[role=tab] {
-			grid-column: 2;
-		}
-	}
-
 	@each $breakpoint,
 	$breakpoint_width in $breakpoints {
 		@media screen and (min-width: $breakpoint_width) {
@@ -92,6 +81,17 @@
 					}
 				}
 			}
+		}
+	}
+
+	&.tabs-right {
+		[role=tabpanel] {
+			grid-column: 1;
+			grid-row   : 1 / 9999;
+		}
+
+		[role=tab] {
+			grid-column: 2;
 		}
 	}
 }

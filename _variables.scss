@@ -66,6 +66,10 @@ $sizes: (xl: 150%,
             --text-color     : #{$color_value};
             --text-color-rgb : #{red($color_value), green($color_value), blue($color_value)};
         }
+
+        @if $color_name==light {
+            --card-color : #{$color_value};
+        }
     }
 
     @each $breakpoint,

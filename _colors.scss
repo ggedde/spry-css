@@ -5,10 +5,6 @@
 @use "variables"as *;
 
 // Set Defaults
-article {
-	--color: var(--light);
-}
-
 .contrast {
 	--color: var(--dark);
 }
@@ -59,9 +55,7 @@ button,
 		--color: var(--light);
 	}
 
-	article {
-		--color: var(--dark);
-	}
+	--card-color: var(--dark);
 	
 	article,
 	.bg-light {
@@ -123,9 +117,12 @@ $color_value in $colors {
 @each $color_name,
 $color_value in $colors {
 
-	[class].#{$color_name} {
+	[class].#{$color_name}:not(article) {
 		--color          : var(--#{$color_name});
 		--color-rgb      : var(--#{$color_name}-rgb);
+	}
+	article.#{$color_name} {
+		--card-color: var(--#{$color_name});
 	}
 	.icon.#{$color_name},
 	.color-#{$color_name},

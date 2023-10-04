@@ -22,314 +22,312 @@
             document.body.setAttribute('data-theme-dark', '');
         }
     </script>
-    <div class="row">
-        <aside role="banner" class="mw-200 index-2">
-            <div class="fixed index-1 bg-light flex align-items-center w py-1">
-                <div class="absolute mw-200">
+    <div class="flex">
+        <aside role="banner" class="w-0 md-mw-200 index-4">
+            <div class="sticky bg-light vw-100 toolbar lg">
+                <div class="inset-left inset-top md-outset-bottom mw-200">
                     <input role="button" type="checkbox" class="toggle link icon menu md-none">
-                    <div id="header-nav" class="collapse md-open sticky w-200">
-                        <nav class="bg-light list lg md-mt-2 md-mb-n3 pb-0 vh overflow-auto">
-                            <ul class="pt-2">
-                                <li>
-                                    <a href="#start">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M13,3H11V13H13V3M17.83,5.17L16.41,6.59C18.05,7.91 19,9.9 19,12A7,7 0 0,1 12,19C8.14,19 5,15.88 5,12C5,9.91 5.95,7.91 7.58,6.58L6.17,5.17C2.38,8.39 1.92,14.07 5.14,17.86C8.36,21.64 14.04,22.1 17.83,18.88C19.85,17.17 21,14.65 21,12C21,9.37 19.84,6.87 17.83,5.17Z" /></svg>
-                                        </i>
-                                        Get Started
-                                    </a>
-                                    <input role="button" type="checkbox" class="toggle link icon down circle">
-                                    <ul class="sm">
-                                        <li>
-                                            <a class="pl-3" href="#support">Support</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#installation">Installation</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#scss">SCSS</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#typography">Typography</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#sizes">Sizes</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#colors">Colors</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#dark-mode">Dark Mode</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#alerts">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
-                                        </i>
-                                        Alerts
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#buttons">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20M4,6V18H20V6H4Z" /></svg>
-                                        </i>
-                                        Buttons
-                                    </a>
-                                    <input role="button" type="checkbox" class="toggle link icon down circle">
-                                    <ul class="sm">
-                                        <li>
-                                            <a class="pl-3" href="#buttons">Default</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#buttons-outline">Outline</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#buttons-hazy">Hazy</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#buttons-link">Link</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#buttons-sizes">Sizes</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#buttons-custom">Custom</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#buttons-icons">With Icons</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#buttons-loader">With Loader</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#cards">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M18 2H6C4.89 2 4 2.9 4 4V20C4 21.11 4.89 22 6 22H18C19.11 22 20 21.11 20 20V4C20 2.9 19.11 2 18 2M18 20H6V16H18V20M18 8H6V4H18V8Z" /></svg>
-                                        </i>
-                                        Cards
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#forms">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M15 5H18L16.5 7L15 5M5 2H19C20.11 2 21 2.9 21 4V20C21 21.11 20.11 22 19 22H5C3.9 22 3 21.11 3 20V4C3 2.9 3.9 2 5 2M5 4V8H19V4H5M5 20H19V10H5V20M7 12H17V14H7V12M7 16H17V18H7V16Z" /></svg>
-                                        </i>
-                                        Forms
-                                    </a>
-                                    <input role="button" type="checkbox" class="toggle link icon down circle">
-                                    <ul class="sm">
-                                        <li>
-                                            <a class="pl-3" href="#forms">Simple Form</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#forms-responsive-labels">Responsive Labels</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#forms-resize">Sizing</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#grid">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M12 16C13.1 16 14 16.9 14 18S13.1 20 12 20 10 19.1 10 18 10.9 16 12 16M12 10C13.1 10 14 10.9 14 12S13.1 14 12 14 10 13.1 10 12 10.9 10 12 10M12 4C13.1 4 14 4.9 14 6S13.1 8 12 8 10 7.1 10 6 10.9 4 12 4M6 16C7.1 16 8 16.9 8 18S7.1 20 6 20 4 19.1 4 18 4.9 16 6 16M6 10C7.1 10 8 10.9 8 12S7.1 14 6 14 4 13.1 4 12 4.9 10 6 10M6 4C7.1 4 8 4.9 8 6S7.1 8 6 8 4 7.1 4 6 4.9 4 6 4M18 16C19.1 16 20 16.9 20 18S19.1 20 18 20 16 19.1 16 18 16.9 16 18 16M18 10C19.1 10 20 10.9 20 12S19.1 14 18 14 16 13.1 16 12 16.9 10 18 10M18 4C19.1 4 20 4.9 20 6S19.1 8 18 8 16 7.1 16 6 16.9 4 18 4Z" /></svg>
-                                        </i>
-                                        Grid
-                                    </a>
-                                    <input role="button" type="checkbox" class="toggle link icon down circle">
-                                    <ul class="sm">
-                                        <li>
-                                            <a class="pl-3" href="#grid">Classes</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#grid-css-grid">CSS Grid</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#grid-css-flex">CSS Flexbox</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#grid-sidebars">Sidebars</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#grid-ordering">Custom Ordering</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#grid-columns">Fixed Columns</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#grid-span">Spanning Columns</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#grid-gap">Gap Sizing</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#icons">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M14,7V9H13V15H14V17H10V15H11V9H10V7H14M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M5,5V19H19V5H5Z" /></svg>
-                                        </i>
-                                        Icons
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#lists">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M11 15H17V17H11V15M9 7H7V9H9V7M11 13H17V11H11V13M11 9H17V7H11V9M9 11H7V13H9V11M21 5V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3H19C20.1 3 21 3.9 21 5M19 5H5V19H19V5M9 15H7V17H9V15Z" /></svg>
-                                        </i>
-                                        Lists
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#loader">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" /></svg>
-                                        </i>
-                                        Loader
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#menus">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
-                                        </i>
-                                        Menus
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#modals">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M4,4H20V20H4V4M6,8V18H18V8H6Z" /></svg>
-                                        </i>
-                                        Modals
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#navigation">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M16,12A2,2 0 0,1 18,10A2,2 0 0,1 20,12A2,2 0 0,1 18,14A2,2 0 0,1 16,12M10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12M4,12A2,2 0 0,1 6,10A2,2 0 0,1 8,12A2,2 0 0,1 6,14A2,2 0 0,1 4,12Z" /></svg>
-                                        </i>
-                                        Navigation
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#sliders">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M9,11H15V8L19,12L15,16V13H9V16L5,12L9,8V11M2,20V4H4V20H2M20,20V4H22V20H20Z" /></svg>
-                                        </i>
-                                        Sliders
-                                    </a>
-                                    <input role="button" type="checkbox" class="toggle link icon down circle">
-                                    <ul class="sm">
-                                        <li>
-                                            <a class="pl-3" href="#slider-js">Javascript</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#sliders-image">Image Slider</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#sliders-breakpoints">Breakpoints</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#tabs">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M21 3H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H3V5h10v4h8v10z" /></svg>
-                                        </i>
-                                        Tabs
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#tables">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z" /></svg>
-                                        </i>
-                                        Tables
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#toggle">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M7,10L12,15L17,10H7Z" /></svg>
-                                        </i>
-                                        Toggles
-                                    </a>
-                                    <input role="button" type="checkbox" class="toggle link icon down circle">
-                                    <ul class="sm">
-                                        <li>
-                                            <a class="pl-3" href="#toggle">Default</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#toggle-accordion">Accordion</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#toggle-overflown">Overflown</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#toggle-hover">On Hover</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#tooltip">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M9 22a1 1 0 0 1-1-1v-3H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6.1l-3.7 3.71c-.2.19-.45.29-.7.29H9m1-6v3.08L13.08 16H20V4H4v12h6z" /></svg>
-                                        </i>
-                                        Tooltips
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#utilities">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M16.06 13.09L21.69 18.68L18.37 21.96L12.78 16.37V15.45L15.14 13.09H16.06M16.97 10.56L16 9.6L11.21 14.4V16.37L5.58 22L2.3 18.68L7.89 13.09H9.86L10.64 12.31L6.8 8.46H5.5L2.69 5.62L5.31 3L8.11 5.8V7.11L12 10.95L14.66 8.29L13.7 7.28L15 5.97H12.34L11.69 5.32L15 2L15.66 2.66V5.32L16.97 4L20.25 7.28C21.34 8.38 21.34 10.17 20.25 11.26L18.28 9.25L16.97 10.56Z" /></svg>
-                                        </i>
-                                        Utilities
-                                    </a>
-                                    <input role="button" type="checkbox" class="toggle link icon down circle">
-                                    <ul class="sm">
-                                        <li>
-                                            <a class="pl-3" href="#utilities-general">General Classes</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#utilities-layout">Layout Classes</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#utilities-max-width">Max Width</a>
-                                        </li>
-                                        <li>
-                                            <a class="pl-3" href="#utilities-spacing">Spacing</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="mt-2">
-                                    <a target="_blank" class="outline contrast sm" href="https://github.com/ggedde/spry-css">
-                                        <i class="sm mr-2">
-                                            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" /></svg>
-                                        </i>
-                                        View Github
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                    <nav class="bg-light list md-mb-n3 pb-0 vh overflow-auto md-open w-200">
+                        <ul class="pt-2">
+                            <li>
+                                <a href="#start">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M13,3H11V13H13V3M17.83,5.17L16.41,6.59C18.05,7.91 19,9.9 19,12A7,7 0 0,1 12,19C8.14,19 5,15.88 5,12C5,9.91 5.95,7.91 7.58,6.58L6.17,5.17C2.38,8.39 1.92,14.07 5.14,17.86C8.36,21.64 14.04,22.1 17.83,18.88C19.85,17.17 21,14.65 21,12C21,9.37 19.84,6.87 17.83,5.17Z" /></svg>
+                                    </i>
+                                    Get Started
+                                </a>
+                                <input role="button" type="checkbox" class="toggle link icon down circle">
+                                <ul class="sm">
+                                    <li>
+                                        <a class="pl-3" href="#support">Support</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#installation">Installation</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#scss">SCSS</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#typography">Typography</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#sizes">Sizes</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#colors">Colors</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#dark-mode">Dark Mode</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#alerts">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
+                                    </i>
+                                    Alerts
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#buttons">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20M4,6V18H20V6H4Z" /></svg>
+                                    </i>
+                                    Buttons
+                                </a>
+                                <input role="button" type="checkbox" class="toggle link icon down circle">
+                                <ul class="sm">
+                                    <li>
+                                        <a class="pl-3" href="#buttons">Default</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#buttons-outline">Outline</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#buttons-hazy">Hazy</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#buttons-link">Link</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#buttons-sizes">Sizes</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#buttons-custom">Custom</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#buttons-icons">With Icons</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#buttons-loader">With Loader</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#cards">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M18 2H6C4.89 2 4 2.9 4 4V20C4 21.11 4.89 22 6 22H18C19.11 22 20 21.11 20 20V4C20 2.9 19.11 2 18 2M18 20H6V16H18V20M18 8H6V4H18V8Z" /></svg>
+                                    </i>
+                                    Cards
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#forms">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M15 5H18L16.5 7L15 5M5 2H19C20.11 2 21 2.9 21 4V20C21 21.11 20.11 22 19 22H5C3.9 22 3 21.11 3 20V4C3 2.9 3.9 2 5 2M5 4V8H19V4H5M5 20H19V10H5V20M7 12H17V14H7V12M7 16H17V18H7V16Z" /></svg>
+                                    </i>
+                                    Forms
+                                </a>
+                                <input role="button" type="checkbox" class="toggle link icon down circle">
+                                <ul class="sm">
+                                    <li>
+                                        <a class="pl-3" href="#forms">Simple Form</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#forms-responsive-labels">Responsive Labels</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#forms-resize">Sizing</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#grid">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M12 16C13.1 16 14 16.9 14 18S13.1 20 12 20 10 19.1 10 18 10.9 16 12 16M12 10C13.1 10 14 10.9 14 12S13.1 14 12 14 10 13.1 10 12 10.9 10 12 10M12 4C13.1 4 14 4.9 14 6S13.1 8 12 8 10 7.1 10 6 10.9 4 12 4M6 16C7.1 16 8 16.9 8 18S7.1 20 6 20 4 19.1 4 18 4.9 16 6 16M6 10C7.1 10 8 10.9 8 12S7.1 14 6 14 4 13.1 4 12 4.9 10 6 10M6 4C7.1 4 8 4.9 8 6S7.1 8 6 8 4 7.1 4 6 4.9 4 6 4M18 16C19.1 16 20 16.9 20 18S19.1 20 18 20 16 19.1 16 18 16.9 16 18 16M18 10C19.1 10 20 10.9 20 12S19.1 14 18 14 16 13.1 16 12 16.9 10 18 10M18 4C19.1 4 20 4.9 20 6S19.1 8 18 8 16 7.1 16 6 16.9 4 18 4Z" /></svg>
+                                    </i>
+                                    Grid
+                                </a>
+                                <input role="button" type="checkbox" class="toggle link icon down circle">
+                                <ul class="sm">
+                                    <li>
+                                        <a class="pl-3" href="#grid">Classes</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#grid-css-grid">CSS Grid</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#grid-css-flex">CSS Flexbox</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#grid-sidebars">Sidebars</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#grid-ordering">Custom Ordering</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#grid-columns">Fixed Columns</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#grid-span">Spanning Columns</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#grid-gap">Gap Sizing</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#icons">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M14,7V9H13V15H14V17H10V15H11V9H10V7H14M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M5,5V19H19V5H5Z" /></svg>
+                                    </i>
+                                    Icons
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#lists">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M11 15H17V17H11V15M9 7H7V9H9V7M11 13H17V11H11V13M11 9H17V7H11V9M9 11H7V13H9V11M21 5V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3H19C20.1 3 21 3.9 21 5M19 5H5V19H19V5M9 15H7V17H9V15Z" /></svg>
+                                    </i>
+                                    Lists
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#loader">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" /></svg>
+                                    </i>
+                                    Loader
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#menus">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
+                                    </i>
+                                    Menus
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#modals">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M4,4H20V20H4V4M6,8V18H18V8H6Z" /></svg>
+                                    </i>
+                                    Modals
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#navigation">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M16,12A2,2 0 0,1 18,10A2,2 0 0,1 20,12A2,2 0 0,1 18,14A2,2 0 0,1 16,12M10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12M4,12A2,2 0 0,1 6,10A2,2 0 0,1 8,12A2,2 0 0,1 6,14A2,2 0 0,1 4,12Z" /></svg>
+                                    </i>
+                                    Navigation
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#sliders">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M9,11H15V8L19,12L15,16V13H9V16L5,12L9,8V11M2,20V4H4V20H2M20,20V4H22V20H20Z" /></svg>
+                                    </i>
+                                    Sliders
+                                </a>
+                                <input role="button" type="checkbox" class="toggle link icon down circle">
+                                <ul class="sm">
+                                    <li>
+                                        <a class="pl-3" href="#slider-js">Javascript</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#sliders-image">Image Slider</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#sliders-breakpoints">Breakpoints</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#tabs">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M21 3H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H3V5h10v4h8v10z" /></svg>
+                                    </i>
+                                    Tabs
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tables">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z" /></svg>
+                                    </i>
+                                    Tables
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#toggle">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M7,10L12,15L17,10H7Z" /></svg>
+                                    </i>
+                                    Toggles
+                                </a>
+                                <input role="button" type="checkbox" class="toggle link icon down circle">
+                                <ul class="sm">
+                                    <li>
+                                        <a class="pl-3" href="#toggle">Default</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#toggle-accordion">Accordion</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#toggle-overflown">Overflown</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#toggle-hover">On Hover</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#tooltip">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M9 22a1 1 0 0 1-1-1v-3H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6.1l-3.7 3.71c-.2.19-.45.29-.7.29H9m1-6v3.08L13.08 16H20V4H4v12h6z" /></svg>
+                                    </i>
+                                    Tooltips
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#utilities">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M16.06 13.09L21.69 18.68L18.37 21.96L12.78 16.37V15.45L15.14 13.09H16.06M16.97 10.56L16 9.6L11.21 14.4V16.37L5.58 22L2.3 18.68L7.89 13.09H9.86L10.64 12.31L6.8 8.46H5.5L2.69 5.62L5.31 3L8.11 5.8V7.11L12 10.95L14.66 8.29L13.7 7.28L15 5.97H12.34L11.69 5.32L15 2L15.66 2.66V5.32L16.97 4L20.25 7.28C21.34 8.38 21.34 10.17 20.25 11.26L18.28 9.25L16.97 10.56Z" /></svg>
+                                    </i>
+                                    Utilities
+                                </a>
+                                <input role="button" type="checkbox" class="toggle link icon down circle">
+                                <ul class="sm">
+                                    <li>
+                                        <a class="pl-3" href="#utilities-general">General Classes</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#utilities-layout">Layout Classes</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#utilities-max-width">Max Width</a>
+                                    </li>
+                                    <li>
+                                        <a class="pl-3" href="#utilities-spacing">Spacing</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="mt-2">
+                                <a target="_blank" class="outline contrast sm" href="https://github.com/ggedde/spry-css">
+                                    <i class="sm mr-2">
+                                        <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" /></svg>
+                                    </i>
+                                    View Github
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-                <h5 class="ml-4 md-ml-2 flex-middle index-1">
+                <h5 class="ml-3 md-ml-0 flex-middle index-1 md">
                     <a class="mr-2" href="https://ggedde.github.io/spry-css">SpryCSS</a>
                     <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases" alt="Release">
                 </h5>
-                <div class="center ml-2 flex-middle">
+                <div class="center ml-2 flex-middle sm">
                     <button class="icon outline circle p-0 sm mr-2" onclick="document.getElementById('body').toggleAttribute('data-theme-dark');">
                         <svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg>
                     </button>
                 </div>
             </div>
         </aside>
-        <main class="lg-mw md-ml-n3" onmouseup="if(this.previousSibling.previousSibling.querySelector('button menu input').checked){this.previousSibling.previousSibling.querySelector('buttonmenu input').click();}">
+        <main class="mw-1200" onmouseup="if(this.previousSibling.previousSibling.querySelector('button menu input').checked){this.previousSibling.previousSibling.querySelector('buttonmenu input').click();}">
 
             <!------------------------------------
             ---------    INSTALLATION    ---------
@@ -544,8 +542,7 @@ $sizes: (
             <section id="sizes">
                 <h2 class="border-bottom pb-1 mb-2">Sizes</h2>
                 <p>By Default SpryCss uses <code class="color-primary">em</code> to set font sizes, padding, heights, etc. So you can alter the sizes using the size classes.</p>
-                <h6 class="mt-2">Ex.</h6>
-                <div class="show-code">
+                <div class="show-code" data-title="Sizing">
                     <p class="xs">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                     <p class="sm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                     <p class="md">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
@@ -553,8 +550,7 @@ $sizes: (
                     <p class="xl">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                 </div>
                 <p>The size classes are applied to all child elements so you can assign it to the parent.</p>
-                <h6 class="mt-2">Ex.</h6>
-                <div class="show-code">
+                <div class="show-code" data-title="Child Sizing">
                     <div class="xs">
                         <button>Button</button>
                         <button>Button</button>
@@ -582,27 +578,24 @@ $sizes: (
             ------------------------------------->
             <section id="colors">
                 <h2 class="border-bottom pb-1 mb-3">Colors</h2>
-                <h4 id="colors-text" class="mt-3">Text Colors</h4>
                 <p class="my-1"><code class="color-medium italic sm">.color-{color}</code></p>
-                <div class="show-code">
+                <div class="show-code" data-title="Text Colors">
                     <p class="color-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                     <p class="color-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                     <p class="color-default">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                     <p class="color-contrast">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                 </div>
 
-                <h4 id="colors-text" class="mt-3">Hover/Focus Colors</h4>
                 <p class="my-1"><code class="medium italic sm">.hover-{color}</code></p>
-                <div class="show-code">
+                <div class="show-code" data-title="Hover/Focus Text Colors">
                     <a href="#" class="hover-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a><br>
                     <a href="#" class="hover-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a><br>
                     <a href="#" class="hover-default">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a><br>
                     <a href="#" class="hover-contrast">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                 </div>
 
-                <h4 id="colors-text" class="mt-3">Change Child Link Colors and Link Hover Colors</h4>
                 <p class="my-1"><code class="medium italic sm">.link-{color}</code> <code class="medium italic sm">.link-hover-{color}</code></p>
-                <div class="show-code">
+                <div class="show-code" data-title="Change Child Link Colors and Link Hover Colors">
                     <div class="link-default link-hover-secondary grid g-1">
                         <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                         <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
@@ -610,21 +603,20 @@ $sizes: (
                     </div>
                 </div>
     
-                <h4 id="colors-backgrounds" class="mt-3">Background Colors</h4>
                 <p class="my-1"><code class="color-medium italic sm">.bg-{color} .color-white</code></p>
-                <div class="show-code">
+                <div class="show-code" data-title="Background Colors">
                     <p class="p-1 bg-primary color-white">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                 </div>
     
                 <h4 id="colors-borders" class="mt-3">Border Colors</h4>
                 <p class="my-1"><code class="color-medium italic sm">.border .border-{color}</code></p>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <p class="border border-primary p-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                 </div>
     
                 <h4 id="colors-buttons" class="mt-3">Button Colors</h4>
                 <p class="my-1"><code class="color-medium italic sm">.{color}</code></p>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <button class="primary">Lorem Ipsum</button>
                 </div>
     
@@ -632,7 +624,7 @@ $sizes: (
                 <div class="sm mb-1">You can wrap elements with an accent color to change and override all the accent
                     colors within that container.</div>
                 <div><code class="color-medium italic sm">.{color}</code></div>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="secondary p-2 mt-1 border">
                         <button class="mt-2">Lorem Ipsum</button>
                         <button class="outline mt-2">Lorem Ipsum</button>
@@ -658,7 +650,7 @@ $sizes: (
                 <div class="sm mb-1">* This means that you will need to use "light" and "dark" color values in your
                     $color variables.</div>
                 <div class="sm mb-1">* This will apply to all child elements.</div>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="p-2 mt-1 border accent-primary" data-theme-dark>
                         <button class="mt-2">Lorem Ipsum</button>
                         <button class="outline mt-2">Lorem Ipsum</button>
@@ -680,7 +672,7 @@ $sizes: (
 
                 <h4 id="dark-mode" class="mt-3 mb-2">Contrast Colors</h4>
                 <div class="mb-1">The <code class="color-primary italic">.contrast</code> class is auto generated from your <code class="color-primary italic">dark</code> and <code class="color-primary italic">light</code> colors. It will switch from dark to light depending on the theme.</div>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <p class="contrast">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                     <button class="contrast">Contrast Button</button>
                 </div>
@@ -707,32 +699,35 @@ $sizes: (
             <section id="icons">
                 <h2 class="border-bottom pb-1 mb-3">Icons</h2>
                 <p class="mb-2">SpryCSS comes with a small set of custom icons. You can either use <code class="primary">&lt;i&gt;</code> or class <code class="primary">.icon</code></p>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <i class="left"></i>
                     <i class="right"></i>
                     <i class="down"></i>
                     <i class="up"></i>
                     <i class="search"></i>
-                    <i class="menu"></i>
-                    <i class="dots"></i>
                     <i class="close"></i>
+                    <i class="checkmark"></i>
+                    <i class="copy"></i>
                     <i class="question"></i>
                     <i class="info"></i>
+                    <i class="dots"></i>
+                    <i class="menu"></i>
                 </div>
                 <h5 class="my-2">Variations</h5>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <span class="icon primary left"></span>
                     <span class="icon secondary right"></span>
                     <span class="icon medium sm down"></span>
                     <span class="icon dark sm up"></span>
                     <span class="icon light sm search"></span>
+                    <span class="icon lg close"></span>
+                    <span class="icon lg primary checkmark"></span>
                     <span class="icon lg menu"></span>
                     <span class="icon lg dots"></span>
-                    <span class="icon lg close"></span>
                 </div>
 
                 <h5 class="my-2">Toggle Icons</h5>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <input type="checkbox" class="icon left"></span>
                     <input type="checkbox" class="icon right"></span>
                     <input type="checkbox" class="icon down"></span>
@@ -740,6 +735,7 @@ $sizes: (
                     <input type="checkbox" class="icon search"></span>
                     <input type="checkbox" class="icon menu"></span>
                     <input type="checkbox" class="icon dots"></span>
+                    <input type="checkbox" class="icon copy"></span>
                 </div>
 
                 <h4 class="mt-2">Need More Icons?</h4>
@@ -755,7 +751,7 @@ $sizes: (
                         href="https://github.com/r3volution11/vscode-materialdesignicons-svg">vscode-materialdesignicons-svg</a>
                     that provides code snippets to quickly add the SVG code.</p>
                 <h5 class="mt-2">Ex.</h5>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <i>
                         <svg viewBox="0 0 24 24">
                             <path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
@@ -794,7 +790,7 @@ $sizes: (
             <section id="alerts">
 
                 <h2 class="border-bottom pb-1 mb-3">Alerts</h2>
-                <div class="show-code">
+                <div class="show-code" data-title="Default">
                     <div role="alert">
                         <i class="mr-2"><svg viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg></i>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
@@ -813,8 +809,7 @@ $sizes: (
                     </div>
                 </div>
 
-                <h4 class="border-bottom pb-1 mb-3">Outline</h4>
-                <div class="show-code">
+                <div class="show-code" data-title="Outline">
                     <div role="alert" class="outline">
                         <i class="mr-2"><svg  viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg></i>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
@@ -833,8 +828,7 @@ $sizes: (
                     </div>
                 </div>
 
-                <h4 class="border-bottom pb-1 mb-3">Hazy</h4>
-                <div class="show-code">
+                <div class="show-code" data-title="Hazy">
                     <div role="alert" class="hazy">
                         <svg class="mr-2" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
@@ -853,18 +847,17 @@ $sizes: (
                     </div>
                 </div>
 
-                <h4 class="pb-1 mt-3 mb-1">Closable Large Alert</h2>
-                <div class="show-code">
+                <div class="show-code" data-title="Closable Large Alert">
+                    <input id="closable-alert" type="checkbox" class="toggle" checked />
                     <div role="alert" class="secondary lg pr-3">
                         <svg class="mr-2" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
-                        <input role="button" type="checkbox" class="hazy light circle sm icon close inset-right inset-top m-1">
+                        <label for="closable-alert" role="button" class="hazy light circle sm icon close inset-right inset-top m-1"></label>
                     </div>
                 </div>
 
-                <h4 class="my-1 mt-3">Popup Alert Example</h4>
-                <div class="show-code">
-                    <label role="button" tabindex="0" for="alert-modal-toggle" class="white" title="Open Popup">Show Alert Popup</label>
+                <div class="show-code" data-title="Popup Alert Example">
+                    <label role="button" for="alert-modal-toggle" class="white" title="Open Popup">Show Alert Popup</label>
                     <div id="alert-modal" role="dialog">
                         <label for="alert-modal-toggle" title="close Popup"></label>
                         <input id="alert-modal-toggle" type="checkbox">
@@ -879,10 +872,10 @@ $sizes: (
                     </div>
                 </div>
 
-                <h4 class="my-1 mt-3">Popup Alert Top Right with No Backdrop and Autoclose</h4>
-                <div class="show-code">
-                    <button onclick="document.getElementById('alert2-modal').classList.add('show'); setTimeout(() => {document.getElementById('alert2-modal').classList.remove('show');}, 3000);">Show Alert Popup</button>
+                <div class="show-code" data-title="Popup Alert Top Right with No Backdrop and Autoclose">
+                    <label role="button" for="alert-modal-toggle2" class="white" title="Open Popup" onclick="setTimeout(() => {document.getElementById('alert-modal-toggle2').click();}, 3000);">Show Alert Popup</label>
                     <div id="alert2-modal" role="dialog" class="no-backdrop m-1">
+                        <input id="alert-modal-toggle2" type="checkbox">
                         <div role="alert" class="primary lg inset-top inset-right mw-400">
                             <svg class="mr-2" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
                             <div>
@@ -900,27 +893,25 @@ $sizes: (
             <section id="buttons">
     
                 <h2 class="border-bottom pb-1 mb-3">Buttons</h2>
-                <div class="show-code">
-                    <p>
-                        <button>Default</button>
-                        <button class="primary">Primary</button>
-                        <button class="secondary">Secondary</button>
-                        <button class="dark">Dark</button>
-                        <button class="light">Light</button>
-                        <button class="contrast">Contrast</button>
-                    </p>
-                    <p>
-                        <a role="button">Default</a>
-                        <a role="button" class="primary">Primary</a>
-                        <a role="button" class="secondary">Secondary</a>
-                        <a role="button" class="dark">Dark</a>
-                        <a role="button" class="light">Light</a>
-                        <a role="button" class="contrast">Contrast</a>
-                    </p>
+                <div class="show-code" data-title="Default">
+                    <h6>Buttons</h6>
+                    <button>Default</button>
+                    <button class="primary">Primary</button>
+                    <button class="secondary">Secondary</button>
+                    <button class="dark">Dark</button>
+                    <button class="light">Light</button>
+                    <button class="contrast">Contrast</button>
+
+                    <h6 class="mt-2">As Links</h6>
+                    <a role="button">Default</a>
+                    <a role="button" class="primary">Primary</a>
+                    <a role="button" class="secondary">Secondary</a>
+                    <a role="button" class="dark">Dark</a>
+                    <a role="button" class="light">Light</a>
+                    <a role="button" class="contrast">Contrast</a>
                 </div>
     
-                <h4 id="buttons-outline" class="mt-4">Outline</h4>
-                <div class="show-code">
+                <div id="buttons-outline" class="show-code" data-title="Outline">
                     <button class="outline">Default</button>
                     <button class="outline primary">Primary</button>
                     <button class="outline secondary">Secondary</button>
@@ -929,8 +920,7 @@ $sizes: (
                     <button class="outline contrast">Contrast</button>
                 </div>
 
-                <h4 id="buttons-hazy" class="mt-4">Hazy</h4>
-                <div class="show-code">
+                <div id="buttons-hazy" class="show-code" data-title="Hazy">
                     <button class="hazy">Default</button>
                     <button class="hazy primary">Primary</button>
                     <button class="hazy secondary">Secondary</button>
@@ -939,8 +929,7 @@ $sizes: (
                     <button class="hazy contrast">Contrast</button>
                 </div>
     
-                <h4 id="buttons-link" class="mt-4">Link</h4>
-                <div class="show-code">
+                <div id="buttons-link" class="show-code" data-title="Link">
                     <button class="link">Default</button>
                     <button class="link primary">Primary</button>
                     <button class="link secondary">Secondary</button>
@@ -949,8 +938,7 @@ $sizes: (
                     <button class="link contrast">Contrast</button>
                 </div>
 
-                <h4 id="buttons-sizes" class="mt-4">Sizing</h4>
-                <div class="show-code">
+                <div id="buttons-sizes" class="show-code" data-title="Sizing">
                     <button class="xl">Extra Large</button>
                     <button class="lg">large</button>
                     <button class="md">Default</button>
@@ -958,8 +946,7 @@ $sizes: (
                     <button class="xs">Extra Small</button>
                 </div>
     
-                <h4 id="buttons-custom" class="mt-4 mb-1">With Custom Icon Classes</h4>
-                <div class="show-code">
+                <div id="buttons-custom" class="show-code" data-title="With Custom Icon Classes">
                     <p>
                         <button class="icon left"></button>
                         <button class="icon right"></button>
@@ -991,8 +978,7 @@ $sizes: (
                     </p>
                 </div>
 
-                <h4 id="buttons-custom" class="mt-3 mb-1">Custom Icon Classes With Toggles</h4>
-                <div class="show-code">
+                <div id="buttons-custom" class="show-code" data-title="Custom Icon Classes With Toggles">
                     <p>
                         <label role="button">
                             With Text Left
@@ -1002,32 +988,17 @@ $sizes: (
                             <input type="checkbox" class="icon up mr-2" />
                             With Text Right
                         </label>
-                        <label role="button" class="icon down">
-                            <input type="checkbox" />
-                        </label>
-                        <label role="button" class="icon up">
-                            <input type="checkbox" />
-                        </label>
-                        <label role="button" class="icon left">
-                            <input type="checkbox" />
-                        </label>
-                        <label role="button" class="icon right">
-                            <input type="checkbox" />
-                        </label>
-                        <label role="button" class="icon menu">
-                            <input type="checkbox" />
-                        </label>
-                        <label role="button" class="icon dots">
-                            <input type="checkbox" />
-                        </label>
-                        <label role="button" class="icon search">
-                            <input type="checkbox" />
-                        </label>
+                        <input type="checkbox" role="button" class="icon down" />
+                        <input type="checkbox" role="button" class="icon up" />
+                        <input type="checkbox" role="button" class="icon left" />
+                        <input type="checkbox" role="button" class="icon right" />
+                        <input type="checkbox" role="button" class="icon menu" />
+                        <input type="checkbox" role="button" class="icon dots" />
+                        <input type="checkbox" role="button" class="icon search" />
                     </p>
                 </div>
     
-                <h4 id="buttons-icons" class="mt-3 mb-1">With SVG Icons</h4>
-                <div class="show-code">
+                <div id="buttons-icons" class="show-code" data-title="Using SVG's">
                     <button>
                         After
                         <svg class="ml-2" viewBox="0 0 24 24">
@@ -1063,8 +1034,7 @@ $sizes: (
                     </button>
                 </div>
 
-                <h4 id="buttons-icons" class="mt-3 mb-1">Toggle SVG Icons</h4>
-                <div class="show-code">
+                <div id="buttons-icons" class="show-code" data-title="Toggle SVG Icons">
                     <label role="button" class="icon">
                         <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                         <input type="checkbox" />
@@ -1086,8 +1056,7 @@ $sizes: (
                     </label>
                 </div>
     
-                <h4 id="buttons-loader" class="mt-4">With Loader</h4>
-                <div class="show-code">
+                <div id="buttons-loader" class="show-code" data-title="With Loader">
                     <button 
                         type="button" 
                         aria-busy="false" 
@@ -1106,7 +1075,7 @@ $sizes: (
             ------------------------------------->
             <section id="cards">
                 <h2 class="border-bottom pb-1 mb-3">Cards</h2>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <article class="mw-400">
                         <h3>Lorem ipsum dolor</h3>
                         <img src="placeholder.jpg" />
@@ -1116,7 +1085,7 @@ $sizes: (
                 </div>
     
                 <h4 class="mt-4 mb-1">Variations</h4>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="row">
     
                         <article class="shadow">
@@ -1164,7 +1133,7 @@ $sizes: (
             <section id="forms">
                 <h2 class="border-bottom pb-1 mb-3">Forms</h2>
                 <h4 class="mb-1">Simple form with some Required Fields</h4>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <form>
                         <div class="row py-3 g-3">
                             <div>
@@ -1215,7 +1184,7 @@ $sizes: (
                 </div>
 
                 <h4 class="mb-1 mt-3">Simple form with Accent Color</h4>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <form class="primary">
                         <div class="row py-3 g-3">
                             <div>
@@ -1272,7 +1241,7 @@ $sizes: (
                 <h4 id="forms-responsive-labels" class="col-12 mt-4">Responsive labels with loading button and disabled fields on submit</h4>
                 <p class="mb-3">Use <code class="color-primary">sup</code> for Upper Labels and <code class="color-primary">sub</code> for Below Labels</p>
 
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <form class="row justify-content-center" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.classList.add('disabled'); setTimeout(() => {this.submit()}, 2000)">
                         <label>
                             <sup>Name *</sup>
@@ -1300,7 +1269,7 @@ $sizes: (
     
                 <h4 id="forms-resize" class="col-12 mb-2 mt-3">Resize Fields using <code class="color-primary sm">form.sm</code> or <code class="color-primary sm">form.lg</code></h4>
                 
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <form class="sm row g-2 justify-content-center">
                         <label class="has-sub">
                             <sub>Name</sub>
@@ -1408,7 +1377,7 @@ $sizes: (
     
                 <h4 id="grid-css-grid" class="mt-4 mb-3">CSS Grid</h4>
                 <h5 class="my-1">Auto Fit minimum 200px</h5>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="grid-200">
                         <div class="bg-light rounded p-1">
                             col
@@ -1429,7 +1398,7 @@ $sizes: (
                 </div>
     
                 <h5 class="mt-4 mb-1">Specify number of columns</h5>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="grid md-columns-2 lg-columns-3">
                         <div class="bg-light rounded p-1">
                             col
@@ -1448,7 +1417,7 @@ $sizes: (
     
                 <h4 id="grid-css-flex" class="mt-4 mb-3">CSS Flexbox</h4>
                 <h5 class="mb-2 mt-2">Equal Columns Single Row above mobile</h5>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="row">
                         <div class="bg-light rounded p-1">
                             fixed
@@ -1466,7 +1435,7 @@ $sizes: (
                 </div>
 
                 <h5 class="mb-2 mt-2">Setting Columns to Auto</h5>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="row">
                         <div class="bg-light rounded p-1">
                             fixed
@@ -1485,7 +1454,7 @@ $sizes: (
     
                 <h5 id="grid-sidebars" class="mb-2 mt-4">Set Sidebar width with Auto Content Column</h5>
     
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="row">
                         <div class="bg-light rounded p-1 md-mw-300">
                             md-mw-300
@@ -1499,7 +1468,7 @@ $sizes: (
                 <h5 id="grid-ordering" class="mt-4 mb-1">Custom Ordering with Space between 
                     <cite class="sm md-ml-2 block md-inline-block">See <a href="#utilities-layout">Layout Classes</a> for more details</cite>
                 </h5>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="row justify-content-between">
                         <div class="md-col-2 md-order-1 bg-light rounded p-1">
                             col C
@@ -1517,7 +1486,7 @@ $sizes: (
                 <cite class="sm fade mb-1 block">(For gapping to work correctly you will need to specify all
                     breakpoints)</cite>
     
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="row md-columns-2 lg-columns-3 justify-content-center">
                         <div class="bg-light rounded p-1">
                             col
@@ -1535,7 +1504,7 @@ $sizes: (
                 </div>
 
                 <h5 id="grid-span" class="mt-4 mb-1">Columns multi row with column spanning</h5>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="row">
                         <div class="col-6 bg-light rounded p-1">
                             .col-6
@@ -1556,7 +1525,7 @@ $sizes: (
                 </div>
 
                 <h5 class="mt-4 mb-1">Row spanning with nested rows and auto height</h5>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="row">
                         <div class="md-col-4 bg-light rounded p-1">
                             .md-col-4
@@ -1584,8 +1553,8 @@ $sizes: (
                 </div>
     
                 <h5 id="grid-gap" class="mt-4 mb-1">Responsive with different gap sizing and nested row with an auto fill column</h5>
-                <div class="show-code">
-                    <div class="row g-1 md-g-2 lg-g-4">
+                <div class="show-code" data-title="">
+                    <div class="row g-1 md-g-2 md-g-4">
                         <div class="col-6 bg-light rounded p-1">
                             .col-6
                         </div>
@@ -1619,7 +1588,7 @@ $sizes: (
             <section id="lists">
                 <h2 class="border-bottom pb-1 mb-3">Lists</h2>
                 <p class="my-2"><code class="color-medium italic sm">&lt;nav class="list"&gt;</code></p>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <nav class="bg-light rounded shadow mw-200 list">
                         <ul>
                             <li>
@@ -1732,7 +1701,7 @@ $sizes: (
                 </div>
     
                 <h4 class="mt-4">Toolbar - Navigation with <code class="color-medium italic">.list</code></h4>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <nav class="bg-light justify-content-end list horizontal hoverable">
                         <ul class="justify-content-end">
                             <li>
@@ -1840,7 +1809,7 @@ $sizes: (
             ------------------------------------->
             <section id="loader">
                 <h2 class="border-bottom pb-1 mb-3">Loader</h2>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <button class="loader loading sm"></button>
                     <button class="loader loading color-success"></button>
                     <button class="loader loading lg color-error"></button>
@@ -1855,87 +1824,72 @@ $sizes: (
             ------------------------------------->
             <section id="menus">
                 <h2 class="border-bottom pb-1 mb-3">Menus</h2>
-                <div class="row">
-                    <div>
-                        <h5 class="mt-3">Left Align</h4>
-                            <div class="show-code">
-                                <label role="button" class="toggle link menu">
-                                    <input type="checkbox" />
-                                </label>
-                                <div class="collapse">
-                                    <nav class="bg-light rounded shadow w-200 list">
-                                        <ul>
-                                            <li>
-                                                <a href="#menus">Link 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="#menus" class="pr-3">Link 2 with a very long text</a>
-                                                <label role="button" class="toggle down link circle">
-                                                    <input type="checkbox">
-                                                </label>
-                                                <ul class="bg-light rounded">
-                                                    <li>
-                                                        <a href="#menus">Sub Link 1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#menus">Sub Link 2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#menus">Sub Link 3</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#menus">Link 3</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
+                <div class="show-code" data-title="Basic Menu">
+                    <input type="checkbox" role="button" class="toggle link icon menu" />
+                    <div class="collapse">
+                        <nav class="bg-light rounded shadow mw-200 list">
+                            <ul>
+                                <li>
+                                    <a href="#menus">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#menus" class="pr-3">Link 2 with a very long text</a>
+                                    <input type="checkbox" role="button" class="toggle link icon down circle" />
+                                    <ul class="bg-light rounded">
+                                        <li>
+                                            <a href="#menus">Sub Link 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#menus">Sub Link 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#menus">Sub Link 3</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#menus">Link 3</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
+                </div>
+                <div class="show-code" data-title="Right Align">
                     <div class="text-right">
-                        <h5 class="mt-3">Right Align</h4>
-                            <div class="show-code">
-                                <label class="toggle btn btn-link p-0 btn-menu">
-                                    <input type="checkbox" />
-                                </label>
-                                <div class="collapse">
-                                    <nav class="bg-light rounded shadow w-200 inset-right list">
-                                        <ul>
+                        <input type="checkbox" role="button" class="toggle link icon menu" />
+                        <div class="collapse">
+                            <nav class="bg-light rounded shadow mw-200 inset-right list">
+                                <ul>
+                                    <li>
+                                        <a href="#menus">Link 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#menus">Link 2</a>
+                                        <input type="checkbox" role="button" class="toggle link icon down circle" />
+                                        <ul class="bg-light left rounded">
                                             <li>
-                                                <a href="#menus">Link 1</a>
+                                                <a href="#menus">Sub Link 1</a>
                                             </li>
                                             <li>
-                                                <a href="#menus">Link 2</a>
-                                                <label role="button" class="toggle down link circle">
-                                                    <input type="checkbox">
-                                                </label>
-                                                <ul class="bg-light left rounded">
-                                                    <li>
-                                                        <a href="#menus">Sub Link 1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#menus">Sub Link 2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#menus">Sub Link 3</a>
-                                                    </li>
-                                                </ul>
+                                                <a href="#menus">Sub Link 2</a>
                                             </li>
                                             <li>
-                                                <a href="#menus">Link 3</a>
+                                                <a href="#menus">Sub Link 3</a>
                                             </li>
                                         </ul>
-                                    </nav>
-                                </div>
-                            </div>
+                                    </li>
+                                    <li>
+                                        <a href="#menus">Link 3</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
     
-                <h4 class="mt-4">Responsive Toolbar Navigation Menu</h4>
                 <p class="my-2">Add the classes <code class="color-medium italic sm">.md-horizontal</code> and <code class="color-medium italic sm">.md-hoverable</code> to the <code class="color-medium italic sm">&lt;nav&gt;</code></p>
-                <div class="show-code">
-                    <div class="bg-light flex align-items-center justify-content-between relative toolbar px-1">
+                <div class="show-code" data-title="Responsive Toolbar Navigation Menu">
+                    <nav class="bg-light toolbar justify-content-between px-1 md-horizontal md-hoverable">
                         <h5 class="flex-center">
                             <svg style="width:24px;height:24px" class="mr-1" viewBox="0 0 24 24">
                                 <path fill="currentColor"
@@ -1943,50 +1897,39 @@ $sizes: (
                             </svg>
                             Logo
                         </h5>
-                        <div>
-                            <label class="toggle btn btn-link p-0 btn-menu md-none">
-                                <input type="checkbox" />
-                            </label>
-                            <div class="md-open">
-                                <nav class="bg-light inset-right md-horizontal md-hoverable">
-                                    <ul>
-                                        <li>
-                                            <a href="#menus">Link 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#menus" class="pr-0">Link 2</a>
-                                            <label class="toggle btn btn-link btn-text btn-toggle circle">
-                                                <input type="checkbox">
-                                            </label>
-                                            <ul class="bg-light rounded md-shadow">
-                                                <li>
-                                                    <a href="#menus">Sub Link 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#menus">Sub Link 2</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#menus">Sub Link 3</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#menus">Link 3</a>
-                                        </li>
-                                        <li>
-                                            <a href="#menus">
-                                                <svg style="width:22px;height:22px" class="mr-1" viewBox="0 0 24 24">
-                                                    <path fill="currentColor"
-                                                        d="M16.56,5.44L15.11,6.89C16.84,7.94 18,9.83 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12C6,9.83 7.16,7.94 8.88,6.88L7.44,5.44C5.36,6.88 4,9.28 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12C20,9.28 18.64,6.88 16.56,5.44M13,3H11V13H13" />
-                                                </svg>Logout
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-    
-                        </div>
-                    </div>
+                        <input type="checkbox" role="button" class="toggle link icon menu md-none" />
+                        <ul class="md-open bg-light inset-right outset-bottom">
+                            <li>
+                                <a href="#menus">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#menus" class="pr-0">Link 2</a>
+                                <input type="checkbox" role="button" class="toggle link icon down circle md-ml-2" />
+                                <ul class="bg-light rounded md-shadow">
+                                    <li>
+                                        <a href="#menus">Sub Link 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#menus">Sub Link 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#menus">Sub Link 3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#menus">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#menus">
+                                    <svg style="width:22px;height:22px" class="mr-1" viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                            d="M16.56,5.44L15.11,6.89C16.84,7.94 18,9.83 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12C6,9.83 7.16,7.94 8.88,6.88L7.44,5.44C5.36,6.88 4,9.28 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12C20,9.28 18.64,6.88 16.56,5.44M13,3H11V13H13" />
+                                    </svg>Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
     
             </section>
@@ -2023,7 +1966,7 @@ $sizes: (
                     </div>
                     <p class="note mt-2">Add max-width to modal-content to change size</p>
                 </div>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div role="dialog" class="blur">
                         <div>
                             Content Here
@@ -2031,7 +1974,7 @@ $sizes: (
                     </div>
                 </div>
                 <h4 class="my-1 mt-3">Login Form Example</h4>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <button class="btn" onclick="document.getElementById('login-modal').classList.add('show'); document.getElementById('login-email').focus();">Open Login Modal</button>
                     <div id="login-modal" role="dialog" class="blur" onclick="if(event.target.id === 'login-modal') document.getElementById('login-modal').classList.remove('show');">
                         <article class="shadow accent-light mw-400">
@@ -2058,7 +2001,7 @@ $sizes: (
                 </div>
     
                 <h4 class="mt-4">Large Model with Long content and forced buttons</h4>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <button class="btn" onclick="document.getElementById('large-modal').classList.add('show');">Open Large Modal</button>
                     <div id="large-modal" role="dialog" onclick="if(event.target.id === 'large-modal') this.classList.add('bounce');">
                         <article class="accent-light shadow lg-mw">
@@ -2166,7 +2109,7 @@ $sizes: (
                 </div>
     
                 <h4 class="mt-4">Standard Navigation Menu</h4>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <nav class="bg-light md-horizontal">
                         <a href="#navigation">Link 1</a>
                         <a href="#navigation">Link 2</a>
@@ -2176,7 +2119,7 @@ $sizes: (
                 </div>
     
                 <h4 class="mt-4">Drop down Navigation Menu Right Aligned</h4>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <nav class="bg-light md-horizontal md-hoverable">
                         <ul class="justify-content-end">
                             <li>
@@ -2251,7 +2194,7 @@ $sizes: (
                 <div class="mb-3"><code class="color-primary">data-stop="hover|action"</code> 'hover' to pause autoplay while hovering over slider or 'action' to pause autoplay while hovering over a link or button or making a text selection.</div>
 
                 <h4 id="sliders-image" class="pb-1">Basic Image Slider</h4>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="slider" data-snap>
                         <button class="slider-prev btn btn-link btn-light btn-left circle"></button>
                         <button class="slider-next btn btn-link btn-light btn-right circle"></button>
@@ -2265,7 +2208,7 @@ $sizes: (
                 </div>
     
                 <h4 id="sliders-breakpoints" class="pb-1 mt-3">Box Slider with Breakpoints, Autoplay and Loop</h4>    
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="slider px-4" data-play="6000" data-stop="action" data-loop>
                         <button class="slider-prev btn btn-link btn-left circle"></button>
                         <button class="slider-next btn btn-link btn-right circle"></button>
@@ -2323,7 +2266,7 @@ $sizes: (
                 </div>
 
                 <h4 id="sliders-image" class="pb-1">Slider with Pagination Slider</h4>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="slider" data-snap>
                         <button class="slider-prev btn btn-link btn-light btn-left circle"></button>
                         <button class="slider-next btn btn-link btn-light btn-right circle"></button>
@@ -2362,7 +2305,7 @@ $sizes: (
             ------------------------------------->
             <section id="tables">
                 <h2 class="border-bottom pb-1 mb-3">Tables</h2>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <table>
                         <thead>
                             <tr>
@@ -2402,7 +2345,7 @@ $sizes: (
             <section id="tabs">
                 <h2 class="border-bottom pb-1 mb-3">Tabs</h2>
                 <h5 class="mb-1">Basic Responsive Tabs</h5>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="bg-light rounded">
                         <div role="tablist" class="md-horizontal">
                             <label role="tab">
@@ -2454,9 +2397,9 @@ $sizes: (
                 </div>
 
                 <h5 class="my-2">Vertical Tabs</h5>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="bg-light rounded">
-                        <div role="tablist" class="vertical">
+                        <div role="tablist" class="md-vertical">
                             <label role="tab">
                                 Tab 1
                                 <input name="tablist2" type="radio" checked>
@@ -2506,9 +2449,9 @@ $sizes: (
                 </div>
 
                 <h5 class="my-2">Vertical Tabs Right</h5>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div class="bg-light rounded">
-                        <div role="tablist" class="vertical tabs-right">
+                        <div role="tablist" class="md-vertical tabs-right">
                             <label role="tab">
                                 Tab 1
                                 <input name="tablist3" type="radio" checked>
@@ -2570,7 +2513,7 @@ $sizes: (
 &lt;/label&gt;
 &lt;p&gt;Toggle Content&lt;/p&gt;</code></pre>
                 <h4 class="mt-4 mb-1">General Toggle Example</h4>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <label role="button" class="toggle down">Toggle Content
                         <input type="checkbox" />
                     </label>
@@ -2584,7 +2527,7 @@ $sizes: (
                 </div>
     
                 <h4 id="toggle-accordion" class="mt-3 mb-2">Collapsing Toggle (Accordion)</h4>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <label role="button" class="link text pl-4 pr-2 toggle text-right w justify-content-start">
                         <input type="checkbox" />
                         <h4>Question 1</h4>
@@ -2619,7 +2562,7 @@ $sizes: (
     
                 <h4 id="toggle-overflown" class="mt-3">Overflown Toggle</h4>
                 <p class="mb-2">Add <code class="color-medium italic sm">.collapse</code> to your container</p>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <label class="btn pl-2 pr-4 toggle btn-toggle text-left">
                         <input type="checkbox" />
                         Toggle Content
@@ -2637,7 +2580,7 @@ $sizes: (
                     </div>
                 </div>
     
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <label class="btn pl-4 pr-2 toggle btn-toggle text-right">
                         <input type="checkbox" />
                         Toggle Content
@@ -2662,7 +2605,7 @@ $sizes: (
                     <code class="color-medium italic sm">.toggle</code> class to the label
                 </p>
     
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <label class="btn pr-4 pl-2 toggle btn-toggle hoverable text-left">
                         Toggle on Hover
                     </label>
@@ -2688,7 +2631,7 @@ $sizes: (
                 <p class="mb-2">You can create a tooltip by adding any tag with the class
                     <code class="color-medium italic sm">tooltip</code> inside a container of your choice.
                 </p>
-                <div class="show-code">
+                <div class="show-code" data-title="">
                     <div>
                         <button class="btn mb-2">Tooltip Top
                             <small role="tooltip" class="rounded shadow o-90 p-2 bg-dark color-light mw-300 outset-top inset-left text-left"
@@ -2997,7 +2940,6 @@ $sizes: (
                 <p class="pt-3 pl-2 note">** = 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100</p>
                 <p class="pt-0 pl-2 note">*** = 0, 100, 200, 300, 400, 500, 600, 700, 800, 900</p>
     
-    
                 <h3 id="utilities-max-width" class="mt-4">Max Width Classes</h3>
                 <p>This requires a breakpoint. ex <code class="color-primary">{breakpoint}-mw</code></p>
                 <h3 id="utilities-spacing" class="mt-4">Spacing</h3>
@@ -3038,6 +2980,32 @@ $sizes: (
     </footer>
     <script src="prism.js?v=3.0.0"></script>
     <script>
+
+        // let currentPanel = null;
+        // let m_pos;
+
+        // function resizePanel(e){
+        //     e.preventDefault();
+        //     const dx = (e.x - currentPanel.offsetLeft) + 3;
+        //     if (currentPanel && dx && dx > 0) {
+        //         currentPanel.style.width = parseInt(dx) + "px";
+        //     }
+        // }
+
+        function copyCode(event) {
+            var html = event.target.parentElement.parentElement.parentElement.querySelector('.code-content').innerHTML;
+            navigator.clipboard.writeText(html).then(function() {
+                event.target.classList.remove('copy');
+                event.target.classList.add('checkmark');
+                setTimeout(() => {
+                    event.target.classList.remove('checkmark');
+                    event.target.classList.add('copy');
+                }, 1000);
+            }, function(err) {
+                console.error('Async: Could not copy text: ', err);
+            });
+        }
+
         document.querySelectorAll('.show-code').forEach((elem) => {
             var id = 'toggle-' + Math.random();
             var html = elem.innerHTML.replaceAll('<', '&lt').replaceAll('>', '&gt');
@@ -3079,9 +3047,23 @@ $sizes: (
                 html = html.replaceAll('data-over=""', 'data-over');
                 html = html.replaceAll('data-wait=""', 'data-wait');
                 html = html.replaceAll('data-theme-dark=""', 'data-theme-dark');
-            })
-            // elem.insertAdjacentHTML('beforeend', '<div><input id="' + id + '" class="toggle" type="checkbox" /><label for="' + id + '" class="btn btn-medium btn-link p-0 btn-menu sm mt-1"><svg viewBox="0 0 24 24"><path d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" /></svg></label><div class="toggle-collapse"><pre><code class="language-html">' + html + '</code></pre></div></div>');
-            elem.insertAdjacentHTML('beforeend', '<div class="mt-2 code-container"><pre><code class="language-html'+(elem.classList.contains('with-wrap')?' pre-wrap':'')+'">' + html + '</code></pre></div>');
+            });
+
+            var toggleId = Math.random().toString().replace('.', '');
+            elem.innerHTML = '<article class="mb-3"><header class="justify-content-between"><h4>'+elem.getAttribute('data-title')+'</h4><div><label for="toggle-'+toggleId+'" role="button" class="icon link contrast" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></label><button class="icon copy link contrast" title="Copy HTML to Clipboard" onclick="copyCode(event);"></button></div></header><div class="p-0"><input id="toggle-'+toggleId+'" type="checkbox" class="toggle"><div class="code-container"><pre class="mb-0"><code class="language-html'+(elem.classList.contains('with-wrap')?' pre-wrap':'')+'">' + html + '</code></pre></div></div><div class="p-2 code-content">'+elem.innerHTML+'</div></article>';
+
+            // elem.addEventListener("mousedown", function(e){
+            //     currentPanel = elem;
+            //     if ((elem.clientWidth - e.offsetX) < 7) {
+            //         e.preventDefault();
+            //         document.addEventListener("mousemove", resizePanel, false);
+            //     }
+            // }, false);
+
+            // document.addEventListener("mouseup", function(){
+            //     currentPanel = null;
+            //     document.removeEventListener("mousemove", resizePanel, false);
+            // }, false);
         });
 
         document.getElementById('header-nav').addEventListener('click', event => {
