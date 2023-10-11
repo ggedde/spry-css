@@ -13,18 +13,18 @@ $gaps: (default: 1.25em,
 // Specify each color used in color-, bg-, border-, and in accents.
 $colors: ("default": #888888,
     "light": #efefef,
-    "dark": #494949,
+    "dark": #333333,
     "primary": #1494df,
     "secondary": #df8a22,
 ) !default;
 
 // Specify each type tag and class like <h3> and .h3 etc.
-$types: (body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, color: var(--dark), line-height: 1.4),
-    h1: (font-size: 3.4em, font-weight: 400, line-height: 1.20),
-    h2: (font-size: 2.7em, font-weight: 300, line-height: 1.25),
-    h3: (font-size: 2.2em, font-weight: 300, line-height: 1.30),
-    h4: (font-size: 1.6em, font-weight: 300, line-height: 1.35),
-    h5: (font-size: 1.2em, font-weight: 300, line-height: 1.5),
+$types: (body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, color: var(--contrast), line-height: 1.4),
+    h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20),
+    h2: (font-size: 2.3em, font-weight: 300, line-height: 1.25),
+    h3: (font-size: 2.0em, font-weight: 300, line-height: 1.30),
+    h4: (font-size: 1.4em, font-weight: 300, line-height: 1.35),
+    h5: (font-size: 1.1em, font-weight: 300, line-height: 1.5),
     h6: (font-size: 1.0em, font-weight: 300, line-height: 1.4),
 ) !default;
 
@@ -55,11 +55,6 @@ $sizes: (xl: 150%,
         --#{$color_name}    : #{$color_value};
         --#{$color_name}-rgb: #{red($color_value), green($color_value), blue($color_value)};
 
-        @if $color_name==dark {
-            --contrast    : #{$color_value};
-            --contrast-rgb: #{red($color_value), green($color_value), blue($color_value)};
-        }
-
         @if $color_name==default {
             --color          : #{$color_value};
             --color-rgb      : #{red($color_value), green($color_value), blue($color_value)};
@@ -67,8 +62,14 @@ $sizes: (xl: 150%,
             --text-color-rgb : #{red($color_value), green($color_value), blue($color_value)};
         }
 
+        @if $color_name==dark {
+            --contrast    : #{$color_value};
+            --contrast-rgb: #{red($color_value), green($color_value), blue($color_value)};
+        }
+
         @if $color_name==light {
-            --card-color : #{$color_value};
+            --faint    : #{$color_value};
+            --faint-rgb: #{red($color_value), green($color_value), blue($color_value)};
         }
     }
 

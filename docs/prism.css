@@ -12,36 +12,8 @@ div.code-toolbar {
 }
 .show-code {
 	position: relative;
+	background-color: transparent !important;
 }
-section > h2.border-bottom {
-	position: sticky;
-	top: 43px;
-	background-color: white;
-	padding-block: .2em !important;
-	z-index: 3;
-}
-[data-theme-dark] section > h2.border-bottom {
-	background-color: #232323;
-}
-/* .show-code::after {
-    content: '';
-    position: absolute;
-	border: 1px solid rgba(160,160,160,0.6);
-	border-top: 0;
-	border-bottom: 0;
-    top: 2px;
-    bottom: 2px;
-    right: 1px;
-    width: 5px;
-    height: calc(100% - 4px);
-    cursor: ew-resize;
-} */
-/* .show-code .code-container {
-	padding: 0;
-	max-height: 0;
-	opacity: 0;
-	transition: all .4s ease-in-out;
-} */
 
 .show-code.open .code-container {
 	max-height: 300px;
@@ -49,22 +21,14 @@ section > h2.border-bottom {
 }
 
 .show-code > article { 
-	background: rgba(230,230,230,0.02);
 	gap: 0;
 }
 @media screen and (min-width: 620px) {
 	.show-code,
 	div.code-toolbar {
-		max-width: calc(100vw - 280px);
+		max-width: calc(100vw - 264px);
 	}
 }
-
-/* @media screen and (min-width: 1250px) {
-	.show-code,
-	div.code-toolbar {
-		max-width: calc(100vw - 300px);
-	}
-} */
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -95,8 +59,8 @@ pre[class*="language-"].pre-wrap {
 	white-space: pre-wrap;
 }
 
-[data-theme-dark] code[class*="language-"],
-[data-theme-dark] pre[class*="language-"] {
+[data-theme=dark] code[class*="language-"],
+[data-theme=dark] pre[class*="language-"] {
 	color: white;
 }
 
@@ -106,9 +70,8 @@ code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-select
 	background: #b3d4fc;
 }
 
-[data-theme-dark] pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-[data-theme-dark] code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	text-shadow: none;
+[data-theme=dark] pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+[data-theme=dark] code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	background: rgba(150,150,150,0.2);
 }
 
@@ -118,10 +81,24 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	background: #b3d4fc;
 }
 
-[data-theme-dark] pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-[data-theme-dark] code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	text-shadow: none;
+[data-theme=dark] pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+[data-theme=dark] code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	background: rgba(150,150,150,0.2);
+}
+
+[data-theme=light] code[class*="language-"],
+[data-theme=light] pre[class*="language-"] {
+	color: black;
+}
+
+[data-theme=light] pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+[data-theme=light] code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	background: #b3d4fc;
+}
+
+[data-theme=light] pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+[data-theme=light] code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	background: #b3d4fc;
 }
 
 @media print {
@@ -133,12 +110,17 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #f5f2f0;
+	background: #F9F9F9;
 }
 
-[data-theme-dark] :not(pre) > code[class*="language-"],
-[data-theme-dark] pre[class*="language-"] {
+[data-theme=dark] :not(pre) > code[class*="language-"],
+[data-theme=dark] pre[class*="language-"] {
 	background: #111111;
+}
+
+[data-theme=light] :not(pre) > code[class*="language-"],
+[data-theme=light] pre[class*="language-"] {
+	background: #F9F9F9;
 }
 
 /* Inline code */

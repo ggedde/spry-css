@@ -1,4 +1,4 @@
-/*
+/*!
 * Spry UI
 */
 @use "variables"as *;
@@ -194,8 +194,7 @@ nav>ul>li>ul {
 }
 
 .toggle:not(:checked)+*,
-.toggle:not(:checked)>[role=tooltip],
-nav>ul>li>ul {
+.toggle:not(:checked)>[role=tooltip] {
 	max-height            : 1px;
 	min-height            : 0;
 	opacity               : 0;
@@ -366,7 +365,7 @@ nav {
 
 			>.toggle {
 				position      : relative;
-				pointer-events: none;
+				// pointer-events: none;
 				top           : auto;
 				transform     : translateY(0);
 			}
@@ -807,7 +806,8 @@ label {
 }
 
 article {
-	background-color: map-get($colors, 'white');
+	--card-color : var(--faint);
+	background-color: white;
 	border-color    : var(--card-color);
 	display         : flex;
 	flex-direction  : column;
@@ -816,6 +816,7 @@ article {
 	gap             : 2em;
 	padding         : 2em;
 	position        : relative;
+	transition: none;
 
 	&:has(>header),
 	&:has(>footer) {
@@ -835,6 +836,7 @@ article {
 		background-color: var(--card-color);
 		color           : var(--color-text);
 		display         : flex;
+		justify-content: space-between;
 		align-items     : center;
 		padding-top     : .5em;
 		padding-bottom  : .5em;
@@ -860,17 +862,18 @@ article {
 
 table {
 	width          : 100%;
-	margin-top     : 1rem;
+	margin-top     : 1em;
 	border-collapse: collapse;
 
 	td,
 	th {
-		padding   : .6rem .2rem;
+		padding   : 1em .5em;
 		text-align: left;
 	}
 
 	thead th {
 		font-weight: 500;
+		border-bottom: 2px solid var(--faint);
 	}
 
 	tbody tr {
@@ -879,11 +882,12 @@ table {
 		}
 
 		td {
-			border-top: 1px solid map-get($colors, 'light');
+			border-top: 1px solid var(--faint);
+			vertical-align: text-top;
 		}
 
 		&:first-child td {
-			border-color: darken(map-get($colors, 'light'), 10%);
+			border-color: var(--faint);
 		}
 	}
 }
