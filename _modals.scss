@@ -61,6 +61,7 @@
 		backdrop-filter: none;
 		min-width: 300px;
 	}
+	&.no-backdrop:has(>[type=checkbox]:checked),
 	&.no-backdrop.show {
 		pointer-events: none;
 		> * {

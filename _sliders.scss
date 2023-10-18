@@ -75,9 +75,13 @@
 			background-color: var(--color);
 			width: 1em;
 			height: 1em;
+			padding: 0;
+			min-height: 0;
+			min-width: 0;
 			transition: opacity .2s ease-in-out;
 			opacity: .4;
 			&:hover,
+			&:focus-visible,
 			&.active {
 				opacity: 1;
 			}

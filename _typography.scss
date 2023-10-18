@@ -3,13 +3,6 @@
 /*!
 * Spry Typography
 */
-input,
-textarea,
-select {
-    font-family: inherit;
-    font-weight: inherit;
-    color      : inherit;
-}
 
 // Heading Font Sizes and Classes
 @each $type_name,
@@ -25,38 +18,8 @@ $type in $types {
     }
 }
 
-:not(article)> :is(h1, h2, h3, h4, h5, h6, p)+ :is(h2, h3, h4, h5, h6, p, .btn) {
+:not(article)> :is(h1, h2, h3, h4, h5, h6, p, [role=alert])+ :is(h2, h3, h4, h5, h6, p, [role=alert], [role=button], button) {
     margin-top: 1rem;
-}
-
-a {
-    cursor         : pointer;
-    color          : map-get($colors, 'primary');
-    text-decoration: none;
-    transition     : all .2s ease-in-out;
-
-    &:hover,
-    &:focus {
-        text-decoration: none;
-    }
-}
-
-blockquote {
-    margin: 1rem;
-
-    &::before {
-        content: '\201C';
-    }
-
-    &::after {
-        content: '\201D';
-    }
-
-    p {
-        font   : inherit;
-        display: inline;
-        color  : inherit;
-    }
 }
 
 [role=comment],

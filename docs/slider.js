@@ -8,6 +8,7 @@
 function spryJsLoadSliders() {
     document.querySelectorAll('.slider').forEach(slider => {
         if(slider.hasAttribute('data-loaded')) return;
+
         var play = parseInt(slider.getAttribute('data-play'));
         var loop = slider.hasAttribute('data-loop');
         var stop = slider.getAttribute('data-stop');
@@ -21,6 +22,11 @@ function spryJsLoadSliders() {
         var scrollTimer = null;
         var playTimer = null;
         var isSelecting = false;
+
+        if (!next && !prev && !loop && !stop && !play) {
+            return;
+        }
+
         var goTo = (to, instant) => {
             var offsetSlides = loop ? slideCount : 0;
             if (to === 'next') {
@@ -56,18 +62,18 @@ function spryJsLoadSliders() {
                 goTo('prev');
             });
         }
-        if ( pagination && slides && slideCount ) {
+        if (pagination && !pagination.childNodes.length && slides && slideCount ) {
             for (let index = 0; index < slideCount; index++) {
-                let div = document.createElement("div");
-                if (index === 0) div.classList.add('active');
-                div.onclick = () => {
+                let btn = document.createElement("button");
+                if (index === 0) btn.classList.add('active');
+                btn.onclick = () => {
                     goTo(index);
                     pagination.childNodes.forEach(pagination => {
                         pagination.classList.remove('active');
                     });
-                    div.classList.add('active');
+                    btn.classList.add('active');
                 }
-                pagination.append(div);
+                pagination.append(btn);
             }
         }
         slides.addEventListener('scroll', () => {

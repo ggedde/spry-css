@@ -15,6 +15,14 @@ body {
     box-sizing: inherit;
 }
 
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-weight: inherit;
+    color      : inherit;
+}
+
 body,
 h1,
 h2,
@@ -24,8 +32,10 @@ h5,
 h6,
 p,
 fieldset,
+menu,
 ol,
-ul {
+ul,
+li {
     margin: 0;
     padding: 0;
 }
@@ -34,23 +44,29 @@ ul {
     list-style: disc;
 }
 
+menu {
+    list-style: none;
+}
+
 ol, ul {
-    margin-left: 1.5em; 
+    margin-left: 1.5em;
 }
 
 ol li, ul li {
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin-block: .5em;
 }
 
-nav :is(ol, ul) {
+nav ol,
+nav ol,
+menu ul,
+menu ol {
     list-style: none;
     margin-left: 0;
 }
 
-nav :is(ol, ul) li {
-    margin-top: 0;
-    margin-bottom: 0;
+nav li,
+menu li {
+    margin-block: 0;
 }
 
 img {

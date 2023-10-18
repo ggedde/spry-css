@@ -7,12 +7,15 @@ button,
 [role=button],
 [role=alert],
 [role=tab],
+menu a,
+nav a,
 input,
 textarea,
 select,
-nav>a,
 .toolbar,
-nav li>a {
+.badge,
+article>header,
+article>footer {
 	position       : relative;
 	appearance     : none;
 	color          : inherit;
@@ -33,8 +36,16 @@ nav li>a {
 	margin         : 0;
 }
 
+.compact,
+.badge {
+	min-height    : 1.7em;
+	min-width     : 1.7em;
+	padding-block : 0em;
+	padding-inline: 0.5em;
+}
+
+
 button,
-// .list li>a,
 [role=button],
 [role=tab],
 input[type=submit] {
@@ -45,35 +56,33 @@ input[type=submit] {
 	text-transform: uppercase;
 }
 
-:is(input, textarea, select):not([role=button]) {
-
-	&:hover,
-	&:focus {
-		border-color: var(--color);
-	}
-
-	&:focus {
-		box-shadow: inset 0 0 0 1px var(--color);
+.badge {
+	font-weight: 500;
+	width      : auto;
+	&.snug {
+		translate: -1em -.7em;
 	}
 }
 
-:is(input, textarea, select, a, button) {
+:is(input, textarea, select):not([role=button]):hover,
+:is(input, textarea, select):not([role=button]):focus {
+	border-color: var(--color);
+}
+
+:is(input, textarea, select):not([role=button]):focus {
+	box-shadow: inset 0 0 0 1px var(--color);
+}
+
+:is(input, textarea, select, a, button),
+[role=button].menu [type=checkbox] {
 	outline: none;
-
-	&:focus-visible:not(:hover) {
-		outline       : 2px solid rgba(140, 140, 140, 0.25);
-		outline-offset: 2px;
-	}
 }
 
+:is(input, textarea, select, a, button):focus-visible:not(:hover),
 [role=button]:has(:focus-visible),
 [role=tab]:has(:focus-visible) {
 	outline       : 2px solid rgba(140, 140, 140, 0.25);
 	outline-offset: 2px;
-}
-
-[role=button].menu [type=checkbox] {
-	outline: none;
 }
 
 :is([type=checkbox], [type=radio]):focus-visible:not(:hover) {
@@ -84,32 +93,37 @@ button,
 [role=button],
 [role=alert],
 [role=tab],
+.badge,
+menu a,
+menu button,
 input,
 textarea,
 select,
-article,
-.list li>a,
-.list li>button {
+article {
 	border         : 1px solid;
 	border-color   : rgba(var(--text-color-rgb), .5);
 	border-radius  : 3px;
 	justify-content: center;
-	transition     : all .2s ease-in-out;
+	transition     : color .2s ease-in-out, background .2s ease-in-out, border .15s ease-in-out, filter .2s ease-in-out;
 }
 
-:is(input, textarea, select) {
-	::placeholder {
-		opacity: .7;
+a {
+	cursor    : pointer;
+	transition: color .1s ease-in-out;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
 	}
+}
+
+::placeholder {
+	opacity: .7;
 }
 
 [role=alert] {
 	justify-content: flex-start;
 	padding        : .5em 1em;
-
-	+[role=alert] {
-		margin-top: 1rem;
-	}
 
 	svg {
 		min-width: 1em;
@@ -129,19 +143,22 @@ article,
 	}
 }
 
-:is(button, [role=button], [role=tab], input, textarea, select, form, .list li>a, .list li>button):disabled {
+:is(button, [role=button], [role=tab], input, textarea, select, form, menu a, menu button):disabled {
 	opacity       : .6;
 	pointer-events: none;
 }
 
-:is([type=checkbox], [type=radio]):not([role=button], .icon, i) {
-	width         : 1em;
-	min-height    : 1em;
-	position      : relative;
-	min-width     : 0;
-	vertical-align: text-bottom;
-	margin        : 0 .6em 0 .4em;
-	padding       : 0;
+label:not([role=button])> :is([type=checkbox], [type=radio]) {
+	margin : 0 .6em 0 .4em;
+	padding: 0;
+}
+
+:is([type=checkbox], [type=radio]):not([role=button], .icon) {
+	padding   : 0;
+	width     : 1em;
+	min-height: 1em;
+	position  : relative;
+	min-width : 0;
 
 	&:checked {
 		border-color: var(--color);
@@ -178,7 +195,7 @@ form.disabled :is(input, select, textarea, label, button) {
 		border    : 0;
 	}
 
-	nav li>& {
+	li>& {
 		position : absolute;
 		right    : .5em;
 		top      : .25em;
@@ -186,41 +203,65 @@ form.disabled :is(input, select, textarea, label, button) {
 	}
 }
 
-.toggle+*,
-.toggle>[role=tooltip],
-nav>ul>li>ul {
+.horizontal>ul>li>ul,
+.toggle+* {
+	transition-delay: .1s;
 	transform-origin: top;
 	transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
 }
 
-.toggle:not(:checked)+*,
-.toggle:not(:checked)>[role=tooltip] {
-	max-height            : 1px;
-	min-height            : 0;
-	opacity               : 0;
-	padding-block         : 0;
-	pointer-events        : none;
-	transform             : scaleY(.8) translateY(-4px);
-	transition-delay   : .1s;
+.horizontal>ul>li>ul,
+.toggle:not(:checked)+* {
+	max-height    : 1px;
+	min-height    : 0;
+	opacity       : 0;
+	padding-block : 0;
+	pointer-events: none;
+	transform     : scaleY(.8) translateY(-4px);
+	z-index       : 2;
+	pointer-events: none;
 }
 
 .toggle:has(:checked)+*,
 .toggle:checked+*,
 .toggle.hoverable:hover+*,
-.toggle.hoverable:hover>[role=tooltip],
 .toggle+.open,
-.hoverable>ul>li:hover>ul,
-nav li>ul:focus-within {
+.hoverable>ul>li:hover>ul {
 	max-height    : 100vh;
 	opacity       : 1;
 	pointer-events: all;
 	transform     : scaleY(1.000001);
-	z-index: 2;
+}
+
+.toggle:not(:checked)+* .toggle+*,
+.hoverable>ul>li>.toggle {
+	pointer-events: none;
+}
+
+.toggle:not(:checked)+.open .toggle+*,
+.hoverable>ul>li:hover>.toggle:not(:checked)+*,
+.hoverable>ul>li:hover .toggle:checked+*,
+.hoverable>ul>li:hover>ul {
+	pointer-events: all;
 }
 
 @each $breakpoint,
 $breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
+
+		.#{$breakpoint}-horizontal>ul>li>ul {
+			max-height      : 1px;
+			min-height      : 0;
+			opacity         : 0;
+			padding-block   : 0;
+			pointer-events  : none;
+			transform       : scaleY(.8) translateY(-4px);
+			transition-delay: .1s;
+			transform-origin: top;
+			transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
+			z-index         : 2;
+			pointer-events  : none;
+		}
 
 		.toggle.#{$breakpoint}-hoverable:hover+*,
 		.toggle+.#{$breakpoint}-open,
@@ -229,16 +270,36 @@ $breakpoint_width in $breakpoints {
 			opacity       : 1;
 			pointer-events: all;
 			transform     : scaleY(1.000001);
+			z-index       : 4;
+		}
+
+		.#{$breakpoint}-hoverable>ul>li>.toggle {
+			pointer-events: none;
+		}
+
+		.toggle:not(:checked)+.#{$breakpoint}-open .toggle+*,
+		.#{$breakpoint}-hoverable>ul>li:hover>.toggle:not(:checked)+*,
+		.#{$breakpoint}-hoverable>ul>li:hover .toggle:checked+*,
+		.#{$breakpoint}-hoverable>ul>li:hover>ul {
+			pointer-events: all;
 		}
 	}
 }
 
-:is(button, [role=button], [role=tab], [role=alert], input[type=submit]) {
+ul:has(:focus-visible) {
+	max-height    : 100vh;
+	opacity       : 1;
+	pointer-events: all;
+	transform     : scaleY(1.000001);
+	pointer-events: all;
+}
+
+:is(button, .badge, [role=button], [role=tab], [role=alert], input[type=submit]) {
 	background-color: var(--color);
 	border-color    : var(--color);
 }
 
-:is(button, [role=button], [role=tab], [role=alert], i:empty, .icon, input[type=submit]) {
+:is(button, .badge, [role=button], [role=tab], [role=alert], i:empty, .icon, input[type=submit]) {
 	color: var(--text-color);
 
 	&:is(.outline, .hazy, .link) {
@@ -311,15 +372,21 @@ button svg,
 [role=button] svg,
 [role=tab] svg,
 [role=alert] svg,
-.list li>a svg,
+menu svg,
 i svg,
 .icon svg {
 	width : 1.25em;
 	height: 1.25em;
 }
 
-:is(.list li>a, .list li>button) {
+:is(menu li > a, menu li > button, menu li > label) {
 	background-color: transparent;
+	justify-content : flex-start;
+
+	>input {
+		margin-left : 0;
+		margin-right: 1em;
+	}
 
 	&:focus,
 	&:focus-within,
@@ -331,13 +398,25 @@ i svg,
 button.link,
 [role=button].link,
 [role=tab].link,
-.list li>a,
-.list li>button {
+menu a,
+menu button {
 	text-transform: capitalize;
 }
 
-nav {
+:is(nav, menu) {
 	position: relative;
+
+	&,
+	>a,
+	li>[role=button]:only-child,
+	>button,
+	li>a,
+	li>button {
+		width          : 100%;
+		text-align     : left;
+		justify-content: flex-start;
+		border         : 0;
+	}
 
 	ul {
 		min-width: 200px;
@@ -348,32 +427,72 @@ nav {
 		width   : 100%;
 		display : block;
 		border  : 0;
+
+		>* {
+			justify-content: flex-start;
+		}
+
+		>*:not(.toggle) {
+			width: 100%;
+		}
 	}
 
-	&.horizontal ul {
+	&.outline {
+		border: 1px solid rgba(var(--color-rgb, '140,140,140'), .5);
 
-		display  : flex;
-		flex-wrap: wrap;
-		position : relative;
+		ul,
+		menu {
+			border: inherit;
+		}
 
 		>a,
-		>li {
+		li {
+			border-top: inherit;
 
-			display    : inline-flex;
-			align-items: center;
-			width      : auto;
+			&:first-child {
+				border-top: 0;
+			}
+		}
+	}
 
-			>.toggle {
-				position      : relative;
-				// pointer-events: none;
-				top           : auto;
-				transform     : translateY(0);
+	&.horizontal {
+		display: flex;
+
+		>* {
+			width: auto;
+		}
+
+		>ul {
+
+			display  : flex;
+			flex-wrap: wrap;
+			position : relative;
+
+			>a,
+			>li {
+
+				display    : inline-flex;
+				align-items: center;
+				width      : auto;
+
+				>ul {
+					position : absolute;
+					top      : 100%;
+					max-width: 300px;
+				}
 			}
 
-			>ul {
-				position : absolute;
-				top      : 100%;
-				max-width: 300px;
+			>li:has(>a+.toggle)>a {
+				padding-right: 2.5em;
+			}
+		}
+
+		&.outline {
+
+			>a,
+			li {
+				border-top  : 0;
+				border-right: inherit;
 			}
 		}
 	}
@@ -381,62 +500,77 @@ nav {
 	@each $breakpoint,
 	$breakpoint_width in $breakpoints {
 		@media screen and (min-width: $breakpoint_width) {
-			&.#{$breakpoint}-horizontal ul {
+			&.#{$breakpoint}-horizontal {
+				display: flex;
 
-				display  : flex;
-				flex-wrap: wrap;
-				position : relative;
+				>* {
+					width: auto;
+				}
 
-				>a,
-				>li {
+				>ul {
 
-					display    : inline-flex;
-					align-items: center;
-					width      : auto;
+					display  : flex;
+					flex-wrap: wrap;
+					position : relative;
 
-					>.toggle {
-						position      : relative;
-						pointer-events: none;
-						top           : auto;
-						transform     : translateY(0);
+					>a,
+					>li {
+
+						display    : inline-flex;
+						align-items: center;
+						width      : auto;
+
+						>ul {
+							position : absolute;
+							top      : 100%;
+							max-width: 300px;
+						}
 					}
 
-					>ul {
-						position : absolute;
-						top      : 100%;
-						max-width: 300px;
+					>li:has(>a+.toggle)>a {
+						padding-right: 2.5em;
+					}
+				}
+
+				&.outline {
+
+					>a,
+					li {
+						border-top  : 0;
+						border-right: inherit;
 					}
 				}
 			}
 		}
 	}
+}
 
-	&.list {
+menu {
 
-		&,
-		>a,
-		>button,
-		li>a,
-		li>button {
-			width          : 100%;
-			text-align     : left;
-			justify-content: flex-start;
-			border         : 0;
-		}
+	:is(menu, ul) li>a {
+		padding-left: 2em;
 	}
+
+	li:has(:not(.toggle):checked) {
+		background-color: rgba(var(--color-rgb), 0.2);
+	}
+}
+
+.toolbar {
+	justify-content: space-between;
 }
 
 :is(button, [role=button], [role=tab]) {
 	position: relative;
 
-	input:not([role=button], .icon, i) {
-		padding   : 0;
-		margin    : 0;
-		width     : 0;
-		height    : 0;
-		min-height: 0;
-		z-index   : -1;
-	}
+	// input:not([role=button], .icon, i) {
+	// 	padding   : 0;
+	// 	margin    : 0;
+	// 	width     : 0;
+	// 	height    : 0;
+	// 	min-height: 0;
+	// 	z-index   : -1;
+	// }
 }
 
 :is([role=button], [role=tab]):has(input) svg:nth-of-type(2) {
@@ -458,11 +592,14 @@ i:has(svg) {
 	position: relative;
 }
 
+.show-invalid :not(:focus):user-invalid {
+	border-color: #ff0000;
+}
+
 .icon,
 i:empty,
 i:has(svg) {
 	transition: rotate .15s ease-in-out;
-	padding   : 0;
 	display   : inline-flex;
 	width     : 1em;
 	height    : 1em;
@@ -474,8 +611,6 @@ i svg {
 	margin  : auto;
 	inset   : 0;
 	fill    : currentColor;
-	width   : 1em;
-	height  : 1em;
 }
 
 :is(.icon, i:empty) {
@@ -491,7 +626,7 @@ i svg {
 		padding       : 0;
 	}
 
-	&:is(.up, .down, .left, .right, .close, .search, .copy, .checkmark, .menu, .dots)::after {
+	&:is(.up, .down, .prev, .next, .close, .search, .copy, .checkmark, .menu, .dots)::after {
 		border       : .15em solid var(--text-color);
 		border-left  : 0;
 		border-bottom: 0;
@@ -522,11 +657,11 @@ i svg {
 		transform: rotate(315deg) translate(-.1em, .1em);
 	}
 
-	&.right::after {
+	&.next::after {
 		transform: rotate(45deg) translate(-.1em, .1em);
 	}
 
-	&.left::after {
+	&.prev::after {
 		transform: rotate(225deg) translate(-.1em, .1em);
 	}
 
@@ -730,12 +865,13 @@ label {
 	}
 
 	&:focus-within,
-	&.active {
+	&:has(input:not(:placeholder-shown)),
+	&:has(textarea:not(:placeholder-shown)),
+	&:has(select option:not(:disabled):checked) {
 
 		:is(sup, sub) {
 			transform  : translate(3px, -50%) scale(0.85);
 			top        : -12px;
-			opacity    : .8;
 			font-weight: 500;
 		}
 
@@ -748,7 +884,10 @@ label {
 		color: var(--color);
 	}
 
-	&:focus-within:not(.active) :is(sup, sub) {
+	// &:focus-within:not(.active) :is(sup, sub),
+	&:focus-within:has(input:placeholder-shown) :is(sup, sub),
+	&:focus-within:has(textarea:placeholder-shown) :is(sup, sub),
+	&:focus-within:has(select option:disabled:checked) :is(sup, sub) {
 		animation: labelOut .2s ease-in-out;
 	}
 
@@ -806,7 +945,7 @@ label {
 }
 
 article {
-	--card-color : var(--faint);
+	--card-color    : var(--faint);
 	background-color: white;
 	border-color    : var(--card-color);
 	display         : flex;
@@ -816,7 +955,7 @@ article {
 	gap             : 2em;
 	padding         : 2em;
 	position        : relative;
-	transition: none;
+	transition      : none;
 
 	&:has(>header),
 	&:has(>footer) {
@@ -826,8 +965,7 @@ article {
 		>footer,
 		>p,
 		>div {
-			padding-left : 1em;
-			padding-right: 1em;
+			padding-inline: 1em;
 		}
 	}
 
@@ -836,10 +974,8 @@ article {
 		background-color: var(--card-color);
 		color           : var(--color-text);
 		display         : flex;
-		justify-content: space-between;
+		justify-content : space-between;
 		align-items     : center;
-		padding-top     : .5em;
-		padding-bottom  : .5em;
 	}
 
 	>footer {
@@ -860,6 +996,12 @@ article {
 	}
 }
 
+.toobar,
+article>header,
+article>footer {
+	min-height: 2.9em;
+}
+
 table {
 	width          : 100%;
 	margin-top     : 1em;
@@ -872,7 +1014,7 @@ table {
 	}
 
 	thead th {
-		font-weight: 500;
+		font-weight  : 500;
 		border-bottom: 2px solid var(--faint);
 	}
 
@@ -882,7 +1024,7 @@ table {
 		}
 
 		td {
-			border-top: 1px solid var(--faint);
+			border-top    : 1px solid var(--faint);
 			vertical-align: text-top;
 		}
 

@@ -7,10 +7,12 @@
 // Set Defaults
 .contrast {
 	--color: var(--contrast);
+	--color-rgb: var(--contrast-rgb);
 }
 
 .faint {
 	--color: var(--faint);
+	--color-rgb: var(--faint-rgb);
 }
 
 .border-contrast {
@@ -22,11 +24,15 @@
 }
 
 .color-contrast {
-	color: var(--contrast);
+	--text-color     : var(--contrast);
+	--text-color-rgb : var(--contrast-rgb);
+	color: var(--text-color);
 }
 
 .color-faint {
-	color: var(--faint);
+	--text-color     : var(--faint);
+	--text-color-rgb : var(--faint-rgb);
+	color: var(--text-color);
 }
 
 .bg-contrast {
@@ -38,6 +44,7 @@
 }
 
 button,
+.badge,
 [type=submit],
 [role=button],
 [role=alert] {
@@ -50,6 +57,7 @@ button,
 	}
 }
 
+.badge.faint,
 button.faint,
 [type=submit].faint,
 form.faint [type=submit],
@@ -74,6 +82,7 @@ $color_value in $colors {
 		color            : var(--text-color);
 	}
 
+	.badge.#{$color_name},
 	button.#{$color_name},
 	[type=submit].#{$color_name},
 	[role=button].#{$color_name},
@@ -90,11 +99,6 @@ $color_value in $colors {
 	.border-#{$color_name} {
 		border-color: var(--#{$color_name});
 	}
-
-	.bg-#{$color_name},
-	[role=tooltip].bg-#{$color_name} {
-		background-color: var(--#{$color_name});
-	}
 }
 
 // Update Prefered Theme Dark Colors
@@ -108,15 +112,16 @@ $color_value in $colors {
 // Update Dark Theme Colors
 [data-theme=dark] {
 
-	color           : var(--contrast);
 	background-color: darken(map-get($colors, 'dark'), 8%);
+	color           : var(--contrast);
 
-	--contrast    : var(--light);
+	--contrast    : #{map-get($colors, 'light')};
 	--contrast-rgb: var(--light-rgb);
-	--faint       : var(--dark);
+	--faint       : #{map-get($colors, 'dark')};
 	--faint-rgb   : var(--dark-rgb);
 
 	button.contrast,
+	.badge.contrast,
 	[type=submit].contrast,
 	form.contrast [type=submit],
 	[role=button].contrast,
@@ -129,6 +134,7 @@ $color_value in $colors {
 	}
 
 	button.faint,
+	.badge.faint,
 	[type=submit].faint,
 	form.faint [type=submit],
 	[role=button].faint,
@@ -153,8 +159,8 @@ $color_value in $colors {
 
 [data-theme=light] {
 
-	color           : var(--contrast);
 	background-color: white;
+	color           : var(--contrast);
 
 	--contrast      : var(--dark);
 	--contrast-rgb  : var(--dark-rgb);
@@ -164,6 +170,7 @@ $color_value in $colors {
 	--text-color-rgb: var(--dark-rgb);
 
 	button.contrast,
+	.badge.contrast,
 	[type=submit].contrast,
 	form.contrast [type=submit],
 	[role=button].contrast,
@@ -176,6 +183,7 @@ $color_value in $colors {
 	}
 
 	button.faint,
+	.badge.faint,
 	[type=submit].faint,
 	form.faint [type=submit],
 	[role=button].faint,
@@ -226,5 +234,10 @@ $color_value in $colors {
 		--text-color     : var(--#{$color_name});
 		--text-color-rgb : var(--#{$color_name}-rgb);
 		color            : var(--text-color);
+	}
+
+	.bg-#{$color_name},
+	[role=tooltip].bg-#{$color_name} {
+		background-color: var(--#{$color_name});
 	}
 }
