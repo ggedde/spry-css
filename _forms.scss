@@ -1,0 +1,121 @@
+/*!
+* Spry Forms
+*/
+
+::placeholder {
+	opacity: .7;
+}
+
+[type=radio], [type=checkbox] {
+	min-height: 1em;
+	min-width: 1em;
+	width: 1em;
+	padding: 0;
+	margin : 0 .6em 0 .4em;
+	&:checked {
+		border-color: var(--color);
+		&::after {
+			background-color: var(--color);
+			border-radius: 2px;
+			content: "";
+			inset: 2px;
+			position: absolute;
+		}
+	}
+}
+
+
+[type=radio],
+[type=radio]:checked::after{
+	border-radius: 50%;
+}
+
+:disabled {
+	opacity       : .6;
+	pointer-events: none;
+}
+
+form.disabled :is(input, select, textarea, label, button) {
+	pointer-events: none;
+	opacity       : 0.8;
+}
+
+select,
+.is-select {
+	background-image   : url("data:image/svg+xml;utf8,<svg fill='gray' xmlns='http://www.w3.org/2000/svg' viewBox='-20 -6 40 36'><path d='M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z'/></svg>");
+	background-repeat  : no-repeat;
+	background-position: calc(100% - 0.8em);
+	padding-right      : 1.7em;
+	line-height        : 1.55;
+}
+
+select option {
+	background: #eee;
+	color     : #333;
+}
+
+textarea {
+	min-height : 8em;
+	max-height : 500px;
+	padding    : .75rem;
+	max-width  : 100%;
+	min-width  : 100%;
+	line-height: 1.2;
+}
+
+@keyframes labelOut {
+
+	0%,
+	100% {
+		opacity: .7,
+	}
+
+	50% {
+		opacity: 0;
+	}
+}
+
+label {
+	position: relative;
+	display : block;
+
+	sup,
+	sub {
+		position        : absolute;
+		transform       : translate(10px, -50%);
+		top             : 1.3em;
+		transition      : all .2s ease-in-out;
+		transform-origin: left;
+		opacity         : 0.7;
+	}
+
+	&:focus-within,
+	&:has(.active){
+
+		:is(sup, sub) {
+			transform  : translate(3px, -50%) scale(0.85);
+			top        : -12px;
+			font-weight: 500;
+		}
+
+		sub {
+			top: calc(100% + 11px);
+		}
+	}
+
+	&:focus-within :is(sup, sub) {
+		color: var(--color);
+	}
+
+	&:focus-within:not(.active) :is(sup, sub) {
+		animation: labelOut .2s ease-in-out;
+	}
+
+	&:has(sup) {
+		margin-top: 1rem;
+	}
+
+	&:has(sub) {
+		margin-bottom: 1rem;
+	}
+}

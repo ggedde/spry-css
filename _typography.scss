@@ -18,13 +18,19 @@ $type in $types {
     }
 }
 
-:not(article)> :is(h1, h2, h3, h4, h5, h6, p, [role=alert])+ :is(h2, h3, h4, h5, h6, p, [role=alert], [role=button], button) {
-    margin-top: 1rem;
+:is(h1, h2, h3, h4, h5, h6, ul, ol, p) + * {
+    margin-top: .5em;
 }
 
-[role=comment],
-[role=mark],
-[role=note] {
+:not(article) > p,
+.alert {
+    + p,
+    + .alert {
+        margin-top: 1em;
+    }
+}
+
+.note {
     font-style: italic;
     font-size : 90%;
     opacity   : .8

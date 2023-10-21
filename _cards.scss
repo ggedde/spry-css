@@ -1,0 +1,67 @@
+/*!
+* Spry Cards
+*/
+
+article {
+	--card-color    : var(--faint);
+	background-color: white;
+	border-color    : var(--card-color);
+	display         : flex;
+	flex-direction  : column;
+	align-items     : flex-start;
+	justify-content : flex-start;
+	gap             : 2em;
+	padding         : 2em;
+	position        : relative;
+	transition      : none;
+
+	&:has(>header),
+	&:has(>footer) {
+		padding: 0;
+
+		>header,
+		>footer,
+		>p,
+		>div {
+			padding-inline: 1em;
+		}
+	}
+
+	>header,
+	>footer {
+		background-color: var(--card-color);
+		color           : var(--color-text);
+		display         : flex;
+		justify-content : space-between;
+		align-items     : center;
+	}
+
+	>footer {
+		margin-top: auto;
+	}
+
+	>header,
+	>footer,
+	>div,
+	>p,
+	>h1,
+	>h2,
+	>h3,
+	>h4,
+	>h5,
+	>h6 {
+		width: 100%;
+	}
+	>header>*,
+	>footer>*,
+	>div,
+	>p,
+	>h1,
+	>h2,
+	>h3,
+	>h4,
+	>h5,
+	>h6 {
+		margin-top: 0;
+	}
+}

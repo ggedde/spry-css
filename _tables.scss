@@ -1,0 +1,35 @@
+/*!
+* Spry Tables
+*/
+
+table {
+	width          : 100%;
+	margin-top     : 1em;
+	border-collapse: collapse;
+
+	td,
+	th {
+		padding   : 1em .5em;
+		text-align: left;
+	}
+
+	thead th {
+		font-weight  : 500;
+		border-bottom: 2px solid var(--faint);
+	}
+
+	tbody tr {
+		&:hover td {
+			background-color: rgba(var(--color-rgb), .04);
+		}
+
+		td {
+			border-top    : 1px solid var(--faint);
+			vertical-align: text-top;
+		}
+
+		&:first-child td {
+			border-color: var(--faint);
+		}
+	}
+}

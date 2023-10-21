@@ -18,8 +18,8 @@ $color_value in $colors {
 		color: var(--spry-color-#{$color_name});
 	}
 
-	.link-color-hover-#{$color_name} a:not([role=button]):not([class*="color-hover-"]):hover,
-	.link-color-hover-#{$color_name} a:not([role=button]):not([class*="color-hover-"]):focus {
+	.link-color-hover-#{$color_name} a:not(.button):not([class*="color-hover-"]):hover,
+	.link-color-hover-#{$color_name} a:not(.button):not([class*="color-hover-"]):focus {
 		color: var(--spry-color-#{$color_name});
 	}
 

@@ -1,0 +1,55 @@
+/*!
+* Spry Toggles
+*/
+@use "variables"as *;
+
+.toggle {
+	cursor  : pointer;
+	position: relative;
+
+	li>& {
+		position : absolute;
+		right    : .5em;
+		top      : .25em;
+		font-size: 80%;
+	}
+}
+
+.hoverable>ul>li:hover>ul,
+ul.hoverable>li:hover>ul,
+.toggle.hoverable:hover+*,
+.open {
+	max-height    : 100vh;
+	opacity       : 1;
+	pointer-events: all;
+	transform     : scaleY(1.000001);
+}
+
+@each $breakpoint,
+$breakpoint_width in $breakpoints {
+	@media screen and (min-width: $breakpoint_width) {
+
+		.toggle.#{$breakpoint}-hoverable:hover+*,
+		.closed.#{$breakpoint}-open,
+		.#{$breakpoint}-hoverable>ul>li:hover>ul,
+		ul.#{$breakpoint}-hoverable>li:hover>ul {
+			max-height    : 100vh;
+			opacity       : 1;
+			pointer-events: all;
+			transform     : scaleY(1.000001);
+			z-index       : 4;
+		}
+
+		// .#{$breakpoint}-hoverable>ul>li>.toggle {
+		// 	pointer-events: none;
+		// }
+
+		// .toggle:not(:checked)+.#{$breakpoint}-open .toggle+*,
+		// .#{$breakpoint}-hoverable>ul>li:hover>.toggle:not(:checked)+*,
+		// .#{$breakpoint}-hoverable>ul>li:hover .toggle:checked+*,
+		// .#{$breakpoint}-hoverable>ul>li:hover>ul,
+		// ul.#{$breakpoint}-hoverable>li:hover>ul {
+		// 	pointer-events: all;
+		// }
+	}
+}

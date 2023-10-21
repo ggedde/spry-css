@@ -1,0 +1,52 @@
+/*!
+* Spry Lists
+*/
+
+.list {
+	> a,
+	li > a,
+	> button,
+	> .button,
+	li > button,
+	li > .button {
+		justify-content: flex-start;
+		width: 100%;
+		&:hover,
+		&:focus {
+			background-color: rgba(var(--color-rgb), .2);
+		}
+	}
+
+	&.outline {
+		border: 1px solid rgba(var(--color-rgb), .4);
+		> :not(ul,ol),
+		li {
+			border-top: 1px solid rgba(var(--color-rgb), .4);
+			&:first-of-type {
+				border-top: 0;
+			}
+		}
+		&.horizontal {
+			li {
+				border-top: 0;
+				border-left: 1px solid rgba(var(--color-rgb), .4);
+				&:first-of-type {
+					border-left: 0;
+				}
+			}
+		}
+	}
+	&.horizontal {
+		display: flex;
+		li {
+			text-align: center;
+		}
+	}
+	&.hide-inputs input {
+		opacity: 0;
+		width: 0;
+		height: 1px;
+		margin: 0;
+		padding: 0;
+	}
+}

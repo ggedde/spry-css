@@ -1,0 +1,34 @@
+/*!
+* Spry Tooltips
+*/
+
+[role=tooltip] {
+	width           : 100vw;
+	max-width       : 300px;
+	position        : absolute;
+	cursor          : auto;
+	border-radius   : 5px;
+	background-color: var(--light);
+	padding         : 1em;
+	z-index         : 2;
+}
+
+:has(>[role=tooltip]) {
+	position: relative;
+
+	&:hover {
+		z-index: 2;
+	}
+
+	[role=tooltip] {
+		width     : 90vw;
+		position  : absolute;
+		transition: opacity .2s ease-in-out;
+		cursor    : auto;
+	}
+
+	&:not(:hover) [role=tooltip] {
+		opacity       : 0;
+		pointer-events: none;
+	}
+}

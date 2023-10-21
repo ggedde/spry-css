@@ -44,10 +44,6 @@ ul {
     list-style: disc;
 }
 
-menu {
-    list-style: none;
-}
-
 ol, ul {
     margin-left: 1.5em;
 }
@@ -56,17 +52,19 @@ ol li, ul li {
     margin-block: .5em;
 }
 
+nav ul,
 nav ol,
-nav ol,
-menu ul,
-menu ol {
+.list,
+.list ul,
+.list ol {
     list-style: none;
     margin-left: 0;
 }
 
 nav li,
-menu li {
-    margin-block: 0;
+.list > * {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 img {

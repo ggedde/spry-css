@@ -11,8 +11,7 @@ $gaps: (default: 1.25em,
 ) !default;
 
 // Specify each color used in color-, bg-, border-, and in accents.
-$colors: (
-    "default": #888888,
+$colors: ("default": #888888,
     "light": #efefef,
     "dark": #333333,
     "primary": #1494df,
@@ -20,33 +19,33 @@ $colors: (
 ) !default;
 
 // Specify each type tag and class like <h3> and .h3 etc.
-$types: (
-    body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, color: var(--contrast), line-height: 1.4),
+$types: (body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, color: var(--contrast), line-height: 1.4),
     h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20),
     h2: (font-size: 2.3em, font-weight: 300, line-height: 1.25),
     h3: (font-size: 2.0em, font-weight: 300, line-height: 1.30),
     h4: (font-size: 1.4em, font-weight: 300, line-height: 1.35),
     h5: (font-size: 1.1em, font-weight: 300, line-height: 1.5),
     h6: (font-size: 1.0em, font-weight: 300, line-height: 1.4),
-    a:  (color: var(--primary), text-decoration: none),
+    a: (color: var(--primary), text-decoration: none),
 ) !default;
 
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc
-$spacing: (
-    0: 0em,
+$spacing: (0: 0em,
     1: .5em,
     2: 1em,
     3: 2em,
     4: 4em,
-    5: 6em,
+    // 5: 6em,
 ) !default;
 
 // Specify each size that applies font-size and all elements using "em".
-$sizes: (xl: 150%,
+$sizes: (xxl: 160%,
+    xl: 140%,
     lg: 120%,
     md: 100%,
     sm: 80%,
-    xs: 60%,
+    xs: 65%,
+    xxs: 50%,
 ) !default;
 
 :root {

@@ -1,0 +1,150 @@
+/*!
+* Spry Icons
+*/
+
+:is(i:empty, .icon:empty):is(.outline, .hazy) {
+	width : 2em;
+	height: 2em;
+}
+
+button svg,
+.button svg,
+[role=tab] svg,
+.alert svg,
+i svg,
+.icon svg {
+	width : 1.25em;
+	height: 1.25em;
+}
+
+:is(button, .button, [role=tab], .icon),
+i:has(svg) {
+	position: relative;
+}
+
+:is(.button, [role=tab]):has(input) svg:nth-of-type(2) {
+	opacity  : 0;
+	transform: scale(.5);
+}
+
+:is(.button, [role=tab]):has(:checked) svg:nth-of-type(1) {
+	opacity  : 0;
+	transform: scale(.5);
+}
+
+:is(.button, [role=tab]):has(:checked) svg:nth-of-type(2) {
+	opacity  : 1;
+	transform: scale(1);
+}
+
+.show-invalid :not(:focus):user-invalid {
+	border-color: #ff0000;
+}
+
+.icon,
+i:empty,
+i:has(svg) {
+	position: relative;
+	display   : inline-flex;
+	width     : 1em;
+	height    : 1em;
+}
+
+.icon svg,
+i svg {
+	position: absolute;
+	margin  : auto;
+	inset   : 0;
+	fill    : currentColor;
+	width     : 1.25em;
+	height    : 1.25em;
+}
+
+:is(.icon, i:empty) {
+
+	&:is(.up, .down, .prev, .next, .close, .menu)::after {
+		border       : .15em solid var(--text-color);
+		border-left  : 0;
+		border-bottom: 0;
+		width        : .7em;
+		height       : .7em;
+		transform    : rotate(135deg) translate(-.1em, .1em);
+	}
+
+	&::before,
+	&::after {
+		content   : '';
+		position  : absolute;
+		margin    : auto;
+		inset     : 0;
+		display   : block;
+		transition: all .25s cubic-bezier(.25, .8, .25, 1);
+	}
+
+	&.text-right::before {
+		order: -2;
+	}
+
+	&.text-right::after {
+		order: -1;
+	}
+
+	&.up::after {
+		transform: rotate(315deg) translate(-.1em, .1em);
+	}
+
+	&.next::after {
+		transform: rotate(45deg) translate(-.1em, .1em);
+	}
+
+	&.prev::after {
+		transform: rotate(225deg) translate(-.1em, .1em);
+	}
+
+	&:is(.menu, .close) {
+
+		&::before,
+		&::after {
+			content         : '';
+			background-color: var(--text-color);
+			height          : 1.2em;
+			margin          : auto;
+			width           : .12em;
+			box-shadow      : none;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+			order    : 1;
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+
+	&.menu:not(:checked, :has(:checked)) {
+
+		&::before,
+		&::after {
+			background-color: var(--text-color);
+			transform       : translate(0, -.4em) rotate(90deg);
+			height          : 1.4em;
+			width           : .12em;
+		}
+
+		&::after {
+			transform : translate(0, .4em) rotate(-90deg);
+			box-shadow: .4em 0 0 var(--text-color);
+		}
+
+		&:focus {
+			box-shadow: none;
+		}
+	}
+
+	&:has(:checked)::after,
+	&.icon:checked::after {
+		rotate: 180deg;
+	}
+}

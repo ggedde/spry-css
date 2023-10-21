@@ -14,7 +14,7 @@
 	color: var(--spry-text-color);
 }
 button.contrast,
-[role=button].contrast {
+.button.contrast {
 	--spry-accent-color: var(--spry-color-dark);
 	--spry-text-color: var(--spry-color-light);
 	--spry-text-color-rgb: var(--spry-color-light-rgb);
@@ -36,7 +36,7 @@ button.contrast,
 		color: var(--spry-text-color);
 	}
 	button.contrast,
-	[role=button].contrast {
+	.button.contrast {
 		--spry-accent-color: var(--spry-color-light);
 		--spry-text-color: var(--spry-color-dark);
 		--spry-text-color-rgb: var(--spry-color-dark-rgb);
@@ -58,8 +58,8 @@ button.contrast,
 $color_value in $colors {
 
 	button.#{$color_name},
-	[role=button].#{$color_name},
-	[role=alert].#{$color_name} {
+	.button.#{$color_name},
+	.alert.#{$color_name} {
 		--spry-accent-color: var(--spry-color-#{$color_name});
 		--spry-accent-color-rgb: var(--spry-color-#{$color_name}-rgb);
 		@if $color_value !=inherit {
@@ -144,8 +144,8 @@ $color_value in $colors {
 	.hover-#{$color_name}:focus,
 	a.hover-#{$color_name}:hover,
 	a.hover-#{$color_name}:focus,
-	a[role=button].hover-#{$color_name}:hover,
-	a[role=button].hover-#{$color_name}:focus,
+	a.button.hover-#{$color_name}:hover,
+	a.button.hover-#{$color_name}:focus,
 	button.hover-#{$color_name}:hover,
 	button.hover-#{$color_name}:focus {
 		--spry-text-color: var(--spry-color-#{$color_name});
@@ -169,8 +169,8 @@ $color_value in $colors {
 	.#{$color_name},
 	[class*=color-#{$color_name}],
 	.link-#{$color_name} a,
-	.link-hover-#{$color_name} a:not([role=button]):not([class*="hover-"]):hover,
-	.link-hover-#{$color_name} a:not([role=button]):not([class*="hover-"]):focus {
+	.link-hover-#{$color_name} a:not(.button):not([class*="hover-"]):hover,
+	.link-hover-#{$color_name} a:not(.button):not([class*="hover-"]):focus {
 		--spry-accent-color: var(--spry-color-#{$color_name});
 		--spry-accent-color-rgb: var(--spry-color-#{$color_name}-rgb);
 		--spry-text-color: var(--spry-color-#{$color_name});
