@@ -30,7 +30,7 @@ $types: (body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font
 ) !default;
 
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc
-$spacing: (0: 0em,
+$spacing: (0: 0,
     1: .5em,
     2: 1em,
     3: 2em,

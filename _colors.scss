@@ -50,10 +50,12 @@ button,
 .alert {
 	@if (lightness(map-get($colors, 'default')) > 70) {
 		--text-color: var(--dark);
+		--text-color-rgb: var(--dark-rgb);
 	}
 
 	@else {
 		--text-color: var(--light);
+		--text-color-rgb: var(--light-rgb);
 	}
 }
 
@@ -95,10 +97,6 @@ $color_value in $colors {
 		@else {
 			--text-color: var(--light);
 		}
-	}
-
-	.border-#{$color_name} {
-		border-color: var(--#{$color_name});
 	}
 }
 
@@ -240,5 +238,15 @@ $color_value in $colors {
 	.bg-#{$color_name},
 	[role=tooltip].bg-#{$color_name} {
 		background-color: var(--#{$color_name});
+	}
+	.bg-#{$color_name}-hazy {
+		background-color: rgba(var(--#{$color_name}-rgb), .1);
+	}
+
+	.border-#{$color_name} {
+		border-color: var(--#{$color_name});
+	}
+	.border-#{$color_name}-hazy {
+		border-color: rgba(var(--#{$color_name}-rgb), .4);
 	}
 }

@@ -15,9 +15,9 @@
 	}
 }
 
-.hoverable>ul>li:hover>ul,
+// .hoverable>li:hover>ul,
 ul.hoverable>li:hover>ul,
-.toggle.hoverable:hover+*,
+// .toggle.hoverable:hover+*,
 .open {
 	max-height    : 100vh;
 	opacity       : 1;

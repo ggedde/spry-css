@@ -14,7 +14,7 @@ General Utility Classes
 .capitalize{ text-transform: capitalize }
 .pointer { cursor: pointer }
 .rounded{ border-radius: 5px; overflow: hidden }
-.rounded-bottom{ border-radius: 0 0 5px 5px }
+.rounded-bottom{ border-radius: 0 0 5px 5px; overflow: hidden }
 .circle{ border-radius: 50% }
 .pill, .badge{ border-radius: 2em; }
 .square{ border-radius: 0 }
@@ -52,6 +52,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .flex-center{ display: flex; align-items: center; justify-content: center }
 .flex-wrap{ flex-wrap: wrap }
 .flex-column{ flex-direction: column }
+.flex-row{ flex-direction: row }
 .align-items-start{ align-items: flex-start }
 .align-items-end{ align-items: flex-end }
 .align-items-center{ align-items: center }
@@ -159,6 +160,7 @@ $size_value in $sizes {
 			&-flex-center{ display: flex; align-items: center; justify-content: center }
 			&-flex-wrap{ flex-wrap: wrap }
 			&-flex-column{ flex-direction: column }
+			&-flex-row{ flex-direction: row }
 			&-align-items-start{ align-items: flex-start }
 			&-align-items-end{ align-items: flex-end }
 			&-align-items-center{ align-items: center }

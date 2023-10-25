@@ -6,14 +6,14 @@
 button,
 .button,
 .alert,
+.toolbar,
+.badge,
 .list li>a,
 .list> :not(:has(>*)),
 nav a,
 input,
 textarea,
 select,
-.toolbar,
-.badge,
 article>header,
 article>footer {
 	position       : relative;
@@ -47,7 +47,6 @@ article>footer {
 
 button,
 .button,
-[role=tab],
 input[type=submit] {
 	width         : auto;
 	cursor        : pointer;
@@ -90,7 +89,6 @@ input[type=submit] {
 button,
 .button,
 .alert,
-[role=tab],
 .badge,
 input,
 textarea,
@@ -130,16 +128,17 @@ ul:has(:focus-visible) {
 	pointer-events: all;
 }
 
-:is(button, .badge, .button, [role=tab], .alert, input[type=submit]) {
+:is(button, .badge, .button, .alert, input[type=submit]) {
 	background-color: var(--color);
 	border-color    : var(--color);
 }
 
-:is(button, .badge, .button, [role=tab], .alert, i:empty, .icon, input[type=submit]) {
+:is(button, .badge, .button, .alert, i:empty, .icon, input[type=submit]) {
 	color: var(--text-color);
 
 	&:is(.outline, .hazy, .link) {
 		--text-color: var(--color);
+		--text-color-rgb: var(--color-rgb);
 		color       : var(--text-color);
 	}
 
@@ -169,29 +168,32 @@ ul:has(:focus-visible) {
 	}
 }
 
-:is(button, .button, [role=tab], input[type=submit]) {
-
-	&:is(.link, .outline) {
-
-		&:hover:not(:active),
-		&:focus:not(:active),
-		&:focus-within:not(:active) {
-			background-color: rgba(var(--color-rgb), 0.1);
-		}
-	}
-
-	&.hazy {
-
-		&:hover:not(:active),
-		&:focus:not(:active),
-		&:focus-within:not(:active) {
-			background-color: rgba(var(--color-rgb), 0.2);
-		}
+:is(button, .button, input[type=submit]):is(.link, .outline),
+.list :is(button, .button, a) {
+	&.active:not(:active),
+	&:has(:checked):not(:active),
+	&:hover:not(:active),
+	&:focus:not(:active),
+	&:focus-within:not(:active) {
+		background-color: rgba(var(--color-rgb), 0.1);
 	}
 }
 
-:is(button, .button, [role=tab], a:not(.button), input[type=submit]) {
+:is(button, .button, input[type=submit]).hazy {
+		
+	&.active:not(:active),
+	&:has(:checked):not(:active),
+	&:hover:not(:active),
+	&:focus:not(:active),
+	&:focus-within:not(:active) {
+		background-color: rgba(var(--color-rgb), 0.1);
+	}
+}
 
+:is(button, .button, input[type=submit]) {
+
+	&.active:not(:active),
+	&:has(:checked):not(:active),
 	&:hover:not(:active),
 	&:focus:not(:active),
 	&:focus-within:not(:active) {
@@ -239,7 +241,7 @@ ul:has(:focus-visible) {
 }
 
 [aria-busy=true],
-:is(button, .button, [role=tab], input[type=submit])[aria-busy=true] {
+:is(button, .button, input[type=submit])[aria-busy=true] {
 	pointer-events: none;
 	user-select   : none;
 	cursor        : default;
@@ -266,71 +268,4 @@ hr {
 
 section {
 	padding: (calc(var(--gap) * 2)) var(--gap);
-}
-
-.hoverable>ul>li>ul,
-.horizontal>ul>li>ul,
-ul.hoverable>li>ul,
-ul.horizontal>li>ul .toggle+*,
-.closed {
-	max-height      : 1px;
-	min-height      : 0;
-	opacity         : 0;
-	padding-block   : 0;
-	pointer-events  : none;
-	pointer-events  : none;
-	transform       : scaleY(.8) translateY(-4px);
-	transform-origin: top;
-	transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
-	transition-delay: .1s;
-	z-index         : 2;
-}
-
-.hoverable>ul>li>ul,
-.horizontal>ul>li>ul {
-	position: absolute;
-}
-
-.horizontal,
-.horizontal>ul {
-	display: flex;
-
-	>a,
-	>li,
-	>button {
-		width: auto;
-	}
-}
-
-@each $breakpoint,
-$breakpoint_width in $breakpoints {
-	@media screen and (min-width: $breakpoint_width) {
-
-		.#{$breakpoint}-horizontal,
-		.#{$breakpoint}-horizontal>ul {
-			display: flex;
-
-			>a,
-			>li,
-			>button {
-				width: auto;
-			}
-		}
-
-		.#{$breakpoint}-horizontal>ul>li>ul,
-		ul.#{$breakpoint}-horizontal>li>ul {
-			max-height      : 1px;
-			min-height      : 0;
-			opacity         : 0;
-			padding-block   : 0;
-			pointer-events  : none;
-			transform       : scaleY(.8) translateY(-4px);
-			transition-delay: .1s;
-			transform-origin: top;
-			transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
-			z-index         : 2;
-			pointer-events  : none;
-			position        : absolute;
-		}
-	}
 }

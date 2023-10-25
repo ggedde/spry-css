@@ -1,45 +1,120 @@
 /*!
 * Spry Lists
 */
+@use "variables"as *;
 
-.list {
-	> a,
-	li > a,
-	> button,
-	> .button,
-	li > button,
-	li > .button {
-		justify-content: flex-start;
-		width: 100%;
-		&:hover,
-		&:focus {
-			background-color: rgba(var(--color-rgb), .2);
+.outline {
+	border-color: rgba(var(--color-rgb), .4);
+	border-width: 1px;
+	border-style: solid;
+	li {
+		border-color: inherit;
+		position: relative;
+		ul {
+			border-width: 1px;
+			border-color: inherit;
+			border-style: solid;
+			inset: auto -1px;
+		}
+	}
+	
+	.tablist {
+		margin: -1px;
+		> :not(ul) {
+			border-width: 0 0 1px 1px;
+			border-color: inherit;
+			border-style: solid;
+		}
+	}
+	&.flex-row {
+		> :not(ul) + *,
+		> ul > li + li {	
+			border-width: 0 0 0 1px;
+			border-color: inherit;
+			border-style: solid;
 		}
 	}
 
-	&.outline {
-		border: 1px solid rgba(var(--color-rgb), .4);
+	> :not(ul) + *,
+	ul > li + li {	
+		border-width: 1px 0 0 0;
+		border-color: inherit;
+		border-style: solid;
+	}
+}
+:is(.list,.tablist) {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	li {
+		margin-block: 0;
+		position: relative;
+		background-color: inherit;
+	}
+	li ul {
+		background-color: inherit;
+	}
+	> * {
+		flex: auto;
+	}
+	li > :is(a,button,.button) {
+		width: 100%;
+	}
+	&,
+	&.flex-column {
 		> :not(ul,ol),
 		li {
-			border-top: 1px solid rgba(var(--color-rgb), .4);
-			&:first-of-type {
-				border-top: 0;
-			}
-		}
-		&.horizontal {
-			li {
-				border-top: 0;
-				border-left: 1px solid rgba(var(--color-rgb), .4);
-				&:first-of-type {
-					border-left: 0;
-				}
+			justify-content: flex-start;
+			text-align: left;
+			width: 100%;
+			flex: 0;
+			> :is(a, button, .button) {
+				width: 100%;
+				justify-content: flex-start;
+				text-align: left;
 			}
 		}
 	}
-	&.horizontal {
-		display: flex;
+	> *,
+	li > * {
+		border-radius: 0;
+	}
+	&.flex-row {
+		> :not(ul,ol),
 		li {
+			justify-content: center;
 			text-align: center;
+			width: auto;
+			flex: 1;
+		}
+	}
+
+	@each $breakpoint,
+	$breakpoint_width in $breakpoints {
+		@media screen and (min-width: $breakpoint_width) {
+			&.#{$breakpoint}-flex-row {
+				> :not(ul,ol),
+				li {
+					justify-content: center;
+					text-align: center;
+				}
+			}
+
+			&.#{$breakpoint}-flex-column {
+				> :not(ul,ol),
+				li {
+					justify-content: left;
+					text-align: left;
+					width: 100%;
+					flex: 0;
+					// .tabs.outline > & {
+					// 	&:last-child {
+					// 		margin-bottom: -1px;
+					// 	}
+					// }
+				}
+				
+			}
 		}
 	}
 	&.hide-inputs input {
