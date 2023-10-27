@@ -31,7 +31,7 @@
                     </button>
                     <nav id="header-nav" role="list" class="bg-faint vh overflow-auto closed md-open w-200 sm allowcloseout allowclosewithin">
                         <ul class="list pt-2">
-                            <li>
+                            <li class="pb-2">
                                 <h5 class="pl-2">
                                     <i class="sm mr-2">
                                         <svg viewBox="0 0 24 24"><path d="M13,3H11V13H13V3M17.83,5.17L16.41,6.59C18.05,7.91 19,9.9 19,12A7,7 0 0,1 12,19C8.14,19 5,15.88 5,12C5,9.91 5.95,7.91 7.58,6.58L6.17,5.17C2.38,8.39 1.92,14.07 5.14,17.86C8.36,21.64 14.04,22.1 17.83,18.88C19.85,17.17 21,14.65 21,12C21,9.37 19.84,6.87 17.83,5.17Z" /></svg>
@@ -48,7 +48,7 @@
                             <li><a href="#themes">Themes</a></li>
                             <li><a href="#icons">Icons</a></li>
                             <li><a href="#support">Support</a></li>
-                            <li class="mt-3">
+                            <li class="pt-3 pb-2">
                                 <h5 class="pl-2">
                                     <i class="sm mr-2">
                                         <svg viewBox="0 0 24 24"><path d="M13 3v6h8V3m-8 18h8V11h-8M3 21h8v-6H3m0-2h8V3H3v10z" /></svg>
@@ -57,11 +57,14 @@
                                 </h5>
                                 <hr class="m-1 o-30" />
                             </li>
+                            <li><a href="#breakpoints">Breakpoints</a></li>
+                            <li><a href="#gaps">Gaps</a></li>
                             <li><a href="#grid">Grid</a></li>
                             <li><a href="#sizes">Sizing</a></li>
                             <li><a href="#utilities-spacing">Spacing</a></li>
+                            <li><a href="#toggle">Toggles</a></li>
                             <li><a href="#utilities">Utilities</a></li>
-                            <li class="mt-3 pb-4">
+                            <li class="pt-3 pb-2">
                                 <h5 class="pl-2">
                                     <i class="sm mr-2">
                                         <svg viewBox="0 0 24 24"><path d="M16 20h4v-4h-4m0-2h4v-4h-4m-6-2h4V4h-4m6 4h4V4h-4m-6 10h4v-4h-4m-6 4h4v-4H4m0 10h4v-4H4m6 4h4v-4h-4M4 8h4V4H4v4z" /></svg>
@@ -74,11 +77,7 @@
                             <li><a href="#badges">Badges</a></li>
                             <li>
                                 <a href="#buttons">Buttons</a>
-                                <label role="button" class="toggle link icon circle">
-                                    <svg class="xxl" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" /></svg>
-                                    <input type="checkbox">
-                                    <svg class="xxl" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z" /></svg>
-                                </label>
+                                <input type="checkbox" class="button toggle link icon down circle">
                                 <ul class="sm pl-3">
                                     <li><a href="#buttons">Default</a></li>
                                     <li><a href="#buttons-outline">Outline</a></li>
@@ -93,11 +92,7 @@
                             <li><a href="#cards">Cards</a></li>
                             <li>
                                 <a href="#forms">Forms</a>
-                                <label role="button" class="toggle link icon circle">
-                                    <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                                    <input type="checkbox">
-                                    <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
-                                </label>
+                                <input type="checkbox" class="button toggle link icon down circle">
                                 <ul class="sm pl-3">
                                     <li><a href="#forms">Simple Form</a></li>
                                     <li><a href="#forms-responsive-labels">Responsive Labels</a></li>
@@ -110,11 +105,7 @@
                             <li><a href="#nav">Nav & Menus</a></li>
                             <li>
                                 <a href="#sliders">Sliders</a>
-                                <label role="button" class="toggle link icon circle">
-                                    <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                                    <input type="checkbox">
-                                    <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
-                                </label>
+                                <input type="checkbox" class="button toggle link icon down circle">
                                 <ul class="sm pl-3">
                                     <li><a href="#slider-js">Javascript</a></li>
                                     <li><a href="#sliders-image">Image Slider</a></li>
@@ -124,23 +115,7 @@
                             </li>
                             <li><a href="#tables">Tables</a></li>
                             <li><a href="#tabs">Tabs</a></li>
-                            <li>
-                                <a href="#toggle">Toggles</a>
-                                <label role="button" class="toggle link icon circle">
-                                    <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                                    <input type="checkbox">
-                                    <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
-                                </label>
-                                <ul class="sm pl-3">
-                                    <li><a href="#toggle">Default</a></li>
-                                    <li><a href="#toggle-accordion">Accordion</a></li>
-                                    <li><a href="#toggle-overflown">Overflown</a></li>
-                                    <li><a href="#toggle-hover">On Hover</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#tooltip">Tooltips</a>
-                            </li>
+                            <li class="pb-4"><a href="#tooltip">Tooltips</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -178,6 +153,23 @@
                     So if a SpryCSS class is not working then chances are you have already set that style in a css file
                     and therefore you should update the style there instead of overriding it in the html.
                 </p>
+                <nav>
+                    <div>
+                        <div>a</div>
+                        <div>b</div>
+                        <div>c</div>
+                    </div>
+                </nav>
+                <button onclick="console.log('aa')">Button</button>
+                <label class="button">
+                    Foo
+                    <input id="baasdf" type="checkbox" style="display: none;" />
+                </label>
+
+                <label class="button link">
+                    Bar
+                    <input type="checkbox" class="toggle" onchange="console.log(123)" />
+                </label>
                 <h2 class="sticky flex-middle index-3 pt-3 bg-inherit border-bottom border-faint pb-1 mb-2">
                     <i class="mr-1"><svg viewBox="0 0 24 24"><path d="m16.56 5.44-1.45 1.45A5.969 5.969 0 0 1 18 12a6 6 0 0 1-6 6 6 6 0 0 1-6-6c0-2.17 1.16-4.06 2.88-5.12L7.44 5.44A7.961 7.961 0 0 0 4 12a8 8 0 0 0 8 8 8 8 0 0 0 8-8c0-2.72-1.36-5.12-3.44-6.56M13 3h-2v10h2" /></svg></i>
                     Getting Started and Installation
@@ -243,7 +235,7 @@ $breakpoints: (
 // Specify each breakpoint gap size. &lt;section&gt; tags with get padding based on gap size.
 // You must include one for each Breakpoint otherwise it will result in a Compile Error.
 $gaps: (
-    default: 1.25em,
+    default: 1.25em, // required
     md:      2em,
 );
 
@@ -274,7 +266,6 @@ $spacing: (
     2: 1em,
     3: 2em,
     4: 4em,
-    5: 6em,
 );
 
 // Specify each size that applies font-size and all elements using "em".
@@ -686,45 +677,6 @@ $sizes: (
     
             </section>
             <!------------------------------------
-            ------------    SIZES    ------------
-            ------------------------------------->
-            <section class="bg-inherit py-0">
-                <h2 class="sticky flex-middle index-3 pt-3 bg-inherit border-bottom border-faint pb-1 mb-2">
-                    <i class="mr-1"><svg viewBox="0 0 24 24"><path d="M10 21v-2H6.41l4.5-4.5-1.41-1.41-4.5 4.5V14H3v7h7m4.5-10.09 4.5-4.5V10h2V3h-7v2h3.59l-4.5 4.5 1.41 1.41z" /></svg></i>
-                    Sizing
-                </h2>
-                <a name="sizes"></a>
-                <p class="mb-1">By Default SpryCss uses <code class="color-primary">em</code> to set font sizes, padding, heights, etc. So you can alter the sizes using the size classes.</p>
-                <pre><code class="language-scss">$sizes: (
-    xl: 150%,
-    lg: 120%,
-    md: 100%,
-    sm: 80%,
-    xs: 60%,
-);</code></pre>
-                <p class="mb-3">Sizing classes are applied to all child elements so you can assign it to the parent.</p>
-                <div class="show-code" data-title="Element Sizing">
-                    <p class="xs">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                    <p class="sm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                    <p class="md">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                    <p class="lg">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                    <p class="xl">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                </div>
-                
-                <div class="show-code" data-title="Child Sizing">
-                    <div class="xs mb-1">
-                        <button>Button</button>
-                        <button>Button</button>
-                        <button>Button</button>
-                    </div>
-                    <div class="lg">
-                        <button>Button</button>
-                        <button>Button</button>
-                        <button>Button</button>
-                    </div>
-                </div>
-            </section>
-            <!------------------------------------
             -------------    ICONS    ------------
             ------------------------------------->
             <section class="bg-inherit py-0">
@@ -847,6 +799,619 @@ $sizes: (
                         <a class="github-button" href="https://github.com/ggedde/spry-css/subscription" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-eye" aria-label="Watch ggedde/spry-css on GitHub">Watch</a>
                     </p>
                 </div>
+            </section>
+            <!------------------------------------
+            --------    BREAKPOINTS    -----------
+            ------------------------------------->
+            <section class="bg-inherit py-0">
+                <h2 class="sticky flex-middle index-3 pt-3 bg-inherit border-bottom border-faint pb-1 mb-2">
+                    <i class="mr-1">
+                        <svg viewBox="0 0 24 24"><path d="M3,4H20A2,2 0 0,1 22,6V8H18V6H5V18H14V20H3A2,2 0 0,1 1,18V6A2,2 0 0,1 3,4M17,10H23A1,1 0 0,1 24,11V21A1,1 0 0,1 23,22H17A1,1 0 0,1 16,21V11A1,1 0 0,1 17,10M18,12V19H22V12H18Z" /></svg>
+                    </i>
+                    Breakpoints
+                </h2>
+                <a name="breakpoints"></a>
+
+                <h5>SpryCSS is mobile first. Meaning all styles start from the smallest device then allow for changes with <code class="color-primary">min-width</code> using breakpoints. By default, SpryCSS only comes with one breakpoint <code class="color-primary">md</code> at <code class="color-primary">40em</code>.</h5>
+
+                <p class="mt-3">You can add more breakpoints in the SCSS Variables, but keep in mind that the more breakpoints you add the larger the compiled file size will be.</p>
+
+                <h5 class="mt-2 note">SCSS Variable</h5>
+                <pre class="mt-1"><code class="language-scss">$breakpoints: (
+    md: 40em,
+)</code></pre>
+
+                <table class="mb-2 mt-3">
+                    <thead>
+                        <tr>
+                            <th width="190"><h4>Used In</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#gaps">Gaps</a></td>
+                            <td>Gaps uses breakpoints to define initial margin in &lt;hr&gt; and initial padding in &lt;section&gt;</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#grid">Grid</a></td>
+                            <td>Grid uses gaps in CSS Grid and CSS Flexbox grids</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#utilities-spacing">Spacing</a></td>
+                            <td>Spacing allows breakpoints. ex <code class="note">&lt;div class="p-0 md-p-2"&gt;No Padding on Mobile&lt;/div&gt;</code></pre></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#utilities-layout">Layout Utility Classes</a></td>
+                            <td>Layout Utility Classes allow breakpoints. ex <code class="note">&lt;div class="none md-block"&gt;Hide on Mobile&lt;/div&gt;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+            <!------------------------------------
+            ------------    GAPS    --------------
+            ------------------------------------->
+            <section class="bg-inherit py-0">
+                <h2 class="sticky flex-middle index-3 pt-3 bg-inherit border-bottom border-faint pb-1 mb-2">
+                    <i class="mr-1">
+                        <svg viewBox="0 0 24 24"><path d="M9,11H15V8L19,12L15,16V13H9V16L5,12L9,8V11M2,20V4H4V20H2M20,20V4H22V20H20Z" /></svg>
+                    </i>
+                    Gaps
+                </h2>
+                <a name="gaps"></a>
+
+                <p class="mt-3">Default gaps (aka gutters) are automatically adjusted based on your breakpoints. If you add more breakpoints in your SCSS Variables you will also need to add the corrisponding Gap.</p>
+
+                <h5 class="mt-2 note">SCSS Variable</h5>
+                <pre class="mt-1"><code class="language-scss">$gaps: (
+    default: 1.25em, // required
+    md: 2em,
+)</code></pre>
+
+                <div class="alert secondary outline">* You need to make sure the gaps match the <a href="#breakpoints" class="mx-1">breakpoints</a> otherwise you will receive a SCSS compile error.</div>
+
+            </section>
+
+            <!------------------------------------
+            -------------    GRID    -------------
+            ------------------------------------->
+            <section class="bg-inherit py-0">
+                <h2 class="sticky flex-middle index-3 pt-3 bg-inherit border-bottom border-faint pb-1 mb-2">
+                    <i class="mr-1">
+                        <svg viewBox="0 0 24 24"><path d="M12 16C13.1 16 14 16.9 14 18S13.1 20 12 20 10 19.1 10 18 10.9 16 12 16M12 10C13.1 10 14 10.9 14 12S13.1 14 12 14 10 13.1 10 12 10.9 10 12 10M12 4C13.1 4 14 4.9 14 6S13.1 8 12 8 10 7.1 10 6 10.9 4 12 4M6 16C7.1 16 8 16.9 8 18S7.1 20 6 20 4 19.1 4 18 4.9 16 6 16M6 10C7.1 10 8 10.9 8 12S7.1 14 6 14 4 13.1 4 12 4.9 10 6 10M6 4C7.1 4 8 4.9 8 6S7.1 8 6 8 4 7.1 4 6 4.9 4 6 4M18 16C19.1 16 20 16.9 20 18S19.1 20 18 20 16 19.1 16 18 16.9 16 18 16M18 10C19.1 10 20 10.9 20 12S19.1 14 18 14 16 13.1 16 12 16.9 10 18 10M18 4C19.1 4 20 4.9 20 6S19.1 8 18 8 16 7.1 16 6 16.9 4 18 4Z" /></svg>
+                    </i>
+                    Grid
+                </h2>
+                <a name="grid"></a>
+
+                <table class="mb-2 mt-3">
+                    <thead>
+                        <tr>
+                            <th width="300"><h4>Container Classes</h4></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary">grid</code></td>
+                            <td>CSS Grid of columns auto width. Uses variable <a href="#gaps">Gaps</a> for spacing</td>
+                        </tr>
+                        <tr>
+                            <td width="300"><code class="color-primary">grid-{n}00</code></td>
+                            <td>CSS Grid of columns using minmax() for column widths in px's. <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code></td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">row</code></td>
+                            <td>CSS Flexbox Row of columns auto width. Uses variable <a href="#gaps">Gaps</a> for spacing</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary"><span class="color-default">{breakpoint}-</span>columns-{n}</code></td>
+                            <td>
+                                <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, <code class="color-primary">fixed</code>
+                                <p class="color-default">* fixed and auto only apply to <code class="color-primary">row</code></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary"><span class="color-default">{breakpoint}-</span>g-{space}</code></td>
+                            <td>Gap for columns within <code class="color-primary">grid</code> or <code class="color-primary">row</code>
+                                <p>See <a href="#utilities-spacing">Spacing</a> for available <code class="color-primary">{space}</code> values.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="mt-2">
+                    <thead>
+                        <tr>
+                            <th width="300"><h4>Column Classes</h4></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary"><span class="color-default">{breakpoint}-</span>col-{n}</code></td>
+                            <td>
+                                <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, <code class="color-primary">fixed</code>
+                                <p class="color-default">* fixed and auto only apply to <code class="color-primary">row</code></p>
+                                <p class="sm color-default">* Custom gaps will not always work correctly with <code
+                                    class="color-primary">row</code> when setting specific column sizes. It works best if you
+                                specify all breakpoint column sizes or use it with <code class="color-primary">grid</code> instead
+                            </p>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+    
+                <h3 id="grid-css-grid" class="mt-2 mb-2">CSS Grid</h3>
+                <div class="show-code" data-title="Auto Fit minimum 200px">
+                    <div class="grid-200">
+                        <div class="bg-faint rounded p-1">
+                            col
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            col
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            col
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            col
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            col
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="show-code" data-title="Specify number of columns">
+                    <div class="grid md-columns-2 lg-columns-3">
+                        <div class="bg-faint rounded p-1">
+                            col
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            col
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            col
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            col
+                        </div>
+                    </div>
+                </div>
+    
+                <h3 id="grid-css-flex" class="mt-4 mb-2">CSS Flexbox</h3>
+                <div class="show-code" data-title="Equal Columns Single Row above mobile">
+                    <div class="row">
+                        <div class="bg-faint rounded p-1">
+                            fixed
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            fixed
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            fixed
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            fixed
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-code" data-title="Setting Columns to Auto">
+                    <div class="row">
+                        <div class="bg-faint rounded p-1">
+                            fixed
+                        </div>
+                        <div class="md-col-auto bg-faint rounded p-1">
+                            auto fit content
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            fixed
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            fixed
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="grid-sidebars" class="show-code" data-title="Set Sidebar width with Auto Content Column">
+                    <div class="row">
+                        <div class="bg-faint rounded p-1 md-mw-300">
+                            md-mw-300
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            auto
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="grid-ordering" class="show-code" data-title="Custom Ordering with Space between">
+                    <div class="row justify-content-between">
+                        <div class="md-col-2 md-order-1 bg-faint rounded p-1">
+                            col C
+                        </div>
+                        <div class="md-col-2 bg-faint rounded p-1">
+                            col B
+                        </div>
+                        <div class="md-col-2 md-order-first bg-faint rounded p-1">
+                            col A
+                        </div>
+                    </div>
+                </div>                
+    
+                <div id="grid-columns" class="show-code" data-title="Specify number of columns centered">
+                    <div class="row md-columns-2 lg-columns-3 justify-content-center">
+                        <div class="bg-faint rounded p-1">
+                            col
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            col
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            col
+                        </div>
+                        <div class="bg-faint rounded p-1">
+                            col
+                        </div>
+                    </div>
+                </div>
+
+                <div id="grid-span" class="show-code" data-title="Columns multi row with column spanning">
+                    <div class="row">
+                        <div class="col-6 bg-faint rounded p-1">
+                            .col-6
+                        </div>
+                        <div class="col-6 bg-faint rounded p-1">
+                            .col-6
+                        </div>
+                        <div class="col-3 bg-faint rounded p-1">
+                            .col-3
+                        </div>
+                        <div class="col-6 bg-faint rounded p-1">
+                            .col-6
+                        </div>
+                        <div class="col-3 bg-faint rounded p-1">
+                            .col-3
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-code" data-title="Row spanning with nested rows and auto height">
+                    <div class="row">
+                        <div class="md-col-4 bg-faint rounded p-1">
+                            .md-col-4
+                        </div>
+                        <div class="row md-col-8">
+                            <div class="bg-faint rounded p-1">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitrsed diam nonumy.
+                            </div>
+                            <div class="bg-faint rounded p-1">
+                                fixed
+                            </div>
+                            <div class="bg-faint rounded p-1">
+                                fixed
+                            </div>
+                            <div class="row col-12">
+                                <div class="bg-faint rounded p-1">
+                                    fixed
+                                </div>
+                                <div class="bg-faint rounded p-1">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="grid-gap" class="show-code" data-title="Responsive with different gap sizing">
+                    <div class="row g-1 md-g-4">
+                        <div class="col-6 bg-faint rounded p-1">
+                            .col-6
+                        </div>
+                        <div class="col-6 bg-faint rounded p-1">
+                            .col-6
+                        </div>
+                        <div class="col-6 md-col-3 lg-col-3 bg-faint rounded p-1">
+                            .col-6 .md-col-3 .lg-col-3
+                        </div>
+                        <div class="col-6 row md-columns-auto">
+                            <div class="bg-faint rounded p-1">
+                                auto
+                            </div>
+                            <div class="bg-faint rounded p-1">
+                                auto fill with larger content
+                            </div>
+                            <div class="bg-faint rounded p-1">
+                                auto
+                            </div>
+                        </div>
+                        <div class="md-col-3 bg-faint rounded p-1">
+                            .md-col-3
+                        </div>
+                    </div>
+                </div>
+    
+            </section>
+            <!------------------------------------
+            ------------    SIZING    ------------
+            ------------------------------------->
+            <section class="bg-inherit py-0">
+                <h2 class="sticky flex-middle index-3 pt-3 bg-inherit border-bottom border-faint pb-1 mb-2">
+                    <i class="mr-1"><svg viewBox="0 0 24 24"><path d="M10 21v-2H6.41l4.5-4.5-1.41-1.41-4.5 4.5V14H3v7h7m4.5-10.09 4.5-4.5V10h2V3h-7v2h3.59l-4.5 4.5 1.41 1.41z" /></svg></i>
+                    Sizing
+                </h2>
+                <a name="sizes"></a>
+                <h5 class="mb-2">By Default SpryCss uses <code class="color-primary">em</code> to set font sizes, padding, heights, etc. So you can alter the sizes using the size classes.</h5>
+                <p class="mb-3">Sizing classes are applied to all child elements so you can assign it to the parent.</p>
+
+                <h5 class="mt-2 note">SCSS Variable</h5>
+                <pre><code class="language-scss">$sizes: (
+    xl: 150%,
+    lg: 120%,
+    md: 100%,
+    sm: 80%,
+    xs: 60%,
+);</code></pre>
+                
+                <div class="show-code mt-3" data-title="Element Sizing">
+                    <p class="xs">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="sm">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="md">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="lg">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="xl">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                </div>
+                
+                <div class="show-code" data-title="Child Sizing">
+                    <div class="xs mb-1">
+                        <button>Button</button>
+                        <button>Button</button>
+                        <button>Button</button>
+                    </div>
+                    <div class="lg">
+                        <button>Button</button>
+                        <button>Button</button>
+                        <button>Button</button>
+                    </div>
+                </div>
+            </section>
+            <!------------------------------------
+            -----------    SPACING    ------------
+            ------------------------------------->
+            <section class="bg-inherit py-0">
+                <h2 class="sticky flex-middle index-3 pt-3 bg-inherit border-bottom border-faint pb-1 mb-2">
+                    <i class="mr-1">
+                        <svg viewBox="0 0 24 24"><path d="M9 11h6V8l4 4-4 4v-3H9v3l-4-4 4-4v3m-7 9V4h2v16H2m18 0V4h2v16h-2z" /></svg>
+                    </i>
+                    Spacing Utility Classes
+                </h2>
+                <a name="utilities-spacing"></a>
+                <p>The classes are named using the format</p>
+                <code class="color-medium">{breakpoint}-</code><code class="color-primary">{property}{sides}-{spacing}</code>
+                <p>There are 3 Spacing properties:</p>
+                <div class="ml-3 my-2">
+                    <div><code class="color-primary">p</code> = padding</div>
+                    <div><code class="color-primary">m</code> = margin</div>
+                </div>
+                <p>There are 6 sides:</p>
+                <div class="ml-3 my-2">
+                    <div><code class="color-primary">t</code> = top</div>
+                    <div><code class="color-primary">r</code> = right</div>
+                    <div><code class="color-primary">b</code> = bottom</div>
+                    <div><code class="color-primary">l</code> = left</div>
+                    <div><code class="color-primary">y</code> = top and bottom</div>
+                    <div><code class="color-primary">x</code> = left and right</div>
+                </div>
+
+                <p>Example Inline Padding 1em</p>
+                <pre><code class="language-css">px-2</code></pre>
+                <p>The sizes are used from the scss variable.</p>
+                <pre><code class="language-scss">// SCSS Variable
+$spacing: (
+    0: 0,
+    1: .5em,
+    2: 1em,
+    3: 2em,
+    4: 4em,
+    5: 6em,
+);</code></pre>
+                <h5>Negative Margin</h5>
+                <p>For a negative margin you can include a negative value by placing a <code class="color-primary">n</code> in
+                    front of the value. ex <code class="color-primary">mx-n2</code></p>
+    
+            </section>
+            <!------------------------------------
+            -----------    TOGGLES    ------------
+            ------------------------------------->
+            <section class="bg-inherit py-0">
+                <h2 class="sticky flex-middle index-3 pt-3 bg-inherit border-bottom border-faint pb-1 mb-2">
+                    <i class="mr-1">
+                        <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M7,10L12,15L17,10H7Z" /></svg>
+                    </i>
+                    Toggles
+                </h2>
+                <a name="toggle"></a>
+                <h5 class="my-2">Toggles are used to open and close content without needing any Javascript.<br>Can be used for Dropdowns, Modals, Menus, Accordians, etc.</h5>
+                
+<pre><code class="language-html">&lt;!-- Hidden Toggle --&gt;
+&lt;input type="checkbox" class="toggle" /&gt;
+&lt;p&gt;Toggle Content&lt;/p&gt;</code></pre>
+
+<pre><code class="language-html">&lt;!-- Button with Icon Toggle --&gt;
+&lt;input type="checkbox" class="toggle button icon down" /&gt;
+&lt;p&gt;Toggle Content&lt;/p&gt;</code></pre>
+
+<pre><code class="language-html">&lt;!-- Text Toggle --&gt;
+&lt;label class="toggle"&gt;Toggle Handle
+    &lt;input type="checkbox" /&gt;
+&lt;/label&gt;
+&lt;p&gt;Toggle Content&lt;/p&gt;</code></pre>
+
+                <table class="mb-2 mt-3">
+                    <thead>
+                        <tr>
+                            <th width="190"><h4>Tags</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary">input</code></td>
+                            <td>The trigger for the toggle. Can be of type <code class="color-primary">checkbox</code> or <code class="color-primary">radio</code></td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">label</code></td>
+                            <td>(Optional) wrapper for a toggle to allow more content.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">.toggle + *</code></td>
+                            <td>Any element immediately following a toggle is hidden.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="mb-2 mt-2">
+                    <thead>
+                        <tr>
+                            <th width="190"><h4>Toggle Classes</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary">toggle</code></td>
+                            <td>Activates a Toggle and hides the immediate following sibling</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">hoverable</code></td>
+                            <td>Allows toggle to activate on hover</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">active</code></td>
+                            <td>
+                                Forces Toggle Active<br>
+                                <span class="note color-default">* All toggles that are :checked or has :checked are considered active.</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="mb-4 mt-2">
+                    <thead>
+                        <tr>
+                            <th width="190"><h4>Sibling Classes</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-default">{bp}-<span class="color-primary">open</span></code></td>
+                            <td>
+                                Forces sibling open even when toggle is not active.
+                                <br>
+                                <span class="note color-default">Can be used with or without breakpoints</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">collapse</code></td>
+                            <td>Positions all child elements absolute.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="show-code" data-title="Basic Toggle">
+                    <label class="button toggle">
+                        Toggle Content
+                        <input type="checkbox" class="icon down ml-2" />
+                    </label>
+                    <p class="border p-1">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                        justo duo
+                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                        sit amet.
+                    </p>
+                </div>
+
+                <div class="show-code" data-title="Toggle (JS)">
+                    <button class="toggle" data-toggle="next">Toggle Content<i class="ml-2 down"></i></button>
+                    <p class="border p-1 closed">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                        justo duo
+                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                        sit amet.
+                    </p>
+                </div>
+    
+                <div class="show-code" data-title="Accordion">
+                    <label class="button link contrast toggle w justify-content-between">
+                        <h4>Question 1</h4>
+                        <input type="checkbox" class="icon down" />
+                    </label>
+                    <div>
+                        <p class="border border-default-hazy p-1">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                            et
+                            justo duo
+                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                            dolor
+                            sit amet.
+                        </p>
+                    </div>
+                    <label class="button link contrast toggle w justify-content-between">
+                        <h4>Question 2</h4>
+                        <input type="checkbox" class="icon down" />
+                    </label>
+                    <div>
+                        <p class="border border-default-hazy p-1">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                            et
+                            justo duo
+                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                            dolor
+                            sit amet.
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="show-code" data-title="Toggle Collapsed Content">
+                    <label class="button toggle">
+                        Toggle Content
+                        <input type="checkbox" class="icon down ml-2" />
+                    </label>
+                    <div class="collapse">
+                        <p class="border p-1 bg-faint">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                            rebum.
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="show-code" data-title="Activate on Hover">
+                    <label class="button hoverable toggle">
+                        Hover Me!
+                    </label>
+                    <div class="collapse">
+                        <p class="border p-1 bg-faint">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                            rebum.
+                        </p>
+                    </div>
+                </div>
+    
             </section>
             <!------------------------------------
             ----------    UTILITIES    -----------
@@ -1240,48 +1805,7 @@ $sizes: (
                 <p class="pt-0 pl-2 note">*** = 0, 100, 200, 300, 400, 500, 600, 700, 800, 900</p>
     
                 <h4 id="utilities-max-width" class="mt-4">Max Width Classes</h4>
-                <p>This requires a breakpoint. ex <code class="color-primary">{breakpoint}-mw</code></p>
-
-                <h2 class="sticky flex-middle index-3 pt-3 bg-inherit border-bottom border-faint pb-1 mb-2">
-                    <i class="mr-1">
-                        <svg viewBox="0 0 24 24"><path d="M9 11h6V8l4 4-4 4v-3H9v3l-4-4 4-4v3m-7 9V4h2v16H2m18 0V4h2v16h-2z" /></svg>
-                    </i>
-                    Spacing Utility Classes
-                </h2>
-                <a name="utilities-spacing"></a>
-                <p>The classes are named using the format</p>
-                <code class="color-medium">{breakpoint}-</code><code class="color-primary">{property}{sides}-{spacing}</code>
-                <p>There are 3 Spacing properties:</p>
-                <div class="ml-3 my-2">
-                    <div><code class="color-primary">p</code> = padding</div>
-                    <div><code class="color-primary">m</code> = margin</div>
-                </div>
-                <p>There are 6 sides:</p>
-                <div class="ml-3 my-2">
-                    <div><code class="color-primary">t</code> = top</div>
-                    <div><code class="color-primary">r</code> = right</div>
-                    <div><code class="color-primary">b</code> = bottom</div>
-                    <div><code class="color-primary">l</code> = left</div>
-                    <div><code class="color-primary">y</code> = top and bottom</div>
-                    <div><code class="color-primary">x</code> = left and right</div>
-                </div>
-
-                <p>Example Inline Padding 1em</p>
-                <pre><code class="language-css">px-2</code></pre>
-                <p>The sizes are used from the scss variable.</p>
-                <pre><code class="language-scss">// SCSS Variable
-$spacing: (
-    0: 0,
-    1: .5em,
-    2: 1em,
-    3: 2em,
-    4: 4em,
-    5: 6em,
-);</code></pre>
-                <h5>Negative Margin</h5>
-                <p>For a negative margin you can include a negative value by placing a <code class="color-primary">n</code> in
-                    front of the value. ex <code class="color-primary">mx-n2</code></p>
-    
+                <p>This requires a breakpoint. ex <code class="color-primary">{breakpoint}-mw</code></p>    
             </section>
             <!------------------------------------
             ----------    NAVIGATION    ----------
@@ -1373,7 +1897,7 @@ $spacing: (
                 </table>
     
                 <div id="nav" class="show-code" data-title="Standard Nav Bar Menu">
-                    <nav class="bg-faint md-horizontal">
+                    <nav class="bg-faint">
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>
                         <a href="#">Link 3</a>
@@ -1382,7 +1906,7 @@ $spacing: (
                 </div>
     
                 <div class="show-code" data-title="Drop down Navigation Menu Right Aligned">
-                    <nav class="bg-faint md-horizontal md-hoverable justify-content-end">
+                    <nav class="bg-faint md-flex-row md-hoverable justify-content-end">
                         <ul>
                             <li>
                                 <a href="#">Link with Dropdown</a>
@@ -1752,7 +2276,7 @@ $spacing: (
                 </div>
     
                 <div id="menus" class="show-code" data-title="Toggle Menu List">
-                    <button class="toggle link icon menu" data-toggle></button>
+                    <input type="checkbox" class="button toggle link icon menu allowcloseout" />
                     <div class="collapse closed allowcloseout allowclosewithin">
                         <ul class="list bg-faint rounded shadow mw-200">
                             <li><a href="http://google.com">Link 1</a></li>
@@ -2550,287 +3074,6 @@ $spacing: (
                 </div>
             </section>
             <!------------------------------------
-            -------------    GRID    -------------
-            ------------------------------------->
-            <section class="bg-inherit py-0">
-                <h2 class="sticky flex-middle index-3 pt-3 bg-inherit border-bottom border-faint pb-1 mb-2">
-                    <i class="mr-1">
-                        <svg viewBox="0 0 24 24"><path d="M12 16C13.1 16 14 16.9 14 18S13.1 20 12 20 10 19.1 10 18 10.9 16 12 16M12 10C13.1 10 14 10.9 14 12S13.1 14 12 14 10 13.1 10 12 10.9 10 12 10M12 4C13.1 4 14 4.9 14 6S13.1 8 12 8 10 7.1 10 6 10.9 4 12 4M6 16C7.1 16 8 16.9 8 18S7.1 20 6 20 4 19.1 4 18 4.9 16 6 16M6 10C7.1 10 8 10.9 8 12S7.1 14 6 14 4 13.1 4 12 4.9 10 6 10M6 4C7.1 4 8 4.9 8 6S7.1 8 6 8 4 7.1 4 6 4.9 4 6 4M18 16C19.1 16 20 16.9 20 18S19.1 20 18 20 16 19.1 16 18 16.9 16 18 16M18 10C19.1 10 20 10.9 20 12S19.1 14 18 14 16 13.1 16 12 16.9 10 18 10M18 4C19.1 4 20 4.9 20 6S19.1 8 18 8 16 7.1 16 6 16.9 4 18 4Z" /></svg>
-                    </i>
-                    Grid
-                </h2>
-                <a name="grid"></a>
-                <p class="lg">You can either use a 12 column css grid or flexbox grid system</p>
-                <h5 id="grid-classes">Container Classes</h5>
-                <div class="ml-1 md-ml-3 mt-1">
-                    <div>
-                        <code class="color-primary block mt-2 md-mt-0 md-inline-block" style="width: 140px;">grid</code> Grid of columns,
-                        Uses variable <code class="color-primary">$gaps</code> for spacing
-                    </div>
-                    <div>
-                        <code class="color-primary block mt-2 md-mt-0 md-inline-block" style="width: 140px;">row</code>
-                        Flex row of columns, Uses variable <code class="color-primary">$gaps</code> for spacing
-                    </div>
-                    <div>
-                        <code class="color-primary block mt-2 md-mt-0 md-inline-block" style="width: 140px;">g-{size}</code>
-                        Gap for columns within <code class="color-primary">grid</code> or <code class="color-primary">row</code>. Default is
-                        variable <code class="color-primary">$gaps</code>
-                    </div>
-                    <div>
-                        <code class="color-primary block mt-2 md-mt-0 md-inline-block" style="width: 140px;">columns-{size}</code> 
-                        {size} can be <code class="color-primary block mt-2 md-mt-0 md-inline-block">1-12</code>,
-                        <code class="color-primary block mt-2 md-mt-0 md-inline-block">fixed</code> or
-                        <code class="color-primary block mt-2 md-mt-0 md-inline-block">auto</code> <span class="note">(fixed and auto only apply to <code class="color-primary">row</code>)</span>
-                    </div>
-                </div>
-                <h5 class="mt-2">Column Classes</h5>
-                <div class="ml-1 md-ml-3 mt-1">
-                    <div>
-                        <code class="color-primary block mt-2 md-mt-0 md-inline-block" style="width: 140px;">col-{size}</code> 
-                        {size} can be <code class="color-primary block mt-2 md-mt-0 md-inline-block">1-12</code>,
-                        <code class="color-primary block mt-2 md-mt-0 md-inline-block">fixed</code> or
-                        <code class="color-primary block mt-2 md-mt-0 md-inline-block">auto</code> <span class="note">(fixed and auto only apply to <code class="color-primary">row</code>)</span>
-                    </div>
-                </div>
-                <h5 class="mt-2">Breakpoint Classes</h5>
-                <div class="ml-1 md-ml-3 mt-1">
-                    <div>
-                        <span style="width: 270px;" class="md-inline-block"><code class="color-primary">grid</code>
-                            <code class="color-medium">-{size}00</code>
-                        </span>
-                        <cite class="block mb-2 md-inline">Min width in px of child elements within container</cite>
-                    </div>
-                    <div>
-                        <span style="width: 270px;" class="md-inline-block">
-                            <code class="color-medium">{breakpoint}-</code>
-                            <code class="color-primary">columns-{size}</code>
-                        </span>
-                        {size} can be <code class="color-primary block mt-2 md-mt-0 md-inline-block">1-12</code>,
-                        <code class="color-primary block mt-2 md-mt-0 md-inline-block">fixed</code> or
-                        <code class="color-primary block mt-2 md-mt-0 md-inline-block">auto</code> <span class="note">(fixed and auto only apply to <code class="color-primary">row</code>)</span>
-                    </div>
-                    <div>
-                        <span style="width: 270px;" class="md-inline-block">
-                            <code class="color-medium">{breakpoint}-</code>
-                            <code class="color-primary">col-{size}</code>
-                        </span>
-                        {size} can be <code class="color-primary block mt-2 md-mt-0 md-inline-block">1-12</code>,
-                        <code class="color-primary block mt-2 md-mt-0 md-inline-block">fixed</code> or
-                        <code class="color-primary block mt-2 md-mt-0 md-inline-block">auto</code> <span class="note">(fixed and auto only apply to <code class="color-primary">row</code>)</span>
-                    </div>
-                    <div>
-                        <span style="width: 270px;" class="md-inline-block">
-                            <code class="color-medium">{breakpoint}-</code>
-                            <code class="color-primary">g-{spacing}</code>
-                        </span>
-                        <cite class="block mb-2 md-inline">Gap size for container</cite>
-                    </div>
-                </div>
-                <cite class="sm fade mt-2 block"><code class="color-primary">{size}</code> is 1-12</cite>
-                <cite class="sm fade mt-1 block"><code class="color-primary">{spacing}</code> is defined by the
-                    $spacing variable. See <a href="#utilities-spacing">Spacing</a> for more details</cite>
-                <cite class="sm fade mt-1 block">* <code class="color-primary">gap</code> for flexbox is not
-                    supported on older browsers. Also, custom gaps will not always work correctly with <code
-                        class="color-primary">row</code> when setting specific column sizes. It works best if you
-                    specify all breakpoint column sizes or use it with <code class="color-primary">grid</code>
-                    instead</cite>
-
-                    <cite class="sm md-ml-2 block md-inline-block">See <a href="#utilities-layout">Layout Classes</a> for more details</cite>
-                    <cite class="sm fade mb-1 block">(For gapping to work correctly you will need to specify all
-                        breakpoints)</cite>
-    
-                <h3 id="grid-css-grid" class="mt-4 mb-2">CSS Grid</h3>
-                <div class="show-code" data-title="Auto Fit minimum 200px">
-                    <div class="grid-200">
-                        <div class="bg-faint rounded p-1">
-                            col
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            col
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            col
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            col
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            col
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="show-code" data-title="Specify number of columns">
-                    <div class="grid md-columns-2 lg-columns-3">
-                        <div class="bg-faint rounded p-1">
-                            col
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            col
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            col
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            col
-                        </div>
-                    </div>
-                </div>
-    
-                <h3 id="grid-css-flex" class="mt-4 mb-2">CSS Flexbox</h3>
-                <div class="show-code" data-title="Equal Columns Single Row above mobile">
-                    <div class="row">
-                        <div class="bg-faint rounded p-1">
-                            fixed
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            fixed
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            fixed
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            fixed
-                        </div>
-                    </div>
-                </div>
-
-                <div class="show-code" data-title="Setting Columns to Auto">
-                    <div class="row">
-                        <div class="bg-faint rounded p-1">
-                            fixed
-                        </div>
-                        <div class="md-col-auto bg-faint rounded p-1">
-                            auto fit content
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            fixed
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            fixed
-                        </div>
-                    </div>
-                </div>
-    
-                <div id="grid-sidebars" class="show-code" data-title="Set Sidebar width with Auto Content Column">
-                    <div class="row">
-                        <div class="bg-faint rounded p-1 md-mw-300">
-                            md-mw-300
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            auto
-                        </div>
-                    </div>
-                </div>
-    
-                <div id="grid-ordering" class="show-code" data-title="Custom Ordering with Space between">
-                    <div class="row justify-content-between">
-                        <div class="md-col-2 md-order-1 bg-faint rounded p-1">
-                            col C
-                        </div>
-                        <div class="md-col-2 bg-faint rounded p-1">
-                            col B
-                        </div>
-                        <div class="md-col-2 md-order-first bg-faint rounded p-1">
-                            col A
-                        </div>
-                    </div>
-                </div>                
-    
-                <div id="grid-columns" class="show-code" data-title="Specify number of columns centered">
-                    <div class="row md-columns-2 lg-columns-3 justify-content-center">
-                        <div class="bg-faint rounded p-1">
-                            col
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            col
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            col
-                        </div>
-                        <div class="bg-faint rounded p-1">
-                            col
-                        </div>
-                    </div>
-                </div>
-
-                <div id="grid-span" class="show-code" data-title="Columns multi row with column spanning">
-                    <div class="row">
-                        <div class="col-6 bg-faint rounded p-1">
-                            .col-6
-                        </div>
-                        <div class="col-6 bg-faint rounded p-1">
-                            .col-6
-                        </div>
-                        <div class="col-3 bg-faint rounded p-1">
-                            .col-3
-                        </div>
-                        <div class="col-6 bg-faint rounded p-1">
-                            .col-6
-                        </div>
-                        <div class="col-3 bg-faint rounded p-1">
-                            .col-3
-                        </div>
-                    </div>
-                </div>
-
-                <div class="show-code" data-title="Row spanning with nested rows and auto height">
-                    <div class="row">
-                        <div class="md-col-4 bg-faint rounded p-1">
-                            .md-col-4
-                        </div>
-                        <div class="row md-col-8">
-                            <div class="bg-faint rounded p-1">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitrsed diam nonumy.
-                            </div>
-                            <div class="bg-faint rounded p-1">
-                                fixed
-                            </div>
-                            <div class="bg-faint rounded p-1">
-                                fixed
-                            </div>
-                            <div class="row col-12">
-                                <div class="bg-faint rounded p-1">
-                                    fixed
-                                </div>
-                                <div class="bg-faint rounded p-1">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div id="grid-gap" class="show-code" data-title="Responsive with different gap sizing">
-                    <div class="row g-1 md-g-4">
-                        <div class="col-6 bg-faint rounded p-1">
-                            .col-6
-                        </div>
-                        <div class="col-6 bg-faint rounded p-1">
-                            .col-6
-                        </div>
-                        <div class="col-6 md-col-3 lg-col-3 bg-faint rounded p-1">
-                            .col-6 .md-col-3 .lg-col-3
-                        </div>
-                        <div class="col-6 row md-columns-auto">
-                            <div class="bg-faint rounded p-1">
-                                auto
-                            </div>
-                            <div class="bg-faint rounded p-1">
-                                auto fill with larger content
-                            </div>
-                            <div class="bg-faint rounded p-1">
-                                auto
-                            </div>
-                        </div>
-                        <div class="md-col-3 bg-faint rounded p-1">
-                            .md-col-3
-                        </div>
-                    </div>
-                </div>
-    
-            </section>
-            <!------------------------------------
             ------------    LOADER    ------------
             ------------------------------------->
             <section class="bg-inherit py-0">
@@ -2932,8 +3175,12 @@ $spacing: (
                 </div>
     
                 <div class="show-code" data-title="Large Model with Long content and forced buttons">
-                    <button class="btn" onclick="this.nextElementSibling.classList.add('open');">Open Large Modal</button>
-                    <div class="modal" role="dialog" onclick="if(event.target === this) this.classList.add('bounce');">
+                    
+                    <label class="button toggle">
+                        Toggle Content
+                        <input type="checkbox" class="icon down ml-2" />
+                    </label>
+                    <div class="modal" role="dialog">
                         <article class="accent-light shadow mw-1200">
                             <header>
                                 <h4>Lorem ipsum dolor</h4>
@@ -3407,148 +3654,6 @@ $spacing: (
                 
             </section>
             <!------------------------------------
-            -----------    TOGGLES    ------------
-            ------------------------------------->
-            <section class="bg-inherit py-0">
-                <h2 class="sticky flex-middle index-3 pt-3 bg-inherit border-bottom border-faint pb-1 mb-2">
-                    <i class="mr-1">
-                        <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M7,10L12,15L17,10H7Z" /></svg>
-                    </i>
-                    Toggles
-                </h2>
-                <a name="toggle"></a>
-                <p class="mt-2">Toggles are used to open and close content, menus, etc</p>
-                <p class="mb-2">You can create a toggle group by adding a <code
-                        class="color-medium italic sm">&lt;input type="checkbox" /&gt;</code> inside
-                    a <code class="color-medium italic sm">&lt;label class="toggle"&gt;</code> then followed by your container of
-                    your choice.</p>
-<pre><code class="language-html">&lt;label class="toggle"&gt;Toggle Handle
-    &lt;input type="checkbox" /&gt;
-&lt;/label&gt;
-&lt;p&gt;Toggle Content&lt;/p&gt;</code></pre>
-                <h4 class="mt-4 mb-1">General Toggle Example</h4>
-                <div class="show-code" data-title="Toggle (No JS)">
-                    <label role="button" class="toggle down">Toggle Content
-                        <input type="checkbox" />
-                    </label>
-                    <p class="border p-1">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                        justo duo
-                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                        sit amet.
-                    </p>
-                </div>
-
-                <div class="show-code" data-title="Toggle (JS)">
-                    <button class="toggle hoverable" data-toggle="next">Toggle Content<i class="ml-2 down"></i></button>
-                    <p class="border p-1 closed">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                        justo duo
-                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                        sit amet.
-                    </p>
-                </div>
-    
-                <h4 id="toggle-accordion" class="mt-3 mb-2">Collapsing Toggle (Accordion)</h4>
-                <div class="show-code" data-title="">
-                    <label role="button" class="link text pl-4 pr-2 toggle text-right w justify-content-start">
-                        <input type="checkbox" />
-                        <h4>Question 1</h4>
-                    </label>
-                    <div>
-                        <p class="border p-1">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                            et
-                            justo duo
-                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-                            dolor
-                            sit amet.
-                        </p>
-                    </div>
-                    <label class="link btn-text pl-4 pr-2 toggle btn-toggle text-right w justify-content-start">
-                        <input type="checkbox" />
-                        <h4>Question 2</h4>
-                    </label>
-                    <div>
-                        <p class="border p-1">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                            et
-                            justo duo
-                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-                            dolor
-                            sit amet.
-                        </p>
-                    </div>
-                </div>
-    
-                <h4 id="toggle-overflown" class="mt-3">Overflown Toggle</h4>
-                <p class="mb-2">Add <code class="color-medium italic sm">.collapse</code> to your container</p>
-                <div class="show-code" data-title="">
-                    <label class="btn pl-2 pr-4 toggle btn-toggle text-left">
-                        <input type="checkbox" />
-                        Toggle Content
-                    </label>
-                    <div class="collapse">
-                        <p class="border p-1 bg-faint">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                            rebum.
-                        </p>
-                    </div>
-                </div>
-    
-                <div class="show-code" data-title="">
-                    <label class="btn pl-4 pr-2 toggle btn-toggle text-right">
-                        <input type="checkbox" />
-                        Toggle Content
-                    </label>
-                    <div class="collapse">
-                        <p class="border p-1 bg-faint">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                            rebum.
-                        </p>
-                    </div>
-                </div>
-    
-                <h4 id="toggle-hover" class="mt-3">Activate on Hover</h4>
-                <p class="mb-2">Add the <code class="color-medium italic sm">.hoverable</code> class to the label</p>
-                <p class="mb-2 note">
-                    * To Remove the click option then just remove the checkbox and add the
-                    <code class="color-medium italic sm">.toggle</code> class to the label
-                </p>
-    
-                <div class="show-code" data-title="">
-                    <label class="btn pr-4 pl-2 toggle btn-toggle hoverable text-left">
-                        Toggle on Hover
-                    </label>
-                    <div class="collapse">
-                        <p class="border p-1 bg-faint">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                            rebum.
-                        </p>
-                    </div>
-                </div>
-    
-            </section>
-            <!------------------------------------
             -----------    TOOLTIPS    -----------
             ------------------------------------->
             <section id="tooltip" class="bg-inherit pt-0">
@@ -3714,6 +3819,15 @@ $spacing: (
             });
         });
 
+        document.querySelectorAll('input.toggle, .toggle input').forEach(elem => {
+            elem.addEventListener('keyup', (event) => {
+                if(event.keyCode === 13) {
+                    event.preventDefault();
+                    event.target.click();
+                }
+            });
+        });
+
         document.querySelectorAll('[data-toggle]').forEach(elem => {
             if (elem.classList.contains('hoverable')) {
                 elem.addEventListener('mouseover', () => {
@@ -3811,6 +3925,9 @@ $spacing: (
                 if (!elem.contains(docTarget)) {
                     toggle(elem , 'close');
                 }
+            });
+            document.querySelectorAll('.toggle.allowcloseout:checked').forEach(elem => {
+                elem.click();
             });
         });
         

@@ -57,7 +57,7 @@
 	> * {
 		flex: auto;
 	}
-	li > :is(a,button,.button) {
+	li > *:first-child {
 		width: 100%;
 	}
 	&,
@@ -68,15 +68,15 @@
 			text-align: left;
 			width: 100%;
 			flex: 0;
-			> :is(a, button, .button) {
+			> :not(input):first-child {
 				width: 100%;
 				justify-content: flex-start;
 				text-align: left;
 			}
 		}
 	}
-	> *,
-	li > * {
+	> *:first-child
+	li > *:first-child {
 		border-radius: 0;
 	}
 	&.flex-row {
@@ -107,11 +107,6 @@
 					text-align: left;
 					width: 100%;
 					flex: 0;
-					// .tabs.outline > & {
-					// 	&:last-child {
-					// 		margin-bottom: -1px;
-					// 	}
-					// }
 				}
 				
 			}

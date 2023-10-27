@@ -6,23 +6,89 @@
 .toggle {
 	cursor  : pointer;
 	position: relative;
+}
 
-	li>& {
-		position : absolute;
-		right    : .5em;
-		top      : .25em;
-		font-size: 80%;
+li>.toggle,
+li>label:has(.toggle) {
+	position : absolute;
+	right    : .5em;
+	top      : .25em;
+	font-size: 80%;
+}
+
+input.toggle:not(.button),
+.toggle input:not(.button) {
+    border: 0;
+	outline: 0;
+	min-width: 0;
+    min-height: 0;
+}
+
+input.toggle:not(.button,.icon) {
+	height: 0;
+	width: 0;
+	padding: 0;
+    margin: 0;
+}
+
+.hoverable > ul > li ul,
+.hoverable > li ul,
+.toggle + *,
+.closed {
+	max-height      : 1px;
+	min-height      : 0;
+	opacity         : 0;
+	padding-block   : 0;
+	pointer-events  : none;
+	pointer-events  : none;
+	transform       : scaleY(.8) translateY(-4px);
+	transform-origin: top;
+	transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
+	transition-delay: .1s;
+	z-index         : 2;
+}
+
+@each $breakpoint,
+$breakpoint_width in $breakpoints {
+	@media screen and (min-width: $breakpoint_width) {
+
+		.#{$breakpoint}-hoverable > ul > li > ul,
+		.#{$breakpoint}-hoverable > li > ul {
+			position: absolute;
+		}
+
+		.#{$breakpoint}-hoverable > ul > li ul,
+		.#{$breakpoint}-hoverable > li ul {
+			max-height      : 1px;
+			min-height      : 0;
+			opacity         : 0;
+			padding-block   : 0;
+			pointer-events  : none;
+			pointer-events  : none;
+			transform       : scaleY(.8) translateY(-4px);
+			transform-origin: top;
+			transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
+			transition-delay: .1s;
+			z-index         : 2;
+		}
 	}
 }
 
-// .hoverable>li:hover>ul,
-ul.hoverable>li:hover>ul,
-// .toggle.hoverable:hover+*,
-.open {
+
+.hoverable>li:hover>ul,
+.hoverable>li:focus-within>ul,
+.hoverable>ul>li:hover>ul,
+.hoverable>ul>li:focus-within>ul,
+.toggle.hoverable:hover+*,
+.toggle:checked+:not(.modal),
+.toggle:has(:checked)+:not(.modal),
+.toggle.active+:not(.modal),
+.open:not(.modal) {
 	max-height    : 100vh;
 	opacity       : 1;
 	pointer-events: all;
 	transform     : scaleY(1.000001);
+	z-index       : 4;
 }
 
 @each $breakpoint,
@@ -30,9 +96,11 @@ $breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
 
 		.toggle.#{$breakpoint}-hoverable:hover+*,
-		.closed.#{$breakpoint}-open,
 		.#{$breakpoint}-hoverable>ul>li:hover>ul,
-		ul.#{$breakpoint}-hoverable>li:hover>ul {
+		.#{$breakpoint}-hoverable>ul>li:focus-within>ul,
+		.#{$breakpoint}-hoverable>li:hover>ul,
+		.#{$breakpoint}-hoverable>li:focus-within>ul,
+		.#{$breakpoint}-open {
 			max-height    : 100vh;
 			opacity       : 1;
 			pointer-events: all;

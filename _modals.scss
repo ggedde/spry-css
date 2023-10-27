@@ -33,13 +33,6 @@
 		transition: scale .3s cubic-bezier(.25,.8,.25,1);
 		width: 90%;
 	}
-	&.open {
-		opacity: 1;
-		pointer-events: all;
-		> * {
-			scale: 1;
-		}
-	}
 	&.bounce {
 		animation-name: dialogBounce;
   		animation-duration: .4s;
@@ -57,5 +50,15 @@
 		> * {
 			pointer-events: all;
 		}
+	}
+}
+
+.toggle:checked + .modal,
+.toggle:has(:checked) + .modal,
+.modal.open {
+	opacity: 1;
+	pointer-events: all;
+	> * {
+		scale: 1;
 	}
 }

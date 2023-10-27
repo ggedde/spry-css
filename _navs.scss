@@ -1,71 +1,48 @@
 /*!
-* Spry UI
+* Spry Navs
 */
 @use "variables"as *;
 
-.hoverable>li>ul,
-.horizontal>ul>li>ul,
-ul.hoverable>li>ul,
-ul.horizontal>li>ul .toggle+*,
-.closed {
-	max-height      : 1px;
-	min-height      : 0;
-	opacity         : 0;
-	padding-block   : 0;
-	pointer-events  : none;
-	pointer-events  : none;
-	transform       : scaleY(.8) translateY(-4px);
-	transform-origin: top;
-	transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
-	transition-delay: .1s;
-	z-index         : 2;
-}
-
-.hoverable>li>ul,
-.horizontal>ul>li>ul {
-	position: absolute;
-}
-
-.horizontal,
-.horizontal>ul {
-	display: flex;
-
-	>a,
-	>li,
-	>button {
-		width: auto;
+nav {
+	&,
+	& > ul {
+		display: flex;
+		flex-direction: column;
 	}
-}
+	> ul {
+		width: 100%;
+	}
+	&.flex-row {
+		&,
+		& > ul {
+			flex-direction: row;
+		}
+		> :not(ul),
+		> ul > * {
+			width: auto;
+		}
+	}
 
-@each $breakpoint,
-$breakpoint_width in $breakpoints {
-	@media screen and (min-width: $breakpoint_width) {
+	@each $breakpoint,
+	$breakpoint_width in $breakpoints {
+		@media screen and (min-width: $breakpoint_width) {
 
-		.#{$breakpoint}-horizontal,
-		.#{$breakpoint}-horizontal>ul {
-			display: flex;
-
-			>a,
-			>li,
-			>button {
-				width: auto;
+			&.#{$breakpoint}-flex-row {
+				&,
+				& > ul {
+					flex-direction: row;
+				}
+				> :not(ul),
+				> ul > * {
+					width: auto;
+				}
 			}
 		}
-
-		.#{$breakpoint}-horizontal>ul>li>ul,
-		ul.#{$breakpoint}-horizontal>li>ul {
-			max-height      : 1px;
-			min-height      : 0;
-			opacity         : 0;
-			padding-block   : 0;
-			pointer-events  : none;
-			transform       : scaleY(.8) translateY(-4px);
-			transition-delay: .1s;
-			transform-origin: top;
-			transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
-			z-index         : 2;
-			pointer-events  : none;
-			position        : absolute;
-		}
 	}
+}
+
+
+.hoverable > ul > li > ul,
+.hoverable > li > ul {
+	position: absolute;
 }

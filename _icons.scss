@@ -9,7 +9,6 @@
 
 button svg,
 .button svg,
-[role=tab] svg,
 .alert svg,
 i svg,
 .icon svg {
@@ -17,22 +16,25 @@ i svg,
 	height: 1.25em;
 }
 
-:is(button, .button, [role=tab], .icon),
+button,
+.button,
+.icon,
+a:has(svg),
 i:has(svg) {
 	position: relative;
 }
 
-:is(.button, [role=tab]):has(input) svg:nth-of-type(2) {
+:is(a, button, .button) :is(i:empty, .icon) {
+	pointer-events: none;
+}
+
+:is(.button):has(input) svg:nth-of-type(2),
+:is(.button):has(:checked) svg:nth-of-type(1) {
 	opacity  : 0;
 	transform: scale(.5);
 }
 
-:is(.button, [role=tab]):has(:checked) svg:nth-of-type(1) {
-	opacity  : 0;
-	transform: scale(.5);
-}
-
-:is(.button, [role=tab]):has(:checked) svg:nth-of-type(2) {
+:is(.button):has(:checked) svg:nth-of-type(2) {
 	opacity  : 1;
 	transform: scale(1);
 }
@@ -41,13 +43,17 @@ i:has(svg) {
 	border-color: #ff0000;
 }
 
+.icon {
+	padding: 0;
+}
+
 .icon,
 i:empty,
 i:has(svg) {
 	position: relative;
-	display   : inline-flex;
-	width     : 1em;
-	height    : 1em;
+	display : inline-flex;
+	width   : 1em;
+	height  : 1em;
 }
 
 .icon svg,
@@ -56,8 +62,8 @@ i svg {
 	margin  : auto;
 	inset   : 0;
 	fill    : currentColor;
-	width     : 1.25em;
-	height    : 1.25em;
+	width   : 1.25em;
+	height  : 1.25em;
 }
 
 :is(.icon, i:empty) {
@@ -131,6 +137,7 @@ i svg {
 			transform       : translate(0, -.4em) rotate(90deg);
 			height          : 1.4em;
 			width           : .12em;
+			border          : 0;
 		}
 
 		&::after {
@@ -142,9 +149,11 @@ i svg {
 			box-shadow: none;
 		}
 	}
+}
 
-	&:has(:checked)::after,
-	&.icon:checked::after {
-		rotate: 180deg;
-	}
+.toggle.icon:has(:checked)::after,
+.toggle.active > .icon::after,
+.toggle.hoverable:hover .icon::after,
+.icon:checked::after {
+	rotate: 180deg;
 }

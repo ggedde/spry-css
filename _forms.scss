@@ -6,7 +6,7 @@
 	opacity: .7;
 }
 
-[type=radio], [type=checkbox] {
+[type=radio]:not(.button, .icon), [type=checkbox]:not(.button, .icon) {
 	min-height: 1em;
 	min-width: 1em;
 	width: 1em;
@@ -25,8 +25,8 @@
 }
 
 
-[type=radio],
-[type=radio]:checked::after{
+[type=radio]:not(.button, .icon),
+[type=radio]:not(.button, .icon):checked::after{
 	border-radius: 50%;
 }
 

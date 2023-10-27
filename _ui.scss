@@ -69,11 +69,12 @@ input[type=submit] {
 	border-color: var(--color);
 }
 
-:is(input, textarea, select):not(.button):focus {
+:is(input, textarea, select):not(.button, .icon):focus {
 	box-shadow: inset 0 0 0 1px var(--color);
 }
 
-:is(input, textarea, select, a, button):focus-visible {
+:is(input, textarea, select, a, button):focus-visible,
+.button:has(:focus-visible) {
 	outline       : 2px solid rgba(140, 140, 140, 0.25);
 	outline-offset: 2px;
 

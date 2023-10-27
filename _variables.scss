@@ -5,7 +5,7 @@ $breakpoints: (md: 40em,
 
 // Specify each breakpoint gap size. <section> tags with get padding based on gap size.
 // You must include one for each Breakpoint otherwise it will result in a Compile Error.
-$gaps: (default: 1.25em,
+$gaps: (default: 1.25em, // required
     md: 2em,
     // lg: 2.25em,
 ) !default;
