@@ -150,7 +150,7 @@ $color_value in $colors {
 	}
 
 	select option,
-	[role=tooltip] {
+	.tooltip {
 		background-color: var(--dark);
 		color           : var(--light);
 	}
@@ -199,7 +199,7 @@ $color_value in $colors {
 	}
 
 	select option,
-	[role=tooltip] {
+	.tooltip {
 		background-color: var(--light);
 		color           : var(--dark);
 	}
@@ -236,7 +236,7 @@ $color_value in $colors {
 	}
 
 	.bg-#{$color_name},
-	[role=tooltip].bg-#{$color_name} {
+	.tooltip.bg-#{$color_name} {
 		background-color: var(--#{$color_name});
 	}
 	.bg-#{$color_name}-hazy {

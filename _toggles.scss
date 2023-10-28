@@ -8,8 +8,8 @@
 	position: relative;
 }
 
-li>.toggle,
-li>label:has(.toggle) {
+li>.toggle:not(:first-child),
+li>label:has(.toggle):not(:first-child) {
 	position : absolute;
 	right    : .5em;
 	top      : .25em;
@@ -24,7 +24,8 @@ input.toggle:not(.button),
     min-height: 0;
 }
 
-input.toggle:not(.button,.icon) {
+input.toggle:not(.button,.icon),
+.toggle input:not(.button,.icon) {
 	height: 0;
 	width: 0;
 	padding: 0;
@@ -41,7 +42,8 @@ input.toggle:not(.button,.icon) {
 	padding-block   : 0;
 	pointer-events  : none;
 	pointer-events  : none;
-	transform       : scaleY(.8) translateY(-4px);
+	transform       : scaleY(.8) translateY(-4px) translateZ(0);
+	transform-style : preserve-3d;
 	transform-origin: top;
 	transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
 	transition-delay: .1s;
@@ -65,7 +67,8 @@ $breakpoint_width in $breakpoints {
 			padding-block   : 0;
 			pointer-events  : none;
 			pointer-events  : none;
-			transform       : scaleY(.8) translateY(-4px);
+			transform       : scaleY(.8) translateY(-4px) translateZ(0);
+			transform-style : preserve-3d;
 			transform-origin: top;
 			transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
 			transition-delay: .1s;
@@ -80,14 +83,14 @@ $breakpoint_width in $breakpoints {
 .hoverable>ul>li:hover>ul,
 .hoverable>ul>li:focus-within>ul,
 .toggle.hoverable:hover+*,
-.toggle:checked+:not(.modal),
-.toggle:has(:checked)+:not(.modal),
-.toggle.active+:not(.modal),
-.open:not(.modal) {
+.toggle:checked+*,
+.toggle:has(:checked)+*,
+.toggle.active+*,
+.open {
 	max-height    : 100vh;
 	opacity       : 1;
 	pointer-events: all;
-	transform     : scaleY(1.000001);
+	transform     : none;
 	z-index       : 4;
 }
 
@@ -104,7 +107,7 @@ $breakpoint_width in $breakpoints {
 			max-height    : 100vh;
 			opacity       : 1;
 			pointer-events: all;
-			transform     : scaleY(1.000001);
+			transform     : none;
 			z-index       : 4;
 		}
 

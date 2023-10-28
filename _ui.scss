@@ -36,12 +36,17 @@ article>footer {
 	margin         : 0;
 }
 
+.alert {
+	display: flex;
+}
+
 .compact,
 .badge {
 	min-height    : 1.7em;
 	min-width     : 1.7em;
 	padding-block : 0em;
 	padding-inline: 0.5em;
+	line-height   : 1;
 }
 
 
@@ -138,9 +143,9 @@ ul:has(:focus-visible) {
 	color: var(--text-color);
 
 	&:is(.outline, .hazy, .link) {
-		--text-color: var(--color);
+		--text-color    : var(--color);
 		--text-color-rgb: var(--color-rgb);
-		color       : var(--text-color);
+		color           : var(--text-color);
 	}
 
 	&:is(.link, .hazy) {
@@ -171,6 +176,7 @@ ul:has(:focus-visible) {
 
 :is(button, .button, input[type=submit]):is(.link, .outline),
 .list :is(button, .button, a) {
+
 	&.active:not(:active),
 	&:has(:checked):not(:active),
 	&:hover:not(:active),
@@ -181,7 +187,7 @@ ul:has(:focus-visible) {
 }
 
 :is(button, .button, input[type=submit]).hazy {
-		
+
 	&.active:not(:active),
 	&:has(:checked):not(:active),
 	&:hover:not(:active),

@@ -2,7 +2,7 @@
 * Spry Tooltips
 */
 
-[role=tooltip] {
+.tooltip {
 	width           : 100vw;
 	max-width       : 300px;
 	position        : absolute;
@@ -13,21 +13,21 @@
 	z-index         : 2;
 }
 
-:has(>[role=tooltip]) {
+:has(>.tooltip) {
 	position: relative;
 
 	&:hover {
 		z-index: 2;
 	}
 
-	[role=tooltip] {
+	.tooltip {
 		width     : 90vw;
 		position  : absolute;
 		transition: opacity .2s ease-in-out;
 		cursor    : auto;
 	}
 
-	&:not(:hover) [role=tooltip] {
+	&:not(:hover) .tooltip {
 		opacity       : 0;
 		pointer-events: none;
 	}

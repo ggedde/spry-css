@@ -35,7 +35,7 @@
 		}
 	}
 
-	> :not(ul) + *,
+	&:not(.alert) > :not(ul) + *,
 	ul > li + li {	
 		border-width: 1px 0 0 0;
 		border-color: inherit;
@@ -50,6 +50,7 @@
 		margin-block: 0;
 		position: relative;
 		background-color: inherit;
+		transform-style : preserve-3d;
 	}
 	li ul {
 		background-color: inherit;

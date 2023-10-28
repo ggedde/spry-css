@@ -63,18 +63,6 @@ textarea {
 	line-height: 1.2;
 }
 
-@keyframes labelOut {
-
-	0%,
-	100% {
-		opacity: .7,
-	}
-
-	50% {
-		opacity: 0;
-	}
-}
-
 label {
 	position: relative;
 	display : block;
@@ -90,7 +78,9 @@ label {
 	}
 
 	&:focus-within,
-	&:has(.active){
+	&:has(input:not(:placeholder-shown)),
+	&:has(textarea:not(:placeholder-shown)),
+	&:has(select option:not(:empty):checked) {
 
 		:is(sup, sub) {
 			transform  : translate(3px, -50%) scale(0.85);
@@ -105,10 +95,6 @@ label {
 
 	&:focus-within :is(sup, sub) {
 		color: var(--color);
-	}
-
-	&:focus-within:not(.active) :is(sup, sub) {
-		animation: labelOut .2s ease-in-out;
 	}
 
 	&:has(sup) {

@@ -16,12 +16,14 @@ General Utility Classes
 .rounded{ border-radius: 5px; overflow: hidden }
 .rounded-bottom{ border-radius: 0 0 5px 5px; overflow: hidden }
 .circle{ border-radius: 50% }
-.pill, .badge{ border-radius: 2em; }
+.pill, .badge{ border-radius: 2em; overflow: hidden }
+.pill-bottom{ border-radius: 0 0 2em 2em; overflow: hidden }
 .square{ border-radius: 0 }
 .index-1{ z-index: 1 }
 .index-2{ z-index: 2 }
 .index-3{ z-index: 3 }
 .index-4{ z-index: 4 }
+.index-5{ z-index: 5 }
 .truncate{ max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block; }
 .rotate-90 { rotate: 90deg }
 .rotate-180 { rotate: 180deg }
@@ -101,12 +103,6 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .order-2{ order:2 }
 .order-3{ order:3 }
 .order-last{ order:99999 }
-.border{ border: 1px solid var(--color) }
-.border-top{ border-top: 1px solid var(--color) }
-.border-right{ border-right: 1px solid var(--color) }
-.border-bottom{ border-bottom: 1px solid var(--color) }
-.border-left{ border-left: 1px solid var(--color) }
-.no-border{ border: 0 }
 .shadow{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }
 .no-shadow{ box-shadow: none }
 .cover { background-size: cover; object-fit: cover }
@@ -209,12 +205,6 @@ $size_value in $sizes {
 			&-order-2{ order:2 }
 			&-order-3{ order:3 }
 			&-order-last{ order:99999 }
-			&-border{ border: 1px solid var(--color) }
-			&-border-top{ border-top: 1px solid var(--color) }
-			&-border-right{ border-right: 1px solid var(--color) }
-			&-border-bottom{ border-bottom: 1px solid var(--color) }
-			&-border-left{ border-left: 1px solid var(--color) }
-			&-no-border{ border: 0 }
 			&-shadow{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }
 			&-no-shadow{ box-shadow: none }
 			&-cover { background-size: cover; object-fit: cover }

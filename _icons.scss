@@ -52,8 +52,13 @@ i:empty,
 i:has(svg) {
 	position: relative;
 	display : inline-flex;
-	width   : 1em;
-	height  : 1em;
+	width   : 1.25em;
+	height  : 1.25em;
+}
+
+i:has(svg) {
+	min-width   : 1.25em;
+	min-height  : 1.25em;
 }
 
 .icon svg,

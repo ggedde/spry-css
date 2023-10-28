@@ -1,64 +1,86 @@
 /*!
 * Spry Modals
 */
-@keyframes dialogBounce {
+@keyframes modalBounce {
 	20% {
-		transform: scale(1.03);
+		scale: 1.03;
 	}
+
 	40% {
-		transform: scale(1);
+		scale: 1;
 	}
+
 	60% {
-		transform: scale(1.03);
+		scale: 1.03;
 	}
+
 	80% {
-		transform: none;
-	}
-}
-.modal {
-	align-items: center;
-	background-color: rgba(0, 0, 0, .7);
-	justify-content: center;
-	opacity: 0;
-	pointer-events: none;
-	position: fixed;
-	inset: 0;
-	transition: opacity .25s cubic-bezier(.25,.8,.25,1);
-	z-index: 1000;
-	display: flex;
-	> * {
-		box-sizing: border-box;
-		overflow: hidden;
-		scale: .6;
-		transition: scale .3s cubic-bezier(.25,.8,.25,1);
-		width: 90%;
-	}
-	&.bounce {
-		animation-name: dialogBounce;
-  		animation-duration: .4s;
-	}
-	&.blur {
-		backdrop-filter: blur(2px);
-	}
-	&.no-backdrop {
-		background-color: transparent;
-		backdrop-filter: none;
-		min-width: 300px;
-	}
-	&.no-backdrop.open {
-		pointer-events: none;
-		> * {
-			pointer-events: all;
-		}
+		scale: none;
 	}
 }
 
-.toggle:checked + .modal,
-.toggle:has(:checked) + .modal,
+.modal {
+	align-items     : center;
+	background-color: rgba(0, 0, 0, .7);
+	justify-content : center;
+	opacity         : 0;
+	pointer-events  : none;
+	position        : fixed;
+	inset           : 0;
+	transition      : opacity .25s cubic-bezier(.25, .8, .25, 1);
+	transition-delay: 0;
+	transform-origin: center;
+	transform: none;
+	z-index         : 1000;
+	display         : flex;
+	max-height      : none;
+
+	> label[for] {
+		position: absolute;
+		inset: 0;
+	}
+
+	>:not(label[for]) {
+		box-sizing: border-box;
+		overflow  : hidden;
+		scale     : .6;
+		transition: scale .3s cubic-bezier(.25, .8, .25, 1);
+		width     : 90%;
+	}
+
+	&.bounce:active:not(:has(:active)) {
+		animation-name    : modalBounce;
+		animation-duration: .4s;
+	}
+
+	&.blur {
+		backdrop-filter: blur(2px);
+	}
+
+	&.no-backdrop {
+		background-color: transparent;
+		backdrop-filter : none;
+		min-width       : 300px;
+	}
+}
+
+.modal.no-backdrop.open,
+.toggle:checked+.modal.no-backdrop,
+.toggle:has(:checked)+.modal.no-backdrop {
+	pointer-events: none;
+
+	>:not(label[for]) {
+		pointer-events: all;
+	}
+}
+
+.toggle:checked+.modal,
+.toggle:has(:checked)+.modal,
 .modal.open {
-	opacity: 1;
+	opacity       : 1;
 	pointer-events: all;
-	> * {
-		scale: 1;
+
+	>:not(label[for]) {
+		scale: 1.000001;
 	}
 }
