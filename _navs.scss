@@ -4,45 +4,55 @@
 @use "variables"as *;
 
 nav {
-	&,
-	& > ul {
-		display: flex;
-		flex-direction: column;
+	> a {
+		width: auto;
 	}
-	> ul {
-		width: 100%;
+	> ul:first-child:last-child {
+		display: contents;
 	}
-	&.flex-row {
-		&,
-		& > ul {
-			flex-direction: row;
-		}
-		> :not(ul),
-		> ul > * {
-			width: auto;
-		}
-	}
-
-	@each $breakpoint,
-	$breakpoint_width in $breakpoints {
-		@media screen and (min-width: $breakpoint_width) {
-
-			&.#{$breakpoint}-flex-row {
-				&,
-				& > ul {
-					flex-direction: row;
-				}
-				> :not(ul),
-				> ul > * {
-					width: auto;
-				}
-			}
+	li,
+	ul {
+		position: relative;
+		background-color: inherit;
+		> *:has(+ label, + input) {
+			padding-right: 2.5em;
 		}
 	}
 }
 
-
 .hoverable > ul > li > ul,
 .hoverable > li > ul {
 	position: absolute;
+	min-width: 160px;
+    max-width: 260px;
+    width: max-content;
+}
+
+.hoverable > ul > li > .toggle,
+.hoverable > li > .toggle {
+	pointer-events: none;
+}
+
+@each $breakpoint,
+$breakpoint_width in $breakpoints {
+	@media screen and (min-width: $breakpoint_width) {
+
+		nav > ul > li,
+		nav > ol > li  {
+			display: inline-block;
+		} 
+
+		.#{$breakpoint}-hoverable > ul > li > ul,
+		.#{$breakpoint}-hoverable > li > ul {
+			position: absolute;
+			min-width: 160px;
+			max-width: 260px;
+			width: max-content;
+		}
+
+		.#{$breakpoint}-hoverable > ul > li > .toggle,
+		.#{$breakpoint}-hoverable > li > .toggle {
+			pointer-events: none;
+		}
+	}
 }

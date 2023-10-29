@@ -13,11 +13,6 @@
 	gap: var(--gap);
 }
 
-.grid,
-[class*=grid-] {
-	display: grid;
-}
-
 [class^=columns-],
 [class*=" columns-"],
 [class*="-columns-"] {
@@ -47,9 +42,16 @@
 	max-width: calc(((var(--col) / 12) * 100%) - (((var(--gap) * (var(--col) / 12)) - var(--gap)) / (var(--col) / 12)));
 }
 
+.column {
+	display: flex;
+	flex-direction: column;
+}
+
 .row {
 	display  : flex;
 	flex-wrap: wrap;
+	flex-direction: row;
+	grid-auto-flow: column;
 
 	>* {
 		flex: 0 100%;
@@ -61,7 +63,7 @@
 	}
 
 	&.columns-auto>* {
-		flex     : auto;
+		flex     : 0 auto;
 		min-width: auto;
 		max-width: none;
 	}
@@ -71,6 +73,11 @@
 		min-width: auto;
 		max-width: none;
 	}
+}
+
+.grid,
+[class*=grid-] {
+	display: grid;
 }
 
 @for $i from 1 through 12 {
@@ -107,6 +114,27 @@ $breakpoint_width in $breakpoints {
 			.row>.#{$breakpoint}-col-#{$i} {
 				--col: #{$i};
 			}
+		}
+
+		.#{$breakpoint}-column {
+			display: flex;
+			flex-direction: column;
+		}
+		
+		.#{$breakpoint}-row {
+			display  : flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			grid-auto-flow: column;
+	
+			>* {
+				flex: 0 100%;
+			}
+		}
+	
+		.grid,
+		[class*=grid-] {
+			display: grid;
 		}
 
 		.row[class*="-columns-"]>* {

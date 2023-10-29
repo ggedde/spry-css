@@ -52,19 +52,18 @@ ol li, ul li {
     margin-block: .5em;
 }
 
+menu,
+menu ul,
+menu ol,
 nav ul,
-nav ol,
-.list,
-.list ul,
-.list ol {
+nav ol {
     list-style: none;
     margin-left: 0;
 }
 
 nav li,
-.list > * {
-    margin-top: 0;
-    margin-bottom: 0;
+menu li {
+    margin-block: 0;
 }
 
 img {

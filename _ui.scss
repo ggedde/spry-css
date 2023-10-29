@@ -8,9 +8,11 @@ button,
 .alert,
 .toolbar,
 .badge,
-.list li>a,
-.list> :not(:has(>*)),
 nav a,
+nav li > label:only-child,
+nav li:not(:has(>*)),
+menu li:not(:has(>*)),
+menu a,
 input,
 textarea,
 select,
@@ -34,10 +36,7 @@ article>footer {
 	border         : 0;
 	font-size      : 100%;
 	margin         : 0;
-}
-
-.alert {
-	display: flex;
+	border-radius  : 3px;
 }
 
 .compact,
@@ -102,9 +101,19 @@ select,
 article {
 	border         : 1px solid;
 	border-color   : rgba(var(--text-color-rgb), .5);
-	border-radius  : 3px;
 	justify-content: center;
-	transition     : color .2s ease-in-out, background .2s ease-in-out, border .15s ease-in-out, filter .2s ease-in-out;
+}
+
+button,
+.button,
+.alert,
+.badge,
+nav a,
+input,
+textarea,
+select,
+article {
+	transition     : color .2s ease-in-out, background .1s ease-in-out, border .15s ease-in-out, filter .1s ease-in-out;
 }
 
 a {
@@ -118,20 +127,13 @@ a {
 }
 
 .alert {
+	display: flex;
 	justify-content: flex-start;
 	padding        : .5em 1em;
 
 	svg {
 		min-width: 1em;
 	}
-}
-
-ul:has(:focus-visible) {
-	max-height    : 100vh;
-	opacity       : 1;
-	pointer-events: all;
-	transform     : scaleY(1.000001);
-	pointer-events: all;
 }
 
 :is(button, .badge, .button, .alert, input[type=submit]) {
@@ -160,12 +162,6 @@ ul:has(:focus-visible) {
 		background-color: rgba(var(--color-rgb), .1);
 	}
 
-	&.outline {
-		border-width: 1px;
-		border-style: solid;
-		border-color: var(--color);
-	}
-
 	svg {
 		fill      : currentColor;
 		transform : scale(1);
@@ -174,15 +170,18 @@ ul:has(:focus-visible) {
 	}
 }
 
-:is(button, .button, input[type=submit]):is(.link, .outline),
-.list :is(button, .button, a) {
+%uihover {
+	background-color: rgba(var(--color-rgb), 0.1);
+}
+
+:is(button, .button, input[type=submit]):is(.link, .outline) {
 
 	&.active:not(:active),
 	&:has(:checked):not(:active),
 	&:hover:not(:active),
 	&:focus:not(:active),
 	&:focus-within:not(:active) {
-		background-color: rgba(var(--color-rgb), 0.1);
+		@extend %uihover;
 	}
 }
 
@@ -193,9 +192,20 @@ ul:has(:focus-visible) {
 	&:hover:not(:active),
 	&:focus:not(:active),
 	&:focus-within:not(:active) {
-		background-color: rgba(var(--color-rgb), 0.1);
+		@extend %uihover;
 	}
 }
+
+// .list > a:hover:not(:active),
+// .list > a:focus:not(:active),
+// .list > label:only-child:hover:not(:active),
+// .list > label:only-child:focus:not(:active),
+// .list li > a:first-child:hover:not(:active),
+// .list li > a:first-child:focus:not(:active),
+// .list li > label:only-child:hover:not(:active),
+// .list li > label:only-child:focus:not(:active) {
+// 	@extend %uihover;
+// }
 
 :is(button, .button, input[type=submit]) {
 
@@ -275,4 +285,54 @@ hr {
 
 section {
 	padding: (calc(var(--gap) * 2)) var(--gap);
+}
+
+.outline {
+	border-color: rgba(var(--color-rgb), .4);
+	border-width: 1px;
+	border-style: solid;
+
+	li {
+		border-color: inherit;
+		position    : relative;
+
+		ul {
+			border-width: 1px;
+			border-color: inherit;
+			border-style: solid;
+			inset       : auto -1px;
+		}
+	}
+
+	&.tabs nav {
+		margin: -1px;
+		border-color: inherit;
+
+		> :not(ul) {
+			border-width: 0 0 1px 1px;
+			border-color: inherit;
+			border-style: solid;
+		}
+	}
+
+	&.flex-row {
+		&.tabs nav {
+			border-width: 0 1px 0 1px;
+			border-style: solid;
+		}
+
+		> :not(ul)+*,
+		>ul>li+li {
+			border-width: 0 0 0 1px;
+			border-color: inherit;
+			border-style: solid;
+		}
+	}
+
+	&:not(.alert)> :not(ul)+*,
+	ul>li+li {
+		border-width: 1px 0 0 0;
+		border-color: inherit;
+		border-style: solid;
+	}
 }

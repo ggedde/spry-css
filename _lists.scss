@@ -2,117 +2,95 @@
 * Spry Lists
 */
 @use "variables"as *;
+@use "ui"as *;
 
-.outline {
-	border-color: rgba(var(--color-rgb), .4);
-	border-width: 1px;
-	border-style: solid;
-	li {
-		border-color: inherit;
-		position: relative;
-		ul {
-			border-width: 1px;
-			border-color: inherit;
-			border-style: solid;
-			inset: auto -1px;
-		}
-	}
-	
-	.tablist {
-		margin: -1px;
-		> :not(ul) {
-			border-width: 0 0 1px 1px;
-			border-color: inherit;
-			border-style: solid;
-		}
-	}
-	&.flex-row {
-		> :not(ul) + *,
-		> ul > li + li {	
-			border-width: 0 0 0 1px;
-			border-color: inherit;
-			border-style: solid;
-		}
-	}
-
-	&:not(.alert) > :not(ul) + *,
-	ul > li + li {	
-		border-width: 1px 0 0 0;
-		border-color: inherit;
-		border-style: solid;
-	}
-}
-:is(.list,.tablist) {
+.list {
 	display: flex;
-	flex-wrap: wrap;
 	flex-direction: column;
+	width: 100%;
 	li {
 		margin-block: 0;
 		position: relative;
 		background-color: inherit;
-		transform-style : preserve-3d;
 	}
-	li ul {
-		background-color: inherit;
-	}
+	// li ul {
+	// 	background-color: inherit;
+	// }
 	> * {
 		flex: auto;
 	}
 	li > *:first-child {
 		width: 100%;
+		cursor: pointer;
 	}
-	&,
-	&.flex-column {
-		> :not(ul,ol),
-		li {
-			justify-content: flex-start;
-			text-align: left;
-			width: 100%;
-			flex: 0;
-			> :not(input):first-child {
-				width: 100%;
-				justify-content: flex-start;
-				text-align: left;
-			}
-		}
+	li > label:only-child {
+		cursor: pointer;
 	}
-	> *:first-child
-	li > *:first-child {
-		border-radius: 0;
-	}
-	&.flex-row {
-		> :not(ul,ol),
-		li {
-			justify-content: center;
-			text-align: center;
-			width: auto;
-			flex: 1;
-		}
+	// &,
+	// &.flex-column {
+	// 	> :not(ul,ol),
+	// 	li {
+	// 		justify-content: flex-start;
+	// 		text-align: left;
+	// 		width: 100%;
+	// 		flex: 0;
+	// 		> :not(input):first-child {
+	// 			width: 100%;
+	// 			justify-content: flex-start;
+	// 			text-align: left;
+	// 		}
+	// 	}
+	// }
+	> a:hover:not(:active),
+	> a:focus:not(:active),
+	> label:only-child:hover:not(:active),
+	> label:only-child:focus:not(:active),
+	li > a:first-child:hover:not(:active),
+	li > a:first-child:focus:not(:active),
+	li > label:only-child:hover:not(:active),
+	li > label:only-child:focus:not(:active) {
+		@extend %uihover;
 	}
 
-	@each $breakpoint,
-	$breakpoint_width in $breakpoints {
-		@media screen and (min-width: $breakpoint_width) {
-			&.#{$breakpoint}-flex-row {
-				> :not(ul,ol),
-				li {
-					justify-content: center;
-					text-align: center;
-				}
-			}
+	// > *:first-child
+	// li > *:first-child {
+	// 	border-radius: 0;
+	// }
+	// &.flex-row {
+	// 	> :not(ul,ol),
+	// 	li {
+	// 		justify-content: center;
+	// 		text-align: center;
+	// 		width: auto;
+	// 		flex: auto;
+	// 	}
+	// }
 
-			&.#{$breakpoint}-flex-column {
-				> :not(ul,ol),
-				li {
-					justify-content: left;
-					text-align: left;
-					width: 100%;
-					flex: 0;
-				}
+	// @each $breakpoint,
+	// $breakpoint_width in $breakpoints {
+	// 	@media screen and (min-width: $breakpoint_width) {
+	// 		&.#{$breakpoint}-flex-row {
+	// 			> :not(ul,ol),
+	// 			li {
+	// 				justify-content: center;
+	// 				text-align: center;
+	// 				width: auto;
+	// 				flex: auto;
+	// 			}
+	// 		}
+
+	// 		&.#{$breakpoint}-flex-column {
+	// 			> :not(ul,ol),
+	// 			li {
+	// 				justify-content: left;
+	// 				text-align: left;
+	// 				width: 100%;
+	// 				flex: 0;
+	// 			}
 				
-			}
-		}
-	}
+	// 		}
+	// 	}
+	// }
 	&.hide-inputs input {
 		opacity: 0;
 		width: 0;

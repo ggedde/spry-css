@@ -1,0 +1,92 @@
+/*!
+* Spry Tabs
+*/
+@use "variables"as *;
+
+.tabs {
+	display  : flex;
+	flex-wrap: wrap;
+
+	.toggle {
+		display         : flex;
+		flex            : auto;
+		border-radius   : 0;
+
+		// &:hover,
+		// &:focus-within {
+		// 	background-color: rgba(var(--color-rgb), .2);
+		// }
+
+		// &:has(:checked) {
+		// 	box-shadow: inset 0 -2px 0 var(--color);
+		// }
+
+		+* {
+			transform : none;
+			transition: opacity .2s ease-in-out, transform .3s ease-out;
+			order     : 9999;
+		}
+
+	}
+
+	.toggle:has(:checked)+* {
+		padding: var(--gap);
+	}	
+
+	.toggle:not(:has(:checked))+* {
+		transition: none;
+		transform : translateY(3px);
+		max-height: 0;
+		opacity   : 0;
+	}
+}
+
+.tabs {
+	&.vertical {
+		display: grid;
+
+		.toggle {
+			justify-content: flex-start;
+			text-align     : left;
+
+			+* {
+				grid-column: 2;
+				grid-row   : 1 / 9999;
+			}
+		}
+	}
+
+	@each $breakpoint,
+	$breakpoint_width in $breakpoints {
+		@media screen and (min-width: $breakpoint_width) {
+			&.#{$breakpoint}-vertical {
+				display: grid;
+
+				.toggle {
+					justify-content: flex-start;
+					text-align     : left;
+
+					+* {
+						grid-column: 2;
+						grid-row   : 1 / 9999;
+					}
+				}
+			}
+		}
+	}
+
+	&.tabs-right {
+		.toggle+* {
+			grid-column: 1;
+			grid-row   : 1 / 9999;
+		}
+
+		.toggle {
+			grid-column: 2;
+
+			+* {
+				grid-column: 1;
+			}
+		}
+	}
+}

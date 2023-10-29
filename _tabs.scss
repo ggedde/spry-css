@@ -2,46 +2,49 @@
 * Spry Tabs
 */
 
-.tabs {
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	border-color: rgba(var(--color-rgb), .4);
-	// &.outline {
-	// 	border-width: 1px;
-	// 	border-style: solid;
-	// 	&.flex-column .tablist {
-	// 		> :not(ul,ol),
-	// 		li {
-	// 			margin-bottom: -1px;
-	// 		}
-	// 	}
-	// }
-}
-.tablist {
-	overflow: hidden;
-	flex: none;
-	border-color: inherit;
-	flex-direction: row;
-	> :not(ul,ol),
-	li {
-		justify-content: center;
-		text-align: center;
-		width: auto;
-		flex: 1 auto;
-	}
-}
-.tabpanels > * {
+%tabopen {
 	transition: opacity .2s ease-in-out, transform .3s ease-out;
-	z-index   : 1;
+	transform: none;
 	padding   : 2em;
-	position: relative;
-	&:not(.open) {
-		transition: none;
-		transform : translateY(3px);
-		max-height: 0;
-		opacity   : 0;
-		order     : 9999;
-		padding   : 0;
+	max-height: none;
+	opacity   : 1;
+}
+
+.tabs {
+	overflow      : hidden;
+	display       : flex;
+	border-color  : rgba(var(--color-rgb), .4);
+
+	nav {
+		overflow      : hidden;
+		flex          : none;
+		border-color  : inherit;
+
+		> :not(ul, ol),
+		li {
+			justify-content: center;
+			text-align     : center;
+			// width          : auto;
+			// flex           : 1 auto;
+		}
+
+		&+*>* {
+			transition: none;
+			z-index   : 1;
+			position  : relative;
+			transform : translateY(3px);
+			max-height: 0;
+			opacity   : 0;
+			order     : 9999;
+			padding   : 0;
+		}
+		&.list > * {
+			flex: none;
+		}
+	}
+	@for $i from 1 through 20 {
+		:has(:nth-child(#{$i}) :checked) + * > :nth-child(#{$i}) {
+		  @extend %tabopen;
+		}
 	}
 }
