@@ -9,34 +9,29 @@ button,
 .toolbar,
 .badge,
 nav a,
-nav li > label:only-child,
-nav li:not(:has(>*)),
-menu li:not(:has(>*)),
-menu a,
 input,
 textarea,
 select,
 article>header,
 article>footer {
-	position       : relative;
+	align-items    : center;
 	appearance     : none;
-	color          : inherit;
 	background     : transparent;
+	border         : 0;
+	border-radius  : .25em;
+	color          : inherit;
+	display        : inline-flex;
+	height         : auto;
 	min-height     : 2.3em;
 	min-width      : 2.3em;
-	height         : auto;
+	position       : relative;
+	text-decoration: none;
+	vertical-align : middle;
+	width          : 100%;
 	padding-inline : 1em;
 	padding-block  : .3em;
-	width          : 100%;
-	display        : inline-flex;
-	align-items    : center;
-	text-decoration: none;
-	outline        : none;
-	vertical-align : middle;
-	border         : 0;
 	font-size      : 100%;
 	margin         : 0;
-	border-radius  : 3px;
 }
 
 .compact,
@@ -99,9 +94,8 @@ input,
 textarea,
 select,
 article {
-	border         : 1px solid;
-	border-color   : rgba(var(--text-color-rgb), .5);
-	justify-content: center;
+	border      : 1px solid;
+	border-color: rgba(var(--text-color-rgb), .5);
 }
 
 button,
@@ -113,7 +107,7 @@ input,
 textarea,
 select,
 article {
-	transition     : color .2s ease-in-out, background .1s ease-in-out, border .15s ease-in-out, filter .1s ease-in-out;
+	transition: color .2s ease-in-out, background .1s ease-in-out, border .15s ease-in-out, filter .1s ease-in-out;
 }
 
 a {
@@ -127,7 +121,7 @@ a {
 }
 
 .alert {
-	display: flex;
+	display        : flex;
 	justify-content: flex-start;
 	padding        : .5em 1em;
 
@@ -136,7 +130,11 @@ a {
 	}
 }
 
-:is(button, .badge, .button, .alert, input[type=submit]) {
+button,
+.badge,
+.button,
+.alert,
+input[type=submit] {
 	background-color: var(--color);
 	border-color    : var(--color);
 }
@@ -170,10 +168,6 @@ a {
 	}
 }
 
-%uihover {
-	background-color: rgba(var(--color-rgb), 0.1);
-}
-
 :is(button, .button, input[type=submit]):is(.link, .outline) {
 
 	&.active:not(:active),
@@ -181,7 +175,7 @@ a {
 	&:hover:not(:active),
 	&:focus:not(:active),
 	&:focus-within:not(:active) {
-		@extend %uihover;
+		@extend %ui-bg-hover;
 	}
 }
 
@@ -192,30 +186,23 @@ a {
 	&:hover:not(:active),
 	&:focus:not(:active),
 	&:focus-within:not(:active) {
-		@extend %uihover;
+		@extend %ui-bg-hover;
 	}
 }
 
-// .list > a:hover:not(:active),
-// .list > a:focus:not(:active),
-// .list > label:only-child:hover:not(:active),
-// .list > label:only-child:focus:not(:active),
-// .list li > a:first-child:hover:not(:active),
-// .list li > a:first-child:focus:not(:active),
-// .list li > label:only-child:hover:not(:active),
-// .list li > label:only-child:focus:not(:active) {
-// 	@extend %uihover;
-// }
-
-:is(button, .button, input[type=submit]) {
+:is(button, .button, input[type=submit]):not(.link, .hazy) {
 
 	&.active:not(:active),
 	&:has(:checked):not(:active),
 	&:hover:not(:active),
 	&:focus:not(:active),
 	&:focus-within:not(:active) {
-		filter: brightness(1.15);
+		@extend %ui-hover;
 	}
+}
+
+a:hover {
+	@extend %ui-hover;
 }
 
 .link {
@@ -305,7 +292,7 @@ section {
 	}
 
 	&.tabs nav {
-		margin: -1px;
+		margin      : -1px;
 		border-color: inherit;
 
 		> :not(ul) {

@@ -87,3 +87,11 @@ $sizes: (
         }
     }
 }
+
+%ui-hover {
+	filter: brightness(1.15);
+}
+
+%ui-bg-hover {
+	background-color: rgba(var(--color-rgb), 0.1);
+}

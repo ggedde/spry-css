@@ -96,8 +96,14 @@ input.toggle:not(:checked)+*,
 .toggle:checked+*,
 .toggle:has(:checked)+*,
 .toggle.active+*,
+.toggle-container:focus-within .toggle+*,
+.toggle-container .toggle+*:hover,
 .open{
 	@extend %toggleopen;
+}
+
+.toggle-container:focus-within .toggle {
+	pointer-events: none;
 }
 
 .tabpanels > * {

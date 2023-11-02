@@ -2,98 +2,40 @@
 * Spry Lists
 */
 @use "variables"as *;
-@use "ui"as *;
 
 .list {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 	li {
 		margin-block: 0;
 		position: relative;
 		background-color: inherit;
 	}
-	// li ul {
-	// 	background-color: inherit;
-	// }
+	&.outline {
+		a,
+		button,
+		.button {
+			border-radius: 0;
+		}
+	}
 	> * {
 		flex: auto;
 	}
 	li > *:first-child {
 		width: 100%;
-		cursor: pointer;
 	}
-	li > label:only-child {
-		cursor: pointer;
+	a:hover:not(:active),
+	a:focus:not(:active) {
+		@extend %ui-bg-hover;
 	}
-	// &,
-	// &.flex-column {
-	// 	> :not(ul,ol),
-	// 	li {
-	// 		justify-content: flex-start;
-	// 		text-align: left;
-	// 		width: 100%;
-	// 		flex: 0;
-	// 		> :not(input):first-child {
-	// 			width: 100%;
-	// 			justify-content: flex-start;
-	// 			text-align: left;
-	// 		}
-	// 	}
-	// }
-	> a:hover:not(:active),
-	> a:focus:not(:active),
-	> label:only-child:hover:not(:active),
-	> label:only-child:focus:not(:active),
-	li > a:first-child:hover:not(:active),
-	li > a:first-child:focus:not(:active),
-	li > label:only-child:hover:not(:active),
-	li > label:only-child:focus:not(:active) {
-		@extend %uihover;
-	}
-
-	// > *:first-child
-	// li > *:first-child {
-	// 	border-radius: 0;
-	// }
-	// &.flex-row {
-	// 	> :not(ul,ol),
-	// 	li {
-	// 		justify-content: center;
-	// 		text-align: center;
-	// 		width: auto;
-	// 		flex: auto;
-	// 	}
-	// }
-
-	// @each $breakpoint,
-	// $breakpoint_width in $breakpoints {
-	// 	@media screen and (min-width: $breakpoint_width) {
-	// 		&.#{$breakpoint}-flex-row {
-	// 			> :not(ul,ol),
-	// 			li {
-	// 				justify-content: center;
-	// 				text-align: center;
-	// 				width: auto;
-	// 				flex: auto;
-	// 			}
-	// 		}
-
-	// 		&.#{$breakpoint}-flex-column {
-	// 			> :not(ul,ol),
-	// 			li {
-	// 				justify-content: left;
-	// 				text-align: left;
-	// 				width: 100%;
-	// 				flex: 0;
-	// 			}
-				
-	// 		}
-	// 	}
-	// }
 	&.hide-inputs input {
 		opacity: 0;
 		width: 0;
+		min-width: 0;
 		height: 1px;
 		margin: 0;
 		padding: 0;

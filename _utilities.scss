@@ -13,12 +13,18 @@ General Utility Classes
 .lowercase{ text-transform: lowercase }
 .capitalize{ text-transform: capitalize }
 .pointer { cursor: pointer }
-.rounded{ border-radius: 5px; overflow: hidden }
-.rounded-bottom{ border-radius: 0 0 5px 5px; overflow: hidden }
-.circle{ border-radius: 50% }
+.rounded{ border-radius: .25em; overflow: hidden }
+.rounded-top{ border-radius: .25em .25em 0 0; overflow: hidden }
+.rounded-bottom{ border-radius: 0 0 .25em .25em; overflow: hidden }
+.rounded-right{ border-radius: 0 .25em .25em 0; overflow: hidden }
+.rounded-left{ border-radius: .25em 0 0 .25em; overflow: hidden }
 .pill, .badge{ border-radius: 2em; overflow: hidden }
+.pill-top{ border-radius: 2em 2em 0 0; overflow: hidden }
 .pill-bottom{ border-radius: 0 0 2em 2em; overflow: hidden }
-.square{ border-radius: 0 }
+.pill-right{ border-radius: 0 2em 2em 0; overflow: hidden }
+.pill-left{ border-radius: 2em 0 0 2em; overflow: hidden }
+.circle{ border-radius: 50% }
+.sharp{ border-radius: 0 }
 .index-1{ z-index: 1 }
 .index-2{ z-index: 2 }
 .index-3{ z-index: 3 }

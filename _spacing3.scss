@@ -3,6 +3,23 @@
 */
 @use "variables" as *;
 
+// button,
+// .button,
+// .alert,
+// .toolbar,
+// .badge,
+// nav a,
+// input,
+// textarea,
+// select,
+// article>header,
+// article>footer {
+// 	padding-inline: 1em;
+// 	padding-block : .3em;
+// 	font-size     : 100%;
+// 	margin        : 0;
+// }
+
 .m-auto {
 	margin: auto;
 }
@@ -24,6 +41,33 @@
 .mr-auto {
 	margin-right: auto;
 }
+
+@each $s, $space in $spacing {
+	%padding-top-#{$s} {
+		padding-top: #{$space};
+	}
+	%padding-right-#{$s} {
+		padding-right: #{$space};
+	}
+	%padding-bottom-#{$s} {
+		padding-bottom: #{$space};
+	}
+	%padding-left-#{$s} {
+		padding-left: #{$space};
+	}
+	%margin-top-#{$s} {
+		margin-top: #{$space};
+	}
+	%margin-right-#{$s} {
+		margin-right: #{$space};
+	}
+	%margin-bottom-#{$s} {
+		margin-bottom: #{$space};
+	}
+	%margin-left-#{$s} {
+		margin-left: #{$space};
+	}
+}
 @each $s, $space in $spacing {
 	@each $prop in (padding, margin, border) {
 		.#{str-slice($prop, 0, 1)}-#{$s} {
@@ -32,7 +76,10 @@
 			}
 
 			@else {
-				#{$prop}: #{$space};
+				@extend %#{$prop}-top-#{$s};
+				@extend %#{$prop}-right-#{$s};
+				@extend %#{$prop}-bottom-#{$s};
+				@extend %#{$prop}-left-#{$s};
 			}
 		}
 	}
@@ -45,7 +92,8 @@
 			}
 
 			@else {
-				#{$prop}-inline: #{$space};
+				@extend %#{$prop}-right-#{$s};
+				@extend %#{$prop}-left-#{$s};
 			}
 		}
 		.#{str-slice($prop, 0, 1)}y-#{$s} {
@@ -54,7 +102,8 @@
 			}
 
 			@else {
-				#{$prop}-block: #{$space};
+				@extend %#{$prop}-top-#{$s};
+				@extend %#{$prop}-bottom-#{$s};
 			}
 		}
 		@if $prop == margin and $s {
@@ -75,7 +124,7 @@
 			}
 
 			@else {
-				#{$prop}-left: #{$space};
+				@extend %#{$prop}-left-#{$s};
 			}
 		}
 		.#{str-slice($prop, 0, 1)}r-#{$s} {
@@ -84,7 +133,7 @@
 			}
 
 			@else {
-				#{$prop}-right: #{$space};
+				@extend %#{$prop}-right-#{$s};
 			}
 		}
 		.#{str-slice($prop, 0, 1)}t-#{$s} {
@@ -93,7 +142,7 @@
 			}
 
 			@else {
-				#{$prop}-top: #{$space};
+				@extend %#{$prop}-top-#{$s};
 			}
 		}
 		.#{str-slice($prop, 0, 1)}b-#{$s} {
@@ -102,7 +151,7 @@
 			}
 
 			@else {
-				#{$prop}-bottom: #{$space};
+				@extend %#{$prop}-bottom-#{$s};
 			}
 		}
 		@if $prop == margin and $s {

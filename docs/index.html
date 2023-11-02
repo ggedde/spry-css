@@ -4510,13 +4510,14 @@ $sizes: (
 
         document.addEventListener('click', (event) => {
             var docTarget = event.target;
-            document.querySelectorAll('.open.closeout').forEach(elem => {
-                if (!elem.contains(docTarget)) {
-                    toggle(elem , 'close');
+            document.querySelectorAll('.toggle:checked + *, .toggle:has(:checked) + *').forEach(elem => {
+                console.log(elem);
+                if (!elem.contains(docTarget) && elem.previousElementSibling !== docTarget && elem.previousElementSibling.checked) {
+                    elem.previousElementSibling.click();
                 }
             });
             document.querySelectorAll('.toggle.allowcloseout:checked').forEach(elem => {
-                elem.click();
+                // elem.click();
             });
         });
         
@@ -4564,27 +4565,29 @@ $sizes: (
                 target.setAttribute('aria-'+type, target.classList.contains('open'));
             });
         }
-        document.querySelectorAll('input:not([type=checkbox],[type=radio]), textarea, select').forEach(elem => {
-            elem.addEventListener('blur', event => {
-                // elem.classList.toggle('active', elem.value !== '');
-            });
-        })
-        document.querySelectorAll('.tablist :is(.button,button)').forEach(elem => {
-            elem.addEventListener('click', event => {
-                var tablist = elem.closest('.tablist');
-                var tabs = [...tablist.children];
-                var tabpanels = [...tablist.parentElement.querySelector('.tabpanels').children];
-                var index = tabs.indexOf(elem);
-                tabs.forEach(tab => {
-                    tab.classList.remove('active');
-                });
-                elem.classList.add('active');
-                tabpanels.forEach(tabpanel => {
-                    tabpanel.classList.remove('open');
-                });
-                tabpanels[index].classList.add('open');
-            });
-        });
+
+        // document.querySelectorAll('input:not([type=checkbox],[type=radio]), textarea, select').forEach(elem => {
+        //     elem.addEventListener('blur', event => {
+        //         elem.classList.toggle('active', elem.value !== '');
+        //     });
+        // });
+
+        // document.querySelectorAll('.tablist :is(.button,button)').forEach(elem => {
+        //     elem.addEventListener('click', event => {
+        //         var tablist = elem.closest('.tablist');
+        //         var tabs = [...tablist.children];
+        //         var tabpanels = [...tablist.parentElement.querySelector('.tabpanels').children];
+        //         var index = tabs.indexOf(elem);
+        //         tabs.forEach(tab => {
+        //             tab.classList.remove('active');
+        //         });
+        //         elem.classList.add('active');
+        //         tabpanels.forEach(tabpanel => {
+        //             tabpanel.classList.remove('open');
+        //         });
+        //         tabpanels[index].classList.add('open');
+        //     });
+        // });
     </script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
