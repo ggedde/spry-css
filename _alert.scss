@@ -1,0 +1,18 @@
+/*!
+* Spry Alerts
+*/
+@use "ui" as *;
+
+.alert {
+	@extend %ui;
+	@extend %ui-bg;
+	@extend %ui-color;
+	@extend %ui-border;
+	display        : flex;
+	justify-content: flex-start;
+	padding        : .5em 1em;
+
+	svg {
+		min-width: 1em;
+	}
+}

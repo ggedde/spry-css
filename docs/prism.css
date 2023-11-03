@@ -6,10 +6,10 @@ https://prismjs.com/download.html#themes=prism&languages=css+scss&plugins=toolba
  * @author Lea Verou
  */
 
-.show-code,
+/* .show-code,
 div.code-toolbar {
 	max-width: calc(100vw - 60px);
-}
+} */
 .show-code {
 	position: relative;
 	background-color: transparent !important;
@@ -23,12 +23,12 @@ div.code-toolbar {
 .show-code > article { 
 	gap: 0;
 }
-@media screen and (min-width: 620px) {
+/* @media screen and (min-width: 620px) {
 	.show-code,
 	div.code-toolbar {
 		max-width: calc(100vw - 264px);
 	}
-}
+} */
 
 code[class*="language-"],
 pre[class*="language-"] {

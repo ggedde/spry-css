@@ -1,8 +1,10 @@
 /*!
 * Spry Cards
 */
+@use "ui" as *;
 
 article {
+	@extend %ui-border;
 	--card-color    : var(--faint);
 	background-color: white;
 	border-color    : var(--card-color);
@@ -29,6 +31,8 @@ article {
 
 	>header,
 	>footer {
+		@extend %ui;
+		@extend %ui-spacious;
 		background-color: var(--card-color);
 		color           : var(--color-text);
 		display         : flex;

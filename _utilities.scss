@@ -122,6 +122,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 @for $i from 1 through 12 {
 	// .h-#{$i}00{ height: #{$i}00px; min-height: #{$i}00px; max-height: #{$i}00px }
 	.mh-#{$i}00{ max-height: #{$i}00px }
+	.pl-#{$i}00{ padding-left: #{$i}00px }
+	.pr-#{$i}00{ padding-right: #{$i}00px }
 	// .vh-#{$i}0{ height: #{$i}0vh }
 	// .mvh-#{$i}0{ max-height: #{$i}0vh }
 	// .w-#{$i}00,.row>.w-#{$i}00{ width: #{$i}00px; min-width: #{$i}00px; max-width: #{$i}00px }
@@ -224,6 +226,8 @@ $size_value in $sizes {
 			@for $i from 1 through 12 {
 				// &-h-#{$i}00{ height: #{$i}00px; min-height: #{$i}00px; max-height: #{$i}00px }
 				&-mh-#{$i}00{ max-height: #{$i}00px }
+				&-pl-#{$i}00{ padding-left: #{$i}00px }
+				&-pr-#{$i}00{ padding-right: #{$i}00px }
 				// &-vh-#{$i}0{ height: #{$i}0vh }
 				// &-mvh-#{$i}0{ max-height: #{$i}0vh }
 				// &-w-#{$i}00,.row>&-w-#{$i}00{ width: #{$i}00px; min-width: #{$i}00px; max-width: #{$i}00px }

@@ -1,0 +1,29 @@
+/*!
+* Spry Buttons
+*/
+@use "variables" as *;
+@use "ui" as *;
+
+button,
+.button,
+input[type=submit] {
+	@extend %ui;
+	@extend %ui-bg;
+	@extend %ui-color;
+	@extend %ui-border;
+	@extend %ui-focus-visible;
+	width         : auto;
+	cursor        : pointer;
+	font-weight   : 400;
+	text-align    : center;
+	text-transform: uppercase;
+	&.outline {
+		@extend %ui-border;
+	}
+	&:is(.link, .outline, .hazy):is(:hover,:focus,:focus-within) {
+		@extend %ui-bg-hover;
+	}
+	&:not(.link):is(:hover,:focus,:focus-within) {
+		@extend %ui-hover;
+	}
+}

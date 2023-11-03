@@ -3,39 +3,58 @@
 */
 @use "variables"as *;
 
-button,
-.button,
-.alert,
-.toolbar,
-.badge,
-nav a,
-input,
-textarea,
-select,
-article>header,
-article>footer {
+@mixin ui-closed {
+	max-height      : 1px;
+	min-height      : 0;
+	opacity         : 0;
+	pointer-events  : none;
+	pointer-events  : none;
+	transform       : scaleY(.8) translateY(-4px) translateZ(0);
+	transform-origin: top;
+	transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
+	transition-delay: .1s;
+	z-index         : 2;
+
+	&:not(.open) {
+		padding-block: 0;
+		margin-block: 0;
+	}
+}
+
+%ui-closed {
+	@include ui-closed;
+}
+
+@mixin ui-open {
+	max-height    : 100vh;
+	opacity       : 1;
+	pointer-events: all;
+	transform     : none;
+	z-index       : 2;
+}
+
+%ui {
 	align-items    : center;
 	appearance     : none;
 	background     : transparent;
 	border         : 0;
-	border-radius  : .25em;
 	color          : inherit;
 	display        : inline-flex;
+	font-size      : 100%;
 	height         : auto;
+	margin         : 0;
 	min-height     : 2.3em;
 	min-width      : 2.3em;
+	padding-block  : .3em;
+	padding-inline : 1em;
 	position       : relative;
 	text-decoration: none;
+	transition     : color .1s ease-in-out, background .1s ease-in-out, border .15s ease-in-out, filter .1s ease-in-out;
 	vertical-align : middle;
 	width          : 100%;
-	padding-inline : 1em;
-	padding-block  : .3em;
-	font-size      : 100%;
-	margin         : 0;
 }
 
-.compact,
-.badge {
+%ui-compact {
 	min-height    : 1.7em;
 	min-width     : 1.7em;
 	padding-block : 0em;
@@ -43,122 +62,61 @@ article>footer {
 	line-height   : 1;
 }
 
-
-button,
-.button,
-input[type=submit] {
-	width         : auto;
-	cursor        : pointer;
-	font-weight   : 400;
-	text-align    : center;
-	text-transform: uppercase;
+%ui-spacious {
+	min-height: 2.9em;
 }
 
-.badge {
-	font-weight: 500;
-	width      : auto;
-
-	&.snug {
-		translate: -1em -.7em;
-	}
+%ui-open {
+	@include ui-open;
 }
 
-:is(input, textarea, select):not(.button):hover,
-:is(input, textarea, select):not(.button):focus {
-	border-color: var(--color);
+%ui-border {
+	border-color : var(--color);
+	border-width : 1px;
+	border-style : solid;
+	border-radius: .25em;
 }
 
-:is(input, textarea, select):not(.button, .icon):focus {
-	box-shadow: inset 0 0 0 1px var(--color);
-}
-
-:is(input, textarea, select, a, button):focus-visible,
-.button:has(:focus-visible) {
-	outline       : 2px solid rgba(140, 140, 140, 0.25);
-	outline-offset: 2px;
-
-	&:hover {
-		outline: none;
-	}
-}
-
-:is([type=checkbox], [type=radio]):focus-visible:not(:hover) {
-	outline-width: 4px;
-}
-
-button,
-.button,
-.alert,
-.badge,
-input,
-textarea,
-select,
-article {
-	border      : 1px solid;
-	border-color: rgba(var(--text-color-rgb), .5);
-}
-
-button,
-.button,
-.alert,
-.badge,
-nav a,
-input,
-textarea,
-select,
-article {
-	transition: color .2s ease-in-out, background .1s ease-in-out, border .15s ease-in-out, filter .1s ease-in-out;
-}
-
-a {
-	cursor    : pointer;
-	transition: color .1s ease-in-out;
-
-	&:hover,
-	&:focus {
-		text-decoration: none;
-	}
-}
-
-.alert {
-	display        : flex;
-	justify-content: flex-start;
-	padding        : .5em 1em;
-
-	svg {
-		min-width: 1em;
-	}
-}
-
-button,
-.badge,
-.button,
-.alert,
-input[type=submit] {
+%ui-bg {
 	background-color: var(--color);
 	border-color    : var(--color);
 }
 
-:is(button, .badge, .button, .alert, i:empty, .icon, input[type=submit]) {
+%ui-hover {
+	&:not(:active) {
+		filter: brightness(1.15);
+	}
+}
+
+%ui-bg-hover {
+	&:not(:active) {
+		background-color: rgba(var(--color-rgb), 0.1);
+	}
+
+	// &.hazy:not(:active) {
+	// 	background-color: rgba(var(--color-rgb), 0.4);
+	// }
+}
+
+%ui-focus-visible {
+	&:focus-visible {
+		outline       : 2px solid rgba(140, 140, 140, 0.25);
+		outline-offset: 2px;
+	}
+}
+
+%ui-color {
+	@if (lightness(map-get($colors, 'default')) > 70) {
+		--text-color    : var(--dark);
+		--text-color-rgb: var(--dark-rgb);
+	}
+
+	@else {
+		--text-color    : var(--light);
+		--text-color-rgb: var(--light-rgb);
+	}
+
 	color: var(--text-color);
-
-	&:is(.outline, .hazy, .link) {
-		--text-color    : var(--color);
-		--text-color-rgb: var(--color-rgb);
-		color           : var(--text-color);
-	}
-
-	&:is(.link, .hazy) {
-		border-color: transparent;
-	}
-
-	&:is(.link, .outline) {
-		background: none;
-	}
-
-	&.hazy {
-		background-color: rgba(var(--color-rgb), .1);
-	}
 
 	svg {
 		fill      : currentColor;
@@ -168,99 +126,71 @@ input[type=submit] {
 	}
 }
 
-:is(button, .button, input[type=submit]):is(.link, .outline) {
+%ui-loading {
+	&[aria-busy=true] {
+		pointer-events: none;
+		user-select   : none;
+		cursor        : default;
+		color         : transparent;
 
-	&.active:not(:active),
-	&:has(:checked):not(:active),
-	&:hover:not(:active),
-	&:focus:not(:active),
-	&:focus-within:not(:active) {
-		@extend %ui-bg-hover;
+		&::after {
+			opacity  : 1;
+			animation: spinner .8s ease infinite;
+		}
 	}
 }
 
-:is(button, .button, input[type=submit]).hazy {
-
-	&.active:not(:active),
-	&:has(:checked):not(:active),
-	&:hover:not(:active),
-	&:focus:not(:active),
-	&:focus-within:not(:active) {
-		@extend %ui-bg-hover;
-	}
+.ui {
+	@extend %ui;
+	@extend %ui-bg;
+	@extend %ui-color;
+	@extend %ui-border;
 }
 
-:is(button, .button, input[type=submit]):not(.link, .hazy) {
+.compact {
+	@extend %ui-compact;
+}
 
-	&.active:not(:active),
-	&:has(:checked):not(:active),
-	&:hover:not(:active),
-	&:focus:not(:active),
-	&:focus-within:not(:active) {
+.spacious {
+	@extend %ui-spacious;
+}
+
+a {
+	@extend %ui-focus-visible;
+	cursor    : pointer;
+	transition: color .1s ease-in-out;
+
+	&:hover,
+	&:focus {
 		@extend %ui-hover;
+		text-decoration: none;
 	}
 }
 
-a:hover {
-	@extend %ui-hover;
+.link,
+.outline:not(.list, .tabs),
+.hazy {
+	--text-color    : var(--color);
+	--text-color-rgb: var(--color-rgb);
+	color           : var(--text-color);
+}
+
+.link,
+.hazy {
+	border-color: transparent;
+}
+
+.link,
+.outline {
+	background: transparent;
+}
+
+.hazy {
+	background-color: rgba(var(--color-rgb), .1);
 }
 
 .link {
 	text-transform: capitalize;
-}
-
-.toolbar {
-	justify-content: space-between;
-}
-
-@keyframes spinner {
-	0% {
-		transform: rotate(0deg)
-	}
-
-	90%,
-	100% {
-		transform: rotate(360deg)
-	}
-}
-
-[aria-busy] {
-	position: relative;
-
-	&::after {
-		content       : '';
-		box-sizing    : border-box;
-		position      : absolute;
-		inset         : 0;
-		margin        : auto;
-		width         : 1.3em;
-		height        : 1.3em;
-		border-radius : 50%;
-		border        : .15em solid transparent;
-		border-color  : var(--text-color) var(--text-color) transparent transparent;
-		opacity       : 0;
-		pointer-events: none;
-		transition    : opacity .3s ease-in-out .1s;
-	}
-}
-
-[aria-busy=true],
-:is(button, .button, input[type=submit])[aria-busy=true] {
-	pointer-events: none;
-	user-select   : none;
-	cursor        : default;
-	color         : transparent;
-
-	&::after {
-		opacity  : 1;
-		animation: spinner .8s ease infinite;
-	}
-}
-
-.toobar,
-article>header,
-article>footer {
-	min-height: 2.9em;
 }
 
 hr {
@@ -272,54 +202,4 @@ hr {
 
 section {
 	padding: (calc(var(--gap) * 2)) var(--gap);
-}
-
-.outline {
-	border-color: rgba(var(--color-rgb), .4);
-	border-width: 1px;
-	border-style: solid;
-
-	li {
-		border-color: inherit;
-		position    : relative;
-
-		ul {
-			border-width: 1px;
-			border-color: inherit;
-			border-style: solid;
-			inset       : auto -1px;
-		}
-	}
-
-	&.tabs nav {
-		margin      : -1px;
-		border-color: inherit;
-
-		> :not(ul) {
-			border-width: 0 0 1px 1px;
-			border-color: inherit;
-			border-style: solid;
-		}
-	}
-
-	&.flex-row {
-		&.tabs nav {
-			border-width: 0 1px 0 1px;
-			border-style: solid;
-		}
-
-		> :not(ul)+*,
-		>ul>li+li {
-			border-width: 0 0 0 1px;
-			border-color: inherit;
-			border-style: solid;
-		}
-	}
-
-	&:not(.alert)> :not(ul)+*,
-	ul>li+li {
-		border-width: 1px 0 0 0;
-		border-color: inherit;
-		border-style: solid;
-	}
 }

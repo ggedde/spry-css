@@ -2,8 +2,12 @@
 * Spry Navs
 */
 @use "variables"as *;
+@use "ui"as *;
 
 nav {
+	a {
+		@extend %ui;
+	}
 	> a {
 		width: auto;
 	}

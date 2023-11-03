@@ -20,14 +20,6 @@ body {
   box-sizing: inherit;
 }
 
-input,
-textarea,
-select {
-  font-family: inherit;
-  font-weight: inherit;
-  color: inherit;
-}
-
 body,
 h1,
 h2,
@@ -103,15 +95,6 @@ img {
   :root {
     --gap: 2em;
   }
-}
-
-:is(button, .button, input[type=submit]):not(.link, .hazy).active:not(:active), :is(button, .button, input[type=submit]):not(.link, .hazy):has(:checked):not(:active), :is(button, .button, input[type=submit]):not(.link, .hazy):hover:not(:active), :is(button, .button, input[type=submit]):not(.link, .hazy):focus:not(:active), :is(button, .button, input[type=submit]):not(.link, .hazy):focus-within:not(:active), a:hover {
-  filter: brightness(1.15);
-}
-
-:is(button, .button, input[type=submit]):is(.link, .outline).active:not(:active), :is(button, .button, input[type=submit]):is(.link, .outline):has(:checked):not(:active), :is(button, .button, input[type=submit]):is(.link, .outline):hover:not(:active), :is(button, .button, input[type=submit]):is(.link, .outline):focus:not(:active), :is(button, .button, input[type=submit]):is(.link, .outline):focus-within:not(:active), :is(button, .button, input[type=submit]).hazy.active:not(:active), :is(button, .button, input[type=submit]).hazy:has(:checked):not(:active), :is(button, .button, input[type=submit]).hazy:hover:not(:active), :is(button, .button, input[type=submit]).hazy:focus:not(:active), :is(button, .button, input[type=submit]).hazy:focus-within:not(:active), .list a:hover:not(:active),
-.list a:focus:not(:active) {
-  background-color: rgba(var(--color-rgb), 0.1);
 }
 
 /*!
@@ -192,276 +175,22 @@ a {
 }
 
 /*!
-* Spry Lists
+* Spry Outline
 */
-.list {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.list li {
-  margin-block: 0;
-  position: relative;
-  background-color: inherit;
-}
-.list.outline a,
-.list.outline button,
-.list.outline .button {
-  border-radius: 0;
-}
-.list > * {
-  flex: auto;
-}
-.list li > *:first-child {
-  width: 100%;
-}
-.list.hide-inputs input {
-  opacity: 0;
-  width: 0;
-  min-width: 0;
-  height: 1px;
-  margin: 0;
-  padding: 0;
-}
-
-/*!
-* Spry UI
-*/
-button,
-.button,
-.alert,
-.toolbar,
-.badge,
-nav a,
-input,
-textarea,
-select,
-article > header,
-article > footer {
-  align-items: center;
-  appearance: none;
-  background: transparent;
-  border: 0;
-  border-radius: 0.25em;
-  color: inherit;
-  display: inline-flex;
-  height: auto;
-  min-height: 2.3em;
-  min-width: 2.3em;
-  position: relative;
-  text-decoration: none;
-  vertical-align: middle;
-  width: 100%;
-  padding-inline: 1em;
-  padding-block: 0.3em;
-  font-size: 100%;
-  margin: 0;
-}
-
-.compact,
-.badge {
-  min-height: 1.7em;
-  min-width: 1.7em;
-  padding-block: 0em;
-  padding-inline: 0.5em;
-  line-height: 1;
-}
-
-button,
-.button,
-input[type=submit] {
-  width: auto;
-  cursor: pointer;
-  font-weight: 400;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.badge {
-  font-weight: 500;
-  width: auto;
-}
-.badge.snug {
-  translate: -1em -0.7em;
-}
-
-:is(input, textarea, select):not(.button):hover,
-:is(input, textarea, select):not(.button):focus {
-  border-color: var(--color);
-}
-
-:is(input, textarea, select):not(.button, .icon):focus {
-  box-shadow: inset 0 0 0 1px var(--color);
-}
-
-:is(input, textarea, select, a, button):focus-visible,
-.button:has(:focus-visible) {
-  outline: 2px solid rgba(140, 140, 140, 0.25);
-  outline-offset: 2px;
-}
-:is(input, textarea, select, a, button):focus-visible:hover,
-.button:has(:focus-visible):hover {
-  outline: none;
-}
-
-:is([type=checkbox], [type=radio]):focus-visible:not(:hover) {
-  outline-width: 4px;
-}
-
-button,
-.button,
-.alert,
-.badge,
-input,
-textarea,
-select,
-article {
-  border: 1px solid;
-  border-color: rgba(var(--text-color-rgb), 0.5);
-}
-
-button,
-.button,
-.alert,
-.badge,
-nav a,
-input,
-textarea,
-select,
-article {
-  transition: color 0.2s ease-in-out, background 0.1s ease-in-out, border 0.15s ease-in-out, filter 0.1s ease-in-out;
-}
-
-a {
-  cursor: pointer;
-  transition: color 0.1s ease-in-out;
-}
-a:hover, a:focus {
-  text-decoration: none;
-}
-
-.alert {
-  display: flex;
-  justify-content: flex-start;
-  padding: 0.5em 1em;
-}
-.alert svg {
-  min-width: 1em;
-}
-
-button,
-.badge,
-.button,
-.alert,
-input[type=submit] {
-  background-color: var(--color);
-  border-color: var(--color);
-}
-
-:is(button, .badge, .button, .alert, i:empty, .icon, input[type=submit]) {
-  color: var(--text-color);
-}
-:is(button, .badge, .button, .alert, i:empty, .icon, input[type=submit]):is(.outline, .hazy, .link) {
-  --text-color: var(--color);
-  --text-color-rgb: var(--color-rgb);
-  color: var(--text-color);
-}
-:is(button, .badge, .button, .alert, i:empty, .icon, input[type=submit]):is(.link, .hazy) {
-  border-color: transparent;
-}
-:is(button, .badge, .button, .alert, i:empty, .icon, input[type=submit]):is(.link, .outline) {
-  background: none;
-}
-:is(button, .badge, .button, .alert, i:empty, .icon, input[type=submit]).hazy {
-  background-color: rgba(var(--color-rgb), 0.1);
-}
-:is(button, .badge, .button, .alert, i:empty, .icon, input[type=submit]) svg {
-  fill: currentColor;
-  transform: scale(1);
-  transition: all 0.2s ease-in-out;
-  display: block;
-}
-
-.link {
-  text-transform: capitalize;
-}
-
-.toolbar {
-  justify-content: space-between;
-}
-
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  90%, 100% {
-    transform: rotate(360deg);
-  }
-}
-[aria-busy] {
-  position: relative;
-}
-[aria-busy]::after {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 1.3em;
-  height: 1.3em;
-  border-radius: 50%;
-  border: 0.15em solid transparent;
-  border-color: var(--text-color) var(--text-color) transparent transparent;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease-in-out 0.1s;
-}
-
-[aria-busy=true],
-:is(button, .button, input[type=submit])[aria-busy=true] {
-  pointer-events: none;
-  user-select: none;
-  cursor: default;
-  color: transparent;
-}
-[aria-busy=true]::after,
-:is(button, .button, input[type=submit])[aria-busy=true]::after {
-  opacity: 1;
-  animation: spinner 0.8s ease infinite;
-}
-
-.toobar,
-article > header,
-article > footer {
-  min-height: 2.9em;
-}
-
-hr {
-  height: 1px;
-  border: 0;
-  background-color: var(--default);
-  margin: var(--gap);
-}
-
-section {
-  padding: calc(var(--gap) * 2) var(--gap);
-}
-
 .outline {
   border-color: rgba(var(--color-rgb), 0.4);
   border-width: 1px;
   border-style: solid;
 }
+.outline ul,
 .outline li {
   border-color: inherit;
+}
+.outline li {
   position: relative;
 }
 .outline li ul {
   border-width: 1px;
-  border-color: inherit;
   border-style: solid;
   inset: auto -1px;
 }
@@ -489,6 +218,314 @@ section {
   border-width: 1px 0 0 0;
   border-color: inherit;
   border-style: solid;
+}
+
+/*!
+* Spry UI
+*/
+.hoverable > ul > li ul,
+.hoverable > li ul,
+[data-toggle=next] + *,
+[data-toggle=""] + *,
+[data-toggle=hover] + *,
+.toggle + *,
+menu > li:nth-child(2),
+.closed {
+  max-height: 1px;
+  min-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  pointer-events: none;
+  transform: scaleY(0.8) translateY(-4px) translateZ(0);
+  transform-origin: top;
+  transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out, max-height 0.5s cubic-bezier(0, 1, 0, 1), padding-block 0.5s cubic-bezier(0, 1, 0, 1);
+  transition-delay: 0.1s;
+  z-index: 2;
+}
+.hoverable > ul > li ul:not(.open),
+.hoverable > li ul:not(.open),
+[data-toggle=next] + :not(.open),
+[data-toggle=""] + :not(.open),
+[data-toggle=hover] + :not(.open),
+.toggle + :not(.open),
+menu > li:not(.open):nth-child(2),
+.closed:not(.open) {
+  padding-block: 0;
+  margin-block: 0;
+}
+
+nav a, input,
+textarea,
+select, article > header,
+article > footer, .toolbar, button,
+.button,
+input[type=submit], .badge, .alert, .ui {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  display: inline-flex;
+  font-size: 100%;
+  height: auto;
+  margin: 0;
+  min-height: 2.3em;
+  min-width: 2.3em;
+  padding-block: 0.3em;
+  padding-inline: 1em;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.1s ease-in-out, background 0.1s ease-in-out, border 0.15s ease-in-out, filter 0.1s ease-in-out;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.badge, .compact {
+  min-height: 1.7em;
+  min-width: 1.7em;
+  padding-block: 0em;
+  padding-inline: 0.5em;
+  line-height: 1;
+}
+
+article > header,
+article > footer, .toolbar, .spacious {
+  min-height: 2.9em;
+}
+
+menu > li:focus-within + li, menu > li:nth-child(2):has(:focus-visible), menu > li:nth-child(2):has(:active), menu > li:nth-child(2):not(:focus-within):hover, .hoverable > li:hover > ul,
+.hoverable li:has(:focus-visible) > ul,
+.hoverable > ul > li:hover > ul,
+[data-toggle=hover].hoverable:hover + *,
+.toggle + *:hover,
+.open {
+  max-height: 100vh;
+  opacity: 1;
+  pointer-events: all;
+  transform: none;
+  z-index: 2;
+}
+
+input,
+textarea,
+select, article, button,
+.button,
+input[type=submit], button.outline,
+.button.outline, .badge, .alert, .ui {
+  border-color: var(--color);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.25em;
+}
+
+button,
+.button,
+input[type=submit], .badge, .alert, .ui {
+  background-color: var(--color);
+  border-color: var(--color);
+}
+
+button:not(:active):not(.link):is(:hover, :focus, :focus-within),
+.button:not(:active):not(.link):is(:hover, :focus, :focus-within),
+input[type=submit]:not(:active):not(.link):is(:hover, :focus, :focus-within), a:not(:active):hover, a:not(:active):focus {
+  filter: brightness(1.15);
+}
+
+button:not(:active):is(.link, .outline, .hazy):is(:hover, :focus, :focus-within),
+.button:not(:active):is(.link, .outline, .hazy):is(:hover, :focus, :focus-within),
+input[type=submit]:not(:active):is(.link, .outline, .hazy):is(:hover, :focus, :focus-within), .list a:not(:active):hover,
+.list a:not(:active):focus {
+  background-color: rgba(var(--color-rgb), 0.1);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible, button:focus-visible,
+.button:focus-visible, a:focus-visible {
+  outline: 2px solid rgba(140, 140, 140, 0.25);
+  outline-offset: 2px;
+}
+
+i:empty, .icon, button,
+.button,
+input[type=submit], .badge, .alert, .ui {
+  --text-color: var(--light);
+  --text-color-rgb: var(--light-rgb);
+  color: var(--text-color);
+}
+i:empty svg, .icon svg, button svg,
+.button svg,
+input[type=submit] svg, .badge svg, .alert svg, .ui svg {
+  fill: currentColor;
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
+  display: block;
+}
+
+a {
+  cursor: pointer;
+  transition: color 0.1s ease-in-out;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+.link,
+.outline:not(.list, .tabs),
+.hazy {
+  --text-color: var(--color);
+  --text-color-rgb: var(--color-rgb);
+  color: var(--text-color);
+}
+
+.link,
+.hazy {
+  border-color: transparent;
+}
+
+.link,
+.outline {
+  background: transparent;
+}
+
+.hazy {
+  background-color: rgba(var(--color-rgb), 0.1);
+}
+
+.link {
+  text-transform: capitalize;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  background-color: var(--default);
+  margin: var(--gap);
+}
+
+section {
+  padding: calc(var(--gap) * 2) var(--gap);
+}
+
+/*!
+* Spry Lists
+*/
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.list li {
+  margin-block: 0;
+  position: relative;
+  background-color: inherit;
+}
+.list.outline a,
+.list.outline > button,
+.list.outline li > button,
+.list.outline > .button,
+.list.outline li > .button {
+  border-radius: 0;
+}
+.list > * {
+  flex: auto;
+}
+.list li > *:first-child {
+  width: 100%;
+}
+.list.hide-inputs input {
+  opacity: 0;
+  width: 0;
+  min-width: 0;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+}
+
+/*!
+* Spry Alerts
+*/
+.alert {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5em 1em;
+}
+.alert svg {
+  min-width: 1em;
+}
+
+/*!
+* Spry Badge
+*/
+.badge {
+  font-weight: 500;
+  width: auto;
+}
+.badge.snug {
+  translate: -1em -0.7em;
+}
+
+/*!
+* Spry Buttons
+*/
+button,
+.button,
+input[type=submit] {
+  width: auto;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+/*!
+* Spry Loader
+*/
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  90%, 100% {
+    transform: rotate(360deg);
+  }
+}
+[aria-busy] {
+  position: relative;
+}
+[aria-busy]::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 50%;
+  border: 0.15em solid transparent;
+  border-color: var(--text-color) var(--text-color) transparent transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out 0.1s;
+}
+
+[aria-busy=true] {
+  pointer-events: none;
+  user-select: none;
+  cursor: default;
+  color: transparent;
+}
+[aria-busy=true]::after {
+  opacity: 1;
+  animation: spinner 0.8s ease infinite;
+}
+
+/*!
+* Spry Toolbar
+*/
+.toolbar {
+  justify-content: space-between;
 }
 
 /*!
@@ -558,6 +595,44 @@ article > h6 {
 /*!
 * Spry Forms
 */
+input,
+textarea,
+select {
+  border-color: rgba(var(--text-color-rgb), 0.5);
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+input:hover,
+textarea:hover,
+select:hover {
+  outline: none;
+}
+input:not(.button):hover, input:not(.button):focus,
+textarea:not(.button):hover,
+textarea:not(.button):focus,
+select:not(.button):hover,
+select:not(.button):focus {
+  border-color: var(--color);
+}
+input:not(.button, .icon):focus,
+textarea:not(.button, .icon):focus,
+select:not(.button, .icon):focus {
+  box-shadow: inset 0 0 0 1px var(--color);
+}
+
+label .ui {
+  border-color: rgba(var(--default-rgb), 0.5);
+  background-color: rgba(var(--default-rgb), 0.2);
+  color: rgba(var(--contrast-rgb), 0.8);
+}
+
+label:focus-within .ui {
+  background-color: var(--color);
+  border-color: var(--color);
+  color: var(--light);
+}
+
 ::placeholder {
   opacity: 0.7;
 }
@@ -583,6 +658,10 @@ article > h6 {
 [type=radio]:not(.button, .icon),
 [type=radio]:not(.button, .icon):checked::after {
   border-radius: 50%;
+}
+
+:is([type=checkbox], [type=radio]):focus-visible:not(:hover) {
+  outline-width: 4px;
 }
 
 :disabled {
@@ -649,6 +728,16 @@ label:has(sub) {
   margin-bottom: 1rem;
 }
 
+.show-invalid :not(:focus):user-invalid {
+  border-color: #ff0000;
+}
+
+.show-invalid label:has(:not(:focus):user-invalid) .ui {
+  background-color: #ff0000;
+  border-color: #ff0000;
+  color: var(--light);
+}
+
 /*!
 * Spry Icons
 */
@@ -687,10 +776,6 @@ i:has(svg) {
 :is(.button):has(:checked) svg:nth-of-type(2) {
   opacity: 1;
   transform: scale(1);
-}
-
-.show-invalid :not(:focus):user-invalid {
-  border-color: #ff0000;
 }
 
 .icon {
@@ -767,25 +852,27 @@ i svg {
 :is(.icon, i:empty):is(.menu, .close)::after {
   transform: rotate(-45deg);
 }
-:is(.icon, i:empty).menu:not(:checked, :has(:checked))::before, :is(.icon, i:empty).menu:not(:checked, :has(:checked))::after {
+:is(.icon, i:empty).menu:not([aria-pressed=true])::before, :is(.icon, i:empty).menu:not([aria-pressed=true])::after {
   background-color: var(--text-color);
   transform: translate(0, -0.4em) rotate(90deg);
   height: 1.4em;
   width: 0.12em;
   border: 0;
 }
-:is(.icon, i:empty).menu:not(:checked, :has(:checked))::after {
+:is(.icon, i:empty).menu:not([aria-pressed=true])::after {
   transform: translate(0, 0.4em) rotate(-90deg);
   box-shadow: 0.4em 0 0 var(--text-color);
 }
-:is(.icon, i:empty).menu:not(:checked, :has(:checked)):focus {
+:is(.icon, i:empty).menu:not([aria-pressed=true]):focus {
   box-shadow: none;
 }
 
 .toggle.icon:has(:checked)::after,
 .toggle.active > .icon::after,
 .toggle.hoverable:hover .icon::after,
-.icon:checked::after {
+.icon[aria-pressed=true]::after,
+[aria-pressed=true] > .icon::after,
+[aria-pressed=true] > i:empty::after {
   rotate: 180deg;
 }
 
@@ -851,16 +938,6 @@ table tbody tr:first-child td {
 /*!
 * Spry Grid
 */
-.grid,
-.row,
-[class^=grid-],
-[class*=" grid-"],
-[class^=g-],
-[class*=" g-"],
-[class*=-g-] {
-  gap: var(--gap);
-}
-
 [class^=columns-],
 [class*=" columns-"],
 [class*=-columns-] {
@@ -912,11 +989,13 @@ table tbody tr:first-child td {
   flex: 0 auto;
   min-width: auto;
   max-width: none;
+  width: auto;
 }
 .row > .col-auto {
   flex: 0 auto;
   min-width: auto;
   max-width: none;
+  width: auto;
 }
 
 .grid,
@@ -1021,23 +1100,28 @@ table tbody tr:first-child td {
 }
 
 .g-0 {
-  --gap: 0;
+  --gap: 0em;
+  gap: var(--gap);
 }
 
 .g-1 {
   --gap: 0.5em;
+  gap: var(--gap);
 }
 
 .g-2 {
   --gap: 1em;
+  gap: var(--gap);
 }
 
 .g-3 {
   --gap: 2em;
+  gap: var(--gap);
 }
 
 .g-4 {
   --gap: 4em;
+  gap: var(--gap);
 }
 
 .md-mw {
@@ -1148,29 +1232,36 @@ table tbody tr:first-child td {
     flex: 1;
   }
   .row.md-columns-auto > * {
-    flex: auto;
+    flex: 0 auto;
     min-width: auto;
     max-width: none;
+    width: auto;
   }
   .row > .md-col-auto {
     flex: 0 auto;
     min-width: auto;
     max-width: none;
+    width: auto;
   }
   .md-g-0 {
-    --gap: 0;
+    --gap: 0em;
+    gap: var(--gap);
   }
   .md-g-1 {
     --gap: 0.5em;
+    gap: var(--gap);
   }
   .md-g-2 {
     --gap: 1em;
+    gap: var(--gap);
   }
   .md-g-3 {
     --gap: 2em;
+    gap: var(--gap);
   }
   .md-g-4 {
     --gap: 4em;
+    gap: var(--gap);
   }
 }
 /*!
@@ -1350,87 +1441,21 @@ nav ul > *:has(+ label, + input) {
   position: relative;
 }
 
-li > .toggle:not(:first-child),
-li > label:has(.toggle):not(:first-child) {
+li > [data-toggle] {
   position: absolute;
   right: 0.5em;
   top: 0.25em;
   font-size: 80%;
 }
 
-input.toggle:not(.button),
-.toggle input:not(.button) {
-  border: 0;
-  outline: 0;
-  min-width: 0;
-  min-height: 0;
-}
-
-input.toggle:not(.button, .icon),
-.toggle input:not(.button, .icon) {
-  height: 0;
-  width: 0;
-  padding: 0;
-  margin: 0;
-}
-
-.hoverable > ul > li ul,
-.hoverable > li ul,
-.toggle + *,
-.closed {
-  max-height: 1px;
-  min-height: 0;
-  opacity: 0;
-  padding-block: 0;
-  pointer-events: none;
-  pointer-events: none;
-  transform: scaleY(0.8) translateY(-4px) translateZ(0);
-  transform-origin: top;
-  transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out, max-height 0.5s cubic-bezier(0, 1, 0, 1), padding-block 0.5s cubic-bezier(0, 1, 0, 1);
-  transition-delay: 0.1s;
-  z-index: 2;
-}
-
-@media screen and (min-width: 40em) {
-  .md-hoverable > ul > li ul,
-  .md-hoverable > li ul {
-    max-height: 1px;
-    min-height: 0;
-    opacity: 0;
-    padding-block: 0;
-    pointer-events: none;
-    pointer-events: none;
-    transform: scaleY(0.8) translateY(-4px) translateZ(0);
-    transform-origin: top;
-    transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out, max-height 0.5s cubic-bezier(0, 1, 0, 1), padding-block 0.5s cubic-bezier(0, 1, 0, 1);
-    transition-delay: 0.1s;
-    z-index: 2;
-  }
-}
 input.toggle:not(:checked) + *,
 .toggle:has(input:not(:checked)) + * {
   padding-block: 0;
 }
 
-.hoverable > li:hover > ul,
-.hoverable li:has(:focus-visible) > ul,
-.hoverable > ul > li:hover > ul,
-.toggle.hoverable:hover + *,
-.toggle:checked + *,
-.toggle:has(:checked) + *,
-.toggle.active + *,
-.toggle-container:focus-within .toggle + *,
-.toggle-container .toggle + *:hover,
-.open {
-  max-height: 100vh;
-  opacity: 1;
-  pointer-events: all;
-  transform: none;
-  z-index: 2;
-}
-
-.toggle-container:focus-within .toggle {
-  pointer-events: none;
+.toggle:focus,
+.toggle:focus-visible {
+  pointer-events: none !important;
 }
 
 .tabpanels > * {
@@ -1444,7 +1469,38 @@ input.toggle:not(:checked) + *,
   z-index: 4;
 }
 
+menu {
+  display: inline-block;
+  position: relative;
+}
+menu > li:first-child {
+  cursor: pointer;
+}
+menu > li:nth-child(2) {
+  position: absolute;
+  width: max-content;
+  max-width: 300px;
+  min-width: 160px;
+}
 @media screen and (min-width: 40em) {
+  .md-hoverable > ul > li ul,
+  .md-hoverable > li ul {
+    max-height: 1px;
+    min-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    pointer-events: none;
+    transform: scaleY(0.8) translateY(-4px) translateZ(0);
+    transform-origin: top;
+    transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out, max-height 0.5s cubic-bezier(0, 1, 0, 1), padding-block 0.5s cubic-bezier(0, 1, 0, 1);
+    transition-delay: 0.1s;
+    z-index: 2;
+  }
+  .md-hoverable > ul > li ul:not(.open),
+  .md-hoverable > li ul:not(.open) {
+    padding-block: 0;
+    margin-block: 0;
+  }
   .toggle.md-hoverable:hover + *,
   .md-hoverable > ul > li:hover > ul,
   .md-hoverable > li:hover > ul,
@@ -1569,35 +1625,35 @@ input.toggle:not(:checked) + *,
 }
 
 .pt-0, .py-0, .p-0 {
-  padding-top: 0;
+  padding-top: 0em;
 }
 
 .pr-0, .px-0, .p-0 {
-  padding-right: 0;
+  padding-right: 0em;
 }
 
 .pb-0, .py-0, .p-0 {
-  padding-bottom: 0;
+  padding-bottom: 0em;
 }
 
 .pl-0, .px-0, .p-0 {
-  padding-left: 0;
+  padding-left: 0em;
 }
 
 .mt-0, .my-0, .m-0 {
-  margin-top: 0;
+  margin-top: 0em;
 }
 
 .mr-0, .mx-0, .m-0 {
-  margin-right: 0;
+  margin-right: 0em;
 }
 
 .mb-0, .my-0, .m-0 {
-  margin-bottom: 0;
+  margin-bottom: 0em;
 }
 
 .ml-0, .mx-0, .m-0 {
-  margin-left: 0;
+  margin-left: 0em;
 }
 
 .pt-1, .py-1, .p-1 {
@@ -1749,11 +1805,11 @@ input.toggle:not(:checked) + *,
 }
 
 .mx-n0 {
-  margin-inline: -0;
+  margin-inline: -0em;
 }
 
 .my-n0 {
-  margin-block: -0;
+  margin-block: -0em;
 }
 
 .bx-0 {
@@ -1829,19 +1885,19 @@ input.toggle:not(:checked) + *,
 }
 
 .ml-n0 {
-  margin-left: -0;
+  margin-left: -0em;
 }
 
 .mr-n0 {
-  margin-right: -0;
+  margin-right: -0em;
 }
 
 .mt-n0 {
-  margin-top: -0;
+  margin-top: -0em;
 }
 
 .mb-n0 {
-  margin-bottom: -0;
+  margin-bottom: -0em;
 }
 
 .bl-0 {
@@ -2011,10 +2067,10 @@ input.toggle:not(:checked) + *,
     margin-right: auto;
   }
   .md-p-0 {
-    padding: 0;
+    padding: 0em;
   }
   .md-m-0 {
-    margin: 0;
+    margin: 0em;
   }
   .md-b-0 {
     border: 0px solid var(--color);
@@ -2056,22 +2112,22 @@ input.toggle:not(:checked) + *,
     border: 4px solid var(--color);
   }
   .md-px-0 {
-    padding-inline: 0;
+    padding-inline: 0em;
   }
   .md-py-0 {
-    padding-block: 0;
+    padding-block: 0em;
   }
   .md-mx-0 {
-    margin-inline: 0;
+    margin-inline: 0em;
   }
   .md-my-0 {
-    margin-block: 0;
+    margin-block: 0em;
   }
   .md-mx-n0 {
-    margin-inline: -0;
+    margin-inline: -0em;
   }
   .md-my-n0 {
-    margin-block: -0;
+    margin-block: -0em;
   }
   .md-bx-0 {
     border-inline: 0px solid var(--color);
@@ -2176,40 +2232,40 @@ input.toggle:not(:checked) + *,
     border-block: 4px solid var(--color);
   }
   .md-pl-0 {
-    padding-left: 0;
+    padding-left: 0em;
   }
   .md-pr-0 {
-    padding-right: 0;
+    padding-right: 0em;
   }
   .md-pt-0 {
-    padding-top: 0;
+    padding-top: 0em;
   }
   .md-pb-0 {
-    padding-bottom: 0;
+    padding-bottom: 0em;
   }
   .md-ml-0 {
-    margin-left: 0;
+    margin-left: 0em;
   }
   .md-mr-0 {
-    margin-right: 0;
+    margin-right: 0em;
   }
   .md-mt-0 {
-    margin-top: 0;
+    margin-top: 0em;
   }
   .md-mb-0 {
-    margin-bottom: 0;
+    margin-bottom: 0em;
   }
   .md-ml-n0 {
-    margin-left: -0;
+    margin-left: -0em;
   }
   .md-mr-n0 {
-    margin-right: -0;
+    margin-right: -0em;
   }
   .md-mt-n0 {
-    margin-top: -0;
+    margin-top: -0em;
   }
   .md-mb-n0 {
-    margin-bottom: -0;
+    margin-bottom: -0em;
   }
   .md-bl-0 {
     border-left: 0px solid var(--color);
@@ -2901,6 +2957,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   max-height: 100px;
 }
 
+.pl-100 {
+  padding-left: 100px;
+}
+
+.pr-100 {
+  padding-right: 100px;
+}
+
 .mw-100, .row > .mw-100 {
   width: 100%;
   max-width: 100px;
@@ -2912,6 +2976,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 
 .mh-200 {
   max-height: 200px;
+}
+
+.pl-200 {
+  padding-left: 200px;
+}
+
+.pr-200 {
+  padding-right: 200px;
 }
 
 .mw-200, .row > .mw-200 {
@@ -2927,6 +2999,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   max-height: 300px;
 }
 
+.pl-300 {
+  padding-left: 300px;
+}
+
+.pr-300 {
+  padding-right: 300px;
+}
+
 .mw-300, .row > .mw-300 {
   width: 100%;
   max-width: 300px;
@@ -2938,6 +3018,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 
 .mh-400 {
   max-height: 400px;
+}
+
+.pl-400 {
+  padding-left: 400px;
+}
+
+.pr-400 {
+  padding-right: 400px;
 }
 
 .mw-400, .row > .mw-400 {
@@ -2953,6 +3041,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   max-height: 500px;
 }
 
+.pl-500 {
+  padding-left: 500px;
+}
+
+.pr-500 {
+  padding-right: 500px;
+}
+
 .mw-500, .row > .mw-500 {
   width: 100%;
   max-width: 500px;
@@ -2964,6 +3060,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 
 .mh-600 {
   max-height: 600px;
+}
+
+.pl-600 {
+  padding-left: 600px;
+}
+
+.pr-600 {
+  padding-right: 600px;
 }
 
 .mw-600, .row > .mw-600 {
@@ -2979,6 +3083,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   max-height: 700px;
 }
 
+.pl-700 {
+  padding-left: 700px;
+}
+
+.pr-700 {
+  padding-right: 700px;
+}
+
 .mw-700, .row > .mw-700 {
   width: 100%;
   max-width: 700px;
@@ -2990,6 +3102,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 
 .mh-800 {
   max-height: 800px;
+}
+
+.pl-800 {
+  padding-left: 800px;
+}
+
+.pr-800 {
+  padding-right: 800px;
 }
 
 .mw-800, .row > .mw-800 {
@@ -3005,6 +3125,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   max-height: 900px;
 }
 
+.pl-900 {
+  padding-left: 900px;
+}
+
+.pr-900 {
+  padding-right: 900px;
+}
+
 .mw-900, .row > .mw-900 {
   width: 100%;
   max-width: 900px;
@@ -3016,6 +3144,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 
 .mh-1000 {
   max-height: 1000px;
+}
+
+.pl-1000 {
+  padding-left: 1000px;
+}
+
+.pr-1000 {
+  padding-right: 1000px;
 }
 
 .mw-1000, .row > .mw-1000 {
@@ -3031,6 +3167,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   max-height: 1100px;
 }
 
+.pl-1100 {
+  padding-left: 1100px;
+}
+
+.pr-1100 {
+  padding-right: 1100px;
+}
+
 .mw-1100, .row > .mw-1100 {
   width: 100%;
   max-width: 1100px;
@@ -3042,6 +3186,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 
 .mh-1200 {
   max-height: 1200px;
+}
+
+.pl-1200 {
+  padding-left: 1200px;
+}
+
+.pr-1200 {
+  padding-right: 1200px;
 }
 
 .mw-1200, .row > .mw-1200 {
@@ -3381,12 +3533,24 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   .md-mh-100 {
     max-height: 100px;
   }
+  .md-pl-100 {
+    padding-left: 100px;
+  }
+  .md-pr-100 {
+    padding-right: 100px;
+  }
   .md-mw-100, .row > .md-mw-100 {
     width: 100%;
     max-width: 100px;
   }
   .md-mh-200 {
     max-height: 200px;
+  }
+  .md-pl-200 {
+    padding-left: 200px;
+  }
+  .md-pr-200 {
+    padding-right: 200px;
   }
   .md-mw-200, .row > .md-mw-200 {
     width: 100%;
@@ -3395,12 +3559,24 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   .md-mh-300 {
     max-height: 300px;
   }
+  .md-pl-300 {
+    padding-left: 300px;
+  }
+  .md-pr-300 {
+    padding-right: 300px;
+  }
   .md-mw-300, .row > .md-mw-300 {
     width: 100%;
     max-width: 300px;
   }
   .md-mh-400 {
     max-height: 400px;
+  }
+  .md-pl-400 {
+    padding-left: 400px;
+  }
+  .md-pr-400 {
+    padding-right: 400px;
   }
   .md-mw-400, .row > .md-mw-400 {
     width: 100%;
@@ -3409,12 +3585,24 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   .md-mh-500 {
     max-height: 500px;
   }
+  .md-pl-500 {
+    padding-left: 500px;
+  }
+  .md-pr-500 {
+    padding-right: 500px;
+  }
   .md-mw-500, .row > .md-mw-500 {
     width: 100%;
     max-width: 500px;
   }
   .md-mh-600 {
     max-height: 600px;
+  }
+  .md-pl-600 {
+    padding-left: 600px;
+  }
+  .md-pr-600 {
+    padding-right: 600px;
   }
   .md-mw-600, .row > .md-mw-600 {
     width: 100%;
@@ -3423,12 +3611,24 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   .md-mh-700 {
     max-height: 700px;
   }
+  .md-pl-700 {
+    padding-left: 700px;
+  }
+  .md-pr-700 {
+    padding-right: 700px;
+  }
   .md-mw-700, .row > .md-mw-700 {
     width: 100%;
     max-width: 700px;
   }
   .md-mh-800 {
     max-height: 800px;
+  }
+  .md-pl-800 {
+    padding-left: 800px;
+  }
+  .md-pr-800 {
+    padding-right: 800px;
   }
   .md-mw-800, .row > .md-mw-800 {
     width: 100%;
@@ -3437,12 +3637,24 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   .md-mh-900 {
     max-height: 900px;
   }
+  .md-pl-900 {
+    padding-left: 900px;
+  }
+  .md-pr-900 {
+    padding-right: 900px;
+  }
   .md-mw-900, .row > .md-mw-900 {
     width: 100%;
     max-width: 900px;
   }
   .md-mh-1000 {
     max-height: 1000px;
+  }
+  .md-pl-1000 {
+    padding-left: 1000px;
+  }
+  .md-pr-1000 {
+    padding-right: 1000px;
   }
   .md-mw-1000, .row > .md-mw-1000 {
     width: 100%;
@@ -3451,12 +3663,24 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   .md-mh-1100 {
     max-height: 1100px;
   }
+  .md-pl-1100 {
+    padding-left: 1100px;
+  }
+  .md-pr-1100 {
+    padding-right: 1100px;
+  }
   .md-mw-1100, .row > .md-mw-1100 {
     width: 100%;
     max-width: 1100px;
   }
   .md-mh-1200 {
     max-height: 1200px;
+  }
+  .md-pl-1200 {
+    padding-left: 1200px;
+  }
+  .md-pr-1200 {
+    padding-right: 1200px;
   }
   .md-mw-1200, .row > .md-mw-1200 {
     width: 100%;
@@ -3558,15 +3782,6 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   background-color: var(--faint);
 }
 
-button,
-.badge,
-[type=submit],
-.button,
-.alert {
-  --text-color: var(--light);
-  --text-color-rgb: var(--light-rgb);
-}
-
 .badge.faint,
 button.faint,
 [type=submit].faint,
@@ -3592,30 +3807,12 @@ form.faint [type=submit]:is(.hazy, .outline, .link),
   color: var(--text-color);
 }
 
-.badge.default,
-button.default,
-button.icon.default:not(.hazy, .outline, .link),
-[type=submit].default,
-.button.default,
-.alert.default {
-  --text-color: var(--light);
-}
-
 .link-light a,
 .link-hover-light a:not(.button):hover,
 .link-hover-light a:not(.button):focus {
   --text-color: var(--light);
   --text-color-rgb: var(--light-rgb);
   color: var(--text-color);
-}
-
-.badge.light,
-button.light,
-button.icon.light:not(.hazy, .outline, .link),
-[type=submit].light,
-.button.light,
-.alert.light {
-  --text-color: var(--dark);
 }
 
 .link-dark a,
@@ -3626,15 +3823,6 @@ button.icon.light:not(.hazy, .outline, .link),
   color: var(--text-color);
 }
 
-.badge.dark,
-button.dark,
-button.icon.dark:not(.hazy, .outline, .link),
-[type=submit].dark,
-.button.dark,
-.alert.dark {
-  --text-color: var(--light);
-}
-
 .link-primary a,
 .link-hover-primary a:not(.button):hover,
 .link-hover-primary a:not(.button):focus {
@@ -3643,30 +3831,12 @@ button.icon.dark:not(.hazy, .outline, .link),
   color: var(--text-color);
 }
 
-.badge.primary,
-button.primary,
-button.icon.primary:not(.hazy, .outline, .link),
-[type=submit].primary,
-.button.primary,
-.alert.primary {
-  --text-color: var(--light);
-}
-
 .link-secondary a,
 .link-hover-secondary a:not(.button):hover,
 .link-hover-secondary a:not(.button):focus {
   --text-color: var(--secondary);
   --text-color-rgb: var(--secondary-rgb);
   color: var(--text-color);
-}
-
-.badge.secondary,
-button.secondary,
-button.icon.secondary:not(.hazy, .outline, .link),
-[type=submit].secondary,
-.button.secondary,
-.alert.secondary {
-  --text-color: var(--light);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -3775,7 +3945,7 @@ button.icon.secondary:not(.hazy, .outline, .link),
   color: var(--dark);
 }
 
-[class].default:not(article) {
+[class].default {
   --color: var(--default);
   --color-rgb: var(--default-rgb);
 }
@@ -3784,7 +3954,7 @@ article.default {
   --card-color: var(--default);
 }
 
-.icon.default,
+.icon.default:not(button, .button),
 .color-default,
 [class*=color-default],
 a.color-default,
@@ -3802,23 +3972,29 @@ button.hover-default:focus {
 }
 
 .bg-default,
+.bg-hover-default:hover,
+button.bg-hover-default:not(:active):is(:hover, :focus, :focus-within),
 .tooltip.bg-default {
   background-color: var(--default);
 }
 
-.bg-default-hazy {
+.bg-default-hazy,
+.bg-hover-default-hazy:hover,
+button.bg-hover-default-hazy:not(:active):is(:hover, :focus, :focus-within) {
   background-color: rgba(var(--default-rgb), 0.1);
 }
 
-.border-default {
+.border-default,
+button.border-default {
   border-color: var(--default);
 }
 
-.border-default-hazy {
+.border-default-hazy,
+button.border-default-hazy {
   border-color: rgba(var(--default-rgb), 0.4);
 }
 
-[class].light:not(article) {
+[class].light {
   --color: var(--light);
   --color-rgb: var(--light-rgb);
 }
@@ -3827,7 +4003,7 @@ article.light {
   --card-color: var(--light);
 }
 
-.icon.light,
+.icon.light:not(button, .button),
 .color-light,
 [class*=color-light],
 a.color-light,
@@ -3845,23 +4021,29 @@ button.hover-light:focus {
 }
 
 .bg-light,
+.bg-hover-light:hover,
+button.bg-hover-light:not(:active):is(:hover, :focus, :focus-within),
 .tooltip.bg-light {
   background-color: var(--light);
 }
 
-.bg-light-hazy {
+.bg-light-hazy,
+.bg-hover-light-hazy:hover,
+button.bg-hover-light-hazy:not(:active):is(:hover, :focus, :focus-within) {
   background-color: rgba(var(--light-rgb), 0.1);
 }
 
-.border-light {
+.border-light,
+button.border-light {
   border-color: var(--light);
 }
 
-.border-light-hazy {
+.border-light-hazy,
+button.border-light-hazy {
   border-color: rgba(var(--light-rgb), 0.4);
 }
 
-[class].dark:not(article) {
+[class].dark {
   --color: var(--dark);
   --color-rgb: var(--dark-rgb);
 }
@@ -3870,7 +4052,7 @@ article.dark {
   --card-color: var(--dark);
 }
 
-.icon.dark,
+.icon.dark:not(button, .button),
 .color-dark,
 [class*=color-dark],
 a.color-dark,
@@ -3888,23 +4070,29 @@ button.hover-dark:focus {
 }
 
 .bg-dark,
+.bg-hover-dark:hover,
+button.bg-hover-dark:not(:active):is(:hover, :focus, :focus-within),
 .tooltip.bg-dark {
   background-color: var(--dark);
 }
 
-.bg-dark-hazy {
+.bg-dark-hazy,
+.bg-hover-dark-hazy:hover,
+button.bg-hover-dark-hazy:not(:active):is(:hover, :focus, :focus-within) {
   background-color: rgba(var(--dark-rgb), 0.1);
 }
 
-.border-dark {
+.border-dark,
+button.border-dark {
   border-color: var(--dark);
 }
 
-.border-dark-hazy {
+.border-dark-hazy,
+button.border-dark-hazy {
   border-color: rgba(var(--dark-rgb), 0.4);
 }
 
-[class].primary:not(article) {
+[class].primary {
   --color: var(--primary);
   --color-rgb: var(--primary-rgb);
 }
@@ -3913,7 +4101,7 @@ article.primary {
   --card-color: var(--primary);
 }
 
-.icon.primary,
+.icon.primary:not(button, .button),
 .color-primary,
 [class*=color-primary],
 a.color-primary,
@@ -3931,23 +4119,29 @@ button.hover-primary:focus {
 }
 
 .bg-primary,
+.bg-hover-primary:hover,
+button.bg-hover-primary:not(:active):is(:hover, :focus, :focus-within),
 .tooltip.bg-primary {
   background-color: var(--primary);
 }
 
-.bg-primary-hazy {
+.bg-primary-hazy,
+.bg-hover-primary-hazy:hover,
+button.bg-hover-primary-hazy:not(:active):is(:hover, :focus, :focus-within) {
   background-color: rgba(var(--primary-rgb), 0.1);
 }
 
-.border-primary {
+.border-primary,
+button.border-primary {
   border-color: var(--primary);
 }
 
-.border-primary-hazy {
+.border-primary-hazy,
+button.border-primary-hazy {
   border-color: rgba(var(--primary-rgb), 0.4);
 }
 
-[class].secondary:not(article) {
+[class].secondary {
   --color: var(--secondary);
   --color-rgb: var(--secondary-rgb);
 }
@@ -3956,7 +4150,7 @@ article.secondary {
   --card-color: var(--secondary);
 }
 
-.icon.secondary,
+.icon.secondary:not(button, .button),
 .color-secondary,
 [class*=color-secondary],
 a.color-secondary,
@@ -3974,19 +4168,25 @@ button.hover-secondary:focus {
 }
 
 .bg-secondary,
+.bg-hover-secondary:hover,
+button.bg-hover-secondary:not(:active):is(:hover, :focus, :focus-within),
 .tooltip.bg-secondary {
   background-color: var(--secondary);
 }
 
-.bg-secondary-hazy {
+.bg-secondary-hazy,
+.bg-hover-secondary-hazy:hover,
+button.bg-hover-secondary-hazy:not(:active):is(:hover, :focus, :focus-within) {
   background-color: rgba(var(--secondary-rgb), 0.1);
 }
 
-.border-secondary {
+.border-secondary,
+button.border-secondary {
   border-color: var(--secondary);
 }
 
-.border-secondary-hazy {
+.border-secondary-hazy,
+button.border-secondary-hazy {
   border-color: rgba(var(--secondary-rgb), 0.4);
 }
 

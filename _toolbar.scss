@@ -1,0 +1,10 @@
+/*!
+* Spry Toolbar
+*/
+@use "ui" as *;
+
+.toolbar {
+	@extend %ui;
+	@extend %ui-spacious;
+	justify-content: space-between;
+}

@@ -33,7 +33,7 @@ $types: (
 
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc
 $spacing: (
-    0: 0,
+    0: 0em,
     1: .5em,
     2: 1em,
     3: 2em,
@@ -86,12 +86,4 @@ $sizes: (
             --gap: #{map-get($gaps, $breakpoint)};
         }
     }
-}
-
-%ui-hover {
-	filter: brightness(1.15);
-}
-
-%ui-bg-hover {
-	background-color: rgba(var(--color-rgb), 0.1);
 }

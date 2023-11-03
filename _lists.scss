@@ -1,43 +1,53 @@
+@use "ui"as *;
+
 /*!
 * Spry Lists
 */
-@use "variables"as *;
 
 .list {
-	display: flex;
+	display       : flex;
 	flex-direction: column;
-	width: 100%;
-	list-style: none;
-	margin: 0;
-	padding: 0;
+	width         : 100%;
+	list-style    : none;
+	margin        : 0;
+	padding       : 0;
+
 	li {
-		margin-block: 0;
-		position: relative;
+		margin-block    : 0;
+		position        : relative;
 		background-color: inherit;
 	}
+
 	&.outline {
+
 		a,
-		button,
-		.button {
+		> button,
+		li > button,
+		> .button,
+		li > .button {
 			border-radius: 0;
 		}
 	}
-	> * {
+
+	>* {
 		flex: auto;
 	}
-	li > *:first-child {
+
+	li>*:first-child {
 		width: 100%;
 	}
-	a:hover:not(:active),
-	a:focus:not(:active) {
+
+	a:hover,
+	a:focus {
 		@extend %ui-bg-hover;
 	}
+
 	&.hide-inputs input {
-		opacity: 0;
-		width: 0;
+		opacity  : 0;
+		width    : 0;
 		min-width: 0;
-		height: 1px;
-		margin: 0;
-		padding: 0;
+		height   : 1px;
+		margin   : 0;
+		padding  : 0;
 	}
 }

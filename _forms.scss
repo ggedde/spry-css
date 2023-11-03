@@ -1,6 +1,40 @@
 /*!
 * Spry Forms
 */
+@use "ui" as *;
+
+input,
+textarea,
+select{
+	@extend %ui;
+	@extend %ui-focus-visible;
+	@extend %ui-border;
+	border-color: rgba(var(--text-color-rgb), .5);
+	font-family: inherit;
+	font-weight: inherit;
+	color: inherit;
+	&:hover {
+		outline: none;
+	}
+	&:not(.button):hover,
+	&:not(.button):focus {
+		border-color: var(--color);
+	}
+	&:not(.button, .icon):focus {
+		box-shadow: inset 0 0 0 1px var(--color);
+	}
+}
+label .ui {
+	border-color: rgba(var(--default-rgb), .5);
+	background-color: rgba(var(--default-rgb), .2);
+	color: rgba(var(--contrast-rgb), 0.8);
+}
+
+label:focus-within .ui {
+	background-color: var(--color);
+	border-color: var(--color);
+	color: var(--light);
+}
 
 ::placeholder {
 	opacity: .7;
@@ -28,6 +62,10 @@
 [type=radio]:not(.button, .icon),
 [type=radio]:not(.button, .icon):checked::after{
 	border-radius: 50%;
+}
+
+:is([type=checkbox], [type=radio]):focus-visible:not(:hover) {
+	outline-width: 4px;
 }
 
 :disabled {
@@ -104,4 +142,14 @@ label {
 	&:has(sub) {
 		margin-bottom: 1rem;
 	}
+}
+
+.show-invalid :not(:focus):user-invalid {
+	border-color: #ff0000;
+}
+
+.show-invalid label:has(:not(:focus):user-invalid) .ui {
+	background-color: #ff0000;
+	border-color: #ff0000;
+	color: var(--light);
 }

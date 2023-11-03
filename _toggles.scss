@@ -2,108 +2,52 @@
 * Spry Toggles
 */
 @use "variables"as *;
+@use "ui"as *;
 
 .toggle {
 	cursor  : pointer;
 	position: relative;
 }
 
-li>.toggle:not(:first-child),
-li>label:has(.toggle):not(:first-child) {
+li>[data-toggle] {
 	position : absolute;
 	right    : .5em;
 	top      : .25em;
 	font-size: 80%;
 }
 
-input.toggle:not(.button),
-.toggle input:not(.button) {
-    border: 0;
-	outline: 0;
-	min-width: 0;
-    min-height: 0;
-}
+// input.toggle:not(.button),
+// .toggle input:not(.button) {
+//     border: 0;
+// 	outline: 0;
+// 	min-width: 0;
+//     min-height: 0;
+// }
 
-input.toggle:not(.button,.icon),
-.toggle input:not(.button,.icon) {
-	height: 0;
-	width: 0;
-	padding: 0;
-    margin: 0;
-}
-
-.hoverable > ul > li ul,
-.hoverable > li ul,
-.toggle + *,
-.closed {
-	max-height      : 1px;
-	min-height      : 0;
-	opacity         : 0;
-	padding-block   : 0;
-	pointer-events  : none;
-	pointer-events  : none;
-	transform       : scaleY(.8) translateY(-4px) translateZ(0);
-	transform-origin: top;
-	transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
-	transition-delay: .1s;
-	z-index         : 2;
-}
-
-@each $breakpoint,
-$breakpoint_width in $breakpoints {
-	@media screen and (min-width: $breakpoint_width) {
-
-		.#{$breakpoint}-hoverable > ul > li ul,
-		.#{$breakpoint}-hoverable > li ul {
-			max-height      : 1px;
-			min-height      : 0;
-			opacity         : 0;
-			padding-block   : 0;
-			pointer-events  : none;
-			pointer-events  : none;
-			transform       : scaleY(.8) translateY(-4px) translateZ(0);
-			transform-origin: top;
-			transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
-			transition-delay: .1s;
-			z-index         : 2;
-		}
-	}
-}
+// input.toggle:not(.button,.icon),
+// .toggle input:not(.button,.icon) {
+// 	height: 0;
+// 	width: 0;
+// 	padding: 0;
+//     margin: 0;
+// }
 
 input.toggle:not(:checked)+*,
 .toggle:has(input:not(:checked))+* {
 	padding-block: 0;
 }
 
-%toggleopen {
-	max-height    : 100vh;
-	opacity       : 1;
-	pointer-events: all;
-	transform     : none;
-	z-index       : 2;	
-}
-
-// @for $i from 1 through 40 {
-// 	.tabs :has(:nth-child(#{$i}) :checked) + * > :nth-child(#{$i}) {
-// 	  @extend %toggleopen;
-// 	}
+// .toggle-container {
+// 	background-color: red;
 // }
 
-.hoverable>li:hover>ul,
-.hoverable li:has(:focus-visible)>ul,
-.hoverable>ul>li:hover>ul,
-.toggle.hoverable:hover+*,
-.toggle:checked+*,
-.toggle:has(:checked)+*,
-.toggle.active+*,
-.toggle-container:focus-within .toggle+*,
-.toggle-container .toggle+*:hover,
-.open{
-	@extend %toggleopen;
-}
+// .toggle-container:focus-within .toggle {
+// 	pointer-events: none;
+// }
 
-.toggle-container:focus-within .toggle {
-	pointer-events: none;
+.toggle:focus,
+.toggle:focus-visible {
+	pointer-events: none !important;
 }
 
 .tabpanels > * {
@@ -117,20 +61,74 @@ input.toggle:not(:checked)+*,
 	z-index       : 4;
 }
 
+.hoverable > ul > li ul,
+.hoverable > li ul,
+[data-toggle=next] + *,
+[data-toggle=""] + *,
+[data-toggle="hover"] + *,
+.toggle + *,
+menu > li:nth-child(2),
+.closed {
+	@extend %ui-closed;
+}
+
+menu {
+	display: inline-block;
+	position: relative;
+	> li:first-child {
+		cursor: pointer;
+	}
+	> li:nth-child(2) {
+		position: absolute;
+		width: max-content;
+		max-width: 300px;
+		min-width: 160px;
+	}
+	> li:focus-within + li,
+	// &:focus-within > li:nth-child(2),
+	& > li:nth-child(2):has(:focus-visible),
+	& > li:nth-child(2):has(:active),
+		& > li:nth-child(2):not(:focus-within):hover {
+		@extend %ui-open;
+	}
+	// &:focus-within > li:first-child > * {
+	> li:focus-within > * {
+		// pointer-events: none;
+	}
+}
+
+.hoverable>li:hover>ul,
+.hoverable li:has(:focus-visible)>ul,
+.hoverable>ul>li:hover>ul,
+// .toggle.hoverable:hover+*,
+// .toggle:checked+*,
+// .toggle:has(:checked)+*,
+// .toggle.active+*,
+// .toggle-container:focus-within .toggle+*,
+// .toggle-container .toggle+*:hover,
+// .toggle:focus+*,
+// .toggle+*:focus-within,
+[data-toggle=hover].hoverable:hover + *,
+.toggle+*:hover,
+.open{
+	@extend %ui-open;
+}
+
 @each $breakpoint,
 $breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
+
+		.#{$breakpoint}-hoverable > ul > li ul,
+		.#{$breakpoint}-hoverable > li ul {
+			@include ui-closed;
+		}
 
 		.toggle.#{$breakpoint}-hoverable:hover+*,
 		.#{$breakpoint}-hoverable>ul>li:hover>ul,
 		.#{$breakpoint}-hoverable>li:hover>ul,
 		.#{$breakpoint}-hoverable li:has(:focus-visible)>ul,
 		.#{$breakpoint}-open {
-			max-height    : 100vh;
-			opacity       : 1;
-			pointer-events: all;
-			transform     : none;
-			z-index       : 2;
+			@include ui-open;
 		}
 	}
 }

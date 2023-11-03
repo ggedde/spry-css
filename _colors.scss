@@ -43,22 +43,6 @@
 	background-color: var(--faint);
 }
 
-button,
-.badge,
-[type=submit],
-.button,
-.alert {
-	@if (lightness(map-get($colors, 'default')) > 70) {
-		--text-color: var(--dark);
-		--text-color-rgb: var(--dark-rgb);
-	}
-
-	@else {
-		--text-color: var(--light);
-		--text-color-rgb: var(--light-rgb);
-	}
-}
-
 .badge.faint,
 button.faint,
 [type=submit].faint,
@@ -82,21 +66,6 @@ $color_value in $colors {
 		--text-color     : var(--#{$color_name});
 		--text-color-rgb : var(--#{$color_name}-rgb);
 		color            : var(--text-color);
-	}
-
-	.badge.#{$color_name},
-	button.#{$color_name},
-	button.icon.#{$color_name}:not(.hazy,.outline,.link),
-	[type=submit].#{$color_name},
-	.button.#{$color_name},
-	.alert.#{$color_name} {
-		@if (lightness($color_value) > 70) {
-			--text-color: var(--dark);
-		}
-
-		@else {
-			--text-color: var(--light);
-		}
 	}
 }
 
@@ -209,7 +178,7 @@ $color_value in $colors {
 @each $color_name,
 $color_value in $colors {
 
-	[class].#{$color_name}:not(article) {
+	[class].#{$color_name} {
 		--color     : var(--#{$color_name});
 		--color-rgb : var(--#{$color_name}-rgb);
 	}
@@ -218,7 +187,7 @@ $color_value in $colors {
 		--card-color: var(--#{$color_name});
 	}
 
-	.icon.#{$color_name},
+	.icon.#{$color_name}:not(button,.button),
 	.color-#{$color_name},
 	[class*=color-#{$color_name}],
 	a.color-#{$color_name},
@@ -236,17 +205,23 @@ $color_value in $colors {
 	}
 
 	.bg-#{$color_name},
+	.bg-hover-#{$color_name}:hover,
+	button.bg-hover-#{$color_name}:not(:active):is(:hover,:focus,:focus-within),
 	.tooltip.bg-#{$color_name} {
 		background-color: var(--#{$color_name});
 	}
-	.bg-#{$color_name}-hazy {
+	.bg-#{$color_name}-hazy,
+	.bg-hover-#{$color_name}-hazy:hover,
+	button.bg-hover-#{$color_name}-hazy:not(:active):is(:hover,:focus,:focus-within) {
 		background-color: rgba(var(--#{$color_name}-rgb), .1);
 	}
 
-	.border-#{$color_name} {
+	.border-#{$color_name},
+	button.border-#{$color_name} {
 		border-color: var(--#{$color_name});
 	}
-	.border-#{$color_name}-hazy {
+	.border-#{$color_name}-hazy,
+	button.border-#{$color_name}-hazy {
 		border-color: rgba(var(--#{$color_name}-rgb), .4);
 	}
 }

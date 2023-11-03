@@ -1,6 +1,11 @@
 /*!
 * Spry Icons
 */
+@use "ui" as *;
+
+i:empty, .icon {
+	@extend %ui-color;
+}
 
 :is(i:empty, .icon:empty):is(.outline, .hazy) {
 	width : 2em;
@@ -37,10 +42,6 @@ i:has(svg) {
 :is(.button):has(:checked) svg:nth-of-type(2) {
 	opacity  : 1;
 	transform: scale(1);
-}
-
-.show-invalid :not(:focus):user-invalid {
-	border-color: #ff0000;
 }
 
 .icon {
@@ -134,7 +135,7 @@ i svg {
 		}
 	}
 
-	&.menu:not(:checked, :has(:checked)) {
+	&.menu:not([aria-pressed=true]) {
 
 		&::before,
 		&::after {
@@ -159,6 +160,8 @@ i svg {
 .toggle.icon:has(:checked)::after,
 .toggle.active > .icon::after,
 .toggle.hoverable:hover .icon::after,
-.icon:checked::after {
+.icon[aria-pressed=true]::after,
+[aria-pressed=true] > .icon::after,
+[aria-pressed=true] > i:empty::after {
 	rotate: 180deg;
 }

@@ -1,0 +1,48 @@
+/*!
+* Spry Loader
+*/
+@use "variables" as *;
+@use "ui" as *;
+
+@keyframes spinner {
+	0% {
+		transform: rotate(0deg)
+	}
+
+	90%,
+	100% {
+		transform: rotate(360deg)
+	}
+}
+
+[aria-busy] {
+	position: relative;
+
+	&::after {
+		content       : '';
+		box-sizing    : border-box;
+		position      : absolute;
+		inset         : 0;
+		margin        : auto;
+		width         : 1.3em;
+		height        : 1.3em;
+		border-radius : 50%;
+		border        : .15em solid transparent;
+		border-color  : var(--text-color) var(--text-color) transparent transparent;
+		opacity       : 0;
+		pointer-events: none;
+		transition    : opacity .3s ease-in-out .1s;
+	}
+}
+
+[aria-busy=true] {
+	pointer-events: none;
+	user-select   : none;
+	cursor        : default;
+	color         : transparent;
+
+	&::after {
+		opacity  : 1;
+		animation: spinner .8s ease infinite;
+	}
+}

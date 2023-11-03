@@ -3,15 +3,15 @@
 */
 @use "variables"as *;
 
-.grid,
-.row,
-[class^=grid-],
-[class*=" grid-"],
-[class^=g-],
-[class*=" g-"],
-[class*="-g-"] {
-	gap: var(--gap);
-}
+// .grid,
+// .row,
+// [class^=grid-],
+// [class*=" grid-"],
+// [class^=g-],
+// [class*=" g-"],
+// [class*="-g-"] {
+// 	gap: var(--gap);
+// }
 
 [class^=columns-],
 [class*=" columns-"],
@@ -43,13 +43,13 @@
 }
 
 .column {
-	display: flex;
+	display       : flex;
 	flex-direction: column;
 }
 
 .row {
-	display  : flex;
-	flex-wrap: wrap;
+	display       : flex;
+	flex-wrap     : wrap;
 	flex-direction: row;
 	grid-auto-flow: column;
 
@@ -66,12 +66,14 @@
 		flex     : 0 auto;
 		min-width: auto;
 		max-width: none;
+		width    : auto;
 	}
 
 	>.col-auto {
 		flex     : 0 auto;
 		min-width: auto;
 		max-width: none;
+		width    : auto;
 	}
 }
 
@@ -95,6 +97,7 @@
 $space in $spacing {
 	.g-#{$s} {
 		--gap: #{$space};
+		gap: var(--gap);
 	}
 }
 
@@ -117,21 +120,21 @@ $breakpoint_width in $breakpoints {
 		}
 
 		.#{$breakpoint}-column {
-			display: flex;
+			display       : flex;
 			flex-direction: column;
 		}
-		
+
 		.#{$breakpoint}-row {
-			display  : flex;
-			flex-wrap: wrap;
+			display       : flex;
+			flex-wrap     : wrap;
 			flex-direction: row;
 			grid-auto-flow: column;
-	
+
 			>* {
 				flex: 0 100%;
 			}
 		}
-	
+
 		.grid,
 		[class*=grid-] {
 			display: grid;
@@ -154,21 +157,24 @@ $breakpoint_width in $breakpoints {
 		}
 
 		.row.#{$breakpoint}-columns-auto>* {
-			flex     : auto;
+			flex     : 0 auto;
 			min-width: auto;
 			max-width: none;
+			width    : auto;
 		}
 
 		.row>.#{$breakpoint}-col-auto {
 			flex     : 0 auto;
 			min-width: auto;
 			max-width: none;
+			width    : auto;
 		}
 
 		@each $s,
 		$space in $spacing {
 			.#{$breakpoint}-g-#{$s} {
 				--gap: #{$space};
+				gap: var(--gap);
 			}
 		}
 	}

@@ -1,0 +1,18 @@
+/*!
+* Spry Badge
+*/
+@use "ui" as *;
+
+.badge {
+	@extend %ui;
+	@extend %ui-bg;
+	@extend %ui-color;
+	@extend %ui-border;
+	@extend %ui-compact;
+	font-weight: 500;
+	width      : auto;
+
+	&.snug {
+		translate: -1em -.7em;
+	}
+}

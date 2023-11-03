@@ -12,7 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="spry.min.css?v=3.0.0">
-    <script defer src="slider.js?v=2.0.0"></script>
+    <script defer src="slider.js?v=3.0.0"></script>
+    <script defer src="toggle.js?v=1.0.0"></script>
     <link rel="stylesheet" href="prism.css?v=3.0.0">
 </head>
 
@@ -22,63 +23,60 @@
             document.body.setAttribute('data-theme', 'dark');
         }
     </script>
-    <div class="flex bg-inherit">
-        <aside class="w-0 md-mw-200 index-4">
-            <div class="sticky bg-faint vw-100 toolbar lg">
-                <div class="absolute top left md-outset-bottom mw-200">
-                    <button id="header-nav-mobile-button" class="button toggle link icon lg md-none" data-toggle="#header-nav">
-
-                    </button>
-                    <nav id="header-nav" class="list bg-faint vh overflow-auto closed md-open w-200 sm allowcloseout allowclosewithin">
-                        <ul class="list pt-2">
-                            <li class="pb-2">
-                                <h5 class="pl-2">
-                                    <i class="sm mr-2">
-                                        <svg viewBox="0 0 24 24"><path d="M13,3H11V13H13V3M17.83,5.17L16.41,6.59C18.05,7.91 19,9.9 19,12A7,7 0 0,1 12,19C8.14,19 5,15.88 5,12C5,9.91 5.95,7.91 7.58,6.58L6.17,5.17C2.38,8.39 1.92,14.07 5.14,17.86C8.36,21.64 14.04,22.1 17.83,18.88C19.85,17.17 21,14.65 21,12C21,9.37 19.84,6.87 17.83,5.17Z" /></svg>
-                                    </i>
-                                    Getting Started
-                                </h5>
-                                <hr class="m-1 o-30" />
-                            </li>
-                            <li><a href="#start">About SpryCSS</a></li>
-                            <li><a href="#installation">Installation</a></li>
-                            <li><a href="#scss">SCSS & CSS</a></li>
-                            <li><a href="#typography">Typography</a></li>
-                            <li><a href="#colors">Colors</a></li>
-                            <li><a href="#themes">Themes</a></li>
-                            <li><a href="#icons">Icons</a></li>
-                            <li><a href="#support">Support</a></li>
-                            <li class="pt-3 pb-2">
-                                <h5 class="pl-2">
-                                    <i class="sm mr-2">
-                                        <svg viewBox="0 0 24 24"><path d="M13 3v6h8V3m-8 18h8V11h-8M3 21h8v-6H3m0-2h8V3H3v10z" /></svg>
-                                    </i>
-                                    Layout & Utilities
-                                </h5>
-                                <hr class="m-1 o-30" />
-                            </li>
-                            <li><a href="#breakpoints">Breakpoints</a></li>
-                            <li><a href="#gaps">Gaps</a></li>
-                            <li><a href="#grid">Grid</a></li>
-                            <li><a href="#sizes">Sizing</a></li>
-                            <li><a href="#utilities-spacing">Spacing</a></li>
-                            <li><a href="#toggles">Toggles</a></li>
-                            <li><a href="#utilities">Utilities</a></li>
-                            <li class="pt-3 pb-2">
-                                <h5 class="pl-2">
-                                    <i class="sm mr-2">
-                                        <svg viewBox="0 0 24 24"><path d="M16 20h4v-4h-4m0-2h4v-4h-4m-6-2h4V4h-4m6 4h4V4h-4m-6 10h4v-4h-4m-6 4h4v-4H4m0 10h4v-4H4m6 4h4v-4h-4M4 8h4V4H4v4z" /></svg>
-                                    </i>
-                                    Components
-                                </h5>
-                                <hr class="m-1 o-30" />
-                            </li>
-                            <li><a href="#accordions">Accordions</a></li>
-                            <li><a href="#alerts">Alerts</a></li>
-                            <li><a href="#badges">Badges</a></li>
-                            <li>
-                                <a href="#buttons">Buttons</a>
-                                <input type="checkbox" class="button toggle link icon down circle">
+    <div class="bg-inherit">
+        <div class="sticky toolbar lg index-4 bg-faint pl-1">
+            <div class="flex-middle bg-inherit toggle-container">
+                <button id="header-nav-mobile-button" class="button link icon menu lg md-none mr-1" data-toggle></button>
+                <nav id="header-nav" class="list absolute left mw-200 outset-bottom bg-inherit vh overflow-auto py-2 md-open sm">
+                    <ul class="list pt-2">
+                        <li class="pb-2">
+                            <h5 class="pl-2">
+                                <i class="sm mr-2">
+                                    <svg viewBox="0 0 24 24"><path d="M13,3H11V13H13V3M17.83,5.17L16.41,6.59C18.05,7.91 19,9.9 19,12A7,7 0 0,1 12,19C8.14,19 5,15.88 5,12C5,9.91 5.95,7.91 7.58,6.58L6.17,5.17C2.38,8.39 1.92,14.07 5.14,17.86C8.36,21.64 14.04,22.1 17.83,18.88C19.85,17.17 21,14.65 21,12C21,9.37 19.84,6.87 17.83,5.17Z" /></svg>
+                                </i>
+                                Getting Started
+                            </h5>
+                            <hr class="m-1 o-30" />
+                        </li>
+                        <li><a href="#start">About SpryCSS</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#scss">SCSS & CSS</a></li>
+                        <li><a href="#typography">Typography</a></li>
+                        <li><a href="#colors">Colors</a></li>
+                        <li><a href="#themes">Themes</a></li>
+                        <li><a href="#icons">Icons</a></li>
+                        <li><a href="#support">Support</a></li>
+                        <li class="pt-3 pb-2">
+                            <h5 class="pl-2">
+                                <i class="sm mr-2">
+                                    <svg viewBox="0 0 24 24"><path d="M13 3v6h8V3m-8 18h8V11h-8M3 21h8v-6H3m0-2h8V3H3v10z" /></svg>
+                                </i>
+                                Layout & Utilities
+                            </h5>
+                            <hr class="m-1 o-30" />
+                        </li>
+                        <li><a href="#breakpoints">Breakpoints</a></li>
+                        <li><a href="#gaps">Gaps</a></li>
+                        <li><a href="#grid">Grid</a></li>
+                        <li><a href="#sizes">Sizing</a></li>
+                        <li><a href="#utilities-spacing">Spacing</a></li>
+                        <li><a href="#toggles">Toggles</a></li>
+                        <li><a href="#utilities">Utilities</a></li>
+                        <li class="pt-3 pb-2">
+                            <h5 class="pl-2">
+                                <i class="sm mr-2">
+                                    <svg viewBox="0 0 24 24"><path d="M16 20h4v-4h-4m0-2h4v-4h-4m-6-2h4V4h-4m6 4h4V4h-4m-6 10h4v-4h-4m-6 4h4v-4H4m0 10h4v-4H4m6 4h4v-4h-4M4 8h4V4H4v4z" /></svg>
+                                </i>
+                                Components
+                            </h5>
+                            <hr class="m-1 o-30" />
+                        </li>
+                        <li><a href="#accordions">Accordions</a></li>
+                        <li><a href="#alerts">Alerts</a></li>
+                        <li><a href="#badges">Badges</a></li>
+                        <li>
+                            <a href="#buttons">Buttons</a>
+                                <button class="link icon down circle sm" data-toggle></button>
                                 <ul class="sm pl-3">
                                     <li><a href="#buttons">Default</a></li>
                                     <li><a href="#buttons-outline">Outline</a></li>
@@ -89,52 +87,51 @@
                                     <li><a href="#buttons-icons">With Icons</a></li>
                                     <li><a href="#buttons-loader">With Loader</a></li>
                                 </ul>
-                            </li>
-                            <li><a href="#cards">Cards</a></li>
-                            <li>
-                                <a href="#forms">Forms</a>
-                                <input type="checkbox" class="button toggle link icon down circle">
-                                <ul class="sm pl-3">
-                                    <li><a href="#forms">Simple Form</a></li>
-                                    <li><a href="#forms-responsive-labels">Responsive Labels</a></li>
-                                    <li><a href="#forms-resize">Sizing</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#lists">Lists</a></li>
-                            <li><a href="#loader">Loader</a></li>
-                            <li><a href="#modals">Modals</a></li>
-                            <li><a href="#nav">Nav & Menus</a></li>
-                            <li>
-                                <a href="#sliders">Sliders</a>
-                                <input type="checkbox" class="button toggle link icon down circle">
-                                <ul class="sm pl-3">
-                                    <li><a href="#slider-js">Javascript</a></li>
-                                    <li><a href="#sliders-image">Image Slider</a></li>
-                                    <li><a href="#sliders-breakpoints">Breakpoints</a></li>
-                                    <li><a href="#sliders-thumbnails">With Thumbnails</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#tables">Tables</a></li>
-                            <li><a href="#tabs">Tabs</a></li>
-                            <li class="pb-4"><a href="#tooltip">Tooltips</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <h5 class="ml-3 md-ml-0 flex-middle index-1 md">
+                        </li>
+                        <li><a href="#cards">Cards</a></li>
+                        <li>
+                            <a href="#forms">Forms</a>
+                            <button class="link icon down circle sm" data-toggle></button>
+                            <ul class="sm pl-3">
+                                <li><a href="#forms">Simple Form</a></li>
+                                <li><a href="#forms-responsive-labels">Responsive Labels</a></li>
+                                <li><a href="#forms-resize">Sizing</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#lists">Lists</a></li>
+                        <li><a href="#loader">Loader</a></li>
+                        <li><a href="#modals">Modals</a></li>
+                        <li><a href="#nav">Nav & Menus</a></li>
+                        <li>
+                            <a href="#sliders">Sliders</a>
+                            <button class="link icon down circle sm" data-toggle></button>
+                            <ul class="sm pl-3">
+                                <li><a href="#slider-js">Javascript</a></li>
+                                <li><a href="#sliders-image">Image Slider</a></li>
+                                <li><a href="#sliders-breakpoints">Breakpoints</a></li>
+                                <li><a href="#sliders-thumbnails">With Thumbnails</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#tables">Tables</a></li>
+                        <li><a href="#tabs">Tabs</a></li>
+                        <li class="pb-4"><a href="#tooltip">Tooltips</a></li>
+                    </ul>
+                </nav>
+                <h5 class="flex-middle index-1 md">
                     <a class="mr-2" href="https://ggedde.github.io/spry-css">SpryCSS</a>
                     <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases" alt="Release">
                 </h5>
-                <div class="center ml-2 flex-middle sm">
-                    <button class="shy icon link contrast circle p-0 mr-1" onclick="toggleTheme(document.body);">
-                        <svg class="xl" viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg>
-                    </button>
-                    <a href="https://github.com/ggedde/spry-css" class="button shy icon link contrast circle mr-2">
-                        <svg viewBox="0 0 24 24" class="xl"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" /></svg>
-                    </a>
-                </div>
             </div>
-        </aside>
-        <main class="mw-1200 bg-inherit">
+            <div class="center ml-2 flex-middle sm">
+                <button class="shy icon link contrast circle p-0 mr-1" onclick="toggleTheme(document.body);">
+                    <svg class="xl" viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg>
+                </button>
+                <a href="https://github.com/ggedde/spry-css" class="button shy icon link contrast circle mr-2">
+                    <svg viewBox="0 0 24 24" class="xl"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" /></svg>
+                </a>
+            </div>
+        </div>
+        <main class="mw-1200 md-pl-200 bg-inherit">
 
             <!------------------------------------
             ---------    INSTALLATION    ---------
@@ -368,7 +365,7 @@ $sizes: (
                 <h4>Heading H4</h4>
                 <h5>Heading H5</h5>
                 <h6>Heading H6</h6>
-                <div class="my-2 flex flex-column g-2">
+                <div class="my-2 column g-2">
                     <em>Emphasis</em>
                     <strong>Strong</strong>
                     <u>Underline</u>
@@ -1332,10 +1329,10 @@ $sizes: (
                 </table>
 
                 <div class="show-code" data-title="Basic Toggle">
-                    <label class="button toggle">
+                    <button data-toggle>
                         Toggle Content
-                        <input type="checkbox" class="icon down ml-2" />
-                    </label>
+                        <i class="down ml-2"></i>
+                    </button>
                     <p class="border p-1">
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                         invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
@@ -1375,7 +1372,7 @@ $sizes: (
                 </div>
     
                 <div class="show-code" data-title="Activate on Hover">
-                    <label class="button hoverable toggle">
+                    <label class="button hoverable" data-toggle="hover">
                         Hover Me!
                     </label>
                     <div class="collapse">
@@ -2202,7 +2199,6 @@ $sizes: (
                     <button class="primary">Primary</button>
                     <button class="secondary">Secondary</button>
                     <button class="dark">Dark</button>
-                    <button class="light">Light</button>
                     <button class="contrast">Contrast</button>
                     <button class="faint">Faint</button>
 
@@ -2211,7 +2207,6 @@ $sizes: (
                     <a href="#" class="button primary">Primary</a>
                     <a href="#" class="button secondary">Secondary</a>
                     <a href="#" class="button dark">Dark</a>
-                    <a href="#" class="button light">Light</a>
                     <a href="#" class="button contrast">Contrast</a>
                     <a href="#" class="button faint">Faint</a>
                 </div>
@@ -2342,23 +2337,23 @@ $sizes: (
 
                 <div id="buttons-custom" class="show-code" data-title="Custom Icon Classes With Toggles">
                     <p>
-                        <label class="button">
+                        <button data-toggle="null">
                             With Text Left
-                            <input type="checkbox" class="icon up ml-2" />
-                        </label>
+                            <i class="up ml-2"></i>
+                        </button>
 
-                        <label class="button">
-                            <input type="checkbox" class="icon up mr-2" />
+                        <button data-toggle="null">
+                            <i class="up mr-2"></i>
                             With Text Right
-                        </label>
+                        </button>
 
-                        <input type="checkbox" class="button icon down" />
-                        <input type="checkbox" class="button icon up" />
-                        <input type="checkbox" class="button icon prev" />
-                        <input type="checkbox" class="button icon next" />
-                        <input type="checkbox" class="button icon menu" />
-                        <input type="checkbox" class="button icon dots" />
-                        <input type="checkbox" class="button icon search" />
+                        <button data-toggle="null" class="icon down"></button>
+                        <button data-toggle="null" class="icon up"></button>
+                        <button data-toggle="null" class="icon prev"></button>
+                        <button data-toggle="null" class="icon next"></button>
+                        <button data-toggle="null" class="icon menu"></button>
+                        <button data-toggle="null" class="icon dots"></button>
+                        <button data-toggle="null" class="icon search"></button>
                     </p>
                 </div>
     
@@ -2550,6 +2545,24 @@ $sizes: (
                                 </label>
                             </div>
                         </div>
+                        <div class="row py-3 g-3">
+                            <div>
+                                <label><h5>Field with Prefix</h5>
+                                    <div class="row g-0">
+                                        <span class="ui rounded-left col-auto">Prefix</span>
+                                        <input class="rounded-right bl-0" type="text" required />
+                                    </div>
+                                </label>
+                            </div>
+                            <div>
+                                <label><h5>Field with Suffix</h5>
+                                    <div class="row g-0">
+                                        <input class="rounded-left br-0" type="text" required />
+                                        <span class="ui rounded-right col-auto">Suffix</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
                         <div class="row g-3">
                             <div>
                                 <h5>Vertical Checkboxes</h5>
@@ -2600,6 +2613,24 @@ $sizes: (
                                         <option>One</option>
                                         <option>Two</option>
                                     </select>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row py-3 g-3">
+                            <div>
+                                <label><h5>Field with Prefix</h5>
+                                    <div class="row g-0">
+                                        <span class="ui rounded-left col-auto">Prefix</span>
+                                        <input class="rounded-right bl-0" type="text" required />
+                                    </div>
+                                </label>
+                            </div>
+                            <div>
+                                <label><h5>Field with Suffix</h5>
+                                    <div class="row g-0">
+                                        <input class="rounded-left br-0" type="text" required />
+                                        <span class="ui rounded-right col-auto">Suffix</span>
+                                    </div>
                                 </label>
                             </div>
                         </div>
@@ -2855,7 +2886,7 @@ $sizes: (
                                     </label>
                                     <label>
                                         <sup>Password</sup>
-                                        <input type="password" required placeholder=" " />
+                                        <input type="password" required placeholder=" "/>
                                     </label>
                                     <a class="button primary link mt-1">Forgot Password?</a>
                                     <button class="primary block mt-3" type="submit">Login</button>
@@ -2866,8 +2897,8 @@ $sizes: (
                 </div>
     
                 <div class="show-code" data-title="Required Large Model with Long content" data-badge="JS">
-                    <button onclick="this.nextElementSibling.classList.add('open')">Open Large Modal</button>
-                    <div class="modal bounce">
+                    <button data-toggle-next>Open Large Modal</button>
+                    <div class="modal bounce" onclick="if (event.target === this) {spryToggle(this);}">
                         <article class="accent-light shadow mw-1200">
                             <header>
                                 <h4>Lorem ipsum dolor</h4>
@@ -2983,8 +3014,8 @@ $sizes: (
                                     Lorem ipsum dolor sit amet.</p>
                             </div>
                             <footer class="px-2">
-                                <button type="button" class="sm outline" onclick="this.closest('.modal').classList.remove('open');">Cancel</button>
-                                <button type="button" class="primary sm ml-1 md-ml-3" onclick="this.closest('.modal').classList.remove('open');">Accept</button>
+                                <button type="button" class="sm outline" data-toggle="close">Cancel</button>
+                                <button type="button" class="primary sm ml-1 md-ml-3" data-toggle="close">Accept</button>
                             </footer>
                         </article>
                     </div>
@@ -3493,25 +3524,26 @@ $sizes: (
                 </div>
     
                 <div id="menus" class="show-code" data-title="Toggle Menu List">
-                    <input type="checkbox" class="button toggle link icon menu allowcloseout" />
-                    <div class="collapse closed allowcloseout allowclosewithin">
-                        <ul class="list bg-faint rounded shadow mw-200">
+                    <button class="link icon menu" data-toggle></button>
+                    <nav class="absolute list bg-faint rounded shadow mw-200">
+                        <ul>
                             <li><a href="http://google.com">Link 1</a></li>
+                            <li>Sadd</li>
                             <li><a href="http://gedde.dev">Link 2</a></li>
                             <li><a href="http://google.com">Link 3</a></li>
-                        </menu>
-                    </div>
+                        </ul>
+                    </nav>
                 </div>
 
                 <div id="menus" class="show-code" data-title="Toggle Dropdown">
-                    <input id="selected1" type="text" class="is-select" value="" data-toggle readonly />
-                    <div class="collapse closed allowclosewithin allowcloseout">
-                        <ul class="list bg-faint rounded shadow mw-200">
+                    <input id="selected1" type="text" class="is-select" data-toggle value="" readonly />
+                    <nav class="absolute list bg-faint rounded shadow mw-200">
+                        <ul>
                             <li><label class="button link contrast"><input class="hide" type="radio" name="efe" value="I1" onclick="document.getElementById('selected1').value = this.parentElement.innerText;">Item 1</label></li>
                             <li><label class="button link contrast"><input class="hide" type="radio" name="efe" value="I2" onclick="document.getElementById('selected1').value = this.parentElement.innerText;">Item 2</label></li>
                             <li><label class="button link contrast"><input class="hide" type="radio" name="efe" value="I3" onclick="document.getElementById('selected1').value = this.parentElement.innerText;">Item 3</label></li>
-                        </menu>
-                    </div>
+                        </ul>
+                    </nav>
                 </div>
 
                 <div id="menus" class="show-code" data-title="Toggle Dropdown">
@@ -3921,15 +3953,58 @@ $sizes: (
                                 <td>200</td>
                                 <td>Red</td>
                                 <td class="text-right">
-                                    <label class="toggle button link icon circle contrast">
+                                    <button class="link icon circle contrast" data-toggle>
                                         <svg class="lg" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
-                                        <input type="checkbox">
                                         <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                                    </label>
-                                    <div class="collapse">
-                                        <ul class="list bg-faint mw-200 top right rounded">
-                                            <li><button class="link contrast"><i class="color-primary mr-1"><svg viewBox="0 0 24 26"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg></i>Edit</button></li>
-                                            <li><button class="link contrast"><i class="color-secondary mr-1"><svg viewBox="0 0 24 26"><path d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9M7 6h10v13H7V6m2 2v9h2V8H9m4 0v9h2V8h-2z" /></svg></i><span>Delete</span></button></li>
+                                    </button>
+                                    <nav class="list absolute bg-faint right rounded shadow">
+                                        <ul>
+                                            <li><button class="link contrast" onclick="console.log('123'); this.blur();" data-toggle="close"><i class="color-primary mr-1"><svg viewBox="0 0 24 26"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg></i>Edit</button></li>
+                                            <li>asdf asdf asdf </li>
+                                            <li><button class="link contrast" onclick="console.log('adf')" data-toggle="close"><i class="color-secondary mr-1"><svg viewBox="0 0 24 26"><path d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9M7 6h10v13H7V6m2 2v9h2V8H9m4 0v9h2V8h-2z" /></svg></i><span>Delete</span></button></li>
+                                            <li>
+                                                <button class="link contrast" data-toggle="close" onclick="spryToggle('#aaa');">
+                                                    <i class="mr-1"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z" /></svg></i>
+                                                    Open Modal 111
+                                                </button>
+                                                
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <div class="modal" id="aaa">
+                                        <article class="mw-400 shadow">
+                                            <header>
+                                                <h4>No Backdrop Modal Example</h4>
+                                                <label class="button link icon close circle mr-n1" data-toggle="close"></label>
+                                            </header>
+                                            <p class="mb-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                                tempor invidunt ut labore et dolore magna aliquyam erat</p>
+                                        </article>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tier 2</td>
+                                <td>400</td>
+                                <td>Blue</td>
+                                <td class="text-right">
+                                    <button class="button link icon circle contrast" data-toggle="#bbbb">
+                                        <svg class="lg" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
+                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                                    </button>
+                                    <button class="button link icon circle contrast" data-toggle=".hhhhh">
+                                        <svg class="lg" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
+                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                                    </button>
+                                    <button class="button link icon circle contrast" data-toggle>
+                                        <svg class="lg" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
+                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                                    </button>
+                                    <nav id="bbbb" class="list bg-faint right rounded shadow hhhhh">
+                                        <ul>
+                                            <li><button class="link contrast" onclick="console.log('123'); this.blur();"><i class="color-primary mr-1"><svg viewBox="0 0 24 26"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg></i>Edit</button></li>
+                                            <li>asdf asdf asdf </li>
+                                            <li><button class="link contrast" onclick="console.log('adf')"><i class="color-secondary mr-1"><svg viewBox="0 0 24 26"><path d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9M7 6h10v13H7V6m2 2v9h2V8H9m4 0v9h2V8h-2z" /></svg></i><span>Delete</span></button></li>
                                             <li>
                                                 <label class="toggle button link contrast">
                                                     <input id="table1-item1-modal-toggle" type="checkbox" />
@@ -3948,14 +4023,8 @@ $sizes: (
                                                     </article>
                                                 </div></li>
                                         </ul>
-                                    </div>
+                                    </nav>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>Tier 2</td>
-                                <td>400</td>
-                                <td>Blue</td>
-                                <td class="text-right"><a href="#" class="button link sm px-2">Learn More</a></td>
                             </tr>
                             <tr>
                                 <td>Tier 3</td>
@@ -4394,6 +4463,7 @@ $sizes: (
                 html = html.replaceAll('data-snap=""', 'data-snap');
                 html = html.replaceAll('data-over=""', 'data-over');
                 html = html.replaceAll('data-wait=""', 'data-wait');
+                html = html.replaceAll('data-toggle=""', 'data-toggle');
                 html = html.replaceAll('data-theme-dark=""', 'data-theme-dark');
             });
 
@@ -4408,163 +4478,169 @@ $sizes: (
             });
         });
 
-        document.querySelectorAll('input.toggle, .toggle input').forEach(elem => {
-            elem.addEventListener('keyup', (event) => {
-                if(event.keyCode === 13) {
-                    event.preventDefault();
-                    event.target.click();
-                }
-            });
-        });
+        // document.querySelectorAll('input.toggle, .toggle input').forEach(elem => {
+        //     elem.addEventListener('keyup', (event) => {
+        //         if(event.keyCode === 13) {
+        //             event.preventDefault();
+        //             event.target.click();
+        //         }
+        //     });
+        // });
 
-        document.querySelectorAll('[data-toggle]').forEach(elem => {
-            if (elem.classList.contains('hoverable')) {
-                elem.addEventListener('mouseover', () => {
-                        toggle(elem.getAttribute('data-toggle'), 'open');
-                });
-                elem.addEventListener('mouseout', () => {
-                        toggle(elem.getAttribute('data-toggle'), 'close');
-                });
-            } else {
-                elem.addEventListener('click', () => {
-                    toggle(elem.getAttribute('data-toggle'));
-                });
-            }
+        // document.querySelectorAll('.toggle').forEach(elem => {
+        //     // if (elem.classList.contains('hoverable')) {
+        //     //     elem.addEventListener('mouseover', () => {
+        //     //             toggle(elem.getAttribute('data-toggle'), 'open');
+        //     //     });
+        //     //     elem.addEventListener('mouseout', () => {
+        //     //             toggle(elem.getAttribute('data-toggle'), 'close');
+        //     //     });
+        //     // } else {
+        //     //     elem.addEventListener('click', () => {
+        //     //         toggle(elem.getAttribute('data-toggle'));
+        //     //     });
+        //     // }
 
-            elem.addEventListener('keyup', (event) => {
-                if(event.keyCode === 27) toggle(elem.getAttribute('data-toggle'), 'close');
-                if(event.keyCode === 13) toggle(elem.getAttribute('data-toggle'), 'open');
+        //     // elem.addEventListener('keyup', (event) => {
+        //     //     if(event.keyCode === 27) toggle(elem.getAttribute('data-toggle'), 'close');
+        //     //     if(event.keyCode === 13) toggle(elem.getAttribute('data-toggle'), 'open');
                 
-            });
+        //     // });
 
-            elem.addEventListener('keydown', (event) => {
-                if(event.keyCode === 32 || event.keyCode === 40) {
-                    event.preventDefault();
-                    toggle(elem.getAttribute('data-toggle'), 'open');
-                }
-                if(event.keyCode === 40) {
-                    var selector = elem.getAttribute('data-toggle');
-                    var target = !selector || selector === 'next' ? event.target.nextElementSibling : (selector === 'prev' ? event.target.previousElementSibling : document.querySelector(selector));
-                    if (target) {
-                        var first = target.querySelector('.list > li > a, .list > li > button, .list > li > label, .list > li > input');
-                        if (first) {
-                            console.log(first);
-                            first.focus();
-                        }
-                    }
-                }
-            });
-        });
+        //     elem.addEventListener('keydown', (event) => {
+        //         if(event.keyCode === 27) {
+        //             event.target.blur();
+        //         }
+        //         if(event.keyCode === 32 || event.keyCode === 40) {
+        //             event.preventDefault();
+        //             // toggle(elem.getAttribute('data-toggle'), 'open');
+        //         }
+        //         if(event.keyCode === 40) {
+        //             var selector = elem.getAttribute('data-toggle');
+        //             var target = event.target.nextElementSibling;
+        //             if (target) {
+        //                 var first = target.querySelector('li > a, li > button, li > label, li > input');
+        //                 if (first) {
+        //                     // console.log(first);
+        //                     first.focus();
+        //                 }
+        //             }
+        //         }
+        //     });
+        // });
 
-        document.querySelectorAll('.allowclosewithin').forEach(item => {
-            item.addEventListener('click', event => {
-                if (['A','BUTTON','LABEL'].includes(event.target.tagName)) {
-                    toggle(item, 'close', event.target);
-                }
-            });
-            item.addEventListener('keyup', event => {
-                if ([13,32].includes(event.keyCode) && ['A','BUTTON','LABEL'].includes(event.target.tagName)) {
-                    toggle(item, 'close', event.target);
-                }
-            });
-        });
+        // document.querySelectorAll('.allowclosewithin').forEach(item => {
+        //     item.addEventListener('click', event => {
+        //         if (['A','BUTTON','LABEL'].includes(event.target.tagName)) {
+        //             toggle(item, 'close', event.target);
+        //         }
+        //     });
+        //     item.addEventListener('keyup', event => {
+        //         if ([13,32].includes(event.keyCode) && ['A','BUTTON','LABEL'].includes(event.target.tagName)) {
+        //             toggle(item, 'close', event.target);
+        //         }
+        //     });
+        // });
 
-        document.querySelectorAll('.list').forEach(list => {
-            list.addEventListener('keydown', (event) => {
-                if([38,40,13,32,27].includes(event.keyCode)) {
-                    event.preventDefault();
-                    var selected = list.querySelector('li:focus-within');
-                    if (selected) {
-                        var hasCloser = list.closest('.open.allowcloseout');
-                        if(event.keyCode === 27 && hasCloser) {
-                            toggle(hasCloser, 'close', list);
-                        } else if(event.keyCode === 13 || event.keyCode === 32) {
-                            selected.childNodes[0].click();
-                        } else {
-                            var index = [...list.children].indexOf(selected);
-                            if (index > -1) {
-                                var newIndex = (event.keyCode === 40 ? index+1 : index-1);
-                                var sibling = list.children[newIndex];
-                                if (sibling && sibling.children && sibling.children[0]) {
-                                    sibling = sibling.children[0];
-                                    if (!['A','BUTTON','LABEL','INPUT'].includes(sibling.tagName)) {
-                                        if (event.keyCode === 40) newIndex++;
-                                        if (event.keyCode === 38) newIndex--;
-                                        var sibling = list.children[newIndex];
-                                        if (sibling && sibling.children && sibling.children[0]) {
-                                            sibling = sibling.children[0];
-                                        }
-                                    }
-                                }
-                                if (sibling) {
-                                    sibling.focus();
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        })
-        
-
-
-        document.addEventListener('click', (event) => {
-            var docTarget = event.target;
-            document.querySelectorAll('.toggle:checked + *, .toggle:has(:checked) + *').forEach(elem => {
-                console.log(elem);
-                if (!elem.contains(docTarget) && elem.previousElementSibling !== docTarget && elem.previousElementSibling.checked) {
-                    elem.previousElementSibling.click();
-                }
-            });
-            document.querySelectorAll('.toggle.allowcloseout:checked').forEach(elem => {
-                // elem.click();
-            });
-        });
-        
-
-        function toggle(targets, state, fromElement) {
-            if (!fromElement) {
-                fromElement = event.target;
-            }
-            if (typeof targets === 'string') {
-                if (!targets || targets === 'next') {
-                    targets = [fromElement.nextElementSibling];
-                } else if (targets === 'prev') {
-                    targets = [fromElement.previousElementSibling];
-                } else if (targets === 'close') {
-                    targets = [fromElement.closest('.open')];
-                } else {
-                    targets = document.querySelectorAll(targets);
-                }
-            } else if(targets) {
-                targets = [targets];
-            }
+        // document.querySelectorAll('.list').forEach(list => {
             
-            if (!targets.length) return;
-            targets.forEach(target => {
-                if (state && state === 'open') {
-                    target.classList.add('open');
-                } else if (state && state === 'close') {
-                    target.classList.remove('open');
-                    target.classList.remove('closeout');
-                } else {
-                    target.classList.toggle('open');
-                }
+        //     list.addEventListener('keydown', (event) => {
+        //         console.log(list, event);
+        //         if([38,40,13,32,27].includes(event.keyCode)) {
+        //             event.preventDefault();
+        //             var selected = list.querySelector('li:focus-within');
+        //             if (selected) {
+        //                 // var hasCloser = list.closest('.open.allowcloseout');
+        //                 if(event.keyCode === 27) {
+        //                     event.target.blur();
+        //                 } else if(event.keyCode === 13 || event.keyCode === 32) {
+        //                     selected.childNodes[0].click();
+        //                 } else {
+        //                     var children = list.children[0].tagName === 'UL' ? list.children[0].children : list.children;
+        //                     var index = [...children].indexOf(selected);
+        //                     if (index > -1) {
+        //                         var newIndex = (event.keyCode === 40 ? index+1 : index-1);
+        //                         var sibling = children[newIndex];
+        //                         if (sibling && sibling.children && sibling.children[0]) {
+        //                             sibling = sibling.children[0];
+        //                             if (!['A','BUTTON','LABEL','INPUT'].includes(sibling.tagName)) {
+        //                                 if (event.keyCode === 40) newIndex++;
+        //                                 if (event.keyCode === 38) newIndex--;
+        //                                 var sibling = children[newIndex];
+        //                                 if (sibling && sibling.children && sibling.children[0]) {
+        //                                     sibling = sibling.children[0];
+        //                                 }
+        //                             }
+        //                         }
+        //                         if (sibling) {
+        //                             sibling.focus();
+        //                         }
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     });
+        // })
+        
 
-                if (target.classList.contains('open') && target.classList.contains('allowcloseout')) {
-                    setTimeout(() => {
-                        target.classList.add('closeout');
-                    }, 100);
-                } else {
-                    target.classList.remove('closeout');
-                }
-                var type = 'pressed';
-                if (target.classList.contains('modal')) {
-                    type = 'modal';
-                }
-                target.setAttribute('aria-'+type, target.classList.contains('open'));
-            });
-        }
+
+        // document.addEventListener('click', (event) => {
+        //     var docTarget = event.target;
+        //     document.querySelectorAll('.toggle:checked + *, .toggle:has(:checked) + *').forEach(elem => {
+        //         console.log(elem);
+        //         if (!elem.contains(docTarget) && elem.previousElementSibling !== docTarget && elem.previousElementSibling.checked) {
+        //             elem.previousElementSibling.click();
+        //         }
+        //     });
+        //     document.querySelectorAll('.toggle.allowcloseout:checked').forEach(elem => {
+        //         // elem.click();
+        //     });
+        // });
+        
+
+        // function toggle(targets, state, fromElement) {
+        //     if (!fromElement) {
+        //         fromElement = event.target;
+        //     }
+        //     if (typeof targets === 'string') {
+        //         if (!targets || targets === 'next') {
+        //             targets = [fromElement.nextElementSibling];
+        //         } else if (targets === 'prev') {
+        //             targets = [fromElement.previousElementSibling];
+        //         } else if (targets === 'close') {
+        //             targets = [fromElement.closest('.open')];
+        //         } else {
+        //             targets = document.querySelectorAll(targets);
+        //         }
+        //     } else if(targets) {
+        //         targets = [targets];
+        //     }
+            
+        //     if (!targets.length) return;
+        //     targets.forEach(target => {
+        //         if (state && state === 'open') {
+        //             target.classList.add('open');
+        //         } else if (state && state === 'close') {
+        //             target.classList.remove('open');
+        //             target.classList.remove('closeout');
+        //         } else {
+        //             target.classList.toggle('open');
+        //         }
+
+        //         if (target.classList.contains('open') && target.classList.contains('allowcloseout')) {
+        //             setTimeout(() => {
+        //                 target.classList.add('closeout');
+        //             }, 100);
+        //         } else {
+        //             target.classList.remove('closeout');
+        //         }
+        //         var type = 'pressed';
+        //         if (target.classList.contains('modal')) {
+        //             type = 'modal';
+        //         }
+        //         target.setAttribute('aria-'+type, target.classList.contains('open'));
+        //     });
+        // }
 
         // document.querySelectorAll('input:not([type=checkbox],[type=radio]), textarea, select').forEach(elem => {
         //     elem.addEventListener('blur', event => {
