@@ -21,33 +21,58 @@ class Spry {
      * 
      * @returns void
      */
-    static toggle = function(toggleObject) {
+    static toggle = function(toggleObjectOrEvent) {
         var elem = null;
         var hasElement = null;
         var action = 'toggle';
         var pressed = null;
-        var isSelf = null; 
+        var isSelf = null;
+        var downPressed = null;
+
+        if (toggleObjectOrEvent && toggleObjectOrEvent.type && (toggleObjectOrEvent.type === 'keyup' || toggleObjectOrEvent.type === 'keydown')) {
+            if(toggleObjectOrEvent.type === 'keydown' && [40,13,32].includes(toggleObjectOrEvent.keyCode)) {
+                toggleObjectOrEvent.preventDefault();
+            }
+            if((toggleObjectOrEvent.type === 'keyup' && toggleObjectOrEvent.keyCode === 40) || (toggleObjectOrEvent.type === 'keydown' && toggleObjectOrEvent.keyCode !== 40) || ![40,13,32].includes(toggleObjectOrEvent.keyCode)) {
+                return;
+            }
+            if(toggleObjectOrEvent.keyCode === 40) {
+                downPressed = true;
+            }
+        }
 
         /**
          * Find which element and togglers are needed to take action.
          */
-        if (typeof toggleObject === 'string') {
-            elem = document.querySelector(toggleObject);
-        } else if (toggleObject && toggleObject.el && toggleObject.togglers) {
-            elem = toggleObject.el;
-        } else if (toggleObject && toggleObject.target) {
+        if (typeof toggleObjectOrEvent === 'string') {
+            elem = document.querySelector(toggleObjectOrEvent);
+        } else if (toggleObjectOrEvent && toggleObjectOrEvent.el && toggleObjectOrEvent.togglers) {
+            elem = toggleObjectOrEvent.el;
+        } else if (toggleObjectOrEvent && toggleObjectOrEvent.target) {
             this.elements.forEach(toggleElement => {
                 if (toggleElement.togglers) {
                     toggleElement.togglers.forEach(toggler => {
-                        if (toggler.el === toggleObject.target) {
+                        isSelf = false;
+                        if (toggler.el === toggleObjectOrEvent.target) {
                             elem = toggleElement.el;
                             action = toggler.action ? toggler.action : 'toggle';
+                            if (toggler.el === toggleElement.el) {
+                                isSelf = true;
+                            }
                         }
                     });
                 }
             });
-        } else if (toggleObject && toggleObject.tagName) {
-            elem = toggleObject;
+        } else if (toggleObjectOrEvent && toggleObjectOrEvent.tagName) {
+            elem = toggleObjectOrEvent;
+        }
+
+        if (downPressed && elem.classList.contains('open')) {
+            var first = elem.querySelector('li > a, li > button, li > .button, li > input, li > label');
+            if (first) {
+                first.focus();
+            }
+            return;
         }
 
         /**
@@ -55,8 +80,8 @@ class Spry {
          */
         this.elements.forEach(toggleElement => {
             if (toggleElement.el === elem) {
+                
                 hasElement = true;
-                isSelf = toggleElement.togglers.length === 1 && toggleElement.togglers[0].el === toggleElement.el;
                 pressed = action === 'toggle' ? (isSelf ? toggleElement.el.getAttribute('aria-pressed') !== 'true' : !toggleElement.el.classList.contains('open')) : (action === 'open' ? true : false);
 
                 if (isSelf) {
@@ -213,6 +238,12 @@ class Spry {
             toggleElement.togglers.forEach(toggler => {
                 toggler.el.removeEventListener('click', this.toggleBound);
                 toggler.el.addEventListener('click', this.toggleBound);
+
+                toggler.el.removeEventListener('keyup', this.toggleBound);
+                toggler.el.addEventListener('keyup', (this.toggleBound));
+
+                toggler.el.removeEventListener('keydown', this.toggleBound);
+                toggler.el.addEventListener('keydown', (this.toggleBound));
             });
         });
     }
@@ -407,6 +438,48 @@ class Spry {
         });
     }
 
+    static loadLists = function() {
+        document.querySelectorAll('.list').forEach(list => {
+            
+            list.addEventListener('keydown', (event) => {
+                console.log(list, event);
+                if([38,40,13,32,27].includes(event.keyCode)) {
+                    event.preventDefault();
+                    var selected = list.querySelector('li:focus-within');
+                    if (selected) {
+                        // var hasCloser = list.closest('.open.allowcloseout');
+                        if(event.keyCode === 27) {
+                            event.target.blur();
+                        } else if(event.keyCode === 13 || event.keyCode === 32) {
+                            selected.childNodes[0].click();
+                        } else {
+                            var children = list.children[0].tagName === 'UL' ? list.children[0].children : list.children;
+                            var index = [...children].indexOf(selected);
+                            if (index > -1) {
+                                var newIndex = (event.keyCode === 40 ? index+1 : index-1);
+                                var sibling = children[newIndex];
+                                if (sibling && sibling.children && sibling.children[0]) {
+                                    sibling = sibling.children[0];
+                                    if (!['A','BUTTON','LABEL','INPUT'].includes(sibling.tagName)) {
+                                        if (event.keyCode === 40) newIndex++;
+                                        if (event.keyCode === 38) newIndex--;
+                                        var sibling = children[newIndex];
+                                        if (sibling && sibling.children && sibling.children[0]) {
+                                            sibling = sibling.children[0];
+                                        }
+                                    }
+                                }
+                                if (sibling) {
+                                    sibling.focus();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        })
+    }
+
     /**
      * Bind Class Reference to methods to allow for removal of Events to ensure there are no duplicate events.
      */
@@ -421,6 +494,7 @@ class Spry {
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
     Spry.loadToggles();
     Spry.loadSliders();
+    Spry.loadLists();
 } else {
     document.addEventListener('DOMContentLoaded', Spry.loadToggles);
     document.addEventListener('DOMContentLoaded', Spry.loadSliders);

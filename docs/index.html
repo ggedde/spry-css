@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="spry.min.css?v=3.0.0">
-    <script defer src="spry.min.js?v=1.0.0"></script>
+    <script defer src="spry.js?v=1.0.0"></script>
     <link rel="stylesheet" href="prism.css?v=3.0.0">
 </head>
 
@@ -4477,14 +4477,6 @@ $sizes: (
             });
         });
 
-        // document.querySelectorAll('input.toggle, .toggle input').forEach(elem => {
-        //     elem.addEventListener('keyup', (event) => {
-        //         if(event.keyCode === 13) {
-        //             event.preventDefault();
-        //             event.target.click();
-        //         }
-        //     });
-        // });
 
         // document.querySelectorAll('.toggle').forEach(elem => {
         //     // if (elem.classList.contains('hoverable')) {
@@ -4583,63 +4575,8 @@ $sizes: (
         
 
 
-        // document.addEventListener('click', (event) => {
-        //     var docTarget = event.target;
-        //     document.querySelectorAll('.toggle:checked + *, .toggle:has(:checked) + *').forEach(elem => {
-        //         console.log(elem);
-        //         if (!elem.contains(docTarget) && elem.previousElementSibling !== docTarget && elem.previousElementSibling.checked) {
-        //             elem.previousElementSibling.click();
-        //         }
-        //     });
-        //     document.querySelectorAll('.toggle.allowcloseout:checked').forEach(elem => {
-        //         // elem.click();
-        //     });
-        // });
-        
-
-        // function toggle(targets, state, fromElement) {
-        //     if (!fromElement) {
-        //         fromElement = event.target;
-        //     }
-        //     if (typeof targets === 'string') {
-        //         if (!targets || targets === 'next') {
-        //             targets = [fromElement.nextElementSibling];
-        //         } else if (targets === 'prev') {
-        //             targets = [fromElement.previousElementSibling];
-        //         } else if (targets === 'close') {
-        //             targets = [fromElement.closest('.open')];
-        //         } else {
-        //             targets = document.querySelectorAll(targets);
-        //         }
-        //     } else if(targets) {
-        //         targets = [targets];
-        //     }
-            
-        //     if (!targets.length) return;
-        //     targets.forEach(target => {
-        //         if (state && state === 'open') {
-        //             target.classList.add('open');
-        //         } else if (state && state === 'close') {
-        //             target.classList.remove('open');
-        //             target.classList.remove('closeout');
-        //         } else {
-        //             target.classList.toggle('open');
-        //         }
-
-        //         if (target.classList.contains('open') && target.classList.contains('allowcloseout')) {
-        //             setTimeout(() => {
-        //                 target.classList.add('closeout');
-        //             }, 100);
-        //         } else {
-        //             target.classList.remove('closeout');
-        //         }
-        //         var type = 'pressed';
-        //         if (target.classList.contains('modal')) {
-        //             type = 'modal';
-        //         }
-        //         target.setAttribute('aria-'+type, target.classList.contains('open'));
-        //     });
-        // }
+      
+       
 
         // document.querySelectorAll('input:not([type=checkbox],[type=radio]), textarea, select').forEach(elem => {
         //     elem.addEventListener('blur', event => {
@@ -4664,11 +4601,11 @@ $sizes: (
         //     });
         // });
 
-        setTimeout((event) => {
-            console.log('CLOSING');
-            Spry.closeAllToggles();
-            console.log('CLOSED');
-        }, 4000);
+        // setTimeout((event) => {
+        //     console.log('CLOSING');
+        //     Spry.closeAllToggles();
+        //     console.log('CLOSED');
+        // }, 4000);
     </script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
