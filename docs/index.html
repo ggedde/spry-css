@@ -12,8 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="spry.min.css?v=3.0.0">
-    <script defer src="slider.js?v=3.0.0"></script>
-    <script defer src="toggle.js?v=1.0.0"></script>
+    <script defer src="spry.min.js?v=1.0.0"></script>
     <link rel="stylesheet" href="prism.css?v=3.0.0">
 </head>
 
@@ -26,7 +25,7 @@
     <div class="bg-inherit">
         <div class="sticky toolbar lg index-4 bg-faint pl-1">
             <div class="flex-middle bg-inherit toggle-container">
-                <button id="header-nav-mobile-button" class="button link icon menu lg md-none mr-1" data-toggle></button>
+                <button id="header-nav-mobile-button" class="button link icon menu lg md-none mr-1" data-toggle="next"></button>
                 <nav id="header-nav" class="list absolute left mw-200 outset-bottom bg-inherit vh overflow-auto py-2 md-open sm">
                     <ul class="list pt-2">
                         <li class="pb-2">
@@ -76,7 +75,7 @@
                         <li><a href="#badges">Badges</a></li>
                         <li>
                             <a href="#buttons">Buttons</a>
-                                <button class="link icon down circle sm" data-toggle></button>
+                                <button class="link icon down circle absolute right mt-1 mr-2 sm" data-toggle="next" data-toggle-persistent></button>
                                 <ul class="sm pl-3">
                                     <li><a href="#buttons">Default</a></li>
                                     <li><a href="#buttons-outline">Outline</a></li>
@@ -91,7 +90,7 @@
                         <li><a href="#cards">Cards</a></li>
                         <li>
                             <a href="#forms">Forms</a>
-                            <button class="link icon down circle sm" data-toggle></button>
+                            <button class="link icon down circle absolute right mt-1 mr-2 sm" data-toggle="next"></button>
                             <ul class="sm pl-3">
                                 <li><a href="#forms">Simple Form</a></li>
                                 <li><a href="#forms-responsive-labels">Responsive Labels</a></li>
@@ -104,7 +103,7 @@
                         <li><a href="#nav">Nav & Menus</a></li>
                         <li>
                             <a href="#sliders">Sliders</a>
-                            <button class="link icon down circle sm" data-toggle></button>
+                            <button class="link icon down circle absolute right mt-1 mr-2 sm" data-toggle="next"></button>
                             <ul class="sm pl-3">
                                 <li><a href="#slider-js">Javascript</a></li>
                                 <li><a href="#sliders-image">Image Slider</a></li>
@@ -1329,7 +1328,7 @@ $sizes: (
                 </table>
 
                 <div class="show-code" data-title="Basic Toggle">
-                    <button data-toggle>
+                    <button data-toggle="next">
                         Toggle Content
                         <i class="down ml-2"></i>
                     </button>
@@ -1343,7 +1342,7 @@ $sizes: (
                 </div>
 
                 <div class="show-code" data-title="Toggle (JS)">
-                    <button class="toggle" data-toggle="next">Toggle Content<i class="ml-2 down"></i></button>
+                    <button data-toggle="next">Toggle Content<i class="ml-2 down"></i></button>
                     <p class="border p-1 closed">
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                         invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
@@ -1354,7 +1353,7 @@ $sizes: (
                 </div>
     
                 <div class="show-code" data-title="Toggle Collapsed Content">
-                    <label class="button toggle">
+                    <label class="button" data-toggle="next">
                         Toggle Content
                         <input type="checkbox" class="icon down ml-2" />
                     </label>
@@ -1374,6 +1373,7 @@ $sizes: (
                 <div class="show-code" data-title="Activate on Hover">
                     <label class="button hoverable" data-toggle="hover">
                         Hover Me!
+                        <i class="down ml-2"></i>
                     </label>
                     <div class="collapse">
                         <p class="border p-1 bg-faint">
@@ -2337,23 +2337,23 @@ $sizes: (
 
                 <div id="buttons-custom" class="show-code" data-title="Custom Icon Classes With Toggles">
                     <p>
-                        <button data-toggle="null">
+                        <button data-toggle>
                             With Text Left
                             <i class="up ml-2"></i>
                         </button>
 
-                        <button data-toggle="null">
+                        <button data-toggle>
                             <i class="up mr-2"></i>
                             With Text Right
                         </button>
 
-                        <button data-toggle="null" class="icon down"></button>
-                        <button data-toggle="null" class="icon up"></button>
-                        <button data-toggle="null" class="icon prev"></button>
-                        <button data-toggle="null" class="icon next"></button>
-                        <button data-toggle="null" class="icon menu"></button>
-                        <button data-toggle="null" class="icon dots"></button>
-                        <button data-toggle="null" class="icon search"></button>
+                        <button data-toggle class="icon down"></button>
+                        <button data-toggle class="icon up"></button>
+                        <button data-toggle class="icon prev"></button>
+                        <button data-toggle class="icon next"></button>
+                        <button data-toggle class="icon menu"></button>
+                        <button data-toggle class="icon dots"></button>
+                        <button data-toggle class="icon search"></button>
                     </p>
                 </div>
     
@@ -2871,12 +2871,12 @@ $sizes: (
                 </div>
 
                 <div class="show-code" data-title="Login Form Example" data-badge="JS">
-                    <button onclick="this.nextElementSibling.classList.add('open'); this.nextElementSibling.querySelector('[type=email]').focus();">Open Login Modal</button>
-                    <div class="modal blur" onclick="if(event.target === this) this.classList.remove('open')">
+                    <button data-toggle="next" onclick="this.nextElementSibling.querySelector('[type=email]').focus();">Open Login Modal</button>
+                    <div class="modal blur" data-toggle>
                         <article class="mw-400">
                             <header>
                                 <h4>Lorem ipsum dolor as</h4>
-                                <button type="button" class="link icon close circle" onclick="this.closest('.modal').classList.remove('open')"></button>
+                                <button type="button" class="link icon close circle" data-toggle="close"></button>
                             </header>
                             <div class="px-3 pb-3 pt-1">
                                 <form class="accent-primary grid g-2">
@@ -2897,8 +2897,8 @@ $sizes: (
                 </div>
     
                 <div class="show-code" data-title="Required Large Model with Long content" data-badge="JS">
-                    <button data-toggle-next>Open Large Modal</button>
-                    <div class="modal bounce" onclick="if (event.target === this) {spryToggle(this);}">
+                    <button data-toggle="next">Open Large Modal</button>
+                    <div class="modal bounce" data-toggle>
                         <article class="accent-light shadow mw-1200">
                             <header>
                                 <h4>Lorem ipsum dolor</h4>
@@ -3524,7 +3524,7 @@ $sizes: (
                 </div>
     
                 <div id="menus" class="show-code" data-title="Toggle Menu List">
-                    <button class="link icon menu" data-toggle></button>
+                    <button class="link icon menu" data-toggle="next"></button>
                     <nav class="absolute list bg-faint rounded shadow mw-200">
                         <ul>
                             <li><a href="http://google.com">Link 1</a></li>
@@ -3536,7 +3536,7 @@ $sizes: (
                 </div>
 
                 <div id="menus" class="show-code" data-title="Toggle Dropdown">
-                    <input id="selected1" type="text" class="is-select" data-toggle value="" readonly />
+                    <input id="selected1" type="text" class="is-select" data-toggle="next" value="" readonly />
                     <nav class="absolute list bg-faint rounded shadow mw-200">
                         <ul>
                             <li><label class="button link contrast"><input class="hide" type="radio" name="efe" value="I1" onclick="document.getElementById('selected1').value = this.parentElement.innerText;">Item 1</label></li>
@@ -3547,7 +3547,7 @@ $sizes: (
                 </div>
 
                 <div id="menus" class="show-code" data-title="Toggle Dropdown">
-                    <input id="selected2" type="text" class="is-select" value="" data-toggle readonly />
+                    <input id="selected2" type="text" class="is-select" value="" data-toggle="next" readonly />
                     <div class="collapse closed allowcloseout allowclosewithin">
                         <ul class="list bg-faint rounded shadow mw-200">
                             <li><button class="link contrast" onclick="document.getElementById('selected2').value = this.innerHTML;">Item 1</button></li>
@@ -3953,17 +3953,16 @@ $sizes: (
                                 <td>200</td>
                                 <td>Red</td>
                                 <td class="text-right">
-                                    <button class="link icon circle contrast" data-toggle>
+                                    <button class="link icon circle contrast" data-toggle="next" data-toggle-action="open" data-toggle-persistent>
                                         <svg class="lg" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
-                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                                     </button>
-                                    <nav class="list absolute bg-faint right rounded shadow">
+                                    <nav id="jkl" class="list absolute mw-200 bg-faint right rounded shadow">
                                         <ul>
                                             <li><button class="link contrast" onclick="console.log('123'); this.blur();" data-toggle="close"><i class="color-primary mr-1"><svg viewBox="0 0 24 26"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg></i>Edit</button></li>
                                             <li>asdf asdf asdf </li>
                                             <li><button class="link contrast" onclick="console.log('adf')" data-toggle="close"><i class="color-secondary mr-1"><svg viewBox="0 0 24 26"><path d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9M7 6h10v13H7V6m2 2v9h2V8H9m4 0v9h2V8h-2z" /></svg></i><span>Delete</span></button></li>
                                             <li>
-                                                <button class="link contrast" data-toggle="close" onclick="spryToggle('#aaa');">
+                                                <button class="link contrast" data-toggle="close" onclick="Spry.toggle('#aaa');">
                                                     <i class="mr-1"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z" /></svg></i>
                                                     Open Modal 111
                                                 </button>
@@ -3996,17 +3995,17 @@ $sizes: (
                                         <svg class="lg" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
                                         <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                                     </button>
-                                    <button class="button link icon circle contrast" data-toggle>
+                                    <button class="button link icon circle contrast" data-toggle="next">
                                         <svg class="lg" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
                                         <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                                     </button>
-                                    <nav id="bbbb" class="list bg-faint right rounded shadow hhhhh">
+                                    <nav id="bbbb" class="list absolute mw-200 bg-faint right mr-3 rounded shadow hhhhh">
                                         <ul>
-                                            <li><button class="link contrast" onclick="console.log('123'); this.blur();"><i class="color-primary mr-1"><svg viewBox="0 0 24 26"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg></i>Edit</button></li>
+                                            <li><button class="link contrast" data-toggle="close" onclick="console.log('123'); this.blur();"><i class="color-primary mr-1"><svg viewBox="0 0 24 26"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg></i>Edit</button></li>
                                             <li>asdf asdf asdf </li>
-                                            <li><button class="link contrast" onclick="console.log('adf')"><i class="color-secondary mr-1"><svg viewBox="0 0 24 26"><path d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9M7 6h10v13H7V6m2 2v9h2V8H9m4 0v9h2V8h-2z" /></svg></i><span>Delete</span></button></li>
+                                            <li><button class="link contrast" data-toggle="close" onclick="console.log('adf')"><i class="color-secondary mr-1"><svg viewBox="0 0 24 26"><path d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9M7 6h10v13H7V6m2 2v9h2V8H9m4 0v9h2V8h-2z" /></svg></i><span>Delete</span></button></li>
                                             <li>
-                                                <label class="toggle button link contrast">
+                                                <label class="button link contrast" data-toggle="close">
                                                     <input id="table1-item1-modal-toggle" type="checkbox" />
                                                     <i class="mr-1"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z" /></svg></i>
                                                     Open Modal
@@ -4468,7 +4467,7 @@ $sizes: (
             });
 
             var toggleId = Math.random().toString().replace('.', '');
-            elem.innerHTML = '<article class="mb-3"><header class="pr-1 sm md-md"><h4>'+elem.getAttribute('data-title')+' '+(elem.hasAttribute('data-badge') ? '<span class="badge outline xs ml-1">'+elem.getAttribute('data-badge')+'</span>' : '')+(elem.hasAttribute('data-tooltip-warning') ? '<span class="sm"><i class="color-secondary shy"><svg viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6z" /></svg></i><span class="tooltip shadow b-1 border-default-hazy sm">'+elem.getAttribute('data-tooltip-warning')+'</span></span>' : '')+(elem.hasAttribute('data-title-note') ? '<div class="note xs my-1 color-default">'+elem.getAttribute('data-title-note')+'</div>' : '')+'</h4><div class="no-wrap"><button class="shy icon link contrast" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button data-toggle="#code-'+toggleId+'" class="shy icon link contrast" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link contrast" title="Copy HTML to Clipboard" onclick="copyCode(event);"><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg></button></div></header><div class="p-0"><div id="code-'+toggleId+'" class="code-container closed"><pre class="mb-0"><code class="language-html'+(elem.classList.contains('with-wrap')?' pre-wrap':'')+'">' + html + '</code></pre></div></div><div class="p-2 code-content">'+elem.innerHTML+'</div>'+(elem.hasAttribute('data-note') ? '<div class="note mt-1 mb-2 color-default">'+elem.getAttribute('data-note')+'</div>' : '')+'</article>';
+            elem.innerHTML = '<article class="mb-3"><header class="pr-1 sm md-md"><h4>'+elem.getAttribute('data-title')+' '+(elem.hasAttribute('data-badge') ? '<span class="badge outline xs ml-1">'+elem.getAttribute('data-badge')+'</span>' : '')+(elem.hasAttribute('data-tooltip-warning') ? '<span class="sm"><i class="color-secondary shy"><svg viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6z" /></svg></i><span class="tooltip shadow b-1 border-default-hazy sm">'+elem.getAttribute('data-tooltip-warning')+'</span></span>' : '')+(elem.hasAttribute('data-title-note') ? '<div class="note xs my-1 color-default">'+elem.getAttribute('data-title-note')+'</div>' : '')+'</h4><div class="no-wrap"><button class="shy icon link contrast" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button data-toggle="#code-'+toggleId+'" data-toggle-persistent class="shy icon link contrast" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link contrast" title="Copy HTML to Clipboard" onclick="copyCode(event);"><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg></button></div></header><div class="p-0"><div id="code-'+toggleId+'" class="code-container closed"><pre class="mb-0"><code class="language-html'+(elem.classList.contains('with-wrap')?' pre-wrap':'')+'">' + html + '</code></pre></div></div><div class="p-2 code-content">'+elem.innerHTML+'</div>'+(elem.hasAttribute('data-note') ? '<div class="note mt-1 mb-2 color-default">'+elem.getAttribute('data-note')+'</div>' : '')+'</article>';
         });
 
         document.querySelectorAll('[href="#"]').forEach(link => {
@@ -4664,6 +4663,12 @@ $sizes: (
         //         tabpanels[index].classList.add('open');
         //     });
         // });
+
+        setTimeout((event) => {
+            console.log('CLOSING');
+            Spry.closeAllToggles();
+            console.log('CLOSED');
+        }, 4000);
     </script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>

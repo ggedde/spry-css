@@ -15,4 +15,7 @@
 	svg {
 		min-width: 1em;
 	}
+	+ .alert {
+		@extend %ui-margin-above-lg;
+	}
 }

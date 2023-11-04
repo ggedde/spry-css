@@ -1,5 +1,6 @@
 
 @use "variables"as *;
+@use "ui"as *;
 /*!
 * Spry Typography
 */
@@ -19,15 +20,11 @@ $type in $types {
 }
 
 :is(h1, h2, h3, h4, h5, h6, ul, ol, p) + * {
-    margin-top: .5em;
+    @extend %ui-margin-above;
 }
 
-:not(article) > p,
-.alert {
-    + p,
-    + .alert {
-        margin-top: 1em;
-    }
+p + p {
+    @extend %ui-margin-above-lg;
 }
 
 .note {

@@ -11,7 +11,7 @@ nav {
 	> a {
 		width: auto;
 	}
-	> ul:first-child:last-child {
+	> ul:only-child {
 		display: contents;
 	}
 	li,
@@ -32,8 +32,8 @@ nav {
     width: max-content;
 }
 
-.hoverable > ul > li > .toggle,
-.hoverable > li > .toggle {
+.hoverable > ul > li > [data-toggle=hover],
+.hoverable > li > [data-toggle=hover] {
 	pointer-events: none;
 }
 
@@ -54,8 +54,8 @@ $breakpoint_width in $breakpoints {
 			width: max-content;
 		}
 
-		.#{$breakpoint}-hoverable > ul > li > .toggle,
-		.#{$breakpoint}-hoverable > li > .toggle {
+		.#{$breakpoint}-hoverable > ul > li > [data-toggle=hover],
+		.#{$breakpoint}-hoverable > li > [data-toggle=hover] {
 			pointer-events: none;
 		}
 	}

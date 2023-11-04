@@ -35,12 +35,7 @@
 	display         : flex;
 	max-height      : none;
 
-	> label[for] {
-		position: absolute;
-		inset: 0;
-	}
-
-	>:not(label[for]) {
+	> * {
 		box-sizing: border-box;
 		overflow  : hidden;
 		scale     : .6;
@@ -62,25 +57,19 @@
 		backdrop-filter : none;
 		min-width       : 300px;
 	}
-}
-
-.modal.no-backdrop.open,
-.toggle:checked+.modal.no-backdrop,
-.toggle:has(:checked)+.modal.no-backdrop {
-	pointer-events: none;
-
-	>:not(label[for]) {
+	&.open {
+		opacity       : 1;
 		pointer-events: all;
-	}
-}
-
-.toggle:checked+.modal,
-.toggle:has(:checked)+.modal,
-.modal.open {
-	opacity       : 1;
-	pointer-events: all;
-
-	>:not(label[for]) {
-		scale: 1.000001;
+	
+		> * {
+			scale: 1.000001;
+		}
+		&.no-backdrop {
+			pointer-events: none;
+		
+			> * {
+				pointer-events: all;
+			}
+		}
 	}
 }

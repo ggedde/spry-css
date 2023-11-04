@@ -4,113 +4,19 @@
 @use "variables"as *;
 @use "ui"as *;
 
-.toggle {
-	cursor  : pointer;
-	position: relative;
-}
-
-li>[data-toggle] {
-	position : absolute;
-	right    : .5em;
-	top      : .25em;
-	font-size: 80%;
-}
-
-// input.toggle:not(.button),
-// .toggle input:not(.button) {
-//     border: 0;
-// 	outline: 0;
-// 	min-width: 0;
-//     min-height: 0;
-// }
-
-// input.toggle:not(.button,.icon),
-// .toggle input:not(.button,.icon) {
-// 	height: 0;
-// 	width: 0;
-// 	padding: 0;
-//     margin: 0;
-// }
-
-input.toggle:not(:checked)+*,
-.toggle:has(input:not(:checked))+* {
-	padding-block: 0;
-}
-
-// .toggle-container {
-// 	background-color: red;
-// }
-
-// .toggle-container:focus-within .toggle {
-// 	pointer-events: none;
-// }
-
-.toggle:focus,
-.toggle:focus-visible {
-	pointer-events: none !important;
-}
-
-.tabpanels > * {
-	max-height: 0;
-	opacity: 0;
-}
-
-.toggle.hoverable:hover+*,
-.toggle:checked+.collapse,
-.toggle:has(:checked)+.collapse {
-	z-index       : 4;
-}
-
-.hoverable > ul > li ul,
+.closed,
 .hoverable > li ul,
+.hoverable > ul > li ul,
 [data-toggle=next] + *,
-[data-toggle=""] + *,
-[data-toggle="hover"] + *,
-.toggle + *,
-menu > li:nth-child(2),
-.closed {
+[data-toggle="hover"] + * {
 	@extend %ui-closed;
 }
 
-menu {
-	display: inline-block;
-	position: relative;
-	> li:first-child {
-		cursor: pointer;
-	}
-	> li:nth-child(2) {
-		position: absolute;
-		width: max-content;
-		max-width: 300px;
-		min-width: 160px;
-	}
-	> li:focus-within + li,
-	// &:focus-within > li:nth-child(2),
-	& > li:nth-child(2):has(:focus-visible),
-	& > li:nth-child(2):has(:active),
-		& > li:nth-child(2):not(:focus-within):hover {
-		@extend %ui-open;
-	}
-	// &:focus-within > li:first-child > * {
-	> li:focus-within > * {
-		// pointer-events: none;
-	}
-}
-
+.open,
 .hoverable>li:hover>ul,
-.hoverable li:has(:focus-visible)>ul,
 .hoverable>ul>li:hover>ul,
-// .toggle.hoverable:hover+*,
-// .toggle:checked+*,
-// .toggle:has(:checked)+*,
-// .toggle.active+*,
-// .toggle-container:focus-within .toggle+*,
-// .toggle-container .toggle+*:hover,
-// .toggle:focus+*,
-// .toggle+*:focus-within,
-[data-toggle=hover].hoverable:hover + *,
-.toggle+*:hover,
-.open{
+.hoverable li:has(:focus-visible)>ul,
+[data-toggle=hover].hoverable:hover + *{
 	@extend %ui-open;
 }
 
@@ -118,16 +24,17 @@ menu {
 $breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
 
+		.#{$breakpoint}-closed,
 		.#{$breakpoint}-hoverable > ul > li ul,
 		.#{$breakpoint}-hoverable > li ul {
 			@include ui-closed;
 		}
 
+		.#{$breakpoint}-open,
 		.toggle.#{$breakpoint}-hoverable:hover+*,
 		.#{$breakpoint}-hoverable>ul>li:hover>ul,
 		.#{$breakpoint}-hoverable>li:hover>ul,
-		.#{$breakpoint}-hoverable li:has(:focus-visible)>ul,
-		.#{$breakpoint}-open {
+		.#{$breakpoint}-hoverable li:has(:focus-visible)>ul {
 			@include ui-open;
 		}
 	}

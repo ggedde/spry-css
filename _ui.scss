@@ -140,6 +140,14 @@
 	}
 }
 
+%ui-margin-above {
+    margin-top: .5em;
+}
+
+%ui-margin-above-lg {
+    margin-top: 1em;
+}
+
 .ui {
 	@extend %ui;
 	@extend %ui-bg;
