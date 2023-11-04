@@ -88,6 +88,7 @@ class Spry {
                     toggleElement.el.setAttribute('aria-pressed', pressed);
                 } else {
                     toggleElement.el.classList.toggle('open', pressed);
+                    toggleElement.el.setAttribute('aria-expanded', pressed);
                     toggleElement.togglers.forEach(toggler => {
                         toggler.el.setAttribute('aria-pressed', pressed);
                     });
@@ -509,12 +510,16 @@ class Spry {
         }
         tablist.querySelectorAll('.active').forEach(activeElement => {
             activeElement.classList.remove('active');
+            activeElement.setAttribute('aria-pressed', false);
         });
         event.target.classList.add('active');
+        event.target.setAttribute('aria-pressed', true);
         tabpanels.forEach(tabpanel => {
             tabpanel.classList.remove('open');
+            tabpanel.setAttribute('aria-expanded', false);
         });
         tabpanels[index].classList.add('open');
+        tabpanels[index].setAttribute('aria-expanded', true);
     }
     
     static loadTabs = function() {

@@ -63,7 +63,7 @@
 	}
 
 	&.columns-auto>* {
-		flex     : 0 auto;
+		flex     : 1 auto;
 		min-width: auto;
 		max-width: none;
 		width    : auto;
@@ -157,7 +157,7 @@ $breakpoint_width in $breakpoints {
 		}
 
 		.row.#{$breakpoint}-columns-auto>* {
-			flex     : 0 auto;
+			flex     : 1 auto;
 			min-width: auto;
 			max-width: none;
 			width    : auto;

@@ -3153,14 +3153,14 @@ $sizes: (
     
                 <div class="show-code" data-title="Drop down Navigation Menu Right Aligned">
                     <nav class="bg-faint md-hoverable text-right">
-                        <ul class="text-left">
+                        <ul>
                             <li>
                                 <a href="#">Link with Dropdown</a>
                                 <ul class="bg-faint rounded-bottom md-shadow">
                                     <li><a href="#">Sub Link 1</a></li>
                                     <li>
-                                        <a href="#">Sub Link with Menu</a>
-                                        <input type="checkbox" class="button toggle icon down link circle" />
+                                        <a class="pr-3" href="#">Sub Link with Menu</a>
+                                        <button class="icon down link circle mr-2 mt-1 sm absolute right" data-toggle="next"></button>
                                         <ul class="bg-faint rounded">
                                             <li><a href="#">Sub Sub Link 1</a></li>
                                             <li><a href="#">Sub Sub Link 2</a></li>
@@ -3325,10 +3325,10 @@ $sizes: (
                 </div>
 
                 <div id="lists" class="show-code" data-title="Outline Horizontal List">
-                    <ul class="list outline flex-row hoverable">
+                    <menu class="list outline row hoverable bg-faint">
                         <li><button class="link contrast">List Item 1</button></li>
                         <li><button class="link contrast">List Item 2</button>
-                            <ul>
+                            <ul class="pill-bottom shadow overflow-hidden">
                                 <li><button class="link contrast">List Item 1</button></li>
                                 <li><button class="link contrast">List Item 2</button></li>
                                 <li><button class="link contrast">List Item 3</button></li>
@@ -4089,12 +4089,60 @@ $sizes: (
                 </h2>
                 <a name="tabs"></a>
 
+                <div class="show-code" data-title="List">
+                    <nav class="list outline">
+                        <button class="link contrast active">Tab 1</button>
+                        <button class="link contrast">Tab 2</button>
+                        <button class="link contrast">Tab 3 lorem ipsum</button>
+                        <button class="link contrast">Tab 4</button>
+                        <button class="link contrast">Tab 5</button>
+                        <button class="link contrast" onclick="console.log('gg')">Tab 6</button>
+                    </nav>
+                </div>
+
+                <div class="show-code" data-title="List with UL">
+                    <nav class="list outline">
+                        <ul>
+                            <li><button class="link contrast active">Tab 1</button></li>
+                            <li><button class="link contrast">Tab 2</button></li>
+                            <li><button class="link contrast">Tab 3 lorem ipsum</button></li>
+                            <li><button class="link contrast">Tab 4</button></li>
+                            <li><button class="link contrast">Tab 5</button></li>
+                            <li><button class="link contrast" onclick="console.log('gg')">Tab 6</button></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="show-code" data-title="List Row">
+                    <nav class="list row outline">
+                        <button class="link contrast active">Tab 1</button>
+                        <button class="link contrast">Tab 2</button>
+                        <button class="link contrast">Tab 3 lorem ipsum</button>
+                        <button class="link contrast">Tab 4</button>
+                        <button class="link contrast">Tab 5</button>
+                        <button class="link contrast" onclick="console.log('gg')">Tab 6</button>
+                    </nav>
+                </div>
+
+                <div class="show-code" data-title="List Row with UL">
+                    <nav class="list row outline">
+                        <ul>
+                            <li><button class="link contrast active">Tab 1</button></li>
+                            <li><button class="link contrast">Tab 2</button></li>
+                            <li><button class="link contrast">Tab 3 lorem ipsum</button></li>
+                            <li><button class="link contrast">Tab 4</button></li>
+                            <li><button class="link contrast">Tab 5</button></li>
+                            <li><button class="link contrast" onclick="console.log('gg')">Tab 6</button></li>
+                        </ul>
+                    </nav>
+                </div>
+
                 <div class="show-code" data-title="Basic Responsive Tabs">
-                    <div class="tabs outline row">
-                        <nav class="list column">
+                    <div class="tabs outline">
+                        <nav class="list">
                             <button class="link contrast active">Tab 1</button>
                             <button class="link contrast">Tab 2</button>
-                            <button class="link contrast">Tab 3</button>
+                            <button class="link contrast">Tab 3 lorem ipsum</button>
                             <button class="link contrast">Tab 4</button>
                             <button class="link contrast">Tab 5</button>
                             <button class="link contrast" onclick="console.log('gg')">Tab 6</button>
@@ -4134,14 +4182,24 @@ $sizes: (
                 </div>
 
                 <div class="show-code" data-title="Horizontal Tabs">
-                    <div class="tabs outline flex-row">
-                        <nav class="flex-column">
-                            <label class="button link contrast"><input name="list-item-tabs2" class="toggle" type="radio" checked />List Item 1</label>
-                            <label class="button link contrast"><input name="list-item-tabs2" class="toggle" type="radio" />List Item 2</label>
-                            <label class="button link contrast"><input name="list-item-tabs2" class="toggle" type="radio" />List Item 3</label>
+                    <div class="tabs outline column">
+                        <nav class="list row columns-auto">
+                            <ul>
+                                <li><button class="link contrast active">Tab 1</button></li>
+                                <li><button class="link contrast">Tab 2</button></li>
+                                <li><button class="link contrast">Tab 2</button></li>
+                                <li><button class="link contrast">Tab 3</button></li>
+                                <li><button class="link contrast">Tab 3</button></li>
+                                <li><button class="link contrast">sadlf slkdf klsa flk asldkf</button></li>
+                                <li><button class="link contrast">Tab 5</button></li>
+                                <li><button class="link contrast">Tab 5</button></li>
+                                <li><button class="link contrast">sadlf slkdf klsa flk asldkf</button></li>
+                                <li><button class="link contrast">Tab 6</button></li>
+                                <li><button class="link contrast">Tab 6</button></li>
+                            </ul>
                         </nav>
                         <div>
-                            <div>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div class="open">Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                             <div>Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                             <div>Tab 3 asldkf </div>
                             <div>Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
@@ -4151,191 +4209,20 @@ $sizes: (
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Medium Vertical Tabs with Accent Colors">
-                    <div class="tabs outline md-vertical primary rounded color-primary">
-                        <nav class="flex-row">
-                            <label class="button link"><input name="list-item-tabs3" class="toggle" type="radio" checked />Tab 1</label>
-                            <label class="button link"><input name="list-item-tabs3" class="toggle" type="radio" />Tab 2</label>
-                            <label class="button link"><input name="list-item-tabs3" class="toggle" type="radio" />Tab 3</label>
-                            <label class="button link"><input name="list-item-tabs3" class="toggle" type="radio" />Tab 4</label>
-                            <label class="button link"><input name="list-item-tabs3" class="toggle" type="radio" />Tab 5</label>
-                            <label class="button link"><input name="list-item-tabs3" class="toggle" type="radio" />Tab 6</label>
+                <div class="show-code" data-title="Selection Tabs">
+                    <div class="tabs outline row">
+                        <nav class="list">
+                            <label class="button link active"><input class="ml-0 mr-3" name="list-item-tabs2" type="radio" checked />List Item 1</label>
+                            <label class="button link"><input class="ml-0 mr-3" name="list-item-tabs2" type="radio" />List Item 2</label>
+                            <label class="button link"><input class="ml-0 mr-3" name="list-item-tabs2" type="radio" />List Item 3</label>
                         </nav>
                         <div>
-                            <div>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div class="open">Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                             <div>Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                             <div>Tab 3 asldkf </div>
-                            <div><p>Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
+                            <div>Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                             <div>Tab 5 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                             <div>Tab 6 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="show-code" data-title="Medium Vertical Tabs Right">
-                    <div class="tabs md-flex-row outline md-vertical rounded border-light-hazy primary">
-                        <nav class="md-flex-column md-order-2 mw-200 bg-primary">
-                            <label class="button link contrast"><input name="list-item-tabs4" class="toggle" type="radio" checked />Tab 1</label>
-                            <label class="button link contrast"><input name="list-item-tabs4" class="toggle" type="radio" />Tab 2</label>
-                            <label class="button link contrast"><input name="list-item-tabs4" class="toggle" type="radio" />Tab 3</label>
-                            <label class="button link contrast"><input name="list-item-tabs4" class="toggle" type="radio" />Tab 4</label>
-                            <label class="button link contrast"><input name="list-item-tabs4" class="toggle" type="radio" />Tab 5</label>
-                            <label class="button link contrast"><input name="list-item-tabs4" class="toggle" type="radio" />Tab 6</label>
-                        </nav>
-                        <div>
-                            <div>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div>Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div>Tab 3 asldkf </div>
-                            <div>Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div>Tab 5 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div>Tab 6 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="show-code" data-title="Basic Responsive Tabs">
-                    <div class="tabs bg-faint rounded outline">
-                        <label class="button outline link contrast toggle">
-                            Tab 1
-                            <input name="tablist" type="radio" checked>
-                        </label>
-                        <div>
-                            Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
-                        <label class="button outline link contrast toggle">
-                            Tab 2 with long label and large content
-                            <input name="tablist" type="radio">
-                        </label>
-                        <div>
-                            <p>Tab 2 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                            <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <label class="button outline link contrast toggle">
-                            Tab 3
-                            <input name="tablist" type="radio">
-                        </label>
-                        <div>
-                            Tab 3 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
-                        <label class="button outline link contrast toggle">
-                            Tab 4
-                            <input name="tablist" type="radio">
-                        </label>
-                        <div>
-                            Tab 4 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
-                        <label class="button outline link contrast toggle">
-                            Tab 5
-                            <input name="tablist" type="radio">
-                        </label>
-                        <div>
-                            Tab 5 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
-                        <label class="button outline link contrast toggle">
-                            Tab 6 with longer label
-                            <input name="tablist" type="radio">
-                        </label>
-                        <div>
-                            Tab 6 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="show-code" data-title="Vertical Tabs with Accent Color">
-                    <div class="tabs md-vertical primary outline bg-faint rounded">
-                        <label class="button outline link toggle">
-                            Tab 1
-                            <input name="tablist2" type="radio" checked>
-                        </label>
-                        <div>
-                            Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
-                        <label class="button outline link toggle">
-                            Tab 2 with long label and content
-                            <input name="tablist2" type="radio">
-                        </label>
-                        <div>
-                            <p>Tab 2 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                            <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                        </div>
-                        <label class="button outline link toggle">
-                            Tab 3
-                            <input name="tablist2" type="radio">
-                        </label>
-                        <div>
-                            Tab 3 content.
-                        </div>
-                        <label class="button outline link toggle">
-                            Tab 4
-                            <input name="tablist2" type="radio">
-                        </label>
-                        <div>
-                            Tab 4 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
-                        <label class="button outline link toggle">
-                            Tab 5
-                            <input name="tablist2" type="radio">
-                        </label>
-                        <div>
-                            Tab 5 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
-                        <label class="button outline link toggle">
-                            Tab 6 with longer label
-                            <input name="tablist2" type="radio">
-                        </label>
-                        <div>
-                            Tab 6 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="show-code" data-title="Vertical Tabs Right">
-                    <div class="bg-faint rounded">
-                        <div class="tabs md-vertical tabs-right">
-                            <label class="button toggle">
-                                Tab 1
-                                <input name="tablist3" type="radio" checked>
-                            </label>
-                            <div>
-                                Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </div>
-                            <label class="button toggle">
-                                Tab 2 with long label
-                                <input name="tablist3" type="radio">
-                            </label>
-                            <div>
-                                Tab 2 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </div>
-                            <label class="button toggle">
-                                Tab 3
-                                <input name="tablist3" type="radio">
-                            </label>
-                            <div>
-                                Tab 3 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </div>
-                            <label class="button toggle">
-                                Tab 4
-                                <input name="tablist3" type="radio">
-                            </label>
-                            <div>
-                                Tab 4 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </div>
-                            <label class="button toggle">
-                                Tab 5
-                                <input name="tablist3" type="radio">
-                            </label>
-                            <div>
-                                Tab 5 content. Invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </div>
-                            <label class="button toggle">
-                                Tab 6 with longer label
-                                <input name="tablist3" type="radio">
-                            </label>
-                            <div>
-                                Tab 6 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -4509,135 +4396,12 @@ $sizes: (
             });
         });
 
-
-        // document.querySelectorAll('.toggle').forEach(elem => {
-        //     // if (elem.classList.contains('hoverable')) {
-        //     //     elem.addEventListener('mouseover', () => {
-        //     //             toggle(elem.getAttribute('data-toggle'), 'open');
-        //     //     });
-        //     //     elem.addEventListener('mouseout', () => {
-        //     //             toggle(elem.getAttribute('data-toggle'), 'close');
-        //     //     });
-        //     // } else {
-        //     //     elem.addEventListener('click', () => {
-        //     //         toggle(elem.getAttribute('data-toggle'));
-        //     //     });
-        //     // }
-
-        //     // elem.addEventListener('keyup', (event) => {
-        //     //     if(event.keyCode === 27) toggle(elem.getAttribute('data-toggle'), 'close');
-        //     //     if(event.keyCode === 13) toggle(elem.getAttribute('data-toggle'), 'open');
-                
-        //     // });
-
-        //     elem.addEventListener('keydown', (event) => {
-        //         if(event.keyCode === 27) {
-        //             event.target.blur();
-        //         }
-        //         if(event.keyCode === 32 || event.keyCode === 40) {
-        //             event.preventDefault();
-        //             // toggle(elem.getAttribute('data-toggle'), 'open');
-        //         }
-        //         if(event.keyCode === 40) {
-        //             var selector = elem.getAttribute('data-toggle');
-        //             var target = event.target.nextElementSibling;
-        //             if (target) {
-        //                 var first = target.querySelector('li > a, li > button, li > label, li > input');
-        //                 if (first) {
-        //                     // console.log(first);
-        //                     first.focus();
-        //                 }
-        //             }
-        //         }
-        //     });
-        // });
-
-        // document.querySelectorAll('.allowclosewithin').forEach(item => {
-        //     item.addEventListener('click', event => {
-        //         if (['A','BUTTON','LABEL'].includes(event.target.tagName)) {
-        //             toggle(item, 'close', event.target);
-        //         }
-        //     });
-        //     item.addEventListener('keyup', event => {
-        //         if ([13,32].includes(event.keyCode) && ['A','BUTTON','LABEL'].includes(event.target.tagName)) {
-        //             toggle(item, 'close', event.target);
-        //         }
-        //     });
-        // });
-
-        // document.querySelectorAll('.list').forEach(list => {
-            
-        //     list.addEventListener('keydown', (event) => {
-        //         console.log(list, event);
-        //         if([38,40,13,32,27].includes(event.keyCode)) {
-        //             event.preventDefault();
-        //             var selected = list.querySelector('li:focus-within');
-        //             if (selected) {
-        //                 // var hasCloser = list.closest('.open.allowcloseout');
-        //                 if(event.keyCode === 27) {
-        //                     event.target.blur();
-        //                 } else if(event.keyCode === 13 || event.keyCode === 32) {
-        //                     selected.childNodes[0].click();
-        //                 } else {
-        //                     var children = list.children[0].tagName === 'UL' ? list.children[0].children : list.children;
-        //                     var index = [...children].indexOf(selected);
-        //                     if (index > -1) {
-        //                         var newIndex = (event.keyCode === 40 ? index+1 : index-1);
-        //                         var sibling = children[newIndex];
-        //                         if (sibling && sibling.children && sibling.children[0]) {
-        //                             sibling = sibling.children[0];
-        //                             if (!['A','BUTTON','LABEL','INPUT'].includes(sibling.tagName)) {
-        //                                 if (event.keyCode === 40) newIndex++;
-        //                                 if (event.keyCode === 38) newIndex--;
-        //                                 var sibling = children[newIndex];
-        //                                 if (sibling && sibling.children && sibling.children[0]) {
-        //                                     sibling = sibling.children[0];
-        //                                 }
-        //                             }
-        //                         }
-        //                         if (sibling) {
-        //                             sibling.focus();
-        //                         }
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     });
-        // })
-        
-
-
-      
-       
-
         // document.querySelectorAll('input:not([type=checkbox],[type=radio]), textarea, select').forEach(elem => {
         //     elem.addEventListener('blur', event => {
         //         elem.classList.toggle('active', elem.value !== '');
         //     });
         // });
-
-        // document.querySelectorAll('.tablist :is(.button,button)').forEach(elem => {
-        //     elem.addEventListener('click', event => {
-        //         var tablist = elem.closest('.tablist');
-        //         var tabs = [...tablist.children];
-        //         var tabpanels = [...tablist.parentElement.querySelector('.tabpanels').children];
-        //         var index = tabs.indexOf(elem);
-        //         tabs.forEach(tab => {
-        //             tab.classList.remove('active');
-        //         });
-        //         elem.classList.add('active');
-        //         tabpanels.forEach(tabpanel => {
-        //             tabpanel.classList.remove('open');
-        //         });
-        //         tabpanels[index].classList.add('open');
-        //     });
-        // });
-
-        // setTimeout((event) => {
-        //     console.log('CLOSING');
-        //     Spry.closeAllToggles();
-        //     console.log('CLOSED');
-        // }, 4000);
+        
     </script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>

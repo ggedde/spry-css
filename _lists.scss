@@ -18,23 +18,57 @@
 		background-color: inherit;
 	}
 
-	&.outline {
+	:is(button, .button, [type=submit]) {
+		text-align: left;
+	}
 
-		a,
-		> button,
-		li > button,
-		> .button,
-		li > .button {
+	&.outline,
+	.outline > & {
+		:is(a, button, .button, [type=submit]) {
 			border-radius: 0;
 		}
 	}
 
-	>* {
-		flex: auto;
+	&.row > * {
+		flex: 1 auto;
+	}
+
+	&.row,
+	&.text-center,
+	.text-center {
+		> :not(ul, ol),
+		li {
+			justify-content: center;
+			text-align: center;
+		}
+	}
+
+	&.text-right,
+	.text-right {
+		> :not(ul, ol),
+		li {
+			justify-content: flex-end;
+			text-align: end;
+		}
+	}
+
+	&.text-left,
+	.text-left {
+		> :not(ul, ol),
+		li {
+			justify-content: flex-start;
+			text-align: start;
+		}
 	}
 
 	li>*:first-child {
 		width: 100%;
+		justify-content: inherit;
+    	text-align: inherit;
+	}
+
+	&.row li>*:first-child {
+		height: 100%;
 	}
 
 	a:hover,

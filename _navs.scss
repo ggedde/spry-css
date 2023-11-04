@@ -16,6 +16,7 @@
 		> li {
 			flex: inherit;
 			width: inherit;
+			justify-content: inherit;
 		}
 	}
 	li,
@@ -31,9 +32,14 @@
 .hoverable > ul > li > ul,
 .hoverable > li > ul {
 	position: absolute;
-	min-width: 160px;
+	min-width: 100%;
     max-width: 260px;
     width: max-content;
+}
+
+.outline.hoverable > ul > li > ul,
+.outline.hoverable > li > ul {
+	min-width: calc(100% + 1px);
 }
 
 .hoverable > ul > li > [data-toggle=hover],
@@ -53,9 +59,14 @@ $breakpoint_width in $breakpoints {
 		.#{$breakpoint}-hoverable > ul > li > ul,
 		.#{$breakpoint}-hoverable > li > ul {
 			position: absolute;
-			min-width: 160px;
+			min-width: 100%;
 			max-width: 260px;
 			width: max-content;
+		}
+
+		.outline.#{$breakpoint}-hoverable > ul > li > ul,
+		.outline.#{$breakpoint}-hoverable > li > ul {
+			min-width: calc(100% + 1px);
 		}
 
 		.#{$breakpoint}-hoverable > ul > li > [data-toggle=hover],

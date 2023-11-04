@@ -1,53 +1,43 @@
 /*!
 * Spry Tabs
 */
+@use "ui"as *;
 
 .tabs {
 	overflow    : hidden;
 	display     : flex;
 	border-color: rgba(var(--color-rgb), .4);
 
-
-
 	.list {
 		overflow    : hidden;
 		border-color: inherit;
 		flex        : none;
-		width       : auto;
+		width       : max-content;
+		max-width   : 300px;
 
-		> :not(ul, ol),
-		li {
-			justify-content: center;
-			text-align     : center;
-			width          : max-content;
-			flex           : auto;
-			> button,
-			> .button {
-				justify-content: center;
-			}
+		&.row {
+			width: auto;
+			max-width: none;
 		}
 
-		&.column > :not(ul, ol),
-		&.column > li {
+		&.column> :not(ul, ol),
+		&.column>li {
 			flex: none;
 		}
 
 		&+*>* {
 			transition: none;
-			z-index   : 1;
-			position  : relative;
 			transform : translateY(3px);
 			max-height: 0;
-			opacity   : 0;
-			order     : 9999;
-			padding   : 0;
+			@extend %ui-closed;
 
 			&.open {
 				transition: opacity .2s ease-in-out, transform .3s ease-out;
 				transform : none;
 				padding   : 2em;
 				max-height: none;
-				opacity   : 1;
+				// opacity   : 1;
+				@extend %ui-open;
 			}
 		}
 

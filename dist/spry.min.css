@@ -104,8 +104,8 @@ img {
 .hoverable > li ul,
 .hoverable > ul > li ul,
 [data-toggle=next] + *,
-[data-toggle=hover] + * {
-  max-height: 1px;
+[data-toggle=hover] + *, .tabs .list + * > * {
+  max-height: 0;
   min-height: 0;
   opacity: 0;
   pointer-events: none;
@@ -120,7 +120,7 @@ img {
 .hoverable > li ul:not(.open),
 .hoverable > ul > li ul:not(.open),
 [data-toggle=next] + :not(.open),
-[data-toggle=hover] + :not(.open) {
+[data-toggle=hover] + :not(.open), .tabs .list + * > :not(.open) {
   padding-block: 0;
   margin-block: 0;
 }
@@ -165,10 +165,12 @@ article > footer, .toolbar, .spacious {
 }
 
 .open,
+.hoverable .open,
+[class*=-hoverable] .open,
 .hoverable > li:hover > ul,
 .hoverable > ul > li:hover > ul,
 .hoverable li:has(:focus-visible) > ul,
-[data-toggle=hover].hoverable:hover + * {
+[data-toggle=hover].hoverable:hover + *, .tabs .list + * > *.open {
   max-height: 100vh;
   opacity: 1;
   pointer-events: all;
@@ -358,6 +360,7 @@ a {
   border-color: rgba(var(--color-rgb), 0.4);
   border-width: 1px;
   border-style: solid;
+  overflow: hidden;
 }
 .outline ul,
 .outline li {
@@ -376,24 +379,27 @@ a {
   border-color: inherit;
 }
 .outline.tabs .list > :not(ul) {
-  border-width: 0 1px 1px 1px;
+  border-width: 0 0 1px 0;
   border-color: inherit;
   border-style: solid;
+}
+.outline.tabs .list > :not(ul):last-child {
+  margin-bottom: -1px;
+}
+.outline.tabs .list, .outline.tabs .list + * {
+  margin: -1px;
+  border-color: inherit;
+  border-width: 0;
+}
+.outline:not(.alert) > :not(ul),
+.outline ul > li {
+  border-width: 0 0 1px 1px;
+  border-color: inherit;
+  border-style: solid;
+  margin: 1px 0 -1px -1px;
 }
 .outline.row.tabs .list {
   border-width: 0 1px 0 1px;
-  border-style: solid;
-}
-.outline.row > :not(ul) + *,
-.outline.row > ul > li + li {
-  border-width: 0 0 0 1px;
-  border-color: inherit;
-  border-style: solid;
-}
-.outline:not(.alert) > :not(ul) + *,
-.outline ul > li + li {
-  border-width: 1px 0 0 0;
-  border-color: inherit;
   border-style: solid;
 }
 
@@ -413,18 +419,44 @@ a {
   position: relative;
   background-color: inherit;
 }
-.list.outline a,
-.list.outline > button,
-.list.outline li > button,
-.list.outline > .button,
-.list.outline li > .button {
+.list :is(button, .button, [type=submit]) {
+  text-align: left;
+}
+.list.outline :is(a, button, .button, [type=submit]), .outline > .list :is(a, button, .button, [type=submit]) {
   border-radius: 0;
 }
-.list > * {
-  flex: auto;
+.list.row > * {
+  flex: 1 auto;
+}
+.list.row > :not(ul, ol),
+.list.row li, .list.text-center > :not(ul, ol),
+.list.text-center li,
+.list .text-center > :not(ul, ol),
+.list .text-center li {
+  justify-content: center;
+  text-align: center;
+}
+.list.text-right > :not(ul, ol),
+.list.text-right li,
+.list .text-right > :not(ul, ol),
+.list .text-right li {
+  justify-content: flex-end;
+  text-align: end;
+}
+.list.text-left > :not(ul, ol),
+.list.text-left li,
+.list .text-left > :not(ul, ol),
+.list .text-left li {
+  justify-content: flex-start;
+  text-align: start;
 }
 .list li > *:first-child {
   width: 100%;
+  justify-content: inherit;
+  text-align: inherit;
+}
+.list.row li > *:first-child {
+  height: 100%;
 }
 .list.hide-inputs input {
   opacity: 0;
@@ -626,17 +658,17 @@ label:focus-within .ui {
   opacity: 0.7;
 }
 
-[type=radio]:not(.button, .icon), [type=checkbox]:not(.button, .icon) {
+[type=radio], [type=checkbox] {
   min-height: 1em;
   min-width: 1em;
   width: 1em;
   padding: 0;
   margin: 0 0.6em 0 0.4em;
 }
-[type=radio]:not(.button, .icon):checked, [type=checkbox]:not(.button, .icon):checked {
+[type=radio]:checked, [type=checkbox]:checked {
   border-color: var(--color);
 }
-[type=radio]:not(.button, .icon):checked::after, [type=checkbox]:not(.button, .icon):checked::after {
+[type=radio]:checked::after, [type=checkbox]:checked::after {
   background-color: var(--color);
   border-radius: 2px;
   content: "";
@@ -974,7 +1006,7 @@ table tbody tr:first-child td {
   flex: 1;
 }
 .row.columns-auto > * {
-  flex: 0 auto;
+  flex: 1 auto;
   min-width: auto;
   max-width: none;
   width: auto;
@@ -1225,7 +1257,7 @@ table tbody tr:first-child td {
     flex: 1;
   }
   .row.md-columns-auto > * {
-    flex: 0 auto;
+    flex: 1 auto;
     min-width: auto;
     max-width: none;
     width: auto;
@@ -1354,40 +1386,26 @@ table tbody tr:first-child td {
   overflow: hidden;
   border-color: inherit;
   flex: none;
-  width: auto;
-}
-.tabs .list > :not(ul, ol),
-.tabs .list li {
-  justify-content: center;
-  text-align: center;
   width: max-content;
-  flex: auto;
+  max-width: 300px;
 }
-.tabs .list > :not(ul, ol) > button,
-.tabs .list > :not(ul, ol) > .button,
-.tabs .list li > button,
-.tabs .list li > .button {
-  justify-content: center;
+.tabs .list.row {
+  width: auto;
+  max-width: none;
 }
 .tabs .list.column > :not(ul, ol), .tabs .list.column > li {
   flex: none;
 }
 .tabs .list + * > * {
   transition: none;
-  z-index: 1;
-  position: relative;
   transform: translateY(3px);
   max-height: 0;
-  opacity: 0;
-  order: 9999;
-  padding: 0;
 }
 .tabs .list + * > *.open {
   transition: opacity 0.2s ease-in-out, transform 0.3s ease-out;
   transform: none;
   padding: 2em;
   max-height: none;
-  opacity: 1;
 }
 .tabs.outline .list {
   border-width: 1px;
@@ -1406,6 +1424,7 @@ table tbody tr:first-child td {
 :is(nav, menu) > ul:only-child > li {
   flex: inherit;
   width: inherit;
+  justify-content: inherit;
 }
 :is(nav, menu) li,
 :is(nav, menu) ul {
@@ -1420,9 +1439,14 @@ table tbody tr:first-child td {
 .hoverable > ul > li > ul,
 .hoverable > li > ul {
   position: absolute;
-  min-width: 160px;
+  min-width: 100%;
   max-width: 260px;
   width: max-content;
+}
+
+.outline.hoverable > ul > li > ul,
+.outline.hoverable > li > ul {
+  min-width: calc(100% + 1px);
 }
 
 .hoverable > ul > li > [data-toggle=hover],
@@ -1438,9 +1462,13 @@ table tbody tr:first-child td {
   .md-hoverable > ul > li > ul,
   .md-hoverable > li > ul {
     position: absolute;
-    min-width: 160px;
+    min-width: 100%;
     max-width: 260px;
     width: max-content;
+  }
+  .outline.md-hoverable > ul > li > ul,
+  .outline.md-hoverable > li > ul {
+    min-width: calc(100% + 1px);
   }
   .md-hoverable > ul > li > [data-toggle=hover],
   .md-hoverable > li > [data-toggle=hover] {
@@ -1454,7 +1482,7 @@ table tbody tr:first-child td {
   .md-closed,
   .md-hoverable > ul > li ul,
   .md-hoverable > li ul {
-    max-height: 1px;
+    max-height: 0;
     min-height: 0;
     opacity: 0;
     pointer-events: none;
@@ -2629,52 +2657,42 @@ General Utility Classes
 
 .rounded {
   border-radius: 0.25em;
-  overflow: hidden;
 }
 
 .rounded-top {
   border-radius: 0.25em 0.25em 0 0;
-  overflow: hidden;
 }
 
 .rounded-bottom {
   border-radius: 0 0 0.25em 0.25em;
-  overflow: hidden;
 }
 
 .rounded-right {
   border-radius: 0 0.25em 0.25em 0;
-  overflow: hidden;
 }
 
 .rounded-left {
   border-radius: 0.25em 0 0 0.25em;
-  overflow: hidden;
 }
 
 .pill, .badge {
   border-radius: 2em;
-  overflow: hidden;
 }
 
 .pill-top {
   border-radius: 2em 2em 0 0;
-  overflow: hidden;
 }
 
 .pill-bottom {
   border-radius: 0 0 2em 2em;
-  overflow: hidden;
 }
 
 .pill-right {
   border-radius: 0 2em 2em 0;
-  overflow: hidden;
 }
 
 .pill-left {
   border-radius: 2em 0 0 2em;
-  overflow: hidden;
 }
 
 .circle {
@@ -2978,6 +2996,10 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 
 .align-bottom {
   vertical-align: bottom;
+}
+
+.overflow-visible {
+  overflow: visible;
 }
 
 .overflow-hidden {
@@ -3579,6 +3601,9 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   }
   .md-align-bottom {
     vertical-align: bottom;
+  }
+  .md-overflow-visible {
+    overflow: visible;
   }
   .md-overflow-hidden {
     overflow: hidden;

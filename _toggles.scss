@@ -13,6 +13,8 @@
 }
 
 .open,
+.hoverable .open,
+[class*=-hoverable] .open,
 .hoverable>li:hover>ul,
 .hoverable>ul>li:hover>ul,
 .hoverable li:has(:focus-visible)>ul,

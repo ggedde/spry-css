@@ -6,13 +6,15 @@
 	border-color: rgba(var(--color-rgb), .4);
 	border-width: 1px;
 	border-style: solid;
+	overflow: hidden;
 
 	ul,
 	li {
 		border-color: inherit;
 	}
+
 	li {
-		position    : relative;
+		position: relative;
 
 		ul {
 			border-width: 1px;
@@ -26,10 +28,29 @@
 		border-color: inherit;
 
 		> :not(ul) {
-			border-width: 0 1px 1px 1px;
+			border-width: 0 0 1px 0;
 			border-color: inherit;
 			border-style: solid;
+
+			&:last-child {
+				margin-bottom: -1px;
+			}
 		}
+	}
+
+	&.tabs .list,
+	&.tabs .list+* {
+		margin      : -1px;
+		border-color: inherit;
+		border-width: 0;
+	}
+
+	&:not(.alert)> :not(ul),
+	ul>li {
+		border-width: 0 0 1px 1px;
+		border-color: inherit;
+		border-style: solid;
+		margin: 1px 0 -1px -1px;
 	}
 
 	&.row {
@@ -37,19 +58,5 @@
 			border-width: 0 1px 0 1px;
 			border-style: solid;
 		}
-
-		> :not(ul)+*,
-		>ul>li+li {
-			border-width: 0 0 0 1px;
-			border-color: inherit;
-			border-style: solid;
-		}
-	}
-
-	&:not(.alert)> :not(ul)+*,
-	ul>li+li {
-		border-width: 1px 0 0 0;
-		border-color: inherit;
-		border-style: solid;
 	}
 }

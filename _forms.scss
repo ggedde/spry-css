@@ -40,7 +40,7 @@ label:focus-within .ui {
 	opacity: .7;
 }
 
-[type=radio]:not(.button, .icon), [type=checkbox]:not(.button, .icon) {
+[type=radio], [type=checkbox] {
 	min-height: 1em;
 	min-width: 1em;
 	width: 1em;
