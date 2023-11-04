@@ -4,7 +4,7 @@
 @use "variables"as *;
 @use "ui"as *;
 
-nav {
+:is(nav,menu) {
 	a {
 		@extend %ui;
 	}
@@ -13,6 +13,10 @@ nav {
 	}
 	> ul:only-child {
 		display: contents;
+		> li {
+			flex: inherit;
+			width: inherit;
+		}
 	}
 	li,
 	ul {

@@ -21,19 +21,19 @@
 		}
 	}
 
-	&.tabs nav {
+	&.tabs .list {
 		margin      : -1px;
 		border-color: inherit;
 
 		> :not(ul) {
-			border-width: 0 0 1px 1px;
+			border-width: 0 1px 1px 1px;
 			border-color: inherit;
 			border-style: solid;
 		}
 	}
 
-	&.flex-row {
-		&.tabs nav {
+	&.row {
+		&.tabs .list {
 			border-width: 0 1px 0 1px;
 			border-style: solid;
 		}

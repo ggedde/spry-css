@@ -3448,13 +3448,13 @@ $sizes: (
                 </div>
 
                 <div class="show-code" data-title="Sidebar List with Sub Lists">
-                    <ul class="list bg-faint rounded shadow mw-200">
+                    <menu class="list bg-faint rounded shadow mw-200">
                         <li>
                             <a href="#">List Item 1</a>
                         </li>
                         <li>
                             <a href="#">List Item 2</a>
-                            <input type="checkbox" class="button toggle icon down link circle">
+                            <button class="link icon down circle absolute right mt-1 mr-2 sm" data-toggle="next" data-toggle-persistent></button>
                             <ul>
                                 <li><a href="#">Sub Link 1</a></li>
                                 <li><a href="#">Sub Link 2</a></li>
@@ -3463,7 +3463,7 @@ $sizes: (
                         </li>
                         <li>
                             <a href="#">List Item 3</a>
-                            <input type="checkbox" class="button toggle icon down link circle">
+                            <button class="link icon down circle absolute right mt-1 mr-2 sm" data-toggle="next" data-toggle-persistent></button>
                             <ul>
                                 <li><a href="#">Sub Link 1</a></li>
                                 <li><a href="#">Sub Link 2</a></li>
@@ -3472,7 +3472,7 @@ $sizes: (
                         </li>
                         <li>
                             <a href="#" class="pr-4">List Item 4 With a very long text</a>
-                            <input type="checkbox" class="button toggle icon down link circle">
+                            <button class="link icon down circle absolute right mt-1 mr-2 sm" data-toggle="next" data-toggle-persistent></button>
                             <ul>
                                 <li><a href="#">Sub Link 1</a></li>
                                 <li><a href="#">Sub Link 2</a></li>
@@ -3481,7 +3481,7 @@ $sizes: (
                         </li>
                         <li>
                             <a href="#" class="truncate pr-3">List Item 5 Truncated Text</a>
-                            <input type="checkbox" class="button toggle icon down link circle">
+                            <button class="link icon down circle absolute right mt-1 mr-2 sm" data-toggle="next" data-toggle-persistent></button>
                             <ul>
                                 <li><a href="#">Sub Link 1</a></li>
                                 <li><a href="#">Sub Link 2</a></li>
@@ -3500,14 +3500,12 @@ $sizes: (
                         <hr class="my-1 mx-1" />
                         <li class="sm">
                             <a href="#">Small List Item 1</a>
-                            <input type="checkbox" class="button toggle icon down link circle">
+                            <button class="link icon down circle absolute right mt-1 mr-2 sm" data-toggle="next" data-toggle-persistent></button>
                             <ul>
                                 <li><a href="#">Sub Link 1</a></li>
                                 <li>
                                     <a href="#">Sub Link 2</a>
-                                    <label class="button toggle icon down link circle">
-                                        <input type="checkbox">
-                                    </label>
+                                    <button class="link icon down circle absolute right mt-1 mr-2 sm" data-toggle="next" data-toggle-persistent></button>
                                     <ul>
                                         <li><a href="#">Sub Link 1</a></li>
                                         <li><a href="#">Sub Link 2</a></li>
@@ -3520,7 +3518,7 @@ $sizes: (
                         <li class="sm">
                             <a href="#">Small List Item 2</a>
                         </li>
-                    </ul>
+                    </menu>
                 </div>
     
                 <div id="menus" class="show-code" data-title="Toggle Menu List">
@@ -3557,15 +3555,26 @@ $sizes: (
                     </div>
                 </div>
 
+                <div id="menus" class="show-code" data-title="Toggle Dropdown">
+                    <input id="selected2" type="text" class="is-select" value="" data-toggle="next" readonly />
+                    <div class="collapse">
+                        <nav class="list bg-faint rounded shadow mw-200">
+                            <button class="link contrast" onclick="document.getElementById('selected2').value = this.innerHTML;">Item 1</button>
+                            <button class="link contrast" onclick="document.getElementById('selected2').value = this.innerHTML;">Item 2</button>
+                            <button class="link contrast" onclick="document.getElementById('selected2').value = this.innerHTML;">Item 3</button>
+                        </nav>
+                    </div>
+                </div>
+
                 <div class="show-code" data-title="Toggle Menu List Right Align with Sub Menu">
                     <div class="text-right">
                         <button class="toggle link icon menu" data-toggle="next"></button>
-                        <div class="collapse closed allowcloseout allowclosewithin">
-                            <ul class="list bg-faint rounded shadow mw-200 absolute right">
+                        <nav class="absolute closed list bg-faint rounded shadow mw-200 absolute right">
+                            <menu>
                                 <li><a href="#">Link 1</a></li>
                                 <li>
                                     <a href="#">Link 2</a>
-                                    <input type="checkbox" class="button toggle link icon down circle" />
+                                    <button class="link icon down circle absolute right sm m-1 mr-2" data-toggle="next" data-toggle-persistent></button>
                                     <ul class="bg-faint left rounded">
                                         <li><a href="#">Sub Link 1</a></li>
                                         <li><a href="#">Sub Link 2</a></li>
@@ -3574,7 +3583,7 @@ $sizes: (
                                 </li>
                                 <li><a href="#">Link 3</a></li>
                             </menu>
-                        </div>
+                        </nav>
                     </div>
                 </div>
     
@@ -4081,17 +4090,40 @@ $sizes: (
                 <a name="tabs"></a>
 
                 <div class="show-code" data-title="Basic Responsive Tabs">
-                    <div class="tabs outline">
-                        <nav class="flex-row">
-                            <label class="button link contrast"><input name="list-item-tabs1" class="toggle" type="radio" checked />Tab 1</label>
-                            <label class="button link contrast"><input name="list-item-tabs1" class="toggle" type="radio" />Tab 2</label>
-                            <label class="button link contrast"><input name="list-item-tabs1" class="toggle" type="radio" />Tab 3</label>
-                            <label class="button link contrast"><input name="list-item-tabs1" class="toggle" type="radio" />Tab 4</label>
-                            <label class="button link contrast"><input name="list-item-tabs1" class="toggle" type="radio" />Tab 5</label>
-                            <label class="button link contrast"><input name="list-item-tabs1" class="toggle" type="radio" />Tab 6</label>
+                    <div class="tabs outline row">
+                        <nav class="list column">
+                            <button class="link contrast active">Tab 1</button>
+                            <button class="link contrast">Tab 2</button>
+                            <button class="link contrast">Tab 3</button>
+                            <button class="link contrast">Tab 4</button>
+                            <button class="link contrast">Tab 5</button>
+                            <button class="link contrast" onclick="console.log('gg')">Tab 6</button>
                         </nav>
                         <div>
-                            <div>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div class="open">Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div>Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div>Tab 3 asldkf </div>
+                            <div>Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div>Tab 5 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div>Tab 6 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-code" data-title="Horizontal Tabs">
+                    <div class="tabs outline column">
+                        <nav class="list row columns-auto">
+                            <ul>
+                                <li><button class="link contrast active">Tab 1</button></li>
+                                <li><button class="link contrast">Tab 2</button></li>
+                                <li><button class="link contrast">Tab 3</button></li>
+                                <li><button class="link contrast">Tab 4</button></li>
+                                <li><button class="link contrast">Tab 5</button></li>
+                                <li><button class="link contrast">Tab 6</button></li>
+                            </ul>
+                        </nav>
+                        <div>
+                            <div class="open">Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                             <div>Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                             <div>Tab 3 asldkf </div>
                             <div>Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>

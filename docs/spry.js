@@ -68,7 +68,7 @@ class Spry {
         }
 
         if (downPressed && elem.classList.contains('open')) {
-            var first = elem.querySelector('li > a, li > button, li > .button, li > input, li > label');
+            var first = elem.querySelector('a, button, input, .button, label');
             if (first) {
                 first.focus();
             }
@@ -438,46 +438,90 @@ class Spry {
         });
     }
 
-    static loadLists = function() {
-        document.querySelectorAll('.list').forEach(list => {
-            
-            list.addEventListener('keydown', (event) => {
-                console.log(list, event);
-                if([38,40,13,32,27].includes(event.keyCode)) {
+    static navigateList = function(event) {
+
+        var list = event.target.closest('.list');
+        if (!list) {
+            return;
+        }
+        if([37,38,39,40,13,32,27].includes(event.keyCode)) {
+            var selected = list.querySelector('li:focus-within');
+            if (!selected) {
+                selected = list.querySelector(':focus');
+            }
+            if (selected) {
+                if(event.keyCode === 27) {
+                    event.target.blur();
+                } else if([13].includes(event.keyCode) && ['LABEL','INPUT'].includes(event.target.tagName)) {
                     event.preventDefault();
-                    var selected = list.querySelector('li:focus-within');
-                    if (selected) {
-                        // var hasCloser = list.closest('.open.allowcloseout');
-                        if(event.keyCode === 27) {
-                            event.target.blur();
-                        } else if(event.keyCode === 13 || event.keyCode === 32) {
-                            selected.childNodes[0].click();
-                        } else {
-                            var children = list.children[0].tagName === 'UL' ? list.children[0].children : list.children;
-                            var index = [...children].indexOf(selected);
-                            if (index > -1) {
-                                var newIndex = (event.keyCode === 40 ? index+1 : index-1);
+                    event.target.click();
+                } else if ([37,38,39,40].includes(event.keyCode)) {
+                    event.preventDefault();
+                    var children = list.children[0].tagName === 'UL' ? list.children[0].children : list.children;
+                    var index = [...children].indexOf(selected);
+                    if (index > -1) {
+                        var newIndex = ([39,40].includes(event.keyCode) ? index+1 : index-1);
+                        var sibling = children[newIndex];
+                        if (sibling && sibling.children && sibling.children[0]) {
+                            sibling = sibling.children[0];
+                            if (!['A','BUTTON','LABEL','INPUT'].includes(sibling.tagName)) {
+                                if ([39,40].includes(event.keyCode)) {
+                                    newIndex++;
+                                } else {
+                                    newIndex--;
+                                }
                                 var sibling = children[newIndex];
                                 if (sibling && sibling.children && sibling.children[0]) {
                                     sibling = sibling.children[0];
-                                    if (!['A','BUTTON','LABEL','INPUT'].includes(sibling.tagName)) {
-                                        if (event.keyCode === 40) newIndex++;
-                                        if (event.keyCode === 38) newIndex--;
-                                        var sibling = children[newIndex];
-                                        if (sibling && sibling.children && sibling.children[0]) {
-                                            sibling = sibling.children[0];
-                                        }
-                                    }
-                                }
-                                if (sibling) {
-                                    sibling.focus();
                                 }
                             }
                         }
+                        if (sibling) {
+                            sibling.focus();
+                        }
                     }
                 }
-            });
+            }
+        }
+    }
+
+    static loadLists = function() {
+        document.querySelectorAll('.list').forEach(list => {
+            list.removeEventListener('keydown', this.navigateList);
+            list.addEventListener('keydown', this.navigateList);
         })
+    }
+
+    static navigateTabs = function(event) {
+        console.log(event);
+        var tablist = event.target.closest('.list');
+        var children = tablist.children[0].tagName === 'UL' ? tablist.children[0].children : tablist.children;
+        
+        var tabs = [...children];
+        var tabpanels = [...tablist.parentElement.querySelector('.list + *').children];
+        var index = tabs.indexOf(event.target);
+        if (index === -1) {
+            tabs.forEach((tab, tabIndex) => {
+                if (event.target === tab || tab.contains(event.target)) {
+                    index = tabIndex;
+                }
+            })
+        }
+        tablist.querySelectorAll('.active').forEach(activeElement => {
+            activeElement.classList.remove('active');
+        });
+        event.target.classList.add('active');
+        tabpanels.forEach(tabpanel => {
+            tabpanel.classList.remove('open');
+        });
+        tabpanels[index].classList.add('open');
+    }
+    
+    static loadTabs = function() {
+        document.querySelectorAll('.tabs .list :is(.button,button)').forEach(elem => {
+            elem.removeEventListener('click', this.navigateTabs);
+            elem.addEventListener('click', this.navigateTabs);
+        });
     }
 
     /**
@@ -495,7 +539,10 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
     Spry.loadToggles();
     Spry.loadSliders();
     Spry.loadLists();
+    Spry.loadTabs();
 } else {
     document.addEventListener('DOMContentLoaded', Spry.loadToggles);
     document.addEventListener('DOMContentLoaded', Spry.loadSliders);
+    document.addEventListener('DOMContentLoaded', Spry.loadLists);
+    document.addEventListener('DOMContentLoaded', Spry.loadTabs);
 }

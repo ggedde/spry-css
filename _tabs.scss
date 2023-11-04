@@ -2,30 +2,34 @@
 * Spry Tabs
 */
 
-%tabopen {
-	transition: opacity .2s ease-in-out, transform .3s ease-out;
-	transform: none;
-	padding   : 2em;
-	max-height: none;
-	opacity   : 1;
-}
-
 .tabs {
-	overflow      : hidden;
-	display       : flex;
-	border-color  : rgba(var(--color-rgb), .4);
+	overflow    : hidden;
+	display     : flex;
+	border-color: rgba(var(--color-rgb), .4);
 
-	nav {
-		overflow      : hidden;
-		flex          : none;
-		border-color  : inherit;
+
+
+	.list {
+		overflow    : hidden;
+		border-color: inherit;
+		flex        : none;
+		width       : auto;
 
 		> :not(ul, ol),
 		li {
 			justify-content: center;
 			text-align     : center;
-			// width          : auto;
-			// flex           : 1 auto;
+			width          : max-content;
+			flex           : auto;
+			> button,
+			> .button {
+				justify-content: center;
+			}
+		}
+
+		&.column > :not(ul, ol),
+		&.column > li {
+			flex: none;
 		}
 
 		&+*>* {
@@ -37,14 +41,29 @@
 			opacity   : 0;
 			order     : 9999;
 			padding   : 0;
+
+			&.open {
+				transition: opacity .2s ease-in-out, transform .3s ease-out;
+				transform : none;
+				padding   : 2em;
+				max-height: none;
+				opacity   : 1;
+			}
 		}
-		&.list > * {
-			flex: none;
-		}
+
+		// &.list > * {
+		// 	flex: none;
+		// }
 	}
-	@for $i from 1 through 20 {
-		:has(:nth-child(#{$i}) :checked) + * > :nth-child(#{$i}) {
-		  @extend %tabopen;
-		}
+
+	&.outline .list {
+		border-width: 1px;
+		border-style: solid;
 	}
+
+	// @for $i from 1 through 20 {
+	// 	:has(:nth-child(#{$i}) :checked) + * > :nth-child(#{$i}) {
+	// 	  @extend %tabopen;
+	// 	}
+	// }
 }
