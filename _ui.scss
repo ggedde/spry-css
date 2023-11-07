@@ -102,42 +102,15 @@
 }
 
 %ui-color {
-	--text-color    : var(--light);
-	--text-color-rgb: var(--light-rgb);
-	
-	&:is(.link,.outline,.hazy) {
-		--text-color    : var(--color);
-		--text-color-rgb: var(--color-rgb);
-		color: var(--text-color);
+	@if (lightness(map-get(map-get($colors, 'default'), 'light')) > 70) {
+		--text-color: var(--dark);
+	} @else {
+		--text-color: var(--light);
 	}
 	
-
-	// @each $color_name, $color_value in $colors {
-		
-	// 	&.#{$color_name} {
-	// 		@if (lightness(map-get(map-get($colors, $color_name), 'light')) > 70) {
-	// 			--text-color    : var(--dark);
-	// 			--text-color-rgb: var(--dark-rgb);
-	// 		}
-	// 		@else {
-	// 			--text-color    : var(--light);
-	// 			--text-color-rgb: var(--light-rgb);
-	// 		}
-
-	// 		[data-theme=dark] & {
-	// 			@if map-get(map-get($colors, $color_name), 'dark') {
-	// 				@if (lightness(map-get(map-get($colors, $color_name), 'dark')) > 70) {
-	// 					--text-color    : var(--dark);
-	// 					--text-color-rgb: var(--dark-rgb);
-	// 				}
-	// 				@else {
-	// 					--text-color    : var(--light);
-	// 					--text-color-rgb: var(--light-rgb);
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
+	&:is(.link,.outline,.hazy) {
+		--text-color: var(--contrast);
+	}
 
 	color: var(--text-color);
 

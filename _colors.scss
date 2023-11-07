@@ -30,11 +30,19 @@
 			--#{$color_name}    : #{map-get($color_value, 'dark')};
 			--#{$color_name}-rgb: #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
 
-			@if $color_name==default {
-				--color          : #{map-get($color_value, 'dark')};
-				--color-rgb      : #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
-				--text-color     : #{map-get($color_value, 'dark')};
-				--text-color-rgb : #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
+			// @if $color_name==default {
+			// 	--color          : #{map-get($color_value, 'dark')};
+			// 	--color-rgb      : #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
+			// 	--text-color     : #{map-get($color_value, 'dark')};
+			// }
+
+			.#{$color_name} {
+				@if (lightness(map-get($color_value, 'dark')) > 70) {
+					--text-color: var(--dark);
+				} 
+				@else {
+					--text-color: var(--light);
+				}
 			}
 		}
     }
@@ -49,7 +57,6 @@ body,
 body,
 [data-theme=light] {
 	--text-color    : var(--dark);
-	--text-color-rgb: var(--dark-rgb);
 
 	select option,
 	.tooltip {
@@ -65,29 +72,57 @@ body,
             --color          : #{map-get($color_value, 'light')};
             --color-rgb      : #{red(map-get($color_value, 'light')), green(map-get($color_value, 'light')), blue(map-get($color_value, 'light'))};
             --text-color     : #{map-get($color_value, 'light')};
-            --text-color-rgb : #{red(map-get($color_value, 'light')), green(map-get($color_value, 'light')), blue(map-get($color_value, 'light'))};
         }
+
+		@if map-get($color_value, 'light') {
+			.#{$color_name} {
+				@if (lightness(map-get($color_value, 'light')) > 70) {
+					--text-color: var(--dark);
+				} 
+				@else {
+					--text-color: var(--light);
+				}
+			}
+		}
     }
 }
 
+// Initial Color sets
 @each $color_name, $color_value in $colors {
 
 	article.#{$color_name} {
 		--card-color: var(--#{$color_name});
 	}
 
+	.#{$color_name} :is(.link,.outline,.hazy) {
+		--text-color     : var(--#{$color_name});
+		color            : var(--text-color);
+	}
+}
+
+// First Color Overrides
+@each $color_name, $color_value in $colors {
+
+	.link-#{$color_name} a:not(.button),
+	.#{$color_name}:is(.link,.outline,.hazy),
+	.link-hover-#{$color_name} a:not(.button):is(:hover,:focus) {
+		--text-color     : var(--#{$color_name});
+		color            : var(--text-color);
+	}
+}
+
+// Final Color Overrides
+@each $color_name, $color_value in $colors {
+
 	[class].#{$color_name} {
 		--color     : var(--#{$color_name});
 		--color-rgb : var(--#{$color_name}-rgb);
 	}
 
-	.link-#{$color_name} a:not(.button),
+	[class].color-#{$color_name},
 	.hover-#{$color_name}:is(:hover,:focus),
-	.link-hover-#{$color_name} a:not(.button):is(:hover,:focus),
-	.icon.#{$color_name}:not(button,.button),
-	[class].color-#{$color_name} {
+	.icon.#{$color_name}:not(button,.button) {
 		--text-color     : var(--#{$color_name});
-		--text-color-rgb : var(--#{$color_name}-rgb);
 		color            : var(--text-color);
 	}
 

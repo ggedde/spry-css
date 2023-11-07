@@ -208,15 +208,12 @@ i:empty, .icon, button,
 .button,
 input[type=submit], .badge, .alert, .ui {
   --text-color: var(--light);
-  --text-color-rgb: var(--light-rgb);
   color: var(--text-color);
 }
 i:is(.link, .outline, .hazy):empty, .icon:is(.link, .outline, .hazy), button:is(.link, .outline, .hazy),
 .button:is(.link, .outline, .hazy),
 input[type=submit]:is(.link, .outline, .hazy), .badge:is(.link, .outline, .hazy), .alert:is(.link, .outline, .hazy), .ui:is(.link, .outline, .hazy) {
-  --text-color: var(--color);
-  --text-color-rgb: var(--color-rgb);
-  color: var(--text-color);
+  --text-color: var(--contrast);
 }
 i:empty svg, .icon svg, button svg,
 .button svg,
@@ -607,7 +604,7 @@ article > h6 {
 input,
 textarea,
 select {
-  border-color: rgba(var(--text-color-rgb), 0.5);
+  border-color: rgba(var(--default-rgb), 0.5);
   font-family: inherit;
   font-weight: inherit;
   color: inherit;
@@ -3903,6 +3900,15 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   background-color: var(--dark);
   color: var(--light);
 }
+[data-theme=dark] .faint {
+  --text-color: var(--light);
+}
+[data-theme=dark] .contrast {
+  --text-color: var(--dark);
+}
+[data-theme=dark] .dark {
+  --text-color: var(--light);
+}
 
 body,
 [data-theme=light],
@@ -3913,13 +3919,11 @@ body,
 body,
 [data-theme=light] {
   --text-color: var(--dark);
-  --text-color-rgb: var(--dark-rgb);
   --default: #808080;
   --default-rgb: 128, 128, 128;
   --color: #808080;
   --color-rgb: 128, 128, 128;
   --text-color: #808080;
-  --text-color-rgb: 128, 128, 128;
   --faint: #efefef;
   --faint-rgb: 239, 239, 239;
   --contrast: #333333;
@@ -3940,9 +3944,145 @@ body .tooltip,
   background-color: var(--light);
   color: var(--dark);
 }
+body .default,
+[data-theme=light] .default {
+  --text-color: var(--light);
+}
+body .faint,
+[data-theme=light] .faint {
+  --text-color: var(--dark);
+}
+body .contrast,
+[data-theme=light] .contrast {
+  --text-color: var(--light);
+}
+body .dark,
+[data-theme=light] .dark {
+  --text-color: var(--light);
+}
+body .light,
+[data-theme=light] .light {
+  --text-color: var(--dark);
+}
+body .primary,
+[data-theme=light] .primary {
+  --text-color: var(--light);
+}
+body .secondary,
+[data-theme=light] .secondary {
+  --text-color: var(--light);
+}
 
 article.default {
   --card-color: var(--default);
+}
+
+.default :is(.link, .outline, .hazy) {
+  --text-color: var(--default);
+  color: var(--text-color);
+}
+
+article.faint {
+  --card-color: var(--faint);
+}
+
+.faint :is(.link, .outline, .hazy) {
+  --text-color: var(--faint);
+  color: var(--text-color);
+}
+
+article.contrast {
+  --card-color: var(--contrast);
+}
+
+.contrast :is(.link, .outline, .hazy) {
+  --text-color: var(--contrast);
+  color: var(--text-color);
+}
+
+article.dark {
+  --card-color: var(--dark);
+}
+
+.dark :is(.link, .outline, .hazy) {
+  --text-color: var(--dark);
+  color: var(--text-color);
+}
+
+article.light {
+  --card-color: var(--light);
+}
+
+.light :is(.link, .outline, .hazy) {
+  --text-color: var(--light);
+  color: var(--text-color);
+}
+
+article.primary {
+  --card-color: var(--primary);
+}
+
+.primary :is(.link, .outline, .hazy) {
+  --text-color: var(--primary);
+  color: var(--text-color);
+}
+
+article.secondary {
+  --card-color: var(--secondary);
+}
+
+.secondary :is(.link, .outline, .hazy) {
+  --text-color: var(--secondary);
+  color: var(--text-color);
+}
+
+.link-default a:not(.button),
+.default:is(.link, .outline, .hazy),
+.link-hover-default a:not(.button):is(:hover, :focus) {
+  --text-color: var(--default);
+  color: var(--text-color);
+}
+
+.link-faint a:not(.button),
+.faint:is(.link, .outline, .hazy),
+.link-hover-faint a:not(.button):is(:hover, :focus) {
+  --text-color: var(--faint);
+  color: var(--text-color);
+}
+
+.link-contrast a:not(.button),
+.contrast:is(.link, .outline, .hazy),
+.link-hover-contrast a:not(.button):is(:hover, :focus) {
+  --text-color: var(--contrast);
+  color: var(--text-color);
+}
+
+.link-dark a:not(.button),
+.dark:is(.link, .outline, .hazy),
+.link-hover-dark a:not(.button):is(:hover, :focus) {
+  --text-color: var(--dark);
+  color: var(--text-color);
+}
+
+.link-light a:not(.button),
+.light:is(.link, .outline, .hazy),
+.link-hover-light a:not(.button):is(:hover, :focus) {
+  --text-color: var(--light);
+  color: var(--text-color);
+}
+
+.link-primary a:not(.button),
+.primary:is(.link, .outline, .hazy),
+.link-hover-primary a:not(.button):is(:hover, :focus) {
+  --text-color: var(--primary);
+  color: var(--text-color);
+}
+
+.link-secondary a:not(.button),
+.secondary:is(.link, .outline, .hazy),
+.link-hover-secondary a:not(.button):is(:hover, :focus) {
+  --text-color: var(--secondary);
+  color: var(--text-color);
 }
 
 [class].default {
@@ -3950,13 +4090,10 @@ article.default {
   --color-rgb: var(--default-rgb);
 }
 
-.link-default a:not(.button),
+[class].color-default,
 .hover-default:is(:hover, :focus),
-.link-hover-default a:not(.button):is(:hover, :focus),
-.icon.default:not(button, .button),
-[class].color-default {
+.icon.default:not(button, .button) {
   --text-color: var(--default);
-  --text-color-rgb: var(--default-rgb);
   color: var(--text-color);
 }
 
@@ -3977,22 +4114,15 @@ article.default {
   border-color: rgba(var(--default-rgb), 0.4);
 }
 
-article.faint {
-  --card-color: var(--faint);
-}
-
 [class].faint {
   --color: var(--faint);
   --color-rgb: var(--faint-rgb);
 }
 
-.link-faint a:not(.button),
+[class].color-faint,
 .hover-faint:is(:hover, :focus),
-.link-hover-faint a:not(.button):is(:hover, :focus),
-.icon.faint:not(button, .button),
-[class].color-faint {
+.icon.faint:not(button, .button) {
   --text-color: var(--faint);
-  --text-color-rgb: var(--faint-rgb);
   color: var(--text-color);
 }
 
@@ -4013,22 +4143,15 @@ article.faint {
   border-color: rgba(var(--faint-rgb), 0.4);
 }
 
-article.contrast {
-  --card-color: var(--contrast);
-}
-
 [class].contrast {
   --color: var(--contrast);
   --color-rgb: var(--contrast-rgb);
 }
 
-.link-contrast a:not(.button),
+[class].color-contrast,
 .hover-contrast:is(:hover, :focus),
-.link-hover-contrast a:not(.button):is(:hover, :focus),
-.icon.contrast:not(button, .button),
-[class].color-contrast {
+.icon.contrast:not(button, .button) {
   --text-color: var(--contrast);
-  --text-color-rgb: var(--contrast-rgb);
   color: var(--text-color);
 }
 
@@ -4049,22 +4172,15 @@ article.contrast {
   border-color: rgba(var(--contrast-rgb), 0.4);
 }
 
-article.dark {
-  --card-color: var(--dark);
-}
-
 [class].dark {
   --color: var(--dark);
   --color-rgb: var(--dark-rgb);
 }
 
-.link-dark a:not(.button),
+[class].color-dark,
 .hover-dark:is(:hover, :focus),
-.link-hover-dark a:not(.button):is(:hover, :focus),
-.icon.dark:not(button, .button),
-[class].color-dark {
+.icon.dark:not(button, .button) {
   --text-color: var(--dark);
-  --text-color-rgb: var(--dark-rgb);
   color: var(--text-color);
 }
 
@@ -4085,22 +4201,15 @@ article.dark {
   border-color: rgba(var(--dark-rgb), 0.4);
 }
 
-article.light {
-  --card-color: var(--light);
-}
-
 [class].light {
   --color: var(--light);
   --color-rgb: var(--light-rgb);
 }
 
-.link-light a:not(.button),
+[class].color-light,
 .hover-light:is(:hover, :focus),
-.link-hover-light a:not(.button):is(:hover, :focus),
-.icon.light:not(button, .button),
-[class].color-light {
+.icon.light:not(button, .button) {
   --text-color: var(--light);
-  --text-color-rgb: var(--light-rgb);
   color: var(--text-color);
 }
 
@@ -4121,22 +4230,15 @@ article.light {
   border-color: rgba(var(--light-rgb), 0.4);
 }
 
-article.primary {
-  --card-color: var(--primary);
-}
-
 [class].primary {
   --color: var(--primary);
   --color-rgb: var(--primary-rgb);
 }
 
-.link-primary a:not(.button),
+[class].color-primary,
 .hover-primary:is(:hover, :focus),
-.link-hover-primary a:not(.button):is(:hover, :focus),
-.icon.primary:not(button, .button),
-[class].color-primary {
+.icon.primary:not(button, .button) {
   --text-color: var(--primary);
-  --text-color-rgb: var(--primary-rgb);
   color: var(--text-color);
 }
 
@@ -4157,22 +4259,15 @@ article.primary {
   border-color: rgba(var(--primary-rgb), 0.4);
 }
 
-article.secondary {
-  --card-color: var(--secondary);
-}
-
 [class].secondary {
   --color: var(--secondary);
   --color-rgb: var(--secondary-rgb);
 }
 
-.link-secondary a:not(.button),
+[class].color-secondary,
 .hover-secondary:is(:hover, :focus),
-.link-hover-secondary a:not(.button):is(:hover, :focus),
-.icon.secondary:not(button, .button),
-[class].color-secondary {
+.icon.secondary:not(button, .button) {
   --text-color: var(--secondary);
-  --text-color-rgb: var(--secondary-rgb);
   color: var(--text-color);
 }
 

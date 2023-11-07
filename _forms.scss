@@ -9,7 +9,7 @@ select{
 	@extend %ui;
 	@extend %ui-focus-visible;
 	@extend %ui-border;
-	border-color: rgba(var(--text-color-rgb), .5);
+	border-color: rgba(var(--default-rgb), .5);
 	font-family: inherit;
 	font-weight: inherit;
 	color: inherit;
