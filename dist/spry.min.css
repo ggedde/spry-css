@@ -72,24 +72,6 @@ img {
 :root {
   --gap: 1.25em;
   --col: 1;
-  --default: #888888;
-  --default-rgb: 136, 136, 136;
-  --color: #888888;
-  --color-rgb: 136, 136, 136;
-  --text-color: #888888;
-  --text-color-rgb: 136, 136, 136;
-  --light: #efefef;
-  --light-rgb: 239, 239, 239;
-  --faint: #efefef;
-  --faint-rgb: 239, 239, 239;
-  --dark: #333333;
-  --dark-rgb: 51, 51, 51;
-  --contrast: #333333;
-  --contrast-rgb: 51, 51, 51;
-  --primary: #1494df;
-  --primary-rgb: 20, 148, 223;
-  --secondary: #df8a22;
-  --secondary-rgb: 223, 138, 34;
 }
 @media screen and (min-width: 40em) {
   :root {
@@ -197,14 +179,18 @@ input[type=submit], .badge, .alert, .ui {
   border-color: var(--color);
 }
 
-button:not(:active):not(.link):is(:hover, :focus, :focus-within),
+button.active:not(:active):not(.link), button:not(:active):not(.link):is(:hover, :focus, :focus-within),
+.button.active:not(:active):not(.link),
 .button:not(:active):not(.link):is(:hover, :focus, :focus-within),
+input[type=submit].active:not(:active):not(.link),
 input[type=submit]:not(:active):not(.link):is(:hover, :focus, :focus-within), a:not(:active):hover, a:not(:active):focus {
   filter: brightness(1.15);
 }
 
-button:not(:active):is(.link, .outline, .hazy):is(:hover, :focus, :focus-within),
+button.active:not(:active):is(.link, .outline, .hazy), button:not(:active):is(.link, .outline, .hazy):is(:hover, :focus, :focus-within),
+.button.active:not(:active):is(.link, .outline, .hazy),
 .button:not(:active):is(.link, .outline, .hazy):is(:hover, :focus, :focus-within),
+input[type=submit].active:not(:active):is(.link, .outline, .hazy),
 input[type=submit]:not(:active):is(.link, .outline, .hazy):is(:hover, :focus, :focus-within), .list a:not(:active):hover,
 .list a:not(:active):focus {
   background-color: rgba(var(--color-rgb), 0.1);
@@ -214,7 +200,7 @@ input:focus-visible,
 textarea:focus-visible,
 select:focus-visible, button:focus-visible,
 .button:focus-visible, a:focus-visible {
-  outline: 2px solid rgba(140, 140, 140, 0.25);
+  outline: 2px solid rgba(var(--color-rgb), 0.25);
   outline-offset: 2px;
 }
 
@@ -223,6 +209,13 @@ i:empty, .icon, button,
 input[type=submit], .badge, .alert, .ui {
   --text-color: var(--light);
   --text-color-rgb: var(--light-rgb);
+  color: var(--text-color);
+}
+i:is(.link, .outline, .hazy):empty, .icon:is(.link, .outline, .hazy), button:is(.link, .outline, .hazy),
+.button:is(.link, .outline, .hazy),
+input[type=submit]:is(.link, .outline, .hazy), .badge:is(.link, .outline, .hazy), .alert:is(.link, .outline, .hazy), .ui:is(.link, .outline, .hazy) {
+  --text-color: var(--color);
+  --text-color-rgb: var(--color-rgb);
   color: var(--text-color);
 }
 i:empty svg, .icon svg, button svg,
@@ -248,14 +241,6 @@ a {
 }
 a:hover, a:focus {
   text-decoration: none;
-}
-
-.link,
-.outline:not(.list, .tabs),
-.hazy {
-  --text-color: var(--color);
-  --text-color-rgb: var(--color-rgb);
-  color: var(--text-color);
 }
 
 .link,
@@ -396,7 +381,7 @@ a {
   border-width: 0 0 1px 1px;
   border-color: inherit;
   border-style: solid;
-  margin: 1px 0 -1px -1px;
+  margin: 0 0 -1px -1px;
 }
 .outline.row.tabs .list {
   border-width: 0 1px 0 1px;
@@ -457,6 +442,9 @@ a {
 }
 .list.row li > *:first-child {
   height: 100%;
+}
+.list li:has(:focus-visible) {
+  z-index: 1;
 }
 .list.hide-inputs input {
   opacity: 0;
@@ -3890,149 +3878,25 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 /*!
 * Spry Colors
 */
-.contrast {
-  --color: var(--contrast);
-  --color-rgb: var(--contrast-rgb);
-}
-
-.faint {
-  --color: var(--faint);
-  --color-rgb: var(--faint-rgb);
-}
-
-.border-contrast {
-  border-color: var(--contrast);
-}
-
-.border-faint {
-  border-color: var(--faint);
-}
-
-.color-contrast {
-  --text-color: var(--contrast);
-  --text-color-rgb: var(--contrast-rgb);
-  color: var(--text-color);
-}
-
-.color-faint {
-  --text-color: var(--faint);
-  --text-color-rgb: var(--faint-rgb);
-  color: var(--text-color);
-}
-
-.bg-contrast {
-  background-color: var(--contrast);
-}
-
-.bg-faint {
-  background-color: var(--faint);
-}
-
-.badge.faint,
-button.faint,
-[type=submit].faint,
-form.faint [type=submit],
-.button.faint,
-.alert.faint {
-  --text-color: var(--dark);
-}
-.badge.faint:is(.hazy, .outline, .link),
-button.faint:is(.hazy, .outline, .link),
-[type=submit].faint:is(.hazy, .outline, .link),
-form.faint [type=submit]:is(.hazy, .outline, .link),
-.button.faint:is(.hazy, .outline, .link),
-.alert.faint:is(.hazy, .outline, .link) {
-  --text-color: var(--light);
-}
-
-.link-default a,
-.link-hover-default a:not(.button):hover,
-.link-hover-default a:not(.button):focus {
-  --text-color: var(--default);
-  --text-color-rgb: var(--default-rgb);
-  color: var(--text-color);
-}
-
-.link-light a,
-.link-hover-light a:not(.button):hover,
-.link-hover-light a:not(.button):focus {
-  --text-color: var(--light);
-  --text-color-rgb: var(--light-rgb);
-  color: var(--text-color);
-}
-
-.link-dark a,
-.link-hover-dark a:not(.button):hover,
-.link-hover-dark a:not(.button):focus {
-  --text-color: var(--dark);
-  --text-color-rgb: var(--dark-rgb);
-  color: var(--text-color);
-}
-
-.link-primary a,
-.link-hover-primary a:not(.button):hover,
-.link-hover-primary a:not(.button):focus {
-  --text-color: var(--primary);
-  --text-color-rgb: var(--primary-rgb);
-  color: var(--text-color);
-}
-
-.link-secondary a,
-.link-hover-secondary a:not(.button):hover,
-.link-hover-secondary a:not(.button):focus {
-  --text-color: var(--secondary);
-  --text-color-rgb: var(--secondary-rgb);
-  color: var(--text-color);
-}
-
 @media (prefers-color-scheme: dark) {
   select option {
     background: var(--dark);
     color: var(--light);
   }
 }
-[data-theme=dark] {
+[data-theme=dark],
+[data-theme=dark] article {
   background-color: #1f1f1f;
   color: var(--contrast);
-  --contrast: #efefef;
-  --contrast-rgb: var(--light-rgb);
+}
+
+[data-theme=dark] {
   --faint: #333333;
-  --faint-rgb: var(--dark-rgb);
-}
-[data-theme=dark] button.contrast,
-[data-theme=dark] .badge.contrast,
-[data-theme=dark] [type=submit].contrast,
-[data-theme=dark] form.contrast [type=submit],
-[data-theme=dark] .button.contrast,
-[data-theme=dark] .alert.contrast {
-  --text-color: var(--dark);
-}
-[data-theme=dark] button.contrast:is(.hazy, .outline, .link),
-[data-theme=dark] .badge.contrast:is(.hazy, .outline, .link),
-[data-theme=dark] [type=submit].contrast:is(.hazy, .outline, .link),
-[data-theme=dark] form.contrast [type=submit]:is(.hazy, .outline, .link),
-[data-theme=dark] .button.contrast:is(.hazy, .outline, .link),
-[data-theme=dark] .alert.contrast:is(.hazy, .outline, .link) {
-  --text-color: var(--light);
-}
-[data-theme=dark] button.faint,
-[data-theme=dark] .badge.faint,
-[data-theme=dark] [type=submit].faint,
-[data-theme=dark] form.faint [type=submit],
-[data-theme=dark] .button.faint,
-[data-theme=dark] .alert.faint {
-  --text-color: var(--light);
-}
-[data-theme=dark] button.faint:is(.hazy, .outline, .link),
-[data-theme=dark] .badge.faint:is(.hazy, .outline, .link),
-[data-theme=dark] [type=submit].faint:is(.hazy, .outline, .link),
-[data-theme=dark] form.faint [type=submit]:is(.hazy, .outline, .link),
-[data-theme=dark] .button.faint:is(.hazy, .outline, .link),
-[data-theme=dark] .alert.faint:is(.hazy, .outline, .link) {
-  --text-color: var(--dark);
-}
-[data-theme=dark] article {
-  background-color: #242424;
+  --faint-rgb: 51, 51, 51;
+  --contrast: #eeeeee;
+  --contrast-rgb: 238, 238, 238;
+  --dark: #333333;
+  --dark-rgb: 51, 51, 51;
 }
 [data-theme=dark] select option,
 [data-theme=dark] .tooltip {
@@ -4040,55 +3904,45 @@ form.faint [type=submit]:is(.hazy, .outline, .link),
   color: var(--light);
 }
 
-[data-theme=light] {
-  background-color: white;
-  color: var(--contrast);
-  --contrast: var(--dark);
-  --contrast-rgb: var(--dark-rgb);
-  --faint: var(--light);
-  --faint-rgb: var(--light-rgb);
-  --text-color: var(--dark);
-  --text-color-rgb: var(--dark-rgb);
-}
-[data-theme=light] button.contrast,
-[data-theme=light] .badge.contrast,
-[data-theme=light] [type=submit].contrast,
-[data-theme=light] form.contrast [type=submit],
-[data-theme=light] .button.contrast,
-[data-theme=light] .alert.contrast {
-  --text-color: var(--light);
-}
-[data-theme=light] button.contrast:is(.hazy, .outline, .link),
-[data-theme=light] .badge.contrast:is(.hazy, .outline, .link),
-[data-theme=light] [type=submit].contrast:is(.hazy, .outline, .link),
-[data-theme=light] form.contrast [type=submit]:is(.hazy, .outline, .link),
-[data-theme=light] .button.contrast:is(.hazy, .outline, .link),
-[data-theme=light] .alert.contrast:is(.hazy, .outline, .link) {
-  --text-color: var(--dark);
-}
-[data-theme=light] button.faint,
-[data-theme=light] .badge.faint,
-[data-theme=light] [type=submit].faint,
-[data-theme=light] form.faint [type=submit],
-[data-theme=light] .button.faint,
-[data-theme=light] .alert.faint {
-  --text-color: var(--dark);
-}
-[data-theme=light] button.faint:is(.hazy, .outline, .link),
-[data-theme=light] .badge.faint:is(.hazy, .outline, .link),
-[data-theme=light] [type=submit].faint:is(.hazy, .outline, .link),
-[data-theme=light] form.faint [type=submit]:is(.hazy, .outline, .link),
-[data-theme=light] .button.faint:is(.hazy, .outline, .link),
-[data-theme=light] .alert.faint:is(.hazy, .outline, .link) {
-  --text-color: var(--light);
-}
+body,
+[data-theme=light],
 [data-theme=light] article {
   background-color: white;
 }
+
+body,
+[data-theme=light] {
+  --text-color: var(--dark);
+  --text-color-rgb: var(--dark-rgb);
+  --default: #808080;
+  --default-rgb: 128, 128, 128;
+  --color: #808080;
+  --color-rgb: 128, 128, 128;
+  --text-color: #808080;
+  --text-color-rgb: 128, 128, 128;
+  --faint: #efefef;
+  --faint-rgb: 239, 239, 239;
+  --contrast: #333333;
+  --contrast-rgb: 51, 51, 51;
+  --dark: #333333;
+  --dark-rgb: 51, 51, 51;
+  --light: #efefef;
+  --light-rgb: 239, 239, 239;
+  --primary: #1494df;
+  --primary-rgb: 20, 148, 223;
+  --secondary: #df8a22;
+  --secondary-rgb: 223, 138, 34;
+}
+body select option,
+body .tooltip,
 [data-theme=light] select option,
 [data-theme=light] .tooltip {
   background-color: var(--light);
   color: var(--dark);
+}
+
+article.default {
+  --card-color: var(--default);
 }
 
 [class].default {
@@ -4096,97 +3950,107 @@ form.faint [type=submit]:is(.hazy, .outline, .link),
   --color-rgb: var(--default-rgb);
 }
 
-article.default {
-  --card-color: var(--default);
-}
-
+.link-default a:not(.button),
+.hover-default:is(:hover, :focus),
+.link-hover-default a:not(.button):is(:hover, :focus),
 .icon.default:not(button, .button),
-.color-default,
-[class*=color-default],
-a.color-default,
-.hover-default:hover,
-.hover-default:focus,
-a.hover-default:hover,
-a.hover-default:focus,
-a.button.hover-default:hover,
-a.button.hover-default:focus,
-button.hover-default:hover,
-button.hover-default:focus {
+[class].color-default {
   --text-color: var(--default);
   --text-color-rgb: var(--default-rgb);
   color: var(--text-color);
 }
 
 .bg-default,
-.bg-hover-default:hover,
-button.bg-hover-default:not(:active):is(:hover, :focus, :focus-within),
 .tooltip.bg-default {
   background-color: var(--default);
 }
 
-.bg-default-hazy,
-.bg-hover-default-hazy:hover,
-button.bg-hover-default-hazy:not(:active):is(:hover, :focus, :focus-within) {
+.bg-default-hazy {
   background-color: rgba(var(--default-rgb), 0.1);
 }
 
-.border-default,
-button.border-default {
+.border-default {
   border-color: var(--default);
 }
 
-.border-default-hazy,
-button.border-default-hazy {
+.border-default-hazy {
   border-color: rgba(var(--default-rgb), 0.4);
 }
 
-[class].light {
-  --color: var(--light);
-  --color-rgb: var(--light-rgb);
+article.faint {
+  --card-color: var(--faint);
 }
 
-article.light {
-  --card-color: var(--light);
+[class].faint {
+  --color: var(--faint);
+  --color-rgb: var(--faint-rgb);
 }
 
-.icon.light:not(button, .button),
-.color-light,
-[class*=color-light],
-a.color-light,
-.hover-light:hover,
-.hover-light:focus,
-a.hover-light:hover,
-a.hover-light:focus,
-a.button.hover-light:hover,
-a.button.hover-light:focus,
-button.hover-light:hover,
-button.hover-light:focus {
-  --text-color: var(--light);
-  --text-color-rgb: var(--light-rgb);
+.link-faint a:not(.button),
+.hover-faint:is(:hover, :focus),
+.link-hover-faint a:not(.button):is(:hover, :focus),
+.icon.faint:not(button, .button),
+[class].color-faint {
+  --text-color: var(--faint);
+  --text-color-rgb: var(--faint-rgb);
   color: var(--text-color);
 }
 
-.bg-light,
-.bg-hover-light:hover,
-button.bg-hover-light:not(:active):is(:hover, :focus, :focus-within),
-.tooltip.bg-light {
-  background-color: var(--light);
+.bg-faint,
+.tooltip.bg-faint {
+  background-color: var(--faint);
 }
 
-.bg-light-hazy,
-.bg-hover-light-hazy:hover,
-button.bg-hover-light-hazy:not(:active):is(:hover, :focus, :focus-within) {
-  background-color: rgba(var(--light-rgb), 0.1);
+.bg-faint-hazy {
+  background-color: rgba(var(--faint-rgb), 0.1);
 }
 
-.border-light,
-button.border-light {
-  border-color: var(--light);
+.border-faint {
+  border-color: var(--faint);
 }
 
-.border-light-hazy,
-button.border-light-hazy {
-  border-color: rgba(var(--light-rgb), 0.4);
+.border-faint-hazy {
+  border-color: rgba(var(--faint-rgb), 0.4);
+}
+
+article.contrast {
+  --card-color: var(--contrast);
+}
+
+[class].contrast {
+  --color: var(--contrast);
+  --color-rgb: var(--contrast-rgb);
+}
+
+.link-contrast a:not(.button),
+.hover-contrast:is(:hover, :focus),
+.link-hover-contrast a:not(.button):is(:hover, :focus),
+.icon.contrast:not(button, .button),
+[class].color-contrast {
+  --text-color: var(--contrast);
+  --text-color-rgb: var(--contrast-rgb);
+  color: var(--text-color);
+}
+
+.bg-contrast,
+.tooltip.bg-contrast {
+  background-color: var(--contrast);
+}
+
+.bg-contrast-hazy {
+  background-color: rgba(var(--contrast-rgb), 0.1);
+}
+
+.border-contrast {
+  border-color: var(--contrast);
+}
+
+.border-contrast-hazy {
+  border-color: rgba(var(--contrast-rgb), 0.4);
+}
+
+article.dark {
+  --card-color: var(--dark);
 }
 
 [class].dark {
@@ -4194,48 +4058,71 @@ button.border-light-hazy {
   --color-rgb: var(--dark-rgb);
 }
 
-article.dark {
-  --card-color: var(--dark);
-}
-
+.link-dark a:not(.button),
+.hover-dark:is(:hover, :focus),
+.link-hover-dark a:not(.button):is(:hover, :focus),
 .icon.dark:not(button, .button),
-.color-dark,
-[class*=color-dark],
-a.color-dark,
-.hover-dark:hover,
-.hover-dark:focus,
-a.hover-dark:hover,
-a.hover-dark:focus,
-a.button.hover-dark:hover,
-a.button.hover-dark:focus,
-button.hover-dark:hover,
-button.hover-dark:focus {
+[class].color-dark {
   --text-color: var(--dark);
   --text-color-rgb: var(--dark-rgb);
   color: var(--text-color);
 }
 
 .bg-dark,
-.bg-hover-dark:hover,
-button.bg-hover-dark:not(:active):is(:hover, :focus, :focus-within),
 .tooltip.bg-dark {
   background-color: var(--dark);
 }
 
-.bg-dark-hazy,
-.bg-hover-dark-hazy:hover,
-button.bg-hover-dark-hazy:not(:active):is(:hover, :focus, :focus-within) {
+.bg-dark-hazy {
   background-color: rgba(var(--dark-rgb), 0.1);
 }
 
-.border-dark,
-button.border-dark {
+.border-dark {
   border-color: var(--dark);
 }
 
-.border-dark-hazy,
-button.border-dark-hazy {
+.border-dark-hazy {
   border-color: rgba(var(--dark-rgb), 0.4);
+}
+
+article.light {
+  --card-color: var(--light);
+}
+
+[class].light {
+  --color: var(--light);
+  --color-rgb: var(--light-rgb);
+}
+
+.link-light a:not(.button),
+.hover-light:is(:hover, :focus),
+.link-hover-light a:not(.button):is(:hover, :focus),
+.icon.light:not(button, .button),
+[class].color-light {
+  --text-color: var(--light);
+  --text-color-rgb: var(--light-rgb);
+  color: var(--text-color);
+}
+
+.bg-light,
+.tooltip.bg-light {
+  background-color: var(--light);
+}
+
+.bg-light-hazy {
+  background-color: rgba(var(--light-rgb), 0.1);
+}
+
+.border-light {
+  border-color: var(--light);
+}
+
+.border-light-hazy {
+  border-color: rgba(var(--light-rgb), 0.4);
+}
+
+article.primary {
+  --card-color: var(--primary);
 }
 
 [class].primary {
@@ -4243,48 +4130,35 @@ button.border-dark-hazy {
   --color-rgb: var(--primary-rgb);
 }
 
-article.primary {
-  --card-color: var(--primary);
-}
-
+.link-primary a:not(.button),
+.hover-primary:is(:hover, :focus),
+.link-hover-primary a:not(.button):is(:hover, :focus),
 .icon.primary:not(button, .button),
-.color-primary,
-[class*=color-primary],
-a.color-primary,
-.hover-primary:hover,
-.hover-primary:focus,
-a.hover-primary:hover,
-a.hover-primary:focus,
-a.button.hover-primary:hover,
-a.button.hover-primary:focus,
-button.hover-primary:hover,
-button.hover-primary:focus {
+[class].color-primary {
   --text-color: var(--primary);
   --text-color-rgb: var(--primary-rgb);
   color: var(--text-color);
 }
 
 .bg-primary,
-.bg-hover-primary:hover,
-button.bg-hover-primary:not(:active):is(:hover, :focus, :focus-within),
 .tooltip.bg-primary {
   background-color: var(--primary);
 }
 
-.bg-primary-hazy,
-.bg-hover-primary-hazy:hover,
-button.bg-hover-primary-hazy:not(:active):is(:hover, :focus, :focus-within) {
+.bg-primary-hazy {
   background-color: rgba(var(--primary-rgb), 0.1);
 }
 
-.border-primary,
-button.border-primary {
+.border-primary {
   border-color: var(--primary);
 }
 
-.border-primary-hazy,
-button.border-primary-hazy {
+.border-primary-hazy {
   border-color: rgba(var(--primary-rgb), 0.4);
+}
+
+article.secondary {
+  --card-color: var(--secondary);
 }
 
 [class].secondary {
@@ -4292,48 +4166,29 @@ button.border-primary-hazy {
   --color-rgb: var(--secondary-rgb);
 }
 
-article.secondary {
-  --card-color: var(--secondary);
-}
-
+.link-secondary a:not(.button),
+.hover-secondary:is(:hover, :focus),
+.link-hover-secondary a:not(.button):is(:hover, :focus),
 .icon.secondary:not(button, .button),
-.color-secondary,
-[class*=color-secondary],
-a.color-secondary,
-.hover-secondary:hover,
-.hover-secondary:focus,
-a.hover-secondary:hover,
-a.hover-secondary:focus,
-a.button.hover-secondary:hover,
-a.button.hover-secondary:focus,
-button.hover-secondary:hover,
-button.hover-secondary:focus {
+[class].color-secondary {
   --text-color: var(--secondary);
   --text-color-rgb: var(--secondary-rgb);
   color: var(--text-color);
 }
 
 .bg-secondary,
-.bg-hover-secondary:hover,
-button.bg-hover-secondary:not(:active):is(:hover, :focus, :focus-within),
 .tooltip.bg-secondary {
   background-color: var(--secondary);
 }
 
-.bg-secondary-hazy,
-.bg-hover-secondary-hazy:hover,
-button.bg-hover-secondary-hazy:not(:active):is(:hover, :focus, :focus-within) {
+.bg-secondary-hazy {
   background-color: rgba(var(--secondary-rgb), 0.1);
 }
 
-.border-secondary,
-button.border-secondary {
+.border-secondary {
   border-color: var(--secondary);
 }
 
-.border-secondary-hazy,
-button.border-secondary-hazy {
+.border-secondary-hazy {
   border-color: rgba(var(--secondary-rgb), 0.4);
 }
-
-/*# sourceMappingURL=spry.min.css.map */

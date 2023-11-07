@@ -6,14 +6,12 @@
 */
 
 // Heading Font Sizes and Classes
-@each $type_name,
-$type in $types {
+@each $type_name, $type in $types {
 
     .#{$type_name},
     #{$type_name} {
 
-        @each $type_field,
-        $type_value in $type {
+        @each $type_field, $type_value in $type {
             #{$type_field}: $type_value;
         }
     }

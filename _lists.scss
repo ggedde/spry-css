@@ -76,6 +76,10 @@
 		@extend %ui-bg-hover;
 	}
 
+	li:has(:focus-visible) {
+		z-index: 1;
+	}
+
 	&.hide-inputs input {
 		opacity  : 0;
 		width    : 0;

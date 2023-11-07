@@ -12,7 +12,7 @@ div.code-toolbar {
 } */
 .show-code {
 	position: relative;
-	background-color: transparent !important;
+	/* background-color: transparent !important; */
 }
 
 .show-code.open .code-container {

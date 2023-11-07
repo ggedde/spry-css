@@ -19,9 +19,11 @@ input[type=submit] {
 	&.outline {
 		@extend %ui-border;
 	}
+	&.active:is(.link, .outline, .hazy),
 	&:is(.link, .outline, .hazy):is(:hover,:focus,:focus-within) {
 		@extend %ui-bg-hover;
 	}
+	&.active:not(.link),
 	&:not(.link):is(:hover,:focus,:focus-within) {
 		@extend %ui-hover;
 	}

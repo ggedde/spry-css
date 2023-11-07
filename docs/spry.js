@@ -130,25 +130,29 @@ class Spry {
      * 
      * @returns void
      */
-    static closeAllToggles = function() {
+    static closeAllToggles = function(event) {
         var docTarget = event && event.type && event.type === 'click' ? event.target : null;
         var escPressed = event && event.type && event.type === 'keyup' && event.keyCode && event.keyCode === 27;
         var togglerClicked = null;
-        var togglerHasPersistent = null;
+        var togglerHasEscapable = null;
+        var elementHasEscapable = null;
         if (!event || docTarget || escPressed) {
             this.elements.forEach(toggleElement => {
-                if ([null, 0, false, 'false'].includes(toggleElement.el.getAttribute('data-toggle-persistent')) && toggleElement.el.classList.contains('open') && (!docTarget || (docTarget && toggleElement.el !== docTarget && !toggleElement.el.contains(docTarget)))) {
+                if (toggleElement.el.classList.contains('open') && (!docTarget || (docTarget && toggleElement.el !== docTarget && !toggleElement.el.contains(docTarget)))) {
                     togglerClicked = false;
-                    togglerHasPersistent = false;
+                    togglerHasEscapable = false;
                     toggleElement.togglers.forEach(toggler => {
                         if (toggler.el === docTarget || toggler.el.contains(docTarget)) {
                             togglerClicked = true;
                         }
-                        if (![null, 0, false, 'false'].includes(toggler.el.getAttribute('data-toggle-persistent'))) {
-                            togglerHasPersistent = true;
+                        if (['', true, 'true'].includes(toggler.el.getAttribute('data-toggle-escapable'))) {
+                            togglerHasEscapable = true;
+                        }
+                        if (['', true, 'true'].includes(toggleElement.el.getAttribute('data-toggle-escapable'))) {
+                            elementHasEscapable = true;
                         }
                     });
-                    if (!togglerClicked && !togglerHasPersistent) {
+                    if (!togglerClicked && (togglerHasEscapable || elementHasEscapable)) {
                         this.toggle(toggleElement);
                     }
                 }
@@ -441,7 +445,7 @@ class Spry {
 
     static navigateList = function(event) {
 
-        var list = event.target.closest('.list');
+        var list = event.target.closest('.list.navigatable');
         if (!list) {
             return;
         }
@@ -463,6 +467,11 @@ class Spry {
                     if (index > -1) {
                         var newIndex = ([39,40].includes(event.keyCode) ? index+1 : index-1);
                         var sibling = children[newIndex];
+                        if (sibling && !sibling.querySelector('a, button, .button, input')){
+                            // Skip if child has not selectable item
+                            var newIndex = ([39,40].includes(event.keyCode) ? newIndex+1 : newIndex-1);
+                            var sibling = children[newIndex];
+                        }
                         if (sibling && sibling.children && sibling.children[0]) {
                             sibling = sibling.children[0];
                             if (!['A','BUTTON','LABEL','INPUT'].includes(sibling.tagName)) {
@@ -487,14 +496,13 @@ class Spry {
     }
 
     static loadLists = function() {
-        document.querySelectorAll('.list').forEach(list => {
+        document.querySelectorAll('.list.navigatable').forEach(list => {
             list.removeEventListener('keydown', this.navigateList);
             list.addEventListener('keydown', this.navigateList);
         })
     }
 
-    static navigateTabs = function(event) {
-        console.log(event);
+    static updateTabs = function(event) {
         var tablist = event.target.closest('.list');
         var children = tablist.children[0].tagName === 'UL' ? tablist.children[0].children : tablist.children;
         
@@ -524,8 +532,8 @@ class Spry {
     
     static loadTabs = function() {
         document.querySelectorAll('.tabs .list :is(.button,button)').forEach(elem => {
-            elem.removeEventListener('click', this.navigateTabs);
-            elem.addEventListener('click', this.navigateTabs);
+            elem.removeEventListener('click', this.updateTabs);
+            elem.addEventListener('click', this.updateTabs);
         });
     }
 

@@ -92,29 +92,52 @@
 	&:not(:active) {
 		background-color: rgba(var(--color-rgb), 0.1);
 	}
-
-	// &.hazy:not(:active) {
-	// 	background-color: rgba(var(--color-rgb), 0.4);
-	// }
 }
 
 %ui-focus-visible {
 	&:focus-visible {
-		outline       : 2px solid rgba(140, 140, 140, 0.25);
+		outline       : 2px solid rgba(var(--color-rgb), 0.25);
 		outline-offset: 2px;
 	}
 }
 
 %ui-color {
-	@if (lightness(map-get($colors, 'default')) > 70) {
-		--text-color    : var(--dark);
-		--text-color-rgb: var(--dark-rgb);
+	--text-color    : var(--light);
+	--text-color-rgb: var(--light-rgb);
+	
+	&:is(.link,.outline,.hazy) {
+		--text-color    : var(--color);
+		--text-color-rgb: var(--color-rgb);
+		color: var(--text-color);
 	}
+	
 
-	@else {
-		--text-color    : var(--light);
-		--text-color-rgb: var(--light-rgb);
-	}
+	// @each $color_name, $color_value in $colors {
+		
+	// 	&.#{$color_name} {
+	// 		@if (lightness(map-get(map-get($colors, $color_name), 'light')) > 70) {
+	// 			--text-color    : var(--dark);
+	// 			--text-color-rgb: var(--dark-rgb);
+	// 		}
+	// 		@else {
+	// 			--text-color    : var(--light);
+	// 			--text-color-rgb: var(--light-rgb);
+	// 		}
+
+	// 		[data-theme=dark] & {
+	// 			@if map-get(map-get($colors, $color_name), 'dark') {
+	// 				@if (lightness(map-get(map-get($colors, $color_name), 'dark')) > 70) {
+	// 					--text-color    : var(--dark);
+	// 					--text-color-rgb: var(--dark-rgb);
+	// 				}
+	// 				@else {
+	// 					--text-color    : var(--light);
+	// 					--text-color-rgb: var(--light-rgb);
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	color: var(--text-color);
 
@@ -173,14 +196,6 @@ a {
 		@extend %ui-hover;
 		text-decoration: none;
 	}
-}
-
-.link,
-.outline:not(.list, .tabs),
-.hazy {
-	--text-color    : var(--color);
-	--text-color-rgb: var(--color-rgb);
-	color           : var(--text-color);
 }
 
 .link,
