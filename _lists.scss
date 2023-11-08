@@ -29,11 +29,11 @@
 		}
 	}
 
-	&.row > * {
-		flex: 1 auto;
-	}
+	// &.row > * {
+	// 	flex: 0 auto;
+	// }
 
-	&.row,
+	// &.row,
 	&.text-center,
 	.text-center {
 		> :not(ul, ol),
@@ -67,9 +67,9 @@
     	text-align: inherit;
 	}
 
-	&.row li>*:first-child {
-		height: 100%;
-	}
+	// &.row li>*:first-child {
+	// 	height: 100%;
+	// }
 
 	a:hover,
 	a:focus {

@@ -17,14 +17,15 @@ class Spry {
      * Toggles an element Open or Closed.
      * This will also update all Togglers that are linked to the toggle element.
      * 
-     * @param string|object toggleObject - Can be an Dom Element or a Selector.
+     * @param string|object toggleObjectOrEvent - Can be an Dom Element or a Selector.
+     * @param string        forceAction         - Can be 'open', 'close', 'toggle'. Default is 'toggle'.
      * 
      * @returns void
      */
-    static toggle = function(toggleObjectOrEvent) {
+    static toggle = function(toggleObjectOrEvent, forceAction) {
         var elem = null;
         var hasElement = null;
-        var action = 'toggle';
+        var action = forceAction && ['open', 'close', 'toggle'].includes(forceAction) ? forceAction : 'toggle';
         var pressed = null;
         var isSelf = null;
         var downPressed = null;
@@ -106,7 +107,7 @@ class Spry {
      * 
      * @returns void
      */
-    static closeToggle = function() {
+    static closeToggle = function(event) {
         var hasElement = false;    
         var closestToggle = event.target.closest('.open');
 
@@ -122,6 +123,26 @@ class Spry {
                 this.toggle(closestToggle);
             }
         }
+    }
+
+    /**
+     * Auto Closes a Toggle in Milliseconds from a Toggler.
+     * 
+     * @returns void
+     */
+    static timeoutToggle = function(event) {
+        this.elements.forEach(toggleElement => {
+            toggleElement.togglers.forEach(toggler => {
+                if (toggler.el === event.target) {
+                    var timeout = parseInt(event.target.getAttribute('data-toggle-timeout')) || 3000;
+                    if (timeout && timeout > 0) {
+                        setTimeout(() => {
+                            this.toggle(toggleElement, 'close');
+                        }, timeout);
+                    }
+                }
+            });
+        });
     }
 
     /**
@@ -234,6 +255,14 @@ class Spry {
         document.querySelectorAll('[data-toggle=close]').forEach(toggle => {
             toggle.removeEventListener('click', this.closeToggleBound);
             toggle.addEventListener('click', this.closeToggleBound);
+        });
+
+        /**
+         * Listen to All Auto Close Togglers and close the closest Open Element.
+         */
+        document.querySelectorAll('[data-toggle-timeout]').forEach(toggle => {
+            toggle.removeEventListener('click', this.timeoutToggleBound);
+            toggle.addEventListener('click', this.timeoutToggleBound);
         });
         
         /**
@@ -541,6 +570,7 @@ class Spry {
      * Bind Class Reference to methods to allow for removal of Events to ensure there are no duplicate events.
      */
     static closeToggleBound = this.closeToggle.bind(this);
+    static timeoutToggleBound = this.timeoutToggle.bind(this);
     static closeAllTogglesBound = this.closeAllToggles.bind(this);
     static toggleBound = this.toggle.bind(this);
 }

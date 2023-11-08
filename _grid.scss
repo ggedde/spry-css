@@ -13,33 +13,34 @@
 // 	gap: var(--gap);
 // }
 
-[class^=columns-],
-[class*=" columns-"],
-[class*="-columns-"] {
-	grid-template-columns: repeat(var(--col), minmax(0, 1fr));
-}
+// [class^=columns-],
+// [class*=" columns-"],
+// [class*="-columns-"] {
+// 	grid-template-columns: repeat(var(--col), minmax(0, 1fr));
+// }
 
-[class^=grid-],
-[class*=" grid-"] {
+// %grid-x {
+// 	grid-template-columns: repeat(auto-fit, minmax(calc(var(--col) * 100px), 1fr));
+// }
+
+
+[class*="grid-"] {
 	grid-template-columns: repeat(auto-fit, minmax(calc(var(--col) * 100px), 1fr));
 }
 
-.grid>[class^=col-],
-.grid>[class*=" col-"],
-.grid>[class*="-col-"] {
+.grid[class*="columns-"] {
+	grid-template-columns: repeat(var(--col), minmax(0, 1fr));
+}
+
+[class*="span-"] {
 	grid-column: 1 / span var(--col);
-}
-
-.row[class^=columns-]>*,
-.row[class*=" columns-"]>* {
-	flex      : none;
-	flex-basis: calc((100% / var(--col)) - ((var(--gap) * (var(--col) - 1)) / var(--col)));
-}
-
-.row>[class^=col-],
-.row>[class*=" col-"] {
 	flex     : calc(((var(--col) / 12) * 100%) - var(--gap));
 	max-width: calc(((var(--col) / 12) * 100%) - (((var(--gap) * (var(--col) / 12)) - var(--gap)) / (var(--col) / 12)));
+}
+
+[class*="columns-"]>* {
+	flex      : none;
+	flex-basis: calc((100% / var(--col)) - ((var(--gap) * (var(--col) - 1)) / var(--col)));
 }
 
 .column {
@@ -52,29 +53,27 @@
 	flex-wrap     : wrap;
 	flex-direction: row;
 	grid-auto-flow: column;
+	--gap: 0em;
+}
 
-	>* {
-		flex: 0 100%;
-	}
+.columns-auto>*,
+.columns-fill>*,
+.span-auto,
+.span-fill {
+	flex: 0 auto;
+	min-width: auto;
+	max-width: none;
+	width    : auto;
+}
 
-	&.columns-fixed>*,
-	>.col-fixed {
-		flex: 1;
-	}
+.columns-fixed>*,
+.span-fixed {
+	flex: 1;
+}
 
-	&.columns-auto>* {
-		flex     : 1 auto;
-		min-width: auto;
-		max-width: none;
-		width    : auto;
-	}
-
-	>.col-auto {
-		flex     : 0 auto;
-		min-width: auto;
-		max-width: none;
-		width    : auto;
-	}
+.columns-fill>*,
+.span-fill {
+	flex: 1 auto;
 }
 
 .grid,
@@ -84,11 +83,10 @@
 
 @for $i from 1 through 12 {
 
-	.grid.columns-#{$i},
+	.span-#{$i},
 	.grid-#{$i}00,
-	.grid>.col-#{$i},
-	.row.columns-#{$i}>*,
-	.row>.col-#{$i} {
+	.columns-#{$i},
+	.columns-#{$i}>*{
 		--col: #{$i};
 	}
 }
@@ -97,12 +95,11 @@
 $space in $spacing {
 	.g-#{$s} {
 		--gap: #{$space};
-		gap: var(--gap);
+		gap  : var(--gap);
 	}
 }
 
-@each $breakpoint,
-$breakpoint_width in $breakpoints {
+@each $breakpoint, $breakpoint_width in $breakpoints {
 
 	.#{$breakpoint}-mw {
 		max-width: $breakpoint_width;
@@ -111,10 +108,9 @@ $breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
 		@for $i from 1 through 12 {
 
-			.grid.#{$breakpoint}-columns-#{$i},
-			.grid>.#{$breakpoint}-col-#{$i},
-			.row.#{$breakpoint}-columns-#{$i}>*,
-			.row>.#{$breakpoint}-col-#{$i} {
+			.#{$breakpoint}-span-#{$i},
+			.#{$breakpoint}-columns-#{$i},
+			.#{$breakpoint}-columns-#{$i}>* {
 				--col: #{$i};
 			}
 		}
@@ -129,52 +125,37 @@ $breakpoint_width in $breakpoints {
 			flex-wrap     : wrap;
 			flex-direction: row;
 			grid-auto-flow: column;
-
-			>* {
-				flex: 0 100%;
-			}
 		}
 
-		.grid,
-		[class*=grid-] {
+		.#{$breakpoint}-grid {
 			display: grid;
 		}
 
-		.row[class*="-columns-"]>* {
-			flex      : none;
-			flex-basis: calc((100% / var(--col)) - ((var(--gap) * (var(--col) - 1)) / var(--col)));
+		.#{$breakpoint}-columns-auto>*,
+		.#{$breakpoint}-columns-fill>*,
+		.#{$breakpoint}-span-auto,
+		.#{$breakpoint}-span-fill {
+			flex: 0 auto;
+			min-width: auto;
+			max-width: none;
+			width    : auto;
 		}
 
-		.row>[class*="-col-"] {
-			flex     : calc(((var(--col) / 12) * 100%) - var(--gap));
-			max-width: calc(((var(--col) / 12) * 100%) - (((var(--gap) * (var(--col) / 12)) - var(--gap)) / (var(--col) / 12)));
-		}
-
-		.row>*,
-		.row.#{$breakpoint}-columns-fixed>*,
-		.row>.#{$breakpoint}-col-fixed {
+		.#{$breakpoint}-columns-fixed>*,
+		.#{$breakpoint}-span-fixed {
 			flex: 1;
 		}
 
-		.row.#{$breakpoint}-columns-auto>* {
-			flex     : 1 auto;
-			min-width: auto;
-			max-width: none;
-			width    : auto;
-		}
-
-		.row>.#{$breakpoint}-col-auto {
-			flex     : 0 auto;
-			min-width: auto;
-			max-width: none;
-			width    : auto;
+		.#{$breakpoint}-columns-fill>*,
+		.#{$breakpoint}-span-fill {
+			flex: 1 auto;
 		}
 
 		@each $s,
 		$space in $spacing {
 			.#{$breakpoint}-g-#{$s} {
 				--gap: #{$space};
-				gap: var(--gap);
+				gap  : var(--gap);
 			}
 		}
 	}

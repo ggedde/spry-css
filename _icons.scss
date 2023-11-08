@@ -159,6 +159,7 @@ i svg {
 
 [data-toggle=hover].hoverable:hover .icon::after,
 [data-toggle=hover].hoverable:hover i:empty::after,
+i:empty[aria-pressed=true]::after,
 .icon[aria-pressed=true]::after,
 [aria-pressed=true] > .icon::after,
 [aria-pressed=true] > i:empty::after {

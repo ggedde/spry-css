@@ -22,10 +22,12 @@
 	li,
 	ul {
 		position: relative;
-		background-color: inherit;
 		> *:has(+ label, + input) {
 			padding-right: 2.5em;
 		}
+	}
+	ul {
+		background-color: inherit;
 	}
 }
 
@@ -40,11 +42,6 @@
 .outline.hoverable > ul > li > ul,
 .outline.hoverable > li > ul {
 	min-width: calc(100% + 1px);
-}
-
-.hoverable > ul > li > [data-toggle=hover],
-.hoverable > li > [data-toggle=hover] {
-	pointer-events: none;
 }
 
 @each $breakpoint,
@@ -67,11 +64,6 @@ $breakpoint_width in $breakpoints {
 		.outline.#{$breakpoint}-hoverable > ul > li > ul,
 		.outline.#{$breakpoint}-hoverable > li > ul {
 			min-width: calc(100% + 1px);
-		}
-
-		.#{$breakpoint}-hoverable > ul > li > [data-toggle=hover],
-		.#{$breakpoint}-hoverable > li > [data-toggle=hover] {
-			pointer-events: none;
 		}
 	}
 }

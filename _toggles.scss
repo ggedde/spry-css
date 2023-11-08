@@ -4,6 +4,26 @@
 @use "variables"as *;
 @use "ui"as *;
 
+:is(nav,.list) li>[data-toggle=next]:nth-child(2) {
+	font-size: 80%;
+	position: absolute;
+	right: 0.5em;
+	top: 0.25em;
+}
+
+:is(nav,.list) ul ul li:has([data-toggle=next]:nth-child(2)) > :first-child {
+	padding-right: 2.5em;
+}
+
+.hoverable {
+	> ul > li > [data-toggle=hover],
+	> ul > li > [data-toggle=next],
+	> li > [data-toggle=hover],
+	> li > [data-toggle=next] {
+		pointer-events: none
+	}
+}
+
 .closed,
 .hoverable > li ul,
 .hoverable > ul > li ul,
@@ -38,6 +58,15 @@ $breakpoint_width in $breakpoints {
 		.#{$breakpoint}-hoverable>li:hover>ul,
 		.#{$breakpoint}-hoverable li:has(:focus-visible)>ul {
 			@include ui-open;
+		}
+
+		.#{$breakpoint}-hoverable {
+			> ul > li > [data-toggle=hover],
+			> ul > li > [data-toggle=next],
+			> li > [data-toggle=hover],
+			> li > [data-toggle=next] {
+				pointer-events: none
+			}
 		}
 	}
 }

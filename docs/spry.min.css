@@ -117,6 +117,7 @@ input[type=submit], .badge, .alert, .ui {
   appearance: none;
   background: transparent;
   border: 0;
+  border-radius: 0.25em;
   color: inherit;
   display: inline-flex;
   font-size: 100%;
@@ -169,7 +170,6 @@ input[type=submit], button.outline,
   border-color: var(--color);
   border-width: 1px;
   border-style: solid;
-  border-radius: 0.25em;
 }
 
 button,
@@ -407,11 +407,7 @@ a {
 .list.outline :is(a, button, .button, [type=submit]), .outline > .list :is(a, button, .button, [type=submit]) {
   border-radius: 0;
 }
-.list.row > * {
-  flex: 1 auto;
-}
-.list.row > :not(ul, ol),
-.list.row li, .list.text-center > :not(ul, ol),
+.list.text-center > :not(ul, ol),
 .list.text-center li,
 .list .text-center > :not(ul, ol),
 .list .text-center li {
@@ -436,9 +432,6 @@ a {
   width: 100%;
   justify-content: inherit;
   text-align: inherit;
-}
-.list.row li > *:first-child {
-  height: 100%;
 }
 .list li:has(:focus-visible) {
   z-index: 1;
@@ -875,6 +868,7 @@ i svg {
 
 [data-toggle=hover].hoverable:hover .icon::after,
 [data-toggle=hover].hoverable:hover i:empty::after,
+i:empty[aria-pressed=true]::after,
 .icon[aria-pressed=true]::after,
 [aria-pressed=true] > .icon::after,
 [aria-pressed=true] > i:empty::after {
@@ -943,33 +937,23 @@ table tbody tr:first-child td {
 /*!
 * Spry Grid
 */
-[class^=columns-],
-[class*=" columns-"],
-[class*=-columns-] {
-  grid-template-columns: repeat(var(--col), minmax(0, 1fr));
-}
-
-[class^=grid-],
-[class*=" grid-"] {
+[class*=grid-] {
   grid-template-columns: repeat(auto-fit, minmax(calc(var(--col) * 100px), 1fr));
 }
 
-.grid > [class^=col-],
-.grid > [class*=" col-"],
-.grid > [class*=-col-] {
+.grid[class*=columns-] {
+  grid-template-columns: repeat(var(--col), minmax(0, 1fr));
+}
+
+[class*=span-] {
   grid-column: 1/span var(--col);
-}
-
-.row[class^=columns-] > *,
-.row[class*=" columns-"] > * {
-  flex: none;
-  flex-basis: calc(100% / var(--col) - var(--gap) * (var(--col) - 1) / var(--col));
-}
-
-.row > [class^=col-],
-.row > [class*=" col-"] {
   flex: calc(var(--col) / 12 * 100% - var(--gap));
   max-width: calc(var(--col) / 12 * 100% - (var(--gap) * var(--col) / 12 - var(--gap)) / (var(--col) / 12));
+}
+
+[class*=columns-] > * {
+  flex: none;
+  flex-basis: calc(100% / var(--col) - var(--gap) * (var(--col) - 1) / var(--col));
 }
 
 .column {
@@ -982,25 +966,27 @@ table tbody tr:first-child td {
   flex-wrap: wrap;
   flex-direction: row;
   grid-auto-flow: column;
+  --gap: 0em;
 }
-.row > * {
-  flex: 0 100%;
-}
-.row.columns-fixed > *,
-.row > .col-fixed {
-  flex: 1;
-}
-.row.columns-auto > * {
-  flex: 1 auto;
-  min-width: auto;
-  max-width: none;
-  width: auto;
-}
-.row > .col-auto {
+
+.columns-auto > *,
+.columns-fill > *,
+.span-auto,
+.span-fill {
   flex: 0 auto;
   min-width: auto;
   max-width: none;
   width: auto;
+}
+
+.columns-fixed > *,
+.span-fixed {
+  flex: 1;
+}
+
+.columns-fill > *,
+.span-fill {
+  flex: 1 auto;
 }
 
 .grid,
@@ -1008,99 +994,87 @@ table tbody tr:first-child td {
   display: grid;
 }
 
-.grid.columns-1,
+.span-1,
 .grid-100,
-.grid > .col-1,
-.row.columns-1 > *,
-.row > .col-1 {
+.columns-1,
+.columns-1 > * {
   --col: 1;
 }
 
-.grid.columns-2,
+.span-2,
 .grid-200,
-.grid > .col-2,
-.row.columns-2 > *,
-.row > .col-2 {
+.columns-2,
+.columns-2 > * {
   --col: 2;
 }
 
-.grid.columns-3,
+.span-3,
 .grid-300,
-.grid > .col-3,
-.row.columns-3 > *,
-.row > .col-3 {
+.columns-3,
+.columns-3 > * {
   --col: 3;
 }
 
-.grid.columns-4,
+.span-4,
 .grid-400,
-.grid > .col-4,
-.row.columns-4 > *,
-.row > .col-4 {
+.columns-4,
+.columns-4 > * {
   --col: 4;
 }
 
-.grid.columns-5,
+.span-5,
 .grid-500,
-.grid > .col-5,
-.row.columns-5 > *,
-.row > .col-5 {
+.columns-5,
+.columns-5 > * {
   --col: 5;
 }
 
-.grid.columns-6,
+.span-6,
 .grid-600,
-.grid > .col-6,
-.row.columns-6 > *,
-.row > .col-6 {
+.columns-6,
+.columns-6 > * {
   --col: 6;
 }
 
-.grid.columns-7,
+.span-7,
 .grid-700,
-.grid > .col-7,
-.row.columns-7 > *,
-.row > .col-7 {
+.columns-7,
+.columns-7 > * {
   --col: 7;
 }
 
-.grid.columns-8,
+.span-8,
 .grid-800,
-.grid > .col-8,
-.row.columns-8 > *,
-.row > .col-8 {
+.columns-8,
+.columns-8 > * {
   --col: 8;
 }
 
-.grid.columns-9,
+.span-9,
 .grid-900,
-.grid > .col-9,
-.row.columns-9 > *,
-.row > .col-9 {
+.columns-9,
+.columns-9 > * {
   --col: 9;
 }
 
-.grid.columns-10,
+.span-10,
 .grid-1000,
-.grid > .col-10,
-.row.columns-10 > *,
-.row > .col-10 {
+.columns-10,
+.columns-10 > * {
   --col: 10;
 }
 
-.grid.columns-11,
+.span-11,
 .grid-1100,
-.grid > .col-11,
-.row.columns-11 > *,
-.row > .col-11 {
+.columns-11,
+.columns-11 > * {
   --col: 11;
 }
 
-.grid.columns-12,
+.span-12,
 .grid-1200,
-.grid > .col-12,
-.row.columns-12 > *,
-.row > .col-12 {
+.columns-12,
+.columns-12 > * {
   --col: 12;
 }
 
@@ -1139,76 +1113,64 @@ table tbody tr:first-child td {
 }
 
 @media screen and (min-width: 40em) {
-  .grid.md-columns-1,
-  .grid > .md-col-1,
-  .row.md-columns-1 > *,
-  .row > .md-col-1 {
+  .md-span-1,
+  .md-columns-1,
+  .md-columns-1 > * {
     --col: 1;
   }
-  .grid.md-columns-2,
-  .grid > .md-col-2,
-  .row.md-columns-2 > *,
-  .row > .md-col-2 {
+  .md-span-2,
+  .md-columns-2,
+  .md-columns-2 > * {
     --col: 2;
   }
-  .grid.md-columns-3,
-  .grid > .md-col-3,
-  .row.md-columns-3 > *,
-  .row > .md-col-3 {
+  .md-span-3,
+  .md-columns-3,
+  .md-columns-3 > * {
     --col: 3;
   }
-  .grid.md-columns-4,
-  .grid > .md-col-4,
-  .row.md-columns-4 > *,
-  .row > .md-col-4 {
+  .md-span-4,
+  .md-columns-4,
+  .md-columns-4 > * {
     --col: 4;
   }
-  .grid.md-columns-5,
-  .grid > .md-col-5,
-  .row.md-columns-5 > *,
-  .row > .md-col-5 {
+  .md-span-5,
+  .md-columns-5,
+  .md-columns-5 > * {
     --col: 5;
   }
-  .grid.md-columns-6,
-  .grid > .md-col-6,
-  .row.md-columns-6 > *,
-  .row > .md-col-6 {
+  .md-span-6,
+  .md-columns-6,
+  .md-columns-6 > * {
     --col: 6;
   }
-  .grid.md-columns-7,
-  .grid > .md-col-7,
-  .row.md-columns-7 > *,
-  .row > .md-col-7 {
+  .md-span-7,
+  .md-columns-7,
+  .md-columns-7 > * {
     --col: 7;
   }
-  .grid.md-columns-8,
-  .grid > .md-col-8,
-  .row.md-columns-8 > *,
-  .row > .md-col-8 {
+  .md-span-8,
+  .md-columns-8,
+  .md-columns-8 > * {
     --col: 8;
   }
-  .grid.md-columns-9,
-  .grid > .md-col-9,
-  .row.md-columns-9 > *,
-  .row > .md-col-9 {
+  .md-span-9,
+  .md-columns-9,
+  .md-columns-9 > * {
     --col: 9;
   }
-  .grid.md-columns-10,
-  .grid > .md-col-10,
-  .row.md-columns-10 > *,
-  .row > .md-col-10 {
+  .md-span-10,
+  .md-columns-10,
+  .md-columns-10 > * {
     --col: 10;
   }
-  .grid.md-columns-11,
-  .grid > .md-col-11,
-  .row.md-columns-11 > *,
-  .row > .md-col-11 {
+  .md-span-11,
+  .md-columns-11,
+  .md-columns-11 > * {
     --col: 11;
   }
-  .grid.md-columns-12,
-  .grid > .md-col-12,
-  .row.md-columns-12 > *,
-  .row > .md-col-12 {
+  .md-span-12,
+  .md-columns-12,
+  .md-columns-12 > * {
     --col: 12;
   }
   .md-column {
@@ -1221,37 +1183,25 @@ table tbody tr:first-child td {
     flex-direction: row;
     grid-auto-flow: column;
   }
-  .md-row > * {
-    flex: 0 100%;
-  }
-  .grid,
-  [class*=grid-] {
+  .md-grid {
     display: grid;
   }
-  .row[class*=-columns-] > * {
-    flex: none;
-    flex-basis: calc(100% / var(--col) - var(--gap) * (var(--col) - 1) / var(--col));
-  }
-  .row > [class*=-col-] {
-    flex: calc(var(--col) / 12 * 100% - var(--gap));
-    max-width: calc(var(--col) / 12 * 100% - (var(--gap) * var(--col) / 12 - var(--gap)) / (var(--col) / 12));
-  }
-  .row > *,
-  .row.md-columns-fixed > *,
-  .row > .md-col-fixed {
-    flex: 1;
-  }
-  .row.md-columns-auto > * {
-    flex: 1 auto;
-    min-width: auto;
-    max-width: none;
-    width: auto;
-  }
-  .row > .md-col-auto {
+  .md-columns-auto > *,
+  .md-columns-fill > *,
+  .md-span-auto,
+  .md-span-fill {
     flex: 0 auto;
     min-width: auto;
     max-width: none;
     width: auto;
+  }
+  .md-columns-fixed > *,
+  .md-span-fixed {
+    flex: 1;
+  }
+  .md-columns-fill > *,
+  .md-span-fill {
+    flex: 1 auto;
   }
   .md-g-0 {
     --gap: 0em;
@@ -1414,11 +1364,13 @@ table tbody tr:first-child td {
 :is(nav, menu) li,
 :is(nav, menu) ul {
   position: relative;
-  background-color: inherit;
 }
 :is(nav, menu) li > *:has(+ label, + input),
 :is(nav, menu) ul > *:has(+ label, + input) {
   padding-right: 2.5em;
+}
+:is(nav, menu) ul {
+  background-color: inherit;
 }
 
 .hoverable > ul > li > ul,
@@ -1432,11 +1384,6 @@ table tbody tr:first-child td {
 .outline.hoverable > ul > li > ul,
 .outline.hoverable > li > ul {
   min-width: calc(100% + 1px);
-}
-
-.hoverable > ul > li > [data-toggle=hover],
-.hoverable > li > [data-toggle=hover] {
-  pointer-events: none;
 }
 
 @media screen and (min-width: 40em) {
@@ -1455,14 +1402,28 @@ table tbody tr:first-child td {
   .outline.md-hoverable > li > ul {
     min-width: calc(100% + 1px);
   }
-  .md-hoverable > ul > li > [data-toggle=hover],
-  .md-hoverable > li > [data-toggle=hover] {
-    pointer-events: none;
-  }
 }
 /*!
 * Spry Toggles
 */
+:is(nav, .list) li > [data-toggle=next]:nth-child(2) {
+  font-size: 80%;
+  position: absolute;
+  right: 0.5em;
+  top: 0.25em;
+}
+
+:is(nav, .list) ul ul li:has([data-toggle=next]:nth-child(2)) > :first-child {
+  padding-right: 2.5em;
+}
+
+.hoverable > ul > li > [data-toggle=hover],
+.hoverable > ul > li > [data-toggle=next],
+.hoverable > li > [data-toggle=hover],
+.hoverable > li > [data-toggle=next] {
+  pointer-events: none;
+}
+
 @media screen and (min-width: 40em) {
   .md-closed,
   .md-hoverable > ul > li ul,
@@ -1494,6 +1455,12 @@ table tbody tr:first-child td {
     pointer-events: all;
     transform: none;
     z-index: 2;
+  }
+  .md-hoverable > ul > li > [data-toggle=hover],
+  .md-hoverable > ul > li > [data-toggle=next],
+  .md-hoverable > li > [data-toggle=hover],
+  .md-hoverable > li > [data-toggle=next] {
+    pointer-events: none;
   }
 }
 /*!
@@ -3884,7 +3851,6 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 [data-theme=dark],
 [data-theme=dark] article {
   background-color: #1f1f1f;
-  color: var(--contrast);
 }
 
 [data-theme=dark] {
@@ -3918,7 +3884,7 @@ body,
 
 body,
 [data-theme=light] {
-  --text-color: var(--dark);
+  color: var(--contrast);
   --default: #808080;
   --default-rgb: 128, 128, 128;
   --color: #808080;
@@ -3944,31 +3910,25 @@ body .tooltip,
   background-color: var(--light);
   color: var(--dark);
 }
-body .default,
+
 [data-theme=light] .default {
   --text-color: var(--light);
 }
-body .faint,
 [data-theme=light] .faint {
   --text-color: var(--dark);
 }
-body .contrast,
 [data-theme=light] .contrast {
   --text-color: var(--light);
 }
-body .dark,
 [data-theme=light] .dark {
   --text-color: var(--light);
 }
-body .light,
 [data-theme=light] .light {
   --text-color: var(--dark);
 }
-body .primary,
 [data-theme=light] .primary {
   --text-color: var(--light);
 }
-body .secondary,
 [data-theme=light] .secondary {
   --text-color: var(--light);
 }
