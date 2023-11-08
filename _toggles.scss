@@ -11,7 +11,7 @@
 	top: 0.25em;
 }
 
-:is(nav,.list) ul ul li:has([data-toggle=next]:nth-child(2)) > :first-child {
+:is(nav,.list) li:has([data-toggle=next]:nth-child(2)) > :first-child {
 	padding-right: 2.5em;
 }
 
@@ -53,7 +53,6 @@ $breakpoint_width in $breakpoints {
 		}
 
 		.#{$breakpoint}-open,
-		.toggle.#{$breakpoint}-hoverable:hover+*,
 		.#{$breakpoint}-hoverable>ul>li:hover>ul,
 		.#{$breakpoint}-hoverable>li:hover>ul,
 		.#{$breakpoint}-hoverable li:has(:focus-visible)>ul {

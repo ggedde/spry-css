@@ -16,6 +16,8 @@
 		margin-block    : 0;
 		position        : relative;
 		background-color: inherit;
+		display: flex;
+		flex-direction: column;
 	}
 
 	:is(button, .button, [type=submit]) {
@@ -29,11 +31,6 @@
 		}
 	}
 
-	// &.row > * {
-	// 	flex: 0 auto;
-	// }
-
-	// &.row,
 	&.text-center,
 	.text-center {
 		> :not(ul, ol),
@@ -65,11 +62,8 @@
 		width: 100%;
 		justify-content: inherit;
     	text-align: inherit;
+		flex: 1;
 	}
-
-	// &.row li>*:first-child {
-	// 	height: 100%;
-	// }
 
 	a:hover,
 	a:focus {

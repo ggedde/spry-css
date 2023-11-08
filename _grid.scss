@@ -3,26 +3,31 @@
 */
 @use "variables"as *;
 
-// .grid,
-// .row,
-// [class^=grid-],
-// [class*=" grid-"],
-// [class^=g-],
-// [class*=" g-"],
-// [class*="-g-"] {
-// 	gap: var(--gap);
-// }
+.column {
+	display       : flex;
+	flex-direction: column;
+	--gap: #{map-get($gaps, 'default')};
+	gap: var(--gap);
+}
 
-// [class^=columns-],
-// [class*=" columns-"],
-// [class*="-columns-"] {
-// 	grid-template-columns: repeat(var(--col), minmax(0, 1fr));
-// }
+.row {
+	display       : flex;
+	flex-wrap     : wrap;
+	flex-direction: row;
+	grid-auto-flow: column;
+	--gap: #{map-get($gaps, 'default')};
+	gap: var(--gap);
+	> * {
+		flex: 1;
+	}
+}
 
-// %grid-x {
-// 	grid-template-columns: repeat(auto-fit, minmax(calc(var(--col) * 100px), 1fr));
-// }
-
+.grid,
+[class*=grid-] {
+	display: grid;
+	--gap: #{map-get($gaps, 'default')};
+	gap: var(--gap);
+}
 
 [class*="grid-"] {
 	grid-template-columns: repeat(auto-fit, minmax(calc(var(--col) * 100px), 1fr));
@@ -32,28 +37,15 @@
 	grid-template-columns: repeat(var(--col), minmax(0, 1fr));
 }
 
-[class*="span-"] {
-	grid-column: 1 / span var(--col);
-	flex     : calc(((var(--col) / 12) * 100%) - var(--gap));
-	max-width: calc(((var(--col) / 12) * 100%) - (((var(--gap) * (var(--col) / 12)) - var(--gap)) / (var(--col) / 12)));
-}
-
 [class*="columns-"]>* {
 	flex      : none;
 	flex-basis: calc((100% / var(--col)) - ((var(--gap) * (var(--col) - 1)) / var(--col)));
 }
 
-.column {
-	display       : flex;
-	flex-direction: column;
-}
-
-.row {
-	display       : flex;
-	flex-wrap     : wrap;
-	flex-direction: row;
-	grid-auto-flow: column;
-	--gap: 0em;
+[class*="span-"] {
+	grid-column: 1 / span var(--col);
+	flex     : calc(((var(--col) / 12) * 100%) - var(--gap));
+	max-width: calc(((var(--col) / 12) * 100%) - (((var(--gap) * (var(--col) / 12)) - var(--gap)) / (var(--col) / 12)));
 }
 
 .columns-auto>*,
@@ -76,11 +68,6 @@
 	flex: 1 auto;
 }
 
-.grid,
-[class*=grid-] {
-	display: grid;
-}
-
 @for $i from 1 through 12 {
 
 	.span-#{$i},
@@ -91,14 +78,6 @@
 	}
 }
 
-@each $s,
-$space in $spacing {
-	.g-#{$s} {
-		--gap: #{$space};
-		gap  : var(--gap);
-	}
-}
-
 @each $breakpoint, $breakpoint_width in $breakpoints {
 
 	.#{$breakpoint}-mw {
@@ -106,6 +85,14 @@ $space in $spacing {
 	}
 
 	@media screen and (min-width: $breakpoint_width) {
+
+		.row,
+		.column,
+		.grid,
+		[class*=grid-] {
+			--gap: #{map-get($gaps, $breakpoint)};
+		}
+
 		@for $i from 1 through 12 {
 
 			.#{$breakpoint}-span-#{$i},
@@ -118,6 +105,7 @@ $space in $spacing {
 		.#{$breakpoint}-column {
 			display       : flex;
 			flex-direction: column;
+			--gap: #{map-get($gaps, $breakpoint)};
 		}
 
 		.#{$breakpoint}-row {
@@ -125,10 +113,12 @@ $space in $spacing {
 			flex-wrap     : wrap;
 			flex-direction: row;
 			grid-auto-flow: column;
+			--gap: #{map-get($gaps, $breakpoint)};
 		}
 
 		.#{$breakpoint}-grid {
 			display: grid;
+			--gap: #{map-get($gaps, $breakpoint)};
 		}
 
 		.#{$breakpoint}-columns-auto>*,
@@ -150,9 +140,20 @@ $space in $spacing {
 		.#{$breakpoint}-span-fill {
 			flex: 1 auto;
 		}
+	}
+}
 
-		@each $s,
-		$space in $spacing {
+@each $s,
+$space in $spacing {
+	.g-#{$s} {
+		--gap: #{$space};
+		gap  : var(--gap);
+	}
+}
+
+@each $breakpoint, $breakpoint_width in $breakpoints {
+	@media screen and (min-width: $breakpoint_width) {
+		@each $s, $space in $spacing {
 			.#{$breakpoint}-g-#{$s} {
 				--gap: #{$space};
 				gap  : var(--gap);

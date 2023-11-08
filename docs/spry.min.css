@@ -179,18 +179,18 @@ input[type=submit], .badge, .alert, .ui {
   border-color: var(--color);
 }
 
-button.active:not(:active):not(.link), button:not(:active):not(.link):is(:hover, :focus, :focus-within),
-.button.active:not(:active):not(.link),
-.button:not(:active):not(.link):is(:hover, :focus, :focus-within),
-input[type=submit].active:not(:active):not(.link),
-input[type=submit]:not(:active):not(.link):is(:hover, :focus, :focus-within), a:not(:active):hover, a:not(:active):focus {
+button:not(:active):is(:hover, :focus, :focus-within, .active, [aria-pressed=true]),
+.button:not(:active):is(:hover, :focus, :focus-within, .active, [aria-pressed=true]),
+input[type=submit]:not(:active):is(:hover, :focus, :focus-within, .active, [aria-pressed=true]), a:not(:active):hover, a:not(:active):focus {
   filter: brightness(1.15);
 }
 
-button.active:not(:active):is(.link, .outline, .hazy), button:not(:active):is(.link, .outline, .hazy):is(:hover, :focus, :focus-within),
+button.active:not(:active):is(.link, .outline, .hazy), button[aria-pressed=true]:not(:active):is(.link, .outline, .hazy), button:not(:active):is(.link, .outline, .hazy):is(:hover, :focus, :focus-within),
 .button.active:not(:active):is(.link, .outline, .hazy),
+.button[aria-pressed=true]:not(:active):is(.link, .outline, .hazy),
 .button:not(:active):is(.link, .outline, .hazy):is(:hover, :focus, :focus-within),
 input[type=submit].active:not(:active):is(.link, .outline, .hazy),
+input[type=submit][aria-pressed=true]:not(:active):is(.link, .outline, .hazy),
 input[type=submit]:not(:active):is(.link, .outline, .hazy):is(:hover, :focus, :focus-within), .list a:not(:active):hover,
 .list a:not(:active):focus {
   background-color: rgba(var(--color-rgb), 0.1);
@@ -400,6 +400,8 @@ a {
   margin-block: 0;
   position: relative;
   background-color: inherit;
+  display: flex;
+  flex-direction: column;
 }
 .list :is(button, .button, [type=submit]) {
   text-align: left;
@@ -432,6 +434,7 @@ a {
   width: 100%;
   justify-content: inherit;
   text-align: inherit;
+  flex: 1;
 }
 .list li:has(:focus-visible) {
   z-index: 1;
@@ -937,6 +940,32 @@ table tbody tr:first-child td {
 /*!
 * Spry Grid
 */
+.column {
+  display: flex;
+  flex-direction: column;
+  --gap: 1.25em;
+  gap: var(--gap);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  grid-auto-flow: column;
+  --gap: 1.25em;
+  gap: var(--gap);
+}
+.row > * {
+  flex: 1;
+}
+
+.grid,
+[class*=grid-] {
+  display: grid;
+  --gap: 1.25em;
+  gap: var(--gap);
+}
+
 [class*=grid-] {
   grid-template-columns: repeat(auto-fit, minmax(calc(var(--col) * 100px), 1fr));
 }
@@ -945,28 +974,15 @@ table tbody tr:first-child td {
   grid-template-columns: repeat(var(--col), minmax(0, 1fr));
 }
 
-[class*=span-] {
-  grid-column: 1/span var(--col);
-  flex: calc(var(--col) / 12 * 100% - var(--gap));
-  max-width: calc(var(--col) / 12 * 100% - (var(--gap) * var(--col) / 12 - var(--gap)) / (var(--col) / 12));
-}
-
 [class*=columns-] > * {
   flex: none;
   flex-basis: calc(100% / var(--col) - var(--gap) * (var(--col) - 1) / var(--col));
 }
 
-.column {
-  display: flex;
-  flex-direction: column;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  grid-auto-flow: column;
-  --gap: 0em;
+[class*=span-] {
+  grid-column: 1/span var(--col);
+  flex: calc(var(--col) / 12 * 100% - var(--gap));
+  max-width: calc(var(--col) / 12 * 100% - (var(--gap) * var(--col) / 12 - var(--gap)) / (var(--col) / 12));
 }
 
 .columns-auto > *,
@@ -987,11 +1003,6 @@ table tbody tr:first-child td {
 .columns-fill > *,
 .span-fill {
   flex: 1 auto;
-}
-
-.grid,
-[class*=grid-] {
-  display: grid;
 }
 
 .span-1,
@@ -1078,41 +1089,17 @@ table tbody tr:first-child td {
   --col: 12;
 }
 
-.g-0 {
-  --gap: 0em;
-  gap: var(--gap);
-}
-
-.g-1 {
-  --gap: 0.25em;
-  gap: var(--gap);
-}
-
-.g-2 {
-  --gap: 0.5em;
-  gap: var(--gap);
-}
-
-.g-3 {
-  --gap: 1em;
-  gap: var(--gap);
-}
-
-.g-4 {
-  --gap: 2em;
-  gap: var(--gap);
-}
-
-.g-5 {
-  --gap: 4em;
-  gap: var(--gap);
-}
-
 .md-mw {
   max-width: 40em;
 }
 
 @media screen and (min-width: 40em) {
+  .row,
+  .column,
+  .grid,
+  [class*=grid-] {
+    --gap: 2em;
+  }
   .md-span-1,
   .md-columns-1,
   .md-columns-1 > * {
@@ -1176,15 +1163,18 @@ table tbody tr:first-child td {
   .md-column {
     display: flex;
     flex-direction: column;
+    --gap: 2em;
   }
   .md-row {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     grid-auto-flow: column;
+    --gap: 2em;
   }
   .md-grid {
     display: grid;
+    --gap: 2em;
   }
   .md-columns-auto > *,
   .md-columns-fill > *,
@@ -1203,27 +1193,50 @@ table tbody tr:first-child td {
   .md-span-fill {
     flex: 1 auto;
   }
+}
+.g-0 {
+  --gap: 0em;
+  gap: var(--gap);
+}
+
+.g-1 {
+  --gap: 0.5em;
+  gap: var(--gap);
+}
+
+.g-2 {
+  --gap: 1em;
+  gap: var(--gap);
+}
+
+.g-3 {
+  --gap: 2em;
+  gap: var(--gap);
+}
+
+.g-4 {
+  --gap: 4em;
+  gap: var(--gap);
+}
+
+@media screen and (min-width: 40em) {
   .md-g-0 {
     --gap: 0em;
     gap: var(--gap);
   }
   .md-g-1 {
-    --gap: 0.25em;
-    gap: var(--gap);
-  }
-  .md-g-2 {
     --gap: 0.5em;
     gap: var(--gap);
   }
-  .md-g-3 {
+  .md-g-2 {
     --gap: 1em;
     gap: var(--gap);
   }
-  .md-g-4 {
+  .md-g-3 {
     --gap: 2em;
     gap: var(--gap);
   }
-  .md-g-5 {
+  .md-g-4 {
     --gap: 4em;
     gap: var(--gap);
   }
@@ -1376,6 +1389,7 @@ table tbody tr:first-child td {
 .hoverable > ul > li > ul,
 .hoverable > li > ul {
   position: absolute;
+  top: 100%;
   min-width: 100%;
   max-width: 260px;
   width: max-content;
@@ -1413,7 +1427,7 @@ table tbody tr:first-child td {
   top: 0.25em;
 }
 
-:is(nav, .list) ul ul li:has([data-toggle=next]:nth-child(2)) > :first-child {
+:is(nav, .list) li:has([data-toggle=next]:nth-child(2)) > :first-child {
   padding-right: 2.5em;
 }
 
@@ -1446,7 +1460,6 @@ table tbody tr:first-child td {
     margin-block: 0;
   }
   .md-open,
-  .toggle.md-hoverable:hover + *,
   .md-hoverable > ul > li:hover > ul,
   .md-hoverable > li:hover > ul,
   .md-hoverable li:has(:focus-visible) > ul {
@@ -1593,162 +1606,130 @@ table tbody tr:first-child td {
 }
 
 .pt-1, .py-1, .p-1 {
-  padding-top: 0.25em;
-}
-
-.pr-1, .px-1, .p-1 {
-  padding-right: 0.25em;
-}
-
-.pb-1, .py-1, .p-1 {
-  padding-bottom: 0.25em;
-}
-
-.pl-1, .px-1, .p-1 {
-  padding-left: 0.25em;
-}
-
-.mt-1, .my-1, .m-1 {
-  margin-top: 0.25em;
-}
-
-.mr-1, .mx-1, .m-1 {
-  margin-right: 0.25em;
-}
-
-.mb-1, .my-1, .m-1 {
-  margin-bottom: 0.25em;
-}
-
-.ml-1, .mx-1, .m-1 {
-  margin-left: 0.25em;
-}
-
-.pt-2, .py-2, .p-2 {
   padding-top: 0.5em;
 }
 
-.pr-2, .px-2, .p-2 {
+.pr-1, .px-1, .p-1 {
   padding-right: 0.5em;
 }
 
-.pb-2, .py-2, .p-2 {
+.pb-1, .py-1, .p-1 {
   padding-bottom: 0.5em;
 }
 
-.pl-2, .px-2, .p-2 {
+.pl-1, .px-1, .p-1 {
   padding-left: 0.5em;
 }
 
-.mt-2, .my-2, .m-2 {
+.mt-1, .my-1, .m-1 {
   margin-top: 0.5em;
 }
 
-.mr-2, .mx-2, .m-2 {
+.mr-1, .mx-1, .m-1 {
   margin-right: 0.5em;
 }
 
-.mb-2, .my-2, .m-2 {
+.mb-1, .my-1, .m-1 {
   margin-bottom: 0.5em;
 }
 
-.ml-2, .mx-2, .m-2 {
+.ml-1, .mx-1, .m-1 {
   margin-left: 0.5em;
 }
 
-.pt-3, .py-3, .p-3 {
+.pt-2, .py-2, .p-2 {
   padding-top: 1em;
 }
 
-.pr-3, .px-3, .p-3 {
+.pr-2, .px-2, .p-2 {
   padding-right: 1em;
 }
 
-.pb-3, .py-3, .p-3 {
+.pb-2, .py-2, .p-2 {
   padding-bottom: 1em;
 }
 
-.pl-3, .px-3, .p-3 {
+.pl-2, .px-2, .p-2 {
   padding-left: 1em;
 }
 
-.mt-3, .my-3, .m-3 {
+.mt-2, .my-2, .m-2 {
   margin-top: 1em;
 }
 
-.mr-3, .mx-3, .m-3 {
+.mr-2, .mx-2, .m-2 {
   margin-right: 1em;
 }
 
-.mb-3, .my-3, .m-3 {
+.mb-2, .my-2, .m-2 {
   margin-bottom: 1em;
 }
 
-.ml-3, .mx-3, .m-3 {
+.ml-2, .mx-2, .m-2 {
   margin-left: 1em;
 }
 
-.pt-4, .py-4, .p-4 {
+.pt-3, .py-3, .p-3 {
   padding-top: 2em;
 }
 
-.pr-4, .px-4, .p-4 {
+.pr-3, .px-3, .p-3 {
   padding-right: 2em;
 }
 
-.pb-4, .py-4, .p-4 {
+.pb-3, .py-3, .p-3 {
   padding-bottom: 2em;
 }
 
-.pl-4, .px-4, .p-4 {
+.pl-3, .px-3, .p-3 {
   padding-left: 2em;
 }
 
-.mt-4, .my-4, .m-4 {
+.mt-3, .my-3, .m-3 {
   margin-top: 2em;
 }
 
-.mr-4, .mx-4, .m-4 {
+.mr-3, .mx-3, .m-3 {
   margin-right: 2em;
 }
 
-.mb-4, .my-4, .m-4 {
+.mb-3, .my-3, .m-3 {
   margin-bottom: 2em;
 }
 
-.ml-4, .mx-4, .m-4 {
+.ml-3, .mx-3, .m-3 {
   margin-left: 2em;
 }
 
-.pt-5, .py-5, .p-5 {
+.pt-4, .py-4, .p-4 {
   padding-top: 4em;
 }
 
-.pr-5, .px-5, .p-5 {
+.pr-4, .px-4, .p-4 {
   padding-right: 4em;
 }
 
-.pb-5, .py-5, .p-5 {
+.pb-4, .py-4, .p-4 {
   padding-bottom: 4em;
 }
 
-.pl-5, .px-5, .p-5 {
+.pl-4, .px-4, .p-4 {
   padding-left: 4em;
 }
 
-.mt-5, .my-5, .m-5 {
+.mt-4, .my-4, .m-4 {
   margin-top: 4em;
 }
 
-.mr-5, .mx-5, .m-5 {
+.mr-4, .mx-4, .m-4 {
   margin-right: 4em;
 }
 
-.mb-5, .my-5, .m-5 {
+.mb-4, .my-4, .m-4 {
   margin-bottom: 4em;
 }
 
-.ml-5, .mx-5, .m-5 {
+.ml-4, .mx-4, .m-4 {
   margin-left: 4em;
 }
 
@@ -1772,10 +1753,6 @@ table tbody tr:first-child td {
   border: 4px solid var(--color);
 }
 
-.b-5 {
-  border: 5px solid var(--color);
-}
-
 .mx-n0 {
   margin-inline: -0em;
 }
@@ -1793,11 +1770,11 @@ table tbody tr:first-child td {
 }
 
 .mx-n1 {
-  margin-inline: -0.25em;
+  margin-inline: -0.5em;
 }
 
 .my-n1 {
-  margin-block: -0.25em;
+  margin-block: -0.5em;
 }
 
 .bx-1 {
@@ -1809,11 +1786,11 @@ table tbody tr:first-child td {
 }
 
 .mx-n2 {
-  margin-inline: -0.5em;
+  margin-inline: -1em;
 }
 
 .my-n2 {
-  margin-block: -0.5em;
+  margin-block: -1em;
 }
 
 .bx-2 {
@@ -1825,11 +1802,11 @@ table tbody tr:first-child td {
 }
 
 .mx-n3 {
-  margin-inline: -1em;
+  margin-inline: -2em;
 }
 
 .my-n3 {
-  margin-block: -1em;
+  margin-block: -2em;
 }
 
 .bx-3 {
@@ -1841,11 +1818,11 @@ table tbody tr:first-child td {
 }
 
 .mx-n4 {
-  margin-inline: -2em;
+  margin-inline: -4em;
 }
 
 .my-n4 {
-  margin-block: -2em;
+  margin-block: -4em;
 }
 
 .bx-4 {
@@ -1854,22 +1831,6 @@ table tbody tr:first-child td {
 
 .by-4 {
   border-block: 4px solid var(--color);
-}
-
-.mx-n5 {
-  margin-inline: -4em;
-}
-
-.my-n5 {
-  margin-block: -4em;
-}
-
-.bx-5 {
-  border-inline: 5px solid var(--color);
-}
-
-.by-5 {
-  border-block: 5px solid var(--color);
 }
 
 .ml-n0 {
@@ -1905,19 +1866,19 @@ table tbody tr:first-child td {
 }
 
 .ml-n1 {
-  margin-left: -0.25em;
+  margin-left: -0.5em;
 }
 
 .mr-n1 {
-  margin-right: -0.25em;
+  margin-right: -0.5em;
 }
 
 .mt-n1 {
-  margin-top: -0.25em;
+  margin-top: -0.5em;
 }
 
 .mb-n1 {
-  margin-bottom: -0.25em;
+  margin-bottom: -0.5em;
 }
 
 .bl-1 {
@@ -1937,19 +1898,19 @@ table tbody tr:first-child td {
 }
 
 .ml-n2 {
-  margin-left: -0.5em;
+  margin-left: -1em;
 }
 
 .mr-n2 {
-  margin-right: -0.5em;
+  margin-right: -1em;
 }
 
 .mt-n2 {
-  margin-top: -0.5em;
+  margin-top: -1em;
 }
 
 .mb-n2 {
-  margin-bottom: -0.5em;
+  margin-bottom: -1em;
 }
 
 .bl-2 {
@@ -1969,19 +1930,19 @@ table tbody tr:first-child td {
 }
 
 .ml-n3 {
-  margin-left: -1em;
+  margin-left: -2em;
 }
 
 .mr-n3 {
-  margin-right: -1em;
+  margin-right: -2em;
 }
 
 .mt-n3 {
-  margin-top: -1em;
+  margin-top: -2em;
 }
 
 .mb-n3 {
-  margin-bottom: -1em;
+  margin-bottom: -2em;
 }
 
 .bl-3 {
@@ -2001,19 +1962,19 @@ table tbody tr:first-child td {
 }
 
 .ml-n4 {
-  margin-left: -2em;
+  margin-left: -4em;
 }
 
 .mr-n4 {
-  margin-right: -2em;
+  margin-right: -4em;
 }
 
 .mt-n4 {
-  margin-top: -2em;
+  margin-top: -4em;
 }
 
 .mb-n4 {
-  margin-bottom: -2em;
+  margin-bottom: -4em;
 }
 
 .bl-4 {
@@ -2030,38 +1991,6 @@ table tbody tr:first-child td {
 
 .bb-4 {
   border-bottom: 4px solid var(--color);
-}
-
-.ml-n5 {
-  margin-left: -4em;
-}
-
-.mr-n5 {
-  margin-right: -4em;
-}
-
-.mt-n5 {
-  margin-top: -4em;
-}
-
-.mb-n5 {
-  margin-bottom: -4em;
-}
-
-.bl-5 {
-  border-left: 5px solid var(--color);
-}
-
-.br-5 {
-  border-right: 5px solid var(--color);
-}
-
-.bt-5 {
-  border-top: 5px solid var(--color);
-}
-
-.bb-5 {
-  border-bottom: 5px solid var(--color);
 }
 
 @media screen and (min-width: 40em) {
@@ -2096,49 +2025,40 @@ table tbody tr:first-child td {
     border: 0px solid var(--color);
   }
   .md-p-1 {
-    padding: 0.25em;
+    padding: 0.5em;
   }
   .md-m-1 {
-    margin: 0.25em;
+    margin: 0.5em;
   }
   .md-b-1 {
     border: 1px solid var(--color);
   }
   .md-p-2 {
-    padding: 0.5em;
+    padding: 1em;
   }
   .md-m-2 {
-    margin: 0.5em;
+    margin: 1em;
   }
   .md-b-2 {
     border: 2px solid var(--color);
   }
   .md-p-3 {
-    padding: 1em;
+    padding: 2em;
   }
   .md-m-3 {
-    margin: 1em;
+    margin: 2em;
   }
   .md-b-3 {
     border: 3px solid var(--color);
   }
   .md-p-4 {
-    padding: 2em;
+    padding: 4em;
   }
   .md-m-4 {
-    margin: 2em;
+    margin: 4em;
   }
   .md-b-4 {
     border: 4px solid var(--color);
-  }
-  .md-p-5 {
-    padding: 4em;
-  }
-  .md-m-5 {
-    margin: 4em;
-  }
-  .md-b-5 {
-    border: 5px solid var(--color);
   }
   .md-px-0 {
     padding-inline: 0em;
@@ -2165,22 +2085,22 @@ table tbody tr:first-child td {
     border-block: 0px solid var(--color);
   }
   .md-px-1 {
-    padding-inline: 0.25em;
+    padding-inline: 0.5em;
   }
   .md-py-1 {
-    padding-block: 0.25em;
+    padding-block: 0.5em;
   }
   .md-mx-1 {
-    margin-inline: 0.25em;
+    margin-inline: 0.5em;
   }
   .md-my-1 {
-    margin-block: 0.25em;
+    margin-block: 0.5em;
   }
   .md-mx-n1 {
-    margin-inline: -0.25em;
+    margin-inline: -0.5em;
   }
   .md-my-n1 {
-    margin-block: -0.25em;
+    margin-block: -0.5em;
   }
   .md-bx-1 {
     border-inline: 1px solid var(--color);
@@ -2189,22 +2109,22 @@ table tbody tr:first-child td {
     border-block: 1px solid var(--color);
   }
   .md-px-2 {
-    padding-inline: 0.5em;
+    padding-inline: 1em;
   }
   .md-py-2 {
-    padding-block: 0.5em;
+    padding-block: 1em;
   }
   .md-mx-2 {
-    margin-inline: 0.5em;
+    margin-inline: 1em;
   }
   .md-my-2 {
-    margin-block: 0.5em;
+    margin-block: 1em;
   }
   .md-mx-n2 {
-    margin-inline: -0.5em;
+    margin-inline: -1em;
   }
   .md-my-n2 {
-    margin-block: -0.5em;
+    margin-block: -1em;
   }
   .md-bx-2 {
     border-inline: 2px solid var(--color);
@@ -2213,22 +2133,22 @@ table tbody tr:first-child td {
     border-block: 2px solid var(--color);
   }
   .md-px-3 {
-    padding-inline: 1em;
+    padding-inline: 2em;
   }
   .md-py-3 {
-    padding-block: 1em;
+    padding-block: 2em;
   }
   .md-mx-3 {
-    margin-inline: 1em;
+    margin-inline: 2em;
   }
   .md-my-3 {
-    margin-block: 1em;
+    margin-block: 2em;
   }
   .md-mx-n3 {
-    margin-inline: -1em;
+    margin-inline: -2em;
   }
   .md-my-n3 {
-    margin-block: -1em;
+    margin-block: -2em;
   }
   .md-bx-3 {
     border-inline: 3px solid var(--color);
@@ -2237,52 +2157,28 @@ table tbody tr:first-child td {
     border-block: 3px solid var(--color);
   }
   .md-px-4 {
-    padding-inline: 2em;
+    padding-inline: 4em;
   }
   .md-py-4 {
-    padding-block: 2em;
+    padding-block: 4em;
   }
   .md-mx-4 {
-    margin-inline: 2em;
+    margin-inline: 4em;
   }
   .md-my-4 {
-    margin-block: 2em;
+    margin-block: 4em;
   }
   .md-mx-n4 {
-    margin-inline: -2em;
+    margin-inline: -4em;
   }
   .md-my-n4 {
-    margin-block: -2em;
+    margin-block: -4em;
   }
   .md-bx-4 {
     border-inline: 4px solid var(--color);
   }
   .md-by-4 {
     border-block: 4px solid var(--color);
-  }
-  .md-px-5 {
-    padding-inline: 4em;
-  }
-  .md-py-5 {
-    padding-block: 4em;
-  }
-  .md-mx-5 {
-    margin-inline: 4em;
-  }
-  .md-my-5 {
-    margin-block: 4em;
-  }
-  .md-mx-n5 {
-    margin-inline: -4em;
-  }
-  .md-my-n5 {
-    margin-block: -4em;
-  }
-  .md-bx-5 {
-    border-inline: 5px solid var(--color);
-  }
-  .md-by-5 {
-    border-block: 5px solid var(--color);
   }
   .md-pl-0 {
     padding-left: 0em;
@@ -2333,40 +2229,40 @@ table tbody tr:first-child td {
     border-bottom: 0px solid var(--color);
   }
   .md-pl-1 {
-    padding-left: 0.25em;
+    padding-left: 0.5em;
   }
   .md-pr-1 {
-    padding-right: 0.25em;
+    padding-right: 0.5em;
   }
   .md-pt-1 {
-    padding-top: 0.25em;
+    padding-top: 0.5em;
   }
   .md-pb-1 {
-    padding-bottom: 0.25em;
+    padding-bottom: 0.5em;
   }
   .md-ml-1 {
-    margin-left: 0.25em;
+    margin-left: 0.5em;
   }
   .md-mr-1 {
-    margin-right: 0.25em;
+    margin-right: 0.5em;
   }
   .md-mt-1 {
-    margin-top: 0.25em;
+    margin-top: 0.5em;
   }
   .md-mb-1 {
-    margin-bottom: 0.25em;
+    margin-bottom: 0.5em;
   }
   .md-ml-n1 {
-    margin-left: -0.25em;
+    margin-left: -0.5em;
   }
   .md-mr-n1 {
-    margin-right: -0.25em;
+    margin-right: -0.5em;
   }
   .md-mt-n1 {
-    margin-top: -0.25em;
+    margin-top: -0.5em;
   }
   .md-mb-n1 {
-    margin-bottom: -0.25em;
+    margin-bottom: -0.5em;
   }
   .md-bl-1 {
     border-left: 1px solid var(--color);
@@ -2381,40 +2277,40 @@ table tbody tr:first-child td {
     border-bottom: 1px solid var(--color);
   }
   .md-pl-2 {
-    padding-left: 0.5em;
+    padding-left: 1em;
   }
   .md-pr-2 {
-    padding-right: 0.5em;
+    padding-right: 1em;
   }
   .md-pt-2 {
-    padding-top: 0.5em;
+    padding-top: 1em;
   }
   .md-pb-2 {
-    padding-bottom: 0.5em;
+    padding-bottom: 1em;
   }
   .md-ml-2 {
-    margin-left: 0.5em;
+    margin-left: 1em;
   }
   .md-mr-2 {
-    margin-right: 0.5em;
+    margin-right: 1em;
   }
   .md-mt-2 {
-    margin-top: 0.5em;
+    margin-top: 1em;
   }
   .md-mb-2 {
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
   }
   .md-ml-n2 {
-    margin-left: -0.5em;
+    margin-left: -1em;
   }
   .md-mr-n2 {
-    margin-right: -0.5em;
+    margin-right: -1em;
   }
   .md-mt-n2 {
-    margin-top: -0.5em;
+    margin-top: -1em;
   }
   .md-mb-n2 {
-    margin-bottom: -0.5em;
+    margin-bottom: -1em;
   }
   .md-bl-2 {
     border-left: 2px solid var(--color);
@@ -2429,40 +2325,40 @@ table tbody tr:first-child td {
     border-bottom: 2px solid var(--color);
   }
   .md-pl-3 {
-    padding-left: 1em;
+    padding-left: 2em;
   }
   .md-pr-3 {
-    padding-right: 1em;
+    padding-right: 2em;
   }
   .md-pt-3 {
-    padding-top: 1em;
+    padding-top: 2em;
   }
   .md-pb-3 {
-    padding-bottom: 1em;
+    padding-bottom: 2em;
   }
   .md-ml-3 {
-    margin-left: 1em;
+    margin-left: 2em;
   }
   .md-mr-3 {
-    margin-right: 1em;
+    margin-right: 2em;
   }
   .md-mt-3 {
-    margin-top: 1em;
+    margin-top: 2em;
   }
   .md-mb-3 {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
   }
   .md-ml-n3 {
-    margin-left: -1em;
+    margin-left: -2em;
   }
   .md-mr-n3 {
-    margin-right: -1em;
+    margin-right: -2em;
   }
   .md-mt-n3 {
-    margin-top: -1em;
+    margin-top: -2em;
   }
   .md-mb-n3 {
-    margin-bottom: -1em;
+    margin-bottom: -2em;
   }
   .md-bl-3 {
     border-left: 3px solid var(--color);
@@ -2477,40 +2373,40 @@ table tbody tr:first-child td {
     border-bottom: 3px solid var(--color);
   }
   .md-pl-4 {
-    padding-left: 2em;
+    padding-left: 4em;
   }
   .md-pr-4 {
-    padding-right: 2em;
+    padding-right: 4em;
   }
   .md-pt-4 {
-    padding-top: 2em;
+    padding-top: 4em;
   }
   .md-pb-4 {
-    padding-bottom: 2em;
+    padding-bottom: 4em;
   }
   .md-ml-4 {
-    margin-left: 2em;
+    margin-left: 4em;
   }
   .md-mr-4 {
-    margin-right: 2em;
+    margin-right: 4em;
   }
   .md-mt-4 {
-    margin-top: 2em;
+    margin-top: 4em;
   }
   .md-mb-4 {
-    margin-bottom: 2em;
+    margin-bottom: 4em;
   }
   .md-ml-n4 {
-    margin-left: -2em;
+    margin-left: -4em;
   }
   .md-mr-n4 {
-    margin-right: -2em;
+    margin-right: -4em;
   }
   .md-mt-n4 {
-    margin-top: -2em;
+    margin-top: -4em;
   }
   .md-mb-n4 {
-    margin-bottom: -2em;
+    margin-bottom: -4em;
   }
   .md-bl-4 {
     border-left: 4px solid var(--color);
@@ -2523,54 +2419,6 @@ table tbody tr:first-child td {
   }
   .md-bb-4 {
     border-bottom: 4px solid var(--color);
-  }
-  .md-pl-5 {
-    padding-left: 4em;
-  }
-  .md-pr-5 {
-    padding-right: 4em;
-  }
-  .md-pt-5 {
-    padding-top: 4em;
-  }
-  .md-pb-5 {
-    padding-bottom: 4em;
-  }
-  .md-ml-5 {
-    margin-left: 4em;
-  }
-  .md-mr-5 {
-    margin-right: 4em;
-  }
-  .md-mt-5 {
-    margin-top: 4em;
-  }
-  .md-mb-5 {
-    margin-bottom: 4em;
-  }
-  .md-ml-n5 {
-    margin-left: -4em;
-  }
-  .md-mr-n5 {
-    margin-right: -4em;
-  }
-  .md-mt-n5 {
-    margin-top: -4em;
-  }
-  .md-mb-n5 {
-    margin-bottom: -4em;
-  }
-  .md-bl-5 {
-    border-left: 5px solid var(--color);
-  }
-  .md-br-5 {
-    border-right: 5px solid var(--color);
-  }
-  .md-bt-5 {
-    border-top: 5px solid var(--color);
-  }
-  .md-bb-5 {
-    border-bottom: 5px solid var(--color);
   }
 }
 /*!

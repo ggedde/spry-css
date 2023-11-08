@@ -34,6 +34,7 @@
 .hoverable > ul > li > ul,
 .hoverable > li > ul {
 	position: absolute;
+	top: 100%;
 	min-width: 100%;
     max-width: 260px;
     width: max-content;
