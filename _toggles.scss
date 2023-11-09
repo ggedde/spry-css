@@ -4,14 +4,14 @@
 @use "variables"as *;
 @use "ui"as *;
 
-:is(nav,.list) li>[data-toggle=next]:nth-child(2) {
+:is(nav,.list) li>.icon:nth-child(2) {
 	font-size: 80%;
 	position: absolute;
 	right: 0.5em;
 	top: 0.25em;
 }
 
-:is(nav,.list) li:has([data-toggle=next]:nth-child(2)) > :first-child {
+:is(nav,.list) li:has(> .icon:nth-child(2)) > :first-child {
 	padding-right: 2.5em;
 }
 

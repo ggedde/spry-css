@@ -7,22 +7,21 @@
 	overflow    : hidden;
 	display     : flex;
 	border-color: rgba(var(--color-rgb), .4);
+	--gap: 0em;
 
 	.list {
 		overflow    : hidden;
 		border-color: inherit;
 		flex        : none;
-		width       : max-content;
-		max-width   : 300px;
+		width       : auto;
+		--gap: 0em;
 
-		&.row {
-			width: auto;
-			max-width: none;
-		}
-
-		&.column> :not(ul, ol),
-		&.column>li {
-			flex: none;
+		&.column {
+			width: max-content;
+			:not(ul, ol),
+			>li {
+				flex: none;
+			}
 		}
 
 		&+*>* {
@@ -36,24 +35,13 @@
 				transform : none;
 				padding   : 2em;
 				max-height: none;
-				// opacity   : 1;
 				@extend %ui-open;
 			}
 		}
-
-		// &.list > * {
-		// 	flex: none;
-		// }
 	}
 
 	&.outline .list {
 		border-width: 1px;
 		border-style: solid;
 	}
-
-	// @for $i from 1 through 20 {
-	// 	:has(:nth-child(#{$i}) :checked) + * > :nth-child(#{$i}) {
-	// 	  @extend %tabopen;
-	// 	}
-	// }
 }

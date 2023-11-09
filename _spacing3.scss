@@ -67,6 +67,10 @@
 	%margin-left-#{$s} {
 		margin-left: #{$space};
 	}
+	.g-#{$s} {
+		--gap: #{$space};
+		gap  : var(--gap);
+	}
 }
 @each $s, $space in $spacing {
 	@each $prop in (padding, margin, border) {
@@ -205,6 +209,10 @@
 					}
 				}
 			}
+			.#{$breakpoint}-g-#{$s} {
+				--gap: #{$space};
+				gap  : var(--gap);
+			}	
 		}
 		@each $s, $space in $spacing {
 			@each $prop in (padding, margin, border) {

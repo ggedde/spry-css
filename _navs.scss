@@ -5,29 +5,33 @@
 @use "ui"as *;
 
 :is(nav,menu) {
+	width: 100%;
 	a {
 		@extend %ui;
 	}
 	> a {
 		width: auto;
 	}
-	> ul:only-child {
-		display: contents;
-		> li {
-			flex: inherit;
-			width: inherit;
-			justify-content: inherit;
-		}
-	}
 	li,
-	ul {
+	ul,
+	menu {
 		position: relative;
-		> *:has(+ label, + input) {
-			padding-right: 2.5em;
-		}
 	}
-	ul {
-		background-color: inherit;
+}
+
+nav ul,
+nav menu,
+menu ul,
+menu menu {
+	background-color: inherit;
+}
+
+nav ul ul,
+menu ul,
+menu menu {
+	width: 100%;
+	> li {
+		width: 100%;
 	}
 }
 
@@ -57,6 +61,7 @@ $breakpoint_width in $breakpoints {
 		.#{$breakpoint}-hoverable > ul > li > ul,
 		.#{$breakpoint}-hoverable > li > ul {
 			position: absolute;
+			top: 100%;
 			min-width: 100%;
 			max-width: 260px;
 			width: max-content;

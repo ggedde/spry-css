@@ -10,7 +10,10 @@
 		scroll-behavior   : smooth;
 		scroll-snap-type  : x mandatory;
 		-ms-overflow-style: none;
-		flex-wrap         : nowrap;
+
+		&[class] {
+			flex-wrap: nowrap;
+		}
 
 		&::-webkit-scrollbar {
 			width  : 0;
@@ -39,10 +42,8 @@
 	&[data-snap] .slider-slides > * {
 		scroll-snap-stop: always;
 	}
-	.grid img[loading="lazy"],
-	.row img[loading="lazy"] {
+	img[loading="lazy"] {
 		width: 100%;
-		height: 100%;
 	}
 	.slider-prev,
 	.slider-next {

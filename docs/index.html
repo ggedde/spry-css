@@ -9,7 +9,7 @@
     <meta name="google" content="notranslate">
     <meta http-equiv="Content-Language" content="en_US">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="spry.min.css?v=3.0.0">
     <script defer src="spry.js?v=1.0.0"></script>
@@ -1055,7 +1055,7 @@ $sizes: (
                         <div class="span-6 md-span-3 lg-span-3 bg-faint rounded p-1">
                             .span-6 .md-span-3 .lg-span-3
                         </div>
-                        <div class="span-6 row md-columns-auto">
+                        <div class="span-6 row md-columns-fill">
                             <div class="bg-faint rounded p-1">
                                 auto
                             </div>
@@ -1857,62 +1857,64 @@ $sizes: (
                 </div>
 
                 <div class="show-code" data-title="Single Opening Accordion">
-                    <button class="button rounded-top hazy link contrast w justify-content-between" data-toggle="next">
-                        <h4>Question 1</h4>
-                        <i class="icon down mt-0"></i>
-                    </button>
-                    <div class="bx-2 border-default-hazy pt-1">
-                        <div class="p-2">
-                            <p>
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                            <p>
-                                At vero eos et accusam
-                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                                Lorem ipsum dolor sit amet.
-                            </p>
+                    <div>
+                        <button class="button rounded-top hazy link contrast w justify-content-between" data-toggle="next" data-toggle-close="{div} .open">
+                            <h4>Question 1</h4>
+                            <i class="icon down mt-0"></i>
+                        </button>
+                        <div class="bx-2 border-default-hazy pt-1">
+                            <div class="p-2">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                                <p>
+                                    At vero eos et accusam
+                                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                            </div>
                         </div>
-                    </div>
 
-                    <button class="button sharp hazy link contrast w justify-content-between" data-toggle="next">
-                        <h4>Question 2</h4>
-                        <i class="icon down mt-0"></i>
-                    </button>
-                    <div class="bx-2 border-default-hazy pt-1">
-                        <div class="p-2">
-                            <p>
-                                At vero eos et accusam
-                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                                Lorem ipsum dolor sit amet.
-                            </p>
+                        <button class="button sharp hazy link contrast w justify-content-between" data-toggle="next" data-toggle-close="{div} .open">
+                            <h4>Question 2</h4>
+                            <i class="icon down mt-0"></i>
+                        </button>
+                        <div class="bx-2 border-default-hazy pt-1">
+                            <div class="p-2">
+                                <p>
+                                    At vero eos et accusam
+                                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <button class="button sharp hazy link contrast w justify-content-between" data-toggle="next">
-                        <h4>Question 3</h4>
-                        <i class="icon down mt-0"></i>
-                    </button>
-                    <div class="b-2 bt-0 border-default-hazy rounded-bottom pt-1">
-                        <div class="p-2">
-                            <p>
-                                Consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                            <p>
-                                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </p>
+                        
+                        <button class="button sharp hazy link contrast w justify-content-between" data-toggle="next" data-toggle-close="{div} .open">
+                            <h4>Question 3</h4>
+                            <i class="icon down mt-0"></i>
+                        </button>
+                        <div class="b-2 bt-0 border-default-hazy rounded-bottom pt-1">
+                            <div class="p-2">
+                                <p>
+                                    Consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                                <p>
+                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="show-code" data-title="Outlined Accordion with Accent">
                     <div class="primary outline rounded">
-                        <button class="button rounded-top link w justify-content-between" data-toggle="next">
+                        <button class="button rounded-top link w justify-content-between" data-toggle="next" data-toggle-close="{div} .open:not(:nth-child(2))">
                             <h4>Question 1</h4>
                             <i class="icon down mt-0 primary"></i>
                         </button>
@@ -1932,7 +1934,7 @@ $sizes: (
                             </div>
                         </div>
 
-                        <button class="button sharp link w justify-content-between" data-toggle="next">
+                        <button class="button sharp link w justify-content-between" data-toggle="next"  data-toggle-close="{div} .open:not(:nth-child(4))">
                             <h4>Question 2</h4>
                             <i class="icon down mt-0 primary"></i>
                         </button>
@@ -1946,7 +1948,7 @@ $sizes: (
                             </div>
                         </div>
                         
-                        <button class="button sharp link w justify-content-between" data-toggle="next">
+                        <button class="button sharp link w justify-content-between" data-toggle="next"  data-toggle-close="{div} .open:not(:nth-child(6))">
                             <h4>Question 3</h4>
                             <i class="icon down mt-0 primary"></i>
                         </button>
@@ -2086,13 +2088,13 @@ $sizes: (
                                 <h5 class="bold">Info</h5>
                                 Please Try again.
                             </div>
-                            <button class="icon close hazy light xs circle absolute top right m-1" title="Close Popup" data-toggle="close"></button>
+                            <button class="icon close hazy light xs circle absolute top right m-1" title="Close Popup" data-toggle-close></button>
                         </div>
                     </div>
                 </div>
 
                 <div class="show-code" data-title="Popup Alert Top Right with No Backdrop and Autoclose">
-                    <button title="Open Popup" data-toggle="next" data-toggle-timeout="2000">Show Alert Popup</button>
+                    <button title="Open Popup" data-toggle="next" data-toggle-action="open" data-toggle-timeout="2000">Show Alert Popup</button>
                     <div class="modal no-backdrop m-1">
                         <div class="alert primary lg absolute top right mw-400">
                             <svg class="mr-2" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
@@ -2100,7 +2102,7 @@ $sizes: (
                                 <h5 class="bold">Info!</h5>
                                 This message will Autoclose.
                             </div>
-                            <button class="icon close hazy light xs circle absolute top right m-1" title="Close Popup" data-toggle="close"></button>
+                            <button class="icon close hazy light xs circle absolute top right m-1" title="Close Popup" data-toggle-close></button>
                         </div>
                     </div>
                 </div>
@@ -2870,7 +2872,7 @@ $sizes: (
                         <article class="mw-400">
                             <header>
                                 <h4>Lorem ipsum dolor as</h4>
-                                <button type="button" class="link icon close circle" data-toggle="close"></button>
+                                <button type="button" class="link icon close circle" data-toggle-close></button>
                             </header>
                             <div class="px-3 pb-3 pt-1">
                                 <form class="accent-primary grid g-2">
@@ -3008,8 +3010,8 @@ $sizes: (
                                     Lorem ipsum dolor sit amet.</p>
                             </div>
                             <footer class="px-2">
-                                <button type="button" class="sm outline" data-toggle="close">Cancel</button>
-                                <button type="button" class="primary sm ml-1 md-ml-3" data-toggle="close">Accept</button>
+                                <button type="button" class="sm outline" data-toggle-close>Cancel</button>
+                                <button type="button" class="primary sm ml-1 md-ml-3" data-toggle-close>Accept</button>
                             </footer>
                         </article>
                     </div>
@@ -3191,99 +3193,101 @@ $sizes: (
                 </div>
 
                 <div class="show-code" data-title="Toolbar Navigation">
-                    <nav class="list row columns-auto toolbar justify-content-end hoverable bg-faint">
-                        <ul class="justify-content-end">
-                            <li>
-                                <a href="#">Link 1</a>
-                                <button class="icon down link circle sm" data-toggle="next"></button>
-                                <ul class="bg-faint rounded">
-                                    <li>
-                                        <a href="#">Sub Link 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Sub Link 2</a>
-                                        <button class="icon down link circle sm shy" data-toggle="next"></button>
-                                        <ul class="bg-faint rounded">
-                                            <li>
-                                                <a href="#">Sub Sub Link 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Sub Sub Link 2</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Sub Sub Link 3</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Sub Sub Link 4</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Sub Link 3</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Sub Link 4</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Link 3</a>
-                                <button class="icon down link circle sm" data-toggle="next"></button>
-                                <ul class="bg-faint right rounded">
-                                    <li>
-                                        <a href="#">Sub Link 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Sub Link 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Sub Link 3</a>
-                                        <button class="icon down link circle sm shy" data-toggle="next"></button>
-                                        <ul class="bg-faint left rounded">
-                                            <li>
-                                                <a href="#">Sub Sub Link 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Sub Sub Link 2</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Sub Sub Link 3</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Link 4</a>
-                            </li>
-                            <li>
-                                <button class="link icon">
-                                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
-                                </button>
-                                <ul class="bg-faint right rounded">
-                                    <li>
-                                        <a href="#">
+                    <div class="toolbar bg-faint">
+                        <nav class="list md-row g-1 md-columns-auto md-justify-content-end md-hoverable bg-inherit">
+                            <ul>
+                                <li>
+                                    <a href="#">Link 1</a>
+                                    <button class="icon down link circle sm shy" data-toggle="next"></button>
+                                    <ul class="bg-faint rounded">
+                                        <li>
+                                            <a href="#">Sub Link 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sub Link 2</a>
+                                            <button class="icon down link circle sm shy" data-toggle="next"></button>
+                                            <ul class="bg-faint rounded">
+                                                <li>
+                                                    <a href="#">Sub Sub Link 1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Sub Sub Link 2</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Sub Sub Link 3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Sub Sub Link 4</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sub Link 3</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sub Link 4</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Link 3</a>
+                                    <button class="icon down link circle sm shy" data-toggle="next"></button>
+                                    <ul class="bg-faint right rounded">
+                                        <li>
+                                            <a href="#">Sub Link 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sub Link 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sub Link 3</a>
+                                            <button class="icon down link circle sm shy" data-toggle="next"></button>
+                                            <ul class="bg-faint left rounded">
+                                                <li>
+                                                    <a href="#">Sub Sub Link 1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Sub Sub Link 2</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Sub Sub Link 3</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Link 4</a>
+                                </li>
+                                <li>
+                                    <button class="link icon">
+                                        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
+                                    </button>
+                                    <ul class="bg-faint right rounded">
+                                        <li>
+                                            <a href="#">
+                                                <i class="mr-2"><svg viewBox="0 0 24 24">
+                                                    <path fill="currentColor"
+                                                        d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" />
+                                                </svg></i> Preferences
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
                                             <i class="mr-2"><svg viewBox="0 0 24 24">
-                                                <path fill="currentColor"
-                                                    d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" />
-                                            </svg></i> Preferences
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                        <i class="mr-2"><svg viewBox="0 0 24 24">
-                                                <path fill="currentColor"
-                                                    d="M16.56,5.44L15.11,6.89C16.84,7.94 18,9.83 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12C6,9.83 7.16,7.94 8.88,6.88L7.44,5.44C5.36,6.88 4,9.28 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12C20,9.28 18.64,6.88 16.56,5.44M13,3H11V13H13" />
-                                            </svg></i>Logout
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
+                                                    <path fill="currentColor"
+                                                        d="M16.56,5.44L15.11,6.89C16.84,7.94 18,9.83 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12C6,9.83 7.16,7.94 8.88,6.88L7.44,5.44C5.36,6.88 4,9.28 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12C20,9.28 18.64,6.88 16.56,5.44M13,3H11V13H13" />
+                                                </svg></i>Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
 
                 <div id="lists" class="show-code" data-title="Basic List Text">
@@ -3319,16 +3323,18 @@ $sizes: (
                 </div>
 
                 <div id="lists" class="show-code" data-title="Outline Horizontal List">
-                    <menu class="list outline row hoverable bg-faint">
-                        <li><button class="link contrast">List Item 1</button></li>
-                        <li><button class="link contrast">List Item 2</button>
-                            <ul class="pill-bottom shadow overflow-hidden">
-                                <li><button class="link contrast">List Item 1</button></li>
-                                <li><button class="link contrast">List Item 2</button></li>
-                                <li><button class="link contrast">List Item 3</button></li>
-                            </ul></li>
-                        <li><button class="link contrast">List Item 3</button></li>
-                    </menu>
+                    <nav class="list outline row hoverable bg-faint">
+                        <ul class="">
+                            <li><button class="link contrast">List Item 1</button></li>
+                            <li><button class="link contrast">List Item 2</button>
+                                <ul class="pill-bottom shadow overflow-hidden">
+                                    <li><button class="link contrast">List Item 1</button></li>
+                                    <li><button class="link contrast">List Item 2</button></li>
+                                    <li><button class="link contrast">List Item 3</button></li>
+                                </ul></li>
+                            <li><button class="link contrast">List Item 3</button></li>
+                        </ul>
+                    </nav>
                 </div>
 
                 <div id="lists" class="show-code" data-title="Single Selection List">
@@ -3563,42 +3569,40 @@ $sizes: (
                 <div class="show-code" data-title="Toggle Menu List Right Align with Sub Menu">
                     <div class="text-right">
                         <button class="toggle link icon menu" data-toggle="next" data-toggle-escapable></button>
-                        <nav class="absolute closed list bg-faint rounded shadow mw-200 absolute right">
-                            <menu>
-                                <li><a href="#">Link 1</a></li>
-                                <li>
-                                    <a href="#">Link 2</a>
-                                    <button class="link icon down circle absolute right sm m-1 mr-2" data-toggle="next"></button>
-                                    <ul class="bg-faint left rounded">
-                                        <li><a href="#">Sub Link 1</a></li>
-                                        <li><a href="#">Sub Link 2</a></li>
-                                        <li><a href="#">Sub Link 3</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Link 3</a></li>
-                            </menu>
-                        </nav>
+                        <menu class="absolute closed list bg-faint rounded shadow mw-200 absolute right mr-2">
+                            <li><a href="#">Link 1</a></li>
+                            <li>
+                                <a href="#">Link 2</a>
+                                <button class="link icon down circle absolute right sm" data-toggle="next"></button>
+                                <ul class="bg-faint left rounded">
+                                    <li><a href="#">Sub Link 1</a></li>
+                                    <li><a href="#">Sub Link 2</a></li>
+                                    <li><a href="#">Sub Link 3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Link 3</a></li>
+                        </menu>
                     </div>
                 </div>
     
                 <div class="show-code" data-title="Responsive Toolbar Navigation Menu">
-                    <nav class="list bg-faint toolbar md-horizontal md-hoverable">
-                        <h5 class="flex-center">
+                    <nav class="toolbar bg-faint">
+                        <a href="#" class="flex-center button link">
                             <svg style="width:24px;height:24px" class="mr-1" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="M19.07,4.93C17.22,3 14.66,1.96 12,2C9.34,1.96 6.79,3 4.94,4.93C3,6.78 1.96,9.34 2,12C1.96,14.66 3,17.21 4.93,19.06C6.78,21 9.34,22.04 12,22C14.66,22.04 17.21,21 19.06,19.07C21,17.22 22.04,14.66 22,12C22.04,9.34 21,6.78 19.07,4.93M17,12V18H13.5V13H10.5V18H7V12H5L12,5L19.5,12H17Z" />
                             </svg>
                             Logo
-                        </h5>
-                        <input type="checkbox" class="button toggle link icon menu md-none" />
-                        <ul class="md-open bg-faint absolute right outset-bottom">
+                        </a>
+                        <button class="link icon menu md-none" data-toggle="next" data-toggle-escapable></button>
+                        <ul class="list md-row md-columns-auto md-open bg-inherit absolute md-relative right outset-bottom md-top md-hoverable">
                             <li>
                                 <a href="#">Link 1</a>
                             </li>
                             <li>
                                 <a href="#" class="pr-0">Link 2</a>
-                                <input type="checkbox" class="button toggle link icon down circle md-ml-2" />
-                                <ul class="bg-faint rounded md-shadow">
+                                <button class="link icon down circle shy" data-toggle="next"></button>
+                                <ul class="bg-inherit rounded-bottom md-shadow">
                                     <li>
                                         <a href="#">Sub Link 1</a>
                                     </li>
@@ -3629,7 +3633,7 @@ $sizes: (
             ---------       SLIDERS      ---------
             ------------------------------------->
             <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-3 pt-3 bg-inherit bb-1 border-faint pb-1 mb-0">
+                <h2 class="sticky flex-middle  pt-3 bg-inherit bb-1 border-faint pb-1 mb-0">
                     <i class="mr-1">
                         <svg viewBox="0 0 24 24"><path d="M9,11H15V8L19,12L15,16V13H9V16L5,12L9,8V11M2,20V4H4V20H2M20,20V4H22V20H20Z" /></svg>
                     </i>
@@ -3823,7 +3827,7 @@ $sizes: (
     
                 <a name="sliders-breakpoints"></a>
                 <div class="show-code" data-title="Breakpoints, Autoplay, Loop and Stop on Action" data-badge="With SprySliderJS">
-                    <div class="slider px-4" data-play="6000" data-stop="action" data-loop>
+                    <div class="slider px-4" data-play="0" data-stop="action" data-loop>
                         <button class="slider-prev link icon prev circle"></button>
                         <button class="slider-next link icon next circle"></button>
                         <div class="slider-slides row md-columns-2 lg-columns-3 md-g-2">
@@ -3961,11 +3965,11 @@ $sizes: (
                                     </button>
                                     <nav id="jkl" class="list absolute mw-200 bg-faint right rounded shadow">
                                         <ul>
-                                            <li><button class="link contrast" onclick="console.log('123'); this.blur();" data-toggle="close"><i class="color-primary mr-1"><svg viewBox="0 0 24 26"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg></i>Edit</button></li>
+                                            <li><button class="link contrast" onclick="console.log('123'); this.blur();" data-toggle-close><i class="color-primary mr-1"><svg viewBox="0 0 24 26"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg></i>Edit</button></li>
                                             <li>asdf asdf asdf </li>
-                                            <li><button class="link contrast" onclick="console.log('adf')" data-toggle="close"><i class="color-secondary mr-1"><svg viewBox="0 0 24 26"><path d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9M7 6h10v13H7V6m2 2v9h2V8H9m4 0v9h2V8h-2z" /></svg></i><span>Delete</span></button></li>
+                                            <li><button class="link contrast" onclick="console.log('adf')" data-toggle-close><i class="color-secondary mr-1"><svg viewBox="0 0 24 26"><path d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9M7 6h10v13H7V6m2 2v9h2V8H9m4 0v9h2V8h-2z" /></svg></i><span>Delete</span></button></li>
                                             <li>
-                                                <button class="link contrast" data-toggle="close" onclick="Spry.toggle('#aaa');">
+                                                <button class="link contrast" data-toggle-close onclick="Spry.toggle('#aaa');">
                                                     <i class="mr-1"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z" /></svg></i>
                                                     Open Modal 111
                                                 </button>
@@ -3977,7 +3981,7 @@ $sizes: (
                                         <article class="mw-400 shadow">
                                             <header>
                                                 <h4>No Backdrop Modal Example</h4>
-                                                <label class="button link icon close circle mr-n1" data-toggle="close"></label>
+                                                <label class="button link icon close circle mr-n1" data-toggle-close></label>
                                             </header>
                                             <p class="mb-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                                                 tempor invidunt ut labore et dolore magna aliquyam erat</p>
@@ -4004,11 +4008,11 @@ $sizes: (
                                     </button>
                                     <nav id="bbbb" class="list absolute mw-200 bg-faint right mr-3 rounded shadow hhhhh">
                                         <ul>
-                                            <li><button class="link contrast" data-toggle="close" onclick="console.log('123'); this.blur();"><i class="color-primary mr-1"><svg viewBox="0 0 24 26"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg></i>Edit</button></li>
+                                            <li><button class="link contrast" data-toggle-close onclick="console.log('123'); this.blur();"><i class="color-primary mr-1"><svg viewBox="0 0 24 26"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg></i>Edit</button></li>
                                             <li>asdf asdf asdf </li>
-                                            <li><button class="link contrast" data-toggle="close" onclick="console.log('adf')"><i class="color-secondary mr-1"><svg viewBox="0 0 24 26"><path d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9M7 6h10v13H7V6m2 2v9h2V8H9m4 0v9h2V8h-2z" /></svg></i><span>Delete</span></button></li>
+                                            <li><button class="link contrast" data-toggle-close onclick="console.log('adf')"><i class="color-secondary mr-1"><svg viewBox="0 0 24 26"><path d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9M7 6h10v13H7V6m2 2v9h2V8H9m4 0v9h2V8h-2z" /></svg></i><span>Delete</span></button></li>
                                             <li>
-                                                <label class="button link contrast" data-toggle="close">
+                                                <label class="button link contrast" data-toggle-close>
                                                     <input id="table1-item1-modal-toggle" type="checkbox" />
                                                     <i class="mr-1"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z" /></svg></i>
                                                     Open Modal
@@ -4131,15 +4135,15 @@ $sizes: (
                     </nav>
                 </div>
 
-                <div class="show-code" data-title="Basic Responsive Tabs">
+                <div class="show-code" data-title="Basic123 Responsive Tabs">
                     <div class="tabs outline">
                         <nav class="list navigatable">
-                            <button class="link active">Tab 1</button>
-                            <button class="link">Tab 2</button>
-                            <button class="link">Tab 3 lorem ipsum</button>
-                            <button class="link">Tab 4</button>
-                            <button class="link">Tab 5</button>
-                            <button class="link" onclick="console.log('gg')">Tab 6</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(1)" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(2)" data-toggle-close="{.tabs} .open">Tab 2</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(3)" data-toggle-close="{.tabs} .open">Tab 3 lorem ipsum</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(4)" data-toggle-close="{.tabs} .open">Tab 4</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(5)" data-toggle-close="{.tabs} .open">Tab 5</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(6)" data-toggle-close="{.tabs} .open">Tab 6</button>
                         </nav>
                         <div>
                             <div class="open">Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
@@ -4154,15 +4158,13 @@ $sizes: (
 
                 <div class="show-code" data-title="Horizontal Tabs">
                     <div class="tabs outline column">
-                        <nav class="list row columns-auto">
-                            <ul>
-                                <li><button class="link active">Tab 1</button></li>
-                                <li><button class="link">Tab 2</button></li>
-                                <li><button class="link">Tab 3</button></li>
-                                <li><button class="link">Tab 4</button></li>
-                                <li><button class="link">Tab 5</button></li>
-                                <li><button class="link">Tab 6</button></li>
-                            </ul>
+                        <nav class="list navigatable row columns-fill">
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(1)" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(2)" data-toggle-close="{.tabs} .open">Tab 2</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(3)" data-toggle-close="{.tabs} .open">Tab 3 lorem ipsum</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(4)" data-toggle-close="{.tabs} .open">Tab 4</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(5)" data-toggle-close="{.tabs} .open">Tab 5</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(6)" data-toggle-close="{.tabs} .open">Tab 6</button>
                         </nav>
                         <div>
                             <div class="open">Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
@@ -4177,7 +4179,7 @@ $sizes: (
 
                 <div class="show-code" data-title="Horizontal Tabs">
                     <div class="tabs outline column">
-                        <nav class="list row columns-auto">
+                        <nav class="list row columns-fill justify-content-center">
                             <ul>
                                 <li><button class="link active">Tab 1</button></li>
                                 <li><button class="link">Tab 2</button></li>
@@ -4211,9 +4213,9 @@ $sizes: (
                 <div class="show-code" data-title="Selection Tabs">
                     <div class="tabs outline row">
                         <nav class="list">
-                            <label class="button link active"><input class="ml-0 mr-3" name="list-item-tabs2" type="radio" checked />List Item 1</label>
-                            <label class="button link"><input class="ml-0 mr-3" name="list-item-tabs2" type="radio" />List Item 2</label>
-                            <label class="button link"><input class="ml-0 mr-3" name="list-item-tabs2" type="radio" />List Item 3</label>
+                            <label class="button link active"><input class="ml-0 mr-2" name="list-item-tabs2" type="radio" checked />List Item 1</label>
+                            <label class="button link"><input class="ml-0 mr-2" name="list-item-tabs2" type="radio" />List Item 2</label>
+                            <label class="button link"><input class="ml-0 mr-2" name="list-item-tabs2" type="radio" />List Item 3</label>
                         </nav>
                         <div>
                             <div class="open">Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
@@ -4264,7 +4266,7 @@ $sizes: (
                         Tooltip Example
                             <span>
                                 <i class="color-default shy"><svg viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-14a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4z" /></svg></i>
-                                <span class="tooltip outset-top">
+                                <span class="tooltip md-absolute md-outset-top">
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                     invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                                 </span>
@@ -4336,27 +4338,17 @@ $sizes: (
             } else {
                 parent.setAttribute('data-theme', parent.getAttribute('data-theme') === 'dark' ? '' : 'dark');
             }
-        }       
-
-        function copyCode(event) {
-            var html = event.target.parentElement.parentElement.parentElement.querySelector('.code-content').innerHTML;
-            navigator.clipboard.writeText(html).then(function() {
-                Spry.toggle('#copy-code-modal');
-                setTimeout(() => {
-                    Spry.toggle('#copy-code-modal', 'close');
-                }, 2000);
-            }, function(err) {
-                console.error('Async: Could not copy text: ', err);
-            });
-        }
-
-        document.querySelectorAll('.show-code').forEach((elem) => {
-            var id = 'toggle-' + Math.random();
-            var html = elem.innerHTML.replaceAll('<', '&lt').replaceAll('>', '&gt');
+        } 
+        
+        function cleanContent(html) {
             html = html.replaceAll(' class="bg-faint rounded p-1"', '');
             html = html.replaceAll('bg-faint rounded p-1 ', '');
             html = html.replaceAll(' bg-faint rounded p-1', '');
-            var firstSpaces = html.slice(0, html.indexOf('&'));
+            var firsTag = html.indexOf('&');
+            if (firsTag === -1) {
+                firsTag = html.indexOf('<');
+            }
+            var firstSpaces = html.slice(0, firsTag);
             html = html.replaceAll(firstSpaces, "\n").trim();
             var infoTxt = [
                 'col',
@@ -4387,6 +4379,27 @@ $sizes: (
                 html = html.replaceAll('data-toggle=""', 'data-toggle');
                 html = html.replaceAll('data-theme-dark=""', 'data-theme-dark');
             });
+
+            return html;
+        }
+
+        function copyCode(event) {
+            var html = event.target.parentElement.parentElement.parentElement.querySelector('.code-content').innerHTML;
+            console.log(cleanContent(html));
+            navigator.clipboard.writeText(cleanContent(html)).then(function() {
+                Spry.toggle('#copy-code-modal');
+                setTimeout(() => {
+                    Spry.toggle('#copy-code-modal', 'close');
+                }, 2000);
+            }, function(err) {
+                console.error('Async: Could not copy text: ', err);
+            });
+        }
+
+        document.querySelectorAll('.show-code').forEach((elem) => {
+            var id = 'toggle-' + Math.random();
+            var html = elem.innerHTML.replaceAll('<', '&lt').replaceAll('>', '&gt');
+            html = cleanContent(html);
 
             var toggleId = Math.random().toString().replace('.', '');
             elem.innerHTML = '<article class="mb-3"><header class="pr-1 sm md-md"><h4>'+elem.getAttribute('data-title')+' '+(elem.hasAttribute('data-badge') ? '<span class="badge default outline xs ml-1">'+elem.getAttribute('data-badge')+'</span>' : '')+(elem.hasAttribute('data-tooltip-warning') ? '<span class="sm"><i class="color-secondary shy"><svg viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6z" /></svg></i><span class="tooltip shadow b-1 border-default-hazy sm">'+elem.getAttribute('data-tooltip-warning')+'</span></span>' : '')+(elem.hasAttribute('data-title-note') ? '<div class="note xs my-1 color-default">'+elem.getAttribute('data-title-note')+'</div>' : '')+'</h4><div class="no-wrap"><button class="shy icon link contrast" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button data-toggle="#code-'+toggleId+'" class="shy icon link contrast" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link contrast" title="Copy HTML to Clipboard" onclick="copyCode(event); setTimeout(() => {this.classList.remove(\'open\'); this.setAttribute(\'aria-pressed\', false)}, 2000)" data-toggle><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg><svg viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg></button></div></header><div class="p-0"><div id="code-'+toggleId+'" class="code-container closed"><pre class="mb-0"><code class="language-html'+(elem.classList.contains('with-wrap')?' pre-wrap':'')+'">' + html + '</code></pre></div></div><div class="p-2 code-content">'+elem.innerHTML+'</div>'+(elem.hasAttribute('data-note') ? '<div class="note mt-1 mb-2 color-default">'+elem.getAttribute('data-note')+'</div>' : '')+'</article>';

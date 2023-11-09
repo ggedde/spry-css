@@ -23,6 +23,7 @@ class Spry {
      * @returns void
      */
     static toggle = function(toggleObjectOrEvent, forceAction) {
+
         var elem = null;
         var hasElement = null;
         var action = forceAction && ['open', 'close', 'toggle'].includes(forceAction) ? forceAction : 'toggle';
@@ -31,7 +32,7 @@ class Spry {
         var downPressed = null;
 
         if (toggleObjectOrEvent && toggleObjectOrEvent.type && (toggleObjectOrEvent.type === 'keyup' || toggleObjectOrEvent.type === 'keydown')) {
-            if(toggleObjectOrEvent.type === 'keydown' && [40,13,32].includes(toggleObjectOrEvent.keyCode)) {
+            if(toggleObjectOrEvent.type === 'keydown' && [13,32].includes(toggleObjectOrEvent.keyCode)) {
                 toggleObjectOrEvent.preventDefault();
             }
             if((toggleObjectOrEvent.type === 'keyup' && toggleObjectOrEvent.keyCode === 40) || (toggleObjectOrEvent.type === 'keydown' && toggleObjectOrEvent.keyCode !== 40) || ![40,13,32].includes(toggleObjectOrEvent.keyCode)) {
@@ -46,7 +47,12 @@ class Spry {
          * Find which element and togglers are needed to take action.
          */
         if (typeof toggleObjectOrEvent === 'string') {
-            elem = document.querySelector(toggleObjectOrEvent);
+            if (event && event.target && toggleObjectOrEvent.indexOf('{') > -1 && toggleObjectOrEvent.indexOf('}') > 0) {
+                var from = event.target.closest(toggleObjectOrEvent.substring(toggleObjectOrEvent.indexOf('{')+1, toggleObjectOrEvent.indexOf('}')));
+                elem = from.querySelector(toggleObjectOrEvent.substring(toggleObjectOrEvent.indexOf('}')+1));
+            } else {
+                elem = document.querySelector(toggleObjectOrEvent);
+            }
         } else if (toggleObjectOrEvent && toggleObjectOrEvent.el && toggleObjectOrEvent.togglers) {
             elem = toggleObjectOrEvent.el;
         } else if (toggleObjectOrEvent && toggleObjectOrEvent.target) {
@@ -68,12 +74,19 @@ class Spry {
             elem = toggleObjectOrEvent;
         }
 
-        if (downPressed && elem.classList.contains('open')) {
-            var first = elem.querySelector('a, button, input, .button, label');
-            if (first) {
-                first.focus();
+        if (downPressed) {
+            if (elem.classList.contains('open')) {
+                var first = elem.querySelector('a, button, input, .button, label');
+                if (first) {
+                    toggleObjectOrEvent.preventDefault();
+                    first.focus();
+                }
             }
             return;
+        }
+
+        if (toggleObjectOrEvent && toggleObjectOrEvent.type && (toggleObjectOrEvent.type === 'keyup' || toggleObjectOrEvent.type === 'keydown')) {
+            toggleObjectOrEvent.preventDefault();
         }
 
         /**
@@ -105,23 +118,40 @@ class Spry {
     /**
      * Closes a Toggle. Must be ran from inside a container that contains the "open" class.
      * 
+     * @param string|object toggleObjectOrEvent - Can be an Dom Element or a Selector.
+     * 
      * @returns void
      */
-    static closeToggle = function(event) {
-        var hasElement = false;    
-        var closestToggle = event.target.closest('.open');
+    static closeToggle = function(toggleObjectOrEvent) {
+        var closeElement = toggleObjectOrEvent, closeSelector;
 
-        if (closestToggle) {
-            this.elements.forEach(toggleElement => {
-                if (toggleElement.el === closestToggle) {
-                    hasElement = true;
-                    this.toggle(toggleElement);
-                }
-            });
-
-            if (!hasElement) {
-                this.toggle(closestToggle);
+        if (toggleObjectOrEvent && toggleObjectOrEvent.type && toggleObjectOrEvent.type === 'keyup') {
+            if (![13,32].includes(toggleObjectOrEvent.keyCode)) {
+                return;
             }
+            toggleObjectOrEvent.preventDefault();
+        }
+
+        if (typeof toggleObjectOrEvent === 'string') {
+            if (event && event.target && toggleObjectOrEvent.indexOf('{') > -1 && toggleObjectOrEvent.indexOf('}') > 0) {
+                var from = event.target.closest(toggleObjectOrEvent.substring(toggleObjectOrEvent.indexOf('{')+1, toggleObjectOrEvent.indexOf('}')));
+                closeElement = from.querySelector(toggleObjectOrEvent.substring(toggleObjectOrEvent.indexOf('}')+1));
+            } else {
+                closeElement = document.querySelector(toggleObjectOrEvent);
+            }
+        } else if (toggleObjectOrEvent && toggleObjectOrEvent.el && toggleObjectOrEvent.togglers) {
+            closeElement = toggleObjectOrEvent;
+        } else if (toggleObjectOrEvent && toggleObjectOrEvent.target) {
+            closeSelector = toggleObjectOrEvent.target.getAttribute('data-toggle-close');
+            if (closeSelector) {
+                closeElement = closeSelector;
+            } else {
+                closeElement = toggleObjectOrEvent.target.closest('.open');
+            }
+        }
+
+        if (closeElement) {
+            this.toggle(closeElement, 'close');
         }
     }
 
@@ -168,6 +198,7 @@ class Spry {
                         }
                         if (['', true, 'true'].includes(toggler.el.getAttribute('data-toggle-escapable'))) {
                             togglerHasEscapable = true;
+                            console.log(toggler);
                         }
                         if (['', true, 'true'].includes(toggleElement.el.getAttribute('data-toggle-escapable'))) {
                             elementHasEscapable = true;
@@ -200,12 +231,15 @@ class Spry {
                 targets = [toggle];
             } else if (selector === 'next') {
                 targets = [toggle.nextElementSibling];
-            } else if (selector === 'close') {
-                targets = ['close'];
             } else if (selector === 'hover') {
                 return;
             } else {
-                targets = document.querySelectorAll(selector);
+                if (selector.indexOf('{') > -1 && selector.indexOf('}') > 0) {
+                    var from = toggle.closest(selector.substring(selector.indexOf('{')+1, selector.indexOf('}')));
+                    targets = from.querySelectorAll(selector.substring(selector.indexOf('}')+1));
+                } else {
+                    targets = document.querySelectorAll(selector);
+                }
             }
             
             if (!targets.length) return;
@@ -231,7 +265,7 @@ class Spry {
                     }
                 });
     
-                if (!hasElement && target !== 'close') {
+                if (!hasElement) {
                     this.elements.push({
                         el: target,
                         togglers: [{
@@ -248,21 +282,24 @@ class Spry {
          */
         document.addEventListener('click', this.closeAllTogglesBound);
         document.addEventListener('keyup', this.closeAllTogglesBound);
-        
+
         /**
-         * Listen to All Close Togglers and close the closest Open Element.
+         * Listen to All Auto Close Togglers and close the closest Open Element.
          */
-        document.querySelectorAll('[data-toggle=close]').forEach(toggle => {
-            toggle.removeEventListener('click', this.closeToggleBound);
-            toggle.addEventListener('click', this.closeToggleBound);
+        document.querySelectorAll('[data-toggle-timeout]').forEach(toggler => {
+            toggler.removeEventListener('click', this.timeoutToggleBound);
+            toggler.addEventListener('click', this.timeoutToggleBound);
         });
 
         /**
          * Listen to All Auto Close Togglers and close the closest Open Element.
          */
-        document.querySelectorAll('[data-toggle-timeout]').forEach(toggle => {
-            toggle.removeEventListener('click', this.timeoutToggleBound);
-            toggle.addEventListener('click', this.timeoutToggleBound);
+        document.querySelectorAll('[data-toggle-close]').forEach(toggler => {
+            toggler.removeEventListener('click', this.closeToggleBound);
+            toggler.addEventListener('click', this.closeToggleBound);
+
+            toggler.removeEventListener('keyup', this.closeToggleBound);
+            toggler.addEventListener('keyup', (this.closeToggleBound));
         });
         
         /**
@@ -496,7 +533,7 @@ class Spry {
                     if (index > -1) {
                         var newIndex = ([39,40].includes(event.keyCode) ? index+1 : index-1);
                         var sibling = children[newIndex];
-                        if (sibling && !sibling.querySelector('a, button, .button, input')){
+                        if (sibling && sibling.tagName === 'LI' && !sibling.querySelector('a, button, .button, input')){
                             // Skip if child has not selectable item
                             var newIndex = ([39,40].includes(event.keyCode) ? newIndex+1 : newIndex-1);
                             var sibling = children[newIndex];
@@ -531,41 +568,6 @@ class Spry {
         })
     }
 
-    static updateTabs = function(event) {
-        var tablist = event.target.closest('.list');
-        var children = tablist.children[0].tagName === 'UL' ? tablist.children[0].children : tablist.children;
-        
-        var tabs = [...children];
-        var tabpanels = [...tablist.parentElement.querySelector('.list + *').children];
-        var index = tabs.indexOf(event.target);
-        if (index === -1) {
-            tabs.forEach((tab, tabIndex) => {
-                if (event.target === tab || tab.contains(event.target)) {
-                    index = tabIndex;
-                }
-            })
-        }
-        tablist.querySelectorAll('.active').forEach(activeElement => {
-            activeElement.classList.remove('active');
-            activeElement.setAttribute('aria-pressed', false);
-        });
-        event.target.classList.add('active');
-        event.target.setAttribute('aria-pressed', true);
-        tabpanels.forEach(tabpanel => {
-            tabpanel.classList.remove('open');
-            tabpanel.setAttribute('aria-expanded', false);
-        });
-        tabpanels[index].classList.add('open');
-        tabpanels[index].setAttribute('aria-expanded', true);
-    }
-    
-    static loadTabs = function() {
-        document.querySelectorAll('.tabs .list :is(.button,button)').forEach(elem => {
-            elem.removeEventListener('click', this.updateTabs);
-            elem.addEventListener('click', this.updateTabs);
-        });
-    }
-
     /**
      * Bind Class Reference to methods to allow for removal of Events to ensure there are no duplicate events.
      */
@@ -582,10 +584,8 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
     Spry.loadToggles();
     Spry.loadSliders();
     Spry.loadLists();
-    Spry.loadTabs();
 } else {
     document.addEventListener('DOMContentLoaded', Spry.loadToggles);
     document.addEventListener('DOMContentLoaded', Spry.loadSliders);
     document.addEventListener('DOMContentLoaded', Spry.loadLists);
-    document.addEventListener('DOMContentLoaded', Spry.loadTabs);
 }

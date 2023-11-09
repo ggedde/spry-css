@@ -38,14 +38,12 @@
 }
 
 [class*="columns-"]>* {
-	flex      : none;
-	flex-basis: calc((100% / var(--col)) - ((var(--gap) * (var(--col) - 1)) / var(--col)));
+	flex: 0 0 calc((100% / var(--col)) - ((var(--gap) * (var(--col) - 1)) / var(--col)));
 }
 
 [class*="span-"] {
 	grid-column: 1 / span var(--col);
 	flex     : calc(((var(--col) / 12) * 100%) - var(--gap));
-	max-width: calc(((var(--col) / 12) * 100%) - (((var(--gap) * (var(--col) / 12)) - var(--gap)) / (var(--col) / 12)));
 }
 
 .columns-auto>*,
@@ -53,9 +51,9 @@
 .span-auto,
 .span-fill {
 	flex: 0 auto;
-	min-width: auto;
-	max-width: none;
-	width    : auto;
+	// min-width: auto;
+	// max-width: none;
+	// width    : auto;
 }
 
 .columns-fixed>*,
@@ -72,8 +70,7 @@
 
 	.span-#{$i},
 	.grid-#{$i}00,
-	.columns-#{$i},
-	.columns-#{$i}>*{
+	.columns-#{$i}{
 		--col: #{$i};
 	}
 }
@@ -96,8 +93,7 @@
 		@for $i from 1 through 12 {
 
 			.#{$breakpoint}-span-#{$i},
-			.#{$breakpoint}-columns-#{$i},
-			.#{$breakpoint}-columns-#{$i}>* {
+			.#{$breakpoint}-columns-#{$i} {
 				--col: #{$i};
 			}
 		}
@@ -126,9 +122,9 @@
 		.#{$breakpoint}-span-auto,
 		.#{$breakpoint}-span-fill {
 			flex: 0 auto;
-			min-width: auto;
-			max-width: none;
-			width    : auto;
+			// min-width: auto;
+			// max-width: none;
+			// width    : auto;
 		}
 
 		.#{$breakpoint}-columns-fixed>*,
@@ -139,25 +135,6 @@
 		.#{$breakpoint}-columns-fill>*,
 		.#{$breakpoint}-span-fill {
 			flex: 1 auto;
-		}
-	}
-}
-
-@each $s,
-$space in $spacing {
-	.g-#{$s} {
-		--gap: #{$space};
-		gap  : var(--gap);
-	}
-}
-
-@each $breakpoint, $breakpoint_width in $breakpoints {
-	@media screen and (min-width: $breakpoint_width) {
-		@each $s, $space in $spacing {
-			.#{$breakpoint}-g-#{$s} {
-				--gap: #{$space};
-				gap  : var(--gap);
-			}
 		}
 	}
 }

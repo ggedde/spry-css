@@ -7,4 +7,8 @@
 	@extend %ui;
 	@extend %ui-spacious;
 	justify-content: space-between;
+	// > * {
+	// 	flex: 0 auto;
+	// 	width: auto;
+	// }
 }

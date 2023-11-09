@@ -37,7 +37,7 @@ ul {
 }
 
 ol, ul {
-    margin-left: 1.5em;
+    margin-inline-start: 1.5em;
 }
 
 ol li, ul li {
@@ -50,7 +50,7 @@ menu ol,
 nav ul,
 nav ol {
     list-style: none;
-    margin-left: 0;
+    margin-inline-start: 0;
 }
 
 nav li,

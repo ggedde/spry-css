@@ -61,21 +61,16 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .flex-wrap{ flex-wrap: wrap }
 .flex-column{ flex-direction: column }
 .flex-row{ flex-direction: row }
-.align-items-start{ align-items: flex-start }
-.align-items-end{ align-items: flex-end }
+.align-items-start{ align-items: start }
+.align-items-end{ align-items: end }
 .align-items-center{ align-items: center }
 .align-items-stretch{ align-items: stretch }
-.align-self-start{ align-self: flex-start }
-.align-self-end{ align-self: flex-end }
-.align-self-center{ align-self: center }
-.justify-content-start{ justify-content: flex-start }
-.justify-content-end{ justify-content: flex-end }
+.justify-content-start{ justify-content: start }
+.justify-content-end{ justify-content: end }
+.justify-content-right{ justify-content: right }
 .justify-content-center{ justify-content: center }
 .justify-content-between{ justify-content: space-between }
 .justify-content-around{ justify-content: space-around }
-.justify-self-start{ justify-self: flex-start }
-.justify-self-end{ justify-self: flex-end }
-.justify-self-center{ justify-self: center }
 .relative{ position: relative }
 .absolute{ position: absolute }
 .collapse{ position: relative; z-index: 5 }
@@ -120,17 +115,13 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .vw{ width: 100dvw }
 .h-0{ height: 0 }
 .w-0{ width: 0 }
+.w-content {width: max-content;}
 @for $i from 1 through 12 {
-	// .h-#{$i}00{ height: #{$i}00px; min-height: #{$i}00px; max-height: #{$i}00px }
 	.mh-#{$i}00{ max-height: #{$i}00px }
 	.pl-#{$i}00{ padding-left: #{$i}00px }
 	.pr-#{$i}00{ padding-right: #{$i}00px }
-	// .vh-#{$i}0{ height: #{$i}0vh }
-	// .mvh-#{$i}0{ max-height: #{$i}0vh }
-	// .w-#{$i}00,.row>.w-#{$i}00{ width: #{$i}00px; min-width: #{$i}00px; max-width: #{$i}00px }
-	.mw-#{$i}00,.row>.mw-#{$i}00{ width: 100%; max-width: #{$i}00px }
-	.vw-#{$i}0{ width: #{$i}0vw }
-	// .mvw-#{$i}0,.row>.mvw-#{$i}0{ max-width: #{$i}0vw }
+	.w-#{$i}00{ width: #{$i}00px; flex: 0 #{$i}00px }
+	.mw-#{$i}00{ max-width: #{$i}00px }
 }
 .o-0{ opacity: 0 }
 @for $i from 1 through 10 {
@@ -166,21 +157,16 @@ $size_value in $sizes {
 			&-flex-wrap{ flex-wrap: wrap }
 			&-flex-column{ flex-direction: column }
 			&-flex-row{ flex-direction: row }
-			&-align-items-start{ align-items: flex-start }
-			&-align-items-end{ align-items: flex-end }
+			&-align-items-start{ align-items: start }
+			&-align-items-end{ align-items: end }
 			&-align-items-center{ align-items: center }
 			&-align-items-stretch{ align-items: stretch }
-			&-align-self-start{ align-self: flex-start }
-			&-align-self-end{ align-self: flex-end }
-			&-align-self-center{ align-self: center }
-			&-justify-content-start{ justify-content: flex-start }
-			&-justify-content-end{ justify-content: flex-end }
+			&-justify-content-start{ justify-content: start }
+			&-justify-content-end{ justify-content: end }
+			&-justify-content-right{ justify-content: right }
 			&-justify-content-center{ justify-content: center }
 			&-justify-content-between{ justify-content: space-between }
 			&-justify-content-around{ justify-content: space-around }
-			&-justify-self-start{ justify-self: flex-start }
-			&-justify-self-end{ justify-self: flex-end }
-			&-justify-self-center{ justify-self: center }
 			&-relative{ position: relative }
 			&-absolute{ position: absolute }
 			&-collapse{ position: relative; z-index: 5 }
@@ -225,17 +211,13 @@ $size_value in $sizes {
 			&-vw{ width: 100dvw }
 			&-h-0{ height: 0 }
 			&-w-0{ width: 0 }
+			&-w-content {width: max-content;}
 			@for $i from 1 through 12 {
-				// &-h-#{$i}00{ height: #{$i}00px; min-height: #{$i}00px; max-height: #{$i}00px }
 				&-mh-#{$i}00{ max-height: #{$i}00px }
 				&-pl-#{$i}00{ padding-left: #{$i}00px }
 				&-pr-#{$i}00{ padding-right: #{$i}00px }
-				// &-vh-#{$i}0{ height: #{$i}0vh }
-				// &-mvh-#{$i}0{ max-height: #{$i}0vh }
-				// &-w-#{$i}00,.row>&-w-#{$i}00{ width: #{$i}00px; min-width: #{$i}00px; max-width: #{$i}00px }
-				&-mw-#{$i}00,.row>&-mw-#{$i}00{ width: 100%; max-width: #{$i}00px }
-				// &-vw-#{$i}0{ width: #{$i}0vw }
-				// &-mvw-#{$i}0,.row>&-mvw-#{$i}0{ max-width: #{$i}0vw }
+				&-w-#{$i}00{ width: #{$i}00px; flex: 0 #{$i}00px }
+				&-mw-#{$i}00{ max-width: #{$i}00px }
 			}
 			&-o-0{ opacity: 0 }
 			@for $i from 1 through 10 {
