@@ -47,6 +47,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .text-right{ text-align: right }
 .text-justify{ text-align: justify }
 .text-justify-center{ text-align: justify; text-align-last: center }
+.text-balance {text-wrap: balance}
 .no-wrap{ white-space: nowrap; flex-wrap: nowrap; }
 .pre-wrap{ white-space: pre-wrap }
 .break-word{ word-wrap: break-word }
@@ -86,6 +87,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .outset-right { left: 100%; right: auto }
 .outset-bottom { top: 100%; bottom: auto }
 .outset-left { right: 100%; left: auto }
+.center-y {top: 50%; bottom: auto; translate: 0 -50%}
+.center-x {left: 50%; right: auto; translate: -50% 0}
 .pointer-none { pointer-events: none }
 .align-baseline{ vertical-align: baseline }
 .align-top{ vertical-align: top }
@@ -143,6 +146,7 @@ $size_value in $sizes {
 			&-text-right{ text-align: right }
 			&-text-justify{ text-align: justify }
 			&-text-justify-center{ text-align: justify; text-align-last: center }
+			&-text-balance {text-wrap: balance}
 			&-no-wrap{ white-space: nowrap; flex-wrap: nowrap; }
 			&-pre-wrap{ white-space: pre-wrap }
 			&-break-word{ word-wrap: break-word }
@@ -182,6 +186,8 @@ $size_value in $sizes {
 			&-outset-right { left: 100%; right: auto }
 			&-outset-bottom { top: 100%; bottom: auto }
 			&-outset-left { right: 100%; left: auto }
+			&-center-y {top: 50%; bottom: auto; translate: 0 -50%}
+			&-center-x {left: 50%; right: auto; translate: -50% 0}
 			&-pointer-none { pointer-events: none }
 			&-align-baseline{ vertical-align: baseline }
 			&-align-top{ vertical-align: top }

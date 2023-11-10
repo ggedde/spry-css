@@ -3,35 +3,58 @@
 */
 
 .tooltip {
-	width           : 100vw;
+	cursor          : text;
+	width           : max-content;
 	max-width       : 300px;
-	position        : fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	cursor          : auto;
+	position        : absolute;
+	left            : 50%;
+	text-align      : left;
+	bottom          : 50%;
 	border-radius   : 5px;
 	background-color: var(--light);
-	padding         : 1em;
+	padding         : .8em 1.2em;
 	z-index         : 2;
+	transition      : opacity .2s ease-in-out .1s, transform .1s ease-in-out;
+	user-select     : text;
+	text-transform  : none;
+	font-style      : normal;
 }
 
 :has(>.tooltip) {
 	position: relative;
 
-	&:hover {
+
+
+	&:hover,
+	&:focus {
 		z-index: 2;
 	}
 
-	.tooltip {
-		width     : 90vw;
-		// position  : absolute;
-		transition: opacity .2s ease-in-out;
-		cursor    : auto;
+	&:hover:not(:active),
+	&:focus:not(:active) {
+		z-index: 2;
+		filter : none;
 	}
 
-	&:not(:hover) .tooltip {
+	&:not(:hover, :focus) .tooltip {
 		opacity       : 0;
 		pointer-events: none;
+		transition    : opacity .2s ease-in-out, transform .1s ease-in-out .1s;
 	}
 }
+
+// [data-tooltip] {
+// 	position: relative;
+// 	&::after {
+// 		content: attr(data-tooltip);
+// 		display: block;
+// 		width           : max-content;
+// 		max-width       : 300px;
+// 		position        : absolute;
+// 		text-wrap       : balance;
+// 		bottom          : 100%;
+// 		border-radius   : 5px;
+// 		background-color: var(--light);
+// 		padding         : 1em;
+// 	}
+// }
