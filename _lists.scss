@@ -41,6 +41,9 @@
 			width: 100%;
 		}
 	}
+	a {
+		@extend %ui-border-radius;
+	}
 
 	&.outline,
 	.outline>& {

@@ -3,9 +3,9 @@
 */
 @use "ui" as *;
 
-i:empty, .icon {
-	@extend %ui-color;
-}
+// i:empty, .icon {
+// 	@extend %ui-color;
+// }
 
 :is(i:empty, .icon:empty):is(.outline, .hazy) {
 	width : 2em;
@@ -72,7 +72,9 @@ i svg {
 	height  : 1.25em;
 }
 
-:is(.icon, i:empty) {
+:is(i:empty, .icon) {
+
+	// color: var(--text-color);
 
 	&:is(.up, .down, .prev, .next, .close, .menu)::after {
 		border       : .15em solid var(--text-color);

@@ -8,6 +8,7 @@
 	@extend %ui-bg;
 	@extend %ui-color;
 	@extend %ui-border;
+	@extend %ui-border-radius;
 	display        : flex;
 	justify-content: flex-start;
 	padding        : .5em 1em;

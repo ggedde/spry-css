@@ -15,7 +15,7 @@
 // Update Dark Theme Colors
 [data-theme=dark],
 [data-theme=dark] article {
-	background-color: darken(map-get(map-get($colors, 'dark'), 'dark'), 8%);
+	background-color: darken(map-get(map-get($colors, 'dark'), 'light'), 8%);
 }
 
 [data-theme=dark] {
@@ -26,23 +26,40 @@
 		color           : var(--light);
 	}
 
-	@each $color_name,
-	$color_value in $colors {
+	@each $color_name, $color_value in $colors {
 		@if map-get($color_value, 'dark') {
 			--#{$color_name}    : #{map-get($color_value, 'dark')};
 			--#{$color_name}-rgb: #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
 
+
+			@if index($colors, ($color_name $color_value)) == 1 {
+				--color      : #{map-get($color_value, 'dark')};
+				--color-rgb  : #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
+				@if (lightness(map-get($color_value, 'dark')) > 70) {
+					--text-color: var(--dark);
+					--text-color-rgb: var(--dark-rgb);
+				}
+	
+				@else {
+					--text-color: var(--light);
+					--text-color-rgb: var(--light-rgb);
+				}
+			}
+
 			.#{$color_name} {
 				@if (lightness(map-get($color_value, 'dark')) > 70) {
 					--text-color: var(--dark);
+					--text-color-rgb: var(--dark-rgb);
 				}
-
+	
 				@else {
 					--text-color: var(--light);
+					--text-color-rgb: var(--light-rgb);
 				}
 			}
 		}
 	}
+	color: var(--text-color);
 }
 
 body,
@@ -53,7 +70,7 @@ body,
 
 body,
 [data-theme=light] {
-	color: var(--contrast);
+	color: var(--text-color);
 
 	select option,
 	.tooltip {
@@ -61,19 +78,30 @@ body,
 		color           : var(--dark);
 	}
 
-	@each $color_name,
-	$color_value in $colors {
+	@each $color_name, $color_value in $colors {
 		--#{$color_name}    : #{map-get($color_value, 'light')};
 		--#{$color_name}-rgb: #{red(map-get($color_value, 'light')), green(map-get($color_value, 'light')), blue(map-get($color_value, 'light'))};
+	}
 
-		@if $color_name==default {
+	@each $color_name, $color_value in $colors {
+
+		@if index($colors, ($color_name $color_value)) == 1 {
 			--color      : #{map-get($color_value, 'light')};
 			--color-rgb  : #{red(map-get($color_value, 'light')), green(map-get($color_value, 'light')), blue(map-get($color_value, 'light'))};
-			--text-color : #{map-get($color_value, 'light')};
+			@if (lightness(map-get($color_value, 'light')) > 70) {
+				--text-color: var(--dark);
+				--text-color-rgb: var(--dark-rgb);
+			}
+
+			@else {
+				--text-color: var(--light);
+				--text-color-rgb: var(--light-rgb);
+			}
 		}
 	}
 }
 
+body,
 [data-theme=light] {
 
 	@each $color_name,
@@ -83,10 +111,12 @@ body,
 			.#{$color_name} {
 				@if (lightness(map-get($color_value, 'light')) > 70) {
 					--text-color: var(--dark);
+					--text-color-rgb: var(--dark-rgb);
 				}
-
+	
 				@else {
 					--text-color: var(--light);
+					--text-color-rgb: var(--light-rgb);
 				}
 			}
 		}
@@ -103,9 +133,11 @@ $color_value in $colors {
 
 	.#{$color_name} :is(.link, .outline, .hazy) {
 		--text-color : var(--#{$color_name});
+		--text-color-rgb : var(--#{$color_name}-rgb);
 		color        : var(--text-color);
 	}
 }
+
 
 // First Color Overrides
 @each $color_name,
@@ -115,6 +147,7 @@ $color_value in $colors {
 	.#{$color_name}:is(.link, .outline, .hazy),
 	.link-hover-#{$color_name} a:not(.button):is(:hover, :focus) {
 		--text-color : var(--#{$color_name});
+		--text-color-rgb : var(--#{$color_name}-rgb);
 		color        : var(--text-color);
 	}
 }
@@ -132,6 +165,7 @@ $color_value in $colors {
 	.hover-#{$color_name}:is(:hover, :focus),
 	.icon.#{$color_name}:not(button, .button) {
 		--text-color : var(--#{$color_name});
+		--text-color-rgb : var(--#{$color_name}-rgb);
 		color        : var(--text-color);
 	}
 

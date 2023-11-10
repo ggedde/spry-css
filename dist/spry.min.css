@@ -69,6 +69,12 @@ img {
   height: auto;
 }
 
+/*!
+* Spry Icons
+*/
+/*!
+* Spry UI
+*/
 :root {
   --gap: 1.25em;
   --col: 1;
@@ -79,9 +85,6 @@ img {
   }
 }
 
-/*!
-* Spry UI
-*/
 .closed,
 .hoverable > li ul,
 .hoverable > ul > li ul,
@@ -117,7 +120,6 @@ input[type=submit], .badge, .alert, .ui {
   appearance: none;
   background: transparent;
   border: 0;
-  border-radius: 0.25em;
   color: inherit;
   display: inline-flex;
   font-size: 100%;
@@ -172,6 +174,14 @@ input[type=submit], button.outline,
   border-style: solid;
 }
 
+.tooltip, input,
+textarea,
+select, article, .toolbar, button,
+.button,
+input[type=submit], .alert, .list a, .ui {
+  border-radius: 0.25em;
+}
+
 button,
 .button,
 input[type=submit], .badge, .alert, .ui {
@@ -204,18 +214,18 @@ select:focus-visible, button:focus-visible,
   outline-offset: 2px;
 }
 
-i:empty, .icon, button,
+button,
 .button,
 input[type=submit], .badge, .alert, .ui {
   --text-color: var(--light);
   color: var(--text-color);
 }
-i:is(.link, .outline, .hazy):empty, .icon:is(.link, .outline, .hazy), button:is(.link, .outline, .hazy),
+button:is(.link, .outline, .hazy),
 .button:is(.link, .outline, .hazy),
 input[type=submit]:is(.link, .outline, .hazy), .badge:is(.link, .outline, .hazy), .alert:is(.link, .outline, .hazy), .ui:is(.link, .outline, .hazy) {
   --text-color: var(--contrast);
 }
-i:empty svg, .icon svg, button svg,
+button svg,
 .button svg,
 input[type=submit] svg, .badge svg, .alert svg, .ui svg {
   fill: currentColor;
@@ -254,7 +264,8 @@ a:hover, a:focus {
   background-color: rgba(var(--color-rgb), 0.1);
 }
 
-.link {
+.link,
+.link.button {
   text-transform: capitalize;
 }
 
@@ -269,6 +280,147 @@ section {
   padding: calc(var(--gap) * 2) var(--gap);
 }
 
+:is(i:empty, .icon:empty):is(.outline, .hazy) {
+  width: 2em;
+  height: 2em;
+}
+
+button svg,
+.button svg,
+.alert svg,
+i svg,
+.icon svg {
+  width: 1.25em;
+  height: 1.25em;
+}
+
+button,
+.button,
+.icon,
+a:has(svg),
+i:has(svg) {
+  position: relative;
+}
+
+:is(a, button, .button) :is(i:empty, .icon) {
+  pointer-events: none;
+}
+
+[data-toggle] svg:nth-of-type(2),
+[data-toggle][aria-pressed=true] svg:first-of-type {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+[data-toggle][aria-pressed=true] svg:last-of-type {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.icon {
+  padding: 0;
+}
+
+.icon,
+i:empty,
+i:has(svg) {
+  position: relative;
+  display: inline-flex;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+i:has(svg) {
+  min-width: 1.25em;
+  min-height: 1.25em;
+}
+
+.icon svg,
+i svg {
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  fill: currentColor;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+:is(i:empty, .icon):is(.up, .down, .prev, .next, .close, .menu)::after {
+  border: 0.15em solid var(--text-color);
+  border-left: 0;
+  border-bottom: 0;
+  width: 0.7em;
+  height: 0.7em;
+  transform: rotate(135deg) translate(-0.1em, 0.1em);
+}
+:is(i:empty, .icon)::before, :is(i:empty, .icon)::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  display: block;
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+:is(i:empty, .icon).text-right::before {
+  order: -2;
+}
+:is(i:empty, .icon).text-right::after {
+  order: -1;
+}
+:is(i:empty, .icon).up::after {
+  transform: rotate(315deg) translate(-0.1em, 0.1em);
+}
+:is(i:empty, .icon).next::after {
+  transform: rotate(45deg) translate(-0.1em, 0.1em);
+}
+:is(i:empty, .icon).prev::after {
+  transform: rotate(225deg) translate(-0.1em, 0.1em);
+}
+:is(i:empty, .icon):is(.menu, .close)::before, :is(i:empty, .icon):is(.menu, .close)::after {
+  content: "";
+  background-color: var(--text-color);
+  height: 1.2em;
+  margin: auto;
+  width: 0.12em;
+  box-shadow: none;
+}
+:is(i:empty, .icon):is(.menu, .close)::before {
+  transform: rotate(45deg);
+  order: 1;
+}
+:is(i:empty, .icon):is(.menu, .close)::after {
+  transform: rotate(-45deg);
+}
+:is(i:empty, .icon).menu:not([aria-pressed=true])::before, :is(i:empty, .icon).menu:not([aria-pressed=true])::after {
+  background-color: var(--text-color);
+  transform: translate(0, -0.4em) rotate(90deg);
+  height: 1.4em;
+  width: 0.12em;
+  border: 0;
+}
+:is(i:empty, .icon).menu:not([aria-pressed=true])::after {
+  transform: translate(0, 0.4em) rotate(-90deg);
+  box-shadow: 0.4em 0 0 var(--text-color);
+}
+:is(i:empty, .icon).menu:not([aria-pressed=true]):focus {
+  box-shadow: none;
+}
+
+[data-toggle=hover].hoverable:hover .icon::after,
+[data-toggle=hover].hoverable:hover i:empty::after,
+i:empty[aria-pressed=true]::after,
+.icon[aria-pressed=true]::after,
+[aria-pressed=true] > .icon::after,
+[aria-pressed=true] > i:empty::after {
+  rotate: 180deg;
+}
+
+/*!
+* Spry UI
+*/
+/*!
+* Spry Icons
+*/
 /*!
 * Spry Typography
 */
@@ -389,6 +541,9 @@ a {
 }
 
 /*!
+* Spry Icons
+*/
+/*!
 * Spry Lists
 */
 .list {
@@ -444,6 +599,12 @@ a {
 }
 
 /*!
+* Spry Icons
+*/
+/*!
+* Spry Icons
+*/
+/*!
 * Spry Alerts
 */
 .alert {
@@ -455,6 +616,9 @@ a {
   min-width: 1em;
 }
 /*!
+* Spry Icons
+*/
+/*!
 * Spry Badge
 */
 .badge {
@@ -465,6 +629,9 @@ a {
   translate: -1em -0.7em;
 }
 
+/*!
+* Spry Icons
+*/
 /*!
 * Spry Buttons
 */
@@ -519,6 +686,9 @@ input[type=submit] {
 }
 
 /*!
+* Spry Icons
+*/
+/*!
 * Spry Toolbar
 */
 .toolbar {
@@ -526,17 +696,21 @@ input[type=submit] {
 }
 
 /*!
+* Spry Icons
+*/
+/*!
 * Spry Cards
 */
 article {
   --card-color: var(--faint);
+  --gap: 2em;
+  align-items: flex-start;
   background-color: white;
   border-color: var(--card-color);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  gap: var(--gap);
   justify-content: flex-start;
-  gap: 2em;
   padding: 2em;
   position: relative;
   transition: none;
@@ -556,7 +730,6 @@ article:has(> footer) > div {
 article > header,
 article > footer {
   background-color: var(--card-color);
-  color: var(--color-text);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -589,6 +762,9 @@ article > h6 {
   margin-top: 0;
 }
 
+/*!
+* Spry Icons
+*/
 /*!
 * Spry Forms
 */
@@ -736,144 +912,6 @@ label:has(sub) {
 }
 
 /*!
-* Spry Icons
-*/
-:is(i:empty, .icon:empty):is(.outline, .hazy) {
-  width: 2em;
-  height: 2em;
-}
-
-button svg,
-.button svg,
-.alert svg,
-i svg,
-.icon svg {
-  width: 1.25em;
-  height: 1.25em;
-}
-
-button,
-.button,
-.icon,
-a:has(svg),
-i:has(svg) {
-  position: relative;
-}
-
-:is(a, button, .button) :is(i:empty, .icon) {
-  pointer-events: none;
-}
-
-[data-toggle] svg:nth-of-type(2),
-[data-toggle][aria-pressed=true] svg:first-of-type {
-  opacity: 0;
-  transform: scale(0.5);
-}
-
-[data-toggle][aria-pressed=true] svg:last-of-type {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.icon {
-  padding: 0;
-}
-
-.icon,
-i:empty,
-i:has(svg) {
-  position: relative;
-  display: inline-flex;
-  width: 1.25em;
-  height: 1.25em;
-}
-
-i:has(svg) {
-  min-width: 1.25em;
-  min-height: 1.25em;
-}
-
-.icon svg,
-i svg {
-  position: absolute;
-  margin: auto;
-  inset: 0;
-  fill: currentColor;
-  width: 1.25em;
-  height: 1.25em;
-}
-
-:is(.icon, i:empty):is(.up, .down, .prev, .next, .close, .menu)::after {
-  border: 0.15em solid var(--text-color);
-  border-left: 0;
-  border-bottom: 0;
-  width: 0.7em;
-  height: 0.7em;
-  transform: rotate(135deg) translate(-0.1em, 0.1em);
-}
-:is(.icon, i:empty)::before, :is(.icon, i:empty)::after {
-  content: "";
-  position: absolute;
-  margin: auto;
-  inset: 0;
-  display: block;
-  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-:is(.icon, i:empty).text-right::before {
-  order: -2;
-}
-:is(.icon, i:empty).text-right::after {
-  order: -1;
-}
-:is(.icon, i:empty).up::after {
-  transform: rotate(315deg) translate(-0.1em, 0.1em);
-}
-:is(.icon, i:empty).next::after {
-  transform: rotate(45deg) translate(-0.1em, 0.1em);
-}
-:is(.icon, i:empty).prev::after {
-  transform: rotate(225deg) translate(-0.1em, 0.1em);
-}
-:is(.icon, i:empty):is(.menu, .close)::before, :is(.icon, i:empty):is(.menu, .close)::after {
-  content: "";
-  background-color: var(--text-color);
-  height: 1.2em;
-  margin: auto;
-  width: 0.12em;
-  box-shadow: none;
-}
-:is(.icon, i:empty):is(.menu, .close)::before {
-  transform: rotate(45deg);
-  order: 1;
-}
-:is(.icon, i:empty):is(.menu, .close)::after {
-  transform: rotate(-45deg);
-}
-:is(.icon, i:empty).menu:not([aria-pressed=true])::before, :is(.icon, i:empty).menu:not([aria-pressed=true])::after {
-  background-color: var(--text-color);
-  transform: translate(0, -0.4em) rotate(90deg);
-  height: 1.4em;
-  width: 0.12em;
-  border: 0;
-}
-:is(.icon, i:empty).menu:not([aria-pressed=true])::after {
-  transform: translate(0, 0.4em) rotate(-90deg);
-  box-shadow: 0.4em 0 0 var(--text-color);
-}
-:is(.icon, i:empty).menu:not([aria-pressed=true]):focus {
-  box-shadow: none;
-}
-
-[data-toggle=hover].hoverable:hover .icon::after,
-[data-toggle=hover].hoverable:hover i:empty::after,
-i:empty[aria-pressed=true]::after,
-.icon[aria-pressed=true]::after,
-[aria-pressed=true] > .icon::after,
-[aria-pressed=true] > i:empty::after {
-  rotate: 180deg;
-}
-
-/*!
 * Spry Tables
 */
 table {
@@ -902,40 +940,42 @@ table tbody tr:first-child td {
 }
 
 /*!
+* Spry Icons
+*/
+/*!
 * Spry Tooltips
 */
 .tooltip {
   cursor: text;
-  width: max-content;
-  max-width: 300px;
-  position: absolute;
-  left: 50%;
-  text-align: left;
-  bottom: 50%;
-  border-radius: 5px;
   background-color: var(--light);
-  padding: 0.8em 1.2em;
-  z-index: 2;
-  transition: opacity 0.2s ease-in-out 0.1s, transform 0.1s ease-in-out;
-  user-select: text;
-  text-transform: none;
+  border: 1px solid rgba(var(--default-rgb), 0.2);
+  bottom: 50%;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.12);
   font-style: normal;
+  left: 50%;
+  max-width: 280px;
+  padding: 0.8em 1.2em;
+  position: absolute;
+  text-align: left;
+  text-transform: none;
+  transition: opacity 0.2s ease-in-out 0.05s, transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  user-select: text;
+  width: max-content;
 }
 
 :has(> .tooltip) {
   position: relative;
-}
-:has(> .tooltip):hover, :has(> .tooltip):focus {
-  z-index: 2;
+  z-index: 1;
 }
 :has(> .tooltip):hover:not(:active), :has(> .tooltip):focus:not(:active) {
-  z-index: 2;
   filter: none;
+  z-index: 2;
 }
 :has(> .tooltip):not(:hover, :focus) .tooltip {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease-in-out, transform 0.1s ease-in-out 0.1s;
+  transform: scale(0);
+  transition: opacity 0.1s ease-in-out, transform 0.8s ease-out;
 }
 
 /*!
@@ -1020,6 +1060,9 @@ table tbody tr:first-child td {
 }
 
 /*!
+* Spry UI
+*/
+/*!
 * Spry Grid
 */
 .column {
@@ -1070,6 +1113,7 @@ table tbody tr:first-child td {
 .span-auto,
 .span-fill {
   flex: 0 auto;
+  width: auto;
 }
 
 .columns-fixed > *,
@@ -1234,6 +1278,7 @@ table tbody tr:first-child td {
   .md-span-auto,
   .md-span-fill {
     flex: 0 auto;
+    width: auto;
   }
   .md-columns-fixed > *,
   .md-span-fixed {
@@ -1244,6 +1289,9 @@ table tbody tr:first-child td {
     flex: 1 auto;
   }
 }
+/*!
+* Spry Icons
+*/
 /*!
 * Spry Tabs
 */
@@ -1283,6 +1331,12 @@ table tbody tr:first-child td {
   border-style: solid;
 }
 
+/*!
+* Spry UI
+*/
+/*!
+* Spry Icons
+*/
 /*!
 * Spry Navs
 */
@@ -1348,6 +1402,12 @@ menu menu > li {
     min-width: calc(100% + 1px);
   }
 }
+/*!
+* Spry UI
+*/
+/*!
+* Spry Icons
+*/
 /*!
 * Spry Toggles
 */
@@ -1473,6 +1533,9 @@ menu menu > li {
   pointer-events: all;
 }
 
+/*!
+* Spry UI
+*/
 /*!
 * Spry Spacing
 */
@@ -2397,6 +2460,9 @@ menu menu > li {
     border-bottom: 4px solid var(--color);
   }
 }
+/*!
+* Spry UI
+*/
 /*!
 * Spry Utilities
 */
@@ -3701,6 +3767,9 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   }
 }
 /*!
+* Spry UI
+*/
+/*!
 * Spry Colors
 */
 @media (prefers-color-scheme: dark) {
@@ -3719,8 +3788,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
   --faint-rgb: 51, 51, 51;
   --contrast: #eeeeee;
   --contrast-rgb: 238, 238, 238;
-  --dark: #333333;
-  --dark-rgb: 51, 51, 51;
+  color: var(--text-color);
 }
 [data-theme=dark] select option,
 [data-theme=dark] .tooltip {
@@ -3729,12 +3797,11 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 }
 [data-theme=dark] .faint {
   --text-color: var(--light);
+  --text-color-rgb: var(--light-rgb);
 }
 [data-theme=dark] .contrast {
   --text-color: var(--dark);
-}
-[data-theme=dark] .dark {
-  --text-color: var(--light);
+  --text-color-rgb: var(--dark-rgb);
 }
 
 body,
@@ -3745,12 +3812,9 @@ body,
 
 body,
 [data-theme=light] {
-  color: var(--contrast);
+  color: var(--text-color);
   --default: #808080;
   --default-rgb: 128, 128, 128;
-  --color: #808080;
-  --color-rgb: 128, 128, 128;
-  --text-color: #808080;
   --faint: #efefef;
   --faint-rgb: 239, 239, 239;
   --contrast: #333333;
@@ -3763,6 +3827,10 @@ body,
   --primary-rgb: 20, 148, 223;
   --secondary: #df8a22;
   --secondary-rgb: 223, 138, 34;
+  --color: #808080;
+  --color-rgb: 128, 128, 128;
+  --text-color: var(--light);
+  --text-color-rgb: var(--light-rgb);
 }
 body select option,
 body .tooltip,
@@ -3772,26 +3840,40 @@ body .tooltip,
   color: var(--dark);
 }
 
+body .default,
 [data-theme=light] .default {
   --text-color: var(--light);
+  --text-color-rgb: var(--light-rgb);
 }
+body .faint,
 [data-theme=light] .faint {
   --text-color: var(--dark);
+  --text-color-rgb: var(--dark-rgb);
 }
+body .contrast,
 [data-theme=light] .contrast {
   --text-color: var(--light);
+  --text-color-rgb: var(--light-rgb);
 }
+body .dark,
 [data-theme=light] .dark {
   --text-color: var(--light);
+  --text-color-rgb: var(--light-rgb);
 }
+body .light,
 [data-theme=light] .light {
   --text-color: var(--dark);
+  --text-color-rgb: var(--dark-rgb);
 }
+body .primary,
 [data-theme=light] .primary {
   --text-color: var(--light);
+  --text-color-rgb: var(--light-rgb);
 }
+body .secondary,
 [data-theme=light] .secondary {
   --text-color: var(--light);
+  --text-color-rgb: var(--light-rgb);
 }
 
 article.default {
@@ -3800,6 +3882,7 @@ article.default {
 
 .default :is(.link, .outline, .hazy) {
   --text-color: var(--default);
+  --text-color-rgb: var(--default-rgb);
   color: var(--text-color);
 }
 
@@ -3809,6 +3892,7 @@ article.faint {
 
 .faint :is(.link, .outline, .hazy) {
   --text-color: var(--faint);
+  --text-color-rgb: var(--faint-rgb);
   color: var(--text-color);
 }
 
@@ -3818,6 +3902,7 @@ article.contrast {
 
 .contrast :is(.link, .outline, .hazy) {
   --text-color: var(--contrast);
+  --text-color-rgb: var(--contrast-rgb);
   color: var(--text-color);
 }
 
@@ -3827,6 +3912,7 @@ article.dark {
 
 .dark :is(.link, .outline, .hazy) {
   --text-color: var(--dark);
+  --text-color-rgb: var(--dark-rgb);
   color: var(--text-color);
 }
 
@@ -3836,6 +3922,7 @@ article.light {
 
 .light :is(.link, .outline, .hazy) {
   --text-color: var(--light);
+  --text-color-rgb: var(--light-rgb);
   color: var(--text-color);
 }
 
@@ -3845,6 +3932,7 @@ article.primary {
 
 .primary :is(.link, .outline, .hazy) {
   --text-color: var(--primary);
+  --text-color-rgb: var(--primary-rgb);
   color: var(--text-color);
 }
 
@@ -3854,6 +3942,7 @@ article.secondary {
 
 .secondary :is(.link, .outline, .hazy) {
   --text-color: var(--secondary);
+  --text-color-rgb: var(--secondary-rgb);
   color: var(--text-color);
 }
 
@@ -3861,6 +3950,7 @@ article.secondary {
 .default:is(.link, .outline, .hazy),
 .link-hover-default a:not(.button):is(:hover, :focus) {
   --text-color: var(--default);
+  --text-color-rgb: var(--default-rgb);
   color: var(--text-color);
 }
 
@@ -3868,6 +3958,7 @@ article.secondary {
 .faint:is(.link, .outline, .hazy),
 .link-hover-faint a:not(.button):is(:hover, :focus) {
   --text-color: var(--faint);
+  --text-color-rgb: var(--faint-rgb);
   color: var(--text-color);
 }
 
@@ -3875,6 +3966,7 @@ article.secondary {
 .contrast:is(.link, .outline, .hazy),
 .link-hover-contrast a:not(.button):is(:hover, :focus) {
   --text-color: var(--contrast);
+  --text-color-rgb: var(--contrast-rgb);
   color: var(--text-color);
 }
 
@@ -3882,6 +3974,7 @@ article.secondary {
 .dark:is(.link, .outline, .hazy),
 .link-hover-dark a:not(.button):is(:hover, :focus) {
   --text-color: var(--dark);
+  --text-color-rgb: var(--dark-rgb);
   color: var(--text-color);
 }
 
@@ -3889,6 +3982,7 @@ article.secondary {
 .light:is(.link, .outline, .hazy),
 .link-hover-light a:not(.button):is(:hover, :focus) {
   --text-color: var(--light);
+  --text-color-rgb: var(--light-rgb);
   color: var(--text-color);
 }
 
@@ -3896,6 +3990,7 @@ article.secondary {
 .primary:is(.link, .outline, .hazy),
 .link-hover-primary a:not(.button):is(:hover, :focus) {
   --text-color: var(--primary);
+  --text-color-rgb: var(--primary-rgb);
   color: var(--text-color);
 }
 
@@ -3903,6 +3998,7 @@ article.secondary {
 .secondary:is(.link, .outline, .hazy),
 .link-hover-secondary a:not(.button):is(:hover, :focus) {
   --text-color: var(--secondary);
+  --text-color-rgb: var(--secondary-rgb);
   color: var(--text-color);
 }
 
@@ -3915,6 +4011,7 @@ article.secondary {
 .hover-default:is(:hover, :focus),
 .icon.default:not(button, .button) {
   --text-color: var(--default);
+  --text-color-rgb: var(--default-rgb);
   color: var(--text-color);
 }
 
@@ -3944,6 +4041,7 @@ article.secondary {
 .hover-faint:is(:hover, :focus),
 .icon.faint:not(button, .button) {
   --text-color: var(--faint);
+  --text-color-rgb: var(--faint-rgb);
   color: var(--text-color);
 }
 
@@ -3973,6 +4071,7 @@ article.secondary {
 .hover-contrast:is(:hover, :focus),
 .icon.contrast:not(button, .button) {
   --text-color: var(--contrast);
+  --text-color-rgb: var(--contrast-rgb);
   color: var(--text-color);
 }
 
@@ -4002,6 +4101,7 @@ article.secondary {
 .hover-dark:is(:hover, :focus),
 .icon.dark:not(button, .button) {
   --text-color: var(--dark);
+  --text-color-rgb: var(--dark-rgb);
   color: var(--text-color);
 }
 
@@ -4031,6 +4131,7 @@ article.secondary {
 .hover-light:is(:hover, :focus),
 .icon.light:not(button, .button) {
   --text-color: var(--light);
+  --text-color-rgb: var(--light-rgb);
   color: var(--text-color);
 }
 
@@ -4060,6 +4161,7 @@ article.secondary {
 .hover-primary:is(:hover, :focus),
 .icon.primary:not(button, .button) {
   --text-color: var(--primary);
+  --text-color-rgb: var(--primary-rgb);
   color: var(--text-color);
 }
 
@@ -4089,6 +4191,7 @@ article.secondary {
 .hover-secondary:is(:hover, :focus),
 .icon.secondary:not(button, .button) {
   --text-color: var(--secondary);
+  --text-color-rgb: var(--secondary-rgb);
   color: var(--text-color);
 }
 

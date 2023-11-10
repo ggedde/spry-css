@@ -38,7 +38,6 @@
 	appearance     : none;
 	background     : transparent;
 	border         : 0;
-	border-radius: .25em;
 	color          : inherit;
 	display        : inline-flex;
 	font-size      : 100%;
@@ -75,6 +74,10 @@
 	border-color : var(--color);
 	border-width : 1px;
 	border-style : solid;
+}
+
+%ui-border-radius {
+	border-radius: .25em;
 }
 
 %ui-bg {
@@ -149,6 +152,7 @@
 	@extend %ui-bg;
 	@extend %ui-color;
 	@extend %ui-border;
+	@extend %ui-border-radius;
 }
 
 .compact {
@@ -185,7 +189,8 @@ a {
 	background-color: rgba(var(--color-rgb), .1);
 }
 
-.link {
+.link,
+.link.button {
 	text-transform: capitalize;
 }
 

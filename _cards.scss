@@ -5,14 +5,16 @@
 
 article {
 	@extend %ui-border;
+	@extend %ui-border-radius;
 	--card-color    : var(--faint);
+	--gap: 2em;
+	align-items     : flex-start;
 	background-color: white;
 	border-color    : var(--card-color);
 	display         : flex;
 	flex-direction  : column;
-	align-items     : flex-start;
+	gap             : var(--gap);
 	justify-content : flex-start;
-	gap             : 2em;
 	padding         : 2em;
 	position        : relative;
 	transition      : none;
@@ -34,7 +36,6 @@ article {
 		@extend %ui;
 		@extend %ui-spacious;
 		background-color: var(--card-color);
-		color           : var(--color-text);
 		display         : flex;
 		justify-content : space-between;
 		align-items     : center;

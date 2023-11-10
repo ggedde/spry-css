@@ -6,6 +6,7 @@
 .toolbar {
 	@extend %ui;
 	@extend %ui-spacious;
+	@extend %ui-border-radius;
 	justify-content: space-between;
 	// > * {
 	// 	flex: 0 auto;

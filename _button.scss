@@ -10,6 +10,7 @@ input[type=submit] {
 	@extend %ui-bg;
 	@extend %ui-color;
 	@extend %ui-border;
+	@extend %ui-border-radius;
 	@extend %ui-focus-visible;
 	width         : auto;
 	cursor        : pointer;

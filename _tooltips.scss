@@ -1,45 +1,42 @@
 /*!
 * Spry Tooltips
 */
+@use "ui" as *;
 
 .tooltip {
+	@extend %ui-border-radius;
 	cursor          : text;
-	width           : max-content;
-	max-width       : 300px;
-	position        : absolute;
-	left            : 50%;
-	text-align      : left;
-	bottom          : 50%;
-	border-radius   : 5px;
 	background-color: var(--light);
-	padding         : .8em 1.2em;
-	z-index         : 2;
-	transition      : opacity .2s ease-in-out .1s, transform .1s ease-in-out;
-	user-select     : text;
-	text-transform  : none;
+	border          : 1px solid rgba(var(--default-rgb), .2);
+	bottom          : 50%;
+	box-shadow      : 1px 3px 4px rgba(0, 0, 0, .12);
 	font-style      : normal;
+	left            : 50%;
+	max-width       : 280px;
+	padding         : .8em 1.2em;
+	position        : absolute;
+	text-align      : left;
+	text-transform  : none;
+	transition      : opacity .2s ease-in-out .05s, transform .25s cubic-bezier(.25, .8, .25, 1); // In
+	user-select     : text;
+	width           : max-content;
 }
 
 :has(>.tooltip) {
 	position: relative;
-
-
-
-	&:hover,
-	&:focus {
-		z-index: 2;
-	}
+	z-index : 1;
 
 	&:hover:not(:active),
 	&:focus:not(:active) {
-		z-index: 2;
-		filter : none;
+		filter: none;
+		z-index : 2;
 	}
 
 	&:not(:hover, :focus) .tooltip {
 		opacity       : 0;
 		pointer-events: none;
-		transition    : opacity .2s ease-in-out, transform .1s ease-in-out .1s;
+		transform     : scale(0);
+		transition    : opacity .1s ease-in-out, transform .8s ease-out; // Out
 	}
 }
 

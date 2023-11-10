@@ -6,8 +6,8 @@
 .column {
 	display       : flex;
 	flex-direction: column;
-	--gap: #{map-get($gaps, 'default')};
-	gap: var(--gap);
+	--gap         : #{map-get($gaps, 'default')};
+	gap           : var(--gap);
 }
 
 .row {
@@ -15,9 +15,10 @@
 	flex-wrap     : wrap;
 	flex-direction: row;
 	grid-auto-flow: column;
-	--gap: #{map-get($gaps, 'default')};
-	gap: var(--gap);
-	> * {
+	--gap         : #{map-get($gaps, 'default')};
+	gap           : var(--gap);
+
+	>* {
 		flex: 1;
 	}
 }
@@ -25,8 +26,8 @@
 .grid,
 [class*=grid-] {
 	display: grid;
-	--gap: #{map-get($gaps, 'default')};
-	gap: var(--gap);
+	--gap  : #{map-get($gaps, 'default')};
+	gap    : var(--gap);
 }
 
 [class*="grid-"] {
@@ -43,17 +44,15 @@
 
 [class*="span-"] {
 	grid-column: 1 / span var(--col);
-	flex     : calc(((var(--col) / 12) * 100%) - var(--gap));
+	flex       : calc(((var(--col) / 12) * 100%) - var(--gap));
 }
 
 .columns-auto>*,
 .columns-fill>*,
 .span-auto,
 .span-fill {
-	flex: 0 auto;
-	// min-width: auto;
-	// max-width: none;
-	// width    : auto;
+	flex : 0 auto;
+	width: auto;
 }
 
 .columns-fixed>*,
@@ -70,12 +69,13 @@
 
 	.span-#{$i},
 	.grid-#{$i}00,
-	.columns-#{$i}{
+	.columns-#{$i} {
 		--col: #{$i};
 	}
 }
 
-@each $breakpoint, $breakpoint_width in $breakpoints {
+@each $breakpoint,
+$breakpoint_width in $breakpoints {
 
 	.#{$breakpoint}-mw {
 		max-width: $breakpoint_width;
@@ -101,7 +101,7 @@
 		.#{$breakpoint}-column {
 			display       : flex;
 			flex-direction: column;
-			--gap: #{map-get($gaps, $breakpoint)};
+			--gap         : #{map-get($gaps, $breakpoint)};
 		}
 
 		.#{$breakpoint}-row {
@@ -109,22 +109,20 @@
 			flex-wrap     : wrap;
 			flex-direction: row;
 			grid-auto-flow: column;
-			--gap: #{map-get($gaps, $breakpoint)};
+			--gap         : #{map-get($gaps, $breakpoint)};
 		}
 
 		.#{$breakpoint}-grid {
 			display: grid;
-			--gap: #{map-get($gaps, $breakpoint)};
+			--gap  : #{map-get($gaps, $breakpoint)};
 		}
 
 		.#{$breakpoint}-columns-auto>*,
 		.#{$breakpoint}-columns-fill>*,
 		.#{$breakpoint}-span-auto,
 		.#{$breakpoint}-span-fill {
-			flex: 0 auto;
-			// min-width: auto;
-			// max-width: none;
-			// width    : auto;
+			flex : 0 auto;
+			width: auto;
 		}
 
 		.#{$breakpoint}-columns-fixed>*,

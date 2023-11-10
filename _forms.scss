@@ -9,6 +9,7 @@ select{
 	@extend %ui;
 	@extend %ui-focus-visible;
 	@extend %ui-border;
+	@extend %ui-border-radius;
 	border-color: rgba(var(--default-rgb), .5);
 	font-family: inherit;
 	font-weight: inherit;
