@@ -12,18 +12,19 @@ $gaps: (default: 1.25em, // required
 
 // Specify each color used in color-, bg-, border-, and in accents.
 $colors: (
-    "default"      : (light: #808080),
-    "faint"        : (light: #efefef, dark: #333333),
-    "contrast"     : (light: #333333, dark: #eeeeee),
-    "dark"         : (light: #333333),
-    "light"        : (light: #efefef),
-    "primary"      : (light: #1494df),
-    "secondary"    : (light: #df8a22),
+    "base"      : (light: #808080),
+    "text"      : (light: #555555, dark: #eeeeee),
+    "faint"     : (light: #efefef, dark: #333333),
+    "contrast"  : (light: #333333, dark: #eeeeee),
+    "dark"      : (light: #333333),
+    "light"     : (light: #efefef),
+    "primary"   : (light: #1494df),
+    "secondary" : (light: #df8a22),
 ) !default;
 
 // Specify each type tag and class like <h3> and .h3 etc.
 $types: (
-    body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, color: var(--contrast), line-height: 1.4),
+    body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, line-height: 1.4),
       h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20),
       h2: (font-size: 2.3em, font-weight: 300, line-height: 1.25),
       h3: (font-size: 2.0em, font-weight: 300, line-height: 1.30),

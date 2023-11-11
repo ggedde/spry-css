@@ -34,6 +34,7 @@ article {
 	>header,
 	>footer {
 		@extend %ui;
+		// @extend %ui-color;
 		@extend %ui-spacious;
 		background-color: var(--card-color);
 		display         : flex;

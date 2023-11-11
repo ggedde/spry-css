@@ -1,7 +1,7 @@
 /*!
 * Spry Buttons
 */
-@use "ui" as *;
+@use "ui"as *;
 
 button,
 .button,
@@ -12,20 +12,24 @@ input[type=submit] {
 	@extend %ui-border;
 	@extend %ui-border-radius;
 	@extend %ui-focus-visible;
+	position      : relative;
 	width         : auto;
 	cursor        : pointer;
 	font-weight   : 400;
 	text-align    : center;
 	text-transform: uppercase;
+
 	&.outline {
 		@extend %ui-border;
 	}
+
 	&.active:is(.link, .outline, .hazy),
 	&[aria-pressed=true]:is(.link, .outline, .hazy),
-	&:is(.link, .outline, .hazy):is(:hover,:focus,:focus-within) {
+	&:is(.link, .outline, .hazy):is(:hover, :focus, :focus-within) {
 		@extend %ui-bg-hover;
 	}
-	&:is(:hover,:focus,:focus-within,.active,[aria-pressed=true]) {
+
+	&:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]) {
 		@extend %ui-hover;
 	}
 }

@@ -302,8 +302,8 @@ $sizes: (
     --col           : 1;           // Used on grids to specifiy the number of columns.                 - Dynamic Property
     --color         : #888;        // This is the Accent Color applied to special components           - Dynamic Property
     --color-rgb     : 136,136,136; // This is the RGB Accent Color applied to special components       - Dynamic Property
-    --default       : #888;
-    --default-rgb   : 136,136,136;
+    --base          : #808080;
+    --base-rgb      : 136,136,136;
     --text-color    : #888;
     --light         : #efefef;
     --light-rgb     : 239,239,239;
@@ -425,7 +425,7 @@ $sizes: (
 
                 <h5>SCSS Variables</h5>
                 <pre class="mt-1"><code class="language-scss">$colors: (
-    "default"  : #888888,
+    "base"  : #888888,
     "light"    : #efefef,
     "dark"     : #333333,
     "primary"  : #1494df,
@@ -439,7 +439,7 @@ $sizes: (
                             <tr>
                                 <th  colspan="2">
                                     <h5>Additional Dynamic Colors</h5>
-                                    <div class="note color-default">These colors are added automatically and based on Light and Dark colors in the SCSS Variables. See <a href="#themes">Themes</a> for more details.</div>
+                                    <div class="note color-base">These colors are added automatically and based on Light and Dark colors in the SCSS Variables. See <a href="#themes">Themes</a> for more details.</div>
                                 </th>
                             </tr>
                         </thead>
@@ -503,18 +503,18 @@ $sizes: (
                 <div class="show-code mt-3" data-title="Text Colors">
                     <p class="color-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                     <p class="color-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                    <p class="color-default">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+                    <p class="color-base">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                     <p class="color-contrast">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                 </div>
 
                 <div class="show-code" data-title="Hover Text Colors">
                     <a class="hover-secondary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a><br>
-                    <a class="hover-default">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a><br>
+                    <a class="hover-base">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a><br>
                     <a class="hover-contrast">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                 </div>
 
                 <div class="show-code" data-title="Change Child Link and Link Hover Colors">
-                    <div class="link-default link-hover-secondary grid g-1">
+                    <div class="link-base link-hover-secondary grid g-1">
                         <a>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                         <a>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                         <a>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
@@ -642,10 +642,10 @@ $sizes: (
                 </div>
 
                 <div class="show-code" data-title="Variations">
-                    <span class="icon primary prev"></span>
-                    <span class="icon secondary next"></span>
-                    <span class="icon medium sm down"></span>
-                    <span class="icon default sm up"></span>
+                    <span class="icon color-primary prev"></span>
+                    <span class="icon color-secondary next"></span>
+                    <span class="icon color-faint sm down"></span>
+                    <span class="icon color-base sm up"></span>
                     <span class="icon lg close"></span>
                     <span class="icon lg menu"></span>
                 </div>
@@ -839,14 +839,14 @@ $sizes: (
                             <td>CSS Flexbox Row of columns auto width. Uses variable <a href="#gaps">Gaps</a> for spacing</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary"><span class="color-default">{breakpoint}-</span>columns-{n}</code></td>
+                            <td><code class="color-primary"><span class="color-base">{breakpoint}-</span>columns-{n}</code></td>
                             <td>
                                 <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, <code class="color-primary">fixed</code>
-                                <p class="color-default">* fixed and auto only apply to <code class="color-primary">row</code></p>
+                                <p class="color-base">* fixed and auto only apply to <code class="color-primary">row</code></p>
                             </td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary"><span class="color-default">{breakpoint}-</span>g-{n}</code></td>
+                            <td><code class="color-primary"><span class="color-base">{breakpoint}-</span>g-{n}</code></td>
                             <td>Gap for columns within <code class="color-primary">grid</code> or <code class="color-primary">row</code>
                                 <p>See <a href="#utilities-spacing">Spacing</a> for available <code class="color-primary">{n}</code> values.</p>
                             </td>
@@ -862,12 +862,12 @@ $sizes: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary"><span class="color-default">{breakpoint}-</span>span-{n}</code></td>
+                            <td><code class="color-primary"><span class="color-base">{breakpoint}-</span>span-{n}</code></td>
                             <td>Span the column based on a 12 column grid.<br>
                                 <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, <code class="color-primary">fixed</code>
-                                <p class="color-default mt-2">* fixed and auto only apply to <code class="color-primary">row</code></p>
-                                <p class="color-default mt-1">* Does not apply when flex container has <code class="color-primary">columns-{n}</code></p>
-                                <p class="sm color-default">* Custom gaps will not always work correctly with <code
+                                <p class="color-base mt-2">* fixed and auto only apply to <code class="color-primary">row</code></p>
+                                <p class="color-base mt-1">* Does not apply when flex container has <code class="color-primary">columns-{n}</code></p>
+                                <p class="sm color-base">* Custom gaps will not always work correctly with <code
                                     class="color-primary">row</code> when setting specific column sizes. It works best if you
                                 specify all breakpoint column sizes or use it with <code class="color-primary">grid</code> instead
                             </p>
@@ -1135,7 +1135,7 @@ $sizes: (
                 
                 <h5 class="mt-2 note">Usage:</h5>
                 <div class="mb-1">
-                    <code class="color-primary"><span class="color-default">{breakpoint}-</span>{property}{side}-{spacing}</code>
+                    <code class="color-primary"><span class="color-base">{breakpoint}-</span>{property}{side}-{spacing}</code>
                 </div>
                 <pre><code class="language-html">&lt;div class="p-2 md-px-3 mt-n2"&gt;&lt;/div&gt;</code></pre>
 
@@ -1149,26 +1149,26 @@ $sizes: (
                         <tr>
                             <td width="150"><code class="color-primary">p{side}-{n}</code></td>
                             <td>Padding.
-                                <div class="color-default">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
+                                <div class="color-base">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                             </td>
                         </tr>
                         <tr>
                             <td><code class="color-primary">m{side}-{n}</code></td>
                             <td>Margin.
-                                <div class="color-default">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
+                                <div class="color-base">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                             </td>
                         </tr>
                         <tr>
                             <td><code class="color-primary">m{side}-n{n}</code></td>
                             <td>Negative Margin.
-                                <div class="color-default">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
+                                <div class="color-base">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                             </td>
                         </tr>
                         <tr>
                             <td><code class="color-primary">g-{n}</code></td>
                             <td>Gap for <a href="#grid">Grid</a>.
-                                <div class="color-default">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
-                                <div class="color-default">* Side properties are not inluded for gap.</div>
+                                <div class="color-base">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
+                                <div class="color-base">* Side properties are not inluded for gap.</div>
                             </td>
                         </tr>
                     </tbody>
@@ -1179,7 +1179,7 @@ $sizes: (
                         <tr>
                             <th colspan="2">
                                 <h4>Side Properties</h4>
-                                <div class="color-default">Side property can be omitted for all sides. ex. <code class="color-primary">p-3</code></div>
+                                <div class="color-base">Side property can be omitted for all sides. ex. <code class="color-primary">p-3</code></div>
                             </th>
                         </tr>
                     </thead>
@@ -1202,11 +1202,11 @@ $sizes: (
                         </tr>
                         <tr>
                             <td><code class="color-primary">x</code></td>
-                            <td>Inline <span class="color-default ml-1">(Left & Right)</span></td>
+                            <td>Inline <span class="color-base ml-1">(Left & Right)</span></td>
                         </tr>
                         <tr>
                             <td><code class="color-primary">y</code></td>
-                            <td>Block <span class="color-default ml-1">(Top & Bottom)</span></td>
+                            <td>Block <span class="color-base ml-1">(Top & Bottom)</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1282,7 +1282,7 @@ $sizes: (
                             <td><code class="color-primary">active</code></td>
                             <td>
                                 Forces Toggle Active<br>
-                                <span class="note color-default">* All toggles that are :checked or has :checked are considered active.</span>
+                                <span class="note color-base">* All toggles that are :checked or has :checked are considered active.</span>
                             </td>
                         </tr>
                     </tbody>
@@ -1297,11 +1297,11 @@ $sizes: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-default">{breakpoint}-<span class="color-primary">open</span></code></td>
+                            <td><code class="color-base">{breakpoint}-<span class="color-primary">open</span></code></td>
                             <td>
                                 Forces sibling open even when toggle is not active.
                                 <br>
-                                <span class="note color-default">Can be used with or without breakpoints</span>
+                                <span class="note color-base">Can be used with or without breakpoints</span>
                             </td>
                         </tr>
                         <tr>
@@ -1470,272 +1470,272 @@ $sizes: (
                 <table class="mb-3">
                     <tbody>
                         <tr>
-                            <td width="260"><code class="color-default">**-</code><code class="color-primary">text-left</code></td>
+                            <td width="260"><code class="color-base">**-</code><code class="color-primary">text-left</code></td>
                             <td>text-align: left</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">text-center</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">text-center</code></td>
                             <td>text-align: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">text-right</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">text-right</code></td>
                             <td>text-align: right</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">text-justify</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">text-justify</code></td>
                             <td>text-align: justify</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">no-wrap</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">no-wrap</code></td>
                             <td>white-space: nowrap; flex-wrap: nowrap;</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">pre-wrap</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">pre-wrap</code></td>
                             <td>white-space: pre-wrap</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">break-word</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">break-word</code></td>
                             <td>word-wrap: break-word</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">inline</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">inline</code></td>
                             <td>display: inline; width: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">flex</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">flex</code></td>
                             <td>display: flex</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">block</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">block</code></td>
                             <td>display: block</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">none</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">none</code></td>
                             <td>display: none</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">inline-block</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">inline-block</code></td>
                             <td>display: inline-block; width: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">inline-flex</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">inline-flex</code></td>
                             <td>display: inline-flex; width: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">table</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">table</code></td>
                             <td>display: table</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">table-cell</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">table-cell</code></td>
                             <td>display: table-cell</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">relative</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">relative</code></td>
                             <td>position: relative</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">absolute</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">absolute</code></td>
                             <td>position: absolute</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">collapse</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">collapse</code></td>
                             <td>position: relative</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">collapse > *</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">collapse > *</code></td>
                             <td>position: absolute</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">sticky</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">sticky</code></td>
                             <td>position: sticky; top: 0</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">fixed</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">fixed</code></td>
                             <td>position: fixed</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">inset </code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">inset </code></td>
                             <td>inset: 0</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">top </code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">top </code></td>
                             <td>top: 0; bottom: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">right </code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">right </code></td>
                             <td>right: 0; left: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">bottom </code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">bottom </code></td>
                             <td>bottom: 0; top: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">left </code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">left </code></td>
                             <td>left: 0; right: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">outset-top </code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">outset-top </code></td>
                             <td>bottom: 100%; top: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">outset-right </code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">outset-right </code></td>
                             <td>left: 100%; right: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">outset-bottom </code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">outset-bottom </code></td>
                             <td>top: 100%; bottom: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">outset-left </code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">outset-left </code></td>
                             <td>right: 100%; left: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">pointer-none </code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">pointer-none </code></td>
                             <td>pointer-events: none</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">align-baseline</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">align-baseline</code></td>
                             <td>vertical-align: baseline</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">align-top</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">align-top</code></td>
                             <td>vertical-align: top</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">align-middle</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">align-middle</code></td>
                             <td>vertical-align: middle</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">align-bottom</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">align-bottom</code></td>
                             <td>vertical-align: bottom</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">overflow-hidden</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">overflow-hidden</code></td>
                             <td>overflow: hidden</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">overflow-scroll</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">overflow-scroll</code></td>
                             <td>overflow: scroll</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">overflow-auto</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">overflow-auto</code></td>
                             <td>overflow: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">order-first</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">order-first</code></td>
                             <td>order:-1</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">order-0</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">order-0</code></td>
                             <td>order:0</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">order-1</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">order-1</code></td>
                             <td>order:1</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">order-2</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">order-2</code></td>
                             <td>order:2</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">order-3</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">order-3</code></td>
                             <td>order:3</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">order-last</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">order-last</code></td>
                             <td>order:99999</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">align-items-start</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">align-items-start</code></td>
                             <td>align-items: flex-start</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">align-items-end</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">align-items-end</code></td>
                             <td>align-items: flex-end</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">align-items-center</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">align-items-center</code></td>
                             <td>align-items: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">align-items-stretch</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">align-items-stretch</code></td>
                             <td>align-items: stretch</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">justify-content-start</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">justify-content-start</code></td>
                             <td>justify-content: flex-start</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">justify-content-end</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">justify-content-end</code></td>
                             <td>justify-content: flex-end</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">justify-content-center</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">justify-content-center</code></td>
                             <td>justify-content: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">justify-content-between</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">justify-content-between</code></td>
                             <td>justify-content: space-between</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">justify-content-around</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">justify-content-around</code></td>
                             <td>justify-content: space-around</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">flex-middle</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">flex-middle</code></td>
                             <td>display: flex; align-items: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">flex-center</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">flex-center</code></td>
                             <td>display: flex; align-items: center; justify-content: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">flex-wrap</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">flex-wrap</code></td>
                             <td>flex-wrap: wrap</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">flex-column</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">flex-column</code></td>
                             <td>flex-direction: column</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">shadow</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">shadow</code></td>
                             <td>box-shadow: 1px 3px 4px rgba(0,0,0,.12)</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">h-***</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">h-***</code></td>
                             <td>height: ***px; min-height: ***px; max-height: ***px</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">mh-***</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">mh-***</code></td>
                             <td>max-height: ***px</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">vh-**</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">vh-**</code></td>
                             <td>height: **vh</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">mvh-**</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">mvh-**</code></td>
                             <td>max-height: **vh</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">w-***</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">w-***</code></td>
                             <td>width: ***px; min-width: ***px; max-width: ***px</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">mw-***</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">mw-***</code></td>
                             <td>max-width: ***px</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">vw-**</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">vw-**</code></td>
                             <td>width: **vw</td>
                         </tr>
                         <tr>
-                            <td><code class="color-default">**-</code><code class="color-primary">mvw-**</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">mvw-**</code></td>
                             <td>max-width: **vw</td>
                         </tr>
                         <tr>
     
-                            <td><code class="color-default">**-</code><code class="color-primary">o-**</code></td>
+                            <td><code class="color-base">**-</code><code class="color-primary">o-**</code></td>
                             <td>opacity: .**</td>
                         </tr>
                     </tbody>
@@ -1857,7 +1857,7 @@ $sizes: (
                             <h4>Question 1</h4>
                             <i class="icon down mt-0"></i>
                         </button>
-                        <div class="bx-2 border-default-hazy pt-1">
+                        <div class="bx-2 border-base-hazy pt-1">
                             <div class="p-2">
                                 <p>
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
@@ -1877,7 +1877,7 @@ $sizes: (
                             <h4>Question 2</h4>
                             <i class="icon down mt-0"></i>
                         </button>
-                        <div class="bx-2 border-default-hazy pt-1">
+                        <div class="bx-2 border-base-hazy pt-1">
                             <div class="p-2">
                                 <p>
                                     At vero eos et accusam
@@ -1891,7 +1891,7 @@ $sizes: (
                             <h4>Question 3</h4>
                             <i class="icon down mt-0"></i>
                         </button>
-                        <div class="b-2 bt-0 border-default-hazy rounded-bottom pt-1">
+                        <div class="b-2 bt-0 border-base-hazy rounded-bottom pt-1">
                             <div class="p-2">
                                 <p>
                                     Consetetur sadipscing elitr, sed diam nonumy eirmod tempor
@@ -2006,7 +2006,7 @@ $sizes: (
 
                 <div class="show-code" data-title="Default">
                     <div class="alert">
-                        <i class="mr-2 question xs light bg-light p-2 color-default circle"></i>
+                        <i class="mr-2 question xs light bg-light p-2 color-base circle"></i>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
                     <div class="alert">
@@ -2556,10 +2556,16 @@ $sizes: (
                         </div>
                         <div class="row g-3">
                             <div>
-                                <h5>Vertical Checkboxes</h5>
+                                <h5>Checkboxes</h5>
                                 <label class="my-1"><input type="checkbox">Red</label>
                                 <label class="my-1"><input type="checkbox">Green</label>
                                 <label class="my-1"><input type="checkbox">None</label>
+                            </div>
+                            <div>
+                                <h5>Switches</h5>
+                                <label class="my-1"><input class="switch" type="checkbox">Red</label>
+                                <label class="my-1"><input class="switch" type="checkbox">Green</label>
+                                <label class="my-1"><input class="switch" type="checkbox">None</label>
                             </div>
                             <div>
                                 <h5 class="mb-1">Horizontal Radios *</h5>
@@ -2627,10 +2633,16 @@ $sizes: (
                         </div>
                         <div class="row g-3">
                             <div>
-                                <h5>Vertical Checkboxes</h5>
+                                <h5>Checkboxes</h5>
                                 <label class="my-1"><input type="checkbox">Red</label>
                                 <label class="my-1"><input type="checkbox">Green</label>
                                 <label class="my-1"><input type="checkbox">None</label>
+                            </div>
+                            <div>
+                                <h5>Switches</h5>
+                                <label class="my-1"><input class="switch" type="checkbox">Red</label>
+                                <label class="my-1"><input class="switch" type="checkbox">Green</label>
+                                <label class="my-1"><input class="switch" type="checkbox">None</label>
                             </div>
                             <div>
                                 <h5 class="mb-1">Horizontal Radios *</h5>
@@ -2805,7 +2817,7 @@ $sizes: (
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Required Modal" data-badge="No JS" data-tooltip-warning="Without Javascript it may be difficult to make it Accessibility compliant. Label tags not are keyboard accessible by default. Use with cautionsd fkls l akslf klsad fkl asdklf klasdf klasd fkl asdklf askldf klas fkl asklf kasl fk sdklf sdk kl sadklf kasld fkl sadlkf lksad fkl sdlkf sald fklas. Without Javascript it may be difficult to make it Accessibility compliant. Label tags not are keyboard accessible by default. Use with cautionsd fkls l akslf klsad fkl asdklf klasdf klasd fkl asdklf askldf klas fkl asklf kasl fk sdklf sdk kl sadklf kasld fkl sadlkf lksad fkl sdlkf sald fklas. Without Javascript it may be difficult to make it Accessibility compliant. Label tags not are keyboard accessible by default. Use with cautionsd fkls l akslf klsad fkl asdklf klasdf klasd fkl asdklf askldf klas fkl asklf kasl fk sdklf sdk kl sadklf kasld fkl sadlkf lksad fkl sdlkf sald fklas. Without Javascript it may be difficult to make it Accessibility compliant. Label tags not are keyboard accessible by default. Use with cautionsd fkls l akslf klsad fkl asdklf klasdf klasd fkl asdklf askldf klas fkl asklf kasl fk sdklf sdk kl sadklf kasld fkl sadlkf lksad fkl sdlkf sald fklas. Without Javascript it may be difficult to make it Accessibility compliant. Label tags not are keyboard accessible by default. Use with cautionsd fkls l akslf klsad fkl asdklf klasdf klasd fkl asdklf askldf klas fkl asklf kasl fk sdklf sdk kl sadklf kasld fkl sadlkf lksad fkl sdlkf sald fklas. Without Javascript it may be difficult to make it Accessibility compliant. Label tags not are keyboard accessible by default. Use with cautionsd fkls l akslf klsad fkl asdklf klasdf klasd fkl asdklf askldf klas fkl asklf kasl fk sdklf sdk kl sadklf kasld fkl sadlkf lksad fkl sdlkf sald fklas. Without Javascript it may be difficult to make it Accessibility compliant. Label tags not are keyboard accessible by default. Use with cautionsd fkls l akslf klsad fkl asdklf klasdf klasd fkl asdklf askldf klas fkl asklf kasl fk sdklf sdk kl sadklf kasld fkl sadlkf lksad fkl sdlkf sald fklas.">
+                <div class="show-code" data-title="Required Modal" data-badge="No JS" data-tooltip-warning="Without Javascript it may be difficult to make it Accessibility compliant. Label tags not are keyboard accessible by default. Use with caution.">
                     <button data-toggle="next">
                         Open Required Modal
                     </button>
@@ -4264,7 +4276,7 @@ $sizes: (
 
                 <div class="show-code text-center" data-title="Basic Tooltip Example">
                     Text Here
-                    <i class="color-default shy">
+                    <i class="color-base shy">
                         <svg viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-14a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4z" /></svg>
                         <span class="tooltip shadow">
                             ToolTip
@@ -4275,7 +4287,7 @@ $sizes: (
                 <div class="show-code" data-title="Tooltip with Custom Content">
                     <div class="my-3 text-center">
                         Left Tooltip with custom content
-                        <i class="color-default shy">
+                        <i class="color-base shy">
                             <svg viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6z" /></svg>
                             
                             <span class="tooltip outset-left center-y bg-primary color-light mh-200 overflow-auto">
@@ -4362,7 +4374,7 @@ $sizes: (
                             </button>
                         </div>
 
-                        <p class="color-default mt-2">* You get the idea</p>
+                        <p class="color-base mt-2">* You get the idea</p>
 
                     </div>
                 </div>
@@ -4376,7 +4388,7 @@ $sizes: (
             <div>Copied To Clipboard!</div>
         </div>
     </div>
-    <footer class="bg-faint color-default p-2 text-right sm">
+    <footer class="bg-faint color-base p-2 text-right sm">
         &copy; 2023 - SpryCSS
     </footer>
     <script>
@@ -4487,7 +4499,7 @@ $sizes: (
             html = cleanContent(html);
 
             var toggleId = Math.random().toString().replace('.', '');
-            elem.innerHTML = '<article class="mb-3"><header class="pr-1 sm md-md"><h4>'+elem.getAttribute('data-title')+' '+(elem.hasAttribute('data-badge') ? '<span class="badge default outline xs ml-1">'+elem.getAttribute('data-badge')+'</span>' : '')+(elem.hasAttribute('data-tooltip-warning') ? '<span class="sm"><i class="color-secondary shy"><svg viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6z" /></svg></i><span class="tooltip sm center-x outset-top">'+elem.getAttribute('data-tooltip-warning')+'</span></span>' : '')+(elem.hasAttribute('data-title-note') ? '<div class="note xs my-1 color-default">'+elem.getAttribute('data-title-note')+'</div>' : '')+'</h4><div class="no-wrap"><button class="shy icon link contrast" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button data-toggle="#code-'+toggleId+'" class="shy icon link contrast" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link contrast" title="Copy HTML to Clipboard" onclick="copyCode(event); setTimeout(() => {this.classList.remove(\'open\'); this.setAttribute(\'aria-pressed\', false)}, 2000)" data-toggle><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg><svg viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg></button></div></header><div class="p-0"><div id="code-'+toggleId+'" class="code-container closed"><pre class="mb-0"><code class="language-html'+(elem.classList.contains('with-wrap')?' pre-wrap':'')+'">' + html + '</code></pre></div></div><div class="p-2 code-content">'+elem.innerHTML+'</div>'+(elem.hasAttribute('data-note') ? '<div class="note mt-1 mb-2 color-default">'+elem.getAttribute('data-note')+'</div>' : '')+'</article>';
+            elem.innerHTML = '<article class="mb-3"><header class="pr-1 sm md-md"><h4>'+elem.getAttribute('data-title')+' '+(elem.hasAttribute('data-badge') ? '<span class="badge base outline xs ml-1">'+elem.getAttribute('data-badge')+'</span>' : '')+(elem.hasAttribute('data-tooltip-warning') ? '<span class="sm"><i class="color-secondary shy"><svg viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6z" /></svg></i><span class="tooltip sm center-x outset-top">'+elem.getAttribute('data-tooltip-warning')+'</span></span>' : '')+(elem.hasAttribute('data-title-note') ? '<div class="note xs my-1 color-base">'+elem.getAttribute('data-title-note')+'</div>' : '')+'</h4><div class="no-wrap"><button class="shy icon link contrast" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button data-toggle="#code-'+toggleId+'" class="shy icon link contrast" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link contrast" title="Copy HTML to Clipboard" onclick="copyCode(event); setTimeout(() => {this.classList.remove(\'open\'); this.setAttribute(\'aria-pressed\', false)}, 2000)" data-toggle><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg><svg viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg></button></div></header><div class="p-0"><div id="code-'+toggleId+'" class="code-container closed"><pre class="mb-0"><code class="language-html'+(elem.classList.contains('with-wrap')?' pre-wrap':'')+'">' + html + '</code></pre></div></div><div class="p-2 code-content">'+elem.innerHTML+'</div>'+(elem.hasAttribute('data-note') ? '<div class="note mt-1 mb-2 color-base">'+elem.getAttribute('data-note')+'</div>' : '')+'</article>';
         });
 
         document.querySelectorAll('[href="#"]').forEach(link => {

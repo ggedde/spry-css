@@ -105,14 +105,20 @@
 }
 
 %ui-color {
-	@if (lightness(map-get(map-get($colors, 'default'), 'light')) > 70) {
-		--text-color: var(--dark);
-	} @else {
-		--text-color: var(--light);
-	}
+
+	// @if (lightness(map-get($color_value, 'dark')) > 70) {
+	// 	--text-color: #{map-get(map-get($colors, 'text'), 'light')};
+	// 	--text-color-rgb: var(--dark-rgb);
+	// }
+
+	// @else {
+	// 	--text-color: #{map-get(map-get($colors, 'text'), 'dark')};
+	// 	--text-color-rgb: var(--light-rgb);
+	// }
 	
 	&:is(.link,.outline,.hazy) {
-		--text-color: var(--contrast);
+		--text-color: var(--text);
+		--text-color-rgb: var(--text-rgb);
 	}
 
 	color: var(--text-color);
@@ -197,7 +203,7 @@ a {
 hr {
 	height          : 1px;
 	border          : 0;
-	background-color: var(--default);
+	background-color: var(--text);
 	margin          : var(--gap);
 }
 

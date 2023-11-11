@@ -7,7 +7,7 @@
 	@extend %ui-border-radius;
 	cursor          : text;
 	background-color: var(--light);
-	border          : 1px solid rgba(var(--default-rgb), .2);
+	border          : 1px solid rgba(var(--text-rgb), .25);
 	bottom          : 50%;
 	box-shadow      : 1px 3px 4px rgba(0, 0, 0, .12);
 	font-style      : normal;

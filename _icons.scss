@@ -1,11 +1,6 @@
 /*!
 * Spry Icons
 */
-@use "ui" as *;
-
-// i:empty, .icon {
-// 	@extend %ui-color;
-// }
 
 :is(i:empty, .icon:empty):is(.outline, .hazy) {
 	width : 2em;
@@ -21,8 +16,6 @@ i svg,
 	height: 1.25em;
 }
 
-button,
-.button,
 .icon,
 a:has(svg),
 i:has(svg) {
@@ -74,10 +67,8 @@ i svg {
 
 :is(i:empty, .icon) {
 
-	// color: var(--text-color);
-
 	&:is(.up, .down, .prev, .next, .close, .menu)::after {
-		border       : .15em solid var(--text-color);
+		border       : .15em solid currentColor;
 		border-left  : 0;
 		border-bottom: 0;
 		width        : .7em;
@@ -120,7 +111,7 @@ i svg {
 		&::before,
 		&::after {
 			content         : '';
-			background-color: var(--text-color);
+			background-color: currentColor;
 			height          : 1.2em;
 			margin          : auto;
 			width           : .12em;
@@ -141,7 +132,7 @@ i svg {
 
 		&::before,
 		&::after {
-			background-color: var(--text-color);
+			background-color: currentColor;
 			transform       : translate(0, -.4em) rotate(90deg);
 			height          : 1.4em;
 			width           : .12em;
@@ -150,7 +141,7 @@ i svg {
 
 		&::after {
 			transform : translate(0, .4em) rotate(-90deg);
-			box-shadow: .4em 0 0 var(--text-color);
+			box-shadow: .4em 0 0 currentColor;
 		}
 
 		&:focus {
