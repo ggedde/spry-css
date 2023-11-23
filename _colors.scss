@@ -64,6 +64,6 @@ $color_value in $colors {
 
 	.border-#{$color_name}-hazy {
 		--border-color: rgba(var(--#{$color_name}-rgb), .4);
-		border-color: rgba(var(--#{$color_name}-rgb), .4);
+		border-color: var(--border-color);
 	}
 }

@@ -26,8 +26,7 @@
 	position: relative;
 	z-index : 1;
 
-	&:hover:not(:active),
-	&:focus:not(:active) {
+	&:is(:hover,:focus):not(:active) {
 		filter: none;
 		z-index : 2;
 	}
@@ -39,19 +38,3 @@
 		transition    : opacity .1s ease-in-out, transform .8s ease-out; // Out
 	}
 }
-
-// [data-tooltip] {
-// 	position: relative;
-// 	&::after {
-// 		content: attr(data-tooltip);
-// 		display: block;
-// 		width           : max-content;
-// 		max-width       : 300px;
-// 		position        : absolute;
-// 		text-wrap       : balance;
-// 		bottom          : 100%;
-// 		border-radius   : 5px;
-// 		background-color: var(--light);
-// 		padding         : 1em;
-// 	}
-// }

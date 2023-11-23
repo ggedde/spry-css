@@ -81,9 +81,7 @@
 			min-width: 0;
 			transition: opacity .2s ease-in-out;
 			opacity: .4;
-			&:hover,
-			&:focus-visible,
-			&.active {
+			:is(:hover,:focus-visible,.active) {
 				opacity: 1;
 			}
 		}

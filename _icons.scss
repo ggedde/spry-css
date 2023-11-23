@@ -1,71 +1,20 @@
 /*!
 * Spry Icons
 */
-
-:is(i:empty, .icon:empty):is(.outline, .hazy) {
-	width : 2em;
-	height: 2em;
-}
-
-button svg,
-.button svg,
-.alert svg,
-i svg,
-.icon svg {
-	width : 1.25em;
-	height: 1.25em;
-}
-
-.icon,
-a:has(svg),
-i:has(svg) {
-	position: relative;
-}
-
-:is(a, button, .button) :is(i:empty, .icon) {
-	pointer-events: none;
-}
-
-[data-toggle] svg:nth-of-type(2),
-[data-toggle][aria-pressed=true] svg:first-of-type {
-	opacity  : 0;
-	transform: scale(.5);
-}
-
-[data-toggle][aria-pressed=true] svg:last-of-type {
-	opacity  : 1;
-	transform: scale(1);
-}
+@use "ui"as *;
 
 .icon {
-	padding: 0;
-}
 
-.icon,
-i:empty,
-i:has(svg) {
+	padding : 0;
 	position: relative;
 	display : inline-flex;
 	width   : 1.25em;
 	height  : 1.25em;
-}
 
-i:has(svg) {
-	min-width   : 1.25em;
-	min-height  : 1.25em;
-}
-
-.icon svg,
-i svg {
-	position: absolute;
-	margin  : auto;
-	inset   : 0;
-	fill    : currentColor;
-	width   : 1.25em;
-	height  : 1.25em;
-}
-
-:is(i:empty, .icon) {
+	&:is(.outline, .hazy) {
+		min-height: 2.3em;
+		min-width : 2.3em;
+	}
 
 	&:is(.up, .down, .prev, .next, .close, .menu)::after {
 		border       : .15em solid currentColor;
@@ -83,7 +32,7 @@ i svg {
 		margin    : auto;
 		inset     : 0;
 		display   : block;
-		transition: all .25s cubic-bezier(.25, .8, .25, 1);
+		transition: all .2s cubic-bezier(.25, .8, .25, 1);
 	}
 
 	&.text-right::before {
@@ -148,13 +97,44 @@ i svg {
 			box-shadow: none;
 		}
 	}
+
+	[data-toggle=hover].hoverable:hover &,
+	&[data-toggle][aria-pressed=true],
+	[data-toggle][aria-pressed=true]>& {
+		&::after {
+			rotate: 180deg;
+		}
+	}
+
+	svg {
+		position: absolute;
+		margin  : auto;
+		inset   : 0;
+		fill    : currentColor;
+		width   : 1.25em;
+		height  : 1.25em;
+	}
 }
 
-[data-toggle=hover].hoverable:hover .icon::after,
-[data-toggle=hover].hoverable:hover i:empty::after,
-i:empty[aria-pressed=true]::after,
-.icon[aria-pressed=true]::after,
-[aria-pressed=true] > .icon::after,
-[aria-pressed=true] > i:empty::after {
-	rotate: 180deg;
+:is(a, button, .button) :is(.icon, svg) {
+	pointer-events: none;
+}
+
+[data-toggle] svg:nth-of-type(2),
+[data-toggle][aria-pressed=true] svg:first-of-type {
+	opacity  : 0;
+	transform: scale(.5);
+}
+
+[data-toggle][aria-pressed=true] svg:last-of-type {
+	opacity  : 1;
+	transform: scale(1);
+}
+
+button svg,
+.button svg,
+.alert svg,
+.icon svg {
+	width : 1.25em;
+	height: 1.25em;
 }

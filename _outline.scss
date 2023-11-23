@@ -50,8 +50,8 @@
 		border-width: 0;
 	}
 
-	&:not(.alert,button,.button) > :not(ul),
-	&:not(.alert,button,.button)> :not(ul),
+	&:not(.alert,button,.button,.icon) > :not(ul),
+	&:not(.alert,button,.button,.icon)> :not(ul),
 	&.tabs .list > :not(ul),
 	ul>li {
 		border-width: 0 0 1px 1px;

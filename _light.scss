@@ -4,26 +4,18 @@
 
 @use "variables"as *;
 
-body, [data-theme=light] {
-	--text-color: var(--text);
-	--text-color-rgb: var(--text-rgb);
-	color: var(--text);
-
-	&,
-	article {
-		background-color: white;
-	}
-
-	select option,
-	.tooltip {
-		background-color: #efefef;
-		color           : #1b1b1b;
-	}
+:root,
+[data-theme=light] {
 
 	@each $color_name, $color_value in $colors {
 		@if map-get($color_value, 'light') {
 			--#{$color_name}    : #{map-get($color_value, 'light')};
 			--#{$color_name}-rgb: #{red(map-get($color_value, 'light')), green(map-get($color_value, 'light')), blue(map-get($color_value, 'light'))};
+		}
+	}
+
+	@each $color_name, $color_value in $colors {
+		@if map-get($color_value, 'light') {
 			@if index($colors, ($color_name $color_value)) == 1 {
 				--border-color    : #{map-get($color_value, 'light')};
 				--border-color-rgb: #{red(map-get($color_value, 'light')), green(map-get($color_value, 'light')), blue(map-get($color_value, 'light'))};
@@ -43,13 +35,33 @@ body, [data-theme=light] {
 					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'dark')), green(map-get(map-get($colors, 'text'), 'dark')), blue(map-get(map-get($colors, 'text'), 'dark'))};
 				}
 			}
+		}
+	}
+}
 
+html, [data-theme=light] {
+	color-scheme: light;
+	color: var(--text);
+
+	&,
+	article {
+		background-color: white;
+	}
+
+	select option,
+	.tooltip {
+		background-color: #efefef;
+		color           : #1b1b1b;
+	}
+
+	@each $color_name, $color_value in $colors {
+		@if map-get($color_value, 'light') {
 			.#{$color_name} {
 				@if (lightness(map-get($color_value, 'light')) > 70) {
 					--text-color: #{map-get(map-get($colors, 'text'), 'light')};
 					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'light')), green(map-get(map-get($colors, 'text'), 'light')), blue(map-get(map-get($colors, 'text'), 'light'))};
 				}
-	
+
 				@else {
 					--text-color: #{map-get(map-get($colors, 'text'), 'dark')};
 					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'dark')), green(map-get(map-get($colors, 'text'), 'dark')), blue(map-get(map-get($colors, 'text'), 'dark'))};

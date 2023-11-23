@@ -23,51 +23,29 @@ article {
 	&:has(>footer) {
 		padding: 0;
 
-		>header,
-		>footer,
-		>p,
-		>div {
+		>:is(header,footer,p,div) {
 			padding-inline: 1em;
 		}
-	}
-
-	>header,
-	>footer {
-		@extend %ui;
-		// @extend %ui-color;
-		@extend %ui-spacious;
-		background-color: var(--card-color);
-		display         : flex;
-		justify-content : space-between;
-		align-items     : center;
 	}
 
 	>footer {
 		margin-top: auto;
 	}
 
-	>header,
-	>footer,
-	>div,
-	>p,
-	>h1,
-	>h2,
-	>h3,
-	>h4,
-	>h5,
-	>h6 {
+	> * {
 		width: 100%;
-	}
-	>header>*,
-	>footer>*,
-	>div,
-	>p,
-	>h1,
-	>h2,
-	>h3,
-	>h4,
-	>h5,
-	>h6 {
 		margin-top: 0;
+	}
+
+	>:is(header,footer) {
+		@extend %ui;
+		@extend %ui-spacious;
+		background-color: var(--card-color);
+		display         : flex;
+		justify-content : space-between;
+		align-items     : center;
+		>* {
+			margin-top: 0;
+		}
 	}
 }

@@ -1,0 +1,316 @@
+/*!
+* Spry Spacing
+*/
+@use "variables" as *;
+
+.m-auto {
+	margin: auto;
+}
+.my-auto {
+	margin-block: auto;
+}
+.mx-auto {
+	margin-inline: auto;
+}
+.mt-auto {
+	margin-top: auto;
+}
+.mb-auto {
+	margin-bottom: auto;
+}
+.ml-auto {
+	margin-left: auto;
+}
+.mr-auto {
+	margin-right: auto;
+}
+
+@each $prop in (padding, margin) {
+	[class*=#{str-slice($prop, 0, 1)}-] {
+		#{$prop}: var(--space);
+	}
+	[class*=#{str-slice($prop, 0, 1)}x-] {
+		#{$prop}-inline: var(--x);
+	}
+	[class*=#{str-slice($prop, 0, 1)}y-] {
+		#{$prop}-block: var(--y);
+	}
+	[class*=#{str-slice($prop, 0, 1)}t-] {
+		#{$prop}-top: var(--t);
+	}
+	[class*=#{str-slice($prop, 0, 1)}r-] {
+		#{$prop}-right: var(--r);
+	}
+	[class*=#{str-slice($prop, 0, 1)}b-] {
+		#{$prop}-bottom: var(--b);
+	}
+	[class*=#{str-slice($prop, 0, 1)}l-] {
+		#{$prop}-left: var(--l);
+	}
+	@if $prop == margin {
+		[class*=#{str-slice($prop, 0, 1)}x-n] {
+			#{$prop}-inline: calc(var(--x) * -1);
+		}
+		[class*=#{str-slice($prop, 0, 1)}y-n] {
+			#{$prop}-block: calc(var(--y) * -1);
+		}
+		[class*=#{str-slice($prop, 0, 1)}t-n] {
+			#{$prop}-top: calc(var(--t) * -1);
+		}
+		[class*=#{str-slice($prop, 0, 1)}r-n] {
+			#{$prop}-right: calc(var(--r) * -1);
+		}
+		[class*=#{str-slice($prop, 0, 1)}b-n] {
+			#{$prop}-bottom: calc(var(--b) * -1);
+		}
+		[class*=#{str-slice($prop, 0, 1)}l-n] {
+			#{$prop}-left: calc(var(--l) * -1);
+		}
+	}
+}
+
+@each $s, $space in $spacing {
+	@each $prop in (padding, margin) {
+		.#{str-slice($prop, 0, 1)}-#{$s} {
+			--space: #{$space};
+		}
+		.#{str-slice($prop, 0, 1)}x-#{$s} {
+			--x: #{$space};
+		}
+		.#{str-slice($prop, 0, 1)}y-#{$s} {
+			--y: #{$space};
+		}
+		.#{str-slice($prop, 0, 1)}t-#{$s} {
+			--t: #{$space};
+		}
+		.#{str-slice($prop, 0, 1)}r-#{$s} {
+			--r: #{$space};
+		}
+		.#{str-slice($prop, 0, 1)}b-#{$s} {
+			--b: #{$space};
+		}
+		.#{str-slice($prop, 0, 1)}l-#{$s} {
+			--l: #{$space};
+		}
+		@if $prop == margin and $s {
+			.#{str-slice($prop, 0, 1)}x-n#{$s} {
+				--x: #{$space};
+			}
+			.#{str-slice($prop, 0, 1)}y-n#{$s} {
+				--y: #{$space};
+			}
+			.#{str-slice($prop, 0, 1)}t-n#{$s} {
+				--t: #{$space};
+			}
+			.#{str-slice($prop, 0, 1)}r-n#{$s} {
+				--r: #{$space};
+			}
+			.#{str-slice($prop, 0, 1)}b-n#{$s} {
+				--b: #{$space};
+			}
+			.#{str-slice($prop, 0, 1)}l-n#{$s} {
+				--l: #{$space};
+			}
+		}
+	}
+}
+
+@each $breakpoint, $breakpoint_width in $breakpoints {
+	@media screen and (min-width: $breakpoint_width) {
+		.#{$breakpoint}-m-auto {
+			margin: auto;
+		}
+		.#{$breakpoint}-my-auto {
+			margin-block: auto;
+		}
+		.#{$breakpoint}-mx-auto {
+			margin-inline: auto;
+		}
+		.#{$breakpoint}-mt-auto {
+			margin-top: auto;
+		}
+		.#{$breakpoint}-mb-auto {
+			margin-bottom: auto;
+		}
+		.#{$breakpoint}-ml-auto {
+			margin-left: auto;
+		}
+		.#{$breakpoint}-mr-auto {
+			margin-right: auto;
+		}
+		
+		@each $s, $space in $spacing {
+			@each $prop in (padding, margin) {
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}-#{$s} {
+					--space: #{$space};
+				}
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-#{$s} {
+					--x: #{$space};
+				}
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}y-#{$s} {
+					--y: #{$space};
+				}
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}t-#{$s} {
+					--t: #{$space};
+				}
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}r-#{$s} {
+					--r: #{$space};
+				}
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}b-#{$s} {
+					--b: #{$space};
+				}
+				.#{$breakpoint}-#{str-slice($prop, 0, 1)}l-#{$s} {
+					--l: #{$space};
+				}
+				@if $prop == margin and $s {
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-n#{$s} {
+						--x: #{$space};
+					}
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}y-n#{$s} {
+						--y: #{$space};
+					}
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}t-n#{$s} {
+						--t: #{$space};
+					}
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}r-n#{$s} {
+						--r: #{$space};
+					}
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}b-n#{$s} {
+						--b: #{$space};
+					}
+					.#{$breakpoint}-#{str-slice($prop, 0, 1)}l-n#{$s} {
+						--l: #{$space};
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// @each $prop in (padding, margin) {
+// 	.#{str-slice($prop, 0, 1)}x-#{$s} {
+// 		#{$prop}-inline: var(--space);
+// 	}
+// 	.#{str-slice($prop, 0, 1)}y-#{$s} {
+// 		#{$prop}-block: var(--space);
+// 	}
+// 	@if $prop == margin and $s {
+// 		.#{str-slice($prop, 0, 1)}x-n#{$s} {
+// 			#{$prop}-inline: -var(--space);
+// 		}
+// 		.#{str-slice($prop, 0, 1)}y-n#{$s} {
+// 			#{$prop}-block: -var(--space);
+// 		}
+// 	}
+// }
+
+// @each $prop in (padding, margin) {
+// 	.#{str-slice($prop, 0, 1)}l-#{$s} {
+// 		#{$prop}-left: var(--space);
+// 	}
+// 	.#{str-slice($prop, 0, 1)}r-#{$s} {
+// 		#{$prop}-right: var(--space);
+// 	}
+// 	.#{str-slice($prop, 0, 1)}t-#{$s} {
+// 		#{$prop}-top: var(--space);
+// 	}
+// 	.#{str-slice($prop, 0, 1)}b-#{$s} {
+// 		#{$prop}-bottom: var(--space);
+// 	}
+// 	@if $prop == margin and $s {
+// 		.#{str-slice($prop, 0, 1)}l-n#{$s} {
+// 			#{$prop}-left: -var(--space);
+// 		}
+// 		.#{str-slice($prop, 0, 1)}r-n#{$s} {
+// 			#{$prop}-right: -var(--space);
+// 		}
+// 		.#{str-slice($prop, 0, 1)}t-n#{$s} {
+// 			#{$prop}-top: -var(--space);
+// 		}
+// 		.#{str-slice($prop, 0, 1)}b-n#{$s} {
+// 			#{$prop}-bottom: -var(--space);
+// 		}
+// 	}
+// }
+
+// @each $breakpoint, $breakpoint_width in $breakpoints {
+// 	@media screen and (min-width: $breakpoint_width) {
+// 		.#{$breakpoint}-m-auto {
+// 			margin: auto;
+// 		}
+// 		.#{$breakpoint}-my-auto {
+// 			margin-block: auto;
+// 		}
+// 		.#{$breakpoint}-mx-auto {
+// 			margin-inline: auto;
+// 		}
+// 		.#{$breakpoint}-mt-auto {
+// 			margin-top: auto;
+// 		}
+// 		.#{$breakpoint}-mb-auto {
+// 			margin-bottom: auto;
+// 		}
+// 		.#{$breakpoint}-ml-auto {
+// 			margin-left: auto;
+// 		}
+// 		.#{$breakpoint}-mr-auto {
+// 			margin-right: auto;
+// 		}
+// 		@each $s, $space in $spacing {
+// 			@each $prop in (padding, margin) {
+// 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}-#{$s} {
+// 					#{$prop}: #{$space};
+// 				}
+// 			}
+// 		}
+// 		@each $s, $space in $spacing {
+// 			@each $prop in (padding, margin) {
+// 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-#{$s} {
+// 					#{$prop}-inline: #{$space};
+// 				}
+// 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}y-#{$s} {
+// 					#{$prop}-block: #{$space};
+// 				}
+// 				@if $prop == margin and $s {
+// 					.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-n#{$s} {
+// 						#{$prop}-inline: -#{$space};
+// 					}
+// 					.#{$breakpoint}-#{str-slice($prop, 0, 1)}y-n#{$s} {
+// 						#{$prop}-block: -#{$space};
+// 					}
+// 				}
+// 			}
+// 		}
+// 		@each $s, $space in $spacing {
+// 			@each $prop in (padding, margin) {
+// 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}l-#{$s} {
+// 					#{$prop}-left: #{$space};
+// 				}
+// 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}r-#{$s} {
+// 					#{$prop}-right: #{$space};
+// 				}
+// 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}t-#{$s} {
+// 					#{$prop}-top: #{$space};
+// 				}
+// 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}b-#{$s} {
+// 					#{$prop}-bottom: #{$space};
+// 				}
+// 				@if $prop == margin and $s {
+// 					.#{$breakpoint}-#{str-slice($prop, 0, 1)}l-n#{$s} {
+// 						#{$prop}-left: -#{$space};
+// 					}
+// 					.#{$breakpoint}-#{str-slice($prop, 0, 1)}r-n#{$s} {
+// 						#{$prop}-right: -#{$space};
+// 					}
+// 					.#{$breakpoint}-#{str-slice($prop, 0, 1)}t-n#{$s} {
+// 						#{$prop}-top: -#{$space};
+// 					}
+// 					.#{$breakpoint}-#{str-slice($prop, 0, 1)}b-n#{$s} {
+// 						#{$prop}-bottom: -#{$space};
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }

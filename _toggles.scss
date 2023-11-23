@@ -16,10 +16,8 @@
 }
 
 .hoverable {
-	> ul > li > [data-toggle=hover],
-	> ul > li > [data-toggle=next],
-	> li > [data-toggle=hover],
-	> li > [data-toggle=next] {
+	> ul > li > :is([data-toggle=hover],[data-toggle=next]),
+	> li > :is([data-toggle=hover],[data-toggle=next]) {
 		pointer-events: none
 	}
 }
@@ -28,7 +26,7 @@
 .hoverable > li ul,
 .hoverable > ul > li ul,
 [data-toggle=next] + *,
-[data-toggle="hover"] + * {
+[data-toggle=hover] + * {
 	@extend %ui-closed;
 }
 
@@ -60,10 +58,8 @@ $breakpoint_width in $breakpoints {
 		}
 
 		.#{$breakpoint}-hoverable {
-			> ul > li > [data-toggle=hover],
-			> ul > li > [data-toggle=next],
-			> li > [data-toggle=hover],
-			> li > [data-toggle=next] {
+			> ul > li > :is([data-toggle=hover],[data-toggle=next]),
+			> li > :is([data-toggle=hover],[data-toggle=next]) {
 				pointer-events: none
 			}
 		}

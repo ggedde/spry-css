@@ -113,7 +113,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .cover { background-size: cover; object-fit: cover }
 .contain { background-size: contain; object-fit: contain }
 .h{ height: 100% }
-.vh{ height: 100dvh }
+.vh{ height: 100svh }
 .w{ width: 100% }
 .vw{ width: 100dvw }
 .h-0{ height: 0 }
@@ -212,7 +212,7 @@ $size_value in $sizes {
 			&-cover { background-size: cover; object-fit: cover }
 			&-contain { background-size: contain; object-fit: contain }
 			&-h{ height: 100% }
-			&-vh{ height: 100dvh }
+			&-vh{ height: 100svh }
 			&-w{ width: 100% }
 			&-vw{ width: 100dvw }
 			&-h-0{ height: 0 }

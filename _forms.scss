@@ -3,11 +3,9 @@
 */
 @use "ui" as *;
 
-input,
-textarea,
-select{
+:is(input,textarea,select){
 	@extend %ui;
-	@extend %ui-focus-visible;
+	// @extend %ui-focus-visible;
 	@extend %ui-border;
 	@extend %ui-border-radius;
 	border-color: var(--border-color);
@@ -34,14 +32,14 @@ label .ui {
 label:focus-within .ui {
 	background-color: var(--color);
 	border-color: var(--color);
-	color: var(--light);
+	color: var(--text);
 }
 
 ::placeholder {
 	opacity: .7;
 }
 
-[type=radio], [type=checkbox] {
+:is([type=radio], [type=checkbox]) {
 	min-height: 1em;
 	min-width: 1em;
 	width: 1em;
@@ -180,5 +178,5 @@ label {
 .show-invalid label:has(:not(:focus):user-invalid) .ui {
 	background-color: #ff0000;
 	border-color: #ff0000;
-	color: var(--light);
+	color: #eee;
 }

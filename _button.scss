@@ -3,15 +3,13 @@
 */
 @use "ui"as *;
 
-button,
-.button,
-input[type=submit] {
+:is(button,.button,[type=submit],[type=reset]) {
 	@extend %ui;
 	@extend %ui-bg;
 	@extend %ui-color;
 	@extend %ui-border;
 	@extend %ui-border-radius;
-	@extend %ui-focus-visible;
+	// @extend %ui-focus-visible;
 	position      : relative;
 	width         : auto;
 	cursor        : pointer;

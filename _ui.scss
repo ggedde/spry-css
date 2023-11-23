@@ -97,32 +97,19 @@
 	}
 }
 
-%ui-focus-visible {
-	&:focus-visible {
-		outline       : 2px solid rgba(var(--color-rgb), 0.25);
-		outline-offset: 2px;
-	}
-}
+// %ui-focus-visible {
+// 	&:focus-visible {
+// 		outline       : 2px solid rgba(var(--color-rgb), 0.25);
+// 		outline-offset: 2px;
+// 	}
+// }
 
 %ui-color {
-
-	// @if (lightness(map-get($color_value, 'dark')) > 70) {
-	// 	--text-color: #{map-get(map-get($colors, 'text'), 'light')};
-	// 	--text-color-rgb: var(--dark-rgb);
-	// }
-
-	// @else {
-	// 	--text-color: #{map-get(map-get($colors, 'text'), 'dark')};
-	// 	--text-color-rgb: var(--light-rgb);
-	// }
-	
+	color: var(--text-color);
 	&:is(.link,.outline,.hazy) {
 		--text-color: var(--text);
 		--text-color-rgb: var(--text-rgb);
 	}
-
-	color: var(--text-color);
-
 	svg {
 		fill      : currentColor;
 		transform : scale(1);
@@ -161,6 +148,11 @@
 	@extend %ui-border-radius;
 }
 
+:focus-visible {
+	outline       : 2px solid rgba(var(--color-rgb), 0.25);
+	outline-offset: 2px;
+}
+
 .compact {
 	@extend %ui-compact;
 }
@@ -170,12 +162,11 @@
 }
 
 a {
-	@extend %ui-focus-visible;
+	// @extend %ui-focus-visible;
 	cursor    : pointer;
 	transition: color .1s ease-in-out;
 
-	&:hover,
-	&:focus {
+	&:is(:hover,:focus) {
 		@extend %ui-hover;
 		text-decoration: none;
 	}
