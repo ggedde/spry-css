@@ -6,7 +6,7 @@
 article {
 	@extend %ui-border;
 	@extend %ui-border-radius;
-	--card-color    : var(--faint);
+	--card-color    : rgba(150,150,150, 0.2);
 	--gap: 2em;
 	align-items     : flex-start;
 	background-color: white;
@@ -19,8 +19,7 @@ article {
 	position        : relative;
 	transition      : none;
 
-	&:has(>header),
-	&:has(>footer) {
+	&:has(>header, >footer) {
 		padding: 0;
 
 		>:is(header,footer,p,div) {

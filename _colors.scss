@@ -49,12 +49,13 @@ $color_value in $colors {
 	}
 
 	.bg-#{$color_name},
-	.tooltip.bg-#{$color_name} {
+	:is(.tooltip,article).bg-#{$color_name} {
 		background-color: var(--#{$color_name});
 	}
 
-	.bg-#{$color_name}-hazy {
-		background-color: rgba(var(--#{$color_name}-rgb), .1);
+	.bg-#{$color_name}-hazy,
+	:is(.tooltip,article).bg-#{$color_name}-hazy {
+		background-color: rgba(var(--#{$color_name}-rgb), .4);
 	}
 
 	.border-#{$color_name} {

@@ -12,7 +12,7 @@ $gaps: (default: 1.25em, // required
 
 // Specify each color used in color-, bg-, border-, and in accents.
 $colors: (
-    "base"      : (light: #808080),
+    "base"      : (light: #808080), // The First Color in the array is your default color.
     "text"      : (light: #555555, dark: #eeeeee),
     "faint"     : (light: #efefef, dark: #333333),
     "contrast"  : (light: #333333, dark: #eeeeee),
@@ -24,7 +24,7 @@ $colors: (
 
 // Specify each type tag and class like <h3> and .h3 etc.
 $types: (
-    body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, line-height: 1.4),
+    body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), color: var(--text), font-weight: 300, line-height: 1.4),
       h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20),
       h2: (font-size: 2.3em, font-weight: 300, line-height: 1.25),
       h3: (font-size: 2.0em, font-weight: 300, line-height: 1.30),
@@ -41,6 +41,15 @@ $spacing: (
     2: 1em,
     3: 2em,
     4: 4em,
+    200: 200px, // Used for Sidebars
+) !default;
+
+// Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc
+$borders: (
+    0: 0,
+    1: 1px,
+    2: 2px,
+    3: 3px,
 ) !default;
 
 // Specify each size that applies font-size and all elements using "em".
@@ -64,4 +73,5 @@ $sizes: (
             --gap: #{map-get($gaps, $breakpoint)};
         }
     }
+    --bdr: solid var(--color);
 }

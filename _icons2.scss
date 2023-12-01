@@ -1,0 +1,142 @@
+/*!
+* Spry Icons
+*/
+@use "ui"as *;
+
+.icon {
+
+	padding : 0;
+	position: relative;
+	display : inline-flex;
+	width   : 1.25em;
+	height  : 1.25em;
+
+	&:is(.outline, .hazy) {
+		min-height: 2.3em;
+		min-width : 2.3em;
+	}
+
+	&:is(.up, .down, .prev, .next, .close, .menu)::after {
+		border       : .15em solid currentColor;
+		border-left  : 0;
+		border-bottom: 0;
+		width        : .7em;
+		height       : .7em;
+		transform    : rotate(135deg) translate(-.1em, .1em);
+	}
+
+	&::before,
+	&::after {
+		content   : '';
+		position  : absolute;
+		margin    : auto;
+		inset     : 0;
+		display   : block;
+		transition: all .2s cubic-bezier(.25, .8, .25, 1);
+	}
+
+	&.text-right::before {
+		order: -2;
+	}
+
+	&.text-right::after {
+		order: -1;
+	}
+
+	&.up::after {
+		transform: rotate(315deg) translate(-.1em, .1em);
+	}
+
+	&.next::after {
+		transform: rotate(45deg) translate(-.1em, .1em);
+	}
+
+	&.prev::after {
+		transform: rotate(225deg) translate(-.1em, .1em);
+	}
+
+	&:is(.menu, .close) {
+
+		&::before,
+		&::after {
+			content         : '';
+			background-color: currentColor;
+			height          : 1.2em;
+			margin          : auto;
+			width           : .12em;
+			box-shadow      : none;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+			order    : 1;
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+
+	&.menu:not([aria-pressed=true]) {
+
+		&::before,
+		&::after {
+			background-color: currentColor;
+			transform       : translate(0, -.4em) rotate(90deg);
+			height          : 1.4em;
+			width           : .12em;
+			border          : 0;
+		}
+
+		&::after {
+			transform : translate(0, .4em) rotate(-90deg);
+			box-shadow: .4em 0 0 currentColor;
+		}
+
+		&:focus {
+			box-shadow: none;
+		}
+	}
+
+	[data-toggle=hover].hoverable:hover &,
+	&[data-toggle][aria-pressed=true],
+	[data-toggle][aria-pressed=true]>& {
+		&::after,
+		svg:only-child {
+			rotate: 180deg;
+		}
+	}
+
+	svg {
+		position: absolute;
+		margin  : auto;
+		inset   : 0;
+		fill    : currentColor;
+		width   : 1.25em;
+		height  : 1.25em;
+		transition: all .2s cubic-bezier(.25, .8, .25, 1);
+	}
+}
+
+:is(a, button, .button) :is(.icon, svg) {
+	pointer-events: none;
+}
+
+[data-toggle] svg:nth-of-type(2),
+[data-toggle][aria-pressed=true] svg:first-of-type {
+	opacity  : 0;
+	transform: scale(.5);
+}
+
+[data-toggle][aria-pressed=true] svg:last-of-type {
+	opacity  : 1;
+	transform: scale(1);
+}
+
+button svg,
+.button svg,
+.alert svg,
+.icon svg {
+	width : 1.25em;
+	height: 1.25em;
+}

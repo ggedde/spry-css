@@ -9,7 +9,6 @@
 	@extend %ui-color;
 	@extend %ui-border;
 	@extend %ui-border-radius;
-	// @extend %ui-focus-visible;
 	position      : relative;
 	width         : auto;
 	cursor        : pointer;
@@ -17,17 +16,14 @@
 	text-align    : center;
 	text-transform: uppercase;
 
-	&.outline {
-		@extend %ui-border;
-	}
-
-	&.active:is(.link, .outline, .hazy),
-	&[aria-pressed=true]:is(.link, .outline, .hazy),
-	&:is(.link, .outline, .hazy):is(:hover, :focus, :focus-within) {
-		@extend %ui-bg-hover;
+	&.link {
+		text-transform: capitalize;
 	}
 
 	&:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]) {
 		@extend %ui-hover;
+		&:is(.link, .outline, .hazy) {
+			@extend %ui-bg-hover;
+		}
 	}
 }

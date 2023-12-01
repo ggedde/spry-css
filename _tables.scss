@@ -12,24 +12,24 @@ table {
 		padding   : 1em .5em;
 		text-align: left;
 	}
+}
 
-	thead th {
-		font-weight  : 500;
-		border-bottom: 2px solid rgba(var(--border-color-rgb), .4);
+thead th {
+	font-weight  : 500;
+	border-bottom: 2px solid var(--border-color);
+}
+
+tbody tr {
+	&:hover td {
+		background-color: rgba(var(--color-rgb), .04);
 	}
 
-	tbody tr {
-		&:hover td {
-			background-color: rgba(var(--color-rgb), .04);
-		}
+	td {
+		border-top    : 1px solid var(--border-color);
+		vertical-align: text-top;
+	}
 
-		td {
-			border-top    : 1px solid rgba(var(--border-color-rgb), .4);
-			vertical-align: text-top;
-		}
-
-		&:first-child td {
-			border-color: rgba(var(--border-color-rgb), .4);
-		}
+	&:first-child td {
+		border-color: var(--border-color);
 	}
 }

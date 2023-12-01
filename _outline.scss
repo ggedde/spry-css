@@ -3,11 +3,9 @@
 */
 
 .outline {
-	border-color: rgba(var(--color-rgb), .4);
+	border-color: var(--color);
 	border-width: 1px;
 	border-style: solid;
-	overflow: hidden;
-
 	ul,
 	li {
 		border-color: inherit;
@@ -17,47 +15,60 @@
 		position: relative;
 
 		ul {
-			border-width: 1px;
 			border-style: solid;
-			inset       : auto -1px;
+			border-width: 1px;
+			margin: 0 0 -1px -1px;
+			min-width   : calc(100% + 3px);
 		}
 	}
 
 	&.tabs .list {
 		margin      : -1px;
+		border-width: 1px;
+		border-style: solid;
 		border-color: inherit;
 
 		> :not(ul) {
 			border-width: 0 0 1px 0;
 			border-color: inherit;
 			border-style: solid;
-
-			&:last-child {
-				margin-bottom: -1px;
-			}
 		}
 	}
 
 	&.list,
+	.list ul,
 	&.tabs .list {
-		--gap: 0em;
+		--gap              : 0em;
+
+		:is(a, button, .button, [type=submit]):not([data-toggle=next]) {
+			border-radius: 0;
+		}
+		li li {
+			width: calc(100% + 1px);
+		}
+		> :not(ul):last-child {
+			border-bottom-width: 1px;
+		}
 	}
 
-	&.tabs .list,
 	&.tabs .list+* {
 		margin      : -1px;
 		border-color: inherit;
 		border-width: 0;
 	}
 
-	&:not(.alert,button,.button,.icon) > :not(ul),
-	&:not(.alert,button,.button,.icon)> :not(ul),
-	&.tabs .list > :not(ul),
+	&:not(.alert, button, .button, .icon)> :not(ul),
+	&:not(.alert, button, .button, .icon)> :not(ul),
+	&.tabs .list> :not(ul),
 	ul>li {
-		border-width: 0 0 1px 1px;
+		border-width: 1px 0 0 1px;
 		border-color: inherit;
 		border-style: solid;
-		margin: 0 0 -1px -1px;
+		margin      : -1px 0 0 -1px;
+		&:last-child {
+			border-bottom-width: 1px;
+			margin-bottom: -1px;
+		}
 	}
 
 	&.row {

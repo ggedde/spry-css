@@ -568,78 +568,78 @@ class Spry {
         })
     }
 
-    static hoverTooltip = function(event) {
-        if (event && event.target) {
-            event.target.querySelectorAll('.tooltip').forEach(tooltip => {
+    // static hoverTooltip = function(event) {
+    //     if (event && event.target) {
+    //         event.target.querySelectorAll('.tooltip').forEach(tooltip => {
 
-                var rect = tooltip.getBoundingClientRect();
+    //             var rect = tooltip.getBoundingClientRect();
 
 
-                var w = window.innerWidth;
-                var h = window.innerHeight;
+    //             var w = window.innerWidth;
+    //             var h = window.innerHeight;
 
-                var right = Math.round(rect.right);
-                var left = Math.round(rect.left);
-                var top = Math.round(rect.top);
-                var bottom = Math.round(rect.bottom);
+    //             var right = Math.round(rect.right);
+    //             var left = Math.round(rect.left);
+    //             var top = Math.round(rect.top);
+    //             var bottom = Math.round(rect.bottom);
 
-                console.log([top, right, bottom, left, w, h, tooltip.style.transform]);
+    //             console.log([top, right, bottom, left, w, h, tooltip.style.transform]);
 
-                var transform = tooltip.style.transform;
-                var translate = transform.match(/translate\((.*)px\,(.*)px\)/);
+    //             var transform = tooltip.style.transform;
+    //             var translate = transform.match(/translate\((.*)px\,(.*)px\)/);
 
-                var translateX = 0;
-                var translateY = 0;
+    //             var translateX = 0;
+    //             var translateY = 0;
 
-                if (translate) {
-                    if (translate[1]) {
-                        translateX = parseInt(translate[1]);
-                    }
-                    if (translate[2]) {
-                        translateY = parseInt(translate[2]);
-                    }
-                }
+    //             if (translate) {
+    //                 if (translate[1]) {
+    //                     translateX = parseInt(translate[1]);
+    //                 }
+    //                 if (translate[2]) {
+    //                     translateY = parseInt(translate[2]);
+    //                 }
+    //             }
 
-                console.log([translateX, translateY]);
+    //             console.log([translateX, translateY]);
 
-                if (tooltip.classList.contains('set') ) {
-                    return;
-                }
+    //             if (tooltip.classList.contains('set') ) {
+    //                 return;
+    //             }
 
-                var x = 0;
-                var y = 0;
+    //             var x = 0;
+    //             var y = 0;
 
-                if (bottom > h) {
-                    y = -(rect.height + 24);
-                } else if (top < 0) {
-                    y = (rect.height + 24);
-                }
+    //             if (bottom > h) {
+    //                 y = -(rect.height + 24);
+    //             } else if (top < 0) {
+    //                 y = (rect.height + 24);
+    //             }
                 
-                if (right > w) {
-                    x = Math.round(w - right);
-                } else if (left < 0) {
-                    x = Math.round(left * -1);
-                }
+    //             if (right > w) {
+    //                 x = Math.round(w - right);
+    //             } else if (left < 0) {
+    //                 x = Math.round(left * -1);
+    //             }
 
-                if (x || y) {
-                    tooltip.style.transform = 'translate('+(x + translateX)+'px, '+(y + translateY)+'px)';
-                    tooltip.classList.add('set');
-                }
+    //             if (x || y) {
+    //                 tooltip.style.transform = 'translate('+(x + translateX)+'px, '+(y + translateY)+'px)';
+    //                 tooltip.classList.add('set');
+    //             }
 
-                // console.log([x, y]);
-            });
-        }
-    }
+    //             // console.log([x, y]);
+    //         });
+    //     }
+    // }
 
-    static loadTooltips = function() {
-        document.querySelectorAll('.tooltip').forEach(tooltip => {
-            tooltip.parentElement.classList.add('has-tooltip');
-            tooltip.parentElement.removeEventListener('mouseover', this.hoverTooltip);
-            tooltip.parentElement.addEventListener('mouseover', this.hoverTooltip);
-            tooltip.parentElement.removeEventListener('focus', this.hoverTooltip);
-            tooltip.parentElement.addEventListener('focus', this.hoverTooltip);
-        });
-    }
+    // static loadTooltips = function() {
+    //     document.querySelectorAll('.tooltip').forEach(tooltip => {
+    //         tooltip.parentElement.classList.add('has-tooltip');
+    //         tooltip.parentElement.removeEventListener('mouseover', this.hoverTooltip);
+    //         tooltip.parentElement.addEventListener('mouseover', this.hoverTooltip);
+    //         tooltip.parentElement.removeEventListener('focus', this.hoverTooltip);
+    //         tooltip.parentElement.addEventListener('focus', this.hoverTooltip);
+    //     });
+    // }
 
     /**
      * Bind Class Reference to methods to allow for removal of Events to ensure there are no duplicate events.

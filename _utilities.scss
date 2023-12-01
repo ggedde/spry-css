@@ -121,8 +121,6 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .w-content {width: max-content;}
 @for $i from 1 through 12 {
 	.mh-#{$i}00{ max-height: #{$i}00px }
-	.pl-#{$i}00{ padding-left: #{$i}00px }
-	.pr-#{$i}00{ padding-right: #{$i}00px }
 	.w-#{$i}00{ width: #{$i}00px; flex: 0 #{$i}00px }
 	.mw-#{$i}00{ max-width: #{$i}00px }
 }
@@ -220,8 +218,6 @@ $size_value in $sizes {
 			&-w-content {width: max-content;}
 			@for $i from 1 through 12 {
 				&-mh-#{$i}00{ max-height: #{$i}00px }
-				&-pl-#{$i}00{ padding-left: #{$i}00px }
-				&-pr-#{$i}00{ padding-right: #{$i}00px }
 				&-w-#{$i}00{ width: #{$i}00px; flex: 0 #{$i}00px }
 				&-mw-#{$i}00{ max-width: #{$i}00px }
 			}

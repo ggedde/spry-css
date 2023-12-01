@@ -6,7 +6,6 @@
 .tabs {
 	overflow    : hidden;
 	display     : flex;
-	border-color: rgba(var(--color-rgb), .4);
 	--gap: 0em;
 
 	.list {
@@ -16,32 +15,22 @@
 		width       : auto;
 		--gap: 0em;
 
-		&.column {
-			width: max-content;
-			:not(ul, ol),
-			>li {
-				flex: none;
-			}
-		}
-
 		&+*>* {
 			transition: none;
 			transform : translateY(3px);
 			max-height: 0;
 			@extend %ui-closed;
+			&:not(.open) {
+				padding-block: 0;
+				margin-block: 0;
+			}
 
 			&.open {
 				transition: opacity .2s ease-in-out, transform .3s ease-out;
 				transform : none;
-				padding   : 2em;
 				max-height: none;
 				@extend %ui-open;
 			}
 		}
-	}
-
-	&.outline .list {
-		border-width: 1px;
-		border-style: solid;
 	}
 }

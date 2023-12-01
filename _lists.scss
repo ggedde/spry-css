@@ -43,13 +43,6 @@
 		@extend %ui-border-radius;
 	}
 
-	&.outline,
-	.outline>& {
-		:is(a, button, .button, [type=submit]) {
-			border-radius: 0;
-		}
-	}
-
 	li>*:first-child {
 		width          : 100%;
 		justify-content: inherit;
@@ -57,12 +50,11 @@
 		flex           : 1;
 	}
 
-	a:hover,
-	a:focus {
+	a:is(:hover,:focus) {
 		@extend %ui-bg-hover;
 	}
 
-	li:has(:focus-visible) {
+	li:has(>:focus-visible) {
 		z-index: 1;
 	}
 

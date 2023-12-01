@@ -34,9 +34,6 @@
 		--gap: #{$space};
 		gap  : var(--gap);
 	}
-	.b-#{$s} {
-		border: #{$s}px solid var(--color);
-	}
 }
 @each $s, $space in $spacing {
 	@each $prop in (padding, margin) {
@@ -54,12 +51,6 @@
 				#{$prop}-block: -#{$space};
 			}
 		}
-	}
-	.bx-#{$s} {
-		border-inline: #{$s}px solid var(--color);
-	}
-	.by-#{$s} {
-		border-block: #{$s}px solid var(--color);
 	}
 }
 @each $s, $space in $spacing {
@@ -90,18 +81,6 @@
 				#{$prop}-bottom: -#{$space};
 			}
 		}
-	}
-	.bt-#{$s} {
-		border-top: #{$s}px solid var(--color);
-	}
-	.br-#{$s} {
-		border-right: #{$s}px solid var(--color);
-	}
-	.bb-#{$s} {
-		border-bottom: #{$s}px solid var(--color);
-	}
-	.bl-#{$s} {
-		border-left: #{$s}px solid var(--color);
 	}
 }
 @each $breakpoint, $breakpoint_width in $breakpoints {
@@ -136,9 +115,6 @@
 			.#{$breakpoint}-g-#{$s} {
 				--gap: #{$space};
 				gap  : var(--gap);
-			}	
-			.#{$breakpoint}-b-#{$s} {
-				border: #{$s}px solid var(--color);
 			}
 		}
 		@each $s, $space in $spacing {
@@ -157,12 +133,6 @@
 						#{$prop}-block: -#{$space};
 					}
 				}
-			}
-			.#{$breakpoint}-bx-#{$s} {
-				border-inline: #{$s}px solid var(--color);
-			}
-			.#{$breakpoint}-by-#{$s} {
-				border-block: #{$s}px solid var(--color);
 			}
 		}
 		@each $s, $space in $spacing {
@@ -193,18 +163,6 @@
 						#{$prop}-bottom: -#{$space};
 					}
 				}
-			}
-			.#{$breakpoint}-bt-#{$s} {
-				border-top: #{$s}px solid var(--color);
-			}
-			.#{$breakpoint}-br-#{$s} {
-				border-right: #{$s}px solid var(--color);
-			}
-			.#{$breakpoint}-bb-#{$s} {
-				border-bottom: #{$s}px solid var(--color);
-			}
-			.#{$breakpoint}-bl-#{$s} {
-				border-left: #{$s}px solid var(--color);
 			}
 		}
 	}

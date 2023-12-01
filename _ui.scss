@@ -15,9 +15,20 @@
 	transition-delay: .1s;
 	z-index         : 2;
 
-	&:not(.open) {
-		padding-block: 0;
-		margin-block: 0;
+	&.from-left {
+		max-height: none;
+		transform : scaleX(.8) translateX(-40px) translateZ(0);
+	}
+
+	&.from-right {
+		max-height: none;
+		transform : scaleX(.8) translateX(40px) translateZ(0);
+	}
+
+	&.from-bottom {
+		max-height: none;
+		transform : scaleY(.8) translateY(20px) translateZ(0);
+		transform-origin: bottom;
 	}
 }
 
@@ -31,6 +42,10 @@
 	pointer-events: all;
 	transform     : none;
 	z-index       : 2;
+
+	&:is(.from-left,.from-right,.from-bottom) {
+		transform: none;
+	}
 }
 
 %ui {
@@ -71,9 +86,9 @@
 }
 
 %ui-border {
-	border-color : var(--color);
-	border-width : 1px;
-	border-style : solid;
+	border-color: var(--color);
+	border-width: 1px;
+	border-style: solid;
 }
 
 %ui-border-radius {
@@ -97,19 +112,14 @@
 	}
 }
 
-// %ui-focus-visible {
-// 	&:focus-visible {
-// 		outline       : 2px solid rgba(var(--color-rgb), 0.25);
-// 		outline-offset: 2px;
-// 	}
-// }
-
 %ui-color {
 	color: var(--text-color);
-	&:is(.link,.outline,.hazy) {
-		--text-color: var(--text);
+
+	&:is(.link, .outline, .hazy) {
+		--text-color    : var(--text);
 		--text-color-rgb: var(--text-rgb);
 	}
+
 	svg {
 		fill      : currentColor;
 		transform : scale(1);
@@ -133,11 +143,11 @@
 }
 
 %ui-margin-above {
-    margin-top: .5em;
+	margin-top: .5em;
 }
 
 %ui-margin-above-lg {
-    margin-top: 1em;
+	margin-top: 1em;
 }
 
 .ui {
@@ -162,11 +172,10 @@
 }
 
 a {
-	// @extend %ui-focus-visible;
 	cursor    : pointer;
 	transition: color .1s ease-in-out;
 
-	&:is(:hover,:focus) {
+	&:is(:hover, :focus) {
 		@extend %ui-hover;
 		text-decoration: none;
 	}
@@ -186,15 +195,10 @@ a {
 	background-color: rgba(var(--color-rgb), .1);
 }
 
-.link,
-.link.button {
-	text-transform: capitalize;
-}
-
 hr {
 	height          : 1px;
 	border          : 0;
-	background-color: var(--text);
+	background-color: var(--color);
 	margin          : var(--gap);
 }
 

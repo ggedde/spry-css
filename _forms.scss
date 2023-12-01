@@ -5,7 +5,6 @@
 
 :is(input,textarea,select){
 	@extend %ui;
-	// @extend %ui-focus-visible;
 	@extend %ui-border;
 	@extend %ui-border-radius;
 	border-color: var(--border-color);
@@ -15,24 +14,13 @@
 	&:hover {
 		outline: none;
 	}
-	&:hover,
-	&:focus {
-		border-color: var(--color);
-	}
 	&:focus {
 		box-shadow: inset 0 0 0 1px var(--color);
 	}
-}
-label .ui {
-	border-color: var(--border-color);
-	background-color: rgba(var(--border-color-rgb), .2);
-	color: rgba(var(--contrast-rgb), 0.8);
-}
-
-label:focus-within .ui {
-	background-color: var(--color);
-	border-color: var(--color);
-	color: var(--text);
+	&:is(:hover,:focus) {
+		border-color: var(--color);
+	}
+	
 }
 
 ::placeholder {
@@ -55,8 +43,7 @@ label:focus-within .ui {
 			border-radius: 2px;
 		}
 	}
-	&:checked::after,
-	&.switch::after {
+	&:is(:checked,.switch)::after {
 		content: "";
 		display: block;
 		width: 0.6em;
@@ -83,7 +70,6 @@ label:focus-within .ui {
 		}
 	}
 }
-
 
 [type=radio],
 [type=radio]:checked::after,
@@ -114,11 +100,6 @@ select,
 	line-height        : 1.55;
 }
 
-select option {
-	background: #eee;
-	color     : #333;
-}
-
 textarea {
 	min-height : 8em;
 	max-height : 500px;
@@ -132,8 +113,19 @@ label {
 	position: relative;
 	display : block;
 
-	sup,
-	sub {
+	.ui {
+		border-color: var(--border-color);
+		background-color: rgba(var(--border-color-rgb), .2);
+		color: rgba(var(--text-rgb), 0.8);
+	}
+	
+	&:focus-within .ui {
+		background-color: var(--color);
+		border-color: var(--color);
+		color: var(--text);
+	}
+
+	:is(sup,sub) {
 		position        : absolute;
 		transform       : translate(10px, -50%);
 		top             : 1.3em;

@@ -6,7 +6,6 @@
 .tooltip {
 	@extend %ui-border-radius;
 	cursor          : text;
-	background-color: var(--light);
 	border          : 1px solid rgba(var(--text-rgb), .25);
 	bottom          : 50%;
 	box-shadow      : 1px 3px 4px rgba(0, 0, 0, .12);
@@ -24,7 +23,6 @@
 
 :has(>.tooltip) {
 	position: relative;
-	z-index : 1;
 
 	&:is(:hover,:focus):not(:active) {
 		filter: none;

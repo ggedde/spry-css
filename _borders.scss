@@ -1,0 +1,47 @@
+/*!
+* Spry Borders
+*/
+@use "variables" as *;
+
+@each $b, $border in $borders {
+	.b-#{$b} {
+		border: #{$border} var(--bdr);
+	}
+}
+@each $b, $border in $borders {
+	.bt-#{$b} {
+		border-top: #{$border} var(--bdr);
+	}
+	.br-#{$b} {
+		border-right: #{$border} var(--bdr);
+	}
+	.bb-#{$b} {
+		border-bottom: #{$border} var(--bdr);
+	}
+	.bl-#{$b} {
+		border-left: #{$border} var(--bdr);
+	}
+}
+@each $breakpoint, $breakpoint_width in $breakpoints {
+	@media screen and (min-width: $breakpoint_width) {
+		@each $b, $border in $borders {
+			.#{$breakpoint}-b-#{$b} {
+				border: #{$border} var(--bdr);
+			}
+		}
+		@each $b, $border in $borders {
+			.#{$breakpoint}-bt-#{$b} {
+				border-top: #{$border} var(--bdr);
+			}
+			.#{$breakpoint}-br-#{$b} {
+				border-right: #{$border} var(--bdr);
+			}
+			.#{$breakpoint}-bb-#{$b} {
+				border-bottom: #{$border} var(--bdr);
+			}
+			.#{$breakpoint}-bl-#{$b} {
+				border-left: #{$border} var(--bdr);
+			}
+		}
+	}
+}

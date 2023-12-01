@@ -19,8 +19,8 @@
   "scripts": {
     "dev": "node_modules/.bin/chokidar *.scss -c 'npm run build'",
     "dev-full": "node_modules/.bin/chokidar *.scss -c 'npm run build-full'",
-    "build": "node_modules/.bin/sass --style=compressed --no-source-map ./spry.scss | node_modules/.bin/postcss --map false --use cssnano -o ./dist/spry.min.css; node_modules/.bin/sass --style=compressed --no-source-map ./spry.scss | node_modules/.bin/postcss --map false --use cssnano -o ./docs/spry.min.css; gzip -c -v4 ./dist/spry.min.css > ./dist/spry.min.css.gz; stat -f%z ./dist/spry.min.css.gz;",
-    "build-full": "node_modules/.bin/sass --no-source-map ./spry.scss:./dist/spry.min.css; node_modules/.bin/sass --no-source-map ./spry.scss:./docs/spry.min.css; gzip -c ./dist/spry.min.css > ./dist/spry.min.css.gz; stat -f%z ./dist/spry.min.css.gz",
+    "build": "node_modules/.bin/postcss ./docs/prism.css --map false -o ./docs/prism.min.css; node_modules/.bin/sass --style=compressed --no-source-map ./spry.scss | node_modules/.bin/postcss --map false -o ./dist/spry.min.css; node_modules/.bin/sass --style=compressed --no-source-map ./spry.scss | node_modules/.bin/postcss --map false -o ./docs/spry.min.css; gzip -c -v4 ./dist/spry.min.css > ./dist/spry.min.css.gz; stat -f%z ./dist/spry.min.css.gz;",
+    "build-full": "node_modules/.bin/sass ./spry.scss:./dist/spry.min.css; node_modules/.bin/sass ./spry.scss:./docs/spry.min.css; gzip -c ./dist/spry.min.css > ./dist/spry.min.css.gz; stat -f%z ./dist/spry.min.css.gz",
     "build-js": "node_modules/.bin/terser ./docs/spry.js --config-file .terser -o ./docs/spry.min.js; node_modules/.bin/terser ./docs/spry.js --config-file .terser -o ./dist/spry.min.js; gzip -c -v4 ./dist/spry.min.js > ./dist/spry.min.js.gz; stat -f%z ./dist/spry.min.js.gz"
   },
   "dependencies": {

@@ -39,14 +39,9 @@ menu menu {
 .hoverable > li > ul {
 	position: absolute;
 	top: 100%;
-	min-width: 100%;
+	min-width: calc(100% + 1px);
     max-width: 260px;
     width: max-content;
-}
-
-.outline.hoverable > ul > li > ul,
-.outline.hoverable > li > ul {
-	min-width: calc(100% + 1px);
 }
 
 @each $breakpoint,
@@ -62,14 +57,9 @@ $breakpoint_width in $breakpoints {
 		.#{$breakpoint}-hoverable > li > ul {
 			position: absolute;
 			top: 100%;
-			min-width: 100%;
+			min-width: calc(100% + 1px);
 			max-width: 260px;
 			width: max-content;
-		}
-
-		.outline.#{$breakpoint}-hoverable > ul > li > ul,
-		.outline.#{$breakpoint}-hoverable > li > ul {
-			min-width: calc(100% + 1px);
 		}
 	}
 }
