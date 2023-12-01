@@ -12,21 +12,7 @@
 	}
 }
 
-[data-theme=dark], html[data-theme=dark] {
-	color-scheme: dark;
-	color: var(--text);
-
-	&,
-	article {
-		background-color: #1b1b1b;
-	}
-
-	select option,
-	.tooltip {
-		background-color: #282828;
-		color           : #efefef;
-	}
-
+:root[data-theme=dark], [data-theme=dark] {
 	@each $color_name, $color_value in $colors {
 		@if map-get($color_value, 'dark') {
 			--#{$color_name}    : #{map-get($color_value, 'dark')};
@@ -50,13 +36,33 @@
 					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'dark')), green(map-get(map-get($colors, 'text'), 'dark')), blue(map-get(map-get($colors, 'text'), 'dark'))};
 				}
 			}
+		}
+	}
+}
 
+[data-theme=dark] {
+	color-scheme: dark;
+	color: map-get(map-get($types, 'body'), 'color');
+
+	&,
+	article {
+		background-color: #1b1b1b;
+	}
+
+	select option,
+	.tooltip {
+		background-color: #282828;
+		color           : #efefef;
+	}
+
+	@each $color_name, $color_value in $colors {
+		@if map-get($color_value, 'dark') {
 			.#{$color_name} {
 				@if (lightness(map-get($color_value, 'dark')) > 70) {
 					--text-color: #{map-get(map-get($colors, 'text'), 'light')};
 					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'light')), green(map-get(map-get($colors, 'text'), 'light')), blue(map-get(map-get($colors, 'text'), 'light'))};
 				}
-	
+
 				@else {
 					--text-color: #{map-get(map-get($colors, 'text'), 'dark')};
 					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'dark')), green(map-get(map-get($colors, 'text'), 'dark')), blue(map-get(map-get($colors, 'text'), 'dark'))};

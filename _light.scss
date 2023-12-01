@@ -39,9 +39,10 @@
 	}
 }
 
-html, [data-theme=light] {
+html,
+[data-theme=light] {
 	color-scheme: light;
-	color: var(--text);
+	color: map-get(map-get($types, 'body'), 'color');
 
 	&,
 	article {

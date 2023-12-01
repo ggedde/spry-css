@@ -116,13 +116,13 @@ label {
 	.ui {
 		border-color: var(--border-color);
 		background-color: rgba(var(--border-color-rgb), .2);
-		color: rgba(var(--text-rgb), 0.8);
+		color: inherit;
 	}
 	
 	&:focus-within .ui {
 		background-color: var(--color);
 		border-color: var(--color);
-		color: var(--text);
+		color: var(--text-color);
 	}
 
 	:is(sup,sub) {

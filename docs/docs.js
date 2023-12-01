@@ -7,8 +7,8 @@
  */
 
 function toggleTheme(parent) {
-    if (parent !== document.body) {
-        var theme = parent.hasAttribute('data-theme') ? ( parent.getAttribute('data-theme') === 'dark' ? 'light' : 'dark') : ( document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    if (parent !== document.documentElement) {
+        var theme = parent.hasAttribute('data-theme') ? ( parent.getAttribute('data-theme') === 'dark' ? 'light' : 'dark') : ( document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
         parent.setAttribute('data-theme', theme );
         var child = parent.querySelector('[data-theme]');
         if (child) {
