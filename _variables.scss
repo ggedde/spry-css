@@ -11,11 +11,13 @@ $gaps: (default: 1.25em, // required
 ) !default;
 
 // Specify each color used in color-, bg-, border-, and in accents.
+// Apply each color with ({theme}: {color_value}, {theme}: {color_value}, ...),
+// Default theme is "light". If no theme color available the color will then fallback to the default theme "light".
 $colors: (
-    "base"      : (light: #808080), // The First Color in the array is your default color.
-    "text"      : (light: #555555, dark: #eeeeee),
-    "faint"     : (light: #efefef, dark: #333333),
-    "contrast"  : (light: #333333, dark: #eeeeee),
+    "base"      : (light: #808080),                  // The First Color in the array is your default color.
+    "text"      : (light: #555555, dark: #eeeeee), // Variable Theme Color
+    "contrast"  : (light: #333333, dark: #eeeeee), // Variable Theme Color
+    "faint"     : (light: #efefef, dark: #333333), // Variable Theme Color
     "dark"      : (light: #333333),
     "light"     : (light: #efefef),
     "primary"   : (light: #1494df),
@@ -34,9 +36,9 @@ $types: (
        a: (color: var(--primary), text-decoration: none),
 ) !default;
 
-// Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc
+// Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc.
 $spacing: (
-    0: 0em,
+    0: 0em,     // Needs unit to be used in calc().
     1: .5em,
     2: 1em,
     3: 2em,
@@ -44,7 +46,7 @@ $spacing: (
     200: 200px, // Used for Sidebars
 ) !default;
 
-// Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc
+// Specify each border size Ex .b-0, .b-1, .bt-3, .bl-3, etc.
 $borders: (
     0: 0,
     1: 1px,
@@ -74,4 +76,5 @@ $sizes: (
         }
     }
     --bdr: solid var(--color);
+    --ease: cubic-bezier(.25, .8, .25, 1);
 }

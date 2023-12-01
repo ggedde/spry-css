@@ -16,7 +16,7 @@
 	position        : absolute;
 	text-align      : left;
 	text-transform  : none;
-	transition      : opacity .2s ease-in-out .05s, transform .25s cubic-bezier(.25, .8, .25, 1); // In
+	transition      : opacity .2s ease-in-out .05s, transform .25s var(--ease); // In
 	user-select     : text;
 	width           : max-content;
 }

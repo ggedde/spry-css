@@ -202,6 +202,18 @@ hr {
 	margin          : var(--gap);
 }
 
-section {
-	padding: (calc(var(--gap) * 2)) var(--gap);
+.rotate-pressed,
+.flip-pressed,
+.shy {
+	transition: all .2s var(--ease);
+}
+
+.rotate-pressed[aria-pressed=true],
+[aria-pressed=true] .rotate-pressed {
+	rotate: 180deg;
+}
+
+.flip-pressed[aria-pressed=true],
+[aria-pressed=true] .flip-pressed {
+	scale: -1;
 }

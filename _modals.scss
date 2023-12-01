@@ -27,7 +27,7 @@
 	pointer-events  : none;
 	position        : fixed;
 	inset           : 0;
-	transition      : opacity .25s cubic-bezier(.25, .8, .25, 1);
+	transition      : opacity .25s var(--ease);
 	transition-delay: 0;
 	transform-origin: center;
 	transform: none;
@@ -39,7 +39,7 @@
 		box-sizing: border-box;
 		overflow  : hidden;
 		scale     : .6;
-		transition: scale .3s cubic-bezier(.25, .8, .25, 1);
+		transition: scale .3s var(--ease);
 		width     : 90%;
 	}
 

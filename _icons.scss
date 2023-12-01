@@ -16,20 +16,12 @@
 		min-width : 2.3em;
 	}
 
-	[data-toggle=hover].hoverable:hover &,
-	&[data-toggle][aria-pressed=true],
-	[data-toggle][aria-pressed=true]>& {
-		svg:only-child {
-			rotate: 180deg;
-		}
-	}
-
 	svg {
-		position: absolute;
-		margin  : auto;
-		inset   : 0;
-		fill    : currentColor;
-		transition: all .2s cubic-bezier(.25, .8, .25, 1);
+		position  : absolute;
+		margin    : auto;
+		inset     : 0;
+		fill      : currentColor;
+		transition: all .2s var(--ease);
 	}
 }
 
@@ -37,18 +29,18 @@
 	pointer-events: none;
 }
 
-[data-toggle] svg:nth-of-type(2),
-[data-toggle][aria-pressed=true] svg:first-of-type {
-	opacity  : 0;
-	transform: scale(.5);
+[data-toggle]:has(svg:nth-of-type(2)) svg:nth-of-type(2),
+[data-toggle][aria-pressed=true]:has(svg:nth-of-type(2)) svg:first-of-type {
+	opacity: 0;
+	scale  : .5
 }
 
-[data-toggle][aria-pressed=true] svg:last-of-type {
-	opacity  : 1;
-	transform: scale(1);
+[data-toggle][aria-pressed=true]:has(svg:nth-of-type(2)) svg:last-of-type {
+	opacity: 1;
+	scale  : 1;
 }
 
-:is(button,.button,.alert,.icon) svg {
+:is(button, .button, .alert, .icon) svg {
 	width : 1.25em;
 	height: 1.25em;
 }

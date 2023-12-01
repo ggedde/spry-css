@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="spry.min.css?v=3.0.0">
     <script defer src="spry.js?v=1.0.0"></script>
     <link rel="stylesheet" href="prism.min.css?v=3.0.0">
+    <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
 </head>
 
 <body>
@@ -39,11 +40,11 @@
                         </li>
                         <li><a href="#start">About SpryCSS</a></li>
                         <li><a href="#installation">Installation</a></li>
+                        <li><a href="#spryjs">Javascript</a></li>
                         <li><a href="#scss">SCSS & CSS</a></li>
                         <li><a href="#typography">Typography</a></li>
                         <li><a href="#colors">Colors</a></li>
                         <li><a href="#themes">Themes</a></li>
-                        <li><a href="#icons">Icons</a></li>
                         <li><a href="#support">Support</a></li>
                         <li class="pt-3">
                             <h5 class="pl-2">
@@ -54,6 +55,7 @@
                             </h5>
                             <hr class="m-1 o-30" />
                         </li>
+                        <li><a href="#borders">Borders</a></li>
                         <li><a href="#breakpoints">Breakpoints</a></li>
                         <li><a href="#gaps">Gaps</a></li>
                         <li><a href="#grid">Grid</a></li>
@@ -75,9 +77,8 @@
                         <li><a href="#badges">Badges</a></li>
                         <li>
                             <a href="#buttons">Buttons</a>
-                                <button class="link icon circle sm shy" data-toggle="next">
-                                    <svg class="xxl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23"><title>chevron-down</title><path d="M5.84,9.59L11.5,15.25L17.16,9.59L16.45,8.89L11.5,13.84L6.55,8.89L5.84,9.59Z" /></svg>
-                                    <svg class="xxl" xmlns="http://www.w3.org/2000/svg" viewBox="0 2 23 23"><title>chevron-up</title><path d="M5.84,15.41L11.5,9.75L17.16,15.41L16.45,16.11L11.5,11.16L6.55,16.11L5.84,15.41Z" /></svg>
+                                <button class="link icon circle sm shy flip-pressed" data-toggle="next">
+                                    <svg class="xxl" viewBox="0 0 23 23"><path d="M5.84,9.59L11.5,15.25L17.16,9.59L16.45,8.89L11.5,13.84L6.55,8.89L5.84,9.59Z" /></svg>
                                 </button>
                                 <ul class="sm">
                                     <li><a class="pl-3" href="#buttons">Default</a></li>
@@ -93,20 +94,25 @@
                         <li><a href="#cards">Cards</a></li>
                         <li>
                             <a href="#forms">Forms</a>
-                            <button class="link icon down circle sm shy" data-toggle="next"></button>
+                            <button class="link icon circle sm shy flip-pressed" data-toggle="next">
+                                <svg class="xxl" viewBox="0 0 23 23"><path d="M5.84,9.59L11.5,15.25L17.16,9.59L16.45,8.89L11.5,13.84L6.55,8.89L5.84,9.59Z" /></svg>
+                            </button>
                             <ul class="sm">
                                 <li><a class="pl-3" href="#forms">Simple Form</a></li>
                                 <li><a class="pl-3" href="#forms-responsive-labels">Responsive Labels</a></li>
                                 <li><a class="pl-3" href="#forms-resize">Sizing</a></li>
                             </ul>
                         </li>
+                        <li><a href="#icons">Icons</a></li>
                         <li><a href="#lists">Lists</a></li>
                         <li><a href="#loader">Loader</a></li>
                         <li><a href="#modals">Modals</a></li>
                         <li><a href="#nav">Nav & Menus</a></li>
                         <li>
                             <a href="#sliders">Sliders</a>
-                            <button class="link icon down circle sm shy" data-toggle="next"></button>
+                            <button class="link icon circle sm shy flip-pressed" data-toggle="next">
+                                <svg class="xxl" viewBox="0 0 23 23"><path d="M5.84,9.59L11.5,15.25L17.16,9.59L16.45,8.89L11.5,13.84L6.55,8.89L5.84,9.59Z" /></svg>
+                            </button>
                             <ul class="sm">
                                 <li><a class="pl-3" href="#slider-js">Javascript</a></li>
                                 <li><a class="pl-3" href="#sliders-image">Image Slider</a></li>
@@ -154,13 +160,6 @@
                     and therefore you should update the style there instead of overriding it in the html.
                 </p>
 
-                <h4 class="mt-3">Javascript <small class="badge outline xs base ml-1">Optional</small></h4>
-                <p>SpryCSS is meant to be quick and easy to impliment without needing to add any additional dependencies.
-                    SpryCSS comes with <a href="#toggles">Toggles</a> which uses hidden checkboxes and radio buttons to impliment javascript like functionality for many of its components like <a href="#accordions">Accordions</a>, <a href="#modals">Modals</a>, and more.
-                    SpryCSS also comes with basic <a href="#sliders">Sliders</a> that don't need any javascript.
-                </p>
-                <p>However, the functionality is limited and may not be suitable for all projects especially with strict accessibility requirements. So SpryCSS does have an optional small javascript library available to extend the functionality for these basic components if needed.</p>
-
                 <h2 class="sticky flex-middle index-1 pt-3 bg-inherit bb-1 border-faint pb-1">
                     <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="m16.56 5.44-1.45 1.45A5.969 5.969 0 0 1 18 12a6 6 0 0 1-6 6 6 6 0 0 1-6-6c0-2.17 1.16-4.06 2.88-5.12L7.44 5.44A7.961 7.961 0 0 0 4 12a8 8 0 0 0 8 8 8 8 0 0 0 8-8c0-2.72-1.36-5.12-3.44-6.56M13 3h-2v10h2" /></svg></i>
                     Getting Started and Installation
@@ -168,8 +167,8 @@
 
                 <a name="installation" class="mb-3 block"></a>
                 <h4 class="mt-3 mb-1">Compatibility</h4>
-                <div class="alert secondary outline mb-4">
-                    <svg class="mr-1" style="width: 16px; height: 16px;" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
+                <div class="alert secondary outline mb-4 flex">
+                    <svg class="mr-2" style="width: 16px; height: 16px;" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
                     <span>SpryCss uses :has() property which is not supported by all browsers yet. Find out which browsers support it <a target="_blank" href="https://caniuse.com/css-has">here</a></span>
                 </div>
 
@@ -218,7 +217,14 @@
 @use "node_modules/@ggedde/spry-css/spacing";
 
 </code></pre>
-    
+
+            <h4 id="spryjs" class="mt-3 pt-3">SpryJS Javascript <small class="badge outline xs base ml-1">Optional</small></h4>
+            <p>SpryCSS is meant to be quick and easy to impliment without needing to add any additional dependencies. However, there are times when you need more functionality then CSS can offer.
+                For this reason, you can include SpryJS to handle <a href="#toggles">Toggles</a> which adds functionality for many of its components like <a href="#accordions">Accordions</a>, <a href="#buttons">Buttons</a>, <a href="#lists">Lists</a>, <a href="#modals">Modals</a>, and <a href="#tabs">Tabs</a>.
+                SpryCSS also comes with basic <a href="#sliders">Sliders</a> with limited functionality, but you can add SpryJS for more functionality.
+            </p>
+            <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0/dist/spry.min.js"&gt;&lt;/script&gt;</code></pre>
+
             </section>
             <!------------------------------------
             ---------   SCSS VARIABLES   ---------
@@ -238,37 +244,49 @@ $breakpoints: (
 // You must include one for each Breakpoint otherwise it will result in a Compile Error.
 $gaps: (
     default: 1.25em, // required
-    md     : 2em,
+    md: 2em,
 );
 
-// Specify each color
+// Specify each color used in color-, bg-, border-, and in accents. Each color can be bound to a theme.
 $colors: (
-    "default"  : #888888,
-    "light"    : #efefef,
-    "dark"     : #333333,
-    "primary"  : #1494df,
-    "secondary": #df8a22,
+    "base"      : (light: #808080),                // The First Color in the array is your default color.
+    "text"      : (light: #555555, dark: #eeeeee), // Variable Theme Color
+    "contrast"  : (light: #333333, dark: #eeeeee), // Variable Theme Color
+    "faint"     : (light: #efefef, dark: #333333), // Variable Theme Color
+    "dark"      : (light: #333333),
+    "light"     : (light: #efefef),
+    "primary"   : (light: #1494df),
+    "secondary" : (light: #df8a22),
 );
 
 // Specify each type tag and class like &lt;h3&gt; and .h3 etc.
 $types: (
-    body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, color: var(--contrast), line-height: 1.4),
-    h1  : (font-size: 3.2em, font-weight: 400, line-height: 1.20),
-    h2  : (font-size: 2.3em, font-weight: 300, line-height: 1.25),
-    h3  : (font-size: 2.0em, font-weight: 300, line-height: 1.30),
-    h4  : (font-size: 1.4em, font-weight: 300, line-height: 1.35),
-    h5  : (font-size: 1.1em, font-weight: 300, line-height: 1.5),
-    h6  : (font-size: 1.0em, font-weight: 300, line-height: 1.4),
-    a   : (color: var(--primary), text-decoration: none),
+    body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), color: var(--text), font-weight: 300, line-height: 1.4),
+        h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20),
+        h2: (font-size: 2.3em, font-weight: 300, line-height: 1.25),
+        h3: (font-size: 2.0em, font-weight: 300, line-height: 1.30),
+        h4: (font-size: 1.4em, font-weight: 300, line-height: 1.35),
+        h5: (font-size: 1.1em, font-weight: 300, line-height: 1.5),
+        h6: (font-size: 1.0em, font-weight: 300, line-height: 1.4),
+        a: (color: var(--primary), text-decoration: none),
 );
 
-// Specify each size that applies font-size and all elements using "em".
+// Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc.
 $spacing: (
-    0: 0em,
+    0: 0em,     // Needs unit to be used in calc().
     1: .5em,
     2: 1em,
     3: 2em,
     4: 4em,
+    200: 200px, // Used for Sidebars.
+);
+
+// Specify each border size Ex .b-0, .b-1, .bt-3, .bl-3, etc.
+$borders: (
+    0: 0,
+    1: 1px,
+    2: 2px,
+    3: 3px,
 );
 
 // Specify each size that applies font-size and all elements using "em".
@@ -306,25 +324,30 @@ $sizes: (
 
                 <h5 class="mt-3">Default CSS Variables</h5>
                 <pre class="mt-1"><code class="language-scss">:root {
-    --gap           : 1.25em;      // Used for initial Gap sizes on grid and for breakpoint gap sizes. - Dynamic Property
-    --col           : 1;           // Used on grids to specifiy the number of columns.                 - Dynamic Property
-    --color         : #888;        // This is the Accent Color applied to special components           - Dynamic Property
-    --color-rgb     : 136,136,136; // This is the RGB Accent Color applied to special components       - Dynamic Property
-    --base          : #808080;
-    --base-rgb      : 136,136,136;
-    --text-color    : #888;
-    --light         : #efefef;
-    --light-rgb     : 239,239,239;
-    --faint         : #efefef;
-    --faint-rgb     : 239,239,239;
-    --dark          : #333;
-    --dark-rgb      : 51,51,51;
-    --contrast      : #333;
-    --contrast-rgb  : 51,51,51;
-    --primary       : #1494df;
-    --primary-rgb   : 20,148,223;
-    --secondary     : #df8a22;
-    --secondary-rgb : 223,138,34;
+    --gap              : 1.25em;      // Used for initial Gap sizes on grid and for breakpoint gap sizes. - Dynamic Property
+    --col              : 1;           // Used on grids to specifiy the number of columns.                 - Dynamic Property
+    --color            : #888;        // This is the Accent Color applied to special components           - Dynamic Property
+    --color-rgb        : 136,136,136; // This is the RGB Accent Color applied to special components       - Dynamic Property
+    --text-color       : #888;        // This is the Text Color applied to special UI components          - Dynamic Property
+    --text-color-rgb   : 136,136,136; // This is the RGB Text Color applied to special UI components      - Dynamic Property
+    --border-color     : #808080;     // This is the Border Color applied to special UI components        - Dynamic Property
+    --border-color-rgb : 128,128,128; // This is the RGB Border Color applied to special UI components    - Dynamic Property
+    --base             : #808080;
+    --base-rgb         : 128,128,128;
+    --text             : #555;
+    --text-rgb         : 85,85,85;
+    --light            : #efefef;
+    --light-rgb        : 239,239,239;
+    --faint            : #efefef;
+    --faint-rgb        : 239,239,239;
+    --dark             : #333;
+    --dark-rgb         : 51,51,51;
+    --contrast         : #333;
+    --contrast-rgb     : 51,51,51;
+    --primary          : #1494df;
+    --primary-rgb      : 20,148,223;
+    --secondary        : #df8a22;
+    --secondary-rgb    : 223,138,34;
 }</code></pre>
 <p class="note">* Dynamic properties change based on scope and conditions.</p>
 
@@ -348,14 +371,14 @@ $sizes: (
 
                 <h4 class="mt-3">SCSS Variables</h4>
                 <pre class="mt-1"><code class="language-scss">$types: (
-    body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), font-weight: 300, color: var(--contrast), line-height: 1.4),
-    h1  : (font-size: 3.2em, font-weight: 400, line-height: 1.20),
-    h2  : (font-size: 2.3em, font-weight: 300, line-height: 1.25),
-    h3  : (font-size: 2.0em, font-weight: 300, line-height: 1.30),
-    h4  : (font-size: 1.4em, font-weight: 300, line-height: 1.35),
-    h5  : (font-size: 1.1em, font-weight: 300, line-height: 1.5),
-    h6  : (font-size: 1.0em, font-weight: 300, line-height: 1.4),
-    a   : (color: var(--primary), text-decoration: none),
+    body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), color: var(--text), font-weight: 300, line-height: 1.4),
+    h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20),
+    h2: (font-size: 2.3em, font-weight: 300, line-height: 1.25),
+    h3: (font-size: 2.0em, font-weight: 300, line-height: 1.30),
+    h4: (font-size: 1.4em, font-weight: 300, line-height: 1.35),
+    h5: (font-size: 1.1em, font-weight: 300, line-height: 1.5),
+    h6: (font-size: 1.0em, font-weight: 300, line-height: 1.4),
+    a: (color: var(--primary), text-decoration: none),
 );</code></pre>
                 <div class="note mb-4">You can add as many types as you want. Each type will be assigned to the tag along with a custom
                     class so if needed you can apply <code class="color-primary">.h2</code>
@@ -432,41 +455,34 @@ $sizes: (
                 <a name="colors" class="mb-3 block"></a>
 
                 <h5>SCSS Variables</h5>
-                <pre class="mt-1"><code class="language-scss">$colors: (
-    "base"  : #888888,
-    "light"    : #efefef,
-    "dark"     : #333333,
-    "primary"  : #1494df,
-    "secondary": #df8a22,
-)</code></pre>
+                <pre class="mt-1"><code class="language-scss">// Specify each color used in color-, bg-, border-, and in accents.
+// Apply each color with ({theme}: {color_value}, {theme}: {color_value}, ...),
+// Default theme is "light". If no theme color available the color will then fallback to the default theme "light".
+$colors: (
+    "base"      : (light: #808080),                // The First Color in the array is your default color.
+    "text"      : (light: #555555, dark: #eeeeee), // Variable Theme Color
+    "contrast"  : (light: #333333, dark: #eeeeee), // Variable Theme Color
+    "faint"     : (light: #efefef, dark: #333333), // Variable Theme Color
+    "dark"      : (light: #333333),
+    "light"     : (light: #efefef),
+    "primary"   : (light: #1494df),
+    "secondary" : (light: #df8a22),
+);</code></pre>
                 <cite class="note">* You can add as many colors as you want, but each color will be added to all classes above. If you
                     only need it for a small thing then it would be better to create a custom variable for it.</cite>
 
-                    <table class="mb-3 border-faint">
-                        <thead>
-                            <tr>
-                                <th  colspan="2">
-                                    <h5>Additional Dynamic Colors</h5>
-                                    <div class="note color-base">These colors are added automatically and based on Light and Dark colors in the SCSS Variables. See <a href="#themes">Themes</a> for more details.</div>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td width="140"><code class="color-primary">contrast</code></td>
-                                <td>Default value is <code class="color-primary">dark</code>.</td>
-                            </tr>
-                            <tr>
-                                <td><code class="color-primary">faint</code></td>
-                                <td>Default value is <code class="color-primary">light</code>.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <h5 class="mt-3">Color Values</h5>
+                <p>Each color can have different values depending on the theme being applied. If the color is missing a value for the current theme, then it will fallback to the default theme <code class="color-primary">light</code>.</p>
 
                 <h5 class="mt-3">Overridable CSS Variables</h5>
                 <pre class="mt-1"><code class="language-scss">:root {
-    --{color}
-    --{color}-rgb
+    --{color}: {new_color};
+    --{color}-rgb: {new_rgb_color};
+}
+
+[data-theme=dark] {
+    --{color}: {new_color};
+    --{color}-rgb: {new_rgb_color};
 }</code></pre>
                 <cite class="note">* These values can be overridden, but for adding new values it is best to do that with a pre-processor in SCSS.</cite>
                 <table class="mb-3 mt-4 border-faint">
@@ -578,7 +594,6 @@ $sizes: (
                         <tr>
                             <td><code class="color-primary">data-theme="{theme}"</code></td>
                             <td>Used to set the theme of the element and child elements.<br>SpryCSS comes with <code class="color-primary">dark</code> and <code class="color-primary">light</code> (default).
-                                <br><br>* In order for this to work correctly, it is required that you have <code class="color-primary">light</code> and <code class="color-primary">dark</code> in your SCSS colors map.
                                 <br><br>Feel free to add on your own themes 
                             </td>
                         </tr>
@@ -608,17 +623,21 @@ $sizes: (
                 <table class="mb-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="160" colspan="2"><h4>Additional Theme Colors</h4></th>
+                            <th width="160" colspan="2"><h4>Default Variable Theme Colors</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
+                            <td><code class="color-primary">text</code></td>
+                            <td>This will change depending on the theme being applied.</td>
+                        </tr>
+                        <tr>
                             <td><code class="color-primary">contrast</code></td>
-                            <td>This will invert with the <code class="color-primary">light</code> and <code class="color-primary">dark</code> colors in the SCSS color map. Default is "dark".</td>
+                            <td>This will change depending on the theme being applied.</td>
                         </tr>
                         <tr>
                             <td><code class="color-primary">faint</code></td>
-                            <td>This will invert with the <code class="color-primary">light</code> and <code class="color-primary">dark</code> colors in the SCSS color map. Default is "light".</td>
+                            <td>This will change depending on the theme being applied.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -629,87 +648,6 @@ $sizes: (
                     <button class="faint">Faint Button</button>
                 </div>
     
-            </section>
-            <!------------------------------------
-            -------------    ICONS    ------------
-            ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-1 pt-3 bg-inherit bb-1 border-faint pb-1">
-                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M14 7v2h-1v6h1v2h-4v-2h1V9h-1V7h4M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m0 2v14h14V5H5z" /></svg></i>
-                    Icons
-                </h2>
-                <a name="icons" class="mb-3 block"></a>
-                <p class="mb-3">SpryCSS comes with a small set of custom icons. You can either use <code class="primary">&lt;i&gt;</code> or class <code class="primary">.icon</code></p>
-                <div class="show-code" data-title="Default Icons">
-                    <i class="icon prev"></i>
-                    <i class="icon next"></i>
-                    <i class="icon down"></i>
-                    <i class="icon up"></i>
-                    <i class="icon close"></i>
-                    <i class="icon menu"></i>
-                </div>
-
-                <div class="show-code" data-title="Variations">
-                    <span class="icon color-primary prev"></span>
-                    <span class="icon color-secondary next"></span>
-                    <span class="icon color-faint sm down"></span>
-                    <span class="icon color-base sm up"></span>
-                    <span class="icon lg close"></span>
-                    <span class="icon lg menu"></span>
-                </div>
-
-                <div class="show-code" data-title="Toggle Icons" data-badge="Requires SpryJS">
-                    <i data-toggle class="icon prev"></i>
-                    <i data-toggle class="icon next"></i>
-                    <i data-toggle class="icon down"></i>
-                    <i data-toggle class="icon up"></i>
-                    <i data-toggle class="icon menu"></i>
-                </div>
-
-                <h4 class="mt-2">Need More Icons?</h4>
-                
-                <p class="mt-3">You can use whatever ican package or icon webfont you
-                    want, but icon webfonts can greatly increase the size of your projects. A recommended alternative is
-                    to use direct svg code within your project. This produces the smallest file size while producing
-                    high resolution icons and allowing you the most flexibility to style the icons within your css.</p>
-                <p>A great option for this is <a target="_blank" href="https://materialdesignicons.com/">Material Design
-                        Icons</a>. You can search for icons and view the SVG code by clicking on the Code dropdown and
-                    click on 'View SVG'. Then copy and paste the code in your html.</p>
-                <p>If your using Visual Studio Code you can install the extension <a target="_blank"
-                        href="https://github.com/r3volution11/vscode-materialdesignicons-svg">vscode-materialdesignicons-svg</a>
-                    that provides code snippets to quickly add the SVG code.</p>
-                <h5 class="mt-2">Ex.</h5>
-                <div class="show-code" data-title="">
-                    <i class="icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
-                        </svg>
-                    </i>
-                    <i class="icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M15.41 16.58L10.83 12L15.41 7.41L14 6L8 12L14 18L15.41 16.58Z" />
-                        </svg>
-                    </i>
-                    <i class="icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M8.59 16.58L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.58Z" />
-                        </svg>
-                    </i>
-                    <i class="icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 
-                                21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 
-                                5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 
-                                13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 
-                                10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
-                        </svg>
-                    </i>
-                    <i class="icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" />
-                        </svg>
-                    </i>
-                </div>
             </section>
             <!------------------------------------
             -----------    Support    ------------
@@ -727,7 +665,7 @@ $sizes: (
                         <svg class="xl" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z" /></svg>
                     </a>
                     <a class="button circle icon contrast hazy" onclick="window.open('https://twitter.com/share?text=SpryCSS&url='+encodeURIComponent(location.href),'twitterShare','width=626,height=436');return false;" onkeypress="window.open('https://twitter.com/share?text=SpryCSS&url='+encodeURIComponent(location.href),'twitterShare','width=626,height=436');return false;">
-                        <svg width="1200" height="1227" viewBox="0 0 1200 1227" xmlns="http://www.w3.org/2000/svg"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" /></svg>
+                        <svg width="1200" height="1227" viewBox="0 0 1200 1227"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" /></svg>
                     </a>
                     <a class="button circle icon contrast hazy" onclick="window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent(location.href),'linkedinShare','width=626,height=436');return false;" onkeypress="window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent(location.href),'linkedinShare','width=626,height=436');return false;">
                         <svg class="xl" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" /></svg>
@@ -741,6 +679,79 @@ $sizes: (
                         <a class="github-button" href="https://github.com/ggedde/spry-css/subscription" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-eye" aria-label="Watch ggedde/spry-css on GitHub">Watch</a>
                     </p>
                 </div>
+            </section>
+            <!------------------------------------
+            -----------    BORDERS    ------------
+            ------------------------------------->
+            <section class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-1 pt-3 bg-inherit bb-1 border-faint pb-1">
+                    <i class="icon mr-1">
+                        <svg viewBox="0 0 24 24"><path d="M15,5H17V3H15M19,21H21V19H19M19,13H21V11H19M19,5H21V3H19M19,17H21V15H19M15,21H17V19H15M19,9H21V7H19M3,21H5V3H3M7,5H9V3H7M7,21H9V19H7M11,5H13V3H11M11,21H13V19H11V21Z" /></svg>
+                    </i>
+                    Borders
+                </h2>
+                <a name="borders" class="mb-2 block"></a>
+
+                <h5 class="mt-2 note">SCSS Variable</h5>
+                <pre><code class="language-scss">// Specify each border size Ex .b-0, .b-1, .bt-3, .bl-3, etc.
+$borders: (
+    0: 0,
+    1: 1px,
+    2: 2px,
+    3: 3px,
+);</code></pre>
+                
+                <h5 class="mt-2 note">Usage:</h5>
+                <div class="mb-1">
+                    <code class="color-primary"><span class="color-base">{breakpoint}-</span>{property}{side}-{spacing}</code>
+                </div>
+                <pre><code class="language-html">&lt;div class="b-2 md-bt-3"&gt;&lt;/div&gt;</code></pre>
+
+                <table class="border-faint">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><h4>Border Classes</h4></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td width="150"><code class="color-primary">b{side}-{n}</code></td>
+                            <td>Padding.
+                                <div class="color-base">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-3</code>. Can be modified in SCSS Variables.</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="mb-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <h4>Side Properties</h4>
+                                <div class="color-base">Side property can be omitted for all sides. ex. <code class="color-primary">b-3</code></div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td width="150"><code class="color-primary">t</code></td>
+                            <td>Top</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">r</code></td>
+                            <td>Right</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">b</code></td>
+                            <td>Bottom</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">l</code></td>
+                            <td>Left</td>
+                        </tr>
+                    </tbody>
+                </table>
+    
             </section>
             <!------------------------------------
             --------    BREAKPOINTS    -----------
@@ -811,7 +822,7 @@ $sizes: (
     md     : 2em,
 )</code></pre>
 
-                <div class="alert secondary outline">* You need to make sure the gaps match the <a href="#breakpoints" class="mx-1">breakpoints</a> otherwise you will receive a SCSS compile error.</div>
+                <div class="alert secondary outline">* You need to make sure the gaps match the <a href="#breakpoints">breakpoints</a> otherwise you will receive a SCSS compile error.</div>
 
             </section>
 
@@ -1130,15 +1141,16 @@ $sizes: (
                     </i>
                     Spacing Utility Classes
                 </h2>
-                <a name="utilities- class="mb-2 block"spacing"></a>
+                <a name="utilities-spacing" class="mb-2 block"></a>
 
                 <h5 class="mt-2 note">SCSS Variable</h5>
                 <pre><code class="language-scss">$spacing: (
-    0: 0,
+    0: 0em,     // Needs unit to be used in calc().
     1: .5em,
     2: 1em,
     3: 2em,
     4: 4em,
+    200: 200px, // Used for Sidebars
 );</code></pre>
                 
                 <h5 class="mt-2 note">Usage:</h5>
@@ -1464,272 +1476,272 @@ $sizes: (
                 <table class="mb-3 border-faint">
                     <tbody>
                         <tr>
-                            <td width="260"><code class="color-base">**-</code><code class="color-primary">text-left</code></td>
+                            <td width="380"><code class="color-base">{breakpoint}-</code><code class="color-primary">text-left</code></td>
                             <td>text-align: left</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">text-center</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">text-center</code></td>
                             <td>text-align: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">text-right</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">text-right</code></td>
                             <td>text-align: right</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">text-justify</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">text-justify</code></td>
                             <td>text-align: justify</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">no-wrap</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">no-wrap</code></td>
                             <td>white-space: nowrap; flex-wrap: nowrap;</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">pre-wrap</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">pre-wrap</code></td>
                             <td>white-space: pre-wrap</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">break-word</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">break-word</code></td>
                             <td>word-wrap: break-word</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">inline</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">inline</code></td>
                             <td>display: inline; width: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">flex</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">flex</code></td>
                             <td>display: flex</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">block</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">block</code></td>
                             <td>display: block</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">none</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">none</code></td>
                             <td>display: none</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">inline-block</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">inline-block</code></td>
                             <td>display: inline-block; width: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">inline-flex</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">inline-flex</code></td>
                             <td>display: inline-flex; width: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">table</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">table</code></td>
                             <td>display: table</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">table-cell</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">table-cell</code></td>
                             <td>display: table-cell</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">relative</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">relative</code></td>
                             <td>position: relative</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">absolute</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">absolute</code></td>
                             <td>position: absolute</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">collapse</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">collapse</code></td>
                             <td>position: relative</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">collapse > *</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">collapse > *</code></td>
                             <td>position: absolute</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">sticky</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">sticky</code></td>
                             <td>position: sticky; top: 0</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">fixed</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">fixed</code></td>
                             <td>position: fixed</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">inset </code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">inset </code></td>
                             <td>inset: 0</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">top </code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">top </code></td>
                             <td>top: 0; bottom: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">right </code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">right </code></td>
                             <td>right: 0; left: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">bottom </code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">bottom </code></td>
                             <td>bottom: 0; top: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">left </code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">left </code></td>
                             <td>left: 0; right: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">outset-top </code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">outset-top </code></td>
                             <td>bottom: 100%; top: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">outset-right </code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">outset-right </code></td>
                             <td>left: 100%; right: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">outset-bottom </code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">outset-bottom </code></td>
                             <td>top: 100%; bottom: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">outset-left </code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">outset-left </code></td>
                             <td>right: 100%; left: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">pointer-none </code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">pointer-none </code></td>
                             <td>pointer-events: none</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">align-baseline</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">align-baseline</code></td>
                             <td>vertical-align: baseline</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">align-top</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">align-top</code></td>
                             <td>vertical-align: top</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">align-middle</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">align-middle</code></td>
                             <td>vertical-align: middle</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">align-bottom</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">align-bottom</code></td>
                             <td>vertical-align: bottom</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">overflow-hidden</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">overflow-hidden</code></td>
                             <td>overflow: hidden</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">overflow-scroll</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">overflow-scroll</code></td>
                             <td>overflow: scroll</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">overflow-auto</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">overflow-auto</code></td>
                             <td>overflow: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">order-first</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">order-first</code></td>
                             <td>order:-1</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">order-0</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">order-0</code></td>
                             <td>order:0</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">order-1</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">order-1</code></td>
                             <td>order:1</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">order-2</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">order-2</code></td>
                             <td>order:2</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">order-3</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">order-3</code></td>
                             <td>order:3</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">order-last</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">order-last</code></td>
                             <td>order:99999</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">align-items-start</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">align-items-start</code></td>
                             <td>align-items: flex-start</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">align-items-end</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">align-items-end</code></td>
                             <td>align-items: flex-end</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">align-items-center</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">align-items-center</code></td>
                             <td>align-items: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">align-items-stretch</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">align-items-stretch</code></td>
                             <td>align-items: stretch</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">justify-content-start</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">justify-content-start</code></td>
                             <td>justify-content: flex-start</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">justify-content-end</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">justify-content-end</code></td>
                             <td>justify-content: flex-end</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">justify-content-center</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">justify-content-center</code></td>
                             <td>justify-content: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">justify-content-between</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">justify-content-between</code></td>
                             <td>justify-content: space-between</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">justify-content-around</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">justify-content-around</code></td>
                             <td>justify-content: space-around</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">flex-middle</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">flex-middle</code></td>
                             <td>display: flex; align-items: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">flex-center</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">flex-center</code></td>
                             <td>display: flex; align-items: center; justify-content: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">flex-wrap</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">flex-wrap</code></td>
                             <td>flex-wrap: wrap</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">flex-column</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">flex-column</code></td>
                             <td>flex-direction: column</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">shadow</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">shadow</code></td>
                             <td>box-shadow: 1px 3px 4px rgba(0,0,0,.12)</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">h-***</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">h-***</code></td>
                             <td>height: ***px; min-height: ***px; max-height: ***px</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">mh-***</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">mh-***</code></td>
                             <td>max-height: ***px</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">vh-**</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">vh-**</code></td>
                             <td>height: **vh</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">mvh-**</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">mvh-**</code></td>
                             <td>max-height: **vh</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">w-***</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">w-***</code></td>
                             <td>width: ***px; min-width: ***px; max-width: ***px</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">mw-***</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">mw-***</code></td>
                             <td>max-width: ***px</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">vw-**</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">vw-**</code></td>
                             <td>width: **vw</td>
                         </tr>
                         <tr>
-                            <td><code class="color-base">**-</code><code class="color-primary">mvw-**</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">mvw-**</code></td>
                             <td>max-width: **vw</td>
                         </tr>
                         <tr>
     
-                            <td><code class="color-base">**-</code><code class="color-primary">o-**</code></td>
+                            <td><code class="color-base">{breakpoint}-</code><code class="color-primary">o-**</code></td>
                             <td>opacity: .**</td>
                         </tr>
                     </tbody>
@@ -2103,7 +2115,7 @@ $sizes: (
             <section class="bg-inherit py-0 pb-3">
                 <h2 class="sticky flex-middle index-1 pt-3 bg-inherit bb-1 border-faint pb-1">
                     <i class="icon mr-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>square-rounded-badge-outline</title><path d="M19.5 8C21.43 8 23 6.43 23 4.5C23 2.57 21.43 1 19.5 1C17.57 1 16 2.57 16 4.5C16 6.43 17.57 8 19.5 8M21 16V9.79C20.5 9.93 20 10 19.5 10C19.33 10 19.17 10 19 10V16C19 17.66 17.66 19 16 19H8C6.34 19 5 17.66 5 16V8C5 6.34 6.34 5 8 5H14C14 4.84 14 4.67 14 4.5C14 4 14.07 3.5 14.21 3H8C5.24 3 3 5.24 3 8V16C3 18.76 5.24 21 8 21H16C18.76 21 21 18.76 21 16Z" /></svg>
+                        <svg viewBox="0 0 24 24"><title>square-rounded-badge-outline</title><path d="M19.5 8C21.43 8 23 6.43 23 4.5C23 2.57 21.43 1 19.5 1C17.57 1 16 2.57 16 4.5C16 6.43 17.57 8 19.5 8M21 16V9.79C20.5 9.93 20 10 19.5 10C19.33 10 19.17 10 19 10V16C19 17.66 17.66 19 16 19H8C6.34 19 5 17.66 5 16V8C5 6.34 6.34 5 8 5H14C14 4.84 14 4.67 14 4.5C14 4 14.07 3.5 14.21 3H8C5.24 3 3 5.24 3 8V16C3 18.76 5.24 21 8 21H16C18.76 21 21 18.76 21 16Z" /></svg>
                     </i>
                     Badges
                 </h2>
@@ -2705,6 +2717,174 @@ $sizes: (
                         </label>
                         <button class="span-4 btn loader" type="submit">Submit</button>
                     </form>
+                </div>
+            </section>
+            <!------------------------------------
+            -------------    ICONS    ------------
+            ------------------------------------->
+            <section class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-1 pt-3 bg-inherit bb-1 border-faint pb-1">
+                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M14 7v2h-1v6h1v2h-4v-2h1V9h-1V7h4M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m0 2v14h14V5H5z" /></svg></i>
+                    Icons
+                </h2>
+                <a name="icons" class="mb-3 block"></a>
+                
+                <p>SpryCSS doesn't come with its own icon package. You can use whatever ican package or icon webfont you
+                    want, but icon webfonts can greatly increase the size of your projects. A recommended alternative is
+                    to use direct svg code within your project. This produces the smallest file size while producing
+                    high resolution icons and allowing you the most flexibility to style the icons within your css.</p>
+                <p>A great option for this is <a target="_blank" href="https://pictogrammers.com/library/mdi/">Material Design
+                        Icons</a> or <a target="_blank" href="https://pictogrammers.com/library/mdil/">Material Design
+                            Icons Light</a>. You can search for icons and view the SVG code by clicking on the Code dropdown and
+                    click on 'View SVG'. Then copy and paste the code in your html.</p>
+                <p>If your using Visual Studio Code you can install the extension <a target="_blank" href="https://github.com/r3volution11/vscode-materialdesignicons-svg">vscode-materialdesignicons-svg</a>
+                    that provides code snippets to quickly add the SVG code.</p>
+
+                <table class="mb-2 mt-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th width="160"><h4>Classes</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary">icon</code></td>
+                            <td>Main Icon container. Set the initial SVG's size inside the container.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">color-{color}</code></td>
+                            <td>Sets icon color</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="show-code" data-title="Material Design Icons">
+                    <i class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
+                    </i>
+                    <i class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M15.41 16.58L10.83 12L15.41 7.41L14 6L8 12L14 18L15.41 16.58Z" /></svg>
+                    </i>
+                    <i class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.58Z" /></svg>
+                    </i>
+                    <i class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" /></svg>
+                    </i>
+                    <i class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" /></svg>
+                    </i>
+                    <i class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-14a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4z" /></svg>
+                    </i>
+                    <i class="icon">
+                        <svg viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
+                    </i>
+                </div>
+
+                <div class="show-code" data-title="Material Design Icons Light">
+                    <i class="icon">
+                        <svg viewBox="0 0 23 23"><path d="M11.5,14C15.64,14 19,15.57 19,17.5V20H4V17.5C4,15.57 7.36,14 11.5,14M18,17.5C18,16.12 15.09,15 11.5,15C7.91,15 5,16.12 5,17.5V19H18V17.5M11.5,5C13.43,5 15,6.57 15,8.5C15,10.43 13.43,12 11.5,12C9.57,12 8,10.43 8,8.5C8,6.57 9.57,5 11.5,5M11.5,6C10.12,6 9,7.12 9,8.5C9,9.88 10.12,11 11.5,11C12.88,11 14,9.88 14,8.5C14,7.12 12.88,6 11.5,6Z" /></svg>
+                    </i>
+                    <i class="icon">
+                        <svg viewBox="0 0 23 23"><path d="M14.41,18.16L8.75,12.5L14.41,6.84L15.11,7.55L10.16,12.5L15.11,17.45L14.41,18.16Z" /></svg>
+                    </i>
+                    <i class="icon">
+                        <svg viewBox="0 0 23 23"><path d="M8.59,18.16L14.25,12.5L8.59,6.84L7.89,7.55L12.84,12.5L7.89,17.45L8.59,18.16Z" /></svg>
+                    </i>
+                    <i class="icon">
+                        <svg viewBox="0 0 23 23"><path d="M6,3H17L20.9,8.57L11.5,22L2.1,8.57L6,3M10.16,4L8.46,8H14.54L12.84,4H10.16M8.33,9L11.5,18.76L14.67,9H8.33M3.72,8H7.38L9.08,4H6.5L3.72,8M3.62,9L10.44,18.75L7.28,9H3.62M19.28,8L16.5,4H13.92L15.62,8H19.28M19.38,9H15.72L12.56,18.75L19.38,9Z" /></svg>
+                    </i>
+                    <i class="icon">
+                        <svg viewBox="0 0 23 23"><path d="M18.9,8.1L9,18L4.05,13.05L4.76,12.34L9,16.59L18.19,7.39L18.9,8.1Z" /></svg>
+                    </i>
+                    <i class="icon">
+                        <svg viewBox="0 0 23 23"><path d="M11.5,4C6.81,4 3,7.81 3,12.5C3,17.19 6.81,21 11.5,21C16.19,21 20,17.19 20,12.5C20,7.81 16.19,4 11.5,4M11.5,3C16.75,3 21,7.25 21,12.5C21,17.75 16.75,22 11.5,22C6.25,22 2,17.75 2,12.5C2,7.25 6.25,3 11.5,3M11,17H12V19H11V17M11.5,6C13.43,6 15,7.57 15,9.5C15,10.4 14.3,11 13.56,11.68L12.63,12.58C12.04,13.25 11.97,14.53 12,14.97V15H11C11,14.95 10.9,13.04 11.87,11.92L12.9,10.93C13.5,10.4 14,9.95 14,9.5C14,8.12 12.88,7 11.5,7C10.12,7 9,8.12 9,9.5H8C8,7.57 9.57,6 11.5,6Z" /></svg>
+                    </i>
+                    <i class="icon">
+                        <svg viewBox="0 0 23 23"><path d="M11.5,3C16.75,3 21,7.25 21,12.5C21,17.75 16.75,22 11.5,22C6.25,22 2,17.75 2,12.5C2,7.25 6.25,3 11.5,3M11.5,4C6.81,4 3,7.81 3,12.5C3,17.19 6.81,21 11.5,21C16.19,21 20,17.19 20,12.5C20,7.81 16.19,4 11.5,4M11,17V15H12V17H11M11,13V8H12V13H11Z" /></svg>
+                    </i>
+                </div>
+
+                <div class="show-code" data-title="Sizing & Colors">
+                    <i class="icon xxl">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
+                        </svg>
+                    </i>
+                    <i class="icon xl color-primary">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
+                        </svg>
+                    </i>
+                    <i class="icon lg color-base">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
+                        </svg>
+                    </i>
+                    <i class="icon md color-secondary">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
+                        </svg>
+                    </i>
+                    <i class="icon sm color-faint">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
+                        </svg>
+                    </i>
+                    <i class="icon xs color-text">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
+                        </svg>
+                    </i>
+                    <i class="icon xxs">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
+                        </svg>
+                    </i>
+                </div>
+
+                <div class="show-code" data-title="Toggle Icons" data-note="See &lt;a href='#toggles'&gt;Toggles&lt;/a&gt;">
+                    <button class="icon link" data-toggle>
+                        <svg class="rotate-pressed" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
+                    </button>
+
+                    <button class="icon link" data-toggle>
+                        <svg class="flip-pressed" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
+                    </button>
+
+                    <button class="icon link" data-toggle>
+                        <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
+                        <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                    </button>
+
+                    <button class="icon link" data-toggle>
+                        <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
+                        <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                    </button>
+
+                    <button class="link" data-toggle>
+                        Select Me
+                        <span class="icon ml-2">
+                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v14H5V5h14z"></path></svg>
+                            <svg viewBox="0 0 24 24"><path d="M19 19H5V5h10V3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8h-2m-11.09-.92L6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09z"></path></svg>
+                        </span>
+                    </button>
+                    
+                    <button class="link" data-toggle>
+                        <span class="icon mr-2">
+                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v14H5V5h14z"></path></svg>
+                            <svg viewBox="0 0 24 24"><path d="M19 19H5V5h10V3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8h-2m-11.09-.92L6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09z"></path></svg>
+                        </span>
+                        Select Me
+                    </button>
+                    
+                    <button class="link" data-toggle>
+                        <svg class="mr-2 lg" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z"></path></svg>
+                        Direction
+                        <svg class="ml-2 lg" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+                    </button>
                 </div>
             </section>
             <!------------------------------------
@@ -4387,7 +4567,7 @@ $sizes: (
         }
     </script>
     <script src="docs.js?v=1.0.0"></script>
-    <script defer src="prism.js?v=3.0.0"></script>
+    <script defer src="prism.min.js?v=3.0.0"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 
