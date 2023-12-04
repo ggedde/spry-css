@@ -7,6 +7,9 @@
 :root,
 [data-theme=light] {
 
+	--border-color-rgb: 140,140,140;
+	--border-color: rgba(var(--border-color-rgb),.6);
+
 	@each $color_name, $color_value in $colors {
 		@if map-get($color_value, 'light') {
 			--#{$color_name}    : #{map-get($color_value, 'light')};
@@ -16,10 +19,6 @@
 
 	@each $color_name, $color_value in $colors {
 		@if map-get($color_value, 'light') {
-			@if index($colors, ($color_name $color_value)) == 1 {
-				--border-color    : #{map-get($color_value, 'light')};
-				--border-color-rgb: #{red(map-get($color_value, 'light')), green(map-get($color_value, 'light')), blue(map-get($color_value, 'light'))};
-			}
 
 			@if index($colors, ($color_name $color_value)) == 1 {
 				--color      : #{map-get($color_value, 'light')};

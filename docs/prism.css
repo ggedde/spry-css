@@ -61,7 +61,7 @@ pre[class*="language-"].pre-wrap {
 
 [data-theme=dark] code[class*="language-"],
 [data-theme=dark] pre[class*="language-"] {
-	color: white;
+	color: #e7e7e7;
 }
 
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
@@ -115,7 +115,7 @@ pre[class*="language-"] {
 
 [data-theme=dark] :not(pre) > code[class*="language-"],
 [data-theme=dark] pre[class*="language-"] {
-	background: #111111;
+	background: #000000;
 }
 
 [data-theme=light] :not(pre) > code[class*="language-"],

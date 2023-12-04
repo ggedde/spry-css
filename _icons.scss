@@ -17,16 +17,19 @@
 	}
 
 	svg {
-		position  : absolute;
-		margin    : auto;
-		inset     : 0;
-		fill      : currentColor;
-		transition: all .2s var(--ease);
+		backface-visibility: hidden;
+		inset              : 50%;
+		margin             : auto;
+		position           : absolute;
+		transform          : translateZ(0) translate(-50%);
+		transform-origin   : 0 center;
 	}
 }
 
-:is(a, button, .button) :is(.icon, svg) {
-	pointer-events: none;
+:is(a, button, .button, .icon) svg {
+	display   : block;
+	fill      : currentColor;
+	transition: all .2s var(--ease);
 }
 
 [data-toggle]:has(svg:nth-of-type(2)) svg:nth-of-type(2),

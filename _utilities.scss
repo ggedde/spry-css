@@ -13,11 +13,11 @@ General Utility Classes
 .lowercase{ text-transform: lowercase }
 .capitalize{ text-transform: capitalize }
 .pointer { cursor: pointer }
-.rounded{ border-radius: .25em }
-.rounded-top{ border-radius: .25em .25em 0 0 }
-.rounded-bottom{ border-radius: 0 0 .25em .25em }
-.rounded-right{ border-radius: 0 .25em .25em 0 }
-.rounded-left{ border-radius: .25em 0 0 .25em }
+.round{ border-radius: .25em }
+.round-top{ border-radius: .25em .25em 0 0 }
+.round-bottom{ border-radius: 0 0 .25em .25em }
+.round-right{ border-radius: 0 .25em .25em 0 }
+.round-left{ border-radius: .25em 0 0 .25em }
 .pill, .badge{ border-radius: 2em }
 .pill-top{ border-radius: 2em 2em 0 0 }
 .pill-bottom{ border-radius: 0 0 2em 2em }

@@ -9,6 +9,7 @@
 	@extend %ui-color;
 	@extend %ui-border;
 	@extend %ui-border-radius;
+	--border-color: var(--color);
 	position      : relative;
 	width         : auto;
 	cursor        : pointer;
@@ -25,5 +26,9 @@
 		&:is(.link, .outline, .hazy) {
 			@extend %ui-bg-hover;
 		}
+	}
+
+	> * {
+		pointer-events: none;
 	}
 }

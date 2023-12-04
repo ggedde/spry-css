@@ -15,17 +15,18 @@
 :root[data-theme=dark], [data-theme=dark] {
 	@each $color_name, $color_value in $colors {
 		@if map-get($color_value, 'dark') {
+
+			// Set each color variable.
 			--#{$color_name}    : #{map-get($color_value, 'dark')};
 			--#{$color_name}-rgb: #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
 
+			// Use the first color as the Default UI color.
 			@if index($colors, ($color_name $color_value)) == 1 {
-				--border-color    : #{map-get($color_value, 'dark')};
-				--border-color-rgb: #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
-			}
-
-			@if index($colors, ($color_name $color_value)) == 1 {
+				
 				--color      : #{map-get($color_value, 'dark')};
 				--color-rgb  : #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
+
+				// For the default UI Color, check to see if the text should be light or dark.
 				@if (lightness(map-get($color_value, 'dark')) > 70) {
 					--text-color: #{map-get(map-get($colors, 'text'), 'light')};
 					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'light')), green(map-get(map-get($colors, 'text'), 'light')), blue(map-get(map-get($colors, 'text'), 'light'))};
@@ -46,17 +47,19 @@
 
 	&,
 	article {
-		background-color: #1b1b1b;
+		background-color: #121212;
 	}
 
 	select option,
 	.tooltip {
-		background-color: #282828;
+		background-color: #262626;
 		color           : #efefef;
 	}
 
 	@each $color_name, $color_value in $colors {
 		@if map-get($color_value, 'dark') {
+
+			// For each UI color Class, check to see if the text should be light or dark.
 			.#{$color_name} {
 				@if (lightness(map-get($color_value, 'dark')) > 70) {
 					--text-color: #{map-get(map-get($colors, 'text'), 'light')};

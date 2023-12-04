@@ -6,7 +6,7 @@
 article {
 	@extend %ui-border;
 	@extend %ui-border-radius;
-	--card-color    : rgba(150,150,150, 0.2);
+	--card-color    : rgba(100,100,100, 0.25);
 	--gap: 2em;
 	align-items     : flex-start;
 	background-color: white;

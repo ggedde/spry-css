@@ -9,6 +9,7 @@
 	@extend %ui-color;
 	@extend %ui-border;
 	@extend %ui-compact;
+	--border-color: var(--color);
 	font-weight: 500;
 	width      : auto;
 

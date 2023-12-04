@@ -14,11 +14,11 @@ $gaps: (default: 1.25em, // required
 // Apply each color with ({theme}: {color_value}, {theme}: {color_value}, ...),
 // Default theme is "light". If no theme color available the color will then fallback to the default theme "light".
 $colors: (
-    "base"      : (light: #808080),                  // The First Color in the array is your default color.
-    "text"      : (light: #555555, dark: #eeeeee), // Variable Theme Color
-    "contrast"  : (light: #333333, dark: #eeeeee), // Variable Theme Color
-    "faint"     : (light: #efefef, dark: #333333), // Variable Theme Color
-    "dark"      : (light: #333333),
+    "grey"      : (light: #808080),                  // The First Color in the array is your default color.
+    "text"      : (light: #555555, dark: #e7e7e7), // Variable Theme Color
+    "contrast"  : (light: #262626, dark: #e7e7e7), // Variable Theme Color
+    "faint"     : (light: #efefef, dark: #262626), // Variable Theme Color
+    "dark"      : (light: #262626),
     "light"     : (light: #efefef),
     "primary"   : (light: #1494df),
     "secondary" : (light: #df8a22),
@@ -56,7 +56,7 @@ $borders: (
 
 // Specify each size that applies font-size and all elements using "em".
 $sizes: (
-    xxl: 160%,
+    xxl: 165%,
      xl: 140%,
      lg: 120%,
      md: 100%,

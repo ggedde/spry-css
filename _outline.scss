@@ -1,11 +1,11 @@
 /*!
 * Spry Outline
 */
+@use "ui"as *;
 
 .outline {
-	border-color: var(--color);
-	border-width: 1px;
-	border-style: solid;
+	@extend %ui-border;
+	border-color: var(--border-color);
 	ul,
 	li {
 		border-color: inherit;

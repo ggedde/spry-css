@@ -9,6 +9,7 @@
 	@extend %ui-color;
 	@extend %ui-border;
 	@extend %ui-border-radius;
+	--border-color: var(--color);
 	display        : block;
 	justify-content: flex-start;
 	padding        : .5em 1em;
