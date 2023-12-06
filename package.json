@@ -19,10 +19,10 @@
   "scripts": {
     "dev": "node_modules/.bin/chokidar *.scss -c 'npm run build'",
     "dev-full": "node_modules/.bin/chokidar *.scss -c 'npm run build-full'",
-    "build": "node_modules/.bin/sass --style=compressed --no-source-map ./spry.scss | node_modules/.bin/postcss --map false -o ./dist/spry.min.css; cp ./dist/spry.min.css ./docs/spry.min.css;",
-    "build-prism": "node_modules/.bin/postcss ./docs/prism.css --map false -o ./docs/prism.min.css",
-    "build-full": "node_modules/.bin/sass ./spry.scss:./dist/spry.min.css; cp ./dist/spry.min.css ./docs/spry.min.css;",
-    "build-js": "node_modules/.bin/terser ./docs/spry.js --config-file .terser -o ./dist/spry.min.js; cp ./dist/spry.min.js ./docs/spry.min.js;"
+    "build": "node_modules/.bin/sass --style=compressed --no-source-map ./spry.scss | node_modules/.bin/postcss --map false -o ./dist/spry.min.css; cp ./dist/spry.min.css ./docs/spry.min.css; gzip -c4 ./dist/spry.min.css | wc -c;",
+    "build-prism": "node_modules/.bin/postcss ./docs/prism.css --map false -o ./docs/prism.min.css; gzip -c4 ./docs/prism.min.css | wc -c;",
+    "build-full": "node_modules/.bin/sass ./spry.scss:./dist/spry.min.css; cp ./dist/spry.min.css ./docs/spry.min.css; cp ./dist/spry.min.css.map ./docs/spry.min.css.map; gzip -c4 ./dist/spry.min.css | wc -c;",
+    "build-js": "node_modules/.bin/terser ./docs/spry.js --config-file .terser -o ./dist/spry.min.js; cp ./dist/spry.min.js ./docs/spry.min.js; gzip -c4 ./dist/spry.min.js | wc -c;"
   },
   "dependencies": {
     "autoprefixer": "^10.4.1",

@@ -4,30 +4,38 @@
 @use "variables"as *;
 @use "ui"as *;
 
-:is(nav,.list) li>.icon:nth-child(2) {
+:is(nav, .list) li>.icon:nth-child(2) {
 	font-size: 80%;
-	position: absolute;
-	right: 0.5em;
-	top: 0.25em;
+	position : absolute;
+	right    : 0.5em;
+	top      : 0.25em;
 }
 
-:is(nav,.list) li:has(> .icon:nth-child(2)) > :first-child {
+:is(nav, .list) li:has(> .icon:nth-child(2))> :first-child {
 	padding-right: 2.5em;
 }
 
 .hoverable {
-	> ul > li > :is([data-toggle=hover],[data-toggle=next]),
-	> li > :is([data-toggle=hover],[data-toggle=next]) {
+
+	>ul>li> :is([data-toggle=hover], [data-toggle=next]),
+	>li> :is([data-toggle=hover], [data-toggle=next]) {
 		pointer-events: none
 	}
 }
 
 .closed,
-.hoverable > li ul,
-.hoverable > ul > li ul,
-[data-toggle=next] + *,
-[data-toggle=hover] + * {
+.hoverable>li ul,
+.hoverable>ul>li ul,
+[data-toggle=next]+*,
+[data-toggle=hover]+* {
 	@extend %ui-closed;
+}
+
+.closed:not(.open) {
+	padding-block: 0;
+	margin-block : 0;
+	min-height   : 0;
+	overflow     : hidden;
 }
 
 .open,
@@ -36,7 +44,7 @@
 .hoverable>li:hover>ul,
 .hoverable>ul>li:hover>ul,
 .hoverable li:has(:focus-visible)>ul,
-[data-toggle=hover].hoverable:hover + *{
+[data-toggle=hover].hoverable:hover+* {
 	@extend %ui-open;
 }
 
@@ -45,8 +53,8 @@ $breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
 
 		.#{$breakpoint}-closed,
-		.#{$breakpoint}-hoverable > ul > li ul,
-		.#{$breakpoint}-hoverable > li ul {
+		.#{$breakpoint}-hoverable>ul>li ul,
+		.#{$breakpoint}-hoverable>li ul {
 			@include ui-closed;
 		}
 
@@ -58,8 +66,9 @@ $breakpoint_width in $breakpoints {
 		}
 
 		.#{$breakpoint}-hoverable {
-			> ul > li > :is([data-toggle=hover],[data-toggle=next]),
-			> li > :is([data-toggle=hover],[data-toggle=next]) {
+
+			>ul>li> :is([data-toggle=hover], [data-toggle=next]),
+			>li> :is([data-toggle=hover], [data-toggle=next]) {
 				pointer-events: none
 			}
 		}

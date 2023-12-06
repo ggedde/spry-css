@@ -23,7 +23,7 @@
 
 	&:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]) {
 		@extend %ui-hover;
-		&:is(.link, .outline, .hazy) {
+		&:is(.link, .outline, .hazy, .plain) {
 			@extend %ui-bg-hover;
 		}
 	}

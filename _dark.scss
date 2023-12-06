@@ -13,6 +13,11 @@
 }
 
 :root[data-theme=dark], [data-theme=dark] {
+
+	--border-color-rgb: 70,70,70;
+	--border-color: rgb(var(--border-color-rgb));
+	--bdr: solid var(--border-color);
+
 	@each $color_name, $color_value in $colors {
 		@if map-get($color_value, 'dark') {
 
@@ -29,12 +34,10 @@
 				// For the default UI Color, check to see if the text should be light or dark.
 				@if (lightness(map-get($color_value, 'dark')) > 70) {
 					--text-color: #{map-get(map-get($colors, 'text'), 'light')};
-					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'light')), green(map-get(map-get($colors, 'text'), 'light')), blue(map-get(map-get($colors, 'text'), 'light'))};
 				}
 	
 				@else {
 					--text-color: #{map-get(map-get($colors, 'text'), 'dark')};
-					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'dark')), green(map-get(map-get($colors, 'text'), 'dark')), blue(map-get(map-get($colors, 'text'), 'dark'))};
 				}
 			}
 		}
@@ -63,12 +66,10 @@
 			.#{$color_name} {
 				@if (lightness(map-get($color_value, 'dark')) > 70) {
 					--text-color: #{map-get(map-get($colors, 'text'), 'light')};
-					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'light')), green(map-get(map-get($colors, 'text'), 'light')), blue(map-get(map-get($colors, 'text'), 'light'))};
 				}
 
 				@else {
 					--text-color: #{map-get(map-get($colors, 'text'), 'dark')};
-					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'dark')), green(map-get(map-get($colors, 'text'), 'dark')), blue(map-get(map-get($colors, 'text'), 'dark'))};
 				}
 			}
 		}

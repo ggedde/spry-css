@@ -4,18 +4,27 @@
 
 @use "variables"as *;
 
+$color_names: ();
+@each $color_name, $color_value in $colors {
+    $color_names: append($color_names, '.#{$color_name}', 'comma');
+}
+
+:is(button,.button,.alert,.badge,[type=submit],[type=reset]):is(.link, .outline, .hazy, .plain):where(#{$color_names}) {
+	--text-color: var(--color);
+	color: var(--color);
+}
+
+:where(#{$color_names}):not(article) :is(.link, .outline, .hazy, .plain) {
+	color: var(--color);
+}
+
 // Initial Color sets
 @each $color_name,
 $color_value in $colors {
 
 	article.#{$color_name} {
-		--card-color: var(--#{$color_name});
-	}
-
-	.#{$color_name} :is(.link, .outline, .hazy) {
-		--text-color : var(--#{$color_name});
-		--text-color-rgb : var(--#{$color_name}-rgb);
-		color        : var(--text-color);
+		--card-color  : var(--#{$color_name});
+		--border-color: var(--card-color);
 	}
 }
 
@@ -24,11 +33,8 @@ $color_value in $colors {
 $color_value in $colors {
 
 	.link-#{$color_name} a:not(.button),
-	.#{$color_name}:is(.link, .outline, .hazy),
 	.link-hover-#{$color_name} a:not(.button):is(:hover, :focus) {
-		--text-color : var(--#{$color_name});
-		--text-color-rgb : var(--#{$color_name}-rgb);
-		color        : var(--text-color);
+		color : var(--#{$color_name});
 	}
 }
 
@@ -43,28 +49,29 @@ $color_value in $colors {
 
 	[class].color-#{$color_name},
 	.hover-#{$color_name}:is(:hover, :focus) {
-		--text-color : var(--#{$color_name});
-		--text-color-rgb : var(--#{$color_name}-rgb);
-		color        : var(--text-color);
+		--text-color     : var(--#{$color_name});
+		color            : var(--text-color);
 	}
 
 	.bg-#{$color_name},
-	:is(.tooltip,article).bg-#{$color_name} {
+	:is(.tooltip, article).bg-#{$color_name} {
 		background-color: var(--#{$color_name});
 	}
 
 	.bg-#{$color_name}-hazy,
-	:is(.tooltip,article).bg-#{$color_name}-hazy {
-		background-color: rgba(var(--#{$color_name}-rgb), .4);
+	:is(.tooltip, article).bg-#{$color_name}-hazy {
+		background-color: rgba(var(--#{$color_name}-rgb), .3);
 	}
 
 	.border-#{$color_name} {
 		--border-color: var(--#{$color_name});
-		border-color: var(--border-color);
+		--input-border-color: var(--#{$color_name});
+		border-color  : var(--border-color);
 	}
 
 	.border-#{$color_name}-hazy {
-		--border-color: rgba(var(--#{$color_name}-rgb), .4);
-		border-color: var(--border-color);
+		--border-color: rgba(var(--#{$color_name}-rgb), .3);
+		--input-border-color: rgba(var(--#{$color_name}-rgb), .3);
+		border-color  : var(--border-color);
 	}
 }

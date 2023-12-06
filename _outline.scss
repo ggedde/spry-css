@@ -6,27 +6,36 @@
 .outline {
 	@extend %ui-border;
 	border-color: var(--border-color);
-	ul,
-	li {
+
+	>ul,
+	>ul ul,
+	>li,
+	>ul li,
+	> :not(ul),
+	:where(&.tabs .list),
+	&.tabs .list>ul,
+	&.list> :not(ul),
+	&.tabs .list>ul li,
+	&.tabs .list+* {
 		border-color: inherit;
 	}
 
-	li {
+	>li,
+	>ul li {
 		position: relative;
 
 		ul {
 			border-style: solid;
 			border-width: 1px;
-			margin: 0 0 -1px -1px;
+			margin      : 0 0 -1px -1px;
 			min-width   : calc(100% + 3px);
 		}
 	}
 
 	&.tabs .list {
-		margin      : -1px;
-		border-width: 1px;
-		border-style: solid;
-		border-color: inherit;
+		margin         : -1px 0;
+		border-width   : 1px 0;
+		border-style   : solid;
 
 		> :not(ul) {
 			border-width: 0 0 1px 0;
@@ -36,45 +45,46 @@
 	}
 
 	&.list,
-	.list ul,
+	.list>ul,
+	.list>ul ul,
 	&.tabs .list {
-		--gap              : 0em;
+		--gap: 0em;
 
 		:is(a, button, .button, [type=submit]):not([data-toggle=next]) {
 			border-radius: 0;
 		}
+
 		li li {
 			width: calc(100% + 1px);
 		}
+
 		> :not(ul):last-child {
 			border-bottom-width: 1px;
 		}
 	}
 
 	&.tabs .list+* {
-		margin      : -1px;
-		border-color: inherit;
-		border-width: 0;
+		margin      : 0 -1px;
+		border-width: 0 1px;
+		position    : relative;
 	}
 
-	&:not(.alert, button, .button, .icon)> :not(ul),
-	&:not(.alert, button, .button, .icon)> :not(ul),
+	&.tabs.column .list+* {
+		border-width: 1px 0;
+	}
+
+	&:not(.alert, button, .button, article, .icon)> :not(ul),
 	&.tabs .list> :not(ul),
-	ul>li {
-		border-width: 1px 0 0 1px;
-		border-color: inherit;
-		border-style: solid;
-		margin      : -1px 0 0 -1px;
+	>ul>li,
+	&.tabs .list>ul>li,
+	>ul ul>li {
+		border-width   : 1px 0 0 1px;
+		border-style   : solid;
+		margin         : -1px 0 0 -1px;
+
 		&:last-child {
 			border-bottom-width: 1px;
-			margin-bottom: -1px;
-		}
-	}
-
-	&.row {
-		&.tabs .list {
-			border-width: 0 1px 0 1px;
-			border-style: solid;
+			margin-bottom      : -1px;
 		}
 	}
 }

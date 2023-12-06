@@ -3,6 +3,27 @@
 */
 @use "variables"as *;
 
+%ui {
+	align-items    : center;
+	appearance     : none;
+	background     : transparent;
+	border         : 0;
+	color          : inherit;
+	display        : inline-flex;
+	font-size      : 100%;
+	height         : auto;
+	margin         : 0;
+	min-height     : 2.3em;
+	min-width      : 2.3em;
+	padding-block  : .3em;
+	padding-inline : 1em;
+	position       : relative;
+	text-decoration: none;
+	transition     : color .1s ease-in-out, background .1s ease-in-out, border .15s ease-in-out, filter .1s ease-in-out;
+	vertical-align : middle;
+	width          : 100%;
+}
+
 @mixin ui-closed {
 	max-height      : 0;
 	min-height      : 0;
@@ -11,7 +32,7 @@
 	pointer-events  : none;
 	transform       : scaleY(.8) translateY(-4px) translateZ(0);
 	transform-origin: top;
-	transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
+	transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), min-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
 	transition-delay: .1s;
 	z-index         : 2;
 
@@ -46,27 +67,6 @@
 	&:is(.from-left, .from-right, .from-bottom) {
 		transform: none;
 	}
-}
-
-%ui {
-	align-items    : center;
-	appearance     : none;
-	background     : transparent;
-	border         : 0;
-	color          : inherit;
-	display        : inline-flex;
-	font-size      : 100%;
-	height         : auto;
-	margin         : 0;
-	min-height     : 2.3em;
-	min-width      : 2.3em;
-	padding-block  : .3em;
-	padding-inline : 1em;
-	position       : relative;
-	text-decoration: none;
-	transition     : color .1s ease-in-out, background .1s ease-in-out, border .15s ease-in-out, filter .1s ease-in-out;
-	vertical-align : middle;
-	width          : 100%;
 }
 
 %ui-compact {
@@ -114,11 +114,8 @@
 
 %ui-color {
 	color: var(--text-color);
-
-
-	&:is(.link, .outline, .hazy) {
-		--text-color    : var(--text);
-		--text-color-rgb: var(--text-rgb);
+	&:where(.link, .outline, .hazy, .plain) {
+		color: var(--text);
 	}
 }
 
@@ -176,11 +173,13 @@ a {
 }
 
 .link,
+.plain,
 .hazy {
 	border-color: transparent;
 }
 
 .link,
+.plain,
 .outline {
 	background: transparent;
 }

@@ -7,7 +7,7 @@
 	@extend %ui;
 	@extend %ui-border;
 	@extend %ui-border-radius;
-	border-color: var(--border-color);
+	border-color: var(--input-border-color);
 	font-family: inherit;
 	font-weight: inherit;
 	color: inherit;
@@ -20,7 +20,6 @@
 	&:is(:hover,:focus) {
 		border-color: var(--color);
 	}
-	
 }
 
 ::placeholder {
@@ -114,7 +113,7 @@ label {
 	display : block;
 
 	.ui {
-		border-color: var(--border-color);
+		border-color: var(--input-border-color);
 		background-color: rgba(var(--border-color-rgb), .2);
 		color: inherit;
 	}

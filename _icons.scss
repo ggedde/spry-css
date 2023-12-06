@@ -26,7 +26,8 @@
 	}
 }
 
-:is(a, button, .button, .icon) svg {
+:is(a, button, .button, .icon) svg,
+svg.icon {
 	display   : block;
 	fill      : currentColor;
 	transition: all .2s var(--ease);
@@ -43,7 +44,8 @@
 	scale  : 1;
 }
 
-:is(button, .button, .alert, .icon) svg {
+:is(button, .button, .alert, .icon) svg,
+svg.icon {
 	width : 1.25em;
 	height: 1.25em;
 }

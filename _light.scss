@@ -7,8 +7,11 @@
 :root,
 [data-theme=light] {
 
-	--border-color-rgb: 140,140,140;
-	--border-color: rgba(var(--border-color-rgb),.6);
+	--border-color-rgb: 210,210,210;
+	--border-color: rgb(var(--border-color-rgb));
+	--bdr: solid var(--border-color);
+
+	--input-border-color: rgba(140,140,140,.7);
 
 	@each $color_name, $color_value in $colors {
 		@if map-get($color_value, 'light') {
@@ -26,12 +29,10 @@
 				
 				@if (lightness(map-get($color_value, 'light')) > 70) {
 					--text-color: #{map-get(map-get($colors, 'text'), 'light')};
-					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'light')), green(map-get(map-get($colors, 'text'), 'light')), blue(map-get(map-get($colors, 'text'), 'light'))};
 				}
 	
 				@else {
 					--text-color: #{map-get(map-get($colors, 'text'), 'dark')};
-					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'dark')), green(map-get(map-get($colors, 'text'), 'dark')), blue(map-get(map-get($colors, 'text'), 'dark'))};
 				}
 			}
 		}
@@ -59,12 +60,10 @@ html,
 			.#{$color_name} {
 				@if (lightness(map-get($color_value, 'light')) > 70) {
 					--text-color: #{map-get(map-get($colors, 'text'), 'light')};
-					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'light')), green(map-get(map-get($colors, 'text'), 'light')), blue(map-get(map-get($colors, 'text'), 'light'))};
 				}
 
 				@else {
 					--text-color: #{map-get(map-get($colors, 'text'), 'dark')};
-					--text-color-rgb: #{red(map-get(map-get($colors, 'text'), 'dark')), green(map-get(map-get($colors, 'text'), 'dark')), blue(map-get(map-get($colors, 'text'), 'dark'))};
 				}
 			}
 		}
