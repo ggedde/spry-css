@@ -3958,43 +3958,43 @@ article.secondary {
   --border-color: var(--card-color);
 }
 
-.link-grey a:not(.button),
-.link-hover-grey a:not(.button):is(:hover, :focus) {
+.links-grey a:not(.button),
+.links-hover-grey a:not(.button):is(:hover, :focus) {
   color: var(--grey);
 }
 
-.link-text a:not(.button),
-.link-hover-text a:not(.button):is(:hover, :focus) {
+.links-text a:not(.button),
+.links-hover-text a:not(.button):is(:hover, :focus) {
   color: var(--text);
 }
 
-.link-contrast a:not(.button),
-.link-hover-contrast a:not(.button):is(:hover, :focus) {
+.links-contrast a:not(.button),
+.links-hover-contrast a:not(.button):is(:hover, :focus) {
   color: var(--contrast);
 }
 
-.link-faint a:not(.button),
-.link-hover-faint a:not(.button):is(:hover, :focus) {
+.links-faint a:not(.button),
+.links-hover-faint a:not(.button):is(:hover, :focus) {
   color: var(--faint);
 }
 
-.link-dark a:not(.button),
-.link-hover-dark a:not(.button):is(:hover, :focus) {
+.links-dark a:not(.button),
+.links-hover-dark a:not(.button):is(:hover, :focus) {
   color: var(--dark);
 }
 
-.link-light a:not(.button),
-.link-hover-light a:not(.button):is(:hover, :focus) {
+.links-light a:not(.button),
+.links-hover-light a:not(.button):is(:hover, :focus) {
   color: var(--light);
 }
 
-.link-primary a:not(.button),
-.link-hover-primary a:not(.button):is(:hover, :focus) {
+.links-primary a:not(.button),
+.links-hover-primary a:not(.button):is(:hover, :focus) {
   color: var(--primary);
 }
 
-.link-secondary a:not(.button),
-.link-hover-secondary a:not(.button):is(:hover, :focus) {
+.links-secondary a:not(.button),
+.links-hover-secondary a:not(.button):is(:hover, :focus) {
   color: var(--secondary);
 }
 

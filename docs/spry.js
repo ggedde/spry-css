@@ -184,27 +184,47 @@ class Spry {
     static closeAllToggles = function(event) {
         var docTarget = event && event.type && event.type === 'click' ? event.target : null;
         var escPressed = event && event.type && event.type === 'keyup' && event.keyCode && event.keyCode === 27;
+        var spacePressed = event && event.type && event.type === 'keyup' && event.keyCode && event.keyCode === 32;
+        var enterPressed = event && event.type && event.type === 'keyup' && event.keyCode && event.keyCode === 13;
         var togglerClicked = null;
         var togglerHasEscapable = null;
+        var togglerHasDismissible = null;
         var elementHasEscapable = null;
+        var elementHasDismissible = null;
+
         if (!event || docTarget || escPressed) {
             this.elements.forEach(toggleElement => {
                 if (toggleElement.el.classList.contains('open') && (!docTarget || (docTarget && toggleElement.el !== docTarget && !toggleElement.el.contains(docTarget)))) {
                     togglerClicked = false;
                     togglerHasEscapable = false;
+                    elementHasEscapable = ['', true, 'true'].includes(toggleElement.el.getAttribute('data-toggle-escapable'));
                     toggleElement.togglers.forEach(toggler => {
                         if (toggler.el === docTarget || toggler.el.contains(docTarget)) {
                             togglerClicked = true;
                         }
                         if (['', true, 'true'].includes(toggler.el.getAttribute('data-toggle-escapable'))) {
                             togglerHasEscapable = true;
-                            console.log(toggler);
-                        }
-                        if (['', true, 'true'].includes(toggleElement.el.getAttribute('data-toggle-escapable'))) {
-                            elementHasEscapable = true;
                         }
                     });
                     if (!togglerClicked && (togglerHasEscapable || elementHasEscapable)) {
+                        this.toggle(toggleElement);
+                    }
+                }
+            });
+        }
+
+
+        if ((docTarget || spacePressed || enterPressed) && ['A','BUTTON','LABEL','INPUT'].includes(event.target.tagName) && !event.target.hasAttribute('data-toggle')) {
+            this.elements.forEach(toggleElement => {
+                if (toggleElement.el.classList.contains('open') && toggleElement.el.contains(event.target)) {
+                    togglerHasDismissible = false;
+                    elementHasDismissible = ['', true, 'true'].includes(toggleElement.el.getAttribute('data-toggle-dismissible'));
+                    toggleElement.togglers.forEach(toggler => {
+                        if (['', true, 'true'].includes(toggler.el.getAttribute('data-toggle-dismissible'))) {
+                            togglerHasDismissible = true;
+                        }
+                    });
+                    if (togglerHasDismissible || elementHasDismissible) {
                         this.toggle(toggleElement);
                     }
                 }

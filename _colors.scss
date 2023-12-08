@@ -32,8 +32,8 @@ $color_value in $colors {
 @each $color_name,
 $color_value in $colors {
 
-	.link-#{$color_name} a:not(.button),
-	.link-hover-#{$color_name} a:not(.button):is(:hover, :focus) {
+	.links-#{$color_name} a:not(.button),
+	.links-hover-#{$color_name} a:not(.button):is(:hover, :focus) {
 		color : var(--#{$color_name});
 	}
 }

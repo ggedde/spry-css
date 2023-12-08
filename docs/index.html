@@ -21,7 +21,7 @@
         <div class="sticky toolbar sharp lg index-4 bg-faint pl-1 bb-1 pr-1">
             <div class="flex-middle bg-faint">
 
-                <button id="header-nav-mobile-button" class="link icon md-none" data-toggle="next" data-toggle-escapable>
+                <button id="header-nav-mobile-button" class="link icon md-none" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
                     <svg class="xl" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                     <svg class="xl" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                 </button>
@@ -57,9 +57,19 @@
                         <li><a href="#borders">Borders</a></li>
                         <li><a href="#breakpoints">Breakpoints</a></li>
                         <li><a href="#gaps">Gaps</a></li>
-                        <li><a href="#grid">Grid</a></li>
-                        <li><a href="#sizes">Sizing</a></li>
-                        <li><a href="#utilities-spacing">Spacing</a></li>
+                        <li>
+                            <a href="#grid">Grid</a>
+                            <button class="link icon circle sm shy" data-toggle="next">
+                                <svg class="xxl flip-pressed" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </button>
+                            <ul class="sm">
+                                <li><a class="pl-3" href="#grid">Classes</a></li>
+                                <li><a class="pl-3" href="#css-grid">CSS Grid</a></li>
+                                <li><a class="pl-3" href="#css-flexbox">CSS Flexbox</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#sizing">Sizing</a></li>
+                        <li><a href="#spacing">Spacing</a></li>
                         <li><a href="#toggles">Toggles</a></li>
                         <li><a href="#utilities">Utilities</a></li>
                         <li class="pt-3">
@@ -225,7 +235,8 @@
 
             <h3 id="spryjs" class="mt-2 pt-3">SpryJS Javascript <small class="badge outline xxs grey ml-1">Optional</small></h3>
             <p>SpryCSS is meant to be quick and easy to impliment without needing to add any additional dependencies. However, there are times when you need more functionality then CSS can offer.
-                For this reason, you can include SpryJS to handle <a href="#toggles">Toggles</a> which adds functionality for many of its components like <a href="#accordions">Accordions</a>, <a href="#buttons">Buttons</a>, <a href="#lists">Lists</a>, <a href="#modals">Modals</a>, and <a href="#tabs">Tabs</a>.
+                For this reason, you can include SpryJS to handle <a href="#toggles">Toggles</a> which adds additional functionality for many of its components like 
+                <a href="#accordions">Accordions</a>, <a href="#buttons">Buttons</a>, <a href="#lists">Lists</a>, <a href="#menus">Menus</a>, <a href="#modals">Modals</a>, and <a href="#tabs">Tabs</a>.
                 SpryCSS also comes with basic <a href="#sliders">Sliders</a> that have limited functionality, but you can add SpryJS for more functionality.
             </p>
             <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0/dist/spry.min.js"&gt;&lt;/script&gt;</code></pre>
@@ -373,7 +384,7 @@ $sizes: (
                 </h2>
                 <a name="typography" class="mb-3 block"></a>
 
-                <h4 class="mt-3">SCSS Variables</h4>
+                <h5 class="mt-2 note">SCSS Variable</h5>
                 <pre class="mt-1"><code class="language-scss">$types: (
     body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), color: var(--text), font-weight: 300, line-height: 1.4),
     h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20),
@@ -458,7 +469,7 @@ $sizes: (
                 </h2>
                 <a name="colors" class="mb-3 block"></a>
 
-                <h5>SCSS Variables</h5>
+                <h5 class="mt-2 note">SCSS Variable</h5>
                 <pre class="mt-1"><code class="language-scss">// Specify each color used in color-, bg-, border-, and in accents.
 // Apply each color with ({theme}: {color_value}, {theme}: {color_value}, ...),
 // Default theme is "light". If no theme color available the color will then fallback to the default theme "light".
@@ -518,12 +529,12 @@ $colors: (
                             <td>Set border color</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">link-{color}</code></td>
-                            <td>Set child link color</td>
+                            <td><code class="color-primary">links-{color}</code></td>
+                            <td>Set child links color</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">link-hover-{color}</code></td>
-                            <td>Set child link hover color</td>
+                            <td><code class="color-primary">links-hover-{color}</code></td>
+                            <td>Set child links hover color</td>
                         </tr>
                     </tbody>
                 </table>
@@ -542,7 +553,7 @@ $colors: (
                 </div>
 
                 <div class="show-code" data-title="Change Child Link and Link Hover Colors">
-                    <div class="link-grey link-hover-secondary grid g-1">
+                    <div class="links-grey links-hover-secondary grid g-1">
                         <a>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                         <a>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                         <a>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
@@ -705,7 +716,7 @@ $borders: (
                 
                 <h5 class="mt-2 note">Usage:</h5>
                 <div class="mb-1">
-                    <code class="color-primary"><span class="color-grey">{breakpoint}-</span>{property}{side}-{spacing}</code>
+                    <code class="color-primary"><span class="color-grey">{breakpoint}-</span>b{side}-{spacing}</code>
                 </div>
                 <pre><code class="language-html">&lt;div class="b-2 md-bt-3"&gt;&lt;/div&gt;</code></pre>
 
@@ -717,7 +728,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td width="150"><code class="color-primary">b{side}-{n}</code></td>
+                            <td width="260"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>b{side}-{n}</code></td>
                             <td>Border.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-3</code>. Can be modified in SCSS Variables.</div>
                             </td>
@@ -793,6 +804,10 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
+                            <td><a href="#borders">Borders</a></td>
+                            <td>Borders allow breakpoints. ex <code class="note">&lt;div class="b-0 md-b-2"&gt;No Border on Mobile&lt;/div&gt;</code></pre></td>
+                        </tr>
+                        <tr>
                             <td><a href="#gaps">Gaps</a></td>
                             <td>Gaps uses breakpoints to define initial margin in &lt;hr&gt; and initial padding in &lt;section&gt;</td>
                         </tr>
@@ -801,11 +816,15 @@ $borders: (
                             <td>Grid uses gaps in CSS Grid and CSS Flexbox grids</td>
                         </tr>
                         <tr>
-                            <td><a href="#utilities-spacing">Spacing</a></td>
+                            <td><a href="#sizing">Sizing</a></td>
+                            <td>Spacing allows breakpoints. ex <code class="note">&lt;div class="sm md-lg"&gt;Small on Mobile, Large on Medium&lt;/div&gt;</code></pre></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#spacing">Spacing</a></td>
                             <td>Spacing allows breakpoints. ex <code class="note">&lt;div class="p-0 md-p-2"&gt;No Padding on Mobile&lt;/div&gt;</code></pre></td>
                         </tr>
                         <tr>
-                            <td><a href="#utilities-layout">Layout Utility Classes</a></td>
+                            <td><a href="#layout">Layout Utility Classes</a></td>
                             <td>Layout Utility Classes allow breakpoints. ex <code class="note">&lt;div class="none md-block"&gt;Hide on Mobile&lt;/div&gt;</code></td>
                         </tr>
                     </tbody>
@@ -833,6 +852,22 @@ $borders: (
 )</code></pre>
 
                 <div class="alert secondary outline">* You need to make sure the gaps match the <a href="#breakpoints">breakpoints</a> otherwise you will receive a SCSS compile error.</div>
+
+                <table class="mb-2 mt-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th width="210"><h4>Classes</h4></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary"><span class="color-grey">{breakpoint}-</span>g-{n}</code></td>
+                            <td>Gap for columns within <code class="color-primary">grid</code> or <code class="color-primary">row</code>
+                                <p>See <a href="#spacing">Spacing</a> for available <code class="color-primary">{n}</code> values.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
             </section>
 
@@ -877,7 +912,7 @@ $borders: (
                         <tr>
                             <td><code class="color-primary"><span class="color-grey">{breakpoint}-</span>g-{n}</code></td>
                             <td>Gap for columns within <code class="color-primary">grid</code> or <code class="color-primary">row</code>
-                                <p>See <a href="#utilities-spacing">Spacing</a> for available <code class="color-primary">{n}</code> values.</p>
+                                <p>See <a href="#spacing">Spacing</a> for available <code class="color-primary">{n}</code> values.</p>
                             </td>
                         </tr>
                     </tbody>
@@ -906,7 +941,7 @@ $borders: (
                     </tbody>
                 </table>
     
-                <h3 id="grid-css-grid" class="mt-2 mb-2">CSS Grid</h3>
+                <h3 id="css-grid" class="mt-2 mb-2">CSS Grid</h3>
                 <div class="show-code" data-title="Auto Fit minimum 200px">
                     <div class="grid-200">
                         <div class="bg-faint round p-1">
@@ -944,7 +979,7 @@ $borders: (
                     </div>
                 </div>
     
-                <h3 id="grid-css-flex" class="mt-4 mb-2">CSS Flexbox</h3>
+                <h3 id="css-flexbox" class="mt-4 mb-2">CSS Flexbox</h3>
                 <div class="show-code" data-title="Equal Columns Single Row above mobile">
                     <div class="row">
                         <div class="bg-faint round p-1">
@@ -1105,7 +1140,7 @@ $borders: (
                     <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M10 21v-2H6.41l4.5-4.5-1.41-1.41-4.5 4.5V14H3v7h7m4.5-10.09 4.5-4.5V10h2V3h-7v2h3.59l-4.5 4.5 1.41 1.41z" /></svg></i>
                     Sizing
                 </h2>
-                <a name="sizes" class="mb-3 block"></a>
+                <a name="sizing" class="mb-3 block"></a>
                 <h5 class="mb-2">By Default SpryCss uses <code class="color-primary">em</code> to set font sizes, padding, heights, etc. So you can alter the sizes using the size classes.</h5>
                 <p class="mb-3">Sizing classes are applied to all child elements so you can assign it to the parent.</p>
 
@@ -1119,6 +1154,23 @@ $borders: (
     xs: 65%,
     xxs: 50%,
 );</code></pre>
+
+                <table class="mb-2 mt-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th width="220"><h4>Classes</h4></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary"><span class="color-grey">{breakpoint}-</span>{size}</code></td>
+                            <td>
+                                ex <pre><code class="language-html">&lt;div class="sm md-lg"&gt;Small on Mobile, Large on Medium&lt;/div&gt;</code></pre>
+                                <p>See above SCSS Variables for available <code class="color-primary">{size}</code> values.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
                 
                 <div class="show-code mt-3" data-title="Element Sizing">
                     <p class="xs">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
@@ -1151,7 +1203,7 @@ $borders: (
                     </i>
                     Spacing Utility Classes
                 </h2>
-                <a name="utilities-spacing" class="mb-2 block"></a>
+                <a name="spacing" class="mb-2 block"></a>
 
                 <h5 class="mt-2 note">SCSS Variable</h5>
                 <pre><code class="language-scss">$spacing: (
@@ -1172,30 +1224,30 @@ $borders: (
                 <table class="border-faint">
                     <thead>
                         <tr>
-                            <th colspan="2"><h4>Spacing Classes</h4></th>
+                            <th colspan="2"><h4>Property Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td width="150"><code class="color-primary">p{side}-{n}</code></td>
+                            <td width="280"><code class="color-grey">{breakpoint}-</code><code class="color-primary">p{side}-{n}</code></td>
                             <td>Padding.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                             </td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">m{side}-{n}</code></td>
+                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">m{side}-{n}</code></td>
                             <td>Margin.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                             </td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">m{side}-n{n}</code></td>
+                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">m{side}-n{n}</code></td>
                             <td>Negative Margin.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                             </td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">g-{n}</code></td>
+                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">g-{n}</code></td>
                             <td>Gap for <a href="#grid">Grid</a>.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                                 <div class="color-grey">* Side properties are not inluded for gap.</div>
@@ -1253,27 +1305,29 @@ $borders: (
                     Toggles
                 </h2>
                 <a name="toggles" class="mb-3 block"></a>
-                <h5 class="my-2">Toggles are used to open and close content and require Javascript (SpryJS).<br>Can be used for Dropdowns, Modals, Menus, Accordions, etc.</h5>
+                <h5 class="my-2">Toggles are used to open and close content and require Javascript (SpryJS).<br>Can be used for <a href="#accordions">Accordions</a>, <a href="#buttons">Buttons</a>, <a href="#lists">Lists</a>, <a href="#menus">Menus</a>, <a href="#modals">Modals</a>, <a href="#tabs">Tabs</a> and more.</h5>
 
                 <h5 class="mt-3">SpryJS <span class="badge xs ml-1 outline secondary">Required</span></h5>
                 <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0/dist/spry.min.js"&gt;&lt;/script&gt;</code></pre>
 
                 <h5 class="mt-3">Toggles can be a single element which toggle themselves or multiple elements consisting of Toggle Activators for a single Toggle Element</h5>
 
-<pre><code class="language-html">&lt;!-- Basic Toggle --&gt;
+<pre><code class="language-html">&lt;!-- Toggle Activator --&gt;
 &lt;button data-toggle="#toggle"&gt;
     Toggle Button
 &lt;/button&gt;
+
+&lt;!-- Toggle Element --&gt;
 &lt;p id="toggle"&gt;
     Toggle Content
 &lt;/p&gt;</code></pre>
-
+<br>
 <pre><code class="language-html">&lt;!-- Self Toggle --&gt;
 &lt;button data-toggle&gt;
     Toggle Me
 &lt;/button&gt;
 </code></pre>
-
+<br>
 <pre><code class="language-html">&lt;!-- Toggle Next Sibling --&gt;
 &lt;button data-toggle="next"&gt;
     Toggle Button
@@ -1281,7 +1335,7 @@ $borders: (
 &lt;p&gt;
     Toggle Content
 &lt;/p&gt;</code></pre>
-
+<br>
 <pre><code class="language-html">&lt;!-- Multiple Activators Toggle --&gt;
 &lt;button data-toggle="#toggle"&gt;
     Toggle Button 1
@@ -1292,6 +1346,9 @@ $borders: (
 &lt;/button&gt;
 &lt;p id="toggle"&gt;
     Toggle Content
+    &lt;button data-toggle-close&gt;
+        Close Toggle Button
+    &lt;/button&gt;
 &lt;/p&gt;
 ...
 &lt;button data-toggle="#toggle"&gt;
@@ -1350,6 +1407,10 @@ $borders: (
                         <tr>
                             <td><code class="color-primary">data-toggle-escapable</code></td>
                             <td>Allows the toggle to close when clicking outside the toggle element or by pressing the ESC key.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">data-toggle-dismissible</code></td>
+                            <td>Allows the toggle to close when clicking inside the toggle element on an actionable child element.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1419,7 +1480,7 @@ $borders: (
                     </div>
                 </div>
     
-                <div class="show-code mb-4" data-title="Activate on Hover" data-badge="Uses SpryJS">
+                <div class="show-code" data-title="Activate on Hover" data-badge="Uses SpryJS">
                     <label class="button hoverable" data-toggle="hover">
                         Hover Me!
                         <i class="icon ml-1 rotate-pressed xl">
@@ -1431,6 +1492,35 @@ $borders: (
                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                             invidun.
                         </p>
+                    </div>
+                </div>
+
+                <div id="menus" class="show-code" data-title="Escapable and Dismissible Menu">
+                    <button class="link icon" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
+                        <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
+                        <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                    </button>
+                    <nav class="absolute list navigatable bg-faint round shadow mw-200 p-1">
+                        <ul>
+                            <li class="p-1">Pick an Item<hr class="mt-1"></li>
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 2</a></li>
+                            <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </nav>
+                </div>
+               
+                <div class="show-code mb-4" data-title="Used for Modals" data-badge="Uses SpryJS" data-note="See &lt;a href='#modals'&gt;Modals&lt;/a&gt;">
+                    <button data-toggle="next">
+                        Open Modal
+                    </button>
+                    <div class="modal blur" data-toggle>
+                        <article class="mw-400">
+                            <p>Toggle Content Here</p>
+                            <button class="link" data-toggle-close>
+                                Close Toggle
+                            </button>
+                        </article>
                     </div>
                 </div>
     
@@ -1521,7 +1611,7 @@ $borders: (
                     </i>
                     Layout Utility Classes
                 </h2>
-                <a name="utilities-layout" class="mb-2 block"></a>
+                <a name="layout" class="mb-2 block"></a>
                 <p>* All Layout Utility Classes can be used with breakpoints 
                     ex <code class="color-primary">{breakpoint}-{layoutclass}</code></p>
                 <p>Example Hide on All</p>
@@ -1806,7 +1896,7 @@ $borders: (
                 <p class="pt-3 pl-2 note">** = 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100</p>
                 <p class="pt-0 pl-2 note">*** = 0, 100, 200, 300, 400, 500, 600, 700, 800, 900</p>
     
-                <h4 id="utilities-max-width" class="mt-4">Max Width Classes</h4>
+                <h4 id="max-width" class="mt-4">Max Width Classes</h4>
                 <p>This requires a breakpoint. ex <code class="color-primary">{breakpoint}-mw</code></p>    
             </section>
             <!------------------------------------
@@ -1821,7 +1911,7 @@ $borders: (
                 </h2>
                 <a name="accordions" class="mb-3 block"></a>
 
-                <h5 class="mb-3">Accordions use Toggles to add the collapsing functionality. View <a href="#toggles">Toggles</a> for more details.</h5>
+                <h5 class="mb-2">Accordions use Toggles to add the collapsing functionality. View <a href="#toggles">Toggles</a> for more details.</h5>
 
                 <pre><code class="language-html">&lt;!-- Basic Accordion Item --&gt;
 &lt;button class="w" data-toggle="next"&gt;
@@ -1841,7 +1931,7 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="260"><h4>Optional Classes</h4></th>
+                            <th width="260"><h4>Variation Classes</h4></th>
                             <th></th>
                         </tr>
                     </thead>
@@ -2039,7 +2129,8 @@ $borders: (
                 </h2>
                 <a name="alerts" class="mb-3 block"></a>
 
-                <pre><code class="language-html">&lt;div class="alert"&gt;Simple Alert Box&lt;/div&gt;</code></pre>
+                <pre><code class="language-html">&lt;!-- Basic Alert --&gt;
+&lt;div class="alert"&gt;Simple Alert Box&lt;/div&gt;</code></pre>
 
                 <table class="mb-3 border-faint">
                     <thead>
@@ -2053,6 +2144,17 @@ $borders: (
                             <td><code class="color-primary">alert</code></td>
                             <td>Assigns the element as Alert.</td>
                         </tr>
+                    </tbody>
+                </table>
+
+                <table class="mb-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th width="260"><h4>Variation Classes</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td><code class="color-primary">outline</code></td>
                             <td>Adds Outline variant</td>
@@ -2127,7 +2229,7 @@ $borders: (
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Closable Large Alert">
+                <div class="show-code" data-title="Closable Large Alert" data-badge="Uses Toggles" data-badge-link="#toggles">
                     <div class="alert secondary lg pr-3 flex closed open">
                         <svg class="icon lg mr-2" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
@@ -2137,7 +2239,7 @@ $borders: (
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Popup Alert Example">
+                <div class="show-code" data-title="Popup Alert Example" data-badge="Uses Toggles" data-badge-link="#toggles">
                     <button title="Open Popup" data-toggle="next">Show Alert Popup</button>
                     <div class="modal">
                         <div class="alert primary lg mw-400 flex">
@@ -2153,7 +2255,7 @@ $borders: (
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Popup Alert Top Right with No Backdrop and Autoclose">
+                <div class="show-code" data-title="Popup Alert Top Right with No Backdrop and Autoclose" data-badge="Uses Toggles" data-badge-link="#toggles">
                     <button title="Open Popup" data-toggle="next" data-toggle-action="open" data-toggle-timeout="2000">Show Alert Popup</button>
                     <div class="modal no-backdrop m-1">
                         <div class="alert flex primary lg absolute top right mw-400">
@@ -2181,6 +2283,52 @@ $borders: (
                     Badges
                 </h2>
                 <a name="badges" class="mb-3 block"></a>
+
+                <pre><code class="language-html">&lt;!-- Basic Badge --&gt;
+&lt;div class="badge"&gt;Simple Badge&lt;/div&gt;</code></pre>
+                    
+                <table class="mb-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th width="260"><h4>Classes</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary">badge</code></td>
+                            <td>Assigns the element as Badge.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="mb-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th width="260"><h4>Variation Classes</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary">outline</code></td>
+                            <td>Adds Outline variant</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">hazy</code></td>
+                            <td>Adds Hazy variant</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">snug</code></td>
+                            <td>Moves badge up left</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">{color}</code></td>
+                            <td>Assigns the Accent color to the Badge.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
                 <div class="show-code" data-title="Default">
                     <span class="badge">Default</span>
                     <span class="badge primary">Primary</span>
@@ -2246,6 +2394,105 @@ $borders: (
                     Buttons
                 </h2>
                 <a name="buttons" class="mb-3 block"></a>
+
+                <pre><code class="language-html">&lt;!-- Basic Button --&gt;
+&lt;button&gt;Simple Button&lt;/button&gt;</code></pre>
+
+<pre><code class="language-html">&lt;!-- Link as a Button --&gt;
+&lt;a href="#" class="button"&gt;Simple Button&lt;/a&gt;</code></pre>
+
+                <table class="mb-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th width="160"><h4>Tags</h4></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary">button</code></td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">type="submit"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">type="reset"</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+                    
+                <table class="mb-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th width="160"><h4>Classes</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary">button</code></td>
+                            <td>Assigns the element as Button.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="mb-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><h4>Variation Classes</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td width="160"><code class="color-primary">outline</code></td>
+                            <td>Adds Outline variant</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">hazy</code></td>
+                            <td>Adds Hazy variant</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">plain</code></td>
+                            <td>Adds Plain variant</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">link</code></td>
+                            <td>Adds Link variant</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">icon</code></td>
+                            <td>Assigns button as a single icon element</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">circle</code></td>
+                            <td>Rounds the button</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">{color}</code></td>
+                            <td>Assigns the Accent color to the Button.</td>
+                        </tr>
+                    </tbody>
+                </table>
+               
+                <table class="mb-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th width="200"><h4>Attributes</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary">aria-busy="false"</code></td>
+                            <td>Prepares button for Loading</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">aria-busy="true"</code></td>
+                            <td>Shows Loading</td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <div class="show-code" data-title="Default">
                     <div>Buttons</div>
                     <button>Default</button>
@@ -2285,6 +2532,17 @@ $borders: (
                     <button class="hazy contrast">Contrast</button>
                     <button class="hazy faint">Faint</button>
                 </div>
+
+                <div id="buttons-plain" class="show-code" data-title="Plain">
+                    <button class="plain">Default</button>
+                    <button class="plain grey">Grey</button>
+                    <button class="plain primary">Primary</button>
+                    <button class="plain secondary">Secondary</button>
+                    <button class="plain dark">Dark</button>
+                    <button class="plain light">Light</button>
+                    <button class="plain contrast">Contrast</button>
+                    <button class="plain faint">Faint</button>
+                </div>
     
                 <div id="buttons-link" class="show-code" data-title="Link">
                     <button class="link">Default</button>
@@ -2305,157 +2563,80 @@ $borders: (
                     <button class="xs">Extra Small</button>
                 </div>
     
-                <div id="buttons-custom" class="show-code" data-title="With Custom Icon Classes">
-                    <p>
-                        <button class="icon prev"></button>
-                        <button class="icon next"></button>
-                        <button class="icon down"></button>
-                        <button class="icon up"></button>
-                        <button class="icon search"></button>
-                        <button class="icon menu"></button>
-                        <button class="icon dots"></button>
-                        <button class="icon close"></button>
-                        <button class="icon question"></button>
-                        <button class="icon info"></button>
-                    </p>
-
+                <div id="buttons-icons" class="show-code" data-title="With Icons">
                     <p>
                         <button class="icon">
-                            <svg class="lg" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z" /></svg>
+                            <svg class="lg" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z"></path></svg>
                         </button>
                         <button class="icon">
-                            <svg class="lg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+                            <svg class="lg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg>
                         </button>
                         <button class="icon">
-                            <svg class="lg" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            <svg class="lg" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z"></path></svg>
                         </button>
                         <button class="icon">
-                            <svg class="lg" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
+                            <svg class="lg" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"></path></svg>
                         </button>
                         <button class="icon">
-                            <svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z" /></svg>
+                            <svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
                         </button>
                         <button class="icon">
-                            <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
+                            <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
                         </button>
                         <button class="icon">
-                            <svg class="lg" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
+                            <svg class="lg" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
                         </button>
                         <button class="icon">
-                            <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                            <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
                         </button>
                         <button class="icon">
-                            <svg viewBox="0 0 24 24"><path d="M10 19h3v3h-3v-3m2-17c5.35.22 7.68 5.62 4.5 9.67-.83 1-2.17 1.66-2.83 2.5C13 15 13 16 13 17h-3c0-1.67 0-3.08.67-4.08.66-1 2-1.59 2.83-2.25C15.92 8.43 15.32 5.26 12 5a3 3 0 0 0-3 3H6a6 6 0 0 1 6-6z" /></svg>
+                            <svg viewBox="0 0 24 24"><path d="M10 19h3v3h-3v-3m2-17c5.35.22 7.68 5.62 4.5 9.67-.83 1-2.17 1.66-2.83 2.5C13 15 13 16 13 17h-3c0-1.67 0-3.08.67-4.08.66-1 2-1.59 2.83-2.25C15.92 8.43 15.32 5.26 12 5a3 3 0 0 0-3 3H6a6 6 0 0 1 6-6z"></path></svg>
                         </button>
                         <button class="icon">
-                            <svg class="lg" viewBox="0 0 24 24"><path d="M11 4h2v11h-2V4zm2 14v2h-2v-2h2z" /></svg>
+                            <svg class="lg" viewBox="0 0 24 24"><path d="M11 4h2v11h-2V4zm2 14v2h-2v-2h2z"></path></svg>
                         </button>
                     </p>
 
                     <p>
                         <button>
-                            Next
-                            <svg class="ml-1 lg" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" /></svg>
+                            After
+                            <svg class="ml-2" viewBox="0 0 24 24">
+                                <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+                            </svg>
                         </button>
-                        <button>
-                            <svg class="mr-1 lg" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z" /></svg>
-                            Prev
-                        </button>
-                        <button class="primary circle icon">
-                            <svg class="lg" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z" /></svg>
-                        </button>
-                        <button class="primary circle hazy icon">
-                            <svg class="lg" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" /></svg>
-                        </button>
-                        <button class="secondary outline circle icon down"></button>
-                        <button class="contrast icon link search"></button>
-                        <button class="primary icon circle dots xs hazy"></button>
-                        <button class="icon circle outline question xs"></button>
-                    </p>
 
-                    <p>
                         <button>
-                            Next
-                            <i class="icon next ml-2"></i>
+                            <svg class="mr-2"  viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
+                            Before
                         </button>
-                        <button>
-                            <i class="icon prev mr-2"></i>
-                            Prev
+
+                        <button class="icon">
+                            <svg viewBox="0 0 24 24"><path d="m16.56 5.44-1.45 1.45A5.969 5.969 0 0 1 18 12a6 6 0 0 1-6 6 6 6 0 0 1-6-6c0-2.17 1.16-4.06 2.88-5.12L7.44 5.44A7.961 7.961 0 0 0 4 12a8 8 0 0 0 8 8 8 8 0 0 0 8-8c0-2.72-1.36-5.12-3.44-6.56M13 3h-2v10h2" /></svg>
                         </button>
-                        <button class="primary circle icon prev"></button>
-                        <button class="primary circle hazy icon next"></button>
-                        <button class="secondary outline circle icon down"></button>
-                        <button class="contrast icon link search"></button>
-                        <button class="primary icon circle dots xs hazy"></button>
-                        <button class="icon circle outline question xs"></button>
+
+                        <button class="icon primary outline circle">
+                            <svg viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
+                        </button>
+
+                        <button class="icon secondary outline circle">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12S17.5 2 12 2M7.7 15.5L7 14.2L11 11.9V7H12.5V12.8L7.7 15.5Z" />
+                            </svg>
+                        </button>
+
+                        <button class="icon primary link circle">
+                            <svg viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
+                        </button>
+
+                        <button class="icon secondary link circle">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12S17.5 2 12 2M7.7 15.5L7 14.2L11 11.9V7H12.5V12.8L7.7 15.5Z" />
+                            </svg>
+                        </button>
                     </p>
                 </div>
 
-                <div id="buttons-custom" class="show-code" data-title="Custom Icon Classes With Toggles">
-                    <p>
-                        <button data-toggle>
-                            With Text Left
-                            <i class="icon up ml-2"></i>
-                        </button>
-
-                        <button data-toggle>
-                            <i class="icon up mr-2"></i>
-                            With Text Right
-                        </button>
-
-                        <button data-toggle class="icon down"></button>
-                        <button data-toggle class="icon up"></button>
-                        <button data-toggle class="icon prev"></button>
-                        <button data-toggle class="icon next"></button>
-                        <button data-toggle class="icon menu"></button>
-                        <button data-toggle class="icon dots"></button>
-                        <button data-toggle class="icon search"></button>
-                    </p>
-                </div>
-    
-                <div id="buttons-icons" class="show-code" data-title="Using SVG's">
-                    <button>
-                        After
-                        <svg class="ml-2" viewBox="0 0 24 24">
-                            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
-                        </svg>
-                    </button>
-
-                    <button>
-                        <svg class="mr-2"  viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
-                        Before
-                    </button>
-
-                    <button class="icon">
-                        <svg viewBox="0 0 24 24"><path d="m16.56 5.44-1.45 1.45A5.969 5.969 0 0 1 18 12a6 6 0 0 1-6 6 6 6 0 0 1-6-6c0-2.17 1.16-4.06 2.88-5.12L7.44 5.44A7.961 7.961 0 0 0 4 12a8 8 0 0 0 8 8 8 8 0 0 0 8-8c0-2.72-1.36-5.12-3.44-6.56M13 3h-2v10h2" /></svg>
-                    </button>
-
-                    <button class="icon primary outline circle">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
-                        </svg>
-                    </button>
-
-                    <button class="icon secondary outline circle">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12S17.5 2 12 2M7.7 15.5L7 14.2L11 11.9V7H12.5V12.8L7.7 15.5Z" />
-                        </svg>
-                    </button>
-
-                    <button class="icon primary link circle">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z" />
-                        </svg>
-                    </button>
-
-                    <button class="icon secondary link circle">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12S17.5 2 12 2M7.7 15.5L7 14.2L11 11.9V7H12.5V12.8L7.7 15.5Z" />
-                        </svg>
-                    </button>
-                </div>
-
-                <div id="buttons-icons" class="show-code" data-title="Toggle SVG Icons">
+                <div id="buttons-icons" class="show-code" data-title="Toggle Icons">
                     <button class="icon" data-toggle>
                         <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                         <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
@@ -2509,6 +2690,59 @@ $borders: (
                     Cards
                 </h2>
                 <a name="cards" class="mb-3 block"></a>
+
+<pre><code class="language-html">&lt;!-- Basic Card --&gt;
+&lt;article&gt;Simple Card&lt;/article&gt;</code></pre>
+
+<pre><code class="language-html">&lt;!-- Card Variant --&gt;
+&lt;article class="outline shadow"&gt;
+    &lt;header&gt;
+        &lt;h4&gt;Lorem ipsum dolor&lt;/h4&gt;
+    &lt;/header&gt;
+    &lt;p&gt;Lorem ipsum&lt;/p&gt;
+    &lt;footer&gt;
+        &lt;a href="#" class="button primary sm"&gt;Learn More&lt;/a&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+
+                <table class="mb-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th width="260"><h4>Tag</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary">article</code></td>
+                            <td>Assigns the element as Card.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="mb-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th width="260"><h4>Variation Classes</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary">outline</code></td>
+                            <td>Adds Outline variant</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">shadow</code></td>
+                            <td>Adds Shadow</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">{color}</code></td>
+                            <td>Assigns the Accent color to the Card.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <div class="show-code" data-title="Default Cards">
                     <div class="row">
                         <article class="mw-400">
@@ -2584,7 +2818,7 @@ $borders: (
 
                 <h4 id="forms-resize" class="span-12 mb-2 mt-3">Resize Fields using <code class="color-primary sm">form.sm</code> or <code class="color-primary sm">form.lg</code></h4>
                 <div class="show-code" data-title="Simple form with some Required Fields">
-                    <form>
+                    <form id="form1">
                         <div class="row py-3 g-3">
                             <div>
                                 <label><h5>Text Field *</h5>
@@ -2603,6 +2837,44 @@ $borders: (
                                         <option>One</option>
                                         <option>Two</option>
                                     </select>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row py-3 g-3">
+                            <div>
+                                <label><h5>Custom Dropdown</h5>
+                                    <input id="dropdown" type="text" class="is-select" value="" data-toggle="next" data-toggle-escapable data-toggle-dismissible readonly>
+                                    <div class="collapse closed">
+                                        <ul class="list navigatable bg-faint round shadow w">
+                                            <li><button type="button" class="link contrast" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 1</button></li>
+                                            <li><button type="button" class="link contrast" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 2</button></li>
+                                            <li><button type="button" class="link contrast" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 3</button></li>
+                                        </ul>
+                                    </div>
+                                </label>
+                            </div>
+                            <div>
+                                <label><h5>Custom Radio Dropdown</h5>
+                                    <input id="dropdown2" type="text" class="is-select" data-toggle="next" data-toggle-escapable="" value="" readonly="">
+                                    <div class="collapse closed">
+                                        <ul class="list navigatable bg-faint round shadow w">
+                                            <li><label class="button link contrast"><input class="hide" type="radio" name="d2" value="hidden_value_1" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 1</label></li>
+                                            <li><label class="button link contrast"><input class="hide" type="radio" name="d2" value="hidden_value_2" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 2</label></li>
+                                            <li><label class="button link contrast"><input class="hide" type="radio" name="d2" value="hidden_value_3" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 3</label></li>
+                                        </ul>
+                                    </div>
+                                </label>
+                            </div>
+                            <div>
+                                <label><h5>Multi Checkbox Dropdown</h5>
+                                    <input id="dropdown3" type="text" class="is-select" data-toggle="next" data-toggle-escapable="" value="" readonly="">
+                                    <div class="collapse closed">
+                                        <ul class="list navigatable bg-faint round shadow w">
+                                            <li><label class="button link contrast"><input class="hide" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
+                                            <li><label class="button link contrast"><input class="hide" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
+                                            <li><label class="button link contrast"><input class="hide" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
+                                        </ul>
+                                    </div>
                                 </label>
                             </div>
                         </div>
@@ -2650,8 +2922,8 @@ $borders: (
                                     <textarea></textarea>
                                 </label>
                             </div>
-                            <div class="mt-3">
-                                <button class="btn mx-auto" type="submit">Submit</button>
+                            <div class="mt-3 text-center">
+                                <button type="submit" class="w mw-200 text-center justify-content-center">Submit</button>
                             </div>
                         </div>
                     </form>
@@ -3279,29 +3551,6 @@ $borders: (
                         <tr>
                             <td><code class="color-primary">&lt;li&gt;</code></td>
                             <td>Creates the Navigation List Item</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <table class="mb-3 border-faint">
-                    <thead>
-                        <tr>
-                            <th width="190"><h5>List Tags</h5></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code class="color-primary">&lt;menu&gt;</code></td>
-                            <td>Creates a List Container</td>
-                        </tr>
-                        <tr>
-                            <td><code class="color-primary">&lt;li&gt;</code></td>
-                            <td>Creates the List Item</td>
-                        </tr>
-                        <tr>
-                            <td><code class="color-primary">&lt;ul&gt;|&lt;menu&gt;</code></td>
-                            <td>Creates a List Sub Container.</td>
                         </tr>
                     </tbody>
                 </table>
