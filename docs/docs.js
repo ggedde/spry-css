@@ -72,6 +72,8 @@ function cleanContent(html) {
         html = html.replaceAll('data-toggle=""', 'data-toggle');
         html = html.replaceAll('data-toggle-close=""', 'data-toggle-close');
         html = html.replaceAll('data-theme-dark=""', 'data-theme-dark');
+        html = html.replaceAll('data-toggle-escapable=""', 'data-toggle-escapable');
+        html = html.replaceAll('data-toggle-dismissible=""', 'data-toggle-dismissible');
     });
 
     return html;

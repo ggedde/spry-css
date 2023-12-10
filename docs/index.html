@@ -892,21 +892,21 @@ $borders: (
                     <tbody>
                         <tr>
                             <td><code class="color-primary">grid</code></td>
-                            <td>CSS Grid of columns auto width. Uses variable <a href="#gaps">Gaps</a> for spacing</td>
+                            <td>CSS Grid of columns auto width.<br>Uses variable <a href="#gaps">Gaps</a> for spacing</td>
                         </tr>
                         <tr>
                             <td width="300"><code class="color-primary">grid-{n}00</code></td>
-                            <td>CSS Grid of columns using minmax() for column widths in px's. <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code></td>
+                            <td>CSS Grid of columns using minmax() for column widths in px's.<br><code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code></td>
                         </tr>
                         <tr>
                             <td><code class="color-primary">row</code></td>
-                            <td>CSS Flexbox Row of columns auto width. Uses variable <a href="#gaps">Gaps</a> for spacing</td>
+                            <td>CSS Flexbox Row of columns auto width.<br>Uses variable <a href="#gaps">Gaps</a> for spacing</td>
                         </tr>
                         <tr>
                             <td><code class="color-primary"><span class="color-grey">{breakpoint}-</span>columns-{n}</code></td>
                             <td>
                                 <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, <code class="color-primary">fixed</code>
-                                <p class="color-grey">* fixed and auto only apply to <code class="color-primary">row</code></p>
+                                <p class="color-grey mt-1">* <code class="color-primary">fixed</code> and <code class="color-primary">auto</code> only apply to <code class="color-primary">row</code> <span class="color-grey">(flexbox)</span></p>
                             </td>
                         </tr>
                         <tr>
@@ -929,8 +929,8 @@ $borders: (
                             <td><code class="color-primary"><span class="color-grey">{breakpoint}-</span>span-{n}</code></td>
                             <td>Span the column based on a 12 column grid.<br>
                                 <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, <code class="color-primary">fixed</code>
-                                <p class="color-grey mt-2">* fixed and auto only apply to <code class="color-primary">row</code></p>
-                                <p class="color-grey mt-1">* Does not apply when flex container has <code class="color-primary">columns-{n}</code></p>
+                                <p class="color-grey mt-2">* Requires container to have <code class="color-primary">columns-{n}</code></p>
+                                <p class="color-grey mt-1">* fixed and auto only apply to <code class="color-primary">row</code> <span class="color-grey">(flexbox)</span></p>
                                 <p class="sm color-grey">* Custom gaps will not always work correctly with <code
                                     class="color-primary">row</code> when setting specific column sizes. It works best if you
                                 specify all breakpoint column sizes or use it with <code class="color-primary">grid</code> instead
@@ -963,7 +963,13 @@ $borders: (
                 </div>
     
                 <div class="show-code" data-title="Specify number of columns">
-                    <div class="grid md-columns-2 lg-columns-3">
+                    <div class="grid columns-2 md-columns-4">
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
                         <div class="bg-faint round p-1">
                             col
                         </div>
@@ -978,10 +984,79 @@ $borders: (
                         </div>
                     </div>
                 </div>
+
+                <div class="show-code" data-title="Spanning Columns">
+                    <div class="grid columns-2 md-columns-3">
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1 span-2 md-span-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1 span-2 md-span-3">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1 span-2 md-span-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-code" data-title="Nested Rows with different Gap Sizes">
+                    <div class="grid columns-2 md-columns-4">
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1 span-2">
+                            col
+                        </div>
+                        <div class="span-2 grid g-1 columns-2 md-columns-4">
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1 span-2">
+                            col
+                        </div>
+                    </div>
+                </div>
     
                 <h3 id="css-flexbox" class="mt-4 mb-2">CSS Flexbox</h3>
                 <div class="show-code" data-title="Equal Columns Single Row above mobile">
-                    <div class="row">
+                    <div class="row columns-1 md-columns-fixed">
                         <div class="bg-faint round p-1">
                             fixed
                         </div>
@@ -993,6 +1068,26 @@ $borders: (
                         </div>
                         <div class="bg-faint round p-1">
                             fixed
+                        </div>
+                    </div>
+                </div>
+
+                <div id="grid-columns" class="show-code" data-title="Specify number of columns centered">
+                    <div class="row columns-2 md-columns-3 justify-content-center">
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
                         </div>
                     </div>
                 </div>
@@ -1003,10 +1098,10 @@ $borders: (
                             fixed
                         </div>
                         <div class="md-span-auto bg-faint round p-1">
-                            auto fit content
+                            Auto Fit content
                         </div>
-                        <div class="bg-faint round p-1">
-                            fixed
+                        <div class="md-span-fill bg-faint round p-1">
+                            Auto Fill content
                         </div>
                         <div class="bg-faint round p-1">
                             fixed
@@ -1015,49 +1110,32 @@ $borders: (
                 </div>
     
                 <div id="grid-sidebars" class="show-code" data-title="Set Sidebar width with Auto Content Column">
-                    <div class="row">
-                        <div class="bg-faint round p-1 md-mw-300">
-                            md-mw-300
+                    <div class="row columns-1 md-columns-fill">
+                        <div class="bg-faint round p-1 md-w-200">
+                            md-w-200
                         </div>
                         <div class="bg-faint round p-1">
-                            auto
+                            fill
                         </div>
                     </div>
                 </div>
     
                 <div id="grid-ordering" class="show-code" data-title="Custom Ordering with Space between">
-                    <div class="row justify-content-between">
-                        <div class="md-span-2 md-order-1 bg-faint round p-1">
+                    <div class="row columns-auto justify-content-between">
+                        <div class="md-order-1 bg-faint round p-1">
                             col C
                         </div>
-                        <div class="md-span-2 bg-faint round p-1">
+                        <div class="bg-faint round p-1">
                             col B
                         </div>
-                        <div class="md-span-2 md-order-first bg-faint round p-1">
+                        <div class="md-order-first bg-faint round p-1">
                             col A
                         </div>
                     </div>
                 </div>                
-    
-                <div id="grid-columns" class="show-code" data-title="Specify number of columns centered">
-                    <div class="row md-columns-2 lg-columns-3 justify-content-center">
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                    </div>
-                </div>
 
                 <div id="grid-span" class="show-code" data-title="Columns multi row with column spanning">
-                    <div class="row">
+                    <div class="row columns-12">
                         <div class="span-6 bg-faint round p-1">
                             .span-6
                         </div>
@@ -1072,11 +1150,14 @@ $borders: (
                         </div>
                         <div class="span-3 bg-faint round p-1">
                             .span-3
+                        </div>
+                        <div class="span-12 bg-faint round p-1">
+                            .span-12
                         </div>
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Row spanning with nested rows and auto height">
+                <div class="show-code" data-title="Nested rows and auto height">
                     <div class="row">
                         <div class="md-span-4 bg-faint round p-1">
                             .md-span-4
@@ -1103,18 +1184,18 @@ $borders: (
                     </div>
                 </div>
     
-                <div id="grid-gap" class="show-code" data-title="Responsive with different gap sizing">
-                    <div class="row g-1 md-g-4">
+                <div id="grid-gap" class="show-code" data-title="Nested rows with different gap sizing" data-note="* With flexbox, nested rows need .span-fixed or need to be nested in an a column container.">
+                    <div class="row columns-12 g-1 md-g-4">
                         <div class="span-6 bg-faint round p-1">
                             .span-6
                         </div>
                         <div class="span-6 bg-faint round p-1">
                             .span-6
                         </div>
-                        <div class="span-6 md-span-3 lg-span-3 bg-faint round p-1">
-                            .span-6 .md-span-3 .lg-span-3
+                        <div class="span-6 md-span-3 bg-faint round p-1">
+                            .span-6 .md-span-3
                         </div>
-                        <div class="span-6 row md-columns-fill">
+                        <div class="span-fixed row g-2 md-columns-fill">
                             <div class="bg-faint round p-1">
                                 auto
                             </div>
@@ -1127,6 +1208,13 @@ $borders: (
                         </div>
                         <div class="md-span-3 bg-faint round p-1">
                             .md-span-3
+                        </div>
+                        <div class="span-12">
+                            <div class="row columns-3 g-1">
+                                <div class="bg-faint round p-1">auto</div>
+                                <div class="bg-faint round p-1">auto</div>
+                                <div class="bg-faint round p-1">auto</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1497,8 +1585,8 @@ $borders: (
 
                 <div id="menus" class="show-code" data-title="Escapable and Dismissible Menu">
                     <button class="link icon" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
-                        <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
-                        <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                        <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
+                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                     </button>
                     <nav class="absolute list navigatable bg-faint round shadow mw-200 p-1">
                         <ul>
@@ -2342,6 +2430,37 @@ $borders: (
                     <span class="badge primary">12,356</span>
                     <span class="badge secondary">New</span>
                 </div>
+
+                <div class="show-code" data-title="Outline">
+                    <span class="badge outline">Default</span>
+                    <span class="badge outline grey">Grey</span>
+                    <span class="badge outline primary">Primary</span>
+                    <span class="badge outline secondary">Secondary</span>
+                    <span class="badge outline dark">Dark</span>
+                    <span class="badge outline light">Light</span>
+                    <span class="badge outline contrast">Contrast</span>
+                    <span class="badge outline faint">Faint</span>
+                </div>
+
+                <div class="show-code" data-title="Hazy">
+                    <span class="badge hazy">Default</span>
+                    <span class="badge hazy grey">Grey</span>
+                    <span class="badge hazy primary">Primary</span>
+                    <span class="badge hazy secondary">Secondary</span>
+                    <span class="badge hazy dark">Dark</span>
+                    <span class="badge hazy light">Light</span>
+                    <span class="badge hazy contrast">Contrast</span>
+                    <span class="badge hazy faint">Faint</span>
+                </div>
+                
+                <div class="show-code" data-title="Sizing">
+                    <span class="badge xl">Extra Large</span>
+                    <span class="badge lg">Large</span>
+                    <span class="badge md">Default</span>
+                    <span class="badge sm">Small</span>
+                    <span class="badge xs">Extra Small</span>
+                </div>
+
                 <div class="show-code" data-title="Small and Snug">
                     <button class="icon circle hazy contrast">
                         <svg class="mr-2"  viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
@@ -2353,34 +2472,16 @@ $borders: (
                         <svg class="mr-2"  viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
                     </button>
                     <span class="badge snug primary sm">New</span>
+                    <br>
+                    <br>
+                    <button class="icon circle hazy contrast">
+                        <svg class="mr-2"  viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
+                    </button>
+                    <span class="badge snug sm icon">
+                        <svg viewBox="0 0 24 24"><path d="M11 4h2v11h-2V4zm2 14v2h-2v-2h2z" /></svg>
+                    </span>
                 </div>
-                <div class="show-code" data-title="Outline">
-                    <span class="badge outline">Default</span>
-                    <span class="badge outline grey">Grey</span>
-                    <span class="badge outline primary">Primary</span>
-                    <span class="badge outline secondary">Secondary</span>
-                    <span class="badge outline dark">Dark</span>
-                    <span class="badge outline light">Light</span>
-                    <span class="badge outline contrast">Contrast</span>
-                    <span class="badge outline faint">Faint</span>
-                </div>
-                <div class="show-code" data-title="Hazy">
-                    <span class="badge hazy">Default</span>
-                    <span class="badge hazy grey">Grey</span>
-                    <span class="badge hazy primary">Primary</span>
-                    <span class="badge hazy secondary">Secondary</span>
-                    <span class="badge hazy dark">Dark</span>
-                    <span class="badge hazy light">Light</span>
-                    <span class="badge hazy contrast">Contrast</span>
-                    <span class="badge hazy faint">Faint</span>
-                </div>
-                <div class="show-code" data-title="Sizing">
-                    <span class="badge xl">Extra Large</span>
-                    <span class="badge lg">Large</span>
-                    <span class="badge md">Default</span>
-                    <span class="badge sm">Small</span>
-                    <span class="badge xs">Extra Small</span>
-                </div>
+
             </section>
 
             <!------------------------------------
@@ -2845,34 +2946,34 @@ $borders: (
                                 <label><h5>Custom Dropdown</h5>
                                     <input id="dropdown" type="text" class="is-select" value="" data-toggle="next" data-toggle-escapable data-toggle-dismissible readonly>
                                     <div class="collapse closed">
-                                        <ul class="list navigatable bg-faint round shadow w">
-                                            <li><button type="button" class="link contrast" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 1</button></li>
-                                            <li><button type="button" class="link contrast" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 2</button></li>
-                                            <li><button type="button" class="link contrast" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 3</button></li>
+                                        <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
+                                            <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 1</button></li>
+                                            <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 2</button></li>
+                                            <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 3</button></li>
                                         </ul>
                                     </div>
                                 </label>
                             </div>
                             <div>
                                 <label><h5>Custom Radio Dropdown</h5>
-                                    <input id="dropdown2" type="text" class="is-select" data-toggle="next" data-toggle-escapable="" value="" readonly="">
+                                    <input id="dropdown2" type="text" class="is-select" data-toggle="next" data-toggle-escapable data-toggle-dismissible value="" readonly="">
                                     <div class="collapse closed">
-                                        <ul class="list navigatable bg-faint round shadow w">
-                                            <li><label class="button link contrast"><input class="hide" type="radio" name="d2" value="hidden_value_1" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 1</label></li>
-                                            <li><label class="button link contrast"><input class="hide" type="radio" name="d2" value="hidden_value_2" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 2</label></li>
-                                            <li><label class="button link contrast"><input class="hide" type="radio" name="d2" value="hidden_value_3" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 3</label></li>
+                                        <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
+                                            <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_1" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 1</label></li>
+                                            <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_2" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 2</label></li>
+                                            <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_3" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 3</label></li>
                                         </ul>
                                     </div>
                                 </label>
                             </div>
                             <div>
                                 <label><h5>Multi Checkbox Dropdown</h5>
-                                    <input id="dropdown3" type="text" class="is-select" data-toggle="next" data-toggle-escapable="" value="" readonly="">
+                                    <input id="dropdown3" type="text" class="is-select" data-toggle="next" data-toggle-escapable value="" readonly="">
                                     <div class="collapse closed">
-                                        <ul class="list navigatable bg-faint round shadow w">
-                                            <li><label class="button link contrast"><input class="hide" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
-                                            <li><label class="button link contrast"><input class="hide" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
-                                            <li><label class="button link contrast"><input class="hide" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
+                                        <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
+                                            <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
+                                            <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
+                                            <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
                                         </ul>
                                     </div>
                                 </label>
@@ -2957,6 +3058,44 @@ $borders: (
                         </div>
                         <div class="row py-3 g-3">
                             <div>
+                                <label><h5>Custom Dropdown</h5>
+                                    <input id="dropdow4" type="text" class="is-select" value="" data-toggle="next" data-toggle-escapable data-toggle-dismissible readonly>
+                                    <div class="collapse closed">
+                                        <ul class="list navigatable bg-primary round-bottom overflow-hidden shadow w">
+                                            <li><button type="button" class="capitalize sharp" onclick="document.getElementById('dropdow4').value = this.innerHTML;">Option 1</button></li>
+                                            <li><button type="button" class="capitalize sharp" onclick="document.getElementById('dropdow4').value = this.innerHTML;">Option 2</button></li>
+                                            <li><button type="button" class="capitalize sharp" onclick="document.getElementById('dropdow4').value = this.innerHTML;">Option 3</button></li>
+                                        </ul>
+                                    </div>
+                                </label>
+                            </div>
+                            <div>
+                                <label><h5>Custom Radio Dropdown</h5>
+                                    <input id="dropdown5" type="text" class="is-select" data-toggle="next" data-toggle-escapable data-toggle-dismissible value="" readonly="">
+                                    <div class="collapse closed">
+                                        <ul class="list navigatable bg-primary round-bottom overflow-hidden shadow w">
+                                            <li><label class="button capitalize sharp"><input class="border-light light" type="radio" name="d2" value="hidden_value_1" onclick="document.getElementById('dropdown5').value = this.parentElement.innerText;">Option 1</label></li>
+                                            <li><label class="button capitalize sharp"><input class="border-light light" type="radio" name="d2" value="hidden_value_2" onclick="document.getElementById('dropdown5').value = this.parentElement.innerText;">Option 2</label></li>
+                                            <li><label class="button capitalize sharp"><input class="border-light light" type="radio" name="d2" value="hidden_value_3" onclick="document.getElementById('dropdown5').value = this.parentElement.innerText;">Option 3</label></li>
+                                        </ul>
+                                    </div>
+                                </label>
+                            </div>
+                            <div>
+                                <label><h5>Multi Checkbox Dropdown</h5>
+                                    <input id="dropdown6" type="text" class="is-select" data-toggle="next" data-toggle-escapable value="" readonly="">
+                                    <div class="collapse closed">
+                                        <ul class="list navigatable bg-primary round-bottom overflow-hidden shadow w">
+                                            <li><label class="button capitalize sharp"><input class="border-light light" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown6').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
+                                            <li><label class="button capitalize sharp"><input class="border-light light" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown6').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
+                                            <li><label class="button capitalize sharp"><input class="border-light light" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown6').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
+                                        </ul>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row py-3 g-3">
+                            <div>
                                 <label><h5>Field with Prefix</h5>
                                     <div class="row g-0">
                                         <span class="ui round-left span-auto br-0">Prefix</span>
@@ -3000,8 +3139,8 @@ $borders: (
                                     <textarea></textarea>
                                 </label>
                             </div>
-                            <div class="mt-3">
-                                <button class="btn mx-auto" type="submit">Submit</button>
+                            <div class="mt-3 text-center">
+                                <button type="submit">Submit</button>
                             </div>
                         </div>
                     </form>
@@ -4304,7 +4443,7 @@ $borders: (
                     <div class="slider px-4" data-play="0" data-stop="action" data-loop>
                         <button class="slider-prev link icon prev circle"></button>
                         <button class="slider-next link icon next circle"></button>
-                        <div class="slider-slides row md-columns-2 lg-columns-3 md-g-2">
+                        <div class="slider-slides row md-columns-2 md-g-2">
                             <div>
                                 <a href="https://google.com"><h5>Image 1</h5>
                                 <img src="/placeholder-1.jpg" loading="lazy"></a>

@@ -38,6 +38,7 @@ General Utility Classes
 .color-inherit { color: inherit }
 .shy { opacity: 0.6; }
 .shy:is(:hover,:focus) { opacity: 1 }
+.snug { translate: -1em -.7em }
 .hover-scale {transition: scale .3s var(--ease)}
 .hover-scale:hover {scale: 1.05}
 

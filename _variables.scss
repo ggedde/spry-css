@@ -68,7 +68,6 @@ $sizes: (
 :root {
 
     --gap: #{map-get($gaps, 'default')};
-    --col: 1;
 
     @each $breakpoint, $breakpoint_width in $breakpoints {
         @media screen and (min-width: $breakpoint_width) {
