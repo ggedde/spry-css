@@ -6,8 +6,9 @@
 .column {
 	display       : flex;
 	flex-direction: column;
-	--gap         : #{map-get($gaps, 'default')};
-	gap           : var(--gap);
+	--gapx        : #{map-get($gaps, 'default')};
+	--gapy        : #{map-get($gaps, 'default')};
+	gap           : var(--gapy) var(--gapx);
 }
 
 .row {
@@ -15,46 +16,52 @@
 	flex-wrap     : wrap;
 	flex-direction: row;
 	grid-auto-flow: column;
-	--gap         : #{map-get($gaps, 'default')};
+	--gapx        : #{map-get($gaps, 'default')};
+	--gapy        : #{map-get($gaps, 'default')};
 	--span        : 1;
 	--cols        : 1;
-	gap           : var(--gap);
+	gap           : var(--gapy) var(--gapx);
 
 	>* {
-		flex: 1;
+		flex  : 1;
+		--span: 1;
 	}
 }
 
 .grid,
 [class*=grid-] {
-	display: grid;
-	--gap  : #{map-get($gaps, 'default')};
-	--span : 1;
-	--cols : 1;
-	gap    : var(--gap);
+	display       : grid;
+	--gapx        : #{map-get($gaps, 'default')};
+	--gapy        : #{map-get($gaps, 'default')};
+	--span        : 1;
+	--cols        : 1;
+	gap           : var(--gapy) var(--gapx);
 	grid-auto-flow: column;
 }
 
 [class*="grid-"] {
 	grid-template-columns: repeat(auto-fit, minmax(calc(var(--span) * 100px), 1fr));
-	grid-auto-flow: row;
+	grid-auto-flow       : row;
 }
 
-.grid[class^="columns-"],
-.grid[class*=" columns-"] {
+.grid[class*="columns-"] {
 	grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
-	grid-auto-flow: row;
+	grid-auto-flow       : row;
 }
 
 [class^="span-"],
 [class*=" span-"],
-[class^="columns-"]>*,
-[class*=" columns-"]>* {
-	flex: 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--gap))/(var(--cols)/var(--span))));
+[class*="columns-"]>* {
+	flex: 0 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--gapx))/(var(--cols)/var(--span))));
 }
 
 [class*="span-"] {
 	grid-column: span var(--span);
+}
+
+[class].span {
+	grid-column: 1 / -1;
+	flex       : 0 0 100%;
 }
 
 .columns-auto>*,
@@ -90,18 +97,7 @@
 @each $breakpoint,
 $breakpoint_width in $breakpoints {
 
-	.#{$breakpoint}-mw {
-		max-width: $breakpoint_width;
-	}
-
 	@media screen and (min-width: $breakpoint_width) {
-
-		.row,
-		.column,
-		.grid,
-		[class*=grid-] {
-			--gap: #{map-get($gaps, $breakpoint)};
-		}
 
 		@for $i from 1 through 12 {
 
@@ -114,29 +110,11 @@ $breakpoint_width in $breakpoints {
 			}
 		}
 
-		[class*="#{$breakpoint}-grid-"] {
-			grid-template-columns: repeat(auto-fit, minmax(calc(var(--span) * 100px), 1fr));
-			grid-auto-flow: row;
-		}
-		
-		.grid[class*="#{$breakpoint}-columns-"] {
-			grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
-			grid-auto-flow: row;
-		}
-		
-		[class*="#{$breakpoint}-span-"],
-		[class*="#{$breakpoint}-columns-"]>* {
-			flex: 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--gap))/(var(--cols)/var(--span))));
-		}
-		
-		[class*="#{$breakpoint}-span-"] {
-			grid-column: span var(--span);
-		}
-
 		.#{$breakpoint}-column {
 			display       : flex;
 			flex-direction: column;
-			--gap         : #{map-get($gaps, $breakpoint)};
+			--gapx        : #{map-get($gaps, 'default')};
+			--gapy        : #{map-get($gaps, 'default')};
 		}
 
 		.#{$breakpoint}-row {
@@ -144,18 +122,12 @@ $breakpoint_width in $breakpoints {
 			flex-wrap     : wrap;
 			flex-direction: row;
 			grid-auto-flow: column;
-			--gap         : #{map-get($gaps, $breakpoint)};
-		}
-
-		.#{$breakpoint}-grid {
-			display: grid;
-			--gap  : #{map-get($gaps, $breakpoint)};
+			--gapx        : #{map-get($gaps, 'default')};
+			--gapy        : #{map-get($gaps, 'default')};
 		}
 
 		.#{$breakpoint}-columns-auto>*,
-		.#{$breakpoint}-columns-fill>*,
-		.#{$breakpoint}-span-auto,
-		.#{$breakpoint}-span-fill {
+		.#{$breakpoint}-span-auto {
 			flex : 0 auto;
 			width: auto;
 		}
@@ -168,6 +140,7 @@ $breakpoint_width in $breakpoints {
 		.#{$breakpoint}-columns-fill>*,
 		.#{$breakpoint}-span-fill {
 			flex: 1 auto;
+			width: auto;
 		}
 	}
 }

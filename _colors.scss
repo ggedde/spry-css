@@ -45,6 +45,7 @@ $color_value in $colors {
 	[class].#{$color_name} {
 		--color     : var(--#{$color_name});
 		--color-rgb : var(--#{$color_name}-rgb);
+		accent-color: var(--color);
 	}
 
 	[class].color-#{$color_name},

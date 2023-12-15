@@ -6,13 +6,15 @@
 .tabs {
 	overflow    : hidden;
 	display     : flex;
-	--gap: 0em;
+	--gapx: 0em;
+	--gapy: 0em;
 
 	.list {
 		overflow    : hidden;
 		flex        : none;
 		width       : auto;
-		--gap: 0em;
+		--gapx: 0em;
+		--gapy: 0em;
 
 		&+*>* {
 			transition: none;

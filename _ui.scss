@@ -4,24 +4,26 @@
 @use "variables"as *;
 
 %ui {
-	align-items    : center;
-	appearance     : none;
-	background     : transparent;
-	border         : 0;
-	color          : inherit;
-	display        : inline-flex;
-	font-size      : 100%;
-	height         : auto;
-	margin         : 0;
-	min-height     : 2.3em;
-	min-width      : 2.3em;
-	padding-block  : .3em;
-	padding-inline : 1em;
-	position       : relative;
-	text-decoration: none;
-	transition     : color .1s ease-in-out, background .1s ease-in-out, border .15s ease-in-out, filter .1s ease-in-out;
-	vertical-align : middle;
-	width          : 100%;
+	align-items       : center;
+	appearance        : none;
+	background        : transparent;
+	border            : 0;
+	color             : inherit;
+	display           : inline-flex;
+	font-size         : 100%;
+	height            : auto;
+	margin            : 0;
+	min-height        : 2.3em;
+	min-width         : 2.3em;
+	padding-block     : .3em;
+	padding-inline    : 1em;
+	position          : relative;
+	text-decoration   : none;
+	transition        : all .1s ease-in-out;
+	outline           : 0 solid rgba(var(--color-rgb), 0.25);
+	outline-offset    : 2px;
+	vertical-align    : middle;
+	width             : 100%;
 }
 
 @mixin ui-closed {
@@ -61,7 +63,7 @@
 	max-height    : 100vh;
 	opacity       : 1;
 	pointer-events: all;
-	transform     : translateZ(0) scale(1,1);
+	transform     : translateZ(0) scale(1, 1);
 	z-index       : 2;
 
 	&:is(.from-left, .from-right, .from-bottom) {
@@ -114,6 +116,7 @@
 
 %ui-color {
 	color: var(--text-color);
+
 	&:where(.link, .outline, .hazy, .plain) {
 		color: var(--text);
 	}
@@ -150,8 +153,7 @@
 }
 
 :focus-visible {
-	outline       : 2px solid rgba(var(--color-rgb), 0.25);
-	outline-offset: 2px;
+	outline-width: 2px;
 }
 
 .compact {
@@ -190,8 +192,8 @@ a {
 
 hr {
 	height       : 0;
-	margin       : var(--gap);
-	border: 0;
+	margin       : var(--gapy) var(--gapx);
+	border       : 0;
 	border-bottom: 1px solid var(--border-color);
 }
 

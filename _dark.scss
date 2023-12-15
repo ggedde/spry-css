@@ -44,14 +44,15 @@
 	}
 }
 
+[data-theme=dark],
+[data-theme=dark] article,
+article[data-theme=dark] {
+	background-color: #121212;
+}
+
 [data-theme=dark] {
 	color-scheme: dark;
 	color: map-get(map-get($types, 'body'), 'color');
-
-	&,
-	article {
-		background-color: #121212;
-	}
 
 	select option,
 	.tooltip {

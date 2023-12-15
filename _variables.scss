@@ -67,11 +67,13 @@ $sizes: (
 
 :root {
 
-    --gap: #{map-get($gaps, 'default')};
+    --gapx: #{map-get($gaps, 'default')};
+    --gapy: #{map-get($gaps, 'default')};
 
     @each $breakpoint, $breakpoint_width in $breakpoints {
         @media screen and (min-width: $breakpoint_width) {
-            --gap: #{map-get($gaps, $breakpoint)};
+            --gapx: #{map-get($gaps, $breakpoint)};
+            --gapy: #{map-get($gaps, $breakpoint)};
         }
     }
     --ease: cubic-bezier(.25, .8, .25, 1);

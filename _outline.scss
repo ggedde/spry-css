@@ -45,12 +45,15 @@
 	}
 
 	&.list,
-	.list>ul,
-	.list>ul ul,
+	>.list>ul,
+	&.list>ul,
+	>.list>ul ul,
+	&.list>ul ul,
 	&.tabs .list {
-		--gap: 0em;
+		--gapx: 0em;
+		--gapy: 0em;
 
-		:is(a, button, .button, [type=submit]):not([data-toggle=next]) {
+		:is(a, button, .button, [type=submit]):first-child:not([data-toggle=next]) {
 			border-radius: 0;
 		}
 

@@ -10,19 +10,19 @@ https://prismjs.com/download.html#themes=prism&languages=css+scss&plugins=toolba
 div.code-toolbar {
 	max-width: calc(100vw - 60px);
 } */
-.show-code {
+/* .show-code {
 	position: relative;
-	/* background-color: transparent !important; */
-}
+	background-color: transparent !important;
+} */
 
-.show-code.open .code-container {
+/* .show-code.open .code-container {
 	max-height: 300px;
 	opacity: 1;
-}
+} */
 
-.show-code > article { 
+/* .show-code > article { 
 	gap: 0;
-}
+} */
 /* @media screen and (min-width: 620px) {
 	.show-code,
 	div.code-toolbar {

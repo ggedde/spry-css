@@ -1,17 +1,17 @@
 /*!
 * Spry Cards
 */
-@use "ui" as *;
+@use "ui"as *;
 
 article {
 	@extend %ui-border-radius;
-	--card-color    : rgba(153,153,153,0.17);
-	--gap: 2em;
+	--card-color    : rgba(153, 153, 153, 0.17);
+	--gapy          : 2em;
 	align-items     : flex-start;
 	background-color: white;
 	display         : flex;
 	flex-direction  : column;
-	gap             : var(--gap);
+	row-gap         : var(--gapy);
 	justify-content : flex-start;
 	padding         : 2em;
 	position        : relative;
@@ -20,7 +20,7 @@ article {
 	&:has(>header, >footer) {
 		padding: 0;
 
-		>:is(header,footer,p,div) {
+		>:is(header, footer, p, div) {
 			padding-inline: 1em;
 		}
 
@@ -34,20 +34,23 @@ article {
 	}
 
 	&.outline {
+		background-color: white;
+
 		>header {
-			border-bottom: 1px var(--bdr);
+			border-bottom: 1px solid var(--border-color);
 		}
+
 		>footer {
-			border-top: 1px var(--bdr);
+			border-top: 1px solid var(--border-color);
 		}
 	}
 
-	> * {
-		width: 100%;
+	>* {
+		width     : 100%;
 		margin-top: 0;
 	}
 
-	>:is(header,footer) {
+	>:is(header, footer) {
 		@extend %ui;
 		@extend %ui-spacious;
 		background-color: var(--card-color);
@@ -55,6 +58,7 @@ article {
 		justify-content : space-between;
 		align-items     : center;
 		transition      : none;
+
 		>* {
 			margin-top: 0;
 		}

@@ -95,8 +95,10 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .pointer-none { pointer-events: none }
 .align-baseline{ vertical-align: baseline }
 .align-top{ vertical-align: top }
+.align-text-top{ vertical-align: text-top }
 .align-middle{ vertical-align: middle }
 .align-bottom{ vertical-align: bottom }
+.align-text-bottom{ vertical-align: text-bottom }
 .overflow-visible{ overflow: visible }
 .overflow-hidden{ overflow: hidden }
 .overflow-y-hidden{ overflow-y: hidden }
@@ -141,6 +143,11 @@ $size_value in $sizes {
 
 @each $breakpoint, $breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
+
+		.#{$breakpoint}-mw {
+			max-width: $breakpoint_width;
+		}
+
 		.#{$breakpoint} {
 			&-text-left{ text-align: left }
 			&-text-center{ text-align: center }
@@ -192,8 +199,10 @@ $size_value in $sizes {
 			&-pointer-none { pointer-events: none }
 			&-align-baseline{ vertical-align: baseline }
 			&-align-top{ vertical-align: top }
+			&-align-text-top{ vertical-align: text-top }
 			&-align-middle{ vertical-align: middle }
 			&-align-bottom{ vertical-align: bottom }
+			&-align-text-bottom{ vertical-align: text-bottom }
 			&-overflow-visible{ overflow: visible }
 			&-overflow-hidden{ overflow: hidden }
 			&-overflow-y-hidden{ overflow-y: hidden }

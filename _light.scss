@@ -40,14 +40,16 @@
 }
 
 html,
+[data-theme=light],
+[data-theme=light] article,
+article[data-theme=light] {
+	background-color: white;
+}
+
+html,
 [data-theme=light] {
 	color-scheme: light;
 	color: map-get(map-get($types, 'body'), 'color');
-
-	&,
-	article {
-		background-color: white;
-	}
 
 	select option,
 	.tooltip {

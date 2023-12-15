@@ -1,164 +1,234 @@
 /*!
 * Spry Spacing
 */
-@use "variables" as *;
+@use "variables"as *;
 
 .m-auto {
 	margin: auto;
 }
+
 .my-auto {
 	margin-block: auto;
 }
+
 .mx-auto {
 	margin-inline: auto;
 }
+
 .mt-auto {
 	margin-top: auto;
 }
+
 .mb-auto {
 	margin-bottom: auto;
 }
+
 .ml-auto {
 	margin-left: auto;
 }
+
 .mr-auto {
 	margin-right: auto;
 }
-@each $s, $space in $spacing {
+
+@each $s,
+$space in $spacing {
 	@each $prop in (padding, margin) {
 		.#{str-slice($prop, 0, 1)}-#{$s} {
 			#{$prop}: #{$space};
 		}
 	}
+
 	.g-#{$s} {
-		--gap: #{$space};
-		gap  : var(--gap);
+		--gapx: #{$space};
+		--gapy: #{$space};
+		gap   : var(--gapy) var(--gapx);
+	}
+
+	.gx-#{$s} {
+		--gapx    : #{$space};
+		column-gap: var(--gapx);
+	}
+
+	.gy-#{$s} {
+		--gapy : #{$space};
+		row-gap: var(--gapy);
 	}
 }
-@each $s, $space in $spacing {
+
+@each $s,
+$space in $spacing {
 	@each $prop in (padding, margin) {
 		.#{str-slice($prop, 0, 1)}x-#{$s} {
 			#{$prop}-inline: #{$space};
 		}
+
 		.#{str-slice($prop, 0, 1)}y-#{$s} {
 			#{$prop}-block: #{$space};
 		}
-		@if $prop == margin and $s {
+
+		@if $prop==margin and $s {
 			.#{str-slice($prop, 0, 1)}x-n#{$s} {
 				#{$prop}-inline: -#{$space};
 			}
+
 			.#{str-slice($prop, 0, 1)}y-n#{$s} {
 				#{$prop}-block: -#{$space};
 			}
 		}
 	}
 }
-@each $s, $space in $spacing {
+
+@each $s,
+$space in $spacing {
 	@each $prop in (padding, margin) {
 		.#{str-slice($prop, 0, 1)}l-#{$s} {
 			#{$prop}-left: #{$space};
 		}
+
 		.#{str-slice($prop, 0, 1)}r-#{$s} {
 			#{$prop}-right: #{$space};
 		}
+
 		.#{str-slice($prop, 0, 1)}t-#{$s} {
 			#{$prop}-top: #{$space};
 		}
+
 		.#{str-slice($prop, 0, 1)}b-#{$s} {
 			#{$prop}-bottom: #{$space};
 		}
-		@if $prop == margin and $s {
+
+		@if $prop==margin and $s {
 			.#{str-slice($prop, 0, 1)}l-n#{$s} {
 				#{$prop}-left: -#{$space};
 			}
+
 			.#{str-slice($prop, 0, 1)}r-n#{$s} {
 				#{$prop}-right: -#{$space};
 			}
+
 			.#{str-slice($prop, 0, 1)}t-n#{$s} {
 				#{$prop}-top: -#{$space};
 			}
+
 			.#{str-slice($prop, 0, 1)}b-n#{$s} {
 				#{$prop}-bottom: -#{$space};
 			}
 		}
 	}
 }
-@each $breakpoint, $breakpoint_width in $breakpoints {
+
+@each $breakpoint,
+$breakpoint_width in $breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
 		.#{$breakpoint}-m-auto {
 			margin: auto;
 		}
+
 		.#{$breakpoint}-my-auto {
 			margin-block: auto;
 		}
+
 		.#{$breakpoint}-mx-auto {
 			margin-inline: auto;
 		}
+
 		.#{$breakpoint}-mt-auto {
 			margin-top: auto;
 		}
+
 		.#{$breakpoint}-mb-auto {
 			margin-bottom: auto;
 		}
+
 		.#{$breakpoint}-ml-auto {
 			margin-left: auto;
 		}
+
 		.#{$breakpoint}-mr-auto {
 			margin-right: auto;
 		}
-		@each $s, $space in $spacing {
+
+		@each $s,
+		$space in $spacing {
 			@each $prop in (padding, margin) {
 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}-#{$s} {
 					#{$prop}: #{$space};
 				}
 			}
+
 			.#{$breakpoint}-g-#{$s} {
-				--gap: #{$space};
-				gap  : var(--gap);
+				--gapx : #{$space};
+				--gapy : #{$space};
+				gap    : var(--gapy) var(--gapx);
+			}
+
+			.#{$breakpoint}-gx-#{$s} {
+				--gapx    : #{$space};
+				column-gap: var(--gapx);
+			}
+
+			.#{$breakpoint}-gy-#{$s} {
+				--gapy : #{$space};
+				row-gap: var(--gapy);
 			}
 		}
-		@each $s, $space in $spacing {
+
+		@each $s,
+		$space in $spacing {
 			@each $prop in (padding, margin) {
 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-#{$s} {
 					#{$prop}-inline: #{$space};
 				}
+
 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}y-#{$s} {
 					#{$prop}-block: #{$space};
 				}
-				@if $prop == margin and $s {
+
+				@if $prop==margin and $s {
 					.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-n#{$s} {
 						#{$prop}-inline: -#{$space};
 					}
+
 					.#{$breakpoint}-#{str-slice($prop, 0, 1)}y-n#{$s} {
 						#{$prop}-block: -#{$space};
 					}
 				}
 			}
 		}
-		@each $s, $space in $spacing {
+
+		@each $s,
+		$space in $spacing {
 			@each $prop in (padding, margin) {
 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}l-#{$s} {
 					#{$prop}-left: #{$space};
 				}
+
 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}r-#{$s} {
 					#{$prop}-right: #{$space};
 				}
+
 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}t-#{$s} {
 					#{$prop}-top: #{$space};
 				}
+
 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}b-#{$s} {
 					#{$prop}-bottom: #{$space};
 				}
-				@if $prop == margin and $s {
+
+				@if $prop==margin and $s {
 					.#{$breakpoint}-#{str-slice($prop, 0, 1)}l-n#{$s} {
 						#{$prop}-left: -#{$space};
 					}
+
 					.#{$breakpoint}-#{str-slice($prop, 0, 1)}r-n#{$s} {
 						#{$prop}-right: -#{$space};
 					}
+
 					.#{$breakpoint}-#{str-slice($prop, 0, 1)}t-n#{$s} {
 						#{$prop}-top: -#{$space};
 					}
+
 					.#{$breakpoint}-#{str-slice($prop, 0, 1)}b-n#{$s} {
 						#{$prop}-bottom: -#{$space};
 					}
@@ -169,5 +239,5 @@
 }
 
 section {
-	padding: (calc(var(--gap) * 2)) var(--gap);
+	padding: (calc(var(--gapy) * 2)) var(--gapx);
 }

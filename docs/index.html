@@ -59,7 +59,7 @@
                         <li><a href="#gaps">Gaps</a></li>
                         <li>
                             <a href="#grid">Grid</a>
-                            <button class="link icon circle sm shy" data-toggle="next">
+                            <button class="link icon circle sm shy" data-toggle="next" title="Expand" aria-label="Expand">
                                 <svg class="xxl flip-pressed" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </button>
                             <ul class="sm">
@@ -86,7 +86,7 @@
                         <li><a href="#badges">Badges</a></li>
                         <li>
                             <a href="#buttons">Buttons</a>
-                                <button class="link icon circle sm shy" data-toggle="next">
+                                <button class="link icon circle sm shy" data-toggle="next" title="Expand" aria-label="Expand">
                                     <svg class="xxl flip-pressed" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                                 </button>
                                 <ul class="sm">
@@ -101,9 +101,10 @@
                                 </ul>
                         </li>
                         <li><a href="#cards">Cards</a></li>
+                        <li><a href="#dropdowns">Dropdowns</a></li>
                         <li>
                             <a href="#forms">Forms</a>
-                            <button class="link icon circle sm shy" data-toggle="next">
+                            <button class="link icon circle sm shy" data-toggle="next" title="Expand" aria-label="Expand">
                                 <svg class="xxl flip-pressed" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </button>
                             <ul class="sm">
@@ -115,11 +116,12 @@
                         <li><a href="#icons">Icons</a></li>
                         <li><a href="#lists">Lists</a></li>
                         <li><a href="#loader">Loader</a></li>
+                        <li><a href="#menus">Menus</a></li>
                         <li><a href="#modals">Modals</a></li>
-                        <li><a href="#nav">Nav & Menus</a></li>
+                        <li><a href="#navs">Navs</a></li>
                         <li>
                             <a href="#sliders">Sliders</a>
-                            <button class="link icon circle sm shy" data-toggle="next">
+                            <button class="link icon circle sm shy" data-toggle="next" title="Expand" aria-label="Expand">
                                 <svg class="xxl flip-pressed" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </button>
                             <ul class="sm">
@@ -143,10 +145,10 @@
                 </h5>
             </div>
             <div class="sm">
-                <button class="shy icon link circle" onclick="toggleTheme(document.documentElement);">
+                <button class="shy icon link circle" onclick="toggleTheme(document.documentElement);" title="Toggle Theme" aria-label="Toggle Theme">
                     <svg class="xl" viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg>
                 </button>
-                <a class="button shy icon link circle" href="https://github.com/ggedde/spry-css">
+                <a class="button shy icon link circle" href="https://github.com/ggedde/spry-css" title="SpryCSS GitHub" aria-label="SpryCSS GitHub">
                     <svg viewBox="0 0 24 24" class="xl"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" /></svg>
                 </a>
             </div>
@@ -163,7 +165,7 @@
                     SpryCSS
                 </h1>
                 <p>SpryCSS aims to be a simple and customizable CSS Toolkit while being as
-                    lightweight as possible <strong>(Only 10.5kb gzipped)</strong>.</p>
+                    lightweight as possible <strong>(Only 11kb gzipped)</strong>.</p>
                 <p>The goal is to remove the messy and tedious task of coming up with class names
                     for elements that just need simple layout styles and provide basic components to help you get up and
                     running fast,
@@ -184,7 +186,7 @@
                 <h4 class="mt-3 mb-1">Compatibility</h4>
                 <div class="alert secondary outline mb-4 flex">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
-                    <span>SpryCss uses :has() property which is not supported by all browsers yet. Find out which browsers support it <a target="_blank" href="https://caniuse.com/css-has">here</a></span>
+                    <span>SpryCss uses :has() property which is not supported by all browsers yet. Find out which browsers support it at <a target="_blank" href="https://caniuse.com/css-has">Can I Use</a>.</span>
                 </div>
 
                 <h4>Using the CDN:</h4>
@@ -235,7 +237,7 @@
 
             <h3 id="spryjs" class="mt-2 pt-3">SpryJS Javascript <small class="badge outline xxs grey ml-1">Optional</small></h3>
             <p>SpryCSS is meant to be quick and easy to impliment without needing to add any additional dependencies. However, there are times when you need more functionality then CSS can offer.
-                For this reason, you can include SpryJS to handle <a href="#toggles">Toggles</a> which adds additional functionality for many of its components like 
+                For this reason, you can include SpryJS to handle <a href="#toggles">Toggles</a> and <a href="#sliders">Sliders</a>. Toggles add additional functionality for many of its components like 
                 <a href="#accordions">Accordions</a>, <a href="#buttons">Buttons</a>, <a href="#lists">Lists</a>, <a href="#menus">Menus</a>, <a href="#modals">Modals</a>, and <a href="#tabs">Tabs</a>.
                 SpryCSS also comes with basic <a href="#sliders">Sliders</a> that have limited functionality, but you can add SpryJS for more functionality.
             </p>
@@ -438,6 +440,68 @@ $sizes: (
                     nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
                     eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
                     est Lorem ipsum dolor sit amet.</p>
+
+                <h2>Heading H2</h2>
+                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.</p>
+                <h2>Heading H2</h2>
+                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.</p>
+                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.</p>
+                <h2>Heading H2</h2>
+                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.</p>
+                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.</p>
+                <h3>Heading H3</h3>
+               <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.</p>
+                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.</p>
+                <h3>Heading H3</h3>
+               <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.</p>
                 <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                     invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
                     duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
@@ -503,7 +567,7 @@ $colors: (
                 <table class="mb-3 mt-4 border-faint">
                     <thead>
                         <tr>
-                            <th width="190"><h4>Classes</h4></th>
+                            <th class="md-w-200"><h4>Classes</h4></th>
                             <th></th>
                         </tr>
                     </thead>
@@ -553,7 +617,7 @@ $colors: (
                 </div>
 
                 <div class="show-code" data-title="Change Child Link and Link Hover Colors">
-                    <div class="links-grey links-hover-secondary grid g-1">
+                    <div class="links-grey links-hover-secondary column g-1">
                         <a>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                         <a>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                         <a>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
@@ -642,15 +706,15 @@ $colors: (
                     <tbody>
                         <tr>
                             <td><code class="color-primary">text</code></td>
-                            <td>This will change depending on the theme being applied.</td>
+                            <td>Color of the body text.<br>This will change depending on the theme being applied.</td>
                         </tr>
                         <tr>
                             <td><code class="color-primary">contrast</code></td>
-                            <td>This will change depending on the theme being applied.</td>
+                            <td>Contrast Color.<br>This will change depending on the theme being applied.</td>
                         </tr>
                         <tr>
                             <td><code class="color-primary">faint</code></td>
-                            <td>This will change depending on the theme being applied.</td>
+                            <td>Faint Color.<br>This will change depending on the theme being applied.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -671,19 +735,19 @@ $colors: (
                     Support
                 </h2>
                 <a name="support" class="mb-3 block"></a>
-                <p class="mb-2">You can report issues or make feature requests on the GitHub Issues page <a target="_blank" href="https://github.com/ggedde/spry-css/issues">here</a>.</p>
-                <p>If you like to help us grow, then please add a star on our GitHub repository <a target="_blank" href="https://github.com/ggedde/spry-css">here</a> or by sharing us on social media.</p>
+                <p class="mb-2">You can report issues or make feature requests on the <a target="_blank" href="https://github.com/ggedde/spry-css/issues">GitHub Issues</a> page.</p>
+                <p>If you like to help us grow, then please add a star on the <a target="_blank" href="https://github.com/ggedde/spry-css">SpryCSS GitHub Repository</a> or by sharing us on social media.</p>
                 <div class="pt-2 flex-middle g-1 mb-4">
-                    <a class="button circle icon contrast hazy" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookShare','width=626,height=436');return false;" onkeypress="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookShare','width=626,height=436');return false;">
+                    <a class="button circle icon contrast hazy" title="Facebook" aria-label="Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookShare','width=626,height=436');return false;" onkeypress="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookShare','width=626,height=436');return false;">
                         <svg class="xl" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z" /></svg>
                     </a>
-                    <a class="button circle icon contrast hazy" onclick="window.open('https://twitter.com/share?text=SpryCSS&url='+encodeURIComponent(location.href),'twitterShare','width=626,height=436');return false;" onkeypress="window.open('https://twitter.com/share?text=SpryCSS&url='+encodeURIComponent(location.href),'twitterShare','width=626,height=436');return false;">
+                    <a class="button circle icon contrast hazy" title="Twitter" aria-label="Twitter" onclick="window.open('https://twitter.com/share?text=SpryCSS&url='+encodeURIComponent(location.href),'twitterShare','width=626,height=436');return false;" onkeypress="window.open('https://twitter.com/share?text=SpryCSS&url='+encodeURIComponent(location.href),'twitterShare','width=626,height=436');return false;">
                         <svg width="1200" height="1227" viewBox="0 0 1200 1227"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" /></svg>
                     </a>
-                    <a class="button circle icon contrast hazy" onclick="window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent(location.href),'linkedinShare','width=626,height=436');return false;" onkeypress="window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent(location.href),'linkedinShare','width=626,height=436');return false;">
+                    <a class="button circle icon contrast hazy" title="Linked In" aria-label="Linked In" onclick="window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent(location.href),'linkedinShare','width=626,height=436');return false;" onkeypress="window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent(location.href),'linkedinShare','width=626,height=436');return false;">
                         <svg class="xl" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" /></svg>
                     </a>
-                    <a class="button circle icon contrast hazy" target="_blank" href="https://github.com/ggedde/spry-css">
+                    <a class="button circle icon contrast hazy" title="GitHub" aria-label="GitHub" target="_blank" href="https://github.com/ggedde/spry-css">
                         <svg class="xl" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" /></svg>
                     </a>
                     <p class="p-1">
@@ -728,7 +792,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td width="260"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>b{side}-{n}</code></td>
+                            <td class="md-w-300"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>b{side}-{n}</code></td>
                             <td>Border.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-3</code>. Can be modified in SCSS Variables.</div>
                             </td>
@@ -747,7 +811,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td width="150"><code class="color-primary">t</code></td>
+                            <td class="md-w-100"><code class="color-primary">t</code></td>
                             <td>Top</td>
                         </tr>
                         <tr>
@@ -886,7 +950,7 @@ $borders: (
                 <table class="mb-2 mt-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="300"><h4>Container Classes</h4></th>
+                            <th class="md-w-300"><h4>Container Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -895,7 +959,7 @@ $borders: (
                             <td>CSS Grid of columns auto width.<br>Uses variable <a href="#gaps">Gaps</a> for spacing</td>
                         </tr>
                         <tr>
-                            <td width="300"><code class="color-primary">grid-{n}00</code></td>
+                            <td><code class="color-primary">grid-{n}00</code></td>
                             <td>CSS Grid of columns using minmax() for column widths in px's.<br><code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code></td>
                         </tr>
                         <tr>
@@ -905,7 +969,10 @@ $borders: (
                         <tr>
                             <td><code class="color-primary"><span class="color-grey">{breakpoint}-</span>columns-{n}</code></td>
                             <td>
-                                <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, <code class="color-primary">fixed</code>
+                                <p>
+                                    Specify the number of columns.<br>
+                                    <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, or <code class="color-primary">fixed</code>
+                                </p>
                                 <p class="color-grey mt-1">* <code class="color-primary">fixed</code> and <code class="color-primary">auto</code> only apply to <code class="color-primary">row</code> <span class="color-grey">(flexbox)</span></p>
                             </td>
                         </tr>
@@ -921,14 +988,14 @@ $borders: (
                 <table class="mt-2 border-faint">
                     <thead>
                         <tr>
-                            <th width="300"><h4>Column Classes</h4></th>
+                            <th class="md-w-300"><h4>Column Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><code class="color-primary"><span class="color-grey">{breakpoint}-</span>span-{n}</code></td>
-                            <td>Span the column based on a 12 column grid.<br>
-                                <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, <code class="color-primary">fixed</code>
+                            <td>Span the column based on a number of columns set.<br>
+                                <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, or <code class="color-primary">fixed</code>
                                 <p class="color-grey mt-2">* Requires container to have <code class="color-primary">columns-{n}</code></p>
                                 <p class="color-grey mt-1">* fixed and auto only apply to <code class="color-primary">row</code> <span class="color-grey">(flexbox)</span></p>
                                 <p class="sm color-grey">* Custom gaps will not always work correctly with <code
@@ -1158,11 +1225,11 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Nested rows and auto height">
-                    <div class="row">
+                    <div class="row columns-12">
                         <div class="md-span-4 bg-faint round p-1">
                             .md-span-4
                         </div>
-                        <div class="row md-span-8">
+                        <div class="row md-span-fixed">
                             <div class="bg-faint round p-1">
                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitrsed diam nonumy.
                             </div>
@@ -1172,7 +1239,7 @@ $borders: (
                             <div class="bg-faint round p-1">
                                 fixed
                             </div>
-                            <div class="row span-12">
+                            <div class="row md-span-">
                                 <div class="bg-faint round p-1">
                                     fixed
                                 </div>
@@ -1243,22 +1310,15 @@ $borders: (
     xxs: 50%,
 );</code></pre>
 
-                <table class="mb-2 mt-3 border-faint">
-                    <thead>
-                        <tr>
-                            <th width="220"><h4>Classes</h4></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code class="color-primary"><span class="color-grey">{breakpoint}-</span>{size}</code></td>
-                            <td>
-                                ex <pre><code class="language-html">&lt;div class="sm md-lg"&gt;Small on Mobile, Large on Medium&lt;/div&gt;</code></pre>
-                                <p>See above SCSS Variables for available <code class="color-primary">{size}</code> values.</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <h5 class="mt-3 note">Usage:</h5>
+                <div class="mb-1">
+                    <code class="color-primary"><span class="color-grey">{breakpoint}-</span>{size}</code>
+                </div>
+                <pre><code class="language-html">&lt;div class="sm md-lg"&gt;Small on Mobile, Large on Medium&lt;/div&gt;</code></pre>
+
+                <div class="my-2 mb-4">
+                    <p>See above SCSS Variables for available <code class="color-primary">{size}</code> values.</p>
+                </div>
                 
                 <div class="show-code mt-3" data-title="Element Sizing">
                     <p class="xs">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
@@ -1293,7 +1353,7 @@ $borders: (
                 </h2>
                 <a name="spacing" class="mb-2 block"></a>
 
-                <h5 class="mt-2 note">SCSS Variable</h5>
+                <h5 class="mt-3 note">SCSS Variable</h5>
                 <pre><code class="language-scss">$spacing: (
     0: 0em,     // Needs unit to be used in calc().
     1: .5em,
@@ -1303,13 +1363,13 @@ $borders: (
     200: 200px, // Used for Sidebars
 );</code></pre>
                 
-                <h5 class="mt-2 note">Usage:</h5>
+                <h5 class="mt-3 note">Usage:</h5>
                 <div class="mb-1">
                     <code class="color-primary"><span class="color-grey">{breakpoint}-</span>{property}{side}-{spacing}</code>
                 </div>
                 <pre><code class="language-html">&lt;div class="p-2 md-px-3 mt-n2"&gt;&lt;/div&gt;</code></pre>
 
-                <table class="border-faint">
+                <table class="border-faint mt-3">
                     <thead>
                         <tr>
                             <th colspan="2"><h4>Property Classes</h4></th>
@@ -1317,7 +1377,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td width="280"><code class="color-grey">{breakpoint}-</code><code class="color-primary">p{side}-{n}</code></td>
+                            <td class="md-w-300"><code class="color-grey">{breakpoint}-</code><code class="color-primary">p{side}-{n}</code></td>
                             <td>Padding.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                             </td>
@@ -1355,7 +1415,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td width="150"><code class="color-primary">t</code></td>
+                            <td class="md-w-200"><code class="color-primary">t</code></td>
                             <td>Top</td>
                         </tr>
                         <tr>
@@ -1483,7 +1543,7 @@ $borders: (
                                     <li><code class="color-grey">empty</code> which closes the closest <code class="color-primary">.open</code> ancestor.</li>
                                 </ul>
                                 <div class="my-1 mt-3"><code class="color-primary">{selector}</code> can start with <code class="color-primary">{*}</code> to be used with "closest".</div>
-                                <div>Ex. <pre><code class="language-html">&lt;button data-toggle-close="{.tabs} .open"&gt;</code></pre>
+                                <div><pre><code class="language-html">&lt;button data-toggle-close="{.tabs} .open"&gt;</code></pre>
                                 This will close all <code class="color-primary">.open</code> elements within the closest <code class="color-primary">.tabs</code> ancestor from the activator.</div>
                             </td>
                         </tr>
@@ -1548,7 +1608,7 @@ $borders: (
                     </div>
                 </div>
     
-                <div class="show-code" data-title="Toggle Collapsed Content" data-badge="Uses SpryJS">
+                <div class="show-code" data-title="Toggle Collapsed Content" data-badge="Uses SpryJS" data-badge-link="#spryjs">
                     <label class="button" data-toggle="next">
                         Toggle Content
                         <i class="icon ml-1 rotate-pressed xl">
@@ -1568,7 +1628,7 @@ $borders: (
                     </div>
                 </div>
     
-                <div class="show-code" data-title="Activate on Hover" data-badge="Uses SpryJS">
+                <div class="show-code" data-title="Activate on Hover" data-badge="Uses SpryJS" data-badge-link="#spryjs">
                     <label class="button hoverable" data-toggle="hover">
                         Hover Me!
                         <i class="icon ml-1 rotate-pressed xl">
@@ -1578,19 +1638,24 @@ $borders: (
                     <div class="collapse">
                         <p class="border p-1 bg-faint">
                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidun.
+                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                            rebum.
                         </p>
                     </div>
                 </div>
 
-                <div id="menus" class="show-code" data-title="Escapable and Dismissible Menu">
+                <div id="menus" class="show-code" data-title="Escapable and Dismissible Menu" data-badge="Uses SpryJS" data-badge-link="#spryjs">
                     <button class="link icon" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
                         <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                         <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                     </button>
                     <nav class="absolute list navigatable bg-faint round shadow mw-200 p-1">
                         <ul>
-                            <li class="p-1">Pick an Item<hr class="mt-1"></li>
+                            <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
                             <li><a href="#">Link 1</a></li>
                             <li><a href="#">Link 2</a></li>
                             <li><a href="#">Link 3</a></li>
@@ -1598,7 +1663,7 @@ $borders: (
                     </nav>
                 </div>
                
-                <div class="show-code mb-4" data-title="Used for Modals" data-badge="Uses SpryJS" data-note="See &lt;a href='#modals'&gt;Modals&lt;/a&gt;">
+                <div class="show-code mb-4" data-title="Used for Modals" data-badge="Uses SpryJS" data-badge-link="#spryjs">
                     <button data-toggle="next">
                         Open Modal
                     </button>
@@ -1628,68 +1693,68 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <tbody>
                         <tr>
-                                <td width="170"><code class="color-primary">bold</code></td>
-                                <td>font-weight: bold</td>
+                            <td class="md-w-200"><code class="color-primary">bold</code></td>
+                            <td>font-weight: bold</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">normal</code></td>
-                                <td>font-weight: normal</td>
+                            <td><code class="color-primary">normal</code></td>
+                            <td>font-weight: normal</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">italic</code></td>
-                                <td>font-style: italic</td>
+                            <td><code class="color-primary">italic</code></td>
+                            <td>font-style: italic</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">uppercase</code></td>
-                                <td>text-transform: uppercase</td>
+                            <td><code class="color-primary">uppercase</code></td>
+                            <td>text-transform: uppercase</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">lowercase</code></td>
-                                <td>text-transform: lowercase</td>
+                            <td><code class="color-primary">lowercase</code></td>
+                            <td>text-transform: lowercase</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">capitalize</code></td>
-                                <td>text-transform: capitalize</td>
+                            <td><code class="color-primary">capitalize</code></td>
+                            <td>text-transform: capitalize</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">pointer </code></td>
-                                <td>cursor: pointer</td>
+                            <td><code class="color-primary">pointer </code></td>
+                            <td>cursor: pointer</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">round</code>
-                                <td>border-radius: 5px; overflow: hidden</td>
+                            <td><code class="color-primary">round</code>
+                            <td>border-radius: 5px; overflow: hidden</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">round-bottom</code></td>
-                                <td>border-radius: 0 0 5px 5px</td>
+                            <td><code class="color-primary">round-bottom</code></td>
+                            <td>border-radius: 0 0 5px 5px</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">circle</code></td>
-                                <td>border-radius: 50%</td>
+                            <td><code class="color-primary">circle</code></td>
+                            <td>border-radius: 50%</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">square</code></td>
-                                <td>border-radius: 0</td>
+                            <td><code class="color-primary">square</code></td>
+                            <td>border-radius: 0</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">index-1</code></td>
-                                <td>z-index: 1</td>
+                            <td><code class="color-primary">index-1</code></td>
+                            <td>z-index: 1</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">index-2</code></td>
-                                <td>z-index: 2</td>
+                            <td><code class="color-primary">index-2</code></td>
+                            <td>z-index: 2</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">index-3</code></td>
-                                <td>z-index: 3</td>
+                            <td><code class="color-primary">index-3</code></td>
+                            <td>z-index: 3</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">note </code></td>
-                                <td>font-style: italic; font-size: 90%; opacity: 0.8</td>
+                            <td><code class="color-primary">note </code></td>
+                            <td>font-style: italic; font-size: 90%; opacity: 0.8</td>
                         </tr>
                         <tr>
-                                <td><code class="color-primary">truncate</code></td>
-                                <td>max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap</td>
+                            <td><code class="color-primary">truncate</code></td>
+                            <td>max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1710,7 +1775,7 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <tbody>
                         <tr>
-                            <td width="380"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-left</code></td>
+                            <td class="md-w-400"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-left</code></td>
                             <td>text-align: left</td>
                         </tr>
                         <tr>
@@ -2039,7 +2104,7 @@ $borders: (
                     </tbody>
                 </table>
 
-                <div class="show-code" data-title="Basic Accordion">
+                <div class="show-code" data-title="Basic Accordion" data-badge="Uses Toggles" data-badge-link="#toggles">
                     <button class="mb-1 w justify-content-between" data-toggle="next">
                         <h4>Question 1</h4>
                         <i class="icon down mt-0"></i>
@@ -2093,7 +2158,7 @@ $borders: (
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Single Opening Accordion">
+                <div class="show-code" data-title="Single Opening Accordion" data-badge="Uses Toggles" data-badge-link="#toggles">
                     <div>
                         <button class="button round-top hazy link contrast w justify-content-between" data-toggle="next" data-toggle-close="{div} .open">
                             <h4>Question 1</h4>
@@ -2149,7 +2214,7 @@ $borders: (
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Outlined Accordion with Accent">
+                <div class="show-code" data-title="Outlined Accordion with Accent" data-badge="Uses Toggles" data-badge-link="#toggles">
                     <div class="primary border-primary outline round">
                         <button class="button round-top link w justify-content-between" data-toggle="next" data-toggle-close="{div} .open:not(:nth-child(2))">
                             <h4>Question 1</h4>
@@ -2545,7 +2610,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td width="160"><code class="color-primary">outline</code></td>
+                            <td class="md-w-200"><code class="color-primary">outline</code></td>
                             <td>Adds Outline variant</td>
                         </tr>
                         <tr>
@@ -2848,14 +2913,14 @@ $borders: (
                     <div class="row">
                         <article class="mw-400">
                             <h3>No Outline</h3>
-                            <img src="placeholder.jpg" />
+                            <img height="225" width="400" src="placeholder.jpg" alt="Placeholder Image" loading="lazy" />
                             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod temporinvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                             <a href="#">Learn More</a>
                         </article>
 
                         <article class="outline shadow mw-400">
                             <h3>With Outline & Shadow</h3>
-                            <img src="placeholder.jpg" />
+                            <img height="225" width="400" src="placeholder.jpg" alt="Placeholder Image" loading="lazy" />
                             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod temporinvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                             <a href="#">Learn More</a>
                         </article>
@@ -2890,7 +2955,7 @@ $borders: (
                         </article>
 
                         <article class="outline shadow">
-                            <img src="placeholder.jpg" />
+                            <img height="225" width="400" src="placeholder.jpg" alt="Placeholder Image" loading="lazy" />
                             <div>
                                 <h4>Lorem Ipsum Dolor</h4>
                                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
@@ -2905,6 +2970,56 @@ $borders: (
                 </div>
             </section>
             <!------------------------------------
+            ------------   DROPDOWNS   -----------
+            ------------------------------------->
+            <section class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-inherit bb-1 pb-1">
+                    <i class="icon mr-1">
+                        <svg viewBox="0 0 24 24"><path d="M17 5H20L18.5 7L17 5M3 2H21C22.11 2 23 2.9 23 4V8C23 9.11 22.11 10 21 10H16V20C16 21.11 15.11 22 14 22H3C1.9 22 1 21.11 1 20V4C1 2.9 1.9 2 3 2M3 4V8H14V4H3M21 8V4H16V8H21M3 20H14V10H3V20M5 12H12V14H5V12M5 16H12V18H5V16Z" /></svg>
+                    </i>
+                    Dropdowns
+                </h2>
+                <a name="dropdowns" class="mb-3 block"></a>
+
+                <pre><code class="language-html">&lt;!-- Basic Dropdown --&gt;
+&lt;button data-toggle="next" data-toggle-escapable data-toggle-dismissible&gt;
+&lt;div class="collapse closed"&gt;
+    &lt;ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w"&gt;
+        &lt;li&gt;&lt;button type="button" class="link contrast sharp"&gt;Item 1&lt;/button&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;button type="button" class="link contrast sharp"&gt;Item 2&lt;/button&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;button type="button" class="link contrast sharp"&gt;Item 3&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+
+            <div class="show-code" data-title="Basic Dropdown">
+                <button class="w-200 pl-1 pr-1 justify-content-end" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
+                    Choose an Item
+                    <svg class="icon ml-1 xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                </button>
+                <div class="collapse closed">
+                    <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w-200">
+                        <li><button type="button" class="link contrast sharp">Item 1</button></li>
+                        <li><button type="button" class="link contrast sharp">Item 2</button></li>
+                        <li><button type="button" class="link contrast sharp">Item 3</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="show-code" data-title="Input Dropdown">
+                <input id="input-dropdown" type="text" class="is-select" value="" data-toggle="next" data-toggle-escapable data-toggle-dismissible readonly>
+                <div class="collapse closed">
+                    <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
+                        <li><button type="button" class="link contrast sharp" onclick="document.getElementById('input-dropdown').value = this.innerHTML;">Option 1</button></li>
+                        <li><button type="button" class="link contrast sharp" onclick="document.getElementById('input-dropdown').value = this.innerHTML;">Option 2</button></li>
+                        <li><button type="button" class="link contrast sharp" onclick="document.getElementById('input-dropdown').value = this.innerHTML;">Option 3</button></li>
+                    </ul>
+                </div>
+            </div>
+            <p>See <a href="#menus">Menus</a> for more options.</p>
+
+            </section>
+
+            <!------------------------------------
             -------------    FORMS    ------------
             ------------------------------------->
             <section class="bg-inherit py-0 pb-3">
@@ -2915,239 +3030,331 @@ $borders: (
                     Forms
                 </h2>
                 <a name="forms" class="mb-3 block"></a>
-                <p class="mb-3">Use <code class="color-primary">sup</code> for Upper Labels and <code class="color-primary">sub</code> for Below Labels</p>
 
-                <h4 id="forms-resize" class="span-12 mb-2 mt-3">Resize Fields using <code class="color-primary sm">form.sm</code> or <code class="color-primary sm">form.lg</code></h4>
+                <pre><code class="language-html">&lt;!-- Basic Form --&gt;
+&lt;form class="grid-300"&gt;
+    &lt;label&gt;
+        &lt;h5&gt;Text Field&lt;/h5&gt;
+        &lt;input type="text" /&gt;
+    &lt;/label&gt;
+&lt;/form&gt;</code></pre>
+
+                <table class="mb-2 mt-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th width="160"><h4>Classes</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code class="color-primary">{color}</code></td>
+                            <td>Sets Accent color.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">border-{color}</code></td>
+                            <td>Sets field border colors.</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">color-{color}</code></td>
+                            <td>Sets Text color.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <div class="show-code" data-title="Simple form with some Required Fields">
-                    <form id="form1">
-                        <div class="row py-3 g-3">
-                            <div>
-                                <label><h5>Text Field *</h5>
-                                    <input type="text" required />
-                                </label>
+                    <form id="form1" class="grid-300 p-2 g-3 md-gy-4">
+
+                        <label>
+                            <h5>Text Field *</h5>
+                            <input type="text" required />
+                        </label>
+                    
+                        <label>
+                            <h5>Email *</h5>
+                            <input type="email" required />
+                        </label>
+                    
+                        <label>
+                            <h5>Select *</h5>
+                            <select required>
+                                <option value="" disabled>Select</option>
+                                <option>One</option>
+                                <option>Two</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            <h5>Custom Dropdown</h5>
+                            <input id="dropdown" type="text" class="is-select" value="" data-toggle="next" data-toggle-escapable data-toggle-dismissible readonly>
+                            <div class="collapse closed">
+                                <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
+                                    <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 1</button></li>
+                                    <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 2</button></li>
+                                    <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 3</button></li>
+                                </ul>
                             </div>
-                            <div>
-                                <label><h5>Email *</h5>
-                                    <input type="email" required />
-                                </label>
+                        </label>
+
+                        <label>
+                            <h5>Custom Radio Dropdown</h5>
+                            <input id="dropdown2" type="text" class="is-select" data-toggle="next" data-toggle-escapable data-toggle-dismissible value="" readonly="">
+                            <div class="collapse closed">
+                                <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
+                                    <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_1" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 1</label></li>
+                                    <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_2" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 2</label></li>
+                                    <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_3" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 3</label></li>
+                                </ul>
                             </div>
-                            <div>
-                                <label><h5>Select *</h5>
-                                    <select required>
-                                        <option value="" disabled>Select</option>
-                                        <option>One</option>
-                                        <option>Two</option>
-                                    </select>
-                                </label>
+                        </label>
+
+                        <label>
+                            <h5>Multi Checkbox Dropdown</h5>
+                            <input id="dropdown3" type="text" class="is-select" data-toggle="next" data-toggle-escapable value="" readonly="">
+                            <div class="collapse closed">
+                                <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
+                                    <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
+                                    <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
+                                    <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="row py-3 g-3">
-                            <div>
-                                <label><h5>Custom Dropdown</h5>
-                                    <input id="dropdown" type="text" class="is-select" value="" data-toggle="next" data-toggle-escapable data-toggle-dismissible readonly>
-                                    <div class="collapse closed">
-                                        <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
-                                            <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 1</button></li>
-                                            <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 2</button></li>
-                                            <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 3</button></li>
-                                        </ul>
-                                    </div>
-                                </label>
+                        </label>
+
+                        <label>
+                            <h5>Field with Prefix</h5>
+                            <div class="row g-0 mt-1">
+                                <span class="ui round-left span-auto br-0">Prefix</span>
+                                <input class="round-right" type="text" required />
                             </div>
-                            <div>
-                                <label><h5>Custom Radio Dropdown</h5>
-                                    <input id="dropdown2" type="text" class="is-select" data-toggle="next" data-toggle-escapable data-toggle-dismissible value="" readonly="">
-                                    <div class="collapse closed">
-                                        <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
-                                            <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_1" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 1</label></li>
-                                            <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_2" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 2</label></li>
-                                            <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_3" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 3</label></li>
-                                        </ul>
-                                    </div>
-                                </label>
+                        </label>
+
+                        <label>
+                            <h5>Field with Suffix</h5>
+                            <div class="row g-0 mt-1">
+                                <input class="round-left" type="text" required />
+                                <span class="ui round-right span-auto bl-0">Suffix</span>
                             </div>
-                            <div>
-                                <label><h5>Multi Checkbox Dropdown</h5>
-                                    <input id="dropdown3" type="text" class="is-select" data-toggle="next" data-toggle-escapable value="" readonly="">
-                                    <div class="collapse closed">
-                                        <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
-                                            <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
-                                            <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
-                                            <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
-                                        </ul>
-                                    </div>
-                                </label>
+                        </label>
+
+                        <label>
+                            <h5>File Upload</h5>
+                            <input type="file" class="pl-1" />
+                        </label>
+
+                        <label>
+                            <h5>Date</h5>
+                            <input type="date" />
+                        </label>
+
+                        <label>
+                            <h5>Time</h5>
+                            <input type="time" />
+                        </label>
+
+                        <label>
+                            <h5>Number</h5>
+                            <input type="number" />
+                        </label>
+
+                        <label>
+                            <h5>Website</h5>
+                            <input type="url" />
+                        </label>
+
+                        <label>
+                            <h5>Color with Value</h5>
+                            <div class="row mt-1 g-0">
+                                <input class="round-left" type="color" oninput="this.nextElementSibling.value = this.value" />
+                                <output class="ui round-right span-auto flex-center bl-0 w-100">#000000</output>
                             </div>
-                        </div>
-                        <div class="row py-3 g-3">
-                            <div>
-                                <label><h5>Field with Prefix</h5>
-                                    <div class="row g-0">
-                                        <span class="ui round-left span-auto br-0">Prefix</span>
-                                        <input class="round-right" type="text" required />
-                                    </div>
-                                </label>
+                        </label>
+
+                        <label>
+                            <h5>Range with Value</h5>
+                            <div class="row mt-1">
+                                <input type="range" min="0" max="100" value="0" oninput="this.nextElementSibling.value = this.value" />
+                                <output class="span-auto flex-center" style="width:26px">0</output>
                             </div>
-                            <div>
-                                <label><h5>Field with Suffix</h5>
-                                    <div class="row g-0">
-                                        <input class="round-left" type="text" required />
-                                        <span class="ui round-right span-auto bl-0">Suffix</span>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row g-3">
-                            <div>
-                                <h5>Checkboxes</h5>
-                                <label class="my-1"><input type="checkbox">Red</label>
-                                <label class="my-1"><input type="checkbox">Green</label>
-                                <label class="my-1"><input type="checkbox">None</label>
-                            </div>
-                            <div>
-                                <h5>Switches</h5>
-                                <label class="my-1"><input class="switch" type="checkbox">Red</label>
-                                <label class="my-1"><input class="switch" type="checkbox">Green</label>
-                                <label class="my-1"><input class="switch" type="checkbox">None</label>
-                            </div>
-                            <div>
-                                <h5 class="mb-1">Horizontal Radios *</h5>
-                                <label class="inline mr-1"><input type="radio" name="rad" required>Why</label>
-                                <label class="inline mr-1"><input type="radio" name="rad" required>When</label>
-                                <label class="inline mr-1"><input type="radio" name="rad" required>Where</label>
-                            </div>
-                        </div>
+                        </label>
+
                         <div>
-                            <div class="mt-3">
-                                <label><h5>Message</h5>
-                                    <textarea></textarea>
-                                </label>
-                            </div>
-                            <div class="mt-3 text-center">
-                                <button type="submit" class="w mw-200 text-center justify-content-center">Submit</button>
-                            </div>
+                            <h5 class="mb-1">Horizontal Radios *</h5>
+                            <label class="inline mx-1"><input type="radio" name="rad" required>Why</label>
+                            <label class="inline mx-1"><input type="radio" name="rad" required>When</label>
+                            <label class="inline mx-1"><input type="radio" name="rad" required>Where</label>
                         </div>
+
+                        <div>
+                            <h5>Checkboxes</h5>
+                            <label class="m-1"><input type="checkbox">Red</label>
+                            <label class="m-1"><input type="checkbox">Green</label>
+                            <label class="m-1"><input type="checkbox">None</label>
+                        </div>
+
+                        <div>
+                            <h5>Switches</h5>
+                            <label class="m-1"><input class="switch" type="checkbox">Red</label>
+                            <label class="m-1"><input class="switch" type="checkbox">Green</label>
+                            <label class="m-1"><input class="switch" type="checkbox">None</label>
+                        </div>
+                
+                        <label class="span"><h5>Message</h5>
+                            <textarea></textarea>
+                        </label>
+
+                        <button type="submit" class="mw-200 span">Submit</button>
                     </form>
                 </div>
 
-                <div class="show-code" data-title="Simple form with Accent Color an Show Invalid">
-                    <form class="primary show-invalid">
-                        <div class="row py-3 g-3">
-                            <div>
-                                <label>
-                                    <h5>Text Field *</h5>
-                                    <input type="text" placeholder=" " required />
-                                </label>
+                <div class="show-code" data-title="Form with Accent Color, Alternate Grid and Show Invalid">
+                    <form class="primary show-invalid row columns-1 md-columns-12 g-3 md-gy-4 p-2 justify-content-center">
+                    
+                        <label class="md-span-4">
+                            <h5>Text Field *</h5>
+                            <input type="text" required />
+                            <small class="error none mt-1">This field is required</small>
+                        </label>
+                    
+                        <label class="md-span-8">
+                            <h5>Email *</h5>
+                            <input type="email" required />
+                            <small class="error none mt-1">Invalid Email Address</small>
+                        </label>
+                    
+                        <label class="md-span-3">
+                            <h5>Select *</h5>
+                            <select required>
+                                <option value="" disabled>Select</option>
+                                <option>One</option>
+                                <option>Two</option>
+                            </select>
+                        </label>
+
+                        <label class="md-span-3">
+                            <h5>Custom Dropdown</h5>
+                            <input id="dropdown" type="text" class="is-select" value="" data-toggle="next" data-toggle-escapable data-toggle-dismissible readonly>
+                            <div class="collapse closed">
+                                <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
+                                    <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 1</button></li>
+                                    <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 2</button></li>
+                                    <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 3</button></li>
+                                </ul>
                             </div>
-                            <div>
-                                <label>
-                                    <h5>Email *</h5>
-                                    <input type="email" placeholder=" " required />
-                                </label>
+                        </label>
+
+                        <label class="md-span-3">
+                            <h5>Custom Radio Dropdown</h5>
+                            <input id="dropdown2" type="text" class="is-select" data-toggle="next" data-toggle-escapable data-toggle-dismissible value="" readonly="">
+                            <div class="collapse closed">
+                                <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
+                                    <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_1" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 1</label></li>
+                                    <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_2" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 2</label></li>
+                                    <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_3" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 3</label></li>
+                                </ul>
                             </div>
-                            <div>
-                                <label>
-                                    <h5>Select *</h5>
-                                    <select required>
-                                        <option value="" disabled selected>Select</option>
-                                        <option>One</option>
-                                        <option>Two</option>
-                                    </select>
-                                </label>
+                        </label>
+
+                        <label class="md-span-3">
+                            <h5>Multi Checkbox Dropdown</h5>
+                            <input id="dropdown3" type="text" class="is-select" data-toggle="next" data-toggle-escapable value="" readonly="">
+                            <div class="collapse closed">
+                                <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
+                                    <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
+                                    <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
+                                    <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
+                                </ul>
                             </div>
+                        </label>
+
+                        <label class="md-span-6">
+                            <h5>Field with Prefix</h5>
+                            <div class="row g-0 mt-1">
+                                <span class="ui round-left span-auto br-0">Prefix</span>
+                                <input class="round-right" type="text" required />
+                            </div>
+                        </label>
+
+                        <label class="md-span-6">
+                            <h5>Field with Suffix</h5>
+                            <div class="row g-0 mt-1">
+                                <input class="round-left" type="text" required />
+                                <span class="ui round-right span-auto bl-0">Suffix</span>
+                            </div>
+                        </label>
+
+                        <label class="md-span-12">
+                            <h5>File Upload</h5>
+                            <input type="file" class="pl-1" />
+                        </label>
+
+                        <label class="md-span-4">
+                            <h5>Date</h5>
+                            <input type="date" />
+                        </label>
+
+                        <label class="md-span-4">
+                            <h5>Time</h5>
+                            <input type="time" />
+                        </label>
+
+                        <label class="md-span-4">
+                            <h5>Number</h5>
+                            <input type="number" />
+                        </label>
+
+                        <label class="md-span-4">
+                            <h5>Website</h5>
+                            <input type="url" />
+                        </label>
+
+                        <label class="md-span-4">
+                            <h5>Color with Value</h5>
+                            <div class="row mt-1 g-0">
+                                <input class="round-left" type="color" oninput="this.nextElementSibling.value = this.value" />
+                                <output class="ui round-right span-auto flex-center bl-0 w-100">#000000</output>
+                            </div>
+                        </label>
+
+                        <label class="md-span-4">
+                            <h5>Range with Value</h5>
+                            <div class="row mt-1">
+                                <input type="range" min="0" max="100" value="0" oninput="this.nextElementSibling.value = this.value" />
+                                <output class="span-auto flex-center" style="width:26px">0</output>
+                            </div>
+                        </label>
+
+                        <div class="md-span-4">
+                            <h5 class="mb-1">Horizontal Radios *</h5>
+                            <label class="inline mx-1"><input type="radio" name="rad" required>Why</label>
+                            <label class="inline mx-1"><input type="radio" name="rad" required>When</label>
+                            <label class="inline mx-1"><input type="radio" name="rad" required>Where</label>
                         </div>
-                        <div class="row py-3 g-3">
-                            <div>
-                                <label><h5>Custom Dropdown</h5>
-                                    <input id="dropdow4" type="text" class="is-select" value="" data-toggle="next" data-toggle-escapable data-toggle-dismissible readonly>
-                                    <div class="collapse closed">
-                                        <ul class="list navigatable bg-primary round-bottom overflow-hidden shadow w">
-                                            <li><button type="button" class="capitalize sharp" onclick="document.getElementById('dropdow4').value = this.innerHTML;">Option 1</button></li>
-                                            <li><button type="button" class="capitalize sharp" onclick="document.getElementById('dropdow4').value = this.innerHTML;">Option 2</button></li>
-                                            <li><button type="button" class="capitalize sharp" onclick="document.getElementById('dropdow4').value = this.innerHTML;">Option 3</button></li>
-                                        </ul>
-                                    </div>
-                                </label>
-                            </div>
-                            <div>
-                                <label><h5>Custom Radio Dropdown</h5>
-                                    <input id="dropdown5" type="text" class="is-select" data-toggle="next" data-toggle-escapable data-toggle-dismissible value="" readonly="">
-                                    <div class="collapse closed">
-                                        <ul class="list navigatable bg-primary round-bottom overflow-hidden shadow w">
-                                            <li><label class="button capitalize sharp"><input class="border-light light" type="radio" name="d2" value="hidden_value_1" onclick="document.getElementById('dropdown5').value = this.parentElement.innerText;">Option 1</label></li>
-                                            <li><label class="button capitalize sharp"><input class="border-light light" type="radio" name="d2" value="hidden_value_2" onclick="document.getElementById('dropdown5').value = this.parentElement.innerText;">Option 2</label></li>
-                                            <li><label class="button capitalize sharp"><input class="border-light light" type="radio" name="d2" value="hidden_value_3" onclick="document.getElementById('dropdown5').value = this.parentElement.innerText;">Option 3</label></li>
-                                        </ul>
-                                    </div>
-                                </label>
-                            </div>
-                            <div>
-                                <label><h5>Multi Checkbox Dropdown</h5>
-                                    <input id="dropdown6" type="text" class="is-select" data-toggle="next" data-toggle-escapable value="" readonly="">
-                                    <div class="collapse closed">
-                                        <ul class="list navigatable bg-primary round-bottom overflow-hidden shadow w">
-                                            <li><label class="button capitalize sharp"><input class="border-light light" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown6').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
-                                            <li><label class="button capitalize sharp"><input class="border-light light" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown6').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
-                                            <li><label class="button capitalize sharp"><input class="border-light light" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown6').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
-                                        </ul>
-                                    </div>
-                                </label>
-                            </div>
+
+                        <div class="md-span-4">
+                            <h5>Checkboxes</h5>
+                            <label class="m-1"><input type="checkbox">Red</label>
+                            <label class="m-1"><input type="checkbox">Green</label>
+                            <label class="m-1"><input type="checkbox">None</label>
                         </div>
-                        <div class="row py-3 g-3">
-                            <div>
-                                <label><h5>Field with Prefix</h5>
-                                    <div class="row g-0">
-                                        <span class="ui round-left span-auto br-0">Prefix</span>
-                                        <input class="round-right" type="text" required />
-                                    </div>
-                                </label>
-                            </div>
-                            <div>
-                                <label><h5>Field with Suffix</h5>
-                                    <div class="row g-0">
-                                        <input class="round-left" type="text" required />
-                                        <span class="ui round-right span-auto bl-0">Suffix</span>
-                                    </div>
-                                </label>
-                            </div>
+
+                        <div class="md-span-4">
+                            <h5>Switches</h5>
+                            <label class="m-1"><input class="switch" type="checkbox">Red</label>
+                            <label class="m-1"><input class="switch" type="checkbox">Green</label>
+                            <label class="m-1"><input class="switch" type="checkbox">None</label>
                         </div>
-                        <div class="row g-3">
-                            <div>
-                                <h5>Checkboxes</h5>
-                                <label class="my-1"><input type="checkbox">Red</label>
-                                <label class="my-1"><input type="checkbox">Green</label>
-                                <label class="my-1"><input type="checkbox">None</label>
-                            </div>
-                            <div>
-                                <h5>Switches</h5>
-                                <label class="my-1"><input class="switch" type="checkbox">Red</label>
-                                <label class="my-1"><input class="switch" type="checkbox">Green</label>
-                                <label class="my-1"><input class="switch" type="checkbox">None</label>
-                            </div>
-                            <div>
-                                <h5 class="mb-1">Horizontal Radios *</h5>
-                                <label class="inline mr-1"><input type="radio" name="rad" required>Why</label>
-                                <label class="inline mr-1"><input type="radio" name="rad" required>When</label>
-                                <label class="inline mr-1"><input type="radio" name="rad" required>Where</label>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="mt-3">
-                                <label>
-                                    <h5>Message</h5>
-                                    <textarea></textarea>
-                                </label>
-                            </div>
-                            <div class="mt-3 text-center">
-                                <button type="submit">Submit</button>
-                            </div>
-                        </div>
+                
+                        <label class="span"><h5>Message</h5>
+                            <textarea></textarea>
+                        </label>
+
+                        <button type="submit" class="mw-200 span">Submit</button>
+
                     </form>
                 </div>
 
-                <div id="forms-responsive-labels" class="show-code" data-title="Responsive labels with loading button and disabled fields on submit">
-                    <form class="row justify-content-center" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.classList.add('disabled'); setTimeout(() => {this.submit()}, 2000)">
+                <div class="show-code" data-title="Compact with Loading Button and Disabled Fields on Submit">
+                    <form class="show-invalid row columns-1 md-columns-3 justify-content-center sm gy-1" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').setAttribute('aria-busy', 'true'); this.classList.add('disabled'); setTimeout(() => {this.reset(); this.querySelector('[type=submit]').setAttribute('aria-busy', 'false'); this.classList.remove('disabled');}, 4000)">
                         <label>
                             <sup>Name *</sup>
                             <input type="text" required placeholder=" " />
@@ -3164,39 +3371,31 @@ $borders: (
                                 <option>Three</option>
                             </select>
                         </label>
-                        <label class="span-12">
+                        <label class="span">
                             <sup>Message</sup>
                             <textarea placeholder=" "></textarea>
                         </label>
-                        <button class="span-6 btn loader" type="submit">Submit with Loading Icon</button>
+                        <button type="submit" aria-busy="false" class="mt-2">Submit with Loading Icon</button>
                     </form>
                 </div>
-                
-                <div class="show-code" data-title="Compact Form">
-                    <form class="sm row g-2 justify-content-center">
+
+
+                <div id="forms-responsive-labels" class="show-code" data-title="Responsive Labels">
+                    <form class="row columns-1 justify-content-center" onsubmit="return false;">
                         <label>
-                            <sub>Name</sub>
-                            <input type="text" placeholder=" " />
+                            <sup>Label Above</sup>
+                            <input type="text" required placeholder=" " />
                         </label>
                         <label>
-                            <sub>Email</sub>
-                            <input type="email" placeholder=" " />
-                        </label>
-                        <label>
-                            <sub>Select</sub>
-                            <select placeholder=" ">
-                                <option value="" selected disabled></option>
+                            <sub>Label Below</sub>
+                            <select>
+                                <option value="" selected></option>
                                 <option>Two</option>
                                 <option>Three</option>
                             </select>
-                        </label>
-                        <label class="span-12">
-                            <sub>Message</sub>
-                            <textarea placeholder=" "></textarea>
-                        </label>
-                        <button class="span-4 btn loader" type="submit">Submit</button>
                     </form>
                 </div>
+
             </section>
             <!------------------------------------
             -------------    ICONS    ------------
@@ -3367,6 +3566,277 @@ $borders: (
                 </div>
             </section>
             <!------------------------------------
+            ------------    LISTS    ------------
+            ------------------------------------->
+            <section class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-inherit bb-1 pb-1">
+                    <i class="icon mr-1">
+                        <svg viewBox="0 0 24 24"><path d="M7,5H21V7H7V5M7,13V11H21V13H7M4,4.5A1.5,1.5 0 0,1 5.5,6A1.5,1.5 0 0,1 4,7.5A1.5,1.5 0 0,1 2.5,6A1.5,1.5 0 0,1 4,4.5M4,10.5A1.5,1.5 0 0,1 5.5,12A1.5,1.5 0 0,1 4,13.5A1.5,1.5 0 0,1 2.5,12A1.5,1.5 0 0,1 4,10.5M7,19V17H21V19H7M4,16.5A1.5,1.5 0 0,1 5.5,18A1.5,1.5 0 0,1 4,19.5A1.5,1.5 0 0,1 2.5,18A1.5,1.5 0 0,1 4,16.5Z" /></svg>
+                    </i>
+                    Lists
+                </h2>
+                <a name="lists" class="mb-3 block"></a>
+
+                <pre><code class="language-html">&lt;!-- Basic List --&gt;
+&lt;div class="list"&gt;
+    &lt;button class="link contrast"&gt;List Item 1&lt;/button&gt;
+    &lt;button class="link contrast"&gt;List Item 2&lt;/button&gt;
+    &lt;button class="link contrast"&gt;List Item 3&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+                <div class="show-code" data-title="Basic List">
+                    <div class="list">
+                        <button class="link contrast">List Item 1</button>
+                        <button class="link contrast">List Item 2</button>
+                        <button class="link contrast">List Item 3</button>
+                    </div>
+                </div>
+
+                <div class="show-code" data-title="Basic UL List">
+                    <ul class="list">
+                        <li><button class="link contrast">List Item 1</button></li>
+                        <li><button class="link contrast">List Item 2</button></li>
+                        <li><button class="link contrast">List Item 3</button></li>
+                    </ul>
+                </div>
+
+                <div class="show-code" data-title="Basic List Text">
+                    <ul class="list">
+                        <li>List Item 1</li>
+                        <li>List Item 2</li>
+                        <li>List Item 3</li>
+                    </ul>
+                </div>
+
+                <div class="show-code" data-title="Outline Horizontal List">
+                    <nav class="list outline row hoverable bg-faint">
+                        <ul class="">
+                            <li><button class="link contrast">List Item 1</button></li>
+                            <li><button class="link contrast">List Item 2</button>
+                                <ul class="pill-bottom shadow overflow-hidden">
+                                    <li><button class="link contrast">List Item 1</button></li>
+                                    <li><button class="link contrast">List Item 2</button></li>
+                                    <li><button class="link contrast">List Item 3</button></li>
+                                </ul></li>
+                            <li><button class="link contrast">List Item 3</button></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="show-code" data-title="Single Selection List">
+                    <nav class="list">
+                        <menu class="outline">
+                            <li><label class="button link contrast"><input name="list-item-menu" type="radio" checked />List Item 1</label></li>
+                            <li><label class="button link contrast"><input name="list-item-menu" type="radio" />List Item 2</label></li>
+                            <li><label class="button link contrast"><input name="list-item-menu" type="radio" />List Item 3</label></li>
+                        </menu>
+                    </nav>
+                </div>
+
+                <div class="show-code" data-title="Accented Multi Selection List">
+                    <menu class="list outline primary border-primary">
+                        <li><label class="button link"><input name="list-item-menu" type="checkbox" checked />List Item 1</label></li>
+                        <li><label class="button link"><input name="list-item-menu" type="checkbox" />List Item 2</label></li>
+                        <li><label class="button link"><input name="list-item-menu" type="checkbox" />List Item 3</label></li>
+                    </menu>
+                </div>
+
+                <div class="show-code" data-title="Outlined Itemized List">
+                    <ul class="list outline round overflow-hidden">
+                        <li>
+                            <div class="row align-items-center p-2">
+                                <i class="span-auto icon xxl outline circle"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
+                                <span class="span-fill">
+                                    <h4>List Item 1</h4>
+                                    <h6 class="sm mt-1">Sub List Data</h6>
+                                </span>
+                                <span class="flex g-2 sm">
+                                    <span class="badge primary compact">12</span>
+                                    <button class="icon hazy secondary circle">
+                                        <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
+                                    </button>
+                                    <button class="icon hazy contrast circle">
+                                        <svg viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
+                                    </button>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row align-items-center p-2">
+                                <i class="span-auto icon xxl outline circle"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
+                                <span class="span-fill">
+                                    <h4>List Item 2</h4>
+                                    <h6 class="sm mt-1">Sub List Data</h6>
+                                </span>
+                                <span class="flex g-2 sm">
+                                    <span class="badge primary compact">12</span>
+                                    <button class="icon hazy secondary circle">
+                                        <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
+                                    </button>
+                                    <button class="icon hazy contrast circle">
+                                        <svg viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
+                                    </button>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row align-items-center p-2">
+                                <i class="span-auto icon xxl outline circle"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
+                                <span class="span-fill">
+                                    <h4>List Item 3</h4>
+                                    <h6 class="sm mt-1">Sub List Data</h6>
+                                </span>
+                                <span class="flex g-2 sm">
+                                    <span class="badge primary compact">12</span>
+                                    <button class="icon hazy secondary circle">
+                                        <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
+                                    </button>
+                                    <button class="icon hazy contrast circle">
+                                        <svg viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
+                                    </button>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="show-code" data-title="Selectable Outlined User List">
+                    <ul class="list outline round overflow-hidden">
+                        <li>
+                            <div class="row align-items-center p-2 button link">
+                                <i class="span-auto icon xxl outline circle"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
+                                <span class="span-fill">
+                                    <h4>List Item 1</h4>
+                                    <h6 class="sm mt-1">Sub List Data</h6>
+                                </span>
+                                <span class="flex g-2 sm">
+                                    <span class="badge primary p-1">12</span>
+                                    <span class="badge secondary p-1">
+                                        <svg viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
+                                    </span>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row align-items-center p-2 button link">
+                                <i class="span-auto icon xxl outline circle"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
+                                <span class="span-fill">
+                                    <h4>List Item 2</h4>
+                                    <h6 class="sm mt-1">Sub List Data</h6>
+                                </span>
+                                <span class="flex g-2 sm">
+                                    <span class="badge primary p-1">12</span>
+                                    <span class="badge secondary p-1">
+                                        <svg viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
+                                    </span>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row align-items-center p-2 button link">
+                                <i class="span-auto icon xxl outline circle"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
+                                <span class="span-fill">
+                                    <h4>List Item 3</h4>
+                                    <h6 class="sm mt-1">Sub List Data</h6>
+                                </span>
+                                <span class="flex g-2 sm">
+                                    <span class="badge primary p-1">12</span>
+                                    <span class="badge secondary p-1">
+                                        <svg viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
+                                    </span>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="show-code" data-title="Sidebar List with Sub Lists">
+                    <menu class="list bg-faint round shadow mw-200">
+                        <li>
+                            <a href="#">List Item 1</a>
+                        </li>
+                        <li>
+                            <a href="#">List Item 2</a>
+                            <button class="icon link circle sm shy" data-toggle="next">
+                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </button>
+                            <ul>
+                                <li><a href="#">Sub Link 1</a></li>
+                                <li><a href="#">Sub Link 2</a></li>
+                                <li><a href="#">Sub Link 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">List Item 3</a>
+                            <button class="icon link circle sm shy" data-toggle="next">
+                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </button>
+                            <ul>
+                                <li><a href="#">Sub Link 1</a></li>
+                                <li><a href="#">Sub Link 2</a></li>
+                                <li><a href="#">Sub Link 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="pr-4">List Item 4 With a very long text</a>
+                            <button class="icon link circle sm shy" data-toggle="next">
+                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </button>
+                            <ul>
+                                <li><a href="#">Sub Link 1</a></li>
+                                <li><a href="#">Sub Link 2</a></li>
+                                <li><a href="#">Sub Link 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="truncate pr-3">List Item 5 Truncated Text</a>
+                            <button class="icon link circle sm shy" data-toggle="next">
+                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </button>
+                            <ul>
+                                <li><a href="#">Sub Link 1</a></li>
+                                <li><a href="#">Sub Link 2</a></li>
+                                <li><a href="#">Sub Link 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg class="icon lg mr-2" viewBox="0 0 24 24">
+                                    <path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
+                                </svg>
+                                With Icon
+                            </a>
+                        </li>
+                        <hr class="my-1 mx-1" />
+                        <li class="sm">
+                            <a href="#">Small List Item 1</a>
+                            <button class="icon link circle sm shy" data-toggle="next">
+                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </button>
+                            <ul>
+                                <li><a href="#">Sub Link 1</a></li>
+                                <li>
+                                    <a href="#">Sub Link 2</a>
+                                    <button class="icon link circle sm shy" data-toggle="next">
+                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </button>
+                                    <ul>
+                                        <li><a href="#">Sub Link 1</a></li>
+                                        <li><a href="#">Sub Link 2</a></li>
+                                        <li><a href="#">Sub Link 3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Sub Link 3</a></li>
+                            </ul>
+                        </li>
+                        <li class="sm">
+                            <a href="#">Small List Item 2</a>
+                        </li>
+                    </menu>
+                </div>
+
+            </section>
+            <!------------------------------------
             ------------    LOADER    ------------
             ------------------------------------->
             <section class="bg-inherit py-0 pb-3">
@@ -3384,6 +3854,90 @@ $borders: (
                     <button type="button" aria-busy="false" onclick="this.setAttribute('aria-busy', 'true'); setTimeout(() => {this.setAttribute('aria-busy', 'false');}, 2000);">Click for Loading</button>
                 </div>
             </section>
+            <!------------------------------------
+            ---------        MENUS      ----------
+            ------------------------------------->
+            <section class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-inherit bb-1 pb-1">
+                    <i class="icon mr-1">
+                        <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
+                    </i>
+                    Menus
+                </h2>
+                <a name="menus" class="mb-3 block"></a>
+                
+                <h5 class="mt-3">Menus use Toggles to add the collapsing functionality. View <a href="#toggles">Toggles</a> for more details.</h5>
+
+                <pre><code class="language-html">&lt;!-- Basic Menu --&gt;
+&lt;button class="link icon" data-toggle="next" data-toggle-escapable data-toggle-dismissible>Open Menu&lt;/button&gt;
+&lt;nav class="absolute list bg-faint round shadow p-1 w-100"&gt;
+    &lt;a href="#"&gt;Link 1&lt;/a&gt;
+    &lt;a href="#"&gt;Link 2&lt;/a&gt;
+    &lt;a href="#"&gt;Link 3&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+
+                <div class="show-code" data-title="Basic Menu">
+                    <button class="link icon" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
+                        <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+                    </button>
+                    <nav class="absolute list bg-faint round shadow p-1 w-100">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </nav>
+                </div>
+
+                <div id="menus" class="show-code" data-title="Toggle Dots List on Right">
+                    <div class="text-right">
+                        <button class="link icon circle" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
+                            <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
+                            <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+                        </button>
+                        <ul class="absolute right list navigatable bg-faint round shadow p-1 mr-1 text-left">
+                            <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                            <li><a class="button link pl-1" href="#">
+                                <svg class="icon mx-1 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
+                                Link 1</a></li>
+                            <li><a class="button link pl-1" href="#">
+                                <svg class="icon mx-1 sm" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2h9m3-4v-2H6v2h12z" /></svg>
+                                Link 2</a></li>
+                            <li><a class="button link pl-1" href="#">
+                                <svg class="icon mx-1 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
+                                Link 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="menus" class="show-code" data-title="Hoverable User Menu">
+                    <nav class="text-right">
+                        <ul class="navigatable hoverable">
+                            <li class="p-1">
+                                <button class="hazy icon circle" data-toggle="hover" data-toggle-escapable data-toggle-dismissible>
+                                    <svg viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
+                                </button>
+                                <ul class="right bg-faint round shadow p-1 list">
+                                    <li>
+                                        <a class="link pl-1" href="#">
+                                        <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
+                                        Link 1</a></li>
+                                    <li>
+                                        <a class="link pl-1" href="#">
+                                        <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2h9m3-4v-2H6v2h12z" /></svg>
+                                        Link 2</a></li>
+                                    <li>
+                                        <a class="link pl-1" href="#">
+                                        <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
+                                        Link 3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </section>
+
             <!------------------------------------
             ---------       MODALS      ----------
             ------------------------------------->
@@ -3444,10 +3998,12 @@ $borders: (
                         <article class="mw-400">
                             <header>
                                 <h4>Lorem ipsum dolor as</h4>
-                                <label class="button link icon close circle mr-n1" data-toggle-close></label>
+                                <button class="link icon circle mr-n1" data-toggle-close>
+                                    <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                                </button>
                             </header>
                             <div class="px-3 pb-3 pt-1">
-                                <form class="accent-primary grid g-2 show-invalid">
+                                <form class="accent-primary column g-2 show-invalid">
                                     <label>
                                         <sup>Email</sup>
                                         <input id="login-email" type="email" required placeholder=" " />
@@ -3484,7 +4040,7 @@ $borders: (
                                 </div>
                                 <footer class="px-2">
                                     <button type="button" class="sm outline" data-toggle-close>Cancel</button>
-                                    <button type="submit" class="button primary sm">Accept</button>
+                                    <button type="submit" class="primary sm">Accept</button>
                                 </footer>
                             </article>
                         </form>
@@ -3499,7 +4055,9 @@ $borders: (
                         <article class="mw-400 shadow">
                             <header>
                                 <h4>No Backdrop Modal Example</h4>
-                                <button class="link icon close circle mr-n1" data-toggle-close></button>
+                                <button class="link icon circle mr-n1" data-toggle-close>
+                                    <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                                </button>
                             </header>
                             <p class="mb-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                                 tempor invidunt ut labore et dolore magna aliquyam erat</p>
@@ -3513,10 +4071,12 @@ $borders: (
                         <article class="mw-400">
                             <header>
                                 <h4>Lorem ipsum dolor as</h4>
-                                <button type="button" class="link icon close circle" data-toggle-close></button>
+                                <button class="link icon circle mr-n1" data-toggle-close>
+                                    <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                                </button>
                             </header>
                             <div class="px-3 pb-3 pt-1">
-                                <form class="accent-primary grid g-2">
+                                <form class="accent-primary column g-2">
                                     <label>
                                         <sup>Email</sup>
                                         <input type="email" required placeholder=" " />
@@ -3660,16 +4220,39 @@ $borders: (
 
             </section>
             <!------------------------------------
-            ----------    NAVIGATION    ----------
+            ----------    NAVS    ----------
             ------------------------------------->
             <section class="bg-inherit pb-0">
                 <h2 class="sticky flex-middle index-2 pt-3 bg-inherit bb-1 pb-1">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                     </i>
-                    Navigation
+                    Navs
                 </h2>
-                <a name="navigation" class="mb-3 block"></a>
+                <a name="navs" class="mb-3 block"></a>
+
+                <pre><code class="language-html">&lt;!-- Basic Nav --&gt;
+&lt;nav&gt;
+    &lt;a href="#"&gt;Link 1&lt;/a&gt;
+    &lt;a href="#"&gt;Link 2&lt;/a&gt;
+    &lt;a href="#"&gt;Link 3&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+
+                <pre><code class="language-html">&lt;!-- UL Nav with Sub Nav --&gt;
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="#"&gt;Link 3&lt;/a&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Sub Link 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Sub Link 2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Sub Link 3&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
 
                 <table class="mb-3 border-faint">
                     <thead>
@@ -3715,8 +4298,8 @@ $borders: (
                             <td>Styles Nav Container as Toolbar</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">horizontal</code></td>
-                            <td>Layout the Items Horizontally. You can use breakpoints with <code class="color-primary">{breakpoint}-horizontal</code></td>
+                            <td><code class="color-primary">list</code></td>
+                            <td>Layout the Items Vertically and change UI to a List Format.</td>
                         </tr>
                         <tr>
                             <td><code class="color-primary">hoverable</code></td>
@@ -3742,39 +4325,21 @@ $borders: (
                         <a href="#">Link 4</a>
                     </nav>
                 </div>
-
-                <div id="nav" class="show-code" data-title="UL Nav Bar Menu">
-                    <nav class="bg-faint">
-                        <ul>
-                            <li><a href="#">Link 1</a></li>
-                            <li><a href="#">Link 2</a></li>
-                            <li><a href="#">Link 3</a></li>
-                            <li><a href="#">Link 4</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div id="nav" class="show-code" data-title="UL List Nav Bar Menu">
-                    <nav class="bg-faint list">
-                        <ul>
-                            <li><a href="#">Link 1</a></li>
-                            <li><a href="#">Link 2</a></li>
-                            <li><a href="#">Link 3</a></li>
-                            <li><a href="#">Link 4</a></li>
-                        </ul>
-                    </nav>
-                </div>
     
                 <div class="show-code" data-title="Drop down Navigation Menu Right Aligned">
                     <nav class="bg-faint md-hoverable text-right">
                         <ul>
                             <li>
-                                <a href="#">Link with Dropdown</a>
+                                <a class="pr-0" href="#">Link with Dropdown
+                                    <svg class="icon lg color-grey ml-1 none md-inline" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                </a>
                                 <ul class="bg-faint round-bottom md-shadow">
                                     <li><a href="#">Sub Link 1</a></li>
                                     <li>
                                         <a href="#">Sub Link with Menu</a>
-                                        <button class="icon down link circle sm" data-toggle="next"></button>
+                                        <button class="icon link circle sm flip-pressed" data-toggle="next">
+                                            <svg class="xl shy" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                        </button>
                                         <ul class="bg-faint round">
                                             <li><a href="#">Sub Sub Link 1</a></li>
                                             <li><a href="#">Sub Sub Link 2</a></li>
@@ -3790,7 +4355,9 @@ $borders: (
                             <li><a href="#">Link 3</a></li>
                             <li><a href="#">Link 4</a></li>
                             <li>
-                                <a href="#">Link with Dropdown</a>
+                                <a class="pr-0" href="#">Link with Dropdown
+                                    <svg class="icon lg color-grey ml-1 none md-inline" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                </a>
                                 <ul class="bg-faint round-bottom md-shadow">
                                     <li><a href="#">Sub Link 1</a></li>
                                     <li><a href="#">Sub Link 2</a></li>
@@ -3810,413 +4377,25 @@ $borders: (
                     </nav>
                 </div>
 
-                <div class="show-code" data-title="Toolbar Navigation">
-                    <div class="toolbar bg-faint">
-                        <nav class="list md-row g-1 md-columns-auto md-justify-content-end md-hoverable bg-inherit">
-                            <ul>
-                                <li>
-                                    <a href="#">Link 1</a>
-                                    <button class="icon down link circle sm shy" data-toggle="next"></button>
-                                    <ul class="bg-faint round">
-                                        <li>
-                                            <a href="#">Sub Link 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Sub Link 2</a>
-                                            <button class="icon down link circle sm shy" data-toggle="next"></button>
-                                            <ul class="bg-faint round">
-                                                <li>
-                                                    <a href="#">Sub Sub Link 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Sub Sub Link 2</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Sub Sub Link 3</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Sub Sub Link 4</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Sub Link 3</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Sub Link 4</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Link 2</a>
-                                </li>
-                                <li>
-                                    <a href="#">Link 3</a>
-                                    <button class="icon down link circle sm shy" data-toggle="next"></button>
-                                    <ul class="bg-faint right round">
-                                        <li>
-                                            <a href="#">Sub Link 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Sub Link 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Sub Link 3</a>
-                                            <button class="icon down link circle sm shy" data-toggle="next"></button>
-                                            <ul class="bg-faint left round">
-                                                <li>
-                                                    <a href="#">Sub Sub Link 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Sub Sub Link 2</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Sub Sub Link 3</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Link 4</a>
-                                </li>
-                                <li>
-                                    <button class="link icon">
-                                        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
-                                    </button>
-                                    <ul class="bg-faint right round">
-                                        <li>
-                                            <a href="#">
-                                                <i class="icon mr-2"><svg viewBox="0 0 24 24">
-                                                    <path fill="currentColor"
-                                                        d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" />
-                                                </svg></i> Preferences
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                            <i class="icon mr-2"><svg viewBox="0 0 24 24">
-                                                    <path fill="currentColor"
-                                                        d="M16.56,5.44L15.11,6.89C16.84,7.94 18,9.83 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12C6,9.83 7.16,7.94 8.88,6.88L7.44,5.44C5.36,6.88 4,9.28 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12C20,9.28 18.64,6.88 16.56,5.44M13,3H11V13H13" />
-                                                </svg></i>Logout
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-
-                <div id="lists" class="show-code" data-title="Basic List Text">
-                    <ul class="list">
-                        <li>List Item 1</li>
-                        <li>List Item 2</li>
-                        <li>List Item 3</li>
-                    </ul>
-                </div>
-
-                <div id="lists" class="show-code" data-title="Basic List Links">
-                    <ul class="list">
-                        <li><a href="#">List Item 1</a></li>
-                        <li><a href="#">List Item 2</a></li>
-                        <li><a href="#">List Item 3</a></li>
-                    </ul>
-                </div>
-            
-                <div id="lists" class="show-code" data-title="Basic List">
-                    <ul class="list">
-                        <li><button class="link contrast">List Item 1</button></li>
-                        <li><button class="link contrast">List Item 2</button></li>
-                        <li><button class="link contrast">List Item 3</button></li>
-                    </ul>
-                </div>
-
-                <div id="lists" class="show-code" data-title="Basic Div List">
-                    <div class="list">
-                        <button class="link contrast">List Item 1</button>
-                        <button class="link contrast">List Item 2</button>
-                        <button class="link contrast">List Item 3</button>
-                    </div>
-                </div>
-
-                <div id="lists" class="show-code" data-title="Outline Horizontal List">
-                    <nav class="list outline row hoverable bg-faint">
-                        <ul class="">
-                            <li><button class="link contrast">List Item 1</button></li>
-                            <li><button class="link contrast">List Item 2</button>
-                                <ul class="pill-bottom shadow overflow-hidden">
-                                    <li><button class="link contrast">List Item 1</button></li>
-                                    <li><button class="link contrast">List Item 2</button></li>
-                                    <li><button class="link contrast">List Item 3</button></li>
-                                </ul></li>
-                            <li><button class="link contrast">List Item 3</button></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div id="lists" class="show-code" data-title="Single Selection List">
-                    <nav class="list">
-                        <menu class="outline">
-                            <li><label class="button link contrast"><input name="list-item-menu" type="radio" checked />List Item 1</label></li>
-                            <li><label class="button link contrast"><input name="list-item-menu" type="radio" />List Item 2</label></li>
-                            <li><label class="button link contrast"><input name="list-item-menu" type="radio" />List Item 3</label></li>
-                        </menu>
-                    </nav>
-                </div>
-
-                <div id="lists" class="show-code" data-title="Multi Selection List">
-                    <menu class="list outline primary">
-                        <li><label class="button link"><input name="list-item-menu" type="checkbox" checked />List Item 1</label></li>
-                        <li><label class="button link"><input name="list-item-menu" type="checkbox" />List Item 2</label></li>
-                        <li><label class="button link"><input name="list-item-menu" type="checkbox" />List Item 3</label></li>
-                    </menu>
-                </div>
-
-                <div class="show-code" data-title="Outlined User List">
-                    <ul class="list outline round">
-                        <li>
-                            <span class="flex-middle">
-                                <i class="icon mr-2 xl"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
-                                <span>
-                                    List Item 1
-                                    <h6 class="sm mt-1">Sub List Data</h6>
-                                </span>
-                            </span>
-                            <span class="flex g-2 sm">
-                                <span class="badge primary compact">12</span>
-                                <button class="icon close hazy secondary circle"></button>
-                                <button class="icon dots hazy contrast circle"></button>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="flex-middle">
-                                <i class="icon mr-2 xl"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
-                                <span>
-                                    List Item 2
-                                    <h6 class="sm mt-1">Sub List Data</h6>
-                                </span>
-                            </span>
-                            <span>
-                                <span class="badge primary circle sm">12</span>
-                            </span>
-                        </li>
-                        <li>
-                            <span class="flex-middle">
-                                <i class="icon mr-2 xl"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
-                                <span>
-                                    List Item 3
-                                    <h6 class="sm mt-1">Sub List Data</h6>
-                                </span>
-                            </span>
-                            <span>
-                                <span class="badge primary circle sm">12,435</span>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="show-code" data-title="Selectable Outlined User List">
-                    <menu class="list outline round">
-                        <li>
-                            <a href="#" class="justify-content-between py-2">
-                                <span class="flex-middle">
-                                    <svg class="mr-2 xl" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
-                                    <span>
-                                        List Item 1
-                                        <h6 class="sm mt-1">Sub List Data</h6>
-                                    </span>
-                                </span>
-                                <span class="flex g-2 sm">
-                                    <span class="badge primary compact">12</span>
-                                    <button class="icon close hazy secondary circle"></button>
-                                    <button class="icon dots hazy contrast circle"></button>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="justify-content-between py-2">
-                                <span class="flex-middle">
-                                    <svg class="mr-2 xl" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
-                                    <span>
-                                        List Item 2
-                                        <h6 class="sm mt-1">Sub List Data</h6>
-                                    </span>
-                                </span>
-                                <span>
-                                    <span class="badge primary circle sm">12</span>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="justify-content-between py-2">
-                                <span class="flex-middle">
-                                    <svg class="mr-2 xl" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
-                                    <span>
-                                        List Item 3
-                                        <h6 class="sm mt-1">Sub List Data</h6>
-                                    </span>
-                                </span>
-                                <span>
-                                    <span class="badge primary circle sm">12,435</span>
-                                </span>
-                            </a>
-                        </li>
-                    </menu>
-                </div>
-
-                <div class="show-code" data-title="Sidebar List with Sub Lists">
-                    <menu class="list bg-faint round shadow mw-200">
-                        <li>
-                            <a href="#">List Item 1</a>
-                        </li>
-                        <li>
-                            <a href="#">List Item 2</a>
-                            <button class="link icon down circle sm" data-toggle="next"></button>
-                            <ul>
-                                <li><a href="#">Sub Link 1</a></li>
-                                <li><a href="#">Sub Link 2</a></li>
-                                <li><a href="#">Sub Link 3</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">List Item 3</a>
-                            <button class="link icon down circle sm" data-toggle="next"></button>
-                            <ul>
-                                <li><a href="#">Sub Link 1</a></li>
-                                <li><a href="#">Sub Link 2</a></li>
-                                <li><a href="#">Sub Link 3</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="pr-4">List Item 4 With a very long text</a>
-                            <button class="link icon down circle sm" data-toggle="next"></button>
-                            <ul>
-                                <li><a href="#">Sub Link 1</a></li>
-                                <li><a href="#">Sub Link 2</a></li>
-                                <li><a href="#">Sub Link 3</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="truncate pr-3">List Item 5 Truncated Text</a>
-                            <button class="link icon down circle sm" data-toggle="next"></button>
-                            <ul>
-                                <li><a href="#">Sub Link 1</a></li>
-                                <li><a href="#">Sub Link 2</a></li>
-                                <li><a href="#">Sub Link 3</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <svg class="mr-2" viewBox="0 0 24 24">
-                                    <path fill="currentColor"
-                                        d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
-                                </svg>
-                                With Icon
-                            </a>
-                        </li>
-                        <hr class="my-1 mx-1" />
-                        <li class="sm">
-                            <a href="#">Small List Item 1</a>
-                            <button class="link icon down circle sm" data-toggle="next"></button>
-                            <ul>
-                                <li><a href="#">Sub Link 1</a></li>
-                                <li>
-                                    <a href="#">Sub Link 2</a>
-                                    <button class="link icon down circle sm" data-toggle="next"></button>
-                                    <ul>
-                                        <li><a href="#">Sub Link 1</a></li>
-                                        <li><a href="#">Sub Link 2</a></li>
-                                        <li><a href="#">Sub Link 3</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Sub Link 3</a></li>
-                            </ul>
-                        </li>
-                        <li class="sm">
-                            <a href="#">Small List Item 2</a>
-                        </li>
-                    </menu>
-                </div>
-    
-                <div id="menus" class="show-code" data-title="Toggle Menu List">
-                    <button class="link icon menu" data-toggle="next" data-toggle-escapable></button>
-                    <nav class="absolute list navigatable bg-faint round shadow mw-200">
-                        <ul>
-                            <li><a href="http://google.com">Link 1</a></li>
-                            <li>Sadd</li>
-                            <li><a href="http://gedde.dev">Link 2</a></li>
-                            <li><a href="http://google.com">Link 3</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div id="menus" class="show-code" data-title="Toggle Dropdown">
-                    <input id="selected1" type="text" class="is-select" data-toggle="next" data-toggle-escapable value="" readonly />
-                    <nav class="absolute list navigatable bg-faint round shadow mw-200">
-                        <ul>
-                            <li><label class="button link contrast"><input class="hide" type="radio" name="efe" value="I1" onclick="document.getElementById('selected1').value = this.parentElement.innerText;">Item 1</label></li>
-                            <li><label class="button link contrast"><input class="hide" type="radio" name="efe" value="I2" onclick="document.getElementById('selected1').value = this.parentElement.innerText;">Item 2</label></li>
-                            <li><label class="button link contrast"><input class="hide" type="radio" name="efe" value="I3" onclick="document.getElementById('selected1').value = this.parentElement.innerText;">Item 3</label></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div id="menus" class="show-code" data-title="Toggle Dropdown">
-                    <input id="selected2" type="text" class="is-select" value="" data-toggle="next" data-toggle-escapable readonly />
-                    <div class="collapse closed allowcloseout allowclosewithin">
-                        <ul class="list navigatable bg-faint round shadow mw-200">
-                            <li><button class="link contrast" onclick="document.getElementById('selected2').value = this.innerHTML;">Item 1</button></li>
-                            <li><button class="link contrast" onclick="document.getElementById('selected2').value = this.innerHTML;">Item 2</button></li>
-                            <li><button class="link contrast" onclick="document.getElementById('selected2').value = this.innerHTML;">Item 3</button></li>
-                        </menu>
-                    </div>
-                </div>
-
-                <div id="menus" class="show-code" data-title="Toggle Dropdown">
-                    <input id="selected2" type="text" class="is-select" value="" data-toggle="next" data-toggle-escapable readonly />
-                    <div class="collapse">
-                        <nav class="list bg-faint round shadow mw-200">
-                            <button class="link contrast" onclick="document.getElementById('selected2').value = this.innerHTML;">Item 1</button>
-                            <button class="link contrast" onclick="document.getElementById('selected2').value = this.innerHTML;">Item 2</button>
-                            <button class="link contrast" onclick="document.getElementById('selected2').value = this.innerHTML;">Item 3</button>
-                        </nav>
-                    </div>
-                </div>
-
-                <div class="show-code" data-title="Toggle Menu List Right Align with Sub Menu">
-                    <div class="text-right">
-                        <button class="toggle link icon menu" data-toggle="next" data-toggle-escapable></button>
-                        <menu class="absolute closed list bg-faint round shadow mw-200 absolute right mr-2">
-                            <li><a href="#">Link 1</a></li>
-                            <li>
-                                <a href="#">Link 2</a>
-                                <button class="link icon down circle absolute right sm" data-toggle="next"></button>
-                                <ul class="bg-faint left round">
-                                    <li><a href="#">Sub Link 1</a></li>
-                                    <li><a href="#">Sub Link 2</a></li>
-                                    <li><a href="#">Sub Link 3</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Link 3</a></li>
-                        </menu>
-                    </div>
-                </div>
-    
                 <div class="show-code" data-title="Responsive Toolbar Navigation Menu">
-                    <nav class="toolbar bg-faint">
-                        <a href="#" class="flex-center button link">
+                    <nav class="toolbar bg-faint px-1">
+                        <a href="#" class="flex-center button link pl-1">
                             <svg class="icon mr-1" viewBox="0 0 24 24"><path fill="currentColor" d="M19.07,4.93C17.22,3 14.66,1.96 12,2C9.34,1.96 6.79,3 4.94,4.93C3,6.78 1.96,9.34 2,12C1.96,14.66 3,17.21 4.93,19.06C6.78,21 9.34,22.04 12,22C14.66,22.04 17.21,21 19.06,19.07C21,17.22 22.04,14.66 22,12C22.04,9.34 21,6.78 19.07,4.93M17,12V18H13.5V13H10.5V18H7V12H5L12,5L19.5,12H17Z" /></svg>
                             Logo
                         </a>
-                        <button class="link icon menu md-none" data-toggle="next" data-toggle-escapable></button>
+                        <button class="link icon md-none" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
+                            <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
+                            <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                        </button>
                         <ul class="list md-row md-columns-auto md-open bg-inherit absolute md-relative right outset-bottom md-top md-hoverable">
                             <li>
                                 <a href="#">Link 1</a>
                             </li>
                             <li>
                                 <a href="#" class="pr-0">Link 2</a>
-                                <button class="link icon down circle shy" data-toggle="next"></button>
+                                <button class="link icon circle shy" data-toggle="next">
+                                    <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                </button>
                                 <ul class="bg-inherit round-bottom md-shadow">
                                     <li>
                                         <a href="#">Sub Link 1</a>
@@ -4234,13 +4413,14 @@ $borders: (
                             </li>
                             <li>
                                 <a href="#">
-                                    <svg class="icon mr-1" viewBox="0 0 24 24"><path fill="currentColor" d="M16.56,5.44L15.11,6.89C16.84,7.94 18,9.83 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12C6,9.83 7.16,7.94 8.88,6.88L7.44,5.44C5.36,6.88 4,9.28 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12C20,9.28 18.64,6.88 16.56,5.44M13,3H11V13H13" /></svg>
+                                    <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M16.56,5.44L15.11,6.89C16.84,7.94 18,9.83 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12C6,9.83 7.16,7.94 8.88,6.88L7.44,5.44C5.36,6.88 4,9.28 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12C20,9.28 18.64,6.88 16.56,5.44M13,3H11V13H13" /></svg>
                                     Logout
                                 </a>
                             </li>
                         </ul>
                     </nav>
                 </div>
+
             </section>
             <!------------------------------------
             ---------       SLIDERS      ---------
@@ -4359,17 +4539,17 @@ $borders: (
                         <div class="slider-slides">
                             <div id="no-js-slide1" class="px-4">
                                 <a href="#no-js-slide3" class="button icon circle link prev absolute left"></a>
-                                <img src="/placeholder-1.jpg" loading="lazy">
+                                <img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                                 <a href="#no-js-slide2" class="button icon circle link next absolute right"></a>
                             </div>
                             <div id="no-js-slide2" class="px-4">
                                 <a href="#no-js-slide1" class="button icon circle link prev absolute left"></a>
-                                <img src="/placeholder-2.jpg" loading="lazy">
+                                <img src="/placeholder-2.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                                 <a href="#no-js-slide3" class="button icon circle link next absolute right"></a>
                             </div>
                             <div id="no-js-slide3" class="px-4">
                                 <a href="#no-js-slide2" class="button icon circle link prev absolute left"></a>
-                                <img src="/placeholder-3.jpg" loading="lazy">
+                                <img src="/placeholder-3.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                                 <a href="#no-js-slide1" class="button icon circle link next absolute right"></a>
                             </div>
                         </div>
@@ -4387,27 +4567,27 @@ $borders: (
                         <div class="slider-slides">
                             <div id="with-thumbnail-slide1" class="px-4">
                                 <a href="#with-thumbnail-slide5" class="button icon circle link prev absolute left"></a>
-                                <img src="/placeholder-1.jpg" loading="lazy">
+                                <img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                                 <a href="#with-thumbnail-slide2" class="button icon circle link next absolute right"></a>
                             </div>
                             <div id="with-thumbnail-slide2" class="px-4">
                                 <a href="#with-thumbnail-slide1" class="button icon circle link prev absolute left"></a>
-                                <img src="/placeholder-2.jpg" loading="lazy">
+                                <img src="/placeholder-2.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                                 <a href="#with-thumbnail-slide3" class="button icon circle link next absolute right"></a>
                             </div>
                             <div id="with-thumbnail-slide3" class="px-4">
                                 <a href="#with-thumbnail-slide2" class="button icon circle link prev absolute left"></a>
-                                <img src="/placeholder-3.jpg" loading="lazy">
+                                <img src="/placeholder-3.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                                 <a href="#with-thumbnail-slide4" class="button icon circle link next absolute right"></a>
                             </div>
                             <div id="with-thumbnail-slide4" class="px-4">
                                 <a href="#with-thumbnail-slide3" class="button icon circle link prev absolute left"></a>
-                                <img src="/placeholder-4.jpg" loading="lazy">
+                                <img src="/placeholder-4.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                                 <a href="#with-thumbnail-slide5" class="button icon circle link next absolute right"></a>
                             </div>
                             <div id="with-thumbnail-slide5" class="px-4">
                                 <a href="#with-thumbnail-slide4" class="button icon circle link prev absolute left"></a>
-                                <img src="/placeholder-5.jpg" loading="lazy">
+                                <img src="/placeholder-5.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                                 <a href="#with-thumbnail-slide1" class="button icon circle link next absolute right"></a>
                             </div>
                         </div>
@@ -4415,11 +4595,11 @@ $borders: (
 
                     <div class="slider mt-2" data-snap>
                         <div class="slider-slides row columns-3 md-columns-5 md-g-2">
-                            <a href="#with-thumbnail-slide1"><img src="/placeholder-1.jpg" loading="lazy"></a>
-                            <a href="#with-thumbnail-slide2"><img src="/placeholder-2.jpg" loading="lazy"></a>
-                            <a href="#with-thumbnail-slide3"><img src="/placeholder-3.jpg" loading="lazy"></a>
-                            <a href="#with-thumbnail-slide4"><img src="/placeholder-4.jpg" loading="lazy"></a>
-                            <a href="#with-thumbnail-slide5"><img src="/placeholder-5.jpg" loading="lazy"></a>
+                            <a href="#with-thumbnail-slide1"><img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                            <a href="#with-thumbnail-slide2"><img src="/placeholder-2.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                            <a href="#with-thumbnail-slide3"><img src="/placeholder-3.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                            <a href="#with-thumbnail-slide4"><img src="/placeholder-4.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                            <a href="#with-thumbnail-slide5"><img src="/placeholder-5.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
                         </div>
                     </div>
                 </div>
@@ -4430,9 +4610,9 @@ $borders: (
                         <button class="slider-prev link icon prev circle"></button>
                         <button class="slider-next link icon next circle"></button>
                         <div class="slider-slides">
-                            <img src="/placeholder-1.jpg" loading="lazy">
-                            <img src="/placeholder-2.jpg" loading="lazy">
-                            <img src="/placeholder-3.jpg" loading="lazy">
+                            <img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
+                            <img src="/placeholder-2.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
+                            <img src="/placeholder-3.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                         </div>
                         <div class="slider-pagination p-3"></div>
                     </div>
@@ -4446,51 +4626,51 @@ $borders: (
                         <div class="slider-slides row md-columns-2 md-g-2">
                             <div>
                                 <a href="https://google.com"><h5>Image 1</h5>
-                                <img src="/placeholder-1.jpg" loading="lazy"></a>
+                                <img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
                             </div>
                             <div>
                                 <h5>Image 2</h5>
-                                <img src="/placeholder-2.jpg" loading="lazy">
+                                <img src="/placeholder-2.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                             </div>
                             <div>
                                 <h5>Image 3</h5>
-                                <img src="/placeholder-3.jpg" loading="lazy">
+                                <img src="/placeholder-3.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                             </div>
                             <div>
                                 <h5>Image 4</h5>
-                                <img src="/placeholder-4.jpg" loading="lazy">
+                                <img src="/placeholder-4.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                             </div>
                             <div>
                                 <h5>Image 5</h5>
-                                <img src="/placeholder-5.jpg" loading="lazy">
+                                <img src="/placeholder-5.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                             </div>
                             <div>
                                 <h5>Image 6</h5>
-                                <img src="/placeholder-6.jpg" loading="lazy">
+                                <img src="/placeholder-6.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                             </div>
                             <div>
                                 <h5>Image 7</h5>
-                                <img src="/placeholder-7.jpg" loading="lazy">
+                                <img src="/placeholder-7.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                             </div>
                             <div>
                                 <h5>Image 8</h5>
-                                <img src="/placeholder-8.jpg" loading="lazy">
+                                <img src="/placeholder-8.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                             </div>
                             <div>
                                 <h5>Image 9</h5>
-                                <img src="/placeholder-9.jpg" loading="lazy">
+                                <img src="/placeholder-9.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                             </div>
                             <div>
                                 <h5>Image 10</h5>
-                                <img src="/placeholder-10.jpg" loading="lazy">
+                                <img src="/placeholder-10.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                             </div>
                             <div>
                                 <h5>Image 11</h5>
-                                <img src="/placeholder-11.jpg" loading="lazy">
+                                <img src="/placeholder-11.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                             </div>
                             <div>
                                 <h5>Image 12</h5>
-                                <img src="/placeholder-12.jpg" loading="lazy">
+                                <img src="/placeholder-12.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -4502,15 +4682,15 @@ $borders: (
                         <button class="slider-prev link icon prev circle"></button>
                         <button class="slider-next link icon next circle"></button>
                         <div class="slider-slides" id="featured-slides">
-                            <img src="/placeholder-1.jpg" loading="lazy">
-                            <img src="/placeholder-2.jpg" loading="lazy">
-                            <img src="/placeholder-3.jpg" loading="lazy">
-                            <img src="/placeholder-4.jpg" loading="lazy">
-                            <img src="/placeholder-5.jpg" loading="lazy">
-                            <img src="/placeholder-6.jpg" loading="lazy">
-                            <img src="/placeholder-7.jpg" loading="lazy">
-                            <img src="/placeholder-8.jpg" loading="lazy">
-                            <img src="/placeholder-9.jpg" loading="lazy">
+                            <img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
+                            <img src="/placeholder-2.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
+                            <img src="/placeholder-3.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
+                            <img src="/placeholder-4.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
+                            <img src="/placeholder-5.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
+                            <img src="/placeholder-6.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
+                            <img src="/placeholder-7.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
+                            <img src="/placeholder-8.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
+                            <img src="/placeholder-9.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                         </div>
                     </div>
 
@@ -4518,15 +4698,15 @@ $borders: (
                         <button class="slider-prev link icon prev circle"></button>
                         <button class="slider-next link icon next circle"></button>
                         <div class="slider-slides row columns-3 md-columns-5 md-g-2">
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(1)').offsetLeft, 0);"><img src="/placeholder-1.jpg" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(2)').offsetLeft, 0);"><img src="/placeholder-2.jpg" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(3)').offsetLeft, 0);"><img src="/placeholder-3.jpg" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(4)').offsetLeft, 0);"><img src="/placeholder-4.jpg" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(5)').offsetLeft, 0);"><img src="/placeholder-5.jpg" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(6)').offsetLeft, 0);"><img src="/placeholder-6.jpg" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(7)').offsetLeft, 0);"><img src="/placeholder-7.jpg" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(8)').offsetLeft, 0);"><img src="/placeholder-8.jpg" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(9)').offsetLeft, 0);"><img src="/placeholder-9.jpg" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(1)').offsetLeft, 0);"><img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(2)').offsetLeft, 0);"><img src="/placeholder-2.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(3)').offsetLeft, 0);"><img src="/placeholder-3.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(4)').offsetLeft, 0);"><img src="/placeholder-4.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(5)').offsetLeft, 0);"><img src="/placeholder-5.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(6)').offsetLeft, 0);"><img src="/placeholder-6.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(7)').offsetLeft, 0);"><img src="/placeholder-7.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(8)').offsetLeft, 0);"><img src="/placeholder-8.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(9)').offsetLeft, 0);"><img src="/placeholder-9.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
                         </div>
                     </div>
                 </div>

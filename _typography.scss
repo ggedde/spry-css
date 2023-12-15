@@ -18,11 +18,11 @@
 }
 
 :is(h1, h2, h3, h4, h5, h6, ul, ol, p) + * {
-    @extend %ui-margin-above;
+    @extend %ui-margin-above-lg;
 }
 
-p + p {
-    @extend %ui-margin-above-lg;
+:is(h1, h2, h3, h4, h5, h6, label, p) + :is(input, select, textarea) {
+    @extend %ui-margin-above;
 }
 
 .note {

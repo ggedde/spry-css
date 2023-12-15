@@ -29,7 +29,6 @@
 
 :is(a, button, .button, .icon) svg,
 svg.icon {
-	display   : block;
 	fill      : currentColor;
 	transition: all .2s var(--ease);
 }
