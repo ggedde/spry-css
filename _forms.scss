@@ -40,6 +40,11 @@
 	opacity: .7;
 }
 
+::-webkit-calendar-picker-indicator {
+	margin-left: -1em;
+	margin-right: -.5em;
+}
+
 :is([type=radio], [type=checkbox]) {
 	min-height: 1em;
 	min-width: 1em;

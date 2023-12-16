@@ -8,6 +8,7 @@
 	width: 100%;
 	a {
 		@extend %ui;
+		justify-content: start;
 	}
 	> a {
 		width: auto;

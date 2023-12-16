@@ -7,11 +7,16 @@
 :root,
 [data-theme=light] {
 
+	--bg-alpha: 1;
+    --border-alpha: 1;
 	--border-color-rgb: 210,210,210;
-	--border-color: rgb(var(--border-color-rgb));
-	--bdr: solid var(--border-color);
-
+	--bg-color-rgb: 255,255,255;
+	--border-color: rgb(var(--border-color-rgb), var(--border-alpha));
 	--input-border-color: rgba(140,140,140,.7);
+
+	.bg-theme {
+		background-color: rgb(var(--bg-color-rgb), var(--bg-alpha));
+	}
 
 	@each $color_name, $color_value in $colors {
 		@if map-get($color_value, 'light') {
@@ -43,7 +48,7 @@ html,
 [data-theme=light],
 [data-theme=light] article,
 article[data-theme=light] {
-	background-color: white;
+	background-color: rgb(var(--bg-color-rgb), var(--bg-alpha));
 }
 
 html,

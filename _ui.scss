@@ -4,26 +4,27 @@
 @use "variables"as *;
 
 %ui {
-	align-items       : center;
-	appearance        : none;
-	background        : transparent;
-	border            : 0;
-	color             : inherit;
-	display           : inline-flex;
-	font-size         : 100%;
-	height            : auto;
-	margin            : 0;
-	min-height        : 2.3em;
-	min-width         : 2.3em;
-	padding-block     : .3em;
-	padding-inline    : 1em;
-	position          : relative;
-	text-decoration   : none;
-	transition        : all .1s ease-in-out;
-	outline           : 0 solid rgba(var(--color-rgb), 0.25);
-	outline-offset    : 2px;
-	vertical-align    : middle;
-	width             : 100%;
+	align-items    : center;
+	appearance     : none;
+	background     : transparent;
+	border         : 0;
+	color          : inherit;
+	display        : inline-flex;
+	font-size      : 100%;
+	height         : auto;
+	justify-content: center;
+	margin         : 0;
+	min-height     : 2.3em;
+	min-width      : 2.3em;
+	outline        : 0 solid rgba(var(--color-rgb), 0.25);
+	outline-offset : 2px;
+	padding-block  : .3em;
+	padding-inline : 1em;
+	position       : relative;
+	text-decoration: none;
+	transition     : all .1s ease-in-out;
+	vertical-align : middle;
+	width          : 100%;
 }
 
 @mixin ui-closed {
@@ -71,16 +72,22 @@
 	}
 }
 
-%ui-compact {
-	min-height    : 1.7em;
-	min-width     : 1.7em;
+%ui-dense {
+	min-height    : var(--dense);
+	min-width     : var(--dense);
 	padding-block : 0em;
 	padding-inline: 0.5em;
 	line-height   : 1;
 }
 
-%ui-spacious {
-	min-height: 2.9em;
+%ui-cozy {
+	min-height: var(--cozy);
+	min-width: var(--cozy);
+}
+
+%ui-roomy {
+	min-height: var(--roomy);
+	min-width: var(--roomy);
 }
 
 %ui-open {
@@ -156,12 +163,16 @@
 	outline-width: 2px;
 }
 
-.compact {
-	@extend %ui-compact;
+.dense {
+	@extend %ui-dense;
 }
 
-.spacious {
-	@extend %ui-spacious;
+.cozy {
+	@extend %ui-cozy;
+}
+
+.roomy {
+	@extend %ui-roomy;
 }
 
 a {
@@ -195,6 +206,15 @@ hr {
 	margin       : var(--gapy) var(--gapx);
 	border       : 0;
 	border-bottom: 1px solid var(--border-color);
+}
+
+li,
+ul ul {
+	background-color: inherit;
+	flex-direction  : column;
+	justify-content : inherit;
+	text-align      : inherit;
+	width           : inherit;
 }
 
 .rotate-pressed,

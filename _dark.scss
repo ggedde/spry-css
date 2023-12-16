@@ -12,13 +12,18 @@
 	}
 }
 
-:root[data-theme=dark], [data-theme=dark] {
+:root[data-theme=dark],
+[data-theme=dark] {
+	--border-color-rgb: 70, 70, 70;
+	--bg-color-rgb    : 20, 20, 20;
+	--border-color    : rgb(var(--border-color-rgb));
 
-	--border-color-rgb: 70,70,70;
-	--border-color: rgb(var(--border-color-rgb));
-	--bdr: solid var(--border-color);
+	.bg-theme {
+		background-color: rgb(var(--bg-color-rgb), var(--bg-alpha));
+	}
 
-	@each $color_name, $color_value in $colors {
+	@each $color_name,
+	$color_value in $colors {
 		@if map-get($color_value, 'dark') {
 
 			// Set each color variable.
@@ -26,16 +31,16 @@
 			--#{$color_name}-rgb: #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
 
 			// Use the first color as the Default UI color.
-			@if index($colors, ($color_name $color_value)) == 1 {
-				
-				--color      : #{map-get($color_value, 'dark')};
-				--color-rgb  : #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
+			@if index($colors, ($color_name $color_value))==1 {
+
+				--color     : #{map-get($color_value, 'dark')};
+				--color-rgb : #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
 
 				// For the default UI Color, check to see if the text should be light or dark.
 				@if (lightness(map-get($color_value, 'dark')) > 70) {
 					--text-color: #{map-get(map-get($colors, 'text'), 'light')};
 				}
-	
+
 				@else {
 					--text-color: #{map-get(map-get($colors, 'text'), 'dark')};
 				}
@@ -47,12 +52,12 @@
 [data-theme=dark],
 [data-theme=dark] article,
 article[data-theme=dark] {
-	background-color: #121212;
+	background-color: rgb(var(--bg-color-rgb), var(--bg-alpha));
 }
 
 [data-theme=dark] {
 	color-scheme: dark;
-	color: map-get(map-get($types, 'body'), 'color');
+	color       : map-get(map-get($types, 'body'), 'color');
 
 	select option,
 	.tooltip {
@@ -60,7 +65,8 @@ article[data-theme=dark] {
 		color           : #efefef;
 	}
 
-	@each $color_name, $color_value in $colors {
+	@each $color_name,
+	$color_value in $colors {
 		@if map-get($color_value, 'dark') {
 
 			// For each UI color Class, check to see if the text should be light or dark.

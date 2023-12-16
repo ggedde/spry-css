@@ -27,30 +27,27 @@
 	}
 
 	li {
-		margin-block    : 0;
-		position        : relative;
-		background-color: inherit;
-		display         : flex;
-		flex-direction  : column;
-		width           : inherit;
-		justify-content : inherit;
-		text-align      : inherit;
+		margin-block: 0;
+		position    : relative;
+		display     : flex;
+
 		li {
 			width: 100%;
 		}
 	}
+
 	a {
 		@extend %ui-border-radius;
 	}
 
-	li>*:first-child {
+	li:not(.button, .row)>*:first-child {
 		width          : 100%;
 		justify-content: inherit;
 		text-align     : inherit;
 		flex           : 1;
 	}
 
-	a:is(:hover,:focus) {
+	a:is(:hover, :focus) {
 		@extend %ui-bg-hover;
 	}
 

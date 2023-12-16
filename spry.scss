@@ -5,7 +5,6 @@
  */
 
 @use "reset";
-@use "icons";        // Has Nesting
 @use "typography";
 @use "outline";      // Has Nesting
 @use "lists";        // Has Nesting
@@ -27,6 +26,7 @@
 @use "modals";       // Has Nesting
 @use "spacing";
 @use "borders";
+@use "icons";        // Has Nesting
 @use "utilities";
 @use "dark";         // Has Nesting
 @use "light";        // Has Nesting

@@ -3,24 +3,26 @@
 */
 @use "variables"as *;
 
+.column,
+.row,
+.grid,
+[class*=grid-] {
+	--gapx        : #{map-get($gaps, 'default')};
+	--gapy        : #{map-get($gaps, 'default')};
+	--span        : 1;
+	--cols        : 1;
+	gap           : var(--gapy) var(--gapx);
+}
+
 .column {
 	display       : flex;
 	flex-direction: column;
-	--gapx        : #{map-get($gaps, 'default')};
-	--gapy        : #{map-get($gaps, 'default')};
-	gap           : var(--gapy) var(--gapx);
 }
 
 .row {
 	display       : flex;
 	flex-wrap     : wrap;
 	flex-direction: row;
-	grid-auto-flow: column;
-	--gapx        : #{map-get($gaps, 'default')};
-	--gapy        : #{map-get($gaps, 'default')};
-	--span        : 1;
-	--cols        : 1;
-	gap           : var(--gapy) var(--gapx);
 
 	>* {
 		flex  : 1;
@@ -31,11 +33,6 @@
 .grid,
 [class*=grid-] {
 	display       : grid;
-	--gapx        : #{map-get($gaps, 'default')};
-	--gapy        : #{map-get($gaps, 'default')};
-	--span        : 1;
-	--cols        : 1;
-	gap           : var(--gapy) var(--gapx);
 	grid-auto-flow: column;
 }
 
@@ -59,26 +56,21 @@
 	grid-column: span var(--span);
 }
 
-[class].span {
+.span {
 	grid-column: 1 / -1;
 	flex       : 0 0 100%;
 }
 
-.columns-auto>*,
-.columns-fill>*,
-.span-auto,
-.span-fill {
+:is(.columns-auto>*,.span-auto) {
 	flex : 0 auto;
 	width: auto;
 }
 
-.columns-fixed>*,
-.span-fixed {
+:is(.columns-fixed>*,.span-fixed) {
 	flex: 1;
 }
 
-.columns-fill>*,
-.span-fill {
+:is(.columns-fill>*,.span-fill) {
 	flex: 1 auto;
 }
 
@@ -110,37 +102,41 @@ $breakpoint_width in $breakpoints {
 			}
 		}
 
+		.#{$breakpoint}-column,
+		.#{$breakpoint}-row,
+		.#{$breakpoint}-grid {
+			--gapx        : #{map-get($gaps, 'default')};
+			--gapy        : #{map-get($gaps, 'default')};
+			gap           : var(--gapy) var(--gapx);
+		}
+
 		.#{$breakpoint}-column {
 			display       : flex;
 			flex-direction: column;
-			--gapx        : #{map-get($gaps, 'default')};
-			--gapy        : #{map-get($gaps, 'default')};
 		}
 
 		.#{$breakpoint}-row {
 			display       : flex;
 			flex-wrap     : wrap;
 			flex-direction: row;
-			grid-auto-flow: column;
-			--gapx        : #{map-get($gaps, 'default')};
-			--gapy        : #{map-get($gaps, 'default')};
 		}
 
-		.#{$breakpoint}-columns-auto>*,
-		.#{$breakpoint}-span-auto {
+		.#{$breakpoint}-grid {
+			display       : grid;
+			grid-auto-flow: column;
+		}
+
+		:is(.#{$breakpoint}-columns-auto>*,.#{$breakpoint}-span-auto) {
 			flex : 0 auto;
 			width: auto;
 		}
-
-		.#{$breakpoint}-columns-fixed>*,
-		.#{$breakpoint}-span-fixed {
+		
+		:is(.#{$breakpoint}-columns-fixed>*,.#{$breakpoint}-span-fixed) {
 			flex: 1;
 		}
-
-		.#{$breakpoint}-columns-fill>*,
-		.#{$breakpoint}-span-fill {
+		
+		:is(.#{$breakpoint}-columns-fill>*,.#{$breakpoint}-span-fill) {
 			flex: 1 auto;
-			width: auto;
 		}
 	}
 }

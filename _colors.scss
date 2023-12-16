@@ -56,23 +56,34 @@ $color_value in $colors {
 
 	.bg-#{$color_name},
 	:is(.tooltip, article).bg-#{$color_name} {
-		background-color: var(--#{$color_name});
+		background-color: rgba(var(--#{$color_name}-rgb), var(--bg-alpha));
 	}
 
-	.bg-#{$color_name}-hazy,
-	:is(.tooltip, article).bg-#{$color_name}-hazy {
-		background-color: rgba(var(--#{$color_name}-rgb), .3);
-	}
+	// .bg-#{$color_name}-hazy,
+	// :is(.tooltip, article).bg-#{$color_name}-hazy {
+	// 	--bg-alpha: .3;
+	// 	background-color: rgba(var(--#{$color_name}-rgb), var(--bg-alpha));
+	// }
 
 	.border-#{$color_name} {
-		--border-color: var(--#{$color_name});
-		--input-border-color: var(--#{$color_name});
+		--border-color: rgba(var(--#{$color_name}-rgb), var(--border-alpha));
+		--input-border-color: var(--border-color);
 		border-color  : var(--border-color);
 	}
 
-	.border-#{$color_name}-hazy {
-		--border-color: rgba(var(--#{$color_name}-rgb), .3);
-		--input-border-color: rgba(var(--#{$color_name}-rgb), .3);
-		border-color  : var(--border-color);
+	// .border-#{$color_name}-hazy {
+	// 	--border-alpha: .3;
+	// 	--border-color: rgba(var(--#{$color_name}-rgb), var(--border-alpha));
+	// 	--input-border-color: var(--border-color);
+	// 	border-color  : var(--border-color);
+	// }
+}
+
+@for $i from 0 through 10 {
+	.bg-alpha-#{$i}0{ 
+		--bg-alpha: calc(#{$i} / 10);
+	}
+	.border-alpha-#{$i}0{ 
+		--border-alpha: calc(#{$i} / 10);
 	}
 }

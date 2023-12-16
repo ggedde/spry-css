@@ -17,7 +17,7 @@ $colors: (
     "grey"      : (light: #808080),                  // The First Color in the array is your default color.
     "text"      : (light: #555555, dark: #e7e7e7), // Variable Theme Color
     "contrast"  : (light: #262626, dark: #e7e7e7), // Variable Theme Color
-    "faint"     : (light: #efefef, dark: #292929), // Variable Theme Color
+    "faint"     : (light: #efefef, dark: #282828), // Variable Theme Color
     "dark"      : (light: #121212),
     "light"     : (light: #efefef),
     "primary"   : (light: #1494df),
@@ -26,7 +26,7 @@ $colors: (
 
 // Specify each type tag and class like <h3> and .h3 etc.
 $types: (
-    body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), color: var(--text), font-weight: 300, line-height: 1.4),
+    body: (font-family: (sans-serif, system-ui), font-size: clamp(.9em, 3vw, 1.0em), color: var(--text), font-weight: 300, line-height: 1.4),
       h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20),
       h2: (font-size: 2.3em, font-weight: 300, line-height: 1.25),
       h3: (font-size: 2.0em, font-weight: 300, line-height: 1.30),
@@ -65,6 +65,12 @@ $sizes: (
     xxs: 50%,
 ) !default;
 
+$comforts: (
+    cozy: 2.3em,
+    compact: 1.7em,
+    spacious: 2.9em,
+) !default;
+
 :root {
 
     --gapx: #{map-get($gaps, 'default')};
@@ -77,4 +83,8 @@ $sizes: (
         }
     }
     --ease: cubic-bezier(.25, .8, .25, 1);
+
+    --dense: 1.7em;
+    --cozy: 2.3em;
+    --roomy: 2.9em;
 }

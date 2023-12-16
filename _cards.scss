@@ -52,7 +52,7 @@ article {
 
 	>:is(header, footer) {
 		@extend %ui;
-		@extend %ui-spacious;
+		@extend %ui-roomy;
 		background-color: var(--card-color);
 		display         : flex;
 		justify-content : space-between;

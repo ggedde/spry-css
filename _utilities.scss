@@ -23,7 +23,7 @@ General Utility Classes
 .pill-bottom{ border-radius: 0 0 2em 2em }
 .pill-right{ border-radius: 0 2em 2em 0 }
 .pill-left{ border-radius: 2em 0 0 2em }
-.circle{ border-radius: 50% }
+.circle{ border-radius: 50%; aspect-ratio: 1; }
 .sharp{ border-radius: 0 }
 .index-1{ z-index: 1 }
 .index-2{ z-index: 2 }
@@ -41,6 +41,7 @@ General Utility Classes
 .snug { translate: -1em -.7em }
 .hover-scale {transition: scale .3s var(--ease)}
 .hover-scale:hover {scale: 1.05}
+.bg-blur { backdrop-filter: blur(8px)}
 
 /****************************************************************************
 Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
