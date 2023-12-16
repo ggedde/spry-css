@@ -1,0 +1,29 @@
+/*!
+* Spry Comfort
+*/
+@use "ui" as *;
+
+.dense {
+	min-height    : var(--dense);
+	min-width     : var(--dense);
+	padding-block : .25em;
+	padding-inline: 0.5em;
+	line-height: 1;
+}
+
+.compact {
+	min-height: var(--compact);
+	min-width : var(--compact);
+	padding-inline: 0.9em;
+	padding-block : 0.25em;
+	line-height: 1.2;
+}
+
+.cozy {
+	min-height: var(--cozy);
+	min-width : var(--cozy);
+}
+
+.roomy {
+	@extend %ui-roomy;
+}

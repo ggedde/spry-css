@@ -72,22 +72,9 @@
 	}
 }
 
-%ui-dense {
-	min-height    : var(--dense);
-	min-width     : var(--dense);
-	padding-block : 0em;
-	padding-inline: 0.5em;
-	line-height   : 1;
-}
-
-%ui-cozy {
-	min-height: var(--cozy);
-	min-width: var(--cozy);
-}
-
 %ui-roomy {
 	min-height: var(--roomy);
-	min-width: var(--roomy);
+	min-width : var(--roomy);
 }
 
 %ui-open {
@@ -161,18 +148,6 @@
 
 :focus-visible {
 	outline-width: 2px;
-}
-
-.dense {
-	@extend %ui-dense;
-}
-
-.cozy {
-	@extend %ui-cozy;
-}
-
-.roomy {
-	@extend %ui-roomy;
 }
 
 a {

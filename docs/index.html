@@ -573,31 +573,31 @@ $colors: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">{color}</code></td>
+                            <td class="md-pl-2"><code class="color-primary">{color}</code></td>
                             <td>Set component accent color. Used on Alerts, Buttons, Cards, Forms, Lists, Sliders, Tables, and Tabs</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">color-{color}</code></td>
+                            <td class="md-pl-2"><code class="color-primary">color-{color}</code></td>
                             <td>Set text color</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">hover-{color}</code></td>
+                            <td class="md-pl-2"><code class="color-primary">hover-{color}</code></td>
                             <td>Set text hover color</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">bg-{color}</code></td>
+                            <td class="md-pl-2"><code class="color-primary">bg-{color}</code></td>
                             <td>Set background color</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">border-{color}</code></td>
+                            <td class="md-pl-2"><code class="color-primary">border-{color}</code></td>
                             <td>Set border color</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">links-{color}</code></td>
+                            <td class="md-pl-2"><code class="color-primary">links-{color}</code></td>
                             <td>Set child links color</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">links-hover-{color}</code></td>
+                            <td class="md-pl-2 md-pr-0"><code class="color-primary">links-hover-{color}</code></td>
                             <td>Set child links hover color</td>
                         </tr>
                     </tbody>
@@ -670,7 +670,7 @@ $colors: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">data-theme="{theme}"</code></td>
+                            <td class="md-pl-2"><code class="color-primary">data-theme="{theme}"</code></td>
                             <td>Used to set the theme of the element and child elements.<br>SpryCSS comes with 2 themes: <code class="color-primary">dark</code> and <code class="color-primary">light</code> <span class="color-grey">(default)</span>.
                                 <br><br>Feel free to add on your own themes 
                             </td>
@@ -705,15 +705,15 @@ $colors: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">text</code></td>
+                            <td class="md-pl-2"><code class="color-primary">text</code></td>
                             <td>Color of the body text.<br>This will change depending on the theme being applied.</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">contrast</code></td>
+                            <td class="md-pl-2"><code class="color-primary">contrast</code></td>
                             <td>Contrast Color.<br>This will change depending on the theme being applied.</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">faint</code></td>
+                            <td class="md-pl-2"><code class="color-primary">faint</code></td>
                             <td>Faint Color.<br>This will change depending on the theme being applied.</td>
                         </tr>
                     </tbody>
@@ -792,7 +792,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-300"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>b{side}-{n}</code></td>
+                            <td class="md-w-300 md-pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>b{side}-{n}</code></td>
                             <td>Border.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-3</code>. Can be modified in SCSS Variables.</div>
                             </td>
@@ -811,27 +811,27 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-100"><code class="color-primary">t</code></td>
+                            <td class="md-w-100 md-pl-2"><code class="color-primary">t</code></td>
                             <td>Top</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">r</code></td>
+                            <td class="md-pl-2"><code class="color-primary">r</code></td>
                             <td>Right</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">b</code></td>
+                            <td class="md-pl-2"><code class="color-primary">b</code></td>
                             <td>Bottom</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">l</code></td>
+                            <td class="md-pl-2"><code class="color-primary">l</code></td>
                             <td>Left</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">x</code></td>
+                            <td class="md-pl-2"><code class="color-primary">x</code></td>
                             <td>Inline <span class="color-grey ml-1">(Left & Right)</span></td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">y</code></td>
+                            <td class="md-pl-2"><code class="color-primary">y</code></td>
                             <td>Block <span class="color-grey ml-1">(Top & Bottom)</span></td>
                         </tr>
                     </tbody>
@@ -868,27 +868,27 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td><a href="#borders">Borders</a></td>
+                            <td class="md-pl-2"><a href="#borders">Borders</a></td>
                             <td>Borders allow breakpoints. ex <code class="note">&lt;div class="b-0 md-b-2"&gt;No Border on Mobile&lt;/div&gt;</code></pre></td>
                         </tr>
                         <tr>
-                            <td><a href="#gaps">Gaps</a></td>
+                            <td class="md-pl-2"><a href="#gaps">Gaps</a></td>
                             <td>Gaps uses breakpoints to define initial margin in &lt;hr&gt; and initial padding in &lt;section&gt;</td>
                         </tr>
                         <tr>
-                            <td><a href="#grid">Grid</a></td>
+                            <td class="md-pl-2"><a href="#grid">Grid</a></td>
                             <td>Grid uses gaps in CSS Grid and CSS Flexbox grids</td>
                         </tr>
                         <tr>
-                            <td><a href="#sizing">Sizing</a></td>
+                            <td class="md-pl-2"><a href="#sizing">Sizing</a></td>
                             <td>Spacing allows breakpoints. ex <code class="note">&lt;div class="sm md-lg"&gt;Small on Mobile, Large on Medium&lt;/div&gt;</code></pre></td>
                         </tr>
                         <tr>
-                            <td><a href="#spacing">Spacing</a></td>
+                            <td class="md-pl-2"><a href="#spacing">Spacing</a></td>
                             <td>Spacing allows breakpoints. ex <code class="note">&lt;div class="p-0 md-p-2"&gt;No Padding on Mobile&lt;/div&gt;</code></pre></td>
                         </tr>
                         <tr>
-                            <td><a href="#layout">Layout Utility Classes</a></td>
+                            <td class="md-pl-2"><a href="#layout">Layout Utility Classes</a></td>
                             <td>Layout Utility Classes allow breakpoints. ex <code class="note">&lt;div class="none md-block"&gt;Hide on Mobile&lt;/div&gt;</code></td>
                         </tr>
                     </tbody>
@@ -925,7 +925,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary"><span class="color-grey">{breakpoint}-</span>g-{n}</code></td>
+                            <td class="md-pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>g-{n}</code></td>
                             <td>Gap for columns within <code class="color-primary">grid</code> or <code class="color-primary">row</code>
                                 <p>See <a href="#spacing">Spacing</a> for available <code class="color-primary">{n}</code> values.</p>
                             </td>
@@ -955,19 +955,19 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">grid</code></td>
+                            <td class="md-pl-2"><code class="color-primary">grid</code></td>
                             <td>CSS Grid of columns auto width.<br>Uses variable <a href="#gaps">Gaps</a> for spacing</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">grid-{n}00</code></td>
+                            <td class="md-pl-2"><code class="color-primary">grid-{n}00</code></td>
                             <td>CSS Grid of columns using minmax() for column widths in px's.<br><code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code></td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">row</code></td>
+                            <td class="md-pl-2"><code class="color-primary">row</code></td>
                             <td>CSS Flexbox Row of columns auto width.<br>Uses variable <a href="#gaps">Gaps</a> for spacing</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary"><span class="color-grey">{breakpoint}-</span>columns-{n}</code></td>
+                            <td class="md-pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>columns-{n}</code></td>
                             <td>
                                 <p>
                                     Specify the number of columns.<br>
@@ -977,7 +977,7 @@ $borders: (
                             </td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary"><span class="color-grey">{breakpoint}-</span>g-{n}</code></td>
+                            <td class="md-pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>g-{n}</code></td>
                             <td>Gap for columns within <code class="color-primary">grid</code> or <code class="color-primary">row</code>
                                 <p>See <a href="#spacing">Spacing</a> for available <code class="color-primary">{n}</code> values.</p>
                             </td>
@@ -993,7 +993,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary"><span class="color-grey">{breakpoint}-</span>span-{n}</code></td>
+                            <td class="md-pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>span-{n}</code></td>
                             <td>Span the column based on a number of columns set.<br>
                                 <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, or <code class="color-primary">fixed</code>
                                 <p class="color-grey mt-2">* Requires container to have <code class="color-primary">columns-{n}</code></p>
@@ -1377,25 +1377,25 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-300"><code class="color-grey">{breakpoint}-</code><code class="color-primary">p{side}-{n}</code></td>
+                            <td class="md-w-300 md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">p{side}-{n}</code></td>
                             <td>Padding.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                             </td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">m{side}-{n}</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">m{side}-{n}</code></td>
                             <td>Margin.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                             </td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">m{side}-n{n}</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">m{side}-n{n}</code></td>
                             <td>Negative Margin.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                             </td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">g-{n}</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">g-{n}</code></td>
                             <td>Gap for <a href="#grid">Grid</a>.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                                 <div class="color-grey">* Side properties are not inluded for gap.</div>
@@ -1415,27 +1415,27 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-200"><code class="color-primary">t</code></td>
+                            <td class="md-w-100 md-pl-2"><code class="color-primary">t</code></td>
                             <td>Top</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">r</code></td>
+                            <td class="md-pl-2"><code class="color-primary">r</code></td>
                             <td>Right</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">b</code></td>
+                            <td class="md-pl-2"><code class="color-primary">b</code></td>
                             <td>Bottom</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">l</code></td>
+                            <td class="md-pl-2"><code class="color-primary">l</code></td>
                             <td>Left</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">x</code></td>
+                            <td class="md-pl-2"><code class="color-primary">x</code></td>
                             <td>Inline <span class="color-grey ml-1">(Left & Right)</span></td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">y</code></td>
+                            <td class="md-pl-2"><code class="color-primary">y</code></td>
                             <td>Block <span class="color-grey ml-1">(Top & Bottom)</span></td>
                         </tr>
                     </tbody>
@@ -1512,7 +1512,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">data-toggle="{selector}"</code></td>
+                            <td class="md-pl-2"><code class="color-primary">data-toggle="{selector}"</code></td>
                             <td>This creates the activator, assigning it to the selector element.
                                 <div class="mt-1"><code class="color-primary">{selector}</code> can be:</div>
                                 <ul>
@@ -1524,7 +1524,7 @@ $borders: (
                             </td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">data-toggle-action="{action}"</code></td>
+                            <td class="md-pl-2"><code class="color-primary">data-toggle-action="{action}"</code></td>
                             <td>Assigns the toggle action.
                                 <div class="mt-1"><code class="color-primary">{action}</code> can be:</div>
                                 <ul>
@@ -1535,7 +1535,7 @@ $borders: (
                             </td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">data-toggle-close="{selector}"</code></td>
+                            <td class="md-pl-2"><code class="color-primary">data-toggle-close="{selector}"</code></td>
                             <td>Closes Toggle(s) by a valid css selector.
                                 <div class="mt-1"><code class="color-primary">{selector}</code> can be:</div>
                                 <ul>
@@ -1549,15 +1549,15 @@ $borders: (
                         </tr>
                        
                         <tr>
-                            <td><code class="color-primary">data-toggle-timeout="{timeout}"</code></td>
+                            <td class="md-pl-2"><code class="color-primary">data-toggle-timeout="{n}"</code></td>
                             <td>Automatically closes the toggle after the timeout in milliseconds.</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">data-toggle-escapable</code></td>
+                            <td class="md-pl-2"><code class="color-primary">data-toggle-escapable</code></td>
                             <td>Allows the toggle to close when clicking outside the toggle element or by pressing the ESC key.</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">data-toggle-dismissible</code></td>
+                            <td class="md-pl-2"><code class="color-primary">data-toggle-dismissible</code></td>
                             <td>Allows the toggle to close when clicking inside the toggle element on an actionable child element.</td>
                         </tr>
                     </tbody>
@@ -1572,7 +1572,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-<span class="color-primary">open</span></code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-<span class="color-primary">open</span></code></td>
                             <td>
                                 Opens toggle even when toggle is not active.
                                 <br>
@@ -1580,11 +1580,11 @@ $borders: (
                             </td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">closed</code></td>
+                            <td class="md-pl-2"><code class="color-primary">closed</code></td>
                             <td>Initiate the toggle element in the closed state.</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">collapse</code></td>
+                            <td class="md-pl-2"><code class="color-primary">collapse</code></td>
                             <td>Positions all child elements absolute.</td>
                         </tr>
                     </tbody>
@@ -1693,67 +1693,67 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <tbody>
                         <tr>
-                            <td class="md-w-200"><code class="color-primary">bold</code></td>
+                            <td class="md-w-200 md-pl-2"><code class="color-primary">bold</code></td>
                             <td>font-weight: bold</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">normal</code></td>
+                            <td class="md-pl-2"><code class="color-primary">normal</code></td>
                             <td>font-weight: normal</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">italic</code></td>
+                            <td class="md-pl-2"><code class="color-primary">italic</code></td>
                             <td>font-style: italic</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">uppercase</code></td>
+                            <td class="md-pl-2"><code class="color-primary">uppercase</code></td>
                             <td>text-transform: uppercase</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">lowercase</code></td>
+                            <td class="md-pl-2"><code class="color-primary">lowercase</code></td>
                             <td>text-transform: lowercase</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">capitalize</code></td>
+                            <td class="md-pl-2"><code class="color-primary">capitalize</code></td>
                             <td>text-transform: capitalize</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">pointer </code></td>
+                            <td class="md-pl-2"><code class="color-primary">pointer </code></td>
                             <td>cursor: pointer</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">round</code>
+                            <td class="md-pl-2"><code class="color-primary">round</code>
                             <td>border-radius: 5px; overflow: hidden</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">round-bottom</code></td>
+                            <td class="md-pl-2"><code class="color-primary">round-bottom</code></td>
                             <td>border-radius: 0 0 5px 5px</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">circle</code></td>
+                            <td class="md-pl-2"><code class="color-primary">circle</code></td>
                             <td>border-radius: 50%</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">square</code></td>
+                            <td class="md-pl-2"><code class="color-primary">square</code></td>
                             <td>border-radius: 0</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">index-1</code></td>
+                            <td class="md-pl-2"><code class="color-primary">index-1</code></td>
                             <td>z-index: 1</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">index-2</code></td>
+                            <td class="md-pl-2"><code class="color-primary">index-2</code></td>
                             <td>z-index: 2</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">index-3</code></td>
+                            <td class="md-pl-2"><code class="color-primary">index-3</code></td>
                             <td>z-index: 3</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">note </code></td>
+                            <td class="md-pl-2"><code class="color-primary">note </code></td>
                             <td>font-style: italic; font-size: 90%; opacity: 0.8</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">truncate</code></td>
+                            <td class="md-pl-2"><code class="color-primary">truncate</code></td>
                             <td>max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap</td>
                         </tr>
                     </tbody>
@@ -1775,272 +1775,271 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <tbody>
                         <tr>
-                            <td class="md-w-400"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-left</code></td>
+                            <td class="md-w-400 md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-left</code></td>
                             <td>text-align: left</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-center</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-center</code></td>
                             <td>text-align: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-right</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-right</code></td>
                             <td>text-align: right</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-justify</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-justify</code></td>
                             <td>text-align: justify</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">no-wrap</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">no-wrap</code></td>
                             <td>white-space: nowrap; flex-wrap: nowrap;</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">pre-wrap</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">pre-wrap</code></td>
                             <td>white-space: pre-wrap</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">break-word</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">break-word</code></td>
                             <td>word-wrap: break-word</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline</code></td>
                             <td>display: inline; width: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex</code></td>
                             <td>display: flex</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">block</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">block</code></td>
                             <td>display: block</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">none</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">none</code></td>
                             <td>display: none</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline-block</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline-block</code></td>
                             <td>display: inline-block; width: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline-flex</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline-flex</code></td>
                             <td>display: inline-flex; width: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">table</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">table</code></td>
                             <td>display: table</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">table-cell</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">table-cell</code></td>
                             <td>display: table-cell</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">relative</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">relative</code></td>
                             <td>position: relative</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">absolute</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">absolute</code></td>
                             <td>position: absolute</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">collapse</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">collapse</code></td>
                             <td>position: relative</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">collapse > *</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">collapse > *</code></td>
                             <td>position: absolute</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">sticky</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">sticky</code></td>
                             <td>position: sticky; top: 0</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">fixed</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">fixed</code></td>
                             <td>position: fixed</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">inset </code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inset </code></td>
                             <td>inset: 0</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">top </code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">top </code></td>
                             <td>top: 0; bottom: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">right </code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">right </code></td>
                             <td>right: 0; left: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">bottom </code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">bottom </code></td>
                             <td>bottom: 0; top: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">left </code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">left </code></td>
                             <td>left: 0; right: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">outset-top </code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outset-top </code></td>
                             <td>bottom: 100%; top: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">outset-right </code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outset-right </code></td>
                             <td>left: 100%; right: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">outset-bottom </code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outset-bottom </code></td>
                             <td>top: 100%; bottom: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">outset-left </code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outset-left </code></td>
                             <td>right: 100%; left: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">pointer-none </code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">pointer-none </code></td>
                             <td>pointer-events: none</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-baseline</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-baseline</code></td>
                             <td>vertical-align: baseline</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-top</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-top</code></td>
                             <td>vertical-align: top</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-middle</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-middle</code></td>
                             <td>vertical-align: middle</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-bottom</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-bottom</code></td>
                             <td>vertical-align: bottom</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-hidden</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-hidden</code></td>
                             <td>overflow: hidden</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-scroll</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-scroll</code></td>
                             <td>overflow: scroll</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-auto</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-auto</code></td>
                             <td>overflow: auto</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-first</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-first</code></td>
                             <td>order:-1</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-0</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-0</code></td>
                             <td>order:0</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-1</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-1</code></td>
                             <td>order:1</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-2</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-2</code></td>
                             <td>order:2</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-3</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-3</code></td>
                             <td>order:3</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-last</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-last</code></td>
                             <td>order:99999</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-start</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-start</code></td>
                             <td>align-items: flex-start</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-end</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-end</code></td>
                             <td>align-items: flex-end</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-center</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-center</code></td>
                             <td>align-items: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-stretch</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-stretch</code></td>
                             <td>align-items: stretch</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-start</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-start</code></td>
                             <td>justify-content: flex-start</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-end</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-end</code></td>
                             <td>justify-content: flex-end</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-center</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-center</code></td>
                             <td>justify-content: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-between</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-between</code></td>
                             <td>justify-content: space-between</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-around</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-around</code></td>
                             <td>justify-content: space-around</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-middle</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-middle</code></td>
                             <td>display: flex; align-items: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-center</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-center</code></td>
                             <td>display: flex; align-items: center; justify-content: center</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-wrap</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-wrap</code></td>
                             <td>flex-wrap: wrap</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-column</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-column</code></td>
                             <td>flex-direction: column</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">shadow</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">shadow</code></td>
                             <td>box-shadow: 1px 3px 4px rgba(0,0,0,.12)</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-***</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-***</code></td>
                             <td>height: ***px; min-height: ***px; max-height: ***px</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">mh-***</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">mh-***</code></td>
                             <td>max-height: ***px</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">vh-**</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">vh-**</code></td>
                             <td>height: **vh</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">mvh-**</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">mvh-**</code></td>
                             <td>max-height: **vh</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-***</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-***</code></td>
                             <td>width: ***px; min-width: ***px; max-width: ***px</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">mw-***</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">mw-***</code></td>
                             <td>max-width: ***px</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">vw-**</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">vw-**</code></td>
                             <td>width: **vw</td>
                         </tr>
                         <tr>
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">mvw-**</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">mvw-**</code></td>
                             <td>max-width: **vw</td>
                         </tr>
                         <tr>
-    
-                            <td><code class="color-grey">{breakpoint}-</code><code class="color-primary">o-**</code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">o-**</code></td>
                             <td>opacity: .**</td>
                         </tr>
                     </tbody>
@@ -2084,21 +2083,20 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="260"><h4>Variation Classes</h4></th>
-                            <th></th>
+                            <th colspan="2"><h4>Variation Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">outline</code></td>
+                            <td class="md-w-200 md-pl-2"><code class="color-primary">outline</code></td>
                             <td>Adds Outline variant to container</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">{color}</code></td>
+                            <td class="md-pl-2"><code class="color-primary">{color}</code></td>
                             <td>Assigns the Accent color to the container and children.</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">border-{color}</code></td>
+                            <td class="md-pl-2"><code class="color-primary">border-{color}</code></td>
                             <td>Assigns the Accent color to the outline borders.</td>
                         </tr>
                     </tbody>
@@ -2288,13 +2286,12 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="260"><h4>Classes</h4></th>
-                            <th></th>
+                            <th colspan="2"><h4>Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">alert</code></td>
+                            <td class="md-w-200 md-pl-2"><code class="color-primary">alert</code></td>
                             <td>Assigns the element as Alert.</td>
                         </tr>
                     </tbody>
@@ -2303,21 +2300,20 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="260"><h4>Variation Classes</h4></th>
-                            <th></th>
+                            <th colspan="2"><h4>Variation Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">outline</code></td>
+                            <td class="md-w-200 md-pl-2"><code class="color-primary">outline</code></td>
                             <td>Adds Outline variant</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">hazy</code></td>
+                            <td class="md-pl-2"><code class="color-primary">hazy</code></td>
                             <td>Adds Hazy variant</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">{color}</code></td>
+                            <td class="md-pl-2"><code class="color-primary">{color}</code></td>
                             <td>Assigns the Accent color to the Alert.</td>
                         </tr>
                     </tbody>
@@ -2443,13 +2439,12 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="260"><h4>Classes</h4></th>
-                            <th></th>
+                            <th colspan="2"><h4>Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">badge</code></td>
+                            <td class="md-w-200 md-pl-2"><code class="color-primary">badge</code></td>
                             <td>Assigns the element as Badge.</td>
                         </tr>
                     </tbody>
@@ -2458,25 +2453,44 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="260"><h4>Variation Classes</h4></th>
-                            <th></th>
+                            <th colspan="2"><h4>Variation Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">outline</code></td>
+                            <td class="md-w-200 md-pl-2"><code class="color-primary">outline</code></td>
                             <td>Adds Outline variant</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">hazy</code></td>
+                            <td class="md-pl-2"><code class="color-primary">hazy</code></td>
                             <td>Adds Hazy variant</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">snug</code></td>
+                            <td class="md-pl-2"><code class="color-primary">snug</code></td>
                             <td>Moves badge up left</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">{color}</code></td>
+                            <td class="md-pl-2"><code class="color-primary">dense</code></td>
+                            <td>Greatly Reduces Padding, Line Height and Minimum Size</td>
+                        </tr>
+                        <tr>
+                            <td class="md-pl-2"><code class="color-primary">compact</code></td>
+                            <td>Reduces Padding, Line Height and Minimum Size</td>
+                        </tr>
+                        <tr>
+                            <td class="md-pl-2"><code class="color-primary">cozy</code></td>
+                            <td>Resets Padding, Line Height and Minimum Size</td>
+                        </tr>
+                        <tr>
+                            <td class="md-pl-2"><code class="color-primary">roomy</code></td>
+                            <td>Increases Padding, Line Height and Minimum Size</td>
+                        </tr>
+                        <tr>
+                            <td class="md-pl-2"><code class="color-primary">circle</code></td>
+                            <td>Rounds the button</td>
+                        </tr>
+                        <tr>
+                            <td class="md-pl-2"><code class="color-primary">{color}</code></td>
                             <td>Assigns the Accent color to the Badge.</td>
                         </tr>
                     </tbody>
@@ -2536,19 +2550,17 @@ $borders: (
                     <button class="icon circle hazy contrast">
                         <svg class="mr-2"  viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
                     </button>
-                    <span class="badge snug secondary sm px-1">7</span>
-                    <br>
-                    <br>
+                    <span class="badge snug dense secondary sm">7</span>
+
                     <button class="icon circle hazy contrast">
                         <svg class="mr-2"  viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
                     </button>
-                    <span class="badge snug primary sm">New</span>
-                    <br>
-                    <br>
+                    <span class="badge snug dense primary sm">New</span>
+
                     <button class="icon circle hazy contrast">
                         <svg class="mr-2"  viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
                     </button>
-                    <span class="badge snug sm icon">
+                    <span class="badge icon snug dense sm">
                         <svg viewBox="0 0 24 24"><path d="M11 4h2v11h-2V4zm2 14v2h-2v-2h2z" /></svg>
                     </span>
                 </div>
@@ -2576,18 +2588,18 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="160"><h4>Tags</h4></th>
+                            <th><h4>Tags</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">button</code></td>
+                            <td class="md-pl-2"><code class="color-primary">button</code></td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">type="submit"</code></td>
+                            <td class="md-pl-2"><code class="color-primary">type="submit"</code></td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">type="reset"</code></td>
+                            <td class="md-pl-2"><code class="color-primary">type="reset"</code></td>
                         </tr>
                     </tbody>
                 </table>
@@ -2595,13 +2607,12 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="160"><h4>Classes</h4></th>
-                            <th></th>
+                            <th colspan="2"><h4>Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">button</code></td>
+                            <td class="md-w-200 md-pl-2"><code class="color-primary">button</code></td>
                             <td>Assigns the element as Button.</td>
                         </tr>
                     </tbody>
@@ -2611,36 +2622,51 @@ $borders: (
                     <thead>
                         <tr>
                             <th colspan="2"><h4>Variation Classes</h4></th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-200"><code class="color-primary">outline</code></td>
+                            <td class="md-w-200 md-pl-2"><code class="color-primary">outline</code></td>
                             <td>Adds Outline variant</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">hazy</code></td>
+                            <td class="md-pl-2"><code class="color-primary">hazy</code></td>
                             <td>Adds Hazy variant</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">plain</code></td>
+                            <td class="md-pl-2"><code class="color-primary">plain</code></td>
                             <td>Adds Plain variant</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">link</code></td>
+                            <td class="md-pl-2"><code class="color-primary">link</code></td>
                             <td>Adds Link variant</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">icon</code></td>
+                            <td class="md-pl-2"><code class="color-primary">dense</code></td>
+                            <td>Greatly Reduces Padding, Line Height and Minimum Size</td>
+                        </tr>
+                        <tr>
+                            <td class="md-pl-2"><code class="color-primary">compact</code></td>
+                            <td>Reduces Padding, Line Height and Minimum Size</td>
+                        </tr>
+                        <tr>
+                            <td class="md-pl-2"><code class="color-primary">cozy</code></td>
+                            <td>Resets Padding, Line Height and Minimum Size</td>
+                        </tr>
+                        <tr>
+                            <td class="md-pl-2"><code class="color-primary">roomy</code></td>
+                            <td>Increases Padding, Line Height and Minimum Size</td>
+                        </tr>
+                        <tr>
+                            <td class="md-pl-2"><code class="color-primary">icon</code></td>
                             <td>Assigns button as a single icon element</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">circle</code></td>
+                            <td class="md-pl-2"><code class="color-primary">circle</code></td>
                             <td>Rounds the button</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">{color}</code></td>
+                            <td class="md-pl-2"><code class="color-primary">{color}</code></td>
                             <td>Assigns the Accent color to the Button.</td>
                         </tr>
                     </tbody>
@@ -2649,17 +2675,16 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="200"><h4>Attributes</h4></th>
-                            <th></th>
+                            <th colspan="2"><h4>Attributes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">aria-busy="false"</code></td>
+                            <td class="md-w-200 md-pl-2"><code class="color-primary">aria-busy="false"</code></td>
                             <td>Prepares button for Loading</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">aria-busy="true"</code></td>
+                            <td class="md-pl-2"><code class="color-primary">aria-busy="true"</code></td>
                             <td>Shows Loading</td>
                         </tr>
                     </tbody>
@@ -2886,13 +2911,12 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="260"><h4>Tag</h4></th>
-                            <th></th>
+                            <th colspan="2"><h4>Tag</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">article</code></td>
+                            <td class="md-w-200 md-pl-2"><code class="color-primary">article</code></td>
                             <td>Assigns the element as Card.</td>
                         </tr>
                     </tbody>
@@ -2901,21 +2925,20 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="260"><h4>Variation Classes</h4></th>
-                            <th></th>
+                            <th colspan="2"><h4>Variation Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">outline</code></td>
+                            <td class="md-w-200 md-pl-2"><code class="color-primary">outline</code></td>
                             <td>Adds Outline variant</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">shadow</code></td>
+                            <td class="md-pl-2"><code class="color-primary">shadow</code></td>
                             <td>Adds Shadow</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">{color}</code></td>
+                            <td class="md-pl-2"><code class="color-primary">{color}</code></td>
                             <td>Assigns the Accent color to the Card.</td>
                         </tr>
                     </tbody>
@@ -2993,22 +3016,40 @@ $borders: (
                 </h2>
                 <a name="dropdowns" class="mb-3 block"></a>
 
+                <h5>Dropdowns use Toggles to add the collapsing functionality. View <a href="#toggles">Toggles</a> for more details.</h5>
+
                 <pre><code class="language-html">&lt;!-- Basic Dropdown --&gt;
 &lt;button data-toggle="next" data-toggle-escapable data-toggle-dismissible&gt;
-&lt;div class="collapse closed"&gt;
-    &lt;ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w"&gt;
-        &lt;li&gt;&lt;button type="button" class="link contrast sharp"&gt;Item 1&lt;/button&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;button type="button" class="link contrast sharp"&gt;Item 2&lt;/button&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;button type="button" class="link contrast sharp"&gt;Item 3&lt;/button&gt;&lt;/li&gt;
-    &lt;/ul&gt;
+    Dropdown
+&lt;/button&gt;
+&lt;div class="collapse"&gt;
+    &lt;nav class="list bg-faint round-bottom overflow-hidden shadow"&gt;
+        &lt;a href="#"&gt;Item 1&lt;/a&gt;
+        &lt;a href="#"&gt;Item 2&lt;/a&gt;
+        &lt;a href="#"&gt;Item 3&lt;/a&gt;
+    &lt;/nav&gt;
 &lt;/div&gt;</code></pre>
 
             <div class="show-code" data-title="Basic Dropdown">
+                <button class="w-100 pl-1 pr-1 justify-content-end" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
+                    List
+                    <svg class="icon ml-1 xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                </button>
+                <div class="collapse w-100">
+                    <nav class="list navigatable bg-faint round-bottom overflow-hidden shadow">
+                        <a href="#">Item 1</a>
+                        <a href="#">Item 2</a>
+                        <a href="#">Item 3</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="show-code" data-title="UL Buttons Dropdown">
                 <button class="w-200 pl-1 pr-1 justify-content-end" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
                     Choose an Item
                     <svg class="icon ml-1 xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                 </button>
-                <div class="collapse closed">
+                <div class="collapse">
                     <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w-200">
                         <li><button type="button" class="link contrast sharp">Item 1</button></li>
                         <li><button type="button" class="link contrast sharp">Item 2</button></li>
@@ -3019,7 +3060,7 @@ $borders: (
 
             <div class="show-code" data-title="Input Dropdown">
                 <input id="input-dropdown" type="text" class="is-select" value="" data-toggle="next" data-toggle-escapable data-toggle-dismissible readonly>
-                <div class="collapse closed">
+                <div class="collapse">
                     <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
                         <li><button type="button" class="link contrast sharp" onclick="document.getElementById('input-dropdown').value = this.innerHTML;">Option 1</button></li>
                         <li><button type="button" class="link contrast sharp" onclick="document.getElementById('input-dropdown').value = this.innerHTML;">Option 2</button></li>
@@ -3054,21 +3095,20 @@ $borders: (
                 <table class="mb-2 mt-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="160"><h4>Classes</h4></th>
-                            <th></th>
+                            <th colspan="2"><h4>Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code class="color-primary">{color}</code></td>
+                            <td class="md-w-200 md-pl-2"><code class="color-primary">{color}</code></td>
                             <td>Sets Accent color.</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">border-{color}</code></td>
+                            <td class="md-pl-2"><code class="color-primary">border-{color}</code></td>
                             <td>Sets field border colors.</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">color-{color}</code></td>
+                            <td class="md-pl-2"><code class="color-primary">color-{color}</code></td>
                             <td>Sets Text color.</td>
                         </tr>
                     </tbody>
