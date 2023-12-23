@@ -18,7 +18,7 @@
 		min-width : 2.3em;
 	}
 
-	svg {
+	> svg {
 		backface-visibility: hidden;
 		inset              : 50%;
 		margin             : auto;
@@ -28,10 +28,21 @@
 	}
 }
 
-:is(a, button, .button, .icon) svg,
+:is(a, button, .button, .icon) > svg,
 svg.icon {
 	fill      : currentColor;
 	transition: all .2s var(--ease);
+}
+
+[data-toggle].has-2svg svg:nth-of-type(2),
+[data-toggle][aria-pressed=true].has-2svg svg:first-of-type {
+	opacity: 0;
+	scale  : .5
+}
+
+[data-toggle][aria-pressed=true].has-2svg svg:last-of-type {
+	opacity: 1;
+	scale  : 1;
 }
 
 [data-toggle]:has(svg:nth-of-type(2)) svg:nth-of-type(2),

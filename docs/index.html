@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" style="scroll-padding-top: 146px;">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <title>SpryCSS</title>
@@ -16,9 +16,18 @@
     <link rel="stylesheet" href="prism.min.css?v=3.0.0">
 </head>
 
-<body>
+<body id="about" style="background: linear-gradient(194deg, 
+    rgba(255,255,255,0) .4%,
+    rgba(255,255,255,0.04) 0.6%, 
+    rgba(255,255,255,0.03) 0.7%, 
+    rgba(255,255,255,0.07) 0.75%,
+    rgba(255,255,255,0.02) 0.78%,
+    rgba(255,255,255,0.03) 0.8%,
+    rgba(255,255,255,0.02) 0.9%,
+    rgba(255,255,255,0) 1%
+    );">
     <div class="bg-inherit">
-        <div class="sticky toolbar sharp lg index-4 bg-faint pl-1 bb-1 pr-1">
+        <div class="sticky toolbar sharp lg index-4 bg-faint border-grey border-alpha-20 pl-1 bb-1 pr-1">
             <div class="flex-middle">
 
                 <button id="header-nav-mobile-button" class="link icon md-none" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
@@ -26,7 +35,7 @@
                     <svg class="xl" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                 </button>
 
-                <nav id="header-nav" class="list absolute md-open left mw-200 outset-bottom bg-faint vh overflow-auto py-2 px-1 pb-200 sm from-left br-1 bt-1 shadow md-no-shadow">
+                <nav id="header-nav" class="list absolute md-open left mw-200 outer-bottom bg-theme border-grey border-alpha-30 vh overflow-auto py-2 px-2 pb-200 sm from-left br-1 bt-1 shadow md-no-shadow links-hover-contrast scrollspy">
                     <ul class="pt-2">
                         <li>
                             <h5 class="pl-1">
@@ -37,14 +46,14 @@
                             </h5>
                             <hr class="m-1" />
                         </li>
-                        <li><a href="#start">About SpryCSS</a></li>
-                        <li><a href="#installation">Installation</a></li>
-                        <li><a href="#spryjs">Javascript</a></li>
-                        <li><a href="#scss">SCSS & CSS</a></li>
-                        <li><a href="#typography">Typography</a></li>
-                        <li><a href="#colors">Colors</a></li>
-                        <li><a href="#themes">Themes</a></li>
-                        <li><a href="#support">Support</a></li>
+                        <li><a tabindex="-1" href="#about">About SpryCSS</a></li>
+                        <li><a tabindex="-1" href="#support">Support</a></li>
+                        <li><a tabindex="-1" href="#installation">Installation</a></li>
+                        <li><a tabindex="-1" href="#spryjs">Javascript</a></li>
+                        <li><a tabindex="-1" href="#scss">SCSS & CSS</a></li>
+                        <li><a tabindex="-1" href="#typography">Typography</a></li>
+                        <li><a tabindex="-1" href="#colors">Colors</a></li>
+                        <li><a tabindex="-1" href="#themes">Themes</a></li>
                         <li class="pt-3">
                             <h5 class="pl-1">
                                 <i class="icon sm mr-1">
@@ -57,17 +66,7 @@
                         <li><a href="#borders">Borders</a></li>
                         <li><a href="#breakpoints">Breakpoints</a></li>
                         <li><a href="#gaps">Gaps</a></li>
-                        <li>
-                            <a href="#grid">Grid</a>
-                            <button class="link icon circle sm shy" data-toggle="next" title="Expand" aria-label="Expand">
-                                <svg class="xxl flip-pressed" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                            </button>
-                            <ul class="sm">
-                                <li><a class="pl-3" href="#grid">Classes</a></li>
-                                <li><a class="pl-3" href="#css-grid">CSS Grid</a></li>
-                                <li><a class="pl-3" href="#css-flexbox">CSS Flexbox</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="#grid">Grid</a></li>
                         <li><a href="#sizing">Sizing</a></li>
                         <li><a href="#spacing">Spacing</a></li>
                         <li><a href="#toggles">Toggles</a></li>
@@ -84,53 +83,17 @@
                         <li><a href="#accordions">Accordions</a></li>
                         <li><a href="#alerts">Alerts</a></li>
                         <li><a href="#badges">Badges</a></li>
-                        <li>
-                            <a href="#buttons">Buttons</a>
-                                <button class="link icon circle sm shy" data-toggle="next" title="Expand" aria-label="Expand">
-                                    <svg class="xxl flip-pressed" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                                </button>
-                                <ul class="sm">
-                                    <li><a class="pl-3" href="#buttons">Default</a></li>
-                                    <li><a class="pl-3" href="#buttons-outline">Outline</a></li>
-                                    <li><a class="pl-3" href="#buttons-hazy">Hazy</a></li>
-                                    <li><a class="pl-3" href="#buttons-link">Link</a></li>
-                                    <li><a class="pl-3" href="#buttons-sizes">Sizes</a></li>
-                                    <li><a class="pl-3" href="#buttons-custom">Custom</a></li>
-                                    <li><a class="pl-3" href="#buttons-icons">With Icons</a></li>
-                                    <li><a class="pl-3" href="#buttons-loader">With Loader</a></li>
-                                </ul>
-                        </li>
+                        <li><a href="#buttons">Buttons</a></li>
                         <li><a href="#cards">Cards</a></li>
                         <li><a href="#dropdowns">Dropdowns</a></li>
-                        <li>
-                            <a href="#forms">Forms</a>
-                            <button class="link icon circle sm shy" data-toggle="next" title="Expand" aria-label="Expand">
-                                <svg class="xxl flip-pressed" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                            </button>
-                            <ul class="sm">
-                                <li><a class="pl-3" href="#forms">Simple Form</a></li>
-                                <li><a class="pl-3" href="#forms-responsive-labels">Responsive Labels</a></li>
-                                <li><a class="pl-3" href="#forms-resize">Sizing</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="#forms">Forms</a></li>
                         <li><a href="#icons">Icons</a></li>
                         <li><a href="#lists">Lists</a></li>
                         <li><a href="#loader">Loader</a></li>
                         <li><a href="#menus">Menus</a></li>
                         <li><a href="#modals">Modals</a></li>
                         <li><a href="#navs">Navs</a></li>
-                        <li>
-                            <a href="#sliders">Sliders</a>
-                            <button class="link icon circle sm shy" data-toggle="next" title="Expand" aria-label="Expand">
-                                <svg class="xxl flip-pressed" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                            </button>
-                            <ul class="sm">
-                                <li><a class="pl-3" href="#slider-js">Javascript</a></li>
-                                <li><a class="pl-3" href="#sliders-image">Image Slider</a></li>
-                                <li><a class="pl-3" href="#sliders-breakpoints">Breakpoints</a></li>
-                                <li><a class="pl-3" href="#sliders-thumbnails">With Thumbnails</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="#sliders">Sliders</a></li>
                         <li><a href="#tables">Tables</a></li>
                         <li><a href="#tabs">Tabs</a></li>
                         <li><a href="#tooltip">Tooltips</a></li>
@@ -156,16 +119,15 @@
         <main class="mw-1200 md-ml-200 bg-inherit overflow-x-clip">
 
             <!------------------------------------
-            ---------    INSTALLATION    ---------
+            -------------    ABOUT    ------------
             ------------------------------------->
-            <section id="start" class="bg-inherit pb-0">
-                
+            <section class="bg-inherit">
                 <h1 class="mb-2 mt-0 flex-middle">
                     <i class="icon circle outline mr-1 xs"><svg class="lg" viewBox="0 0 24 24"><path d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" /></svg></i>
                     SpryCSS
                 </h1>
                 <p>SpryCSS aims to be a simple and customizable CSS Toolkit while being as
-                    lightweight as possible <strong>(Only 11kb gzipped)</strong>.</p>
+                    lightweight as possible.</p>
                 <p>The goal is to remove the messy and tedious task of coming up with class names
                     for elements that just need simple layout styles and provide basic components to help you get up and
                     running fast,
@@ -176,17 +138,49 @@
                     So if a SpryCSS class is not working then chances are you have already set that style in a css file
                     and therefore you should update the style there instead of overriding it in the html.
                 </p>
+            
+                <h3 id="support" class="flex-middle index-2 pt-3 border-grey border-alpha-30 bb-1 pb-1 mx-n2 px-2 mb-2">
+                    <span class="mt-1">
+                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-14a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4z" /></svg></i>
+                    Support
+                </span>
+                </h3>
+                <p>You can report issues or make feature requests on the <a target="_blank" href="https://github.com/ggedde/spry-css/issues">GitHub Issues</a> page.</p>
+                <p>If you like to help us grow, then please add a star on the <a target="_blank" href="https://github.com/ggedde/spry-css">SpryCSS GitHub Repository</a> or by sharing us on social media.</p>
+                <div class="pt-2 flex-middle g-1 mb-2">
+                    <a class="button circle icon contrast hazy" title="Facebook" aria-label="Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookShare','width=626,height=436');return false;" onkeypress="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookShare','width=626,height=436');return false;">
+                        <svg class="xl" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z" /></svg>
+                    </a>
+                    <a class="button circle icon contrast hazy" title="Twitter" aria-label="Twitter" onclick="window.open('https://twitter.com/share?text=SpryCSS&url='+encodeURIComponent(location.href),'twitterShare','width=626,height=436');return false;" onkeypress="window.open('https://twitter.com/share?text=SpryCSS&url='+encodeURIComponent(location.href),'twitterShare','width=626,height=436');return false;">
+                        <svg width="1200" height="1227" viewBox="0 0 1200 1227"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" /></svg>
+                    </a>
+                    <a class="button circle icon contrast hazy" title="Linked In" aria-label="Linked In" onclick="window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent(location.href),'linkedinShare','width=626,height=436');return false;" onkeypress="window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent(location.href),'linkedinShare','width=626,height=436');return false;">
+                        <svg class="xl" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" /></svg>
+                    </a>
+                    <a class="button circle icon contrast hazy" title="GitHub" aria-label="GitHub" target="_blank" href="https://github.com/ggedde/spry-css">
+                        <svg class="xl" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" /></svg>
+                    </a>
+                    <p class="p-1">
+                        <a class="github-button" href="https://github.com/ggedde/spry-css" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-show-count="true" aria-label="Star ggedde/spry-css on GitHub">Star</a>
+                        <a class="github-button" href="https://github.com/ggedde/spry-css/issues" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-issue-opened" data-show-count="true" aria-label="Issue ggedde/spry-css on GitHub">Issue</a>
+                        <a class="github-button" href="https://github.com/ggedde/spry-css/subscription" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-eye" aria-label="Watch ggedde/spry-css on GitHub">Watch</a>
+                    </p>
+                </div>
+            </section>
 
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <!------------------------------------
+            ---------    INSTALLATION    ---------
+            ------------------------------------->
+            <section id="installation" class="bg-inherit pt-0 pb-0">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="m16.56 5.44-1.45 1.45A5.969 5.969 0 0 1 18 12a6 6 0 0 1-6 6 6 6 0 0 1-6-6c0-2.17 1.16-4.06 2.88-5.12L7.44 5.44A7.961 7.961 0 0 0 4 12a8 8 0 0 0 8 8 8 8 0 0 0 8-8c0-2.72-1.36-5.12-3.44-6.56M13 3h-2v10h2" /></svg></i>
-                    Getting Started and Installation
+                    Installation
                 </h2>
 
-                <a name="installation" class="mb-3 block"></a>
-                <h4 class="mt-3 mb-1">Compatibility</h4>
+                <h4 class="mb-1">Compatibility</h4>
                 <div class="alert secondary outline mb-4 flex">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
-                    <span>SpryCss uses :has() property which is not supported by all browsers yet. Find out which browsers support it at <a target="_blank" href="https://caniuse.com/css-has">Can I Use</a>.</span>
+                    <span>SpryCss uses :has() property which is not supported by all browsers yet. Find out which browsers support it at <a target="_blank" href="https://caniuse.com/css-has">Can I Use</a>.<br>However, you can use <a href="#spryjs">SpryJS</a> to add a polyfill to allow the browser to support most of the SpryCSS :has() selectors.</span>
                 </div>
 
                 <h4>Using the CDN:</h4>
@@ -214,45 +208,126 @@
                 <pre><code class="language-scss">@import 'your_variables.scss';
 @use "node_modules/@ggedde/spry-css/reset";
 @use "node_modules/@ggedde/spry-css/typography";
-@use "node_modules/@ggedde/spry-css/ui";
+@use "node_modules/@ggedde/spry-css/outline";
 @use "node_modules/@ggedde/spry-css/lists";
+@use "node_modules/@ggedde/spry-css/ui";
+// @use "node_modules/@ggedde/spry-css/alert";
+@use "node_modules/@ggedde/spry-css/badge";
+@use "node_modules/@ggedde/spry-css/button";
+@use "node_modules/@ggedde/spry-css/loader";
+@use "node_modules/@ggedde/spry-css/toolbar";
 @use "node_modules/@ggedde/spry-css/cards";
 @use "node_modules/@ggedde/spry-css/forms";
-// @use "node_modules/@ggedde/spry-css/icons";
 @use "node_modules/@ggedde/spry-css/tables";
-@use "node_modules/@ggedde/spry-css/tooltips";
-@use "node_modules/@ggedde/spry-css/grid";
 /*
-@use "node_modules/@ggedde/spry-css/modals";
+@use "node_modules/@ggedde/spry-css/tooltips";
 @use "node_modules/@ggedde/spry-css/sliders";
-@use "node_modules/@ggedde/spry-css/tabs";
 */
+@use "node_modules/@ggedde/spry-css/grid";
+@use "node_modules/@ggedde/spry-css/tabs";
 @use "node_modules/@ggedde/spry-css/navs";
 @use "node_modules/@ggedde/spry-css/toggles";
-@use "node_modules/@ggedde/spry-css/utilities";
-@use "node_modules/@ggedde/spry-css/colors";
+@use "node_modules/@ggedde/spry-css/modals";
+@use "node_modules/@ggedde/spry-css/comfort";
 @use "node_modules/@ggedde/spry-css/spacing";
+@use "node_modules/@ggedde/spry-css/borders";
+@use "node_modules/@ggedde/spry-css/icons";
+@use "node_modules/@ggedde/spry-css/utilities";
+// @use "node_modules/@ggedde/spry-css/dark";
+@use "node_modules/@ggedde/spry-css/light";
+@use "node_modules/@ggedde/spry-css/colors";
 
 </code></pre>
 
-            <h3 id="spryjs" class="mt-2 pt-3">SpryJS Javascript <small class="badge outline xxs grey ml-1">Optional</small></h3>
+        </section>
+        <!------------------------------------
+        -----------   JAVASCRIPT   -----------
+        ------------------------------------->
+        <section id="spryjs" class="bg-inherit py-0 pb-3">
+            <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M3,3H21V21H3V3M7.73,18.04C8.13,18.89 8.92,19.59 10.27,19.59C11.77,19.59 12.8,18.79 12.8,17.04V11.26H11.1V17C11.1,17.86 10.75,18.08 10.2,18.08C9.62,18.08 9.38,17.68 9.11,17.21L7.73,18.04M13.71,17.86C14.21,18.84 15.22,19.59 16.8,19.59C18.4,19.59 19.6,18.76 19.6,17.23C19.6,15.82 18.79,15.19 17.35,14.57L16.93,14.39C16.2,14.08 15.89,13.87 15.89,13.37C15.89,12.96 16.2,12.64 16.7,12.64C17.18,12.64 17.5,12.85 17.79,13.37L19.1,12.5C18.55,11.54 17.77,11.17 16.7,11.17C15.19,11.17 14.22,12.13 14.22,13.4C14.22,14.78 15.03,15.43 16.25,15.95L16.67,16.13C17.45,16.47 17.91,16.68 17.91,17.26C17.91,17.74 17.46,18.09 16.76,18.09C15.93,18.09 15.45,17.66 15.09,17.06L13.71,17.86Z" /></svg></i>
+                SpryJS Javascript <small class="badge outline xxs grey dense ml-2 px-2 md-px-1">Optional</small>
+            </h2>
             <p>SpryCSS is meant to be quick and easy to impliment without needing to add any additional dependencies. However, there are times when you need more functionality then CSS can offer.
                 For this reason, you can include SpryJS to handle <a href="#toggles">Toggles</a> and <a href="#sliders">Sliders</a>. Toggles add additional functionality for many of its components like 
                 <a href="#accordions">Accordions</a>, <a href="#buttons">Buttons</a>, <a href="#lists">Lists</a>, <a href="#menus">Menus</a>, <a href="#modals">Modals</a>, and <a href="#tabs">Tabs</a>.
                 SpryCSS also comes with basic <a href="#sliders">Sliders</a> that have limited functionality, but you can add SpryJS for more functionality.
             </p>
+            <p class="note">SpryJS</p>
             <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0/dist/spry.min.js"&gt;&lt;/script&gt;</code></pre>
+
+            <h5 class="mt-3">The SpryJS file will run the following functions on document page load.</h5>
+
+            <table class="mb-3 mt-3 border-faint">
+                <thead>
+                    <tr>
+                        <th class="md-w-200"><h4>Load Functions</h4></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="md-pl-2"><code class="color-primary">Spry.loadToggles()</code></td>
+                        <td>Loads all <a href="#toggles">Toggles</a> into scope and runs all necessary features.</td>
+                    </tr>
+                    <tr>
+                        <td class="md-pl-2"><code class="color-primary">Spry.loadSliders()</code></td>
+                        <td>Loads all <a href="#sliders">Sliders</a> into scope and runs all necessary features.</td>
+                    </tr>
+                    <tr>
+                        <td class="md-pl-2"><code class="color-primary">Spry.loadLists()</code></td>
+                        <td>Loads all <a href="#lists">Lists</a> into scope and runs all necessary features.</td>
+                    </tr>
+                    <tr>
+                        <td class="md-pl-2"><code class="color-primary">Spry.loadHas()</code></td>
+                        <td>Runs a polyfill to add <code class="color-primary">.has-{selector}</code> to all parent elements requiring the :has() selector.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="mb-3 mt-3 border-faint">
+                <thead>
+                    <tr>
+                        <th class="md-w-500"><h4>Additional Functions</h4></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="md-pl-2"><code class="color-primary">Spry.toggle(<span class="color-grey">toggleObjectOrEvent</span>, <span class="color-grey">forceAction</span>)</code></td>
+                        <td>
+                            <p>Toggles the class <code class="color-primary">open</code> on an element if it has been registered with <code class="color-primary">data-toggle</code>. See <a href="#toggles">Toggles</a> for more information.</p>
+                            </p><code class="color-primary">toggleObjectOrEvent</code> - Can be a valid css selector, element object, or event of element object.</p>
+                            </p><code class="color-primary">forceAction</code> - Can be <code class="color-primary">close</code>, <code class="color-primary">open</code> or <code class="color-primary">toggle</code> <span class="color-grey">(default)</span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="md-pl-2"><code class="color-primary">Spry.closeToggle(<span class="color-grey">toggleObjectOrEvent</span>)</code></td>
+                        <td>
+                            <p>Closes a toggle element. See <a href="#toggles">Toggles</a> for more information.</p>
+                            </p><code class="color-primary">toggleObjectOrEvent</code> - Can be a valid css selector, element object, or event of element object.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="md-pl-2"><code class="color-primary">Spry.closeAllToggles()</code></td>
+                        <td>
+                            <p>Closes all toggle elements on the page. See <a href="#toggles">Toggles</a> for more information.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
             </section>
             <!------------------------------------
             ---------   SCSS VARIABLES   ---------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="scss" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></i>
                     SCSS Variables
                 </h2>
-                <a name="scss" class="mb-3 block"></a>
+
+                <dfn>_variables.scss</dfn>
                 <pre><code class="language-scss">// Specify each breakpoint size
 $breakpoints: (
     md: 40em,
@@ -319,7 +394,7 @@ $sizes: (
 );
 </code></pre>
                 <h4 class="mt-3 mb-1">Accessing Variables in SCSS</h4>
-                <p>You can access variables using <code>map-get()</code></p>
+                <p>You can access variables using <code class="color-primary">map-get()</code></p>
                 <pre class="mt-1"><code class="language-css">p {
     color: map-get($colors, 'primary');
     background-color: rgba(map-get($colors, 'primary'), .5);
@@ -333,22 +408,23 @@ $sizes: (
             <!------------------------------------
             ---------   CSS VARIABLES   ---------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="css" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></i>
                     CSS Variables
                 </h2>
-                <a name="css" class="mb-3 block"></a>
 
-                <h5 class="mt-3">Default CSS Variables</h5>
+                <dfn>Default CSS Variables</dfn>
                 <pre class="mt-1"><code class="language-scss">:root {
     --gap              : 1.25em;      // Used for initial Gap sizes on grid and for breakpoint gap sizes. - Dynamic Property
     --col              : 1;           // Used on grids to specifiy the number of columns.                 - Dynamic Property
-    --color            : #888;        // This is the Accent Color applied to special components           - Dynamic Property
-    --color-rgb        : 136,136,136; // This is the RGB Accent Color applied to special components       - Dynamic Property
-    --text-color       : #888;        // This is the Text Color applied to special UI components          - Dynamic Property
-    --border-color     : #808080;     // This is the Border Color applied to special UI components        - Dynamic Property
-    --border-color-rgb : 128,128,128; // This is the RGB Border Color applied to special UI components    - Dynamic Property
+    --color            : #888;        // This is the Accent Color applied to special components.          - Dynamic Property
+    --color-rgb        : 136,136,136; // This is the RGB Accent Color applied to special components.      - Dynamic Property
+    --text-color       : #888;        // This is the Text Color applied to special UI components.         - Dynamic Property
+    --border-color     : #808080;     // This is the Border Color applied to special UI components.       - Dynamic Property
+    --border-color-rgb : 128,128,128; // This is the RGB Border Color applied to special UI components.   - Dynamic Property
+    --bg-alpha         : 1;           // This is the alpha for RGBa in background colors.
+    --border-alpha     : 1;           // This is the alpha for RGBa in border colors.
     --grey             : #808080;
     --grey-rgb         : 128,128,128;
     --text             : #555;
@@ -379,14 +455,13 @@ $sizes: (
             <!------------------------------------
             ----------    TYPOGRAPHY    ----------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="typography" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M2 4v3h5v12h3V7h5V4H2m19 5h-9v3h3v7h3v-7h3V9z" /></svg></i>
                     Typography
                 </h2>
-                <a name="typography" class="mb-3 block"></a>
 
-                <h5 class="mt-2 note">SCSS Variable</h5>
+                <dfn>SCSS Variable</dfn>
                 <pre class="mt-1"><code class="language-scss">$types: (
     body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), color: var(--text), font-weight: 300, line-height: 1.4),
     h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20),
@@ -412,6 +487,8 @@ $sizes: (
                     <strong>Strong</strong>
                     <u>Underline</u>
                     <small>Small</small>
+                    <cite>Cite</cite>
+                    <dfn>Definition</dfn>
                     <a href="#">Anchor</a>
                     hr
                     <hr>
@@ -440,68 +517,6 @@ $sizes: (
                     nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
                     eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
                     est Lorem ipsum dolor sit amet.</p>
-
-                <h2>Heading H2</h2>
-                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet.</p>
-                <h2>Heading H2</h2>
-                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet.</p>
-                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet.</p>
-                <h2>Heading H2</h2>
-                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet.</p>
-                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet.</p>
-                <h3>Heading H3</h3>
-               <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet.</p>
-                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet.</p>
-                <h3>Heading H3</h3>
-               <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet.</p>
                 <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                     invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
                     duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
@@ -517,23 +532,73 @@ $sizes: (
                     eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
                     est Lorem ipsum dolor sit amet.</p>
 
-                <blockquote class="h3 mt-2">"Blockquote - At vero eos et accusam et justo duo dolores et ea rebum. Stet
-                    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-                    <div class="note m-1 sm"> - Blockquote, Cite</div>
+                <h2>Heading H2</h2>
+                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.</p>
+                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.</p>
+                <h3>Heading H3</h3>
+               <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.</p>
+                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.</p>
+
+                <blockquote>
+                    <p>
+                        "Blockquote - At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                    </p>
+                    <cite class="sm">
+                        - Blockquote, Cite
+                    </cite>
                 </blockquote>
+
+                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.</p>
+                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.</p>
                 
             </section>
             <!------------------------------------
             ------------    COLORS    ------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="colors" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M12 22A10 10 0 0 1 2 12 10 10 0 0 1 12 2c5.5 0 10 4 10 9a6 6 0 0 1-6 6h-1.8c-.3 0-.5.2-.5.5 0 .1.1.2.1.3.4.5.6 1.1.6 1.7.1 1.4-1 2.5-2.4 2.5m0-18a8 8 0 0 0-8 8 8 8 0 0 0 8 8c.3 0 .5-.2.5-.5 0-.2-.1-.3-.1-.4-.4-.5-.6-1-.6-1.6 0-1.4 1.1-2.5 2.5-2.5H16a4 4 0 0 0 4-4c0-3.9-3.6-7-8-7m-5.5 6c.8 0 1.5.7 1.5 1.5S7.3 13 6.5 13 5 12.3 5 11.5 5.7 10 6.5 10m3-4c.8 0 1.5.7 1.5 1.5S10.3 9 9.5 9 8 8.3 8 7.5 8.7 6 9.5 6m5 0c.8 0 1.5.7 1.5 1.5S15.3 9 14.5 9 13 8.3 13 7.5 13.7 6 14.5 6m3 4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5z" /></svg></i>
                     Colors
                 </h2>
-                <a name="colors" class="mb-3 block"></a>
 
-                <h5 class="mt-2 note">SCSS Variable</h5>
+                <dfn>SCSS Variable</dfn>
                 <pre class="mt-1"><code class="language-scss">// Specify each color used in color-, bg-, border-, and in accents.
 // Apply each color with ({theme}: {color_value}, {theme}: {color_value}, ...),
 // Default theme is "light". If no theme color available the color will then fallback to the default theme "light".
@@ -547,13 +612,13 @@ $colors: (
     "primary"   : (light: #1494df),
     "secondary" : (light: #df8a22),
 );</code></pre>
-                <cite class="note">* You can add as many colors as you want, but each color will be added to all classes above. If you
-                    only need it for a small thing then it would be better to create a custom variable for it.</cite>
+                <dfn>* You can add as many colors as you want, but each color will be added to all classes above. If you
+                    only need it for a small thing then it would be better to create a custom variable for it.</dfn>
 
-                <h5 class="mt-3">Color Values</h5>
+                <h4 class="mt-3">Color Values</h4>
                 <p>Each color can have different values depending on the theme being applied. If the color is missing a value for the current theme, then it will fallback to the default theme <code class="color-primary">light</code>.</p>
 
-                <h5 class="mt-3">Overridable CSS Variables</h5>
+                <div class="note">Overridable CSS Variables</div>
                 <pre class="mt-1"><code class="language-scss">:root {
     --{color}: {new_color};
     --{color}-rgb: {new_rgb_color};
@@ -563,7 +628,7 @@ $colors: (
     --{color}: {new_color};
     --{color}-rgb: {new_rgb_color};
 }</code></pre>
-                <cite class="note">* These values can be overridden, but for adding new values it is best to do that with a pre-processor in SCSS.</cite>
+                <dfn>* These values can be overridden, but for adding new values it is best to do that with a pre-processor in SCSS.</dfn>
                 <table class="mb-3 mt-4 border-faint">
                     <thead>
                         <tr>
@@ -655,11 +720,16 @@ $colors: (
                     </div>
                 </div>
 
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            </section>
+
+            <!------------------------------------
+            ------------    THEMES    ------------
+            ------------------------------------->
+            <section id="themes" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M22 22H10v-2h12v2M2 22v-2h7v2H2m16-4v-8h4v8h-4m0-15h4v6h-4V3M2 18V3h14v15H2m7-3.44a3 3 0 0 0 3-3c0-2-3-5.37-3-5.37s-3 3.37-3 5.37a3 3 0 0 0 3 3z" /></svg></i>
                     Themes
                 </h2>
-                <a name="themes" class="mb-3 block"></a>
 
                 <table class="mb-3 border-faint">
                     <thead>
@@ -720,56 +790,24 @@ $colors: (
                 </table>
 
                 <div class="show-code" data-title="Contrast and Faint Colors">
-                    <p class="color-contrast bg-faint p-2 mb-2">Contrast Text with Faint Background</p>
+                    <div class="color-contrast bg-faint p-2 mb-2">Contrast Text with Faint Background</div>
                     <button class="contrast">Contrast Button</button>
                     <button class="faint">Faint Button</button>
                 </div>
     
             </section>
             <!------------------------------------
-            -----------    Support    ------------
-            ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
-                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-14a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4z" /></svg></i>
-                    Support
-                </h2>
-                <a name="support" class="mb-3 block"></a>
-                <p class="mb-2">You can report issues or make feature requests on the <a target="_blank" href="https://github.com/ggedde/spry-css/issues">GitHub Issues</a> page.</p>
-                <p>If you like to help us grow, then please add a star on the <a target="_blank" href="https://github.com/ggedde/spry-css">SpryCSS GitHub Repository</a> or by sharing us on social media.</p>
-                <div class="pt-2 flex-middle g-1 mb-4">
-                    <a class="button circle icon contrast hazy" title="Facebook" aria-label="Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookShare','width=626,height=436');return false;" onkeypress="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookShare','width=626,height=436');return false;">
-                        <svg class="xl" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z" /></svg>
-                    </a>
-                    <a class="button circle icon contrast hazy" title="Twitter" aria-label="Twitter" onclick="window.open('https://twitter.com/share?text=SpryCSS&url='+encodeURIComponent(location.href),'twitterShare','width=626,height=436');return false;" onkeypress="window.open('https://twitter.com/share?text=SpryCSS&url='+encodeURIComponent(location.href),'twitterShare','width=626,height=436');return false;">
-                        <svg width="1200" height="1227" viewBox="0 0 1200 1227"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" /></svg>
-                    </a>
-                    <a class="button circle icon contrast hazy" title="Linked In" aria-label="Linked In" onclick="window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent(location.href),'linkedinShare','width=626,height=436');return false;" onkeypress="window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent(location.href),'linkedinShare','width=626,height=436');return false;">
-                        <svg class="xl" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" /></svg>
-                    </a>
-                    <a class="button circle icon contrast hazy" title="GitHub" aria-label="GitHub" target="_blank" href="https://github.com/ggedde/spry-css">
-                        <svg class="xl" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" /></svg>
-                    </a>
-                    <p class="p-1">
-                        <a class="github-button" href="https://github.com/ggedde/spry-css" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-show-count="true" aria-label="Star ggedde/spry-css on GitHub">Star</a>
-                        <a class="github-button" href="https://github.com/ggedde/spry-css/issues" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-issue-opened" data-show-count="true" aria-label="Issue ggedde/spry-css on GitHub">Issue</a>
-                        <a class="github-button" href="https://github.com/ggedde/spry-css/subscription" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-eye" aria-label="Watch ggedde/spry-css on GitHub">Watch</a>
-                    </p>
-                </div>
-            </section>
-            <!------------------------------------
             -----------    BORDERS    ------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="borders" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M15,5H17V3H15M19,21H21V19H19M19,13H21V11H19M19,5H21V3H19M19,17H21V15H19M15,21H17V19H15M19,9H21V7H19M3,21H5V3H3M7,5H9V3H7M7,21H9V19H7M11,5H13V3H11M11,21H13V19H11V21Z" /></svg>
                     </i>
                     Borders
                 </h2>
-                <a name="borders" class="mb-2 block"></a>
 
-                <h5 class="mt-2 note">SCSS Variable</h5>
+                <dfn>SCSS Variable</dfn>
                 <pre><code class="language-scss">// Specify each border size Ex .b-0, .b-1, .bt-3, .bx-3, .br-2, etc.
 $borders: (
     0: 0,
@@ -778,7 +816,7 @@ $borders: (
     3: 3px,
 );</code></pre>
                 
-                <h5 class="mt-2 note">Usage:</h5>
+                <dfn>Usage:</dfn>
                 <div class="mb-1">
                     <code class="color-primary"><span class="color-grey">{breakpoint}-</span>b{side}-{spacing}</code>
                 </div>
@@ -841,20 +879,19 @@ $borders: (
             <!------------------------------------
             --------    BREAKPOINTS    -----------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="breakpoints" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M3,4H20A2,2 0 0,1 22,6V8H18V6H5V18H14V20H3A2,2 0 0,1 1,18V6A2,2 0 0,1 3,4M17,10H23A1,1 0 0,1 24,11V21A1,1 0 0,1 23,22H17A1,1 0 0,1 16,21V11A1,1 0 0,1 17,10M18,12V19H22V12H18Z" /></svg>
                     </i>
                     Breakpoints
                 </h2>
-                <a name="breakpoints" class="mb-3 block"></a>
 
                 <h5>SpryCSS is mobile first. Meaning all styles start from the smallest device then allow for changes with <code class="color-primary">min-width</code> using breakpoints. By default, SpryCSS only comes with one breakpoint <code class="color-primary">md</code> at <code class="color-primary">40em</code>.</h5>
 
-                <p class="mt-3">You can add more breakpoints in the SCSS Variables, but keep in mind that the more breakpoints you add the larger the compiled file size will be.</p>
+                <p>You can add more breakpoints in the SCSS Variables, but keep in mind that the more breakpoints you add the larger the compiled file size will be.</p>
 
-                <h5 class="mt-2 note">SCSS Variable</h5>
+                <dfn>SCSS Variable</dfn>
                 <pre class="mt-1"><code class="language-scss">$breakpoints: (
     md: 40em,
 )</code></pre>
@@ -898,18 +935,17 @@ $borders: (
             <!------------------------------------
             ------------    GAPS    --------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="gaps" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M9,11H15V8L19,12L15,16V13H9V16L5,12L9,8V11M2,20V4H4V20H2M20,20V4H22V20H20Z" /></svg>
                     </i>
                     Gaps
                 </h2>
-                <a name="gaps" class="mb-3 block"></a>
 
-                <p class="mt-3">Default gaps (aka gutters) are automatically adjusted based on your breakpoints. If you add more breakpoints in your SCSS Variables you will also need to add the corrisponding Gap.</p>
+                <p>Default gaps (aka gutters) are automatically adjusted based on your breakpoints. If you add more breakpoints in your SCSS Variables you will also need to add the corrisponding Gap.</p>
 
-                <h5 class="mt-2 note">SCSS Variable</h5>
+                <dfn>SCSS Variable</dfn>
                 <pre class="mt-1"><code class="language-scss">$gaps: (
     default: 1.25em, // required
     md     : 2em,
@@ -938,16 +974,15 @@ $borders: (
             <!------------------------------------
             -------------    GRID    -------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="grid" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M12 16C13.1 16 14 16.9 14 18S13.1 20 12 20 10 19.1 10 18 10.9 16 12 16M12 10C13.1 10 14 10.9 14 12S13.1 14 12 14 10 13.1 10 12 10.9 10 12 10M12 4C13.1 4 14 4.9 14 6S13.1 8 12 8 10 7.1 10 6 10.9 4 12 4M6 16C7.1 16 8 16.9 8 18S7.1 20 6 20 4 19.1 4 18 4.9 16 6 16M6 10C7.1 10 8 10.9 8 12S7.1 14 6 14 4 13.1 4 12 4.9 10 6 10M6 4C7.1 4 8 4.9 8 6S7.1 8 6 8 4 7.1 4 6 4.9 4 6 4M18 16C19.1 16 20 16.9 20 18S19.1 20 18 20 16 19.1 16 18 16.9 16 18 16M18 10C19.1 10 20 10.9 20 12S19.1 14 18 14 16 13.1 16 12 16.9 10 18 10M18 4C19.1 4 20 4.9 20 6S19.1 8 18 8 16 7.1 16 6 16.9 4 18 4Z" /></svg>
                     </i>
                     Grid
                 </h2>
-                <a name="grid" class="mb-3 block"></a>
 
-                <table class="mb-2 mt-3 border-faint">
+                <table class="mb-2 border-faint">
                     <thead>
                         <tr>
                             <th class="md-w-300"><h4>Container Classes</h4></th>
@@ -1008,7 +1043,6 @@ $borders: (
                     </tbody>
                 </table>
     
-                <h3 id="css-grid" class="mt-2 mb-2">CSS Grid</h3>
                 <div class="show-code" data-title="Auto Fit minimum 200px">
                     <div class="grid-200">
                         <div class="bg-faint round p-1">
@@ -1121,7 +1155,6 @@ $borders: (
                     </div>
                 </div>
     
-                <h3 id="css-flexbox" class="mt-4 mb-2">CSS Flexbox</h3>
                 <div class="show-code" data-title="Equal Columns Single Row above mobile">
                     <div class="row columns-1 md-columns-fixed">
                         <div class="bg-faint round p-1">
@@ -1139,7 +1172,7 @@ $borders: (
                     </div>
                 </div>
 
-                <div id="grid-columns" class="show-code" data-title="Specify number of columns centered">
+                <div class="show-code" data-title="Specify number of columns centered">
                     <div class="row columns-2 md-columns-3 justify-content-center">
                         <div class="bg-faint round p-1">
                             col
@@ -1176,7 +1209,7 @@ $borders: (
                     </div>
                 </div>
     
-                <div id="grid-sidebars" class="show-code" data-title="Set Sidebar width with Auto Content Column">
+                <div class="show-code" data-title="Set Sidebar width with Auto Content Column">
                     <div class="row columns-1 md-columns-fill">
                         <div class="bg-faint round p-1 md-w-200">
                             md-w-200
@@ -1187,7 +1220,7 @@ $borders: (
                     </div>
                 </div>
     
-                <div id="grid-ordering" class="show-code" data-title="Custom Ordering with Space between">
+                <div class="show-code" data-title="Custom Ordering with Space between">
                     <div class="row columns-auto justify-content-between">
                         <div class="md-order-1 bg-faint round p-1">
                             col C
@@ -1201,7 +1234,7 @@ $borders: (
                     </div>
                 </div>                
 
-                <div id="grid-span" class="show-code" data-title="Columns multi row with column spanning">
+                <div class="show-code" data-title="Columns multi row with column spanning">
                     <div class="row columns-12">
                         <div class="span-6 bg-faint round p-1">
                             .span-6
@@ -1251,7 +1284,7 @@ $borders: (
                     </div>
                 </div>
     
-                <div id="grid-gap" class="show-code" data-title="Nested rows with different gap sizing" data-note="* With flexbox, nested rows need .span-fixed or need to be nested in an a column container.">
+                <div class="show-code" data-title="Nested rows with different gap sizing" data-note="* With flexbox, nested rows need .span-fixed or need to be nested in an a column container.">
                     <div class="row columns-12 g-1 md-g-4">
                         <div class="span-6 bg-faint round p-1">
                             .span-6
@@ -1290,16 +1323,15 @@ $borders: (
             <!------------------------------------
             ------------    SIZING    ------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="sizing" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M10 21v-2H6.41l4.5-4.5-1.41-1.41-4.5 4.5V14H3v7h7m4.5-10.09 4.5-4.5V10h2V3h-7v2h3.59l-4.5 4.5 1.41 1.41z" /></svg></i>
                     Sizing
                 </h2>
-                <a name="sizing" class="mb-3 block"></a>
                 <h5 class="mb-2">By Default SpryCss uses <code class="color-primary">em</code> to set font sizes, padding, heights, etc. So you can alter the sizes using the size classes.</h5>
                 <p class="mb-3">Sizing classes are applied to all child elements so you can assign it to the parent.</p>
 
-                <h5 class="mt-2 note">SCSS Variable</h5>
+                <dfn>SCSS Variable</dfn>
                 <pre><code class="language-scss">$sizes: (
     xxl: 165%,
     xl: 140%,
@@ -1344,16 +1376,15 @@ $borders: (
             <!------------------------------------
             -----------    SPACING    ------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="spacing" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M9 11h6V8l4 4-4 4v-3H9v3l-4-4 4-4v3m-7 9V4h2v16H2m18 0V4h2v16h-2z" /></svg>
                     </i>
                     Spacing Utility Classes
                 </h2>
-                <a name="spacing" class="mb-2 block"></a>
 
-                <h5 class="mt-3 note">SCSS Variable</h5>
+                <p class="note">SCSS Variable</p>
                 <pre><code class="language-scss">$spacing: (
     0: 0em,     // Needs unit to be used in calc().
     1: .5em,
@@ -1445,17 +1476,15 @@ $borders: (
             <!------------------------------------
             -----------    TOGGLES    ------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="toggles" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M7,10L12,15L17,10H7Z" /></svg>
                     </i>
                     Toggles
                 </h2>
-                <a name="toggles" class="mb-3 block"></a>
-                <h5 class="my-2">Toggles are used to open and close content and require Javascript (SpryJS).<br>Can be used for <a href="#accordions">Accordions</a>, <a href="#buttons">Buttons</a>, <a href="#lists">Lists</a>, <a href="#menus">Menus</a>, <a href="#modals">Modals</a>, <a href="#tabs">Tabs</a> and more.</h5>
-
-                <h5 class="mt-3">SpryJS <span class="badge xs ml-1 outline secondary">Required</span></h5>
+                <h5>Toggles are used to open and close content and require Javascript (SpryJS).<br>Can be used for <a href="#accordions">Accordions</a>, <a href="#buttons">Buttons</a>, <a href="#lists">Lists</a>, <a href="#menus">Menus</a>, <a href="#modals">Modals</a>, <a href="#tabs">Tabs</a> and more.</h5>
+                <p class="note">SpryJS <span class="badge xs ml-1 outline secondary">Required</span></p>
                 <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0/dist/spry.min.js"&gt;&lt;/script&gt;</code></pre>
 
                 <h5 class="mt-3">Toggles can be a single element which toggle themselves or multiple elements consisting of Toggle Activators for a single Toggle Element</h5>
@@ -1469,13 +1498,13 @@ $borders: (
 &lt;p id="toggle"&gt;
     Toggle Content
 &lt;/p&gt;</code></pre>
-<br>
+
 <pre><code class="language-html">&lt;!-- Self Toggle --&gt;
 &lt;button data-toggle&gt;
     Toggle Me
 &lt;/button&gt;
 </code></pre>
-<br>
+
 <pre><code class="language-html">&lt;!-- Toggle Next Sibling --&gt;
 &lt;button data-toggle="next"&gt;
     Toggle Button
@@ -1483,7 +1512,7 @@ $borders: (
 &lt;p&gt;
     Toggle Content
 &lt;/p&gt;</code></pre>
-<br>
+
 <pre><code class="language-html">&lt;!-- Multiple Activators Toggle --&gt;
 &lt;button data-toggle="#toggle"&gt;
     Toggle Button 1
@@ -1609,12 +1638,12 @@ $borders: (
                 </div>
     
                 <div class="show-code" data-title="Toggle Collapsed Content" data-badge="Uses SpryJS" data-badge-link="#spryjs">
-                    <label class="button" data-toggle="next">
+                    <button data-toggle="next">
                         Toggle Content
                         <i class="icon ml-1 rotate-pressed xl">
                             <svg viewBox="-.5 -.5 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                         </i>
-                    </label>
+                    </button>
                     <div class="collapse">
                         <p class="border p-1 bg-faint">
                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
@@ -1629,12 +1658,12 @@ $borders: (
                 </div>
     
                 <div class="show-code" data-title="Activate on Hover" data-badge="Uses SpryJS" data-badge-link="#spryjs">
-                    <label class="button hoverable" data-toggle="hover">
+                    <button class="hoverable" data-toggle="hover">
                         Hover Me!
                         <i class="icon ml-1 rotate-pressed xl">
                             <svg viewBox="-.5 -.5 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                         </i>
-                    </label>
+                    </button>
                     <div class="collapse">
                         <p class="border p-1 bg-faint">
                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
@@ -1648,7 +1677,7 @@ $borders: (
                     </div>
                 </div>
 
-                <div id="menus" class="show-code" data-title="Escapable and Dismissible Menu" data-badge="Uses SpryJS" data-badge-link="#spryjs">
+                <div class="show-code" data-title="Escapable and Dismissible Menu" data-badge="Uses SpryJS" data-badge-link="#spryjs">
                     <button class="link icon" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
                         <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                         <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
@@ -1670,7 +1699,7 @@ $borders: (
                     <div class="modal blur" data-toggle>
                         <article class="mw-400">
                             <p>Toggle Content Here</p>
-                            <button class="link" data-toggle-close>
+                            <button class="hazy" data-toggle-close>
                                 Close Toggle
                             </button>
                         </article>
@@ -1681,14 +1710,13 @@ $borders: (
             <!------------------------------------
             ----------    UTILITIES    -----------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="utilities" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M16.06 13.09L21.69 18.68L18.37 21.96L12.78 16.37V15.45L15.14 13.09H16.06M16.97 10.56L16 9.6L11.21 14.4V16.37L5.58 22L2.3 18.68L7.89 13.09H9.86L10.64 12.31L6.8 8.46H5.5L2.69 5.62L5.31 3L8.11 5.8V7.11L12 10.95L14.66 8.29L13.7 7.28L15 5.97H12.34L11.69 5.32L15 2L15.66 2.66V5.32L16.97 4L20.25 7.28C21.34 8.38 21.34 10.17 20.25 11.26L18.28 9.25L16.97 10.56Z" /></svg>
                     </i>
                     General Utility Classes
                 </h2>
-                <a name="utilities" class="mb-3 block"></a>
 
                 <table class="mb-3 border-faint">
                     <tbody>
@@ -1758,13 +1786,18 @@ $borders: (
                         </tr>
                     </tbody>
                 </table>
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            </section>
+
+            <!------------------------------------
+            -------    LAYOUT UTILITIES    -------
+            ------------------------------------->
+            <section id="utilities-layout" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M22 13v6H6v-6h16M6 5v6h10V5H6M2 2v20h2V2H2" /></svg>
                     </i>
                     Layout Utility Classes
                 </h2>
-                <a name="layout" class="mb-2 block"></a>
                 <p>* All Layout Utility Classes can be used with breakpoints 
                     ex <code class="color-primary">{breakpoint}-{layoutclass}</code></p>
                 <p>Example Hide on All</p>
@@ -1879,19 +1912,19 @@ $borders: (
                             <td>left: 0; right: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outset-top </code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outer-top </code></td>
                             <td>bottom: 100%; top: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outset-right </code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outer-right </code></td>
                             <td>left: 100%; right: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outset-bottom </code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outer-bottom </code></td>
                             <td>top: 100%; bottom: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outset-left </code></td>
+                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outer-left </code></td>
                             <td>right: 100%; left: auto</td>
                         </tr>
                         <tr>
@@ -2048,26 +2081,25 @@ $borders: (
                 <p class="pt-3 pl-2 note">** = 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100</p>
                 <p class="pt-0 pl-2 note">*** = 0, 100, 200, 300, 400, 500, 600, 700, 800, 900</p>
     
-                <h4 id="max-width" class="mt-4">Max Width Classes</h4>
+                <h4 class="mt-4">Max Width Classes</h4>
                 <p>This requires a breakpoint. ex <code class="color-primary">{breakpoint}-mw</code></p>    
             </section>
             <!------------------------------------
             -----------    ACCORDION    ----------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="accordions" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M2,3V6H21V3M20,8H3A1,1 0 0,0 2,9V15A1,1 0 0,0 3,16H20A1,1 0 0,0 21,15V9A1,1 0 0,0 20,8M2,21H21V18H2V21Z" /></svg>
                     </i>
                     Accordions
                 </h2>
-                <a name="accordions" class="mb-3 block"></a>
 
                 <h5 class="mb-2">Accordions use Toggles to add the collapsing functionality. View <a href="#toggles">Toggles</a> for more details.</h5>
 
                 <pre><code class="language-html">&lt;!-- Basic Accordion Item --&gt;
 &lt;button class="w" data-toggle="next"&gt;
-    &lt;h4&gt;Question 1&lt;/h4&gt;
+    Question 1
 &lt;/button&gt;
 &lt;div&gt;
     &lt;div class="p-2"&gt;
@@ -2103,12 +2135,14 @@ $borders: (
                 </table>
 
                 <div class="show-code" data-title="Basic Accordion" data-badge="Uses Toggles" data-badge-link="#toggles">
-                    <button class="mb-1 w justify-content-between" data-toggle="next">
-                        <h4>Question 1</h4>
-                        <i class="icon down mt-0"></i>
+                    <button class="mb-1 w justify-content-between compact xl" data-toggle="next">
+                        Question 1
+                        <i class="icon flip-pressed mt-0">
+                            <svg viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                        </i>
                     </button>
                     <div>
-                        <div class="p-2 pt-1">
+                        <div class="p-2 pt-0">
                             <p>
                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                 invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
@@ -2123,12 +2157,14 @@ $borders: (
                         </div>
                     </div>
 
-                    <button class="mb-1 w justify-content-between" data-toggle="next">
-                        <h4>Question 2</h4>
-                        <i class="icon down mt-0"></i>
+                    <button class="mb-1 w justify-content-between compact xl" data-toggle="next">
+                        Question 2
+                        <i class="icon flip-pressed mt-0">
+                            <svg viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                        </i>
                     </button>
                     <div>
-                        <div class="p-2">
+                        <div class="p-2 pt-0">
                             <p>
                                 At vero eos et accusam
                                 et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
@@ -2137,12 +2173,14 @@ $borders: (
                         </div>
                     </div>
                     
-                    <button class="w justify-content-between" data-toggle="next">
-                        <h4>Question 3</h4>
-                        <i class="icon down mt-0"></i>
+                    <button class="mb-1 w justify-content-between compact xl" data-toggle="next">
+                        Question 3
+                        <i class="icon flip-pressed mt-0">
+                            <svg viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                        </i>
                     </button>
                     <div>
-                        <div class="p-2">
+                        <div class="p-2 pt-0">
                             <p>
                                 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                 invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
@@ -2160,7 +2198,9 @@ $borders: (
                     <div>
                         <button class="button round-top hazy link contrast w justify-content-between" data-toggle="next" data-toggle-close="{div} .open">
                             <h4>Question 1</h4>
-                            <i class="icon down mt-0"></i>
+                            <i class="icon flip-pressed mt-0">
+                                <svg viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </i>
                         </button>
                         <div class="bx-2 border-grey-hazy pt-1">
                             <div class="p-2">
@@ -2180,7 +2220,9 @@ $borders: (
 
                         <button class="button sharp hazy link contrast w justify-content-between" data-toggle="next" data-toggle-close="{div} .open">
                             <h4>Question 2</h4>
-                            <i class="icon down mt-0"></i>
+                            <i class="icon flip-pressed mt-0">
+                                <svg viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </i>
                         </button>
                         <div class="bx-2 border-grey-hazy pt-1">
                             <div class="p-2">
@@ -2194,7 +2236,9 @@ $borders: (
                         
                         <button class="button sharp hazy link contrast w justify-content-between" data-toggle="next" data-toggle-close="{div} .open">
                             <h4>Question 3</h4>
-                            <i class="icon down mt-0"></i>
+                            <i class="icon flip-pressed mt-0">
+                                <svg viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </i>
                         </button>
                         <div class="b-2 bt-0 border-grey-hazy round-bottom pt-1">
                             <div class="p-2">
@@ -2216,7 +2260,9 @@ $borders: (
                     <div class="primary border-primary outline round">
                         <button class="button round-top link w justify-content-between" data-toggle="next" data-toggle-close="{div} .open:not(:nth-child(2))">
                             <h4>Question 1</h4>
-                            <i class="icon down mt-0 primary"></i>
+                            <i class="icon flip-pressed mt-0">
+                                <svg viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </i>
                         </button>
                         <div>
                             <div class="p-2">
@@ -2236,7 +2282,9 @@ $borders: (
 
                         <button class="button sharp link w justify-content-between" data-toggle="next"  data-toggle-close="{div} .open:not(:nth-child(4))">
                             <h4>Question 2</h4>
-                            <i class="icon down mt-0 primary"></i>
+                            <i class="icon flip-pressed mt-0">
+                                <svg viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </i>
                         </button>
                         <div>
                             <div class="p-2">
@@ -2250,7 +2298,9 @@ $borders: (
                         
                         <button class="button sharp link w justify-content-between" data-toggle="next"  data-toggle-close="{div} .open:not(:nth-child(6))">
                             <h4>Question 3</h4>
-                            <i class="icon down mt-0 primary"></i>
+                            <i class="icon flip-pressed mt-0">
+                                <svg viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </i>
                         </button>
                         <div>
                             <div class="p-2">
@@ -2271,14 +2321,13 @@ $borders: (
             <!------------------------------------
             -----------    ALERTS    ------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="alerts" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
                     </i>
                     Alerts
                 </h2>
-                <a name="alerts" class="mb-3 block"></a>
 
                 <pre><code class="language-html">&lt;!-- Basic Alert --&gt;
 &lt;div class="alert"&gt;Simple Alert Box&lt;/div&gt;</code></pre>
@@ -2424,14 +2473,13 @@ $borders: (
             <!------------------------------------
             -----------    BADGES    ------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="badges" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M19.5 8C21.43 8 23 6.43 23 4.5C23 2.57 21.43 1 19.5 1C17.57 1 16 2.57 16 4.5C16 6.43 17.57 8 19.5 8M21 16V9.79C20.5 9.93 20 10 19.5 10C19.33 10 19.17 10 19 10V16C19 17.66 17.66 19 16 19H8C6.34 19 5 17.66 5 16V8C5 6.34 6.34 5 8 5H14C14 4.84 14 4.67 14 4.5C14 4 14.07 3.5 14.21 3H8C5.24 3 3 5.24 3 8V16C3 18.76 5.24 21 8 21H16C18.76 21 21 18.76 21 16Z" /></svg>
                     </i>
                     Badges
                 </h2>
-                <a name="badges" class="mb-3 block"></a>
 
                 <pre><code class="language-html">&lt;!-- Basic Badge --&gt;
 &lt;div class="badge"&gt;Simple Badge&lt;/div&gt;</code></pre>
@@ -2570,14 +2618,13 @@ $borders: (
             <!------------------------------------
             -----------    BUTTONS    ------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="buttons" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M20 20H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2M4 6v12h16V6H4z" /></svg>
                     </i>
                     Buttons
                 </h2>
-                <a name="buttons" class="mb-3 block"></a>
 
                 <pre><code class="language-html">&lt;!-- Basic Button --&gt;
 &lt;button&gt;Simple Button&lt;/button&gt;</code></pre>
@@ -2708,10 +2755,11 @@ $borders: (
                     <a href="#" class="button faint">Faint</a>
                 </div>
     
-                <div id="buttons-outline" class="show-code" data-title="Outline">
+                <div class="show-code" data-title="Outline">
                     <button class="outline">Default</button>
                     <button class="outline grey">Grey</button>
                     <button class="outline primary">Primary</button>
+                    <button class="outline primary" aria-busy="true">Primary</button>
                     <button class="outline secondary">Secondary</button>
                     <button class="outline dark">Dark</button>
                     <button class="outline light">Light</button>
@@ -2719,7 +2767,7 @@ $borders: (
                     <button class="outline faint">Faint</button>
                 </div>
 
-                <div id="buttons-hazy" class="show-code" data-title="Hazy">
+                <div class="show-code" data-title="Hazy">
                     <button class="hazy">Default</button>
                     <button class="hazy grey">Grey</button>
                     <button class="hazy primary">Primary</button>
@@ -2730,7 +2778,7 @@ $borders: (
                     <button class="hazy faint">Faint</button>
                 </div>
 
-                <div id="buttons-plain" class="show-code" data-title="Plain">
+                <div class="show-code" data-title="Plain">
                     <button class="plain">Default</button>
                     <button class="plain grey">Grey</button>
                     <button class="plain primary">Primary</button>
@@ -2741,7 +2789,7 @@ $borders: (
                     <button class="plain faint">Faint</button>
                 </div>
     
-                <div id="buttons-link" class="show-code" data-title="Link">
+                <div class="show-code" data-title="Link">
                     <button class="link">Default</button>
                     <button class="link grey">Grey</button>
                     <button class="link primary">Primary</button>
@@ -2752,7 +2800,7 @@ $borders: (
                     <button class="link faint">Faint</button>
                 </div>
 
-                <div id="buttons-sizes" class="show-code" data-title="Sizing">
+                <div class="show-code" data-title="Sizing">
                     <button class="xl">Extra Large</button>
                     <button class="lg">Large</button>
                     <button class="md">Default</button>
@@ -2760,13 +2808,13 @@ $borders: (
                     <button class="xs">Extra Small</button>
                 </div>
 
-                <div id="buttons-sizes" class="show-code" data-title="Comfort">
+                <div class="show-code" data-title="Comfort">
                     <button class="dense">Dense</button>
                     <button class="cozy">Cozy</button>
                     <button class="roomy">Roomy</button>
                 </div>
     
-                <div id="buttons-icons" class="show-code" data-title="With Icons">
+                <div class="show-code" data-title="With Icons">
                     <p>
                         <button class="icon">
                             <svg class="lg" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z"></path></svg>
@@ -2839,7 +2887,7 @@ $borders: (
                     </p>
                 </div>
 
-                <div id="buttons-icons" class="show-code" data-title="Toggle Icons">
+                <div class="show-code" data-title="Toggle Icons">
                     <button class="icon" data-toggle>
                         <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                         <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
@@ -2868,7 +2916,7 @@ $borders: (
                     </button>
                 </div>
     
-                <div id="buttons-loader" class="show-code" data-title="With Loader">
+                <div class="show-code" data-title="With Loader">
                     <button 
                         type="button" 
                         aria-busy="false" 
@@ -2885,14 +2933,13 @@ $borders: (
             <!------------------------------------
             ----------       CARDS      ----------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="cards" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M18 2H6C4.89 2 4 2.9 4 4V20C4 21.11 4.89 22 6 22H18C19.11 22 20 21.11 20 20V4C20 2.9 19.11 2 18 2M18 20H6V16H18V20M18 8H6V4H18V8Z" /></svg>
                     </i>
                     Cards
                 </h2>
-                <a name="cards" class="mb-3 block"></a>
 
 <pre><code class="language-html">&lt;!-- Basic Card --&gt;
 &lt;article&gt;Simple Card&lt;/article&gt;</code></pre>
@@ -3007,14 +3054,13 @@ $borders: (
             <!------------------------------------
             ------------   DROPDOWNS   -----------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="dropdowns" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M17 5H20L18.5 7L17 5M3 2H21C22.11 2 23 2.9 23 4V8C23 9.11 22.11 10 21 10H16V20C16 21.11 15.11 22 14 22H3C1.9 22 1 21.11 1 20V4C1 2.9 1.9 2 3 2M3 4V8H14V4H3M21 8V4H16V8H21M3 20H14V10H3V20M5 12H12V14H5V12M5 16H12V18H5V16Z" /></svg>
                     </i>
                     Dropdowns
                 </h2>
-                <a name="dropdowns" class="mb-3 block"></a>
 
                 <h5>Dropdowns use Toggles to add the collapsing functionality. View <a href="#toggles">Toggles</a> for more details.</h5>
 
@@ -3031,16 +3077,18 @@ $borders: (
 &lt;/div&gt;</code></pre>
 
             <div class="show-code" data-title="Basic Dropdown">
-                <button class="w-100 pl-1 pr-1 justify-content-end" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
-                    List
-                    <svg class="icon ml-1 xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                </button>
-                <div class="collapse w-100">
-                    <nav class="list navigatable bg-faint round-bottom overflow-hidden shadow">
-                        <a href="#">Item 1</a>
-                        <a href="#">Item 2</a>
-                        <a href="#">Item 3</a>
-                    </nav>
+                <div class="w-content">
+                    <button class="pl-1 pr-1 justify-content-end" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
+                        Dropdown Button
+                        <svg class="icon ml-1 xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                    </button>
+                    <div class="collapse w">
+                        <nav class="list navigatable bg-faint round-bottom overflow-hidden shadow">
+                            <a href="#">Item 1</a>
+                            <a href="#">Item 2</a>
+                            <a href="#">Item 3</a>
+                        </nav>
+                    </div>
                 </div>
             </div>
 
@@ -3075,14 +3123,13 @@ $borders: (
             <!------------------------------------
             -------------    FORMS    ------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="forms" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M15 5H18L16.5 7L15 5M5 2H19C20.11 2 21 2.9 21 4V20C21 21.11 20.11 22 19 22H5C3.9 22 3 21.11 3 20V4C3 2.9 3.9 2 5 2M5 4V8H19V4H5M5 20H19V10H5V20M7 12H17V14H7V12M7 16H17V18H7V16Z" /></svg>
                     </i>
                     Forms
                 </h2>
-                <a name="forms" class="mb-3 block"></a>
 
                 <pre><code class="language-html">&lt;!-- Basic Form --&gt;
 &lt;form class="grid-300"&gt;
@@ -3118,17 +3165,17 @@ $borders: (
                     <form id="form1" class="grid-300 p-2 g-3 md-gy-4">
 
                         <label>
-                            <h5>Text Field *</h5>
+                            Text Field *
                             <input type="text" required />
                         </label>
                     
                         <label>
-                            <h5>Email *</h5>
+                            Email *
                             <input type="email" required />
                         </label>
                     
                         <label>
-                            <h5>Select *</h5>
+                            Select *
                             <select required>
                                 <option value="" disabled>Select</option>
                                 <option>One</option>
@@ -3137,7 +3184,7 @@ $borders: (
                         </label>
 
                         <label>
-                            <h5>Custom Dropdown</h5>
+                            Custom Dropdown
                             <input id="dropdown" type="text" class="is-select" value="" data-toggle="next" data-toggle-escapable data-toggle-dismissible readonly>
                             <div class="collapse closed">
                                 <ul class="list navigatable bg-faint round-bottom overflow-hidden shadow w">
@@ -3405,6 +3452,22 @@ $borders: (
                     </form>
                 </div>
 
+                <div class="show-code" data-title="Responsive Labels">
+                    <form class="row columns-1 justify-content-center" onsubmit="return false;">
+                        <label>
+                            <sup>Label Above</sup>
+                            <input type="text" required placeholder=" " />
+                        </label>
+                        <label>
+                            <sub>Label Below</sub>
+                            <select>
+                                <option value="" selected></option>
+                                <option>Two</option>
+                                <option>Three</option>
+                            </select>
+                    </form>
+                </div>
+
                 <div class="show-code" data-title="Compact with Loading Button and Disabled Fields on Submit">
                     <form class="show-invalid row columns-1 md-columns-3 justify-content-center sm gy-1" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').setAttribute('aria-busy', 'true'); this.classList.add('disabled'); setTimeout(() => {this.reset(); this.querySelector('[type=submit]').setAttribute('aria-busy', 'false'); this.classList.remove('disabled');}, 4000)">
                         <label>
@@ -3431,33 +3494,15 @@ $borders: (
                     </form>
                 </div>
 
-
-                <div id="forms-responsive-labels" class="show-code" data-title="Responsive Labels">
-                    <form class="row columns-1 justify-content-center" onsubmit="return false;">
-                        <label>
-                            <sup>Label Above</sup>
-                            <input type="text" required placeholder=" " />
-                        </label>
-                        <label>
-                            <sub>Label Below</sub>
-                            <select>
-                                <option value="" selected></option>
-                                <option>Two</option>
-                                <option>Three</option>
-                            </select>
-                    </form>
-                </div>
-
             </section>
             <!------------------------------------
             -------------    ICONS    ------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="icons" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M14 7v2h-1v6h1v2h-4v-2h1V9h-1V7h4M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m0 2v14h14V5H5z" /></svg></i>
                     Icons
                 </h2>
-                <a name="icons" class="mb-3 block"></a>
                 
                 <p>SpryCSS doesn't come with its own icon package. You can use whatever ican package or icon webfont you
                     want, but icon webfonts can greatly increase the size of your projects. A recommended alternative is
@@ -3620,14 +3665,13 @@ $borders: (
             <!------------------------------------
             ------------    LISTS    ------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="lists" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M7,5H21V7H7V5M7,13V11H21V13H7M4,4.5A1.5,1.5 0 0,1 5.5,6A1.5,1.5 0 0,1 4,7.5A1.5,1.5 0 0,1 2.5,6A1.5,1.5 0 0,1 4,4.5M4,10.5A1.5,1.5 0 0,1 5.5,12A1.5,1.5 0 0,1 4,13.5A1.5,1.5 0 0,1 2.5,12A1.5,1.5 0 0,1 4,10.5M7,19V17H21V19H7M4,16.5A1.5,1.5 0 0,1 5.5,18A1.5,1.5 0 0,1 4,19.5A1.5,1.5 0 0,1 2.5,18A1.5,1.5 0 0,1 4,16.5Z" /></svg>
                     </i>
                     Lists
                 </h2>
-                <a name="lists" class="mb-3 block"></a>
 
                 <pre><code class="language-html">&lt;!-- Basic List --&gt;
 &lt;div class="list"&gt;
@@ -3636,36 +3680,123 @@ $borders: (
     &lt;button class="link contrast"&gt;List Item 3&lt;/button&gt;
 &lt;/div&gt;</code></pre>
 
-                <div class="show-code" data-title="Basic List">
+                <div class="show-code" data-title="Basic List with Buttons">
                     <div class="list">
-                        <button class="link contrast">List Item 1</button>
-                        <button class="link contrast">List Item 2</button>
-                        <button class="link contrast">List Item 3</button>
+                        <p><button class="link contrast">List Item 1</button></p>
+                        <p><button class="link contrast">List Item 2</button></p>
+                        <p><button class="link contrast">List Item 3</button></p>
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Basic UL List">
+                <div class="show-code" data-title="Basic UL List with Text">
                     <ul class="list">
-                        <li><button class="link contrast">List Item 1</button></li>
-                        <li><button class="link contrast">List Item 2</button></li>
-                        <li><button class="link contrast">List Item 3</button></li>
+                        <li>Text Item 1</li>
+                        <li>Text Item 2</li>
+                        <li>Text Item 3</li>
                     </ul>
                 </div>
 
-                <div class="show-code" data-title="Basic List Text">
-                    <ul class="list">
-                        <li>List Item 1</li>
-                        <li>List Item 2</li>
-                        <li>List Item 3</li>
-                    </ul>
+                <div class="show-code" data-title="Nav List">
+                    <nav class="list">
+                        <ul>
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 2</a></li>
+                            <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="show-code" data-title="Sidebar List with Sub Lists">
+                    <menu class="list bg-faint round shadow mw-200">
+                        <li>
+                            <a href="#">List Item 1</a>
+                        </li>
+                        <li>
+                            <a href="#">List Item 2</a>
+                            <button class="icon link circle sm shy flip-pressed" data-toggle="next">
+                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </button>
+                            <ul>
+                                <li><a href="#">Sub Link 1</a></li>
+                                <li><a href="#">Sub Link 2</a></li>
+                                <li><a href="#">Sub Link 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">List Item 3</a>
+                            <button class="icon link circle sm shy flip-pressed" data-toggle="next">
+                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </button>
+                            <ul>
+                                <li><a href="#">Sub Link 1</a></li>
+                                <li><a href="#">Sub Link 2</a></li>
+                                <li><a href="#">Sub Link 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">List Item 4 With a very long text</a>
+                            <button class="icon link circle sm shy flip-pressed" data-toggle="next">
+                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </button>
+                            <ul>
+                                <li><a href="#">Sub Link 1</a></li>
+                                <li><a href="#">Sub Link 2</a></li>
+                                <li><a href="#">Sub Link 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="truncate">List Item 5 Truncated Text</a>
+                            <button class="icon link circle sm shy flip-pressed" data-toggle="next">
+                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </button>
+                            <ul>
+                                <li><a href="#">Sub Link 1</a></li>
+                                <li><a href="#">Sub Link 2</a></li>
+                                <li><a href="#">Sub Link 3</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg class="icon lg mr-2" viewBox="0 0 24 24">
+                                    <path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
+                                </svg>
+                                With Icon
+                            </a>
+                        </li>
+                        <hr class="my-1 mx-1" />
+                        <li class="sm">
+                            <a href="#">Small List Item 1</a>
+                            <button class="icon link circle sm shy flip-pressed" data-toggle="next">
+                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </button>
+                            <ul>
+                                <li><a href="#">Sub Link 1</a></li>
+                                <li>
+                                    <a href="#">Sub Link 2</a>
+                                    <button class="icon link circle sm shy flip-pressed" data-toggle="next">
+                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </button>
+                                    <ul>
+                                        <li><a href="#">Sub Link 1</a></li>
+                                        <li><a href="#">Sub Link 2</a></li>
+                                        <li><a href="#">Sub Link 3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Sub Link 3</a></li>
+                            </ul>
+                        </li>
+                        <li class="sm">
+                            <a href="#">Small List Item 2</a>
+                        </li>
+                    </menu>
                 </div>
 
                 <div class="show-code" data-title="Outline Horizontal List">
                     <nav class="list outline row hoverable bg-faint">
                         <ul class="">
                             <li><button class="link contrast">List Item 1</button></li>
-                            <li><button class="link contrast">List Item 2</button>
-                                <ul class="pill-bottom shadow overflow-hidden">
+                            <li><button class="link contrast">List Item 2 With Dropdown</button>
+                                <ul class="round-bottom shadow overflow-hidden">
                                     <li><button class="link contrast">List Item 1</button></li>
                                     <li><button class="link contrast">List Item 2</button></li>
                                     <li><button class="link contrast">List Item 3</button></li>
@@ -3703,14 +3834,52 @@ $borders: (
                                 <h4>List Item 1</h4>
                                 <h6 class="sm mt-1">Sub List Data</h6>
                             </span>
-                            <span class="row sm md-span-auto columns-auto justify-content-center">
+                            <span class="row md-span-auto columns-auto justify-content-center">
                                 <span class="badge primary px-1">12</span>
-                                <button class="icon hazy secondary circle">
+                                <button class="icon hazy secondary circle" data-toggle="next">
                                     <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
                                 </button>
-                                <button class="icon hazy contrast circle">
+                                <div class="modal bg-blur-sm" data-toggle>
+                                    <form class="mw-400">
+                                        <article class="shadow outline">
+                                            <header>
+                                                <h4>Edit User</h4>
+                                                <button type="button" class="icon link circle" data-toggle-close>
+                                                    <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                                                </button>
+                                            </header>
+                                            <div>
+                                                <label>
+                                                    <h5>New Username:</h5>
+                                                    <input type="text" value="List Item 1" />
+                                                </label>
+                                            </div>
+                                            <footer class="justify-content-right">
+                                                <button type="button" class="sm primary" data-toggle-close>Update</button>
+                                            </footer>
+                                        </article>
+                                    </form>
+                                </div>
+                                <button class="icon hazy contrast circle" data-toggle="next">
                                     <svg viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
                                 </button>
+                                <div class="modal bg-blur-sm" data-toggle>
+                                    <article class="mw-400 shadow outline">
+                                        <header>
+                                            <h4>Are You Sure?</h4>
+                                            <button class="icon link circle" data-toggle-close>
+                                                <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                                            </button>
+                                        </header>
+                                        <div>
+                                            <p>You are about to delete this user. Please make sure you really want to delete them.</p>
+                                            <p class="alert secondary outline">This cannot be undown!</p>
+                                        </div>
+                                        <footer class="justify-content-right">
+                                            <button class="sm secondary" data-toggle-close>Yes, Delete</button>
+                                        </footer>
+                                    </article>
+                                </div>
                             </span>
                         </li>
                         <li class="row align-items-center p-2">
@@ -3719,25 +3888,49 @@ $borders: (
                                 <h4>List Item 2</h4>
                                 <h6 class="sm mt-1">Sub List Data</h6>
                             </span>
-                            <span class="row sm md-span-auto columns-auto justify-content-center">
+                            <span class="row md-span-auto columns-auto justify-content-center">
                                 <span class="badge primary px-1">12</span>
-                                <button class="icon hazy secondary circle">
+                                <button class="icon hazy secondary circle" data-toggle="next">
                                     <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
                                 </button>
+                                <div class="modal bg-blur-sm" data-toggle>
+                                    <form class="mw-400">
+                                        <article class="shadow outline">
+                                            <header>
+                                                <h4>Edit User</h4>
+                                                <button type="button" class="icon link circle" data-toggle-close>
+                                                    <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                                                </button>
+                                            </header>
+                                            <div>
+                                                <label>
+                                                    <h5>New Username:</h5>
+                                                    <input type="text" value="List Item 2" />
+                                                </label>
+                                            </div>
+                                            <footer class="justify-content-right">
+                                                <button type="button" class="sm primary" data-toggle-close>Update</button>
+                                            </footer>
+                                        </article>
+                                    </form>
+                                </div>
                                 <button class="icon hazy contrast circle" data-toggle="next">
                                     <svg viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
                                 </button>
-                                <div class="modal" data-toggle>
-                                    <article class="mw-400 shadow">
+                                <div class="modal bg-blur-sm" data-toggle>
+                                    <article class="mw-400 shadow outline">
                                         <header>
                                             <h4>Are You Sure?</h4>
+                                            <button class="icon link circle" data-toggle-close>
+                                                <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                                            </button>
                                         </header>
                                         <div>
                                             <p>You are about to delete this user. Please make sure you really want to delete them.</p>
                                             <p class="alert secondary outline">This cannot be undown!</p>
                                         </div>
-                                        <footer>
-                                            <button data-toggle-close>Yes, Delete</button>
+                                        <footer class="justify-content-right">
+                                            <button class="sm secondary" data-toggle-close>Yes, Delete</button>
                                         </footer>
                                     </article>
                                 </div>
@@ -3749,14 +3942,52 @@ $borders: (
                                 <h4>List Item 3</h4>
                                 <h6 class="sm mt-1">Sub List Data</h6>
                             </span>
-                            <span class="row sm md-span-auto columns-auto justify-content-center">
+                            <span class="row md-span-auto columns-auto justify-content-center">
                                 <span class="badge primary px-1">12</span>
-                                <button class="icon hazy secondary circle">
+                                <button class="icon hazy secondary circle" data-toggle="next">
                                     <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
                                 </button>
-                                <button class="icon hazy contrast circle">
+                                <div class="modal bg-blur-sm" data-toggle>
+                                    <form class="mw-400">
+                                        <article class="shadow outline">
+                                            <header>
+                                                <h4>Edit User</h4>
+                                                <button type="button" class="icon link circle" data-toggle-close>
+                                                    <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                                                </button>
+                                            </header>
+                                            <div>
+                                                <label>
+                                                    <h5>New Username:</h5>
+                                                    <input type="text" value="List Item 3" />
+                                                </label>
+                                            </div>
+                                            <footer class="justify-content-right">
+                                                <button type="button" class="sm primary" data-toggle-close>Update</button>
+                                            </footer>
+                                        </article>
+                                    </form>
+                                </div>
+                                <button class="icon hazy contrast circle" data-toggle="next">
                                     <svg viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
                                 </button>
+                                <div class="modal bg-blur-sm" data-toggle>
+                                    <article class="mw-400 shadow outline">
+                                        <header>
+                                            <h4>Are You Sure?</h4>
+                                            <button class="icon link circle" data-toggle-close>
+                                                <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                                            </button>
+                                        </header>
+                                        <div>
+                                            <p>You are about to delete this user. Please make sure you really want to delete them.</p>
+                                            <p class="alert secondary outline">This cannot be undown!</p>
+                                        </div>
+                                        <footer class="justify-content-right">
+                                            <button class="sm secondary" data-toggle-close>Yes, Delete</button>
+                                        </footer>
+                                    </article>
+                                </div>
                             </span>
                         </li>
                     </ul>
@@ -3764,7 +3995,7 @@ $borders: (
 
                 <div class="show-code" data-title="Selectable Outlined User List">
                     <ul class="list outline round overflow-hidden">
-                        <li class="row align-items-center p-2 button link">
+                        <li class="row align-items-center p-2 button link" onclick="alert('User has been selected')">
                             <i class="span-auto icon xxl outline circle"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
                             <span class="span-fill">
                                 <h4>List Item 1</h4>
@@ -3806,125 +4037,39 @@ $borders: (
                     </ul>
                 </div>
 
-                <div class="show-code" data-title="Sidebar List with Sub Lists">
-                    <menu class="list bg-faint round shadow mw-200">
-                        <li>
-                            <a href="#">List Item 1</a>
-                        </li>
-                        <li>
-                            <a href="#">List Item 2</a>
-                            <button class="icon link circle sm shy" data-toggle="next">
-                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                            </button>
-                            <ul>
-                                <li><a href="#">Sub Link 1</a></li>
-                                <li><a href="#">Sub Link 2</a></li>
-                                <li><a href="#">Sub Link 3</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">List Item 3</a>
-                            <button class="icon link circle sm shy" data-toggle="next">
-                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                            </button>
-                            <ul>
-                                <li><a href="#">Sub Link 1</a></li>
-                                <li><a href="#">Sub Link 2</a></li>
-                                <li><a href="#">Sub Link 3</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="pr-4">List Item 4 With a very long text</a>
-                            <button class="icon link circle sm shy" data-toggle="next">
-                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                            </button>
-                            <ul>
-                                <li><a href="#">Sub Link 1</a></li>
-                                <li><a href="#">Sub Link 2</a></li>
-                                <li><a href="#">Sub Link 3</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="truncate pr-3">List Item 5 Truncated Text</a>
-                            <button class="icon link circle sm shy" data-toggle="next">
-                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                            </button>
-                            <ul>
-                                <li><a href="#">Sub Link 1</a></li>
-                                <li><a href="#">Sub Link 2</a></li>
-                                <li><a href="#">Sub Link 3</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <svg class="icon lg mr-2" viewBox="0 0 24 24">
-                                    <path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" />
-                                </svg>
-                                With Icon
-                            </a>
-                        </li>
-                        <hr class="my-1 mx-1" />
-                        <li class="sm">
-                            <a href="#">Small List Item 1</a>
-                            <button class="icon link circle sm shy" data-toggle="next">
-                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                            </button>
-                            <ul>
-                                <li><a href="#">Sub Link 1</a></li>
-                                <li>
-                                    <a href="#">Sub Link 2</a>
-                                    <button class="icon link circle sm shy" data-toggle="next">
-                                <svg class="xxl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                            </button>
-                                    <ul>
-                                        <li><a href="#">Sub Link 1</a></li>
-                                        <li><a href="#">Sub Link 2</a></li>
-                                        <li><a href="#">Sub Link 3</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Sub Link 3</a></li>
-                            </ul>
-                        </li>
-                        <li class="sm">
-                            <a href="#">Small List Item 2</a>
-                        </li>
-                    </menu>
-                </div>
-
             </section>
             <!------------------------------------
             ------------    LOADER    ------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="loader" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" /></svg>
                     </i>
                     Loader
                 </h2>
-                <a name="loader" class="mb-3 block"></a>
                 <div class="show-code" data-title="Various Loaders">
                     <button class="sm" aria-busy="true"></button>
                     <button class="hazy primary" aria-busy="true"></button>
                     <button class="lg outline secondary" aria-busy="true"></button>
                     <button type="button" aria-busy="false" onclick="this.setAttribute('aria-busy', 'true'); setTimeout(() => {this.setAttribute('aria-busy', 'false');}, 2000);">Click for Loading</button>
+                    <button class="outline primary" type="button" aria-busy="false" onclick="this.setAttribute('aria-busy', 'true'); setTimeout(() => {this.setAttribute('aria-busy', 'false');}, 2000);">Click for Loading</button>
                 </div>
             </section>
             <!------------------------------------
             ---------        MENUS      ----------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="menus" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                     </i>
                     Menus
                 </h2>
-                <a name="menus" class="mb-3 block"></a>
                 
-                <h5 class="mt-3">Menus use Toggles to add the collapsing functionality. View <a href="#toggles">Toggles</a> for more details.</h5>
+                <h5>Menus use Toggles to add the collapsing functionality. View <a href="#toggles">Toggles</a> for more details.</h5>
 
-                <pre><code class="language-html">&lt;!-- Basic Menu --&gt;
+                <pre class="mb-3"><code class="language-html">&lt;!-- Basic Menu --&gt;
 &lt;button class="link icon" data-toggle="next" data-toggle-escapable data-toggle-dismissible>Open Menu&lt;/button&gt;
 &lt;nav class="absolute list bg-faint round shadow p-1 w-100"&gt;
     &lt;a href="#"&gt;Link 1&lt;/a&gt;
@@ -3944,52 +4089,59 @@ $borders: (
                     </nav>
                 </div>
 
-                <div id="menus" class="show-code" data-title="Toggle Dots List on Right">
+                <div class="show-code" data-title="Toggle Dots List on Right">
                     <div class="text-right">
                         <button class="link icon circle" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
                             <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
                             <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
                         </button>
-                        <ul class="absolute right list navigatable bg-faint round shadow p-1 mr-1 text-left">
-                            <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
-                            <li><a class="button link pl-1" href="#">
-                                <svg class="icon mx-1 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
-                                Link 1</a></li>
-                            <li><a class="button link pl-1" href="#">
-                                <svg class="icon mx-1 sm" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2h9m3-4v-2H6v2h12z" /></svg>
-                                Link 2</a></li>
-                            <li><a class="button link pl-1" href="#">
-                                <svg class="icon mx-1 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
-                                Link 3</a></li>
+                        <ul class="absolute right list navigatable bg-faint round shadow p-1 mr-1 text-left mw-200">
+                            <li class="p-1">
+                                Pick an Item
+                                <hr class="m-0 mt-1">
+                            </li>
+                            <li>
+                                <button class="link pl-1" href="#">
+                                <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
+                                Link 1</button>
+                            </li>
+                            <li>
+                                <button class="link pl-1" href="#">
+                                <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2h9m3-4v-2H6v2h12z" /></svg>
+                                Link 2</button>
+                            </li>
+                            <li>
+                                <button class="link pl-1" href="#">
+                                <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
+                                Link 3</button>
+                            </li>
                         </ul>
                     </div>
                 </div>
 
-                <div id="menus" class="show-code" data-title="Hoverable User Menu">
-                    <nav class="text-right">
-                        <ul class="navigatable hoverable">
-                            <li class="p-1">
-                                <button class="hazy icon circle" data-toggle="hover" data-toggle-escapable data-toggle-dismissible>
-                                    <svg viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
-                                </button>
-                                <ul class="right bg-faint round shadow p-1 list">
-                                    <li>
-                                        <a class="link pl-1" href="#">
-                                        <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
-                                        Link 1</a></li>
-                                    <li>
-                                        <a class="link pl-1" href="#">
-                                        <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2h9m3-4v-2H6v2h12z" /></svg>
-                                        Link 2</a></li>
-                                    <li>
-                                        <a class="link pl-1" href="#">
-                                        <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
-                                        Link 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
+                <div class="show-code" data-title="Hoverable User Menu">
+                    <div class="text-right">
+                        <button class="hazy icon circle" data-toggle="hover" data-toggle-escapable data-toggle-dismissible>
+                            <svg viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
+                        </button>
+                        <nav class="absolute right bg-faint round shadow p-1 list closed overflow-hidden w-content mw-200 navigatable">
+                            <ul>
+                                <li>
+                                    <a class="link pl-1" href="#">
+                                    <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
+                                    Link 1</a></li>
+                                <li>
+                                    <a class="link pl-1" href="#">
+                                    <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2h9m3-4v-2H6v2h12z" /></svg>
+                                    Link 2</a></li>
+                                <li>
+                                    <a class="link pl-1" href="#">
+                                    <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
+                                    Link 3</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
 
             </section>
@@ -3997,16 +4149,15 @@ $borders: (
             <!------------------------------------
             ---------       MODALS      ----------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="modals" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M4,4H20V20H4V4M6,8V18H18V8H6Z" /></svg>
                     </i>
                     Modals
                 </h2>
-                <a name="modals" class="mb-3 block"></a>
                 
-                <h5 class="mt-3">Modals consist of a container with the class <code class="color-primary">modal</code> and a child element considered as the modal box. Add max-width classes to the modal box to restrain the width.</h5>
+                <h5>Modals consist of a container with the class <code class="color-primary">modal</code> and a child element considered as the modal box. Add max-width classes to the modal box to restrain the width.</h5>
 
                 <pre><code class="language-html">&lt;!-- Basic Modal --&gt;
 &lt;div class="modal open"&gt;
@@ -4032,7 +4183,11 @@ $borders: (
                             <td>Opens the modal</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary">blur</code></td>
+                            <td>
+                                <code class="color-primary">bg-blur-sm</code><br>
+                                <code class="color-primary">bg-blur</code><br>
+                                <code class="color-primary">bg-blur-lg</code>
+                            </td>
                             <td>Adds blur to background when open</td>
                         </tr>
                         <tr>
@@ -4050,7 +4205,7 @@ $borders: (
                     <button data-toggle="next">
                         Open Modal
                     </button>
-                    <div class="modal blur" data-toggle>
+                    <div class="modal" data-toggle>
                         <article class="mw-400 outline shadow">
                             <header>
                                 <h4>Lorem ipsum dolor as</h4>
@@ -4078,11 +4233,11 @@ $borders: (
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Required Modal" data-badge="No JS" data-tooltip-warning="Without Javascript it may be difficult to make it Accessibility compliant. Label tags not are keyboard accessible by default. Use with caution.">
+                <div class="show-code" data-title="Required Modal with Blur" data-badge="No JS" data-tooltip-warning="Without Javascript it may be difficult to make it Accessibility compliant. Label tags not are keyboard accessible by default. Use with caution.">
                     <button data-toggle="next">
                         Open Required Modal
                     </button>
-                    <div class="modal blur bounce">
+                    <div class="modal bg-blur-sm bounce">
                         <form class="mw-400" action="#modals" method="get">
                             <article class="outline shadow">
                                 <header>
@@ -4278,14 +4433,13 @@ $borders: (
             <!------------------------------------
             ----------    NAVS    ----------
             ------------------------------------->
-            <section class="bg-inherit pb-0">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="navs" class="bg-inherit pb-0">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                     </i>
                     Navs
                 </h2>
-                <a name="navs" class="mb-3 block"></a>
 
                 <pre><code class="language-html">&lt;!-- Basic Nav --&gt;
 &lt;nav&gt;
@@ -4364,7 +4518,7 @@ $borders: (
                     </tbody>
                 </table>
     
-                <div id="nav" class="show-code" data-title="Basic Nav Bar Menu">
+                <div class="show-code" data-title="Basic Nav Bar Menu">
                     <nav class="bg-faint">
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>
@@ -4373,7 +4527,7 @@ $borders: (
                     </nav>
                 </div>
 
-                <div id="nav" class="show-code" data-title="List Nav Bar Menu">
+                <div class="show-code" data-title="List Nav Bar Menu">
                     <nav class="bg-faint list">
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>
@@ -4443,7 +4597,7 @@ $borders: (
                             <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                             <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                         </button>
-                        <ul class="list md-row md-columns-auto md-open bg-inherit absolute md-relative right outset-bottom md-top md-hoverable">
+                        <ul class="list md-row md-columns-auto md-open bg-inherit absolute md-relative right outer-bottom md-top md-hoverable">
                             <li>
                                 <a href="#">Link 1</a>
                             </li>
@@ -4481,14 +4635,13 @@ $borders: (
             <!------------------------------------
             ---------       SLIDERS      ---------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="sliders" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M9,11H15V8L19,12L15,16V13H9V16L5,12L9,8V11M2,20V4H4V20H2M20,20V4H22V20H20Z" /></svg>
                     </i>
                     Sliders
                 </h2>
-                <a name="sliders" class="mb-3 block"></a>
                 <h5>These are basic lightweight sliders. If you are looking for something more robust, you might want to check out <a
                         target="_blank" href="https://swiperjs.com">Swiper</a> or <a target="_blank" href="https://glidejs.com">Glide</a>
                 </h5>
@@ -4505,7 +4658,7 @@ $borders: (
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-                <h4 id="slider-js" class="mt-3">Optional <span class="color-primary">SprySliderJS</span> Javascript <span class="badge outline xs">1.4 kb</span></h4>
+                <h4 class="mt-3">Optional <span class="color-primary">SprySliderJS</span> Javascript <span class="badge outline xs">1.4 kb</span></h4>
                 <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0/dist/spry-slider.min.js"&gt;&lt;/script&gt;</code></pre>
                 <p class="mb-3">View full <a href="slider.js">slider.js</a></p>
 
@@ -4617,7 +4770,6 @@ $borders: (
                     </div>
                 </div>
 
-                <a name="sliders-thumbnails"></a>
                 <div class="show-code" data-title="Slider with Thumbnails" data-badge="No JS">
                     <div class="slider" data-snap>
                         <div class="slider-slides">
@@ -4660,7 +4812,6 @@ $borders: (
                     </div>
                 </div>
 
-                <a name="sliders-image"></a>
                 <div class="show-code" data-title="Image Slider with Accent" data-badge="With SprySliderJS">
                     <div class="slider primary" data-snap>
                         <button class="slider-prev link icon prev circle"></button>
@@ -4674,7 +4825,6 @@ $borders: (
                     </div>
                 </div>
     
-                <a name="sliders-breakpoints"></a>
                 <div class="show-code" data-title="Breakpoints, Autoplay, Loop and Stop on Action" data-badge="With SprySliderJS">
                     <div class="slider px-4" data-play="0" data-stop="action" data-loop>
                         <button class="slider-prev link icon prev circle"></button>
@@ -4732,7 +4882,6 @@ $borders: (
                     </div>
                 </div>
 
-                <a id="sliders-thumbnails"></a>
                 <div class="show-code" data-title="Slider with Thumbnail Slider" data-badge="With SprySliderJS">
                     <div class="slider" data-snap>
                         <button class="slider-prev link icon prev circle"></button>
@@ -4770,16 +4919,15 @@ $borders: (
             <!------------------------------------
             ------------    TABLES    ------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="tables" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z" /></svg>
                     </i>
                     Tables
                 </h2>
-                <a name="tables" class="mb-3 block"></a>
 
-                <table class="mb-3 mt-3 border-faint">
+                <table class="mb-3 border-faint">
                     <thead>
                         <tr>
                             <th width="190"><h4>Classes</h4></th>
@@ -4927,66 +5075,17 @@ $borders: (
             <!------------------------------------
             ------------    TABS    --------------
             ------------------------------------->
-            <section class="bg-inherit py-0 pb-3">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+            <section id="tabs" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M21 3H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H3V5h10v4h8v10z" /></svg>
                     </i>
                     Tabs
                 </h2>
-                <a name="tabs" class="mb-3 block"></a>
 
-                <div class="show-code" data-title="List">
-                    <nav class="list outline">
-                        <button class="active">Tab 1</button>
-                        <button>Tab 2</button>
-                        <button>Tab 3 lorem ipsum</button>
-                        <button>Tab 4</button>
-                        <button>Tab 5</button>
-                        <button onclick="console.log('gg')">Tab 6</button>
-                    </nav>
-                </div>
-
-                <div class="show-code" data-title="List with UL">
-                    <nav class="list navigatable outline pill overflow-hidden">
-                        <ul>
-                            <li><button class="link active">Tab 1</button></li>
-                            <li><button class="link">Tab 2</button></li>
-                            <li><button class="link">Tab 3 lorem ipsum</button></li>
-                            <li><button class="link">Tab 4</button></li>
-                            <li><button class="link">Tab 5</button></li>
-                            <li><button class="link" onclick="console.log('gg')">Tab 6</button></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div class="show-code" data-title="List Row">
-                    <nav class="list navigatable row outline">
-                        <button class="link active">Tab 1</button>
-                        <button class="link">Tab 2</button>
-                        <button class="link">Tab 3 lorem ipsum</button>
-                        <button class="link">Tab 4</button>
-                        <button class="link">Tab 5</button>
-                        <button class="link" onclick="console.log('gg')">Tab 6</button>
-                    </nav>
-                </div>
-
-                <div class="show-code" data-title="List Row with UL">
-                    <nav class="list navigatable row outline">
-                        <ul>
-                            <li><button class="link active">Tab 1</button></li>
-                            <li><button class="link">Tab 2</button></li>
-                            <li><button class="link">Tab 3 lorem ipsum</button></li>
-                            <li><button class="link">Tab 4</button></li>
-                            <li><button class="link">Tab 5</button></li>
-                            <li><button class="link" onclick="console.log('gg')">Tab 6</button></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div class="show-code" data-title="Basic123 Responsive Tabs">
-                    <div class="tabs outline border-primary-hazy">
-                        <nav class="list navigatable">
+                <div class="show-code" data-title="Basic Vertical Tabs">
+                    <div class="tabs outline">
+                        <nav class="list navigatable bg-faint">
                             <button class="link" data-toggle="{.tabs} .list + * > :nth-child(1)" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
                             <button class="link" data-toggle="{.tabs} .list + * > :nth-child(2)" data-toggle-close="{.tabs} .open">Tab 2</button>
                             <button class="link" data-toggle="{.tabs} .list + * > :nth-child(3)" data-toggle-close="{.tabs} .open">Tab 3 lorem ipsum</button>
@@ -4995,8 +5094,8 @@ $borders: (
                             <button class="link" data-toggle="{.tabs} .list + * > :nth-child(6)" data-toggle-close="{.tabs} .open">Tab 6</button>
                         </nav>
                         <div>
-                            <div class="p-3 open">Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div class="p-3 open"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
+                            <div class="p-3"><p>Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
                             <div class="p-3">Tab 3 asldkf </div>
                             <div class="p-3">Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                             <div class="p-3">Tab 5 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
@@ -5005,9 +5104,38 @@ $borders: (
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Horizontal Tabs">
-                    <div class="tabs outline column">
-                        <nav class="list navigatable row columns-fill">
+                <div class="show-code" data-title="Horizontal Responsive Tabs">
+                    <div class="tabs column outline">
+                        <nav class="list row navigatable justify-content-center text-center columns-fill bg-faint">
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(1)" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(2)" data-toggle-close="{.tabs} .open">Tab 2</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(3)" data-toggle-close="{.tabs} .open">Tab 3 With Long Title</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(4)" data-toggle-close="{.tabs} .open">Tab 4</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(5)" data-toggle-close="{.tabs} .open">Tab 5</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(6)" data-toggle-close="{.tabs} .open">Tab 6</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(7)" data-toggle-close="{.tabs} .open">Tab 7 With Long Title</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(8)" data-toggle-close="{.tabs} .open">Tab 8</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(9)" data-toggle-close="{.tabs} .open">Tab 9 With Longer Title</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(8)" data-toggle-close="{.tabs} .open">Tab 10</button>
+                        </nav>
+                        <div>
+                            <div class="p-3 open"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
+                            <div class="p-3"><h3>Tab 2 Content.</h3><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><h3>Another Heading</h3><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
+                            <div class="p-3">Tab 3 content. Dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur. </div>
+                            <div class="p-3">Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div class="p-3">Tab 5 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div class="p-3">Tab 6 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div class="p-3">Tab 7 content. Duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div class="p-3"><p>Tab 8 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
+                            <div class="p-3">Tab 9 content. Duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div class="p-3"><p>Tab 10 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-code" data-title="Vertical Right Tabs with Accent">
+                    <div class="tabs outline border-primary">
+                        <nav class="list navigatable bg-primary bg-alpha-20 primary order-2">
                             <button class="link" data-toggle="{.tabs} .list + * > :nth-child(1)" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
                             <button class="link" data-toggle="{.tabs} .list + * > :nth-child(2)" data-toggle-close="{.tabs} .open">Tab 2</button>
                             <button class="link" data-toggle="{.tabs} .list + * > :nth-child(3)" data-toggle-close="{.tabs} .open">Tab 3 lorem ipsum</button>
@@ -5016,8 +5144,8 @@ $borders: (
                             <button class="link" data-toggle="{.tabs} .list + * > :nth-child(6)" data-toggle-close="{.tabs} .open">Tab 6</button>
                         </nav>
                         <div>
-                            <div class="p-3 open">Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div class="p-3 open"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
+                            <div class="p-3"><p>Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
                             <div class="p-3">Tab 3 asldkf </div>
                             <div class="p-3">Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                             <div class="p-3">Tab 5 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
@@ -5026,53 +5154,42 @@ $borders: (
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Horizontal Tabs">
-                    <div class="tabs outline column">
-                        <nav class="list row columns-fill justify-content-center">
-                            <ul>
-                                <li><button class="link active">Tab 1</button></li>
-                                <li><button class="link">Tab 2</button></li>
-                                <li><button class="link">Tab 3</button></li>
-                                <li><button class="link">Tab 4</button></li>
-                                <li><button class="link">Tab 5 slkdf klsa flk asldkf</button></li>
-                                <li><button class="link">Tab 6</button></li>
-                                <li><button class="link">Tab 7</button></li>
-                                <li><button class="link">Tab 8 slkdf klsa flk</button></li>
-                                <li><button class="link">Tab 9</button></li>
-                                <li><button class="link">Tab 10</button></li>
-                                <li><button class="link">Tab 11</button></li>
-                            </ul>
+                <div class="show-code" data-title="Bottom Fixed Tabs">
+                    <div class="tabs column outline">
+                        <nav class="list row order-2 navigatable justify-content-center text-center bg-faint">
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(1)" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(2)" data-toggle-close="{.tabs} .open">Tab 2</button>
+                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(3)" data-toggle-close="{.tabs} .open">Tab 3 With Long Title</button>
                         </nav>
                         <div>
-                            <div class="p-3 open">Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 3 asldkf </div>
-                            <div class="p-3">Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 5 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 6 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 7 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 8 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 9 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 10 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 11 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div class="p-4 open text-center"><h3>Tab 1 Content.</h3></div>
+                            <div class="p-4 text-center"><h3>Tab 2 Content.</h3></div>
+                            <div class="p-4 text-center"><h3>Tab 3 Content.</h3></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Selection Tabs">
+                <div class="show-code" data-title="Selection Tabs With None Selected Default">
                     <div class="tabs outline row">
                         <nav class="list">
-                            <label class="button link active"><input class="ml-0 mr-2" name="list-item-tabs2" type="radio" checked />List Item 1</label>
-                            <label class="button link"><input class="ml-0 mr-2" name="list-item-tabs2" type="radio" />List Item 2</label>
-                            <label class="button link"><input class="ml-0 mr-2" name="list-item-tabs2" type="radio" />List Item 3</label>
+                            <label class="button link" data-toggle="{.tabs} .list + * > :nth-child(1)" data-toggle-close="{.tabs} .open">
+                                <input class="ml-0 mr-2" name="list-item-tabs2" type="radio" />
+                                Option 1
+                            </label>
+                            <label class="button link" data-toggle="{.tabs} .list + * > :nth-child(2)" data-toggle-close="{.tabs} .open">
+                                <input class="ml-0 mr-2" name="list-item-tabs2" type="radio" />
+                                Option 2
+                            </label>
+                            <label class="button link" data-toggle="{.tabs} .list + * > :nth-child(3)" data-toggle-close="{.tabs} .open">
+                                <input class="ml-0 mr-2" name="list-item-tabs2" type="radio" />
+                                Option 3
+                            </label>
                         </nav>
                         <div>
-                            <div class="p-3 open">Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 3 asldkf </div>
-                            <div class="p-3">Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 5 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 6 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div class="p-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+                            <div class="p-3">At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+                            <div class="p-3">Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</div>
+                            <div class="p-3 open color-grey">Select one to see details.</div>
                         </div>
                     </div>
                 </div>
@@ -5082,14 +5199,13 @@ $borders: (
             -----------    TOOLTIPS    -----------
             ------------------------------------->
             <section id="tooltip" class="bg-inherit pt-0">
-                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 bg-blur bb-1 pb-1 mx-n2 px-2">
+                <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M9 22a1 1 0 0 1-1-1v-3H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6.1l-3.7 3.71c-.2.19-.45.29-.7.29H9m1-6v3.08L13.08 16H20V4H4v12h6z" /></svg>
                     </i>
                     ToolTips
                 </h2>
-                <a name="tooltip" class="mb-3 block"></a>
-                <h5 class="mt-3 mb-2">You can create a tooltip by adding any tag with the class
+                <h5 class="mb-2">You can create a tooltip by adding any tag with the class
                     <code class="color-primary">tooltip</code> inside any container.
                 </h5>
 
@@ -5147,7 +5263,7 @@ $borders: (
                         <i class="icon color-grey shy">
                             <svg viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6z" /></svg>
                             
-                            <span class="tooltip outset-left center-y bg-primary color-light mh-200 overflow-auto">
+                            <span class="tooltip outer-left center-y bg-primary color-light mh-200 overflow-auto">
                                 <h5>Custom Long Content</h5>
                                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                     invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <a class="color-dark" href="#">Custom Link</a></p>
@@ -5177,7 +5293,7 @@ $borders: (
 
                         <div>
                             <button>Tooltip Top Center
-                                <span class="tooltip outset-top center-x">
+                                <span class="tooltip outer-top center-x">
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                 </span>
                             </button>
@@ -5185,7 +5301,7 @@ $borders: (
 
                         <div>
                             <button>Tooltip Top Right
-                                <span class="tooltip outset-top outset-right">
+                                <span class="tooltip outer-top outer-right">
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                 </span>
                             </button>
@@ -5193,7 +5309,7 @@ $borders: (
 
                         <div>
                             <button>Tooltip Top Inset Right
-                                <span class="tooltip outset-top right">
+                                <span class="tooltip outer-top right">
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                 </span>
                             </button>
@@ -5201,7 +5317,7 @@ $borders: (
 
                         <div>
                             <button>Tooltip Right Center
-                                <span class="tooltip outset-right center-y">
+                                <span class="tooltip outer-right center-y">
                                     Lorem ipsum dolor sit
                                 </span>
                             </button>
@@ -5209,7 +5325,7 @@ $borders: (
 
                         <div>
                             <button>Tooltip Left Center
-                                <span class="tooltip outset-left center-y">
+                                <span class="tooltip outer-left center-y">
                                     Lorem ipsum dolor sit
                                 </span>
                             </button>
@@ -5217,7 +5333,7 @@ $borders: (
 
                         <div>
                             <button>Tooltip Bottom Left
-                                <span class="tooltip outset-left outset-bottom">
+                                <span class="tooltip outer-left outer-bottom">
                                     Lorem ipsum dolor sit
                                 </span>
                             </button>
@@ -5225,7 +5341,7 @@ $borders: (
 
                         <div>
                             <button>Tooltip Bottom Center
-                                <span class="tooltip outset-bottom center-x">
+                                <span class="tooltip outer-bottom center-x">
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                 </span>
                             </button>
@@ -5240,8 +5356,8 @@ $borders: (
         </main>
     </div>
     <div id="copy-code-modal" class="modal no-backdrop m-1">
-        <div class="alert primary lg absolute top right md mw-200 px-2 pr-1">
-            <svg viewBox="0 0 24 24" class="mr-1"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg>
+        <div class="alert primary lg absolute top right md mw-300 px-2 pr-1 flex">
+            <svg viewBox="0 0 24 24" class="icon mr-1"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg>
             <div>Copied To Clipboard!</div>
         </div>
     </div>

@@ -23,6 +23,22 @@
 	transform          : translateZ(0) scale(1, 1);
 }
 
+.has-tooltip {
+	position: relative;
+
+	&:is(:hover, :focus):not(:active) {
+		filter : none;
+		z-index: 2;
+	}
+
+	&:not(:hover, :focus) .tooltip {
+		opacity       : 0;
+		pointer-events: none;
+		transform     : translateZ(0) scale(0);
+		transition    : opacity .1s ease-in-out, transform .8s ease-out; // Out
+	}
+}
+
 :has(>.tooltip) {
 	position: relative;
 

@@ -11,6 +11,10 @@
 	margin        : 0;
 	padding       : 0;
 
+	> * {
+		@extend %ui-margin-above-none;
+	}
+
 	>ul {
 		display        : contents;
 		justify-content: inherit;
@@ -47,7 +51,7 @@
 		flex           : 1;
 	}
 
-	a:is(:hover, :focus) {
+	a:is(:hover, :focus, .active, [aria-pressed=true]) {
 		@extend %ui-bg-hover;
 	}
 

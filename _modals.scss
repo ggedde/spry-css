@@ -30,12 +30,12 @@
 	transition      : opacity .25s var(--ease);
 	transition-delay: 0;
 	transform-origin: center;
-	transform: none;
+	transform       : none;
 	z-index         : 1000;
 	display         : flex;
 	max-height      : none;
 
-	> * {
+	>* {
 		box-sizing: border-box;
 		overflow  : hidden;
 		scale     : .6;
@@ -48,26 +48,23 @@
 		animation-duration: .4s;
 	}
 
-	&.blur {
-		backdrop-filter: blur(2px);
-	}
-
 	&.no-backdrop {
 		background-color: transparent;
 		backdrop-filter : none;
-		min-width       : 300px;
 	}
+
 	&.open {
 		opacity       : 1;
 		pointer-events: all;
-	
-		> * {
+
+		>* {
 			scale: 1.000001;
 		}
+
 		&.no-backdrop {
 			pointer-events: none;
-		
-			> * {
+
+			>* {
 				pointer-events: all;
 			}
 		}

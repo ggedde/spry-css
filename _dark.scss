@@ -17,6 +17,7 @@
 	--border-color-rgb: 70, 70, 70;
 	--bg-color-rgb    : 20, 20, 20;
 	--border-color    : rgb(var(--border-color-rgb));
+	--ui-text-color: var(--ui-light-text-color);
 
 	.bg-theme {
 		background-color: rgb(var(--bg-color-rgb), var(--bg-alpha));
@@ -38,11 +39,11 @@
 
 				// For the default UI Color, check to see if the text should be light or dark.
 				@if (lightness(map-get($color_value, 'dark')) > 70) {
-					--text-color: #{map-get(map-get($colors, 'text'), 'light')};
+					--text-color: var(--ui-dark-text-color);
 				}
 
 				@else {
-					--text-color: #{map-get(map-get($colors, 'text'), 'dark')};
+					--text-color: var(--ui-light-text-color);
 				}
 			}
 		}
@@ -72,11 +73,11 @@ article[data-theme=dark] {
 			// For each UI color Class, check to see if the text should be light or dark.
 			.#{$color_name} {
 				@if (lightness(map-get($color_value, 'dark')) > 70) {
-					--text-color: #{map-get(map-get($colors, 'text'), 'light')};
+					--text-color: var(--ui-dark-text-color);
 				}
 
 				@else {
-					--text-color: #{map-get(map-get($colors, 'text'), 'dark')};
+					--text-color: var(--ui-light-text-color);
 				}
 			}
 		}

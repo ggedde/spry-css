@@ -6,8 +6,9 @@
 /*************************************
 General Utility Classes
 **************************************/
-.bold{ font-weight: bold }
-.normal{ font-weight: normal }
+.thin{ font-weight: 300 }
+.normal{ font-weight: 400 }
+.bold{ font-weight: 600 }
 .italic{ font-style: italic }
 .uppercase{ text-transform: uppercase }
 .lowercase{ text-transform: lowercase }
@@ -41,7 +42,9 @@ General Utility Classes
 .snug { translate: -1em -.7em }
 .hover-scale {transition: scale .3s var(--ease)}
 .hover-scale:hover {scale: 1.05}
-.bg-blur { backdrop-filter: blur(8px)}
+.bg-blur-sm { backdrop-filter: blur(2px)}
+.bg-blur,.bg-blur-md { backdrop-filter: blur(8px)}
+.bg-blur-lg { backdrop-filter: blur(16px)}
 
 /****************************************************************************
 Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
@@ -83,16 +86,17 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .sticky{ position: sticky; top: 0 }
 .fixed{ position: fixed }
 .inset { inset: 0 }
+.center {inset: 50% auto auto 50%; translate: -50% -50%}
+.center-y {top: 50%; bottom: auto; translate: 0 -50%}
+.center-x {left: 50%; right: auto; translate: -50% 0}
 .top { top: 0; bottom: auto }
 .right { right: 0; left: auto }
 .bottom { bottom: 0; top: auto }
 .left { left: 0; right: auto }
-.outset-top { bottom: 100%; top: auto }
-.outset-right { left: 100%; right: auto }
-.outset-bottom { top: 100%; bottom: auto }
-.outset-left { right: 100%; left: auto }
-.center-y {top: 50%; bottom: auto; translate: 0 -50%}
-.center-x {left: 50%; right: auto; translate: -50% 0}
+.outer-top { bottom: 100%; top: auto }
+.outer-right { left: 100%; right: auto }
+.outer-bottom { top: 100%; bottom: auto }
+.outer-left { right: 100%; left: auto }
 .pointer-none { pointer-events: none }
 .align-baseline{ vertical-align: baseline }
 .align-top{ vertical-align: top }
@@ -187,16 +191,17 @@ $size_value in $sizes {
 			&-sticky{ position: sticky; top: 0 }
 			&-fixed{ position: fixed }
 			&-inset { inset: 0 }
+			&-center {inset: 50% auto auto 50%; translate: -50%}
+			&-center-y {top: 50%; bottom: auto; translate: 0 -50%}
+			&-center-x {left: 50%; right: auto; translate: -50% 0}
 			&-top { top: 0; bottom: auto }
 			&-right { right: 0; left: auto }
 			&-bottom { bottom: 0; top: auto }
 			&-left { left: 0; right: auto }
-			&-outset-top { bottom: 100%; top: auto }
-			&-outset-right { left: 100%; right: auto }
-			&-outset-bottom { top: 100%; bottom: auto }
-			&-outset-left { right: 100%; left: auto }
-			&-center-y {top: 50%; bottom: auto; translate: 0 -50%}
-			&-center-x {left: 50%; right: auto; translate: -50% 0}
+			&-outer-top { bottom: 100%; top: auto }
+			&-outer-right { left: 100%; right: auto }
+			&-outer-bottom { top: 100%; bottom: auto }
+			&-outer-left { right: 100%; left: auto }
 			&-pointer-none { pointer-events: none }
 			&-align-baseline{ vertical-align: baseline }
 			&-align-top{ vertical-align: top }

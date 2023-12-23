@@ -194,7 +194,7 @@ class Spry {
 
         if (!event || docTarget || escPressed) {
             this.elements.forEach(toggleElement => {
-                if (toggleElement.el.classList.contains('open') && (!docTarget || (docTarget && toggleElement.el !== docTarget && !toggleElement.el.contains(docTarget)))) {
+                if ((!docTarget || (docTarget && toggleElement.el !== docTarget && !toggleElement.el.contains(docTarget)))) {
                     togglerClicked = false;
                     togglerHasEscapable = false;
                     elementHasEscapable = ['', true, 'true'].includes(toggleElement.el.getAttribute('data-toggle-escapable'));
@@ -206,8 +206,15 @@ class Spry {
                             togglerHasEscapable = true;
                         }
                     });
+                    
                     if (!togglerClicked && (togglerHasEscapable || elementHasEscapable)) {
-                        this.toggle(toggleElement);
+                        if (toggleElement.el.classList.contains('open')) {
+                            this.toggle(toggleElement);
+                        }
+                        toggleElement.el.classList.add('dismissed');
+                        setTimeout(() => {
+                            toggleElement.el.classList.remove('dismissed');
+                        }, 500);
                     }
                 }
             });
@@ -216,7 +223,7 @@ class Spry {
 
         if ((docTarget || spacePressed || enterPressed) && ['A','BUTTON','LABEL','INPUT'].includes(event.target.tagName) && !event.target.hasAttribute('data-toggle')) {
             this.elements.forEach(toggleElement => {
-                if (toggleElement.el.classList.contains('open') && toggleElement.el.contains(event.target)) {
+                if (toggleElement.el.contains(event.target)) {
                     togglerHasDismissible = false;
                     elementHasDismissible = ['', true, 'true'].includes(toggleElement.el.getAttribute('data-toggle-dismissible'));
                     toggleElement.togglers.forEach(toggler => {
@@ -224,10 +231,17 @@ class Spry {
                             togglerHasDismissible = true;
                         }
                     });
-                    if (togglerHasDismissible || elementHasDismissible) {
-                        this.toggle(toggleElement);
+                    if ((togglerHasDismissible || elementHasDismissible)) {
+                        if (toggleElement.el.classList.contains('open')) {
+                            this.toggle(toggleElement);
+                        }
+                        toggleElement.el.classList.add('dismissed');
+                        setTimeout(() => {
+                            toggleElement.el.classList.remove('dismissed');
+                        }, 500);
                     }
                 }
+                
             });
         }
     }
@@ -252,7 +266,7 @@ class Spry {
             } else if (selector === 'next') {
                 targets = [toggle.nextElementSibling];
             } else if (selector === 'hover') {
-                return;
+                targets = [toggle.nextElementSibling];
             } else {
                 if (selector.indexOf('{') > -1 && selector.indexOf('}') > 0) {
                     var from = toggle.closest(selector.substring(selector.indexOf('{')+1, selector.indexOf('}')));
@@ -588,78 +602,97 @@ class Spry {
         })
     }
 
-    // static hoverTooltip = function(event) {
-    //     if (event && event.target) {
-    //         event.target.querySelectorAll('.tooltip').forEach(tooltip => {
+    static loadHas = function() {
+        document.querySelectorAll('li > .icon').forEach(icon => {
+           icon.parentElement.classList.add('has-icon');
+        });
+        document.querySelectorAll('article > header').forEach(elem => {
+            elem.parentElement.classList.add('has-header');
+        });
+        document.querySelectorAll('article > footer').forEach(elem => {
+            elem.parentElement.classList.add('has-footer');
+        });
+        document.querySelectorAll('article > img').forEach(elem => {
+            elem.parentElement.classList.add('has-img');
+        });
+        document.querySelectorAll('.tooltip').forEach(elem => {
+            elem.parentElement.classList.add('has-tooltip');
+        });
+        document.querySelectorAll('[data-toggle] svg:nth-of-type(2)').forEach(elem => {
+            elem.closest('[data-toggle]').classList.add('has-2svg');
+        });
+        document.querySelectorAll('label > sup').forEach(elem => {
+            elem.closest('label').classList.add('has-sup');
+        });
+        document.querySelectorAll('label > sub').forEach(elem => {
+            elem.closest('label').classList.add('has-sub');
+        });
+        document.querySelectorAll('input, textarea, select').forEach(elem => {
+            var label = elem.closest('label');
+            if (label) {
+                elem.addEventListener('blur', (e) => {
+                    console.log(123);
+                    if (e.target.value) {
+                        label.classList.add('has-blank');
+                    } else {
+                        label.classList.remove('has-blank');
+                    }
+                })
+            }
+        });
+    }
 
-    //             var rect = tooltip.getBoundingClientRect();
+    static getScrollSpyAnchors = function() {
+        var scrollSpysLinks = document.querySelectorAll('.scrollspy [href^="#"]');
+        var anchors = [];
 
+        if (scrollSpysLinks.length) {
+            scrollSpysLinks.forEach(link => {
+                var id = link.getAttribute('href').substring(1);
+                document.querySelectorAll('[id="'+id+'"], a[name="'+id+'"]').forEach(anchor => {
+                    var rect = anchor.getBoundingClientRect();
+                    anchors.push(
+                        {
+                            id: id,
+                            top: (rect.y + window.scrollY) - 100,
+                            link: link
+                        }
+                    );
+                });
+            });
+        }
+        
+        return anchors.reverse();
 
-    //             var w = window.innerWidth;
-    //             var h = window.innerHeight;
+    };
 
-    //             var right = Math.round(rect.right);
-    //             var left = Math.round(rect.left);
-    //             var top = Math.round(rect.top);
-    //             var bottom = Math.round(rect.bottom);
+    static loadScrollSpy = function() {
+        setTimeout(() => {
+            var anchors = this.getScrollSpyAnchors();
+            if (anchors.length) {
+                window.addEventListener('scroll', () => {
+                    let y = window.scrollY;
 
-    //             console.log([top, right, bottom, left, w, h, tooltip.style.transform]);
+                    anchors.forEach(anchor => {anchor.link.classList.remove('active');});
+                    for (let a in anchors) {
+                        var anchor = anchors[a];
+                        if (y > anchor.top) {
+                            anchor.link.classList.add('active');
+                            break;
+                        }
+                    };
+                });
 
-    //             var transform = tooltip.style.transform;
-    //             var translate = transform.match(/translate\((.*)px\,(.*)px\)/);
-
-    //             var translateX = 0;
-    //             var translateY = 0;
-
-    //             if (translate) {
-    //                 if (translate[1]) {
-    //                     translateX = parseInt(translate[1]);
-    //                 }
-    //                 if (translate[2]) {
-    //                     translateY = parseInt(translate[2]);
-    //                 }
-    //             }
-
-    //             console.log([translateX, translateY]);
-
-    //             if (tooltip.classList.contains('set') ) {
-    //                 return;
-    //             }
-
-    //             var x = 0;
-    //             var y = 0;
-
-    //             if (bottom > h) {
-    //                 y = -(rect.height + 24);
-    //             } else if (top < 0) {
-    //                 y = (rect.height + 24);
-    //             }
-                
-    //             if (right > w) {
-    //                 x = Math.round(w - right);
-    //             } else if (left < 0) {
-    //                 x = Math.round(left * -1);
-    //             }
-
-    //             if (x || y) {
-    //                 tooltip.style.transform = 'translate('+(x + translateX)+'px, '+(y + translateY)+'px)';
-    //                 tooltip.classList.add('set');
-    //             }
-
-    //             // console.log([x, y]);
-    //         });
-    //     }
-    // }
-
-    // static loadTooltips = function() {
-    //     document.querySelectorAll('.tooltip').forEach(tooltip => {
-    //         tooltip.parentElement.classList.add('has-tooltip');
-    //         tooltip.parentElement.removeEventListener('mouseover', this.hoverTooltip);
-    //         tooltip.parentElement.addEventListener('mouseover', this.hoverTooltip);
-    //         tooltip.parentElement.removeEventListener('focus', this.hoverTooltip);
-    //         tooltip.parentElement.addEventListener('focus', this.hoverTooltip);
-    //     });
-    // }
+                var resizeTimer;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(() => {
+                        anchors = this.getScrollSpyAnchors();
+                    }, 100);
+                });
+            }
+        }, 1000);
+    }
 
     /**
      * Bind Class Reference to methods to allow for removal of Events to ensure there are no duplicate events.
@@ -674,13 +707,16 @@ class Spry {
  * Initiate the Components
  */
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    Spry.loadScrollSpy();
     Spry.loadToggles();
     Spry.loadSliders();
     Spry.loadLists();
-    // Spry.loadTooltips();
+    Spry.loadHas();
+
 } else {
+    document.addEventListener('DOMContentLoaded', Spry.loadScrollSpy);
     document.addEventListener('DOMContentLoaded', Spry.loadToggles);
     document.addEventListener('DOMContentLoaded', Spry.loadSliders);
     document.addEventListener('DOMContentLoaded', Spry.loadLists);
-    // document.addEventListener('DOMContentLoaded', Spry.loadTooltips);
+    document.addEventListener('DOMContentLoaded', Spry.loadHas);
 }

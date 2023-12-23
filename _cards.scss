@@ -17,19 +17,33 @@ article {
 	position        : relative;
 	transition      : none;
 
+	&:is(.has-header, .has-footer) {
+		padding: 0;
+	}
+
 	&:has(>header, >footer) {
 		padding: 0;
 
-		>:is(header, footer, p, div) {
+		>:is(p, div) {
 			padding-inline: 1em;
-		}
-
-		&:has(>img) {
-			overflow: hidden;
 		}
 	}
 
+	&.has-img {
+		overflow: hidden;
+	}
+
+	&:has(>img) {
+		overflow: hidden;
+	}
+
+	>header {
+		padding-inline: 1em;
+		padding-right: .5em;
+	}
+
 	>footer {
+		padding-inline: 1em;
 		margin-top: auto;
 	}
 
@@ -47,7 +61,7 @@ article {
 
 	>* {
 		width     : 100%;
-		margin-top: 0;
+		@extend %ui-margin-above-none;
 	}
 
 	>:is(header, footer) {
@@ -60,7 +74,7 @@ article {
 		transition      : none;
 
 		>* {
-			margin-top: 0;
+			@extend %ui-margin-above-none;
 		}
 	}
 }

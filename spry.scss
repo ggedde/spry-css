@@ -12,7 +12,6 @@
 @use "alert";
 @use "badge";
 @use "button";
-@use "loader";
 @use "toolbar";
 @use "cards";        // Has Nesting
 @use "forms";        // Has Nesting
@@ -32,3 +31,4 @@
 @use "dark";         // Has Nesting
 @use "light";        // Has Nesting
 @use "colors";
+@use "loader";

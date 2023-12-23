@@ -44,6 +44,13 @@
 		}
 	}
 
+	&.tabs .list,
+	&.list {
+		> :is(a, button, .button, [type=submit]) {
+			border-radius: 0;
+		}
+	}
+
 	&.list,
 	>.list>ul,
 	&.list>ul,
@@ -53,9 +60,9 @@
 		--gapx: 0em;
 		--gapy: 0em;
 
-		:is(a, button, .button, [type=submit]):first-child:not([data-toggle=next]) {
-			border-radius: 0;
-		}
+		// :is(a, button, .button, [type=submit]):first-child:not([data-toggle=next]) {
+		// 	border-radius: 0;
+		// }
 
 		li li {
 			width: calc(100% + 1px);

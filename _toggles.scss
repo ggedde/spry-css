@@ -11,7 +11,11 @@
 	top      : 0.25em;
 }
 
-:is(nav, .list) li:has(> .icon:nth-child(2))> :first-child {
+:is(nav, .list) li.has-icon > :not(.icon):first-child {
+	padding-right: 2.5em;
+}
+
+:is(nav, .list) li:has(> .icon:nth-child(2))> :not(.icon):first-child {
 	padding-right: 2.5em;
 }
 
@@ -31,7 +35,7 @@
 	@extend %ui-closed;
 }
 
-.closed:not(.open) {
+:not([data-toggle=hover]:hover)+.closed:not(.open,:hover) {
 	padding-block: 0;
 	margin-block : 0;
 	min-height   : 0;
@@ -43,9 +47,13 @@
 [class*=-hoverable] .open,
 .hoverable>li:hover>ul,
 .hoverable>ul>li:hover>ul,
-.hoverable li:has(:focus-visible)>ul,
-[data-toggle=hover].hoverable:hover+* {
+[data-toggle=hover]:hover+*,
+[data-toggle=hover]+:not(.dismissed):hover {
 	@extend %ui-open;
+}
+
+.hoverable li:has(:focus-visible)>ul{
+	@include ui-open;
 }
 
 @each $breakpoint,
@@ -60,7 +68,10 @@ $breakpoint_width in $breakpoints {
 
 		.#{$breakpoint}-open,
 		.#{$breakpoint}-hoverable>ul>li:hover>ul,
-		.#{$breakpoint}-hoverable>li:hover>ul,
+		.#{$breakpoint}-hoverable>li:hover>ul {
+			@include ui-open;
+		}
+
 		.#{$breakpoint}-hoverable li:has(:focus-visible)>ul {
 			@include ui-open;
 		}

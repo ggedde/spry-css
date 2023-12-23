@@ -110,7 +110,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #F9F9F9;
+	background: #F6F6F6;
 }
 
 [data-theme=dark] :not(pre) > code[class*="language-"],
@@ -120,7 +120,7 @@ pre[class*="language-"] {
 
 [data-theme=light] :not(pre) > code[class*="language-"],
 [data-theme=light] pre[class*="language-"] {
-	background: #F9F9F9;
+	background: #F6F6F6;
 }
 
 /* Inline code */

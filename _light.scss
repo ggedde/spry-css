@@ -13,6 +13,9 @@
 	--bg-color-rgb: 255,255,255;
 	--border-color: rgb(var(--border-color-rgb), var(--border-alpha));
 	--input-border-color: rgba(140,140,140,.7);
+	--ui-light-text-color: #f2f2f2;
+	--ui-dark-text-color: #444;
+	--ui-text-color: var(--ui-dark-text-color);
 
 	.bg-theme {
 		background-color: rgb(var(--bg-color-rgb), var(--bg-alpha));
@@ -33,11 +36,11 @@
 				--color-rgb  : #{red(map-get($color_value, 'light')), green(map-get($color_value, 'light')), blue(map-get($color_value, 'light'))};
 				
 				@if (lightness(map-get($color_value, 'light')) > 70) {
-					--text-color: #{map-get(map-get($colors, 'text'), 'light')};
+					--text-color: var(--ui-dark-text-color);
 				}
-	
+
 				@else {
-					--text-color: #{map-get(map-get($colors, 'text'), 'dark')};
+					--text-color: var(--ui-light-text-color);
 				}
 			}
 		}
@@ -66,11 +69,11 @@ html,
 		@if map-get($color_value, 'light') {
 			.#{$color_name} {
 				@if (lightness(map-get($color_value, 'light')) > 70) {
-					--text-color: #{map-get(map-get($colors, 'text'), 'light')};
+					--text-color: var(--ui-dark-text-color);
 				}
 
 				@else {
-					--text-color: #{map-get(map-get($colors, 'text'), 'dark')};
+					--text-color: var(--ui-light-text-color);
 				}
 			}
 		}

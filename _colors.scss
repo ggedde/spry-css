@@ -9,14 +9,22 @@ $color_names: ();
     $color_names: append($color_names, '.#{$color_name}', 'comma');
 }
 
-:is(button,.button,.alert,.badge,[type=submit],[type=reset]):is(.link, .outline, .hazy, .plain):where(#{$color_names}) {
+:is(button,.button,.alert,.badge,[type=submit],[type=reset]):is(.link, .outline, .hazy, .plain):where(#{$color_names}),
+:is(#{$color_names}) :is(button,.button,.alert,.badge,[type=submit],[type=reset]):is(.link, .outline, .hazy, .plain) {
 	--text-color: var(--color);
-	color: var(--color);
 }
 
+:is(button,.button,.alert,.badge,[type=submit],[type=reset]):where(.link, .outline, .hazy, .plain):where(#{$color_names}),
 :where(#{$color_names}):not(article) :is(.link, .outline, .hazy, .plain) {
 	color: var(--color);
 }
+
+:is(button,.button,.alert,.badge,[type=submit],[type=reset]):where(#{$color_names}) :is(h1,h2,h3,h4,h5,h6),
+article:where(#{$color_names}) > :is(header, footer) :is(h1,h2,h3,h4,h5,h6),
+:where(#{$color_names}):not(article) :is(.link, .outline, .hazy, .plain) {
+	color: var(--text-color);
+}
+
 
 // Initial Color sets
 @each $color_name,
@@ -32,8 +40,9 @@ $color_value in $colors {
 @each $color_name,
 $color_value in $colors {
 
+	.color-#{$color_name} :is(h1,h2,h3,h4,h5,h6),
 	.links-#{$color_name} a:not(.button),
-	.links-hover-#{$color_name} a:not(.button):is(:hover, :focus) {
+	.links-hover-#{$color_name} a:not(.button):is(:hover, :focus, .active, [aria-pressed=true]) {
 		color : var(--#{$color_name});
 	}
 }
@@ -49,7 +58,7 @@ $color_value in $colors {
 	}
 
 	[class].color-#{$color_name},
-	.hover-#{$color_name}:is(:hover, :focus) {
+	.hover-#{$color_name}:is(:hover, :focus, .active, [aria-pressed=true]) {
 		--text-color     : var(--#{$color_name});
 		color            : var(--text-color);
 	}
@@ -59,24 +68,11 @@ $color_value in $colors {
 		background-color: rgba(var(--#{$color_name}-rgb), var(--bg-alpha));
 	}
 
-	// .bg-#{$color_name}-hazy,
-	// :is(.tooltip, article).bg-#{$color_name}-hazy {
-	// 	--bg-alpha: .3;
-	// 	background-color: rgba(var(--#{$color_name}-rgb), var(--bg-alpha));
-	// }
-
 	.border-#{$color_name} {
 		--border-color: rgba(var(--#{$color_name}-rgb), var(--border-alpha));
 		--input-border-color: var(--border-color);
 		border-color  : var(--border-color);
 	}
-
-	// .border-#{$color_name}-hazy {
-	// 	--border-alpha: .3;
-	// 	--border-color: rgba(var(--#{$color_name}-rgb), var(--border-alpha));
-	// 	--input-border-color: var(--border-color);
-	// 	border-color  : var(--border-color);
-	// }
 }
 
 @for $i from 0 through 10 {

@@ -29,7 +29,7 @@
 		}
 	}
 
-	> * {
+	> :is(.icon, svg, img) {
 		pointer-events: none;
 	}
 }

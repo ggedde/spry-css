@@ -17,16 +17,28 @@
     }
 }
 
-:is(h1, h2, h3, h4, h5, h6, ul, ol, p) + * {
+:is(h1, h2, h3, h4, h5, ul, ol, p) + * {
     @extend %ui-margin-above-lg;
 }
 
-:is(h1, h2, h3, h4, h5, h6, label, p) + :is(input, select, textarea) {
+:is(dfn, cite) + *,
+.note + * {
     @extend %ui-margin-above;
 }
 
 .note {
     font-style: italic;
-    font-size : 90%;
-    opacity   : .8
+    opacity   : .7
+}
+
+blockquote, q {
+    font-size: 160%;
+    margin-block: 2em;
+    font-style: italic;
+    color: var(--ui-text-color);
+}
+
+cite, dfn {
+    display: inline-block;
+    opacity: .7;
 }

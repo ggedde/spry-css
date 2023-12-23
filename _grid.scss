@@ -2,6 +2,7 @@
 * Spry Grid
 */
 @use "variables"as *;
+@use "ui"as *;
 
 .column,
 .row,
@@ -28,6 +29,11 @@
 		flex  : 1;
 		--span: 1;
 	}
+}
+
+.column>*,
+.row>* {
+	@extend %ui-margin-above-none;
 }
 
 .grid,

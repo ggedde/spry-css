@@ -10,7 +10,7 @@
 	border-color: var(--input-border-color);
 	font-family: inherit;
 	font-weight: inherit;
-	color: inherit;
+	color: var(--ui-text-color);
 	&:hover {
 		outline-width: 0;
 	}
@@ -20,6 +20,11 @@
 	&:is(:hover,:focus) {
 		border-color: var(--color);
 	}
+}
+
+:is(h1, h2, h3, h4, h5, label, p) + :is(input, select, textarea),
+label > :is(input, select, textarea):not([type=radio], [type=checkbox]):only-child{
+    @extend %ui-margin-above;
 }
 
 [type=range] {
@@ -159,7 +164,7 @@ label {
 	}
 
 	.error {
-		color: #e00;
+		color: #f33;
 	}
 	
 	&:focus-within .ui,
@@ -179,6 +184,19 @@ label {
 	}
 
 	&:focus-within,
+	&.has-blank {
+
+		:is(sup, sub) {
+			transform  : translate(3px, -50%) scale(0.85);
+			top        : -12px;
+			font-weight: 500;
+		}
+
+		sub {
+			top: calc(100% + 11px);
+		}
+	}
+
 	&:has(input:not(:placeholder-shown)),
 	&:has(textarea:not(:placeholder-shown)),
 	&:has(select option:not(:empty):checked) {
@@ -198,6 +216,14 @@ label {
 		color: var(--color);
 	}
 
+	&.has-sup {
+		margin-top: 1rem;
+	}
+
+	&.has-sub {
+		margin-bottom: 1rem;
+	}
+
 	&:has(sup) {
 		margin-top: 1rem;
 	}
@@ -208,13 +234,13 @@ label {
 }
 
 .show-invalid :not(:focus):user-invalid {
-	border-color: #e00;
+	border-color: #f33;
 }
 
 .show-invalid label:has(:not(:focus):user-invalid) {
 	.ui {
-		background-color: #e00;
-		border-color: #e00;
+		background-color: #f33;
+		border-color: #f33;
 		color: #eee;
 	}
 	.error {

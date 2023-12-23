@@ -33,7 +33,7 @@
 	}
 }
 
-[aria-busy=true] {
+:is([aria-busy=true]), [class].loading {
 	pointer-events: none;
 	user-select   : none;
 	cursor        : default;

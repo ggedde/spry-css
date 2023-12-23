@@ -3,6 +3,13 @@
 */
 @use "ui" as *;
 
+:root {
+    --dense: 1.7em;
+    --compact: 2em;
+    --cozy: 2.3em;
+    --roomy: 2.9em;
+}
+
 .dense {
 	min-height    : var(--dense);
 	min-width     : var(--dense);
