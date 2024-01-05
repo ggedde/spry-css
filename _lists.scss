@@ -51,8 +51,8 @@
 		flex           : 1;
 	}
 
-	&:not(.buttons) > a:is(:hover, :focus, .active, [aria-pressed=true]),
-	&:not(.buttons) li:not(.buttons) > a:is(:hover, :focus, .active, [aria-pressed=true]) {
+	&:not(.buttons) > a:not(.button):is(:hover, :focus, .active, [aria-pressed=true]),
+	&:not(.buttons) li:not(.buttons) > a:not(.button):is(:hover, :focus, .active, [aria-pressed=true]) {
 		@extend %ui-bg-hover;
 	}
 

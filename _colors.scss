@@ -65,6 +65,7 @@ $color_value in $colors {
 
 	.bg-#{$color_name},
 	:is(.tooltip, article).bg-#{$color_name} {
+		--bg-alpha: 1;
 		background-color: rgba(var(--#{$color_name}-rgb), var(--bg-alpha));
 	}
 
@@ -77,9 +78,9 @@ $color_value in $colors {
 
 @for $i from 0 through 10 {
 	.bg-alpha-#{$i}0{ 
-		--bg-alpha: calc(#{$i} / 10);
+		--bg-alpha: #{calc($i / 10)};
 	}
 	.border-alpha-#{$i}0{ 
-		--border-alpha: calc(#{$i} / 10);
+		--border-alpha: #{calc($i / 10)};
 	}
 }
