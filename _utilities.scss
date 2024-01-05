@@ -73,6 +73,10 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 .align-items-end{ align-items: end }
 .align-items-center{ align-items: center }
 .align-items-stretch{ align-items: stretch }
+.align-self-start{ align-self: start }
+.align-self-end{ align-self: end }
+.align-self-center{ align-self: center }
+.align-self-stretch{ align-self: stretch }
 .justify-content-start{ justify-content: start }
 .justify-content-end{ justify-content: end }
 .justify-content-right{ justify-content: right }
@@ -178,6 +182,10 @@ $size_value in $sizes {
 			&-align-items-end{ align-items: end }
 			&-align-items-center{ align-items: center }
 			&-align-items-stretch{ align-items: stretch }
+			&-align-self-start{ align-self: start }
+			&-align-self-end{ align-self: end }
+			&-align-self-center{ align-self: center }
+			&-align-self-stretch{ align-self: stretch }
 			&-justify-content-start{ justify-content: start }
 			&-justify-content-end{ justify-content: end }
 			&-justify-content-right{ justify-content: right }
