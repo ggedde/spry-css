@@ -91,7 +91,7 @@
 }
 
 %ui-bg {
-	background-color: var(--color);
+	background-color: rgba(var(--color-rgb), 1);
 	border-color    : var(--color);
 }
 
@@ -103,7 +103,8 @@
 
 %ui-bg-hover {
 	&:not(:active) {
-		background-color: rgba(var(--color-rgb), 0.1);
+		--bg-alpha: .15;
+		background-color: rgba(var(--color-rgb), var(--bg-alpha));
 	}
 }
 
@@ -165,18 +166,25 @@ a {
 
 .link,
 .plain,
-.hazy {
+.hazy,
+:is(.buttons-link, .buttons-plain, .buttons-hazy) a {
 	border-color: transparent;
 }
 
 .link,
 .plain,
-.outline {
+.outline,
+:is(.buttons-link, .buttons-plain, .buttons-outline) a {
 	background: transparent;
 }
 
-.hazy {
+.hazy,
+.buttons-hazy a {
 	background-color: rgba(var(--color-rgb), .1);
+}
+
+:is(.buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a {
+	color: var(--ui-text-color);
 }
 
 hr {

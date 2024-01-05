@@ -3,7 +3,8 @@
 */
 @use "ui"as *;
 
-:is(button,.button,[type=submit],[type=reset]) {
+:is(button,.button,[type=submit],[type=reset]),
+:is(.buttons,.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a {
 	@extend %ui;
 	@extend %ui-bg;
 	@extend %ui-color;
