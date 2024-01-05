@@ -29,6 +29,10 @@
 	}
 }
 
+:is(.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a {
+	--text-color: var(--color);
+}
+
 :is(button,.button,[type=submit],[type=reset]).link,
 .buttons-link a {
 	text-transform: none;

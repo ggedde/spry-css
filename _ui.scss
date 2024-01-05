@@ -183,10 +183,6 @@ a {
 	background-color: rgba(var(--color-rgb), .1);
 }
 
-:is(.buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a {
-	color: var(--ui-text-color);
-}
-
 hr {
 	height       : 0;
 	margin       : var(--gapy) var(--gapx);
