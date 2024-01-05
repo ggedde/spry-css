@@ -5,6 +5,7 @@
 
 :is(button,.button,[type=submit],[type=reset]),
 :is(.buttons,.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a {
+
 	@extend %ui;
 	@extend %ui-bg;
 	@extend %ui-color;
@@ -23,14 +24,16 @@
 		text-transform: capitalize;
 	}
 
-	&:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]) {
-		@extend %ui-hover;
-		&:is(.link, .outline, .hazy, .plain) {
-			@extend %ui-bg-hover;
-		}
-	}
-
 	> :is(.icon, svg, img) {
 		pointer-events: none;
 	}
+
+	&:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]) {
+		@extend %ui-hover;
+	}
+}
+
+:is(button,.button,[type=submit],[type=reset]):is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):is(.link, .outline, .hazy, .plain),
+:is(.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]) {
+	@extend %ui-bg-hover;
 }
