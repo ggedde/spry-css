@@ -33,7 +33,7 @@ $types: (
       h4: (font-size: 1.4em, font-weight: 300, line-height: 1.35, color: var(--contrast)),
       h5: (font-size: 1.1em, font-weight: 300, line-height: 1.5, color: var(--contrast)),
       h6: (font-size: 1.0em, font-weight: 300, line-height: 1.4, color: var(--contrast)),
-       a: (color: var(--primary), text-decoration: none),
+       a: (color: var(--primary)),
 ) !default;
 
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc.

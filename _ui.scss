@@ -157,10 +157,10 @@
 a {
 	cursor    : pointer;
 	transition: color .1s ease-in-out;
+	text-decoration: none;
 
-	&:is(:hover, :focus) {
+	&:is(:hover, :focus):not(:has(img)) {
 		@extend %ui-hover;
-		text-decoration: none;
 	}
 }
 
