@@ -18,11 +18,6 @@
 	font-weight   : 400;
 	text-align    : center;
 	justify-content: center;
-	text-transform: uppercase;
-
-	&.link {
-		text-transform: capitalize;
-	}
 
 	> :is(.icon, svg, img) {
 		pointer-events: none;
@@ -31,6 +26,11 @@
 	&:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]) {
 		@extend %ui-hover;
 	}
+}
+
+:is(button,.button,[type=submit],[type=reset]):not(.link),
+:is(.buttons,.buttons-outline,.buttons-hazy,.buttons-plain) a {
+	text-transform: uppercase;
 }
 
 :is(button,.button,[type=submit],[type=reset]):is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):is(.link, .outline, .hazy, .plain),
