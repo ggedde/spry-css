@@ -9,7 +9,7 @@
 class Spry {
 
     /**
-     * Store a list lf all Toggable Elements along with their togglers
+     * Store a list lf all Toggle Elements along with their togglers
      */
     static elements = [];
 
@@ -545,7 +545,7 @@ class Spry {
 
     static navigateList = function(event) {
 
-        var list = event.target.closest('.list.navigatable');
+        var list = event.target.closest('.list.navigable');
         if (!list) {
             return;
         }
@@ -596,7 +596,7 @@ class Spry {
     }
 
     static loadLists = function() {
-        document.querySelectorAll('.list.navigatable').forEach(list => {
+        document.querySelectorAll('.list.navigable').forEach(list => {
             list.removeEventListener('keydown', this.navigateList);
             list.addEventListener('keydown', this.navigateList);
         })
