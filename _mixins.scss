@@ -9,7 +9,7 @@
 /// @output - Contents
 @mixin min($min){
 	@if type-of($min) == string {
-		@media only screen and (min-width: map-get($breakpoints, $min)) {
+		@media only screen and (min-width: map-get(variables.$breakpoints, $min)) {
 			@content;
 		}
 	} @else {
@@ -24,7 +24,7 @@
 /// @output - Contents
 @mixin max($max){
 	@if type-of($max) == string {
-		@media only screen and (max-width: map-get($breakpoints, $max)) {
+		@media only screen and (max-width: map-get(variables.$breakpoints, $max)) {
 			@content;
 		}
 	} @else {
@@ -41,17 +41,17 @@
 @mixin in($min, $max){
 	@if type-of($min) == string {
 		@if type-of($max) == string {
-			@media only screen and (min-width: map-get($breakpoints, $min)) and (max-width: map-get($breakpoints, $max)) {
+			@media only screen and (min-width: map-get(variables.$breakpoints, $min)) and (max-width: map-get(variables.$breakpoints, $max)) {
 				@content;
 			}
 		} @else {
-			@media only screen and (min-width: map-get($breakpoints, $min)) and (max-width: $max) {
+			@media only screen and (min-width: map-get(variables.$breakpoints, $min)) and (max-width: $max) {
 				@content;
 			}
 		}
 	} @else {
 		@if type-of($max) == string {
-			@media only screen and (min-width: $min) and (max-width: map-get($breakpoints, $max)) {
+			@media only screen and (min-width: $min) and (max-width: map-get(variables.$breakpoints, $max)) {
 				@content;
 			}
 		} @else {
