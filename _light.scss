@@ -2,7 +2,7 @@
 * Spry Light Theme
 */
 
-@use "variables"as *;
+@use "variables";
 
 :root,
 [data-theme=light] {
@@ -21,17 +21,17 @@
 		background-color: rgb(var(--bg-color-rgb), var(--bg-alpha));
 	}
 
-	@each $color_name, $color_value in $colors {
+	@each $color_name, $color_value in variables.$colors {
 		@if map-get($color_value, 'light') {
 			--#{$color_name}    : #{map-get($color_value, 'light')};
 			--#{$color_name}-rgb: #{red(map-get($color_value, 'light')), green(map-get($color_value, 'light')), blue(map-get($color_value, 'light'))};
 		}
 	}
 
-	@each $color_name, $color_value in $colors {
+	@each $color_name, $color_value in variables.$colors {
 		@if map-get($color_value, 'light') {
 
-			@if index($colors, ($color_name $color_value)) == 1 {
+			@if index(variables.$colors, ($color_name $color_value)) == 1 {
 				--color      : #{map-get($color_value, 'light')};
 				--color-rgb  : #{red(map-get($color_value, 'light')), green(map-get($color_value, 'light')), blue(map-get($color_value, 'light'))};
 				
@@ -57,7 +57,7 @@ article[data-theme=light] {
 html,
 [data-theme=light] {
 	color-scheme: light;
-	color: map-get(map-get($types, 'body'), 'color');
+	color: map-get(map-get(variables.$types, 'body'), 'color');
 
 	select option,
 	.tooltip {
@@ -65,7 +65,7 @@ html,
 		color           : #1b1b1b;
 	}
 
-	@each $color_name, $color_value in $colors {
+	@each $color_name, $color_value in variables.$colors {
 		@if map-get($color_value, 'light') {
 			.#{$color_name} {
 				@if (lightness(map-get($color_value, 'light')) > 70) {

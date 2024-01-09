@@ -1,7 +1,7 @@
 /*!
 * Spry Outline
 */
-@use "ui"as *;
+@use "extends";
 
 .outline {
 	@extend %ui-border;

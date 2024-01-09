@@ -1,7 +1,7 @@
 /*!
 * Spry Spacing
 */
-@use "variables"as *;
+@use "variables";
 
 .m-auto {
 	margin: auto;
@@ -32,7 +32,7 @@
 }
 
 @each $s,
-$space in $spacing {
+$space in variables.$spacing {
 	@each $prop in (padding, margin) {
 		.#{str-slice($prop, 0, 1)}-#{$s} {
 			#{$prop}: #{$space};
@@ -57,7 +57,7 @@ $space in $spacing {
 }
 
 @each $s,
-$space in $spacing {
+$space in variables.$spacing {
 	@each $prop in (padding, margin) {
 		.#{str-slice($prop, 0, 1)}x-#{$s} {
 			#{$prop}-inline: #{$space};
@@ -80,7 +80,7 @@ $space in $spacing {
 }
 
 @each $s,
-$space in $spacing {
+$space in variables.$spacing {
 	@each $prop in (padding, margin) {
 		.#{str-slice($prop, 0, 1)}l-#{$s} {
 			#{$prop}-left: #{$space};
@@ -119,7 +119,7 @@ $space in $spacing {
 }
 
 @each $breakpoint,
-$breakpoint_width in $breakpoints {
+$breakpoint_width in variables.$breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
 		.#{$breakpoint}-m-auto {
 			margin: auto;
@@ -150,7 +150,7 @@ $breakpoint_width in $breakpoints {
 		}
 
 		@each $s,
-		$space in $spacing {
+		$space in variables.$spacing {
 			@each $prop in (padding, margin) {
 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}-#{$s} {
 					#{$prop}: #{$space};
@@ -175,7 +175,7 @@ $breakpoint_width in $breakpoints {
 		}
 
 		@each $s,
-		$space in $spacing {
+		$space in variables.$spacing {
 			@each $prop in (padding, margin) {
 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}x-#{$s} {
 					#{$prop}-inline: #{$space};
@@ -198,7 +198,7 @@ $breakpoint_width in $breakpoints {
 		}
 
 		@each $s,
-		$space in $spacing {
+		$space in variables.$spacing {
 			@each $prop in (padding, margin) {
 				.#{$breakpoint}-#{str-slice($prop, 0, 1)}l-#{$s} {
 					#{$prop}-left: #{$space};

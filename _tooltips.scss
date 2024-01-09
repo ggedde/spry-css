@@ -1,7 +1,7 @@
 /*!
 * Spry Tooltips
 */
-@use "ui"as *;
+@use "extends";
 
 .tooltip {
 	@extend %ui-border-radius;

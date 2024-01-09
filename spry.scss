@@ -4,12 +4,11 @@
  * author: https://github.com/ggedde/spry-css
  */
 
-@use "mixins";
 @use "reset";
+@use "ui";
 @use "typography";
 @use "outline";      // Has Nesting
 @use "lists";        // Has Nesting
-@use "ui";
 @use "alert";
 @use "badge";
 @use "button";

@@ -1,7 +1,7 @@
 /*!
 * Spry Buttons
 */
-@use "ui"as *;
+@use "extends";
 
 :is(button,.button,[type=submit],[type=reset]),
 :is(.buttons,.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a {

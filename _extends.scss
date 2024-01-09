@@ -1,0 +1,102 @@
+/*!
+* Spry Extends
+*/
+@use "mixins";
+
+%ui {
+	align-items    : center;
+	appearance     : none;
+	background     : transparent;
+	border         : 0;
+	color          : inherit;
+	display        : inline-flex;
+	font-size      : 100%;
+	height         : auto;
+	justify-content: center;
+	min-height     : 2.3em;
+	min-width      : 2.3em;
+	outline        : 0 solid rgba(var(--color-rgb), 0.25);
+	outline-offset : 2px;
+	padding-block  : .3em;
+	padding-inline : 1em;
+	position       : relative;
+	text-decoration: none;
+	transition     : all .1s ease-in-out;
+	vertical-align : middle;
+	width          : 100%;
+}
+
+%ui-closed {
+	@include mixins.ui-closed;
+}
+
+%ui-roomy {
+	min-height: var(--roomy);
+	min-width : var(--roomy);
+}
+
+%ui-open {
+	@include mixins.ui-open;
+}
+
+%ui-border {
+	border-color: var(--color);
+	border-width: 1px;
+	border-style: solid;
+}
+
+%ui-border-radius {
+	border-radius: .25em;
+}
+
+%ui-bg {
+	background-color: rgba(var(--color-rgb), 1);
+	border-color    : var(--color);
+}
+
+%ui-hover {
+	&:not(:active) {
+		filter: brightness(1.15);
+	}
+}
+
+%ui-bg-hover {
+	&:not(:active) {
+		--bg-alpha: .15;
+		background-color: rgba(var(--color-rgb), var(--bg-alpha));
+	}
+}
+
+%ui-color {
+	color: var(--text-color);
+
+	&:where(.link, .outline, .hazy, .plain) {
+		color: var(--ui-text-color);
+	}
+}
+
+%ui-loading {
+	&:is([aria-busy=true]) {
+		pointer-events: none;
+		user-select   : none;
+		cursor        : default;
+		color         : transparent;
+
+		&::after {
+			opacity  : 1;
+			animation: spinner .8s ease infinite;
+		}
+	}
+}
+
+%ui-margin-above {
+	margin-top: .5em;
+}
+
+%ui-margin-above-lg {
+	margin-top: 1em;
+}
+
+%ui-margin-above-none {
+	margin-top: 0;
+}

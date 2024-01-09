@@ -1,14 +1,14 @@
 /*!
 * Spry Borders
 */
-@use "variables" as *;
+@use "variables";
 
-@each $b, $border in $borders {
+@each $b, $border in variables.$borders {
 	.b-#{$b} {
 		border: #{$border} solid var(--border-color);
 	}
 }
-@each $b, $border in $borders {
+@each $b, $border in variables.$borders {
 	.bx-#{$b} {
 		border-inline: #{$border} solid var(--border-color);
 	}
@@ -16,7 +16,7 @@
 		border-block: #{$border} solid var(--border-color);
 	}
 }
-@each $b, $border in $borders {
+@each $b, $border in variables.$borders {
 	.bt-#{$b} {
 		border-top: #{$border} solid var(--border-color);
 	}
@@ -30,14 +30,14 @@
 		border-left: #{$border} solid var(--border-color);
 	}
 }
-@each $breakpoint, $breakpoint_width in $breakpoints {
+@each $breakpoint, $breakpoint_width in variables.$breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
-		@each $b, $border in $borders {
+		@each $b, $border in variables.$borders {
 			.#{$breakpoint}-b-#{$b} {
 				border: #{$border} solid var(--border-color);
 			}
 		}
-		@each $b, $border in $borders {
+		@each $b, $border in variables.$borders {
 			.#{$breakpoint}-bx-#{$b} {
 				border-inline: #{$border} solid var(--border-color);
 			}
@@ -45,7 +45,7 @@
 				border-block: #{$border} solid var(--border-color);
 			}
 		}
-		@each $b, $border in $borders {
+		@each $b, $border in variables.$borders {
 			.#{$breakpoint}-bt-#{$b} {
 				border-top: #{$border} solid var(--border-color);
 			}

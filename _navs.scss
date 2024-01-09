@@ -1,8 +1,8 @@
 /*!
 * Spry Navs
 */
-@use "variables"as *;
-@use "ui"as *;
+@use "variables";
+@use "extends";
 
 :is(nav,menu) {
 	width: 100%;
@@ -46,7 +46,7 @@ menu menu {
 }
 
 @each $breakpoint,
-$breakpoint_width in $breakpoints {
+$breakpoint_width in variables.$breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
 
 		nav > ul > li,

@@ -1,7 +1,7 @@
 /*!
 * Spry Forms
 */
-@use "ui" as *;
+@use "extends";
 
 :is(input,textarea,select){
 	@extend %ui;

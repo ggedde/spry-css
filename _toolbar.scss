@@ -1,7 +1,7 @@
 /*!
 * Spry Toolbar
 */
-@use "ui" as *;
+@use "extends";
 
 .toolbar {
 	@extend %ui;

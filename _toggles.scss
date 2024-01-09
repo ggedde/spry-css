@@ -1,8 +1,9 @@
 /*!
 * Spry Toggles
 */
-@use "variables"as *;
-@use "ui"as *;
+@use "extends";
+@use "mixins";
+@use "variables";
 
 :is(nav, .list) li>.icon:nth-child(2) {
 	font-size: 80%;
@@ -53,27 +54,27 @@
 }
 
 .hoverable li:has(:focus-visible)>ul{
-	@include ui-open;
+	@include mixins.ui-open;
 }
 
 @each $breakpoint,
-$breakpoint_width in $breakpoints {
+$breakpoint_width in variables.$breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
 
 		.#{$breakpoint}-closed,
 		.#{$breakpoint}-hoverable>ul>li ul,
 		.#{$breakpoint}-hoverable>li ul {
-			@include ui-closed;
+			@include mixins.ui-closed;
 		}
 
 		.#{$breakpoint}-open,
 		.#{$breakpoint}-hoverable>ul>li:hover>ul,
 		.#{$breakpoint}-hoverable>li:hover>ul {
-			@include ui-open;
+			@include mixins.ui-open;
 		}
 
 		.#{$breakpoint}-hoverable li:has(:focus-visible)>ul {
-			@include ui-open;
+			@include mixins.ui-open;
 		}
 
 		.#{$breakpoint}-hoverable {

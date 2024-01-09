@@ -1,7 +1,7 @@
 /*!
 * Spry Badge
 */
-@use "ui" as *;
+@use "extends";
 
 .badge {
 	@extend %ui;

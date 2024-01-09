@@ -1,156 +1,573 @@
 /*!
 * Spry Utilities
 */
-@use "variables" as *;
+@use "variables";
 
 /*************************************
 General Utility Classes
 **************************************/
-.thin{ font-weight: 300 }
-.normal{ font-weight: 400 }
-.bold{ font-weight: 600 }
-.italic{ font-style: italic }
-.uppercase{ text-transform: uppercase }
-.lowercase{ text-transform: lowercase }
-.capitalize{ text-transform: capitalize }
-.pointer { cursor: pointer }
-.round{ border-radius: .25em }
-.round-top{ border-radius: .25em .25em 0 0 }
-.round-bottom{ border-radius: 0 0 .25em .25em }
-.round-right{ border-radius: 0 .25em .25em 0 }
-.round-left{ border-radius: .25em 0 0 .25em }
-.pill, .badge{ border-radius: 2em }
-.pill-top{ border-radius: 2em 2em 0 0 }
-.pill-bottom{ border-radius: 0 0 2em 2em }
-.pill-right{ border-radius: 0 2em 2em 0 }
-.pill-left{ border-radius: 2em 0 0 2em }
-.circle{ border-radius: 50%; aspect-ratio: 1; }
-.sharp{ border-radius: 0 }
-.index-1{ z-index: 1 }
-.index-2{ z-index: 2 }
-.index-3{ z-index: 3 }
-.index-4{ z-index: 4 }
-.index-5{ z-index: 5 }
-.truncate{ max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block }
-.rotate-90 { rotate: 90deg }
-.rotate-180 { rotate: 180deg }
-.rotate-270 { rotate: 270deg }
-.bg-inherit { background-color: inherit }
-.color-inherit { color: inherit }
-.shy { opacity: 0.6; }
-.shy:is(:hover,:focus) { opacity: 1 }
-.snug { translate: -1em -.7em }
-.hover-scale {transition: scale .3s var(--ease)}
-.hover-scale:hover {scale: 1.05}
-.bg-blur-sm { backdrop-filter: blur(2px)}
-.bg-blur,.bg-blur-md { backdrop-filter: blur(8px)}
-.bg-blur-lg { backdrop-filter: blur(16px)}
+.thin {
+	font-weight: 300
+}
+
+.normal {
+	font-weight: 400
+}
+
+.bold {
+	font-weight: 600
+}
+
+.italic {
+	font-style: italic
+}
+
+.uppercase {
+	text-transform: uppercase
+}
+
+.lowercase {
+	text-transform: lowercase
+}
+
+.capitalize {
+	text-transform: capitalize
+}
+
+.pointer {
+	cursor: pointer
+}
+
+.round {
+	border-radius: .25em
+}
+
+.round-top {
+	border-radius: .25em .25em 0 0
+}
+
+.round-bottom {
+	border-radius: 0 0 .25em .25em
+}
+
+.round-right {
+	border-radius: 0 .25em .25em 0
+}
+
+.round-left {
+	border-radius: .25em 0 0 .25em
+}
+
+.pill,
+.badge {
+	border-radius: 2em
+}
+
+.pill-top {
+	border-radius: 2em 2em 0 0
+}
+
+.pill-bottom {
+	border-radius: 0 0 2em 2em
+}
+
+.pill-right {
+	border-radius: 0 2em 2em 0
+}
+
+.pill-left {
+	border-radius: 2em 0 0 2em
+}
+
+.circle {
+	border-radius: 50%;
+	aspect-ratio : 1;
+}
+
+.sharp {
+	border-radius: 0
+}
+
+.index-1 {
+	z-index: 1
+}
+
+.index-2 {
+	z-index: 2
+}
+
+.index-3 {
+	z-index: 3
+}
+
+.index-4 {
+	z-index: 4
+}
+
+.index-5 {
+	z-index: 5
+}
+
+.truncate {
+	max-width    : 100%;
+	overflow     : hidden;
+	text-overflow: ellipsis;
+	white-space  : nowrap;
+	display      : inline-block
+}
+
+.rotate-90 {
+	rotate: 90deg
+}
+
+.rotate-180 {
+	rotate: 180deg
+}
+
+.rotate-270 {
+	rotate: 270deg
+}
+
+.bg-inherit {
+	background-color: inherit
+}
+
+.color-inherit {
+	color: inherit
+}
+
+.shy {
+	opacity: 0.6;
+}
+
+.shy:is(:hover, :focus) {
+	opacity: 1
+}
+
+.snug {
+	translate: -1em -.7em
+}
+
+.hover-scale {
+	transition: scale .3s var(--ease)
+}
+
+.hover-scale:hover {
+	scale: 1.05
+}
+
+.bg-blur-sm {
+	backdrop-filter: blur(2px)
+}
+
+.bg-blur,
+.bg-blur-md {
+	backdrop-filter: blur(8px)
+}
+
+.bg-blur-lg {
+	backdrop-filter: blur(16px)
+}
 
 /****************************************************************************
 Layout Utility Classes - Can include Grid Prefix Ex. .md-right, etc
 ****************************************************************************/
-.text-left{ text-align: left }
-.text-center{ text-align: center }
-.text-right{ text-align: right }
-.text-justify{ text-align: justify }
-.text-justify-center{ text-align: justify; text-align-last: center }
-.text-balance {text-wrap: balance}
-.no-wrap{ white-space: nowrap; flex-wrap: nowrap; }
-.pre-wrap{ white-space: pre-wrap }
-.break-word{ word-wrap: break-word }
-.inline{ display: inline; width: auto }
-.block{ display: block; width: 100% }
-.none{ display: none }
-.inline-block{ display: inline-block; width: auto }
-.inline-flex{ display: inline-flex; width: auto }
-.flex{ display: flex }
-.flex-middle{ display: flex; align-items: center }
-.flex-center{ display: flex; align-items: center; justify-content: center }
-.flex-wrap{ flex-wrap: wrap }
-.flex-column{ flex-direction: column }
-.flex-row{ flex-direction: row }
-.align-items-start{ align-items: start }
-.align-items-end{ align-items: end }
-.align-items-center{ align-items: center }
-.align-items-stretch{ align-items: stretch }
-.align-self-start{ align-self: start }
-.align-self-end{ align-self: end }
-.align-self-center{ align-self: center }
-.align-self-stretch{ align-self: stretch }
-.justify-content-start{ justify-content: start }
-.justify-content-end{ justify-content: end }
-.justify-content-right{ justify-content: right }
-.justify-content-center{ justify-content: center }
-.justify-content-between{ justify-content: space-between }
-.justify-content-around{ justify-content: space-around }
-.relative{ position: relative }
-.absolute{ position: absolute }
-.collapse{ position: relative; z-index: 5 }
-.collapse > *{ position: absolute }
-.sticky{ position: sticky; top: 0 }
-.fixed{ position: fixed }
-.inset { inset: 0 }
-.center {inset: 50% auto auto 50%; translate: -50% -50%}
-.center-y {top: 50%; bottom: auto; translate: 0 -50%}
-.center-x {left: 50%; right: auto; translate: -50% 0}
-.top { top: 0; bottom: auto }
-.right { right: 0; left: auto }
-.bottom { bottom: 0; top: auto }
-.left { left: 0; right: auto }
-.outer-top { bottom: 100%; top: auto }
-.outer-right { left: 100%; right: auto }
-.outer-bottom { top: 100%; bottom: auto }
-.outer-left { right: 100%; left: auto }
-.pointer-none { pointer-events: none }
-.align-baseline{ vertical-align: baseline }
-.align-top{ vertical-align: top }
-.align-text-top{ vertical-align: text-top }
-.align-middle{ vertical-align: middle }
-.align-bottom{ vertical-align: bottom }
-.align-text-bottom{ vertical-align: text-bottom }
-.overflow-visible{ overflow: visible }
-.overflow-hidden{ overflow: hidden }
-.overflow-y-hidden{ overflow-y: hidden }
-.overflow-x-hidden{ overflow-x: hidden }
-.overflow-y-clip{ overflow-y: clip }
-.overflow-x-clip{ overflow-x: clip }
-.overflow-scroll{ overflow: scroll }
-.overflow-auto{ overflow: auto }
-.order-first{ order:-1 }
-.order-0{ order:0 }
-.order-1{ order:1 }
-.order-2{ order:2 }
-.order-3{ order:3 }
-.order-last{ order:99999 }
-.shadow{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }
-.no-shadow{ box-shadow: none }
-.cover { background-size: cover; object-fit: cover }
-.contain { background-size: contain; object-fit: contain }
-.h{ height: 100% }
-.vh{ height: 100svh }
-.w{ width: 100% }
-.vw{ width: 100dvw }
-.h-0{ height: 0 }
-.w-0{ width: 0 }
-.w-content {width: max-content;}
-@for $i from 1 through 12 {
-	.mh-#{$i}00{ max-height: #{$i}00px }
-	.w-#{$i}00{ width: #{$i}00px; flex: 0 #{$i}00px }
-	.mw-#{$i}00{ max-width: #{$i}00px }
+.text-left {
+	text-align: left
 }
-.o-0{ opacity: 0 }
+
+.text-center {
+	text-align: center
+}
+
+.text-right {
+	text-align: right
+}
+
+.text-justify {
+	text-align: justify
+}
+
+.text-justify-center {
+	text-align     : justify;
+	text-align-last: center
+}
+
+.text-balance {
+	text-wrap: balance
+}
+
+.no-wrap {
+	white-space: nowrap;
+	flex-wrap  : nowrap;
+}
+
+.pre-wrap {
+	white-space: pre-wrap
+}
+
+.break-word {
+	word-wrap: break-word
+}
+
+.inline {
+	display: inline;
+	width  : auto
+}
+
+.block {
+	display: block;
+	width  : 100%
+}
+
+.none {
+	display: none
+}
+
+.inline-block {
+	display: inline-block;
+	width  : auto
+}
+
+.inline-flex {
+	display: inline-flex;
+	width  : auto
+}
+
+.flex {
+	display: flex
+}
+
+.flex-middle {
+	display    : flex;
+	align-items: center
+}
+
+.flex-center {
+	display        : flex;
+	align-items    : center;
+	justify-content: center
+}
+
+.flex-wrap {
+	flex-wrap: wrap
+}
+
+.flex-column {
+	flex-direction: column
+}
+
+.flex-row {
+	flex-direction: row
+}
+
+.align-items-start {
+	align-items: start
+}
+
+.align-items-end {
+	align-items: end
+}
+
+.align-items-center {
+	align-items: center
+}
+
+.align-items-stretch {
+	align-items: stretch
+}
+
+.align-self-start {
+	align-self: start
+}
+
+.align-self-end {
+	align-self: end
+}
+
+.align-self-center {
+	align-self: center
+}
+
+.align-self-stretch {
+	align-self: stretch
+}
+
+.justify-content-start {
+	justify-content: start
+}
+
+.justify-content-end {
+	justify-content: end
+}
+
+.justify-content-right {
+	justify-content: right
+}
+
+.justify-content-center {
+	justify-content: center
+}
+
+.justify-content-between {
+	justify-content: space-between
+}
+
+.justify-content-around {
+	justify-content: space-around
+}
+
+.relative {
+	position: relative
+}
+
+.absolute {
+	position: absolute
+}
+
+.collapse {
+	position: relative;
+	z-index : 5
+}
+
+.collapse>* {
+	position: absolute
+}
+
+.sticky {
+	position: sticky;
+	top     : 0
+}
+
+.fixed {
+	position: fixed
+}
+
+.inset {
+	inset: 0
+}
+
+.center {
+	inset    : 50% auto auto 50%;
+	translate: -50% -50%
+}
+
+.center-y {
+	top      : 50%;
+	bottom   : auto;
+	translate: 0 -50%
+}
+
+.center-x {
+	left     : 50%;
+	right    : auto;
+	translate: -50% 0
+}
+
+.top {
+	top   : 0;
+	bottom: auto
+}
+
+.right {
+	right: 0;
+	left : auto
+}
+
+.bottom {
+	bottom: 0;
+	top   : auto
+}
+
+.left {
+	left : 0;
+	right: auto
+}
+
+.outer-top {
+	bottom: 100%;
+	top   : auto
+}
+
+.outer-right {
+	left : 100%;
+	right: auto
+}
+
+.outer-bottom {
+	top   : 100%;
+	bottom: auto
+}
+
+.outer-left {
+	right: 100%;
+	left : auto
+}
+
+.pointer-none {
+	pointer-events: none
+}
+
+.align-baseline {
+	vertical-align: baseline
+}
+
+.align-top {
+	vertical-align: top
+}
+
+.align-text-top {
+	vertical-align: text-top
+}
+
+.align-middle {
+	vertical-align: middle
+}
+
+.align-bottom {
+	vertical-align: bottom
+}
+
+.align-text-bottom {
+	vertical-align: text-bottom
+}
+
+.overflow-visible {
+	overflow: visible
+}
+
+.overflow-hidden {
+	overflow: hidden
+}
+
+.overflow-y-hidden {
+	overflow-y: hidden
+}
+
+.overflow-x-hidden {
+	overflow-x: hidden
+}
+
+.overflow-y-clip {
+	overflow-y: clip
+}
+
+.overflow-x-clip {
+	overflow-x: clip
+}
+
+.overflow-scroll {
+	overflow: scroll
+}
+
+.overflow-auto {
+	overflow: auto
+}
+
+.order-first {
+	order: -1
+}
+
+.order-0 {
+	order: 0
+}
+
+.order-1 {
+	order: 1
+}
+
+.order-2 {
+	order: 2
+}
+
+.order-3 {
+	order: 3
+}
+
+.order-last {
+	order: 99999
+}
+
+.shadow {
+	box-shadow: 1px 3px 4px rgba(0, 0, 0, .12)
+}
+
+.no-shadow {
+	box-shadow: none
+}
+
+.cover {
+	background-size: cover;
+	object-fit     : cover
+}
+
+.contain {
+	background-size: contain;
+	object-fit     : contain
+}
+
+.h {
+	height: 100%
+}
+
+.vh {
+	height: 100svh
+}
+
+.w {
+	width: 100%
+}
+
+.vw {
+	width: 100dvw
+}
+
+.h-0 {
+	height: 0
+}
+
+.w-0 {
+	width: 0
+}
+
+.w-content {
+	width: max-content;
+}
+
+@for $i from 1 through 12 {
+	.mh-#{$i}00 {
+		max-height: #{$i}00px
+	}
+
+	.w-#{$i}00 {
+		width: #{$i}00px;
+		flex : 0 #{$i}00px
+	}
+
+	.mw-#{$i}00 {
+		max-width: #{$i}00px
+	}
+}
+
+.o-0 {
+	opacity: 0
+}
+
 @for $i from 1 through 10 {
-	.o-#{$i}0{ opacity: calc($i / 10) }
+	.o-#{$i}0 {
+		opacity: calc($i / 10)
+	}
 }
 
 @each $size_name,
-$size_value in $sizes {
+$size_value in variables.$sizes {
 	.#{$size_name} {
 		font-size: $size_value;
 	}
 }
 
-@each $breakpoint, $breakpoint_width in $breakpoints {
+@each $breakpoint,
+$breakpoint_width in variables.$breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
 
 		.#{$breakpoint}-mw {
@@ -158,102 +575,395 @@ $size_value in $sizes {
 		}
 
 		.#{$breakpoint} {
-			&-text-left{ text-align: left }
-			&-text-center{ text-align: center }
-			&-text-right{ text-align: right }
-			&-text-justify{ text-align: justify }
-			&-text-justify-center{ text-align: justify; text-align-last: center }
-			&-text-balance {text-wrap: balance}
-			&-no-wrap{ white-space: nowrap; flex-wrap: nowrap; }
-			&-pre-wrap{ white-space: pre-wrap }
-			&-break-word{ word-wrap: break-word }
-			&-inline{ display: inline; width: auto }
-			&-block{ display: block; width: 100% }
-			&-none{ display: none }
-			&-inline-block{ display: inline-block; width: auto }
-			&-inline-flex{ display: inline-flex; width: auto }
-			&-flex{ display: flex }
-			&-flex-middle{ display: flex; align-items: center }
-			&-flex-center{ display: flex; align-items: center; justify-content: center }
-			&-flex-wrap{ flex-wrap: wrap }
-			&-flex-column{ flex-direction: column }
-			&-flex-row{ flex-direction: row }
-			&-align-items-start{ align-items: start }
-			&-align-items-end{ align-items: end }
-			&-align-items-center{ align-items: center }
-			&-align-items-stretch{ align-items: stretch }
-			&-align-self-start{ align-self: start }
-			&-align-self-end{ align-self: end }
-			&-align-self-center{ align-self: center }
-			&-align-self-stretch{ align-self: stretch }
-			&-justify-content-start{ justify-content: start }
-			&-justify-content-end{ justify-content: end }
-			&-justify-content-right{ justify-content: right }
-			&-justify-content-center{ justify-content: center }
-			&-justify-content-between{ justify-content: space-between }
-			&-justify-content-around{ justify-content: space-around }
-			&-relative{ position: relative }
-			&-absolute{ position: absolute }
-			&-collapse{ position: relative; z-index: 5 }
-			&-collapse > *{ position: absolute }
-			&-sticky{ position: sticky; top: 0 }
-			&-fixed{ position: fixed }
-			&-inset { inset: 0 }
-			&-center {inset: 50% auto auto 50%; translate: -50%}
-			&-center-y {top: 50%; bottom: auto; translate: 0 -50%}
-			&-center-x {left: 50%; right: auto; translate: -50% 0}
-			&-top { top: 0; bottom: auto }
-			&-right { right: 0; left: auto }
-			&-bottom { bottom: 0; top: auto }
-			&-left { left: 0; right: auto }
-			&-outer-top { bottom: 100%; top: auto }
-			&-outer-right { left: 100%; right: auto }
-			&-outer-bottom { top: 100%; bottom: auto }
-			&-outer-left { right: 100%; left: auto }
-			&-pointer-none { pointer-events: none }
-			&-align-baseline{ vertical-align: baseline }
-			&-align-top{ vertical-align: top }
-			&-align-text-top{ vertical-align: text-top }
-			&-align-middle{ vertical-align: middle }
-			&-align-bottom{ vertical-align: bottom }
-			&-align-text-bottom{ vertical-align: text-bottom }
-			&-overflow-visible{ overflow: visible }
-			&-overflow-hidden{ overflow: hidden }
-			&-overflow-y-hidden{ overflow-y: hidden }
-			&-overflow-x-hidden{ overflow-x: hidden }
-			&-overflow-y-clip{ overflow-y: clip }
-			&-overflow-x-clip{ overflow-x: clip }
-			&-overflow-scroll{ overflow: scroll }
-			&-overflow-auto{ overflow: auto }
-			&-order-first{ order:-1 }
-			&-order-0{ order:0 }
-			&-order-1{ order:1 }
-			&-order-2{ order:2 }
-			&-order-3{ order:3 }
-			&-order-last{ order:99999 }
-			&-shadow{ box-shadow: 1px 3px 4px rgba(0,0,0,.12) }
-			&-no-shadow{ box-shadow: none }
-			&-cover { background-size: cover; object-fit: cover }
-			&-contain { background-size: contain; object-fit: contain }
-			&-h{ height: 100% }
-			&-vh{ height: 100svh }
-			&-w{ width: 100% }
-			&-vw{ width: 100dvw }
-			&-h-0{ height: 0 }
-			&-w-0{ width: 0 }
-			&-w-content {width: max-content;}
-			@for $i from 1 through 12 {
-				&-mh-#{$i}00{ max-height: #{$i}00px }
-				&-w-#{$i}00{ width: #{$i}00px; flex: 0 #{$i}00px }
-				&-mw-#{$i}00{ max-width: #{$i}00px }
+			&-text-left {
+				text-align: left
 			}
-			&-o-0{ opacity: 0 }
+
+			&-text-center {
+				text-align: center
+			}
+
+			&-text-right {
+				text-align: right
+			}
+
+			&-text-justify {
+				text-align: justify
+			}
+
+			&-text-justify-center {
+				text-align     : justify;
+				text-align-last: center
+			}
+
+			&-text-balance {
+				text-wrap: balance
+			}
+
+			&-no-wrap {
+				white-space: nowrap;
+				flex-wrap  : nowrap;
+			}
+
+			&-pre-wrap {
+				white-space: pre-wrap
+			}
+
+			&-break-word {
+				word-wrap: break-word
+			}
+
+			&-inline {
+				display: inline;
+				width  : auto
+			}
+
+			&-block {
+				display: block;
+				width  : 100%
+			}
+
+			&-none {
+				display: none
+			}
+
+			&-inline-block {
+				display: inline-block;
+				width  : auto
+			}
+
+			&-inline-flex {
+				display: inline-flex;
+				width  : auto
+			}
+
+			&-flex {
+				display: flex
+			}
+
+			&-flex-middle {
+				display    : flex;
+				align-items: center
+			}
+
+			&-flex-center {
+				display        : flex;
+				align-items    : center;
+				justify-content: center
+			}
+
+			&-flex-wrap {
+				flex-wrap: wrap
+			}
+
+			&-flex-column {
+				flex-direction: column
+			}
+
+			&-flex-row {
+				flex-direction: row
+			}
+
+			&-align-items-start {
+				align-items: start
+			}
+
+			&-align-items-end {
+				align-items: end
+			}
+
+			&-align-items-center {
+				align-items: center
+			}
+
+			&-align-items-stretch {
+				align-items: stretch
+			}
+
+			&-align-self-start {
+				align-self: start
+			}
+
+			&-align-self-end {
+				align-self: end
+			}
+
+			&-align-self-center {
+				align-self: center
+			}
+
+			&-align-self-stretch {
+				align-self: stretch
+			}
+
+			&-justify-content-start {
+				justify-content: start
+			}
+
+			&-justify-content-end {
+				justify-content: end
+			}
+
+			&-justify-content-right {
+				justify-content: right
+			}
+
+			&-justify-content-center {
+				justify-content: center
+			}
+
+			&-justify-content-between {
+				justify-content: space-between
+			}
+
+			&-justify-content-around {
+				justify-content: space-around
+			}
+
+			&-relative {
+				position: relative
+			}
+
+			&-absolute {
+				position: absolute
+			}
+
+			&-collapse {
+				position: relative;
+				z-index : 5
+			}
+
+			&-collapse>* {
+				position: absolute
+			}
+
+			&-sticky {
+				position: sticky;
+				top     : 0
+			}
+
+			&-fixed {
+				position: fixed
+			}
+
+			&-inset {
+				inset: 0
+			}
+
+			&-center {
+				inset    : 50% auto auto 50%;
+				translate: -50%
+			}
+
+			&-center-y {
+				top      : 50%;
+				bottom   : auto;
+				translate: 0 -50%
+			}
+
+			&-center-x {
+				left     : 50%;
+				right    : auto;
+				translate: -50% 0
+			}
+
+			&-top {
+				top   : 0;
+				bottom: auto
+			}
+
+			&-right {
+				right: 0;
+				left : auto
+			}
+
+			&-bottom {
+				bottom: 0;
+				top   : auto
+			}
+
+			&-left {
+				left : 0;
+				right: auto
+			}
+
+			&-outer-top {
+				bottom: 100%;
+				top   : auto
+			}
+
+			&-outer-right {
+				left : 100%;
+				right: auto
+			}
+
+			&-outer-bottom {
+				top   : 100%;
+				bottom: auto
+			}
+
+			&-outer-left {
+				right: 100%;
+				left : auto
+			}
+
+			&-pointer-none {
+				pointer-events: none
+			}
+
+			&-align-baseline {
+				vertical-align: baseline
+			}
+
+			&-align-top {
+				vertical-align: top
+			}
+
+			&-align-text-top {
+				vertical-align: text-top
+			}
+
+			&-align-middle {
+				vertical-align: middle
+			}
+
+			&-align-bottom {
+				vertical-align: bottom
+			}
+
+			&-align-text-bottom {
+				vertical-align: text-bottom
+			}
+
+			&-overflow-visible {
+				overflow: visible
+			}
+
+			&-overflow-hidden {
+				overflow: hidden
+			}
+
+			&-overflow-y-hidden {
+				overflow-y: hidden
+			}
+
+			&-overflow-x-hidden {
+				overflow-x: hidden
+			}
+
+			&-overflow-y-clip {
+				overflow-y: clip
+			}
+
+			&-overflow-x-clip {
+				overflow-x: clip
+			}
+
+			&-overflow-scroll {
+				overflow: scroll
+			}
+
+			&-overflow-auto {
+				overflow: auto
+			}
+
+			&-order-first {
+				order: -1
+			}
+
+			&-order-0 {
+				order: 0
+			}
+
+			&-order-1 {
+				order: 1
+			}
+
+			&-order-2 {
+				order: 2
+			}
+
+			&-order-3 {
+				order: 3
+			}
+
+			&-order-last {
+				order: 99999
+			}
+
+			&-shadow {
+				box-shadow: 1px 3px 4px rgba(0, 0, 0, .12)
+			}
+
+			&-no-shadow {
+				box-shadow: none
+			}
+
+			&-cover {
+				background-size: cover;
+				object-fit     : cover
+			}
+
+			&-contain {
+				background-size: contain;
+				object-fit     : contain
+			}
+
+			&-h {
+				height: 100%
+			}
+
+			&-vh {
+				height: 100svh
+			}
+
+			&-w {
+				width: 100%
+			}
+
+			&-vw {
+				width: 100dvw
+			}
+
+			&-h-0 {
+				height: 0
+			}
+
+			&-w-0 {
+				width: 0
+			}
+
+			&-w-content {
+				width: max-content;
+			}
+
+			@for $i from 1 through 12 {
+				&-mh-#{$i}00 {
+					max-height: #{$i}00px
+				}
+
+				&-w-#{$i}00 {
+					width: #{$i}00px;
+					flex : 0 #{$i}00px
+				}
+
+				&-mw-#{$i}00 {
+					max-width: #{$i}00px
+				}
+			}
+
+			&-o-0 {
+				opacity: 0
+			}
+
 			@for $i from 1 through 10 {
-				&-o-#{$i}0{ opacity: calc($i / 10) }
+				&-o-#{$i}0 {
+					opacity: calc($i / 10)
+				}
 			}
 
 			@each $size_name,
-			$size_value in $sizes {
+			$size_value in variables.$sizes {
 				&-#{$size_name} {
 					font-size: $size_value;
 				}

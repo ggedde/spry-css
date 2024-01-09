@@ -2,7 +2,7 @@
 * Spry Dark Theme
 */
 
-@use "variables"as *;
+@use "variables";
 
 // Update Prefered Theme Dark Colors
 @media (prefers-color-scheme: dark) {
@@ -24,7 +24,7 @@
 	}
 
 	@each $color_name,
-	$color_value in $colors {
+	$color_value in variables.$colors {
 		@if map-get($color_value, 'dark') {
 
 			// Set each color variable.
@@ -32,7 +32,7 @@
 			--#{$color_name}-rgb: #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
 
 			// Use the first color as the Default UI color.
-			@if index($colors, ($color_name $color_value))==1 {
+			@if index(variables.$colors, ($color_name $color_value))==1 {
 
 				--color     : #{map-get($color_value, 'dark')};
 				--color-rgb : #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
@@ -58,7 +58,7 @@ article[data-theme=dark] {
 
 [data-theme=dark] {
 	color-scheme: dark;
-	color       : map-get(map-get($types, 'body'), 'color');
+	color       : map-get(map-get(variables.$types, 'body'), 'color');
 
 	select option,
 	.tooltip {
@@ -67,7 +67,7 @@ article[data-theme=dark] {
 	}
 
 	@each $color_name,
-	$color_value in $colors {
+	$color_value in variables.$colors {
 		@if map-get($color_value, 'dark') {
 
 			// For each UI color Class, check to see if the text should be light or dark.

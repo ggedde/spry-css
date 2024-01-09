@@ -1,7 +1,7 @@
 /*!
 * Spry Alerts
 */
-@use "ui" as *;
+@use "extends";
 
 .alert {
 	@extend %ui;
@@ -9,7 +9,7 @@
 	@extend %ui-color;
 	@extend %ui-border;
 	@extend %ui-border-radius;
-	--border-color: var(--color);
+	--border-color : var(--color);
 	display        : block;
 	justify-content: flex-start;
 	padding        : .5em 1em;
@@ -17,11 +17,12 @@
 	svg {
 		min-width: 1em;
 	}
-	+ .alert {
+
+	+.alert {
 		@extend %ui-margin-above-lg;
 	}
 }
 
-.alert + * {
+.alert+* {
 	@extend %ui-margin-above-lg;
 }

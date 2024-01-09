@@ -2,10 +2,10 @@
 * Spry Colors
 */
 
-@use "variables"as *;
+@use "variables";
 
 $color_names: ();
-@each $color_name, $color_value in $colors {
+@each $color_name, $color_value in variables.$colors {
     $color_names: append($color_names, '.#{$color_name}', 'comma');
 }
 
@@ -28,7 +28,7 @@ article:where(#{$color_names}) > :is(header, footer) :is(h1,h2,h3,h4,h5,h6),
 
 // Initial Color sets
 @each $color_name,
-$color_value in $colors {
+$color_value in variables.$colors {
 
 	article.#{$color_name} {
 		--card-color  : var(--#{$color_name});
@@ -38,7 +38,7 @@ $color_value in $colors {
 
 // First Color Overrides
 @each $color_name,
-$color_value in $colors {
+$color_value in variables.$colors {
 
 	.color-#{$color_name} :is(h1,h2,h3,h4,h5,h6),
 	.links-#{$color_name} a:not(.button),
@@ -49,7 +49,7 @@ $color_value in $colors {
 
 // Final Color Overrides
 @each $color_name,
-$color_value in $colors {
+$color_value in variables.$colors {
 
 	[class].#{$color_name} {
 		--color     : var(--#{$color_name});

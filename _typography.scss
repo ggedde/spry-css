@@ -1,12 +1,12 @@
 
-@use "variables"as *;
-@use "ui"as *;
+@use "variables";
+@use "extends";
 /*!
 * Spry Typography
 */
 
 // Heading Font Sizes and Classes
-@each $type_name, $type in $types {
+@each $type_name, $type in variables.$types {
 
     .#{$type_name},
     #{$type_name} {

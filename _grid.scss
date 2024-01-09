@@ -1,15 +1,15 @@
 /*!
 * Spry Grid
 */
-@use "variables"as *;
-@use "ui"as *;
+@use "variables";
+@use "extends";
 
 .column,
 .row,
 .grid,
 [class*=grid-] {
-	--gapx        : #{map-get($gaps, 'default')};
-	--gapy        : #{map-get($gaps, 'default')};
+	--gapx        : #{map-get(variables.$gaps, 'default')};
+	--gapy        : #{map-get(variables.$gaps, 'default')};
 	--span        : 1;
 	--cols        : 1;
 	gap           : var(--gapy) var(--gapx);
@@ -93,7 +93,7 @@
 }
 
 @each $breakpoint,
-$breakpoint_width in $breakpoints {
+$breakpoint_width in variables.$breakpoints {
 
 	@media screen and (min-width: $breakpoint_width) {
 
@@ -111,8 +111,8 @@ $breakpoint_width in $breakpoints {
 		.#{$breakpoint}-column,
 		.#{$breakpoint}-row,
 		.#{$breakpoint}-grid {
-			--gapx        : #{map-get($gaps, 'default')};
-			--gapy        : #{map-get($gaps, 'default')};
+			--gapx        : #{map-get(variables.$gaps, 'default')};
+			--gapy        : #{map-get(variables.$gaps, 'default')};
 			gap           : var(--gapy) var(--gapx);
 		}
 
