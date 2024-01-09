@@ -55,38 +55,20 @@
 }
 
 %ui-hover {
-	&:not(:active) {
-		filter: brightness(1.15);
-	}
+	filter: brightness(1.15);
 }
 
 %ui-bg-hover {
-	&:not(:active) {
-		--bg-alpha: .15;
-		background-color: rgba(var(--color-rgb), var(--bg-alpha));
-	}
+	--bg-alpha: .15;
+	background-color: rgba(var(--color-rgb), var(--bg-alpha));
 }
 
 %ui-color {
 	color: var(--text-color);
-
-	&:where(.link, .outline, .hazy, .plain) {
-		color: var(--ui-text-color);
-	}
 }
 
-%ui-loading {
-	&:is([aria-busy=true]) {
-		pointer-events: none;
-		user-select   : none;
-		cursor        : default;
-		color         : transparent;
-
-		&::after {
-			opacity  : 1;
-			animation: spinner .8s ease infinite;
-		}
-	}
+%ui-text-color {
+	color: var(--ui-text-color);
 }
 
 %ui-margin-above {

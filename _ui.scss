@@ -9,6 +9,9 @@
 	@extend %ui-color;
 	@extend %ui-border;
 	@extend %ui-border-radius;
+	&:where(.link, .outline, .hazy, .plain) {
+		@extend %ui-text-color;
+	}
 }
 
 :focus-visible {
@@ -20,7 +23,7 @@ a {
 	transition: color .1s ease-in-out;
 	text-decoration: none;
 
-	&:is(:hover, :focus):not(:has(img)) {
+	&:is(:hover, :focus):not(:has(img),:active) {
 		@extend %ui-hover;
 	}
 }

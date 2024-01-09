@@ -21,6 +21,10 @@
 	+.alert {
 		@extend %ui-margin-above-lg;
 	}
+
+	&:where(.outline, .hazy) {
+		@extend %ui-text-color;
+	}
 }
 
 .alert+* {

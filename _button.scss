@@ -24,9 +24,13 @@
 		pointer-events: none;
 	}
 
-	&:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]) {
+	&:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):not(:active) {
 		@extend %ui-hover;
 	}
+}
+
+:is(button,.button,[type=submit],[type=reset]):where(.link, .outline, .hazy, .plain) {
+	@extend %ui-text-color;
 }
 
 :is(.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a {
@@ -38,7 +42,7 @@
 	text-transform: none;
 }
 
-:is(button,.button,[type=submit],[type=reset]):is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):is(.link, .outline, .hazy, .plain),
-:is(.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]) {
+:is(button,.button,[type=submit],[type=reset]):is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):is(.link, .outline, .hazy, .plain):not(:active),
+:is(.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):not(:active) {
 	@extend %ui-bg-hover;
 }

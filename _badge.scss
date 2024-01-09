@@ -12,4 +12,8 @@
 	width      : auto;
 	font-weight: 500;
 	line-height: 1;
+
+	&:where(.outline, .hazy) {
+		@extend %ui-text-color;
+	}
 }
