@@ -17,20 +17,12 @@ article {
 	position        : relative;
 	transition      : none;
 
-	&:is(.has-header, .has-footer) {
-		padding: 0;
-	}
-
 	&:has(>header, >footer) {
 		padding: 0;
 
 		>:is(p, div) {
 			padding-inline: 1em;
 		}
-	}
-
-	&.has-img {
-		overflow: hidden;
 	}
 
 	&:has(>img) {

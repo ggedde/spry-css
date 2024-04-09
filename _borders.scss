@@ -3,61 +3,79 @@
 */
 @use "variables";
 
-@each $b, $border in variables.$borders {
-	.b-#{$b} {
-		border: #{$border} solid var(--border-color);
+@mixin border-styles($prefix) {
+	@each $b, $border in variables.$borders {
+		@if $b == 0 {
+			#{$prefix}b-0 {
+				border: #{$border};
+			}
+		}
+	
+		@else {
+			#{$prefix}b-#{$b} {
+				border: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha));
+			}
+		}
+	}
+	@each $b, $border in variables.$borders {
+		@if $b == 0 {
+			#{$prefix}bx-0 {
+				border-inline: #{$border};
+			}
+			#{$prefix}by-0 {
+				border-block: #{$border};
+			}
+		}
+	
+		@else {
+			#{$prefix}bx-#{$b} {
+				border-inline: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha));
+			}
+			#{$prefix}by-#{$b} {
+				border-block: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha));
+			}
+		}
+	}
+	@each $b, $border in variables.$borders {
+		@if $b == 0 {
+			#{$prefix}bt-0 {
+				border-top: #{$border};
+			}
+			#{$prefix}br-0 {
+				border-right: #{$border};
+			}
+			#{$prefix}bb-0 {
+				border-bottom: #{$border};
+			}
+			#{$prefix}bl-0 {
+				border-left: #{$border};
+			}
+		}
+	
+		@else {
+			#{$prefix}bt-#{$b} {
+				border-top: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha));
+			}
+			#{$prefix}br-#{$b} {
+				border-right: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha));
+			}
+			#{$prefix}bb-#{$b} {
+				border-bottom: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha));
+			}
+			#{$prefix}bl-#{$b} {
+				border-left: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha));
+			}
+		}
 	}
 }
-@each $b, $border in variables.$borders {
-	.bx-#{$b} {
-		border-inline: #{$border} solid var(--border-color);
-	}
-	.by-#{$b} {
-		border-block: #{$border} solid var(--border-color);
-	}
-}
-@each $b, $border in variables.$borders {
-	.bt-#{$b} {
-		border-top: #{$border} solid var(--border-color);
-	}
-	.br-#{$b} {
-		border-right: #{$border} solid var(--border-color);
-	}
-	.bb-#{$b} {
-		border-bottom: #{$border} solid var(--border-color);
-	}
-	.bl-#{$b} {
-		border-left: #{$border} solid var(--border-color);
-	}
-}
+
+@include border-styles('.');
+
 @each $breakpoint, $breakpoint_width in variables.$breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
-		@each $b, $border in variables.$borders {
-			.#{$breakpoint}-b-#{$b} {
-				border: #{$border} solid var(--border-color);
-			}
-		}
-		@each $b, $border in variables.$borders {
-			.#{$breakpoint}-bx-#{$b} {
-				border-inline: #{$border} solid var(--border-color);
-			}
-			.#{$breakpoint}-by-#{$b} {
-				border-block: #{$border} solid var(--border-color);
-			}
-		}
-		@each $b, $border in variables.$borders {
-			.#{$breakpoint}-bt-#{$b} {
-				border-top: #{$border} solid var(--border-color);
-			}
-			.#{$breakpoint}-br-#{$b} {
-				border-right: #{$border} solid var(--border-color);
-			}
-			.#{$breakpoint}-bb-#{$b} {
-				border-bottom: #{$border} solid var(--border-color);
-			}
-			.#{$breakpoint}-bl-#{$b} {
-				border-left: #{$border} solid var(--border-color);
-			}
-		}
+		@include border-styles('.#{$breakpoint}\\:');
+	}
+	@container (min-width: #{$breakpoint_width}) {
+		@include border-styles('.c-#{$breakpoint}\\:');
 	}
 }

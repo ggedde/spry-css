@@ -184,19 +184,6 @@ label {
 	}
 
 	&:focus-within,
-	&.has-blank {
-
-		:is(sup, sub) {
-			transform  : translate(3px, -50%) scale(0.85);
-			top        : -12px;
-			font-weight: 500;
-		}
-
-		sub {
-			top: calc(100% + 11px);
-		}
-	}
-
 	&:has(input:not(:placeholder-shown)),
 	&:has(textarea:not(:placeholder-shown)),
 	&:has(select option:not(:empty):checked) {
@@ -214,14 +201,6 @@ label {
 
 	&:focus-within :is(sup, sub) {
 		color: var(--color);
-	}
-
-	&.has-sup {
-		margin-top: 1rem;
-	}
-
-	&.has-sub {
-		margin-bottom: 1rem;
 	}
 
 	&:has(sup) {

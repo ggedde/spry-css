@@ -36,31 +36,29 @@ menu menu {
 	}
 }
 
-.hoverable > ul > li > ul,
-.hoverable > li > ul {
-	position: absolute;
-	top: 100%;
-	min-width: calc(100% + 1px);
-    max-width: 260px;
-    width: max-content;
+@mixin hoverable-styles($prefix) {
+	#{$prefix}hoverable > ul > li > ul,
+	#{$prefix}hoverable > li > ul {
+		position: absolute;
+		top: 100%;
+		min-width: calc(100% + 1px);
+		max-width: 260px;
+		width: max-content;
+	}
 }
+
+@include hoverable-styles('.');
 
 @each $breakpoint,
 $breakpoint_width in variables.$breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
-
 		nav > ul > li,
 		nav > ol > li  {
 			display: inline-block;
 		} 
-
-		.#{$breakpoint}-hoverable > ul > li > ul,
-		.#{$breakpoint}-hoverable > li > ul {
-			position: absolute;
-			top: 100%;
-			min-width: calc(100% + 1px);
-			max-width: 260px;
-			width: max-content;
-		}
+		@include hoverable-styles('.#{$breakpoint}\\:');
+	}
+	@container (min-width: #{$breakpoint_width}) {
+		@include hoverable-styles('.c-#{$breakpoint}\\:');
 	}
 }

@@ -1,11 +1,13 @@
 // Specify each breakpoint size
-$breakpoints: (md: 40em,
+$breakpoints: (
+    md: 40em,
     // lg: 80em,
 ) !default;
 
 // Specify each breakpoint gap size. <section> tags with get padding based on gap size.
 // You must include one for each Breakpoint otherwise it will result in a Compile Error.
-$gaps: (default: 1.25em, // required
+$gaps: (
+    default: 1.25em, // required
     md: 2em,
     // lg: 2.25em,
 ) !default;
@@ -63,12 +65,6 @@ $sizes: (
      sm: 80%,
      xs: 65%,
     xxs: 50%,
-) !default;
-
-$comforts: (
-    cozy: 2.3em,
-    compact: 1.7em,
-    spacious: 2.9em,
 ) !default;
 
 :root {

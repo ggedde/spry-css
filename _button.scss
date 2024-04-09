@@ -11,7 +11,7 @@
 	@extend %ui-color;
 	@extend %ui-border;
 	@extend %ui-border-radius;
-	--border-color: var(--color);
+	--border-color: rgba(var(--color-rgb), var(--border-alpha));
 	position      : relative;
 	width         : auto;
 	cursor        : pointer;

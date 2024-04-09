@@ -21,12 +21,12 @@
         <div class="sticky toolbar sharp lg index-4 bg-faint border-grey border-alpha-20 pl-1 bb-1 pr-1">
             <div class="flex-middle">
 
-                <button id="header-nav-mobile-button" class="link icon md-none" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
+                <button id="header-nav-mobile-button" class="link icon md:none" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
                     <svg class="xl" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                     <svg class="xl" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                 </button>
 
-                <nav id="header-nav" class="list absolute md-open left mw-200 outer-bottom bg-theme border-grey border-alpha-30 vh overflow-auto py-2 px-2 pb-200 sm from-left br-1 bt-1 shadow md-no-shadow links-hover-contrast scrollspy">
+                <nav id="header-nav" class="list absolute md:open left mw-200 outer-bottom bg-theme border-grey border-alpha-30 vh overflow-auto py-2 px-2 pb-200 sm from-left br-1 bt-1 shadow md:no-shadow links-hover-contrast scrollspy">
                     <ul class="pt-2">
                         <li>
                             <h5 class="pl-1">
@@ -91,8 +91,8 @@
                     </ul>
                 </nav>
                 <h5 class="flex-middle md">
-                    <a class="mr-2 md-mr-3 ml-1 flex-middle" href="https://ggedde.github.io/spry-css">
-                        <i class="icon circle outline mr-2 xs border-primary none md-inline"><svg class="lg" viewBox="0 0 24 24"><path d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" /></svg></i>
+                    <a class="mr-2 md:mr-3 ml-1 flex-middle" href="https://ggedde.github.io/spry-css">
+                        <i class="icon circle outline mr-2 xs border-primary none md:inline"><svg class="lg" viewBox="0 0 24 24"><path d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" /></svg></i>
                         SpryCSS
                     </a>
                     <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases" alt="Release">
@@ -107,7 +107,7 @@
                 </a>
             </div>
         </div>
-        <main class="mw-1200 md-ml-200 bg-inherit overflow-x-clip">
+        <main class="mw-1200 md:ml-200 bg-inherit overflow-x-clip">
 
             <!------------------------------------
             -------------    ABOUT    ------------
@@ -169,10 +169,7 @@
                 </h2>
 
                 <h4 class="mb-1">Compatibility</h4>
-                <div class="alert secondary outline mb-4 flex">
-                    <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
-                    <span>SpryCss uses :has() property which is not supported by all browsers yet. Find out which browsers support it at <a target="_blank" href="https://caniuse.com/css-has">Can I Use</a>.<br>However, you can use <a href="#spryjs">SpryJS</a> to add a polyfill to allow the browser to support most of the SpryCSS :has() selectors.</span>
-                </div>
+                <p class="mb-4">SpryCss uses :has() property and native css nesting which is supported by all major browsers since April 2024</p>
 
                 <h4>Using the CDN:</h4>
                 <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0-rc.1/dist/spry.min.css"&gt;</code></pre>
@@ -237,7 +234,7 @@
         <section id="spryjs" class="bg-inherit py-0 pb-3">
             <h2 class="sticky flex-middle index-2 pt-3 bg-theme bg-alpha-70 border-grey border-alpha-30 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
                 <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M3,3H21V21H3V3M7.73,18.04C8.13,18.89 8.92,19.59 10.27,19.59C11.77,19.59 12.8,18.79 12.8,17.04V11.26H11.1V17C11.1,17.86 10.75,18.08 10.2,18.08C9.62,18.08 9.38,17.68 9.11,17.21L7.73,18.04M13.71,17.86C14.21,18.84 15.22,19.59 16.8,19.59C18.4,19.59 19.6,18.76 19.6,17.23C19.6,15.82 18.79,15.19 17.35,14.57L16.93,14.39C16.2,14.08 15.89,13.87 15.89,13.37C15.89,12.96 16.2,12.64 16.7,12.64C17.18,12.64 17.5,12.85 17.79,13.37L19.1,12.5C18.55,11.54 17.77,11.17 16.7,11.17C15.19,11.17 14.22,12.13 14.22,13.4C14.22,14.78 15.03,15.43 16.25,15.95L16.67,16.13C17.45,16.47 17.91,16.68 17.91,17.26C17.91,17.74 17.46,18.09 16.76,18.09C15.93,18.09 15.45,17.66 15.09,17.06L13.71,17.86Z" /></svg></i>
-                SpryJS Javascript <small class="badge outline xxs grey dense ml-2 px-2 md-px-1">Optional</small>
+                SpryJS Javascript <small class="badge outline xxs grey dense ml-2 px-2 md:px-1">Optional</small>
             </h2>
             <p>SpryCSS is meant to be quick and easy to implement without needing to add any additional dependencies. However, there are times when you need more functionality then CSS can offer.
                 For this reason, you can include SpryJS to handle <a href="#toggles">Toggles</a> and <a href="#sliders">Sliders</a>. Toggles add additional functionality for many of its components like 
@@ -252,26 +249,22 @@
             <table class="mb-3 mt-3 border-faint">
                 <thead>
                     <tr>
-                        <th class="md-w-200"><h4>Load Functions</h4></th>
+                        <th class="md:w-200"><h4>Load Functions</h4></th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="md-pl-2"><code class="color-primary">Spry.loadToggles()</code></td>
+                        <td class="md:pl-2"><code class="color-primary">Spry.loadToggles()</code></td>
                         <td>Loads all <a href="#toggles">Toggles</a> into scope and runs all necessary features.</td>
                     </tr>
                     <tr>
-                        <td class="md-pl-2"><code class="color-primary">Spry.loadSliders()</code></td>
+                        <td class="md:pl-2"><code class="color-primary">Spry.loadSliders()</code></td>
                         <td>Loads all <a href="#sliders">Sliders</a> into scope and runs all necessary features.</td>
                     </tr>
                     <tr>
-                        <td class="md-pl-2"><code class="color-primary">Spry.loadLists()</code></td>
+                        <td class="md:pl-2"><code class="color-primary">Spry.loadLists()</code></td>
                         <td>Loads all <a href="#lists">Lists</a> into scope and runs all necessary features.</td>
-                    </tr>
-                    <tr>
-                        <td class="md-pl-2"><code class="color-primary">Spry.loadHas()</code></td>
-                        <td>Runs a polyfill to add <code class="color-primary">.has-{selector}</code> to all parent elements requiring the :has() selector.</td>
                     </tr>
                 </tbody>
             </table>
@@ -279,13 +272,13 @@
             <table class="mb-3 mt-3 border-faint">
                 <thead>
                     <tr>
-                        <th class="md-w-500"><h4>Additional Functions</h4></th>
+                        <th class="md:w-500"><h4>Additional Functions</h4></th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="md-pl-2"><code class="color-primary">Spry.toggle(<span class="color-grey">toggleObjectOrEvent</span>, <span class="color-grey">forceAction</span>)</code></td>
+                        <td class="md:pl-2"><code class="color-primary">Spry.toggle(<span class="color-grey">toggleObjectOrEvent</span>, <span class="color-grey">forceAction</span>)</code></td>
                         <td>
                             <p>Toggles the class <code class="color-primary">open</code> on an element if it has been registered with <code class="color-primary">data-toggle</code>. See <a href="#toggles">Toggles</a> for more information.</p>
                             </p><code class="color-primary">toggleObjectOrEvent</code> - Can be a valid css selector, element object, or event of element object.</p>
@@ -293,14 +286,14 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="md-pl-2"><code class="color-primary">Spry.closeToggle(<span class="color-grey">toggleObjectOrEvent</span>)</code></td>
+                        <td class="md:pl-2"><code class="color-primary">Spry.closeToggle(<span class="color-grey">toggleObjectOrEvent</span>)</code></td>
                         <td>
                             <p>Closes a toggle element. See <a href="#toggles">Toggles</a> for more information.</p>
                             </p><code class="color-primary">toggleObjectOrEvent</code> - Can be a valid css selector, element object, or event of element object.</p>
                         </td>
                     </tr>
                     <tr>
-                        <td class="md-pl-2"><code class="color-primary">Spry.closeAllToggles()</code></td>
+                        <td class="md:pl-2"><code class="color-primary">Spry.closeAllToggles()</code></td>
                         <td>
                             <p>Closes all toggle elements on the page. See <a href="#toggles">Toggles</a> for more information.</p>
                         </td>
@@ -623,37 +616,37 @@ $colors: (
                 <table class="mb-3 mt-4 border-faint">
                     <thead>
                         <tr>
-                            <th class="md-w-200"><h4>Classes</h4></th>
+                            <th class="md:w-200"><h4>Classes</h4></th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">{color}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">{color}</code></td>
                             <td>Set component accent color. Used on Alerts, Buttons, Cards, Forms, Lists, Sliders, Tables, and Tabs</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">color-{color}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">color-{color}</code></td>
                             <td>Set text color</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">hover-{color}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">hover-{color}</code></td>
                             <td>Set text hover color</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">bg-{color}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">bg-{color}</code></td>
                             <td>Set background color</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">border-{color}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">border-{color}</code></td>
                             <td>Set border color</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">links-{color}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">links-{color}</code></td>
                             <td>Set child links color</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2 md-pr-0"><code class="color-primary">links-hover-{color}</code></td>
+                            <td class="md:pl-2 md:pr-0"><code class="color-primary">links-hover-{color}</code></td>
                             <td>Set child links hover color</td>
                         </tr>
                     </tbody>
@@ -731,7 +724,7 @@ $colors: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">data-theme="{theme}"</code></td>
+                            <td class="md:pl-2"><code class="color-primary">data-theme="{theme}"</code></td>
                             <td>Used to set the theme of the element and child elements.<br>SpryCSS comes with 2 themes: <code class="color-primary">dark</code> and <code class="color-primary">light</code> <span class="color-grey">(default)</span>.
                                 <br><br>Feel free to add on your own themes 
                             </td>
@@ -766,15 +759,15 @@ $colors: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">text</code></td>
+                            <td class="md:pl-2"><code class="color-primary">text</code></td>
                             <td>Color of the body text.<br>This will change depending on the theme being applied.</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">contrast</code></td>
+                            <td class="md:pl-2"><code class="color-primary">contrast</code></td>
                             <td>Contrast Color.<br>This will change depending on the theme being applied.</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">faint</code></td>
+                            <td class="md:pl-2"><code class="color-primary">faint</code></td>
                             <td>Faint Color.<br>This will change depending on the theme being applied.</td>
                         </tr>
                     </tbody>
@@ -811,7 +804,7 @@ $borders: (
                 <div class="mb-1">
                     <code class="color-primary"><span class="color-grey">{breakpoint}-</span>b{side}-{spacing}</code>
                 </div>
-                <pre><code class="language-html">&lt;div class="b-2 md-bt-3"&gt;&lt;/div&gt;</code></pre>
+                <pre><code class="language-html">&lt;div class="b-2 md:bt-3"&gt;&lt;/div&gt;</code></pre>
 
                 <table class="border-faint">
                     <thead>
@@ -821,7 +814,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-300 md-pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>b{side}-{n}</code></td>
+                            <td class="md:w-300 md:pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>b{side}-{n}</code></td>
                             <td>Border.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-3</code>. Can be modified in SCSS Variables.</div>
                             </td>
@@ -840,27 +833,27 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-100 md-pl-2"><code class="color-primary">t</code></td>
+                            <td class="md:w-100 md:pl-2"><code class="color-primary">t</code></td>
                             <td>Top</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">r</code></td>
+                            <td class="md:pl-2"><code class="color-primary">r</code></td>
                             <td>Right</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">b</code></td>
+                            <td class="md:pl-2"><code class="color-primary">b</code></td>
                             <td>Bottom</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">l</code></td>
+                            <td class="md:pl-2"><code class="color-primary">l</code></td>
                             <td>Left</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">x</code></td>
+                            <td class="md:pl-2"><code class="color-primary">x</code></td>
                             <td>Inline <span class="color-grey ml-1">(Left & Right)</span></td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">y</code></td>
+                            <td class="md:pl-2"><code class="color-primary">y</code></td>
                             <td>Block <span class="color-grey ml-1">(Top & Bottom)</span></td>
                         </tr>
                     </tbody>
@@ -878,7 +871,7 @@ $borders: (
                     Breakpoints
                 </h2>
 
-                <h5>SpryCSS is mobile first. Meaning all styles start from the smallest device then allow for changes with <code class="color-primary">min-width</code> using breakpoints. By default, SpryCSS only comes with one breakpoint <code class="color-primary">md</code> at <code class="color-primary">40em</code>.</h5>
+                <h5>SpryCSS is mobile first. Meaning all styles start from the smallest device then allow for changes with <code class="color-primary">min-width</code> using breakpoints.<br/>By default, SpryCSS only comes with one breakpoint <code class="color-primary">md</code> at <code class="color-primary">40em</code>.</h5>
 
                 <p>You can add more breakpoints in the SCSS Variables, but keep in mind that the more breakpoints you add the larger the compiled file size will be.</p>
 
@@ -886,6 +879,22 @@ $borders: (
                 <pre class="mt-1"><code class="language-scss">$breakpoints: (
     md: 40em,
 )</code></pre>
+
+                <h3 class="mt-3">Media Queries</h3>
+                <p>To use media queries use the prefix <code class="color-primary">{breakpoint}:</code> with allowed component classes. See below for which components classes use media queries.</p>
+                <pre class="mt-1"><code class="language-html">&lt;div class="p-4 md:p-2"&gt;</code></pre>
+
+                <h3 class="mt-3">Container Queries</h3>
+                <p>To use conatiner queries use the prefix <code class="color-primary">c-{breakpoint}:</code> with allowed component classes. See below for which components classes use container queries.</p>
+                <p>Container queries require a wrapping element which will get <code class="color-primary">container-type: inline-size;</code> added to it.</p>
+                <pre class="mt-1"><code class="language-html">&lt;div&gt;
+    &lt;div class="p-4 c-md:p-2"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                
+                <div class="alert secondary outline flex align-items-start">
+                    <svg class="icon mr-2 mt-1" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z"></path></svg>
+                    <p>Containers with <code class="color-primary">container-type: inline-size;</code> will break the position of any child elements. This will break modals and other elements if placed inside.</p>
+                </div>
 
                 <table class="mb-2 mt-3 border-faint">
                     <thead>
@@ -896,28 +905,28 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-pl-2"><a href="#borders">Borders</a></td>
-                            <td>Borders allow breakpoints. ex <code class="note">&lt;div class="b-0 md-b-2"&gt;No Border on Mobile&lt;/div&gt;</code></pre></td>
+                            <td class="md:pl-2"><a href="#borders">Borders</a></td>
+                            <td>Borders allow breakpoints. ex <code class="note">&lt;div class="b-0 md:b-2"&gt;No Border on Mobile&lt;/div&gt;</code></pre></td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><a href="#gaps">Gaps</a></td>
+                            <td class="md:pl-2"><a href="#gaps">Gaps</a></td>
                             <td>Gaps uses breakpoints to define initial margin in &lt;hr&gt; and initial padding in &lt;section&gt;</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><a href="#grid">Grid</a></td>
+                            <td class="md:pl-2"><a href="#grid">Grid</a></td>
                             <td>Grid uses gaps in CSS Grid and CSS Flexbox grids</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><a href="#sizing">Sizing</a></td>
-                            <td>Spacing allows breakpoints. ex <code class="note">&lt;div class="sm md-lg"&gt;Small on Mobile, Large on Medium&lt;/div&gt;</code></pre></td>
+                            <td class="md:pl-2"><a href="#sizing">Sizing</a></td>
+                            <td>Spacing allows breakpoints. ex <code class="note">&lt;div class="sm md:lg"&gt;Small on Mobile, Large on Medium&lt;/div&gt;</code></pre></td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><a href="#spacing">Spacing</a></td>
-                            <td>Spacing allows breakpoints. ex <code class="note">&lt;div class="p-0 md-p-2"&gt;No Padding on Mobile&lt;/div&gt;</code></pre></td>
+                            <td class="md:pl-2"><a href="#spacing">Spacing</a></td>
+                            <td>Spacing allows breakpoints. ex <code class="note">&lt;div class="p-0 md:p-2"&gt;No Padding on Mobile&lt;/div&gt;</code></pre></td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><a href="#layout">Layout Utility Classes</a></td>
-                            <td>Layout Utility Classes allow breakpoints. ex <code class="note">&lt;div class="none md-block"&gt;Hide on Mobile&lt;/div&gt;</code></td>
+                            <td class="md:pl-2"><a href="#layout">Layout Utility Classes</a></td>
+                            <td>Layout Utility Classes allow breakpoints. ex <code class="note">&lt;div class="none md:block"&gt;Hide on Mobile&lt;/div&gt;</code></td>
                         </tr>
                     </tbody>
                 </table>
@@ -952,7 +961,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>g-{n}</code></td>
+                            <td class="md:pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>g-{n}</code></td>
                             <td>Gap for columns within <code class="color-primary">grid</code> or <code class="color-primary">row</code>
                                 <p>See <a href="#spacing">Spacing</a> for available <code class="color-primary">{n}</code> values.</p>
                             </td>
@@ -976,24 +985,28 @@ $borders: (
                 <table class="mb-2 border-faint">
                     <thead>
                         <tr>
-                            <th class="md-w-300"><h4>Container Classes</h4></th>
+                            <th class="md:w-300"><h4>Container Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">grid</code></td>
+                            <td class="md:pl-2"><code class="color-primary">grid</code></td>
                             <td>CSS Grid of columns auto width.<br>Uses variable <a href="#gaps">Gaps</a> for spacing</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">grid-{n}00</code></td>
+                            <td class="md:pl-2"><code class="color-primary">grid-{n}00</code></td>
                             <td>CSS Grid of columns using minmax() for column widths in px's.<br><code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code></td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">row</code></td>
+                            <td class="md:pl-2"><code class="color-primary">row</code></td>
                             <td>CSS Flexbox Row of columns auto width.<br>Uses variable <a href="#gaps">Gaps</a> for spacing</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>columns-{n}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">column</code></td>
+                            <td>CSS Flexbox Column of rows auto width.<br>Uses variable <a href="#gaps">Gaps</a> for spacing</td>
+                        </tr>
+                        <tr>
+                            <td class="md:pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>columns-{n}</code></td>
                             <td>
                                 <p>
                                     Specify the number of columns.<br>
@@ -1003,7 +1016,7 @@ $borders: (
                             </td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>g-{n}</code></td>
+                            <td class="md:pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>g-{n}</code></td>
                             <td>Gap for columns within <code class="color-primary">grid</code> or <code class="color-primary">row</code>
                                 <p>See <a href="#spacing">Spacing</a> for available <code class="color-primary">{n}</code> values.</p>
                             </td>
@@ -1014,12 +1027,12 @@ $borders: (
                 <table class="mt-2 border-faint">
                     <thead>
                         <tr>
-                            <th class="md-w-300"><h4>Column Classes</h4></th>
+                            <th class="md:w-300"><h4>Column Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>span-{n}</code></td>
+                            <td class="md:pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}-</span>span-{n}</code></td>
                             <td>Span the column based on a number of columns set.<br>
                                 <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, or <code class="color-primary">fixed</code>
                                 <p class="color-grey mt-2">* Requires container to have <code class="color-primary">columns-{n}</code></p>
@@ -1055,7 +1068,7 @@ $borders: (
                 </div>
     
                 <div class="show-code" data-title="Specify number of columns">
-                    <div class="grid columns-2 md-columns-4">
+                    <div class="grid columns-2 md:columns-4">
                         <div class="bg-faint round p-1">
                             col
                         </div>
@@ -1078,20 +1091,20 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Spanning Columns">
-                    <div class="grid columns-2 md-columns-3">
+                    <div class="grid columns-2 md:columns-3">
                         <div class="bg-faint round p-1">
                             col
                         </div>
                         <div class="bg-faint round p-1">
                             col
                         </div>
-                        <div class="bg-faint round p-1 span-2 md-span-1">
+                        <div class="bg-faint round p-1 span-2 md:span-1">
                             col
                         </div>
-                        <div class="bg-faint round p-1 span-2 md-span-3">
+                        <div class="bg-faint round p-1 span-2 md:span-3">
                             col
                         </div>
-                        <div class="bg-faint round p-1 span-2 md-span-1">
+                        <div class="bg-faint round p-1 span-2 md:span-1">
                             col
                         </div>
                         <div class="bg-faint round p-1">
@@ -1104,7 +1117,7 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Nested Rows with different Gap Sizes">
-                    <div class="grid columns-2 md-columns-4">
+                    <div class="grid columns-2 md:columns-4">
                         <div class="bg-faint round p-1">
                             col
                         </div>
@@ -1120,7 +1133,7 @@ $borders: (
                         <div class="bg-faint round p-1 span-2">
                             col
                         </div>
-                        <div class="span-2 grid g-1 columns-2 md-columns-4">
+                        <div class="span-2 grid g-1 columns-2 md:columns-4">
                             <div class="bg-faint round p-1">
                                 col
                             </div>
@@ -1147,7 +1160,7 @@ $borders: (
                 </div>
     
                 <div class="show-code" data-title="Equal Columns Single Row above mobile">
-                    <div class="row columns-1 md-columns-fixed">
+                    <div class="row columns-1 md:columns-fixed">
                         <div class="bg-faint round p-1">
                             fixed
                         </div>
@@ -1164,7 +1177,7 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Specify number of columns centered">
-                    <div class="row columns-2 md-columns-3 justify-content-center">
+                    <div class="row columns-2 md:columns-3 justify-content-center">
                         <div class="bg-faint round p-1">
                             col
                         </div>
@@ -1188,10 +1201,10 @@ $borders: (
                         <div class="bg-faint round p-1">
                             fixed
                         </div>
-                        <div class="md-span-auto bg-faint round p-1">
+                        <div class="md:span-auto bg-faint round p-1">
                             Auto Fit content
                         </div>
-                        <div class="md-span-fill bg-faint round p-1">
+                        <div class="md:span-fill bg-faint round p-1">
                             Auto Fill content
                         </div>
                         <div class="bg-faint round p-1">
@@ -1201,9 +1214,9 @@ $borders: (
                 </div>
     
                 <div class="show-code" data-title="Set Sidebar width with Auto Content Column">
-                    <div class="row columns-1 md-columns-fill">
-                        <div class="bg-faint round p-1 md-w-200">
-                            md-w-200
+                    <div class="row columns-1 md:columns-fill">
+                        <div class="bg-faint round p-1 md:w-200">
+                            md:w-200
                         </div>
                         <div class="bg-faint round p-1">
                             fill
@@ -1213,13 +1226,13 @@ $borders: (
     
                 <div class="show-code" data-title="Custom Ordering with Space between">
                     <div class="row columns-auto justify-content-between">
-                        <div class="md-order-1 bg-faint round p-1">
+                        <div class="md:order-1 bg-faint round p-1">
                             col C
                         </div>
                         <div class="bg-faint round p-1">
                             col B
                         </div>
-                        <div class="md-order-first bg-faint round p-1">
+                        <div class="md:order-first bg-faint round p-1">
                             col A
                         </div>
                     </div>
@@ -1250,10 +1263,10 @@ $borders: (
 
                 <div class="show-code" data-title="Nested rows and auto height">
                     <div class="row columns-12">
-                        <div class="md-span-4 bg-faint round p-1">
-                            .md-span-4
+                        <div class="md:span-4 bg-faint round p-1">
+                            .md:span-4
                         </div>
-                        <div class="row md-span-fixed">
+                        <div class="row md:span-fixed">
                             <div class="bg-faint round p-1">
                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitrsed diam nonumy.
                             </div>
@@ -1263,7 +1276,7 @@ $borders: (
                             <div class="bg-faint round p-1">
                                 fixed
                             </div>
-                            <div class="row md-span-">
+                            <div class="row md:span-">
                                 <div class="bg-faint round p-1">
                                     fixed
                                 </div>
@@ -1276,17 +1289,17 @@ $borders: (
                 </div>
     
                 <div class="show-code" data-title="Nested rows with different gap sizing" data-note="* With flexbox, nested rows need .span-fixed or need to be nested in an a column container.">
-                    <div class="row columns-12 g-1 md-g-4">
+                    <div class="row columns-12 g-1 md:g-4">
                         <div class="span-6 bg-faint round p-1">
                             .span-6
                         </div>
                         <div class="span-6 bg-faint round p-1">
                             .span-6
                         </div>
-                        <div class="span-6 md-span-3 bg-faint round p-1">
-                            .span-6 .md-span-3
+                        <div class="span-6 md:span-3 bg-faint round p-1">
+                            .span-6 .md:span-3
                         </div>
-                        <div class="span-fixed row g-2 md-columns-fill">
+                        <div class="span-fixed row g-2 md:columns-fill">
                             <div class="bg-faint round p-1">
                                 auto
                             </div>
@@ -1297,8 +1310,8 @@ $borders: (
                                 auto
                             </div>
                         </div>
-                        <div class="md-span-3 bg-faint round p-1">
-                            .md-span-3
+                        <div class="md:span-3 bg-faint round p-1">
+                            .md:span-3
                         </div>
                         <div class="span-12">
                             <div class="row columns-3 g-1">
@@ -1337,7 +1350,7 @@ $borders: (
                 <div class="mb-1">
                     <code class="color-primary"><span class="color-grey">{breakpoint}-</span>{size}</code>
                 </div>
-                <pre><code class="language-html">&lt;div class="sm md-lg"&gt;Small on Mobile, Large on Medium&lt;/div&gt;</code></pre>
+                <pre><code class="language-html">&lt;div class="sm md:lg"&gt;Small on Mobile, Large on Medium&lt;/div&gt;</code></pre>
 
                 <div class="my-2 mb-4">
                     <p>See above SCSS Variables for available <code class="color-primary">{size}</code> values.</p>
@@ -1389,7 +1402,7 @@ $borders: (
                 <div class="mb-1">
                     <code class="color-primary"><span class="color-grey">{breakpoint}-</span>{property}{side}-{spacing}</code>
                 </div>
-                <pre><code class="language-html">&lt;div class="p-2 md-px-3 mt-n2"&gt;&lt;/div&gt;</code></pre>
+                <pre><code class="language-html">&lt;div class="p-2 md:px-3 mt-n2"&gt;&lt;/div&gt;</code></pre>
 
                 <table class="border-faint mt-3">
                     <thead>
@@ -1399,25 +1412,25 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-300 md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">p{side}-{n}</code></td>
+                            <td class="md:w-300 md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">p{side}-{n}</code></td>
                             <td>Padding.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                             </td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">m{side}-{n}</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">m{side}-{n}</code></td>
                             <td>Margin.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                             </td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">m{side}-n{n}</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">m{side}-n{n}</code></td>
                             <td>Negative Margin.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                             </td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">g-{n}</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">g-{n}</code></td>
                             <td>Gap for <a href="#grid">Grid</a>.
                                 <div class="color-grey">Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-4</code>. Can be modified in SCSS Variables.</div>
                                 <div class="color-grey">* Side properties are not inluded for gap.</div>
@@ -1437,27 +1450,27 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-100 md-pl-2"><code class="color-primary">t</code></td>
+                            <td class="md:w-100 md:pl-2"><code class="color-primary">t</code></td>
                             <td>Top</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">r</code></td>
+                            <td class="md:pl-2"><code class="color-primary">r</code></td>
                             <td>Right</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">b</code></td>
+                            <td class="md:pl-2"><code class="color-primary">b</code></td>
                             <td>Bottom</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">l</code></td>
+                            <td class="md:pl-2"><code class="color-primary">l</code></td>
                             <td>Left</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">x</code></td>
+                            <td class="md:pl-2"><code class="color-primary">x</code></td>
                             <td>Inline <span class="color-grey ml-1">(Left & Right)</span></td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">y</code></td>
+                            <td class="md:pl-2"><code class="color-primary">y</code></td>
                             <td>Block <span class="color-grey ml-1">(Top & Bottom)</span></td>
                         </tr>
                     </tbody>
@@ -1532,7 +1545,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">data-toggle="{selector}"</code></td>
+                            <td class="md:pl-2"><code class="color-primary">data-toggle="{selector}"</code></td>
                             <td>This creates the activator, assigning it to the selector element.
                                 <div class="mt-1"><code class="color-primary">{selector}</code> can be:</div>
                                 <ul>
@@ -1544,7 +1557,7 @@ $borders: (
                             </td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">data-toggle-action="{action}"</code></td>
+                            <td class="md:pl-2"><code class="color-primary">data-toggle-action="{action}"</code></td>
                             <td>Assigns the toggle action.
                                 <div class="mt-1"><code class="color-primary">{action}</code> can be:</div>
                                 <ul>
@@ -1555,7 +1568,7 @@ $borders: (
                             </td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">data-toggle-close="{selector}"</code></td>
+                            <td class="md:pl-2"><code class="color-primary">data-toggle-close="{selector}"</code></td>
                             <td>Closes Toggle(s) by a valid css selector.
                                 <div class="mt-1"><code class="color-primary">{selector}</code> can be:</div>
                                 <ul>
@@ -1569,15 +1582,15 @@ $borders: (
                         </tr>
                        
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">data-toggle-timeout="{n}"</code></td>
+                            <td class="md:pl-2"><code class="color-primary">data-toggle-timeout="{n}"</code></td>
                             <td>Automatically closes the toggle after the timeout in milliseconds.</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">data-toggle-escapable</code></td>
+                            <td class="md:pl-2"><code class="color-primary">data-toggle-escapable</code></td>
                             <td>Allows the toggle to close when clicking outside the toggle element or by pressing the ESC key.</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">data-toggle-dismissible</code></td>
+                            <td class="md:pl-2"><code class="color-primary">data-toggle-dismissible</code></td>
                             <td>Allows the toggle to close when clicking inside the toggle element on an actionable child element.</td>
                         </tr>
                     </tbody>
@@ -1592,7 +1605,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-<span class="color-primary">open</span></code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-<span class="color-primary">open</span></code></td>
                             <td>
                                 Opens toggle even when toggle is not active.
                                 <br>
@@ -1600,11 +1613,11 @@ $borders: (
                             </td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">closed</code></td>
+                            <td class="md:pl-2"><code class="color-primary">closed</code></td>
                             <td>Initiate the toggle element in the closed state.</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">collapse</code></td>
+                            <td class="md:pl-2"><code class="color-primary">collapse</code></td>
                             <td>Positions all child elements absolute.</td>
                         </tr>
                     </tbody>
@@ -1712,67 +1725,67 @@ $borders: (
                 <table class="mb-3 border-faint">
                     <tbody>
                         <tr>
-                            <td class="md-w-200 md-pl-2"><code class="color-primary">bold</code></td>
+                            <td class="md:w-200 md:pl-2"><code class="color-primary">bold</code></td>
                             <td>font-weight: bold</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">normal</code></td>
+                            <td class="md:pl-2"><code class="color-primary">normal</code></td>
                             <td>font-weight: normal</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">italic</code></td>
+                            <td class="md:pl-2"><code class="color-primary">italic</code></td>
                             <td>font-style: italic</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">uppercase</code></td>
+                            <td class="md:pl-2"><code class="color-primary">uppercase</code></td>
                             <td>text-transform: uppercase</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">lowercase</code></td>
+                            <td class="md:pl-2"><code class="color-primary">lowercase</code></td>
                             <td>text-transform: lowercase</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">capitalize</code></td>
+                            <td class="md:pl-2"><code class="color-primary">capitalize</code></td>
                             <td>text-transform: capitalize</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">pointer </code></td>
+                            <td class="md:pl-2"><code class="color-primary">pointer </code></td>
                             <td>cursor: pointer</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">round</code>
+                            <td class="md:pl-2"><code class="color-primary">round</code>
                             <td>border-radius: 5px; overflow: hidden</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">round-bottom</code></td>
+                            <td class="md:pl-2"><code class="color-primary">round-bottom</code></td>
                             <td>border-radius: 0 0 5px 5px</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">circle</code></td>
+                            <td class="md:pl-2"><code class="color-primary">circle</code></td>
                             <td>border-radius: 50%</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">square</code></td>
+                            <td class="md:pl-2"><code class="color-primary">square</code></td>
                             <td>border-radius: 0</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">index-1</code></td>
+                            <td class="md:pl-2"><code class="color-primary">index-1</code></td>
                             <td>z-index: 1</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">index-2</code></td>
+                            <td class="md:pl-2"><code class="color-primary">index-2</code></td>
                             <td>z-index: 2</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">index-3</code></td>
+                            <td class="md:pl-2"><code class="color-primary">index-3</code></td>
                             <td>z-index: 3</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">note </code></td>
+                            <td class="md:pl-2"><code class="color-primary">note </code></td>
                             <td>font-style: italic; font-size: 90%; opacity: 0.8</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">truncate</code></td>
+                            <td class="md:pl-2"><code class="color-primary">truncate</code></td>
                             <td>max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap</td>
                         </tr>
                     </tbody>
@@ -1794,276 +1807,276 @@ $borders: (
                 <p>Example Hide on All</p>
                 <pre><code class="language-html">&lt;span class="none"&gt;</code></pre>
                 <p>Example Hide on Mobile</p>
-                <pre><code class="language-html">&lt;span class="none md-block"&gt;</code></pre>
+                <pre><code class="language-html">&lt;span class="none md:block"&gt;</code></pre>
 
                 <table class="mb-3 border-faint">
                     <tbody>
                         <tr>
-                            <td class="md-w-400 md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-left</code></td>
+                            <td class="md:w-400 md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-left</code></td>
                             <td>text-align: left</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-center</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-center</code></td>
                             <td>text-align: center</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-right</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-right</code></td>
                             <td>text-align: right</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-justify</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">text-justify</code></td>
                             <td>text-align: justify</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">no-wrap</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">no-wrap</code></td>
                             <td>white-space: nowrap; flex-wrap: nowrap;</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">pre-wrap</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">pre-wrap</code></td>
                             <td>white-space: pre-wrap</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">break-word</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">break-word</code></td>
                             <td>word-wrap: break-word</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline</code></td>
                             <td>display: inline; width: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex</code></td>
                             <td>display: flex</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">block</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">block</code></td>
                             <td>display: block</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">none</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">none</code></td>
                             <td>display: none</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline-block</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline-block</code></td>
                             <td>display: inline-block; width: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline-flex</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inline-flex</code></td>
                             <td>display: inline-flex; width: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">table</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">table</code></td>
                             <td>display: table</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">table-cell</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">table-cell</code></td>
                             <td>display: table-cell</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">relative</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">relative</code></td>
                             <td>position: relative</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">absolute</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">absolute</code></td>
                             <td>position: absolute</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">collapse</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">collapse</code></td>
                             <td>position: relative</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">collapse > *</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">collapse > *</code></td>
                             <td>position: absolute</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">sticky</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">sticky</code></td>
                             <td>position: sticky; top: 0</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">fixed</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">fixed</code></td>
                             <td>position: fixed</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inset </code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">inset </code></td>
                             <td>inset: 0</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">top </code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">top </code></td>
                             <td>top: 0; bottom: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">right </code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">right </code></td>
                             <td>right: 0; left: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">bottom </code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">bottom </code></td>
                             <td>bottom: 0; top: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">left </code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">left </code></td>
                             <td>left: 0; right: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outer-top </code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outer-top </code></td>
                             <td>bottom: 100%; top: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outer-right </code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outer-right </code></td>
                             <td>left: 100%; right: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outer-bottom </code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outer-bottom </code></td>
                             <td>top: 100%; bottom: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outer-left </code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">outer-left </code></td>
                             <td>right: 100%; left: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">pointer-none </code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">pointer-none </code></td>
                             <td>pointer-events: none</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-baseline</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-baseline</code></td>
                             <td>vertical-align: baseline</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-top</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-top</code></td>
                             <td>vertical-align: top</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-middle</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-middle</code></td>
                             <td>vertical-align: middle</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-bottom</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-bottom</code></td>
                             <td>vertical-align: bottom</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-hidden</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-hidden</code></td>
                             <td>overflow: hidden</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-scroll</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-scroll</code></td>
                             <td>overflow: scroll</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-auto</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">overflow-auto</code></td>
                             <td>overflow: auto</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-first</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-first</code></td>
                             <td>order:-1</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-0</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-0</code></td>
                             <td>order:0</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-1</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-1</code></td>
                             <td>order:1</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-2</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-2</code></td>
                             <td>order:2</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-3</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-3</code></td>
                             <td>order:3</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-last</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">order-last</code></td>
                             <td>order:99999</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-start</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-start</code></td>
                             <td>align-items: flex-start</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-end</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-end</code></td>
                             <td>align-items: flex-end</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-center</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-center</code></td>
                             <td>align-items: center</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-stretch</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">align-items-stretch</code></td>
                             <td>align-items: stretch</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-start</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-start</code></td>
                             <td>justify-content: flex-start</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-end</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-end</code></td>
                             <td>justify-content: flex-end</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-center</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-center</code></td>
                             <td>justify-content: center</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-between</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-between</code></td>
                             <td>justify-content: space-between</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-around</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">justify-content-around</code></td>
                             <td>justify-content: space-around</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-middle</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-middle</code></td>
                             <td>display: flex; align-items: center</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-center</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-center</code></td>
                             <td>display: flex; align-items: center; justify-content: center</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-wrap</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-wrap</code></td>
                             <td>flex-wrap: wrap</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-column</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">flex-column</code></td>
                             <td>flex-direction: column</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">shadow</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">shadow</code></td>
                             <td>box-shadow: 1px 3px 4px rgba(0,0,0,.12)</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-***</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">h-***</code></td>
                             <td>height: ***px; min-height: ***px; max-height: ***px</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">mh-***</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">mh-***</code></td>
                             <td>max-height: ***px</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">vh-**</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">vh-**</code></td>
                             <td>height: **vh</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">mvh-**</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">mvh-**</code></td>
                             <td>max-height: **vh</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-***</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">w-***</code></td>
                             <td>width: ***px; min-width: ***px; max-width: ***px</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">mw-***</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">mw-***</code></td>
                             <td>max-width: ***px</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">vw-**</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">vw-**</code></td>
                             <td>width: **vw</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">mvw-**</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">mvw-**</code></td>
                             <td>max-width: **vw</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">o-**</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}-</code><code class="color-primary">o-**</code></td>
                             <td>opacity: .**</td>
                         </tr>
                     </tbody>
@@ -2111,15 +2124,15 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-200 md-pl-2"><code class="color-primary">outline</code></td>
+                            <td class="md:w-200 md:pl-2"><code class="color-primary">outline</code></td>
                             <td>Adds Outline variant to container</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">{color}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">{color}</code></td>
                             <td>Assigns the Accent color to the container and children.</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">border-{color}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">border-{color}</code></td>
                             <td>Assigns the Accent color to the outline borders.</td>
                         </tr>
                     </tbody>
@@ -2331,7 +2344,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-200 md-pl-2"><code class="color-primary">alert</code></td>
+                            <td class="md:w-200 md:pl-2"><code class="color-primary">alert</code></td>
                             <td>Assigns the element as Alert.</td>
                         </tr>
                     </tbody>
@@ -2345,15 +2358,15 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-200 md-pl-2"><code class="color-primary">outline</code></td>
+                            <td class="md:w-200 md:pl-2"><code class="color-primary">outline</code></td>
                             <td>Adds Outline variant</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">hazy</code></td>
+                            <td class="md:pl-2"><code class="color-primary">hazy</code></td>
                             <td>Adds Hazy variant</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">{color}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">{color}</code></td>
                             <td>Assigns the Accent color to the Alert.</td>
                         </tr>
                     </tbody>
@@ -2483,7 +2496,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-200 md-pl-2"><code class="color-primary">badge</code></td>
+                            <td class="md:w-200 md:pl-2"><code class="color-primary">badge</code></td>
                             <td>Assigns the element as Badge.</td>
                         </tr>
                     </tbody>
@@ -2497,39 +2510,39 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-200 md-pl-2"><code class="color-primary">outline</code></td>
+                            <td class="md:w-200 md:pl-2"><code class="color-primary">outline</code></td>
                             <td>Adds Outline variant</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">hazy</code></td>
+                            <td class="md:pl-2"><code class="color-primary">hazy</code></td>
                             <td>Adds Hazy variant</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">snug</code></td>
+                            <td class="md:pl-2"><code class="color-primary">snug</code></td>
                             <td>Moves badge up left</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">dense</code></td>
+                            <td class="md:pl-2"><code class="color-primary">dense</code></td>
                             <td>Greatly Reduces Padding, Line Height and Minimum Size</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">compact</code></td>
+                            <td class="md:pl-2"><code class="color-primary">compact</code></td>
                             <td>Reduces Padding, Line Height and Minimum Size</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">cozy</code></td>
+                            <td class="md:pl-2"><code class="color-primary">cozy</code></td>
                             <td>Resets Padding, Line Height and Minimum Size</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">roomy</code></td>
+                            <td class="md:pl-2"><code class="color-primary">roomy</code></td>
                             <td>Increases Padding, Line Height and Minimum Size</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">circle</code></td>
+                            <td class="md:pl-2"><code class="color-primary">circle</code></td>
                             <td>Rounds the button</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">{color}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">{color}</code></td>
                             <td>Assigns the Accent color to the Badge.</td>
                         </tr>
                     </tbody>
@@ -2631,13 +2644,13 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">button</code></td>
+                            <td class="md:pl-2"><code class="color-primary">button</code></td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">type="submit"</code></td>
+                            <td class="md:pl-2"><code class="color-primary">type="submit"</code></td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">type="reset"</code></td>
+                            <td class="md:pl-2"><code class="color-primary">type="reset"</code></td>
                         </tr>
                     </tbody>
                 </table>
@@ -2650,7 +2663,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-200 md-pl-2"><code class="color-primary">button</code></td>
+                            <td class="md:w-200 md:pl-2"><code class="color-primary">button</code></td>
                             <td>Assigns the element as Button.</td>
                         </tr>
                     </tbody>
@@ -2664,47 +2677,47 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-200 md-pl-2"><code class="color-primary">outline</code></td>
+                            <td class="md:w-200 md:pl-2"><code class="color-primary">outline</code></td>
                             <td>Adds Outline variant</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">hazy</code></td>
+                            <td class="md:pl-2"><code class="color-primary">hazy</code></td>
                             <td>Adds Hazy variant</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">plain</code></td>
+                            <td class="md:pl-2"><code class="color-primary">plain</code></td>
                             <td>Adds Plain variant</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">link</code></td>
+                            <td class="md:pl-2"><code class="color-primary">link</code></td>
                             <td>Adds Link variant</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">dense</code></td>
+                            <td class="md:pl-2"><code class="color-primary">dense</code></td>
                             <td>Greatly Reduces Padding, Line Height and Minimum Size</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">compact</code></td>
+                            <td class="md:pl-2"><code class="color-primary">compact</code></td>
                             <td>Reduces Padding, Line Height and Minimum Size</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">cozy</code></td>
+                            <td class="md:pl-2"><code class="color-primary">cozy</code></td>
                             <td>Resets Padding, Line Height and Minimum Size</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">roomy</code></td>
+                            <td class="md:pl-2"><code class="color-primary">roomy</code></td>
                             <td>Increases Padding, Line Height and Minimum Size</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">icon</code></td>
+                            <td class="md:pl-2"><code class="color-primary">icon</code></td>
                             <td>Assigns button as a single icon element</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">circle</code></td>
+                            <td class="md:pl-2"><code class="color-primary">circle</code></td>
                             <td>Rounds the button</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">{color}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">{color}</code></td>
                             <td>Assigns the Accent color to the Button.</td>
                         </tr>
                     </tbody>
@@ -2718,11 +2731,11 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-200 md-pl-2"><code class="color-primary">aria-busy="false"</code></td>
+                            <td class="md:w-200 md:pl-2"><code class="color-primary">aria-busy="false"</code></td>
                             <td>Prepares button for Loading</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">aria-busy="true"</code></td>
+                            <td class="md:pl-2"><code class="color-primary">aria-busy="true"</code></td>
                             <td>Shows Loading</td>
                         </tr>
                     </tbody>
@@ -2954,7 +2967,7 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-200 md-pl-2"><code class="color-primary">article</code></td>
+                            <td class="md:w-200 md:pl-2"><code class="color-primary">article</code></td>
                             <td>Assigns the element as Card.</td>
                         </tr>
                     </tbody>
@@ -2968,15 +2981,15 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-200 md-pl-2"><code class="color-primary">outline</code></td>
+                            <td class="md:w-200 md:pl-2"><code class="color-primary">outline</code></td>
                             <td>Adds Outline variant</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">shadow</code></td>
+                            <td class="md:pl-2"><code class="color-primary">shadow</code></td>
                             <td>Adds Shadow</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">{color}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">{color}</code></td>
                             <td>Assigns the Accent color to the Card.</td>
                         </tr>
                     </tbody>
@@ -3005,13 +3018,13 @@ $borders: (
     
                         <article class="outline shadow">
                             <header>
-                                <h4>Lorem ipsum dolor</h4>
+                                <h4 class="truncate">Tuncated Card - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</h4>
                             </header>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                            <p class="truncate-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                                 eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
                             </p>
                             <footer>
-                                <a href="#" class="button primary sm">Learn More</a>
+                                <a href="#" class="button primary sm"><span class="truncate">Learn More Truncated - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</span></a>
                             </footer>
                         </article>
     
@@ -3138,35 +3151,35 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md-w-200 md-pl-2"><code class="color-primary">{color}</code></td>
+                            <td class="md:w-200 md:pl-2"><code class="color-primary">{color}</code></td>
                             <td>Sets Accent color.</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">border-{color}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">border-{color}</code></td>
                             <td>Sets field border colors.</td>
                         </tr>
                         <tr>
-                            <td class="md-pl-2"><code class="color-primary">color-{color}</code></td>
+                            <td class="md:pl-2"><code class="color-primary">color-{color}</code></td>
                             <td>Sets Text color.</td>
                         </tr>
                     </tbody>
                 </table>
 
                 <div class="show-code" data-title="Simple form with some Required Fields">
-                    <form id="form1" class="grid-300 p-2 g-3 md-gy-4">
+                    <form id="form1" class="grid-300 p-2 g-3 md:gy-4">
 
                         <label>
-                            Text Field *
+                            <h5>Text Field *</h5>
                             <input type="text" required />
                         </label>
                     
                         <label>
-                            Email *
+                            <h5>Email *</h5>
                             <input type="email" required />
                         </label>
                     
                         <label>
-                            Select *
+                            <h5>Select *</h5>
                             <select required>
                                 <option value="" disabled>Select</option>
                                 <option>One</option>
@@ -3175,7 +3188,7 @@ $borders: (
                         </label>
 
                         <label>
-                            Custom Dropdown
+                            <h5>Custom Dropdown</h5>
                             <input id="dropdown" type="text" class="is-select" value="" data-toggle="next" data-toggle-escapable data-toggle-dismissible readonly>
                             <div class="collapse closed">
                                 <ul class="list navigable bg-faint round-bottom overflow-hidden shadow w">
@@ -3297,21 +3310,21 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Form with Accent Color, Alternate Grid and Show Invalid">
-                    <form class="primary show-invalid row columns-1 md-columns-12 g-3 md-gy-4 p-2 justify-content-center">
+                    <form class="primary show-invalid row columns-1 md:columns-12 g-3 md:gy-4 p-2 justify-content-center">
                     
-                        <label class="md-span-4">
+                        <label class="md:span-4">
                             <h5>Text Field *</h5>
                             <input type="text" required />
                             <small class="error none mt-1">This field is required</small>
                         </label>
                     
-                        <label class="md-span-8">
+                        <label class="md:span-8">
                             <h5>Email *</h5>
                             <input type="email" required />
                             <small class="error none mt-1">Invalid Email Address</small>
                         </label>
                     
-                        <label class="md-span-3">
+                        <label class="md:span-3">
                             <h5>Select *</h5>
                             <select required>
                                 <option value="" disabled>Select</option>
@@ -3320,7 +3333,7 @@ $borders: (
                             </select>
                         </label>
 
-                        <label class="md-span-3">
+                        <label class="md:span-3">
                             <h5>Custom Dropdown</h5>
                             <input id="dropdown" type="text" class="is-select" value="" data-toggle="next" data-toggle-escapable data-toggle-dismissible readonly>
                             <div class="collapse closed">
@@ -3332,7 +3345,7 @@ $borders: (
                             </div>
                         </label>
 
-                        <label class="md-span-3">
+                        <label class="md:span-3">
                             <h5>Custom Radio Dropdown</h5>
                             <input id="dropdown2" type="text" class="is-select" data-toggle="next" data-toggle-escapable data-toggle-dismissible value="" readonly="">
                             <div class="collapse closed">
@@ -3344,7 +3357,7 @@ $borders: (
                             </div>
                         </label>
 
-                        <label class="md-span-3">
+                        <label class="md:span-3">
                             <h5>Multi Checkbox Dropdown</h5>
                             <input id="dropdown3" type="text" class="is-select" data-toggle="next" data-toggle-escapable value="" readonly="">
                             <div class="collapse closed">
@@ -3356,7 +3369,7 @@ $borders: (
                             </div>
                         </label>
 
-                        <label class="md-span-6">
+                        <label class="md:span-6">
                             <h5>Field with Prefix</h5>
                             <div class="row g-0 mt-1">
                                 <span class="ui round-left span-auto br-0">Prefix</span>
@@ -3364,7 +3377,7 @@ $borders: (
                             </div>
                         </label>
 
-                        <label class="md-span-6">
+                        <label class="md:span-6">
                             <h5>Field with Suffix</h5>
                             <div class="row g-0 mt-1">
                                 <input class="round-left" type="text" required />
@@ -3372,32 +3385,32 @@ $borders: (
                             </div>
                         </label>
 
-                        <label class="md-span-12">
+                        <label class="md:span-12">
                             <h5>File Upload</h5>
                             <input type="file" class="pl-1" />
                         </label>
 
-                        <label class="md-span-4">
+                        <label class="md:span-4">
                             <h5>Date</h5>
                             <input type="date" />
                         </label>
 
-                        <label class="md-span-4">
+                        <label class="md:span-4">
                             <h5>Time</h5>
                             <input type="time" />
                         </label>
 
-                        <label class="md-span-4">
+                        <label class="md:span-4">
                             <h5>Number</h5>
                             <input type="number" />
                         </label>
 
-                        <label class="md-span-4">
+                        <label class="md:span-4">
                             <h5>Website</h5>
                             <input type="url" />
                         </label>
 
-                        <label class="md-span-4">
+                        <label class="md:span-4">
                             <h5>Color with Value</h5>
                             <div class="row mt-1 g-0">
                                 <input class="round-left" type="color" oninput="this.nextElementSibling.value = this.value" />
@@ -3405,7 +3418,7 @@ $borders: (
                             </div>
                         </label>
 
-                        <label class="md-span-4">
+                        <label class="md:span-4">
                             <h5>Range with Value</h5>
                             <div class="row mt-1">
                                 <input type="range" min="0" max="100" value="0" oninput="this.nextElementSibling.value = this.value" />
@@ -3413,21 +3426,21 @@ $borders: (
                             </div>
                         </label>
 
-                        <div class="md-span-4">
+                        <div class="md:span-4">
                             <h5 class="mb-1">Horizontal Radios *</h5>
                             <label class="inline mx-1"><input type="radio" name="rad" required>Why</label>
                             <label class="inline mx-1"><input type="radio" name="rad" required>When</label>
                             <label class="inline mx-1"><input type="radio" name="rad" required>Where</label>
                         </div>
 
-                        <div class="md-span-4">
+                        <div class="md:span-4">
                             <h5>Checkboxes</h5>
                             <label class="m-1"><input type="checkbox">Red</label>
                             <label class="m-1"><input type="checkbox">Green</label>
                             <label class="m-1"><input type="checkbox">None</label>
                         </div>
 
-                        <div class="md-span-4">
+                        <div class="md:span-4">
                             <h5>Switches</h5>
                             <label class="m-1"><input class="switch" type="checkbox">Red</label>
                             <label class="m-1"><input class="switch" type="checkbox">Green</label>
@@ -3460,7 +3473,7 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Compact with Loading Button and Disabled Fields on Submit">
-                    <form class="show-invalid row columns-1 md-columns-3 justify-content-center sm gy-1" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').setAttribute('aria-busy', 'true'); this.classList.add('disabled'); setTimeout(() => {this.reset(); this.querySelector('[type=submit]').setAttribute('aria-busy', 'false'); this.classList.remove('disabled');}, 4000)">
+                    <form class="show-invalid row columns-1 md:columns-3 justify-content-center sm gy-1" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').setAttribute('aria-busy', 'true'); this.classList.add('disabled'); setTimeout(() => {this.reset(); this.querySelector('[type=submit]').setAttribute('aria-busy', 'false'); this.classList.remove('disabled');}, 4000)">
                         <label>
                             <sup>Name *</sup>
                             <input type="text" required placeholder=" " />
@@ -3825,7 +3838,7 @@ $borders: (
                                 <h4>List Item 1</h4>
                                 <h6 class="sm mt-1">Sub List Data</h6>
                             </span>
-                            <span class="row md-span-auto columns-auto justify-content-center">
+                            <span class="row md:span-auto columns-auto justify-content-center">
                                 <span class="badge primary px-1">12</span>
                                 <button class="icon hazy secondary circle" data-toggle="next">
                                     <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
@@ -3879,7 +3892,7 @@ $borders: (
                                 <h4>List Item 2</h4>
                                 <h6 class="sm mt-1">Sub List Data</h6>
                             </span>
-                            <span class="row md-span-auto columns-auto justify-content-center">
+                            <span class="row md:span-auto columns-auto justify-content-center">
                                 <span class="badge primary px-1">12</span>
                                 <button class="icon hazy secondary circle" data-toggle="next">
                                     <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
@@ -3933,7 +3946,7 @@ $borders: (
                                 <h4>List Item 3</h4>
                                 <h6 class="sm mt-1">Sub List Data</h6>
                             </span>
-                            <span class="row md-span-auto columns-auto justify-content-center">
+                            <span class="row md:span-auto columns-auto justify-content-center">
                                 <span class="badge primary px-1">12</span>
                                 <button class="icon hazy secondary circle" data-toggle="next">
                                     <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
@@ -3992,7 +4005,7 @@ $borders: (
                                 <h4>List Item 1</h4>
                                 <h6 class="sm mt-1">Sub List Data</h6>
                             </span>
-                            <span class="row sm md-span-auto columns-auto justify-content-center">
+                            <span class="row sm md:span-auto columns-auto justify-content-center">
                                 <span class="badge primary px-1">12</span>
                                 <span class="badge secondary p-1">
                                     <svg viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
@@ -4005,7 +4018,7 @@ $borders: (
                                 <h4>List Item 2</h4>
                                 <h6 class="sm mt-1">Sub List Data</h6>
                             </span>
-                            <span class="row sm md-span-auto columns-auto justify-content-center">
+                            <span class="row sm md:span-auto columns-auto justify-content-center">
                                 <span class="badge primary px-1">12</span>
                                 <span class="badge secondary p-1">
                                     <svg viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
@@ -4018,7 +4031,7 @@ $borders: (
                                 <h4>List Item 3</h4>
                                 <h6 class="sm mt-1">Sub List Data</h6>
                             </span>
-                            <span class="row sm md-span-auto columns-auto justify-content-center">
+                            <span class="row sm md:span-auto columns-auto justify-content-center">
                                 <span class="badge primary px-1">12</span>
                                 <span class="badge secondary p-1">
                                     <svg viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
@@ -4414,7 +4427,7 @@ $borders: (
                             </div>
                             <footer class="px-2">
                                 <button type="button" class="sm outline" data-toggle-close>Cancel</button>
-                                <button type="button" class="primary sm ml-1 md-ml-3" data-toggle-close>Accept</button>
+                                <button type="button" class="primary sm ml-1 md:ml-3" data-toggle-close>Accept</button>
                             </footer>
                         </article>
                     </div>
@@ -4528,13 +4541,13 @@ $borders: (
                 </div>
     
                 <div class="show-code" data-title="Drop down Navigation Menu Right Aligned">
-                    <nav class="bg-faint md-hoverable text-right">
+                    <nav class="bg-faint md:hoverable text-right">
                         <ul>
                             <li>
                                 <a class="pr-0" href="#">Link with Dropdown
-                                    <svg class="icon lg color-grey ml-1 none md-inline" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                    <svg class="icon lg color-grey ml-1 none md:inline" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                                 </a>
-                                <ul class="bg-faint round-bottom md-shadow">
+                                <ul class="bg-faint round-bottom md:shadow">
                                     <li><a href="#">Sub Link 1</a></li>
                                     <li>
                                         <a href="#">Sub Link with Menu</a>
@@ -4557,9 +4570,9 @@ $borders: (
                             <li><a href="#">Link 4</a></li>
                             <li>
                                 <a class="pr-0" href="#">Link with Dropdown
-                                    <svg class="icon lg color-grey ml-1 none md-inline" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                    <svg class="icon lg color-grey ml-1 none md:inline" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                                 </a>
-                                <ul class="bg-faint round-bottom md-shadow">
+                                <ul class="bg-faint round-bottom md:shadow">
                                     <li><a href="#">Sub Link 1</a></li>
                                     <li><a href="#">Sub Link 2</a></li>
                                     <li>
@@ -4584,11 +4597,11 @@ $borders: (
                             <svg class="icon mr-1" viewBox="0 0 24 24"><path fill="currentColor" d="M19.07,4.93C17.22,3 14.66,1.96 12,2C9.34,1.96 6.79,3 4.94,4.93C3,6.78 1.96,9.34 2,12C1.96,14.66 3,17.21 4.93,19.06C6.78,21 9.34,22.04 12,22C14.66,22.04 17.21,21 19.06,19.07C21,17.22 22.04,14.66 22,12C22.04,9.34 21,6.78 19.07,4.93M17,12V18H13.5V13H10.5V18H7V12H5L12,5L19.5,12H17Z" /></svg>
                             Logo
                         </a>
-                        <button class="link icon md-none" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
+                        <button class="link icon md:none" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
                             <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                             <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                         </button>
-                        <ul class="list md-row md-columns-auto md-open bg-inherit absolute md-relative right outer-bottom md-top md-hoverable">
+                        <ul class="list md:row md:columns-auto md:open bg-inherit absolute md:relative right outer-bottom md:top md:hoverable">
                             <li>
                                 <a href="#">Link 1</a>
                             </li>
@@ -4597,7 +4610,7 @@ $borders: (
                                 <button class="link icon circle shy" data-toggle="next">
                                     <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                                 </button>
-                                <ul class="bg-inherit round-bottom md-shadow">
+                                <ul class="bg-inherit round-bottom md:shadow">
                                     <li>
                                         <a href="#">Sub Link 1</a>
                                     </li>
@@ -4793,7 +4806,7 @@ $borders: (
                     </div>
 
                     <div class="slider mt-2" data-snap>
-                        <div class="slider-slides row columns-3 md-columns-5 md-g-2">
+                        <div class="slider-slides row columns-3 md:columns-5 md:g-2">
                             <a href="#with-thumbnail-slide1"><img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
                             <a href="#with-thumbnail-slide2"><img src="/placeholder-2.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
                             <a href="#with-thumbnail-slide3"><img src="/placeholder-3.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
@@ -4820,7 +4833,7 @@ $borders: (
                     <div class="slider px-4" data-play="0" data-stop="action" data-loop>
                         <button class="slider-prev link icon prev circle"></button>
                         <button class="slider-next link icon next circle"></button>
-                        <div class="slider-slides row md-columns-2 md-g-2">
+                        <div class="slider-slides row md:columns-2 md:g-2">
                             <div>
                                 <a href="https://google.com"><h5>Image 1</h5>
                                 <img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
@@ -4893,7 +4906,7 @@ $borders: (
                     <div class="slider mt-2" data-snap>
                         <button class="slider-prev link icon prev circle"></button>
                         <button class="slider-next link icon next circle"></button>
-                        <div class="slider-slides row columns-3 md-columns-5 md-g-2">
+                        <div class="slider-slides row columns-3 md:columns-5 md:g-2">
                             <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(1)').offsetLeft, 0);"><img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
                             <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(2)').offsetLeft, 0);"><img src="/placeholder-2.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
                             <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(3)').offsetLeft, 0);"><img src="/placeholder-3.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>

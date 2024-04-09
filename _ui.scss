@@ -1,6 +1,7 @@
 /*!
 * Spry UI
 */
+@use "variables";
 @use "extends";
 
 .ui {
@@ -77,4 +78,11 @@ ul ul {
 .flip-pressed[aria-pressed=true],
 [aria-pressed=true] .flip-pressed {
 	scale: -1;
+}
+
+@each $breakpoint,
+$breakpoint_width in variables.$breakpoints {
+	:has(> [class*=c-#{$breakpoint}\:]) {
+		container-type: inline-size;
+	}
 }

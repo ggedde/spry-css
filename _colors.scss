@@ -32,7 +32,8 @@ $color_value in variables.$colors {
 
 	article.#{$color_name} {
 		--card-color  : var(--#{$color_name});
-		--border-color: var(--card-color);
+		--card-color-rgb  : var(--#{$color_name}-rgb);
+		--border-color: rgba(var(--card-color-rgb), var(--border-alpha));
 	}
 }
 
@@ -76,7 +77,14 @@ $color_value in variables.$colors {
 	}
 }
 
-@for $i from 0 through 10 {
+.bg-alpha-0{ 
+	--bg-alpha: 0;
+}
+.border-alpha-0{ 
+	--border-alpha: 0;
+}
+
+@for $i from 1 through 10 {
 	.bg-alpha-#{$i}0{ 
 		--bg-alpha: #{calc($i / 10)};
 	}

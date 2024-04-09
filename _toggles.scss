@@ -12,10 +12,6 @@
 	top      : 0.25em;
 }
 
-:is(nav, .list) li.has-icon > :not(.icon):first-child {
-	padding-right: 2.5em;
-}
-
 :is(nav, .list) li:has(> .icon:nth-child(2))> :not(.icon):first-child {
 	padding-right: 2.5em;
 }
@@ -57,32 +53,38 @@
 	@include mixins.ui-open;
 }
 
+@mixin toggle-query-styles($prefix) {
+	#{$prefix}closed,
+	#{$prefix}hoverable>ul>li ul,
+	#{$prefix}hoverable>li ul {
+		@include mixins.ui-closed;
+	}
+
+	#{$prefix}open,
+	#{$prefix}hoverable>ul>li:hover>ul,
+	#{$prefix}hoverable>li:hover>ul {
+		@include mixins.ui-open;
+	}
+
+	#{$prefix}hoverable li:has(:focus-visible)>ul {
+		@include mixins.ui-open;
+	}
+
+	#{$prefix}hoverable {
+
+		>ul>li> :is([data-toggle=hover], [data-toggle=next]),
+		>li> :is([data-toggle=hover], [data-toggle=next]) {
+			pointer-events: none
+		}
+	}
+}
+
 @each $breakpoint,
 $breakpoint_width in variables.$breakpoints {
-	@media screen and (min-width: $breakpoint_width) {
-
-		.#{$breakpoint}-closed,
-		.#{$breakpoint}-hoverable>ul>li ul,
-		.#{$breakpoint}-hoverable>li ul {
-			@include mixins.ui-closed;
-		}
-
-		.#{$breakpoint}-open,
-		.#{$breakpoint}-hoverable>ul>li:hover>ul,
-		.#{$breakpoint}-hoverable>li:hover>ul {
-			@include mixins.ui-open;
-		}
-
-		.#{$breakpoint}-hoverable li:has(:focus-visible)>ul {
-			@include mixins.ui-open;
-		}
-
-		.#{$breakpoint}-hoverable {
-
-			>ul>li> :is([data-toggle=hover], [data-toggle=next]),
-			>li> :is([data-toggle=hover], [data-toggle=next]) {
-				pointer-events: none
-			}
-		}
+	@media screen and (min-width: #{$breakpoint_width}) {
+		@include toggle-query-styles('.#{$breakpoint}\\:');
+	}
+	@container (min-width: #{$breakpoint_width}) {
+		@include toggle-query-styles('.c-#{$breakpoint}\\:');
 	}
 }

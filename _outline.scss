@@ -5,7 +5,8 @@
 
 .outline {
 	@extend %ui-border;
-	border-color: var(--border-color);
+	// border-color: var(--border-color);
+	border-color: rgba(var(--border-color-rgb), var(--border-alpha));
 
 	>ul,
 	>ul ul,

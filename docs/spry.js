@@ -602,46 +602,6 @@ class Spry {
         })
     }
 
-    static loadHas = function() {
-        document.querySelectorAll('li > .icon').forEach(icon => {
-           icon.parentElement.classList.add('has-icon');
-        });
-        document.querySelectorAll('article > header').forEach(elem => {
-            elem.parentElement.classList.add('has-header');
-        });
-        document.querySelectorAll('article > footer').forEach(elem => {
-            elem.parentElement.classList.add('has-footer');
-        });
-        document.querySelectorAll('article > img').forEach(elem => {
-            elem.parentElement.classList.add('has-img');
-        });
-        document.querySelectorAll('.tooltip').forEach(elem => {
-            elem.parentElement.classList.add('has-tooltip');
-        });
-        document.querySelectorAll('[data-toggle] svg:nth-of-type(2)').forEach(elem => {
-            elem.closest('[data-toggle]').classList.add('has-2svg');
-        });
-        document.querySelectorAll('label > sup').forEach(elem => {
-            elem.closest('label').classList.add('has-sup');
-        });
-        document.querySelectorAll('label > sub').forEach(elem => {
-            elem.closest('label').classList.add('has-sub');
-        });
-        document.querySelectorAll('input, textarea, select').forEach(elem => {
-            var label = elem.closest('label');
-            if (label) {
-                elem.addEventListener('blur', (e) => {
-                    console.log(123);
-                    if (e.target.value) {
-                        label.classList.add('has-blank');
-                    } else {
-                        label.classList.remove('has-blank');
-                    }
-                })
-            }
-        });
-    }
-
     static getScrollSpyAnchors = function() {
         var scrollSpysLinks = document.querySelectorAll('.scrollspy [href^="#"]');
         var anchors = [];
@@ -711,12 +671,10 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
     Spry.loadToggles();
     Spry.loadSliders();
     Spry.loadLists();
-    Spry.loadHas();
 
 } else {
     document.addEventListener('DOMContentLoaded', Spry.loadScrollSpy);
     document.addEventListener('DOMContentLoaded', Spry.loadToggles);
     document.addEventListener('DOMContentLoaded', Spry.loadSliders);
     document.addEventListener('DOMContentLoaded', Spry.loadLists);
-    document.addEventListener('DOMContentLoaded', Spry.loadHas);
 }
