@@ -16,7 +16,7 @@ table {
 
 thead th {
 	font-weight  : 500;
-	border-bottom: 2px solid var(--border-color);
+	border-bottom: 2px solid rgba(var(--border-color-rgb), var(--border-alpha));
 }
 
 tbody tr {
@@ -25,7 +25,7 @@ tbody tr {
 	}
 
 	td {
-		border-top    : 1px solid var(--border-color);
+		border-top: 1px solid rgba(var(--border-color-rgb), var(--border-alpha));
 		vertical-align: text-top;
 	}
 

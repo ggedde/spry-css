@@ -43,11 +43,11 @@ article {
 		background-color: white;
 
 		>header {
-			border-bottom: 1px solid var(--border-color);
+			border-bottom: inherit;
 		}
 
 		>footer {
-			border-top: 1px solid var(--border-color);
+			border-top: inherit;
 		}
 	}
 

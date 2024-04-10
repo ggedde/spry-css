@@ -6,14 +6,15 @@
 .badge {
 	@extend %ui;
 	@extend %ui-bg;
-	@extend %ui-color;
 	@extend %ui-border;
+	--border-alpha: .8;
 	--border-color: var(--color);
+	--border-color-rgb: var(--color-rgb);
 	width      : auto;
 	font-weight: 500;
 	line-height: 1;
 
-	&:where(.outline, .hazy) {
-		@extend %ui-text-color;
+	&:not(.outline, .hazy) {
+		@extend %ui-color;
 	}
 }

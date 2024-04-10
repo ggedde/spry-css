@@ -25,13 +25,16 @@
     "build-js": "node_modules/.bin/terser ./docs/spry.js --config-file .terser -o ./dist/spry.min.js; cp ./dist/spry.min.js ./docs/spry.min.js; gzip -c4 ./dist/spry.min.js | wc -c;"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.1",
+    "autoprefixer": "^10.4.19",
+    "sass": "^1.74.1"
+  },
+  "devDependencies": {
     "chokidar-cli": "^3.0.0",
-    "cssnano": "^5.1.14",
-    "postcss": "^8.4.5",
-    "postcss-cli": "^9.1.0",
+    "cssnano": "^6.1.2",
+    "lightningcss-cli": "^1.24.1",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
     "postcss-combine-media-query": "^1.0.1",
-    "sass": "^1.56.1",
-    "terser": "^5.24.0"
+    "terser": "^5.30.3"
   }
 }

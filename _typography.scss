@@ -31,11 +31,8 @@
     opacity   : .7
 }
 
-blockquote, q {
-    font-size: 160%;
-    margin-block: 2em;
-    font-style: italic;
-    color: var(--ui-text-color);
+blockquote {
+    @extend .q;
 }
 
 cite, dfn {

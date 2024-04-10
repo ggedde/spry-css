@@ -5,20 +5,21 @@
 
 :is(input,textarea,select){
 	@extend %ui;
-	@extend %ui-border;
 	@extend %ui-border-radius;
-	border-color: var(--input-border-color);
+	--border-alpha: .7;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(var(--border-color-rgb), var(--border-alpha));
 	font-family: inherit;
 	font-weight: inherit;
-	color: var(--ui-text-color);
 	&:hover {
 		outline-width: 0;
 	}
 	&:focus {
-		box-shadow: inset 0 0 0 1px var(--color);
+		box-shadow: inset 0 0 0 1px rgba(var(--color-rgb), calc(var(--border-alpha) + .4));
 	}
 	&:is(:hover,:focus) {
-		border-color: var(--color);
+		border-color: rgba(var(--color-rgb), calc(var(--border-alpha) + .2));
 	}
 }
 
@@ -144,12 +145,12 @@ textarea {
 input::file-selector-button {
 	appearance: none;
 	border: 0;
-	background-color: rgba(var(--border-color-rgb), .4);
+	background-color: rgba(var(--border-color-rgb), .2);
 	color: inherit;
 	height: 2.3em;
 	padding-inline: 1em;
 	margin: -.4em 1em -.4em -.6em;
-	border-right: 1px solid var(--input-border-color);
+	border-right: 1px solid rgba(var(--border-color-rgb), var(--border-alpha));
 	font: inherit;
 }
 
@@ -158,8 +159,9 @@ label {
 	display : block;
 
 	.ui {
-		border-color: var(--input-border-color);
-		background-color: rgba(var(--border-color-rgb), .4);
+		--border-alpha: .7;
+		border-color: rgba(var(--border-color-rgb), var(--border-alpha));
+		background-color: rgba(var(--border-color-rgb), .2);
 		color: inherit;
 	}
 

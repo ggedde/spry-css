@@ -40,7 +40,9 @@
 }
 
 %ui-border {
-	border-color: var(--color);
+	// --border-alpha: 1;
+	// --border-color-rgb: var(--color-rgb);
+	border-color: rgba(var(--color-rgb), var(--border-alpha));
 	border-width: 1px;
 	border-style: solid;
 }
@@ -50,7 +52,7 @@
 }
 
 %ui-bg {
-	background-color: rgba(var(--color-rgb), 1);
+	background-color: rgba(var(--color-rgb), var(--bg-alpha, 1));
 	border-color    : var(--color);
 }
 
@@ -65,10 +67,9 @@
 
 %ui-color {
 	color: var(--text-color);
-}
-
-%ui-text-color {
-	color: var(--ui-text-color);
+	&[aria-busy=true] {
+		color: transparent;
+	}
 }
 
 %ui-margin-above {

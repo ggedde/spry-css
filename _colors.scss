@@ -10,7 +10,8 @@ $color_names: ();
 }
 
 :is(button,.button,.alert,.badge,[type=submit],[type=reset]):is(.link, .outline, .hazy, .plain):where(#{$color_names}),
-:is(#{$color_names}) :is(button,.button,.alert,.badge,[type=submit],[type=reset]):is(.link, .outline, .hazy, .plain) {
+:is(#{$color_names}) :is(button,.button,.alert,.badge,[type=submit],[type=reset]):is(.link, .outline, .hazy, .plain),
+:is(.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a {
 	--text-color: var(--color);
 }
 
@@ -20,8 +21,7 @@ $color_names: ();
 }
 
 :is(button,.button,.alert,.badge,[type=submit],[type=reset]):where(#{$color_names}) :is(h1,h2,h3,h4,h5,h6),
-article:where(#{$color_names}) > :is(header, footer) :is(h1,h2,h3,h4,h5,h6),
-:where(#{$color_names}):not(article) :is(.link, .outline, .hazy, .plain) {
+article:where(#{$color_names}) > :is(header, footer) :is(h1,h2,h3,h4,h5,h6) {
 	color: var(--text-color);
 }
 
@@ -33,7 +33,7 @@ $color_value in variables.$colors {
 	article.#{$color_name} {
 		--card-color  : var(--#{$color_name});
 		--card-color-rgb  : var(--#{$color_name}-rgb);
-		--border-color: rgba(var(--card-color-rgb), var(--border-alpha));
+		--border-alpha: 1;
 	}
 }
 
@@ -71,8 +71,9 @@ $color_value in variables.$colors {
 	}
 
 	.border-#{$color_name} {
+		--border-alpha: 1;
+		--border-color-rgb: var(--#{$color_name}-rgb);
 		--border-color: rgba(var(--#{$color_name}-rgb), var(--border-alpha));
-		--input-border-color: var(--border-color);
 		border-color  : var(--border-color);
 	}
 }
@@ -80,15 +81,23 @@ $color_value in variables.$colors {
 .bg-alpha-0{ 
 	--bg-alpha: 0;
 }
-.border-alpha-0{ 
+[class].border-alpha-0{ 
 	--border-alpha: 0;
+	:is(input,textarea,select),
+	label .ui {
+		--border-alpha: 0;
+	}
 }
 
 @for $i from 1 through 10 {
 	.bg-alpha-#{$i}0{ 
 		--bg-alpha: #{calc($i / 10)};
 	}
-	.border-alpha-#{$i}0{ 
+	[class].border-alpha-#{$i}0 { 
 		--border-alpha: #{calc($i / 10)};
+		:is(input,textarea,select),
+		label .ui {
+			--border-alpha: #{calc($i / 10)};
+		}
 	}
 }

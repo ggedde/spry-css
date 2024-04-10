@@ -8,14 +8,10 @@
 [data-theme=light] {
 
 	--bg-alpha: 1;
-    --border-alpha: 1;
-	--border-color-rgb: 210,210,210;
 	--bg-color-rgb: 255,255,255;
-	--border-color: rgb(var(--border-color-rgb), var(--border-alpha));
-	--input-border-color: rgba(140,140,140,.7);
+	--border-color: rgb(var(--border-color-rgb), var(--border-alpha, 1));
 	--ui-light-text-color: #f2f2f2;
 	--ui-dark-text-color: #444;
-	--ui-text-color: var(--ui-dark-text-color);
 
 	.bg-theme {
 		background-color: rgb(var(--bg-color-rgb), var(--bg-alpha));
@@ -34,6 +30,7 @@
 			@if index(variables.$colors, ($color_name $color_value)) == 1 {
 				--color      : #{map-get($color_value, 'light')};
 				--color-rgb  : #{red(map-get($color_value, 'light')), green(map-get($color_value, 'light')), blue(map-get($color_value, 'light'))};
+				--border-color-rgb: #{red(map-get($color_value, 'light')), green(map-get($color_value, 'light')), blue(map-get($color_value, 'light'))};
 				
 				@if (lightness(map-get($color_value, 'light')) > 70) {
 					--text-color: var(--ui-dark-text-color);

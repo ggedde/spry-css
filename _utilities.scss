@@ -108,7 +108,6 @@ General Utility Classes
 	z-index: 5
 }
 
-.truncate,
 .truncate-1 {
 	overflow-wrap: break-word;
 	word-break   : break-all;
@@ -132,13 +131,10 @@ General Utility Classes
 	}
 }
 
-// .truncate {
-// 	max-width    : 100%;
-// 	overflow     : hidden;
-// 	text-overflow: ellipsis;
-// 	white-space  : nowrap;
-// 	display      : inline-block
-// }
+.truncate {
+	white-space  : nowrap;
+	display      : inline-block
+}
 
 .rotate-90 {
 	rotate: 90deg
@@ -154,6 +150,24 @@ General Utility Classes
 
 .bg-inherit {
 	background-color: inherit
+}
+
+.bg-blur-sm {
+	backdrop-filter: blur(2px)
+}
+
+.bg-blur,
+.bg-blur-md {
+	backdrop-filter: blur(8px)
+}
+
+.bg-blur-lg {
+	backdrop-filter: blur(16px)
+}
+
+.no-bg {
+	background: transparent;
+	backdrop-filter : none
 }
 
 .color-inherit {
@@ -178,19 +192,6 @@ General Utility Classes
 
 .hover-scale:hover {
 	scale: 1.05
-}
-
-.bg-blur-sm {
-	backdrop-filter: blur(2px)
-}
-
-.bg-blur,
-.bg-blur-md {
-	backdrop-filter: blur(8px)
-}
-
-.bg-blur-lg {
-	backdrop-filter: blur(16px)
 }
 
 /****************************************************************************
@@ -272,83 +273,68 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		display: flex
 	}
 
-	#{$prefix}flex-middle {
-		display    : flex;
-		align-items: center
-	}
-
-	#{$prefix}flex-center {
-		display        : flex;
-		align-items    : center;
-		justify-content: center
-	}
-
 	#{$prefix}flex-wrap {
 		flex-wrap: wrap
 	}
 
-	#{$prefix}flex-column {
-		flex-direction: column
+	#{$prefix}items-center {
+		place-items: center
 	}
 
-	#{$prefix}flex-row {
-		flex-direction: row
+	#{$prefix}items-end {
+		place-items: end
 	}
 
-	#{$prefix}align-items-start {
-		align-items: start
+	#{$prefix}items-start {
+		place-items: start
+	}
+	
+	#{$prefix}items-stretch {
+		place-items: stretch
 	}
 
-	#{$prefix}align-items-end {
-		align-items: end
+	#{$prefix}content-center {
+		place-content: center
 	}
 
-	#{$prefix}align-items-center {
-		align-items: center
+	#{$prefix}content-end {
+		place-content: end
 	}
 
-	#{$prefix}align-items-stretch {
-		align-items: stretch
+	#{$prefix}content-start {
+		place-content: start
+	}
+	
+	#{$prefix}content-stretch {
+		place-content: stretch
 	}
 
-	#{$prefix}align-self-start {
-		align-self: start
+	#{$prefix}content-between {
+		place-content: space-between
 	}
 
-	#{$prefix}align-self-end {
-		align-self: end
+	#{$prefix}content-around {
+		place-content: space-around
 	}
 
-	#{$prefix}align-self-center {
-		align-self: center
+	#{$prefix}content-evenly {
+		place-content: space-evenly
 	}
 
-	#{$prefix}align-self-stretch {
-		align-self: stretch
+	#{$prefix}self-center {
+		place-self: center
 	}
 
-	#{$prefix}justify-content-start {
-		justify-content: start
+	#{$prefix}self-end {
+		place-self: end
 	}
 
-	#{$prefix}justify-content-end {
-		justify-content: end
+	#{$prefix}self-start {
+		place-self: start
 	}
-
-	#{$prefix}justify-content-right {
-		justify-content: right
-	}
-
-	#{$prefix}justify-content-center {
-		justify-content: center
-	}
-
-	#{$prefix}justify-content-between {
-		justify-content: space-between
-	}
-
-	#{$prefix}justify-content-around {
-		justify-content: space-around
+	
+	#{$prefix}self-stretch {
+		place-self: stretch
 	}
 
 	#{$prefix}relative {
@@ -381,21 +367,25 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		inset: 0
 	}
 
-	#{$prefix}center {
+	#{$prefix}translate-center {
 		inset    : 50% auto auto 50%;
 		translate: -50%
 	}
 
-	#{$prefix}center-y {
+	#{$prefix}translate-y-center {
 		top      : 50%;
 		bottom   : auto;
 		translate: 0 -50%
 	}
 
-	#{$prefix}center-x {
+	#{$prefix}translate-x-center {
 		left     : 50%;
 		right    : auto;
 		translate: -50% 0
+	}
+
+	#{$prefix}no-translate {
+		translate: 0
 	}
 
 	#{$prefix}top {
@@ -418,27 +408,27 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		right: auto
 	}
 
-	#{$prefix}outer-top {
+	#{$prefix}out-top {
 		bottom: 100%;
 		top   : auto
 	}
 
-	#{$prefix}outer-right {
+	#{$prefix}out-right {
 		left : 100%;
 		right: auto
 	}
 
-	#{$prefix}outer-bottom {
+	#{$prefix}out-bottom {
 		top   : 100%;
 		bottom: auto
 	}
 
-	#{$prefix}outer-left {
+	#{$prefix}out-left {
 		right: 100%;
 		left : auto
 	}
 
-	#{$prefix}pointer-none {
+	#{$prefix}no-pointer {
 		pointer-events: none
 	}
 
@@ -464,6 +454,18 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 	#{$prefix}align-text-bottom {
 		vertical-align: text-bottom
+	}
+
+	#{$prefix}align-super {
+		vertical-align: super
+	}
+
+	#{$prefix}align-sub {
+		vertical-align: sub
+	}
+
+	#{$prefix}no-align {
+		vertical-align: unset
 	}
 
 	#{$prefix}overflow-visible {

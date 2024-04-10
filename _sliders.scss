@@ -63,6 +63,7 @@
 	&[data-position="start"] .slider-prev,
 	&[data-position="end"] .slider-next {
 		opacity: 0;
+		pointer-events: none;
 	}
 
 	.slider-pagination {

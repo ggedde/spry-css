@@ -5,7 +5,8 @@
 
 .outline {
 	@extend %ui-border;
-	// border-color: var(--border-color);
+	--border-alpha: .4;
+	--border-color-rgb: var(--color-rgb);
 	border-color: rgba(var(--border-color-rgb), var(--border-alpha));
 
 	>ul,
@@ -60,10 +61,6 @@
 	&.tabs .list {
 		--gapx: 0em;
 		--gapy: 0em;
-
-		// :is(a, button, .button, [type=submit]):first-child:not([data-toggle=next]) {
-		// 	border-radius: 0;
-		// }
 
 		li li {
 			width: calc(100% + 1px);

@@ -4,14 +4,18 @@
 @use "variables";
 @use "extends";
 
+$color_names: ();
+@each $color_name, $color_value in variables.$colors {
+    $color_names: append($color_names, '.#{$color_name}', 'comma');
+}
+
 .ui {
 	@extend %ui;
 	@extend %ui-bg;
-	@extend %ui-color;
 	@extend %ui-border;
 	@extend %ui-border-radius;
-	&:where(.link, .outline, .hazy, .plain) {
-		@extend %ui-text-color;
+	&:where(#{$color_names}) {
+		@extend %ui-color;
 	}
 }
 
@@ -52,7 +56,7 @@ hr {
 	height       : 0;
 	margin       : var(--gapy) var(--gapx);
 	border       : 0;
-	border-bottom: 1px solid var(--border-color);
+	border-bottom: 1px solid rgba(var(--border-color-rgb), var(--border-alpha));
 }
 
 li,

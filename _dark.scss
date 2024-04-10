@@ -14,10 +14,8 @@
 
 :root[data-theme=dark],
 [data-theme=dark] {
-	--border-color-rgb: 70, 70, 70;
 	--bg-color-rgb    : 20, 20, 20;
 	--border-color    : rgb(var(--border-color-rgb));
-	--ui-text-color: var(--ui-light-text-color);
 
 	.bg-theme {
 		background-color: rgb(var(--bg-color-rgb), var(--bg-alpha));
@@ -36,6 +34,7 @@
 
 				--color     : #{map-get($color_value, 'dark')};
 				--color-rgb : #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
+				--border-color-rgb: #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
 
 				// For the default UI Color, check to see if the text should be light or dark.
 				@if (lightness(map-get($color_value, 'dark')) > 70) {
