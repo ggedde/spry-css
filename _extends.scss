@@ -26,17 +26,9 @@
 	width          : 100%;
 }
 
-%ui-closed {
-	@include mixins.ui-closed;
-}
-
 %ui-roomy {
 	min-height: var(--roomy);
 	min-width : var(--roomy);
-}
-
-%ui-open {
-	@include mixins.ui-open;
 }
 
 %ui-border {
@@ -82,4 +74,12 @@
 
 %ui-margin-above-none {
 	margin-top: 0;
+}
+
+%toggle-closed {
+	@include mixins.toggle-closed;
+}
+
+%toggle-open {
+	@include mixins.toggle-open;
 }

@@ -65,6 +65,9 @@ $color_value in variables.$colors {
 	}
 
 	.bg-#{$color_name},
+	.bg-#{$color_name} > ul,
+	.bg-#{$color_name} > li > ul,
+	.bg-#{$color_name} > ul ul,
 	:is(.tooltip, article).bg-#{$color_name} {
 		--bg-alpha: 1;
 		background-color: rgba(var(--#{$color_name}-rgb), var(--bg-alpha));

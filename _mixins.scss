@@ -7,12 +7,14 @@
 /// Min Width Media Query
 /// @param {String | Unit} $min - Minimum Value. String must be included in $breakpoints.
 /// @output - Contents
-@mixin min($min){
-	@if type-of($min) == string {
+@mixin min($min) {
+	@if type-of($min)==string {
 		@media only screen and (min-width: map-get(variables.$breakpoints, $min)) {
 			@content;
 		}
-	} @else {
+	}
+
+	@else {
 		@media only screen and (min-width: $min) {
 			@content;
 		}
@@ -22,12 +24,14 @@
 /// Max Width Media Query
 /// @param {String | Unit} $max - Max Value. String must be included in $breakpoints.
 /// @output - Contents
-@mixin max($max){
-	@if type-of($max) == string {
+@mixin max($max) {
+	@if type-of($max)==string {
 		@media only screen and (max-width: map-get(variables.$breakpoints, $max)) {
 			@content;
 		}
-	} @else {
+	}
+
+	@else {
 		@media only screen and (max-width: $max) {
 			@content;
 		}
@@ -38,23 +42,29 @@
 /// @param {String | Unit} $min - Min Value. String must be included in $breakpoints.
 /// @param {String | Unit} $max - Max Value. String must be included in $breakpoints.
 /// @output - Contents
-@mixin in($min, $max){
-	@if type-of($min) == string {
-		@if type-of($max) == string {
+@mixin in($min, $max) {
+	@if type-of($min)==string {
+		@if type-of($max)==string {
 			@media only screen and (min-width: map-get(variables.$breakpoints, $min)) and (max-width: map-get(variables.$breakpoints, $max)) {
 				@content;
 			}
-		} @else {
+		}
+
+		@else {
 			@media only screen and (min-width: map-get(variables.$breakpoints, $min)) and (max-width: $max) {
 				@content;
 			}
 		}
-	} @else {
-		@if type-of($max) == string {
+	}
+
+	@else {
+		@if type-of($max)==string {
 			@media only screen and (min-width: $min) and (max-width: map-get(variables.$breakpoints, $max)) {
 				@content;
 			}
-		} @else {
+		}
+
+		@else {
 			@media only screen and (min-width: $min) and (max-width: $max) {
 				@content;
 			}
@@ -62,47 +72,80 @@
 	}
 }
 
-/// Default Closed UI State
+/// Default Closed State
 /// @output - Contents
-@mixin ui-closed {
+@mixin toggle-closed {
 	max-height      : 0;
 	min-height      : 0;
 	opacity         : 0;
 	pointer-events  : none;
-	pointer-events  : none;
-	transform       : scaleY(.8) translateY(-4px) translateZ(0);
+	transform       : scale(1, .9) translateY(-4px) translateZ(0);
 	transform-origin: top;
-	transition      : transform .1s ease-in-out, opacity .1s ease-in-out, max-height .5s cubic-bezier(0, 1, 0, 1), min-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1); // Out
+	transition      : transform .2s cubic-bezier(0.785, 0.135, 0.150, 0.860), opacity .2s cubic-bezier(0.785, 0.135, 0.150, 0.860), grid-template-rows .5s cubic-bezier(0, 1, 0, 1), min-height .5s cubic-bezier(0, 1, 0, 1), max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1), margin-block .5s cubic-bezier(0, 1, 0, 1); // Out
 	transition-delay: .1s;
 	z-index         : 2;
 
+	&.from-center {
+		transform       : scale(1, 0.4) translate(0, 0) translateZ(0);
+		transform-origin: center;
+	}
+
 	&.from-left {
-		max-height: none;
-		transform : scaleX(.8) translateX(-40px) translateZ(0);
+		max-height      : none;
+		transform       : scale(.9, 1) translate(-40px, 0) translateZ(0);
+		transform-origin: left;
 	}
 
 	&.from-right {
-		max-height: none;
-		transform : scaleX(.8) translateX(40px) translateZ(0);
+		max-height        : none;
+		transform       : scale(.9, 1) translate(40px, 0) translateZ(0);
+		transform-origin: right;
 	}
 
 	&.from-bottom {
-		max-height      : none;
-		transform       : scaleY(.8) translateY(20px) translateZ(0);
+		transform       : scale(1, .9) translate(0, 20px) translateZ(0);
 		transform-origin: bottom;
+	}
+
+	&.expand {
+		display: grid;
+		grid-template-rows: 0fr;
+		max-height        : none;
+		&:not(.collapse) {
+			overflow: hidden;
+		}
+		>:not(.collapse) {
+			min-height: 0;
+		}
+	}
+
+	>* {
+		transition: inherit;
+		transition: translate 5.2s ease-in-out;
 	}
 }
 
-/// Default Opened UI State
+/// Opened State
 /// @output - Contents
-@mixin ui-open {
+@mixin toggle-open {
 	max-height    : 100vh;
 	opacity       : 1;
 	pointer-events: all;
 	transform     : translateZ(0) scale(1, 1);
-	z-index       : 2;
 
 	&:is(.from-left, .from-right, .from-bottom) {
 		transform: none;
+	}
+
+	&.expand {
+		max-height        : none;
+		position          : relative;
+		display           : grid;
+		grid-template-rows: 1fr;
+		transform         : translateZ(0) scale(1, 1);
+
+		>:not(.collapse) {
+			min-height: 0;
+		}
 	}
 }

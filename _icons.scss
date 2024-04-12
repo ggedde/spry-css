@@ -50,3 +50,14 @@ svg.icon {
 	width : 1.25em;
 	height: 1.25em;
 }
+
+:is(nav, .list) li>.icon:nth-child(2) {
+	font-size: 80%;
+	position : absolute;
+	right    : 0.5em;
+	top      : 0.25em;
+}
+
+:is(nav, .list) li:has(> .icon:nth-child(2))> :not(.icon):first-child {
+	padding-right: 2.5em;
+}

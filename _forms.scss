@@ -212,6 +212,15 @@ label {
 	&:has(sub) {
 		margin-bottom: 1rem;
 	}
+
+	&:has(:checked) .label-checked,
+	&:not(:has(:checked)) .label-unchecked {
+		display: inline;
+	}
+	&:has(:checked) .label-unchecked,
+	&:not(:has(:checked)) .label-checked {
+		display: none;
+	}
 }
 
 .show-invalid :not(:focus):user-invalid {

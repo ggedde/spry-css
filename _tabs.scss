@@ -20,7 +20,7 @@
 			transition: none;
 			transform : translateY(3px);
 			max-height: 0;
-			@extend %ui-closed;
+			@extend %toggle-closed;
 			&:not(.open) {
 				padding-block: 0;
 				margin-block: 0;
@@ -30,7 +30,7 @@
 				transition: opacity .2s ease-in-out, transform .3s ease-out;
 				transform : none;
 				max-height: none;
-				@extend %ui-open;
+				@extend %toggle-open;
 			}
 		}
 	}

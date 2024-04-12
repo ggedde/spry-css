@@ -367,18 +367,18 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		inset: 0
 	}
 
-	#{$prefix}translate-center {
+	#{$prefix}center {
 		inset    : 50% auto auto 50%;
 		translate: -50%
 	}
 
-	#{$prefix}translate-y-center {
+	#{$prefix}center-y {
 		top      : 50%;
 		bottom   : auto;
 		translate: 0 -50%
 	}
 
-	#{$prefix}translate-x-center {
+	#{$prefix}center-x {
 		left     : 50%;
 		right    : auto;
 		translate: -50% 0
@@ -468,35 +468,43 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		vertical-align: unset
 	}
 
-	#{$prefix}overflow-visible {
-		overflow: visible
+	#{$prefix}visibility-hidden {
+		visibility: hidden
 	}
 
-	#{$prefix}overflow-hidden {
+	#{$prefix}visibility-visible {
+		visibility: visible
+	}
+
+	#{$prefix}hidden {
 		overflow: hidden
 	}
 
-	#{$prefix}overflow-y-hidden {
+	#{$prefix}hidden-y {
 		overflow-y: hidden
 	}
 
-	#{$prefix}overflow-x-hidden {
+	#{$prefix}hidden-x {
 		overflow-x: hidden
 	}
 
-	#{$prefix}overflow-y-clip {
+	#{$prefix}clip {
+		overflow: clip
+	}
+
+	#{$prefix}clip-y {
 		overflow-y: clip
 	}
 
-	#{$prefix}overflow-x-clip {
+	#{$prefix}clip-x {
 		overflow-x: clip
 	}
 
-	#{$prefix}overflow-scroll {
+	#{$prefix}scroll {
 		overflow: scroll
 	}
 
-	#{$prefix}overflow-auto {
+	#{$prefix}auto {
 		overflow: auto
 	}
 

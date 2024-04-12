@@ -19,6 +19,10 @@
 	}
 }
 
+body:has(.modal.open:not(.no-bg)) {
+	overflow: hidden;
+}
+
 .modal {
 	align-items     : center;
 	background-color: rgba(0, 0, 0, .7);
@@ -31,7 +35,7 @@
 	transition-delay: 0;
 	transform-origin: center;
 	transform       : none;
-	z-index         : 1000;
+	z-index         : 10;
 	display         : flex;
 	max-height      : none;
 

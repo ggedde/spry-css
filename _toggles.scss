@@ -5,69 +5,67 @@
 @use "mixins";
 @use "variables";
 
-:is(nav, .list) li>.icon:nth-child(2) {
-	font-size: 80%;
-	position : absolute;
-	right    : 0.5em;
-	top      : 0.25em;
-}
-
-:is(nav, .list) li:has(> .icon:nth-child(2))> :not(.icon):first-child {
-	padding-right: 2.5em;
+.toggle input:not(.switch) {
+	width: 0;
+	min-width: 0;
+	min-height: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
 
 .hoverable {
-
 	>ul>li> :is([data-toggle=hover], [data-toggle=next]),
 	>li> :is([data-toggle=hover], [data-toggle=next]) {
 		pointer-events: none
 	}
 }
 
+.closed:not(.open) {
+	border: 0;
+	&:not(.from-left, .from-right) {
+		padding-block: 0;
+		margin-block: 0;
+	}
+}
+
 .closed,
+.expand,
 .hoverable>li ul,
 .hoverable>ul>li ul,
 [data-toggle=next]+*,
-[data-toggle=hover]+* {
-	@extend %ui-closed;
-}
-
-:not([data-toggle=hover]:hover)+.closed:not(.open,:hover) {
-	padding-block: 0;
-	margin-block : 0;
-	min-height   : 0;
-	overflow     : hidden;
+[data-toggle=hover]+*,
+.toggle+* {
+	@extend %toggle-closed;
 }
 
 .open,
+.expand.open,
 .hoverable .open,
-[class*=-hoverable] .open,
+.toggle:has(:checked)+*,
+[class*=\:hoverable] .open,
 .hoverable>li:hover>ul,
 .hoverable>ul>li:hover>ul,
+.hoverable li:has(:focus-visible)>ul,
 [data-toggle=hover]:hover+*,
+[data-toggle=next][aria-pressed=""]+.expand,
+[data-toggle=next][aria-pressed=true]+.expand,
 [data-toggle=hover]+:not(.dismissed):hover {
-	@extend %ui-open;
-}
-
-.hoverable li:has(:focus-visible)>ul{
-	@include mixins.ui-open;
+	@extend %toggle-open;
 }
 
 @mixin toggle-query-styles($prefix) {
 	#{$prefix}closed,
 	#{$prefix}hoverable>ul>li ul,
 	#{$prefix}hoverable>li ul {
-		@include mixins.ui-closed;
+		@include mixins.toggle-closed;
 	}
 
 	#{$prefix}open,
+	#{$prefix}hoverable>li:hover>ul,
 	#{$prefix}hoverable>ul>li:hover>ul,
-	#{$prefix}hoverable>li:hover>ul {
-		@include mixins.ui-open;
-	}
-
 	#{$prefix}hoverable li:has(:focus-visible)>ul {
-		@include mixins.ui-open;
+		@include mixins.toggle-open;
 	}
 
 	#{$prefix}hoverable {
