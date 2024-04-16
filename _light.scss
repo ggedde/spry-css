@@ -9,7 +9,8 @@
 
 	--bg-alpha: 1;
 	--bg-color-rgb: 255,255,255;
-	--border-color: rgb(var(--border-color-rgb), var(--border-alpha, 1));
+	--border-color: rgba(var(--border-color-rgb), var(--border-alpha, 1));
+	--select-arrow: var(--border-color);
 	--ui-light-text-color: #f2f2f2;
 	--ui-dark-text-color: #444;
 

@@ -18,6 +18,9 @@
 	menu {
 		position: relative;
 	}
+	> ul {
+		display: contents;
+	}
 }
 
 nav ul,
@@ -52,10 +55,6 @@ menu menu {
 @each $breakpoint,
 $breakpoint_width in variables.$breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
-		nav > ul > li,
-		nav > ol > li  {
-			display: inline-block;
-		} 
 		@include hoverable-styles('.#{$breakpoint}\\:');
 	}
 	@container (min-width: #{$breakpoint_width}) {

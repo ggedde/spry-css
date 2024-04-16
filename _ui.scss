@@ -45,7 +45,7 @@ a {
 .plain,
 .outline,
 :is(.buttons-link, .buttons-plain, .buttons-outline) a {
-	background: transparent;
+	background-color: transparent;
 }
 
 .hazy,
@@ -90,11 +90,4 @@ ul ul {
 [aria-pressed=true] .flip-pressed,
 [aria-pressed=""] .flip-pressed {
 	scale: -1;
-}
-
-@each $breakpoint,
-$breakpoint_width in variables.$breakpoints {
-	:has(> [class*=c-#{$breakpoint}\:]):not(table,thead,tbody,tfoot,tr,td,th) {
-		container-type: inline-size;
-	}
 }

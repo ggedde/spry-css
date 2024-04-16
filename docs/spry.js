@@ -1,7 +1,7 @@
 /**!
  * Spry Toggle JS
  *
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: gedde.dev
  * Github: https://github.com/ggedde/spry-css
  */

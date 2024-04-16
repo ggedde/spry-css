@@ -205,6 +205,15 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		}
 	}
 
+	#{$prefix}container {
+		container-type: inline-size;
+		position: relative;
+	}
+
+	#{$prefix}no-container {
+		container-type: normal;
+	}
+
 	#{$prefix}text-left {
 		text-align: left
 	}

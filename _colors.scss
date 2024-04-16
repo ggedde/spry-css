@@ -13,11 +13,13 @@ $color_names: ();
 :is(#{$color_names}) :is(button,.button,.alert,.badge,[type=submit],[type=reset]):is(.link, .outline, .hazy, .plain),
 :is(.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a {
 	--text-color: var(--color);
+	--select-arrow: var(--text-color);
 }
 
 :is(button,.button,.alert,.badge,[type=submit],[type=reset]):where(.link, .outline, .hazy, .plain):where(#{$color_names}),
 :where(#{$color_names}):not(article) :is(.link, .outline, .hazy, .plain) {
 	color: var(--color);
+	--select-arrow: var(--color);
 }
 
 :is(button,.button,.alert,.badge,[type=submit],[type=reset]):where(#{$color_names}) :is(h1,h2,h3,h4,h5,h6),

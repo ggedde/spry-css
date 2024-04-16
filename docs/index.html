@@ -11,9 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="spry.min.css?v=3.0.0-rc.1">
-    <script defer src="spry.js?v=3.0.0-rc.1"></script>
-    <link rel="stylesheet" href="prism.min.css?v=3.0.0-rc.1">
+    <link rel="stylesheet" href="spry.min.css?v=3.0.0-rc.2">
+    <script defer src="spry.js?v=3.0.0-rc.2"></script>
+    <link rel="stylesheet" href="prism.min.css?v=3.0.0-rc.2">
 </head>
 
 <body id="about">
@@ -172,7 +172,7 @@
                 <p class="mb-4">SpryCss uses :has() property and native css nesting which is supported by all major browsers since April 2024</p>
 
                 <h4>Using the CDN:</h4>
-                <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0-rc.1/dist/spry.min.css"&gt;</code></pre>
+                <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0-rc.2/dist/spry.min.css"&gt;</code></pre>
     
                 <h4 class="mt-4">Using NPM and SCSS:</h4>
                 <pre><code class="language-bash">npm install @ggedde/spry-css</code></pre>
@@ -242,7 +242,7 @@
                 SpryCSS also comes with basic <a href="#sliders">Sliders</a> that have limited functionality, but you can add SpryJS for more functionality.
             </p>
             <p class="note">SpryJS</p>
-            <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0-rc.1/dist/spry.min.js"&gt;&lt;/script&gt;</code></pre>
+            <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0-rc.2/dist/spry.min.js"&gt;&lt;/script&gt;</code></pre>
 
             <h5 class="mt-3">The SpryJS file will run the following functions on document page load.</h5>
 
@@ -886,14 +886,14 @@ $borders: (
 
                 <h3 class="mt-3">Container Queries</h3>
                 <p>To use conatiner queries use the prefix <code class="color-primary">c-{breakpoint}:</code> with allowed component classes. See below for which components classes use container queries.</p>
-                <p>Container queries require a wrapping element which will get <code class="color-primary">container-type: inline-size;</code> added to it.</p>
-                <pre class="mt-1"><code class="language-html">&lt;div&gt;
+                <p>Container queries require a wrapping element that has <code class="color-primary">container-type: inline-size;</code>. You can use the class <code class="color-primary">container</code> to add this to a parent element.</p>
+                <pre class="mt-1"><code class="language-html">&lt;div class="container"&gt;
     &lt;div class="p-4 c-md:p-2"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
                 
                 <div class="alert secondary outline flex items-start">
                     <svg class="icon mr-2 mt-1" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z"></path></svg>
-                    <p>Containers with <code class="color-primary">container-type: inline-size;</code> will break the position of any child elements. This will break modals and other elements if placed inside.</p>
+                    <p>Containers with <code class="color-primary">container-type: inline-size;</code> will break the position of any child elements. This will break modals and other elements if placed inside. If this is not desired then you will need to place those elements outside the container element.</p>
                 </div>
 
                 <table class="mb-2 mt-3 border-faint">
@@ -982,31 +982,31 @@ $borders: (
                     Grid
                 </h2>
 
-                <table class="mb-2 border-faint">
+                <table class="mb-2 border-faint c-responsive">
                     <thead>
                         <tr>
-                            <th class="md:w-300"><h4>Container Classes</h4></th>
+                            <th colspan="2"><h4>Container Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md:pl-2"><code class="color-primary">grid</code></td>
+                            <td><code class="color-primary">grid</code></td>
                             <td>CSS Grid of columns auto width.<br>Uses variable <a href="#gaps">Gaps</a> for spacing</td>
                         </tr>
                         <tr>
-                            <td class="md:pl-2"><code class="color-primary">grid-{n}00</code></td>
+                            <td><code class="color-primary">grid-{n}00</code></td>
                             <td>CSS Grid of columns using minmax() for column widths in px's.<br><code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code></td>
                         </tr>
                         <tr>
-                            <td class="md:pl-2"><code class="color-primary">row</code></td>
+                            <td><code class="color-primary">row</code></td>
                             <td>CSS Flexbox Row of columns auto width.<br>Uses variable <a href="#gaps">Gaps</a> for spacing</td>
                         </tr>
                         <tr>
-                            <td class="md:pl-2"><code class="color-primary">column</code></td>
+                            <td><code class="color-primary">column</code></td>
                             <td>CSS Flexbox Column of rows auto width.<br>Uses variable <a href="#gaps">Gaps</a> for spacing</td>
                         </tr>
                         <tr>
-                            <td class="md:pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}:</span>columns-{n}</code></td>
+                            <td><code class="color-primary"><span class="color-grey">{breakpoint}:</span>columns-{n}</code></td>
                             <td>
                                 <p>
                                     Specify the number of columns.<br>
@@ -1016,7 +1016,7 @@ $borders: (
                             </td>
                         </tr>
                         <tr>
-                            <td class="md:pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}:</span>g-{n}</code></td>
+                            <td><code class="color-primary"><span class="color-grey">{breakpoint}:</span>g-{n}</code></td>
                             <td>Gap for columns within <code class="color-primary">grid</code> or <code class="color-primary">row</code>
                                 <p>See <a href="#spacing">Spacing</a> for available <code class="color-primary">{n}</code> values.</p>
                             </td>
@@ -1068,7 +1068,7 @@ $borders: (
                 </div>
     
                 <div class="show-code" data-title="Specify number of columns">
-                    <div class="grid columns-2 md:columns-4">
+                    <div class="grid columns-2 c-md:columns-4">
                         <div class="bg-faint round p-1">
                             col
                         </div>
@@ -1091,20 +1091,20 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Spanning Columns">
-                    <div class="grid columns-2 md:columns-3">
+                    <div class="grid columns-2 c-md:columns-3">
                         <div class="bg-faint round p-1">
                             col
                         </div>
                         <div class="bg-faint round p-1">
                             col
                         </div>
-                        <div class="bg-faint round p-1 span-2 md:span-1">
+                        <div class="bg-faint round p-1 span-2 c-md:span-1">
                             col
                         </div>
-                        <div class="bg-faint round p-1 span-2 md:span-3">
+                        <div class="bg-faint round p-1 span-2 c-md:span-3">
                             col
                         </div>
-                        <div class="bg-faint round p-1 span-2 md:span-1">
+                        <div class="bg-faint round p-1 span-2 c-md:span-1">
                             col
                         </div>
                         <div class="bg-faint round p-1">
@@ -1117,7 +1117,7 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Nested Rows with different Gap Sizes">
-                    <div class="grid columns-2 md:columns-4">
+                    <div class="grid columns-2 c-md:columns-4">
                         <div class="bg-faint round p-1">
                             col
                         </div>
@@ -1133,7 +1133,7 @@ $borders: (
                         <div class="bg-faint round p-1 span-2">
                             col
                         </div>
-                        <div class="span-2 grid g-1 columns-2 md:columns-4">
+                        <div class="span-2 grid g-1 columns-2 c-md:columns-4">
                             <div class="bg-faint round p-1">
                                 col
                             </div>
@@ -1160,7 +1160,7 @@ $borders: (
                 </div>
     
                 <div class="show-code" data-title="Equal Columns Single Row above mobile">
-                    <div class="row columns-1 md:columns-fixed">
+                    <div class="row columns-1 c-md:columns-fixed">
                         <div class="bg-faint round p-1">
                             fixed
                         </div>
@@ -1177,7 +1177,7 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Specify number of columns centered">
-                    <div class="row columns-2 md:columns-3 content-center">
+                    <div class="row columns-2 c-md:columns-3 content-center">
                         <div class="bg-faint round p-1">
                             col
                         </div>
@@ -1201,10 +1201,10 @@ $borders: (
                         <div class="bg-faint round p-1">
                             fixed
                         </div>
-                        <div class="md:span-auto bg-faint round p-1">
+                        <div class="c-md:span-auto bg-faint round p-1">
                             Auto Fit content
                         </div>
-                        <div class="md:span-fill bg-faint round p-1">
+                        <div class="c-md:span-fill bg-faint round p-1">
                             Auto Fill content
                         </div>
                         <div class="bg-faint round p-1">
@@ -1214,9 +1214,9 @@ $borders: (
                 </div>
     
                 <div class="show-code" data-title="Set Sidebar width with Auto Content Column">
-                    <div class="row columns-1 md:columns-fill">
-                        <div class="bg-faint round p-1 md:w-200">
-                            md:w-200
+                    <div class="row columns-1 c-md:columns-fill">
+                        <div class="bg-faint round p-1 c-md:w-200">
+                            c-md:w-200
                         </div>
                         <div class="bg-faint round p-1">
                             fill
@@ -1226,13 +1226,13 @@ $borders: (
     
                 <div class="show-code" data-title="Custom Ordering with Space between">
                     <div class="row columns-auto content-between">
-                        <div class="md:order-1 bg-faint round p-1">
+                        <div class="c-md:order-1 bg-faint round p-1">
                             col C
                         </div>
                         <div class="bg-faint round p-1">
                             col B
                         </div>
-                        <div class="md:order-first bg-faint round p-1">
+                        <div class="c-md:order-first bg-faint round p-1">
                             col A
                         </div>
                     </div>
@@ -1263,10 +1263,10 @@ $borders: (
 
                 <div class="show-code" data-title="Nested rows and auto height">
                     <div class="row columns-12">
-                        <div class="md:span-4 bg-faint round p-1">
-                            .md:span-4
+                        <div class="c-md:span-4 bg-faint round p-1">
+                            .c-md:span-4
                         </div>
-                        <div class="row md:span-fixed">
+                        <div class="row c-md:span-fixed">
                             <div class="bg-faint round p-1">
                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitrsed diam nonumy.
                             </div>
@@ -1276,7 +1276,7 @@ $borders: (
                             <div class="bg-faint round p-1">
                                 fixed
                             </div>
-                            <div class="row md:span-">
+                            <div class="row c-md:span-">
                                 <div class="bg-faint round p-1">
                                     fixed
                                 </div>
@@ -1289,17 +1289,17 @@ $borders: (
                 </div>
     
                 <div class="show-code" data-title="Nested rows with different gap sizing" data-note="* With flexbox, nested rows need .span-fixed or need to be nested in an a column container.">
-                    <div class="row columns-12 g-1 md:g-4">
+                    <div class="row columns-12 g-1 c-md:g-4">
                         <div class="span-6 bg-faint round p-1">
                             .span-6
                         </div>
                         <div class="span-6 bg-faint round p-1">
                             .span-6
                         </div>
-                        <div class="span-6 md:span-3 bg-faint round p-1">
-                            .span-6 .md:span-3
+                        <div class="span-6 c-md:span-3 bg-faint round p-1">
+                            .span-6 .c-md:span-3
                         </div>
-                        <div class="span-fixed row g-2 md:columns-fill">
+                        <div class="span-fixed row g-2 c-md:columns-fill">
                             <div class="bg-faint round p-1">
                                 auto
                             </div>
@@ -1310,8 +1310,8 @@ $borders: (
                                 auto
                             </div>
                         </div>
-                        <div class="md:span-3 bg-faint round p-1">
-                            .md:span-3
+                        <div class="c-md:span-3 bg-faint round p-1">
+                            .c-md:span-3
                         </div>
                         <div class="span-12">
                             <div class="row columns-3 g-1">
@@ -1489,7 +1489,7 @@ $borders: (
                 </h2>
                 <h5>Toggles are used to open and close content and require Javascript (SpryJS).<br>Can be used for <a href="#accordions">Accordions</a>, <a href="#buttons">Buttons</a>, <a href="#lists">Lists</a>, <a href="#menus">Menus</a>, <a href="#modals">Modals</a>, <a href="#tabs">Tabs</a> and more.</h5>
                 <p class="note">SpryJS <span class="badge xs ml-1 outline secondary">Required</span></p>
-                <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0-rc.1/dist/spry.min.js"&gt;&lt;/script&gt;</code></pre>
+                <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0-rc.2/dist/spry.min.js"&gt;&lt;/script&gt;</code></pre>
 
                 <h5 class="mt-3">Toggles can be a single element which toggle themselves or multiple elements consisting of Toggle Activators for a single Toggle Element</h5>
 
@@ -4657,67 +4657,69 @@ $borders: (
                 </div>
     
                 <div class="show-code" data-title="Drop down Navigation Menu Right Aligned">
-                    <nav class="bg-faint md:hoverable text-right">
-                        <ul>
-                            <li>
-                                <a class="pr-0" href="#">Link with Dropdown
-                                    <svg class="icon lg color-grey ml-1 none md:inline" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                                </a>
-                                <ul class="bg-faint round-bottom md:shadow">
-                                    <li><a href="#">Sub Link 1</a></li>
-                                    <li>
-                                        <a href="#">Sub Link with Menu</a>
-                                        <button class="icon link circle sm flip-pressed" data-toggle="next">
-                                            <svg class="xl shy" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                                        </button>
-                                        <ul class="bg-faint round">
-                                            <li><a href="#">Sub Sub Link 1</a></li>
-                                            <li><a href="#">Sub Sub Link 2</a></li>
-                                            <li><a href="#">Sub Sub Link 3</a></li>
-                                            <li><a href="#">Sub Sub Link 4</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Sub Link 3</a></li>
-                                    <li><a href="#">Sub Link 4</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Link 2</a></li>
-                            <li><a href="#">Link 3</a></li>
-                            <li><a href="#">Link 4</a></li>
-                            <li>
-                                <a class="pr-0" href="#">Link with Dropdown
-                                    <svg class="icon lg color-grey ml-1 none md:inline" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                                </a>
-                                <ul class="bg-faint round-bottom md:shadow">
-                                    <li><a href="#">Sub Link 1</a></li>
-                                    <li><a href="#">Sub Link 2</a></li>
-                                    <li>
-                                        <a href="#">Sub Link with Menu</a>
-                                        <button class="icon down link circle sm" data-toggle="next"></button>
-                                        <ul class="bg-faint round">
-                                            <li><a href="#">Sub Sub Link 1</a></li>
-                                            <li><a href="#">Sub Sub Link 2</a></li>
-                                            <li><a href="#">Sub Sub Link 3</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Link 5</a></li>
-                        </ul>
-                    </nav>
+                    <div class="container index-2">
+                        <nav class="bg-faint c-md:hoverable c-md:row c-md:content-end g-0 text-right">
+                            <ul>
+                                <li>
+                                    <a class="pr-0" href="#">Link with Dropdown
+                                        <svg class="icon lg color-grey ml-1 none c-md:inline" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                    </a>
+                                    <ul class="bg-faint round-bottom c-md:shadow">
+                                        <li><a href="#">Sub Link 1</a></li>
+                                        <li>
+                                            <a href="#">Sub Link with Menu</a>
+                                            <button class="icon link circle sm flip-pressed" data-toggle="next">
+                                                <svg class="xl shy" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                            </button>
+                                            <ul class="bg-faint round">
+                                                <li><a href="#">Sub Sub Link 1</a></li>
+                                                <li><a href="#">Sub Sub Link 2</a></li>
+                                                <li><a href="#">Sub Sub Link 3</a></li>
+                                                <li><a href="#">Sub Sub Link 4</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Sub Link 3</a></li>
+                                        <li><a href="#">Sub Link 4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Link 2</a></li>
+                                <li><a href="#">Link 3</a></li>
+                                <li><a href="#">Link 4</a></li>
+                                <li>
+                                    <a class="pr-0" href="#">Link with Dropdown
+                                        <svg class="icon lg color-grey ml-1 none c-md:inline" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                    </a>
+                                    <ul class="bg-faint round-bottom c-md:shadow">
+                                        <li><a href="#">Sub Link 1</a></li>
+                                        <li><a href="#">Sub Link 2</a></li>
+                                        <li>
+                                            <a href="#">Sub Link with Menu</a>
+                                            <button class="icon down link circle sm" data-toggle="next"></button>
+                                            <ul class="bg-faint round">
+                                                <li><a href="#">Sub Sub Link 1</a></li>
+                                                <li><a href="#">Sub Sub Link 2</a></li>
+                                                <li><a href="#">Sub Sub Link 3</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Link 5</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
 
                 <div class="show-code" data-title="Responsive Toolbar Navigation Menu">
-                    <nav class="toolbar bg-faint px-1">
+                    <nav class="toolbar bg-faint px-1 container">
                         <a href="#" class="button link pl-1">
                             <svg class="icon mr-1" viewBox="0 0 24 24"><path fill="currentColor" d="M19.07,4.93C17.22,3 14.66,1.96 12,2C9.34,1.96 6.79,3 4.94,4.93C3,6.78 1.96,9.34 2,12C1.96,14.66 3,17.21 4.93,19.06C6.78,21 9.34,22.04 12,22C14.66,22.04 17.21,21 19.06,19.07C21,17.22 22.04,14.66 22,12C22.04,9.34 21,6.78 19.07,4.93M17,12V18H13.5V13H10.5V18H7V12H5L12,5L19.5,12H17Z" /></svg>
                             Logo
                         </a>
-                        <button class="link icon md:none" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
+                        <button class="link icon c-md:none" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
                             <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                             <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                         </button>
-                        <ul class="list md:row md:columns-auto md:open bg-inherit absolute md:relative right out-bottom md:top md:hoverable">
+                        <ul class="list c-md:row c-md:columns-auto c-md:open bg-inherit absolute c-md:relative right out-bottom c-md:top c-md:hoverable">
                             <li>
                                 <a href="#">Link 1</a>
                             </li>
@@ -4726,7 +4728,7 @@ $borders: (
                                 <button class="link icon circle shy" data-toggle="next">
                                     <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                                 </button>
-                                <ul class="bg-inherit round-bottom md:shadow">
+                                <ul class="bg-inherit round-bottom c-md:shadow">
                                     <li>
                                         <a href="#">Sub Link 1</a>
                                     </li>
@@ -4779,7 +4781,7 @@ $borders: (
 &lt;/div&gt;</code></pre>
 
                 <h4 class="mt-3">Optional <span class="color-primary">SprySliderJS</span> Javascript <span class="badge outline xs">1.4 kb</span></h4>
-                <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0-rc.1/dist/spry-slider.min.js"&gt;&lt;/script&gt;</code></pre>
+                <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0-rc.2/dist/spry-slider.min.js"&gt;&lt;/script&gt;</code></pre>
                 <p class="mb-3">View full <a href="slider.js">slider.js</a></p>
 
 <pre><code class="language-html">&lt;!-- Slider With SprySliderJS --&gt;
@@ -5096,40 +5098,50 @@ $borders: (
                     </i>
                     Tables
                 </h2>
+                
+                <div>
+                    <table class="mb-3 border-faint c-responsive">
+                        <thead>
+                            <tr>
+                                <th colspan="2" width="190"><h4>Classes</h4></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code class="color-primary">{color}</code></td>
+                                <td>Adds Accent color to component.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="color-primary">responsive</code></td>
+                                <td>
+                                    <p>Turns table into block format for smaller devices based on viewport.</p>
+                                    <p>* Requires at least one breakpoint and removes responsive at the first breakpoint.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code class="color-primary">c-responsive</code></td>
+                                <td>
+                                    <p>Turns table into block format based on container size.</p>
+                                    <p>* Requires at least one breakpoint and removes responsive at the first breakpoint by container size.</p>
+                                    <p>* Requires an ancestor to have <code class="color-grey">container-type: inline-size;</code>. You can use the class <code class="color-grey">container</code> for this.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code class="color-primary">striped</code></td>
+                                <td>Adds background color to each even tbody row</td>
+                            </tr>
+                            <tr>
+                                <td><code class="color-primary">striped-expand</code></td>
+                                <td>Adds background color to each even tbody row when adding expanding rows</td>
+                            </tr>
+                            <tr>
+                                <td><code class="color-primary">hoverable</code></td>
+                                <td>Makes each even tbody row have a hover color</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-                <table class="mb-3 border-faint c-responsive">
-                    <thead>
-                        <tr>
-                            <th colspan="2" width="190"><h4>Classes</h4></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code class="color-primary">{color}</code></td>
-                            <td>Adds Accent color to component</td>
-                        </tr>
-                        <tr>
-                            <td><code class="color-primary">responsive</code></td>
-                            <td>Turns table into block format for smaller devices based on viewport</td>
-                        </tr>
-                        <tr>
-                            <td><code class="color-primary">c-responsive</code></td>
-                            <td>Turns table into block format based on container size. <br>* Adds <code class="color-grey">container-type: inline-size;</code> to parent element</td>
-                        </tr>
-                        <tr>
-                            <td><code class="color-primary">striped</code></td>
-                            <td>Adds background color to each even tbody row</td>
-                        </tr>
-                        <tr>
-                            <td><code class="color-primary">striped-expand</code></td>
-                            <td>Adds background color to each even tbody row when adding expanding rows</td>
-                        </tr>
-                        <tr>
-                            <td><code class="color-primary">hoverable</code></td>
-                            <td>Makes each even tbody row have a hover color</td>
-                        </tr>
-                    </tbody>
-                </table>
                 <div class="show-code" data-title="Basic Table">
                     <table>
                         <thead>
@@ -5335,203 +5347,236 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Expanding Row with Collapsing Columns">
-                    <table class="hoverable striped-expand c-md:table">
-                        <thead>
-                            <tr>
-                                <th class="h5">Name</th>
-                                <th class="h5">Size</th>
-                                <th class="h5 none c-md:table-cell">Color</th>
-                                <th class="h5 none c-md:table-cell">Date</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="bt-0 c-md:bt-1">
-                                    <button class="link icon pressed-rotate mr-1" data-toggle="{tr} + tr .extend">
-                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
-                                    </button>
-                                    Tier 1
-                                </td>
-                                <td>100</td>
-                                <td class="none c-md:table-cell">Red</td>
-                                <td class="none c-md:table-cell">1/12/2024</td>
-                                <td class="bt-0 c-md:bt-1 text-right">
-                                    <button class="link icon circle" data-toggle="next" data-toggle-escapable data-toggle-dismissible aria-pressed="false">
-                                        <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
-                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-                                    </button>
-                                    <nav class="absolute right list navigable bg-faint round shadow p-1 mr-1 text-left w-content">
-                                        <button class="link pl-1" href="#">
-                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
-                                            Edit
+                    <div>
+                        <table class="hoverable striped-expand c-md:table">
+                            <thead>
+                                <tr>
+                                    <th class="h5">Name</th>
+                                    <th class="h5">Size</th>
+                                    <th class="h5 none c-md:table-cell">Color</th>
+                                    <th class="h5 none c-md:table-cell">Date</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="bt-0 c-md:bt-1">
+                                        <button class="link icon pressed-rotate mr-1" data-toggle="{tr} + tr .extend">
+                                            <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                            <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
                                         </button>
-                                        <button class="link pl-1 secondary" href="#">
-                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
-                                            Remove
+                                        Tier 1
+                                    </td>
+                                    <td>100</td>
+                                    <td class="none c-md:table-cell">Red</td>
+                                    <td class="none c-md:table-cell">1/12/2024</td>
+                                    <td class="bt-0 c-md:bt-1 text-right">
+                                        <button class="link icon circle" data-toggle="next" data-toggle-escapable data-toggle-dismissible aria-pressed="false">
+                                            <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
+                                            <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
                                         </button>
-                                    </nav>
-                                </td>
-                            </tr>
-                            <tr class="px-1 c-md:p-0 ">
-                                <td colspan="5" class="bt-0 p-0">
-                                    <div class="closed extend">
-                                        <div class="p-3 pt-1">
-                                            <p class="c-md:none">
-                                                <b>Color:</b> Red
-                                            </p>
-                                            <p class="c-md:none">
-                                                <b>Date:</b> 1/12/2024
-                                            </p>
-                                            <p class="c-md:mt-0">
-                                                <b>Description:</b><br>
-                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                            </p>
+                                        <nav class="absolute right list navigable bg-faint round shadow p-1 mr-1 text-left w-content">
+                                            <button class="link pl-1" data-toggle="#table-item-edit-modal">
+                                                <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+                                                Edit
+                                            </button>
+                                            <button class="link pl-1 secondary" data-toggle="#table-item-remove-modal">
+                                                <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
+                                                Remove
+                                            </button>
+                                        </nav>
+                                    </td>
+                                </tr>
+                                <tr class="px-1 c-md:p-0 ">
+                                    <td colspan="5" class="bt-0 p-0">
+                                        <div class="closed extend">
+                                            <div class="p-3 pt-1">
+                                                <p class="c-md:none">
+                                                    <b>Color:</b> Red
+                                                </p>
+                                                <p class="c-md:none">
+                                                    <b>Date:</b> 1/12/2024
+                                                </p>
+                                                <p class="c-md:mt-0">
+                                                    <b>Description:</b><br>
+                                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <button class="link icon pressed-rotate mr-1" data-toggle="{tr} + tr .extend">
-                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
-                                    </button>
-                                    Tier 2
-                                </td>
-                                <td>200</td>
-                                <td class="none c-md:table-cell">Blue</td>
-                                <td class="none c-md:table-cell">1/24/2024</td>
-                                <td class="text-right">
-                                    <button class="link icon circle" data-toggle="next" data-toggle-escapable data-toggle-dismissible aria-pressed="false">
-                                        <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
-                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-                                    </button>
-                                    <nav class="absolute right list navigable bg-faint round shadow p-1 mr-1 text-left w-content">
-                                        <button class="link pl-1" href="#">
-                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
-                                            Edit
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button class="link icon pressed-rotate mr-1" data-toggle="{tr} + tr .extend">
+                                            <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                            <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
                                         </button>
-                                        <button class="link pl-1 secondary" href="#">
-                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
-                                            Remove
+                                        Tier 2
+                                    </td>
+                                    <td>200</td>
+                                    <td class="none c-md:table-cell">Blue</td>
+                                    <td class="none c-md:table-cell">1/24/2024</td>
+                                    <td class="text-right">
+                                        <button class="link icon circle" data-toggle="next" data-toggle-escapable data-toggle-dismissible aria-pressed="false">
+                                            <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
+                                            <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
                                         </button>
-                                    </nav>
-                                </td>
-                            </tr>
-                            <tr class="px-1 c-md:p-0 ">
-                                <td colspan="5" class="bt-0 p-0">
-                                    <div class="closed extend">
-                                        <div class="p-3 pt-1">
-                                            <p class="c-md:none">
-                                                <b>Color:</b> Blue
-                                            </p>
-                                            <p class="c-md:none">
-                                                <b>Date:</b> 1/24/2024
-                                            </p>
-                                            <p class="c-md:mt-0">
-                                                <b>Description:</b><br>
-                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                            </p>
+                                        <nav class="absolute right list navigable bg-faint round shadow p-1 mr-1 text-left w-content">
+                                            <button class="link pl-1" data-toggle="#table-item-edit-modal">
+                                                <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+                                                Edit
+                                            </button>
+                                            <button class="link pl-1 secondary" data-toggle="#table-item-remove-modal">
+                                                <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
+                                                Remove
+                                            </button>
+                                        </nav>
+                                    </td>
+                                </tr>
+                                <tr class="px-1 c-md:p-0 ">
+                                    <td colspan="5" class="bt-0 p-0">
+                                        <div class="closed extend">
+                                            <div class="p-3 pt-1">
+                                                <p class="c-md:none">
+                                                    <b>Color:</b> Blue
+                                                </p>
+                                                <p class="c-md:none">
+                                                    <b>Date:</b> 1/24/2024
+                                                </p>
+                                                <p class="c-md:mt-0">
+                                                    <b>Description:</b><br>
+                                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <button class="link icon pressed-rotate mr-1" data-toggle="{tr} + tr .extend">
-                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
-                                    </button>
-                                    Tier 3
-                                </td>
-                                <td>300</td>
-                                <td class="none c-md:table-cell">Yellow</td>
-                                <td class="none c-md:table-cell">2/4/2024</td>
-                                <td class="text-right">
-                                    <button class="link icon circle" data-toggle="next" data-toggle-escapable data-toggle-dismissible aria-pressed="false">
-                                        <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
-                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-                                    </button>
-                                    <nav class="absolute right list navigable bg-faint round shadow p-1 mr-1 text-left w-content">
-                                        <button class="link pl-1" href="#">
-                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
-                                            Edit
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button class="link icon pressed-rotate mr-1" data-toggle="{tr} + tr .extend">
+                                            <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                            <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
                                         </button>
-                                        <button class="link pl-1 secondary" href="#">
-                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
-                                            Remove
+                                        Tier 3
+                                    </td>
+                                    <td>300</td>
+                                    <td class="none c-md:table-cell">Yellow</td>
+                                    <td class="none c-md:table-cell">2/4/2024</td>
+                                    <td class="text-right">
+                                        <button class="link icon circle" data-toggle="next" data-toggle-escapable data-toggle-dismissible aria-pressed="false">
+                                            <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
+                                            <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
                                         </button>
-                                    </nav>
-                                </td>
-                            </tr>
-                            <tr class="px-1 c-md:p-0 ">
-                                <td colspan="5" class="bt-0 p-0">
-                                    <div class="closed extend">
-                                        <div class="p-3 pt-1">
-                                            <p class="c-md:none">
-                                                <b>Color:</b> Yellow
-                                            </p>
-                                            <p class="c-md:none">
-                                                <b>Date:</b> 2/4/2024
-                                            </p>
-                                            <p class="c-md:mt-0">
-                                                <b>Description:</b><br>
-                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                            </p>
+                                        <nav class="absolute right list navigable bg-faint round shadow p-1 mr-1 text-left w-content">
+                                            <button class="link pl-1" data-toggle="#table-item-edit-modal">
+                                                <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+                                                Edit
+                                            </button>
+                                            <button class="link pl-1 secondary" data-toggle="#table-item-remove-modal">
+                                                <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
+                                                Remove
+                                            </button>
+                                        </nav>
+                                    </td>
+                                </tr>
+                                <tr class="px-1 c-md:p-0 ">
+                                    <td colspan="5" class="bt-0 p-0">
+                                        <div class="closed extend">
+                                            <div class="p-3 pt-1">
+                                                <p class="c-md:none">
+                                                    <b>Color:</b> Yellow
+                                                </p>
+                                                <p class="c-md:none">
+                                                    <b>Date:</b> 2/4/2024
+                                                </p>
+                                                <p class="c-md:mt-0">
+                                                    <b>Description:</b><br>
+                                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <button class="link icon pressed-rotate mr-1" data-toggle="{tr} + tr .extend">
-                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
-                                    </button>
-                                    Tier 4
-                                </td>
-                                <td>400</td>
-                                <td class="none c-md:table-cell">Orange</td>
-                                <td class="none c-md:table-cell">3/17/2024</td>
-                                <td class="text-right">
-                                    <button class="link icon circle" data-toggle="next" data-toggle-escapable data-toggle-dismissible aria-pressed="false">
-                                        <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
-                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-                                    </button>
-                                    <nav class="absolute right list navigable bg-faint round shadow p-1 mr-1 text-left w-content">
-                                        <button class="link pl-1" href="#">
-                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
-                                            Edit
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button class="link icon pressed-rotate mr-1" data-toggle="{tr} + tr .extend">
+                                            <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                            <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
                                         </button>
-                                        <button class="link pl-1 secondary" href="#">
-                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
-                                            Remove
+                                        Tier 4
+                                    </td>
+                                    <td>400</td>
+                                    <td class="none c-md:table-cell">Orange</td>
+                                    <td class="none c-md:table-cell">3/17/2024</td>
+                                    <td class="text-right">
+                                        <button class="link icon circle" data-toggle="next" data-toggle-escapable data-toggle-dismissible aria-pressed="false">
+                                            <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
+                                            <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
                                         </button>
-                                    </nav>
-                                </td>
-                            </tr>
-                            <tr class="px-1 c-md:p-0 ">
-                                <td colspan="5" class="bt-0 p-0">
-                                    <div class="closed extend">
-                                        <div class="p-3 pt-1">
-                                            <p class="c-md:none">
-                                                <b>Color:</b> Orange
-                                            </p>
-                                            <p class="c-md:none">
-                                                <b>Date:</b> 3/17/2024
-                                            </p>
-                                            <p class="c-md:mt-0">
-                                                <b>Description:</b><br>
-                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                            </p>
+                                        <nav class="absolute right list navigable bg-faint round shadow p-1 mr-1 text-left w-content">
+                                            <button class="link pl-1" data-toggle="#table-item-edit-modal">
+                                                <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+                                                Edit
+                                            </button>
+                                            <button class="link pl-1 secondary" data-toggle="#table-item-remove-modal">
+                                                <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
+                                                Remove
+                                            </button>
+                                        </nav>
+                                    </td>
+                                </tr>
+                                <tr class="px-1 c-md:p-0 ">
+                                    <td colspan="5" class="bt-0 p-0">
+                                        <div class="closed extend">
+                                            <div class="p-3 pt-1">
+                                                <p class="c-md:none">
+                                                    <b>Color:</b> Orange
+                                                </p>
+                                                <p class="c-md:none">
+                                                    <b>Date:</b> 3/17/2024
+                                                </p>
+                                                <p class="c-md:mt-0">
+                                                    <b>Description:</b><br>
+                                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="table-item-edit-modal" class="modal bg-blur-sm bounce" aria-expanded="false">
+                        <article class="outline shadow mw-400">
+                            <header>
+                                <h4>Edit Item</h4>
+                            </header>
+                            <div class="px-3 pb-1 pt-1">
+                                Are you Sure?
+                            </div>
+                            <footer class="px-2">
+                                <button type="button" class="sm outline" data-toggle-close>Cancel</button>
+                                <button type="submit" class="primary sm" data-toggle-close>Yes, Edit</button>
+                            </footer>
+                        </article>
+                    </div>
+
+                    <div id="table-item-remove-modal" class="modal bg-blur-sm bounce" aria-expanded="false">
+                        <article class="outline shadow mw-400">
+                            <header>
+                                <h4>Remove Item</h4>
+                            </header>
+                            <div class="px-3 pb-1 pt-1">
+                                Are you Sure?
+                            </div>
+                            <footer class="px-2">
+                                <button type="button" class="sm outline" data-toggle-close>Cancel</button>
+                                <button type="submit" class="secondary sm" data-toggle-close>Yes, Remove</button>
+                            </footer>
+                        </article>
+                    </div>
+
                 </div>
             </section>
             <!------------------------------------
@@ -5812,10 +5857,10 @@ $borders: (
     <script>
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.documentElement.setAttribute('data-theme', 'dark');
-        }
+        }    
     </script>
-    <script src="docs.js?v=3.0.0-rc.1"></script>
-    <script defer src="prism.min.js?v=3.0.0-rc.1"></script>
+    <script src="docs.js?v=3.0.0-rc.2"></script>
+    <script defer src="prism.min.js?v=3.0.0-rc.2"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 

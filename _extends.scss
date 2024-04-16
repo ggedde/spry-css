@@ -4,26 +4,26 @@
 @use "mixins";
 
 %ui {
-	align-items    : center;
-	appearance     : none;
-	background     : transparent;
-	border         : 0;
-	color          : inherit;
-	display        : inline-flex;
-	font-size      : 100%;
-	height         : auto;
-	justify-content: center;
-	min-height     : 2.3em;
-	min-width      : 2.3em;
-	outline        : 0 solid rgba(var(--color-rgb), 0.25);
-	outline-offset : 2px;
-	padding-block  : .3em;
-	padding-inline : 1em;
-	position       : relative;
-	text-decoration: none;
-	transition     : all .1s ease-in-out;
-	vertical-align : middle;
-	width          : 100%;
+	align-items     : center;
+	appearance      : none;
+	background-color: transparent;
+	border          : 0;
+	color           : inherit;
+	display         : inline-flex;
+	font-size       : 100%;
+	height          : auto;
+	justify-content : center;
+	min-height      : 2.3em;
+	min-width       : 2.3em;
+	outline         : 0 solid rgba(var(--color-rgb), 0.25);
+	outline-offset  : 2px;
+	padding-block   : .3em;
+	padding-inline  : 1em;
+	position        : relative;
+	text-decoration : none;
+	transition      : all .1s ease-in-out;
+	vertical-align  : middle;
+	width           : 100%;
 }
 
 %ui-roomy {
@@ -53,12 +53,14 @@
 }
 
 %ui-bg-hover {
-	--bg-alpha: .15;
+	--bg-alpha      : .15;
 	background-color: rgba(var(--color-rgb), var(--bg-alpha));
 }
 
 %ui-color {
 	color: var(--text-color);
+	--select-arrow: var(--text-color);
+
 	&[aria-busy=true] {
 		color: transparent;
 	}

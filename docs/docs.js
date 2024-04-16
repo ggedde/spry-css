@@ -6,6 +6,8 @@
  * Github: https://github.com/ggedde/spry-css
  */
 
+let _currentPanel = null;
+
 function toggleTheme(parent) {
     if (parent !== document.documentElement) {
         var theme = parent.hasAttribute('data-theme') ? ( parent.getAttribute('data-theme') === 'dark' ? 'light' : 'dark') : ( document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
@@ -74,6 +76,11 @@ function cleanContent(html) {
         html = html.replaceAll('data-theme-dark=""', 'data-theme-dark');
         html = html.replaceAll('data-toggle-escapable=""', 'data-toggle-escapable');
         html = html.replaceAll('data-toggle-dismissible=""', 'data-toggle-dismissible');
+
+        
+        html = html.replaceAll('&ltdiv class="code-resize-handle"&gt&lt/div&gt', '###');
+        html = html.replace(/\&gt\n.*\#\#\#/, '&gt');
+        console.log(html);
     });
 
     return html;
@@ -90,6 +97,14 @@ function copyCode(event) {
     }, function(err) {
         console.error('Async: Could not copy text: ', err);
     });
+}
+
+function resizePanel(e){
+    e.preventDefault();
+    const dx = (e.x - _currentPanel.offsetLeft) + 3;
+    if (_currentPanel && dx && dx > 0) {
+        _currentPanel.style.width = parseInt(dx) + "px";
+    }
 }
 
 function loadCodeContainer(container) {
@@ -119,8 +134,25 @@ document.querySelectorAll('.show-code').forEach((elem) => {
     var tooltipWarning = (elem.hasAttribute('data-tooltip-warning') ? '<span class="sm"><i class="icon color-secondary shy"><svg viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6z" /></svg></i><span class="tooltip sm center-x outset-top">'+elem.getAttribute('data-tooltip-warning')+'</span></span>' : '');
     var titleNote = (elem.hasAttribute('data-title-note') ? '<div class="note xs my-1 color-grey">'+elem.getAttribute('data-title-note')+'</div>' : '');
     var codeDiv = '<div class="code-preview-container"></div>';
-    elem.outerHTML = '<article class="mb-3 outline g-0 code-content-container"><header class="pr-1 sm md:md"><h4>'+elem.getAttribute('data-title')+' '+badge+tooltipWarning+titleNote+'</h4><div class="no-wrap"><button class="shy icon link" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button onclick="loadCodeContainer(this)" data-toggle="#code-'+toggleId+'" class="shy icon link" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link" title="Copy HTML to Clipboard" onclick="copyCode(event); setTimeout(() => {this.classList.remove(\'open\'); this.setAttribute(\'aria-pressed\', false)}, 2000)" data-toggle><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg><svg viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg></button></div></header><div class="p-0"><div id="code-'+toggleId+'" class="code-container closed">'+codeDiv+'</div></div><div class="p-2 code-content">'+elem.innerHTML+'</div>'+(elem.hasAttribute('data-note') ? '<div class="note mt-1 mb-2 color-grey">'+elem.getAttribute('data-note')+'</div>' : '')+'</article>';
+    elem.outerHTML = '<article class="mb-3 outline g-0 code-content-container"><header class="pr-1 sm md:md"><h4>'+elem.getAttribute('data-title')+' '+badge+tooltipWarning+titleNote+'</h4><div class="no-wrap"><button class="shy icon link" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button onclick="loadCodeContainer(this)" data-toggle="#code-'+toggleId+'" class="shy icon link" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link" title="Copy HTML to Clipboard" onclick="copyCode(event); setTimeout(() => {this.classList.remove(\'open\'); this.setAttribute(\'aria-pressed\', false)}, 2000)" data-toggle><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg><svg viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg></button></div></header><div class="p-0"><div id="code-'+toggleId+'" class="code-container closed">'+codeDiv+'</div></div><div class="p-2 code-content">'+elem.innerHTML+'<div class="code-resize-handle"></div></div>'+(elem.hasAttribute('data-note') ? '<div class="note p-2 bg-faint">'+elem.getAttribute('data-note')+'</div>' : '')+'</article>';
 });
+
+document.querySelectorAll('.code-resize-handle').forEach((elem) => {
+    elem.addEventListener("mousedown", function(e){
+        elem.classList.add('moving');
+        e.preventDefault();
+        _currentPanel = elem.closest('.code-content-container');
+        document.addEventListener("mousemove", resizePanel, false);
+    }, false);
+});
+
+document.addEventListener("mouseup", function(){
+    _currentPanel = null;
+    document.removeEventListener("mousemove", resizePanel, false);
+    document.querySelectorAll('.code-resize-handle.moving').forEach((elem) => {
+        elem.classList.remove('moving');
+    });
+}, false);
 
 document.querySelectorAll('[href="#"]').forEach(link => {
     link.addEventListener('click', event => {
@@ -128,6 +160,28 @@ document.querySelectorAll('[href="#"]').forEach(link => {
         return false;
     });
 });
+
+// var _stickies = document.querySelectorAll(".sticky");
+
+// window.addEventListener("scroll", () => {
+//     _stickies.forEach(sticky => {
+//         const currentTop = sticky.getBoundingClientRect().top;
+//         sticky.classList.toggle("index-1", currentTop <= 0);
+//     })
+// });
+
+// document.querySelectorAll(".sticky").forEach(el => {
+//     const observer = new IntersectionObserver( 
+//         ([e]) => {
+//             console.log(e.intersectionRatio);
+//             e.target.classList.toggle("is-pinned", e.intersectionRatio < 1)
+//         },
+//         { threshold: [1] }
+//       );
+      
+//       observer.observe(el);
+// })
+
 
 // document.querySelectorAll('input:not([type=checkbox],[type=radio]), textarea, select').forEach(elem => {
 //     elem.addEventListener('blur', event => {

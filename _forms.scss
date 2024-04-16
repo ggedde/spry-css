@@ -10,6 +10,7 @@
 	border-width: 1px;
 	border-style: solid;
 	border-color: rgba(var(--border-color-rgb), var(--border-alpha));
+	--select-arrow: rgba(var(--border-color-rgb), var(--border-alpha));
 	font-family: inherit;
 	font-weight: inherit;
 	&:hover {
@@ -120,11 +121,14 @@ form.disabled :is(input, select, textarea, label, button) {
 
 select,
 .is-select {
-	background-image   : url("data:image/svg+xml;utf8,<svg fill='gray' xmlns='http://www.w3.org/2000/svg' viewBox='-20 -6 40 36'><path d='M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z'/></svg>");
-	background-repeat  : no-repeat;
-	background-position: calc(100% - 0.8em);
+	text-align: left;
 	padding-right      : 1.7em;
 	line-height        : 1.55;
+	background-image: linear-gradient(45deg, transparent 50%, var(--select-arrow) 0 calc(50% + 1px), transparent calc(50% + 2px)), linear-gradient(-45deg, transparent 50%, var(--select-arrow) 0 calc(50% + 1px), transparent calc(50% + 2px));
+    background-position: calc(100% - 1.2em), calc(100% - 0.8em);
+    background-size: .4em .4em;
+    background-repeat: no-repeat;
+	backdrop-filter: opacity(.5);
 }
 
 input,
