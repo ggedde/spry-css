@@ -15,6 +15,9 @@
 		width       : auto;
 		--gapx: 0em;
 		--gapy: 0em;
+		&+* {
+			flex: 1;
+		}
 
 		&+*>* {
 			transition: none;

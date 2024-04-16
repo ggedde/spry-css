@@ -273,6 +273,31 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		display: flex
 	}
 
+	#{$prefix}table {
+		display: table
+	}
+
+	#{$prefix}table-cell {
+		display: table-cell;
+		width: auto;
+	}
+
+	#{$prefix}table-row {
+		display: table-row
+	}
+
+	#{$prefix}table-row-group {
+		display: table-row-group
+	}
+
+	#{$prefix}table-header-group {
+		display: table-header-group
+	}
+
+	#{$prefix}table-footer-group {
+		display: table-footer-group
+	}
+
 	#{$prefix}flex-wrap {
 		flex-wrap: wrap
 	}

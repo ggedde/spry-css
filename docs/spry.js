@@ -260,7 +260,12 @@ class Spry {
 
             var dataToggleAction = toggle.getAttribute('data-toggle-action');
             var action = dataToggleAction && ['open', 'close', 'toggle'].includes(dataToggleAction) ? dataToggleAction : 'toggle';
-    
+            
+            var from = null;
+            var fromId = null;
+            var fromSetId = null;
+            var selectorIndex = null;
+
             if (!selector) {
                 targets = [toggle];
             } else if (selector === 'next') {
@@ -268,11 +273,26 @@ class Spry {
             } else if (selector === 'hover') {
                 targets = [toggle.nextElementSibling];
             } else {
+                if (selector.indexOf('{n}') > -1) {
+                    selectorIndex = [...toggle.parentElement.children].indexOf(toggle);
+                    selector = selector.replaceAll('{n}', parseInt(selectorIndex) + 1);
+                }
                 if (selector.indexOf('{') > -1 && selector.indexOf('}') > 0) {
-                    var from = toggle.closest(selector.substring(selector.indexOf('{')+1, selector.indexOf('}')));
-                    targets = from.querySelectorAll(selector.substring(selector.indexOf('}')+1));
-                } else {
-                    targets = document.querySelectorAll(selector);
+                    from = toggle.closest(selector.substring(selector.indexOf('{')+1, selector.indexOf('}')));
+                    if (from) {
+                        if (from.hasAttribute('id')) {
+                            fromId = from.getAttribute('id');
+                        } else {
+                            fromId = 'id-'+(Math.random() + 1).toString(36).substring(2);
+                            from.setAttribute('id', fromId);
+                            fromSetId = true;
+                        }
+                        selector = '#'+fromId + selector.substring(selector.indexOf('}')+1);
+                    }
+                }
+                targets = document.querySelectorAll(selector);
+                if (from && fromSetId) {
+                    from.removeAttribute('id');
                 }
             }
             

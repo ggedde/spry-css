@@ -1,6 +1,7 @@
 /*!
 * Spry Outline
 */
+@use "variables";
 @use "extends";
 
 .outline {
@@ -78,7 +79,22 @@
 	}
 
 	&.tabs.column .list+* {
-		border-width: 1px 0;
+		border-width: 0;
+	}
+
+	@each $breakpoint,
+	$breakpoint_width in variables.$breakpoints {
+		@media screen and (min-width: #{$breakpoint_width}) {
+			&.tabs.#{$breakpoint}\:row .list+* {
+				border-width: 0 1px;
+			}
+		}
+
+		@container (min-width: #{$breakpoint_width}) {
+			&.tabs.c-#{$breakpoint}\:row .list+* {
+				border-width: 0 1px;
+			}
+		}
 	}
 
 	&:not(.alert, button, .button, article, .icon)> :not(ul),

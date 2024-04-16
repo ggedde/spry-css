@@ -2270,7 +2270,7 @@ $borders: (
                         </div>
                     </div>
                     
-                    <button class="mb-1 w content-between compact xl" data-toggle="next">
+                    <button class="w content-between compact xl" data-toggle="next">
                         Question 3
                         <i class="icon flip-pressed mt-0">
                             <svg viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
@@ -2278,7 +2278,7 @@ $borders: (
                     </button>
                     <div class="expand">
                         <div>
-                            <div class="p-2 pt-0">
+                            <div class="p-2">
                                 <p>
                                     Consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                     invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
@@ -2326,8 +2326,8 @@ $borders: (
                             </i>
                         </button>
                         <div class="expand">
-                            <div class="bx-2 pt-1">
-                                <div class="p-2">
+                            <div class="pt-1">
+                                <div class="mt-n1 bx-2 p-2">
                                     <p>
                                         At vero eos et accusam
                                         et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
@@ -2344,8 +2344,8 @@ $borders: (
                             </i>
                         </button>
                         <div class="expand">
-                            <div class="b-2 bt-0 round-bottom">
-                                <div class="p-2">
+                            <div class="pt-1">
+                                <div class="mt-n1 b-2 bt-0 p-2">
                                     <p>
                                         Consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                         invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
@@ -5097,11 +5097,10 @@ $borders: (
                     Tables
                 </h2>
 
-                <table class="mb-3 border-faint">
+                <table class="mb-3 border-faint c-responsive">
                     <thead>
                         <tr>
-                            <th width="190"><h4>Classes</h4></th>
-                            <th></th>
+                            <th colspan="2" width="190"><h4>Classes</h4></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -5109,16 +5108,35 @@ $borders: (
                             <td><code class="color-primary">{color}</code></td>
                             <td>Adds Accent color to component</td>
                         </tr>
+                        <tr>
+                            <td><code class="color-primary">responsive</code></td>
+                            <td>Turns table into block format for smaller devices based on viewport</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">c-responsive</code></td>
+                            <td>Turns table into block format based on container size. <br>* Adds <code class="color-grey">container-type: inline-size;</code> to parent element</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">striped</code></td>
+                            <td>Adds background color to each even tbody row</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">striped-expand</code></td>
+                            <td>Adds background color to each even tbody row when adding expanding rows</td>
+                        </tr>
+                        <tr>
+                            <td><code class="color-primary">hoverable</code></td>
+                            <td>Makes each even tbody row have a hover color</td>
+                        </tr>
                     </tbody>
                 </table>
                 <div class="show-code" data-title="Basic Table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Size</th>
-                                <th>Color</th>
-                                <th></th>
+                                <th class="h5">Name</th>
+                                <th class="h5">Size</th>
+                                <th class="h5">Color</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -5126,117 +5144,391 @@ $borders: (
                                 <td>Tier 1</td>
                                 <td>200</td>
                                 <td>Red</td>
-                                <td class="text-right">
-                                    <button class="link icon circle contrast" data-toggle="next" data-toggle-action="open">
-                                        <svg class="lg" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
-                                    </button>
-                                    <nav id="jkl" class="list absolute mw-200 bg-faint right round shadow">
-                                        <ul>
-                                            <li><button class="link contrast" onclick="console.log('123'); this.blur();" data-toggle-close><i class="icon color-primary mr-1"><svg viewBox="0 0 24 26"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg></i>Edit</button></li>
-                                            <li>asdf asdf asdf </li>
-                                            <li><button class="link contrast" onclick="console.log('adf')" data-toggle-close><i class="icon color-secondary mr-1"><svg viewBox="0 0 24 26"><path d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9M7 6h10v13H7V6m2 2v9h2V8H9m4 0v9h2V8h-2z" /></svg></i><span>Delete</span></button></li>
-                                            <li>
-                                                <button class="link contrast" data-toggle-close onclick="Spry.toggle('#aaa');">
-                                                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z" /></svg></i>
-                                                    Open Modal 111
-                                                </button>
-                                                
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                    <div class="modal" id="aaa">
-                                        <article class="mw-400 shadow">
-                                            <header>
-                                                <h4>No Backdrop Modal Example</h4>
-                                                <label class="button link icon close circle mr-n1" data-toggle-close></label>
-                                            </header>
-                                            <p class="mb-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                                tempor invidunt ut labore et dolore magna aliquyam erat</p>
-                                        </article>
-                                    </div>
-                                </td>
                             </tr>
                             <tr>
                                 <td>Tier 2</td>
                                 <td>400</td>
                                 <td>Blue</td>
-                                <td class="text-right">
-                                    <button class="button link icon circle contrast" data-toggle="#bbbb">
-                                        <svg class="lg" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
-                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                                    </button>
-                                    <button class="button link icon circle contrast" data-toggle=".hhhhh">
-                                        <svg class="lg" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
-                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                                    </button>
-                                    <button class="button link icon circle contrast" data-toggle="next">
-                                        <svg class="lg" viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
-                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                                    </button>
-                                    <nav id="bbbb" class="list absolute mw-200 bg-faint right mr-3 round shadow hhhhh">
-                                        <ul>
-                                            <li><button class="link contrast" data-toggle-close onclick="console.log('123'); this.blur();"><i class="icon color-primary mr-1"><svg viewBox="0 0 24 26"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg></i>Edit</button></li>
-                                            <li>asdf asdf asdf </li>
-                                            <li><button class="link contrast" data-toggle-close onclick="console.log('adf')"><i class="icon color-secondary mr-1"><svg viewBox="0 0 24 26"><path d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9M7 6h10v13H7V6m2 2v9h2V8H9m4 0v9h2V8h-2z" /></svg></i><span>Delete</span></button></li>
-                                            <li>
-                                                <label class="button link contrast" data-toggle-close>
-                                                    <input id="table1-item1-modal-toggle" type="checkbox" />
-                                                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z" /></svg></i>
-                                                    Open Modal
-                                                </label>
-                                                <div class="modal">
-                                                    <label for="table1-item1-modal-toggle"></label>
-                                                    <article class="mw-400 shadow">
-                                                        <header>
-                                                            <h4>No Backdrop Modal Example</h4>
-                                                            <label class="button link icon close circle mr-n1" for="table1-item1-modal-toggle"></label>
-                                                        </header>
-                                                        <p class="mb-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                                                            tempor invidunt ut labore et dolore magna aliquyam erat</p>
-                                                    </article>
-                                                </div></li>
-                                        </ul>
-                                    </nav>
-                                </td>
                             </tr>
                             <tr>
                                 <td>Tier 3</td>
                                 <td>500</td>
                                 <td>Gold</td>
-                                <td class="text-right"><a href="#" class="button link sm px-2">Learn More</a></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div class="show-code" data-title="Accent Table">
-                    <table class="primary">
+                <div class="show-code" data-title="Overflow Scroll with Sticky Header">
+                    <div class="auto mh-300">
+                        <table style="min-width: 800px;">
+                            <thead class="sticky bg-theme">
+                                <tr>
+                                    <th class="h5">Name</th>
+                                    <th class="h5">Size</th>
+                                    <th class="h5">Color</th>
+                                    <th class="h5">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tier 1</td>
+                                    <td>200</td>
+                                    <td>Red</td>
+                                    <td>1/12/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 2</td>
+                                    <td>400</td>
+                                    <td>Blue</td>
+                                    <td>2/2/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 3</td>
+                                    <td>500</td>
+                                    <td>Gold</td>
+                                    <td>3/17/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 1</td>
+                                    <td>200</td>
+                                    <td>Red</td>
+                                    <td>1/12/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 2</td>
+                                    <td>400</td>
+                                    <td>Blue</td>
+                                    <td>2/2/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 3</td>
+                                    <td>500</td>
+                                    <td>Gold</td>
+                                    <td>3/17/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 1</td>
+                                    <td>200</td>
+                                    <td>Red</td>
+                                    <td>1/12/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 2</td>
+                                    <td>400</td>
+                                    <td>Blue</td>
+                                    <td>2/2/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 3</td>
+                                    <td>500</td>
+                                    <td>Gold</td>
+                                    <td>3/17/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 1</td>
+                                    <td>200</td>
+                                    <td>Red</td>
+                                    <td>1/12/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 2</td>
+                                    <td>400</td>
+                                    <td>Blue</td>
+                                    <td>2/2/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 3</td>
+                                    <td>500</td>
+                                    <td>Gold</td>
+                                    <td>3/17/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 1</td>
+                                    <td>200</td>
+                                    <td>Red</td>
+                                    <td>1/12/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 2</td>
+                                    <td>400</td>
+                                    <td>Blue</td>
+                                    <td>2/2/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 3</td>
+                                    <td>500</td>
+                                    <td>Gold</td>
+                                    <td>3/17/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 1</td>
+                                    <td>200</td>
+                                    <td>Red</td>
+                                    <td>1/12/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 2</td>
+                                    <td>400</td>
+                                    <td>Blue</td>
+                                    <td>2/2/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Tier 3</td>
+                                    <td>500</td>
+                                    <td>Gold</td>
+                                    <td>3/17/2024</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="show-code" data-title="Responsive Hoverable Striped Accent Table">
+                    <table class="primary hoverable striped block c-md:table">
+                        <thead class="none c-md:table-header-group">
+                            <tr>
+                                <th class="h5">Name</th>
+                                <th class="h5">Size</th>
+                                <th class="h5" colspan="2">Color</th>
+                            </tr>
+                        </thead>
+                        <tbody class="block c-md:table-row-group">
+                            <tr class="block mb-1 c-md:table-row px-1 c-md:p-0">
+                                <td class="block c-md:table-cell bt-0 c-md:bt-1"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Name: </span>Tier 1</td>
+                                <td class="block c-md:table-cell"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Size: </span>100</td>
+                                <td class="block c-md:table-cell"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Color: </span>Red</td>
+                                <td class="block c-md:table-cell text-right"><a href="#" class="button link sm px-2">Learn More</a></td>
+                            </tr>
+                            <tr class="block mb-1 c-md:table-row px-1 c-md:p-0">
+                                <td class="block c-md:table-cell bt-0 c-md:bt-1"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Name: </span>Tier 2</td>
+                                <td class="block c-md:table-cell"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Size: </span>200</td>
+                                <td class="block c-md:table-cell"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Color: </span>Blue</td>
+                                <td class="block c-md:table-cell text-right"><a href="#" class="button link sm px-2">Learn More</a></td>
+                            </tr>
+                            <tr class="block mb-1 c-md:table-row px-1 c-md:p-0">
+                                <td class="block c-md:table-cell bt-0 c-md:bt-1"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Name: </span>Tier 3</td>
+                                <td class="block c-md:table-cell"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Size: </span>300</td>
+                                <td class="block c-md:table-cell"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Color: </span>Gold</td>
+                                <td class="block c-md:table-cell text-right"><a href="#" class="button link sm px-2">Learn More</a></td>
+                            </tr>
+                            <tr class="block mb-1 c-md:table-row px-1 c-md:p-0">
+                                <td class="block c-md:table-cell bt-0 c-md:bt-1"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Name: </span>Tier 4</td>
+                                <td class="block c-md:table-cell"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Size: </span>400</td>
+                                <td class="block c-md:table-cell"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Color: </span>Gold</td>
+                                <td class="block c-md:table-cell text-right"><a href="#" class="button link sm px-2">Learn More</a></td>
+                            </tr>
+                            <tr class="block mb-1 c-md:table-row px-1 c-md:p-0">
+                                <td class="block c-md:table-cell bt-0 c-md:bt-1"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Name: </span>Tier 5</td>
+                                <td class="block c-md:table-cell"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Size: </span>500</td>
+                                <td class="block c-md:table-cell"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Color: </span>Gold</td>
+                                <td class="block c-md:table-cell text-right"><a href="#" class="button link sm px-2">Learn More</a></td>
+                            </tr>
+                            <tr class="block mb-1 c-md:table-row px-1 c-md:p-0">
+                                <td class="block c-md:table-cell bt-0 c-md:bt-1"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Name: </span>Tier 6</td>
+                                <td class="block c-md:table-cell"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Size: </span>600</td>
+                                <td class="block c-md:table-cell"><span class="inline-block w-100 c-md:none text-right pr-3 bold">Color: </span>Gold</td>
+                                <td class="block c-md:table-cell text-right"><a href="#" class="button link sm px-2">Learn More</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="show-code" data-title="Expanding Row with Collapsing Columns">
+                    <table class="hoverable striped-expand c-md:table">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Size</th>
-                                <th>Color</th>
+                                <th class="h5">Name</th>
+                                <th class="h5">Size</th>
+                                <th class="h5 none c-md:table-cell">Color</th>
+                                <th class="h5 none c-md:table-cell">Date</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Tier 1</td>
+                                <td class="bt-0 c-md:bt-1">
+                                    <button class="link icon pressed-rotate mr-1" data-toggle="{tr} + tr .extend">
+                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
+                                    </button>
+                                    Tier 1
+                                </td>
+                                <td>100</td>
+                                <td class="none c-md:table-cell">Red</td>
+                                <td class="none c-md:table-cell">1/12/2024</td>
+                                <td class="bt-0 c-md:bt-1 text-right">
+                                    <button class="link icon circle" data-toggle="next" data-toggle-escapable data-toggle-dismissible aria-pressed="false">
+                                        <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
+                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+                                    </button>
+                                    <nav class="absolute right list navigable bg-faint round shadow p-1 mr-1 text-left w-content">
+                                        <button class="link pl-1" href="#">
+                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+                                            Edit
+                                        </button>
+                                        <button class="link pl-1 secondary" href="#">
+                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
+                                            Remove
+                                        </button>
+                                    </nav>
+                                </td>
+                            </tr>
+                            <tr class="px-1 c-md:p-0 ">
+                                <td colspan="5" class="bt-0 p-0">
+                                    <div class="closed extend">
+                                        <div class="p-3 pt-1">
+                                            <p class="c-md:none">
+                                                <b>Color:</b> Red
+                                            </p>
+                                            <p class="c-md:none">
+                                                <b>Date:</b> 1/12/2024
+                                            </p>
+                                            <p class="c-md:mt-0">
+                                                <b>Description:</b><br>
+                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="link icon pressed-rotate mr-1" data-toggle="{tr} + tr .extend">
+                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
+                                    </button>
+                                    Tier 2
+                                </td>
                                 <td>200</td>
-                                <td>Red</td>
-                                <td class="text-right"><a href="#" class="button link sm px-2">Learn More</a></td>
+                                <td class="none c-md:table-cell">Blue</td>
+                                <td class="none c-md:table-cell">1/24/2024</td>
+                                <td class="text-right">
+                                    <button class="link icon circle" data-toggle="next" data-toggle-escapable data-toggle-dismissible aria-pressed="false">
+                                        <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
+                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+                                    </button>
+                                    <nav class="absolute right list navigable bg-faint round shadow p-1 mr-1 text-left w-content">
+                                        <button class="link pl-1" href="#">
+                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+                                            Edit
+                                        </button>
+                                        <button class="link pl-1 secondary" href="#">
+                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
+                                            Remove
+                                        </button>
+                                    </nav>
+                                </td>
+                            </tr>
+                            <tr class="px-1 c-md:p-0 ">
+                                <td colspan="5" class="bt-0 p-0">
+                                    <div class="closed extend">
+                                        <div class="p-3 pt-1">
+                                            <p class="c-md:none">
+                                                <b>Color:</b> Blue
+                                            </p>
+                                            <p class="c-md:none">
+                                                <b>Date:</b> 1/24/2024
+                                            </p>
+                                            <p class="c-md:mt-0">
+                                                <b>Description:</b><br>
+                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <td>Tier 2</td>
+                                <td>
+                                    <button class="link icon pressed-rotate mr-1" data-toggle="{tr} + tr .extend">
+                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
+                                    </button>
+                                    Tier 3
+                                </td>
+                                <td>300</td>
+                                <td class="none c-md:table-cell">Yellow</td>
+                                <td class="none c-md:table-cell">2/4/2024</td>
+                                <td class="text-right">
+                                    <button class="link icon circle" data-toggle="next" data-toggle-escapable data-toggle-dismissible aria-pressed="false">
+                                        <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
+                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+                                    </button>
+                                    <nav class="absolute right list navigable bg-faint round shadow p-1 mr-1 text-left w-content">
+                                        <button class="link pl-1" href="#">
+                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+                                            Edit
+                                        </button>
+                                        <button class="link pl-1 secondary" href="#">
+                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
+                                            Remove
+                                        </button>
+                                    </nav>
+                                </td>
+                            </tr>
+                            <tr class="px-1 c-md:p-0 ">
+                                <td colspan="5" class="bt-0 p-0">
+                                    <div class="closed extend">
+                                        <div class="p-3 pt-1">
+                                            <p class="c-md:none">
+                                                <b>Color:</b> Yellow
+                                            </p>
+                                            <p class="c-md:none">
+                                                <b>Date:</b> 2/4/2024
+                                            </p>
+                                            <p class="c-md:mt-0">
+                                                <b>Description:</b><br>
+                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="link icon pressed-rotate mr-1" data-toggle="{tr} + tr .extend">
+                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                        <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
+                                    </button>
+                                    Tier 4
+                                </td>
                                 <td>400</td>
-                                <td>Blue</td>
-                                <td class="text-right"><a href="#" class="button link sm px-2">Learn More</a></td>
+                                <td class="none c-md:table-cell">Orange</td>
+                                <td class="none c-md:table-cell">3/17/2024</td>
+                                <td class="text-right">
+                                    <button class="link icon circle" data-toggle="next" data-toggle-escapable data-toggle-dismissible aria-pressed="false">
+                                        <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
+                                        <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+                                    </button>
+                                    <nav class="absolute right list navigable bg-faint round shadow p-1 mr-1 text-left w-content">
+                                        <button class="link pl-1" href="#">
+                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+                                            Edit
+                                        </button>
+                                        <button class="link pl-1 secondary" href="#">
+                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
+                                            Remove
+                                        </button>
+                                    </nav>
+                                </td>
                             </tr>
-                            <tr>
-                                <td>Tier 3</td>
-                                <td>500</td>
-                                <td>Gold</td>
-                                <td class="text-right"><a href="#" class="button link sm px-2">Learn More</a></td>
+                            <tr class="px-1 c-md:p-0 ">
+                                <td colspan="5" class="bt-0 p-0">
+                                    <div class="closed extend">
+                                        <div class="p-3 pt-1">
+                                            <p class="c-md:none">
+                                                <b>Color:</b> Orange
+                                            </p>
+                                            <p class="c-md:none">
+                                                <b>Date:</b> 3/17/2024
+                                            </p>
+                                            <p class="c-md:mt-0">
+                                                <b>Description:</b><br>
+                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -5256,17 +5548,23 @@ $borders: (
                 <div class="show-code" data-title="Basic Vertical Tabs">
                     <div class="tabs outline">
                         <nav class="list navigable bg-faint">
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(1)" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(2)" data-toggle-close="{.tabs} .open">Tab 2</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(3)" data-toggle-close="{.tabs} .open">Tab 3 lorem ipsum</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(4)" data-toggle-close="{.tabs} .open">Tab 4</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(5)" data-toggle-close="{.tabs} .open">Tab 5</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(6)" data-toggle-close="{.tabs} .open">Tab 6</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 3 lorem ipsum</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 4</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 5</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 6</button>
                         </nav>
                         <div>
                             <div class="p-3 open"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
-                            <div class="p-3"><p>Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
-                            <div class="p-3">Tab 3 asldkf </div>
+                            <div class="p-3">
+                                <p>Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                            </div>
+                            <div class="p-3"><p>Tab 3 asldkf</p></div>
                             <div class="p-3">Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                             <div class="p-3">Tab 5 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                             <div class="p-3">Tab 6 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
@@ -5275,18 +5573,18 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Horizontal Responsive Tabs">
-                    <div class="tabs column outline">
-                        <nav class="list row navigable content-center text-center columns-fill bg-faint">
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(1)" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(2)" data-toggle-close="{.tabs} .open">Tab 2</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(3)" data-toggle-close="{.tabs} .open">Tab 3 With Long Title</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(4)" data-toggle-close="{.tabs} .open">Tab 4</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(5)" data-toggle-close="{.tabs} .open">Tab 5</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(6)" data-toggle-close="{.tabs} .open">Tab 6</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(7)" data-toggle-close="{.tabs} .open">Tab 7 With Long Title</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(8)" data-toggle-close="{.tabs} .open">Tab 8</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(9)" data-toggle-close="{.tabs} .open">Tab 9 With Longer Title</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(8)" data-toggle-close="{.tabs} .open">Tab 10</button>
+                    <div class="tabs column c-md:row outline">
+                        <nav class="list row c-md:column c-md:content-start columns-fill c-md:columns-auto text-center navigable bg-faint">
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 3 With Long Title</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 4</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 5</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 6</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 7 With Long Title</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 8</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 9 With Longer Title</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 10</button>
                         </nav>
                         <div>
                             <div class="p-3 open"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
@@ -5306,12 +5604,12 @@ $borders: (
                 <div class="show-code" data-title="Vertical Right Tabs with Accent">
                     <div class="tabs outline border-primary">
                         <nav class="list navigable bg-primary bg-alpha-20 primary order-2">
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(1)" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(2)" data-toggle-close="{.tabs} .open">Tab 2</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(3)" data-toggle-close="{.tabs} .open">Tab 3 lorem ipsum</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(4)" data-toggle-close="{.tabs} .open">Tab 4</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(5)" data-toggle-close="{.tabs} .open">Tab 5</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(6)" data-toggle-close="{.tabs} .open">Tab 6</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 3 lorem ipsum</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 4</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 5</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 6</button>
                         </nav>
                         <div>
                             <div class="p-3 open"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
@@ -5327,9 +5625,9 @@ $borders: (
                 <div class="show-code" data-title="Bottom Fixed Tabs">
                     <div class="tabs column outline">
                         <nav class="list row order-2 navigable content-center text-center bg-faint">
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(1)" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(2)" data-toggle-close="{.tabs} .open">Tab 2</button>
-                            <button class="link" data-toggle="{.tabs} .list + * > :nth-child(3)" data-toggle-close="{.tabs} .open">Tab 3 With Long Title</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 3 With Long Title</button>
                         </nav>
                         <div>
                             <div class="p-4 open text-center"><h3>Tab 1 Content.</h3></div>
@@ -5418,13 +5716,14 @@ $borders: (
                 </table>
 
                 <div class="show-code text-center" data-title="Basic Tooltip Example">
-                    Text Here
-                    <i class="icon color-grey shy">
-                        <svg viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-14a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4z" /></svg>
-                        <span class="tooltip shadow">
-                            ToolTip
-                        </span>
-                    </i>
+                    <div>Text Here
+                        <i class="icon color-grey shy">
+                            <svg viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-14a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4z" /></svg>
+                            <span class="tooltip shadow">
+                                ToolTip
+                            </span>
+                        </i>
+                    </div>
                 </div>
 
                 <div class="show-code" data-title="Tooltip with Custom Content">

@@ -81,20 +81,20 @@ ul ul {
 .toggle:has(:checked) .rotate-pressed,
 .rotate-pressed[aria-pressed=true],
 [aria-pressed=true] .rotate-pressed,
-[aria-pressed] .rotate-pressed {
+[aria-pressed=""] .rotate-pressed {
 	rotate: 180deg;
 }
 
 .toggle:has(:checked) .flip-pressed,
 .flip-pressed[aria-pressed=true],
 [aria-pressed=true] .flip-pressed,
-[aria-pressed] .flip-pressed {
+[aria-pressed=""] .flip-pressed {
 	scale: -1;
 }
 
 @each $breakpoint,
 $breakpoint_width in variables.$breakpoints {
-	:has(> [class*=c-#{$breakpoint}\:]) {
+	:has(> [class*=c-#{$breakpoint}\:]):not(table,thead,tbody,tfoot,tr,td,th) {
 		container-type: inline-size;
 	}
 }
