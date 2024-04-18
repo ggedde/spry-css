@@ -1,4 +1,4 @@
-/*!
+/*
 * Spry Utilities
 */
 @use "variables";
@@ -403,7 +403,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 	#{$prefix}center {
 		inset    : 50% auto auto 50%;
-		translate: -50%
+		translate: -50% -50%
 	}
 
 	#{$prefix}center-y {

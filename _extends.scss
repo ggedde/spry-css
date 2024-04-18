@@ -1,4 +1,4 @@
-/*!
+/*
 * Spry Extends
 */
 @use "mixins";
@@ -40,7 +40,7 @@
 }
 
 %ui-border-radius {
-	border-radius: .25em;
+	border-radius: var(--border-radius, .25em);
 }
 
 %ui-bg {

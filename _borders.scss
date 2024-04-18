@@ -1,4 +1,4 @@
-/*!
+/*
 * Spry Borders
 */
 @use "variables";
@@ -13,7 +13,7 @@
 	
 		@else {
 			#{$prefix}b-#{$b} {
-				border: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha));
+				border: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha, 1));
 			}
 		}
 	}
@@ -29,10 +29,10 @@
 	
 		@else {
 			#{$prefix}bx-#{$b} {
-				border-inline: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha));
+				border-inline: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha, 1));
 			}
 			#{$prefix}by-#{$b} {
-				border-block: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha));
+				border-block: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha, 1));
 			}
 		}
 	}
@@ -54,16 +54,16 @@
 	
 		@else {
 			#{$prefix}bt-#{$b} {
-				border-top: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha));
+				border-top: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha, 1));
 			}
 			#{$prefix}br-#{$b} {
-				border-right: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha));
+				border-right: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha, 1));
 			}
 			#{$prefix}bb-#{$b} {
-				border-bottom: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha));
+				border-bottom: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha, 1));
 			}
 			#{$prefix}bl-#{$b} {
-				border-left: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha));
+				border-left: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha, 1));
 			}
 		}
 	}
