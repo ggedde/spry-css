@@ -41,7 +41,7 @@ tbody td {
 	#{$prefix}responsive {
 
 		&,
-		& :is(thead, tbody, tr, td, th, tfoot) {
+		& :where(thead, tbody, tr, td, th, tfoot) {
 			display: block;
 		}
 
