@@ -15,7 +15,7 @@
 	justify-content : center;
 	min-height      : 2.3em;
 	min-width       : 2.3em;
-	outline         : 0 solid rgba(var(--color-rgb), 0.25);
+	outline         : 0 solid rgb(from var(--color) r g b / 0.25);
 	outline-offset  : 2px;
 	padding-block   : .3em;
 	padding-inline  : 1em;
@@ -32,9 +32,7 @@
 }
 
 %ui-border {
-	// --border-alpha: 1;
-	// --border-color-rgb: var(--color-rgb);
-	border-color: rgba(var(--color-rgb), var(--border-alpha));
+	border-color: hsl(from var(--color) h s var(--border-lightness, l) / var(--border-alpha, 100%));
 	border-width: 1px;
 	border-style: solid;
 }
@@ -44,23 +42,38 @@
 }
 
 %ui-bg {
-	background-color: rgba(var(--color-rgb), var(--bg-alpha, 1));
-	border-color    : var(--color);
+	background-color: hsl(from var(--color) h s var(--bg-lightness, l) / var(--bg-alpha, 100%));
+	border-color    : hsl(from var(--color) h s var(--border-lightness, l) / var(--border-alpha, 100%));
 }
 
 %ui-hover {
-	filter: brightness(1.15);
+	// filter: brightness(1.15);
+	background-color: hsl(from var(--color) h s calc(var(--bg-lightness, l) + 10) / var(--bg-alpha, 100%));
+	// color: hsl(from var(--text-color) h s calc(l + 10) / var(--color-alpha, 100%));
+	&:where(.hazy, .outline, .plain, .link) {
+		background-color: hsl(from var(--color) h s calc(var(--bg-lightness, l) + 10) / 15%);
+	}
 }
 
 %ui-bg-hover {
-	--bg-alpha      : .15;
-	background-color: rgba(var(--color-rgb), var(--bg-alpha));
+	background-color: hsl(from var(--color) h s l / 15%);
 }
+
+// %ui-hover {
+// 	filter: brightness(1.15);
+// }
+
+// %ui-bg-hover {
+// 	--bg-alpha      : .15;
+// 	background-color: rgba(var(--color-rgb), var(--bg-alpha));
+// }
 
 %ui-color {
 	color: var(--text-color);
 	--select-arrow: var(--text-color);
-
+	&:where(.link, .outline, .hazy, .plain) {
+		color: hsl(from var(--color) h s var(--color-lightness, l) / var(--color-alpha, 100%));
+	}
 	&[aria-busy=true] {
 		color: transparent;
 	}

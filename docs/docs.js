@@ -8,30 +8,34 @@
 
 let _currentPanel = null;
 
-function toggleTheme(parent) {
-    if (parent !== document.documentElement) {
-        var theme = parent.hasAttribute('data-theme') ? ( parent.getAttribute('data-theme') === 'dark' ? 'light' : 'dark') : ( document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-        parent.setAttribute('data-theme', theme );
-        var child = parent.querySelector('[data-theme]');
-        if (child) {
-            child.setAttribute('data-theme', theme);
-            var codeVals = parent.querySelectorAll('.attr-value');
-            if (codeVals) {
-                codeVals.forEach(val => {
-                    if (val.innerHTML && (val.innerHTML.indexOf('dark') || val.innerHTML.indexOf('light'))) {
-                        val.innerHTML = val.innerHTML.replace('dark', theme);
-                        val.innerHTML = val.innerHTML.replace('light', theme);
-                    }
-                });
-            }
-            var codeTitle = parent.querySelector('article header h4');
-            if (codeTitle.innerHTML && (codeTitle.innerHTML.indexOf('Dark Theme') > -1 || codeTitle.innerHTML.indexOf('Light Theme') > -1)) {
-                codeTitle.innerHTML = codeTitle.innerHTML.replace('Dark', theme.charAt(0).toUpperCase() + theme.slice(1));
-                codeTitle.innerHTML = codeTitle.innerHTML.replace('Light', theme.charAt(0).toUpperCase() + theme.slice(1));
-            }
+function toggleTheme(element) {
+    var themeMatches = element.className.match(/theme\-[a-z0-9\_\-]+/gi);
+    var currentTheme = themeMatches && themeMatches[0] ? themeMatches[0] : null;
+    var theme = currentTheme === 'theme-dark' ? 'theme-light' : 'theme-dark';
+    element.classList.remove(currentTheme);
+    element.classList.add(theme);
+    if (element !== document.documentElement) {   
+        var children = element.querySelectorAll('.theme-dark,.theme-light');
+        if (children) {
+            children.forEach(child => {
+                child.classList.remove(currentTheme);
+                child.classList.add(theme);
+                var codeValues = element.querySelectorAll('.attr-value');
+                if (codeValues) {
+                    codeValues.forEach(val => {
+                        if (val.innerHTML && (val.innerHTML.indexOf('theme-dark') || val.innerHTML.indexOf('theme-light'))) {
+                            val.innerHTML = val.innerHTML.replace('theme-dark', theme);
+                            val.innerHTML = val.innerHTML.replace('theme-light', theme);
+                        }
+                    });
+                }
+                var codeTitle = element.querySelector('article header h4');
+                if (codeTitle.innerHTML && (codeTitle.innerHTML.indexOf('Dark Theme') > -1 || codeTitle.innerHTML.indexOf('Light Theme') > -1)) {
+                    codeTitle.innerHTML = codeTitle.innerHTML.replace('Dark Theme', theme === 'theme-dark' ? 'Dark Theme' : 'Light Theme');
+                    codeTitle.innerHTML = codeTitle.innerHTML.replace('Light Theme', theme === 'theme-dark' ? 'Dark Theme' : 'Light Theme');
+                }
+            });
         }
-    } else {
-        parent.setAttribute('data-theme', parent.getAttribute('data-theme') === 'dark' ? '' : 'dark');
     }
 } 
 

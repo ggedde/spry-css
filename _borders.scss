@@ -13,7 +13,7 @@
 	
 		@else {
 			#{$prefix}b-#{$b} {
-				border: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha, 1));
+				border: #{$border} solid;
 			}
 		}
 	}
@@ -29,10 +29,10 @@
 	
 		@else {
 			#{$prefix}bx-#{$b} {
-				border-inline: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha, 1));
+				border-inline: #{$border} solid;
 			}
 			#{$prefix}by-#{$b} {
-				border-block: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha, 1));
+				border-block: #{$border} solid;
 			}
 		}
 	}
@@ -54,16 +54,16 @@
 	
 		@else {
 			#{$prefix}bt-#{$b} {
-				border-top: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha, 1));
+				border-top: #{$border} solid;
 			}
 			#{$prefix}br-#{$b} {
-				border-right: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha, 1));
+				border-right: #{$border} solid;
 			}
 			#{$prefix}bb-#{$b} {
-				border-bottom: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha, 1));
+				border-bottom: #{$border} solid;
 			}
 			#{$prefix}bl-#{$b} {
-				border-left: #{$border} solid rgba(var(--border-color-rgb), var(--border-alpha, 1));
+				border-left: #{$border} solid;
 			}
 		}
 	}

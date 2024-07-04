@@ -6,6 +6,7 @@
 .badge {
 	@extend %ui;
 	@extend %ui-bg;
+	@extend %ui-color;
 	@extend %ui-border;
 	--border-alpha: .8;
 	--border-color: var(--color);
@@ -14,7 +15,7 @@
 	font-weight: 500;
 	line-height: 1;
 
-	&:not(.outline, .hazy) {
-		@extend %ui-color;
-	}
+	// &:not(.outline, .hazy) {
+	// 	@extend %ui-color;
+	// }
 }

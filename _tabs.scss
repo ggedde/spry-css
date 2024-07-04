@@ -19,12 +19,17 @@
 			flex: 1;
 		}
 
+		// > button,
+		// > a {
+		// 	filter: none !important;
+		// }
+
 		&+*>* {
 			transition: none;
 			transform : translateY(3px);
-			max-height: 0;
 			@extend %toggle-closed;
 			&:not(.open) {
+				max-height: 0;
 				padding-block: 0;
 				margin-block: 0;
 			}

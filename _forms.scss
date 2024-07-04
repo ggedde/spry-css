@@ -3,24 +3,27 @@
 */
 @use "extends";
 
+form {
+	--border-alpha: 70%;
+}
+
 :is(input,textarea,select){
 	@extend %ui;
+	@extend %ui-border;
 	@extend %ui-border-radius;
-	--border-alpha: .7;
-	border-width: 1px;
-	border-style: solid;
-	border-color: rgba(var(--border-color-rgb), var(--border-alpha));
-	--select-arrow: rgba(var(--border-color-rgb), 1);
+	border-color: hsl(from var(--border-color) h s var(--border-lightness, l) / var(--border-alpha, 70%));
+	--select-arrow: var(--border-color);
 	font-family: inherit;
 	font-weight: inherit;
 	&:hover {
 		outline-width: 0;
 	}
 	&:focus {
-		box-shadow: inset 0 0 0 1px rgba(var(--color-rgb), calc(var(--border-alpha) + .4));
+		box-shadow: inset 0 0 0 1px hsl(from var(--color) h s l / 50%);
 	}
 	&:is(:hover,:focus) {
-		border-color: rgba(var(--color-rgb), calc(var(--border-alpha) + .2));
+		--border-color: var(--color);
+		border-color: hsl(from var(--border-color) h s l / 100%);
 	}
 }
 
@@ -109,14 +112,10 @@ label > :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chi
 	outline-width: 4px;
 }
 
-:disabled {
-	opacity       : .6;
-	pointer-events: none;
-}
-
+:disabled,
 form.disabled :is(input, select, textarea, label, button) {
+	opacity       : .7;
 	pointer-events: none;
-	opacity       : 0.8;
 }
 
 select,

@@ -1,0 +1,75 @@
+/*
+* Spry Light Theme
+*/
+
+@use "variables";
+
+$theme: #ffffff !default;
+
+:root,
+.theme-light {
+
+	--theme: $theme;
+	--select-arrow: var(--border-color);
+	--ui-light-text-color: #f2f2f2;
+	--ui-dark-text-color: #444;
+
+	// .bg-theme {
+	// 	background-color: rgb(var(--bg-color-rgb), var(--bg-alpha));
+	// }
+
+	@each $color_name, $color_value in variables.$colors {
+		@if map-get($color_value, 'light') {
+
+			@if index(variables.$colors, ($color_name $color_value)) == 1 {
+				--color      : #{map-get($color_value, 'light')};
+				// --color-rgb  : #{red(map-get($color_value, 'light')), green(map-get($color_value, 'light')), blue(map-get($color_value, 'light'))};
+				// --border-color-rgb: #{red(map-get($color_value, 'light')), green(map-get($color_value, 'light')), blue(map-get($color_value, 'light'))};
+				
+				@if (lightness(map-get($color_value, 'light')) > 70) {
+					--text-color: var(--ui-dark-text-color);
+				}
+
+				@else {
+					--text-color: var(--ui-light-text-color);
+				}
+			}
+		}
+	}
+}
+
+html,
+.theme-light,
+.theme-light article,
+article.theme-light {
+	background-color: hsla(#{round(hue($theme))}, #{round(saturation($theme))}, var(--color-lightness, #{round(lightness($theme))}), var(--color-alpha, 100%))
+}
+
+html,
+.theme-light {
+	color-scheme: light;
+	color: map-get(map-get(variables.$types, 'body'), 'color');
+
+	select option,
+	.tooltip {
+		background-color: #efefef;
+		color           : #1b1b1b;
+	}
+
+	@each $color_name, $color_value in variables.$colors {
+		@if map-get($color_value, 'light') {
+			// --#{$color_name}    : #{map-get($color_value, 'light')};
+			--#{$color_name}    : hsla(#{round(hue(map-get($color_value, 'light')))}, #{round(saturation(map-get($color_value, 'light')))}, var(--color-lightness, #{round(lightness(map-get($color_value, 'light')))}), var(--color-alpha, 100%));
+			
+			.#{$color_name} {
+				@if (lightness(map-get($color_value, 'light')) > 70) {
+					--text-color: var(--ui-dark-text-color);
+				}
+
+				@else {
+					--text-color: var(--ui-light-text-color);
+				}
+			}
+		}
+	}
+}

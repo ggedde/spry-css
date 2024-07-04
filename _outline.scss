@@ -5,10 +5,14 @@
 @use "extends";
 
 .outline {
+	// --border-lightness: 80%;
 	@extend %ui-border;
-	--border-alpha: .4;
-	--border-color-rgb: var(--color-rgb);
-	border-color: rgba(var(--border-color-rgb), var(--border-alpha));
+	// --border-alpha: 1;
+	// --border-color-rgb: var(--color-rgb);
+	// border-color: var(--border-color);
+	// border-color:  hsla(var(--border-hue), var(--border-sat), var(--border-lightness), var(--border-alpha, 100%));
+
+	// border-color: var(--border-color);
 
 	>ul,
 	>ul ul,

@@ -88,8 +88,8 @@ pre[class*="language-"].pre-wrap {
 	white-space: pre-wrap;
 }
 
-[data-theme=dark] code[class*="language-"],
-[data-theme=dark] pre[class*="language-"] {
+.theme-dark code[class*="language-"],
+.theme-dark pre[class*="language-"] {
 	color: #e7e7e7;
 }
 
@@ -99,8 +99,8 @@ code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-select
 	background: #b3d4fc;
 }
 
-[data-theme=dark] pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-[data-theme=dark] code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+.theme-dark pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+.theme-dark code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	background: rgba(150,150,150,0.2);
 }
 
@@ -110,23 +110,23 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	background: #b3d4fc;
 }
 
-[data-theme=dark] pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-[data-theme=dark] code[class*="language-"]::selection, code[class*="language-"] ::selection {
+.theme-dark pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+.theme-dark code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	background: rgba(150,150,150,0.2);
 }
 
-[data-theme=light] code[class*="language-"],
-[data-theme=light] pre[class*="language-"] {
+.theme-light code[class*="language-"],
+.theme-light pre[class*="language-"] {
 	color: black;
 }
 
-[data-theme=light] pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-[data-theme=light] code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+.theme-light pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+.theme-light code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	background: #b3d4fc;
 }
 
-[data-theme=light] pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-[data-theme=light] code[class*="language-"]::selection, code[class*="language-"] ::selection {
+.theme-light pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+.theme-light code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	background: #b3d4fc;
 }
 
@@ -142,13 +142,13 @@ pre[class*="language-"] {
 	background: #F6F6F6;
 }
 
-[data-theme=dark] :not(pre) > code[class*="language-"],
-[data-theme=dark] pre[class*="language-"] {
+.theme-dark :not(pre) > code[class*="language-"],
+.theme-dark pre[class*="language-"] {
 	background: #000000;
 }
 
-[data-theme=light] :not(pre) > code[class*="language-"],
-[data-theme=light] pre[class*="language-"] {
+.theme-light :not(pre) > code[class*="language-"],
+.theme-light pre[class*="language-"] {
 	background: #F6F6F6;
 }
 

@@ -29,8 +29,12 @@ a {
 	transition: color .1s ease-in-out;
 	text-decoration: none;
 
-	&:is(:hover, :focus):not(:has(img),:active) {
-		@extend %ui-hover;
+	// &:is(:hover, :focus):not(:has(img),:active) {
+	// 	// @extend %ui-hover;
+	// }
+	&:is(:hover, :focus):not(button,.button,:has(img),:active) {
+		// @extend %ui-hover;
+		filter: brightness(1.15);
 	}
 }
 
@@ -50,7 +54,7 @@ a {
 
 .hazy,
 .buttons-hazy a {
-	background-color: rgba(var(--color-rgb), .1);
+	background-color: hsl(from var(--color) h s var(--color-lightness, l) / 10%);
 }
 
 hr {

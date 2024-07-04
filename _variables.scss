@@ -15,28 +15,43 @@ $gaps: (
 // Specify each color used in color-, bg-, border-, and in accents.
 // Apply each color with ({theme}: {color_value}, {theme}: {color_value}, ...),
 // Default theme is "light". If no theme color available the color will then fallback to the default theme "light".
+// $colors: (
+//     "grey"     : (light: #808080), // The First Color in the array is your default color.
+//     "text"     : (light: #555555, dark: #bbbbbb), // Variable Theme Color
+//     "contrast" : (light: #262626, dark: #efefef), // Variable Theme Color
+//     "faint"    : (light: #efefef, dark: #282828), // Variable Theme Color
+//     "dark"     : (light: #121212),
+//     "light"    : (light: #efefef),
+//     "primary"  : (light: #1494df),
+//     "secondary": (light: #df8a22),
+// ) !default;
+
 $colors: (
+    // "hazy"      :#ccc, // The First Color in the array is your default color.
     "grey"     : (light: #808080), // The First Color in the array is your default color.
     "text"     : (light: #555555, dark: #bbbbbb), // Variable Theme Color
     "contrast" : (light: #262626, dark: #efefef), // Variable Theme Color
     "faint"    : (light: #efefef, dark: #282828), // Variable Theme Color
-    "dark"     : (light: #121212),
-    "light"    : (light: #efefef),
+    // "text"      :#555555,
+    // "contrast"  :#262626,
+    // "faint"     :#efefef,
+    // "dark"      :#121212,
+    // "light"     :#efefef,
     "primary"  : (light: #1494df),
     "secondary": (light: #df8a22),
 ) !default;
 
 // Specify each type tag and class like <h3> and .h3 etc.
 $types: (
-    body: (font-family: (sans-serif, system-ui), font-size: clamp(.9em, 3vw, 1.0em), color: var(--text), font-weight: 300, line-height: 1.4),
-    h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20, color: var(--contrast)),
-    h2: (font-size: 2.3em, font-weight: 300, line-height: 1.25, color: var(--contrast)),
-    h3: (font-size: 1.8em, font-weight: 300, line-height: 1.30, color: var(--contrast)),
-    h4: (font-size: 1.4em, font-weight: 300, line-height: 1.35, color: var(--contrast)),
-    h5: (font-size: 1.1em, font-weight: 300, line-height: 1.5, color: var(--contrast)),
-    h6: (font-size: 1.0em, font-weight: 300, line-height: 1.4, color: var(--contrast)),
-     q: (font-size: 1.6em, font-weight: 300, font-style: italic, line-height: 1.4, color: var(--contrast), margin-block: 2em),
-     a: (color: var(--primary)),
+    body: (font-family: (sans-serif, system-ui), font-size: clamp(.9em, 3vw, 1.0em), color: hsl(from var(--text) h s var(--color-lightness, l) / var(--color-alpha, 100%)), font-weight: 300, line-height: 1.4),
+    h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20, color: hsl(from var(--contrast) h s var(--color-lightness, l) / var(--color-alpha, 100%))),
+    h2: (font-size: 2.3em, font-weight: 300, line-height: 1.25, color: hsl(from var(--contrast) h s var(--color-lightness, l) / var(--color-alpha, 100%))),
+    h3: (font-size: 1.8em, font-weight: 300, line-height: 1.30, color: hsl(from var(--contrast) h s var(--color-lightness, l) / var(--color-alpha, 100%))),
+    h4: (font-size: 1.4em, font-weight: 300, line-height: 1.35, color: hsl(from var(--contrast) h s var(--color-lightness, l) / var(--color-alpha, 100%))),
+    h5: (font-size: 1.1em, font-weight: 300, line-height: 1.5, color: hsl(from var(--contrast) h s var(--color-lightness, l) / var(--color-alpha, 100%))),
+    h6: (font-size: 1.0em, font-weight: 300, line-height: 1.4, color: hsl(from var(--contrast) h s var(--color-lightness, l) / var(--color-alpha, 100%))),
+     q: (font-size: 1.6em, font-weight: 300, font-style: italic, line-height: 1.4, color: hsl(from var(--contrast) h s var(--color-lightness, l) / var(--color-alpha, 100%)), margin-block: 2em),
+     a: (color: hsl(from var(--primary) h s var(--color-lightness, l) / var(--color-alpha, 100%))),
 ) !default;
 
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc.
@@ -66,6 +81,36 @@ $sizes: (
     sm: 80%,
     xs: 65%,
     xxs: 50%,
+) !default;
+
+// Specify each size that applies font-size and all elements using "em".
+$shades: (
+    0: 0%,
+    10: 10%,
+    20: 20%,
+    30: 30%,
+    40: 40%,
+    50: 50%,
+    60: 60%,
+    70: 70%,
+    80: 80%,
+    90: 90%,
+    100: 100%,
+) !default;
+
+// Specify each size that applies font-size and all elements using "em".
+$opacities: (
+    0: 0%,
+    10: 10%,
+    20: 20%,
+    30: 30%,
+    40: 40%,
+    50: 50%,
+    60: 60%,
+    70: 70%,
+    80: 80%,
+    90: 90%,
+    100: 100%,
 ) !default;
 
 :root {

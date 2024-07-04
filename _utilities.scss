@@ -627,13 +627,9 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		}
 	}
 
-	#{$prefix}o-0 {
-		opacity: 0
-	}
-
-	@for $i from 1 through 10 {
-		#{$prefix}o-#{$i}0 {
-			opacity: calc($i / 10)
+	@each $opacity_name, $opacity_value in variables.$opacities {
+		#{$prefix}o-#{$opacity_name} {
+			opacity: #{$opacity_value};
 		}
 	}
 
