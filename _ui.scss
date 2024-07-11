@@ -5,18 +5,18 @@
 @use "extends";
 
 $color_names: ();
-@each $color_name, $color_value in variables.$colors {
-    $color_names: append($color_names, '.#{$color_name}', 'comma');
+
+@each $color_name,
+$color_value in variables.$colors {
+	$color_names: append($color_names, '.#{$color_name}', 'comma');
 }
 
 .ui {
 	@extend %ui;
 	@extend %ui-bg;
 	@extend %ui-border;
+	@extend %ui-color;
 	@extend %ui-border-radius;
-	&:where(#{$color_names}) {
-		@extend %ui-color;
-	}
 }
 
 .toggle:has(:focus-visible),
@@ -25,15 +25,10 @@ $color_names: ();
 }
 
 a {
-	cursor    : pointer;
-	transition: color .1s ease-in-out;
+	cursor         : pointer;
 	text-decoration: none;
 
-	// &:is(:hover, :focus):not(:has(img),:active) {
-	// 	// @extend %ui-hover;
-	// }
-	&:is(:hover, :focus):not(button,.button,:has(img),:active) {
-		// @extend %ui-hover;
+	&:is(:hover, :focus):not(button, .button, :has(img), :active) {
 		filter: brightness(1.15);
 	}
 }
@@ -54,22 +49,22 @@ a {
 
 .hazy,
 .buttons-hazy a {
-	background-color: hsl(from var(--color) h s var(--color-lightness, l) / 10%);
+	background-color: hsl(from var(--color) h s var(--bg-l, l) / 10%);
 }
 
 hr {
 	height       : 0;
 	margin       : var(--gapy) var(--gapx);
 	border       : 0;
-	border-bottom: 1px solid rgba(var(--border-color-rgb), var(--border-alpha));
+	border-bottom: 1px solid;
 }
 
 li,
 ul ul {
-	flex-direction  : column;
-	justify-content : inherit;
-	text-align      : inherit;
-	width           : inherit;
+	flex-direction : column;
+	justify-content: inherit;
+	text-align     : inherit;
+	width          : inherit;
 }
 
 ul ul {

@@ -3,106 +3,151 @@
 */
 
 @use "variables";
+@use "extends";
 
 $color_names: ();
 @each $color_name, $color_value in variables.$colors {
-    $color_names: append($color_names, '.#{$color_name}', 'comma');
+	$color_names: append($color_names, '.#{$color_name}', 'comma');
 }
 
-:is(button,.button,.alert,.badge,[type=submit],[type=reset]):is(.link, .outline, .hazy, .plain):where(#{$color_names}),
-:is(#{$color_names}) :is(button,.button,.alert,.badge,[type=submit],[type=reset]):is(.link, .outline, .hazy, .plain),
-:is(.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a {
-	--text-color: var(--color);
-	--select-arrow: var(--text-color);
-}
+:root,
+.theme-default {
+	--theme-bg           : #fff;
+	--theme-text         : var(--text, #444);
+	--theme-border       : #ccc;
+	--theme-input-border : #777;
+	--ui-light-text-color: #f2f2f2;
+	--ui-dark-text-color : #444;
+	--text-color         : #444;
+	--card-color         : #eee;
 
-:is(button,.button,.alert,.badge,[type=submit],[type=reset]):where(.link, .outline, .hazy, .plain):where(#{$color_names}),
-:where(#{$color_names}):not(article) :is(.link, .outline, .hazy, .plain) {
-	color: var(--color);
-	--select-arrow: var(--color);
-}
+	@each $color_name, $color_value in variables.$colors {
+		--#{$color_name}: #{map-get($color_value, 'default')};
 
-:is(button,.button,.alert,.badge,[type=submit],[type=reset]):where(#{$color_names}) :is(h1,h2,h3,h4,h5,h6),
-article:where(#{$color_names}) > :is(header, footer) :is(h1,h2,h3,h4,h5,h6) {
-	color: var(--text-color);
-}
+		@if index(variables.$colors, ($color_name $color_value))==1 {
+			--color: #{map-get($color_value, 'default')};
 
+			@if (lightness(map-get($color_value, 'default')) > 70) {
+				--text-color: var(--ui-dark-text-color);
+			}
 
-// Initial Color sets
-@each $color_name,
-$color_value in variables.$colors {
-
-	article.#{$color_name} {
-		--card-color  : var(--#{$color_name});
-		--card-color-rgb  : var(--#{$color_name}-rgb);
-		--border-alpha: 1;
-	}
-}
-
-// First Color Overrides
-@each $color_name,
-$color_value in variables.$colors {
-
-	.color-#{$color_name} :is(h1,h2,h3,h4,h5,h6),
-	.links-#{$color_name} a:not(.button),
-	.links-hover-#{$color_name} a:not(.button):is(:hover, :focus, .active, [aria-pressed=true]) {
-		color : var(--#{$color_name});
-	}
-}
-
-// Final Color Overrides
-@each $color_name,
-$color_value in variables.$colors {
-
-	[class].#{$color_name} {
-		--color     : var(--#{$color_name});
-		--color-rgb : var(--#{$color_name}-rgb);
-		accent-color: var(--color);
-	}
-
-	[class].color-#{$color_name},
-	.hover-#{$color_name}:is(:hover, :focus, .active, [aria-pressed=true]) {
-		--text-color     : var(--#{$color_name});
-		color            : var(--text-color);
-	}
-
-	.bg-#{$color_name},
-	.bg-#{$color_name} > ul,
-	.bg-#{$color_name} > li > ul,
-	.bg-#{$color_name} > ul ul,
-	:is(.tooltip, article).bg-#{$color_name} {
-		--bg-alpha: 1;
-		background-color: rgba(var(--#{$color_name}-rgb), var(--bg-alpha));
-	}
-
-	.border-#{$color_name} {
-		--border-alpha: 1;
-		--border-color-rgb: var(--#{$color_name}-rgb);
-		--border-color: rgba(var(--#{$color_name}-rgb), var(--border-alpha));
-		border-color  : var(--border-color);
-	}
-}
-
-.bg-alpha-0{ 
-	--bg-alpha: 0;
-}
-[class].border-alpha-0{ 
-	--border-alpha: 0;
-	:is(input,textarea,select),
-	label .ui {
-		--border-alpha: 0;
-	}
-}
-
-@for $i from 1 through 10 {
-	.bg-alpha-#{$i}0{ 
-		--bg-alpha: #{calc($i / 10)};
-	}
-	[class].border-alpha-#{$i}0 { 
-		--border-alpha: #{calc($i / 10)};
-		:is(input,textarea,select),
-		label .ui {
-			--border-alpha: #{calc($i / 10)};
+			@else {
+				--text-color: var(--ui-light-text-color);
+			}
 		}
 	}
+}
+
+.color-theme {
+	color: hsl(from var(--theme-text) h s var(--clr-l, l) / var(--clr-a, 100%));
+}
+
+.bg-theme {
+	background-color: hsl(from var(--theme-bg) h s var(--bg-l, l) / var(--bg-a, 100%));
+}
+
+.border-theme {
+	background-color: hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+}
+
+:where(html,.theme-default) {
+	@each $color_name, $color_value in variables.$colors {
+		.links-#{$color_name} :where(a:not(.button)),
+		.hover\:links-#{$color_name} a:not(.button,[class*=hover\:color-]):is(:hover, :focus, .active) {
+			color: hsl(from #{map-get($color_value, 'default')} h s var(--clr-l, l) / var(--clr-a, 100%));
+		}
+	}
+}
+
+html,
+.theme-default {
+	color-scheme: light;
+	@each $color_name, $color_value in variables.$colors {
+
+		.#{$color_name} {
+			--color       : #{map-get($color_value, 'default')};
+			--card-color  : #{map-get($color_value, 'default')};
+			--theme-border: #{map-get($color_value, 'default')};
+
+			@if (lightness(map-get($color_value, 'default')) > 70) {
+				--text-color: var(--ui-dark-text-color);
+			}
+
+			@else {
+				--text-color: var(--ui-light-text-color);
+			}
+		}
+
+		.hover\:color-#{$color_name}:is(:hover, :focus, .active),
+		.color-#{$color_name} {
+			color: hsl(from #{map-get($color_value, 'default')} h s var(--clr-l, l) / var(--clr-a, 100%));
+			--text-color: #{map-get($color_value, 'default')};
+		}
+
+		.bg-#{$color_name} {
+			background-color: hsl(from #{map-get($color_value, 'default')} h s var(--bg-l, l) / var(--bg-a, 100%));
+		}
+
+		.border-#{$color_name} {
+			--theme-border      : #{map-get($color_value, 'default')};
+			--theme-input-border: #{map-get($color_value, 'default')};
+			border-color        : hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+		}
+	}
+
+	@for $i from 0 through 10 {
+		.color\/#{calc($i * 10)} {
+			@extend %ui-clr-a-#{$i};
+		}
+		.bg\/#{calc($i * 10)} {
+			@extend %ui-bg-a-#{$i};
+		}
+		.border\/#{calc($i * 10)} {
+			@extend %ui-bdr-a-#{$i};
+		}
+		.color-#{calc($i * 10)} {
+			@extend %ui-clr-l-#{$i};
+		}
+		.bg-#{calc($i * 10)} { 
+			@extend %ui-bg-l-#{$i};
+		}
+		.border-#{calc($i * 10)} {
+			@extend %ui-bdr-l-#{$i};
+		}
+	}
+}
+
+:where(#{$color_names}, [class^=color-], [class*=\ color-]) :is(h1,h2,h3,h4,h5,h6) {
+	color: inherit
+}
+
+html,
+.theme-default,
+article,
+article.outline,
+article.theme-default,
+select option,
+.tooltip {
+	color           : hsl(from var(--theme-text) h s var(--clr-l, l) / var(--clr-a, 100%));
+	background-color: hsl(from var(--theme-bg) h s var(--bg-l, l) / var(--bg-a, 100%));
+	border-color    : hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+}
+
+:is(button, .button, .alert, .badge, [type=submit], [type=reset], .ui):is(.link, .plain, .hazy, .outline),
+:is(.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a,
+:where(#{$color_names}).loading {
+	--text-color: var(--color);
+}
+
+.outline,
+hr,
+[class^=b-],
+[class*=\ b-],
+[class*=bx-],
+[class*=by-],
+[class*=bt-],
+[class*=br-],
+[class*=bb-],
+[class*=bl-] {
+	border-color: hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
 }

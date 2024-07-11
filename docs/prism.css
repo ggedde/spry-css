@@ -6,30 +6,6 @@ https://prismjs.com/download.html#themes=prism&languages=css+scss&plugins=toolba
  * @author Lea Verou
  */
 
-/* .show-code,
-div.code-toolbar {
-	max-width: calc(100vw - 60px);
-} */
-/* .show-code {
-	position: relative;
-	background-color: transparent !important;
-} */
-
-/* .show-code.open .code-container {
-	max-height: 300px;
-	opacity: 1;
-} */
-
-/* .show-code > article { 
-	gap: 0;
-} */
-/* @media screen and (min-width: 620px) {
-	.show-code,
-	div.code-toolbar {
-		max-width: calc(100vw - 264px);
-	}
-} */
-
 .code-content-container {
 	min-width: 300px;
 	max-width: 100%;
@@ -41,22 +17,35 @@ div.code-toolbar {
 
 .code-resize-handle {
     position: absolute;
-	border: 1px solid rgba(160,160,160,0);
-	border-top: 0;
-	border-bottom: 0;
-	border-radius: 0 0 6px 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 6px;
+    inset: auto -3px -3px auto;
+    width: 18px;
+    height: 18px;
 	margin: 0;
     cursor: ew-resize;
-	transition: border-color .2s ease-in-out;
+	rotate: 45deg;
+	opacity: 0.4;
+	transition: opacity .2s ease-in-out;
+}
+
+.code-resize-handle::before,
+.code-resize-handle::after {
+	content: "";
+	display: block;
+	width: 1px;
+    height: 14px;
+	position: absolute;
+	inset: 2px 0 0 10px;
+	background-color: #888;
+}
+
+.code-resize-handle::after {
+    height: 8px;
+	inset: 5px 0 0 13px;
 }
 
 .code-resize-handle.moving,
 .code-resize-handle:hover {
-	border-color: rgba(160,160,160,0.4);
+	opacity: 1;
 }
 
 code[class*="language-"],

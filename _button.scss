@@ -11,10 +11,6 @@
 	@extend %ui-color;
 	@extend %ui-border;
 	@extend %ui-border-radius;
-	--border-alpha: 1;
-	// --border-color: rgba(var(--color-rgb), var(--border-alpha));
-	// --border-color: var(--border-color);
-	// --border-color-rgb: var(--color-rgb);
 	position      : relative;
 	width         : auto;
 	cursor        : pointer;
@@ -30,11 +26,6 @@
 		@extend %ui-hover;
 	}
 }
-
-// :is(button,.button,[type=submit],[type=reset]):not(.link, .outline, .hazy, .plain),
-// :is(.buttons,.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a {
-// 	@extend %ui-color;
-// }
 
 :is(button,.button,[type=submit],[type=reset]).link,
 .buttons-link a {

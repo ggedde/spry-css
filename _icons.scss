@@ -34,13 +34,13 @@ svg.icon {
 	transition: all .2s var(--ease);
 }
 
-[data-toggle]:has(svg:nth-of-type(2)) svg:nth-of-type(2),
-[data-toggle][aria-pressed=true]:has(svg:nth-of-type(2)) svg:first-of-type {
+:where(.toggle,[data-toggle]):has(svg:nth-of-type(2)) svg:nth-of-type(2),
+:where(.toggle:has(:checked),[data-toggle][aria-pressed=true]):has(svg:nth-of-type(2)) svg:first-of-type {
 	opacity: 0;
 	scale  : .5
 }
 
-[data-toggle][aria-pressed=true]:has(svg:nth-of-type(2)) svg:last-of-type {
+:where(.toggle:has(:checked),[data-toggle][aria-pressed=true]):has(svg:nth-of-type(2)) svg:last-of-type {
 	opacity: 1;
 	scale  : 1;
 }

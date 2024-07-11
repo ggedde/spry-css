@@ -1,6 +1,7 @@
 /*
 * Spry Extends
 */
+@use "variables";
 @use "mixins";
 
 %ui {
@@ -32,9 +33,10 @@
 }
 
 %ui-border {
-	border-color: hsl(from var(--color) h s var(--border-lightness, l) / var(--border-alpha, 100%));
+	--bdr-a: 100%; // Reset for all UI elements
 	border-width: 1px;
 	border-style: solid;
+	border-color: hsl(from var(--color) h s var(--bdr-l, l) / var(--bdr-a, 100%));
 }
 
 %ui-border-radius {
@@ -42,16 +44,14 @@
 }
 
 %ui-bg {
-	background-color: hsl(from var(--color) h s var(--bg-lightness, l) / var(--bg-alpha, 100%));
-	border-color    : hsl(from var(--color) h s var(--border-lightness, l) / var(--border-alpha, 100%));
+	--bg-a: 100%; // Reset for all UI elements
+	background-color: hsl(from var(--color) h s var(--bg-l, l) / var(--bg-a, 100%));
 }
 
 %ui-hover {
-	// filter: brightness(1.15);
-	background-color: hsl(from var(--color) h s calc(var(--bg-lightness, l) + 10) / var(--bg-alpha, 100%));
-	// color: hsl(from var(--text-color) h s calc(l + 10) / var(--color-alpha, 100%));
+	background-color: hsl(from var(--color) h s calc(var(--bg-l, l) + 10) / var(--bg-a, 100%));
 	&:where(.hazy, .outline, .plain, .link) {
-		background-color: hsl(from var(--color) h s calc(var(--bg-lightness, l) + 10) / 15%);
+		background-color: hsl(from var(--color) h s calc(var(--bg-l, l) + 10) / 15%);
 	}
 }
 
@@ -59,24 +59,8 @@
 	background-color: hsl(from var(--color) h s l / 15%);
 }
 
-// %ui-hover {
-// 	filter: brightness(1.15);
-// }
-
-// %ui-bg-hover {
-// 	--bg-alpha      : .15;
-// 	background-color: rgba(var(--color-rgb), var(--bg-alpha));
-// }
-
 %ui-color {
-	color: var(--text-color);
-	--select-arrow: var(--text-color);
-	&:where(.link, .outline, .hazy, .plain) {
-		color: hsl(from var(--color) h s var(--color-lightness, l) / var(--color-alpha, 100%));
-	}
-	&[aria-busy=true] {
-		color: transparent;
-	}
+	color: hsl(from var(--text-color) h s var(--clr-l, l) / var(--clr-a, 100%));
 }
 
 %ui-margin-above {
@@ -90,6 +74,42 @@
 %ui-margin-above-none {
 	margin-top: 0;
 }
+@for $i from 0 through 10 {
+	%ui-clr-a-#{$i} {
+		--clr-a: #{calc($i / 10)};
+	}
+	%ui-clr-l-#{$i} {
+		--clr-l: #{calc($i * 10)};
+	}
+	%ui-bg-a-#{$i} {
+		--bg-a: #{calc($i / 10)};
+	}
+	%ui-bg-l-#{$i} {
+		--bg-l: #{calc($i * 10)};
+	}
+	%ui-bdr-a-#{$i} {
+		--bdr-a: #{calc($i / 10)};
+	}
+	%ui-bdr-l-#{$i} {
+		--bdr-l: #{calc($i * 10)};
+	}
+}
+
+// @each $color_name, $color_values in variables.$colors {
+// 	@each $theme_name, $color_value in $color_values {
+// 		%ui-clr-#{$theme_name}-#{$color_name} {
+// 			color: hsl(from #{$color_value} h s var(--clr-l, l) / var(--clr-a, 100%));
+// 		}
+// 		%ui-bg-#{$theme_name}-#{$color_name} {
+// 			background-color: hsl(from #{$color_value} h s var(--bg-l, l) / var(--bg-a, 100%));
+// 		}
+// 		%ui-bdr-#{$theme_name}-#{$color_name} {
+// 			--theme-border      : #{$color_value};
+// 			--theme-input-border: #{$color_value};
+// 			border-color        : hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+// 		}
+// 	}
+// }
 
 %toggle-closed {
 	@include mixins.toggle-closed;

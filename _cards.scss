@@ -5,7 +5,6 @@
 
 article {
 	@extend %ui-border-radius;
-	--card-color    : rgba(153, 153, 153, 0.17);
 	--gapy          : 2em;
 	align-items     : flex-start;
 	background-color: white;
@@ -40,7 +39,7 @@ article {
 	}
 
 	&.outline {
-		background-color: white;
+		// background-color: white;
 
 		>header {
 			border-bottom: inherit;
@@ -59,7 +58,7 @@ article {
 	>:is(header, footer) {
 		@extend %ui;
 		@extend %ui-roomy;
-		background-color: var(--card-color);
+		background-color: hsl(from var(--card-color) h s var(--bg-l, l) / var(--bg-a, 100%));
 		display         : flex;
 		justify-content : space-between;
 		align-items     : center;

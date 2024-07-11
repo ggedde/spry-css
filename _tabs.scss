@@ -19,11 +19,6 @@
 			flex: 1;
 		}
 
-		// > button,
-		// > a {
-		// 	filter: none !important;
-		// }
-
 		&+*>* {
 			transition: none;
 			transform : translateY(3px);

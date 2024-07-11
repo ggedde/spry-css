@@ -6,18 +6,12 @@
 .alert {
 	@extend %ui;
 	@extend %ui-bg;
+	@extend %ui-color;
 	@extend %ui-border;
 	@extend %ui-border-radius;
-	--border-alpha: 1;
-	--border-color : var(--color);
-	--border-color-rgb: var(--color-rgb);
 	display        : block;
 	justify-content: flex-start;
 	padding        : .5em 1em;
-
-	&:not(.outline, .hazy) {
-		@extend %ui-color;
-	}
 
 	svg {
 		min-width: 1em;

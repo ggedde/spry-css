@@ -121,19 +121,21 @@ General Utility Classes
 	display           : -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 1;
+	line-clamp        : 1;
 }
 
 @for $i from 2 through 5 {
 	.truncate-#{$i} {
 		-webkit-line-clamp: #{$i};
+		line-clamp        : #{$i};
 		white-space       : normal;
 		word-break        : break-word;
 	}
 }
 
 .truncate {
-	white-space  : nowrap;
-	display      : inline-block
+	white-space: nowrap;
+	display    : inline-block
 }
 
 .rotate-90 {
@@ -166,8 +168,8 @@ General Utility Classes
 }
 
 .no-bg {
-	background: transparent;
-	backdrop-filter : none
+	background     : transparent;
+	backdrop-filter: none
 }
 
 .color-inherit {
@@ -186,11 +188,13 @@ General Utility Classes
 	translate: -1em -.7em
 }
 
-.hover-scale {
+.hover\:scale {
+	scale: 1.00001;
 	transition: scale .3s var(--ease)
 }
 
-.hover-scale:hover {
+.scale,
+.hover\:scale:hover {
 	scale: 1.05
 }
 
@@ -199,7 +203,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 ****************************************************************************/
 @mixin utility-styles($prefix, $breakpoint_width) {
 
-	@if $breakpoint_width > 0 {
+	@if $breakpoint_width>0 {
 		#{$prefix}mw {
 			max-width: #{$breakpoint_width};
 		}
@@ -207,7 +211,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 	#{$prefix}container {
 		container-type: inline-size;
-		position: relative;
+		position      : relative;
 	}
 
 	#{$prefix}no-container {
@@ -288,7 +292,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 	#{$prefix}table-cell {
 		display: table-cell;
-		width: auto;
+		width  : auto;
 	}
 
 	#{$prefix}table-row {
@@ -322,7 +326,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	#{$prefix}items-start {
 		place-items: start
 	}
-	
+
 	#{$prefix}items-stretch {
 		place-items: stretch
 	}
@@ -338,7 +342,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	#{$prefix}content-start {
 		place-content: start
 	}
-	
+
 	#{$prefix}content-stretch {
 		place-content: stretch
 	}
@@ -366,7 +370,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	#{$prefix}self-start {
 		place-self: start
 	}
-	
+
 	#{$prefix}self-stretch {
 		place-self: stretch
 	}
@@ -584,6 +588,25 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		object-fit     : contain
 	}
 
+	#{$prefix}resize {
+		overflow: auto;
+		resize: both;
+	}
+
+	#{$prefix}resize-x {
+		overflow-x: auto;
+		resize: horizontal;
+	}
+
+	#{$prefix}resize-y {
+		overflow-y: auto;
+		resize: vertical;
+	}
+
+	#{$prefix}no-resize {
+		resize: none;
+	}
+
 	#{$prefix}h {
 		height: 100%
 	}
@@ -627,9 +650,13 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		}
 	}
 
-	@each $opacity_name, $opacity_value in variables.$opacities {
-		#{$prefix}o-#{$opacity_name} {
-			opacity: #{$opacity_value};
+	#{$prefix}o-0 {
+		opacity: 0
+	}
+
+	@for $i from 1 through 10 {
+		#{$prefix}o-#{$i}0 {
+			opacity: #{calc($i / 10)};
 		}
 	}
 
@@ -642,6 +669,16 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 }
 
 @include utility-styles('.', 0);
+
+.hover\:o-0:hover {
+	opacity: 0
+}
+
+@for $i from 1 through 10 {
+	.hover\:o-#{$i}0:hover {
+		opacity: #{calc($i / 10)};
+	}
+}
 
 @each $breakpoint,
 $breakpoint_width in variables.$breakpoints {

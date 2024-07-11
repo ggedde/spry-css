@@ -3,40 +3,24 @@
 */
 
 @use "variables";
+@use "extends";
 
-// Update Prefered Theme Dark Colors
-@media (prefers-color-scheme: dark) {
-	select option {
-		background: #1b1b1b;
-		color     : #efefef;
-	}
-}
-
-:root[data-theme=dark],
-[data-theme=dark] {
-	--bg-color-rgb    : 20, 20, 20;
-	--border-color    : rgb(var(--border-color-rgb));
-
-	.bg-theme {
-		background-color: rgb(var(--bg-color-rgb), var(--bg-alpha));
-	}
+:root.theme-dark,
+.theme-dark {
+	--theme-bg              : #111;
+	--theme-text            : var(--text, #eee);
+	--theme-border          : #3a3a3a;
+	--theme-input-border    : #999;
+	--card-color            : #282828;
 
 	@each $color_name,
 	$color_value in variables.$colors {
 		@if map-get($color_value, 'dark') {
+			--#{$color_name}: #{map-get($color_value, 'dark')};
 
-			// Set each color variable.
-			--#{$color_name}    : #{map-get($color_value, 'dark')};
-			--#{$color_name}-rgb: #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
-
-			// Use the first color as the Default UI color.
 			@if index(variables.$colors, ($color_name $color_value))==1 {
+				--color: #{map-get($color_value, 'dark')};
 
-				--color     : #{map-get($color_value, 'dark')};
-				--color-rgb : #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
-				--border-color-rgb: #{red(map-get($color_value, 'dark')), green(map-get($color_value, 'dark')), blue(map-get($color_value, 'dark'))};
-
-				// For the default UI Color, check to see if the text should be light or dark.
 				@if (lightness(map-get($color_value, 'dark')) > 70) {
 					--text-color: var(--ui-dark-text-color);
 				}
@@ -49,28 +33,28 @@
 	}
 }
 
-[data-theme=dark],
-[data-theme=dark] article,
-article[data-theme=dark] {
-	background-color: rgb(var(--bg-color-rgb), var(--bg-alpha));
-}
-
-[data-theme=dark] {
+.theme-dark {
+	color           : hsl(from var(--theme-text) h s var(--clr-l, l) / var(--clr-a, 100%));
+	background-color: hsl(from var(--theme-bg) h s var(--bg-l, l) / var(--bg-a, 100%));
+	border-color    : hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
 	color-scheme: dark;
-	color       : map-get(map-get(variables.$types, 'body'), 'color');
 
-	select option,
-	.tooltip {
-		background-color: #262626;
-		color           : #efefef;
+	@each $color_name, $color_value in variables.$colors {
+		@if map-get($color_value, 'dark') {
+			.links-#{$color_name} :where(a:not(.button,[class^=color-],[class*=\ color-])),
+			.hover\:links-#{$color_name} a:not(.button,[class*=hover\:color-]):is(:hover, :focus, .active) {	
+				color: hsl(from #{map-get($color_value, 'dark')} h s var(--clr-l, l) / var(--clr-a, 100%));
+			}
+		}
 	}
 
-	@each $color_name,
-	$color_value in variables.$colors {
+	@each $color_name, $color_value in variables.$colors {
 		@if map-get($color_value, 'dark') {
-
-			// For each UI color Class, check to see if the text should be light or dark.
 			.#{$color_name} {
+				--color       : #{map-get($color_value, 'dark')};
+				--card-color  : #{map-get($color_value, 'dark')};
+				--theme-border: #{map-get($color_value, 'dark')};
+
 				@if (lightness(map-get($color_value, 'dark')) > 70) {
 					--text-color: var(--ui-dark-text-color);
 				}
@@ -79,6 +63,33 @@ article[data-theme=dark] {
 					--text-color: var(--ui-light-text-color);
 				}
 			}
+
+			.hover\:color-#{$color_name}:is(:hover, :focus, .active),
+			.color-#{$color_name} {
+				color: hsl(from #{map-get($color_value, 'dark')} h s var(--clr-l, l) / var(--clr-a, 100%));
+			}
+
+			.bg-#{$color_name} {
+				background-color: hsl(from #{map-get($color_value, 'dark')} h s var(--bg-l, l) / var(--bg-a, 100%));
+			}
+
+			.border-#{$color_name} {
+				--theme-border      : #{map-get($color_value, 'dark')};
+				--theme-input-border: #{map-get($color_value, 'dark')};
+				border-color        : hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+			}
+		}
+	}
+	
+	@for $i from 0 through 10 {
+		.dark\:color-#{calc($i * 10)}{ 
+			@extend %ui-clr-l-#{$i};
+		}
+		.dark\:bg-#{calc($i * 10)}{ 
+			@extend %ui-bg-l-#{$i};
+		}
+		.dark\:border-#{calc($i * 10)} { 
+			@extend %ui-bdr-l-#{$i};
 		}
 	}
 }

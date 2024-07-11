@@ -1,5 +1,5 @@
 /*! 
- * SpryCss v3.0.0-rc.2
+ * SpryCss v3.0.0-rc.3
  * license: MIT
  * author: https://github.com/ggedde/spry-css
  */
@@ -21,6 +21,7 @@
 @use "grid";
 @use "tabs";         // Has Nesting
 @use "navs";         // Has Nesting
+@use "menus";         // Has Nesting
 @use "toggles";
 @use "modals";       // Has Nesting
 @use "comfort";
@@ -28,7 +29,6 @@
 @use "borders";
 @use "icons";        // Has Nesting
 @use "utilities";
-@use "dark4";         // Has Nesting
-@use "light4";        // Has Nesting
-@use "colors4";
+@use "dark";         // Has Nesting
+@use "colors";
 @use "loader";

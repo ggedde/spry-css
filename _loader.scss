@@ -13,34 +13,35 @@
 	}
 }
 
-[aria-busy] {
-	position: relative;
-
-	&::after {
-		content       : '';
-		box-sizing    : border-box;
-		position      : absolute;
-		inset         : 0;
-		margin        : auto;
-		width         : 1.3em;
-		height        : 1.3em;
-		border-radius : 50%;
-		border        : .15em solid transparent;
-		border-color  : var(--text-color) var(--text-color) transparent transparent;
-		opacity       : 0;
-		pointer-events: none;
-		transition    : opacity .3s ease-in-out .1s;
-	}
-}
-
-:is([aria-busy=true]) {
+.loading {
+	position      : relative;
 	pointer-events: none;
 	user-select   : none;
 	cursor        : default;
-	color         : transparent;
+	opacity       : .8;
 
 	&::after {
-		opacity  : 1;
-		animation: spinner .8s ease infinite;
+		content       : '';
+		animation     : spinner .8s ease infinite;
+		border        : .15em solid transparent;
+		border-color  : hsl(from var(--text-color) h s var(--clr-l, l) / var(--clr-a, 100%)) hsl(from var(--text-color) h s var(--clr-l, l) / var(--clr-a, 100%)) transparent transparent;
+		border-radius : 50%;
+		box-sizing    : border-box;
+		height        : 1.3em;
+		width         : 1.3em;
+		inset         : 0;
+		margin        : auto;
+		pointer-events: none;
+		position      : absolute;
+		transition    : opacity .3s ease-in-out .1s;
+	}
+
+	&:is(input, select, textarea, button, .button, a) {
+		color: transparent;
+	}
+
+	:is(input, select, textarea, button, .button, a) {
+		pointer-events: none;
+		opacity       : .7;
 	}
 }

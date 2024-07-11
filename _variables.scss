@@ -27,54 +27,49 @@ $gaps: (
 // ) !default;
 
 $colors: (
-    // "hazy"      :#ccc, // The First Color in the array is your default color.
-    "grey"     : (light: #808080), // The First Color in the array is your default color.
-    "text"     : (light: #555555, dark: #bbbbbb), // Variable Theme Color
-    "contrast" : (light: #262626, dark: #efefef), // Variable Theme Color
-    "faint"    : (light: #efefef, dark: #282828), // Variable Theme Color
-    // "text"      :#555555,
-    // "contrast"  :#262626,
-    // "faint"     :#efefef,
-    // "dark"      :#121212,
-    // "light"     :#efefef,
-    "primary"  : (light: #1494df),
-    "secondary": (light: #df8a22),
+    "text"     : (default: #555555, dark: #bbbbbb),
+    "grey"     : (default: #888, dark: #999),
+    "contrast" : (default: #333, dark: #eee), // The First Color in the array is your default color.
+    "faint"    : (default: #efefef, dark: #282828),
+    "light"    : (default: #eee), 
+    "dark"     : (default: #333), 
+    "primary"  : (default: #1494df),
+    "success"  : (default: #0a0),
+    "warning"  : (default: #df8a22),
+    "error"    : (default: #e22),
 ) !default;
 
 // Specify each type tag and class like <h3> and .h3 etc.
 $types: (
-    body: (font-family: (sans-serif, system-ui), font-size: clamp(.9em, 3vw, 1.0em), color: hsl(from var(--text) h s var(--color-lightness, l) / var(--color-alpha, 100%)), font-weight: 300, line-height: 1.4),
-    h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20, color: hsl(from var(--contrast) h s var(--color-lightness, l) / var(--color-alpha, 100%))),
-    h2: (font-size: 2.3em, font-weight: 300, line-height: 1.25, color: hsl(from var(--contrast) h s var(--color-lightness, l) / var(--color-alpha, 100%))),
-    h3: (font-size: 1.8em, font-weight: 300, line-height: 1.30, color: hsl(from var(--contrast) h s var(--color-lightness, l) / var(--color-alpha, 100%))),
-    h4: (font-size: 1.4em, font-weight: 300, line-height: 1.35, color: hsl(from var(--contrast) h s var(--color-lightness, l) / var(--color-alpha, 100%))),
-    h5: (font-size: 1.1em, font-weight: 300, line-height: 1.5, color: hsl(from var(--contrast) h s var(--color-lightness, l) / var(--color-alpha, 100%))),
-    h6: (font-size: 1.0em, font-weight: 300, line-height: 1.4, color: hsl(from var(--contrast) h s var(--color-lightness, l) / var(--color-alpha, 100%))),
-     q: (font-size: 1.6em, font-weight: 300, font-style: italic, line-height: 1.4, color: hsl(from var(--contrast) h s var(--color-lightness, l) / var(--color-alpha, 100%)), margin-block: 2em),
-     a: (color: hsl(from var(--primary) h s var(--color-lightness, l) / var(--color-alpha, 100%))),
+    body: (font-family: (sans-serif, system-ui), font-size: clamp(.9em, 3vw, 1.0em), color: hsl(from var(--text) h s var(--clr-l, l) / var(--clr-a, 100%)), font-weight: 300, line-height: 1.4),
+    h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20, color: hsl(from var(--contrast) h s var(--clr-l, l) / var(--clr-a, 100%))),
+    h2: (font-size: 2.3em, font-weight: 300, line-height: 1.25, color: hsl(from var(--contrast) h s var(--clr-l, l) / var(--clr-a, 100%))),
+    h3: (font-size: 1.8em, font-weight: 300, line-height: 1.30, color: hsl(from var(--contrast) h s var(--clr-l, l) / var(--clr-a, 100%))),
+    h4: (font-size: 1.4em, font-weight: 300, line-height: 1.35, color: hsl(from var(--contrast) h s var(--clr-l, l) / var(--clr-a, 100%))),
+    h5: (font-size: 1.1em, font-weight: 300, line-height: 1.5, color: hsl(from var(--contrast) h s var(--clr-l, l) / var(--clr-a, 100%))),
+    h6: (font-size: 1.0em, font-weight: 300, line-height: 1.4, color: hsl(from var(--contrast) h s var(--clr-l, l) / var(--clr-a, 100%))),
+    q: (font-size: 1.6em, font-weight: 300, font-style: italic, line-height: 1.4, color: hsl(from var(--contrast) h s var(--clr-l, l) / var(--clr-a, 100%)), margin-block: 2em),
+    a: (color: hsl(from var(--primary) h s var(--clr-l, l) / var(--clr-a, 100%))),
 ) !default;
 
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc.
-$spacing: (
-      0: 0em, // Needs unit to be used in calc().
-      1: .5em,
-      2: 1em,
-      3: 2em,
-      4: 4em,
+$spacing: (0: 0em, // Needs unit to be used in calc().
+    1   : .5em,
+    2: 1em,
+    3: 2em,
+    4: 4em,
     200: 200px, // Used for Sidebars
 ) !default;
 
 // Specify each border size Ex .b-0, .b-1, .bt-3, .bx-3, .br-2, etc.
-$borders: (
-    0: 0,
+$borders: (0: 0,
     1: 1px,
     2: 2px,
     3: 3px,
 ) !default;
 
 // Specify each size that applies font-size and all elements using "em".
-$sizes: (
-    xxl: 165%,
+$sizes: (xxl: 165%,
     xl: 140%,
     lg: 120%,
     md: 100%,
@@ -83,39 +78,11 @@ $sizes: (
     xxs: 50%,
 ) !default;
 
-// Specify each size that applies font-size and all elements using "em".
-$shades: (
-    0: 0%,
-    10: 10%,
-    20: 20%,
-    30: 30%,
-    40: 40%,
-    50: 50%,
-    60: 60%,
-    70: 70%,
-    80: 80%,
-    90: 90%,
-    100: 100%,
-) !default;
-
-// Specify each size that applies font-size and all elements using "em".
-$opacities: (
-    0: 0%,
-    10: 10%,
-    20: 20%,
-    30: 30%,
-    40: 40%,
-    50: 50%,
-    60: 60%,
-    70: 70%,
-    80: 80%,
-    90: 90%,
-    100: 100%,
-) !default;
-
 :root {
     --gapx: #{map-get($gaps, 'default')};
     --gapy: #{map-get($gaps, 'default')};
+    --ease: cubic-bezier(.25, .8, .25, 1);
+    --border-radius: .25em;
 
     @each $breakpoint,
     $breakpoint_width in $breakpoints {
@@ -123,8 +90,5 @@ $opacities: (
             --gapx: #{map-get($gaps, $breakpoint)};
             --gapy: #{map-get($gaps, $breakpoint)};
         }
-    }
-
-    --ease: cubic-bezier(.25, .8, .25, 1);
-    --border-radius: .25em;
+    }  
 }

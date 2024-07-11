@@ -69,3 +69,7 @@
 		padding  : 0;
 	}
 }
+
+:where([class*=bg-]) > :where(ul, li) :where(ul, li) {
+	background-color: inherit;
+}

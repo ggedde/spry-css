@@ -128,7 +128,7 @@
 /// Opened State
 /// @output - Contents
 @mixin toggle-open {
-	max-height    : 100vh;
+	max-height    : 1900px;
 	opacity       : 1;
 	pointer-events: all;
 	transform     : translateZ(0) scale(1, 1);

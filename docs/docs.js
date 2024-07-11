@@ -9,13 +9,22 @@
 let _currentPanel = null;
 
 function toggleTheme(element) {
+    var documentMatches = document.documentElement.className.match(/theme\-[a-z0-9\_\-]+/gi);
+    var documentTheme = documentMatches && documentMatches[0] ? documentMatches[0] : 'theme-default';
     var themeMatches = element.className.match(/theme\-[a-z0-9\_\-]+/gi);
-    var currentTheme = themeMatches && themeMatches[0] ? themeMatches[0] : null;
-    var theme = currentTheme === 'theme-dark' ? 'theme-light' : 'theme-dark';
+    var currentTheme = themeMatches && themeMatches[0] ? themeMatches[0] : documentTheme;
+    var theme = currentTheme === 'theme-dark' ? 'theme-default' : 'theme-dark';
     element.classList.remove(currentTheme);
-    element.classList.add(theme);
-    if (element !== document.documentElement) {   
-        var children = element.querySelectorAll('.theme-dark,.theme-light');
+    if (element === document.documentElement) {
+        if(theme === 'theme-dark') {
+            element.classList.add(theme);
+        }
+        element.querySelectorAll('.'+theme).forEach(elem => {
+            elem.classList.remove(theme);
+        });
+    } else if (element !== document.documentElement && theme !== documentTheme) {
+        element.classList.add(theme);
+        var children = element.querySelectorAll('.theme-dark,.theme-default');
         if (children) {
             children.forEach(child => {
                 child.classList.remove(currentTheme);
@@ -23,26 +32,27 @@ function toggleTheme(element) {
                 var codeValues = element.querySelectorAll('.attr-value');
                 if (codeValues) {
                     codeValues.forEach(val => {
-                        if (val.innerHTML && (val.innerHTML.indexOf('theme-dark') || val.innerHTML.indexOf('theme-light'))) {
+                        if (val.innerHTML && (val.innerHTML.indexOf('theme-dark') || val.innerHTML.indexOf('theme-default'))) {
                             val.innerHTML = val.innerHTML.replace('theme-dark', theme);
-                            val.innerHTML = val.innerHTML.replace('theme-light', theme);
+                            val.innerHTML = val.innerHTML.replace('theme-default', theme);
                         }
                     });
                 }
                 var codeTitle = element.querySelector('article header h4');
-                if (codeTitle.innerHTML && (codeTitle.innerHTML.indexOf('Dark Theme') > -1 || codeTitle.innerHTML.indexOf('Light Theme') > -1)) {
-                    codeTitle.innerHTML = codeTitle.innerHTML.replace('Dark Theme', theme === 'theme-dark' ? 'Dark Theme' : 'Light Theme');
-                    codeTitle.innerHTML = codeTitle.innerHTML.replace('Light Theme', theme === 'theme-dark' ? 'Dark Theme' : 'Light Theme');
+                if (codeTitle.innerHTML && (codeTitle.innerHTML.indexOf('Dark Theme') > -1 || codeTitle.innerHTML.indexOf('Default Theme') > -1)) {
+                    codeTitle.innerHTML = codeTitle.innerHTML.replace('Dark Theme', theme === 'theme-dark' ? 'Dark Theme' : 'Default Theme');
+                    codeTitle.innerHTML = codeTitle.innerHTML.replace('Default Theme', theme === 'theme-dark' ? 'Dark Theme' : 'Default Theme');
                 }
             });
         }
     }
-} 
+}
 
 function cleanContent(html) {
     html = html.replaceAll(' class="bg-faint round p-1"', '');
     html = html.replaceAll('bg-faint round p-1 ', '');
     html = html.replaceAll(' bg-faint round p-1', '');
+    html = html.replaceAll('<div class="code-resize-handle"></div>', '');
     var firsTag = html.indexOf('&');
     if (firsTag === -1) {
         firsTag = html.indexOf('<');
@@ -84,7 +94,6 @@ function cleanContent(html) {
         
         html = html.replaceAll('&ltdiv class="code-resize-handle"&gt&lt/div&gt', '###');
         html = html.replace(/\&gt\n.*\#\#\#/, '&gt');
-        console.log(html);
     });
 
     return html;
@@ -92,7 +101,6 @@ function cleanContent(html) {
 
 function copyCode(event) {
     var html = event.target.parentElement.parentElement.parentElement.querySelector('.code-content').innerHTML;
-    console.log(cleanContent(html));
     navigator.clipboard.writeText(cleanContent(html)).then(function() {
         Spry.toggle('#copy-code-modal');
         setTimeout(() => {
@@ -105,7 +113,8 @@ function copyCode(event) {
 
 function resizePanel(e){
     e.preventDefault();
-    const dx = (e.x - _currentPanel.offsetLeft) + 3;
+    var rect = _currentPanel.getBoundingClientRect();
+    const dx = (e.x - rect.x) + 3;
     if (_currentPanel && dx && dx > 0) {
         _currentPanel.style.width = parseInt(dx) + "px";
     }
@@ -144,6 +153,7 @@ document.querySelectorAll('.show-code').forEach((elem) => {
 document.querySelectorAll('.code-resize-handle').forEach((elem) => {
     elem.addEventListener("mousedown", function(e){
         elem.classList.add('moving');
+        document.body.style.cursor = 'ew-resize';
         e.preventDefault();
         _currentPanel = elem.closest('.code-content-container');
         document.addEventListener("mousemove", resizePanel, false);
@@ -155,6 +165,7 @@ document.addEventListener("mouseup", function(){
     document.removeEventListener("mousemove", resizePanel, false);
     document.querySelectorAll('.code-resize-handle.moving').forEach((elem) => {
         elem.classList.remove('moving');
+        document.body.style.cursor = 'default';
     });
 }, false);
 
@@ -164,31 +175,3 @@ document.querySelectorAll('[href="#"]').forEach(link => {
         return false;
     });
 });
-
-// var _stickies = document.querySelectorAll(".sticky");
-
-// window.addEventListener("scroll", () => {
-//     _stickies.forEach(sticky => {
-//         const currentTop = sticky.getBoundingClientRect().top;
-//         sticky.classList.toggle("index-1", currentTop <= 0);
-//     })
-// });
-
-// document.querySelectorAll(".sticky").forEach(el => {
-//     const observer = new IntersectionObserver( 
-//         ([e]) => {
-//             console.log(e.intersectionRatio);
-//             e.target.classList.toggle("is-pinned", e.intersectionRatio < 1)
-//         },
-//         { threshold: [1] }
-//       );
-      
-//       observer.observe(el);
-// })
-
-
-// document.querySelectorAll('input:not([type=checkbox],[type=radio]), textarea, select').forEach(elem => {
-//     elem.addEventListener('blur', event => {
-//         elem.classList.toggle('active', elem.value !== '');
-//     });
-// });

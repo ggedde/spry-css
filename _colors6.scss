@@ -1,0 +1,108 @@
+/*
+* Spry Colors
+*/
+
+@use "variables";
+
+$color_names: ();
+@each $color_name, $color_value in variables.$colors {
+    $color_names: append($color_names, '.#{$color_name}', 'comma');
+}
+
+:is(button,.button,.alert,.badge,[type=submit],[type=reset]):is(.link, .outline, .hazy, .plain):where(#{$color_names}),
+:is(#{$color_names}) :is(button,.button,.alert,.badge,[type=submit],[type=reset]):is(.link, .outline, .hazy, .plain),
+:is(.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a {
+	--text-color: var(--color);
+	--select-arrow: var(--text-color);
+}
+
+:is(button,.button,.alert,.badge,[type=submit],[type=reset]):where(.link, .outline, .hazy, .plain):where(#{$color_names}),
+:where(#{$color_names}):not(article) :is(.link, .outline, .hazy, .plain) {
+	color: var(--color);
+	--select-arrow: var(--color);
+}
+
+:is(button,.button,.alert,.badge,[type=submit],[type=reset]):where(#{$color_names}) :is(h1,h2,h3,h4,h5,h6),
+article:where(#{$color_names}) > :is(header, footer) :is(h1,h2,h3,h4,h5,h6) {
+	color: var(--text-color);
+}
+
+
+// Initial Color sets
+@each $color_name,
+$color_value in variables.$colors {
+
+	article.#{$color_name} {
+		--card-color  : var(--#{$color_name});
+		--card-color-rgb  : var(--#{$color_name}-rgb);
+		--border-alpha: 1;
+	}
+}
+
+// First Color Overrides
+@each $color_name,
+$color_value in variables.$colors {
+
+	.color-#{$color_name} :is(h1,h2,h3,h4,h5,h6),
+	.links-#{$color_name} a:not(.button),
+	.links-hover-#{$color_name} a:not(.button):is(:hover, :focus, .active, [aria-pressed=true]) {
+		color : var(--#{$color_name});
+	}
+}
+
+// Final Color Overrides
+@each $color_name,
+$color_value in variables.$colors {
+
+	[class].#{$color_name} {
+		--color     : var(--#{$color_name});
+		--color-rgb : var(--#{$color_name}-rgb);
+		accent-color: var(--color);
+	}
+
+	[class].color-#{$color_name},
+	.hover-#{$color_name}:is(:hover, :focus, .active, [aria-pressed=true]) {
+		--text-color     : var(--#{$color_name});
+		color            : var(--text-color);
+	}
+
+	.bg-#{$color_name},
+	.bg-#{$color_name} > ul,
+	.bg-#{$color_name} > li > ul,
+	.bg-#{$color_name} > ul ul,
+	:is(.tooltip, article).bg-#{$color_name} {
+		--bg-alpha: 1;
+		background-color: rgba(var(--#{$color_name}-rgb), var(--bg-alpha));
+	}
+
+	.border-#{$color_name} {
+		--border-alpha: 1;
+		--border-color-rgb: var(--#{$color_name}-rgb);
+		--border-color: rgba(var(--#{$color_name}-rgb), var(--border-alpha));
+		border-color  : var(--border-color);
+	}
+}
+
+.bg-alpha-0{ 
+	--bg-alpha: 0;
+}
+[class].border-alpha-0{ 
+	--border-alpha: 0;
+	:is(input,textarea,select),
+	label .ui {
+		--border-alpha: 0;
+	}
+}
+
+@for $i from 1 through 10 {
+	.bg-alpha-#{$i}0{ 
+		--bg-alpha: #{calc($i / 10)};
+	}
+	[class].border-alpha-#{$i}0 { 
+		--border-alpha: #{calc($i / 10)};
+		:is(input,textarea,select),
+		label .ui {
+			--border-alpha: #{calc($i / 10)};
+		}
+	}
+}

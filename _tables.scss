@@ -8,7 +8,6 @@ table {
 	position       : relative;
 	width          : 100%;
 	border-collapse: collapse;
-	--border-lightness: var(--default-border-lightness);
 
 	td,
 	th {
@@ -18,8 +17,7 @@ table {
 }
 
 thead {
-	// --border-lightness: 80%;
-	box-shadow: 0 2px 0 hsl(from var(--color) h s var(--border-lightness, l) / var(--border-alpha, 100%));
+	box-shadow: 0 2px 0 var(--theme-border);
 
 	th {
 		font-weight: 500;
@@ -28,17 +26,16 @@ thead {
 
 tbody td {
 	@extend %ui-border;
+	border-color: hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
 	border-right: 0;
 	border-bottom: 0;
 	border-left: 0;
-	// --border-lightness: 80%;
-	// border-top    : 1px solid hsla(var(--border-hue), var(--border-sat), var(--border-lightness), var(--border-alpha, 100%));
 	vertical-align: text-top;
 }
 
 .hoverable tbody tr:hover,
 .hoverable.striped-expand tbody tr:nth-child(2n - 1):hover+tr {
-	background-color: rgba(var(--color-rgb), .025);
+	background-color: rgb(from var(--color) r g b / 6%);
 }
 
 .hoverable.striped-expand tbody tr:nth-child(4n - 2):hover {
@@ -60,7 +57,7 @@ tbody td {
 
 		tbody tr {
 			padding-block: 1em;
-			border-top: 1px solid var(--border-color);
+			border-top: 1px solid var(--theme-border);
 		}
 
 		td {
@@ -69,14 +66,12 @@ tbody td {
 	}
 }
 
-
-
 @mixin table-styles($prefix) {
 	#{$prefix}striped {
 
 		tr:nth-child(even),
 		> :not(table, tbody, thead, tfoot):nth-child(even) {
-			background-color: rgba(var(--color-rgb), .04);
+			background-color: rgb(from var(--color) r g b / 4%);
 		}
 	}
 
@@ -86,13 +81,9 @@ tbody td {
 		tr:nth-child(4n),
 		> :not(table, tbody, thead, tfoot):nth-child(4n -1),
 		> :not(table, tbody, thead, tfoot):nth-child(4n) {
-			background-color: rgba(var(--color-rgb), .04);
+			background-color: rgb(from var(--color) r g b / 4%);
 		}
 	}
-}
-
-:has(>.c-responsive) {
-	container-type: inline-size;
 }
 
 @include table-styles('.');
@@ -124,5 +115,5 @@ $breakpoint_width in variables.$breakpoints {
 .hoverable.striped-expand tbody tr:nth-child(4n -1):hover+tr,
 .hoverable tbody.striped-expand tr:nth-child(4n -1):hover,
 .hoverable tbody.striped-expand tr:nth-child(4n -1):hover+tr {
-	background-color: rgba(var(--color-rgb), .06);
+	background-color: rgb(from var(--color) r g b / 6%);
 }
