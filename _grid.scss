@@ -7,7 +7,8 @@
 .column,
 .row,
 .grid,
-[class*=grid-] {
+[class^=grid-],
+[class*=\ grid-] {
 	--gapx        : #{map-get(variables.$gaps, 'default')};
 	--gapy        : #{map-get(variables.$gaps, 'default')};
 	--span        : 1;
@@ -43,12 +44,14 @@
     grid: none / auto-flow minmax(0, 1fr);
 }
 
-[class*="grid-"] {
+[class^=grid-],
+[class*=\ grid-] {
 	display: grid;
 	grid: auto-flow / repeat(auto-fit, minmax(calc(var(--span) * 100px), 1fr));
 }
 
-.grid[class*="columns-"] {
+.grid[class^=columns-],
+.grid[class*=\ columns-] {
 	grid: auto-flow / repeat(var(--cols), minmax(0, 1fr));
 }
 
@@ -56,13 +59,15 @@
 	grid: none / auto-flow auto;
 }
 
-[class^="span-"],
-[class*=" span-"],
-[class*="columns-"]>* {
+[class^=span-],
+[class*=\ span-],
+[class^=columns-]>*,
+[class*=\ columns-]>* {
 	flex: 0 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--gapx))/(var(--cols)/var(--span))));
 }
 
-[class*="span-"] {
+[class^=span-],
+[class*=\ span-] {
 	grid-column: span var(--span);
 }
 
@@ -161,7 +166,8 @@
 		.column,
 		.row,
 		.grid,
-		[class*=grid-] {
+		[class^=grid-],
+		[class*=\ grid-] {
 			--gapx: #{map-get(variables.$gaps, $breakpoint)};
             --gapy: #{map-get(variables.$gaps, $breakpoint)};
 		}
