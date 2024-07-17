@@ -178,12 +178,18 @@ input::file-selector-button {
 	flex: 0 auto;
 }
 .prefix {
-	border-radius: var(--border-radius) 0 0 var(--border-radius);
 	border-right: 0;
 }
 .suffix {
-	border-radius: 0 var(--border-radius) var(--border-radius) 0;
 	border-left: 0;
+}
+.suffix,
+.prefix + :where(input, select, textarea) {
+	border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+.prefix
+:where(input, select, textarea):has(+ .suffix) {
+	border-radius: var(--border-radius) 0 0 var(--border-radius);
 }
 
 label {

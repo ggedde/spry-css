@@ -45,6 +45,7 @@ body:has(.modal.open:not(.no-bg)) {
 		scale     : .6;
 		transition: scale .3s var(--ease);
 		width     : 90%;
+		max-width : 90svh;
 	}
 
 	&.bounce:active:not(:has(:active)) {
