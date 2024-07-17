@@ -187,7 +187,7 @@ input::file-selector-button {
 .prefix + :where(input, select, textarea) {
 	border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
-.prefix
+.prefix,
 :where(input, select, textarea):has(+ .suffix) {
 	border-radius: var(--border-radius) 0 0 var(--border-radius);
 }
