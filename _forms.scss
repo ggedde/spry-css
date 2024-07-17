@@ -61,6 +61,7 @@ label > :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chi
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	vertical-align: text-top;
 	&::after {
 		content: "";
 		position: absolute;
