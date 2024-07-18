@@ -1,31 +1,10 @@
 /*
 * Spry Icons
 */
-// @use "extends";
+@use "extends";
 
 .icon {
-
-	padding : 0;
-	position: relative;
-	display : inline-flex;
-	width   : 1.25em;
-	height  : 1.25em;
-	vertical-align: middle;
-	flex: 0 1 auto;
-
-	&:is(.outline, .hazy) {
-		min-height: 2.3em;
-		min-width : 2.3em;
-	}
-
-	> svg {
-		backface-visibility: hidden;
-		inset              : 50%;
-		margin             : auto;
-		position           : absolute;
-		transform          : translateZ(0) translate(-50%);
-		transform-origin   : 0 center;
-	}
+	@extend %ui-icon;
 }
 
 :is(a, button, .button, .icon) > svg,

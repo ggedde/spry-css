@@ -243,6 +243,18 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		text-wrap: balance
 	}
 
+	#{$prefix}float-right {
+		float: right
+	}
+
+	#{$prefix}float-left {
+		float: left
+	}
+
+	#{$prefix}clear {
+		clear: both
+	}
+
 	#{$prefix}no-wrap {
 		white-space: nowrap;
 		flex-wrap  : nowrap;

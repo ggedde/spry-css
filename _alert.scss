@@ -13,7 +13,8 @@
 	justify-content: flex-start;
 	padding        : .5em 1em;
 
-	svg {
+	>svg {
+		@extend %ui-icon;
 		min-width: 1em;
 	}
 

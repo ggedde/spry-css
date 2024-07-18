@@ -3,20 +3,19 @@
 */
 @use "extends";
 
-:is(button,.button,[type=submit],[type=reset]),
-:is(.buttons,.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a {
+:is(button, .button, [type=submit], [type=reset]),
+:is(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a {
 
 	@extend %ui;
 	@extend %ui-bg;
 	@extend %ui-color;
 	@extend %ui-border;
 	@extend %ui-border-radius;
-	position      : relative;
-	width         : auto;
-	cursor        : pointer;
-	font-weight   : 400;
-	justify-content: center;
-	text-transform: uppercase;
+	position       : relative;
+	width          : auto;
+	cursor         : pointer;
+	font-weight    : 400;
+	text-transform : uppercase;
 
 	> :is(.icon, svg, img) {
 		pointer-events: none;
@@ -25,14 +24,18 @@
 	&:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):not(:active) {
 		@extend %ui-hover;
 	}
+
+	>svg {
+		@extend %ui-icon;
+	}
 }
 
-:is(button,.button,[type=submit],[type=reset]).link,
+:is(button, .button, [type=submit], [type=reset]).link,
 .buttons-link a {
 	text-transform: none;
 }
 
-:is(button,.button,[type=submit],[type=reset]):is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):is(.link, .outline, .hazy, .plain):not(:active),
-:is(.buttons-link,.buttons-outline,.buttons-hazy,.buttons-plain) a:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):not(:active) {
+:is(button, .button, [type=submit], [type=reset]):is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):is(.link, .outline, .hazy, .plain):not(:active),
+:is(.buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):not(:active) {
 	@extend %ui-bg-hover;
 }
