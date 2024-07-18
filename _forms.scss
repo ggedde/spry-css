@@ -156,6 +156,16 @@ select,
 	text-overflow: ellipsis;
 }
 
+.no-arrows::-webkit-outer-spin-button,
+.no-arrows::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.no-arrows{
+	appearance: textfield;
+    -moz-appearance: textfield;
+}
+
 textarea {
 	min-height : 8em;
 	max-height : 500px;

@@ -2978,15 +2978,19 @@ $borders: (
 
                     <p>
                         <button>
+                            <svg class="scale" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
+                            <span>Add Item</span>
+                        </button>
+                        <button>
                             After
-                            <svg class="ml-2" viewBox="0 0 24 24">
+                            <svg viewBox="0 0 24 24">
                                 <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
                             </svg>
                         </button>
 
                         <button>
-                            <svg class="mr-2"  viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
-                            Before
+                            <svg viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
+                            Username
                         </button>
 
                         <button class="icon">
@@ -3227,8 +3231,8 @@ $borders: (
 
             <div class="show-code" data-title="UL Buttons Dropdown">
                 <button class="w-200 pl-1 pr-1 content-end" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
-                    Choose an Item
-                    <svg class="icon ml-1 xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                    Choose Item
+                    <svg class="xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                 </button>
                 <div class="collapse">
                     <ul class="list navigable bg-faint round-bottom shadow w-200">
@@ -3425,16 +3429,16 @@ $borders: (
 
                         <div>
                             <h5>Checkboxes</h5>
-                            <label class="m-1"><input type="checkbox" class="loading"><span class="label-checked">Checked</span><span class="label-unchecked">Unchecked</span></label>
-                            <label class="m-1"><input type="checkbox"><span class="label-checked">Checked</span><span class="label-unchecked">Unchecked</span></label>
-                            <label class="m-1"><input type="checkbox" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading')}, 2000);"><span class="label-checked">Checked</span><span class="label-unchecked">Unchecked</span></label>
+                            <label><input type="checkbox" class="loading"><span class="label-checked">Checked</span><span class="label-unchecked">Unchecked</span></label>
+                            <label><input type="checkbox"><span class="label-checked">Checked</span><span class="label-unchecked">Unchecked</span></label>
+                            <label><input type="checkbox" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading')}, 2000);"><span class="label-checked">Checked</span><span class="label-unchecked">Unchecked</span></label>
                         </div>
 
                         <div>
                             <h5>Switches</h5>
-                            <label class="m-1"><input class="switch" type="checkbox" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading')}, 2000);"><span class="label-checked">On</span><span class="label-unchecked">Off</span></label>
-                            <label class="m-1"><input class="switch" type="checkbox"><span class="label-checked">On</span><span class="label-unchecked">Off</span></label>
-                            <label class="m-1"><input class="switch" type="checkbox"><span class="label-checked">On</span><span class="label-unchecked">Off</span></label>
+                            <label><input class="switch" type="checkbox" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading')}, 2000);"><span class="label-checked">On</span><span class="label-unchecked">Off</span></label>
+                            <label><input class="switch" type="checkbox"><span class="label-checked">On</span><span class="label-unchecked">Off</span></label>
+                            <label><input class="switch" type="checkbox"><span class="label-checked">On</span><span class="label-unchecked">Off</span></label>
                         </div>
                 
                         <label class="span"><h5>Message</h5>
