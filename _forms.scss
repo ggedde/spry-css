@@ -224,11 +224,20 @@ input::file-selector-button {
 	border-radius: var(--border-radius) 0 0 var(--border-radius);
 }
 
+label,
+output {
+	min-height: 2.3em;
+	min-width : 2.3em;
+	align-content: center;
+}
+
+output {
+	text-align: center;
+}
+
 label {
 	position  : relative;
 	display   : block;
-	min-height: 2.3em;
-	min-width : 2.3em;
 
 	.error {
 		color: var(--error, #c33);
