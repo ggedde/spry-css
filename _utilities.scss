@@ -498,6 +498,10 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		vertical-align: middle
 	}
 
+	#{$prefix}align-center {
+		align-content: center;
+	}
+
 	#{$prefix}align-bottom {
 		vertical-align: bottom
 	}
