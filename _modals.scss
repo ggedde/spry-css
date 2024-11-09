@@ -46,27 +46,38 @@ body:has(.modal.open:not(.no-bg)) {
 		transition: scale .3s var(--ease);
 		width     : 90%;
 		max-width : 90svh;
+		&.fixed {
+			width     : 100%;
+			max-width : 100%;
+		}
 	}
 
 	&.bounce:active:not(:has(:active)) {
 		animation-name    : modalBounce;
 		animation-duration: .4s;
 	}
+	.modal-backdrop {
+		position: fixed;
+		inset: 0;
+		width: 100%;
+		max-width: 100%;
+	}
+}
 
-	&.open {
-		opacity       : 1;
-		pointer-events: all;
+.modal.open,
+.toggle:has(:checked) + .modal {
+	opacity       : 1;
+	pointer-events: all;
+
+	>* {
+		scale: 1.000001;
+	}
+
+	&.no-bg {
+		pointer-events: none;
 
 		>* {
-			scale: 1.000001;
-		}
-
-		&.no-bg {
-			pointer-events: none;
-
-			>* {
-				pointer-events: all;
-			}
+			pointer-events: all;
 		}
 	}
 }

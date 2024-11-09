@@ -1,6 +1,8 @@
 /*
 * Spry Sliders
 */
+@use "variables";
+
 .slider {
 	position: relative;
 
@@ -10,9 +12,11 @@
 		scroll-behavior   : smooth;
 		scroll-snap-type  : x mandatory;
 		-ms-overflow-style: none;
+		scrollbar-width   : none;
 
 		&[class] {
-			flex-wrap: nowrap;
+			flex-wrap    : nowrap;
+			place-content: start;
 		}
 
 		&::-webkit-scrollbar {
@@ -30,29 +34,33 @@
 		}
 
 		>* {
-			display          : flex;
-			flex-direction   : column;
-			position         : relative;
-			flex             : 0 0 100%;
-			width            : 100%;
-			scroll-snap-align: start;
-			justify-content  : center;
+			display             : flex;
+			flex-direction      : column;
+			position            : relative;
+			flex                : 0 0 100%;
+			// width            : 100%;
+			min-width           : 100%;
+			scroll-snap-align   : start;
+			justify-content     : center;
 		}
 	}
-	&[data-snap] .slider-slides > * {
+
+	&[data-snap] .slider-slides>* {
 		scroll-snap-stop: always;
 	}
+
 	img[loading="lazy"] {
 		width: 100%;
 	}
+
 	.slider-prev,
 	.slider-next {
-		content  : '';
-		z-index  : 1;
-		position : absolute;
-		top      : 50%;
-		left     : 0;
-		transform: translateY(-50%);
+		content   : '';
+		z-index   : 1;
+		position  : absolute;
+		top       : 50%;
+		left      : 0;
+		transform : translateY(-50%);
 		transition: opacity .2s ease-in-out;
 	}
 
@@ -60,29 +68,32 @@
 		right: 0;
 		left : auto;
 	}
+
 	&[data-position="start"] .slider-prev,
 	&[data-position="end"] .slider-next {
-		opacity: 0;
+		opacity       : 0;
 		pointer-events: none;
 	}
 
 	.slider-pagination {
-		display: flex;
+		display        : flex;
 		justify-content: center;
-		align-items: center;
-		gap: 2%;
-		& > * {
-			cursor: pointer;
-			border-radius: 50%;
+		align-items    : center;
+		gap            : 2%;
+
+		&>* {
+			cursor          : pointer;
+			border-radius   : 50%;
 			background-color: var(--color);
-			width: 1em;
-			height: 1em;
-			padding: 0;
-			min-height: 0;
-			min-width: 0;
-			transition: opacity .2s ease-in-out;
-			opacity: .4;
-			&:is(:hover,:focus-visible,.active) {
+			width           : 1em;
+			height          : 1em;
+			padding         : 0;
+			min-height      : 0;
+			min-width       : 0;
+			transition      : opacity .2s ease-in-out;
+			opacity         : .4;
+
+			&:is(:hover, :focus-visible, .active) {
 				opacity: 1;
 			}
 		}

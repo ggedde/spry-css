@@ -1015,17 +1015,25 @@ $borders: (
                             <td>CSS Flexbox Column of rows auto width.<br>Uses variable <a href="#gaps">Gaps</a> for spacing</td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary"><span class="color-grey">{breakpoint}:</span>columns-{n}</code></td>
+                            <td>
+                                <code class="color-primary"><span class="color-grey">{breakpoint}:</span>columns-{n}</code>
+                                <div class="mt-3 ml-1 note">See <a href="#breakpoints">Breakpoints</a></div>
+                            </td>
                             <td>
                                 <p>
-                                    Specify the number of columns.<br>
-                                    <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, or <code class="color-primary">fixed</code>
+                                    Specify the columns.<br>
+                                    <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">fixed</code>, <code class="color-primary">auto</code>, or <code class="color-primary">fill</code>
                                 </p>
-                                <p class="color-grey mt-1">* <code class="color-primary">fixed</code> and <code class="color-primary">auto</code> only apply to <code class="color-primary">row</code> <span class="color-grey">(flexbox)</span></p>
+                                <p class="ml-2 color-grey">Default: <code class="color-primary">1</code> then <code class="color-primary">fixed</code> on first breakpoint</p>
+                                <p class="ml-2"><code class="color-primary">1-12</code> = Number of columns to span.</p>
+                                <p class="ml-2"><code class="color-primary">fixed</code> = Equally spaced.</p>
+                                <p class="ml-2"><code class="color-primary">auto</code> = Minimum width based on content. <span class="color-grey sm note mt-l">(Does not apply to <code class="color-primary">grid</code>)</span></p>
+                                <p class="ml-2"><code class="color-primary">fill</code> = Fills space based on content. <span class="color-grey sm note mt-l">(Does not apply to <code class="color-primary">grid</code>)</span></p>
                             </td>
                         </tr>
                         <tr>
-                            <td><code class="color-primary"><span class="color-grey">{breakpoint}:</span>g-{n}</code></td>
+                            <td><code class="color-primary"><span class="color-grey">{breakpoint}:</span>g-{n}</code>
+                                <div class="mt-3 ml-1 note">See <a href="#breakpoints">Breakpoints</a></div></td>
                             <td>Gap for columns within <code class="color-primary">grid</code> or <code class="color-primary">row</code>
                                 <p>See <a href="#spacing">Spacing</a> for available <code class="color-primary">{n}</code> values.</p>
                             </td>
@@ -1041,7 +1049,8 @@ $borders: (
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="md:pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}:</span>span-{n}</code></td>
+                            <td class="md:pl-2"><code class="color-primary"><span class="color-grey">{breakpoint}:</span>span-{n}</code>
+                                <div class="mt-3 ml-1 note">See <a href="#breakpoints">Breakpoints</a></div></td>
                             <td>Span the column based on a number of columns set.<br>
                                 <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, or <code class="color-primary">fixed</code>
                                 <p class="color-grey mt-2">* Requires container to have <code class="color-primary">columns-{n}</code></p>
@@ -1055,9 +1064,31 @@ $borders: (
                         
                     </tbody>
                 </table>
+
+                <h4 class="mt-2"><code class="color-primary">grid</code> Classes</h4>
     
                 <div class="show-code" data-title="Auto Fit minimum 200px">
                     <div class="grid-200">
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                        <div class="bg-faint round p-1">
+                            col
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-code" data-title="Auto Fit minimum 300px Right Aligned">
+                    <div class="grid-300 rtl text-left">
                         <div class="bg-faint round p-1">
                             col
                         </div>
@@ -1102,49 +1133,36 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Spanning Columns">
-                    <div class="grid columns-2 c-md:columns-3">
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1 span-2 c-md:span-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1 span-2 c-md:span-3">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1 span-2 c-md:span-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
+                    <div class="container">
+                        <div class="grid columns-2 c-md:columns-3">
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1 span-2 c-md:span-1">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1 span-2 c-md:span-3">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1 span-2 c-md:span-1">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="show-code" data-title="Nested Rows with different Gap Sizes">
-                    <div class="grid columns-2 c-md:columns-4">
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1 span-2">
-                            col
-                        </div>
-                        <div class="span-2 grid g-1 columns-2 c-md:columns-4">
+                    <div class="container">
+                        <div class="grid columns-2 c-md:columns-4">
                             <div class="bg-faint round p-1">
                                 col
                             </div>
@@ -1157,142 +1175,195 @@ $borders: (
                             <div class="bg-faint round p-1">
                                 col
                             </div>
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1 span-2">
-                            col
+                            <div class="bg-faint round p-1 span-2">
+                                col
+                            </div>
+                            <div class="span-2 grid g-1 columns-2 c-md:columns-4">
+                                <div class="bg-faint round p-1">
+                                    col
+                                </div>
+                                <div class="bg-faint round p-1">
+                                    col
+                                </div>
+                                <div class="bg-faint round p-1">
+                                    col
+                                </div>
+                                <div class="bg-faint round p-1">
+                                    col
+                                </div>
+                            </div>
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1 span-2">
+                                col
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <h4 class="mt-4"><code class="color-primary">row</code> Classes</h4>
+                <h5 class="my-1 color-grey"><code class="color-primary">row</code> has content center as the default</h5>
     
-                <div class="show-code" data-title="Equal Columns Single Row above mobile">
-                    <div class="row columns-1 c-md:columns-fixed">
-                        <div class="bg-faint round p-1">
-                            fixed
+                <div class="show-code" data-title="Fixed columns single row above mobile">
+                    <div class="container">
+                        <div class="row">
+                            <div class="bg-faint round p-1">
+                                fixed
+                            </div>
+                            <div class="bg-faint round p-1">
+                                fixed
+                            </div>
+                            <div class="bg-faint round p-1">
+                                fixed
+                            </div>
+                            <div class="bg-faint round p-1">
+                                fixed
+                            </div>
                         </div>
-                        <div class="bg-faint round p-1">
-                            fixed
-                        </div>
-                        <div class="bg-faint round p-1">
-                            fixed
-                        </div>
-                        <div class="bg-faint round p-1">
-                            fixed
+                    </div>
+                </div>
+
+                <div class="show-code" data-title="Auto columns with items-center on all sizes">
+                    <div class="container">
+                        <div class="row columns-auto items-center">
+                            <div class="bg-faint round p-1">
+                                auto
+                            </div>
+                            <div class="bg-faint round p-1">
+                                auto longer content<br>asdfasdf saf asdf a
+                            </div>
+                            <div class="bg-faint round p-1">
+                                auto
+                            </div>
+                            <div class="bg-faint round p-1">
+                                auto
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="show-code" data-title="Specify number of columns centered">
-                    <div class="row columns-2 c-md:columns-3 content-center">
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col
+                    <div class="container">
+                        <div class="row columns-2 c-md:columns-4">
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
+                            <div class="bg-faint round p-1">
+                                col
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Setting Columns to Auto">
-                    <div class="row">
-                        <div class="bg-faint round p-1">
-                            fixed
-                        </div>
-                        <div class="c-md:span-auto bg-faint round p-1">
-                            Auto Fit content
-                        </div>
-                        <div class="c-md:span-fill bg-faint round p-1">
-                            Auto Fill content
-                        </div>
-                        <div class="bg-faint round p-1">
-                            fixed
+                <div class="show-code" data-title="Setting columns to Auto or Fill">
+                    <div class="container">
+                        <div class="row">
+                            <div class="bg-faint round p-1">
+                                fixed
+                            </div>
+                            <div class="c-md:span-auto bg-faint round p-1">
+                                Auto Fit content
+                            </div>
+                            <div class="c-md:span-fill bg-faint round p-1">
+                                Auto Fill content
+                            </div>
+                            <div class="bg-faint round p-1">
+                                fixed
+                            </div>
                         </div>
                     </div>
                 </div>
     
-                <div class="show-code" data-title="Set Sidebar width with Auto Content Column">
-                    <div class="row columns-1 c-md:columns-fill">
-                        <div class="bg-faint round p-1 c-md:w-200">
-                            c-md:w-200
-                        </div>
-                        <div class="bg-faint round p-1">
-                            fill
+                <div class="show-code" data-title="Create a Sidebar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="bg-faint round p-1 c-md:w-200">
+                                c-md:w-200
+                            </div>
+                            <div class="bg-faint round p-1">
+                                fill
+                            </div>
                         </div>
                     </div>
                 </div>
     
                 <div class="show-code" data-title="Custom Ordering with Space between">
-                    <div class="row columns-auto content-between">
-                        <div class="c-md:order-1 bg-faint round p-1">
-                            col C
-                        </div>
-                        <div class="bg-faint round p-1">
-                            col B
-                        </div>
-                        <div class="c-md:order-first bg-faint round p-1">
-                            col A
+                    <div class="container">
+                        <div class="row columns-auto content-between">
+                            <div class="c-md:order-1 bg-faint round p-1">
+                                col C
+                            </div>
+                            <div class="bg-faint round p-1">
+                                col B
+                            </div>
+                            <div class="c-md:order-first bg-faint round p-1">
+                                col A
+                            </div>
                         </div>
                     </div>
                 </div>                
 
                 <div class="show-code" data-title="Columns multi row with column spanning">
-                    <div class="row columns-12">
-                        <div class="span-6 bg-faint round p-1">
-                            .span-6
-                        </div>
-                        <div class="span-6 bg-faint round p-1">
-                            .span-6
-                        </div>
-                        <div class="span-3 bg-faint round p-1">
-                            .span-3
-                        </div>
-                        <div class="span-6 bg-faint round p-1">
-                            .span-6
-                        </div>
-                        <div class="span-3 bg-faint round p-1">
-                            .span-3
-                        </div>
-                        <div class="span-12 bg-faint round p-1">
-                            .span-12
+                    <div class="container">
+                        <div class="row columns-12">
+                            <div class="span-6 bg-faint round p-1">
+                                .span-6
+                            </div>
+                            <div class="span-6 bg-faint round p-1">
+                                .span-6
+                            </div>
+                            <div class="span-6 c-md:span-3 bg-faint round p-1">
+                                .span-6 .c-md:span-3
+                            </div>
+                            <div class="span-6 bg-faint round p-1">
+                                .span-6
+                            </div>
+                            <div class="span-12 c-md:span-3 bg-faint round p-1">
+                                .span-12 .c-md:span-3
+                            </div>
+                            <div class="span-12 bg-faint round p-1">
+                                .span-12
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="show-code" data-title="Nested rows and auto height">
-                    <div class="row columns-12">
-                        <div class="c-md:span-4 bg-faint round p-1">
-                            .c-md:span-4
-                        </div>
-                        <div class="row c-md:span-fixed">
-                            <div class="bg-faint round p-1">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitrsed diam nonumy.
+                    <div class="container">
+                        <div class="row columns-12">
+                            <div class="c-md:span-4 bg-faint round p-1">
+                                .c-md:span-4
                             </div>
-                            <div class="bg-faint round p-1">
-                                fixed
-                            </div>
-                            <div class="bg-faint round p-1">
-                                fixed
-                            </div>
-                            <div class="row c-md:span-">
+                            <div class="row c-md:span-fixed">
+                                <div class="bg-faint round p-1">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitrsed diam nonumy.
+                                </div>
                                 <div class="bg-faint round p-1">
                                     fixed
                                 </div>
                                 <div class="bg-faint round p-1">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                                    fixed
+                                </div>
+                                <div class="row c-md:span-fixed">
+                                    <div class="bg-faint round p-1">
+                                        fixed
+                                    </div>
+                                    <div class="bg-faint round p-1">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1300,35 +1371,37 @@ $borders: (
                 </div>
     
                 <div class="show-code" data-title="Nested rows with different gap sizing" data-note="* With flexbox, nested rows need .span-fixed or need to be nested in an a column container.">
-                    <div class="row columns-12 g-1 c-md:g-4">
-                        <div class="span-6 bg-faint round p-1">
-                            .span-6
-                        </div>
-                        <div class="span-6 bg-faint round p-1">
-                            .span-6
-                        </div>
-                        <div class="span-6 c-md:span-3 bg-faint round p-1">
-                            .span-6 .c-md:span-3
-                        </div>
-                        <div class="span-fixed row g-2 c-md:columns-fill">
-                            <div class="bg-faint round p-1">
-                                auto
+                    <div class="container">
+                        <div class="row columns-12 g-1 c-md:g-4">
+                            <div class="span-6 bg-faint round p-1">
+                                .span-6
                             </div>
-                            <div class="bg-faint round p-1">
-                                auto fill with larger content
+                            <div class="span-6 bg-faint round p-1">
+                                .span-6
                             </div>
-                            <div class="bg-faint round p-1">
-                                auto
+                            <div class="span-6 c-md:span-3 bg-faint round p-1">
+                                .span-6 .c-md:span-3
                             </div>
-                        </div>
-                        <div class="c-md:span-3 bg-faint round p-1">
-                            .c-md:span-3
-                        </div>
-                        <div class="span-12">
-                            <div class="row columns-3 g-1">
-                                <div class="bg-faint round p-1">auto</div>
-                                <div class="bg-faint round p-1">auto</div>
-                                <div class="bg-faint round p-1">auto</div>
+                            <div class="span-fixed row g-2 c-md:columns-fill">
+                                <div class="bg-faint round p-1">
+                                    auto
+                                </div>
+                                <div class="bg-faint round p-1">
+                                    auto fill with larger content
+                                </div>
+                                <div class="bg-faint round p-1">
+                                    auto
+                                </div>
+                            </div>
+                            <div class="c-md:span-3 bg-faint round p-1">
+                                .c-md:span-3
+                            </div>
+                            <div class="span-12">
+                                <div class="row columns-3 g-1">
+                                    <div class="bg-faint round p-1">auto</div>
+                                    <div class="bg-faint round p-1">auto</div>
+                                    <div class="bg-faint round p-1">auto</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1634,26 +1707,73 @@ $borders: (
                     </tbody>
                 </table>
 
-                <div class="show-code mt-4" data-title="Basic Toggle" data-badge="No JS">
-                    <label class="button toggle">
-                        <input type="checkbox" />
-                        Toggle Content
-                        <i class="icon ml-1 rotate-pressed xl">
-                            <svg viewBox="-.5 -.5 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                        </i>
-                    </label>
-                    <div>
-                        <p class="b-1 p-1 my-2">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                            justo duo
-                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                            sit amet.
-                        </p>
+                <div class="show-code mt-4" data-title="Basic Toggle Dropdown">
+
+                    <div class="language-select" data-language="html">
+                        <label class="button toggle">
+                            <input type="checkbox" />
+                            Toggle Content
+                            <i class="icon ml-1 rotate-pressed xl">
+                                <svg viewBox="-.5 -.5 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </i>
+                        </label>
+                        <div class="expand">
+                            <div>
+                                <p class="b-1 p-2 my-2">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                                    justo duo
+                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                                    sit amet.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
+                    <div class="language-select" data-language="js">
+                        <button onclick="this.children[0].classList.toggle('rotate-180'); this.nextElementSibling.classList.toggle('open')">
+                            Toggle Content
+                            <i class="icon ml-1 rotate-pressed xl">
+                                <svg viewBox="-.5 -.5 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </i>
+                        </button>
+                        <div class="expand">
+                            <div>
+                                <p class="b-1 p-2 my-2">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                                    justo duo
+                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                                    sit amet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="language-select" data-language="spryJs">
+                        <button data-toggle="next">
+                            Toggle Content
+                            <i class="icon ml-1 rotate-pressed xl">
+                                <svg viewBox="-.5 -.5 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            </i>
+                        </button>
+                        <div class="expand">
+                            <div>
+                                <p class="b-1 p-2 my-2">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                                    justo duo
+                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                                    sit amet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-code mt-4" data-title="Basic Toggle Switch" data-badge="No JS">
                     <label class="toggle">
-                        <input class="switch my-1" type="checkbox" />
+                        <input class="switch" type="checkbox" />
                         <span class="label-checked">On</span>
                         <span class="label-unchecked">Off</span>
                     </label>
@@ -1670,12 +1790,12 @@ $borders: (
                     </div>
                 </div>
 
-                <div class="show-code mt-4" data-title="Basic Toggle" data-badge="No JS">
-                    <label for="toggle2" class="button toggle">
+                <div class="show-code mt-4" data-title="Toggle Element by ID" data-badge="No JS">
+                    <label for="toggle2" class="button">
                         Toggle Content
                     </label>
 
-                    <p>Middle Content...</p>
+                    <p class="mt-2">Middle Content...</p>
 
                     <label class="toggle">
                         <input id="toggle2" type="checkbox" />
@@ -1782,6 +1902,115 @@ $borders: (
                             <li><a href="#">Link 3</a></li>
                         </ul>
                     </nav>
+                </div>
+
+                <div class="show-code mb-4" data-title="Used for Modals">
+
+                    <div class="language-select" data-language="html">
+                        <label class="toggle button">
+                            Open Modal with HTML
+                            <input id="toggleModal" type="checkbox" />
+                        </label>
+                        <div class="modal blur">
+                            <label for="toggleModal" class="fixed inset"></label>
+                            <article class="mw-400">
+                                <p>HTML Modal</p>
+                                <label for="toggleModal" class="button hazy">
+                                    Close Toggle
+                                </label>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="language-select" data-language="js">
+                        <button onclick="this.nextElementSibling.classList.add('open')">
+                            Open Modal with JS
+                        </button>
+                        <div class="modal blur" onclick="event.target === this && this.classList.remove('open');">
+                            <article class="mw-400">
+                                <p>JS Modal</p>
+                                <button class="hazy" onclick="this.closest('.modal').classList.remove('open')">
+                                    Close Toggle
+                                </button>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="language-select" data-language="spryJs">
+                        <button data-toggle="next">
+                            Open Modal with SpryJs
+                        </button>
+                        <div class="modal blur" data-toggle>
+                            <article class="mw-400">
+                                <p>SpryJs Modal</p>
+                                <button class="hazy" data-toggle-close>
+                                    Close Toggle
+                                </button>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="language-select" data-language="petiteVue">
+                        <div id="modalTogglePetiteVue">
+                            <button @click="open = true">
+                                Open Modal with Petite Vue
+                            </button>
+                            <div class="modal blur" :class="{open: open}" @click="open = false">
+                                <article class="mw-400" @click.stop>
+                                    <p>Petite Vue Modal</p>
+                                    <button class="hazy" @click="open = false">
+                                        Close Toggle
+                                    </button>
+                                </article>
+                            </div>
+                        </div>
+                        <script type="module">
+                            import { createApp } from 'https://unpkg.com/petite-vue?module';
+                            createApp({
+                                open: false
+                            }).mount('#modalTogglePetiteVue');
+                        </script>
+                    </div>
+                    
+                    <div class="language-select" data-language="vueJs">
+                        <div id="modalToggleVue">
+            <!-- nl --><!----><button @click="open = true">Open Modal with Vue.js</button>
+            <!-- nl --><!----><div class="modal blur" :class="{open: open}" @click="open = false">
+            <!-- nl --><!----><!----><article class="mw-400" @click.stop>
+            <!-- nl --><!----><!----><!----><p>Vue.js Modal</p>
+            <!-- nl --><!----><!----><!----><button class="hazy" @click="open = false">Close Toggle</button>
+            <!-- nl --><!----><!----></article>
+            <!-- nl --><!----></div>
+            <!-- nl --></div>
+                        <script type="module">
+                            import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+                            createApp({
+                                setup() {
+                                    const open = ref(false);
+                                    return {
+                                        open
+                                    }
+                                }
+                            }).mount('#modalToggleVue');
+                        </script>
+                    </div>
+
+                    <div class="language-select" data-language="alpineJs">
+                        <script src="//unpkg.com/alpinejs" defer></script>
+                        <div x-data="{ open: false }">
+                            <button @click="open = true">
+                                Open Modal with Alpine.js
+                            </button>
+                            <div class="modal blur" :class="{open: open}" @click="open = false">
+                                <article class="mw-400" @click.stop>
+                                    <p>Alpine.js Modal</p>
+                                    <button class="hazy" @click="open = false">
+                                        Close Toggle
+                                    </button>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                
                 <div class="show-code mb-4" data-title="Used for Modals" data-badge="Uses SpryJS" data-badge-link="#spryjs">
@@ -4421,7 +4650,7 @@ $borders: (
                         <article class="mw-400 outline shadow">
                             <header>
                                 <h4>Lorem ipsum dolor as</h4>
-                                <button class="link icon circle mr-n1" data-toggle-close>
+                                <button class="link icon circle" data-toggle-close>
                                     <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                                 </button>
                             </header>
@@ -5047,8 +5276,8 @@ $borders: (
                         </div>
                     </div>
 
-                    <div class="slider mt-2" data-snap>
-                        <div class="slider-slides row columns-3 md:columns-5 md:g-2">
+                    <div class="slider container mt-2" data-snap>
+                        <div class="slider-slides columns-3 c-md:columns-5 c-md:g-2">
                             <a href="#with-thumbnail-slide1"><img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
                             <a href="#with-thumbnail-slide2"><img src="/placeholder-2.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
                             <a href="#with-thumbnail-slide3"><img src="/placeholder-3.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
@@ -5075,20 +5304,18 @@ $borders: (
                     </div>
                 </div>
     
-                <div class="show-code" data-title="Breakpoints, Autoplay, Loop and Stop on Action" data-badge="With SprySliderJS">
-                    <div class="slider px-4" data-play="0" data-stop="action" data-loop>
+                <div class="show-code" data-title="Breakpoints, Autoplay, Loop, Snap and Stop on Action" data-badge="With SprySliderJS">
+                    <div class="slider container primary px-4" data-play="6000" data-stop="action" data-snap data-loop>
                         <button class="slider-prev link icon circle xl">
                             <svg viewBox="0 0 24 24" class="xl"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z" /></svg>
                         </button>
                         <button class="slider-next link icon circle xl">
                             <svg viewBox="0 0 24 24" class="xl"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" /></svg>
                         </button>
-                        <div class="slider-slides row md:columns-2 md:g-2">
+                        <div class="slider-slides c-md:columns-3 c-md:g-2">
                             <div>
-                                <a href="https://google.com">
-                                    <h5>Image 1</h5>
-                                    <img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
-                                </a>
+                                <h5>Image 1</h5>
+                                <img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                             </div>
                             <div>
                                 <h5>Image 2</h5>
@@ -5135,6 +5362,7 @@ $borders: (
                                 <img src="/placeholder-12.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
                             </div>
                         </div>
+                        <div class="slider-pagination p-3"></div>
                     </div>
                 </div>
 
@@ -5159,23 +5387,25 @@ $borders: (
                         </div>
                     </div>
 
-                    <div class="slider mt-2" data-snap>
-                        <button class="slider-prev grey link icon circle">
-                            <svg viewBox="0 0 24 24" class="xl"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z" /></svg>
-                        </button>
-                        <button class="slider-next grey link icon circle">
-                            <svg viewBox="0 0 24 24" class="xl"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" /></svg>
-                        </button>
-                        <div class="slider-slides row columns-3 md:columns-5 md:g-2">
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(1)').offsetLeft, 0);"><img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(2)').offsetLeft, 0);"><img src="/placeholder-2.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(3)').offsetLeft, 0);"><img src="/placeholder-3.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(4)').offsetLeft, 0);"><img src="/placeholder-4.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(5)').offsetLeft, 0);"><img src="/placeholder-5.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(6)').offsetLeft, 0);"><img src="/placeholder-6.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(7)').offsetLeft, 0);"><img src="/placeholder-7.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(8)').offsetLeft, 0);"><img src="/placeholder-8.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
-                            <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(9)').offsetLeft, 0);"><img src="/placeholder-9.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                    <div class="container">
+                        <div class="slider mt-1 c-md:mt-2" data-snap>
+                            <button class="slider-prev grey link icon circle">
+                                <svg viewBox="0 0 24 24" class="xl"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z" /></svg>
+                            </button>
+                            <button class="slider-next grey link icon circle">
+                                <svg viewBox="0 0 24 24" class="xl"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" /></svg>
+                            </button>
+                            <div class="slider-slides columns-3 g-1 c-md:columns-5 c-md:g-2">
+                                <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(1)').offsetLeft, 0);"><img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                                <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(2)').offsetLeft, 0);"><img src="/placeholder-2.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                                <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(3)').offsetLeft, 0);"><img src="/placeholder-3.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                                <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(4)').offsetLeft, 0);"><img src="/placeholder-4.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                                <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(5)').offsetLeft, 0);"><img src="/placeholder-5.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                                <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(6)').offsetLeft, 0);"><img src="/placeholder-6.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                                <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(7)').offsetLeft, 0);"><img src="/placeholder-7.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                                <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(8)').offsetLeft, 0);"><img src="/placeholder-8.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                                <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(9)').offsetLeft, 0);"><img src="/placeholder-9.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -5265,7 +5495,7 @@ $borders: (
 
                 <div class="show-code" data-title="Overflow Scroll with Sticky Header">
                     <div class="auto mh-300">
-                        <table style="min-width: 800px;">
+                        <table>
                             <thead class="sticky bg-theme">
                                 <tr>
                                     <th class="h5">Name</th>

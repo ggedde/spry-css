@@ -5,6 +5,10 @@
 @use "mixins";
 @use "variables";
 
+.toggle {
+	@extend %ui-toggle;
+}
+
 .toggle input:not(.switch) {
 	width: 0;
 	min-width: 0;

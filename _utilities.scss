@@ -255,6 +255,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		clear: both
 	}
 
+	#{$prefix}rtl {
+		direction: rtl
+	}
+
+	#{$prefix}ltr {
+		direction: ltr
+	}
+
 	#{$prefix}no-wrap {
 		white-space: nowrap;
 		flex-wrap  : nowrap;

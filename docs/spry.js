@@ -380,6 +380,7 @@ class Spry {
             var play = parseInt(slider.getAttribute('data-play'));
             var loop = slider.hasAttribute('data-loop');
             var stop = slider.getAttribute('data-stop');
+            var snap = slider.hasAttribute('data-snap');
             var slides = slider.querySelector('.slider-slides');
             var slideCount = slides.childElementCount;
             var next = slider.querySelector('.slider-next');
@@ -396,13 +397,23 @@ class Spry {
             }
     
             var goTo = (to, instant) => {
-                var offsetSlides = loop ? slideCount : 0;
+                if (slider.hasAttribute('data-sliding')) {
+                    return;
+                }
                 if (to === 'next') {
-                    slides.scrollBy(slider.offsetWidth, 0);
+                    var to = (slides.scrollLeft + slider.offsetWidth);
+                    if (snap) {
+                        to = (slides.scrollLeft + slider.querySelector('.slider-slides > :first-child').offsetWidth);
+                    }
+                    slides.scrollTo({left: to, behavior: instant ? 'instant' : 'smooth'});
                 } else if (to === 'prev') {
-                    slides.scrollBy(-(slides.offsetWidth), 0);
+                    var to = (slides.scrollLeft - slider.offsetWidth);
+                    if (snap) {
+                        to = (slides.scrollLeft - slider.querySelector('.slider-slides > :first-child').offsetWidth);
+                    }
+                    slides.scrollTo({left: to, behavior: instant ? 'instant' : 'smooth'});
                 } else {
-                    slides.scrollTo({left: slides.children[(to+offsetSlides)].offsetLeft, behavior: instant ? 'instant' : 'smooth'});
+                    slides.scrollTo({left: slides.children[(to+(loop ? slideCount : 0))].offsetLeft, behavior: instant ? 'instant' : 'smooth'});
                 }
             };
             var resetPlay = () => {
