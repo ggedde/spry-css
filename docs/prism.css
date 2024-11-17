@@ -6,6 +6,34 @@ https://prismjs.com/download.html#themes=prism&languages=css+scss&plugins=toolba
  * @author Lea Verou
  */
 
+html:has(.code-content-container:target) {
+	scroll-padding-top: 200px;
+}
+@keyframes blinkTarget {
+	0% {
+		box-shadow: 0 0 8px 4px rgba(20, 148, 223, 1);
+	}
+
+	1% {
+		box-shadow: 0 0 8px 4px rgba(20, 148, 223, .5);
+	}
+
+	2% {
+		box-shadow: 0 0 8px 4px rgba(20, 148, 223, 1);
+	}
+
+	99% {
+		box-shadow: 0 0 8px 4px rgba(20, 148, 223, 0);
+	}
+	100% {
+		box-shadow: none;
+	}
+}
+.code-content-container:target {
+	animation-name    : blinkTarget;
+	animation-duration: 30s;
+}
+
 .code-content-container {
 	min-width: 300px;
 	max-width: 100%;

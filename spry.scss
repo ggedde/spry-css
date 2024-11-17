@@ -4,7 +4,6 @@
  * author: https://github.com/ggedde/spry-css
  */
 
-@use "toggles";
 @use "reset";
 @use "ui";
 @use "typography";
@@ -25,6 +24,8 @@
 @use "menus";         // Has Nesting
 @use "modals";       // Has Nesting
 @use "comfort";
+@use "toggles";
+// @use "collapse";
 @use "spacing";
 @use "borders";
 @use "icons";        // Has Nesting

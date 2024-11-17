@@ -4,16 +4,84 @@
  * author: https://github.com/ggedde/spry-css
  */
 /*
-* Spry Toggles
+* Spry Reset
 */
+html {
+  box-sizing: border-box;
+  background: #fff;
+}
+
+body {
+  background: inherit;
+  color: inherit;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+fieldset,
+menu,
+ol,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol, ul {
+  margin-left: 1.5em;
+}
+
+ol li, ul li {
+  margin-block: 0.5em;
+}
+
+menu,
+menu ul,
+menu ol,
+nav ul,
+nav ol {
+  list-style: none;
+  margin-left: 0;
+}
+
+nav li,
+menu li {
+  margin-block: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /*
-* Spry Extends
+* Spry UI
 */
 :root {
   --gapx: 1.25em;
   --gapy: 1.25em;
-  --ease: cubic-bezier(.25, .8, .25, 1);
+  --ease: cubic-bezier(.45,.45,0,1);
+  --ease-speed: .4s;
   --border-radius: .25em;
+  --toggle-transform: translate3d(0, -4px, 0);
+  --toggle-transform-origin: top;
 }
 @media screen and (min-width: 40em) {
   :root {
@@ -22,22 +90,30 @@
   }
 }
 
+.slow {
+  --ease-speed: .8s;
+}
+
+.fast {
+  --ease-speed: .2s;
+}
+
+.instant {
+  --ease-speed: 0s;
+}
+
+/*
+* Spry UI
+*/
 /*
 * Spry Extends
 */
 /*
+* Spry UI
+*/
+/*
 * Spry Mixins
 */
-.toggle {
-  min-height: 0;
-  min-width: 0;
-  height: 0;
-  margin: 0;
-}
-.toggle:has(> .switch) {
-  height: 1.15em;
-}
-
 :is(nav, menu) a, :where(input, textarea, select, .is-select, .prefix, .suffix), article > :is(header, footer), .toolbar, :is(button, .button, [type=submit], [type=reset]),
 :is(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a, .badge, .alert, .ui {
   align-items: center;
@@ -58,13 +134,9 @@
   padding-inline: 1em;
   position: relative;
   text-decoration: none;
-  transition: all 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out, color 0.1s ease-in-out, background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
   vertical-align: middle;
   width: 100%;
-}
-:is(nav, menu) a:has(:where([type=radio], [type=checkbox])), :has(:where([type=radio], [type=checkbox])):where(input, textarea, select, .is-select, .prefix, .suffix), article > :has(:where([type=radio], [type=checkbox])):is(header, footer), .toolbar:has(:where([type=radio], [type=checkbox])), :has(:where([type=radio], [type=checkbox])):is(button, .button, [type=submit], [type=reset]),
-:is(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a:has(:where([type=radio], [type=checkbox])), .badge:has(:where([type=radio], [type=checkbox])), .alert:has(:where([type=radio], [type=checkbox])), .ui:has(:where([type=radio], [type=checkbox])) {
-  gap: 0.5em;
 }
 
 .icon, :is(button, .button, [type=submit], [type=reset]) > svg,
@@ -116,17 +188,17 @@
   background-color: hsl(from var(--color) h s var(--bg-l, l)/var(--bg-a, 100%));
 }
 
-:is(button, .button, [type=submit], [type=reset]):is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):not(:active),
-:is(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):not(:active) {
+:is(button, .button, [type=submit], [type=reset]):is(:hover, :focus, :focus-within, .active):not(:active),
+:is(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a:is(:hover, :focus, :focus-within, .active):not(:active) {
   background-color: hsl(from var(--color) h s calc(var(--bg-l, l) + 10)/var(--bg-a, 100%));
 }
-:where(.hazy, .outline, .plain, .link):is(button, .button, [type=submit], [type=reset]):is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):not(:active),
-:is(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a:where(.hazy, .outline, .plain, .link):is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):not(:active) {
+:where(.hazy, .outline, .plain, .link):is(button, .button, [type=submit], [type=reset]):is(:hover, :focus, :focus-within, .active):not(:active),
+:is(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a:where(.hazy, .outline, .plain, .link):is(:hover, :focus, :focus-within, .active):not(:active) {
   background-color: hsl(from var(--color) h s calc(var(--bg-l, l) + 10)/15%);
 }
 
-:is(button, .button, [type=submit], [type=reset]):is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):is(.link, .outline, .hazy, .plain):not(:active),
-:is(.buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):not(:active), .list:not(.buttons) > a:not(.button, :active):is(:hover, :focus, .active, [aria-pressed=true]), .list:not(.buttons) li:not(.buttons) > a:not(.button, :active):is(:hover, :focus, .active, [aria-pressed=true]) {
+:is(button, .button, [type=submit], [type=reset]):is(:hover, :focus, :focus-within, .active):is(.link, .outline, .hazy, .plain):not(:active),
+:is(.buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a:is(:hover, :focus, :focus-within, .active):not(:active), .list:not(.buttons) > a:not(.button, :active):is(:hover, :focus, .active), .list:not(.buttons) li:not(.buttons) > a:not(.button, :active):is(:hover, :focus, .active) {
   background-color: hsl(from var(--color) h s l/15%);
 }
 
@@ -480,436 +552,75 @@ html .border-100,
   --bdr-l: 100;
 }
 
-.menu nav, .tabs .list + * > *, .closed,
-.expand,
-.hoverable > li ul,
-.hoverable > ul > li ul,
-[data-toggle=next] + *,
-[data-toggle=hover] + *,
-.toggle + * {
+.collapse,
+.hover\:open > li ul,
+.hover\:open > ul > li ul,
+:where([data-toggle=next] + :not(.collapse-inner, .overlay:has(> .collapse-inner))),
+[data-toggle=hover] + :not(.collapse-inner, .overlay:has(> .collapse-inner)),
+:where(.toggle:has(input) + :not(.collapse-inner, .overlay:has(> .collapse-inner))),
+.toggle.hover\:active + :not(.collapse-inner, .overlay:has(> .collapse-inner)), :where(.menu > .toggle + .overlay > :not(.collapse-inner)), .tabs .list + * > * {
   max-height: 0;
-  min-height: 0;
   opacity: 0;
   pointer-events: none;
-  transform: scale(1, 0.9) translateY(-4px) translateZ(0);
-  transform-origin: top;
-  transition: transform 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86), grid-template-rows 0.5s cubic-bezier(0, 1, 0, 1), min-height 0.5s cubic-bezier(0, 1, 0, 1), max-height 0.5s cubic-bezier(0, 1, 0, 1), padding-block 0.5s cubic-bezier(0, 1, 0, 1), margin-block 0.5s cubic-bezier(0, 1, 0, 1);
+  transform: var(--toggle-transform);
+  transform-origin: var(--toggle-transform-origin);
+  transition: transform calc(var(--ease-speed) / 1.5), opacity calc(var(--ease-speed) / 1.5), max-height calc(var(--ease-speed) / 2);
+  transition-timing-function: var(--ease);
   transition-delay: 0.1s;
-  z-index: 2;
-}
-.menu nav.from-center, .tabs .list + * > .from-center, .from-center.closed,
-.from-center.expand,
-.hoverable > li ul.from-center,
-.hoverable > ul > li ul.from-center,
-[data-toggle=next] + .from-center,
-[data-toggle=hover] + .from-center,
-.toggle + .from-center {
-  transform: scale(1, 0.4) translate(0, 0) translateZ(0);
-  transform-origin: center;
-}
-.menu nav.from-left, .tabs .list + * > .from-left, .from-left.closed,
-.from-left.expand,
-.hoverable > li ul.from-left,
-.hoverable > ul > li ul.from-left,
-[data-toggle=next] + .from-left,
-[data-toggle=hover] + .from-left,
-.toggle + .from-left {
-  max-height: none;
-  transform: scale(0.9, 1) translate(-40px, 0) translateZ(0);
-  transform-origin: left;
-}
-.menu nav.from-right, .tabs .list + * > .from-right, .from-right.closed,
-.from-right.expand,
-.hoverable > li ul.from-right,
-.hoverable > ul > li ul.from-right,
-[data-toggle=next] + .from-right,
-[data-toggle=hover] + .from-right,
-.toggle + .from-right {
-  max-height: none;
-  transform: scale(0.9, 1) translate(40px, 0) translateZ(0);
-  transform-origin: right;
-}
-.menu nav.from-bottom, .tabs .list + * > .from-bottom, .from-bottom.closed,
-.from-bottom.expand,
-.hoverable > li ul.from-bottom,
-.hoverable > ul > li ul.from-bottom,
-[data-toggle=next] + .from-bottom,
-[data-toggle=hover] + .from-bottom,
-.toggle + .from-bottom {
-  transform: scale(1, 0.9) translate(0, 20px) translateZ(0);
-  transform-origin: bottom;
-}
-.menu nav.expand, .tabs .list + * > .expand,
-.expand,
-.hoverable > li ul.expand,
-.hoverable > ul > li ul.expand {
-  display: grid;
-  grid-template-rows: 0fr;
-  max-height: none;
-}
-.expand:not(.collapse) {
-  overflow: hidden;
-}
-.expand > :not(.collapse) {
-  min-height: 0;
-}
-.menu nav > *, .tabs .list + * > * > *, .closed > *,
-.expand > *,
-.hoverable > li ul > *,
-.hoverable > ul > li ul > *,
-[data-toggle=next] + * > *,
-[data-toggle=hover] + * > *,
-.toggle + * > * {
-  transition: inherit;
-  transition: translate 5.2s ease-in-out;
+  z-index: 1;
 }
 
-.menu:has(.toggle:focus) nav, .menu:not(.keep-open):has(:focus-visible) nav, .menu.keep-open:has(:focus-within) nav, .menu.hover\:open:not(:has(:active)):hover nav, .menu.open nav, .tabs .list + * > *.open, .open,
-.expand.open,
-.hoverable .open,
-.toggle:has(:checked) + *,
-[class*=\:hoverable] .open,
-.hoverable > li:hover > ul,
-.hoverable > ul > li:hover > ul,
-.hoverable li:has(:focus-visible) > ul,
-[data-toggle=hover]:hover + *,
-[data-toggle=next][aria-pressed=""] + .expand,
-[data-toggle=next][aria-pressed=true] + .expand,
-[data-toggle=hover] + :not(.dismissed):hover {
-  max-height: 1900px;
+.open,
+.hover\:open:hover .collapse,
+.hover\:open > li:hover > ul,
+.hover\:open > ul > li:hover > ul,
+.hover\:open li:has(:focus-visible) > ul,
+[class*=\:hover\:open] .open,
+.toggle:has(:checked) + :not(.collapse-inner, .overlay:has(> .collapse-inner)),
+:where(.toggle.hover\:active:hover + :not(.collapse-inner, .overlay:has(> .collapse-inner))),
+.toggle:has(:checked) + .overlay > .collapse,
+[data-toggle=hover]:hover + :not(.collapse-inner, .overlay:has(> .collapse-inner)),
+[data-toggle=hover] + :not(.dismissed):hover, .menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle + .overlay > :not(.collapse-inner), .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle + .overlay > :not(.collapse-inner), .tabs .list + * > *.open {
+  --toggle-transform-origin: top;
   opacity: 1;
-  pointer-events: all;
-  transform: translateZ(0) scale(1, 1);
+  max-height: 1900px;
+  transform: translate3d(0, 0, 0);
+  transition-timing-function: var(--ease);
+  pointer-events: inherit;
+  z-index: 1;
 }
-.menu:has(.toggle:focus) nav:is(.from-left, .from-right, .from-bottom), .menu:not(.keep-open):has(:focus-visible) nav:is(.from-left, .from-right, .from-bottom), .menu.keep-open:has(:focus-within) nav:is(.from-left, .from-right, .from-bottom), .menu.hover\:open:not(:has(:active)):hover nav:is(.from-left, .from-right, .from-bottom), .menu.open nav:is(.from-left, .from-right, .from-bottom), .tabs .list + * > .open:is(.from-left, .from-right, .from-bottom), .open:is(.from-left, .from-right, .from-bottom),
-.toggle:has(:checked) + :is(.from-left, .from-right, .from-bottom),
-.hoverable > li:hover > ul:is(.from-left, .from-right, .from-bottom),
-.hoverable > ul > li:hover > ul:is(.from-left, .from-right, .from-bottom),
-.hoverable li:has(:focus-visible) > ul:is(.from-left, .from-right, .from-bottom),
-[data-toggle=hover]:hover + :is(.from-left, .from-right, .from-bottom),
-[data-toggle=next][aria-pressed=""] + .expand:is(.from-left, .from-right, .from-bottom),
-[data-toggle=next][aria-pressed=true] + .expand:is(.from-left, .from-right, .from-bottom),
-[data-toggle=hover] + :is(.from-left, .from-right, .from-bottom):not(.dismissed):hover {
-  transform: none;
-}
-.menu:has(.toggle:focus) nav.expand, .menu:not(.keep-open):has(:focus-visible) nav.expand, .menu.keep-open:has(:focus-within) nav.expand, .menu.hover\:open:not(:has(:active)):hover nav.expand, .menu.open nav.expand, .tabs .list + * > .expand.open, .expand.open,
-.toggle:has(:checked) + .expand,
-.hoverable > li:hover > ul.expand,
-.hoverable > ul > li:hover > ul.expand,
-.hoverable li:has(:focus-visible) > ul.expand,
-[data-toggle=hover]:hover + .expand,
-[data-toggle=next][aria-pressed=""] + .expand,
-[data-toggle=next][aria-pressed=true] + .expand,
-[data-toggle=hover] + .expand:not(.dismissed):hover {
+
+.collapse-inner, :where(.menu > .toggle + :not(.overlay)) {
   max-height: none;
-  position: relative;
   display: grid;
-  grid-template-rows: 1fr;
-  transform: translateZ(0) scale(1, 1);
-}
-.menu:has(.toggle:focus) nav.expand > :not(.collapse), .menu:not(.keep-open):has(:focus-visible) nav.expand > :not(.collapse), .menu.keep-open:has(:focus-within) nav.expand > :not(.collapse), .menu.hover\:open:not(:has(:active)):hover nav.expand > :not(.collapse), .menu.open nav.expand > :not(.collapse), .expand.open > :not(.collapse),
-.toggle:has(:checked) + .expand > :not(.collapse),
-.hoverable > li:hover > ul.expand > :not(.collapse),
-.hoverable > ul > li:hover > ul.expand > :not(.collapse),
-.hoverable li:has(:focus-visible) > ul.expand > :not(.collapse),
-[data-toggle=hover]:hover + .expand > :not(.collapse),
-[data-toggle=next][aria-pressed=""] + .expand > :not(.collapse),
-[data-toggle=next][aria-pressed=true] + .expand > :not(.collapse),
-[data-toggle=hover] + .expand:not(.dismissed):hover > :not(.collapse) {
-  min-height: 0;
-}
-
-.toggle input:not(.switch) {
-  width: 0;
-  min-width: 0;
-  min-height: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-.hoverable > ul > li > :is([data-toggle=hover], [data-toggle=next]),
-.hoverable > li > :is([data-toggle=hover], [data-toggle=next]) {
+  opacity: 0;
+  grid-template-rows: 0fr;
   pointer-events: none;
+  transform: var(--toggle-transform);
+  transform-origin: var(--toggle-transform-origin);
+  transition: grid-template-rows var(--ease-speed), transform var(--ease-speed), opacity var(--ease-speed);
+  transition-timing-function: var(--ease);
+  transition-delay: 0.1s;
 }
-
-.closed:not(.open) {
-  border: 0;
-}
-.closed:not(.open):not(.from-left, .from-right) {
-  padding-block: 0;
-  margin-block: 0;
-}
-
-@media screen and (min-width: 40em) {
-  .md\:closed,
-  .md\:hoverable > ul > li ul,
-  .md\:hoverable > li ul {
-    max-height: 0;
-    min-height: 0;
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(1, 0.9) translateY(-4px) translateZ(0);
-    transform-origin: top;
-    transition: transform 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86), grid-template-rows 0.5s cubic-bezier(0, 1, 0, 1), min-height 0.5s cubic-bezier(0, 1, 0, 1), max-height 0.5s cubic-bezier(0, 1, 0, 1), padding-block 0.5s cubic-bezier(0, 1, 0, 1), margin-block 0.5s cubic-bezier(0, 1, 0, 1);
-    transition-delay: 0.1s;
-    z-index: 2;
-  }
-  .md\:closed.from-center,
-  .md\:hoverable > ul > li ul.from-center,
-  .md\:hoverable > li ul.from-center {
-    transform: scale(1, 0.4) translate(0, 0) translateZ(0);
-    transform-origin: center;
-  }
-  .md\:closed.from-left,
-  .md\:hoverable > ul > li ul.from-left,
-  .md\:hoverable > li ul.from-left {
-    max-height: none;
-    transform: scale(0.9, 1) translate(-40px, 0) translateZ(0);
-    transform-origin: left;
-  }
-  .md\:closed.from-right,
-  .md\:hoverable > ul > li ul.from-right,
-  .md\:hoverable > li ul.from-right {
-    max-height: none;
-    transform: scale(0.9, 1) translate(40px, 0) translateZ(0);
-    transform-origin: right;
-  }
-  .md\:closed.from-bottom,
-  .md\:hoverable > ul > li ul.from-bottom,
-  .md\:hoverable > li ul.from-bottom {
-    transform: scale(1, 0.9) translate(0, 20px) translateZ(0);
-    transform-origin: bottom;
-  }
-  .md\:closed.expand,
-  .md\:hoverable > ul > li ul.expand,
-  .md\:hoverable > li ul.expand {
-    display: grid;
-    grid-template-rows: 0fr;
-    max-height: none;
-  }
-  .md\:closed.expand:not(.collapse),
-  .md\:hoverable > ul > li ul.expand:not(.collapse),
-  .md\:hoverable > li ul.expand:not(.collapse) {
-    overflow: hidden;
-  }
-  .md\:closed.expand > :not(.collapse),
-  .md\:hoverable > ul > li ul.expand > :not(.collapse),
-  .md\:hoverable > li ul.expand > :not(.collapse) {
-    min-height: 0;
-  }
-  .md\:closed > *,
-  .md\:hoverable > ul > li ul > *,
-  .md\:hoverable > li ul > * {
-    transition: inherit;
-    transition: translate 5.2s ease-in-out;
-  }
-  .md\:open,
-  .md\:hoverable > li:hover > ul,
-  .md\:hoverable > ul > li:hover > ul,
-  .md\:hoverable li:has(:focus-visible) > ul {
-    max-height: 1900px;
-    opacity: 1;
-    pointer-events: all;
-    transform: translateZ(0) scale(1, 1);
-  }
-  .md\:open:is(.from-left, .from-right, .from-bottom),
-  .md\:hoverable > li:hover > ul:is(.from-left, .from-right, .from-bottom),
-  .md\:hoverable > ul > li:hover > ul:is(.from-left, .from-right, .from-bottom),
-  .md\:hoverable li:has(:focus-visible) > ul:is(.from-left, .from-right, .from-bottom) {
-    transform: none;
-  }
-  .md\:open.expand,
-  .md\:hoverable > li:hover > ul.expand,
-  .md\:hoverable > ul > li:hover > ul.expand,
-  .md\:hoverable li:has(:focus-visible) > ul.expand {
-    max-height: none;
-    position: relative;
-    display: grid;
-    grid-template-rows: 1fr;
-    transform: translateZ(0) scale(1, 1);
-  }
-  .md\:open.expand > :not(.collapse),
-  .md\:hoverable > li:hover > ul.expand > :not(.collapse),
-  .md\:hoverable > ul > li:hover > ul.expand > :not(.collapse),
-  .md\:hoverable li:has(:focus-visible) > ul.expand > :not(.collapse) {
-    min-height: 0;
-  }
-  .md\:hoverable > ul > li > :is([data-toggle=hover], [data-toggle=next]),
-  .md\:hoverable > li > :is([data-toggle=hover], [data-toggle=next]) {
-    pointer-events: none;
-  }
-}
-@container (min-width: 40em) {
-  .c-md\:closed,
-  .c-md\:hoverable > ul > li ul,
-  .c-md\:hoverable > li ul {
-    max-height: 0;
-    min-height: 0;
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(1, 0.9) translateY(-4px) translateZ(0);
-    transform-origin: top;
-    transition: transform 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86), grid-template-rows 0.5s cubic-bezier(0, 1, 0, 1), min-height 0.5s cubic-bezier(0, 1, 0, 1), max-height 0.5s cubic-bezier(0, 1, 0, 1), padding-block 0.5s cubic-bezier(0, 1, 0, 1), margin-block 0.5s cubic-bezier(0, 1, 0, 1);
-    transition-delay: 0.1s;
-    z-index: 2;
-  }
-  .c-md\:closed.from-center,
-  .c-md\:hoverable > ul > li ul.from-center,
-  .c-md\:hoverable > li ul.from-center {
-    transform: scale(1, 0.4) translate(0, 0) translateZ(0);
-    transform-origin: center;
-  }
-  .c-md\:closed.from-left,
-  .c-md\:hoverable > ul > li ul.from-left,
-  .c-md\:hoverable > li ul.from-left {
-    max-height: none;
-    transform: scale(0.9, 1) translate(-40px, 0) translateZ(0);
-    transform-origin: left;
-  }
-  .c-md\:closed.from-right,
-  .c-md\:hoverable > ul > li ul.from-right,
-  .c-md\:hoverable > li ul.from-right {
-    max-height: none;
-    transform: scale(0.9, 1) translate(40px, 0) translateZ(0);
-    transform-origin: right;
-  }
-  .c-md\:closed.from-bottom,
-  .c-md\:hoverable > ul > li ul.from-bottom,
-  .c-md\:hoverable > li ul.from-bottom {
-    transform: scale(1, 0.9) translate(0, 20px) translateZ(0);
-    transform-origin: bottom;
-  }
-  .c-md\:closed.expand,
-  .c-md\:hoverable > ul > li ul.expand,
-  .c-md\:hoverable > li ul.expand {
-    display: grid;
-    grid-template-rows: 0fr;
-    max-height: none;
-  }
-  .c-md\:closed.expand:not(.collapse),
-  .c-md\:hoverable > ul > li ul.expand:not(.collapse),
-  .c-md\:hoverable > li ul.expand:not(.collapse) {
-    overflow: hidden;
-  }
-  .c-md\:closed.expand > :not(.collapse),
-  .c-md\:hoverable > ul > li ul.expand > :not(.collapse),
-  .c-md\:hoverable > li ul.expand > :not(.collapse) {
-    min-height: 0;
-  }
-  .c-md\:closed > *,
-  .c-md\:hoverable > ul > li ul > *,
-  .c-md\:hoverable > li ul > * {
-    transition: inherit;
-    transition: translate 5.2s ease-in-out;
-  }
-  .c-md\:open,
-  .c-md\:hoverable > li:hover > ul,
-  .c-md\:hoverable > ul > li:hover > ul,
-  .c-md\:hoverable li:has(:focus-visible) > ul {
-    max-height: 1900px;
-    opacity: 1;
-    pointer-events: all;
-    transform: translateZ(0) scale(1, 1);
-  }
-  .c-md\:open:is(.from-left, .from-right, .from-bottom),
-  .c-md\:hoverable > li:hover > ul:is(.from-left, .from-right, .from-bottom),
-  .c-md\:hoverable > ul > li:hover > ul:is(.from-left, .from-right, .from-bottom),
-  .c-md\:hoverable li:has(:focus-visible) > ul:is(.from-left, .from-right, .from-bottom) {
-    transform: none;
-  }
-  .c-md\:open.expand,
-  .c-md\:hoverable > li:hover > ul.expand,
-  .c-md\:hoverable > ul > li:hover > ul.expand,
-  .c-md\:hoverable li:has(:focus-visible) > ul.expand {
-    max-height: none;
-    position: relative;
-    display: grid;
-    grid-template-rows: 1fr;
-    transform: translateZ(0) scale(1, 1);
-  }
-  .c-md\:open.expand > :not(.collapse),
-  .c-md\:hoverable > li:hover > ul.expand > :not(.collapse),
-  .c-md\:hoverable > ul > li:hover > ul.expand > :not(.collapse),
-  .c-md\:hoverable li:has(:focus-visible) > ul.expand > :not(.collapse) {
-    min-height: 0;
-  }
-  .c-md\:hoverable > ul > li > :is([data-toggle=hover], [data-toggle=next]),
-  .c-md\:hoverable > li > :is([data-toggle=hover], [data-toggle=next]) {
-    pointer-events: none;
-  }
-}
-/*
-* Spry Reset
-*/
-html {
-  box-sizing: border-box;
-  background: #fff;
-}
-
-body {
-  background: inherit;
-  color: inherit;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-fieldset,
-menu,
-ol,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-}
-
-ul {
-  list-style: disc;
-}
-
-ol, ul {
-  margin-left: 1.5em;
-}
-
-ol li, ul li {
-  margin-block: 0.5em;
-}
-
-menu,
-menu ul,
-menu ol,
-nav ul,
-nav ol {
-  list-style: none;
-  margin-left: 0;
-}
-
-nav li,
-menu li {
-  margin-block: 0;
-}
-
-img {
+.collapse-inner > *, :where(.menu > .toggle + :not(.overlay)) > * {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
 }
 
-/*
-* Spry UI
-*/
+.collapse-inner.open,
+.hover\:open:hover .collapse-inner,
+.collapse-inner.hover\:open:hover,
+.toggle.hover\:active:hover + .collapse-inner,
+.toggle:has(:checked) + .collapse-inner,
+.toggle:has(:checked) + .overlay > .collapse-inner, .menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle + :not(.overlay),
+.menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle + .overlay > .collapse-inner, .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle + :not(.overlay),
+.menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle + .overlay > .collapse-inner {
+  opacity: 1;
+  grid-template-rows: 1fr;
+  transform: translate3d(0, 0, 0);
+  pointer-events: inherit;
+}
+
 .toggle:has(:focus-visible),
 :focus-visible {
   outline-width: 2px;
@@ -961,26 +672,31 @@ ul ul {
   background-color: inherit;
 }
 
-.rotate-pressed,
-.flip-pressed,
+.active\:rotate,
+.active\:flip,
 .shy {
-  transition: all 0.2s var(--ease);
+  transition: all var(--ease-speed) var(--ease);
 }
 
-.toggle:has(:checked) .rotate-pressed,
-.rotate-pressed[aria-pressed=true],
-[aria-pressed=true] .rotate-pressed,
-[aria-pressed=""] .rotate-pressed {
+.toggle.active.active\:rotate,
+.toggle:has(:checked) .active\:rotate,
+.hover\:active:hover.active\:rotate,
+.hover\:active:hover .active\:rotate,
+.active .active\:rotate {
   rotate: 180deg;
 }
 
-.toggle:has(:checked) .flip-pressed,
-.flip-pressed[aria-pressed=true],
-[aria-pressed=true] .flip-pressed,
-[aria-pressed=""] .flip-pressed {
+.toggle.active.active\:flip,
+.toggle:has(:checked) .active\:flip,
+.hover\:active:hover.active\:flip,
+.hover\:active:hover .active\:flip,
+.active .active\:flip {
   scale: -1;
 }
 
+/*
+* Spry UI
+*/
 /*
 * Spry Typography
 */
@@ -1066,6 +782,9 @@ cite, dfn {
   opacity: 0.7;
 }
 
+/*
+* Spry UI
+*/
 /*
 * Spry Outline
 */
@@ -1173,6 +892,7 @@ cite, dfn {
   margin-block: 0;
   position: relative;
   display: flex;
+  max-width: 100%;
 }
 .list li li {
   width: 100%;
@@ -1575,6 +1295,9 @@ label:has(:checked) .label-unchecked, label:not(:has(:checked)) .label-checked {
 }
 
 /*
+* Spry UI
+*/
+/*
 * Spry Tables
 */
 table {
@@ -1603,12 +1326,12 @@ tbody td {
   vertical-align: top;
 }
 
-.hoverable tbody tr:hover,
-.hoverable.striped-expand tbody tr:nth-child(2n-1):hover + tr {
+.hover\:active tbody tr:hover,
+.hover\:active.striped-expand tbody tr:nth-child(2n-1):hover + tr {
   background-color: rgb(from var(--color) r g b/6%);
 }
 
-.hoverable.striped-expand tbody tr:nth-child(4n-2):hover {
+.hover\:active.striped-expand tbody tr:nth-child(4n-2):hover {
   background-color: transparent;
 }
 
@@ -1622,6 +1345,21 @@ tbody td {
 .striped-expand > :not(table, tbody, thead, tfoot):nth-child(4n-1),
 .striped-expand > :not(table, tbody, thead, tfoot):nth-child(4n) {
   background-color: rgb(from var(--color) r g b/4%);
+}
+
+.responsive, .responsive :where(thead, tbody, tr, td, th, tfoot) {
+  display: block;
+}
+.responsive thead td:nth-child(n+2),
+.responsive thead th:nth-child(n+2) {
+  display: none;
+}
+.responsive tbody tr {
+  padding-block: 1em;
+  border-top: 1px solid var(--theme-border);
+}
+.responsive td {
+  border: 0;
 }
 
 @media screen and (min-width: 40em) {
@@ -1649,43 +1387,43 @@ tbody td {
   }
 }
 @media screen and (max-width: 40em) {
-  .responsive, .responsive :where(thead, tbody, tr, td, th, tfoot) {
+  .md\:responsive, .md\:responsive :where(thead, tbody, tr, td, th, tfoot) {
     display: block;
   }
-  .responsive thead td:nth-child(n+2),
-  .responsive thead th:nth-child(n+2) {
+  .md\:responsive thead td:nth-child(n+2),
+  .md\:responsive thead th:nth-child(n+2) {
     display: none;
   }
-  .responsive tbody tr {
+  .md\:responsive tbody tr {
     padding-block: 1em;
     border-top: 1px solid var(--theme-border);
   }
-  .responsive td {
+  .md\:responsive td {
     border: 0;
   }
 }
 @container (max-width: 40em) {
-  .c-responsive, .c-responsive :where(thead, tbody, tr, td, th, tfoot) {
+  .c-md\:responsive, .c-md\:responsive :where(thead, tbody, tr, td, th, tfoot) {
     display: block;
   }
-  .c-responsive thead td:nth-child(n+2),
-  .c-responsive thead th:nth-child(n+2) {
+  .c-md\:responsive thead td:nth-child(n+2),
+  .c-md\:responsive thead th:nth-child(n+2) {
     display: none;
   }
-  .c-responsive tbody tr {
+  .c-md\:responsive tbody tr {
     padding-block: 1em;
     border-top: 1px solid var(--theme-border);
   }
-  .c-responsive td {
+  .c-md\:responsive td {
     border: 0;
   }
 }
-.hoverable.striped tbody tr:nth-child(even):hover,
-.hoverable tbody.striped tr:nth-child(even):hover,
-.hoverable.striped-expand tbody tr:nth-child(4n-1):hover,
-.hoverable.striped-expand tbody tr:nth-child(4n-1):hover + tr,
-.hoverable tbody.striped-expand tr:nth-child(4n-1):hover,
-.hoverable tbody.striped-expand tr:nth-child(4n-1):hover + tr {
+.hover\:active.striped tbody tr:nth-child(even):hover,
+.hover\:active tbody.striped tr:nth-child(even):hover,
+.hover\:active.striped-expand tbody tr:nth-child(4n-1):hover,
+.hover\:active.striped-expand tbody tr:nth-child(4n-1):hover + tr,
+.hover\:active tbody.striped-expand tr:nth-child(4n-1):hover,
+.hover\:active tbody.striped-expand tr:nth-child(4n-1):hover + tr {
   background-color: rgb(from var(--color) r g b/6%);
 }
 
@@ -1693,25 +1431,23 @@ tbody td {
 * Spry Tooltips
 */
 .tooltip {
+  --toggle-transform: scale(.8, .8) translate3d(0, 0, 0);
+  --toggle-transform-origin: center;
   cursor: text;
-  bottom: 50%;
+  bottom: 80%;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.12);
   font-style: normal;
-  left: 50%;
   max-width: 280px;
   padding: 0.8em 1.2em;
   position: absolute;
   text-align: left;
   text-transform: none;
-  transition: opacity 0.2s ease-in-out 0.05s, transform 0.25s var(--ease);
+  transition: opacity var(--ease-speed) var(--ease), transform var(--ease-speed) var(--ease);
   user-select: text;
   width: max-content;
   backface-visibility: hidden;
-  transform: translate3d(-50%, 0, 0) scale(1, 1);
-  transform-origin: center;
-}
-.tooltip:is(.out-left, .out-right, .left, .right) {
-  transform: translate3d(0, 0, 0) scale(1);
+  transform: none;
+  transform-origin: var(--toggle-transform-origin);
 }
 
 :has(> .tooltip) {
@@ -1726,13 +1462,12 @@ tbody td {
 :has(> .tooltip):not(:hover, :focus) .tooltip {
   opacity: 0;
   pointer-events: none;
-  transform: translate3d(-50%, 0, 0) scale(0);
-  transition: opacity 0.1s ease-in-out, transform 0.8s ease-out;
-}
-:has(> .tooltip):not(:hover, :focus) .tooltip:is(.out-left, .out-right, .left, .right) {
-  transform: translate3d(0, 0, 0) scale(0);
+  transform: var(--toggle-transform);
 }
 
+/*
+* Spry UI
+*/
 /*
 * Spry Sliders
 */
@@ -1817,6 +1552,9 @@ tbody td {
   opacity: 1;
 }
 
+/*
+* Spry UI
+*/
 /*
 * Spry Grid
 */
@@ -2317,6 +2055,9 @@ tbody td {
 }
 
 /*
+* Spry UI
+*/
+/*
 * Spry Navs
 */
 :is(nav, menu) {
@@ -2355,8 +2096,8 @@ menu menu > li {
   width: 100%;
 }
 
-.hoverable > ul > li > ul,
-.hoverable > li > ul {
+.hover\:open > ul > li > ul,
+.hover\:open > li > ul {
   position: absolute;
   top: 100%;
   min-width: calc(100% + 1px);
@@ -2365,8 +2106,8 @@ menu menu > li {
 }
 
 @media screen and (min-width: 40em) {
-  .md\:hoverable > ul > li > ul,
-  .md\:hoverable > li > ul {
+  .md\:hover\:open > ul > li > ul,
+  .md\:hover\:open > li > ul {
     position: absolute;
     top: 100%;
     min-width: calc(100% + 1px);
@@ -2375,8 +2116,8 @@ menu menu > li {
   }
 }
 @container (min-width: 40em) {
-  .c-md\:hoverable > ul > li > ul,
-  .c-md\:hoverable > li > ul {
+  .c-md\:hover\:open > ul > li > ul,
+  .c-md\:hover\:open > li > ul {
     position: absolute;
     top: 100%;
     min-width: calc(100% + 1px);
@@ -2385,32 +2126,50 @@ menu menu > li {
   }
 }
 /*
+* Spry UI
+*/
+/*
 * Spry Navs
 */
 .menu {
   position: relative;
-  z-index: 1;
   cursor: pointer;
+  display: inline-block;
+  width: auto;
 }
-.menu nav {
+.menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)), .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) {
   z-index: 1;
 }
-.menu:has(.toggle:focus), .menu:not(.keep-open):has(:focus-visible), .menu.keep-open:has(:focus-within), .menu.hover\:open:not(:has(:active)):hover, .menu.open {
-  z-index: 1;
-}
-.menu:has(.toggle:focus) svg, .menu:not(.keep-open):has(:focus-visible) svg, .menu.keep-open:has(:focus-within) svg, .menu.hover\:open:not(:has(:active)):hover svg, .menu.open svg {
+.menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle, .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle {
   pointer-events: none;
 }
-.menu:has(.toggle:focus) .toggle:has(svg:nth-of-type(2)) svg:first-of-type, .menu:not(.keep-open):has(:focus-visible) .toggle:has(svg:nth-of-type(2)) svg:first-of-type, .menu.keep-open:has(:focus-within) .toggle:has(svg:nth-of-type(2)) svg:first-of-type, .menu.hover\:open:not(:has(:active)):hover .toggle:has(svg:nth-of-type(2)) svg:first-of-type, .menu.open .toggle:has(svg:nth-of-type(2)) svg:first-of-type {
+.menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):first-of-type, .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):first-of-type {
   opacity: 0;
   scale: 0.5;
 }
-.menu:has(.toggle:focus) .toggle:has(svg:nth-of-type(2)) svg:last-of-type, .menu:not(.keep-open):has(:focus-visible) .toggle:has(svg:nth-of-type(2)) svg:last-of-type, .menu.keep-open:has(:focus-within) .toggle:has(svg:nth-of-type(2)) svg:last-of-type, .menu.hover\:open:not(:has(:active)):hover .toggle:has(svg:nth-of-type(2)) svg:last-of-type, .menu.open .toggle:has(svg:nth-of-type(2)) svg:last-of-type {
+.menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):last-of-type, .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):last-of-type {
   opacity: 1;
   scale: 1;
 }
-.menu:has(.toggle:focus) .toggle, .menu:has(:focus-visible) .toggle, .menu.open .toggle {
+
+:where(.menu > .toggle + :not(.overlay)),
+:where(.menu > .toggle + .overlay > *) {
+  z-index: 1;
   pointer-events: none;
+  width: max-content;
+}
+:where(.menu > .toggle + :not(.overlay)) nav > ul,
+:where(.menu > .toggle + :not(.overlay)) > ul,
+:where(.menu > .toggle + .overlay > *) nav > ul,
+:where(.menu > .toggle + .overlay > *) > ul {
+  display: block;
+  width: max-content;
+}
+:where(.menu > .toggle + :not(.overlay)) nav > ul li,
+:where(.menu > .toggle + :not(.overlay)) > ul li,
+:where(.menu > .toggle + .overlay > *) nav > ul li,
+:where(.menu > .toggle + .overlay > *) > ul li {
+  width: 100%;
 }
 
 /*
@@ -2435,6 +2194,8 @@ body:has(.modal.open:not(.no-bg)) {
 }
 
 .modal {
+  --toggle-transform: scale(.8, .8) translate3d(0, 0, 0);
+  --toggle-transform-origin: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
@@ -2442,7 +2203,7 @@ body:has(.modal.open:not(.no-bg)) {
   pointer-events: none;
   position: fixed;
   inset: 0;
-  transition: opacity 0.25s var(--ease);
+  transition: opacity var(--ease-speed) var(--ease);
   transition-delay: 0;
   transform-origin: center;
   transform: none;
@@ -2453,10 +2214,11 @@ body:has(.modal.open:not(.no-bg)) {
 .modal > * {
   box-sizing: border-box;
   overflow: hidden;
-  scale: 0.6;
-  transition: scale 0.3s var(--ease);
+  transition: transform var(--ease-speed) var(--ease);
   width: 90%;
   max-width: 90svh;
+  transform: var(--toggle-transform);
+  transform-origin: var(--toggle-transform-origin);
 }
 .modal > *.fixed {
   width: 100%;
@@ -2480,14 +2242,14 @@ body:has(.modal.open:not(.no-bg)) {
 }
 .modal.open > *,
 .toggle:has(:checked) + .modal > * {
-  scale: 1.000001;
+  transform: none;
 }
-.modal.open.no-bg,
-.toggle:has(:checked) + .modal.no-bg {
+.modal.open.bg-none,
+.toggle:has(:checked) + .modal.bg-none {
   pointer-events: none;
 }
-.modal.open.no-bg > *,
-.toggle:has(:checked) + .modal.no-bg > * {
+.modal.open.bg-none > *,
+.toggle:has(:checked) + .modal.bg-none > * {
   pointer-events: all;
 }
 
@@ -2522,6 +2284,140 @@ body:has(.modal.open:not(.no-bg)) {
   min-width: var(--cozy);
 }
 
+/*
+* Spry Extends
+*/
+/*
+* Spry UI
+*/
+/*
+* Spry Toggles
+*/
+.toggle :is(svg, img):nth-of-type(2), .toggle:is(.active, :has(:checked)):has(:is(svg, img):nth-of-type(2)) :is(svg, img):first-of-type {
+  opacity: 0;
+  scale: 0.5;
+}
+.toggle:is(.active, :has(:checked)) :is(svg, img):nth-of-type(2) {
+  opacity: 1;
+  scale: 1;
+}
+.toggle:is(.active, :has(:checked)) .label-active {
+  display: inline-block;
+}
+.toggle:not(.active, :has(:checked)) .label-active, .toggle:is(.active, :has(:checked)) .label-inactive {
+  display: none;
+}
+.toggle > :is(input[type=checkbox], input[type=radio]):not(.switch) {
+  width: 0;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  margin-right: -1em;
+}
+.toggle:has(> .switch) {
+  height: 1.15em;
+}
+
+.hover\:open > ul > li > :is([data-toggle=hover], [data-toggle=next]),
+.hover\:open > li > :is([data-toggle=hover], [data-toggle=next]) {
+  pointer-events: none;
+}
+
+@media screen and (min-width: 40em) {
+  .md\:collapse,
+  .md\:hover\:open > ul > li ul,
+  .md\:hover\:open > li ul {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: var(--toggle-transform);
+    transform-origin: var(--toggle-transform-origin);
+    transition: transform calc(var(--ease-speed) / 1.5), opacity calc(var(--ease-speed) / 1.5), max-height calc(var(--ease-speed) / 2);
+    transition-timing-function: var(--ease);
+    transition-delay: 0.1s;
+    z-index: 1;
+  }
+  .md\:open,
+  .md\:hover\:open:hover .collapse,
+  .md\:hover\:open > li:hover > ul,
+  .md\:hover\:open > ul > li:hover > ul,
+  .md\:hover\:open li:has(:focus-visible) > ul {
+    --toggle-transform-origin: top;
+    opacity: 1;
+    max-height: 1900px;
+    transform: translate3d(0, 0, 0);
+    transition-timing-function: var(--ease);
+    pointer-events: inherit;
+    z-index: 1;
+  }
+  .md\:hover\:open > ul > li > :is([data-toggle=hover], [data-toggle=next]),
+  .md\:hover\:open > li > :is([data-toggle=hover], [data-toggle=next]) {
+    pointer-events: none;
+  }
+}
+@container (min-width: 40em) {
+  .c-md\:collapse,
+  .c-md\:hover\:open > ul > li ul,
+  .c-md\:hover\:open > li ul {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: var(--toggle-transform);
+    transform-origin: var(--toggle-transform-origin);
+    transition: transform calc(var(--ease-speed) / 1.5), opacity calc(var(--ease-speed) / 1.5), max-height calc(var(--ease-speed) / 2);
+    transition-timing-function: var(--ease);
+    transition-delay: 0.1s;
+    z-index: 1;
+  }
+  .c-md\:open,
+  .c-md\:hover\:open:hover .collapse,
+  .c-md\:hover\:open > li:hover > ul,
+  .c-md\:hover\:open > ul > li:hover > ul,
+  .c-md\:hover\:open li:has(:focus-visible) > ul {
+    --toggle-transform-origin: top;
+    opacity: 1;
+    max-height: 1900px;
+    transform: translate3d(0, 0, 0);
+    transition-timing-function: var(--ease);
+    pointer-events: inherit;
+    z-index: 1;
+  }
+  .c-md\:hover\:open > ul > li > :is([data-toggle=hover], [data-toggle=next]),
+  .c-md\:hover\:open > li > :is([data-toggle=hover], [data-toggle=next]) {
+    pointer-events: none;
+  }
+}
+/*
+* Collapse Inner
+* 
+* Will be depricated once calc-size(auto) is fully supported
+* https://caniuse.com/?search=calc-size
+*/
+.collapse-inner > * {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 40em) {
+  .md\:open.collapse-inner {
+    opacity: 1;
+    grid-template-rows: 1fr;
+    transform: translate3d(0, 0, 0);
+    pointer-events: inherit;
+  }
+}
+@container (min-width: 40em) {
+  .c-md\:open.collapse-inner {
+    opacity: 1;
+    grid-template-rows: 1fr;
+    transform: translate3d(0, 0, 0);
+    pointer-events: inherit;
+  }
+}
+/*
+* Spry UI
+*/
 /*
 * Spry Spacing
 */
@@ -4056,6 +3952,9 @@ section {
 }
 
 /*
+* Spry UI
+*/
+/*
 * Spry Borders
 */
 .b-0 {
@@ -4348,18 +4247,7 @@ section {
 :is(a, button, .button, .icon) > svg,
 svg.icon {
   fill: currentColor;
-  transition: all 0.2s var(--ease);
-}
-
-:where(.toggle, [data-toggle]):has(svg:nth-of-type(2)) svg:nth-of-type(2),
-:where(.toggle:has(:checked), [data-toggle][aria-pressed=true]):has(svg:nth-of-type(2)) svg:first-of-type {
-  opacity: 0;
-  scale: 0.5;
-}
-
-:where(.toggle:has(:checked), [data-toggle][aria-pressed=true]):has(svg:nth-of-type(2)) svg:last-of-type {
-  opacity: 1;
-  scale: 1;
+  transition: transform var(--ease-speed) var(--ease), rotate var(--ease-speed) var(--ease), scale var(--ease-speed) var(--ease);
 }
 
 :is(button, .button, .alert, .icon) svg,
@@ -4379,6 +4267,9 @@ svg.icon {
   padding-right: 2.5em;
 }
 
+/*
+* Spry UI
+*/
 /*
 * Spry Utilities
 */
@@ -4565,7 +4456,7 @@ General Utility Classes
   backdrop-filter: blur(16px);
 }
 
-.no-bg {
+.bg-none {
   background: transparent;
   backdrop-filter: none;
 }
@@ -4588,7 +4479,7 @@ General Utility Classes
 
 .hover\:scale {
   scale: 1.00001;
-  transition: scale 0.3s var(--ease);
+  transition: scale var(--ease-speed) var(--ease);
 }
 
 .scale,
@@ -4604,8 +4495,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   position: relative;
 }
 
-.no-container {
-  container-type: normal;
+.container-none {
+  container-type: initial;
 }
 
 .text-left {
@@ -4653,7 +4544,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   direction: ltr;
 }
 
-.no-wrap {
+.wrap-none {
   white-space: nowrap;
   flex-wrap: nowrap;
 }
@@ -4793,12 +4684,13 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   position: absolute;
 }
 
-.collapse {
+.overlay {
   position: relative;
-  z-index: 5;
+  overflow: visible;
+  z-index: 1;
 }
 
-.collapse > * {
+.overlay > * {
   position: absolute;
 }
 
@@ -4832,8 +4724,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   translate: -50% 0;
 }
 
-.no-translate {
-  translate: 0;
+.translate-none {
+  translate: initial;
 }
 
 .top {
@@ -4856,27 +4748,27 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   right: auto;
 }
 
-.out-top {
+.outer-top {
   bottom: 100%;
   top: auto;
 }
 
-.out-right {
+.outer-right {
   left: 100%;
   right: auto;
 }
 
-.out-bottom {
+.outer-bottom {
   top: 100%;
   bottom: auto;
 }
 
-.out-left {
+.outer-left {
   right: 100%;
   left: auto;
 }
 
-.no-pointer {
+.pointer-none {
   pointer-events: none;
 }
 
@@ -4916,8 +4808,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   vertical-align: sub;
 }
 
-.no-align {
-  vertical-align: unset;
+.align-none {
+  vertical-align: initial;
 }
 
 .visibility-hidden {
@@ -4988,7 +4880,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.12);
 }
 
-.no-shadow {
+.shadow-none {
   box-shadow: none;
 }
 
@@ -5017,7 +4909,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   resize: vertical;
 }
 
-.no-resize {
+.resize-none {
   resize: none;
 }
 
@@ -5047,6 +4939,31 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 .w-content {
   width: max-content;
+}
+
+.from-top {
+  --toggle-transform: scale(1, .9) translate3d(0, -20px, 0);
+  --toggle-transform-origin: top;
+}
+
+.from-center {
+  --toggle-transform: scale(1, 0.4) translate3d(0, 0, 0);
+  --toggle-transform-origin: center;
+}
+
+.from-left {
+  --toggle-transform: scale(.9, 1) translate3d(-80px, 0, 0);
+  --toggle-transform-origin: left;
+}
+
+.from-right {
+  --toggle-transform: scale(.9, 1) translate3d(80px, 0, 0);
+  --toggle-transform-origin: right;
+}
+
+.from-bottom {
+  --toggle-transform: scale(1, .9) translate3d(0, 80px, 0);
+  --toggle-transform-origin: bottom;
 }
 
 .mh-100 {
@@ -5329,8 +5246,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
     container-type: inline-size;
     position: relative;
   }
-  .md\:no-container {
-    container-type: normal;
+  .md\:container-none {
+    container-type: initial;
   }
   .md\:text-left {
     text-align: left;
@@ -5366,7 +5283,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   .md\:ltr {
     direction: ltr;
   }
-  .md\:no-wrap {
+  .md\:wrap-none {
     white-space: nowrap;
     flex-wrap: nowrap;
   }
@@ -5473,11 +5390,12 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   .md\:absolute {
     position: absolute;
   }
-  .md\:collapse {
+  .md\:overlay {
     position: relative;
-    z-index: 5;
+    overflow: visible;
+    z-index: 1;
   }
-  .md\:collapse > * {
+  .md\:overlay > * {
     position: absolute;
   }
   .md\:sticky {
@@ -5504,8 +5422,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
     right: auto;
     translate: -50% 0;
   }
-  .md\:no-translate {
-    translate: 0;
+  .md\:translate-none {
+    translate: initial;
   }
   .md\:top {
     top: 0;
@@ -5523,23 +5441,23 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
     left: 0;
     right: auto;
   }
-  .md\:out-top {
+  .md\:outer-top {
     bottom: 100%;
     top: auto;
   }
-  .md\:out-right {
+  .md\:outer-right {
     left: 100%;
     right: auto;
   }
-  .md\:out-bottom {
+  .md\:outer-bottom {
     top: 100%;
     bottom: auto;
   }
-  .md\:out-left {
+  .md\:outer-left {
     right: 100%;
     left: auto;
   }
-  .md\:no-pointer {
+  .md\:pointer-none {
     pointer-events: none;
   }
   .md\:align-baseline {
@@ -5569,8 +5487,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   .md\:align-sub {
     vertical-align: sub;
   }
-  .md\:no-align {
-    vertical-align: unset;
+  .md\:align-none {
+    vertical-align: initial;
   }
   .md\:visibility-hidden {
     visibility: hidden;
@@ -5623,7 +5541,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   .md\:shadow {
     box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.12);
   }
-  .md\:no-shadow {
+  .md\:shadow-none {
     box-shadow: none;
   }
   .md\:cover {
@@ -5646,7 +5564,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
     overflow-y: auto;
     resize: vertical;
   }
-  .md\:no-resize {
+  .md\:resize-none {
     resize: none;
   }
   .md\:h {
@@ -5669,6 +5587,26 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   }
   .md\:w-content {
     width: max-content;
+  }
+  .md\:from-top {
+    --toggle-transform: scale(1, .9) translate3d(0, -20px, 0);
+    --toggle-transform-origin: top;
+  }
+  .md\:from-center {
+    --toggle-transform: scale(1, 0.4) translate3d(0, 0, 0);
+    --toggle-transform-origin: center;
+  }
+  .md\:from-left {
+    --toggle-transform: scale(.9, 1) translate3d(-80px, 0, 0);
+    --toggle-transform-origin: left;
+  }
+  .md\:from-right {
+    --toggle-transform: scale(.9, 1) translate3d(80px, 0, 0);
+    --toggle-transform-origin: right;
+  }
+  .md\:from-bottom {
+    --toggle-transform: scale(1, .9) translate3d(0, 80px, 0);
+    --toggle-transform-origin: bottom;
   }
   .md\:mh-100 {
     max-height: 100px;
@@ -5853,8 +5791,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
     container-type: inline-size;
     position: relative;
   }
-  .c-md\:no-container {
-    container-type: normal;
+  .c-md\:container-none {
+    container-type: initial;
   }
   .c-md\:text-left {
     text-align: left;
@@ -5890,7 +5828,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   .c-md\:ltr {
     direction: ltr;
   }
-  .c-md\:no-wrap {
+  .c-md\:wrap-none {
     white-space: nowrap;
     flex-wrap: nowrap;
   }
@@ -5997,11 +5935,12 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   .c-md\:absolute {
     position: absolute;
   }
-  .c-md\:collapse {
+  .c-md\:overlay {
     position: relative;
-    z-index: 5;
+    overflow: visible;
+    z-index: 1;
   }
-  .c-md\:collapse > * {
+  .c-md\:overlay > * {
     position: absolute;
   }
   .c-md\:sticky {
@@ -6028,8 +5967,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
     right: auto;
     translate: -50% 0;
   }
-  .c-md\:no-translate {
-    translate: 0;
+  .c-md\:translate-none {
+    translate: initial;
   }
   .c-md\:top {
     top: 0;
@@ -6047,23 +5986,23 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
     left: 0;
     right: auto;
   }
-  .c-md\:out-top {
+  .c-md\:outer-top {
     bottom: 100%;
     top: auto;
   }
-  .c-md\:out-right {
+  .c-md\:outer-right {
     left: 100%;
     right: auto;
   }
-  .c-md\:out-bottom {
+  .c-md\:outer-bottom {
     top: 100%;
     bottom: auto;
   }
-  .c-md\:out-left {
+  .c-md\:outer-left {
     right: 100%;
     left: auto;
   }
-  .c-md\:no-pointer {
+  .c-md\:pointer-none {
     pointer-events: none;
   }
   .c-md\:align-baseline {
@@ -6093,8 +6032,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   .c-md\:align-sub {
     vertical-align: sub;
   }
-  .c-md\:no-align {
-    vertical-align: unset;
+  .c-md\:align-none {
+    vertical-align: initial;
   }
   .c-md\:visibility-hidden {
     visibility: hidden;
@@ -6147,7 +6086,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   .c-md\:shadow {
     box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.12);
   }
-  .c-md\:no-shadow {
+  .c-md\:shadow-none {
     box-shadow: none;
   }
   .c-md\:cover {
@@ -6170,7 +6109,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
     overflow-y: auto;
     resize: vertical;
   }
-  .c-md\:no-resize {
+  .c-md\:resize-none {
     resize: none;
   }
   .c-md\:h {
@@ -6193,6 +6132,26 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   }
   .c-md\:w-content {
     width: max-content;
+  }
+  .c-md\:from-top {
+    --toggle-transform: scale(1, .9) translate3d(0, -20px, 0);
+    --toggle-transform-origin: top;
+  }
+  .c-md\:from-center {
+    --toggle-transform: scale(1, 0.4) translate3d(0, 0, 0);
+    --toggle-transform-origin: center;
+  }
+  .c-md\:from-left {
+    --toggle-transform: scale(.9, 1) translate3d(-80px, 0, 0);
+    --toggle-transform-origin: left;
+  }
+  .c-md\:from-right {
+    --toggle-transform: scale(.9, 1) translate3d(80px, 0, 0);
+    --toggle-transform-origin: right;
+  }
+  .c-md\:from-bottom {
+    --toggle-transform: scale(1, .9) translate3d(0, 80px, 0);
+    --toggle-transform-origin: bottom;
   }
   .c-md\:mh-100 {
     max-height: 100px;
@@ -6370,6 +6329,9 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   }
 }
 /*
+* Spry UI
+*/
+/*
 * Spry Dark Theme
 */
 :root.theme-dark,
@@ -6481,6 +6443,9 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   --theme-input-border: #282828;
   border-color: hsl(from var(--theme-border) h s var(--bdr-l, l)/var(--bdr-a, 100%));
 }
+/*
+* Spry UI
+*/
 /*
 * Spry Colors
 */

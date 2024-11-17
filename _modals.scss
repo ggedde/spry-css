@@ -24,6 +24,8 @@ body:has(.modal.open:not(.no-bg)) {
 }
 
 .modal {
+	--toggle-transform: scale(.8, .8) translate3d(0, 0, 0);
+    --toggle-transform-origin: center;
 	align-items     : center;
 	background-color: rgba(0, 0, 0, .7);
 	justify-content : center;
@@ -31,7 +33,7 @@ body:has(.modal.open:not(.no-bg)) {
 	pointer-events  : none;
 	position        : fixed;
 	inset           : 0;
-	transition      : opacity .25s var(--ease);
+	transition      : opacity var(--ease-speed) var(--ease);
 	transition-delay: 0;
 	transform-origin: center;
 	transform       : none;
@@ -42,10 +44,12 @@ body:has(.modal.open:not(.no-bg)) {
 	>* {
 		box-sizing: border-box;
 		overflow  : hidden;
-		scale     : .6;
-		transition: scale .3s var(--ease);
+		// scale     : .6;
+		transition: transform var(--ease-speed) var(--ease);
 		width     : 90%;
 		max-width : 90svh;
+		transform       : var(--toggle-transform);
+		transform-origin: var(--toggle-transform-origin);
 		&.fixed {
 			width     : 100%;
 			max-width : 100%;
@@ -70,10 +74,10 @@ body:has(.modal.open:not(.no-bg)) {
 	pointer-events: all;
 
 	>* {
-		scale: 1.000001;
+		transform: none;
 	}
 
-	&.no-bg {
+	&.bg-none {
 		pointer-events: none;
 
 		>* {

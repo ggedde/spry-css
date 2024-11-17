@@ -71,22 +71,24 @@ ul ul {
 	background-color: inherit;
 }
 
-.rotate-pressed,
-.flip-pressed,
+.active\:rotate,
+.active\:flip,
 .shy {
-	transition: all .2s var(--ease);
+	transition: all var(--ease-speed) var(--ease);
 }
 
-.toggle:has(:checked) .rotate-pressed,
-.rotate-pressed[aria-pressed=true],
-[aria-pressed=true] .rotate-pressed,
-[aria-pressed=""] .rotate-pressed {
+.toggle.active.active\:rotate,
+.toggle:has(:checked) .active\:rotate,
+.hover\:active:hover.active\:rotate,
+.hover\:active:hover .active\:rotate,
+.active .active\:rotate {
 	rotate: 180deg;
 }
 
-.toggle:has(:checked) .flip-pressed,
-.flip-pressed[aria-pressed=true],
-[aria-pressed=true] .flip-pressed,
-[aria-pressed=""] .flip-pressed {
+.toggle.active.active\:flip,
+.toggle:has(:checked) .active\:flip,
+.hover\:active:hover.active\:flip,
+.hover\:active:hover .active\:flip,
+.active .active\:flip {
 	scale: -1;
 }

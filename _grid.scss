@@ -39,23 +39,27 @@
     grid: none / auto-flow minmax(0, 1fr);
 }
 
-@media screen and (max-width: #{nth(nth(variables.$breakpoints, 1), 2)}) {
-	.row>* {
-		flex: 100%;
-		min-width: 100%;
-	}
-	.grid {
-		grid: auto / auto;
+@if (length(variables.$breakpoints) > 0) {
+	@media screen and (max-width: #{nth(nth(variables.$breakpoints, 1), 2)}) {
+		.row>* {
+			flex: 100%;
+			min-width: 100%;
+		}
+		.grid {
+			grid: auto / auto;
+		}
 	}
 }
 
-@container (max-width: #{nth(nth(variables.$breakpoints, 1), 2)}) {
-	.row>* {
-		flex: 100%;
-		min-width: 100%;
-	}
-	.grid {
-		grid: auto / auto;
+@if (length(variables.$breakpoints) > 0) {
+	@container (max-width: #{nth(nth(variables.$breakpoints, 1), 2)}) {
+		.row>* {
+			flex: 100%;
+			min-width: 100%;
+		}
+		.grid {
+			grid: auto / auto;
+		}
 	}
 }
 

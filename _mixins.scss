@@ -72,80 +72,66 @@
 	}
 }
 
-/// Default Closed State
+/// Default Shut State
 /// @output - Contents
-@mixin toggle-closed {
+@mixin closed {
 	max-height      : 0;
-	min-height      : 0;
 	opacity         : 0;
 	pointer-events  : none;
-	transform       : scale(1, .9) translateY(-4px) translateZ(0);
-	transform-origin: top;
-	transition      : transform .2s cubic-bezier(0.785, 0.135, 0.150, 0.860), opacity .2s cubic-bezier(0.785, 0.135, 0.150, 0.860), grid-template-rows .5s cubic-bezier(0, 1, 0, 1), min-height .5s cubic-bezier(0, 1, 0, 1), max-height .5s cubic-bezier(0, 1, 0, 1), padding-block .5s cubic-bezier(0, 1, 0, 1), margin-block .5s cubic-bezier(0, 1, 0, 1); // Out
-	transition-delay: .1s;
-	z-index         : 2;
-
-	&.from-center {
-		transform       : scale(1, 0.4) translate(0, 0) translateZ(0);
-		transform-origin: center;
-	}
-
-	&.from-left {
-		max-height      : none;
-		transform       : scale(.9, 1) translate(-40px, 0) translateZ(0);
-		transform-origin: left;
-	}
-
-	&.from-right {
-		max-height        : none;
-		transform       : scale(.9, 1) translate(40px, 0) translateZ(0);
-		transform-origin: right;
-	}
-
-	&.from-bottom {
-		transform       : scale(1, .9) translate(0, 20px) translateZ(0);
-		transform-origin: bottom;
-	}
-
-	&.expand {
-		display: grid;
-		grid-template-rows: 0fr;
-		max-height        : none;
-		&:not(.collapse) {
-			overflow: hidden;
-		}
-		>:not(.collapse) {
-			min-height: 0;
-		}
-	}
-
-	>* {
-		transition: inherit;
-		transition: translate 5.2s ease-in-out;
-	}
+	// overflow        : hidden;
+	transform       : var(--toggle-transform);
+	transform-origin: var(--toggle-transform-origin);
+	transition      :
+		transform calc(var(--ease-speed) / 1.5),
+		opacity calc(var(--ease-speed) / 1.5),
+		max-height calc(var(--ease-speed) / 2);
+	transition-timing-function: var(--ease);
+	transition-delay          : .1s;
+	z-index                   : 1;
 }
 
 /// Opened State
 /// @output - Contents
-@mixin toggle-open {
-	max-height    : 1900px;
-	opacity       : 1;
-	pointer-events: all;
-	transform     : translateZ(0) scale(1, 1);
+@mixin open {
+	--toggle-transform-origin : top;
+	opacity                   : 1;
+	max-height                : 1900px;
+	transform                 : translate3d(0,0,0);
+	transition-timing-function: var(--ease);
+	pointer-events            : inherit;
+	z-index                   : 1;
+}
 
-	&:is(.from-left, .from-right, .from-bottom) {
-		transform: none;
+/// Default Collapse State
+/// @output - Contents
+@mixin inner-closed {
+	max-height        : none;
+	display           : grid;
+	opacity           : 0;
+	grid-template-rows: 0fr;
+	pointer-events    : none;
+	transform         : var(--toggle-transform);
+	transform-origin  : var(--toggle-transform-origin);
+	transition        :
+		grid-template-rows var(--ease-speed),
+		transform var(--ease-speed),
+		opacity var(--ease-speed); // Out
+	transition-timing-function: var(--ease);
+	transition-delay          : .1s;
+
+	>* {
+		display: block;
+		width  : 100%;
 	}
+}
 
-	&.expand {
-		max-height        : none;
-		position          : relative;
-		display           : grid;
-		grid-template-rows: 1fr;
-		transform         : translateZ(0) scale(1, 1);
 
-		>:not(.collapse) {
-			min-height: 0;
-		}
-	}
+
+/// Opened State
+/// @output - Contents
+@mixin inner-open {
+	opacity           : 1;
+	grid-template-rows: 1fr;
+	transform         : translate3d(0,0,0);
+	pointer-events    : inherit;
 }

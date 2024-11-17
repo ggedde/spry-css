@@ -4,16 +4,6 @@
 @use "variables";
 @use "mixins";
 
-%ui-toggle {
-	min-height: 0;
-    min-width: 0;
-    height: 0;
-	margin: 0;
-	&:has(> .switch) {
-		height: 1.15em;
-	}
-}
-
 %ui {
 	align-items     : center;
 	appearance      : none;
@@ -33,12 +23,13 @@
 	padding-inline  : 1em;
 	position        : relative;
 	text-decoration : none;
-	transition      : all .1s ease-in-out;
+	transition      : 
+		opacity .1s ease-in-out,
+		color .1s ease-in-out,
+		background-color .1s ease-in-out,
+		border-color .1s ease-in-out;
 	vertical-align  : middle;
 	width           : 100%;
-	&:has(:where([type=radio],[type=checkbox])) {
-		gap: .5em;
-	}
 }
 
 %ui-icon {
@@ -156,10 +147,16 @@
 // 	}
 // }
 
-%toggle-closed {
-	@include mixins.toggle-closed;
+%closed {
+	@include mixins.closed;
+}
+%open {
+	@include mixins.open;
 }
 
-%toggle-open {
-	@include mixins.toggle-open;
+%inner-closed {
+	@include mixins.inner-closed;
+}
+%inner-open {
+	@include mixins.inner-open;
 }

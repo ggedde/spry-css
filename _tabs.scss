@@ -22,7 +22,7 @@
 		&+*>* {
 			transition: none;
 			transform : translateY(3px);
-			@extend %toggle-closed;
+			@extend %closed;
 			&:not(.open) {
 				max-height: 0;
 				padding-block: 0;
@@ -33,7 +33,7 @@
 				transition: opacity .2s ease-in-out, transform .3s ease-out;
 				transform : none;
 				max-height: none;
-				@extend %toggle-open;
+				@extend %open;
 			}
 		}
 	}

@@ -10,18 +10,10 @@
 :is(a, button, .button, .icon) > svg,
 svg.icon {
 	fill      : currentColor;
-	transition: all .2s var(--ease);
-}
-
-:where(.toggle,[data-toggle]):has(svg:nth-of-type(2)) svg:nth-of-type(2),
-:where(.toggle:has(:checked),[data-toggle][aria-pressed=true]):has(svg:nth-of-type(2)) svg:first-of-type {
-	opacity: 0;
-	scale  : .5
-}
-
-:where(.toggle:has(:checked),[data-toggle][aria-pressed=true]):has(svg:nth-of-type(2)) svg:last-of-type {
-	opacity: 1;
-	scale  : 1;
+	transition: 
+		transform var(--ease-speed) var(--ease),
+		rotate var(--ease-speed) var(--ease),
+		scale var(--ease-speed) var(--ease);
 }
 
 :is(button, .button, .alert, .icon) svg,

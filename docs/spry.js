@@ -96,15 +96,17 @@ class Spry {
             if (toggleElement.el === elem) {
                 
                 hasElement = true;
-                pressed = action === 'toggle' ? (isSelf ? toggleElement.el.getAttribute('aria-pressed') !== 'true' : !toggleElement.el.classList.contains('open')) : (action === 'open' ? true : false);
+                pressed = action === 'toggle' ? (isSelf ? toggleElement.el.classList.contains('active') : !toggleElement.el.classList.contains('open')) : (action === 'open' ? true : false);
 
                 if (isSelf) {
                     toggleElement.el.setAttribute('aria-pressed', pressed);
+                    toggleElement.el.classList.toggle('active', pressed);
                 } else {
                     toggleElement.el.classList.toggle('open', pressed);
                     toggleElement.el.setAttribute('aria-expanded', pressed);
                     toggleElement.togglers.forEach(toggler => {
                         toggler.el.setAttribute('aria-pressed', pressed);
+                        toggler.el.classList.toggle('active', pressed);
                     });
                 }
             }
@@ -297,6 +299,9 @@ class Spry {
             }
             
             if (!targets.length) return;
+
+            toggle.classList.add('toggle');
+
             targets.forEach(target => {
     
                 var hasElement = false;

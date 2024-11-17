@@ -6,25 +6,24 @@
 .tooltip {
 	@extend %ui-border-radius;
 	@extend %ui-border;
-	cursor             : text;
-	bottom             : 50%;
-	box-shadow         : 1px 3px 4px rgba(0, 0, 0, .12);
-	font-style         : normal;
-	left               : 50%;
-	max-width          : 280px;
-	padding            : .8em 1.2em;
-	position           : absolute;
-	text-align         : left;
-	text-transform     : none;
-	transition         : opacity .2s ease-in-out .05s, transform .25s var(--ease); // In
-	user-select        : text;
-	width              : max-content;
-	backface-visibility: hidden;
-	transform          : translate3d(-50%, 0, 0) scale(1,1);
-	transform-origin: center;
-	&:is(.out-left,.out-right,.left,.right) {
-		transform: translate3d(0, 0, 0)  scale(1);
-	}
+	--toggle-transform       : scale(.8, .8) translate3d(0, 0, 0);
+	--toggle-transform-origin: center;
+	cursor                   : text;
+	bottom                   : 80%;
+	box-shadow               : 1px 3px 4px rgba(0, 0, 0, .12);
+	font-style               : normal;
+	// left                     : 50%;
+	max-width                : 280px;
+	padding                  : .8em 1.2em;
+	position                 : absolute;
+	text-align               : left;
+	text-transform           : none;
+	transition               : opacity var(--ease-speed) var(--ease), transform var(--ease-speed) var(--ease); // In
+	user-select              : text;
+	width                    : max-content;
+	backface-visibility      : hidden;
+	transform                : none;
+	transform-origin         : var(--toggle-transform-origin);
 }
 
 :has(>.tooltip) {
@@ -32,18 +31,15 @@
 
 	&:is(:hover, :focus) {
 		z-index: 2;
+
 		&:not(:active) {
-			filter : none;
+			filter: none;
 		}
 	}
 
 	&:not(:hover, :focus) .tooltip {
 		opacity       : 0;
 		pointer-events: none;
-		transform     : translate3d(-50%, 0, 0)  scale(0);
-		transition    : opacity .1s ease-in-out, transform .8s ease-out; // Out
-		&:is(.out-left,.out-right,.left,.right) {
-			transform: translate3d(0, 0, 0)  scale(0);
-		}
+		transform     : var(--toggle-transform);
 	}
 }

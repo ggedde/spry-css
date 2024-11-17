@@ -21,7 +21,7 @@
 		pointer-events: none;
 	}
 
-	&:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):not(:active) {
+	&:is(:hover, :focus, :focus-within, .active):not(:active) {
 		@extend %ui-hover;
 	}
 
@@ -35,7 +35,7 @@
 	text-transform: none;
 }
 
-:is(button, .button, [type=submit], [type=reset]):is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):is(.link, .outline, .hazy, .plain):not(:active),
-:is(.buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a:is(:hover, :focus, :focus-within, .active, [aria-pressed=true]):not(:active) {
+:is(button, .button, [type=submit], [type=reset]):is(:hover, :focus, :focus-within, .active):is(.link, .outline, .hazy, .plain):not(:active),
+:is(.buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a:is(:hover, :focus, :focus-within, .active):not(:active) {
 	@extend %ui-bg-hover;
 }

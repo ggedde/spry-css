@@ -39,9 +39,9 @@ menu menu {
 	}
 }
 
-@mixin hoverable-styles($prefix) {
-	#{$prefix}hoverable > ul > li > ul,
-	#{$prefix}hoverable > li > ul {
+@mixin hoveropen-styles($prefix) {
+	#{$prefix}hover\:open > ul > li > ul,
+	#{$prefix}hover\:open > li > ul {
 		position: absolute;
 		top: 100%;
 		min-width: calc(100% + 1px);
@@ -50,14 +50,14 @@ menu menu {
 	}
 }
 
-@include hoverable-styles('.');
+@include hoveropen-styles('.');
 
 @each $breakpoint,
 $breakpoint_width in variables.$breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
-		@include hoverable-styles('.#{$breakpoint}\\:');
+		@include hoveropen-styles('.#{$breakpoint}\\:');
 	}
 	@container (min-width: #{$breakpoint_width}) {
-		@include hoverable-styles('.c-#{$breakpoint}\\:');
+		@include hoveropen-styles('.c-#{$breakpoint}\\:');
 	}
 }

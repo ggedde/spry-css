@@ -81,14 +81,28 @@ $sizes: (xxl: 165%,
 :root {
     --gapx: #{map-get($gaps, 'default')};
     --gapy: #{map-get($gaps, 'default')};
-    --ease: cubic-bezier(.25, .8, .25, 1);
+    --ease: cubic-bezier(.45,.45,0,1); //cubic-bezier(.25, .8, .25, 1);
+    --ease-speed: .4s;
     --border-radius: .25em;
+    --toggle-transform: translate3d(0, -4px, 0);
+    --toggle-transform-origin: top;
 
-    @each $breakpoint,
-    $breakpoint_width in $breakpoints {
+    @each $breakpoint, $breakpoint_width in $breakpoints {
         @media screen and (min-width: $breakpoint_width) {
             --gapx: #{map-get($gaps, $breakpoint)};
             --gapy: #{map-get($gaps, $breakpoint)};
         }
-    }  
+    }
+}
+
+.slow {
+    --ease-speed: .8s;
+}
+
+.fast {
+    --ease-speed: .2s;
+}
+
+.instant {
+    --ease-speed: 0s;
 }

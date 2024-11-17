@@ -33,12 +33,12 @@ tbody td {
 	vertical-align: top;
 }
 
-.hoverable tbody tr:hover,
-.hoverable.striped-expand tbody tr:nth-child(2n - 1):hover+tr {
+.hover\:active tbody tr:hover,
+.hover\:active.striped-expand tbody tr:nth-child(2n - 1):hover+tr {
 	background-color: rgb(from var(--color) r g b / 6%);
 }
 
-.hoverable.striped-expand tbody tr:nth-child(4n - 2):hover {
+.hover\:active.striped-expand tbody tr:nth-child(4n - 2):hover {
 	background-color: transparent;
 }
 
@@ -87,6 +87,7 @@ tbody td {
 }
 
 @include table-styles('.');
+@include table-responsive-styles('.');
 
 @each $breakpoint,
 $breakpoint_width in variables.$breakpoints {
@@ -100,20 +101,20 @@ $breakpoint_width in variables.$breakpoints {
 
 	@if index(variables.$breakpoints, ($breakpoint $breakpoint_width))==1 {
 		@media screen and (max-width: #{$breakpoint_width}) {
-			@include table-responsive-styles('.');
+			@include table-responsive-styles('.#{$breakpoint}\\:');
 		}
 
 		@container (max-width: #{$breakpoint_width}) {
-			@include table-responsive-styles('.c-');
+			@include table-responsive-styles('.c-#{$breakpoint}\\:');
 		}
 	}
 }
 
-.hoverable.striped tbody tr:nth-child(even):hover,
-.hoverable tbody.striped tr:nth-child(even):hover,
-.hoverable.striped-expand tbody tr:nth-child(4n -1):hover,
-.hoverable.striped-expand tbody tr:nth-child(4n -1):hover+tr,
-.hoverable tbody.striped-expand tr:nth-child(4n -1):hover,
-.hoverable tbody.striped-expand tr:nth-child(4n -1):hover+tr {
+.hover\:active.striped tbody tr:nth-child(even):hover,
+.hover\:active tbody.striped tr:nth-child(even):hover,
+.hover\:active.striped-expand tbody tr:nth-child(4n -1):hover,
+.hover\:active.striped-expand tbody tr:nth-child(4n -1):hover+tr,
+.hover\:active tbody.striped-expand tr:nth-child(4n -1):hover,
+.hover\:active tbody.striped-expand tr:nth-child(4n -1):hover+tr {
 	background-color: rgb(from var(--color) r g b / 6%);
 }

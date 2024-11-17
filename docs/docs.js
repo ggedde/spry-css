@@ -97,29 +97,37 @@ function cleanContent(html) {
     html = html.replaceAll('data-toggle-dismissible=""', 'data-toggle-dismissible');
     html = html.replaceAll('@click.stop=""', '@click.stop');
     html = html.replaceAll(' data-v-app=""', '');
-    html = html.replaceAll('&lt!-- nl --&gt', "\n");
-    html = html.replaceAll('&lt!----&gt', "\t");
-    html = html.replaceAll('<!-- nl -->', "\n");
-    html = html.replaceAll('<!---->', "\t");
+    // html = html.replaceAll('&lt!-- nl --&gt', "\n");
+    // html = html.replaceAll('&lt!----&gt', "\t");
+    // html = html.replaceAll('<!-- nl -->', "\n");
+    // html = html.replaceAll('<!---->', "\t");
     html = html.replaceAll(' data-enpassusermodified="yes"', '');
+    html = html.replaceAll(/&ltdiv class="note p-2 mb-n2 mx-n2 mt-2 bg-faint"&gt.*&lt\/div&gt/gs, '');
+    html = html.replaceAll(/\<div class="note p-2 mb-n2 mx-n2 mt-2 bg-faint"\>.*\<\/div\>/gs, '');
 
     html = html.replaceAll('&ltdiv class="code-resize-handle"&gt&lt/div&gt', '###');
     html = html.replace(/\&gt\n.*\#\#\#/, '&gt');
+
+    return html.trim();
+}
+
+function getContent(el) {
+    var elem = el.closest('.code-content-container');
+    var html = _panelContents[elem.getAttribute('id')];
+    var languageSelector = elem.querySelector('.language-selector');
+    if (languageSelector && languageSelector.value) {
+        var html = document.createElement("div");
+        html.innerHTML = _panelContents[elem.getAttribute('id')];
+        html = html.querySelector('.language-select[data-language='+languageSelector.value+']').innerHTML;
+    }
+    
+    html = cleanContent(html);
 
     return html;
 }
 
 function copyCode(event) {
-    var container = event.target.closest('.code-content-container');
-    var codeContent = container.querySelector('.code-content');
-    var html = codeContent.innerHTML;
-
-    var languageSelector = container.querySelector('.language-selector');
-    if (languageSelector && languageSelector.value) {
-        var html = codeContent.querySelector('.language-select[data-language='+languageSelector.value+']').innerHTML;
-    }
-
-    navigator.clipboard.writeText(cleanContent(html)).then(function() {
+    navigator.clipboard.writeText(getContent(event.target)).then(function() {
         Spry.toggle('#copy-code-modal');
         setTimeout(() => {
             Spry.toggle('#copy-code-modal', 'close');
@@ -148,19 +156,8 @@ function loadCodeContainer(el) {
     // }
 
     var codeDiv = elem.querySelector('.code-preview-container');
-    // var codeContent = elem.querySelector('.code-content');
-
-    var html = _panelContents[elem.getAttribute('id')].replaceAll('<', '&lt').replaceAll('>', '&gt');
-    
-    var languageSelector = elem.querySelector('.language-selector');
-    if (languageSelector && languageSelector.value) {
-        var html = document.createElement("div");
-        html.innerHTML = _panelContents[elem.getAttribute('id')];
-        html = html.querySelector('.language-select[data-language='+languageSelector.value+']').innerHTML.replaceAll('<', '&lt').replaceAll('>', '&gt');
-    }
-    
-    html = cleanContent(html);
-
+    var html = getContent(el);
+    html = html.replaceAll('<', '&lt').replaceAll('>', '&gt');
     var codeDivContents = '<pre class="mb-0"><code class="language-html'+(elem.classList.contains('with-wrap')?' pre-wrap':'')+'">' + html + '</code></pre>';
 
     codeDiv.innerHTML = codeDivContents;
@@ -197,14 +194,8 @@ document.querySelectorAll('.show-code').forEach((elem, index) => {
         });
         languageSelector += '</select></div>';
     }
-    elem.outerHTML = '<article class="mb-3 outline g-0 code-content-container" id="code-container-'+index+'"><header class="pr-1 sm md:md"><h4>'+elem.getAttribute('data-title')+' '+badge+tooltipWarning+titleNote+'</h4><div class="no-wrap flex">'+languageSelector+'<button class="shy icon link" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button onclick="loadCodeContainer(this)" data-toggle="#code-'+toggleId+'" class="shy icon link" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link" title="Copy HTML to Clipboard" onclick="copyCode(event); setTimeout(() => {this.classList.remove(\'open\'); this.setAttribute(\'aria-pressed\', false)}, 2000)" data-toggle><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg><svg viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg></button></div></header><div class="p-0"><div id="code-'+toggleId+'" class="code-container closed">'+codeDiv+'</div></div><div class="p-2 code-content">'+innerContents+'<div class="code-resize-handle"></div></div>'+(elem.hasAttribute('data-note') ? '<div class="note p-2 bg-faint">'+elem.getAttribute('data-note')+'</div>' : '')+'</article>';
+    elem.outerHTML = '<article class="mb-3 outline g-0 code-content-container" id="code-container-'+index+'"><header class="pr-1 sm md:md"><h4>'+elem.getAttribute('data-title')+' '+badge+tooltipWarning+titleNote+'</h4><div class="no-wrap flex">'+languageSelector+'<button class="shy icon link" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button onclick="loadCodeContainer(this)" data-toggle="#code-'+toggleId+'" class="shy icon link" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link" title="Copy HTML to Clipboard" onclick="copyCode(event); setTimeout(() => {this.classList.remove(\'open\'); this.classList.remove(\'active\'); this.setAttribute(\'aria-pressed\', false)}, 2000)" data-toggle><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg><svg viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg></button></div></header><div class="p-0"><div id="code-'+toggleId+'" class="code-container collapse-inner">'+codeDiv+'</div></div><div class="p-2 code-content">'+innerContents+'<div class="code-resize-handle"></div></div>'+(elem.hasAttribute('data-note') ? '<div class="note p-2 bg-faint">'+elem.getAttribute('data-note')+'</div>' : '')+'</article>';
 });
-
-// document.querySelectorAll('.language-select').forEach((elem) => {
-//     elem.addEventListener('click', event => {
-//         loadCodeContainer(elem);
-//     });
-// });
 
 document.querySelectorAll('.code-resize-handle').forEach((elem) => {
     elem.addEventListener("mousedown", function(e){

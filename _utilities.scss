@@ -167,7 +167,7 @@ General Utility Classes
 	backdrop-filter: blur(16px)
 }
 
-.no-bg {
+.bg-none {
 	background     : transparent;
 	backdrop-filter: none
 }
@@ -190,7 +190,7 @@ General Utility Classes
 
 .hover\:scale {
 	scale: 1.00001;
-	transition: scale .3s var(--ease)
+	transition: scale var(--ease-speed) var(--ease)
 }
 
 .scale,
@@ -211,11 +211,11 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 	#{$prefix}container {
 		container-type: inline-size;
-		position      : relative;
+		position      : relative
 	}
 
-	#{$prefix}no-container {
-		container-type: normal;
+	#{$prefix}container-none {
+		container-type: initial
 	}
 
 	#{$prefix}text-left {
@@ -263,7 +263,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		direction: ltr
 	}
 
-	#{$prefix}no-wrap {
+	#{$prefix}wrap-none {
 		white-space: nowrap;
 		flex-wrap  : nowrap;
 	}
@@ -403,12 +403,13 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		position: absolute
 	}
 
-	#{$prefix}collapse {
+	#{$prefix}overlay {
 		position: relative;
-		z-index : 5
+		overflow: visible;
+		z-index : 1
 	}
 
-	#{$prefix}collapse>* {
+	#{$prefix}overlay>* {
 		position: absolute
 	}
 
@@ -442,8 +443,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		translate: -50% 0
 	}
 
-	#{$prefix}no-translate {
-		translate: 0
+	#{$prefix}translate-none {
+		translate: initial
 	}
 
 	#{$prefix}top {
@@ -466,27 +467,27 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		right: auto
 	}
 
-	#{$prefix}out-top {
+	#{$prefix}outer-top {
 		bottom: 100%;
 		top   : auto
 	}
 
-	#{$prefix}out-right {
+	#{$prefix}outer-right {
 		left : 100%;
 		right: auto
 	}
 
-	#{$prefix}out-bottom {
+	#{$prefix}outer-bottom {
 		top   : 100%;
 		bottom: auto
 	}
 
-	#{$prefix}out-left {
+	#{$prefix}outer-left {
 		right: 100%;
 		left : auto
 	}
 
-	#{$prefix}no-pointer {
+	#{$prefix}pointer-none {
 		pointer-events: none
 	}
 
@@ -526,8 +527,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		vertical-align: sub
 	}
 
-	#{$prefix}no-align {
-		vertical-align: unset
+	#{$prefix}align-none {
+		vertical-align: initial
 	}
 
 	#{$prefix}visibility-hidden {
@@ -598,7 +599,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		box-shadow: 1px 3px 4px rgba(0, 0, 0, .12)
 	}
 
-	#{$prefix}no-shadow {
+	#{$prefix}shadow-none {
 		box-shadow: none
 	}
 
@@ -614,21 +615,21 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 	#{$prefix}resize {
 		overflow: auto;
-		resize: both;
+		resize: both
 	}
 
 	#{$prefix}resize-x {
 		overflow-x: auto;
-		resize: horizontal;
+		resize: horizontal
 	}
 
 	#{$prefix}resize-y {
 		overflow-y: auto;
-		resize: vertical;
+		resize: vertical
 	}
 
-	#{$prefix}no-resize {
-		resize: none;
+	#{$prefix}resize-none {
+		resize: none
 	}
 
 	#{$prefix}h {
@@ -657,6 +658,31 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 	#{$prefix}w-content {
 		width: max-content;
+	}
+
+	#{$prefix}from-top {
+		--toggle-transform: scale(1, .9) translate3d(0, -20px, 0);
+		--toggle-transform-origin: top;
+	}
+
+	#{$prefix}from-center {
+		--toggle-transform       : scale(1, 0.4) translate3d(0, 0, 0);
+		--toggle-transform-origin: center;
+	}
+
+	#{$prefix}from-left {
+		--toggle-transform       : scale(.9, 1) translate3d(-80px, 0, 0);
+		--toggle-transform-origin: left;
+	}
+
+	#{$prefix}from-right {
+		--toggle-transform       : scale(.9, 1) translate3d(80px, 0, 0);
+		--toggle-transform-origin: right;
+	}
+
+	#{$prefix}from-bottom {
+		--toggle-transform       : scale(1, .9) translate3d(0, 80px, 0);
+		--toggle-transform-origin: bottom;
 	}
 
 	@for $i from 1 through 12 {

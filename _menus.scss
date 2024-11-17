@@ -6,38 +6,54 @@
 
 .menu {
 	position: relative;
-	z-index: 1;
 	cursor: pointer;
-	nav {
-		@extend %toggle-closed;
+	display: inline-block;
+	width: auto;
+	
+	&:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)),
+	&:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) {
 		z-index: 1;
-	}
-	&:has(.toggle:focus), 
-	&:not(.keep-open):has(:focus-visible),
-	&.keep-open:has(:focus-within),
-	&.hover\:open:not(:has(:active)):hover,
-	&.open {
-		z-index: 1;
-		nav {
-			@extend %toggle-open;
-		}
-		svg {
+		> .toggle {
 			pointer-events: none;
+			+ :not(.overlay),
+			+ .overlay>.collapse-inner {
+				@extend %inner-open;
+			}
+			+ .overlay>:not(.collapse-inner) {
+				@extend %open;
+			}
 		}
-		.toggle:has(svg:nth-of-type(2)) svg:first-of-type {
+		.toggle:has(:is(img,svg):nth-of-type(2)) :is(img,svg):first-of-type {
 			opacity: 0;
 			scale  : .5;
 		}
-		.toggle:has(svg:nth-of-type(2)) svg:last-of-type {
+		.toggle:has(:is(img,svg):nth-of-type(2)) :is(img,svg):last-of-type {
 			opacity: 1;
 			scale  : 1;
 		}
 	}
-	&:has(.toggle:focus), 
-	&:has(:focus-visible),
-	&.open {
-		.toggle {
-			pointer-events: none;
+}
+
+:where(.menu > .toggle+:not(.overlay)),
+:where(.menu > .toggle+.overlay>.collapse-inner) {
+	@extend %inner-closed;
+}
+
+:where(.menu > .toggle+.overlay>:not(.collapse-inner)) {
+	@extend %closed;
+}
+
+:where(.menu > .toggle+:not(.overlay)),
+:where(.menu > .toggle+.overlay>*) {
+	z-index: 1;
+	pointer-events: none;
+	width: max-content;
+	nav > ul,
+	> ul {
+		display: block;
+		width: max-content;
+		li {
+			width: 100%;
 		}
 	}
 }

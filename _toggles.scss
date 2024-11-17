@@ -6,73 +6,91 @@
 @use "variables";
 
 .toggle {
-	@extend %ui-toggle;
+	& :is(svg,img):nth-of-type(2),
+	&:is(.active, :has(:checked)):has(:is(svg,img):nth-of-type(2)) :is(svg,img):first-of-type {
+		opacity: 0;
+		scale  : .5
+	}
+
+	&:is(.active, :has(:checked)) :is(svg,img):nth-of-type(2) {
+		opacity: 1;
+		scale  : 1
+	}
+
+	&:is(.active, :has(:checked)) .label-active {
+		display: inline-block;
+	}
+
+	&:not(.active, :has(:checked)) .label-active,
+	&:is(.active, :has(:checked)) .label-inactive {
+		display: none;
+	}
+
+	& > :is(input[type=checkbox], input[type=radio]):not(.switch) {
+		width     : 0;
+		min-width : 0;
+		min-height: 0;
+		margin    : 0;
+		padding   : 0;
+		border    : 0;
+		margin-right: -1em;
+	}
+
+	&:has(> .switch) {
+		height: 1.15em;
+	}
 }
 
-.toggle input:not(.switch) {
-	width: 0;
-	min-width: 0;
-	min-height: 0;
-	margin: 0;
-	padding: 0;
-	border: 0;
-}
-
-.hoverable {
+.hover\:open {
 	>ul>li> :is([data-toggle=hover], [data-toggle=next]),
 	>li> :is([data-toggle=hover], [data-toggle=next]) {
 		pointer-events: none
 	}
 }
 
-.closed:not(.open) {
-	border: 0;
-	&:not(.from-left, .from-right) {
-		padding-block: 0;
-		margin-block: 0;
-	}
-}
+.collapse,
+.hover\:open>li ul,
+.hover\:open>ul>li ul,
 
-.closed,
-.expand,
-.hoverable>li ul,
-.hoverable>ul>li ul,
-[data-toggle=next]+*,
-[data-toggle=hover]+*,
-.toggle+* {
-	@extend %toggle-closed;
+:where([data-toggle=next]+:not(.collapse-inner, .overlay:has(>.collapse-inner))),
+[data-toggle=hover]+:not(.collapse-inner, .overlay:has(>.collapse-inner)),
+:where(.toggle:has(input)+:not(.collapse-inner, .overlay:has(>.collapse-inner))),
+.toggle.hover\:active+:not(.collapse-inner, .overlay:has(>.collapse-inner)) {
+	@extend %closed;
 }
 
 .open,
-.expand.open,
-.hoverable .open,
-.toggle:has(:checked)+*,
-[class*=\:hoverable] .open,
-.hoverable>li:hover>ul,
-.hoverable>ul>li:hover>ul,
-.hoverable li:has(:focus-visible)>ul,
-[data-toggle=hover]:hover+*,
-[data-toggle=next][aria-pressed=""]+.expand,
-[data-toggle=next][aria-pressed=true]+.expand,
-[data-toggle=hover]+:not(.dismissed):hover {
-	@extend %toggle-open;
+.hover\:open:hover .collapse,
+.hover\:open>li:hover>ul,
+.hover\:open>ul>li:hover>ul,
+.hover\:open li:has(:focus-visible)>ul,
+
+[class*=\:hover\:open] .open,
+.toggle:has(:checked)+:not(.collapse-inner, .overlay:has(>.collapse-inner)),
+:where(.toggle.hover\:active:hover+:not(.collapse-inner, .overlay:has(>.collapse-inner))),
+.toggle:has(:checked)+.overlay>.collapse,
+[data-toggle=hover]:hover+:not(.collapse-inner, .overlay:has(>.collapse-inner)),
+[data-toggle=hover]+:not(.dismissed):hover{
+	@extend %open;
 }
 
 @mixin toggle-query-styles($prefix) {
-	#{$prefix}closed,
-	#{$prefix}hoverable>ul>li ul,
-	#{$prefix}hoverable>li ul {
-		@include mixins.toggle-closed;
+
+	#{$prefix}collapse,
+	#{$prefix}hover\:open>ul>li ul,
+	#{$prefix}hover\:open>li ul {
+		@include mixins.closed;
 	}
 
 	#{$prefix}open,
-	#{$prefix}hoverable>li:hover>ul,
-	#{$prefix}hoverable>ul>li:hover>ul,
-	#{$prefix}hoverable li:has(:focus-visible)>ul {
-		@include mixins.toggle-open;
+	#{$prefix}hover\:open:hover .collapse,
+	#{$prefix}hover\:open>li:hover>ul,
+	#{$prefix}hover\:open>ul>li:hover>ul,
+	#{$prefix}hover\:open li:has(:focus-visible)>ul {
+		@include mixins.open;
 	}
 
-	#{$prefix}hoverable {
+	#{$prefix}hover\:open {
 
 		>ul>li> :is([data-toggle=hover], [data-toggle=next]),
 		>li> :is([data-toggle=hover], [data-toggle=next]) {
@@ -86,7 +104,47 @@ $breakpoint_width in variables.$breakpoints {
 	@media screen and (min-width: #{$breakpoint_width}) {
 		@include toggle-query-styles('.#{$breakpoint}\\:');
 	}
+
 	@container (min-width: #{$breakpoint_width}) {
 		@include toggle-query-styles('.c-#{$breakpoint}\\:');
+	}
+}
+
+/*
+* Collapse Inner
+* 
+* Will be depricated once calc-size(auto) is fully supported
+* https://caniuse.com/?search=calc-size
+*/
+
+.collapse-inner{
+	@extend %inner-closed;
+	> * {
+		overflow: hidden;
+	}
+}
+
+.collapse-inner.open,
+.hover\:open:hover .collapse-inner,
+.collapse-inner.hover\:open:hover,
+.toggle.hover\:active:hover+.collapse-inner,
+.toggle:has(:checked)+.collapse-inner,
+.toggle:has(:checked)+.overlay>.collapse-inner {
+	@extend %inner-open;
+}
+
+@mixin collapse-inner-query-styles($prefix) {
+	#{$prefix}open.collapse-inner {
+		@include mixins.inner-open;
+	}
+}
+
+@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+	@media screen and (min-width: #{$breakpoint_width}) {
+		@include collapse-inner-query-styles('.#{$breakpoint}\\:');
+	}
+
+	@container (min-width: #{$breakpoint_width}) {
+		@include collapse-inner-query-styles('.c-#{$breakpoint}\\:');
 	}
 }
