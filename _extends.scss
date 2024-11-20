@@ -13,7 +13,7 @@
 	display         : inline-flex;
 	font-size       : 100%;
 	height          : auto;
-	justify-content : center;
+	justify-content : space-between;
 	gap             : 1em;
 	min-height      : 2.3em;
 	min-width       : 2.3em;
@@ -153,10 +153,9 @@
 %open {
 	@include mixins.open;
 }
-
-%inner-closed {
-	@include mixins.inner-closed;
+%closed-inner {
+	@include mixins.closed-inner;
 }
-%inner-open {
-	@include mixins.inner-open;
+%open-inner {
+	@include mixins.open-inner;
 }

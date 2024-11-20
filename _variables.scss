@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // Specify each breakpoint size
 $breakpoints: (
     md: 40em,
@@ -79,18 +81,19 @@ $sizes: (xxl: 165%,
 ) !default;
 
 :root {
-    --gapx: #{map-get($gaps, 'default')};
-    --gapy: #{map-get($gaps, 'default')};
+    --gapx: #{map.get($gaps, 'default')};
+    --gapy: #{map.get($gaps, 'default')};
     --ease: cubic-bezier(.45,.45,0,1); //cubic-bezier(.25, .8, .25, 1);
     --ease-speed: .4s;
     --border-radius: .25em;
-    --toggle-transform: translate3d(0, -4px, 0);
+    --toggle-transform: translate3d(0, -3px, 0);
     --toggle-transform-origin: top;
+    --max-height: 1900px;
 
     @each $breakpoint, $breakpoint_width in $breakpoints {
         @media screen and (min-width: $breakpoint_width) {
-            --gapx: #{map-get($gaps, $breakpoint)};
-            --gapy: #{map-get($gaps, $breakpoint)};
+            --gapx: #{map.get($gaps, $breakpoint)};
+            --gapy: #{map.get($gaps, $breakpoint)};
         }
     }
 }

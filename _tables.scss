@@ -3,6 +3,7 @@
 */
 @use "variables";
 @use "extends";
+@use 'sass:list';
 
 table {
 	position       : relative;
@@ -99,7 +100,7 @@ $breakpoint_width in variables.$breakpoints {
 		@include table-styles('.c-#{$breakpoint}\\:');
 	}
 
-	@if index(variables.$breakpoints, ($breakpoint $breakpoint_width))==1 {
+	@if list.index(variables.$breakpoints, ($breakpoint $breakpoint_width))==1 {
 		@media screen and (max-width: #{$breakpoint_width}) {
 			@include table-responsive-styles('.#{$breakpoint}\\:');
 		}

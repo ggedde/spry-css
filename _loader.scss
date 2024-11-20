@@ -22,18 +22,18 @@
 
 	&::after {
 		content       : '';
-		animation     : spinner .8s ease infinite;
-		border        : .15em solid transparent;
+		animation     : spinner calc(var(--ease-speed) * 2) ease infinite;
+		border        : .16em solid transparent;
 		border-color  : hsl(from var(--text-color) h s var(--clr-l, l) / var(--clr-a, 100%)) hsl(from var(--text-color) h s var(--clr-l, l) / var(--clr-a, 100%)) transparent transparent;
 		border-radius : 50%;
 		box-sizing    : border-box;
-		height        : 1.3em;
-		width         : 1.3em;
+		height        : 1.1em;
+		width         : 1.1em;
 		inset         : 0;
 		margin        : auto;
 		pointer-events: none;
 		position      : absolute;
-		transition    : opacity .3s ease-in-out .1s;
+		transition    : opacity var(--ease-speed) ease-in-out .1s;
 	}
 
 	&:is(input, select, textarea, button, .button, a) {

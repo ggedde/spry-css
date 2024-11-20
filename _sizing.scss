@@ -1,0 +1,66 @@
+/*
+* Spry Utilities
+*/
+@use "variables";
+
+/****************************************************************************
+Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
+****************************************************************************/
+@mixin sizingUtility-styles($prefix) {
+
+	#{$prefix}h {
+		height: 100%
+	}
+
+	#{$prefix}vh {
+		height: 100svh
+	}
+
+	#{$prefix}w {
+		width: 100%
+	}
+
+	#{$prefix}vw {
+		width: 100dvw
+	}
+
+	#{$prefix}h-0 {
+		height: 0
+	}
+
+	#{$prefix}w-0 {
+		width: 0
+	}
+
+	#{$prefix}w-content {
+		width: max-content;
+	}
+
+	@for $i from 1 through 12 {
+		#{$prefix}mh-#{$i}00 {
+			--max-height: #{$i}00px;
+			max-height: #{$i}00px
+		}
+
+		#{$prefix}w-#{$i}00 {
+			width: #{$i}00px;
+			flex : 0 #{$i}00px
+		}
+
+		#{$prefix}mw-#{$i}00 {
+			max-width: #{$i}00px
+		}
+	}
+}
+
+@include sizingUtility-styles('.');
+
+@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+	@media screen and (min-width: #{$breakpoint_width}) {
+		@include sizingUtility-styles('.#{$breakpoint}\\:');
+	}
+
+	@container (min-width: #{$breakpoint_width}) {
+		@include sizingUtility-styles('.c-#{$breakpoint}\\:');
+	}
+}

@@ -17,15 +17,6 @@
 		scale  : 1
 	}
 
-	&:is(.active, :has(:checked)) .label-active {
-		display: inline-block;
-	}
-
-	&:not(.active, :has(:checked)) .label-active,
-	&:is(.active, :has(:checked)) .label-inactive {
-		display: none;
-	}
-
 	& > :is(input[type=checkbox], input[type=radio]):not(.switch) {
 		width     : 0;
 		min-width : 0;
@@ -33,6 +24,7 @@
 		margin    : 0;
 		padding   : 0;
 		border    : 0;
+		outline   : 0;
 		margin-right: -1em;
 	}
 
@@ -48,30 +40,83 @@
 	}
 }
 
+// .collapse,
+// .hover\:open>li ul,
+// .hover\:open>ul>li ul,
+
+// :where([data-toggle=next]+:not(.collapse-inner, .overlay)),
+// [data-toggle=hover]+:not(.collapse-inner, .overlay),
+// .toggle:has(input)+:not(.collapse-inner, .overlay),
+// .toggle:has(input)+.overlay>:not(.collapse-inner),
+// .toggle.hover\:active+:not(.collapse-inner, .overlay),
+// .toggle.hover\:active+.overlay>* {
+// 	@extend %closed;
+// 	&.open {
+// 		@extend %open;
+// 	}
+// }
+
 .collapse,
 .hover\:open>li ul,
-.hover\:open>ul>li ul,
-
-:where([data-toggle=next]+:not(.collapse-inner, .overlay:has(>.collapse-inner))),
-[data-toggle=hover]+:not(.collapse-inner, .overlay:has(>.collapse-inner)),
-:where(.toggle:has(input)+:not(.collapse-inner, .overlay:has(>.collapse-inner))),
-.toggle.hover\:active+:not(.collapse-inner, .overlay:has(>.collapse-inner)) {
+.hover\:open>ul>li ul {
 	@extend %closed;
+	&.open {
+		@extend %open;
+	}
 }
 
-.open,
+[data-toggle=next]+*{
+	@extend %closed;
+	&.open {
+		@extend %open;
+	}
+}
+// [data-toggle=hover]+:not(.collapse-inner, .overlay),
+.toggle:has(input),
+.toggle.hover\:active {
+	+.collapse,
+	+.overlay>.collapse {
+		@extend %closed;
+		&.open {
+			@extend %open;
+		}
+	}
+	+.collapse-inner,
+	+.overlay>.collapse-inner {
+		@extend %closed-inner;
+		&.open {
+			@extend %open-inner;
+		}
+	}
+}
+
+// html [class].open,
 .hover\:open:hover .collapse,
 .hover\:open>li:hover>ul,
 .hover\:open>ul>li:hover>ul,
-.hover\:open li:has(:focus-visible)>ul,
-
-[class*=\:hover\:open] .open,
-.toggle:has(:checked)+:not(.collapse-inner, .overlay:has(>.collapse-inner)),
-:where(.toggle.hover\:active:hover+:not(.collapse-inner, .overlay:has(>.collapse-inner))),
-.toggle:has(:checked)+.overlay>.collapse,
-[data-toggle=hover]:hover+:not(.collapse-inner, .overlay:has(>.collapse-inner)),
-[data-toggle=hover]+:not(.dismissed):hover{
+.hover\:open li:has(:focus-visible)>ul {
 	@extend %open;
+}
+
+// [class*=\:hover\:open] .open,
+// [data-toggle=hover]:hover+:not(.collapse-inner, .overlay:has(>.collapse-inner)),
+// [data-toggle=hover]+:not(.dismissed):hover,
+.toggle :checked,
+.toggle:has(:checked),
+.toggle.hover\:active:hover {
+	+.collapse,
+	+.overlay>.collapse {
+		@extend %open;
+	}
+	+.collapse-inner,
+	+.overlay>.collapse-inner {
+		@extend %open-inner;
+	}
+}
+
+// Delay on hover to prevent accidental showing
+[class*="hover:open"] :is(ul, .collapse, .collapse-inner) {
+	transition-delay: .1s;
 }
 
 @mixin toggle-query-styles($prefix) {
@@ -113,29 +158,35 @@ $breakpoint_width in variables.$breakpoints {
 /*
 * Collapse Inner
 * 
-* Will be depricated once calc-size(auto) is fully supported
+* Will be deprecated once calc-size(auto) is fully supported
 * https://caniuse.com/?search=calc-size
 */
 
-.collapse-inner{
-	@extend %inner-closed;
-	> * {
+.collapse-inner {
+	@extend %closed-inner;
+	> *,
+	> ul {
 		overflow: hidden;
+		display: block;
+	}
+	&.open {
+		@extend %open-inner;
 	}
 }
 
-.collapse-inner.open,
-.hover\:open:hover .collapse-inner,
-.collapse-inner.hover\:open:hover,
-.toggle.hover\:active:hover+.collapse-inner,
-.toggle:has(:checked)+.collapse-inner,
-.toggle:has(:checked)+.overlay>.collapse-inner {
-	@extend %inner-open;
-}
+// .collapse-inner.open,
+// .toggle :checked + .collapse-inner,
+// .hover\:open:hover .collapse-inner,
+// .collapse-inner.hover\:open:hover,
+// .toggle.hover\:active:hover+.collapse-inner,
+// .toggle:has(:checked)+.collapse-inner,
+// .toggle:has(:checked)+.overlay>.collapse-inner {
+// 	@extend %open-inner;
+// }
 
 @mixin collapse-inner-query-styles($prefix) {
 	#{$prefix}open.collapse-inner {
-		@include mixins.inner-open;
+		@include mixins.open-inner;
 	}
 }
 

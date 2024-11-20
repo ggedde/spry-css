@@ -80,8 +80,9 @@ img {
   --ease: cubic-bezier(.45,.45,0,1);
   --ease-speed: .4s;
   --border-radius: .25em;
-  --toggle-transform: translate3d(0, -4px, 0);
+  --toggle-transform: translate3d(0, -3px, 0);
   --toggle-transform-origin: top;
+  --max-height: 1900px;
 }
 @media screen and (min-width: 40em) {
   :root {
@@ -124,7 +125,7 @@ img {
   display: inline-flex;
   font-size: 100%;
   height: auto;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1em;
   min-height: 2.3em;
   min-width: 2.3em;
@@ -139,8 +140,7 @@ img {
   width: 100%;
 }
 
-.icon, :is(button, .button, [type=submit], [type=reset]) > svg,
-:is(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a > svg, .badge > svg, .alert > svg {
+.icon, .badge > svg, .alert > svg {
   padding: 0;
   position: relative;
   display: inline-flex;
@@ -149,13 +149,11 @@ img {
   vertical-align: middle;
   flex: 0 1 auto;
 }
-.icon:is(.outline, .hazy), :is(button, .button, [type=submit], [type=reset]) > svg:is(.outline, .hazy),
-:is(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a > svg:is(.outline, .hazy), .badge > svg:is(.outline, .hazy), .alert > svg:is(.outline, .hazy) {
+.icon:is(.outline, .hazy), .badge > svg:is(.outline, .hazy), .alert > svg:is(.outline, .hazy) {
   min-height: 2.3em;
   min-width: 2.3em;
 }
-.icon > svg, :is(button, .button, [type=submit], [type=reset]) > svg > svg,
-:is(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a > svg > svg, .badge > svg > svg, .alert > svg > svg {
+.icon > svg, .badge > svg > svg, .alert > svg > svg {
   backface-visibility: hidden;
   inset: 50%;
   margin: auto;
@@ -554,67 +552,79 @@ html .border-100,
 
 .collapse,
 .hover\:open > li ul,
-.hover\:open > ul > li ul,
-:where([data-toggle=next] + :not(.collapse-inner, .overlay:has(> .collapse-inner))),
-[data-toggle=hover] + :not(.collapse-inner, .overlay:has(> .collapse-inner)),
-:where(.toggle:has(input) + :not(.collapse-inner, .overlay:has(> .collapse-inner))),
-.toggle.hover\:active + :not(.collapse-inner, .overlay:has(> .collapse-inner)), :where(.menu > .toggle + .overlay > :not(.collapse-inner)), .tabs .list + * > * {
+.hover\:open > ul > li ul, [data-toggle=next] + *, .toggle:has(input) + .collapse,
+.toggle:has(input) + .overlay > .collapse,
+.toggle.hover\:active + .collapse,
+.toggle.hover\:active + .overlay > .collapse, .tabs .list + * > * {
   max-height: 0;
   opacity: 0;
   pointer-events: none;
+  overflow: hidden;
   transform: var(--toggle-transform);
   transform-origin: var(--toggle-transform-origin);
-  transition: transform calc(var(--ease-speed) / 1.5), opacity calc(var(--ease-speed) / 1.5), max-height calc(var(--ease-speed) / 2);
+  transition-property: max-height, transform, opacity;
+  transition-duration: var(--ease-speed);
   transition-timing-function: var(--ease);
-  transition-delay: 0.1s;
   z-index: 1;
+  width: auto;
 }
 
-.open,
-.hover\:open:hover .collapse,
+.collapse.open,
+.hover\:open > li ul.open,
+.hover\:open > ul > li ul.open, [data-toggle=next] + *.open, .toggle:has(input) + .collapse.open,
+.toggle:has(input) + .overlay > .collapse.open,
+.toggle.hover\:active + .collapse.open,
+.toggle.hover\:active + .overlay > .collapse.open, .hover\:open:hover .collapse,
 .hover\:open > li:hover > ul,
 .hover\:open > ul > li:hover > ul,
-.hover\:open li:has(:focus-visible) > ul,
-[class*=\:hover\:open] .open,
-.toggle:has(:checked) + :not(.collapse-inner, .overlay:has(> .collapse-inner)),
-:where(.toggle.hover\:active:hover + :not(.collapse-inner, .overlay:has(> .collapse-inner))),
+.hover\:open li:has(:focus-visible) > ul, .toggle :checked + .collapse,
+.toggle :checked + .overlay > .collapse,
+.toggle:has(:checked) + .collapse,
 .toggle:has(:checked) + .overlay > .collapse,
-[data-toggle=hover]:hover + :not(.collapse-inner, .overlay:has(> .collapse-inner)),
-[data-toggle=hover] + :not(.dismissed):hover, .menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle + .overlay > :not(.collapse-inner), .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle + .overlay > :not(.collapse-inner), .tabs .list + * > *.open {
+.toggle.hover\:active:hover + .collapse,
+.toggle.hover\:active:hover + .overlay > .collapse, .menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle + .collapse, .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle + .collapse,
+.focus\:open:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle + .collapse,
+.focus\:open:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle + .collapse, .tabs .list + * > *.open {
   --toggle-transform-origin: top;
   opacity: 1;
-  max-height: 1900px;
+  max-height: var(--max-height);
   transform: translate3d(0, 0, 0);
-  transition-timing-function: var(--ease);
   pointer-events: inherit;
-  z-index: 1;
 }
 
-.collapse-inner, :where(.menu > .toggle + :not(.overlay)) {
+.toggle:has(input) + .collapse-inner,
+.toggle:has(input) + .overlay > .collapse-inner,
+.toggle.hover\:active + .collapse-inner,
+.toggle.hover\:active + .overlay > .collapse-inner, .collapse-inner {
   max-height: none;
-  display: grid;
   opacity: 0;
   grid-template-rows: 0fr;
   pointer-events: none;
   transform: var(--toggle-transform);
   transform-origin: var(--toggle-transform-origin);
-  transition: grid-template-rows var(--ease-speed), transform var(--ease-speed), opacity var(--ease-speed);
+  transition-property: grid-template-rows, transform, opacity;
+  transition-duration: var(--ease-speed);
   transition-timing-function: var(--ease);
-  transition-delay: 0.1s;
+  z-index: 1;
 }
-.collapse-inner > *, :where(.menu > .toggle + :not(.overlay)) > * {
-  display: block;
-  width: 100%;
+.toggle:has(input) + [class].collapse-inner,
+.toggle:has(input) + .overlay > [class].collapse-inner,
+.toggle.hover\:active + [class].collapse-inner,
+.toggle.hover\:active + .overlay > [class].collapse-inner, [class].collapse-inner {
+  display: grid;
 }
 
-.collapse-inner.open,
-.hover\:open:hover .collapse-inner,
-.collapse-inner.hover\:open:hover,
-.toggle.hover\:active:hover + .collapse-inner,
+.toggle:has(input) + .collapse-inner.open,
+.toggle:has(input) + .overlay > .collapse-inner.open,
+.toggle.hover\:active + .collapse-inner.open,
+.toggle.hover\:active + .overlay > .collapse-inner.open, .toggle :checked + .collapse-inner,
+.toggle :checked + .overlay > .collapse-inner,
 .toggle:has(:checked) + .collapse-inner,
-.toggle:has(:checked) + .overlay > .collapse-inner, .menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle + :not(.overlay),
-.menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle + .overlay > .collapse-inner, .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle + :not(.overlay),
-.menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle + .overlay > .collapse-inner {
+.toggle:has(:checked) + .overlay > .collapse-inner,
+.toggle.hover\:active:hover + .collapse-inner,
+.toggle.hover\:active:hover + .overlay > .collapse-inner, .collapse-inner.open, .menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle + .collapse-inner, .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle + .collapse-inner,
+.focus\:open:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle + .collapse-inner,
+.focus\:open:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle + .collapse-inner {
   opacity: 1;
   grid-template-rows: 1fr;
   transform: translate3d(0, 0, 0);
@@ -1273,18 +1283,12 @@ label:has(:is(sup)) {
 label:has(sub) {
   margin-bottom: 1rem;
 }
-label:has(:checked) .label-checked, label:not(:has(:checked)) .label-unchecked {
-  display: inline;
-}
-label:has(:checked) .label-unchecked, label:not(:has(:checked)) .label-checked {
-  display: none;
-}
 
 .show-invalid :not(:focus):user-invalid {
   border-color: var(--error, #c33);
 }
 
-.show-invalid label:has(:not(:focus):user-invalid) .preffix,
+.show-invalid label:has(:not(:focus):user-invalid) .prefix,
 .show-invalid label:has(:not(:focus):user-invalid) .suffix {
   background-color: var(--error, #c33);
   border-color: var(--error, #c33);
@@ -2083,6 +2087,7 @@ nav menu,
 menu ul,
 menu menu {
   background-color: inherit;
+  overflow: visible;
 }
 
 nav ul ul,
@@ -2131,45 +2136,22 @@ menu menu > li {
 /*
 * Spry Navs
 */
-.menu {
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  width: auto;
-}
-.menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)), .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) {
-  z-index: 1;
-}
-.menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle, .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle {
+.menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle, .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle,
+.focus\:open:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle,
+.focus\:open:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle {
   pointer-events: none;
 }
-.menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):first-of-type, .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):first-of-type {
+.menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):first-of-type, .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):first-of-type,
+.focus\:open:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):first-of-type,
+.focus\:open:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):first-of-type {
   opacity: 0;
   scale: 0.5;
 }
-.menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):last-of-type, .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):last-of-type {
+.menu:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):last-of-type, .menu:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):last-of-type,
+.focus\:open:has(:focus-within):not(.hover\:open):not(:has(:focus-within):not(:active)) > .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):last-of-type,
+.focus\:open:is(.open, :has(.toggle:focus), :has(:focus-visible), .hover\:open:hover) > .toggle:has(:is(img, svg):nth-of-type(2)) :is(img, svg):last-of-type {
   opacity: 1;
   scale: 1;
-}
-
-:where(.menu > .toggle + :not(.overlay)),
-:where(.menu > .toggle + .overlay > *) {
-  z-index: 1;
-  pointer-events: none;
-  width: max-content;
-}
-:where(.menu > .toggle + :not(.overlay)) nav > ul,
-:where(.menu > .toggle + :not(.overlay)) > ul,
-:where(.menu > .toggle + .overlay > *) nav > ul,
-:where(.menu > .toggle + .overlay > *) > ul {
-  display: block;
-  width: max-content;
-}
-:where(.menu > .toggle + :not(.overlay)) nav > ul li,
-:where(.menu > .toggle + :not(.overlay)) > ul li,
-:where(.menu > .toggle + .overlay > *) nav > ul li,
-:where(.menu > .toggle + .overlay > *) > ul li {
-  width: 100%;
 }
 
 /*
@@ -2301,12 +2283,6 @@ body:has(.modal.open:not(.no-bg)) {
   opacity: 1;
   scale: 1;
 }
-.toggle:is(.active, :has(:checked)) .label-active {
-  display: inline-block;
-}
-.toggle:not(.active, :has(:checked)) .label-active, .toggle:is(.active, :has(:checked)) .label-inactive {
-  display: none;
-}
 .toggle > :is(input[type=checkbox], input[type=radio]):not(.switch) {
   width: 0;
   min-width: 0;
@@ -2314,6 +2290,7 @@ body:has(.modal.open:not(.no-bg)) {
   margin: 0;
   padding: 0;
   border: 0;
+  outline: 0;
   margin-right: -1em;
 }
 .toggle:has(> .switch) {
@@ -2325,6 +2302,10 @@ body:has(.modal.open:not(.no-bg)) {
   pointer-events: none;
 }
 
+[class*="hover:open"] :is(ul, .collapse, .collapse-inner) {
+  transition-delay: 0.1s;
+}
+
 @media screen and (min-width: 40em) {
   .md\:collapse,
   .md\:hover\:open > ul > li ul,
@@ -2332,12 +2313,14 @@ body:has(.modal.open:not(.no-bg)) {
     max-height: 0;
     opacity: 0;
     pointer-events: none;
+    overflow: hidden;
     transform: var(--toggle-transform);
     transform-origin: var(--toggle-transform-origin);
-    transition: transform calc(var(--ease-speed) / 1.5), opacity calc(var(--ease-speed) / 1.5), max-height calc(var(--ease-speed) / 2);
+    transition-property: max-height, transform, opacity;
+    transition-duration: var(--ease-speed);
     transition-timing-function: var(--ease);
-    transition-delay: 0.1s;
     z-index: 1;
+    width: auto;
   }
   .md\:open,
   .md\:hover\:open:hover .collapse,
@@ -2346,11 +2329,9 @@ body:has(.modal.open:not(.no-bg)) {
   .md\:hover\:open li:has(:focus-visible) > ul {
     --toggle-transform-origin: top;
     opacity: 1;
-    max-height: 1900px;
+    max-height: var(--max-height);
     transform: translate3d(0, 0, 0);
-    transition-timing-function: var(--ease);
     pointer-events: inherit;
-    z-index: 1;
   }
   .md\:hover\:open > ul > li > :is([data-toggle=hover], [data-toggle=next]),
   .md\:hover\:open > li > :is([data-toggle=hover], [data-toggle=next]) {
@@ -2364,12 +2345,14 @@ body:has(.modal.open:not(.no-bg)) {
     max-height: 0;
     opacity: 0;
     pointer-events: none;
+    overflow: hidden;
     transform: var(--toggle-transform);
     transform-origin: var(--toggle-transform-origin);
-    transition: transform calc(var(--ease-speed) / 1.5), opacity calc(var(--ease-speed) / 1.5), max-height calc(var(--ease-speed) / 2);
+    transition-property: max-height, transform, opacity;
+    transition-duration: var(--ease-speed);
     transition-timing-function: var(--ease);
-    transition-delay: 0.1s;
     z-index: 1;
+    width: auto;
   }
   .c-md\:open,
   .c-md\:hover\:open:hover .collapse,
@@ -2378,11 +2361,9 @@ body:has(.modal.open:not(.no-bg)) {
   .c-md\:hover\:open li:has(:focus-visible) > ul {
     --toggle-transform-origin: top;
     opacity: 1;
-    max-height: 1900px;
+    max-height: var(--max-height);
     transform: translate3d(0, 0, 0);
-    transition-timing-function: var(--ease);
     pointer-events: inherit;
-    z-index: 1;
   }
   .c-md\:hover\:open > ul > li > :is([data-toggle=hover], [data-toggle=next]),
   .c-md\:hover\:open > li > :is([data-toggle=hover], [data-toggle=next]) {
@@ -2392,13 +2373,14 @@ body:has(.modal.open:not(.no-bg)) {
 /*
 * Collapse Inner
 * 
-* Will be depricated once calc-size(auto) is fully supported
+* Will be deprecated once calc-size(auto) is fully supported
 * https://caniuse.com/?search=calc-size
 */
-.collapse-inner > * {
+.collapse-inner > *,
+.collapse-inner > ul {
   overflow: hidden;
+  display: block;
 }
-
 @media screen and (min-width: 40em) {
   .md\:open.collapse-inner {
     opacity: 1;
@@ -4273,6 +4255,521 @@ svg.icon {
 /*
 * Spry Utilities
 */
+/****************************************************************************
+Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
+****************************************************************************/
+.h {
+  height: 100%;
+}
+
+.vh {
+  height: 100svh;
+}
+
+.w {
+  width: 100%;
+}
+
+.vw {
+  width: 100dvw;
+}
+
+.h-0 {
+  height: 0;
+}
+
+.w-0 {
+  width: 0;
+}
+
+.w-content {
+  width: max-content;
+}
+
+.mh-100 {
+  --max-height: 100px;
+  max-height: 100px;
+}
+
+.w-100 {
+  width: 100px;
+  flex: 0 100px;
+}
+
+.mw-100 {
+  max-width: 100px;
+}
+
+.mh-200 {
+  --max-height: 200px;
+  max-height: 200px;
+}
+
+.w-200 {
+  width: 200px;
+  flex: 0 200px;
+}
+
+.mw-200 {
+  max-width: 200px;
+}
+
+.mh-300 {
+  --max-height: 300px;
+  max-height: 300px;
+}
+
+.w-300 {
+  width: 300px;
+  flex: 0 300px;
+}
+
+.mw-300 {
+  max-width: 300px;
+}
+
+.mh-400 {
+  --max-height: 400px;
+  max-height: 400px;
+}
+
+.w-400 {
+  width: 400px;
+  flex: 0 400px;
+}
+
+.mw-400 {
+  max-width: 400px;
+}
+
+.mh-500 {
+  --max-height: 500px;
+  max-height: 500px;
+}
+
+.w-500 {
+  width: 500px;
+  flex: 0 500px;
+}
+
+.mw-500 {
+  max-width: 500px;
+}
+
+.mh-600 {
+  --max-height: 600px;
+  max-height: 600px;
+}
+
+.w-600 {
+  width: 600px;
+  flex: 0 600px;
+}
+
+.mw-600 {
+  max-width: 600px;
+}
+
+.mh-700 {
+  --max-height: 700px;
+  max-height: 700px;
+}
+
+.w-700 {
+  width: 700px;
+  flex: 0 700px;
+}
+
+.mw-700 {
+  max-width: 700px;
+}
+
+.mh-800 {
+  --max-height: 800px;
+  max-height: 800px;
+}
+
+.w-800 {
+  width: 800px;
+  flex: 0 800px;
+}
+
+.mw-800 {
+  max-width: 800px;
+}
+
+.mh-900 {
+  --max-height: 900px;
+  max-height: 900px;
+}
+
+.w-900 {
+  width: 900px;
+  flex: 0 900px;
+}
+
+.mw-900 {
+  max-width: 900px;
+}
+
+.mh-1000 {
+  --max-height: 1000px;
+  max-height: 1000px;
+}
+
+.w-1000 {
+  width: 1000px;
+  flex: 0 1000px;
+}
+
+.mw-1000 {
+  max-width: 1000px;
+}
+
+.mh-1100 {
+  --max-height: 1100px;
+  max-height: 1100px;
+}
+
+.w-1100 {
+  width: 1100px;
+  flex: 0 1100px;
+}
+
+.mw-1100 {
+  max-width: 1100px;
+}
+
+.mh-1200 {
+  --max-height: 1200px;
+  max-height: 1200px;
+}
+
+.w-1200 {
+  width: 1200px;
+  flex: 0 1200px;
+}
+
+.mw-1200 {
+  max-width: 1200px;
+}
+
+@media screen and (min-width: 40em) {
+  .md\:h {
+    height: 100%;
+  }
+  .md\:vh {
+    height: 100svh;
+  }
+  .md\:w {
+    width: 100%;
+  }
+  .md\:vw {
+    width: 100dvw;
+  }
+  .md\:h-0 {
+    height: 0;
+  }
+  .md\:w-0 {
+    width: 0;
+  }
+  .md\:w-content {
+    width: max-content;
+  }
+  .md\:mh-100 {
+    --max-height: 100px;
+    max-height: 100px;
+  }
+  .md\:w-100 {
+    width: 100px;
+    flex: 0 100px;
+  }
+  .md\:mw-100 {
+    max-width: 100px;
+  }
+  .md\:mh-200 {
+    --max-height: 200px;
+    max-height: 200px;
+  }
+  .md\:w-200 {
+    width: 200px;
+    flex: 0 200px;
+  }
+  .md\:mw-200 {
+    max-width: 200px;
+  }
+  .md\:mh-300 {
+    --max-height: 300px;
+    max-height: 300px;
+  }
+  .md\:w-300 {
+    width: 300px;
+    flex: 0 300px;
+  }
+  .md\:mw-300 {
+    max-width: 300px;
+  }
+  .md\:mh-400 {
+    --max-height: 400px;
+    max-height: 400px;
+  }
+  .md\:w-400 {
+    width: 400px;
+    flex: 0 400px;
+  }
+  .md\:mw-400 {
+    max-width: 400px;
+  }
+  .md\:mh-500 {
+    --max-height: 500px;
+    max-height: 500px;
+  }
+  .md\:w-500 {
+    width: 500px;
+    flex: 0 500px;
+  }
+  .md\:mw-500 {
+    max-width: 500px;
+  }
+  .md\:mh-600 {
+    --max-height: 600px;
+    max-height: 600px;
+  }
+  .md\:w-600 {
+    width: 600px;
+    flex: 0 600px;
+  }
+  .md\:mw-600 {
+    max-width: 600px;
+  }
+  .md\:mh-700 {
+    --max-height: 700px;
+    max-height: 700px;
+  }
+  .md\:w-700 {
+    width: 700px;
+    flex: 0 700px;
+  }
+  .md\:mw-700 {
+    max-width: 700px;
+  }
+  .md\:mh-800 {
+    --max-height: 800px;
+    max-height: 800px;
+  }
+  .md\:w-800 {
+    width: 800px;
+    flex: 0 800px;
+  }
+  .md\:mw-800 {
+    max-width: 800px;
+  }
+  .md\:mh-900 {
+    --max-height: 900px;
+    max-height: 900px;
+  }
+  .md\:w-900 {
+    width: 900px;
+    flex: 0 900px;
+  }
+  .md\:mw-900 {
+    max-width: 900px;
+  }
+  .md\:mh-1000 {
+    --max-height: 1000px;
+    max-height: 1000px;
+  }
+  .md\:w-1000 {
+    width: 1000px;
+    flex: 0 1000px;
+  }
+  .md\:mw-1000 {
+    max-width: 1000px;
+  }
+  .md\:mh-1100 {
+    --max-height: 1100px;
+    max-height: 1100px;
+  }
+  .md\:w-1100 {
+    width: 1100px;
+    flex: 0 1100px;
+  }
+  .md\:mw-1100 {
+    max-width: 1100px;
+  }
+  .md\:mh-1200 {
+    --max-height: 1200px;
+    max-height: 1200px;
+  }
+  .md\:w-1200 {
+    width: 1200px;
+    flex: 0 1200px;
+  }
+  .md\:mw-1200 {
+    max-width: 1200px;
+  }
+}
+@container (min-width: 40em) {
+  .c-md\:h {
+    height: 100%;
+  }
+  .c-md\:vh {
+    height: 100svh;
+  }
+  .c-md\:w {
+    width: 100%;
+  }
+  .c-md\:vw {
+    width: 100dvw;
+  }
+  .c-md\:h-0 {
+    height: 0;
+  }
+  .c-md\:w-0 {
+    width: 0;
+  }
+  .c-md\:w-content {
+    width: max-content;
+  }
+  .c-md\:mh-100 {
+    --max-height: 100px;
+    max-height: 100px;
+  }
+  .c-md\:w-100 {
+    width: 100px;
+    flex: 0 100px;
+  }
+  .c-md\:mw-100 {
+    max-width: 100px;
+  }
+  .c-md\:mh-200 {
+    --max-height: 200px;
+    max-height: 200px;
+  }
+  .c-md\:w-200 {
+    width: 200px;
+    flex: 0 200px;
+  }
+  .c-md\:mw-200 {
+    max-width: 200px;
+  }
+  .c-md\:mh-300 {
+    --max-height: 300px;
+    max-height: 300px;
+  }
+  .c-md\:w-300 {
+    width: 300px;
+    flex: 0 300px;
+  }
+  .c-md\:mw-300 {
+    max-width: 300px;
+  }
+  .c-md\:mh-400 {
+    --max-height: 400px;
+    max-height: 400px;
+  }
+  .c-md\:w-400 {
+    width: 400px;
+    flex: 0 400px;
+  }
+  .c-md\:mw-400 {
+    max-width: 400px;
+  }
+  .c-md\:mh-500 {
+    --max-height: 500px;
+    max-height: 500px;
+  }
+  .c-md\:w-500 {
+    width: 500px;
+    flex: 0 500px;
+  }
+  .c-md\:mw-500 {
+    max-width: 500px;
+  }
+  .c-md\:mh-600 {
+    --max-height: 600px;
+    max-height: 600px;
+  }
+  .c-md\:w-600 {
+    width: 600px;
+    flex: 0 600px;
+  }
+  .c-md\:mw-600 {
+    max-width: 600px;
+  }
+  .c-md\:mh-700 {
+    --max-height: 700px;
+    max-height: 700px;
+  }
+  .c-md\:w-700 {
+    width: 700px;
+    flex: 0 700px;
+  }
+  .c-md\:mw-700 {
+    max-width: 700px;
+  }
+  .c-md\:mh-800 {
+    --max-height: 800px;
+    max-height: 800px;
+  }
+  .c-md\:w-800 {
+    width: 800px;
+    flex: 0 800px;
+  }
+  .c-md\:mw-800 {
+    max-width: 800px;
+  }
+  .c-md\:mh-900 {
+    --max-height: 900px;
+    max-height: 900px;
+  }
+  .c-md\:w-900 {
+    width: 900px;
+    flex: 0 900px;
+  }
+  .c-md\:mw-900 {
+    max-width: 900px;
+  }
+  .c-md\:mh-1000 {
+    --max-height: 1000px;
+    max-height: 1000px;
+  }
+  .c-md\:w-1000 {
+    width: 1000px;
+    flex: 0 1000px;
+  }
+  .c-md\:mw-1000 {
+    max-width: 1000px;
+  }
+  .c-md\:mh-1100 {
+    --max-height: 1100px;
+    max-height: 1100px;
+  }
+  .c-md\:w-1100 {
+    width: 1100px;
+    flex: 0 1100px;
+  }
+  .c-md\:mw-1100 {
+    max-width: 1100px;
+  }
+  .c-md\:mh-1200 {
+    --max-height: 1200px;
+    max-height: 1200px;
+  }
+  .c-md\:w-1200 {
+    width: 1200px;
+    flex: 0 1200px;
+  }
+  .c-md\:mw-1200 {
+    max-width: 1200px;
+  }
+}
+/*
+* Spry UI
+*/
+/*
+* Spry Utilities
+*/
 /*************************************
 General Utility Classes
 **************************************/
@@ -4484,7 +4981,7 @@ General Utility Classes
 
 .scale,
 .hover\:scale:hover {
-  scale: 1.05;
+  scale: 1.08;
 }
 
 /****************************************************************************
@@ -4559,18 +5056,18 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   hyphens: auto;
 }
 
-.inline {
-  display: inline;
-  width: auto;
-}
-
 .block {
   display: block;
   width: 100%;
 }
 
-.none {
-  display: none;
+.flex {
+  display: flex;
+}
+
+.inline {
+  display: inline;
+  width: auto;
 }
 
 .inline-block {
@@ -4583,8 +5080,12 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   width: auto;
 }
 
-.flex {
-  display: flex;
+.revert {
+  display: revert;
+}
+
+.none {
+  display: none;
 }
 
 .table {
@@ -4614,6 +5115,12 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.hide {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
 }
 
 .items-center {
@@ -4676,21 +5183,28 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   place-self: stretch;
 }
 
-.relative {
-  position: relative;
-}
-
-.absolute {
-  position: absolute;
-}
-
 .overlay {
+  width: max-content;
   position: relative;
   overflow: visible;
   z-index: 1;
 }
 
 .overlay > * {
+  position: absolute;
+  width: 100%;
+  min-width: min-content;
+}
+
+.overlay > .toggle {
+  position: relative;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
   position: absolute;
 }
 
@@ -4913,213 +5427,29 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   resize: none;
 }
 
-.h {
-  height: 100%;
-}
-
-.vh {
-  height: 100svh;
-}
-
-.w {
-  width: 100%;
-}
-
-.vw {
-  width: 100dvw;
-}
-
-.h-0 {
-  height: 0;
-}
-
-.w-0 {
-  width: 0;
-}
-
-.w-content {
-  width: max-content;
-}
-
 .from-top {
-  --toggle-transform: scale(1, .9) translate3d(0, -20px, 0);
+  --toggle-transform: translate3d(0, -20px, 0);
   --toggle-transform-origin: top;
 }
 
 .from-center {
-  --toggle-transform: scale(1, 0.4) translate3d(0, 0, 0);
+  --toggle-transform: scale(.8, .8) translate3d(0, 0, 0);
   --toggle-transform-origin: center;
 }
 
 .from-left {
-  --toggle-transform: scale(.9, 1) translate3d(-80px, 0, 0);
+  --toggle-transform: translate3d(-80px, 0, 0);
   --toggle-transform-origin: left;
 }
 
 .from-right {
-  --toggle-transform: scale(.9, 1) translate3d(80px, 0, 0);
+  --toggle-transform: translate3d(80px, 0, 0);
   --toggle-transform-origin: right;
 }
 
 .from-bottom {
-  --toggle-transform: scale(1, .9) translate3d(0, 80px, 0);
+  --toggle-transform: translate3d(0, 80px, 0);
   --toggle-transform-origin: bottom;
-}
-
-.mh-100 {
-  max-height: 100px;
-}
-
-.w-100 {
-  width: 100px;
-  flex: 0 100px;
-}
-
-.mw-100 {
-  max-width: 100px;
-}
-
-.mh-200 {
-  max-height: 200px;
-}
-
-.w-200 {
-  width: 200px;
-  flex: 0 200px;
-}
-
-.mw-200 {
-  max-width: 200px;
-}
-
-.mh-300 {
-  max-height: 300px;
-}
-
-.w-300 {
-  width: 300px;
-  flex: 0 300px;
-}
-
-.mw-300 {
-  max-width: 300px;
-}
-
-.mh-400 {
-  max-height: 400px;
-}
-
-.w-400 {
-  width: 400px;
-  flex: 0 400px;
-}
-
-.mw-400 {
-  max-width: 400px;
-}
-
-.mh-500 {
-  max-height: 500px;
-}
-
-.w-500 {
-  width: 500px;
-  flex: 0 500px;
-}
-
-.mw-500 {
-  max-width: 500px;
-}
-
-.mh-600 {
-  max-height: 600px;
-}
-
-.w-600 {
-  width: 600px;
-  flex: 0 600px;
-}
-
-.mw-600 {
-  max-width: 600px;
-}
-
-.mh-700 {
-  max-height: 700px;
-}
-
-.w-700 {
-  width: 700px;
-  flex: 0 700px;
-}
-
-.mw-700 {
-  max-width: 700px;
-}
-
-.mh-800 {
-  max-height: 800px;
-}
-
-.w-800 {
-  width: 800px;
-  flex: 0 800px;
-}
-
-.mw-800 {
-  max-width: 800px;
-}
-
-.mh-900 {
-  max-height: 900px;
-}
-
-.w-900 {
-  width: 900px;
-  flex: 0 900px;
-}
-
-.mw-900 {
-  max-width: 900px;
-}
-
-.mh-1000 {
-  max-height: 1000px;
-}
-
-.w-1000 {
-  width: 1000px;
-  flex: 0 1000px;
-}
-
-.mw-1000 {
-  max-width: 1000px;
-}
-
-.mh-1100 {
-  max-height: 1100px;
-}
-
-.w-1100 {
-  width: 1100px;
-  flex: 0 1100px;
-}
-
-.mw-1100 {
-  max-width: 1100px;
-}
-
-.mh-1200 {
-  max-height: 1200px;
-}
-
-.w-1200 {
-  width: 1200px;
-  flex: 0 1200px;
-}
-
-.mw-1200 {
-  max-width: 1200px;
 }
 
 .o-0 {
@@ -5192,6 +5522,31 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 .xxs {
   font-size: 50%;
+}
+
+:has(:checked) > .checked\:block {
+  display: block;
+}
+:has(:checked) > .checked\:flex {
+  display: flex;
+}
+:has(:checked) > .checked\:grid {
+  display: grid;
+}
+:has(:checked) > .checked\:inline {
+  display: inline;
+}
+:has(:checked) > .checked\:inline-block {
+  display: inline-block;
+}
+:has(:checked) > .checked\:inline-flex {
+  display: inline-flex;
+}
+:has(:checked) > .checked\:revert {
+  display: revert;
+}
+:has(:checked) > .checked\:none {
+  display: none;
 }
 
 .hover\:o-0:hover {
@@ -5295,16 +5650,16 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
     word-break: break-word;
     hyphens: auto;
   }
-  .md\:inline {
-    display: inline;
-    width: auto;
-  }
   .md\:block {
     display: block;
     width: 100%;
   }
-  .md\:none {
-    display: none;
+  .md\:flex {
+    display: flex;
+  }
+  .md\:inline {
+    display: inline;
+    width: auto;
   }
   .md\:inline-block {
     display: inline-block;
@@ -5314,8 +5669,11 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
     display: inline-flex;
     width: auto;
   }
-  .md\:flex {
-    display: flex;
+  .md\:revert {
+    display: revert;
+  }
+  .md\:none {
+    display: none;
   }
   .md\:table {
     display: table;
@@ -5338,6 +5696,11 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   }
   .md\:flex-wrap {
     flex-wrap: wrap;
+  }
+  .md\:hide {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
   }
   .md\:items-center {
     place-items: center;
@@ -5384,18 +5747,24 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   .md\:self-stretch {
     place-self: stretch;
   }
-  .md\:relative {
-    position: relative;
-  }
-  .md\:absolute {
-    position: absolute;
-  }
   .md\:overlay {
+    width: max-content;
     position: relative;
     overflow: visible;
     z-index: 1;
   }
   .md\:overlay > * {
+    position: absolute;
+    width: 100%;
+    min-width: min-content;
+  }
+  .md\:overlay > .toggle {
+    position: relative;
+  }
+  .md\:relative {
+    position: relative;
+  }
+  .md\:absolute {
     position: absolute;
   }
   .md\:sticky {
@@ -5567,166 +5936,25 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   .md\:resize-none {
     resize: none;
   }
-  .md\:h {
-    height: 100%;
-  }
-  .md\:vh {
-    height: 100svh;
-  }
-  .md\:w {
-    width: 100%;
-  }
-  .md\:vw {
-    width: 100dvw;
-  }
-  .md\:h-0 {
-    height: 0;
-  }
-  .md\:w-0 {
-    width: 0;
-  }
-  .md\:w-content {
-    width: max-content;
-  }
   .md\:from-top {
-    --toggle-transform: scale(1, .9) translate3d(0, -20px, 0);
+    --toggle-transform: translate3d(0, -20px, 0);
     --toggle-transform-origin: top;
   }
   .md\:from-center {
-    --toggle-transform: scale(1, 0.4) translate3d(0, 0, 0);
+    --toggle-transform: scale(.8, .8) translate3d(0, 0, 0);
     --toggle-transform-origin: center;
   }
   .md\:from-left {
-    --toggle-transform: scale(.9, 1) translate3d(-80px, 0, 0);
+    --toggle-transform: translate3d(-80px, 0, 0);
     --toggle-transform-origin: left;
   }
   .md\:from-right {
-    --toggle-transform: scale(.9, 1) translate3d(80px, 0, 0);
+    --toggle-transform: translate3d(80px, 0, 0);
     --toggle-transform-origin: right;
   }
   .md\:from-bottom {
-    --toggle-transform: scale(1, .9) translate3d(0, 80px, 0);
+    --toggle-transform: translate3d(0, 80px, 0);
     --toggle-transform-origin: bottom;
-  }
-  .md\:mh-100 {
-    max-height: 100px;
-  }
-  .md\:w-100 {
-    width: 100px;
-    flex: 0 100px;
-  }
-  .md\:mw-100 {
-    max-width: 100px;
-  }
-  .md\:mh-200 {
-    max-height: 200px;
-  }
-  .md\:w-200 {
-    width: 200px;
-    flex: 0 200px;
-  }
-  .md\:mw-200 {
-    max-width: 200px;
-  }
-  .md\:mh-300 {
-    max-height: 300px;
-  }
-  .md\:w-300 {
-    width: 300px;
-    flex: 0 300px;
-  }
-  .md\:mw-300 {
-    max-width: 300px;
-  }
-  .md\:mh-400 {
-    max-height: 400px;
-  }
-  .md\:w-400 {
-    width: 400px;
-    flex: 0 400px;
-  }
-  .md\:mw-400 {
-    max-width: 400px;
-  }
-  .md\:mh-500 {
-    max-height: 500px;
-  }
-  .md\:w-500 {
-    width: 500px;
-    flex: 0 500px;
-  }
-  .md\:mw-500 {
-    max-width: 500px;
-  }
-  .md\:mh-600 {
-    max-height: 600px;
-  }
-  .md\:w-600 {
-    width: 600px;
-    flex: 0 600px;
-  }
-  .md\:mw-600 {
-    max-width: 600px;
-  }
-  .md\:mh-700 {
-    max-height: 700px;
-  }
-  .md\:w-700 {
-    width: 700px;
-    flex: 0 700px;
-  }
-  .md\:mw-700 {
-    max-width: 700px;
-  }
-  .md\:mh-800 {
-    max-height: 800px;
-  }
-  .md\:w-800 {
-    width: 800px;
-    flex: 0 800px;
-  }
-  .md\:mw-800 {
-    max-width: 800px;
-  }
-  .md\:mh-900 {
-    max-height: 900px;
-  }
-  .md\:w-900 {
-    width: 900px;
-    flex: 0 900px;
-  }
-  .md\:mw-900 {
-    max-width: 900px;
-  }
-  .md\:mh-1000 {
-    max-height: 1000px;
-  }
-  .md\:w-1000 {
-    width: 1000px;
-    flex: 0 1000px;
-  }
-  .md\:mw-1000 {
-    max-width: 1000px;
-  }
-  .md\:mh-1100 {
-    max-height: 1100px;
-  }
-  .md\:w-1100 {
-    width: 1100px;
-    flex: 0 1100px;
-  }
-  .md\:mw-1100 {
-    max-width: 1100px;
-  }
-  .md\:mh-1200 {
-    max-height: 1200px;
-  }
-  .md\:w-1200 {
-    width: 1200px;
-    flex: 0 1200px;
-  }
-  .md\:mw-1200 {
-    max-width: 1200px;
   }
   .md\:o-0 {
     opacity: 0;
@@ -5840,16 +6068,16 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
     word-break: break-word;
     hyphens: auto;
   }
-  .c-md\:inline {
-    display: inline;
-    width: auto;
-  }
   .c-md\:block {
     display: block;
     width: 100%;
   }
-  .c-md\:none {
-    display: none;
+  .c-md\:flex {
+    display: flex;
+  }
+  .c-md\:inline {
+    display: inline;
+    width: auto;
   }
   .c-md\:inline-block {
     display: inline-block;
@@ -5859,8 +6087,11 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
     display: inline-flex;
     width: auto;
   }
-  .c-md\:flex {
-    display: flex;
+  .c-md\:revert {
+    display: revert;
+  }
+  .c-md\:none {
+    display: none;
   }
   .c-md\:table {
     display: table;
@@ -5883,6 +6114,11 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   }
   .c-md\:flex-wrap {
     flex-wrap: wrap;
+  }
+  .c-md\:hide {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
   }
   .c-md\:items-center {
     place-items: center;
@@ -5929,18 +6165,24 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   .c-md\:self-stretch {
     place-self: stretch;
   }
-  .c-md\:relative {
-    position: relative;
-  }
-  .c-md\:absolute {
-    position: absolute;
-  }
   .c-md\:overlay {
+    width: max-content;
     position: relative;
     overflow: visible;
     z-index: 1;
   }
   .c-md\:overlay > * {
+    position: absolute;
+    width: 100%;
+    min-width: min-content;
+  }
+  .c-md\:overlay > .toggle {
+    position: relative;
+  }
+  .c-md\:relative {
+    position: relative;
+  }
+  .c-md\:absolute {
     position: absolute;
   }
   .c-md\:sticky {
@@ -6112,166 +6354,25 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
   .c-md\:resize-none {
     resize: none;
   }
-  .c-md\:h {
-    height: 100%;
-  }
-  .c-md\:vh {
-    height: 100svh;
-  }
-  .c-md\:w {
-    width: 100%;
-  }
-  .c-md\:vw {
-    width: 100dvw;
-  }
-  .c-md\:h-0 {
-    height: 0;
-  }
-  .c-md\:w-0 {
-    width: 0;
-  }
-  .c-md\:w-content {
-    width: max-content;
-  }
   .c-md\:from-top {
-    --toggle-transform: scale(1, .9) translate3d(0, -20px, 0);
+    --toggle-transform: translate3d(0, -20px, 0);
     --toggle-transform-origin: top;
   }
   .c-md\:from-center {
-    --toggle-transform: scale(1, 0.4) translate3d(0, 0, 0);
+    --toggle-transform: scale(.8, .8) translate3d(0, 0, 0);
     --toggle-transform-origin: center;
   }
   .c-md\:from-left {
-    --toggle-transform: scale(.9, 1) translate3d(-80px, 0, 0);
+    --toggle-transform: translate3d(-80px, 0, 0);
     --toggle-transform-origin: left;
   }
   .c-md\:from-right {
-    --toggle-transform: scale(.9, 1) translate3d(80px, 0, 0);
+    --toggle-transform: translate3d(80px, 0, 0);
     --toggle-transform-origin: right;
   }
   .c-md\:from-bottom {
-    --toggle-transform: scale(1, .9) translate3d(0, 80px, 0);
+    --toggle-transform: translate3d(0, 80px, 0);
     --toggle-transform-origin: bottom;
-  }
-  .c-md\:mh-100 {
-    max-height: 100px;
-  }
-  .c-md\:w-100 {
-    width: 100px;
-    flex: 0 100px;
-  }
-  .c-md\:mw-100 {
-    max-width: 100px;
-  }
-  .c-md\:mh-200 {
-    max-height: 200px;
-  }
-  .c-md\:w-200 {
-    width: 200px;
-    flex: 0 200px;
-  }
-  .c-md\:mw-200 {
-    max-width: 200px;
-  }
-  .c-md\:mh-300 {
-    max-height: 300px;
-  }
-  .c-md\:w-300 {
-    width: 300px;
-    flex: 0 300px;
-  }
-  .c-md\:mw-300 {
-    max-width: 300px;
-  }
-  .c-md\:mh-400 {
-    max-height: 400px;
-  }
-  .c-md\:w-400 {
-    width: 400px;
-    flex: 0 400px;
-  }
-  .c-md\:mw-400 {
-    max-width: 400px;
-  }
-  .c-md\:mh-500 {
-    max-height: 500px;
-  }
-  .c-md\:w-500 {
-    width: 500px;
-    flex: 0 500px;
-  }
-  .c-md\:mw-500 {
-    max-width: 500px;
-  }
-  .c-md\:mh-600 {
-    max-height: 600px;
-  }
-  .c-md\:w-600 {
-    width: 600px;
-    flex: 0 600px;
-  }
-  .c-md\:mw-600 {
-    max-width: 600px;
-  }
-  .c-md\:mh-700 {
-    max-height: 700px;
-  }
-  .c-md\:w-700 {
-    width: 700px;
-    flex: 0 700px;
-  }
-  .c-md\:mw-700 {
-    max-width: 700px;
-  }
-  .c-md\:mh-800 {
-    max-height: 800px;
-  }
-  .c-md\:w-800 {
-    width: 800px;
-    flex: 0 800px;
-  }
-  .c-md\:mw-800 {
-    max-width: 800px;
-  }
-  .c-md\:mh-900 {
-    max-height: 900px;
-  }
-  .c-md\:w-900 {
-    width: 900px;
-    flex: 0 900px;
-  }
-  .c-md\:mw-900 {
-    max-width: 900px;
-  }
-  .c-md\:mh-1000 {
-    max-height: 1000px;
-  }
-  .c-md\:w-1000 {
-    width: 1000px;
-    flex: 0 1000px;
-  }
-  .c-md\:mw-1000 {
-    max-width: 1000px;
-  }
-  .c-md\:mh-1100 {
-    max-height: 1100px;
-  }
-  .c-md\:w-1100 {
-    width: 1100px;
-    flex: 0 1100px;
-  }
-  .c-md\:mw-1100 {
-    max-width: 1100px;
-  }
-  .c-md\:mh-1200 {
-    max-height: 1200px;
-  }
-  .c-md\:w-1200 {
-    width: 1200px;
-    flex: 0 1200px;
-  }
-  .c-md\:mw-1200 {
-    max-width: 1200px;
   }
   .c-md\:o-0 {
     opacity: 0;
@@ -6825,18 +6926,18 @@ hr,
 }
 .loading::after {
   content: "";
-  animation: spinner 0.8s ease infinite;
-  border: 0.15em solid transparent;
+  animation: spinner calc(var(--ease-speed) * 2) ease infinite;
+  border: 0.16em solid transparent;
   border-color: hsl(from var(--text-color) h s var(--clr-l, l)/var(--clr-a, 100%)) hsl(from var(--text-color) h s var(--clr-l, l)/var(--clr-a, 100%)) transparent transparent;
   border-radius: 50%;
   box-sizing: border-box;
-  height: 1.3em;
-  width: 1.3em;
+  height: 1.1em;
+  width: 1.1em;
   inset: 0;
   margin: auto;
   pointer-events: none;
   position: absolute;
-  transition: opacity 0.3s ease-in-out 0.1s;
+  transition: opacity var(--ease-speed) ease-in-out 0.1s;
 }
 .loading:is(input, select, textarea, button, .button, a) {
   color: transparent;

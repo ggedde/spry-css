@@ -3,13 +3,14 @@
 */
 
 @use "variables";
+@use "sass:map";
 
 /// Min Width Media Query
 /// @param {String | Unit} $min - Minimum Value. String must be included in $breakpoints.
 /// @output - Contents
 @mixin min($min) {
 	@if type-of($min)==string {
-		@media only screen and (min-width: map-get(variables.$breakpoints, $min)) {
+		@media only screen and (min-width: map.get(variables.$breakpoints, $min)) {
 			@content;
 		}
 	}
@@ -26,7 +27,7 @@
 /// @output - Contents
 @mixin max($max) {
 	@if type-of($max)==string {
-		@media only screen and (max-width: map-get(variables.$breakpoints, $max)) {
+		@media only screen and (max-width: map.get(variables.$breakpoints, $max)) {
 			@content;
 		}
 	}
@@ -45,13 +46,13 @@
 @mixin in($min, $max) {
 	@if type-of($min)==string {
 		@if type-of($max)==string {
-			@media only screen and (min-width: map-get(variables.$breakpoints, $min)) and (max-width: map-get(variables.$breakpoints, $max)) {
+			@media only screen and (min-width: map.get(variables.$breakpoints, $min)) and (max-width: map.get(variables.$breakpoints, $max)) {
 				@content;
 			}
 		}
 
 		@else {
-			@media only screen and (min-width: map-get(variables.$breakpoints, $min)) and (max-width: $max) {
+			@media only screen and (min-width: map.get(variables.$breakpoints, $min)) and (max-width: $max) {
 				@content;
 			}
 		}
@@ -59,7 +60,7 @@
 
 	@else {
 		@if type-of($max)==string {
-			@media only screen and (min-width: $min) and (max-width: map-get(variables.$breakpoints, $max)) {
+			@media only screen and (min-width: $min) and (max-width: map.get(variables.$breakpoints, $max)) {
 				@content;
 			}
 		}
@@ -75,53 +76,47 @@
 /// Default Shut State
 /// @output - Contents
 @mixin closed {
-	max-height      : 0;
-	opacity         : 0;
-	pointer-events  : none;
-	// overflow        : hidden;
-	transform       : var(--toggle-transform);
-	transform-origin: var(--toggle-transform-origin);
-	transition      :
-		transform calc(var(--ease-speed) / 1.5),
-		opacity calc(var(--ease-speed) / 1.5),
-		max-height calc(var(--ease-speed) / 2);
+	max-height                : 0;
+	opacity                   : 0;
+	pointer-events            : none;
+	overflow                  : hidden;
+	transform                 : var(--toggle-transform);
+	transform-origin          : var(--toggle-transform-origin);
+	transition-property       : max-height, transform, opacity;
+	transition-duration       : var(--ease-speed);
 	transition-timing-function: var(--ease);
-	transition-delay          : .1s;
 	z-index                   : 1;
+	width                     : auto;
 }
 
 /// Opened State
 /// @output - Contents
 @mixin open {
-	--toggle-transform-origin : top;
-	opacity                   : 1;
-	max-height                : 1900px;
-	transform                 : translate3d(0,0,0);
-	transition-timing-function: var(--ease);
-	pointer-events            : inherit;
-	z-index                   : 1;
+	--toggle-transform-origin    : top;
+	opacity                      : 1;
+	max-height                   : var(--max-height);
+	transform                    : translate3d(0, 0, 0);
+	// transition-timing-function: var(--ease);
+	// transition-duration       : calc(var(--ease-speed) / .6);
+	pointer-events               : inherit;
 }
 
 /// Default Collapse State
 /// @output - Contents
-@mixin inner-closed {
-	max-height        : none;
-	display           : grid;
-	opacity           : 0;
-	grid-template-rows: 0fr;
-	pointer-events    : none;
-	transform         : var(--toggle-transform);
-	transform-origin  : var(--toggle-transform-origin);
-	transition        :
-		grid-template-rows var(--ease-speed),
-		transform var(--ease-speed),
-		opacity var(--ease-speed); // Out
+@mixin closed-inner {
+	max-height                : none;
+	opacity                   : 0;
+	grid-template-rows        : 0fr;
+	pointer-events            : none;
+	transform                 : var(--toggle-transform);
+	transform-origin          : var(--toggle-transform-origin);
+	transition-property       : grid-template-rows, transform, opacity;
+	transition-duration       : var(--ease-speed);
 	transition-timing-function: var(--ease);
-	transition-delay          : .1s;
+	z-index                   : 1;
 
-	>* {
-		display: block;
-		width  : 100%;
+	&[class] {
+		display: grid;
 	}
 }
 
@@ -129,9 +124,9 @@
 
 /// Opened State
 /// @output - Contents
-@mixin inner-open {
+@mixin open-inner {
 	opacity           : 1;
 	grid-template-rows: 1fr;
-	transform         : translate3d(0,0,0);
+	transform         : translate3d(0, 0, 0);
 	pointer-events    : inherit;
 }

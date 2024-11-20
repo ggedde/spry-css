@@ -195,7 +195,7 @@ General Utility Classes
 
 .scale,
 .hover\:scale:hover {
-	scale: 1.05
+	scale: 1.08
 }
 
 /****************************************************************************
@@ -278,18 +278,18 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		hyphens      : auto;
 	}
 
-	#{$prefix}inline {
-		display: inline;
-		width  : auto
-	}
-
 	#{$prefix}block {
 		display: block;
 		width  : 100%
 	}
 
-	#{$prefix}none {
-		display: none
+	#{$prefix}flex {
+		display: flex
+	}
+
+	#{$prefix}inline {
+		display: inline;
+		width  : auto
 	}
 
 	#{$prefix}inline-block {
@@ -302,8 +302,12 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		width  : auto
 	}
 
-	#{$prefix}flex {
-		display: flex
+	#{$prefix}revert {
+		display: revert
+	}
+
+	#{$prefix}none {
+		display: none
 	}
 
 	#{$prefix}table {
@@ -333,6 +337,12 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 	#{$prefix}flex-wrap {
 		flex-wrap: wrap
+	}
+
+	#{$prefix}hide {
+		opacity: 0;
+		position: absolute;
+		pointer-events: none;
 	}
 
 	#{$prefix}items-center {
@@ -395,21 +405,27 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		place-self: stretch
 	}
 
-	#{$prefix}relative {
-		position: relative
-	}
-
-	#{$prefix}absolute {
-		position: absolute
-	}
-
 	#{$prefix}overlay {
+		width: max-content;
 		position: relative;
 		overflow: visible;
 		z-index : 1
 	}
 
 	#{$prefix}overlay>* {
+		position: absolute;
+		width: 100%;
+		min-width: min-content;
+	}
+	#{$prefix}overlay>.toggle {
+		position: relative;
+	}
+
+	#{$prefix}relative {
+		position: relative
+	}
+
+	#{$prefix}absolute {
 		position: absolute
 	}
 
@@ -632,72 +648,29 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		resize: none
 	}
 
-	#{$prefix}h {
-		height: 100%
-	}
-
-	#{$prefix}vh {
-		height: 100svh
-	}
-
-	#{$prefix}w {
-		width: 100%
-	}
-
-	#{$prefix}vw {
-		width: 100dvw
-	}
-
-	#{$prefix}h-0 {
-		height: 0
-	}
-
-	#{$prefix}w-0 {
-		width: 0
-	}
-
-	#{$prefix}w-content {
-		width: max-content;
-	}
-
 	#{$prefix}from-top {
-		--toggle-transform: scale(1, .9) translate3d(0, -20px, 0);
+		--toggle-transform: translate3d(0, -20px, 0);
 		--toggle-transform-origin: top;
 	}
 
 	#{$prefix}from-center {
-		--toggle-transform       : scale(1, 0.4) translate3d(0, 0, 0);
+		--toggle-transform       : scale(.8, .8) translate3d(0, 0, 0);
 		--toggle-transform-origin: center;
 	}
 
 	#{$prefix}from-left {
-		--toggle-transform       : scale(.9, 1) translate3d(-80px, 0, 0);
+		--toggle-transform       : translate3d(-80px, 0, 0);
 		--toggle-transform-origin: left;
 	}
 
 	#{$prefix}from-right {
-		--toggle-transform       : scale(.9, 1) translate3d(80px, 0, 0);
+		--toggle-transform       : translate3d(80px, 0, 0);
 		--toggle-transform-origin: right;
 	}
 
 	#{$prefix}from-bottom {
-		--toggle-transform       : scale(1, .9) translate3d(0, 80px, 0);
+		--toggle-transform       : translate3d(0, 80px, 0);
 		--toggle-transform-origin: bottom;
-	}
-
-	@for $i from 1 through 12 {
-		#{$prefix}mh-#{$i}00 {
-			max-height: #{$i}00px
-		}
-
-		#{$prefix}w-#{$i}00 {
-			width: #{$i}00px;
-			flex : 0 #{$i}00px
-		}
-
-		#{$prefix}mw-#{$i}00 {
-			max-width: #{$i}00px
-		}
 	}
 
 	#{$prefix}o-0 {
@@ -719,6 +692,34 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 }
 
 @include utility-styles('.', 0);
+
+// Checked Utilities
+:has(:checked) > .checked\: {
+	&block {
+		display: block;
+	}
+	&flex {
+		display: flex;
+	}
+	&grid {
+		display: grid;
+	}
+	&inline {
+		display: inline;
+	}
+	&inline-block {
+		display: inline-block;
+	}
+	&inline-flex {
+		display: inline-flex;
+	}
+	&revert {
+		display: revert;
+	}
+	&none {
+		display: none;
+	}
+}
 
 .hover\:o-0:hover {
 	opacity: 0

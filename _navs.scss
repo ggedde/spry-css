@@ -4,21 +4,25 @@
 @use "variables";
 @use "extends";
 
-:is(nav,menu) {
+:is(nav, menu) {
 	width: 100%;
+
 	a {
 		@extend %ui;
 		justify-content: start;
 	}
-	> a {
+
+	>a {
 		width: auto;
 	}
+
 	li,
 	ul,
 	menu {
 		position: relative;
 	}
-	> ul {
+
+	>ul {
 		display: contents;
 	}
 }
@@ -28,36 +32,40 @@ nav menu,
 menu ul,
 menu menu {
 	background-color: inherit;
+	overflow: visible;
 }
 
 nav ul ul,
 menu ul,
 menu menu {
 	width: 100%;
-	> li {
+
+	>li {
 		width: 100%;
 	}
 }
 
-@mixin hoveropen-styles($prefix) {
-	#{$prefix}hover\:open > ul > li > ul,
-	#{$prefix}hover\:open > li > ul {
-		position: absolute;
-		top: 100%;
+@mixin hoverOpen-styles($prefix) {
+
+	#{$prefix}hover\:open>ul>li>ul,
+	#{$prefix}hover\:open>li>ul {
+		position : absolute;
+		top      : 100%;
 		min-width: calc(100% + 1px);
 		max-width: 260px;
-		width: max-content;
+		width    : max-content;
 	}
 }
 
-@include hoveropen-styles('.');
+@include hoverOpen-styles('.');
 
 @each $breakpoint,
 $breakpoint_width in variables.$breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
-		@include hoveropen-styles('.#{$breakpoint}\\:');
+		@include hoverOpen-styles('.#{$breakpoint}\\:');
 	}
+
 	@container (min-width: #{$breakpoint_width}) {
-		@include hoveropen-styles('.c-#{$breakpoint}\\:');
+		@include hoverOpen-styles('.c-#{$breakpoint}\\:');
 	}
 }

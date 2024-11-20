@@ -24,10 +24,6 @@
 	&:is(:hover, :focus, :focus-within, .active):not(:active) {
 		@extend %ui-hover;
 	}
-
-	>svg {
-		@extend %ui-icon;
-	}
 }
 
 :is(button, .button, [type=submit], [type=reset]).link,

@@ -3,6 +3,8 @@
 */
 @use "variables";
 @use "extends";
+@use "sass:map";
+@use 'sass:list';
 
 .column,
 .row,
@@ -10,8 +12,8 @@
 .slider-slides,
 [class^=grid-],
 [class*=\ grid-] {
-	--gapx        : #{map-get(variables.$gaps, 'default')};
-	--gapy        : #{map-get(variables.$gaps, 'default')};
+	--gapx        : #{map.get(variables.$gaps, 'default')};
+	--gapy        : #{map.get(variables.$gaps, 'default')};
 	--span        : 1;
 	--cols        : 1;
 	gap           : var(--gapy) var(--gapx);
@@ -39,8 +41,8 @@
     grid: none / auto-flow minmax(0, 1fr);
 }
 
-@if (length(variables.$breakpoints) > 0) {
-	@media screen and (max-width: #{nth(nth(variables.$breakpoints, 1), 2)}) {
+@if (list.length(variables.$breakpoints) > 0) {
+	@media screen and (max-width: #{list.nth(list.nth(variables.$breakpoints, 1), 2)}) {
 		.row>* {
 			flex: 100%;
 			min-width: 100%;
@@ -51,8 +53,8 @@
 	}
 }
 
-@if (length(variables.$breakpoints) > 0) {
-	@container (max-width: #{nth(nth(variables.$breakpoints, 1), 2)}) {
+@if (list.length(variables.$breakpoints) > 0) {
+	@container (max-width: #{list.nth(list.nth(variables.$breakpoints, 1), 2)}) {
 		.row>* {
 			flex: 100%;
 			min-width: 100%;
@@ -144,8 +146,8 @@
 	#{$prefix}column,
 	#{$prefix}row,
 	#{$prefix}grid {
-		--gapx        : #{map-get(variables.$gaps, 'default')};
-		--gapy        : #{map-get(variables.$gaps, 'default')};
+		--gapx        : #{map.get(variables.$gaps, 'default')};
+		--gapy        : #{map.get(variables.$gaps, 'default')};
 		gap           : var(--gapy) var(--gapx);
 	}
 
@@ -207,8 +209,8 @@
 		.grid,
 		[class^=grid-],
 		[class*=\ grid-] {
-			--gapx: #{map-get(variables.$gaps, $breakpoint)};
-            --gapy: #{map-get(variables.$gaps, $breakpoint)};
+			--gapx: #{map.get(variables.$gaps, $breakpoint)};
+            --gapy: #{map.get(variables.$gaps, $breakpoint)};
 		}
 		@include grid-query-styles('.#{$breakpoint}\\:', '#{$breakpoint}\\:');
 	}

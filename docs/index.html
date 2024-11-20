@@ -56,6 +56,7 @@
                         </li>
                         <li><a href="#borders">Borders</a></li>
                         <li><a href="#breakpoints">Breakpoints</a></li>
+                        <li><a href="#checked">Checked</a></li>
                         <li><a href="#collapse">Collapse</a></li>
                         <li><a href="#gaps">Gaps</a></li>
                         <li><a href="#grid">Grid</a></li>
@@ -945,13 +946,123 @@ $borders: (
 
             </section>
 
+            <!------------------------------------
+            -------    Checked UTILITIES    -------
+            ------------------------------------->
+            <section id="checked" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                    <i class="icon mr-1">
+                        <svg viewBox="0 0 24 24"><title>checkbox-outline</title><path d="M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,5V19H5V5H19M10,17L6,13L7.41,11.58L10,14.17L16.59,7.58L18,9" /></svg>
+                    </i>
+                    Checked Classes
+                </h2>
 
+                <h5>
+                    Checked Classes apply to the siblings of an element. Like <code class="color-grey">:has(:checked) > .checked:none</code>.
+                    <br>This allows you to swap labels or elements based on the state of a checked or unchecked sibling.
+                </h5>
 
+                <p class="mt-2 mb-0">Example:</p>
+                <label class="mt-0">
+                    <input type="checkbox">
+                    <span class="none checked:revert">On</span>
+                    <span class="checked:none">Off</span>
+                </label>
 
+                <pre><code class="language-html">&lt;label&gt;
+    &lt;input type="checkbox"&gt;
+    &lt;span class="none checked:revert"&gt;On&lt;/span&gt;
+    &lt;span class="checked:none"&gt;Off&lt;/span&gt;
+&lt;/label&gt;
+</code></pre>
 
+                <table class="mb-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><h4>Checked Utility Classes</h4></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="md:pl-2"><code class="color-grey">checked:</code><code class="color-primary">block</code></td>
+                            <td>display: block</td>
+                        </tr>
+                        <tr>
+                            <td class="md:pl-2"><code class="color-grey">checked:</code><code class="color-primary">flex</code></td>
+                            <td>display: flex</td>
+                        </tr>
+                        <tr>
+                            <td class="md:pl-2"><code class="color-grey">checked:</code><code class="color-primary">inline</code></td>
+                            <td>display: inline; width: auto</td>
+                        </tr>
+                        <tr>
+                            <td class="md:pl-2"><code class="color-grey">checked:</code><code class="color-primary">inline-block</code></td>
+                            <td>display: inline-block; width: auto</td>
+                        </tr>
+                        <tr>
+                            <td class="md:pl-2"><code class="color-grey">checked:</code><code class="color-primary">inline-flex</code></td>
+                            <td>display: inline-flex; width: auto</td>
+                        </tr>
+                        <tr>
+                            <td class="md:pl-2"><code class="color-grey">checked:</code><code class="color-primary">revert</code></td>
+                            <td>display: revert</td>
+                        </tr>
+                        <tr>
+                            <td class="md:pl-2"><code class="color-grey">checked:</code><code class="color-primary">none</code></td>
+                            <td>display: none</td>
+                        </tr>
+                    </tbody>
+                </table>
 
+                <div class="show-code mt-4" data-title="Checkboxes">
+                    <label>
+                        <input type="checkbox">
+                        <span class="none checked:revert">Checked</span>
+                        <span class="checked:none">Unchecked</span>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <span class="none checked:revert">Checked</span>
+                        <span class="checked:none">Unchecked</span>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <span class="none checked:revert">Checked</span>
+                        <span class="checked:none">Unchecked</span>
+                    </label>
+                </div>
 
+                <div class="show-code mt-4" data-title="Radios">
+                    <label>
+                        <input name="state-radio" type="radio">
+                        <span class="none checked:revert">Selected</span>
+                        <span class="checked:none">Unselected</span>
+                    </label>
+                    <label>
+                        <input name="state-radio" type="radio">
+                        <span class="none checked:revert">Selected</span>
+                        <span class="checked:none">Unselected</span>
+                    </label>
+                    <label>
+                        <input name="state-radio" type="radio">
+                        <span class="none checked:revert">Selected</span>
+                        <span class="checked:none">Unselected</span>
+                    </label>
+                </div>
 
+                <div class="show-code mt-4" data-title="Label as Button">
+                    <label class="button">
+                        <input class="hide" type="checkbox">
+
+                        <svg class="none checked:revert" viewBox="0 0 24 24"><path d="M19 19H5V5h10V3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8h-2m-11.09-.92L6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09z"></path></svg>
+                        <svg class="checked:none" viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v14H5V5h14z"></path></svg>
+                        
+                        <span class="none checked:revert">Selected</span>
+                        <span class="checked:none">Unselected</span>
+                    </label>
+                </div>
+
+            </section>
 
             <!------------------------------------
             ------------    COLLAPSE    ----------
@@ -1091,14 +1202,16 @@ $borders: (
     
                 <div class="show-code" data-title="Collapse container">
                     <div class="language-select" data-language="html">
-                        <label class="button toggle">
-                            <span class="label-active">Toggle Closed</span>
-                            <span class="label-inactive">Toggle Open</span>
-                            <input type="checkbox" />
-                        </label>
-                        <div class="collapse">
-                            <p class="pt-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                            <p>Sed diam nonumy eirm Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                        <div class="container">
+                            <label class="button toggle">
+                                <span class="none checked:inline">Toggle Closed</span>
+                                <span class="checked:none">Toggle Open</span>
+                                <input type="checkbox" />
+                            </label>
+                            <div class="collapse absolute bg-primary">
+                                <p class="pt-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                                <p>Sed diam nonumy eirm Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                            </div>
                         </div>
 
                         <div class="note p-2 mb-n2 mx-n2 mt-2 bg-faint">
@@ -1108,8 +1221,8 @@ $borders: (
 
                     <div class="language-select" data-language="js">
                         <button class="toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">
-                            <span class="label-active">Toggle Closed</span>
-                            <span class="label-inactive">Toggle Open</span>
+                            <span class="none checked:revert">Toggle Closed</span>
+                            <span class="checked:none">Toggle Open</span>
                         </button>
                         <div class="collapse">
                             <p class="pt-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
@@ -1120,17 +1233,96 @@ $borders: (
 
                 <div class="show-code" data-title="Collapse Overlay">
                     <div class="language-select" data-language="html">
-                        <label class="button toggle">
-                            <span class="label-active">Toggle Closed</span>
-                            <span class="label-inactive">Toggle Open</span>
-                            <input type="checkbox" />
-                        </label>
-                        <div class="collapse overlay">
-                            <div class="p-3 bg-faint">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                                <p>Sed diam nonumy eirm Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                        <div class="overlay">
+                            <label class="relative button toggle">
+                                <span class="none checked:revert">Toggle Closed</span>
+                                <span class="checked:none">Toggle Open</span>
+                                <input type="checkbox" />
+                            </label>
+                            <div class="collapse mh-200">
+                                <div class="bg-faint p-2">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                                    <p>Sed diam nonumy eirm Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                </div>
                             </div>
                         </div>
+
+                        <br>asdfasdf
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                        <span class="relative">
+                            <label class="button link toggle">
+                                <span>Toggle</span>
+                                <input type="checkbox" />
+                                <span class="icon">
+                                    <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+                                    <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+                                </span>
+                            </label>
+                            <nav class="collapse left absolute list bg-faint round-bottom shadow p-1">
+                                <a href="#">Item 1</a>
+                                <a href="#">Item 1sakjf lksadf k aslfk las flk asfkl asklf lsa f salf skalf kls flks akl asf lk</a>
+                                <a href="#">Item 1</a>
+                            </nav>
+                        </span>
+
+                        <span class="relative">
+                            <label class="button link toggle">
+                                <span>Toggle</span>
+                                <input type="checkbox" />
+                                <span class="icon">
+                                    <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+                                    <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+                                </span>
+                            </label>
+                            <nav class="collapse absolute list bg-faint round-bottom shadow p-1">
+                                <a href="#">Item 1</a>
+                                <a href="#">Item 1sakjf lksadf k aslfk las flk asfkl asklf lsa f salf skalf kls flks akl asf lk</a>
+                                <a href="#">Item 1</a>
+                            </nav>
+                        </span>
+
+                        <span class="relative focus:open">
+                            <button class="link toggle">
+                                <span>Toggle</span>
+                                <span class="icon">
+                                    <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+                                    <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+                                </span>
+                            </button>
+                            <nav class="collapse left absolute list bg-faint round-bottom shadow p-1">
+                                <a href="#">Item 1</a>
+                                <a href="#">Item 1sakjf lksadf k aslfk las flk asfkl asklf lsa f salf skalf kls flks akl asf lk</a>
+                                <a href="#">Item 1</a>
+                            </nav>
+                        </span>
+                        asdf
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                        <span class="menu">
+                            <button class="link icon toggle">
+                                <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+                                <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+                            </button>
+                            <nav class="absolute list bg-faint round-bottom shadow w-content p-1">
+                                <a href="#">Item 1</a>
+                                <a href="#">Item 1</a>
+                                <a href="#">Item 1</a>
+                            </nav>
+                        </span>
 
                         <div class="note p-2 mb-n2 mx-n2 mt-2 bg-faint">
                             * HTML version uses <a href="#toggles">Toggles</a>.
@@ -1139,13 +1331,15 @@ $borders: (
 
                     <div class="language-select" data-language="js">
                         <button class="toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">
-                            <span class="label-active">Toggle Closed</span>
-                            <span class="label-inactive">Toggle Open</span>
+                            <span class="none checked:revert">Toggle Closed</span>
+                            <span class="checked:none">Toggle Open</span>
                         </button>
-                        <div class="collapse overlay">
-                            <div class="p-3 bg-faint">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-                                <p>Sed diam nonumy eirm Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                        <div class="overlay">
+                            <div class="collapse">
+                                <div class="p-3 bg-faint">
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                                    <p>Sed diam nonumy eirm Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1155,8 +1349,8 @@ $borders: (
 
                     <div class="language-select" data-language="html">
                         <label class="button toggle">
-                            <span class="label-active">Toggle Closed</span>
-                            <span class="label-inactive">Toggle Open</span>
+                            <span class="none checked:revert">Toggle Closed</span>
+                            <span class="checked:none">Toggle Open</span>
                             <input type="checkbox" />
                         </label>
                         <div class="collapse hidden">
@@ -1173,8 +1367,8 @@ $borders: (
 
                     <div class="language-select" data-language="js">
                         <button class="toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">
-                            <span class="label-active">Toggle Closed</span>
-                            <span class="label-inactive">Toggle Open</span>
+                            <span class="none checked:revert">Toggle Closed</span>
+                            <span class="checked:none">Toggle Open</span>
                         </button>
                         <div class="collapse hidden">
                             <div class="b-3 p-3 mt-4">
@@ -1253,39 +1447,23 @@ $borders: (
                 <div class="show-code" data-title="Simple Menu">
                     
                     <div class="language-select" data-language="html">
-                        <label class="button icon link circle toggle">
-                            <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
-                            <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-                            <input type="checkbox" />
-                        </label>
-                        <div class="collapse overlay">
-                            <nav class="bg-faint round hidden p-1 w-content">
+                        <span class="focus:open">
+                            <button class="toggle icon link circle">
+                                <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
+                                <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+                            </button>
+                            <nav class="collapse-inner absolute list bg-faint round hidden p-1 w-content">
                                 <ul>
                                     <li class="p-1">
                                         Pick an Item
                                         <hr class="m-0 mt-1">
                                     </li>
-                                    <li>
-                                        <button class="link pl-1" href="#">
-                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
-                                            Link 1
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="link pl-1" href="#">
-                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2h9m3-4v-2H6v2h12z"></path></svg>
-                                            Link 2
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="link pl-1" href="#">
-                                            <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
-                                            Link 3
-                                        </button>
-                                    </li>
+                                    <li><button class="link pl-1" href="#">Link 1</button></li>
+                                    <li><button class="link pl-1" href="#">Link 2</button></li>
+                                    <li><button class="link pl-1" href="#">Link 3</button></li>
                                 </ul>
                             </nav>
-                        </div>
+                        </span>
                     </div>
 
                     <div class="language-select" data-language="js">
@@ -1293,31 +1471,29 @@ $borders: (
                             <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
                             <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
                         </button>
-                        <div class="collapse overlay">
-                            <nav class="bg-faint round hidden p-1 w-content">
-                                <ul>
-                                    <li class="p-1">
-                                        Pick an Item
-                                        <hr class="m-0 mt-1">
-                                    </li>
-                                    <li>
-                                        <button class="link pl-1" href="#">
-                                        <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
-                                        Link 1</button>
-                                    </li>
-                                    <li>
-                                        <button class="link pl-1" href="#">
-                                        <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2h9m3-4v-2H6v2h12z"></path></svg>
-                                        Link 2</button>
-                                    </li>
-                                    <li>
-                                        <button class="link pl-1" href="#">
-                                        <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
-                                        Link 3</button>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+                        <nav class="collapse absolute list bg-faint round hidden p-1 w-content">
+                            <ul>
+                                <li class="p-1">
+                                    Pick an Item
+                                    <hr class="m-0 mt-1">
+                                </li>
+                                <li>
+                                    <button class="link pl-1" href="#">
+                                    <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+                                    Link 1</button>
+                                </li>
+                                <li>
+                                    <button class="link pl-1" href="#">
+                                    <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2h9m3-4v-2H6v2h12z"></path></svg>
+                                    Link 2</button>
+                                </li>
+                                <li>
+                                    <button class="link pl-1" href="#">
+                                    <svg class="icon mr-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z"></path></svg>
+                                    Link 3</button>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
 
                     <div class="note p-2 mb-n2 mx-n2 mt-2 bg-faint">
@@ -1332,8 +1508,8 @@ $borders: (
                     <div class="language-select" data-language="html">
                         <div class="hidden">
                             <label class="button toggle">
-                                <span class="label-active">Toggle Closed</span>
-                                <span class="label-inactive">Toggle Open</span>
+                                <span class="none checked:revert">Toggle Closed</span>
+                                <span class="checked:none">Toggle Open</span>
                                 <input type="checkbox" />
                             </label>
                             <div class="collapse-inner slow from-left">
@@ -1351,8 +1527,8 @@ $borders: (
                     <div class="language-select" data-language="js">
                         <div class="hidden">
                             <button class="toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">
-                                <span class="label-active">Toggle Closed</span>
-                                <span class="label-inactive">Toggle Open</span>
+                                <span class="none checked:revert">Toggle Closed</span>
+                                <span class="checked:none">Toggle Open</span>
                             </button>
                             <div class="collapse-inner slow from-left">
                                 <div>
@@ -1363,11 +1539,27 @@ $borders: (
                     </div>
                 </div>
 
+                <div class="show-code" data-title="Collapse Overlay">
+                    <div class="language-select" data-language="html">
+                        <label class="button toggle">
+                            <span class="none checked:revert">Toggle Closed</span>
+                            <span class="checked:none">Toggle Open</span>
+                            <input type="checkbox">
+                        </label>
+                        <div class="collapse-inner absolute">
+                            <div class="p-3 bg-faint">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                                <p>Sed diam nonumy eirm Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="show-code" data-title="With child spacing and multiple children">
                     <div class="language-select" data-language="html">
                         <label class="button toggle">
-                            <span class="label-active">Toggle Closed</span>
-                            <span class="label-inactive">Toggle Open</span>
+                            <span class="none checked:revert">Toggle Closed</span>
+                            <span class="checked:none">Toggle Open</span>
                             <input type="checkbox" />
                         </label>
                         <div class="collapse-inner">
@@ -1386,8 +1578,8 @@ $borders: (
 
                     <div class="language-select" data-language="js">
                         <button class="toggle" onclick="this.classList.toggle('active');this.nextElementSibling.classList.toggle('open')">
-                            <span class="label-active">Toggle Closed</span>
-                            <span class="label-inactive">Toggle Open</span>
+                            <span class="none checked:revert">Toggle Closed</span>
+                            <span class="checked:none">Toggle Open</span>
                         </button>
                         <div class="collapse-inner">
                             <div><!-- Notice required wrapper here to ignore child spacing (padding, margins, borders, etc) -->
@@ -1912,6 +2104,7 @@ $borders: (
                 </div>
     
             </section>
+
             <!------------------------------------
             ------------    SIZING    ------------
             ------------------------------------->
@@ -2061,6 +2254,7 @@ $borders: (
                 </table>
     
             </section>
+
             <!------------------------------------
             -----------    TOGGLES    ------------
             ------------------------------------->
@@ -2081,8 +2275,8 @@ $borders: (
 
 <pre><code class="language-html">&lt;!-- HTML Toggle --&gt;
 &lt;label class="button toggle"&gt; &lt;!-- Toggle Activator --&gt;
-    &lt;span class="label-active"&gt;Toggle Closed&lt;/span&gt;
-    &lt;span class="label-inactive"&gt;Toggle Open&lt;/span&gt;
+    &lt;span class="none checked:revert"&gt;Toggle Closed&lt;/span&gt;
+    &lt;span class="checked:none"&gt;Toggle Open&lt;/span&gt;
     &lt;input type="checkbox"&gt;
 &lt;/label&gt;
 &lt;div class="collapse"&gt; &lt;!-- Toggle Element --&gt;
@@ -2208,7 +2402,7 @@ $borders: (
                             <td class="md:pl-2"><code class="color-primary">toggle</code></td>
                             <td>Initiate the toggle activator. If the toggle activator contains a checkbox or radio then it will collapse the nextElementSibling.
                                 <br>
-                                A toggle can contain <code class="color-primary">.label-active</code> and <code class="color-primary">.label-inactive</code> child elements that will change their display based on if the toggle is active or not.
+                                A toggle can contain <code class="color-primary">.none checked:revert</code> and <code class="color-primary">.checked:none</code> child elements that will change their display based on if the toggle is active or not.
                             </td>
                         </tr>
                         <tr>
@@ -2333,36 +2527,8 @@ $borders: (
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
-                    <br>
-
-                    <div class="language-select" data-language="html">
-                        <label class="button toggle">
-                            <input type="checkbox" />
-                            Toggle Content
-                            <i class="icon active:rotate xl">
-                                <svg viewBox="-.5 -.5 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                            </i>
-                        </label>
-                        <div class="b-3 border-error p-2 mt-2 bg-primary">
-                            <p>
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                justo duo
-                                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                                sit amet.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                justo duo
-                                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                                sit amet.
-                            </p>
-                        </div>
-                    </div>
 
                     <div class="language-select" data-language="js">
                         <button class="toggle" onclick="this.classList.toggle('active'); this.nextElementSibling.children[0].classList.toggle('open')">
@@ -2467,8 +2633,8 @@ $borders: (
                 <div class="show-code mt-4" data-title="Basic Toggle Switch" data-badge="No JS">
                     <label class="toggle inline">
                         <input class="switch" type="checkbox" />
-                        <span class="label-checked">On</span>
-                        <span class="label-unchecked">Off</span>
+                        <span class="none checked:inline">On</span>
+                        <span class="checked:none">Off</span>
                     </label>
                     <div class="from-left">
                         <div>
@@ -2571,16 +2737,18 @@ $borders: (
                             <svg viewBox="-.5 -.5 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                         </i>
                     </button>
-                    <div class="collapse overlay">
-                        <p class="border p-2 bg-faint">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                            rebum.
-                        </p>
+                    <div class="overlay">
+                        <div class="collapse">
+                            <p class="border p-2 bg-faint">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                                sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                                sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                                rebum.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -4240,7 +4408,7 @@ $borders: (
                         </article>
 
                         <article class="outline shadow mw-400">
-                            <h3>With Outline & Shadow</h3>
+                            <h3>With Outline and Shadow</h3>
                             <img height="225" width="400" src="placeholder.jpg" alt="Placeholder Image" loading="lazy" />
                             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod temporinvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                             <a href="#">Learn More</a>
@@ -4316,18 +4484,23 @@ $borders: (
 &lt;/div&gt;</code></pre>
 
             <div class="show-code" data-title="Basic Dropdown">
-                <div class="w-content">
-                    <button class="pl-1 pr-1 content-end" data-toggle="next" data-toggle-escapable data-toggle-dismissible>
-                        Dropdown Button
-                        <svg class="icon ml-1 xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                    </button>
-                    <div class="collapse w slow">
-                        <div>
-                            <nav class="list navigable bg-faint round-bottom shadow">
-                                <a href="#">Item 1</a>
-                                <a href="#">Item 2</a>
-                                <a href="#">Item 3</a>
-                            </nav>
+                <div class="language-select" data-language="html">
+                    <div class="menlu">
+                        <div class="overlay">
+                            <div>
+                                <label class="button toggle">
+                                    <input type="checkbox" />
+                                    Dropdown Button
+                                    <svg class="icon xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                </label>
+                                <div class="collapse-inner outer-bottom">
+                                    <nav class="list bg-faint round-bottom shadow p-1">
+                                        <a href="#">Item 1</a>
+                                        <a href="#">Item 2</a>
+                                        <a href="#">Item 3</a>
+                                    </nav>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -4526,23 +4699,59 @@ $borders: (
 
                         <div>
                             <h5 class="mb-1">Responsive Radios *</h5>
-                            <label class="mx-1"><input type="radio" class="loading" name="rad" required><span class="label-checked">Selected</span><span class="label-unchecked">Not Selected</span></label>
-                            <label class="mx-1"><input type="radio" name="rad" required><span class="label-checked">Selected</span><span class="label-unchecked">Not Selected</span></label>
-                            <label class="mx-1"><input type="radio" name="rad" required onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading')}, 2000);"><span class="label-checked">Selected</span><span class="label-unchecked">Not Selected</span></label>
+                            <label class="mx-1">
+                                <input type="radio" class="loading" name="rad" required>
+                                <span class="none checked:inline">Selected</span>
+                                <span class="checked:none">Not Selected</span>
+                            </label>
+                            <label class="mx-1">
+                                <input type="radio" name="rad" required>
+                                <span class="none checked:inline">Selected</span>
+                                <span class="checked:none">Not Selected</span>
+                            </label>
+                            <label class="mx-1">
+                                <input type="radio" name="rad" required onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading')}, 2000);">
+                                <span class="none checked:inline">Selected</span>
+                                <span class="checked:none">Not Selected</span>
+                            </label>
                         </div>
 
                         <div>
                             <h5>Checkboxes</h5>
-                            <label><input type="checkbox" class="loading"><span class="label-checked">Checked</span><span class="label-unchecked">Unchecked</span></label>
-                            <label><input type="checkbox"><span class="label-checked">Checked</span><span class="label-unchecked">Unchecked</span></label>
-                            <label><input type="checkbox" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading')}, 2000);"><span class="label-checked">Checked</span><span class="label-unchecked">Unchecked</span></label>
+                            <label>
+                                <input type="checkbox" class="loading">
+                                <span class="none checked:inline">Checked</span>
+                                <span class="checked:none">Unchecked</span>
+                            </label>
+                            <label>
+                                <input type="checkbox">
+                                <span class="none checked:inline">Checked</span>
+                                <span class="checked:none">Unchecked</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading')}, 2000);">
+                                <span class="none checked:inline">Checked</span>
+                                <span class="checked:none">Unchecked</span>
+                            </label>
                         </div>
 
                         <div>
                             <h5>Switches</h5>
-                            <label><input class="switch" type="checkbox" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading')}, 2000);"><span class="label-checked">On</span><span class="label-unchecked">Off</span></label>
-                            <label><input class="switch" type="checkbox"><span class="label-checked">On</span><span class="label-unchecked">Off</span></label>
-                            <label><input class="switch" type="checkbox"><span class="label-checked">On</span><span class="label-unchecked">Off</span></label>
+                            <label>
+                                <input class="switch" type="checkbox" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading')}, 2000);">
+                                <span class="none checked:inline">On</span>
+                                <span class="checked:none">Off</span>
+                            </label>
+                            <label>
+                                <input class="switch" type="checkbox">
+                                <span class="none checked:inline">On</span>
+                                <span class="checked:none">Off</span>
+                            </label>
+                            <label>
+                                <input class="switch" type="checkbox">
+                                <span class="none checked:inline">On</span>
+                                <span class="checked:none">Off</span>
+                            </label>
                         </div>
                 
                         <label class="span"><h5>Message</h5>

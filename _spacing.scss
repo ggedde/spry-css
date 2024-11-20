@@ -2,6 +2,7 @@
 * Spry Spacing
 */
 @use "variables";
+@use 'sass:string';
 
 @mixin spacing-styles($prefix) {
 	#{$prefix}m-auto {
@@ -35,7 +36,7 @@
 	@each $s,
 	$space in variables.$spacing {
 		@each $prop in (padding, margin) {
-			#{$prefix}#{str-slice($prop, 0, 1)}-#{$s} {
+			#{$prefix}#{string.slice($prop, 0, 1)}-#{$s} {
 				#{$prop}: #{$space};
 			}
 		}
@@ -60,20 +61,20 @@
 	@each $s,
 	$space in variables.$spacing {
 		@each $prop in (padding, margin) {
-			#{$prefix}#{str-slice($prop, 0, 1)}x-#{$s} {
+			#{$prefix}#{string.slice($prop, 0, 1)}x-#{$s} {
 				#{$prop}-inline: #{$space};
 			}
 
-			#{$prefix}#{str-slice($prop, 0, 1)}y-#{$s} {
+			#{$prefix}#{string.slice($prop, 0, 1)}y-#{$s} {
 				#{$prop}-block: #{$space};
 			}
 
 			@if $prop==margin and $s {
-				#{$prefix}#{str-slice($prop, 0, 1)}x-n#{$s} {
+				#{$prefix}#{string.slice($prop, 0, 1)}x-n#{$s} {
 					#{$prop}-inline: -#{$space};
 				}
 
-				#{$prefix}#{str-slice($prop, 0, 1)}y-n#{$s} {
+				#{$prefix}#{string.slice($prop, 0, 1)}y-n#{$s} {
 					#{$prop}-block: -#{$space};
 				}
 			}
@@ -83,36 +84,36 @@
 	@each $s,
 	$space in variables.$spacing {
 		@each $prop in (padding, margin) {
-			#{$prefix}#{str-slice($prop, 0, 1)}l-#{$s} {
+			#{$prefix}#{string.slice($prop, 0, 1)}l-#{$s} {
 				#{$prop}-left: #{$space};
 			}
 
-			#{$prefix}#{str-slice($prop, 0, 1)}r-#{$s} {
+			#{$prefix}#{string.slice($prop, 0, 1)}r-#{$s} {
 				#{$prop}-right: #{$space};
 			}
 
-			#{$prefix}#{str-slice($prop, 0, 1)}t-#{$s} {
+			#{$prefix}#{string.slice($prop, 0, 1)}t-#{$s} {
 				#{$prop}-top: #{$space};
 			}
 
-			#{$prefix}#{str-slice($prop, 0, 1)}b-#{$s} {
+			#{$prefix}#{string.slice($prop, 0, 1)}b-#{$s} {
 				#{$prop}-bottom: #{$space};
 			}
 
 			@if $prop==margin and $s {
-				#{$prefix}#{str-slice($prop, 0, 1)}l-n#{$s} {
+				#{$prefix}#{string.slice($prop, 0, 1)}l-n#{$s} {
 					#{$prop}-left: -#{$space};
 				}
 
-				#{$prefix}#{str-slice($prop, 0, 1)}r-n#{$s} {
+				#{$prefix}#{string.slice($prop, 0, 1)}r-n#{$s} {
 					#{$prop}-right: -#{$space};
 				}
 
-				#{$prefix}#{str-slice($prop, 0, 1)}t-n#{$s} {
+				#{$prefix}#{string.slice($prop, 0, 1)}t-n#{$s} {
 					#{$prop}-top: -#{$space};
 				}
 
-				#{$prefix}#{str-slice($prop, 0, 1)}b-n#{$s} {
+				#{$prefix}#{string.slice($prop, 0, 1)}b-n#{$s} {
 					#{$prop}-bottom: -#{$space};
 				}
 			}

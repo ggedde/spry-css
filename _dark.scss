@@ -4,6 +4,9 @@
 
 @use "variables";
 @use "extends";
+@use "sass:color";
+@use "sass:map";
+@use 'sass:list';
 
 :root.theme-dark,
 .theme-dark {
@@ -15,13 +18,13 @@
 
 	@each $color_name,
 	$color_value in variables.$colors {
-		@if map-get($color_value, 'dark') {
-			--#{$color_name}: #{map-get($color_value, 'dark')};
+		@if map.get($color_value, 'dark') {
+			--#{$color_name}: #{map.get($color_value, 'dark')};
 
-			@if index(variables.$colors, ($color_name $color_value))==1 {
-				--color: #{map-get($color_value, 'dark')};
+			@if list.index(variables.$colors, ($color_name $color_value))==1 {
+				--color: #{map.get($color_value, 'dark')};
 
-				@if (lightness(map-get($color_value, 'dark')) > 70) {
+				@if (color.channel(color.to-space(map.get($color_value, 'dark'), hsl), 'lightness', hsl) > 70) {
 					--text-color: var(--ui-dark-text-color);
 				}
 
@@ -40,22 +43,22 @@
 	color-scheme: dark;
 
 	@each $color_name, $color_value in variables.$colors {
-		@if map-get($color_value, 'dark') {
+		@if map.get($color_value, 'dark') {
 			.links-#{$color_name} :where(a:not(.button,[class^=color-],[class*=\ color-])),
 			.hover\:links-#{$color_name} a:not(.button,[class*=hover\:color-]):is(:hover, :focus, .active) {	
-				color: hsl(from #{map-get($color_value, 'dark')} h s var(--clr-l, l) / var(--clr-a, 100%));
+				color: hsl(from #{map.get($color_value, 'dark')} h s var(--clr-l, l) / var(--clr-a, 100%));
 			}
 		}
 	}
 
 	@each $color_name, $color_value in variables.$colors {
-		@if map-get($color_value, 'dark') {
+		@if map.get($color_value, 'dark') {
 			.#{$color_name} {
-				--color       : #{map-get($color_value, 'dark')};
-				--card-color  : #{map-get($color_value, 'dark')};
-				--theme-border: #{map-get($color_value, 'dark')};
+				--color       : #{map.get($color_value, 'dark')};
+				--card-color  : #{map.get($color_value, 'dark')};
+				--theme-border: #{map.get($color_value, 'dark')};
 
-				@if (lightness(map-get($color_value, 'dark')) > 70) {
+				@if (color.channel(color.to-space(map.get($color_value, 'dark'), hsl), 'lightness', hsl) > 70) {
 					--text-color: var(--ui-dark-text-color);
 				}
 
@@ -66,16 +69,16 @@
 
 			.hover\:color-#{$color_name}:is(:hover, :focus, .active),
 			.color-#{$color_name} {
-				color: hsl(from #{map-get($color_value, 'dark')} h s var(--clr-l, l) / var(--clr-a, 100%));
+				color: hsl(from #{map.get($color_value, 'dark')} h s var(--clr-l, l) / var(--clr-a, 100%));
 			}
 
 			.bg-#{$color_name} {
-				background-color: hsl(from #{map-get($color_value, 'dark')} h s var(--bg-l, l) / var(--bg-a, 100%));
+				background-color: hsl(from #{map.get($color_value, 'dark')} h s var(--bg-l, l) / var(--bg-a, 100%));
 			}
 
 			.border-#{$color_name} {
-				--theme-border      : #{map-get($color_value, 'dark')};
-				--theme-input-border: #{map-get($color_value, 'dark')};
+				--theme-border      : #{map.get($color_value, 'dark')};
+				--theme-input-border: #{map.get($color_value, 'dark')};
 				border-color        : hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
 			}
 		}

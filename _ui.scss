@@ -3,12 +3,13 @@
 */
 @use "variables";
 @use "extends";
+@use 'sass:list';
 
 $color_names: ();
 
 @each $color_name,
 $color_value in variables.$colors {
-	$color_names: append($color_names, '.#{$color_name}', 'comma');
+	$color_names: list.append($color_names, '.#{$color_name}', 'comma');
 }
 
 .ui {
