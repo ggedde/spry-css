@@ -28,7 +28,6 @@
 	display       : flex;
 	flex-wrap     : wrap;
 	flex-direction: row;
-	place-content : center;
 
 	>* {
 		flex  : 1;
@@ -39,6 +38,10 @@
 .grid {
 	display: grid;
     grid: none / auto-flow minmax(0, 1fr);
+}
+
+.equal[class] {
+	grid-auto-rows: 1fr;
 }
 
 @if (list.length(variables.$breakpoints) > 0) {
@@ -160,7 +163,6 @@
 		display       : flex;
 		flex-wrap     : wrap;
 		flex-direction: row;
-		justify-content: center;
 		>* {
 			flex  : 1;
 			--span: 1;
@@ -176,6 +178,10 @@
 	[class*=\ #{$noDotPrefix}columns-]>* {
 		flex: 0 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--gapx))/(var(--cols)/var(--span))));
 		min-width: 0;
+	}
+
+	#{$prefix}equal[class] {
+		grid-auto-rows: 1fr;
 	}
 
 	#{$prefix}grid,

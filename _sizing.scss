@@ -37,9 +37,13 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	}
 
 	@for $i from 1 through 12 {
-		#{$prefix}mh-#{$i}00 {
+		#{$prefix}max-h-#{$i}00 {
 			--max-height: #{$i}00px;
 			max-height: #{$i}00px
+		}
+
+		#{$prefix}min-h-#{$i}00 {
+			min-height: #{$i}00px
 		}
 
 		#{$prefix}w-#{$i}00 {
@@ -47,10 +51,62 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 			flex : 0 #{$i}00px
 		}
 
-		#{$prefix}mw-#{$i}00 {
+		#{$prefix}max-w-#{$i}00 {
 			max-width: #{$i}00px
 		}
+
+		#{$prefix}min-w-#{$i}00 {
+			min-width: #{$i}00px
+		}
 	}
+
+	// #{$prefix}min-w {
+	// 	min-width: 100%;
+	// }
+
+	// #{$prefix}min-h {
+	// 	min-height: 100%;
+	// }
+
+	// #{$prefix}max-w {
+	// 	max-width: 100%;
+	// }
+
+	// #{$prefix}max-h {
+	// 	max-height: 100%;
+	// }
+
+	// #{$prefix}min-w-0 {
+	// 	min-width: 0;
+	// }
+
+	// #{$prefix}min-h-0 {
+	// 	min-height: 0;
+	// }
+
+	// #{$prefix}min-w-content {
+	// 	min-width: min-content;
+	// }
+
+	// #{$prefix}min-h-content {
+	// 	min-height: min-content;
+	// }
+
+	// #{$prefix}max-w-none {
+	// 	max-width: none;
+	// }
+
+	// #{$prefix}max-h-none {
+	// 	max-width: none;
+	// }
+
+	// #{$prefix}max-w-content {
+	// 	max-width: max-content;
+	// }
+
+	// #{$prefix}max-h-content {
+	// 	max-width: max-content;
+	// }
 }
 
 @include sizingUtility-styles('.');

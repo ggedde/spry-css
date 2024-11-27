@@ -9,4 +9,8 @@
 	@extend %ui-border-radius;
 	justify-content: space-between;
 	transition: none;
+	> * {
+		width: auto;
+		background-color: inherit;
+	}
 }

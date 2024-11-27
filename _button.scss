@@ -17,11 +17,11 @@
 	font-weight    : 400;
 	text-transform : uppercase;
 
-	> :is(.icon, svg, img) {
+	> :where(.icon, svg, img) {
 		pointer-events: none;
 	}
 
-	&:is(:hover, :focus, :focus-within, .active):not(:active) {
+	&:is(:hover, :focus, :focus-within, .active, :has(:checked)):not(:active) {
 		@extend %ui-hover;
 	}
 }

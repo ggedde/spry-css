@@ -20,7 +20,7 @@ $color_value in variables.$colors {
 	@extend %ui-border-radius;
 }
 
-.toggle:has(:focus-visible),
+:is(.toggle, .toggle-next):has(:focus-visible),
 :focus-visible {
 	outline-width: 2px;
 }
@@ -61,35 +61,17 @@ hr {
 }
 
 li,
-ul ul {
-	flex-direction : column;
+ul {
 	justify-content: inherit;
 	text-align     : inherit;
+}
+
+li,
+ul ul {
 	width          : inherit;
+	flex-direction : column;
 }
 
 ul ul {
 	background-color: inherit;
-}
-
-.active\:rotate,
-.active\:flip,
-.shy {
-	transition: all var(--ease-speed) var(--ease);
-}
-
-.toggle.active.active\:rotate,
-.toggle:has(:checked) .active\:rotate,
-.hover\:active:hover.active\:rotate,
-.hover\:active:hover .active\:rotate,
-.active .active\:rotate {
-	rotate: 180deg;
-}
-
-.toggle.active.active\:flip,
-.toggle:has(:checked) .active\:flip,
-.hover\:active:hover.active\:flip,
-.hover\:active:hover .active\:flip,
-.active .active\:flip {
-	scale: -1;
 }

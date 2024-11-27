@@ -295,7 +295,8 @@ label {
 	}
 }
 
-.show-invalid :not(:focus):user-invalid {
+.show-invalid :not(:focus):user-invalid,
+.show-invalid :not(:focus-within):has([type=radio][required][value=""]:checked) {
 	border-color: var(--error, #c33);
 }
 

@@ -15,9 +15,9 @@
 	height          : auto;
 	justify-content : space-between;
 	gap             : 1em;
-	min-height      : 2.3em;
+	min-height      : 2.32em;
 	min-width       : 2.3em;
-	outline         : 0 solid rgb(from var(--color) r g b / 0.25);
+	outline         : 0 solid rgb(from var(--color) r g b / 0.5);
 	outline-offset  : 2px;
 	padding-block   : .3em;
 	padding-inline  : 1em;
@@ -131,31 +131,23 @@
 	}
 }
 
-// @each $color_name, $color_values in variables.$colors {
-// 	@each $theme_name, $color_value in $color_values {
-// 		%ui-clr-#{$theme_name}-#{$color_name} {
-// 			color: hsl(from #{$color_value} h s var(--clr-l, l) / var(--clr-a, 100%));
-// 		}
-// 		%ui-bg-#{$theme_name}-#{$color_name} {
-// 			background-color: hsl(from #{$color_value} h s var(--bg-l, l) / var(--bg-a, 100%));
-// 		}
-// 		%ui-bdr-#{$theme_name}-#{$color_name} {
-// 			--theme-border      : #{$color_value};
-// 			--theme-input-border: #{$color_value};
-// 			border-color        : hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
-// 		}
-// 	}
-// }
-
 %closed {
 	@include mixins.closed;
 }
 %open {
 	@include mixins.open;
 }
-%closed-inner {
-	@include mixins.closed-inner;
-}
-%open-inner {
-	@include mixins.open-inner;
+
+%icon-arrow {
+	content: "";
+	border: 2px solid var(--color);
+	border-bottom: 0;
+	border-left: 0;
+	opacity: .7;
+	display: block;
+	height: .5em;
+	margin: auto;
+	position: absolute;
+	transform: rotate(45deg);
+	width: .5em;
 }

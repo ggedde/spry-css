@@ -10,11 +10,12 @@
 
 :root.theme-dark,
 .theme-dark {
-	--theme-bg              : #111;
-	--theme-text            : var(--text, #eee);
-	--theme-border          : #3a3a3a;
-	--theme-input-border    : #999;
-	--card-color            : #282828;
+	--theme-bg          : #111;
+	--theme-text        : var(--text, #eee);
+	--theme-border      : #3a3a3a;
+	--theme-input-border: #999;
+	--card-color        : #282828;
+	--shadow-o          : .24;
 
 	@each $color_name,
 	$color_value in variables.$colors {
@@ -40,18 +41,21 @@
 	color           : hsl(from var(--theme-text) h s var(--clr-l, l) / var(--clr-a, 100%));
 	background-color: hsl(from var(--theme-bg) h s var(--bg-l, l) / var(--bg-a, 100%));
 	border-color    : hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
-	color-scheme: dark;
+	color-scheme    : dark;
 
-	@each $color_name, $color_value in variables.$colors {
+	@each $color_name,
+	$color_value in variables.$colors {
 		@if map.get($color_value, 'dark') {
-			.links-#{$color_name} :where(a:not(.button,[class^=color-],[class*=\ color-])),
-			.hover\:links-#{$color_name} a:not(.button,[class*=hover\:color-]):is(:hover, :focus, .active) {	
+
+			.links-#{$color_name} :where(a:not(.button, [class^=color-], [class*=\ color-])),
+			.hover\:links-#{$color_name} a:not(.button, [class*=hover\:color-]):is(:hover, :focus, .active) {
 				color: hsl(from #{map.get($color_value, 'dark')} h s var(--clr-l, l) / var(--clr-a, 100%));
 			}
 		}
 	}
 
-	@each $color_name, $color_value in variables.$colors {
+	@each $color_name,
+	$color_value in variables.$colors {
 		@if map.get($color_value, 'dark') {
 			.#{$color_name} {
 				--color       : #{map.get($color_value, 'dark')};
@@ -83,15 +87,17 @@
 			}
 		}
 	}
-	
+
 	@for $i from 0 through 10 {
-		.dark\:color-#{calc($i * 10)}{ 
+		.dark\:color-#{calc($i * 10)} {
 			@extend %ui-clr-l-#{$i};
 		}
-		.dark\:bg-#{calc($i * 10)}{ 
+
+		.dark\:bg-#{calc($i * 10)} {
 			@extend %ui-bg-l-#{$i};
 		}
-		.dark\:border-#{calc($i * 10)} { 
+
+		.dark\:border-#{calc($i * 10)} {
 			@extend %ui-bdr-l-#{$i};
 		}
 	}

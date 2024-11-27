@@ -5,11 +5,13 @@
 @use "extends";
 
 :is(nav, menu) {
-	width: 100%;
+	width        : 100%;
+	text-align   : inherit;
+	place-content: inherit;
 
 	a {
 		@extend %ui;
-		justify-content: start;
+		// justify-content: start;
 	}
 
 	>a {
@@ -20,6 +22,7 @@
 	ul,
 	menu {
 		position: relative;
+		background-color: inherit;
 	}
 
 	>ul {
@@ -27,12 +30,17 @@
 	}
 }
 
+// .list {
+// 	text-align: left;
+// 	place-content: start;
+// }
+
 nav ul,
 nav menu,
 menu ul,
 menu menu {
-	background-color: inherit;
-	overflow: visible;
+	// background-color: inherit;
+	overflow        : visible;
 }
 
 nav ul ul,
@@ -45,15 +53,56 @@ menu menu {
 	}
 }
 
+.indicators li:has(ul),
+.sub\:indicators ul ul li:has(ul) {
+	> :first-child {
+		padding-right: 2.3em;
+		position     : relative;
+
+		&::after {
+			@extend %icon-arrow;
+			right     : 1em;
+			rotate    : 90deg;
+			margin-top: -.35em;
+		}
+	}
+}
+
 @mixin hoverOpen-styles($prefix) {
 
-	#{$prefix}hover\:open>ul>li>ul,
-	#{$prefix}hover\:open>li>ul {
+	:is(#{$prefix}hover\:open, #{$prefix}focus\:open) > ul > li > ul,
+	:is(#{$prefix}hover\:open, #{$prefix}focus\:open) > li > ul,
+	#{$prefix}open\:side ul ul,
+	#{$prefix}sub\:open\:side ul ul ul {
 		position : absolute;
-		top      : 100%;
 		min-width: calc(100% + 1px);
 		max-width: 260px;
 		width    : max-content;
+	}
+
+	:where(#{$prefix}open\:down ul ul, #{$prefix}sub\:open\:down ul ul ul) {
+		position: static;
+		top     : auto;
+		left    : auto;
+	}
+
+	:where(#{$prefix}open\:side ul ul, #{$prefix}sub\:open\:side ul ul ul){
+		top : 0;
+		left: 100%;
+	}
+	
+	#{$prefix}sub\:shadow ul ul {
+		box-shadow: 1px 3px 6px rgba(0, 0, 0, var(--shadow-o));
+	}
+
+	:is(#{$prefix}open\:down ul, #{$prefix}sub\:open\:down ul ul) > li:has(ul)> :first-child::after {
+		rotate    : 90deg;
+		margin-top: -.35em;
+	}
+	
+	:is(#{$prefix}open\:side ul, #{$prefix}sub\:open\:side ul ul) > li:has(ul)> :first-child::after {
+		rotate    : 0deg;
+		margin-top: 0;
 	}
 }
 

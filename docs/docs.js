@@ -97,6 +97,7 @@ function cleanContent(html) {
     html = html.replaceAll('data-toggle-dismissible=""', 'data-toggle-dismissible');
     html = html.replaceAll('@click.stop=""', '@click.stop');
     html = html.replaceAll(' data-v-app=""', '');
+    html = html.replaceAll('defer=""', 'defer');
     // html = html.replaceAll('&lt!-- nl --&gt', "\n");
     // html = html.replaceAll('&lt!----&gt', "\t");
     // html = html.replaceAll('<!-- nl -->', "\n");
@@ -107,6 +108,7 @@ function cleanContent(html) {
 
     html = html.replaceAll('&ltdiv class="code-resize-handle"&gt&lt/div&gt', '###');
     html = html.replace(/\&gt\n.*\#\#\#/, '&gt');
+    html = html.replace('<!-- AlpineJsScript -->', '&ltscript src="//unpkg.com/alpinejs" defer&gt&lt/script&gt');
 
     return html.trim();
 }
@@ -127,7 +129,9 @@ function getContent(el) {
 }
 
 function copyCode(event) {
-    navigator.clipboard.writeText(getContent(event.target)).then(function() {
+    var code = getContent(event.target);
+    code = code.replace('&ltscript src="//unpkg.com/alpinejs" defer&gt&lt/script&gt', '<script src="//unpkg.com/alpinejs" defer></script>');
+    navigator.clipboard.writeText(code).then(function() {
         Spry.toggle('#copy-code-modal');
         setTimeout(() => {
             Spry.toggle('#copy-code-modal', 'close');
@@ -169,7 +173,7 @@ document.querySelectorAll('.show-code').forEach((elem, index) => {
     var badge = (elem.hasAttribute('data-badge') ? '<'+(elem.hasAttribute('data-badge-link') ? 'a title="Link to '+elem.getAttribute('data-badge-link')+'" aria-label="'+elem.getAttribute('data-badge')+'" href="'+elem.getAttribute('data-badge-link')+'"' : 'span')+' class="badge dense grey outline xs ml-1 align-text-bottom">'+elem.getAttribute('data-badge')+(elem.hasAttribute('data-badge-link') ? '</a>' : '</span>') : '');
     var tooltipWarning = (elem.hasAttribute('data-tooltip-warning') ? '<span class="sm"><i class="icon color-secondary shy"><svg viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6z" /></svg></i><span class="tooltip sm center-x outset-top">'+elem.getAttribute('data-tooltip-warning')+'</span></span>' : '');
     var titleNote = (elem.hasAttribute('data-title-note') ? '<div class="note xs my-1 color-grey">'+elem.getAttribute('data-title-note')+'</div>' : '');
-    var codeDiv = '<div class="code-preview-container"></div>';
+    var codeDiv = '<div class="content"><div class="code-preview-container"></div></div>';
 
     var innerContents = elem.innerHTML;
     _panelContents['code-container-'+index] = innerContents+'';
@@ -194,7 +198,7 @@ document.querySelectorAll('.show-code').forEach((elem, index) => {
         });
         languageSelector += '</select></div>';
     }
-    elem.outerHTML = '<article class="mb-3 outline g-0 code-content-container" id="code-container-'+index+'"><header class="pr-1 sm md:md"><h4>'+elem.getAttribute('data-title')+' '+badge+tooltipWarning+titleNote+'</h4><div class="no-wrap flex">'+languageSelector+'<button class="shy icon link" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button onclick="loadCodeContainer(this)" data-toggle="#code-'+toggleId+'" class="shy icon link" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link" title="Copy HTML to Clipboard" onclick="copyCode(event); setTimeout(() => {this.classList.remove(\'open\'); this.classList.remove(\'active\'); this.setAttribute(\'aria-pressed\', false)}, 2000)" data-toggle><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg><svg viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg></button></div></header><div class="p-0"><div id="code-'+toggleId+'" class="code-container collapse-inner">'+codeDiv+'</div></div><div class="p-2 code-content">'+innerContents+'<div class="code-resize-handle"></div></div>'+(elem.hasAttribute('data-note') ? '<div class="note p-2 bg-faint">'+elem.getAttribute('data-note')+'</div>' : '')+'</article>';
+    elem.outerHTML = '<article class="mb-3 outline g-0 code-content-container" id="code-container-'+index+'"><header class="pr-1 sm md:md"><h4>'+elem.getAttribute('data-title')+' '+badge+tooltipWarning+titleNote+'</h4><div class="no-wrap flex">'+languageSelector+'<button class="shy icon link" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button onclick="loadCodeContainer(this)" data-toggle="#code-'+toggleId+'" class="shy icon link" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link" title="Copy HTML to Clipboard" onclick="copyCode(event); setTimeout(() => {this.classList.remove(\'open\'); this.classList.remove(\'active\'); this.setAttribute(\'aria-pressed\', false)}, 2000)" data-toggle><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg><svg viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg></button></div></header><div class="p-0"><div id="code-'+toggleId+'" class="code-container collapse">'+codeDiv+'</div></div><div class="p-2 code-content">'+innerContents+'<div class="code-resize-handle"></div></div>'+(elem.hasAttribute('data-note') ? '<div class="note p-2 bg-faint">'+elem.getAttribute('data-note')+'</div>' : '')+'</article>';
 });
 
 document.querySelectorAll('.code-resize-handle').forEach((elem) => {

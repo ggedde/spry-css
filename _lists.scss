@@ -10,8 +10,9 @@
 	list-style    : none;
 	margin        : 0;
 	padding       : 0;
+	align-items   : stretch;
 
-	> * {
+	>* {
 		@extend %ui-margin-above-none;
 	}
 
@@ -33,7 +34,6 @@
 	li {
 		margin-block: 0;
 		position    : relative;
-		display     : flex;
 		max-width   : 100%;
 
 		li {
@@ -52,8 +52,8 @@
 		flex           : 1;
 	}
 
-	&:not(.buttons) > a:not(.button,:active):is(:hover, :focus, .active),
-	&:not(.buttons) li:not(.buttons) > a:not(.button,:active):is(:hover, :focus, .active) {
+	&:not(.buttons)>a:not(.button, :active):is(:hover, :focus, .active),
+	&:not(.buttons) li:not(.buttons)>a:not(.button, :active):is(:hover, :focus, .active) {
 		@extend %ui-bg-hover;
 	}
 
@@ -71,6 +71,6 @@
 	}
 }
 
-:where([class*=bg-]) > :where(ul, li) :where(ul, li) {
+:where([class*=bg-])> :where(ul, li) :where(ul, li) {
 	background-color: inherit;
 }

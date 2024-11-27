@@ -76,57 +76,24 @@
 /// Default Shut State
 /// @output - Contents
 @mixin closed {
+	height                    : calc-size(auto, calc( size - size ));
 	max-height                : 0;
 	opacity                   : 0;
 	pointer-events            : none;
-	overflow                  : hidden;
 	transform                 : var(--toggle-transform);
 	transform-origin          : var(--toggle-transform-origin);
-	transition-property       : max-height, transform, opacity;
+	transition-property       : height, max-height, transform, opacity;
 	transition-duration       : var(--ease-speed);
 	transition-timing-function: var(--ease);
 	z-index                   : 1;
-	width                     : auto;
 }
 
 /// Opened State
 /// @output - Contents
 @mixin open {
-	--toggle-transform-origin    : top;
-	opacity                      : 1;
-	max-height                   : var(--max-height);
-	transform                    : translate3d(0, 0, 0);
-	// transition-timing-function: var(--ease);
-	// transition-duration       : calc(var(--ease-speed) / .6);
-	pointer-events               : inherit;
-}
-
-/// Default Collapse State
-/// @output - Contents
-@mixin closed-inner {
-	max-height                : none;
-	opacity                   : 0;
-	grid-template-rows        : 0fr;
-	pointer-events            : none;
-	transform                 : var(--toggle-transform);
-	transform-origin          : var(--toggle-transform-origin);
-	transition-property       : grid-template-rows, transform, opacity;
-	transition-duration       : var(--ease-speed);
-	transition-timing-function: var(--ease);
-	z-index                   : 1;
-
-	&[class] {
-		display: grid;
-	}
-}
-
-
-
-/// Opened State
-/// @output - Contents
-@mixin open-inner {
 	opacity           : 1;
-	grid-template-rows: 1fr;
+	max-height        : var(--max-height);
+	height            : calc-size(auto, size);
 	transform         : translate3d(0, 0, 0);
 	pointer-events    : inherit;
 }

@@ -345,6 +345,12 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		pointer-events: none;
 	}
 
+	#{$prefix}show {
+		opacity: 1;
+		position: revert;
+		pointer-events: inherit;
+	}
+
 	#{$prefix}items-center {
 		place-items: center
 	}
@@ -406,19 +412,26 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	}
 
 	#{$prefix}overlay {
-		width: max-content;
-		position: relative;
-		overflow: visible;
-		z-index : 1
+		// width: 100%;
+		position: absolute;
+		// overflow: hidden;
+		min-width: 100%;
+		place-content: inherit;
+		text-align: inherit;
 	}
 
+	// #{$prefix}overlay {
+	// 	width: 100%;
+	// 	position: absolute;
+	// 	overflow: hidden;
+	// 	min-width: min-content;
+	// 	// z-index: 1;
+	// }
+
 	#{$prefix}overlay>* {
-		position: absolute;
+		position: relative;
 		width: 100%;
 		min-width: min-content;
-	}
-	#{$prefix}overlay>.toggle {
-		position: relative;
 	}
 
 	#{$prefix}relative {
@@ -432,6 +445,10 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	#{$prefix}sticky {
 		position: sticky;
 		top     : 0
+	}
+
+	#{$prefix}static {
+		position: static;
 	}
 
 	#{$prefix}fixed {
@@ -505,6 +522,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 	#{$prefix}pointer-none {
 		pointer-events: none
+	}
+
+	#{$prefix}pointer-all {
+		pointer-events: all
+	}
+
+	#{$prefix}pointer-inherit {
+		pointer-events: inherit
 	}
 
 	#{$prefix}align-baseline {
@@ -587,6 +612,10 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		overflow: auto
 	}
 
+	#{$prefix}visible {
+		overflow: visible
+	}
+
 	#{$prefix}order-first {
 		order: -1
 	}
@@ -612,7 +641,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	}
 
 	#{$prefix}shadow {
-		box-shadow: 1px 3px 4px rgba(0, 0, 0, .12)
+		box-shadow: 1px 3px 6px rgba(0, 0, 0, var(--shadow-o))
 	}
 
 	#{$prefix}shadow-none {
@@ -649,7 +678,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	}
 
 	#{$prefix}from-top {
-		--toggle-transform: translate3d(0, -20px, 0);
+		--toggle-transform: translate3d(0, -80px, 0);
 		--toggle-transform-origin: top;
 	}
 
@@ -673,6 +702,11 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		--toggle-transform-origin: bottom;
 	}
 
+	#{$prefix}from-default {
+		--toggle-transform: translate3d(0, -2px, 0);
+		--toggle-transform-origin: top;
+	}
+
 	#{$prefix}o-0 {
 		opacity: 0
 	}
@@ -694,7 +728,9 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 @include utility-styles('.', 0);
 
 // Checked Utilities
-:has(:checked) > .checked\: {
+:has(:checked) > .checked\:,
+:has([value=""]:checked) > .checked-empty\:,
+:not(:has(:checked)) > .checked-empty\: {
 	&block {
 		display: block;
 	}
@@ -728,6 +764,9 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 @for $i from 1 through 10 {
 	.hover\:o-#{$i}0:hover {
 		opacity: #{calc($i / 10)};
+	}
+	.shadow\/#{calc($i * 10)} {
+		--shadow-o: #{calc($i / 10)};
 	}
 }
 
