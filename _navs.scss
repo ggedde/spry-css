@@ -59,11 +59,13 @@ menu menu {
 		padding-right: 2.3em;
 		position     : relative;
 
+		@extend %icon-arrow;
+
 		&::after {
-			@extend %icon-arrow;
 			right     : 1em;
 			rotate    : 90deg;
 			margin-top: -.35em;
+			opacity: .5;
 		}
 	}
 }

@@ -58,7 +58,7 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 	padding-right: .5em;
 }
 
-:is([type=radio], [type=checkbox]) {
+:where([type=radio], [type=checkbox]) {
 	min-height     : 1em;
 	min-width      : 1em;
 	width          : 1em;

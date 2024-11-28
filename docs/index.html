@@ -1226,7 +1226,8 @@ $borders: (
                                 <div class="collapse from-left slow">
                                     <label class="button toggle"> <!-- Inner Toggle-->
                                         Open Another From the Left Slowly
-                                        <input type="checkbox" />
+                                        <span class="none open:inline">GG</span>
+                                        <input id="gggg" type="checkbox" />
                                     </label>
                                     <div class="content hidden"> <!-- Inner Content-->
                                         <div class="b-2 p-3 mt-2">
@@ -1234,6 +1235,9 @@ $borders: (
                                             <p class="pb-2">Sed diam nonumy eirm Lorem ipsum dolor sit amet.</p>
                                         </div>
                                     </div>
+                                    <label class="none button toggle open:block" for="gggg"> <!-- Inner Toggle-->
+                                        bbb
+                                    </label>
                                 </div>
                                 
                             </div>
@@ -3236,11 +3240,11 @@ $borders: (
                                     Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                                 
                                 </div>
-                                <label class="toggle button hazy light circle icon absolute sm top right m-1">
-                                    <input type="checkbox" checked onclick="setTimeout(() => this.checked = true, 3000)" />
-                                    <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                                </label>
+                                <input class="toggle button circle icon arrow" id="htmlAlertToggle" type="checkbox" checked />
                             </div>
+                            <label class="button open:none" for="htmlAlertToggle">
+                                Re-Open
+                            </label>
                         </div>
                     </div>
                     <div class="language-select" data-language="js" data-footer-note="* See &lt;a href='#collapse'&gt;Collapse&lt;/a&gt; for more details">
@@ -3249,12 +3253,14 @@ $borders: (
                                 <div class="alert primary pr-3 flex">
                                     <svg class="icon lg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
                                     Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
-                                
                                 </div>
                                 <button onclick="this.closest('.open').classList.remove('open')" class="hazy light circle icon absolute sm top right m-1">
                                     <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                                 </button>
                             </div>
+                            <button class="open:none" onclick="this.closest('.collapse').classList.add('open')">
+                                Re-Open
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -4597,6 +4603,13 @@ $borders: (
                         </tr>
                     </tbody>
                 </table>
+
+                <div class="show-code" data-title="Material Design Icons">
+                    <span class="icon next"></span>
+                    <span class="icon prev"></span>
+                    <span class="icon up"></span>
+                    <span class="icon down"></span>
+                </div>
 
                 <div class="show-code" data-title="Material Design Icons">
                     <i class="icon">

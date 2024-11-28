@@ -41,3 +41,19 @@
 :is(nav, .list) li:has(> .icon:nth-child(2))> :not(.icon):first-child {
 	padding-right: 2.5em;
 }
+.icon:is(.next, .prev, .up, .down, .close, .menu) {
+	@extend %icon-arrow;
+}
+
+.icon.prev::after {
+	rotate: 180deg;
+	translate: 0.08em 0;
+}
+.icon.up::after {
+	rotate: 270deg;
+	translate: 0 0.08em;
+}
+.icon.down::after {
+	rotate: 90deg;
+	translate: 0 -0.08em;
+}

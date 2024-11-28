@@ -139,15 +139,19 @@
 }
 
 %icon-arrow {
-	content: "";
-	border: 2px solid var(--color);
-	border-bottom: 0;
-	border-left: 0;
-	opacity: .7;
-	display: block;
-	height: .5em;
-	margin: auto;
-	position: absolute;
-	transform: rotate(45deg);
-	width: .5em;
+	&::after {
+		content: "";
+		background-color: transparent;
+		border: .15em solid currentColor;
+		border-bottom: 0;
+		border-left: 0;
+		// opacity: .7;
+		display: block;
+		height: .5em;
+		margin: auto;
+		position: absolute;
+		transform: rotate(45deg);
+		translate: -.08em 0;
+		width: .5em;
+	}
 }

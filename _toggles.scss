@@ -87,7 +87,6 @@
 		position: relative;
 	}
 
-	// #{$prefix}hover\:open > ul li > ul,
 	#{$prefix}collapse > .content,
 	#{$prefix}collapse > .overlay > .content,
 	#{$prefix}focus\:open ul > li > ul,
@@ -101,14 +100,6 @@
 		}
 	}
 
-	// Nav only
-	// #{$prefix}hover\:open > ul > li:hover > ul,
-
-	// #{$prefix}hover\:open li:hover > ul,
-	// #{$prefix}hover\:open li:hover > .hidden > ul,
-	// #{$prefix}hover\:open li:has(:focus-visible) > ul,
-	// #{$prefix}hover\:open li:has(:focus-visible) > .hidden > ul {
-
 	#{$prefix}hover\:open :is(li:hover > ul, li:hover > * > ul, li:has(:focus-visible) > ul, li:has(:focus-visible) > * > ul),
 	#{$prefix}focus\:open :is(li:focus-within > ul, li:focus-within > * > ul) {
 		@if $prefix == '.' {
@@ -117,7 +108,6 @@
 		@else {
 			@include mixins.open;
 		}
-		// overflow: hidden;
 	}
 
 	:is(#{$prefix}open[class],
@@ -126,7 +116,7 @@
 	#{$prefix}collapse:has(.content > .toggle:checked),
 	#{$prefix}collapse:has( > .toggle:checked)),
 	#{$prefix}hover\:open:is(:hover, :has(:focus-visible)),
-	#{$prefix}focus\:open:not(:has(.toggle label:active)):has(:active),
+	#{$prefix}focus\:open:not(:has(:is(.toggle, .toggle-next) label:active)):has(:active),
 	#{$prefix}focus\:open:is(:has( > :focus):not(:has(label:active)), :has(:focus-visible), .hover\:open:hover) {
 		> .content,
 		> * > .content {
@@ -146,39 +136,81 @@
 				opacity: 1;
 				scale  : 1;
 			}
+		}
+		// .open\: {
+		// 	&rotate {
+		// 		rotate: 180deg;
+		// 	}
+		// 	&flip {
+		// 		scale: -1;
+		// 	}
+		// 	&block {
+		// 		display: block;
+		// 	}
+		// 	&flex {
+		// 		display: flex;
+		// 	}
+		// 	&grid {
+		// 		display: grid;
+		// 	}
+		// 	&inline {
+		// 		display: inline;
+		// 	}
+		// 	&inline-block {
+		// 		display: inline-block;
+		// 	}
+		// 	&inline-flex {
+		// 		display: inline-flex;
+		// 	}
+		// 	&revert {
+		// 		display: revert;
+		// 	}
+		// 	&none {
+		// 		display: none;
+		// 	}
+		// }
+	}
 
-			.open\:,
-			&.open\: {
-				&rotate {
-					rotate: 180deg;
-				}
-				&flip {
-					scale: -1;
-				}
-				&block {
-					display: block;
-				}
-				&flex {
-					display: flex;
-				}
-				&grid {
-					display: grid;
-				}
-				&inline {
-					display: inline;
-				}
-				&inline-block {
-					display: inline-block;
-				}
-				&inline-flex {
-					display: inline-flex;
-				}
-				&revert {
-					display: revert;
-				}
-				&none {
-					display: none;
-				}
+	:is(#{$prefix}open[class],
+	.toggle-next:has(>:checked),
+	.toggle-next:checked,
+	#{$prefix}collapse:has( > .toggle > :checked),
+	#{$prefix}collapse:has(.content > .toggle > :checked),
+	#{$prefix}collapse:has(.content > .toggle:checked),
+	#{$prefix}collapse:has( > .toggle:checked)) {
+	// #{$prefix}hover\:open:is(:hover, :has(:focus-visible)),
+	// #{$prefix}focus\:open:not(:has(:is(.toggle, .toggle-next) label:active)):has(:active),
+	// #{$prefix}focus\:open:is(:has( > :focus):not(:has(label:active)), :has(:focus-visible), .hover\:open:hover) {
+		.open\: {
+			&rotate {
+				rotate: 180deg;
+			}
+			&flip {
+				scale: -1;
+			}
+			&block {
+				display: block;
+			}
+			&flex {
+				display: flex;
+			}
+			&grid {
+				display: grid;
+			}
+			&inline {
+				display: inline;
+			}
+			&inline-block {
+				display: inline-block;
+			}
+			&inline-flex {
+				display: inline-flex;
+			}
+			&revert {
+				display: revert;
+			}
+			&none {
+				display: none;
 			}
 		}
 	}
@@ -212,38 +244,38 @@
 		+ * {
 			@extend %open;
 		}
-		.open\: {
-			&rotate {
-				rotate: 180deg;
-			}
-			&flip {
-				scale: -1;
-			}
-			&block {
-				display: block;
-			}
-			&flex {
-				display: flex;
-			}
-			&grid {
-				display: grid;
-			}
-			&inline {
-				display: inline;
-			}
-			&inline-block {
-				display: inline-block;
-			}
-			&inline-flex {
-				display: inline-flex;
-			}
-			&revert {
-				display: revert;
-			}
-			&none {
-				display: none;
-			}
-		}
+		// .open\: {
+		// 	&rotate {
+		// 		rotate: 180deg;
+		// 	}
+		// 	&flip {
+		// 		scale: -1;
+		// 	}
+		// 	&block {
+		// 		display: block;
+		// 	}
+		// 	&flex {
+		// 		display: flex;
+		// 	}
+		// 	&grid {
+		// 		display: grid;
+		// 	}
+		// 	&inline {
+		// 		display: inline;
+		// 	}
+		// 	&inline-block {
+		// 		display: inline-block;
+		// 	}
+		// 	&inline-flex {
+		// 		display: inline-flex;
+		// 	}
+		// 	&revert {
+		// 		display: revert;
+		// 	}
+		// 	&none {
+		// 		display: none;
+		// 	}
+		// }
 	}
 }
 
