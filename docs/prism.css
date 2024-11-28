@@ -43,16 +43,22 @@ html:has(.code-content-container:target) {
 	position: relative;
 }
 
-.language-select {
+.language-select, .note[class*="language-"] {
 	display: none;
 }
 
 .code-content-container:has(option[value=html]:checked) .language-select[data-language=html],
+.code-content-container:has(option[value=html]:checked) .note.language-html,
 .code-content-container:has(option[value=js]:checked) .language-select[data-language=js],
+.code-content-container:has(option[value=js]:checked) .note.language-js,
 .code-content-container:has(option[value=spryJs]:checked) .language-select[data-language=spryJs],
+.code-content-container:has(option[value=spryJs]:checked) .note.language-spryJs,
 .code-content-container:has(option[value=petiteVue]:checked) .language-select[data-language=petiteVue],
+.code-content-container:has(option[value=petiteVue]:checked) .note.language-petiteVue,
 .code-content-container:has(option[value=vueJs]:checked) .language-select[data-language=vueJs],
-.code-content-container:has(option[value=alpineJs]:checked) .language-select[data-language=alpineJs] {
+.code-content-container:has(option[value=vueJs]:checked) .note.language-vueJs,
+.code-content-container:has(option[value=alpineJs]:checked) .language-select[data-language=alpineJs],
+.code-content-container:has(option[value=alpineJs]:checked) .note.language-alpineJs {
 	display: block;
 }
 

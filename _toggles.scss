@@ -6,12 +6,15 @@
 @use "variables";
 
 :is(.toggle, .toggle-next) {
+	user-select: none;
 	& :is(svg,img):nth-of-type(2),
+	&:not(:has([type])):focus-within:has(:is(svg,img):nth-of-type(2)) :is(svg,img):first-of-type,
 	&:is(.active, :has(:checked)):has(:is(svg,img):nth-of-type(2)) :is(svg,img):first-of-type {
 		opacity: 0;
 		scale  : .5
 	}
 
+	&:not(:has([type])):focus-within :is(svg,img):nth-of-type(2),
 	&:is(.active, :has(:checked)) :is(svg,img):nth-of-type(2) {
 		opacity: 1;
 		scale  : 1
@@ -30,6 +33,39 @@
 
 	&:has( > .switch) {
 		height: 1.15em;
+	}
+
+	&:focus-within > .focus\: {
+		&rotate {
+			rotate: 180deg;
+		}
+		&flip {
+			scale: -1;
+		}
+		&block {
+			display: block;
+		}
+		&flex {
+			display: flex;
+		}
+		&grid {
+			display: grid;
+		}
+		&inline {
+			display: inline;
+		}
+		&inline-block {
+			display: inline-block;
+		}
+		&inline-flex {
+			display: inline-flex;
+		}
+		&revert {
+			display: revert;
+		}
+		&none {
+			display: none;
+		}
 	}
 }
 
@@ -86,6 +122,8 @@
 
 	:is(#{$prefix}open[class],
 	#{$prefix}collapse:has( > .toggle > :checked),
+	#{$prefix}collapse:has(.content > .toggle > :checked),
+	#{$prefix}collapse:has(.content > .toggle:checked),
 	#{$prefix}collapse:has( > .toggle:checked)),
 	#{$prefix}hover\:open:is(:hover, :has(:focus-visible)),
 	#{$prefix}focus\:open:not(:has(.toggle label:active)):has(:active),
@@ -109,7 +147,8 @@
 				scale  : 1;
 			}
 
-			.open\: {
+			.open\:,
+			&.open\: {
 				&rotate {
 					rotate: 180deg;
 				}
@@ -163,7 +202,6 @@
 		@include collapse-toggle-styles('.c-#{$breakpoint}\\:');
 	}
 }
-
 
 .toggle-next {
 	+ * {

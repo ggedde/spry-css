@@ -1211,7 +1211,7 @@ $borders: (
                     </tbody>
                 </table>
 
-                <div class="show-code" data-title="Collapse with Toggle">
+                <div class="show-code" data-title="Collapse with Toggle" data-footer-note="* See &lt;a href='#toggles'&gt;Toogles&lt;/a&gt; for more variations">
                     <div class="collapse">
                         <label class="button toggle"> <!-- Toggle-->
                             Open
@@ -1239,13 +1239,9 @@ $borders: (
                             </div>
                         </div>
                     </div>
-
-                    <div class="note p-2 mb-n2 mx-n2 mt-2 bg-faint">
-                        * See <a href="#toggles">Toogles</a> for more variations
-                    </div>
                 </div>
 
-                <div class="show-code" data-title="Collapse with Overlay and Focus Open">
+                <div class="show-code" data-title="Collapse with Overlay and Focus Open" data-footer-note="* See &lt;a href='#toggles'&gt;Toogles&lt;/a&gt;, &lt;a href='#accordions'&gt;Accordions&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
                     <span class="collapse from-top focus:open">
                         <button class="toggle"> <!-- Toggle-->
                             View Items
@@ -1263,13 +1259,9 @@ $borders: (
                             </nav>
                         </div>
                     </span>
-
-                    <div class="note p-2 mb-n2 mx-n2 mt-2 bg-faint">
-                        * See <a href="#toggles">Toogles</a>, <a href="#accordions">Accordions</a>, <a href="#dropdowns">Dropdowns</a> and <a href="#menus">Menus</a> for more variations
-                    </div>
                 </div>
 
-                <div class="show-code" data-title="Collapse Nav with Hover Open">
+                <div class="show-code" data-title="Collapse Nav with Hover Open" data-footer-note="* See &lt;a href='#lists'&gt;Lists&lt;/a&gt; and &lt;a href='#navs'&gt;Navs&lt;/a&gt; for more variations">
                     <div class="container">
                         <nav class="list indicators hover:open open:side c-md:open:down c-md:sub:open:side c-md:row c-md:columns-auto c-md:sub:shadow bg-faint p-1 g-1">
                             <ul>
@@ -1320,10 +1312,6 @@ $borders: (
                                 </li>
                             </ul>
                         </nav>
-                    </div>
-
-                    <div class="note p-2 mb-n2 mx-n2 mt-2 bg-faint">
-                        * See <a href="#lists">Lists</a> and <a href="#navs">Navs</a> for more variations
                     </div>
                 </div>
 
@@ -2305,7 +2293,60 @@ $borders: (
                     </div>
                 </div>
 
-                <div class="show-code mt-4" data-title="Toogle Next">
+                <div class="show-code" data-title="Toggle Distant Siblings">
+                    <div class="language-select" data-language="html">
+                        <span class="collapse">
+
+                            <p class="mt-2">Other Content...</p>
+
+                            <div class="content hidden">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore.
+                                    Nonumy eirmod tempor invidunt ut labore et dolore magna erat,
+                                    sed diam voluptua. At vero eos et accusam et justo duo
+                                    dolores et ea rebum. Stet clita kasd gubergren, no sea
+                                    takimata sanctus est Lorem ipsum dolor sit amet.
+                                </p>
+                                <p>
+                                    Sed diam nonumy eirm Lorem ipsum dolor sit amet,
+                                    consetetur sadipscing elitr, sed diam nonumy.
+                                </p>
+                            </div>
+
+                            <p class="mt-2">Other Content...</p>
+
+                            <label class="button toggle">
+                                <span class="none checked:inline">
+                                    Toggle Closed
+                                </span>
+                                <span class="checked:none">
+                                    Toggle Open
+                                </span>
+                                <input type="checkbox" />
+                            </label>
+
+                            <p class="mt-2">Other Content...</p>
+
+                            <div class="content hidden">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore.
+                                    Nonumy eirmod tempor invidunt ut labore et dolore magna erat,
+                                    sed diam voluptua. At vero eos et accusam et justo duo
+                                    dolores et ea rebum. Stet clita kasd gubergren, no sea
+                                    takimata sanctus est Lorem ipsum dolor sit amet.
+                                </p>
+                                <p>
+                                    Sed diam nonumy eirm Lorem ipsum dolor sit amet,
+                                    consetetur sadipscing elitr, sed diam nonumy.
+                                </p>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="show-code mt-4" data-title="Toogle Next Sibling" data-note="Uses &lt;span class='color-primary'&gt;.toggle-next&lt;/span&gt;&lt;br&gt;Does not require a &lt;span class='color-primary'&gt;.collapse&lt;/span&gt; wrapper and automatically collapses the next element sibling.">
                     <label class="toggle-next button"> <!-- Toggle Next -->
                         <input type="checkbox" />
                         <span class="none checked:inline">Toggle Next Closed</span>
@@ -2324,7 +2365,7 @@ $borders: (
                 </div>
 
                 <div class="show-code mt-4" data-title="Toggle Element by ID">
-                    <div class="language-select" data-language="html">
+                    <div class="language-select" data-language="html" data-warning="* HTML version is not keyboard accessible. Use JS version instead.">
                         <label for="toggle2" class="button">
                             Toggle Content
                         </label>
@@ -2342,10 +2383,6 @@ $borders: (
                                     sit amet.
                                 </p>
                             </div>
-                        </div>
-
-                        <div class="note p-2 mb-n2 mx-n2 mt-2 bg-faint">
-                            <span class="color-warning">* HTML version is not keyboard accessible. Use JS version instead.</span>
                         </div>
                     </div>
 
@@ -2422,8 +2459,8 @@ $borders: (
                     </div>
                 </div>
                
-                <div class="show-code mb-4" data-title="Used for Modals">
-                    <div class="language-select" data-language="html">
+                <div class="show-code mb-4" data-title="Used for Modals" data-footer-note="* See &lt;a href='#modals'&gt;Modals&lt;/a&gt; for more variations">
+                    <div class="language-select" data-language="html" data-warning="* HTML version is not keyboard accessible. Use JS version instead.">
                         <label class="toggle-next button">
                             Open Modal with HTML
                             <input id="toggleModal" type="checkbox" />
@@ -2436,10 +2473,6 @@ $borders: (
                                     Close Toggle
                                 </label>
                             </article>
-                        </div>
-
-                        <div class="note p-2 mb-n2 mx-n2 mt-2 bg-faint">
-                            <div class="color-warning mb-n3">* HTML version is not keyboard accessible. Use JS version instead.</div>
                         </div>
                     </div>
 
@@ -2455,10 +2488,6 @@ $borders: (
                                 </button>
                             </article>
                         </div>
-                    </div>
-
-                    <div class="note p-2 mb-n2 mx-n2 mt-2 bg-faint">
-                        * See <a href="#modals">Modals</a> for more variations
                     </div>
                 </div>
     
@@ -2939,13 +2968,13 @@ $borders: (
                         </div>
                     </div>
                     
-                    <label class="toggle-next button mb-1 w">
+                    <label class="toggle-next button w">
                         Question 3
                         <input type="checkbox" />
                         <svg class="icon open:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                     </label>
                     <div>
-                        <div class="p-2 pt-0">
+                        <div class="p-2">
                             <p>
                                 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                 invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
@@ -2959,11 +2988,11 @@ $borders: (
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Single Opening Accordion" data-badge="Uses Radios">
+                <div class="show-code" data-title="Single Opening Accordion" data-note="Uses Radios with a grouped name='' instead of Checkboxes">
                     <div>
                         <label class="toggle-next button sharp hazy link contrast w">
                             Question 1
-                            <input type="radio" name="accordionValue" />
+                            <input type="radio" name="accordionGroup1" />
                             <svg class="icon open:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                         </label>
                         <div class="hidden">
@@ -2984,7 +3013,7 @@ $borders: (
 
                         <label class="toggle-next button sharp hazy link contrast w">
                             Question 2
-                            <input type="radio" name="accordionValue" />
+                            <input type="radio" name="accordionGroup1" />
                             <svg class="icon open:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                         </label>
                         <div class="hidden">
@@ -2999,7 +3028,7 @@ $borders: (
                         
                         <label class="toggle-next button sharp hazy link contrast w">
                             Question 3
-                            <input type="radio" name="accordionValue" />
+                            <input type="radio" name="accordionGroup1" />
                             <svg class="icon open:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                         </label>
                         <div class="hidden">
@@ -3134,65 +3163,95 @@ $borders: (
                     <div class="alert primary">
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
+                    <div class="alert success flex">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M19.78 2.2 24 6.42 8.44 22 0 13.55l4.22-4.22 4.22 4.22L19.78 2.2m0 2.8L8.44 16.36l-4.22-4.17-1.41 1.36 5.63 5.62L21.19 6.42 19.78 5z" /></svg>
+                        With Icon - Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
                     <div class="alert warning flex">
-                        <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
                         With Icon - Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
                     <div class="alert contrast flex">
-                        <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-14a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4z" /></svg>
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-14a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4z" /></svg>
                         Contrast Colors - Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore ma.
+                    </div>
+                    <div class="alert error flex">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                        Error Colors - Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore ma.
                     </div>
                 </div>
 
                 <div class="show-code" data-title="Outline">
                     <div class="alert outline flex">
-                        <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg>
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
                     <div class="alert primary outline flex">
-                        <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8 12h2v2h-2v-2m0-8h2v6h-2V7" /></svg>
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8 12h2v2h-2v-2m0-8h2v6h-2V7" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
                     <div class="alert success outline flex">
-                        <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
-                    <div class="alert contrast outline flex">
-                        <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
+                    <div class="alert warning outline flex">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    </div>
+                    <div class="alert error outline flex">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Hazy">
-                    <div class="alert hazy flex">
-                        <svg class="icon lg mr-1" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg>
+                <div class="show-code" data-title="Hazy with Accent Border">
+                    <div class="alert hazy flex b-0 bl-3 sharp">
+                        <svg class="icon lg" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
-                    <div class="alert primary hazy flex">
-                        <svg class="icon lg mr-1" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
+                    <div class="alert primary hazy flex b-0 bl-3 sharp">
+                        <svg class="icon lg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
-                    <div class="alert success hazy flex">
-                        <svg class="icon lg mr-1" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
+                    <div class="alert success hazy flex b-0 bl-3 sharp">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M19.78 2.2 24 6.42 8.44 22 0 13.55l4.22-4.22 4.22 4.22L19.78 2.2m0 2.8L8.44 16.36l-4.22-4.17-1.41 1.36 5.63 5.62L21.19 6.42 19.78 5z" /></svg>
                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
-                    <div class="alert primary hazy flex b-0 bl-3 border-primary sharp">
-                        <svg class="icon lg mr-1" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
-                        With Border Highlight - Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    <div class="alert warning hazy flex b-0 bl-3 sharp">
+                        <svg class="icon lg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
-                    <div class="alert success hazy flex b-0 bl-3 border-success sharp">
-                        <svg class="icon lg mr-1" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
-                        With Border Highlight - Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                    <div class="alert error hazy flex b-0 bl-3 sharp">
+                        <svg class="icon lg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Closable Large Alert" data-badge="Uses Toggles" data-badge-link="#toggles">
-                    <div class="expand from-center open">
-                        <div>
-                            <div class="alert secondary lg pr-3 flex">
-                                <svg class="icon lg mr-2" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
-                                Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
-                                <button class="hazy light circle xs icon absolute top right m-1" data-toggle-close onclick="setTimeout(() => this.closest('.expand').classList.add('open'), 3000);">
+                <div class="show-code" data-title="Closable Large Alert">
+                    <div class="language-select" data-language="html" data-footer-note="* HTML version uses Toggles. See &lt;a href='#collapse'&gt;Collapse&lt;/a&gt; and &lt;a href='#toggles'&gt;Toogles&lt;/a&gt; for more details">
+                        <div class="collapse from-center">
+                            <div class="content hidden lg">
+                                <div class="alert primary pr-3 flex">
+                                    <svg class="icon lg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                                
+                                </div>
+                                <label class="toggle button hazy light circle icon absolute sm top right m-1">
+                                    <input type="checkbox" checked onclick="setTimeout(() => this.checked = true, 3000)" />
+                                    <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="language-select" data-language="js" data-footer-note="* See &lt;a href='#collapse'&gt;Collapse&lt;/a&gt; for more details">
+                        <div class="collapse open from-center">
+                            <div class="content hidden lg">
+                                <div class="alert primary pr-3 flex">
+                                    <svg class="icon lg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                                
+                                </div>
+                                <button onclick="this.closest('.open').classList.remove('open')" class="hazy light circle icon absolute sm top right m-1">
                                     <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                                 </button>
                             </div>
@@ -3201,17 +3260,21 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Popup Alert Example" data-badge="Uses Toggles" data-badge-link="#toggles">
-                    <button title="Open Popup" data-toggle="next">Show Alert Popup</button>
+                    <label class="toggle-next button" title="Open Popup">
+                        Show Alert Popup
+                        <input id="alertModal" type="checkbox" />
+                    </label>
                     <div class="modal">
-                        <div class="alert primary lg max-w-400 flex">
+                        <label for="alertModal" class="fixed inset"></label>
+                        <div class="alert primary lg max-w-400 flex shadow shadow/100">
                             <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
                             <div>
                                 <h5 class="bold">Info</h5>
                                 Please Try again.
                             </div>
-                            <button class="icon hazy light xs circle absolute top right m-1" title="Close Popup" data-toggle-close>
+                            <label for="alertModal" class="button icon hazy light xs circle absolute top right m-1" title="Close Popup">
                                 <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                            </button>
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -3859,12 +3922,12 @@ $borders: (
                                 <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
                             </svg>
                         </button>
-                        <div class="overlay hidden">
-                            <nav class="content from-top list bg-faint round-bottom shadow p-1 b-1 g-1">
+                        <div class="overlay hidden from-top">
+                            <nav class="content list bg-faint round-bottom shadow p-1 b-1 g-1">
                                 <ul>
-                                    <li><a href="#" class="plain">Item 1</a></li>
-                                    <li><a href="#" class="plain">Item 2</a></li>
-                                    <li><a href="#" class="plain">Item 3</a></li>
+                                    <li><button class="link">Item 1</button></li>
+                                    <li><button class="link">Item 2</button></li>
+                                    <li><button class="link">Item 3</button></li>
                                 </ul>
                             </nav>
                         </div>
@@ -3881,12 +3944,12 @@ $borders: (
                                 <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
                             </svg>
                         </button>
-                        <div class="overlay hidden">
-                            <nav class="content from-top list bg-faint round-bottom shadow p-1 b-1 g-1">
+                        <div class="overlay hidden from-top">
+                            <nav class="content list bg-faint round-bottom shadow p-1 b-1 g-1">
                                 <ul>
-                                    <li><a href="#" class="plain" onclick="this.closest('.collapse').classList.remove('open')">Item 1</a></li>
-                                    <li><a href="#" class="plain" onclick="this.closest('.collapse').classList.remove('open')">Item 2</a></li>
-                                    <li><a href="#" class="plain" onclick="this.closest('.collapse').classList.remove('open')">Item 3</a></li>
+                                    <li><button class="link" onclick="this.closest('.collapse').classList.remove('open')">Item 1</button></li>
+                                    <li><button class="link" onclick="this.closest('.collapse').classList.remove('open')">Item 2</button></li>
+                                    <li><button class="link" onclick="this.closest('.collapse').classList.remove('open')">Item 3</button></li>
                                 </ul>
                             </nav>
                         </div>
@@ -3894,18 +3957,18 @@ $borders: (
                 </div>
 
                 <div class="language-select" data-language="petiteVue">
-                    <span id="dropdownTogglePetiteVue" class="relative" @vue:mounted="registerClickOutside($el)" @keyup="event.keyCode === 27 ? open = false : null">
-                        <button class="pr-1" :class="{active: open}" @click="open = !open">
-                            {{toggleValue}}
+                    <span id="dropdownTogglePetiteVue" class="relative" @vue:mounted="mounted($el)" @keyup="event.keyCode === 27 ? open = false : null">
+                        <button :class="{active: open}" @click="open = !open">
+                            View Items
                             <svg class="icon active:rotate lg" viewBox="0 0 24 24">
                                 <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
                             </svg>
                         </button>
-                        <div class="overlay">
-                            <nav class="collapse from-top list bg-faint round-bottom shadow p-1 b-1 g-1" :class="{open: open}">
+                        <div class="collapse overlay hidden from-top" :class="{open: open}">
+                            <nav class="content list bg-faint round-bottom shadow p-1 b-1 g-1" :class="{open: open}">
                                 <ul>
                                     <li v-for="item in items">
-                                        <button class="button plain" :class="{active: (toggleValue === item)}" @click="toggleValue = item; open = false">{{ item }}</button>
+                                        <button class="link" :class="{active: (toggleValue === item)}" @click="toggleValue = item; open = false">{{ item }}</button>
                                     </li>
                                 </ul>
                             </nav>
@@ -3918,11 +3981,11 @@ $borders: (
                             open: false,
                             toggleValue: 'Select',
                             items: [
-                                'Option 1',
-                                'Option 2',
-                                'Option 3',
+                                'Item 1',
+                                'Item 2',
+                                'Item 3',
                             ],
-                            registerClickOutside(el) {
+                            mounted(el) {
                                 document.documentElement.addEventListener('click', e => {
                                     if (el !== e.target && !el.contains(e.target)) {
                                         this.open = false;
@@ -3936,17 +3999,17 @@ $borders: (
                 <div class="language-select" data-language="vueJs">
                     <span id="dropdownToggleVueJs">
                         <span class="relative" ref="el" @keyup.esc="open = false">
-                            <button class="pr-1" :class="{active: open}" @click="open = !open">
-                                {{toggleValue}}
+                            <button :class="{active: open}" @click="open = !open">
+                                View Items
                                 <svg class="icon active:rotate lg" viewBox="0 0 24 24">
                                     <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
                                 </svg>
                             </button>
-                            <div class="overlay">
-                                <nav class="collapse from-top list bg-faint round-bottom shadow p-1 b-1 g-1" :class="{open: open}">
+                            <div class="collapse overlay hidden from-top" :class="{open: open}">
+                                <nav class="content list bg-faint round-bottom shadow p-1 b-1 g-1" :class="{open: open}">
                                     <ul>
                                         <li v-for="item in items">
-                                            <button class="button plain" :class="{active: (toggleValue === item)}" @click="toggleValue = item; open = false">{{ item }}</button>
+                                            <button class="link" :class="{active: (toggleValue === item)}" @click="toggleValue = item; open = false">{{ item }}</button>
                                         </li>
                                     </ul>
                                 </nav>
@@ -3962,9 +4025,9 @@ $borders: (
                                 const open = ref(false);
                                 const toggleValue = ref('Select');
                                 const items = [
-                                    'Option 1',
-                                    'Option 2',
-                                    'Option 3',
+                                    'Item 1',
+                                    'Item 2',
+                                    'Item 3',
                                 ];
                                 onMounted(() => {
                                     document.documentElement.addEventListener('click', e => {
@@ -3988,21 +4051,21 @@ $borders: (
                     <span x-data="{
                             open: false,
                             toggleValue: 'Select',
-                            items: ['Option 1', 'Option 2', 'Option 3']
+                            items: ['Item 1', 'Item 2', 'Item 3']
                         }">
                         <span class="relative" @keyup.esc="open = false" @click.outside="open = false">
-                            <button class="pr-1" :class="{active: open}" @click="open = !open">
-                                <span x-text="toggleValue"></span>
+                            <button :class="{active: open}" @click="open = !open">
+                                View Items
                                 <svg class="icon active:rotate lg" viewBox="0 0 24 24">
                                     <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
                                 </svg>
                             </button>
-                            <div class="overlay">
-                                <nav class="collapse from-top list bg-faint round-bottom shadow p-1 b-1 g-1" :class="{open: open}">
+                            <div class="collapse overlay hidden from-top" :class="{open: open}">
+                                <nav class="content list bg-faint round-bottom shadow p-1 b-1 g-1" :class="{open: open}">
                                     <ul>
                                         <template x-for="item in items">
                                             <li>
-                                                <button class="button plain" :class="{active: (toggleValue === item)}" @click="toggleValue = item; open = false" x-text="item"></button>
+                                                <button class="link" :class="{active: (toggleValue === item)}" @click="toggleValue = item; open = false" x-text="item"></button>
                                             </li>
                                         </template>
                                     </ul>
@@ -4053,7 +4116,7 @@ $borders: (
                 </span>
             </div>
 
-            <div class="show-code" data-title="Dismissible Menu">
+            <div class="show-code" data-title="Dismissible Menu" data-footer-note="* See &lt;a href='#menus'&gt;Menus&lt;/a&gt; and &lt;a href='#toggles'&gt;Toogles&lt;/a&gt; for more variations">
                 <span class="collapse focus:open">
                     <button class="toggle icon link circle">
                         <svg viewBox="0 0 24 24">
@@ -4073,11 +4136,6 @@ $borders: (
                         </div>
                     </nav>
                 </span>
-
-                <div class="note p-2 mb-n2 mx-n2 mt-2 bg-faint">
-                    * See <a href="#menus">Menus</a> and <a href="#toggles">Toogles</a> for more variations
-                </div>
-
             </div>
 
 
@@ -4626,46 +4684,67 @@ $borders: (
                     </i>
                 </div>
 
-                <div class="show-code" data-title="Toggle Icons" data-note="See &lt;a href='#toggles'&gt;Toggles&lt;/a&gt;">
-                    <button class="icon link" data-toggle>
-                        <svg class="active:rotate" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
+                <div class="show-code" data-title="Toggle Icons" data-footer-note="* See &lt;a href='#toggles'&gt;Toggles&lt;/a&gt; for more details">
+                    <span class="h5 inline-block min-w-200 mr-n4">With Focus</span>
+
+                    <button class="toggle icon link">
+                        <svg class="focus:rotate" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
                     </button>
 
-                    <button class="icon link" data-toggle>
-                        <svg class="active:flip" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
+                    <button class="toggle icon link">
+                        <svg class="focus:flip" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
                     </button>
 
-                    <button class="icon link" data-toggle>
+                    <button class="toggle icon link">
                         <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                         <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                     </button>
 
-                    <button class="icon link" data-toggle>
+                    <button class="toggle icon link">
                         <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
                         <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                     </button>
 
-                    <button class="link" data-toggle>
+                    <br>
+
+                    <span class="h5 inline-block min-w-200 mr-n4">With Toggles</span>
+
+                    <label class="toggle button icon link">
+                        <input type="checkbox" />
+                        <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
+                        <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                    </label>
+
+                    <label class="toggle button icon link">
+                        <input type="checkbox" />
+                        <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
+                        <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+                    </label>
+
+                    <label class="toggle button link">
                         Select Me
-                        <span class="icon ml-2">
+                        <input type="checkbox" />
+                        <span class="icon">
                             <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v14H5V5h14z"></path></svg>
                             <svg viewBox="0 0 24 24"><path d="M19 19H5V5h10V3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8h-2m-11.09-.92L6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09z"></path></svg>
                         </span>
-                    </button>
+                    </label>
                     
-                    <button class="link" data-toggle>
-                        <span class="icon mr-2">
+                    <label class="toggle button link">
+                        <span class="icon">
                             <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v14H5V5h14z"></path></svg>
                             <svg viewBox="0 0 24 24"><path d="M19 19H5V5h10V3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8h-2m-11.09-.92L6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09z"></path></svg>
                         </span>
+                        <input type="checkbox" />
                         Select Me
-                    </button>
+                    </label>
                     
-                    <button class="link" data-toggle>
-                        <svg class="mr-2 lg" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z"></path></svg>
+                    <label class="toggle button link">
+                        <svg class="lg icon" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z"></path></svg>
                         Direction
-                        <svg class="ml-2 lg" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
-                    </button>
+                        <input type="checkbox" />
+                        <svg class="lg icon" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+                    </label>
                 </div>
             </section>
             <!------------------------------------
