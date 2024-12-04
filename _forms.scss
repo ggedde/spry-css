@@ -1,9 +1,10 @@
-/*
+@use "extends";
+/*!
 * Spry Forms
 */
-@use "extends";
 
-:where(input, textarea, select, .is-select, .prefix, .suffix) {
+:where(input, textarea, select, .is-select, .prefix, .suffix),
+.input-group> :not(input, select, textarea) {
 	@extend %ui;
 	@extend %ui-border;
 	@extend %ui-border-radius;
@@ -21,13 +22,13 @@
 		box-shadow: inset 0 0 0 1px hsl(from var(--color) h s var(--bdr-l, l) / var(--bdr-a, 50%));
 	}
 
-	&:is(:hover, :focus) {
+	&:is(:hover, :focus):not(.icon) {
 		--theme-input-border: var(--color);
 		border-color        : hsl(from var(--theme-input-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
 	}
 }
 
-:is(h1, h2, h3, h4, h5, label, p)+ :is(input, select, textarea),
+:where(h1, h2, h3, h4, h5, label, p)+ :where(input, select, textarea, .input-group),
 label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-child {
 	@extend %ui-margin-above;
 }
@@ -80,13 +81,16 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 		border-radius   : 2px;
 	}
 
-	&:checked {
+	&:not(.icon, .switch):checked {
 		border-color: var(--color);
 
 		&::after {
-			inset  : 2px;
-			opacity: 1;
+			inset: 2px;
 		}
+	}
+
+	&:checked::after {
+		opacity: 1;
 	}
 
 	&.switch {
@@ -129,10 +133,6 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 	border-radius: 50%;
 }
 
-:is([type=checkbox], [type=radio]):focus-visible:not(:hover) {
-	outline-width: 4px;
-}
-
 :disabled,
 .disabled :is(input, select, textarea, label, button, a) {
 	opacity       : .7;
@@ -158,12 +158,13 @@ select,
 
 .no-arrows::-webkit-outer-spin-button,
 .no-arrows::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+	-webkit-appearance: none;
+	margin            : 0;
 }
-.no-arrows{
-	appearance: textfield;
-    -moz-appearance: textfield;
+
+.no-arrows {
+	appearance     : textfield;
+	-moz-appearance: textfield;
 }
 
 textarea {
@@ -191,67 +192,70 @@ input::file-selector-button {
 	font            : inherit;
 }
 
-.prefix,
-.suffix {
-	--bg-a          : 20%;
-	width           : auto;
-	background-color: hsl(from var(--theme-input-border) h s var(--bg-l, l) / var(--bg-a));
-	border-color    : hsl(from var(--theme-input-border) h s var(--bdr-l, l) / var(--bdr-a, 50%));
-	color           : inherit;
-	display         : inline-flex;
+.input-group {
+	display: flex;
+	gap    : 0;
+
+	> :not(input, select, textarea) {
+		--bg-a          : 20%;
+		width           : auto;
+		background-color: hsl(from var(--theme-input-border) h s var(--bg-l, l) / var(--bg-a));
+		border-color    : hsl(from var(--theme-input-border) h s var(--bdr-l, l) / var(--bdr-a, 50%));
+		color           : inherit;
+		display         : inline-flex;
+		justify-content : center;
+
+		&:last-child,
+		+* {
+			border-radius: 0 var(--border-radius) var(--border-radius) 0;
+		}
+
+		&:last-child {
+			border-left: 0;
+		}
+
+		&:first-child {
+			border-right: 0;
+		}
+	}
+
+	> :not(input, select, textarea):first-child,
+	:where(input, select, textarea):has(+ :not(input, select, textarea)) {
+		border-radius: var(--border-radius) 0 0 var(--border-radius);
+	}
+
+	[type=color]+output {
+		min-width: 100px;
+	}
 }
 
-[class].prefix,
-[class].suffix {
-	flex: 0 auto;
-}
-
-.prefix {
-	border-right: 0;
-}
-
-.suffix {
-	border-left: 0;
-}
-
-.suffix,
-.prefix+ :where(input, select, textarea) {
-	border-radius: 0 var(--border-radius) var(--border-radius) 0;
-}
-
-.prefix,
-:where(input, select, textarea):has(+ .suffix) {
-	border-radius: var(--border-radius) 0 0 var(--border-radius);
-}
-
-label,
-output {
-	min-height: 2.3em;
-	min-width : 2.3em;
-	align-content: center;
-}
+// label,
+// output {
+// 	min-height   : 2.3em;
+// 	min-width    : 2.3em;
+// }
 
 output {
 	text-align: center;
 }
 
 label {
-	position  : relative;
-	display   : block;
+	position     : relative;
+	display      : block;
+	align-content: start;
 
 	.error {
 		color: var(--error, #c33);
 	}
 
-	&:focus-within .prefix,
-	&:focus-within .suffix,
+	&:focus-within .input-group> :not(input, select, textarea),
 	&:focus-within input::file-selector-button {
 		background-color: var(--color);
 		border-color    : var(--color);
 		color           : hsl(from var(--text-color) h s var(--clr-l, l) / var(--clr-a, 100%));
 	}
 
-	&:hover :is(.prefix, .suffix) {
+	&:hover .input-group> :not(input, select, textarea) {
 		--theme-input-border: var(--color);
 	}
 
@@ -302,8 +306,7 @@ label {
 
 .show-invalid label:has(:not(:focus):user-invalid) {
 
-	.prefix,
-	.suffix {
+	.input-group> :not(input, select, textarea) {
 		background-color: var(--error, #c33);
 		border-color    : var(--error, #c33);
 		color           : hsl(from var(--text-color) h s var(--clr-l, l) / var(--clr-a, 100%));

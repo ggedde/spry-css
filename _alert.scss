@@ -1,7 +1,7 @@
-/*
+@use "extends";
+/*!
 * Spry Alerts
 */
-@use "extends";
 
 .alert {
 	@extend %ui;

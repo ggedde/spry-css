@@ -1,7 +1,7 @@
-/*
+@use "extends";
+/*!
 * Spry Cards
 */
-@use "extends";
 
 article {
 	@extend %ui-border-radius;

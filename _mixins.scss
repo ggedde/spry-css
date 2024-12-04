@@ -1,9 +1,8 @@
+@use "variables";
+@use "sass:map";
 /*
 * Spry Mixins
 */
-
-@use "variables";
-@use "sass:map";
 
 /// Min Width Media Query
 /// @param {String | Unit} $min - Minimum Value. String must be included in $breakpoints.

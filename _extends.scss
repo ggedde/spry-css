@@ -1,8 +1,8 @@
-/*
-* Spry Extends
-*/
 @use "variables";
 @use "mixins";
+/*!
+* Spry Extends
+*/
 
 %ui {
 	align-items     : center;
@@ -151,7 +151,7 @@
 		margin: auto;
 		position: absolute;
 		transform: rotate(45deg);
-		translate: -.08em 0;
+		// translate: -.08em 0;
 		width: .5em;
 	}
 }

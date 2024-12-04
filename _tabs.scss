@@ -1,7 +1,7 @@
-/*
+@use "extends";
+/*!
 * Spry Tabs
 */
-@use "extends";
 
 .tabs {
 	overflow    : hidden;
@@ -22,18 +22,18 @@
 		&+*>* {
 			transition: none;
 			transform : translateY(3px);
-			@extend %closed;
 			&:not(.open) {
-				max-height: 0;
+				height: 0;
+				opacity: 0;
 				padding-block: 0;
 				margin-block: 0;
+				pointer-events: none;
 			}
 
 			&.open {
 				transition: opacity .2s ease-in-out, transform .3s ease-out;
 				transform : none;
 				max-height: none;
-				@extend %open;
 			}
 		}
 	}

@@ -1,7 +1,6 @@
-
 @use "variables";
 @use "extends";
-/*
+/*!
 * Spry Typography
 */
 
@@ -17,12 +16,19 @@
     }
 }
 
-:is(h1, h2, h3, h4, h5, ul, ol, p) + * {
+// @each $breakpoint, $separations in variables.$separations {
+//     @each $separate, $separation in $separations {
+//         :where(#{$separate}) + :where(#{$separate}) {
+//             margin-top: $separation;
+//         }
+//     }
+// }
+
+:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label) + :where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label) {
     @extend %ui-margin-above-lg;
 }
 
-:is(dfn, cite) + *,
-.note + * {
+:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, div) + :where(dfn, cite, .note) {
     @extend %ui-margin-above;
 }
 

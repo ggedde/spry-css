@@ -1,9 +1,9 @@
-/*
-* Spry Toggles
-*/
 @use "extends";
 @use "mixins";
 @use "variables";
+/*!
+* Spry Toggles
+*/
 
 :is(.toggle, .toggle-next) {
 	user-select: none;
@@ -34,39 +34,6 @@
 	&:has( > .switch) {
 		height: 1.15em;
 	}
-
-	&:focus-within > .focus\: {
-		&rotate {
-			rotate: 180deg;
-		}
-		&flip {
-			scale: -1;
-		}
-		&block {
-			display: block;
-		}
-		&flex {
-			display: flex;
-		}
-		&grid {
-			display: grid;
-		}
-		&inline {
-			display: inline;
-		}
-		&inline-block {
-			display: inline-block;
-		}
-		&inline-flex {
-			display: inline-flex;
-		}
-		&revert {
-			display: revert;
-		}
-		&none {
-			display: none;
-		}
-	}
 }
 
 // Delay on hover to prevent accidental showing
@@ -83,15 +50,11 @@
 
 @mixin collapse-toggle-styles($prefix) {
 
-	#{$prefix}collapse {
-		position: relative;
+	#{$prefix}toggle-content {
+		z-index: 1;
 	}
-
-	#{$prefix}collapse > .content,
-	#{$prefix}collapse > .overlay > .content,
-	#{$prefix}focus\:open ul > li > ul,
-	#{$prefix}hover\:open ul > li > ul,
-	#{$prefix}hover\:open ul > li > * > ul {
+	#{$prefix}toggle-content > *,
+	:is(#{$prefix}hover\:open, #{$prefix}focus\:open) ul > li > ul {
 		@if $prefix == '.' {
 			@extend %closed;
 		}
@@ -100,125 +63,12 @@
 		}
 	}
 
-	#{$prefix}hover\:open :is(li:hover > ul, li:hover > * > ul, li:has(:focus-visible) > ul, li:has(:focus-visible) > * > ul),
-	#{$prefix}focus\:open :is(li:focus-within > ul, li:focus-within > * > ul) {
+	#{$prefix}open > :where(.toggle-content) > * {
 		@if $prefix == '.' {
 			@extend %open;
 		}
 		@else {
 			@include mixins.open;
-		}
-	}
-
-	:is(#{$prefix}open[class],
-	#{$prefix}collapse:has( > .toggle > :checked),
-	#{$prefix}collapse:has(.content > .toggle > :checked),
-	#{$prefix}collapse:has(.content > .toggle:checked),
-	#{$prefix}collapse:has( > .toggle:checked)),
-	#{$prefix}hover\:open:is(:hover, :has(:focus-visible)),
-	#{$prefix}focus\:open:not(:has(:is(.toggle, .toggle-next) label:active)):has(:active),
-	#{$prefix}focus\:open:is(:has( > :focus):not(:has(label:active)), :has(:focus-visible), .hover\:open:hover) {
-		> .content,
-		> * > .content {
-			@if $prefix == '.' {
-				@extend %open;
-			}
-			@else {
-				@include mixins.open;
-			}
-		}
-		> :is(.toggle, .toggle-next){
-			&:has(:is(img,svg):nth-of-type(2)) :is(img,svg):first-of-type {
-				opacity: 0;
-				scale  : .5;
-			}
-			&:has(:is(img,svg):nth-of-type(2)) :is(img,svg):last-of-type {
-				opacity: 1;
-				scale  : 1;
-			}
-		}
-		// .open\: {
-		// 	&rotate {
-		// 		rotate: 180deg;
-		// 	}
-		// 	&flip {
-		// 		scale: -1;
-		// 	}
-		// 	&block {
-		// 		display: block;
-		// 	}
-		// 	&flex {
-		// 		display: flex;
-		// 	}
-		// 	&grid {
-		// 		display: grid;
-		// 	}
-		// 	&inline {
-		// 		display: inline;
-		// 	}
-		// 	&inline-block {
-		// 		display: inline-block;
-		// 	}
-		// 	&inline-flex {
-		// 		display: inline-flex;
-		// 	}
-		// 	&revert {
-		// 		display: revert;
-		// 	}
-		// 	&none {
-		// 		display: none;
-		// 	}
-		// }
-	}
-
-	:is(#{$prefix}open[class],
-	.toggle-next:has(>:checked),
-	.toggle-next:checked,
-	#{$prefix}collapse:has( > .toggle > :checked),
-	#{$prefix}collapse:has(.content > .toggle > :checked),
-	#{$prefix}collapse:has(.content > .toggle:checked),
-	#{$prefix}collapse:has( > .toggle:checked)) {
-	// #{$prefix}hover\:open:is(:hover, :has(:focus-visible)),
-	// #{$prefix}focus\:open:not(:has(:is(.toggle, .toggle-next) label:active)):has(:active),
-	// #{$prefix}focus\:open:is(:has( > :focus):not(:has(label:active)), :has(:focus-visible), .hover\:open:hover) {
-		.open\: {
-			&rotate {
-				rotate: 180deg;
-			}
-			&flip {
-				scale: -1;
-			}
-			&block {
-				display: block;
-			}
-			&flex {
-				display: flex;
-			}
-			&grid {
-				display: grid;
-			}
-			&inline {
-				display: inline;
-			}
-			&inline-block {
-				display: inline-block;
-			}
-			&inline-flex {
-				display: inline-flex;
-			}
-			&revert {
-				display: revert;
-			}
-			&none {
-				display: none;
-			}
-		}
-	}
-
-	#{$prefix}focus\:open:not(:has(:is(.toggle, .toggle-next) label:active)):has(:active),
-	#{$prefix}focus\:open:is(.open, :has( > :focus):not(:has(label:active)), :has(:focus-visible), .hover\:open:hover) {
-		> :is(.toggle, .toggle-next){
-			pointer-events: none;
 		}
 	}
 }
@@ -235,49 +85,79 @@
 	}
 }
 
-.toggle-next {
-	+ * {
-		@extend %closed;
-	}
-	// &:checked,
-	&:has(>:checked) {
-		+ * {
-			@extend %open;
-		}
-		// .open\: {
-		// 	&rotate {
-		// 		rotate: 180deg;
-		// 	}
-		// 	&flip {
-		// 		scale: -1;
-		// 	}
-		// 	&block {
-		// 		display: block;
-		// 	}
-		// 	&flex {
-		// 		display: flex;
-		// 	}
-		// 	&grid {
-		// 		display: grid;
-		// 	}
-		// 	&inline {
-		// 		display: inline;
-		// 	}
-		// 	&inline-block {
-		// 		display: inline-block;
-		// 	}
-		// 	&inline-flex {
-		// 		display: inline-flex;
-		// 	}
-		// 	&revert {
-		// 		display: revert;
-		// 	}
-		// 	&none {
-		// 		display: none;
-		// 	}
-		// }
-	}
+.toggle-next + * {
+	@extend %closed;
 }
+
+
+li :is(.toggle:checked, .toggle:has(:checked)) + ul,
+.toggle-container:has(> .toggle:checked, > .toggle :checked) > :where(.toggle-content) > *,
+.hover\:open li:has(:focus-visible, :hover) > ul,
+.hover\:open:hover > :where(.toggle-content) > *,
+.hover\:open:focus-within > :where(.toggle-content) > *,
+.focus\:open li:focus-within > ul,
+.toggle-next:checked + *,
+.toggle-next:has(:checked) + *,
+.focus\:open:focus > :where(.toggle-content) > *,
+.focus\:open:has(.toggle:focus, .toggle :focus, :focus-visible, :active) > :where(.toggle-content) > * {
+	@extend %open;
+}
+
+// .toggle-container:has(> .toggle:checked, > .toggle :checked),
+// .focus\:open:focus,
+// .focus\:open:has(.toggle:focus, .toggle :focus, :focus-visible, :active) {
+// 	> .toggle .open\:,
+// 	> .open\:,
+// 	&.open\: {
+// 		&rotate {
+// 			rotate: 180deg;
+// 		}
+// 		&flip {
+// 			scale: -1;
+// 		}
+// 		&block {
+// 			display: block;
+// 		}
+// 		&flex {
+// 			display: flex;
+// 		}
+// 		&grid {
+// 			display: grid;
+// 		}
+// 		&inline {
+// 			display: inline;
+// 		}
+// 		&inline-block {
+// 			display: inline-block;
+// 		}
+// 		&inline-flex {
+// 			display: inline-flex;
+// 		}
+// 		&revert {
+// 			display: revert;
+// 		}
+// 		&none {
+// 			display: none;
+// 		}
+// 		&close {
+
+// 			&::before,
+// 			&::after {
+// 				height          : 1.2em;
+// 				width           : .12em;
+// 				box-shadow      : none;
+// 			}
+
+// 			&::before {
+// 				transform: rotate(45deg);
+// 			}
+
+// 			&::after {
+// 				transform: rotate(-45deg);
+// 			}
+// 		}
+// 	}
+// }
 
 .clip-top, .clip-bottom, .clip-right, .clip-left {
 	clip-path: inset(0 -1900px -1900px -1900px);
@@ -292,60 +172,3 @@
 .clip-left {
 	clip-path: inset(-1900px -1900px -1900px 0);
 }
-
-
-/*
-* Collapse Inner
-* 
-* Will be deprecated once calc-size(auto) is fully supported
-* https://caniuse.com/?search=calc-size
-*/
-
-// @mixin collapse-inner-toggle-styles($prefix) {
-
-// 	// #{$prefix}collapse-inner {
-// 	// 	position: relative;
-// 	// }
-
-// 	// #{$prefix}collapse-inner > .content,
-// 	// #{$prefix}collapse-inner > :is(.overlay, .hidden)>.content {
-// 	// 	@include mixins.closed-inner;
-// 	// 	> * {
-// 	// 		overflow: hidden;
-// 	// 	}
-// 	// }
-
-// 	// #{$prefix}collapse-inner.open,
-// 	// #{$prefix}collapse-inner:has( > .toggle > :checked) {
-// 	// 	> .content,
-// 	// 	> .overlay > .content {
-// 	// 		@include mixins.open-inner;
-// 	// 	}
-// 	// }
-
-// 	// #{$prefix}collapse-inner > .content > * {
-// 	// 	overflow: hidden;
-// 	// }
-
-// 	// #{$prefix}open:where(.collapse-inner) > .content,
-// 	// #{$prefix}hover\:open:is(:hover, :has(:focus-visible)) > .content,
-// 	// #{$prefix}hover\:open:is(:hover, :has(:focus-visible)) > :is(.overlay, .hidden)>.content,
-// 	// #{$prefix}hover\:open li:hover > .content,
-// 	// #{$prefix}hover\:open li:hover > :is(.overlay, .hidden)>.content,
-// 	// #{$prefix}hover\:open li:has(:focus-visible) > .content,
-// 	// #{$prefix}hover\:open li:has(:focus-visible) > :is(.overlay, .hidden)>.content {
-// 	// 	@include mixins.open-inner;
-// 	// }
-// }
-
-// @include collapse-inner-toggle-styles('.');
-
-// @each $breakpoint, $breakpoint_width in variables.$breakpoints {
-// 	@media screen and (min-width: #{$breakpoint_width}) {
-// 		@include collapse-inner-toggle-styles('.#{$breakpoint}\\:');
-// 	}
-
-// 	@container (min-width: #{$breakpoint_width}) {
-// 		@include collapse-inner-toggle-styles('.c-#{$breakpoint}\\:');
-// 	}
-// }

@@ -1,9 +1,9 @@
-/*
-* Spry UI
-*/
 @use "variables";
 @use "extends";
 @use 'sass:list';
+/*!
+* Spry UI
+*/
 
 $color_names: ();
 
@@ -74,4 +74,16 @@ ul ul {
 
 ul ul {
 	background-color: inherit;
+}
+
+.slow {
+    --ease-speed: .8s;
+}
+
+.fast {
+    --ease-speed: .2s;
+}
+
+.instant {
+    --ease-speed: 0s;
 }

@@ -1,7 +1,7 @@
-/*
+@use "variables";
+/*!
 * Spry Borders
 */
-@use "variables";
 
 @mixin border-styles($prefix) {
 	@each $b, $border in variables.$borders {

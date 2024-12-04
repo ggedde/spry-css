@@ -1,12 +1,11 @@
-/*
-* Spry Dark Theme
-*/
-
 @use "variables";
 @use "extends";
 @use "sass:color";
 @use "sass:map";
 @use 'sass:list';
+/*!
+* Spry Dark Theme
+*/
 
 :root.theme-dark,
 .theme-dark {

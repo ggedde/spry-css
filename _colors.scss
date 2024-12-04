@@ -1,12 +1,11 @@
-/*
-* Spry Colors
-*/
-
 @use "variables";
 @use "extends";
 @use "sass:color";
 @use "sass:map";
 @use 'sass:list';
+/*!
+* Spry Colors
+*/
 
 $color_names: ();
 @each $color_name, $color_value in variables.$colors {

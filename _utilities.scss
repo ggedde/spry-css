@@ -1,7 +1,8 @@
-/*
+@use "variables";
+@use "sass:map";
+/*!
 * Spry Utilities
 */
-@use "variables";
 
 /*************************************
 General Utility Classes
@@ -136,18 +137,6 @@ General Utility Classes
 .truncate {
 	white-space: nowrap;
 	display    : inline-block
-}
-
-.rotate-90 {
-	rotate: 90deg
-}
-
-.rotate-180 {
-	rotate: 180deg
-}
-
-.rotate-270 {
-	rotate: 270deg
 }
 
 .bg-inherit {
@@ -677,6 +666,22 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		resize: none
 	}
 
+	#{$prefix}rotate-0 {
+		rotate: 0deg
+	}
+	
+	#{$prefix}rotate-90 {
+		rotate: 90deg
+	}
+	
+	#{$prefix}rotate-180 {
+		rotate: 180deg
+	}
+	
+	#{$prefix}rotate-270 {
+		rotate: 270deg
+	}
+
 	#{$prefix}from-top {
 		--toggle-transform: translate3d(0, -80px, 0);
 		--toggle-transform-origin: top;
@@ -728,27 +733,35 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 @include utility-styles('.', 0);
 
 // Checked Utilities
+:checked.checked\:,
 :has(:checked) > .checked\:,
+:has(:checked).checked\:,
 :has([value=""]:checked) > .checked-empty\:,
 :not(:has(:checked)) > .checked-empty\: {
-	&block {
-		display: block;
+	&rotate {
+		rotate: 180deg;
 	}
-	&flex {
-		display: flex;
+	&flip {
+		scale: -1;
 	}
-	&grid {
-		display: grid;
-	}
-	&inline {
-		display: inline;
-	}
-	&inline-block {
-		display: inline-block;
-	}
-	&inline-flex {
-		display: inline-flex;
-	}
+	// &block {
+	// 	display: block;
+	// }
+	// &flex {
+	// 	display: flex;
+	// }
+	// &grid {
+	// 	display: grid;
+	// }
+	// &inline {
+	// 	display: inline;
+	// }
+	// &inline-block {
+	// 	display: inline-block;
+	// }
+	// &inline-flex {
+	// 	display: inline-flex;
+	// }
 	&revert {
 		display: revert;
 	}

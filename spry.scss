@@ -1,4 +1,4 @@
-/*! 
+/*!
  * SpryCss v3.0.0-rc.3
  * license: MIT
  * author: https://github.com/ggedde/spry-css
@@ -21,13 +21,13 @@
 @use "grid";
 @use "tabs";         // Has Nesting
 @use "navs";         // Has Nesting
-// @use "menus";         // Has Nesting
 @use "comfort";
 @use "toggles";
+@use "toggle-icons.css";
 @use "modals";       // Has Nesting
 @use "spacing";
 @use "borders";
-@use "icons";        // Has Nesting
+@use "icons.css";        // Has Nesting
 @use "utilities";
 @use "sizing";
 @use "dark";         // Has Nesting

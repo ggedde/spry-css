@@ -1,10 +1,29 @@
-@use "extends";
 /*!
 * Spry Icons
 */
 
 .icon {
-	@extend %ui-icon;
+	padding : 0;
+	position: relative;
+	display : inline-flex;
+	width   : 1.25em;
+	height  : 1.25em;
+	vertical-align: middle;
+	flex: 0 1 auto;
+
+	&:is(.outline, .hazy) {
+		min-height: 2.3em;
+		min-width : 2.3em;
+	}
+
+	> svg {
+		backface-visibility: hidden;
+		inset              : 50%;
+		margin             : auto;
+		position           : absolute;
+		transform          : translateZ(0) translate(-50%);
+		transform-origin   : 0 center;
+	}
 }
 
 .icon,
@@ -39,7 +58,6 @@
 .icon {
 	opacity: 1;
 	box-shadow: none;
-	// border-color: transparent;
 	&:is(.next, .prev, .up, .down, .close, .menu, .dots) {
 		&::before,
 		&::after {

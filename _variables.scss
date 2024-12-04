@@ -1,4 +1,7 @@
 @use "sass:map";
+/*!
+* Spry Variables
+*/
 
 // Specify each breakpoint size
 $breakpoints: (
@@ -54,6 +57,36 @@ $types: (
     a: (color: hsl(from var(--primary) h s var(--clr-l, l) / var(--clr-a, 100%))),
 ) !default;
 
+// $separations: (
+//     ".alert",
+//     ".code-toolbar"
+//     ".note",
+//     "article",
+//     "cite",
+//     "dfn",
+//     "h1",
+//     "h2",
+//     "h3",
+//     "h4",
+//     "h5",
+//     "h6",
+//     "ol",
+//     "p",
+//     "q",
+//     "ul",
+// );
+
+// $separations: (
+//     default: (
+//         'h1, h2, h3, h4, h5, h6, ul, ol, p, q, cite, dfn, article, .alert, .note, .code-toolbar, a': 1em,
+//         'article, .code-toolbar': 3em
+//     ),
+//     md: (
+//         'h1, h2, h3, h4, h5, h6, ul, ol, p, q, cite, dfn, article, .alert, .note, .code-toolbar': 1em,
+//         'article, .code-toolbar': 2em
+//     ),
+// );
+
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc.
 $spacing: (0: 0em, // Needs unit to be used in calc().
     1   : .5em,
@@ -97,16 +130,4 @@ $sizes: (xxl: 165%,
             --gapy: #{map.get($gaps, $breakpoint)};
         }
     }
-}
-
-.slow {
-    --ease-speed: .8s;
-}
-
-.fast {
-    --ease-speed: .2s;
-}
-
-.instant {
-    --ease-speed: 0s;
 }

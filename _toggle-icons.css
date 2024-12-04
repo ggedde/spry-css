@@ -1,0 +1,167 @@
+
+/* .relative:has(.focus\:open + :focus-within):has(:focus-within):has(:active),
+.relative:has(.focus\:open + :focus-within):has(:focus-visible),
+.focus\:open:focus {
+	&.toggle {
+		pointer-events: none;
+	}
+} */
+
+.toggle-container:has(> .toggle:checked, > .toggle :checked),
+.hover\:open:hover,
+.hover\:open:focus-within,
+.focus\:open:focus,
+.toggle-next:checked,
+.toggle-next:has(:checked),
+.focus\:open:has(.toggle:focus, .toggle :focus, :focus-visible, :active) {
+	> .toggle .open\:rotate,
+	> .open\:rotate,
+	&.open\:rotate {
+		rotate: 180deg;
+	}
+	> .toggle .open\:rotate,
+	> .open\:rotate,
+	&.open\:rotate {
+		rotate: 180deg;
+	}
+	> .toggle .open\:flip,
+	> .open\:flip,
+	&.open\:flip {
+		scale: -1;
+	}
+	> .toggle .open\:block,
+	> .open\:block,
+	&.open\:block {
+		display: block;
+	}
+	> .toggle .open\:flex,
+	> .open\:flex,
+	&.open\:flex {
+		display: flex;
+	}
+	> .toggle .open\:grid,
+	> .open\:grid,
+	&.open\:grid {
+		display: grid;
+	}
+	> .toggle .open\:inline,
+	> .open\:inline,
+	&.open\:inline {
+		display: inline;
+	}
+	> .toggle .open\:inline-block,
+	> .open\:inline-block,
+	&.open\:inline-block {
+		display: inline-block;
+	}
+	> .toggle .open\:inline-flex,
+	> .open\:inline-flex,
+	&.open\:inline-flex {
+		display: inline-flex;
+	}
+	> .toggle .open\:revert,
+	> .open\:revert,
+	&.open\:revert {
+		display: revert;
+	}
+	> .toggle .open\:none,
+	> .open\:none,
+	&.open\:none {
+		display: none;
+	}
+	> .toggle .open\:pointer-none,
+	> .open\:pointer-none,
+	&.open\:pointer-none {
+		pointer-events: none;
+	}
+	> .toggle .open\:close,
+	> .open\:close,
+	&.open\:close {
+
+		&::before,
+		&::after {
+			height          : 1.2em;
+			width           : .12em;
+			box-shadow      : none;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+}
+/* 
+:checked.checked\:,
+:has(:checked) > .checked\:,
+:has(:checked).checked\:,
+:has([value=""]:checked) > .checked-empty\:,
+:not(:has(:checked)) > .checked-empty\: {
+	.checked\:rotate {
+		rotate: 180deg;
+	}
+	.checked\:flip {
+		scale: -1;
+	}
+	.checked\:block {
+		display: block;
+	}
+	.checked\:flex {
+		display: flex;
+	}
+	.checked\:grid {
+		display: grid;
+	}
+	.checked\:inline {
+		display: inline;
+	}
+	.checked\:inline-block {
+		display: inline-block;
+	}
+	.checked\:inline-flex {
+		display: inline-flex;
+	}
+	.checked\:revert {
+		display: revert;
+	}
+	.checked\:none {
+		display: none;
+	}
+}
+
+:has([value=""]:checked) > .checked-empty\:,
+:not(:has(:checked)) > .checked-empty\: {
+	.checked-empty\:rotate {
+		rotate: 180deg;
+	}
+	.checked-empty\:flip {
+		scale: -1;
+	}
+	.checked-empty\:block {
+		display: block;
+	}
+	.checked-empty\:flex {
+		display: flex;
+	}
+	.checked-empty\:grid {
+		display: grid;
+	}
+	.checked-empty\:inline {
+		display: inline;
+	}
+	.checked-empty\:inline-block {
+		display: inline-block;
+	}
+	.checked-empty\:inline-flex {
+		display: inline-flex;
+	}
+	.checked-empty\:revert {
+		display: revert;
+	}
+	.checked-empty\:none {
+		display: none;
+	}
+} */

@@ -1,4 +1,4 @@
-/*
+/*!
 * Spry Reset
 */
 html {
@@ -17,7 +17,7 @@ body {
     box-sizing: inherit;
 }
 
-body,
+:where(body,
 h1,
 h2,
 h3,
@@ -29,7 +29,9 @@ fieldset,
 menu,
 ol,
 ul,
-li {
+li,
+pre,
+input) {
     margin: 0;
     padding: 0;
 }

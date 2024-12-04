@@ -1,11 +1,8 @@
-/*
-* Spry Utilities
-*/
 @use "variables";
+/*!
+* Spry Sizing
+*/
 
-/****************************************************************************
-Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
-****************************************************************************/
 @mixin sizingUtility-styles($prefix) {
 
 	#{$prefix}h {
