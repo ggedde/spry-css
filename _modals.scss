@@ -24,8 +24,8 @@ body:has(.modal.open:not(.no-bg)) {
 }
 
 .modal {
-	--toggle-transform       : scale(.8, .8) translate3d(0, 0, 0);
-	--toggle-transform-origin: center;
+	--transform       : scale(.8, .8) translate3d(0, 0, 0);
+	--origin: center;
 	align-items              : center;
 	background-color         : rgba(0, 0, 0, .7);
 	display                  : flex;
@@ -38,7 +38,7 @@ body:has(.modal.open:not(.no-bg)) {
 	position                 : fixed;
 	transform                : none;
 	transform-origin         : center;
-	transition               : opacity var(--ease-speed) var(--ease);
+	transition               : opacity var(--speed) var(--ease);
 	transition-delay         : 0;
 	z-index                  : 10;
 
@@ -46,9 +46,9 @@ body:has(.modal.open:not(.no-bg)) {
 		box-sizing      : border-box;
 		max-height      : 90%;
 		overflow        : auto;
-		transform       : var(--toggle-transform);
-		transform-origin: var(--toggle-transform-origin);
-		transition      : transform var(--ease-speed) var(--ease);
+		transform       : var(--transform);
+		transform-origin: var(--origin);
+		transition      : transform var(--speed) var(--ease);
 		width           : 90%;
 	}
 

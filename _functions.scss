@@ -1,0 +1,14 @@
+/*
+* Spry Functions
+*/
+@function color($n) {
+	@return hsl(from $n h s var(--clr-l, l) / var(--clr-a, 100%));
+}
+
+@function bg($n) {
+	@return hsl(from $n h s var(--bg-l, l) / var(--bg-a, 100%));
+}
+
+@function border($n) {
+	@return hsl(from $n h s var(--bdr-l, l) / var(--bdr-a, 100%));
+}

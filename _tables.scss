@@ -36,7 +36,7 @@ tbody td {
 
 .hover\:active tbody tr:hover,
 .hover\:active.striped-expand tbody tr:nth-child(2n - 1):hover+tr {
-	background-color: rgb(from var(--color) r g b / 6%);
+	background-color: rgb(from var(--theme-color) r g b / 6%);
 }
 
 .hover\:active.striped-expand tbody tr:nth-child(4n - 2):hover {
@@ -72,7 +72,7 @@ tbody td {
 
 		tr:nth-child(even),
 		> :not(table, tbody, thead, tfoot):nth-child(even) {
-			background-color: rgb(from var(--color) r g b / 4%);
+			background-color: rgb(from var(--theme-color) r g b / 4%);
 		}
 	}
 
@@ -82,7 +82,7 @@ tbody td {
 		tr:nth-child(4n),
 		> :not(table, tbody, thead, tfoot):nth-child(4n -1),
 		> :not(table, tbody, thead, tfoot):nth-child(4n) {
-			background-color: rgb(from var(--color) r g b / 4%);
+			background-color: rgb(from var(--theme-color) r g b / 4%);
 		}
 	}
 }
@@ -117,5 +117,5 @@ $breakpoint_width in variables.$breakpoints {
 .hover\:active.striped-expand tbody tr:nth-child(4n -1):hover+tr,
 .hover\:active tbody.striped-expand tr:nth-child(4n -1):hover,
 .hover\:active tbody.striped-expand tr:nth-child(4n -1):hover+tr {
-	background-color: rgb(from var(--color) r g b / 6%);
+	background-color: rgb(from var(--theme-color) r g b / 6%);
 }

@@ -22,9 +22,9 @@
 
 	&::after {
 		content       : '';
-		animation     : spinner calc(var(--ease-speed) * 2) ease infinite;
+		animation     : spinner calc(var(--speed) * 2) ease infinite;
 		border        : .16em solid transparent;
-		border-color  : hsl(from var(--text-color) h s var(--clr-l, l) / var(--clr-a, 100%)) hsl(from var(--text-color) h s var(--clr-l, l) / var(--clr-a, 100%)) transparent transparent;
+		border-color  : var(--text-color) var(--text-color) transparent transparent;
 		border-radius : 50%;
 		box-sizing    : border-box;
 		height        : 1.1em;
@@ -33,7 +33,7 @@
 		margin        : auto;
 		pointer-events: none;
 		position      : absolute;
-		transition    : opacity var(--ease-speed) ease-in-out .1s;
+		transition    : opacity var(--speed) ease-in-out .1s;
 	}
 
 	&:is(input, select, textarea, button, .button, a) {

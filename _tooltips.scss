@@ -6,8 +6,8 @@
 .tooltip {
 	@extend %ui-border-radius;
 	@extend %ui-border;
-	--toggle-transform       : scale(.8, .8) translate3d(0, 0, 0);
-	--toggle-transform-origin: center;
+	--transform       : scale(.8, .8) translate3d(0, 0, 0);
+	--origin: center;
 	cursor                   : text;
 	bottom                   : 80%;
 	box-shadow               : 1px 3px 4px rgba(0, 0, 0, .12);
@@ -18,12 +18,12 @@
 	position                 : absolute;
 	text-align               : left;
 	text-transform           : none;
-	transition               : opacity var(--ease-speed) var(--ease), transform var(--ease-speed) var(--ease); // In
+	transition               : opacity var(--speed) var(--ease), transform var(--speed) var(--ease); // In
 	user-select              : text;
 	width                    : max-content;
 	backface-visibility      : hidden;
 	transform                : none;
-	transform-origin         : var(--toggle-transform-origin);
+	transform-origin         : var(--origin);
 }
 
 :has(>.tooltip) {
@@ -40,6 +40,6 @@
 	&:not(:hover, :focus) .tooltip {
 		opacity       : 0;
 		pointer-events: none;
-		transform     : var(--toggle-transform);
+		transform     : var(--transform);
 	}
 }

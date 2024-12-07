@@ -4,11 +4,11 @@
 */
 
 :is(button, .button, [type=submit], [type=reset]),
-:is(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a {
+:where(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a {
 
 	@extend %ui;
 	@extend %ui-bg;
-	@extend %ui-color;
+	// @extend %ui-color;
 	@extend %ui-border;
 	@extend %ui-border-radius;
 	position       : relative;
@@ -24,6 +24,19 @@
 	&:is(:hover, :focus, :focus-within, .active, :has(:checked)):not(:active) {
 		@extend %ui-hover;
 	}
+}
+
+:is(button, .button, [type=submit], [type=reset]),
+:is(.buttons) a {
+	@extend %ui-color;
+}
+
+:where(.buttons-link, .buttons-plain, .buttons-hazy, .buttons-outline) a {
+		--text-color: hsl(from var(--theme-color) h s var(--clr-l, l) / var(--clr-a, 100%));
+		color: var(--text-color);
+}
+:is(.buttons-link, .buttons-plain, .buttons-hazy, .buttons-outline) a {
+	color: var(--text-color);
 }
 
 :is(button, .button, [type=submit], [type=reset]).link,

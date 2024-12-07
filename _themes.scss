@@ -1,0 +1,145 @@
+@use "variables";
+@use "extends";
+@use "sass:color";
+@use "sass:map";
+@use 'sass:list';
+@use "sass:string";
+/*!
+* Spry Colors
+*/
+$colorNames: ();
+$themeNames: ();
+@each $theme_name, $theme_values in variables.$themes {
+	$themeNames: list.append($themeNames, '.theme-#{$theme_name}', 'comma');
+
+	$themeHandle: '.theme-#{$theme_name}';
+
+	@if list.index(variables.$themes, ($theme_name $theme_values)) == 1 {
+		$defaultTheme: $theme_name;
+		$themeHandle: string.insert($themeHandle, ':root,', 0);
+	}
+
+	@if list.length(variables.$themes) == 1 {
+		$themeHandle: ':root';	
+	}
+
+	#{$themeHandle} {
+
+		--theme-scheme    : #{map.get($theme_values, 'color-scheme')};
+		--theme-bg        : #{map.get($theme_values, 'bg')};
+		--theme-text      : #{map.get($theme_values, 'text')};
+		--theme-border    : #{map.get($theme_values, 'border')};
+		--theme-input     : #{map.get($theme_values, 'input')};
+		--theme-color     : #{map.get($theme_values, 'color')};
+
+		@each $color_name, $color_value in variables.$colors {
+			@if map.get($color_value, $theme_name) {
+				--#{"" + $color_name}: #{map.get($color_value, $theme_name)};
+			}
+		}
+
+		@if list.index(variables.$themes, ($theme_name $theme_values)) == 1 {
+			--text-color: hsl(from var(--theme-color) 0 0 min(calc((l - var(--invert))* -1000%), 98%) / var(--clr-a, 100%));
+		}
+	}
+}
+
+@for $i from 0 through 10 {
+	.color\/#{calc($i * 10)} {
+		--clr-a: #{calc($i / 10)};
+	}
+	.bg\/#{calc($i * 10)} {
+		--bg-a: #{calc($i / 10)};
+	}
+	.border\/#{calc($i * 10)} {
+		--bdr-a: #{calc($i / 10)};
+	}
+	.color-#{calc($i * 10)} {
+		--clr-l: #{calc($i * 10)};
+	}
+	.bg-#{calc($i * 10)} { 
+		--bg-l: #{calc($i * 10)};
+	}
+	.border-#{calc($i * 10)} {
+		--bdr-l: #{calc($i * 10)};
+	}
+}
+
+:where(#{$themeNames}),
+:where(#{$themeNames}).outline,
+select option,
+.tooltip {
+	color-scheme    : var(--theme-scheme);
+	color           : hsl(from var(--theme-text) h s var(--clr-l, l) / var(--clr-a, 100%));
+	background-color: hsl(from var(--theme-bg) h s var(--bg-l, l) / var(--bg-a, 100%));
+	border-color    : hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+}
+
+.color-theme,
+.link,
+.outline,
+.hazy,
+.plain,
+:where(.buttons-link,
+.buttons-outline,
+.buttons-plain,
+.buttons-hazy) a {
+	--text-color: var(--theme-text);
+	color: hsl(from var(--theme-text) h s var(--clr-l, l) / var(--clr-a, 100%));
+}
+.bg-theme {
+	background-color: hsl(from var(--theme-bg) h s var(--bg-l, l) / var(--bg-a, 100%));
+}
+.border-theme {
+	border-color: hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+}
+
+hr,
+[class^=b-],
+[class*=\ b-],
+[class*=bx-],
+[class*=by-],
+[class*=bt-],
+[class*=br-],
+[class*=bb-],
+[class*=bl-] {
+	border-color: hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+}
+
+@each $color_name, $color_value in variables.$colors {
+	$colorNames: list.append($colorNames, '.#{$color_name}', 'comma');
+
+	.#{"" + $color_name} {
+		--theme-color    : var(--#{$color_name});
+		--theme-text     : var(--#{$color_name});
+		--theme-border   : var(--#{$color_name});
+	}
+}
+
+@each $color_name, $color_value in variables.$colors {
+	$colorNames: list.append($colorNames, '.#{$color_name}', 'comma');
+	
+	.links-#{"" + $color_name} :where(a:not(.button)),
+	.hover\:links-#{"" + $color_name} a:not(.button,[class*=hover\:color-]):is(:hover, :focus, .active),
+	.hover\:color-#{"" + $color_name}:is(:hover, :focus, .active),
+	.color-#{"" + $color_name} {
+		--text-color: hsl(from var(--#{$color_name}) h s var(--clr-l, l) / var(--clr-a, 100%));
+		color       : var(--text-color);
+	}
+	
+	.hover\:bg-#{"" + $color_name}:is(:hover, :focus, .active),
+	.bg-#{"" + $color_name} {
+		background-color: hsl(from var(--#{$color_name}) h s var(--bg-l, l) / var(--bg-a, 100%));
+	}
+	
+	.hover\:border-#{"" + $color_name}:is(:hover, :focus, .active),
+	.border-#{"" + $color_name} {
+		--theme-border: var(--#{$color_name});
+		--theme-input : var(--#{$color_name});
+		border-color  : hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+	}
+}
+
+:where(#{$colorNames}, [class^=color-], [class*=\ color-]) :is(h1,h2,h3,h4,h5,h6) {
+	color: inherit;
+}

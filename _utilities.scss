@@ -179,7 +179,7 @@ General Utility Classes
 
 .hover\:scale {
 	scale: 1.00001;
-	transition: scale var(--ease-speed) var(--ease)
+	transition: scale var(--speed) var(--ease)
 }
 
 .scale,
@@ -683,33 +683,33 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	}
 
 	#{$prefix}from-top {
-		--toggle-transform: translate3d(0, -80px, 0);
-		--toggle-transform-origin: top;
+		--transform: translate3d(0, -80px, 0);
+		--origin: top;
 	}
 
 	#{$prefix}from-center {
-		--toggle-transform       : scale(.8, .8) translate3d(0, 0, 0);
-		--toggle-transform-origin: center;
+		--transform       : scale(.8, .8) translate3d(0, 0, 0);
+		--origin: center;
 	}
 
 	#{$prefix}from-left {
-		--toggle-transform       : translate3d(-80px, 0, 0);
-		--toggle-transform-origin: left;
+		--transform       : translate3d(-80px, 0, 0);
+		--origin: left;
 	}
 
 	#{$prefix}from-right {
-		--toggle-transform       : translate3d(80px, 0, 0);
-		--toggle-transform-origin: right;
+		--transform       : translate3d(80px, 0, 0);
+		--origin: right;
 	}
 
 	#{$prefix}from-bottom {
-		--toggle-transform       : translate3d(0, 80px, 0);
-		--toggle-transform-origin: bottom;
+		--transform       : translate3d(0, 80px, 0);
+		--origin: bottom;
 	}
 
 	#{$prefix}from-default {
-		--toggle-transform: translate3d(0, -2px, 0);
-		--toggle-transform-origin: top;
+		--transform: translate3d(0, -2px, 0);
+		--origin: top;
 	}
 
 	#{$prefix}o-0 {

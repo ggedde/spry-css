@@ -7,7 +7,6 @@ article {
 	@extend %ui-border-radius;
 	--gapy          : 2em;
 	align-items     : flex-start;
-	background-color: white;
 	display         : flex;
 	flex-direction  : column;
 	row-gap         : var(--gapy);
@@ -39,7 +38,6 @@ article {
 	}
 
 	&.outline {
-		// background-color: white;
 
 		>header {
 			border-bottom: inherit;
@@ -57,14 +55,16 @@ article {
 
 	>:is(header, footer) {
 		@extend %ui;
+		@extend %ui-color;
 		@extend %ui-roomy;
-		background-color: hsl(from var(--card-color) h s var(--bg-l, l) / var(--bg-a, 100%));
+		background-color: hsl(from var(--theme-color) h s var(--bg-l, l) / var(--bg-a, 100%));
 		display         : flex;
 		justify-content : space-between;
 		align-items     : center;
 		transition      : none;
 
 		>* {
+			@extend %ui-color;
 			@extend %ui-margin-above-none;
 		}
 	}

@@ -37,20 +37,20 @@ a {
 .link,
 .plain,
 .hazy,
-:is(.buttons-link, .buttons-plain, .buttons-hazy) a {
+:where(.buttons-link, .buttons-plain, .buttons-hazy) a {
 	border-color: transparent;
 }
 
 .link,
 .plain,
 .outline,
-:is(.buttons-link, .buttons-plain, .buttons-outline) a {
+:where(.buttons-link, .buttons-plain, .buttons-outline) a {
 	background-color: transparent;
 }
 
 .hazy,
 .buttons-hazy a {
-	background-color: hsl(from var(--color) h s var(--bg-l, l) / 10%);
+	background-color: hsl(from var(--theme-text) h s var(--bg-l, l) / 10%);
 }
 
 hr {
@@ -77,13 +77,13 @@ ul ul {
 }
 
 .slow {
-    --ease-speed: .8s;
+    --speed: .8s;
 }
 
 .fast {
-    --ease-speed: .2s;
+    --speed: .2s;
 }
 
 .instant {
-    --ease-speed: 0s;
+    --speed: 0s;
 }

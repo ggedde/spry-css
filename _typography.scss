@@ -7,22 +7,13 @@
 // Heading Font Sizes and Classes
 @each $type_name, $type in variables.$types {
 
-    .#{$type_name},
-    #{$type_name} {
+    .#{$type_name}, #{$type_name} {
 
         @each $type_field, $type_value in $type {
             #{$type_field}: $type_value;
         }
     }
 }
-
-// @each $breakpoint, $separations in variables.$separations {
-//     @each $separate, $separation in $separations {
-//         :where(#{$separate}) + :where(#{$separate}) {
-//             margin-top: $separation;
-//         }
-//     }
-// }
 
 :where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label) + :where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label) {
     @extend %ui-margin-above-lg;

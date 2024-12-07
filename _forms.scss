@@ -9,8 +9,8 @@
 	@extend %ui-border;
 	@extend %ui-border-radius;
 	display       : inline-block;
-	border-color  : hsl(from var(--theme-input-border) h s var(--bdr-l, l) / var(--bdr-a, 50%));
-	--select-arrow: hsl(from var(--theme-input-border) h s var(--bdr-l, l) / var(--bdr-a, 70%));
+	border-color  : hsl(from var(--theme-input) h s var(--bdr-l, l) / var(--bdr-a, 50%));
+	--select-arrow: hsl(from var(--theme-input) h s var(--bdr-l, l) / var(--bdr-a, 70%));
 	font-family   : inherit;
 	font-weight   : inherit;
 
@@ -19,12 +19,12 @@
 	}
 
 	&:focus {
-		box-shadow: inset 0 0 0 1px hsl(from var(--color) h s var(--bdr-l, l) / var(--bdr-a, 50%));
+		box-shadow: inset 0 0 0 1px hsl(from var(--theme-text) h s var(--bdr-l, l) / var(--bdr-a, 50%));
 	}
 
 	&:is(:hover, :focus):not(.icon) {
-		--theme-input-border: var(--color);
-		border-color        : hsl(from var(--theme-input-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+		// --theme-input: var(--theme-color);
+		border-color        : hsl(from var(--theme-text) h s var(--bdr-l, l) / var(--bdr-a, 100%));
 	}
 }
 
@@ -38,7 +38,7 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 	min-height  : 2px;
 	padding     : 0;
 	margin-block: 1em;
-	accent-color: var(--color);
+	accent-color: var(--theme-text);
 }
 
 [type=color] {
@@ -77,12 +77,12 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 		inset           : 12px;
 		opacity         : 0;
 		transition      : all .1s ease-in-out;
-		background-color: var(--color);
+		background-color: var(--theme-text);
 		border-radius   : 2px;
 	}
 
 	&:not(.icon, .switch):checked {
-		border-color: var(--color);
+		border-color: var(--theme-text);
 
 		&::after {
 			inset: 2px;
@@ -100,7 +100,7 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 		justify-content: left;
 
 		&:not(:checked)::after {
-			background-color: var(--theme-input-border);
+			background-color: var(--theme-input);
 			opacity         : 0.5;
 		}
 
@@ -123,7 +123,7 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 		inset        : 0;
 		margin-inline: auto;
 		opacity      : 1;
-		--text-color : var(--color);
+		--text-color : var(--theme-text);
 	}
 }
 
@@ -183,12 +183,12 @@ input[type=file] {
 input::file-selector-button {
 	appearance      : none;
 	border          : 0;
-	background-color: rgb(from var(--theme-input-border) r g b / 20%);
+	background-color: rgb(from var(--theme-input) r g b / 20%);
 	color           : inherit;
 	height          : 2.3em;
 	padding-inline  : 1em;
 	margin          : -.4em 1em -.4em -.6em;
-	border-right    : 1px solid hsl(from var(--theme-input-border) h s var(--bdr-l, l) / var(--bdr-a, 50%));
+	border-right    : 1px solid hsl(from var(--theme-input) h s var(--bdr-l, l) / var(--bdr-a, 50%));
 	font            : inherit;
 }
 
@@ -199,15 +199,15 @@ input::file-selector-button {
 	> :not(input, select, textarea) {
 		--bg-a          : 20%;
 		width           : auto;
-		background-color: hsl(from var(--theme-input-border) h s var(--bg-l, l) / var(--bg-a));
-		border-color    : hsl(from var(--theme-input-border) h s var(--bdr-l, l) / var(--bdr-a, 50%));
+		background-color: hsl(from var(--theme-input) h s var(--bg-l, l) / var(--bg-a));
+		border-color    : hsl(from var(--theme-input) h s var(--bdr-l, l) / var(--bdr-a, 50%));
 		color           : inherit;
 		display         : inline-flex;
 		justify-content : center;
 
 		&:last-child,
 		+* {
-			border-radius: 0 var(--border-radius) var(--border-radius) 0;
+			border-radius: 0 var(--radius) var(--radius) 0;
 		}
 
 		&:last-child {
@@ -221,7 +221,7 @@ input::file-selector-button {
 
 	> :not(input, select, textarea):first-child,
 	:where(input, select, textarea):has(+ :not(input, select, textarea)) {
-		border-radius: var(--border-radius) 0 0 var(--border-radius);
+		border-radius: var(--radius) 0 0 var(--radius);
 	}
 
 	[type=color]+output {
@@ -250,13 +250,13 @@ label {
 
 	&:focus-within .input-group> :not(input, select, textarea),
 	&:focus-within input::file-selector-button {
-		background-color: var(--color);
-		border-color    : var(--color);
-		color           : hsl(from var(--text-color) h s var(--clr-l, l) / var(--clr-a, 100%));
+		background-color: var(--theme-text);
+		border-color    : var(--theme-text);
+		@extend %ui-color;
 	}
 
 	&:hover .input-group> :not(input, select, textarea) {
-		--theme-input-border: var(--color);
+		--theme-input: var(--theme-text);
 	}
 
 	:is(sup, sub) {
@@ -287,7 +287,7 @@ label {
 	}
 
 	&:focus-within :is(sup, sub):not([class*=color-]) {
-		color: var(--color);
+		color: var(--theme-text);
 	}
 
 	&:has(:is(sup)) {
@@ -309,7 +309,8 @@ label {
 	.input-group> :not(input, select, textarea) {
 		background-color: var(--error, #c33);
 		border-color    : var(--error, #c33);
-		color           : hsl(from var(--text-color) h s var(--clr-l, l) / var(--clr-a, 100%));
+		--theme-color: var(--error, #c33);
+		@extend %ui-color;
 	}
 
 	.error {

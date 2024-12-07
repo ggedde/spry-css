@@ -11,9 +11,8 @@
 .icon> :is(svg, img) {
 	fill: currentColor;
 	transition:
-		transform var(--ease-speed) var(--ease),
-		rotate var(--ease-speed) var(--ease),
-		scale var(--ease-speed) var(--ease);
+		rotate var(--speed) var(--ease),
+		scale var(--speed) var(--ease);
 }
 
 :is(button, .button, .alert, .icon) :is(svg, img),
@@ -23,9 +22,9 @@
 }
 
 :is(nav, .list) li>.icon:nth-child(2) {
-	position : absolute;
-	right    : 0.5em;
-	top      : 0.25em;
+	position: absolute;
+	right   : 0.5em;
+	top     : 0.25em;
 }
 
 :where(nav, .list) li>:where(.icon):nth-child(2) {
@@ -37,42 +36,43 @@
 }
 
 .icon {
-	opacity: 1;
+	opacity   : 1;
 	box-shadow: none;
-	// border-color: transparent;
+
 	&:is(.next, .prev, .up, .down, .close, .menu, .dots) {
+
 		&::before,
 		&::after {
 			content   : '';
-			position  : absolute;
-			margin    : auto;
-			inset     : 0;
-			display   : block;
-			transition: all .2s var(--ease);
-			opacity: 1;
 			background: transparent;
+			display   : block;
+			inset     : 0;
+			margin    : auto;
+			opacity   : 1;
+			position  : absolute;
+			transition: all .2s var(--ease);
 		}
 	}
 
 	&:is(.up, .down, .prev, .next, .close, .menu, .dots)::after {
 		border       : .16em solid currentColor;
-		border-left  : 0;
 		border-bottom: 0;
-		width        : .7em;
+		border-left  : 0;
 		height       : .7em;
 		transform    : rotate(135deg) translate(-.1em, .1em);
+		width        : .7em;
 	}
 
 	&.prev::after {
-		rotate      : 90deg;
+		rotate: 90deg;
 	}
 
 	&.up::after {
-		rotate      : 180deg;
+		rotate: 180deg;
 	}
 
 	&.next::after {
-		rotate      : 270deg;
+		rotate: 270deg;
 	}
 
 	&:is(.menu, .close, .dots) {
@@ -81,17 +81,17 @@
 		&::after {
 			content         : '';
 			background-color: currentColor;
+			border          : 0;
+			border-radius   : .12em;
+			box-shadow      : none;
 			height          : 1.2em;
 			margin          : auto;
 			width           : .12em;
-			box-shadow      : none;
-			border-radius   : .12em;
-			border          : 0;
 		}
 
 		&::before {
-			transform: rotate(45deg);
 			order    : 1;
+			transform: rotate(45deg);
 		}
 
 		&::after {
@@ -100,18 +100,21 @@
 	}
 
 	&:is(.menu, .dots) {
+
 		&::before,
 		&::after {
-			transform       : translate(0, -.4em) rotate(90deg);
-			height          : 1.4em;
+			height   : 1.4em;
+			transform: translate(0, -.4em) rotate(90deg);
 		}
+
 		&::after {
-			transform : translate(0, .4em) rotate(-90deg);
 			box-shadow: .4em 0 0 currentColor;
+			transform : translate(0, .4em) rotate(-90deg);
 		}
 	}
 
 	&.dots {
+
 		&::before,
 		&::after {
 			height: .18em;

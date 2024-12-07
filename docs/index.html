@@ -28,7 +28,7 @@
 
                 <button id="header-nav-mobile-button" tabindex="0" class="toggle open:pointer-none button link icon menu open:close md:none"></button>
                 <div class="toggle-content">
-                <nav id="header-nav" class="list focus:open absolute left max-w-200 outer-bottom bg-theme border-alpha-30 vh auto py-2 px-2 pb-200 sm from-left br-1 bt-1 shadow md:no-shadow hover:links-contrast scrollspy">
+                <nav id="header-nav" class="list focus:open absolute left max-w-200 outer-bottom bg-theme border-alpha-30 vh auto py-2 px-2 pb-200 sm from-left br-1 bt-1 shadow md:shadow-none hover:links-contrast scrollspy">
                     <ul class="pt-2">
                         <li>
                             <h5 class="pl-1">
@@ -112,7 +112,7 @@
                 </a>
             </div>
         </div>
-        <main class="max-w-1200 md:ml-200 bg-inherit clip-x">
+        <main class="max-w-1200 md:ml-200 bg-inherit">
 
             <!------------------------------------
             -------------    ABOUT    ------------
@@ -480,7 +480,7 @@ $sizes: (
                     <small>Small</small>
                     <cite>Cite</cite>
                     <dfn>Definition</dfn>
-                    <a href="#">Anchor</a>
+                    <a class="color/20" href="#">Anchor</a>
                     hr
                     <hr>
                 </div>
@@ -685,7 +685,7 @@ $colors: (
                 </div>
 
                 <div class="show-code" data-title="Hover Text Colors">
-                    <a class="hover:color-success">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a><br>
+                    <a class="color-warning hover:color-success">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a><br>
                     <a class="hover:color-grey">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a><br>
                     <a class="hover:color-contrast">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                 </div>
@@ -2755,7 +2755,7 @@ $borders: (
                             <td>text-align: justify</td>
                         </tr>
                         <tr>
-                            <td class="md:pl-2"><code class="color-grey">{breakpoint}:</code><code class="color-primary">no-wrap</code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}:</code><code class="color-primary">wrap-none</code></td>
                             <td>white-space: nowrap; flex-wrap: nowrap;</td>
                         </tr>
                         <tr>
@@ -2859,7 +2859,7 @@ $borders: (
                             <td>right: 100%; left: auto</td>
                         </tr>
                         <tr>
-                            <td class="md:pl-2"><code class="color-grey">{breakpoint}:</code><code class="color-primary">no-pointer </code></td>
+                            <td class="md:pl-2"><code class="color-grey">{breakpoint}:</code><code class="color-primary">pointer-none </code></td>
                             <td>pointer-events: none</td>
                         </tr>
                         <tr>
@@ -3727,7 +3727,9 @@ $borders: (
                 <div class="show-code" data-title="Default">
                     <div>Buttons</div>
                     <button>Default</button>
+                    <button class="loading">Default</button>
                     <button class="primary">Primary</button>
+                    <button class="primary loading">Primary</button>
                     <button class="success">Success</button>
                     <button class="warning">Warning</button>
                     <button class="error">Error</button>
@@ -3742,13 +3744,37 @@ $borders: (
                     <a href="#" class="button error">Error</a>
                     <a href="#" class="button contrast">Contrast</a>
                     <a href="#" class="button faint">Faint</a>
+
+                    <div class="mt-2 buttons">As Link Children
+                        <a href="#">Default</a>
+                        <a href="#" class="loading">Default</a>
+                        <a href="#" class="primary">Primary</a>
+                        <a href="#" class="primary loading">Primary</a>
+                        <a href="#" class="success">Success</a>
+                        <a href="#" class="warning">Warning</a>
+                        <a href="#" class="error">Error</a>
+                        <a href="#" class="contrast">Contrast</a>
+                        <a href="#" class="faint">Faint</a>
+                    </div>
+
+                    <div class="mt-2 buttons-outline">As Link Children
+                        <a href="#">Default</a>
+                        <a href="#" class="loading">Default</a>
+                        <a href="#" class="primary">Primary</a>
+                        <a href="#" class="primary loading color-success">Primary</a>
+                        <a href="#" class="success">Success</a>
+                        <a href="#" class="warning">Warning</a>
+                        <a href="#" class="error">Error</a>
+                        <a href="#" class="contrast">Contrast</a>
+                        <a href="#" class="faint">Faint</a>
+                    </div>
                 </div>
     
                 <div class="show-code" data-title="Outline">
                     <button class="outline">Default</button>
                     <button class="outline grey">Grey</button>
                     <button class="outline primary">Primary</button>
-                    <button class="outline primary loading">Primary</button>
+                    <button class="outline primary loading color-success">Primary</button>
                     <button class="outline success">Success</button>
                     <button class="outline warning">Warning</button>
                     <button class="outline error">Error</button>
@@ -4784,6 +4810,7 @@ $borders: (
                     <span class="icon down"></span>
                     <span class="icon close"></span>
                     <span class="icon menu"></span>
+                    <span class="icon dots"></span>
                 </div>
 
                 <div class="show-code" data-title="SVG Icons">

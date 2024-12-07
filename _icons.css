@@ -30,9 +30,9 @@
 .icon> :is(svg, img) {
 	fill: currentColor;
 	transition:
-		transform var(--ease-speed) var(--ease),
-		rotate var(--ease-speed) var(--ease),
-		scale var(--ease-speed) var(--ease);
+		transform var(--speed) var(--ease),
+		rotate var(--speed) var(--ease),
+		scale var(--speed) var(--ease);
 }
 
 :is(button, .button, .alert, .icon) :is(svg, img),

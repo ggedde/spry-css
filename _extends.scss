@@ -17,7 +17,7 @@
 	gap             : 1em;
 	min-height      : 2.32em;
 	min-width       : 2.3em;
-	outline         : 0 solid rgb(from var(--color) r g b / 0.5);
+	outline         : 0 solid rgb(from var(--theme-color) r g b / 0.5);
 	outline-offset  : 2px;
 	padding-block   : .3em;
 	padding-inline  : 1em;
@@ -65,32 +65,36 @@
 	--bdr-a     : 100%; // Reset for all UI elements
 	border-width: 1px;
 	border-style: solid;
-	border-color: hsl(from var(--color) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+	border-color: hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
 }
 
 %ui-border-radius {
-	border-radius: var(--border-radius, .25em);
+	border-radius: var(--radius, .25em);
 }
 
 %ui-bg {
 	--bg-a          : 100%; // Reset for all UI elements
-	background-color: hsl(from var(--color) h s var(--bg-l, l) / var(--bg-a, 100%));
+	background-color: hsl(from var(--theme-color) h s var(--bg-l, l) / var(--bg-a, 100%));
 }
 
 %ui-hover {
-	background-color: hsl(from var(--color) h s calc(var(--bg-l, l) + 10) / var(--bg-a, 100%));
+	background-color: hsl(from var(--theme-color) h s calc(var(--bg-l, l) + 10) / var(--bg-a, 100%));
 
 	&:where(.hazy, .outline, .plain, .link) {
-		background-color: hsl(from var(--color) h s calc(var(--bg-l, l) + 10) / 15%);
+		background-color: hsl(from var(--theme-color) h s calc(var(--bg-l, l) + 10) / 15%);
 	}
 }
 
 %ui-bg-hover {
-	background-color: hsl(from var(--color) h s l / 15%);
+	background-color: hsl(from var(--theme-text) h s var(--bg-l, l) / 15%);
 }
 
 %ui-color {
-	color: hsl(from var(--text-color) h s var(--clr-l, l) / var(--clr-a, 100%));
+	--text-color: hsl(from var(--theme-color) 0 0 min(calc((l - var(--invert))* -1000%), 98%) / var(--clr-a, 100%));
+	color: var(--text-color);
+	&:where(.link, .plain, .hazy, .outline) {
+		--text-color: hsl(from var(--theme-color) h s var(--clr-l, l) / var(--clr-a, 100%));
+	}
 }
 
 %ui-margin-above {
@@ -103,32 +107,6 @@
 
 %ui-margin-above-none {
 	margin-top: 0;
-}
-
-@for $i from 0 through 10 {
-	%ui-clr-a-#{$i} {
-		--clr-a: #{calc($i / 10)};
-	}
-
-	%ui-clr-l-#{$i} {
-		--clr-l: #{calc($i * 10)};
-	}
-
-	%ui-bg-a-#{$i} {
-		--bg-a: #{calc($i / 10)};
-	}
-
-	%ui-bg-l-#{$i} {
-		--bg-l: #{calc($i * 10)};
-	}
-
-	%ui-bdr-a-#{$i} {
-		--bdr-a: #{calc($i / 10)};
-	}
-
-	%ui-bdr-l-#{$i} {
-		--bdr-l: #{calc($i * 10)};
-	}
 }
 
 %closed {

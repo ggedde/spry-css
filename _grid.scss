@@ -6,6 +6,18 @@
 * Spry Grid
 */
 
+:root {
+    --gapx       : #{map.get(variables.$gaps, 'default')};
+    --gapy       : #{map.get(variables.$gaps, 'default')};
+
+    @each $breakpoint, $breakpoint_width in variables.$breakpoints {
+        @media screen and (min-width: $breakpoint_width) {
+            --gapx: #{map.get(variables.$gaps, $breakpoint)};
+            --gapy: #{map.get(variables.$gaps, $breakpoint)};
+        }
+    }
+}
+
 .column,
 .row,
 .grid,
