@@ -15,33 +15,34 @@ table {
 		padding   : 1em .5em;
 		text-align: left;
 	}
+
+	td {
+		border-top: 1px solid hsl(from var(--ui-border) h s var(--bdr-l, l) / var(--bdr-a, 50%));
+		vertical-align: top;
+	}
 }
 
 thead {
-	box-shadow: 0 2px 0 var(--theme-border);
+	box-shadow: 0 2px 0 hsl(from var(--ui-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+	color: var(--ui-color);
 
 	th {
 		font-weight: 500;
 	}
 }
 
-tbody td {
-	@extend %ui-border;
-	border-color: hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
-	border-right: 0;
-	border-bottom: 0;
-	border-left: 0;
-	vertical-align: top;
+.striped tbody tr:nth-child(even),
+.striped-expand tbody tr:nth-child(4n -1),
+.striped-expand tbody tr:nth-child(4n -1) + tr {
+	background-color: rgb(from var(--ui-color) r g b / .04);
 }
 
-.hover\:active tbody tr:hover,
-.hover\:active.striped-expand tbody tr:nth-child(2n - 1):hover+tr {
-	background-color: rgb(from var(--theme-color) r g b / 6%);
+.h\:striped tbody tr:hover,
+.h\:striped-expand tbody tr:nth-child(odd):hover,
+.h\:striped-expand tbody tr:nth-child(odd):hover + tr {
+	background-color: rgb(from var(--ui-color) r g b / .07);
 }
 
-.hover\:active.striped-expand tbody tr:nth-child(4n - 2):hover {
-	background-color: transparent;
-}
 
 @mixin table-responsive-styles($prefix) {
 	#{$prefix}responsive {
@@ -58,7 +59,7 @@ tbody td {
 
 		tbody tr {
 			padding-block: 1em;
-			border-top: 1px solid var(--theme-border);
+			border-top: 1px solid var(--ui-border);
 		}
 
 		td {
@@ -67,40 +68,10 @@ tbody td {
 	}
 }
 
-@mixin table-styles($prefix) {
-	#{$prefix}striped {
-
-		tr:nth-child(even),
-		> :not(table, tbody, thead, tfoot):nth-child(even) {
-			background-color: rgb(from var(--theme-color) r g b / 4%);
-		}
-	}
-
-	#{$prefix}striped-expand {
-
-		tr:nth-child(4n -1),
-		tr:nth-child(4n),
-		> :not(table, tbody, thead, tfoot):nth-child(4n -1),
-		> :not(table, tbody, thead, tfoot):nth-child(4n) {
-			background-color: rgb(from var(--theme-color) r g b / 4%);
-		}
-	}
-}
-
-@include table-styles('.');
 @include table-responsive-styles('.');
 
-@each $breakpoint,
-$breakpoint_width in variables.$breakpoints {
-	@media screen and (min-width: #{$breakpoint_width}) {
-		@include table-styles('.#{$breakpoint}\\:');
-	}
-
-	@container (min-width: #{$breakpoint_width}) {
-		@include table-styles('.c-#{$breakpoint}\\:');
-	}
-
-	@if list.index(variables.$breakpoints, ($breakpoint $breakpoint_width))==1 {
+@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+	@if list.index(variables.$breakpoints, ($breakpoint $breakpoint_width)) == 1 {
 		@media screen and (max-width: #{$breakpoint_width}) {
 			@include table-responsive-styles('.#{$breakpoint}\\:');
 		}
@@ -109,13 +80,4 @@ $breakpoint_width in variables.$breakpoints {
 			@include table-responsive-styles('.c-#{$breakpoint}\\:');
 		}
 	}
-}
-
-.hover\:active.striped tbody tr:nth-child(even):hover,
-.hover\:active tbody.striped tr:nth-child(even):hover,
-.hover\:active.striped-expand tbody tr:nth-child(4n -1):hover,
-.hover\:active.striped-expand tbody tr:nth-child(4n -1):hover+tr,
-.hover\:active tbody.striped-expand tr:nth-child(4n -1):hover,
-.hover\:active tbody.striped-expand tr:nth-child(4n -1):hover+tr {
-	background-color: rgb(from var(--theme-color) r g b / 6%);
 }

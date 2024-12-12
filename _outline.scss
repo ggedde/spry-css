@@ -17,6 +17,7 @@
 	&.tabs .list>ul li,
 	&.tabs .list+* {
 		border-color: inherit;
+		border-image: inherit;
 	}
 
 	>li,
@@ -40,6 +41,7 @@
 			border-width: 0 0 1px 0;
 			border-color: inherit;
 			border-style: solid;
+			border-image: inherit;
 		}
 	}
 

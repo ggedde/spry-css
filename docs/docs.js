@@ -169,7 +169,7 @@ function loadCodeContainer(el) {
 
 document.querySelectorAll('.show-code').forEach((elem, index) => {
     var toggleId = Math.random().toString().replace('.', '');
-    var badge = (elem.hasAttribute('data-badge') ? '<'+(elem.hasAttribute('data-badge-link') ? 'a title="Link to '+elem.getAttribute('data-badge-link')+'" aria-label="'+elem.getAttribute('data-badge')+'" href="'+elem.getAttribute('data-badge-link')+'"' : 'span')+' class="badge dense grey outline xs ml-1 align-text-bottom">'+elem.getAttribute('data-badge')+(elem.hasAttribute('data-badge-link') ? '</a>' : '</span>') : '');
+    var badge = (elem.hasAttribute('data-badge') ? '<'+(elem.hasAttribute('data-badge-link') ? 'a title="Link to '+elem.getAttribute('data-badge-link')+'" aria-label="'+elem.getAttribute('data-badge')+'" href="'+elem.getAttribute('data-badge-link')+'"' : 'span')+' class="badge dense gray outline xs ml-1 align-text-bottom">'+elem.getAttribute('data-badge')+(elem.hasAttribute('data-badge-link') ? '</a>' : '</span>') : '');
     var tooltipWarning = (elem.hasAttribute('data-tooltip-warning') ? '<span class="sm"><i class="icon color-secondary shy"><svg viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6z" /></svg></i><span class="tooltip sm center-x outset-top">'+elem.getAttribute('data-tooltip-warning')+'</span></span>' : '');
     var note = (elem.hasAttribute('data-note') ? '<p>'+elem.getAttribute('data-note')+'</p>' : '');
     var warning = (elem.hasAttribute('data-warning') ? '<p class="color-warning">'+elem.getAttribute('data-warning')+'</p>' : '');
@@ -183,7 +183,7 @@ document.querySelectorAll('.show-code').forEach((elem, index) => {
 
     var languageSelector = '';
     var headerNote = warning || note ? '<div class="note bg-faint bb-1 py-2 mt-0">' + warning + note + '</div>' : '';
-    var footerNote = footerNote ? '<div class="note bg-faint bt-1 py-2 mt-0">' + footerNote + '</div>' : '';
+    var footerNote = footerNote ? '<footer class="bg-faint py-2">' + footerNote + '</footer>' : '';
 
     var headerNotes = headerNote;
     var footerNotes = footerNote;

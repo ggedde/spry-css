@@ -8,6 +8,8 @@
 	@extend %ui-bg;
 	@extend %ui-color;
 	@extend %ui-border;
+	@extend %ui-border-radius;
+	--radius: 2em;
 	width      : auto;
 	font-weight: 500;
 	line-height: 1;

@@ -39,74 +39,15 @@ General Utility Classes
 	cursor: pointer
 }
 
-.round {
-	border-radius: .25em
-}
-
-.round-top {
-	border-radius: .25em .25em 0 0
-}
-
-.round-bottom {
-	border-radius: 0 0 .25em .25em
-}
-
-.round-right {
-	border-radius: 0 .25em .25em 0
-}
-
-.round-left {
-	border-radius: .25em 0 0 .25em
-}
-
-.pill,
-.badge {
-	border-radius: 2em
-}
-
-.pill-top {
-	border-radius: 2em 2em 0 0
-}
-
-.pill-bottom {
-	border-radius: 0 0 2em 2em
-}
-
-.pill-right {
-	border-radius: 0 2em 2em 0
-}
-
-.pill-left {
-	border-radius: 2em 0 0 2em
-}
-
 .circle {
 	border-radius: 50%;
-	aspect-ratio : 1;
+	aspect-ratio: 1;
 }
 
-.sharp {
-	border-radius: 0
-}
-
-.index-1 {
-	z-index: 1
-}
-
-.index-2 {
-	z-index: 2
-}
-
-.index-3 {
-	z-index: 3
-}
-
-.index-4 {
-	z-index: 4
-}
-
-.index-5 {
-	z-index: 5
+@for $i from 1 through 5 {
+	.index-#{$i} {
+		z-index: #{$i}
+	}
 }
 
 .truncate-1 {
@@ -161,6 +102,10 @@ General Utility Classes
 	backdrop-filter: none
 }
 
+.border-none {
+	border-color: transparent;
+}
+
 .color-inherit {
 	color: inherit
 }
@@ -177,14 +122,24 @@ General Utility Classes
 	translate: -1em -.7em
 }
 
-.hover\:scale {
-	scale: 1.00001;
+.h\:scale {
+	scale     : 1.00001;
 	transition: scale var(--speed) var(--ease)
 }
 
 .scale,
-.hover\:scale:hover {
+.h\:scale:hover {
 	scale: 1.08
+}
+
+.appearance-none {
+	appearance: none;
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-calendar-picker-indicator,
+	&::-webkit-inner-spin-button {
+		display: none;
+	}
 }
 
 /****************************************************************************
@@ -299,44 +254,44 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		display: none
 	}
 
-	#{$prefix}table {
-		display: table
-	}
+	// #{$prefix}table {
+	// 	display: table
+	// }
 
 	#{$prefix}table-cell {
 		display: table-cell;
 		width  : auto;
 	}
 
-	#{$prefix}table-row {
-		display: table-row
-	}
+	// #{$prefix}table-row {
+	// 	display: table-row
+	// }
 
-	#{$prefix}table-row-group {
-		display: table-row-group
-	}
+	// #{$prefix}table-row-group {
+	// 	display: table-row-group
+	// }
 
-	#{$prefix}table-header-group {
-		display: table-header-group
-	}
+	// #{$prefix}table-header-group {
+	// 	display: table-header-group
+	// }
 
-	#{$prefix}table-footer-group {
-		display: table-footer-group
-	}
+	// #{$prefix}table-footer-group {
+	// 	display: table-footer-group
+	// }
 
 	#{$prefix}flex-wrap {
 		flex-wrap: wrap
 	}
 
 	#{$prefix}hide {
-		opacity: 0;
-		position: absolute;
+		opacity       : 0;
+		position      : absolute;
 		pointer-events: none;
 	}
 
 	#{$prefix}show {
-		opacity: 1;
-		position: revert;
+		opacity       : 1;
+		position      : revert;
 		pointer-events: inherit;
 	}
 
@@ -402,11 +357,11 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 	#{$prefix}overlay {
 		// width: 100%;
-		position: absolute;
+		position     : absolute;
 		// overflow: hidden;
-		min-width: 100%;
+		min-width    : 100%;
 		place-content: inherit;
-		text-align: inherit;
+		text-align   : inherit;
 	}
 
 	// #{$prefix}overlay {
@@ -418,8 +373,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	// }
 
 	#{$prefix}overlay>* {
-		position: relative;
-		width: 100%;
+		position : relative;
+		width    : 100%;
 		min-width: min-content;
 	}
 
@@ -649,17 +604,17 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 	#{$prefix}resize {
 		overflow: auto;
-		resize: both
+		resize  : both
 	}
 
 	#{$prefix}resize-x {
 		overflow-x: auto;
-		resize: horizontal
+		resize    : horizontal
 	}
 
 	#{$prefix}resize-y {
 		overflow-y: auto;
-		resize: vertical
+		resize    : vertical
 	}
 
 	#{$prefix}resize-none {
@@ -669,47 +624,47 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	#{$prefix}rotate-0 {
 		rotate: 0deg
 	}
-	
+
 	#{$prefix}rotate-90 {
 		rotate: 90deg
 	}
-	
+
 	#{$prefix}rotate-180 {
 		rotate: 180deg
 	}
-	
+
 	#{$prefix}rotate-270 {
 		rotate: 270deg
 	}
 
 	#{$prefix}from-top {
 		--transform: translate3d(0, -80px, 0);
-		--origin: top;
+		--origin   : top;
 	}
 
 	#{$prefix}from-center {
-		--transform       : scale(.8, .8) translate3d(0, 0, 0);
-		--origin: center;
+		--transform: scale(.8, .8) translate3d(0, 0, 0);
+		--origin   : center;
 	}
 
 	#{$prefix}from-left {
-		--transform       : translate3d(-80px, 0, 0);
-		--origin: left;
+		--transform: translate3d(-80px, 0, 0);
+		--origin   : left;
 	}
 
 	#{$prefix}from-right {
-		--transform       : translate3d(80px, 0, 0);
-		--origin: right;
+		--transform: translate3d(80px, 0, 0);
+		--origin   : right;
 	}
 
 	#{$prefix}from-bottom {
-		--transform       : translate3d(0, 80px, 0);
-		--origin: bottom;
+		--transform: translate3d(0, 80px, 0);
+		--origin   : bottom;
 	}
 
 	#{$prefix}from-default {
 		--transform: translate3d(0, -2px, 0);
-		--origin: top;
+		--origin   : top;
 	}
 
 	#{$prefix}o-0 {
@@ -734,16 +689,18 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 // Checked Utilities
 :checked.checked\:,
-:has(:checked) > .checked\:,
+:has(:checked)>.checked\:,
 :has(:checked).checked\:,
-:has([value=""]:checked) > .checked-empty\:,
-:not(:has(:checked)) > .checked-empty\: {
+:has([value=""]:checked)>.checked-empty\:,
+:not(:has(:checked))>.checked-empty\: {
 	&rotate {
 		rotate: 180deg;
 	}
+
 	&flip {
 		scale: -1;
 	}
+
 	// &block {
 	// 	display: block;
 	// }
@@ -765,19 +722,21 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	&revert {
 		display: revert;
 	}
+
 	&none {
 		display: none;
 	}
 }
 
-.hover\:o-0:hover {
+.h\:o-0:hover {
 	opacity: 0
 }
 
 @for $i from 1 through 10 {
-	.hover\:o-#{$i}0:hover {
+	.h\:o-#{$i}0:hover {
 		opacity: #{calc($i / 10)};
 	}
+
 	.shadow\/#{calc($i * 10)} {
 		--shadow-o: #{calc($i / 10)};
 	}

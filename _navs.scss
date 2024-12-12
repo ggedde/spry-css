@@ -11,7 +11,6 @@
 
 	a {
 		@extend %ui;
-		// justify-content: start;
 	}
 
 	>a {
@@ -21,7 +20,7 @@
 	li,
 	ul,
 	menu {
-		position: relative;
+		position        : relative;
 		background-color: inherit;
 	}
 
@@ -30,17 +29,11 @@
 	}
 }
 
-// .list {
-// 	text-align: left;
-// 	place-content: start;
-// }
-
 nav ul,
 nav menu,
 menu ul,
 menu menu {
-	// background-color: inherit;
-	overflow        : visible;
+	overflow: visible;
 }
 
 nav ul ul,
@@ -65,15 +58,15 @@ menu menu {
 			right     : 1em;
 			rotate    : 90deg;
 			margin-top: -.35em;
-			opacity: .5;
+			opacity   : .5;
 		}
 	}
 }
 
 @mixin hoverOpen-styles($prefix) {
 
-	:is(#{$prefix}hover\:open, #{$prefix}focus\:open) > ul > li > ul,
-	:is(#{$prefix}hover\:open, #{$prefix}focus\:open) > li > ul,
+	:is(#{$prefix}h\:open, #{$prefix}f\:open)>ul>li>ul,
+	:is(#{$prefix}h\:open, #{$prefix}f\:open)>li>ul,
 	#{$prefix}open\:side ul ul,
 	#{$prefix}sub\:open\:side ul ul ul {
 		position : absolute;
@@ -88,21 +81,21 @@ menu menu {
 		left    : auto;
 	}
 
-	:where(#{$prefix}open\:side ul ul, #{$prefix}sub\:open\:side ul ul ul){
+	:where(#{$prefix}open\:side ul ul, #{$prefix}sub\:open\:side ul ul ul) {
 		top : 0;
 		left: 100%;
 	}
-	
+
 	#{$prefix}sub\:shadow ul ul {
 		box-shadow: 1px 3px 6px rgba(0, 0, 0, var(--shadow-o));
 	}
 
-	:is(#{$prefix}open\:down ul, #{$prefix}sub\:open\:down ul ul) > li:has(ul)> :first-child::after {
+	:is(#{$prefix}open\:down ul, #{$prefix}sub\:open\:down ul ul)>li:has(ul)> :first-child::after {
 		rotate    : 90deg;
 		margin-top: -.35em;
 	}
-	
-	:is(#{$prefix}open\:side ul, #{$prefix}sub\:open\:side ul ul) > li:has(ul)> :first-child::after {
+
+	:is(#{$prefix}open\:side ul, #{$prefix}sub\:open\:side ul ul)>li:has(ul)> :first-child::after {
 		rotate    : 0deg;
 		margin-top: 0;
 	}

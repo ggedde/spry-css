@@ -20,7 +20,8 @@ $color_value in variables.$colors {
 	@extend %ui-border-radius;
 }
 
-:is(.toggle, .toggle-next):has(:focus-visible),
+label:has(.hide:focus-visible),
+:is(.toggle, .toggle-next, .input):has(:focus-visible),
 :focus-visible {
 	outline-width: 2px;
 }
@@ -37,7 +38,7 @@ a {
 .link,
 .plain,
 .hazy,
-:where(.buttons-link, .buttons-plain, .buttons-hazy) a {
+:is(.buttons-link, .buttons-plain, .buttons-hazy) a {
 	border-color: transparent;
 }
 
@@ -50,7 +51,7 @@ a {
 
 .hazy,
 .buttons-hazy a {
-	background-color: hsl(from var(--theme-text) h s var(--bg-l, l) / 10%);
+	background-color: hsl(from var(--ui-color) h s var(--bg-l, l) / 10%);
 }
 
 hr {

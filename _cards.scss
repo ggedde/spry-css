@@ -41,10 +41,12 @@ article {
 
 		>header {
 			border-bottom: inherit;
+			border-image: inherit;
 		}
 
 		>footer {
 			border-top: inherit;
+			border-image: inherit;
 		}
 	}
 
@@ -57,7 +59,7 @@ article {
 		@extend %ui;
 		@extend %ui-color;
 		@extend %ui-roomy;
-		background-color: hsl(from var(--theme-color) h s var(--bg-l, l) / var(--bg-a, 100%));
+		background-color: hsl(from var(--ui-color) h s var(--bg-l, l) / var(--bg-a, 100%));
 		display         : flex;
 		justify-content : space-between;
 		align-items     : center;

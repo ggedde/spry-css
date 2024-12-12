@@ -24,7 +24,7 @@
 		content       : '';
 		animation     : spinner calc(var(--speed) * 2) ease infinite;
 		border        : .16em solid transparent;
-		border-color  : var(--text-color) var(--text-color) transparent transparent;
+		border-color  : var(--ui-text) var(--ui-text) transparent transparent;
 		border-radius : 50%;
 		box-sizing    : border-box;
 		height        : 1.1em;
@@ -36,12 +36,7 @@
 		transition    : opacity var(--speed) ease-in-out .1s;
 	}
 
-	&:is(input, select, textarea, button, .button, a) {
+	&[class] {
 		color: transparent;
-	}
-
-	:is(input, select, textarea, button, .button, a) {
-		pointer-events: none;
-		opacity       : .7;
 	}
 }

@@ -12,12 +12,11 @@
 	color           : inherit;
 	display         : inline-flex;
 	font-size       : 100%;
-	height          : auto;
 	justify-content : space-between;
 	gap             : 1em;
 	min-height      : 2.32em;
 	min-width       : 2.3em;
-	outline         : 0 solid rgb(from var(--theme-color) r g b / 0.5);
+	outline         : 0 solid rgb(from var(--ui-accent) r g b / 0.5);
 	outline-offset  : 2px;
 	padding-block   : .3em;
 	padding-inline  : 1em;
@@ -29,7 +28,6 @@
 		background-color .1s ease-in-out,
 		border-color .1s ease-in-out;
 	vertical-align  : middle;
-	width           : 100%;
 }
 
 %ui-icon {
@@ -62,10 +60,9 @@
 }
 
 %ui-border {
-	--bdr-a     : 100%; // Reset for all UI elements
 	border-width: 1px;
 	border-style: solid;
-	border-color: hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+	border-color: hsl(from var(--ui-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
 }
 
 %ui-border-radius {
@@ -73,28 +70,24 @@
 }
 
 %ui-bg {
-	--bg-a          : 100%; // Reset for all UI elements
-	background-color: hsl(from var(--theme-color) h s var(--bg-l, l) / var(--bg-a, 100%));
+	background-color: hsl(from var(--ui-color) h s var(--bg-l, l) / var(--bg-a, 100%));
 }
 
 %ui-hover {
-	background-color: hsl(from var(--theme-color) h s calc(var(--bg-l, l) + 10) / var(--bg-a, 100%));
+	background-color: hsl(from var(--ui-color) h s calc(var(--bg-l, l) + 10) / var(--bg-a, 100%));
 
 	&:where(.hazy, .outline, .plain, .link) {
-		background-color: hsl(from var(--theme-color) h s calc(var(--bg-l, l) + 10) / 15%);
+		background-color: hsl(from var(--ui-color) h s calc(var(--bg-l, l) + 10) / 15%);
 	}
 }
 
 %ui-bg-hover {
-	background-color: hsl(from var(--theme-text) h s var(--bg-l, l) / 15%);
+	background-color: hsl(from var(--ui-accent) h s var(--bg-l, l) / 15%);
 }
 
 %ui-color {
-	--text-color: hsl(from var(--theme-color) 0 0 min(calc((l - var(--invert))* -1000%), 98%) / var(--clr-a, 100%));
-	color: var(--text-color);
-	&:where(.link, .plain, .hazy, .outline) {
-		--text-color: hsl(from var(--theme-color) h s var(--clr-l, l) / var(--clr-a, 100%));
-	}
+	--ui-text: hsl(from var(--ui-color) 0 0 clamp(15%, calc((l - var(--invert))* -1000%), 98%) / var(--clr-a, 100%));
+	color: var(--ui-text);
 }
 
 %ui-margin-above {
@@ -123,13 +116,11 @@
 		border: .15em solid currentColor;
 		border-bottom: 0;
 		border-left: 0;
-		// opacity: .7;
 		display: block;
 		height: .5em;
 		margin: auto;
 		position: absolute;
 		transform: rotate(45deg);
-		// translate: -.08em 0;
 		width: .5em;
 	}
 }

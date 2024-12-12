@@ -3,14 +3,21 @@
 * Spry Forms
 */
 
-:where(input, textarea, select, .is-select, .prefix, .suffix),
-.input-group> :not(input, select, textarea) {
+:where(input, textarea, select, .is-select),
+input::file-selector-button,
+.input>*,
+.input {
+	--input-color: hsl(from var(--ui-input) h s var(--bdr-l, l) / var(--bdr-a, 1));
+}
+
+:where(input, textarea, select, .is-select),
+.input {
 	@extend %ui;
 	@extend %ui-border;
 	@extend %ui-border-radius;
 	display       : inline-block;
-	border-color  : hsl(from var(--theme-input) h s var(--bdr-l, l) / var(--bdr-a, 50%));
-	--select-arrow: hsl(from var(--theme-input) h s var(--bdr-l, l) / var(--bdr-a, 70%));
+	border-color  : var(--input-color);
+	--select-arrow: var(--input-color);
 	font-family   : inherit;
 	font-weight   : inherit;
 
@@ -18,45 +25,57 @@
 		outline-width: 0;
 	}
 
-	&:focus {
-		box-shadow: inset 0 0 0 1px hsl(from var(--theme-text) h s var(--bdr-l, l) / var(--bdr-a, 50%));
-	}
-
-	&:is(:hover, :focus):not(.icon) {
-		// --theme-input: var(--theme-color);
-		border-color        : hsl(from var(--theme-text) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+	&:is(:hover, :focus, :focus-within):not(.icon) {
+		--ui-input: hsl(from var(--ui-accent) h s var(--bdr-l, l) / var(--bdr-a, 1));
 	}
 }
 
-:where(h1, h2, h3, h4, h5, label, p)+ :where(input, select, textarea, .input-group),
-label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-child {
+
+
+:where(h1, h2, h3, h4, h5, h6, label, p)+ :where(input, select, textarea, .input),
+label > :is(input, select, textarea):not([type=radio], [type=checkbox]):only-child {
 	@extend %ui-margin-above;
 }
 
 [type=range] {
-	height      : 0;
-	min-height  : 2px;
-	padding     : 0;
-	margin-block: 1em;
-	accent-color: var(--theme-text);
-}
+	&::-moz-range-track {
+		background: var(--ui-accent);
+		height    : 2px;
+	}
 
-[type=color] {
-	height        : 0;
-	padding-inline: .5em;
+	&::-webkit-slider-runnable-track {
+		background: var(--ui-accent);
+		height    : 2px;
+	}
+
+	&::-moz-range-thumb {
+		appearance   : none;
+		background   : var(--ui-accent);
+		width        : 1em;
+		height       : 1em;
+		border-radius: 50%;
+		margin-top   : -.45em;
+		border       : 0;
+	}
+
+	&::-webkit-slider-thumb {
+		appearance   : none;
+		background   : var(--ui-accent);
+		width        : 1em;
+		height       : 1em;
+		border-radius: 50%;
+		margin-top   : -.45em;
+	}
 }
 
 ::placeholder {
 	opacity: .7;
 }
 
-::-webkit-calendar-picker-indicator {
-	margin-left : -1em;
-	margin-right: -.5em;
-}
-
-[type=number] {
-	padding-right: .5em;
+[type=number],
+[type=date],
+[type=time] {
+	padding-right: 0.5em;
 }
 
 :where([type=radio], [type=checkbox]) {
@@ -77,43 +96,8 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 		inset           : 12px;
 		opacity         : 0;
 		transition      : all .1s ease-in-out;
-		background-color: var(--theme-text);
+		background-color: var(--ui-accent);
 		border-radius   : 2px;
-	}
-
-	&:not(.icon, .switch):checked {
-		border-color: var(--theme-text);
-
-		&::after {
-			inset: 2px;
-		}
-	}
-
-	&:checked::after {
-		opacity: 1;
-	}
-
-	&.switch {
-		width          : 2.25em;
-		height         : 1.15em;
-		border-radius  : 1em;
-		justify-content: left;
-
-		&:not(:checked)::after {
-			background-color: var(--theme-input);
-			opacity         : 0.5;
-		}
-
-		&::after {
-			margin  : .15em;
-			position: absolute;
-			inset   : 0 calc(100% - 1.05em) 0 0;
-		}
-
-		&:checked::after {
-			left : calc(100% - 1.05em);
-			right: 0;
-		}
 	}
 
 	&[class].loading::after {
@@ -123,8 +107,43 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 		inset        : 0;
 		margin-inline: auto;
 		opacity      : 1;
-		--text-color : var(--theme-text);
+		--ui-text    : var(--ui-accent);
 	}
+}
+
+.switch {
+	width          : 2.25em;
+	height         : 1.15em;
+	border-radius  : 1em;
+	justify-content: left;
+
+	&:not(:checked)::after {
+		background-color: var(--input-color);
+		opacity         : 0.5;
+	}
+
+	&::after {
+		margin  : .15em;
+		position: absolute;
+		inset   : 0 calc(100% - 1.05em) 0 0;
+	}
+
+	&:checked::after {
+		left : calc(100% - 1.05em);
+		right: 0;
+	}
+}
+
+:not(.icon):checked {
+	border-color: var(--ui-accent);
+}
+
+:not(.icon, .switch):checked::after {
+	inset: 2px;
+}
+
+:checked::after {
+	opacity: 1;
 }
 
 [type=radio],
@@ -134,37 +153,24 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 }
 
 :disabled,
-.disabled :is(input, select, textarea, label, button, a) {
+.disabled {
 	opacity       : .7;
 	pointer-events: none;
 }
 
 select,
 .is-select {
-	text-align         : left;
-	padding-right      : 1.7em;
-	line-height        : 1.55;
-	background-image   : linear-gradient(45deg, transparent 50%, var(--select-arrow) 0 calc(50% + 1px), transparent calc(50% + 2px)), linear-gradient(-45deg, transparent 50%, var(--select-arrow) 0 calc(50% + .065em), transparent calc(50% + 2px));
-	background-position: calc(100% - 1.2em), calc(100% - 0.82em);
-	background-size    : .4em .4em;
-	background-repeat  : no-repeat;
+	text-align     : left;
+	padding-right  : 1.7em;
+	line-height    : 1.55;
+	background     : linear-gradient(45deg, transparent 50%, var(--select-arrow) 0 calc(50% + 1px), transparent calc(50% + 2px)) no-repeat calc(100% - 1.2em), linear-gradient(-45deg, transparent 50%, var(--select-arrow) 0 calc(50% + .065em), transparent calc(50% + 2px)) no-repeat calc(100% - 0.82em);
+	background-size: .4em .4em;
 }
 
 input,
 select,
 .is-select {
 	text-overflow: ellipsis;
-}
-
-.no-arrows::-webkit-outer-spin-button,
-.no-arrows::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-	margin            : 0;
-}
-
-.no-arrows {
-	appearance     : textfield;
-	-moz-appearance: textfield;
 }
 
 textarea {
@@ -177,97 +183,87 @@ textarea {
 }
 
 input[type=file] {
-	padding-left: .5em;
+	padding-left : .5em;
+	text-overflow: revert;
+	overflow     : hidden;
 }
 
-input::file-selector-button {
+::file-selector-button {
 	appearance      : none;
 	border          : 0;
-	background-color: rgb(from var(--theme-input) r g b / 20%);
-	color           : inherit;
+	--bdr-a         : .5;
+	border-right    : 1px solid var(--input-color);
+	background-color: hsl(from var(--theme-ui) h s var(--bg-l, l) / var(--bg-a, 1));
+	color           : var(--ui-text);
 	height          : 2.3em;
 	padding-inline  : 1em;
 	margin          : -.4em 1em -.4em -.6em;
-	border-right    : 1px solid hsl(from var(--theme-input) h s var(--bdr-l, l) / var(--bdr-a, 50%));
 	font            : inherit;
+	opacity         : .8;
 }
 
-.input-group {
-	display: flex;
-	gap    : 0;
+.input {
+	display : flex;
+	gap     : 0;
+	overflow: hidden;
+	padding : 0;
 
 	> :not(input, select, textarea) {
-		--bg-a          : 20%;
-		width           : auto;
-		background-color: hsl(from var(--theme-input) h s var(--bg-l, l) / var(--bg-a));
-		border-color    : hsl(from var(--theme-input) h s var(--bdr-l, l) / var(--bdr-a, 50%));
-		color           : inherit;
-		display         : inline-flex;
+		@extend %ui;
+		--bg-a          : 1;
+		background-color: hsl(from var(--theme-ui) h s var(--bg-l, l) / var(--bg-a, 1));
+		color           : var(--ui-text);
 		justify-content : center;
+		min-width       : max-content;
+		opacity         : .8;
+		border-radius   : 0;
 
-		&:last-child,
-		+* {
-			border-radius: 0 var(--radius) var(--radius) 0;
+		--bdr-a: .7;
+
+		&:first-child {
+			border-right: 1px solid var(--input-color);
 		}
 
 		&:last-child {
-			border-left: 0;
+			border-left: 1px solid var(--input-color);
 		}
-
-		&:first-child {
-			border-right: 0;
-		}
-	}
-
-	> :not(input, select, textarea):first-child,
-	:where(input, select, textarea):has(+ :not(input, select, textarea)) {
-		border-radius: var(--radius) 0 0 var(--radius);
 	}
 
 	[type=color]+output {
 		min-width: 100px;
 	}
-}
 
-// label,
-// output {
-// 	min-height   : 2.3em;
-// 	min-width    : 2.3em;
-// }
-
-output {
-	text-align: center;
+	>* {
+		border       : 0;
+		border-radius: 0;
+		outline      : 0;
+		box-shadow   : none;
+	}
 }
 
 label {
-	position     : relative;
-	display      : block;
-	align-content: start;
-
-	.error {
-		color: var(--error, #c33);
-	}
-
-	&:focus-within .input-group> :not(input, select, textarea),
+	&:focus-within .input> :not(input, select, textarea),
 	&:focus-within input::file-selector-button {
-		background-color: var(--theme-text);
-		border-color    : var(--theme-text);
-		@extend %ui-color;
+		background-color: var(--ui-border);
+		opacity         : 1;
+		--ui-text       : hsl(from var(--ui-color) 0 0 clamp(15%, calc((l - var(--invert))* -1000%), 98%) / var(--clr-a, 100%));
 	}
 
-	&:hover .input-group> :not(input, select, textarea) {
-		--theme-input: var(--theme-text);
+	&:hover .input> :not(input, select, textarea) {
+		--theme-input: var(--ui-border);
 	}
 
 	:is(sup, sub) {
-		position        : absolute;
-		top             : 1.3em;
-		left            : 0;
-		opacity         : 0.7;
-		transform       : translate(10px, -50%);
-		transform-origin: left;
-		transition      : all .2s ease-in-out;
-		z-index         : 1;
+		position  : relative;
+		display   : inline-block;
+		opacity   : 0.7;
+		transform : translate(1em, 2.6em);
+		transition: all .2s ease-in-out;
+		z-index   : 1;
+	}
+
+	sub {
+		transform: translate(1em, -2.65em);
 	}
 
 	&:focus-within,
@@ -276,44 +272,38 @@ label {
 	&:has(select option:not(:empty):checked) {
 
 		:is(sup, sub) {
-			transform  : translate(3px, -50%) scale(0.85);
-			top        : -12px;
+			opacity    : 0.7;
+			transform  : translate(.1em, 0) scale(0.85);
 			font-weight: 500;
 		}
-
-		sub {
-			top: calc(100% + 11px);
-		}
 	}
 
-	&:focus-within :is(sup, sub):not([class*=color-]) {
-		color: var(--theme-text);
-	}
-
-	&:has(:is(sup)) {
-		margin-top: 1rem;
-	}
-
-	&:has(sub) {
-		margin-bottom: 1rem;
+	:is(input, select, textarea):not([type=radio], [type=checkbox]) {
+		width: 100%;
 	}
 }
 
-.show-invalid :not(:focus):user-invalid,
-.show-invalid :not(:focus-within):has([type=radio][required][value=""]:checked) {
-	border-color: var(--error, #c33);
+.invalid {
+	display: none;
 }
 
-.show-invalid label:has(:not(:focus):user-invalid) {
+.show-invalid {
 
-	.input-group> :not(input, select, textarea) {
+	:not(:focus-within):has([type=radio][required][value=""]:checked),
+	:user-invalid,
+	.input:has(:user-invalid) {
+		border-color : var(--error, #c33);
+		outline-color: rgba(from var(--error, #c33) r g b / .4);
+	}
+
+	label:has(:user-invalid) .invalid {
+		display: block;
+	}
+
+	.input:has(:user-invalid)> :not(input, select, textarea) {
 		background-color: var(--error, #c33);
 		border-color    : var(--error, #c33);
-		--theme-color: var(--error, #c33);
+		--ui-color      : var(--error, #c33);
 		@extend %ui-color;
-	}
-
-	.error {
-		display: block;
 	}
 }

@@ -1,0 +1,35 @@
+@use "variables";
+/*!
+* Spry Radius
+*/
+
+@mixin radius-styles($prefix) {
+	@each $r, $radius in variables.$radius {
+		#{$prefix}r-#{$r} {
+			border-radius: #{$radius};
+		}
+		#{$prefix}rt-#{$r} {
+			border-radius: #{$radius} #{$radius} 0 0;
+		}
+		#{$prefix}rr-#{$r} {
+			border-radius: 0 #{$radius} #{$radius} 0;
+		}
+		#{$prefix}rb-#{$r} {
+			border-radius: 0 0 #{$radius} #{$radius};
+		}
+		#{$prefix}rl-#{$r} {
+			border-radius: #{$radius} 0 0 #{$radius};
+		}
+	}
+}
+
+@include radius-styles('.');
+
+@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+	@media screen and (min-width: $breakpoint_width) {
+		@include radius-styles('.#{$breakpoint}\\:');
+	}
+	@container (min-width: #{$breakpoint_width}) {
+		@include radius-styles('.c-#{$breakpoint}\\:');
+	}
+}
