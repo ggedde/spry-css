@@ -4,40 +4,33 @@
 <head>
     <title>SpryCSS</title>
     <meta charset="UTF-8">
-    <meta name="description" content="SpryCSS is a lightweight toolkit to help jump start your project." />
-    <meta name="robots" content="index, follow" />
+    <meta name="description" content="SpryCSS is a lightweight toolkit to help jump start your project.">
+    <meta name="robots" content="index, follow">
     <meta name="google" content="notranslate">
-    <meta http-equiv="Content-Language" content="en_US">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="spry.min.css?v=3.0.0-rc.2">
     <script defer src="spry.js?v=3.0.0-rc.2"></script>
     <link rel="stylesheet" href="prism.min.css?v=3.0.0-rc.2">
-    <script>
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('theme-dark');
-        }    
-    </script>
+    
 </head>
 
 <body id="about">
     <div class="bg-inherit">
-        <div class="sticky toolbar sharp lg index-4 bg-faint pl-1 bb-1 pr-1">
+        <div class="sticky toolbar r-0 lg index-4 bg-faint pl-2 bb-1 pr-2 glow-theme glow-2 glow/10">
             <div class="toggle-container focus:open md:open flex items-center">
 
                 <button id="header-nav-mobile-button" tabindex="0" class="toggle open:pointer-none button link icon menu open:close md:none"></button>
                 <div class="toggle-content">
-                <nav id="header-nav" class="list focus:open absolute left max-w-200 outer-bottom bg-theme border-alpha-30 vh auto py-2 px-2 pb-200 sm from-left br-1 bt-1 shadow md:shadow-none scrollspy">
-                    <ul class="pt-2">
+                <nav id="header-nav" class="list focus:open absolute left max-w-200 outer-bottom bg-theme border-alpha-30 vh auto py-3 px-3 pb-6 sm from-left br-1 bt-1 shadow md:shadow-none scrollspy">
+                    <ul>
                         <li>
-                            <h5 class="pl-1">
-                                <i class="icon sm mr-1">
-                                    <svg viewBox="0 0 24 24"><path d="M13,3H11V13H13V3M17.83,5.17L16.41,6.59C18.05,7.91 19,9.9 19,12A7,7 0 0,1 12,19C8.14,19 5,15.88 5,12C5,9.91 5.95,7.91 7.58,6.58L6.17,5.17C2.38,8.39 1.92,14.07 5.14,17.86C8.36,21.64 14.04,22.1 17.83,18.88C19.85,17.17 21,14.65 21,12C21,9.37 19.84,6.87 17.83,5.17Z" /></svg>
-                                </i>
+                            <h5 class="pl-2">
+                                <svg class="icon sm mr-2" viewBox="0 0 24 24"><path d="M13,3H11V13H13V3M17.83,5.17L16.41,6.59C18.05,7.91 19,9.9 19,12A7,7 0 0,1 12,19C8.14,19 5,15.88 5,12C5,9.91 5.95,7.91 7.58,6.58L6.17,5.17C2.38,8.39 1.92,14.07 5.14,17.86C8.36,21.64 14.04,22.1 17.83,18.88C19.85,17.17 21,14.65 21,12C21,9.37 19.84,6.87 17.83,5.17Z" /></svg>
                                 Getting Started
                             </h5>
-                            <hr class="m-1" />
+                            <hr class="m-2">
                         </li>
                         <li><a href="#">About SpryCSS</a></li>
                         <li><a href="#support">Support</a></li>
@@ -48,13 +41,11 @@
                         <li><a href="#colors">Colors</a></li>
                         <li><a href="#themes">Themes</a></li>
                         <li class="pt-3">
-                            <h5 class="pl-1">
-                                <i class="icon sm mr-1">
-                                    <svg viewBox="0 0 24 24"><path d="M13 3v6h8V3m-8 18h8V11h-8M3 21h8v-6H3m0-2h8V3H3v10z" /></svg>
-                                </i>
+                            <h5 class="pl-2">
+                                <svg class="icon sm mr-2" viewBox="0 0 24 24"><path d="M13 3v6h8V3m-8 18h8V11h-8M3 21h8v-6H3m0-2h8V3H3v10z" /></svg>
                                 Layout & Utilities
                             </h5>
-                            <hr class="m-1" />
+                            <hr class="m-2">
                         </li>
                         <li><a href="#borders">Borders</a></li>
                         <li><a href="#breakpoints">Breakpoints</a></li>
@@ -67,13 +58,11 @@
                         <li><a href="#toggles">Toggles</a></li>
                         <li><a href="#utilities">Utilities</a></li>
                         <li class="pt-3">
-                            <h5 class="pl-1">
-                                <i class="icon sm mr-1">
-                                    <svg viewBox="0 0 24 24"><path d="M16 20h4v-4h-4m0-2h4v-4h-4m-6-2h4V4h-4m6 4h4V4h-4m-6 10h4v-4h-4m-6 4h4v-4H4m0 10h4v-4H4m6 4h4v-4h-4M4 8h4V4H4v4z" /></svg>
-                                </i>
+                            <h5 class="pl-2">
+                                <svg class="icon sm mr-2" viewBox="0 0 24 24"><path d="M16 20h4v-4h-4m0-2h4v-4h-4m-6-2h4V4h-4m6 4h4V4h-4m-6 10h4v-4h-4m-6 4h4v-4H4m0 10h4v-4H4m6 4h4v-4h-4M4 8h4V4H4v4z" /></svg>
                                 Components
                             </h5>
-                            <hr class="m-1" />
+                            <hr class="m-2">
                         </li>
                         <li><a href="#accordions">Accordions</a></li>
                         <li><a href="#alerts">Alerts</a></li>
@@ -95,13 +84,11 @@
                     </ul>
                 </nav>
                 </div>
-                <h5 class="flex items-center md">
-                    <a class="flex items-center mr-2 md:mr-3 ml-1" href="https://ggedde.github.io/spry-css">
-                        <i class="icon circle outline mr-2 xs border-primary none md:inline"><svg class="lg" viewBox="0 0 24 24"><path d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" /></svg></i>
-                        SpryCSS
-                    </a>
-                    <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases" alt="Release">
-                </h5>
+                <a class="flex mr-2 md:mr-3 ml-2" href="https://ggedde.github.io/spry-css">
+                    <svg class="icon circle outline mr-3 xs border-primary none md:inline p-1" viewBox="0 0 24 24"><path d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" /></svg>
+                    SpryCSS
+                </a>
+                <img src="https://img.shields.io/github/v/release/ggedde/spry-css?include_prereleases" alt="Release">
             </div>
             <div class="sm">
                 <button class="shy icon link circle" onclick="toggleTheme(document.documentElement);" title="Toggle Theme" aria-label="Toggle Theme">
@@ -114,11 +101,10 @@
         </div>
         <main class="max-w-1200 md:ml-200 bg-inherit">
 
-            <!------------------------------------
-            -------------    ABOUT    ------------
-            ------------------------------------->
-            <section class="bg-inherit cover" style="background-image: url('bg.png');"">
-                <h1 class="flex items-center mb-2 mt-0">
+            <!--
+            -    ABOUT    -->
+            <section class="bg-inherit cover" style="background-image: url('bg.png');">
+                <h1 class="flex items-center mb-3 mt-0">
                     <i class="icon circle outline mr-1 xs"><svg class="lg" viewBox="0 0 24 24"><path d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" /></svg></i>
                     SpryCSS
                 </h1>
@@ -135,63 +121,108 @@
                     <h5>
                         It is almost inevitable that you will need to add your own custom css and therefore it should be simple and easy to do without conflicts. SpryCSS does not use !important and tries to use the lease amount of css priority as possible.
                     </h5>
+
+                    <div class="glow-primary bg-theme b-1 border-primary p-4 r-3 m-5">
+                        <p>asdfsdfadsf</p>
+                    </div>
+
+                    <div class="bg-theme surface b-1 r-3 p-3">
+                        aaaaaaaaaa
+                        <div class="surface b-1 r-3 p-3">
+                            bbbbbbbbb
+                            <div class="surface b-1 r-3 p-3">
+                                cccccccc
+                                <div class="surface b-1 r-3 p-3">
+                                    dddddddd
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             
-                <h3 id="support" class="flex items-center index-2 pt-3 border-alpha-30 bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 id="support" class="flex items-center index-2 pt-4 border-alpha-30 bb-1 pb-2 mx-n3 px-3 mb-3">
                     <span class="mt-1">
-                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-14a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4z" /></svg></i>
+                    <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-14a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4z" /></svg>
                     Support
                 </span>
-                </h3>
+                </h2>
                 <p>You can report issues or make feature requests on the <a target="_blank" href="https://github.com/ggedde/spry-css/issues">GitHub Issues</a> page.</p>
                 <p>If you like to help us grow, then please add a star on the <a target="_blank" href="https://github.com/ggedde/spry-css">SpryCSS GitHub Repository</a> or by sharing us on social media.</p>
-                <div class="flex items-center pt-2 g-1 mb-2">
-                    <a class="button circle icon contrast hazy" title="Facebook" aria-label="Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookShare','width=626,height=436');return false;" onkeypress="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookShare','width=626,height=436');return false;">
+                <div class="row columns-auto pt-4 g-3">
+                    <a class="button circle icon contrast hazy mt-n2" title="Facebook" aria-label="Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookShare','width=626,height=436');return false;" onkeypress="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookShare','width=626,height=436');return false;">
                         <svg class="xl" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z" /></svg>
                     </a>
-                    <a class="button circle icon contrast hazy" title="Twitter" aria-label="Twitter" onclick="window.open('https://twitter.com/share?text=SpryCSS&url='+encodeURIComponent(location.href),'twitterShare','width=626,height=436');return false;" onkeypress="window.open('https://twitter.com/share?text=SpryCSS&url='+encodeURIComponent(location.href),'twitterShare','width=626,height=436');return false;">
+                    <a class="button circle icon contrast hazy mt-n2" title="Twitter" aria-label="Twitter" onclick="window.open('https://twitter.com/share?text=SpryCSS&url='+encodeURIComponent(location.href),'twitterShare','width=626,height=436');return false;" onkeypress="window.open('https://twitter.com/share?text=SpryCSS&url='+encodeURIComponent(location.href),'twitterShare','width=626,height=436');return false;">
                         <svg width="1200" height="1227" viewBox="0 0 1200 1227"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" /></svg>
                     </a>
-                    <a class="button circle icon contrast hazy" title="Linked In" aria-label="Linked In" onclick="window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent(location.href),'linkedinShare','width=626,height=436');return false;" onkeypress="window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent(location.href),'linkedinShare','width=626,height=436');return false;">
+                    <a class="button circle icon contrast hazy mt-n2" title="Linked In" aria-label="Linked In" onclick="window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent(location.href),'linkedinShare','width=626,height=436');return false;" onkeypress="window.open('https://www.linkedin.com/cws/share?url='+encodeURIComponent(location.href),'linkedinShare','width=626,height=436');return false;">
                         <svg class="xl" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" /></svg>
                     </a>
-                    <a class="button circle icon contrast hazy" title="GitHub" aria-label="GitHub" target="_blank" href="https://github.com/ggedde/spry-css">
+                    <a class="button circle icon contrast hazy mt-n2" title="GitHub" aria-label="GitHub" target="_blank" href="https://github.com/ggedde/spry-css">
                         <svg class="xl" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" /></svg>
                     </a>
-                    <p class="p-1">
-                        <a class="github-button" href="https://github.com/ggedde/spry-css" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-show-count="true" aria-label="Star ggedde/spry-css on GitHub">Star</a>
-                        <a class="github-button" href="https://github.com/ggedde/spry-css/issues" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-issue-opened" data-show-count="true" aria-label="Issue ggedde/spry-css on GitHub">Issue</a>
-                        <a class="github-button" href="https://github.com/ggedde/spry-css/subscription" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-eye" aria-label="Watch ggedde/spry-css on GitHub">Watch</a>
-                    </p>
+                    <a class="github-button none" href="https://github.com/ggedde/spry-css" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-show-count="true" aria-label="Star ggedde/spry-css on GitHub">Star</a>
+                    <a class="github-button none" href="https://github.com/ggedde/spry-css/issues" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-issue-opened" data-show-count="true" aria-label="Issue ggedde/spry-css on GitHub">Issue</a>
+                    <a class="github-button none" href="https://github.com/ggedde/spry-css/subscription" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-eye" aria-label="Watch ggedde/spry-css on GitHub">Watch</a>
                 </div>
             </section>
 
-            <!------------------------------------
-            ---------    INSTALLATION    ---------
-            ------------------------------------->
-            <section id="installation" class="bg-inherit pt-0 pb-0">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
-                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="m16.56 5.44-1.45 1.45A5.969 5.969 0 0 1 18 12a6 6 0 0 1-6 6 6 6 0 0 1-6-6c0-2.17 1.16-4.06 2.88-5.12L7.44 5.44A7.961 7.961 0 0 0 4 12a8 8 0 0 0 8 8 8 8 0 0 0 8-8c0-2.72-1.36-5.12-3.44-6.56M13 3h-2v10h2" /></svg></i>
+            <!--
+            ---------    INSTALLATION    ----------->
+            <section id="installation" class="bg-inherit pt-0 pb-0 column">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
+                    <svg class="icon mr-1" viewBox="0 0 24 24"><path d="m16.56 5.44-1.45 1.45A5.969 5.969 0 0 1 18 12a6 6 0 0 1-6 6 6 6 0 0 1-6-6c0-2.17 1.16-4.06 2.88-5.12L7.44 5.44A7.961 7.961 0 0 0 4 12a8 8 0 0 0 8 8 8 8 0 0 0 8-8c0-2.72-1.36-5.12-3.44-6.56M13 3h-2v10h2" /></svg>
                     Installation
                 </h2>
 
-                <h4 class="mb-1">Compatibility</h4>
-                <p class="mb-4">SpryCss uses modern css properties and native css nesting which is supported by all major browsers since April 2024</p>
+                <div>
+                    <h4>Compatibility</h4>
+                    <p>SpryCss uses modern css properties and native css nesting which is supported by all major browsers since April 2024</p>
+                </div>
 
-                <h4>Using the CDN:</h4>
-                <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0-rc.2/dist/spry.min.css"&gt;</code></pre>
+                <div>
+                    <h4>Using the CDN:</h4>
+                    <pre><code class="language-html surface b-1 p-3 r-2 w block auto">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0-rc.2/dist/spry.min.css"&gt;</code></pre>
+                </div>
     
-                <h4 class="mt-4">Using NPM and SCSS:</h4>
-                <pre><code class="language-bash">npm install @ggedde/spry-css</code></pre>
-                <p>Then in your scss file import SpryCSS:</p>
-                <pre><code class="language-scss">@import 'node_modules/@ggedde/spry-css/spry.scss';</code></pre>
-                <cite>Note: you may need to change the path to match your project's node_modules folder</cite>
-    
-                <h4 class="mt-4">Using Yarn and SCSS:</h4>
-                <pre><code class="language-bash">yarn add @ggedde/spry-css</code></pre>
-                <p>Then in your scss file import SpryCSS:</p>
-                <pre><code class="language-scss">@import 'node_modules/@ggedde/spry-css/spry.scss';</code></pre>
-                <cite>Note: you may need to change the path to match your project's node_modules folder</cite>
+                <div>
+                    <h4>Using a package manager:</h4>
+                    <div class="row columns-auto items-center mt-3 ml-3">
+                        <div style="width: 30px">npm</div>
+                        <div class="relative span-fill">
+                            <pre class="surface b-1 p-3 r-2"><code class="language-bash w block ml-3 auto">npm install @ggedde/spry-css</code></pre>
+                            <div class="absolute top left ml-2 pointer-none h content-center color-gray">
+                                <svg class="icon block color-gray" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" /></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row columns-auto items-center mt-3 ml-3">
+                        <div style="width: 30px">Yarn</div>
+                        <div class="relative span-fill">
+                            <pre class="surface b-1 p-3 r-2"><code class="language-bash w block ml-3 auto">yarn add @ggedde/spry-css</code></pre>
+                            <div class="absolute top left ml-2 pointer-none h content-center color-gray">
+                                <svg class="icon block color-gray" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" /></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row columns-auto items-center mt-3 ml-3">
+                        <div style="width: 30px">Bun</div>
+                        <div class="relative span-fill">
+                            <pre class="surface b-1 p-3 r-2"><code class="language-bash w block ml-3 auto">bun install @ggedde/spry-css</code></pre>
+                            <div class="absolute top left ml-2 pointer-none h content-center color-gray">
+                                <svg class="icon block color-gray" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" /></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p>Then in your scss file import SpryCSS:</p>
+                    <pre><code class="language-scss surface b-1 r-2 w block p-3 auto">@import 'node_modules/@ggedde/spry-css/spry.scss';</code></pre>
+                    <p class="note">Note: you may need to change the path to match your project's node_modules folder</p>
+                </div>
     
                 <h4 class="mt-4">Overriding SCSS Variables:</h4>
                 <p>To override the Spry Variables just declare the variables before you import the file.
@@ -234,93 +265,91 @@
 
 </code></pre>
 
-        </section>
-        <!------------------------------------
-        -----------   JAVASCRIPT   -----------
-        ------------------------------------->
-        <section id="spryjs" class="bg-inherit py-0 pb-3">
-            <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
-                <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M3,3H21V21H3V3M7.73,18.04C8.13,18.89 8.92,19.59 10.27,19.59C11.77,19.59 12.8,18.79 12.8,17.04V11.26H11.1V17C11.1,17.86 10.75,18.08 10.2,18.08C9.62,18.08 9.38,17.68 9.11,17.21L7.73,18.04M13.71,17.86C14.21,18.84 15.22,19.59 16.8,19.59C18.4,19.59 19.6,18.76 19.6,17.23C19.6,15.82 18.79,15.19 17.35,14.57L16.93,14.39C16.2,14.08 15.89,13.87 15.89,13.37C15.89,12.96 16.2,12.64 16.7,12.64C17.18,12.64 17.5,12.85 17.79,13.37L19.1,12.5C18.55,11.54 17.77,11.17 16.7,11.17C15.19,11.17 14.22,12.13 14.22,13.4C14.22,14.78 15.03,15.43 16.25,15.95L16.67,16.13C17.45,16.47 17.91,16.68 17.91,17.26C17.91,17.74 17.46,18.09 16.76,18.09C15.93,18.09 15.45,17.66 15.09,17.06L13.71,17.86Z" /></svg></i>
-                SpryJS Javascript <small class="badge outline xxs gray dense ml-2 px-2 md:px-1">Optional</small>
-            </h2>
-            <p>SpryCSS is meant to be quick and easy to implement without needing to add any additional dependencies. However, there are times when you need more functionality then CSS can offer.
-                For this reason, you can include SpryJS to handle <a href="#toggles">Toggles</a> and <a href="#sliders">Sliders</a>. Toggles add additional functionality for many of its components like 
-                <a href="#accordions">Accordions</a>, <a href="#buttons">Buttons</a>, <a href="#lists">Lists</a>, <a href="#menus">Menus</a>, <a href="#modals">Modals</a>, and <a href="#tabs">Tabs</a>.
-                SpryCSS also comes with basic <a href="#sliders">Sliders</a> that have limited functionality, but you can add SpryJS for more functionality.
-            </p>
-            <p class="note">SpryJS</p>
-            <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0-rc.2/dist/spry.min.js"&gt;&lt;/script&gt;</code></pre>
+            </section>
 
-            <h5 class="mt-3">The SpryJS file will run the following functions on document page load.</h5>
+            <!-- JAVASCRIPT -->
+            <section id="spryjs" class="bg-inherit py-0 pb-3">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
+                    <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M3,3H21V21H3V3M7.73,18.04C8.13,18.89 8.92,19.59 10.27,19.59C11.77,19.59 12.8,18.79 12.8,17.04V11.26H11.1V17C11.1,17.86 10.75,18.08 10.2,18.08C9.62,18.08 9.38,17.68 9.11,17.21L7.73,18.04M13.71,17.86C14.21,18.84 15.22,19.59 16.8,19.59C18.4,19.59 19.6,18.76 19.6,17.23C19.6,15.82 18.79,15.19 17.35,14.57L16.93,14.39C16.2,14.08 15.89,13.87 15.89,13.37C15.89,12.96 16.2,12.64 16.7,12.64C17.18,12.64 17.5,12.85 17.79,13.37L19.1,12.5C18.55,11.54 17.77,11.17 16.7,11.17C15.19,11.17 14.22,12.13 14.22,13.4C14.22,14.78 15.03,15.43 16.25,15.95L16.67,16.13C17.45,16.47 17.91,16.68 17.91,17.26C17.91,17.74 17.46,18.09 16.76,18.09C15.93,18.09 15.45,17.66 15.09,17.06L13.71,17.86Z" /></svg>
+                    SpryJS Javascript <small class="badge outline xxs gray dense ml-2 px-2 md:px-1">Optional</small>
+                </h2>
+                <p>SpryCSS is meant to be quick and easy to implement without needing to add any additional dependencies. However, there are times when you need more functionality then CSS can offer.
+                    For this reason, you can include SpryJS to handle <a href="#toggles">Toggles</a> and <a href="#sliders">Sliders</a>. Toggles add additional functionality for many of its components like 
+                    <a href="#accordions">Accordions</a>, <a href="#buttons">Buttons</a>, <a href="#lists">Lists</a>, <a href="#menus">Menus</a>, <a href="#modals">Modals</a>, and <a href="#tabs">Tabs</a>.
+                    SpryCSS also comes with basic <a href="#sliders">Sliders</a> that have limited functionality, but you can add SpryJS for more functionality.
+                </p>
+                <p class="note">SpryJS</p>
+                <pre><code class="language-html">&lt;script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0-rc.2/dist/spry.min.js"&gt;&lt;/script&gt;</code></pre>
 
-            <table class="mb-3 mt-3 border-faint">
-                <thead>
-                    <tr>
-                        <th class="md:w-200"><h4>Load Functions</h4></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="md:pl-2"><code class="color-primary">Spry.loadToggles()</code></td>
-                        <td>Loads all <a href="#toggles">Toggles</a> into scope and runs all necessary features.</td>
-                    </tr>
-                    <tr>
-                        <td class="md:pl-2"><code class="color-primary">Spry.loadSliders()</code></td>
-                        <td>Loads all <a href="#sliders">Sliders</a> into scope and runs all necessary features.</td>
-                    </tr>
-                    <tr>
-                        <td class="md:pl-2"><code class="color-primary">Spry.loadLists()</code></td>
-                        <td>Loads all <a href="#lists">Lists</a> into scope and runs all necessary features.</td>
-                    </tr>
-                </tbody>
-            </table>
+                <h5 class="mt-3">The SpryJS file will run the following functions on document page load.</h5>
 
-            <table class="mb-3 mt-3 border-faint">
-                <thead>
-                    <tr>
-                        <th class="md:w-500"><h4>Additional Functions</h4></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="md:pl-2"><code class="color-primary">Spry.toggle(<span class="color-gray">toggleObjectOrEvent</span>, <span class="color-gray">forceAction</span>)</code></td>
-                        <td>
-                            <p>Toggles the class <code class="color-primary">open</code> on an element if it has been registered with <code class="color-primary">data-toggle</code>. See <a href="#toggles">Toggles</a> for more information.</p>
-                            </p><code class="color-primary">toggleObjectOrEvent</code> - Can be a valid css selector, element object, or event of element object.</p>
-                            </p><code class="color-primary">forceAction</code> - Can be <code class="color-primary">close</code>, <code class="color-primary">open</code> or <code class="color-primary">toggle</code> <span class="color-gray">(default)</span></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="md:pl-2"><code class="color-primary">Spry.closeToggle(<span class="color-gray">toggleObjectOrEvent</span>)</code></td>
-                        <td>
-                            <p>Closes a toggle element. See <a href="#toggles">Toggles</a> for more information.</p>
-                            </p><code class="color-primary">toggleObjectOrEvent</code> - Can be a valid css selector, element object, or event of element object.</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="md:pl-2"><code class="color-primary">Spry.closeAllToggles()</code></td>
-                        <td>
-                            <p>Closes all toggle elements on the page. See <a href="#toggles">Toggles</a> for more information.</p>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                <table class="mb-3 mt-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th class="md:w-200"><h4>Load Functions</h4></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="md:pl-2"><code class="color-primary">Spry.loadToggles()</code></td>
+                            <td>Loads all <a href="#toggles">Toggles</a> into scope and runs all necessary features.</td>
+                        </tr>
+                        <tr>
+                            <td class="md:pl-2"><code class="color-primary">Spry.loadSliders()</code></td>
+                            <td>Loads all <a href="#sliders">Sliders</a> into scope and runs all necessary features.</td>
+                        </tr>
+                        <tr>
+                            <td class="md:pl-2"><code class="color-primary">Spry.loadLists()</code></td>
+                            <td>Loads all <a href="#lists">Lists</a> into scope and runs all necessary features.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="mb-3 mt-3 border-faint">
+                    <thead>
+                        <tr>
+                            <th class="md:w-500 h4">Additional Functions</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="md:pl-2"><code class="color-primary">Spry.toggle(<span class="color-gray">toggleObjectOrEvent</span>, <span class="color-gray">forceAction</span>)</code></td>
+                            <td>
+                                <p>Toggles the class <code class="color-primary">open</code> on an element if it has been registered with <code class="color-primary">data-toggle</code>. See <a href="#toggles">Toggles</a> for more information.</p>
+                                <p><code class="color-primary">toggleObjectOrEvent</code> - Can be a valid css selector, element object, or event of element object.</p>
+                                <p><code class="color-primary">forceAction</code> - Can be <code class="color-primary">close</code>, <code class="color-primary">open</code> or <code class="color-primary">toggle</code> <span class="color-gray">(default)</span></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="md:pl-2"><code class="color-primary">Spry.closeToggle(<span class="color-gray">toggleObjectOrEvent</span>)</code></td>
+                            <td>
+                                <p>Closes a toggle element. See <a href="#toggles">Toggles</a> for more information.</p>
+                                <p><code class="color-primary">toggleObjectOrEvent</code> - Can be a valid css selector, element object, or event of element object.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="md:pl-2"><code class="color-primary">Spry.closeAllToggles()</code></td>
+                            <td>
+                                <p>Closes all toggle elements on the page. See <a href="#toggles">Toggles</a> for more information.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
             </section>
-            <!------------------------------------
-            ---------   SCSS VARIABLES   ---------
-            ------------------------------------->
+
+            <!-- SCSS VARIABLES -->
             <section id="scss" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
-                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></i>
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
+                    <svg class="icon mr-1" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg>
                     SCSS Variables
                 </h2>
 
-                <dfn>_variables.scss</dfn>
-                <pre><code class="language-scss">// Specify each breakpoint size
-$breakpoints: (
+                <h5>_variables.scss</h5>
+                <pre><code class="language-scss b-1 r-3 p-3 bg-surface w block auto">// Specify each breakpoint size
+    $breakpoints: (
     md: 40em,
 );
 
@@ -345,14 +374,14 @@ $colors: (
 
 // Specify each type tag and class like &lt;h3&gt; and .h3 etc.
 $types: (
-    body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), color: var(--text), font-weight: 300, line-height: 1.4),
-        h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20),
-        h2: (font-size: 2.3em, font-weight: 300, line-height: 1.25),
-        h3: (font-size: 2.0em, font-weight: 300, line-height: 1.30),
-        h4: (font-size: 1.4em, font-weight: 300, line-height: 1.35),
-        h5: (font-size: 1.1em, font-weight: 300, line-height: 1.5),
-        h6: (font-size: 1.0em, font-weight: 300, line-height: 1.4),
-        a: (color: var(--primary), text-decoration: none),
+body: (font-family: Helvetica, font-size: clamp(.9em, 3vw, 1.0em), color: var(--text), font-weight: 300, line-height: 1.4),
+    h1: (font-size: 3.2em, font-weight: 400, line-height: 1.20),
+    h2: (font-size: 2.3em, font-weight: 300, line-height: 1.25),
+    h3: (font-size: 2.0em, font-weight: 300, line-height: 1.30),
+    h4: (font-size: 1.4em, font-weight: 300, line-height: 1.35),
+    h5: (font-size: 1.1em, font-weight: 300, line-height: 1.5),
+    h6: (font-size: 1.0em, font-weight: 300, line-height: 1.4),
+    a: (color: var(--primary), text-decoration: none),
 );
 
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc.
@@ -366,7 +395,7 @@ $spacing: (
 );
 
 // Specify each border size Ex .b-0, .b-1, .bt-3, .bx-3, .br-2, etc.
-$borders: (
+    $borders: (
     0: 0,
     1: 1px,
     2: 2px,
@@ -383,30 +412,31 @@ $sizes: (
     xs: 65%,
     xxs: 50%,
 );
-</code></pre>
+    </code></pre>
                 <h4 class="mt-3 mb-1">Accessing Variables in SCSS</h4>
                 <p>You can access variables using <code class="color-primary">map-get()</code></p>
-                <pre class="mt-1"><code class="language-css">p {
-    color: map-get($colors, 'primary');
-    background-color: rgba(map-get($colors, 'primary'), .5);
+                <pre class="mt-1"><code class="language-css b-1 r-3 p-3 bg-surface w block auto">@use "sass:map";
+
+p {
+    color: map.get($colors, 'default', 'primary');
+    background-color: rgba(map.get($colors, 'default', 'primary'), .5);
     margin-bottom: 1rem;
-    @media screen and (min-width: map-get($breakpoints, 'md')) {
+    @media screen and (min-width: map.get($breakpoints, 'md')) {
         margin-bottom: .5rem;
     }
 }
     </code></pre>
             </section>
-            <!------------------------------------
-            ---------   CSS VARIABLES   ---------
-            ------------------------------------->
+
+            <!-- CSS VARIABLES -->
             <section id="css" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
-                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></i>
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
+                    <svg class="icon mr-1" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg>
                     CSS Variables
                 </h2>
 
-                <dfn>Default CSS Variables</dfn>
-                <pre class="mt-1"><code class="language-scss">:root {
+                <h5>Default CSS Variables</h5>
+                <pre class="mt-1"><code class="language-scss b-1 r-3 p-3 bg-surface w block auto">:root {
     --gap              : 1.25em;      // Used for initial Gap sizes on grid and for breakpoint gap sizes. - Dynamic Property
     --col              : 1;           // Used on grids to specify the number of columns.                 - Dynamic Property
     --color            : #888;        // This is the Accent Color applied to special components.          - Dynamic Property
@@ -443,12 +473,11 @@ $sizes: (
     </code></pre>
     <p class="note">* Unfortunately, breakpoints are not available in CSS Variables. Instead it is recommended to us a Pre-Processor like SASS.</p>
             </section>
-            <!------------------------------------
-            ----------    TYPOGRAPHY    ----------
-            ------------------------------------->
+
+            <!-- TYPOGRAPHY -->
             <section id="typography" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
-                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M2 4v3h5v12h3V7h5V4H2m19 5h-9v3h3v7h3v-7h3V9z" /></svg></i>
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
+                    <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M2 4v3h5v12h3V7h5V4H2m19 5h-9v3h3v7h3v-7h3V9z" /></svg>
                     Typography
                 </h2>
 
@@ -500,7 +529,7 @@ $sizes: (
                     <li>List Item 3 lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                         nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
                 </ol>
-                <br />
+                <br>
                 <p class="sm">Paragraph Small - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                     nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
                     eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
@@ -590,12 +619,11 @@ $sizes: (
                     sit amet.</p>
                 
             </section>
-            <!------------------------------------
-            ------------    COLORS    ------------
-            ------------------------------------->
+
+            <!-- COLORS -->
             <section id="colors" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
-                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M12 22A10 10 0 0 1 2 12 10 10 0 0 1 12 2c5.5 0 10 4 10 9a6 6 0 0 1-6 6h-1.8c-.3 0-.5.2-.5.5 0 .1.1.2.1.3.4.5.6 1.1.6 1.7.1 1.4-1 2.5-2.4 2.5m0-18a8 8 0 0 0-8 8 8 8 0 0 0 8 8c.3 0 .5-.2.5-.5 0-.2-.1-.3-.1-.4-.4-.5-.6-1-.6-1.6 0-1.4 1.1-2.5 2.5-2.5H16a4 4 0 0 0 4-4c0-3.9-3.6-7-8-7m-5.5 6c.8 0 1.5.7 1.5 1.5S7.3 13 6.5 13 5 12.3 5 11.5 5.7 10 6.5 10m3-4c.8 0 1.5.7 1.5 1.5S10.3 9 9.5 9 8 8.3 8 7.5 8.7 6 9.5 6m5 0c.8 0 1.5.7 1.5 1.5S15.3 9 14.5 9 13 8.3 13 7.5 13.7 6 14.5 6m3 4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5z" /></svg></i>
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
+                    <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M12 22A10 10 0 0 1 2 12 10 10 0 0 1 12 2c5.5 0 10 4 10 9a6 6 0 0 1-6 6h-1.8c-.3 0-.5.2-.5.5 0 .1.1.2.1.3.4.5.6 1.1.6 1.7.1 1.4-1 2.5-2.4 2.5m0-18a8 8 0 0 0-8 8 8 8 0 0 0 8 8c.3 0 .5-.2.5-.5 0-.2-.1-.3-.1-.4-.4-.5-.6-1-.6-1.6 0-1.4 1.1-2.5 2.5-2.5H16a4 4 0 0 0 4-4c0-3.9-3.6-7-8-7m-5.5 6c.8 0 1.5.7 1.5 1.5S7.3 13 6.5 13 5 12.3 5 11.5 5.7 10 6.5 10m3-4c.8 0 1.5.7 1.5 1.5S10.3 9 9.5 9 8 8.3 8 7.5 8.7 6 9.5 6m5 0c.8 0 1.5.7 1.5 1.5S15.3 9 14.5 9 13 8.3 13 7.5 13.7 6 14.5 6m3 4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5z" /></svg>
                     Colors
                 </h2>
 
@@ -633,7 +661,7 @@ $colors: (
                 <table class="mb-3 mt-4 border-faint">
                     <thead>
                         <tr>
-                            <th class="md:w-200"><h4>Classes</h4></th>
+                            <th class="md:w-200 h4">Classes</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -718,26 +746,24 @@ $colors: (
                         <div class="mt-2">
                             Inputs
                         </div>
-                        <input type="text" />
+                        <input type="text">
                         <div class="my-2">
-                            <input type="checkbox" checked />
-                            <input type="checkbox" />
+                            <input type="checkbox" checked>
+                            <input type="checkbox">
                         </div>
                         <div class="my-2">
-                            <input type="radio" name="accent-radio" checked />
-                            <input type="radio" name="accent-radio" />
+                            <input type="radio" name="accent-radio" checked>
+                            <input type="radio" name="accent-radio">
                         </div>
                     </div>
                 </div>
 
             </section>
 
-            <!------------------------------------
-            ------------    THEMES    ------------
-            ------------------------------------->
+            <!-- THEMES -->
             <section id="themes" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
-                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M22 22H10v-2h12v2M2 22v-2h7v2H2m16-4v-8h4v8h-4m0-15h4v6h-4V3M2 18V3h14v15H2m7-3.44a3 3 0 0 0 3-3c0-2-3-5.37-3-5.37s-3 3.37-3 5.37a3 3 0 0 0 3 3z" /></svg></i>
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
+                    <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M22 22H10v-2h12v2M2 22v-2h7v2H2m16-4v-8h4v8h-4m0-15h4v6h-4V3M2 18V3h14v15H2m7-3.44a3 3 0 0 0 3-3c0-2-3-5.37-3-5.37s-3 3.37-3 5.37a3 3 0 0 0 3 3z" /></svg>
                     Themes
                 </h2>
 
@@ -765,14 +791,14 @@ $colors: (
                         <div class="mt-2">
                             Inputs
                         </div>
-                        <input type="text" />
+                        <input type="text">
                         <div class="my-2">
-                            <input type="checkbox" checked />
-                            <input type="checkbox" />
+                            <input type="checkbox" checked>
+                            <input type="checkbox">
                         </div>
                         <div class="my-2">
-                            <input type="radio" name="accent-radio" checked />
-                            <input type="radio" name="accent-radio" />
+                            <input type="radio" name="accent-radio" checked>
+                            <input type="radio" name="accent-radio">
                         </div>
                     </div>
                 </div>
@@ -780,7 +806,7 @@ $colors: (
                 <table class="mb-3 border-faint">
                     <thead>
                         <tr>
-                            <th width="160" colspan="2"><h4>Default Variable Theme Colors</h4></th>
+                            <th width="160" colspan="2" class="h4">Default Variable Theme Colors</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -806,11 +832,10 @@ $colors: (
                 </div>
     
             </section>
-            <!------------------------------------
-            -----------    BORDERS    ------------
-            ------------------------------------->
+
+            <!-- BORDERS -->
             <section id="borders" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M15,5H17V3H15M19,21H21V19H19M19,13H21V11H19M19,5H21V3H19M19,17H21V15H19M15,21H17V19H15M19,9H21V7H19M3,21H5V3H3M7,5H9V3H7M7,21H9V19H7M11,5H13V3H11M11,21H13V19H11V21Z" /></svg>
                     </i>
@@ -886,11 +911,10 @@ $borders: (
                 </table>
     
             </section>
-            <!------------------------------------
-            --------    BREAKPOINTS    -----------
-            ------------------------------------->
+            <!--
+            --------    BREAKPOINTS    ------------->
             <section id="breakpoints" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M3,4H20A2,2 0 0,1 22,6V8H18V6H5V18H14V20H3A2,2 0 0,1 1,18V6A2,2 0 0,1 3,4M17,10H23A1,1 0 0,1 24,11V21A1,1 0 0,1 23,22H17A1,1 0 0,1 16,21V11A1,1 0 0,1 17,10M18,12V19H22V12H18Z" /></svg>
                     </i>
@@ -932,7 +956,7 @@ $borders: (
                     <tbody>
                         <tr>
                             <td class="md:pl-2"><a href="#borders">Borders</a></td>
-                            <td>Borders allow breakpoints. ex <code class="note">&lt;div class="b-0 md:b-2"&gt;No Border on Mobile&lt;/div&gt;</code></pre></td>
+                            <td>Borders allow breakpoints. ex <code class="note">&lt;div class="b-0 md:b-2"&gt;No Border on Mobile&lt;/div&gt;</code></td>
                         </tr>
                         <tr>
                             <td class="md:pl-2"><a href="#gaps">Gaps</a></td>
@@ -944,11 +968,11 @@ $borders: (
                         </tr>
                         <tr>
                             <td class="md:pl-2"><a href="#sizing">Sizing</a></td>
-                            <td>Spacing allows breakpoints. ex <code class="note">&lt;div class="sm md:lg"&gt;Small on Mobile, Large on Medium&lt;/div&gt;</code></pre></td>
+                            <td>Spacing allows breakpoints. ex <code class="note">&lt;div class="sm md:lg"&gt;Small on Mobile, Large on Medium&lt;/div&gt;</code></td>
                         </tr>
                         <tr>
                             <td class="md:pl-2"><a href="#spacing">Spacing</a></td>
-                            <td>Spacing allows breakpoints. ex <code class="note">&lt;div class="p-0 md:p-2"&gt;No Padding on Mobile&lt;/div&gt;</code></pre></td>
+                            <td>Spacing allows breakpoints. ex <code class="note">&lt;div class="p-0 md:p-2"&gt;No Padding on Mobile&lt;/div&gt;</code></td>
                         </tr>
                         <tr>
                             <td class="md:pl-2"><a href="#layout">Layout Utility Classes</a></td>
@@ -959,11 +983,10 @@ $borders: (
 
             </section>
 
-            <!------------------------------------
-            -------    Checked UTILITIES    -------
-            ------------------------------------->
+            <!--
+            -------    Checked UTILITIES    --------->
             <section id="checked" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><title>checkbox-outline</title><path d="M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,5V19H5V5H19M10,17L6,13L7.41,11.58L10,14.17L16.59,7.58L18,9" /></svg>
                     </i>
@@ -1077,11 +1100,9 @@ $borders: (
 
             </section>
 
-            <!------------------------------------
-            ------------    COLLAPSE    ----------
-            ------------------------------------->
+            <!-- COLLAPSE -->
             <section id="collapse" class="bg-inherit py-0 pb-4">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><title>arrow-collapse-vertical</title><path d="M4,12H20V14H4V12M4,9H20V11H4V9M16,4L12,8L8,4H11V1H13V4H16M8,19L12,15L16,19H13V22H11V19H8Z" /></svg>
                     </i>
@@ -1228,10 +1249,10 @@ $borders: (
                     <div class="toggle-container">
                         <label class="button toggle"> <!-- Toggle-->
                             Open
-                            <input type="checkbox" />
+                            <input type="checkbox">
                         </label>
 
-                        <input class="toggle" type="checkbox" />
+                        <input class="toggle" type="checkbox">
                         <div class="toggle-content overlay hidden"> <!-- Content-->
                             <div class="b-2 p-2 mt-1">
                                 <p class="mt-1">Lorem Sed diam nonumy eirm Lorem ipsum dolor sit amet.</p>
@@ -1242,7 +1263,7 @@ $borders: (
                                     <label class="button toggle"> <!-- Inner Toggle-->
                                         Open Another From the Left Slowly
                                         <span class="none open:inline">GG</span>
-                                        <input id="gggg" type="checkbox" />
+                                        <input id="gggg" type="checkbox">
                                     </label>
                                     <div class="toggle-content hidden"> <!-- Inner Content-->
                                         <div class="b-2 p-3 mt-2">
@@ -1465,19 +1486,9 @@ $borders: (
 
             </section>
 
-
-
-
-
-
-
-
-
-            <!------------------------------------
-            ------------    GAPS    --------------
-            ------------------------------------->
+            <!-- GAPS -->
             <section id="gaps" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M9,11H15V8L19,12L15,16V13H9V16L5,12L9,8V11M2,20V4H4V20H2M20,20V4H22V20H20Z" /></svg>
                     </i>
@@ -1512,11 +1523,10 @@ $borders: (
 
             </section>
 
-            <!------------------------------------
-            -------------    GRID    -------------
-            ------------------------------------->
+            <!--
+            -    GRID    --->
             <section id="grid" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M12 16C13.1 16 14 16.9 14 18S13.1 20 12 20 10 19.1 10 18 10.9 16 12 16M12 10C13.1 10 14 10.9 14 12S13.1 14 12 14 10 13.1 10 12 10.9 10 12 10M12 4C13.1 4 14 4.9 14 6S13.1 8 12 8 10 7.1 10 6 10.9 4 12 4M6 16C7.1 16 8 16.9 8 18S7.1 20 6 20 4 19.1 4 18 4.9 16 6 16M6 10C7.1 10 8 10.9 8 12S7.1 14 6 14 4 13.1 4 12 4.9 10 6 10M6 4C7.1 4 8 4.9 8 6S7.1 8 6 8 4 7.1 4 6 4.9 4 6 4M18 16C19.1 16 20 16.9 20 18S19.1 20 18 20 16 19.1 16 18 16.9 16 18 16M18 10C19.1 10 20 10.9 20 12S19.1 14 18 14 16 13.1 16 12 16.9 10 18 10M18 4C19.1 4 20 4.9 20 6S19.1 8 18 8 16 7.1 16 6 16.9 4 18 4Z" /></svg>
                     </i>
@@ -1536,7 +1546,11 @@ $borders: (
                         </tr>
                         <tr>
                             <td><code class="color-primary">grid-{n}00</code></td>
-                            <td>CSS Grid of columns using minmax() for column widths in px's.<br><code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code></td>
+                            <td>
+                                CSS Grid of columns using minmax() for column widths in px's.
+                                <br><code class="color-primary">{n}</code> can be <code class="color-primary">1-6</code>
+                                <br><code class="color-primary">{n}00</code> is the estimation in px size, but it uses em's under the hood.
+                            </td>
                         </tr>
                         <tr>
                             <td><code class="color-primary">row</code></td>
@@ -1599,21 +1613,21 @@ $borders: (
 
                 <h4 class="mt-2"><code class="color-primary">grid</code> Classes</h4>
     
-                <div class="show-code" data-title="Auto Fit minimum 200px">
-                    <div class="grid-200">
-                        <div class="bg-faint round p-1">
+                <div class="show-code" data-title="Auto Fit minimum 300px">
+                    <div class="grid-300">
+                        <div class="bg-faint r-1 p-2">
                             col
                         </div>
-                        <div class="bg-faint round p-1">
+                        <div class="bg-faint r-1 p-2">
                             col
                         </div>
-                        <div class="bg-faint round p-1">
+                        <div class="bg-faint r-1 p-2">
                             col
                         </div>
-                        <div class="bg-faint round p-1">
+                        <div class="bg-faint r-1 p-2">
                             col
                         </div>
-                        <div class="bg-faint round p-1">
+                        <div class="bg-faint r-1 p-2">
                             col
                         </div>
                     </div>
@@ -1621,19 +1635,19 @@ $borders: (
 
                 <div class="show-code" data-title="Auto Fit minimum 300px Right Aligned">
                     <div class="grid-300 rtl text-left">
-                        <div class="bg-faint round p-1">
+                        <div class="bg-faint r-1 p-2">
                             col
                         </div>
-                        <div class="bg-faint round p-1">
+                        <div class="bg-faint r-1 p-2">
                             col
                         </div>
-                        <div class="bg-faint round p-1">
+                        <div class="bg-faint r-1 p-2">
                             col
                         </div>
-                        <div class="bg-faint round p-1">
+                        <div class="bg-faint r-1 p-2">
                             col
                         </div>
-                        <div class="bg-faint round p-1">
+                        <div class="bg-faint r-1 p-2">
                             col
                         </div>
                     </div>
@@ -1642,22 +1656,22 @@ $borders: (
                 <div class="show-code" data-title="Specify number of columns">
                     <div class="container">
                         <div class="grid columns-2 c-md:columns-4">
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
                         </div>
@@ -1667,25 +1681,25 @@ $borders: (
                 <div class="show-code" data-title="Spanning Columns">
                     <div class="container">
                         <div class="grid columns-2 c-md:columns-3">
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1 span-2 c-md:span-1">
+                            <div class="bg-faint r-1 p-2 span-2 c-md:span-1">
                                 col
                             </div>
-                            <div class="bg-faint round p-1 span-2 c-md:span-3">
+                            <div class="bg-faint r-1 p-2 span-2 c-md:span-3">
                                 col
                             </div>
-                            <div class="bg-faint round p-1 span-2 c-md:span-1">
+                            <div class="bg-faint r-1 p-2 span-2 c-md:span-1">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
                         </div>
@@ -1695,42 +1709,42 @@ $borders: (
                 <div class="show-code" data-title="Nested Rows with different Gap Sizes">
                     <div class="container">
                         <div class="grid columns-2 c-md:columns-4">
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1 span-2">
+                            <div class="bg-faint r-1 p-2 span-2">
                                 col
                             </div>
                             <div class="span-2 grid g-1 columns-2 c-md:columns-4">
-                                <div class="bg-faint round p-1">
+                                <div class="bg-faint r-1 p-2">
                                     col
                                 </div>
-                                <div class="bg-faint round p-1">
+                                <div class="bg-faint r-1 p-2">
                                     col
                                 </div>
-                                <div class="bg-faint round p-1">
+                                <div class="bg-faint r-1 p-2">
                                     col
                                 </div>
-                                <div class="bg-faint round p-1">
+                                <div class="bg-faint r-1 p-2">
                                     col
                                 </div>
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1 span-2">
+                            <div class="bg-faint r-1 p-2 span-2">
                                 col
                             </div>
                         </div>
@@ -1738,21 +1752,20 @@ $borders: (
                 </div>
 
                 <h4 class="mt-4"><code class="color-primary">row</code> Classes</h4>
-                <h5 class="my-1 color-gray"><code class="color-primary">row</code> has content center as the default</h5>
     
                 <div class="show-code" data-title="Fixed columns single row above mobile">
                     <div class="container">
                         <div class="row">
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 fixed
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 fixed
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 fixed
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 fixed
                             </div>
                         </div>
@@ -1762,16 +1775,16 @@ $borders: (
                 <div class="show-code" data-title="Auto columns with items-center on all sizes">
                     <div class="container">
                         <div class="row columns-auto items-center">
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 auto
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 auto longer content<br>asdfasdf saf asdf a
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 auto
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 auto
                             </div>
                         </div>
@@ -1780,20 +1793,20 @@ $borders: (
 
                 <div class="show-code" data-title="Specify number of columns centered">
                     <div class="container">
-                        <div class="row columns-2 c-md:columns-4">
-                            <div class="bg-faint round p-1">
+                        <div class="row columns-2 c-md:columns-4 content-center">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col
                             </div>
                         </div>
@@ -1803,16 +1816,16 @@ $borders: (
                 <div class="show-code" data-title="Setting columns to Auto or Fill">
                     <div class="container">
                         <div class="row">
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 fixed
                             </div>
-                            <div class="c-md:span-auto bg-faint round p-1">
+                            <div class="c-md:span-auto bg-faint r-1 p-2">
                                 Auto Fit content
                             </div>
-                            <div class="c-md:span-fill bg-faint round p-1">
+                            <div class="c-md:span-fill bg-faint r-1 p-2">
                                 Auto Fill content
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 fixed
                             </div>
                         </div>
@@ -1822,10 +1835,10 @@ $borders: (
                 <div class="show-code" data-title="Create a Sidebar">
                     <div class="container">
                         <div class="row">
-                            <div class="bg-faint round p-1 c-md:w-200">
+                            <div class="bg-faint r-1 p-2 c-md:w-200">
                                 c-md:w-200
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 fill
                             </div>
                         </div>
@@ -1835,13 +1848,13 @@ $borders: (
                 <div class="show-code" data-title="Custom Ordering with Space between">
                     <div class="container">
                         <div class="row columns-auto content-between">
-                            <div class="c-md:order-1 bg-faint round p-1">
+                            <div class="c-md:order-1 bg-faint r-1 p-2">
                                 col C
                             </div>
-                            <div class="bg-faint round p-1">
+                            <div class="bg-faint r-1 p-2">
                                 col B
                             </div>
-                            <div class="c-md:order-first bg-faint round p-1">
+                            <div class="c-md:order-first bg-faint r-1 p-2">
                                 col A
                             </div>
                         </div>
@@ -1851,22 +1864,22 @@ $borders: (
                 <div class="show-code" data-title="Columns multi row with column spanning">
                     <div class="container">
                         <div class="row columns-12">
-                            <div class="span-6 bg-faint round p-1">
+                            <div class="span-6 bg-faint r-1 p-2">
                                 .span-6
                             </div>
-                            <div class="span-6 bg-faint round p-1">
+                            <div class="span-6 bg-faint r-1 p-2">
                                 .span-6
                             </div>
-                            <div class="span-6 c-md:span-3 bg-faint round p-1">
+                            <div class="span-6 c-md:span-3 bg-faint r-1 p-2">
                                 .span-6 .c-md:span-3
                             </div>
-                            <div class="span-6 bg-faint round p-1">
+                            <div class="span-6 bg-faint r-1 p-2">
                                 .span-6
                             </div>
-                            <div class="span-12 c-md:span-3 bg-faint round p-1">
+                            <div class="span-12 c-md:span-3 bg-faint r-1 p-2">
                                 .span-12 .c-md:span-3
                             </div>
-                            <div class="span-12 bg-faint round p-1">
+                            <div class="span-12 bg-faint r-1 p-2">
                                 .span-12
                             </div>
                         </div>
@@ -1876,24 +1889,24 @@ $borders: (
                 <div class="show-code" data-title="Nested rows and auto height">
                     <div class="container">
                         <div class="row columns-12">
-                            <div class="c-md:span-4 bg-faint round p-1">
+                            <div class="c-md:span-4 bg-faint r-1 p-2">
                                 .c-md:span-4
                             </div>
                             <div class="row c-md:span-fixed">
-                                <div class="bg-faint round p-1">
+                                <div class="bg-faint r-1 p-2">
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitrsed diam nonumy.
                                 </div>
-                                <div class="bg-faint round p-1">
+                                <div class="bg-faint r-1 p-2">
                                     fixed
                                 </div>
-                                <div class="bg-faint round p-1">
+                                <div class="bg-faint r-1 p-2">
                                     fixed
                                 </div>
                                 <div class="row c-md:span-fixed">
-                                    <div class="bg-faint round p-1">
+                                    <div class="bg-faint r-1 p-2">
                                         fixed
                                     </div>
-                                    <div class="bg-faint round p-1">
+                                    <div class="bg-faint r-1 p-2">
                                         Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                                     </div>
                                 </div>
@@ -1905,34 +1918,34 @@ $borders: (
                 <div class="show-code" data-title="Nested rows with different gap sizing" data-note="* With flexbox, nested rows need .span-fixed or need to be nested in an a column container.">
                     <div class="container">
                         <div class="row columns-12 g-1 c-md:g-4">
-                            <div class="span-6 bg-faint round p-1">
+                            <div class="span-6 bg-faint r-1 p-2">
                                 .span-6
                             </div>
-                            <div class="span-6 bg-faint round p-1">
+                            <div class="span-6 bg-faint r-1 p-2">
                                 .span-6
                             </div>
-                            <div class="span-6 c-md:span-3 bg-faint round p-1">
+                            <div class="span-6 c-md:span-3 bg-faint r-1 p-2">
                                 .span-6 .c-md:span-3
                             </div>
                             <div class="span-fixed row g-2 c-md:columns-fill">
-                                <div class="bg-faint round p-1">
+                                <div class="bg-faint r-1 p-2">
                                     auto
                                 </div>
-                                <div class="bg-faint round p-1">
+                                <div class="bg-faint r-1 p-2">
                                     auto fill with larger content
                                 </div>
-                                <div class="bg-faint round p-1">
+                                <div class="bg-faint r-1 p-2">
                                     auto
                                 </div>
                             </div>
-                            <div class="c-md:span-3 bg-faint round p-1">
+                            <div class="c-md:span-3 bg-faint r-1 p-2">
                                 .c-md:span-3
                             </div>
                             <div class="span-12">
                                 <div class="row columns-3 g-1">
-                                    <div class="bg-faint round p-1">auto</div>
-                                    <div class="bg-faint round p-1">auto</div>
-                                    <div class="bg-faint round p-1">auto</div>
+                                    <div class="bg-faint r-1 p-2">auto</div>
+                                    <div class="bg-faint r-1 p-2">auto</div>
+                                    <div class="bg-faint r-1 p-2">auto</div>
                                 </div>
                             </div>
                         </div>
@@ -1941,12 +1954,11 @@ $borders: (
     
             </section>
 
-            <!------------------------------------
-            ------------    SIZING    ------------
-            ------------------------------------->
+            <!--
+                SIZING    -->
             <section id="sizing" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
-                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M10 21v-2H6.41l4.5-4.5-1.41-1.41-4.5 4.5V14H3v7h7m4.5-10.09 4.5-4.5V10h2V3h-7v2h3.59l-4.5 4.5 1.41 1.41z" /></svg></i>
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
+                    <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M10 21v-2H6.41l4.5-4.5-1.41-1.41-4.5 4.5V14H3v7h7m4.5-10.09 4.5-4.5V10h2V3h-7v2h3.59l-4.5 4.5 1.41 1.41z" /></svg>
                     Sizing
                 </h2>
                 <h5 class="mb-2">By Default SpryCss uses <code class="color-primary">em</code> to set font sizes, padding, heights, etc. So you can alter the sizes using the size classes.</h5>
@@ -1990,11 +2002,10 @@ $borders: (
                     </div>
                 </div>
             </section>
-            <!------------------------------------
-            -----------    SPACING    ------------
-            ------------------------------------->
+            <!--
+            -----------    SPACING    -->
             <section id="spacing" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M9 11h6V8l4 4-4 4v-3H9v3l-4-4 4-4v3m-7 9V4h2v16H2m18 0V4h2v16h-2z" /></svg>
                     </i>
@@ -2091,11 +2102,10 @@ $borders: (
     
             </section>
 
-            <!------------------------------------
-            -----------    TOGGLES    ------------
-            ------------------------------------->
+            <!--
+            -----------    TOGGLES    -->
             <section id="toggles" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M7,10L12,15L17,10H7Z" /></svg>
                     </i>
@@ -2285,7 +2295,7 @@ $borders: (
                                 <span class="checked:none">
                                     Toggle Open
                                 </span>
-                                <input type="checkbox" />
+                                <input type="checkbox">
                             </label>
 
                             <div class="toggle-content">
@@ -2473,7 +2483,7 @@ $borders: (
                                 <span class="checked:none">
                                     Toggle Open
                                 </span>
-                                <input type="checkbox" />
+                                <input type="checkbox">
                             </label>
 
                             <p class="mt-2">Other Content...</p>
@@ -2498,7 +2508,7 @@ $borders: (
 
                 <div class="show-code mt-4" data-title="Toogle Next Sibling" data-note="Uses &lt;span class='color-primary'&gt;.toggle-next&lt;/span&gt;&lt;br&gt;Does not require a &lt;span class='color-primary'&gt;.collapse&lt;/span&gt; wrapper and automatically collapses the next element sibling.">
                     <label class="toggle-next button"> <!-- Toggle Next -->
-                        <input type="checkbox" />
+                        <input type="checkbox">
                         <span class="none checked:inline">Toggle Next Closed</span>
                         <span class="checked:none">Toggle Next Open</span>
                     </label>
@@ -2523,7 +2533,7 @@ $borders: (
                         <p class="mt-2">Middle Content...</p>
 
                         <div class="collapse">
-                            <input class="toggle-next none" id="toggle2" type="checkbox" />
+                            <input class="toggle-next none" id="toggle2" type="checkbox">
                             <div class="">
                                 <p class="b-1 p-1">
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
@@ -2560,7 +2570,7 @@ $borders: (
                 <div class="show-code" data-title="Menu">
                     <div class="toggle-container from-top">
                         <label class="toggle button link icon menu open:close">
-                            <input type="checkbox" />
+                            <input type="checkbox">
                         </label>
 
                         <div class="toggle-content overlay hidden">
@@ -2586,7 +2596,7 @@ $borders: (
                 <div class="show-code mt-4" data-title="As Switch From Left Slow">
                     <div class="collapse hidden from-left slow">
                         <label class="toggle inline">
-                            <input class="switch" type="checkbox" />
+                            <input class="switch" type="checkbox">
                             <span class="none checked:inline">On</span>
                             <span class="checked:none">Off</span>
                         </label>
@@ -2606,7 +2616,7 @@ $borders: (
                     <div class="language-select" data-language="html" data-warning="* HTML version is not keyboard accessible. Use JS version instead.">
                         <label class="toggle-next button">
                             Open Modal with HTML
-                            <input id="toggleModal" type="checkbox" />
+                            <input id="toggleModal" type="checkbox">
                         </label>
                         <div class="modal blur">
                             <label for="toggleModal" class="fixed inset w"></label>
@@ -2635,11 +2645,10 @@ $borders: (
                 </div>
     
             </section>
-            <!------------------------------------
-            ----------    UTILITIES    -----------
-            ------------------------------------->
+            <!--
+            ----------    UTILITIES    ------------->
             <section id="utilities" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M16.06 13.09L21.69 18.68L18.37 21.96L12.78 16.37V15.45L15.14 13.09H16.06M16.97 10.56L16 9.6L11.21 14.4V16.37L5.58 22L2.3 18.68L7.89 13.09H9.86L10.64 12.31L6.8 8.46H5.5L2.69 5.62L5.31 3L8.11 5.8V7.11L12 10.95L14.66 8.29L13.7 7.28L15 5.97H12.34L11.69 5.32L15 2L15.66 2.66V5.32L16.97 4L20.25 7.28C21.34 8.38 21.34 10.17 20.25 11.26L18.28 9.25L16.97 10.56Z" /></svg>
                     </i>
@@ -2720,11 +2729,10 @@ $borders: (
                 </table>
             </section>
 
-            <!------------------------------------
-            -------    LAYOUT UTILITIES    -------
-            ------------------------------------->
+            <!--
+            -------    LAYOUT UTILITIES    --------->
             <section id="utilities-layout" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M22 13v6H6v-6h16M6 5v6h10V5H6M2 2v20h2V2H2" /></svg>
                     </i>
@@ -3024,11 +3032,10 @@ $borders: (
                 <h4 class="mt-4">Max Width Classes</h4>
                 <p>This requires a breakpoint. ex <code class="color-primary">{breakpoint}:mw</code></p>    
             </section>
-            <!------------------------------------
-            -----------    ACCORDION    ----------
-            ------------------------------------->
+            <!--
+            -----------    ACCORDION    ------------>
             <section id="accordions" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M2,3V6H21V3M20,8H3A1,1 0 0,0 2,9V15A1,1 0 0,0 3,16H20A1,1 0 0,0 21,15V9A1,1 0 0,0 20,8M2,21H21V18H2V21Z" /></svg>
                     </i>
@@ -3077,7 +3084,7 @@ $borders: (
                 <div class="show-code" data-title="Basic Accordion">
                     <label class="toggle-next button mb-1 w">
                         Question 1
-                        <input type="checkbox" />
+                        <input type="checkbox">
                         <svg class="icon open:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                     </label>
                     <div>
@@ -3098,7 +3105,7 @@ $borders: (
 
                     <label class="toggle-next button mb-1 w">
                         Question 2
-                        <input type="checkbox" />
+                        <input type="checkbox">
                         <svg class="icon open:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                     </label>
                     <div>
@@ -3113,7 +3120,7 @@ $borders: (
                     
                     <label class="toggle-next button w">
                         Question 3
-                        <input type="checkbox" />
+                        <input type="checkbox">
                         <svg class="icon open:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                     </label>
                     <div>
@@ -3135,7 +3142,7 @@ $borders: (
                     <div>
                         <label class="toggle-next button sharp hazy link contrast w">
                             Question 1
-                            <input type="radio" name="accordionGroup1" />
+                            <input type="radio" name="accordionGroup1">
                             <svg class="icon open:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                         </label>
                         <div class="hidden">
@@ -3156,7 +3163,7 @@ $borders: (
 
                         <label class="toggle-next button sharp hazy link contrast w">
                             Question 2
-                            <input type="radio" name="accordionGroup1" />
+                            <input type="radio" name="accordionGroup1">
                             <svg class="icon open:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                         </label>
                         <div class="hidden">
@@ -3171,7 +3178,7 @@ $borders: (
                         
                         <label class="toggle-next button sharp hazy link contrast w">
                             Question 3
-                            <input type="radio" name="accordionGroup1" />
+                            <input type="radio" name="accordionGroup1">
                             <svg class="icon open:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                         </label>
                         <div class="hidden">
@@ -3194,7 +3201,7 @@ $borders: (
                     <div class="primary border-primary outline round">
                         <label class="toggle-next button round-op link w">
                             Question 1
-                            <input type="checkbox" />
+                            <input type="checkbox">
                             <svg class="icon open:rotate xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                         </label>
                         <div class="hidden">
@@ -3215,7 +3222,7 @@ $borders: (
 
                         <label class="toggle-next button sharp link w">
                             Question 2
-                            <input type="checkbox" />
+                            <input type="checkbox">
                             <svg class="icon open:rotate xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                         </label>
                         <div class="hidden">
@@ -3230,7 +3237,7 @@ $borders: (
                         
                         <label class="toggle-next button sharp link w">
                             Question 3
-                            <input type="checkbox" />
+                            <input type="checkbox">
                             <svg class="icon open:rotate xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                         </label>
                         <div class="hidden">
@@ -3249,11 +3256,10 @@ $borders: (
                     </div>
                 </div>
             </section>
-            <!------------------------------------
-            -----------    ALERTS    ------------
-            ------------------------------------->
+            <!--
+            -----------    ALERTS    -->
             <section id="alerts" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
                     </i>
@@ -3379,7 +3385,7 @@ $borders: (
                                     Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
 
                                 </div>
-                                <input class="toggle button hazy light circle absolute top right icon close sm m-1" id="htmlAlertToggle" type="checkbox" checked />
+                                <input class="toggle button hazy light circle absolute top right icon close sm m-1" id="htmlAlertToggle" type="checkbox" checked>
                             </div>
                             <label class="button open:none" for="htmlAlertToggle">
                                 Re-Open
@@ -3407,7 +3413,7 @@ $borders: (
                 <div class="show-code" data-title="Popup Alert Example" data-badge="Uses Toggles" data-badge-link="#toggles">
                     <label class="toggle-next button" title="Open Popup">
                         Show Alert Popup
-                        <input id="alertModal" type="checkbox" />
+                        <input id="alertModal" type="checkbox">
                     </label>
                     <div class="modal">
                         <label for="alertModal" class="fixed inset"></label>
@@ -3458,11 +3464,10 @@ $borders: (
                 </div>
 
             </section>
-            <!------------------------------------
-            -----------    BADGES    ------------
-            ------------------------------------->
+            <!--
+            -----------    BADGES    -->
             <section id="badges" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M19.5 8C21.43 8 23 6.43 23 4.5C23 2.57 21.43 1 19.5 1C17.57 1 16 2.57 16 4.5C16 6.43 17.57 8 19.5 8M21 16V9.79C20.5 9.93 20 10 19.5 10C19.33 10 19.17 10 19 10V16C19 17.66 17.66 19 16 19H8C6.34 19 5 17.66 5 16V8C5 6.34 6.34 5 8 5H14C14 4.84 14 4.67 14 4.5C14 4 14.07 3.5 14.21 3H8C5.24 3 3 5.24 3 8V16C3 18.76 5.24 21 8 21H16C18.76 21 21 18.76 21 16Z" /></svg>
                     </i>
@@ -3603,11 +3608,10 @@ $borders: (
 
             </section>
 
-            <!------------------------------------
-            -----------    BUTTONS    ------------
-            ------------------------------------->
+            <!--
+            -----------    BUTTONS    -->
             <section id="buttons" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M20 20H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2M4 6v12h16V6H4z" /></svg>
                     </i>
@@ -3955,11 +3959,10 @@ $borders: (
                     </button>
                 </div>
             </section>
-            <!------------------------------------
-            ----------       CARDS      ----------
-            ------------------------------------->
+            <!--
+            ----------       CARDS      ------------>
             <section id="cards" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path onclick="alert(123)" d="M18 2H6C4.89 2 4 2.9 4 4V20C4 21.11 4.89 22 6 22H18C19.11 22 20 21.11 20 20V4C20 2.9 19.11 2 18 2M18 20H6V16H18V20M18 8H6V4H18V8Z" /></svg>
                     </i>
@@ -4017,70 +4020,80 @@ $borders: (
                 </table>
 
                 <div class="show-code" data-title="Default Cards">
-                    <div class="row">
-                        <article class="max-w-400">
+                    <div class="grid-500">
+
+                        <article>
                             <h3>No Outline</h3>
-                            <img height="225" width="400" src="placeholder.jpg" alt="Placeholder Image" loading="lazy" />
+                            <img height="225" width="400" src="placeholder.jpg" alt="Placeholder Image" loading="lazy">
                             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod temporinvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                             <a href="#">Learn More</a>
                         </article>
 
-                        <article class="outline shadow max-w-400">
+                        <article class="outline shadow">
                             <h3>With Outline and Shadow</h3>
-                            <img height="225" width="400" src="placeholder.jpg" alt="Placeholder Image" loading="lazy" />
+                            <img height="225" width="400" src="placeholder.jpg" alt="Placeholder Image" loading="lazy">
                             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod temporinvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                             <a href="#">Learn More</a>
                         </article>
+
+                        <article class="outline shadow">
+                            <header><h4>With Header and Footer</h4></header>
+                            <div class="px-3"><img height="225" width="400" src="placeholder.jpg" alt="Placeholder Image" loading="lazy"></div>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod temporinvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                            <footer><a class="color-primary" href="#">Learn More</a></footer>
+                        </article>
+
                     </div>
                 </div>
 
                 <div class="show-code" data-title="Variations">
-                    <div class="row">
-    
-                        <article class="outline shadow">
-                            <header>
-                                <h4 class="truncate-1">Tuncated Card - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</h4>
-                            </header>
-                            <p class="truncate-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                            </p>
-                            <footer>
-                                <a href="#" class="button primary sm"><span class="truncate-1">Learn More Truncated - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</span></a>
-                            </footer>
-                        </article>
-    
-                        <article class="primary outline shadow">
-                            <header class="color-light">
-                                <h4>This is the Title</h4>
-                            </header>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                            </p>
-                            <footer>
-                                <a href="#" class="button outline light sm">Learn More</a>
-                            </footer>
-                        </article>
+                    <div class="container">
+                        <div class="grid-300">
+        
+                            <article class="outline shadow">
+                                <header>
+                                    <h4 class="truncate-1">Tuncated Card - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</h4>
+                                </header>
+                                <p class="truncate-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                </p>
+                                <footer>
+                                    <a href="#" class="button primary sm"><span class="truncate-1">Learn More Truncated - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</span></a>
+                                </footer>
+                            </article>
+        
+                            <article class="primary outline shadow">
+                                <header class="color-light">
+                                    <h4>This is the Title</h4>
+                                </header>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                </p>
+                                <footer>
+                                    <a href="#" class="button outline light sm">Learn More</a>
+                                </footer>
+                            </article>
 
-                        <article class="outline shadow">
-                            <img height="225" width="400" src="placeholder.jpg" alt="Placeholder Image" loading="lazy" />
-                            <div>
-                                <h4>Lorem Ipsum Dolor</h4>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-                                <cite>- Meta Data</cite>
-                            </div>
-                            <footer class="g-2 bg-transparent">
-                                <a href="#" class="button link primary sm">Learn More</a>
-                            </footer>
-                        </article>
-    
+                            <article class="outline shadow">
+                                <img height="225" width="400" src="placeholder.jpg" alt="Placeholder Image" loading="lazy">
+                                <div>
+                                    <h4>Lorem Ipsum Dolor</h4>
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                                    <cite>- Meta Data</cite>
+                                </div>
+                                <footer class="g-2 bg-transparent">
+                                    <a href="#" class="button link primary sm">Learn More</a>
+                                </footer>
+                            </article>
+        
+                        </div>
                     </div>
                 </div>
             </section>
-            <!------------------------------------
-            ------------   DROPDOWNS   -----------
-            ------------------------------------->
+            <!--
+               DROPDOWNS   ------------->
             <section id="dropdowns" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M17 5H20L18.5 7L17 5M3 2H21C22.11 2 23 2.9 23 4V8C23 9.11 22.11 10 21 10H16V20C16 21.11 15.11 22 14 22H3C1.9 22 1 21.11 1 20V4C1 2.9 1.9 2 3 2M3 4V8H14V4H3M21 8V4H16V8H21M3 20H14V10H3V20M5 12H12V14H5V12M5 16H12V18H5V16Z" /></svg>
                     </i>
@@ -4272,19 +4285,19 @@ $borders: (
                     <label class="toggle focus:open g-0 is-select pr-4 inline-flex min-w-200 content-start bb" tabindex="0">
                         <span>
                             <span class="none checked:revert">Select</span>
-                            <input id="selectHtmlNone" class="hide" type="radio" name="selectHtmlValue" value="" checked />
+                            <input id="selectHtmlNone" class="hide" type="radio" name="selectHtmlValue" value="" checked>
                         </span>
                         <span>
                             <span class="none checked:revert">Option 1</span>
-                            <input id="selectHtml1" class="hide" type="radio" name="selectHtmlValue" value="Option 1" />
+                            <input id="selectHtml1" class="hide" type="radio" name="selectHtmlValue" value="Option 1">
                         </span>
                         <span>
                             <span class="none checked:revert">Option 2</span>
-                            <input id="selectHtml2" class="hide" type="radio" name="selectHtmlValue" value="Option 2" />
+                            <input id="selectHtml2" class="hide" type="radio" name="selectHtmlValue" value="Option 2">
                         </span>
                         <span>
                             <span class="none checked:revert">Option 3</span>
-                            <input id="selectHtml3" class="hide" type="radio" name="selectHtmlValue" value="Option 3" />
+                            <input id="selectHtml3" class="hide" type="radio" name="selectHtmlValue" value="Option 3">
                         </span>
                         <label class="checked-empty:none button absolute right icon circle pointer-all shy xxs mr-4" for="selectHtmlNone">
                             <svg class="xl" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
@@ -4307,7 +4320,7 @@ $borders: (
                     <button class="toggle focus:open icon dots open:close open:pointer-none link circle">
                     </button>
                     <div class="toggle-content clip absolute">
-                        <nav class="list bg-faint round p-1 w-content">
+                        <nav class="list bg-faint r-1 p-2 w-content">
                             <ul>
                                 <li><button class="link pl-1" href="#">Link 1</button></li>
                                 <li><button class="link pl-1" href="#">Link 2</button></li>
@@ -4321,11 +4334,9 @@ $borders: (
 
             </section>
 
-            <!------------------------------------
-            -------------    FORMS    ------------
-            ------------------------------------->
+            <!-- FORMS -->
             <section id="forms" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M15 5H18L16.5 7L15 5M5 2H19C20.11 2 21 2.9 21 4V20C21 21.11 20.11 22 19 22H5C3.9 22 3 21.11 3 20V4C3 2.9 3.9 2 5 2M5 4V8H19V4H5M5 20H19V10H5V20M7 12H17V14H7V12M7 16H17V18H7V16Z" /></svg>
                     </i>
@@ -4367,12 +4378,12 @@ $borders: (
 
                         <label>
                             <h5>Text Field *</h5>
-                            <input type="text" required />
+                            <input type="text" required>
                         </label>
                     
                         <label>
                             <h5>Email *</h5>
-                            <input type="email" required />
+                            <input type="email" required>
                         </label>
                     
                         <label>
@@ -4424,47 +4435,47 @@ $borders: (
                             <h5>Field with Prefix</h5>
                             <div class="input">
                                 <span>Prefix</span>
-                                <input type="text" required />
+                                <input type="text" required>
                             </div>
                         </label>
 
                         <label>
                             <h5>Field with Suffix</h5>
                             <div class="input">
-                                <input type="text" required />
+                                <input type="text" required>
                                 <span>Suffix</span>
                             </div>
                         </label>
 
                         <label>
                             <h5>File Upload</h5>
-                            <input type="file" />
+                            <input type="file">
                         </label>
 
                         <label>
                             <h5>Date</h5>
-                            <input type="date" />
+                            <input type="date">
                         </label>
 
                         <label>
                             <h5>Time</h5>
-                            <input type="time" />
+                            <input type="time">
                         </label>
 
                         <label>
                             <h5>Number</h5>
-                            <input type="number" />
+                            <input type="number">
                         </label>
 
                         <label>
                             <h5>Website</h5>
-                            <input type="url" />
+                            <input type="url">
                         </label>
 
                         <label>
                             <h5>Color with Value</h5>
                             <div class="input">
-                                <input type="color" oninput="this.nextElementSibling.value = this.value" />
+                                <input type="color" oninput="this.nextElementSibling.value = this.value">
                                 <output>#000000</output>
                             </div>
                         </label>
@@ -4472,7 +4483,7 @@ $borders: (
                         <label>
                             <h5>Range with Value</h5>
                             <div class="input">
-                                <input type="range" min="0" max="100" value="0" oninput="this.nextElementSibling.value = this.value" />
+                                <input type="range" min="0" max="100" value="0" oninput="this.nextElementSibling.value = this.value">
                                 <output style="width:26px">0</output>
                             </div>
                         </label>
@@ -4554,13 +4565,13 @@ $borders: (
                     
                         <label class="md:span-4">
                             <h5>Text Field *</h5>
-                            <input type="text" required />
+                            <input type="text" required>
                             <small class="invalid color-error absolute mt-1">This field is required</small>
                         </label>
                     
                         <label class="md:span-8">
                             <h5>Email *</h5>
-                            <input type="email" required />
+                            <input type="email" required>
                             <small class="invalid color-error absolute mt-1">Invalid Email Address</small>
                         </label>
                     
@@ -4639,14 +4650,14 @@ $borders: (
                             <h5>Field with Prefix</h5>
                             <div class="input">
                                 <span>Prefix</span>
-                                <input type="text" required />
+                                <input type="text" required>
                             </div>
                         </label>
 
                         <label class="md:span-6">
                             <h5>Field with Suffixs444</h5>
                             <div class="input">
-                                <input type="text" required />
+                                <input type="text" required>
                                 <span>Suffix</span>
                             </div>
                         </label>
@@ -4657,7 +4668,7 @@ $borders: (
                                 <span class="icon">
                                     <svg viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
                                 </span>
-                                <input type="text" required />
+                                <input type="text" required>
                                 <button class="icon" type="button" onclick="this.classList.add('loading');setTimeout(() => {this.classList.remove('loading');this.previousElementSibling.value = 'Good Job!';}, 2000);">
                                     <svg viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z" /></svg>
                                 </button>
@@ -4667,40 +4678,40 @@ $borders: (
                         <label class="md:span-6">
                             <h5>Field with Button</h5>
                             <div class="input">
-                                <input type="text" required />
+                                <input type="text" required>
                                 <button type="button" onclick="this.classList.add('loading');setTimeout(() => {this.classList.remove('loading');this.previousElementSibling.value = 'Good Job!';}, 2000);">Click Me</button>
                             </div>
                         </label>
 
                         <label class="md:span-12">
                             <h5>File Upload</h5>
-                            <input type="file" />
+                            <input type="file">
                         </label>
 
                         <label class="md:span-4">
                             <h5>Date</h5>
-                            <input type="date" />
+                            <input type="date">
                         </label>
 
                         <label class="md:span-4">
                             <h5>Time</h5>
-                            <input type="time" />
+                            <input type="time">
                         </label>
 
                         <label class="md:span-4">
                             <h5>Number</h5>
-                            <input type="number" />
+                            <input type="number">
                         </label>
 
                         <label class="md:span-4">
                             <h5>Website</h5>
-                            <input type="url" />
+                            <input type="url">
                         </label>
 
                         <label class="md:span-4">
                             <h5>Color with Value</h5>
                             <div class="input">
-                                <input type="color" oninput="this.nextElementSibling.value = this.value" />
+                                <input type="color" oninput="this.nextElementSibling.value = this.value">
                                 <output>#000000</output>
                             </div>
                         </label>
@@ -4708,7 +4719,7 @@ $borders: (
                         <label class="md:span-4">
                             <h5>Range with Value</h5>
                             <div class="input">
-                                <input type="range" min="0" max="100" value="0" oninput="this.nextElementSibling.value = this.value" />
+                                <input type="range" min="0" max="100" value="0" oninput="this.nextElementSibling.value = this.value">
                                 <output style="width: 3em;">0</output>
                             </div>
                         </label>
@@ -4747,10 +4758,10 @@ $borders: (
                     <form class="row columns-1 content-center" onsubmit="return false;">
                         <label>
                             <sup>Label Above</sup>
-                            <input type="text" required placeholder=" " />
+                            <input type="text" required placeholder=" ">
                         </label>
                         <label>
-                            <input type="text" required placeholder=" " />
+                            <input type="text" required placeholder=" ">
                             <sub>Label Below</sub>
                         </label>
                     </form>
@@ -4760,10 +4771,10 @@ $borders: (
                     <form class="show-invalid row columns-1 md:columns-3 content-center sm gy-1" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').setAttribute('aria-busy', 'true'); this.classList.add('disabled'); setTimeout(() => {this.reset(); this.querySelector('[type=submit]').setAttribute('aria-busy', 'false'); this.classList.remove('disabled');}, 4000)">
                         <label>
                             <sup>Name *</sup>
-                            <input type="text" required placeholder=" " />
+                            <input type="text" required placeholder=" ">
                         </label>
                         <label>
-                            <input type="email" placeholder=" " />
+                            <input type="email" placeholder=" ">
                             <sub>Email</sub>
                         </label>
                         <label>
@@ -4783,12 +4794,11 @@ $borders: (
                 </div>
 
             </section>
-            <!------------------------------------
-            -------------    ICONS    ------------
-            ------------------------------------->
+
+            <!-- ICONS -->
             <section id="icons" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
-                    <i class="icon mr-1"><svg viewBox="0 0 24 24"><path d="M14 7v2h-1v6h1v2h-4v-2h1V9h-1V7h4M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m0 2v14h14V5H5z" /></svg></i>
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
+                    <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M14 7v2h-1v6h1v2h-4v-2h1V9h-1V7h4M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m0 2v14h14V5H5z" /></svg>
                     Icons
                 </h2>
                 
@@ -4912,20 +4922,20 @@ $borders: (
                     <span class="h5 inline-block min-w-200 mr-n4">With Toggles</span>
 
                     <label class="toggle button icon link">
-                        <input type="checkbox" />
+                        <input type="checkbox">
                         <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                         <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                     </label>
 
                     <label class="toggle button icon link">
-                        <input type="checkbox" />
+                        <input type="checkbox">
                         <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
                         <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                     </label>
 
                     <label class="toggle button link">
                         Select Me
-                        <input type="checkbox" />
+                        <input type="checkbox">
                         <span class="icon">
                             <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v14H5V5h14z"></path></svg>
                             <svg viewBox="0 0 24 24"><path d="M19 19H5V5h10V3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8h-2m-11.09-.92L6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09z"></path></svg>
@@ -4937,23 +4947,22 @@ $borders: (
                             <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v14H5V5h14z"></path></svg>
                             <svg viewBox="0 0 24 24"><path d="M19 19H5V5h10V3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8h-2m-11.09-.92L6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09z"></path></svg>
                         </span>
-                        <input type="checkbox" />
+                        <input type="checkbox">
                         Select Me
                     </label>
                     
                     <label class="toggle button link">
                         <svg class="lg icon" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z"></path></svg>
                         Direction
-                        <input type="checkbox" />
+                        <input type="checkbox">
                         <svg class="lg icon" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
                     </label>
                 </div>
             </section>
-            <!------------------------------------
-            ------------    LISTS    ------------
-            ------------------------------------->
+
+            <!-- LISTS -->
             <section id="lists" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M7,5H21V7H7V5M7,13V11H21V13H7M4,4.5A1.5,1.5 0 0,1 5.5,6A1.5,1.5 0 0,1 4,7.5A1.5,1.5 0 0,1 2.5,6A1.5,1.5 0 0,1 4,4.5M4,10.5A1.5,1.5 0 0,1 5.5,12A1.5,1.5 0 0,1 4,13.5A1.5,1.5 0 0,1 2.5,12A1.5,1.5 0 0,1 4,10.5M7,19V17H21V19H7M4,16.5A1.5,1.5 0 0,1 5.5,18A1.5,1.5 0 0,1 4,19.5A1.5,1.5 0 0,1 2.5,18A1.5,1.5 0 0,1 4,16.5Z" /></svg>
                     </i>
@@ -5001,7 +5010,7 @@ $borders: (
                         <li>
                             <a href="#">List Item 2</a>
                             <label class="button icon link circle shy toggle">
-                                <input type="checkbox" />
+                                <input type="checkbox">
                                 <svg class="xxl active:flip" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <ul class="collapse px-1">
@@ -5013,7 +5022,7 @@ $borders: (
                         <li>
                             <a href="#">List Item 3v</a>
                             <label class="button icon link circle shy toggle">
-                                <input type="checkbox" />
+                                <input type="checkbox">
                                 <svg class="xxl active:flip" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <ul class="collapse px-1">
@@ -5025,7 +5034,7 @@ $borders: (
                         <li>
                             <a href="#">List Item 4 With a very long text</a>
                             <label class="button icon link circle shy toggle">
-                                <input type="checkbox" />
+                                <input type="checkbox">
                                 <svg class="xxl active:flip" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <ul class="collapse px-1">
@@ -5037,7 +5046,7 @@ $borders: (
                         <li>
                             <a href="#" class="truncate">List Item 5 Truncated Text</a>
                             <label class="button icon link circle shy toggle">
-                                <input type="checkbox" />
+                                <input type="checkbox">
                                 <svg class="xxl active:flip" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <ul class="collapse px-1">
@@ -5054,13 +5063,13 @@ $borders: (
                                 With Icon
                             </a>
                         </li>
-                        <hr class="my-1 mx-1" />
+                        <hr class="my-1 mx-1">
                         <h6 class="pl-2">Small Sub List</h6>
-                        <hr class="my-1 mx-1" />
+                        <hr class="my-1 mx-1">
                         <li class="sm">
                             <a href="#">Small List Item 1</a>
                             <label class="button icon link circle shy toggle">
-                                <input type="checkbox" />
+                                <input type="checkbox">
                                 <svg class="xxl active:flip" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <ul class="collapse">
@@ -5068,7 +5077,7 @@ $borders: (
                                 <li>
                                     <a href="#">Sub Link 2</a>
                                     <label class="button icon link circle shy toggle">
-                                        <input type="checkbox" />
+                                        <input type="checkbox">
                                         <svg class="xxl active:flip" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                                     </label>
                                     <ul class="collapse">
@@ -5105,18 +5114,18 @@ $borders: (
                 <div class="show-code" data-title="Single Selection List">
                     <nav class="list">
                         <menu class="outline">
-                            <li><label class="button link contrast"><input name="list-item-menu" type="radio" checked />List Item 1</label></li>
-                            <li><label class="button link contrast"><input name="list-item-menu" type="radio" />List Item 2</label></li>
-                            <li><label class="button link contrast"><input name="list-item-menu" type="radio" />List Item 3</label></li>
+                            <li><label class="button link contrast"><input name="list-item-menu" type="radio" checked>List Item 1</label></li>
+                            <li><label class="button link contrast"><input name="list-item-menu" type="radio">List Item 2</label></li>
+                            <li><label class="button link contrast"><input name="list-item-menu" type="radio">List Item 3</label></li>
                         </menu>
                     </nav>
                 </div>
 
                 <div class="show-code" data-title="Accented Multi Selection List">
                     <menu class="list outline primary border-primary">
-                        <li><label class="button link"><input name="list-item-menu" type="checkbox" checked />List Item 1</label></li>
-                        <li><label class="button link"><input name="list-item-menu" type="checkbox" />List Item 2</label></li>
-                        <li><label class="button link"><input name="list-item-menu" type="checkbox" />List Item 3</label></li>
+                        <li><label class="button link"><input name="list-item-menu" type="checkbox" checked>List Item 1</label></li>
+                        <li><label class="button link"><input name="list-item-menu" type="checkbox">List Item 2</label></li>
+                        <li><label class="button link"><input name="list-item-menu" type="checkbox">List Item 3</label></li>
                     </menu>
                 </div>
 
@@ -5147,7 +5156,7 @@ $borders: (
                                             <div>
                                                 <label>
                                                     <h5>New Username:</h5>
-                                                    <input type="text" value="List Item 1" />
+                                                    <input type="text" value="List Item 1">
                                                 </label>
                                             </div>
                                             <footer class="content-end">
@@ -5201,7 +5210,7 @@ $borders: (
                                             <div>
                                                 <label>
                                                     <h5>New Username:</h5>
-                                                    <input type="text" value="List Item 2" />
+                                                    <input type="text" value="List Item 2">
                                                 </label>
                                             </div>
                                             <footer class="content-end">
@@ -5255,7 +5264,7 @@ $borders: (
                                             <div>
                                                 <label>
                                                     <h5>New Username:</h5>
-                                                    <input type="text" value="List Item 3" />
+                                                    <input type="text" value="List Item 3">
                                                 </label>
                                             </div>
                                             <footer class="content-end">
@@ -5334,11 +5343,10 @@ $borders: (
                 </div>
 
             </section>
-            <!------------------------------------
-            ------------    LOADER    ------------
-            ------------------------------------->
+
+            <!-- LOADER -->
             <section id="loader" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" /></svg>
                     </i>
@@ -5363,11 +5371,10 @@ $borders: (
                     <button class="outline primary" type="button" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">Click for Loading</button>
                 </div>
             </section>
-            <!------------------------------------
-            ---------        MENUS      ----------
-            ------------------------------------->
+
+            <!-- MENUS -->
             <section id="menus" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                     </i>
@@ -5508,11 +5515,10 @@ $borders: (
 
             </section>
 
-            <!------------------------------------
-            ---------       MODALS      ----------
-            ------------------------------------->
+            <!--
+            ---------       MODALS      ------------>
             <section id="modals" class="bg-inherit py-0 pb-3 mt-2">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M4,4H20V20H4V4M6,8V18H18V8H6Z" /></svg>
                     </i>
@@ -5579,11 +5585,11 @@ $borders: (
                                 <form class="accent-primary column g-2 show-invalid">
                                     <label>
                                         <sup>Email</sup>
-                                        <input id="login-email" type="email" required placeholder=" " />
+                                        <input id="login-email" type="email" required placeholder=" ">
                                     </label>
                                     <label>
                                         <sup>Password</sup>
-                                        <input type="password" required placeholder=" " />
+                                        <input type="password" required placeholder=" ">
                                     </label>
                                     <div>
                                         <a class="button primary link mt-n1 mb-1">Forgot Password?</a>
@@ -5608,7 +5614,7 @@ $borders: (
                                 <div class="px-3 pb-1 pt-1">
                                     This Modal is Required!
                                     <label class="mt-2">
-                                        <input type="checkbox" name="accept" required value="yes" /> I Agree to the Terms
+                                        <input type="checkbox" name="accept" required value="yes"> I Agree to the Terms
                                     </label>
                                 </div>
                                 <footer class="px-2">
@@ -5652,7 +5658,7 @@ $borders: (
                                 <form class="accent-primary column g-2">
                                     <label>
                                         <sup>Email</sup>
-                                        <input type="email" required placeholder=" " />
+                                        <input type="email" required placeholder=" ">
                                     </label>
                                     <label>
                                         <sup>Password</sup>
@@ -5792,11 +5798,10 @@ $borders: (
                 </div>
 
             </section>
-            <!------------------------------------
-            ----------    NAVS    ----------
-            ------------------------------------->
+            <!--
+            ----------    NAVS    ------------>
             <section id="navs" class="bg-inherit pb-2">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                     </i>
@@ -5996,11 +6001,10 @@ $borders: (
                 </div>
 
             </section>
-            <!------------------------------------
-            ---------       SLIDERS      ---------
-            ------------------------------------->
+            <!--
+            ---------       SLIDERS      ----------->
             <section id="sliders" class="bg-inherit py-0 pb-3 mt-4">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M9,11H15V8L19,12L15,16V13H9V16L5,12L9,8V11M2,20V4H4V20H2M20,20V4H22V20H20Z" /></svg>
                     </i>
@@ -6331,11 +6335,10 @@ $borders: (
                     </div>
                 </div>
             </section>
-            <!------------------------------------
-            ------------    TABLES    ------------
-            ------------------------------------->
+            <!--
+                TABLES    -->
             <section id="tables" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z" /></svg>
                     </i>
@@ -6386,7 +6389,7 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Basic Table">
-                    <table>
+                    <table class="outline">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -6541,7 +6544,7 @@ $borders: (
 
                 <div class="show-code" data-title="Expanding Row with Collapsing Columns">
                     <div class="container">
-                        <table class="striped-expand h:striped-expand c-md:table primary">
+                        <table class="outline striped-expand h:striped-expand c-md:table primary">
                             <thead class="color-success">
                                 <tr>
                                     <th>Name</th>
@@ -6794,11 +6797,10 @@ $borders: (
 
                 </div>
             </section>
-            <!------------------------------------
-            ------------    TABS    --------------
-            ------------------------------------->
+            <!--
+                TABS    ---->
             <section id="tabs" class="bg-inherit py-0 pb-3">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M21 3H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H3V5h10v4h8v10z" /></svg>
                     </i>
@@ -6806,7 +6808,7 @@ $borders: (
                 </h2>
 
                 <div class="show-code" data-title="Basic Vertical Tabs">
-                    <div class="tabs outline">
+                    <div class="tabs primary outline">
                         <nav class="list navigable bg-faint">
                             <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
                             <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
@@ -6832,38 +6834,9 @@ $borders: (
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Horizontal Responsive Tabs">
-                    <div class="tabs column c-md:row outline">
-                        <nav class="list row c-md:column c-md:content-start columns-fill c-md:columns-auto text-center navigable bg-faint">
-                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
-                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
-                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 3 With Long Title</button>
-                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 4</button>
-                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 5</button>
-                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 6</button>
-                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 7 With Long Title</button>
-                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 8</button>
-                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 9 With Longer Title</button>
-                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 10</button>
-                        </nav>
-                        <div>
-                            <div class="p-3 open"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
-                            <div class="p-3"><h3>Tab 2 Content.</h3><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><h3>Another Heading</h3><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
-                            <div class="p-3">Tab 3 content. Dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur. </div>
-                            <div class="p-3">Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 5 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 6 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3">Tab 7 content. Duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3"><p>Tab 8 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
-                            <div class="p-3">Tab 9 content. Duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
-                            <div class="p-3"><p>Tab 10 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="show-code" data-title="Vertical Right Tabs with Accent">
-                    <div class="tabs outline border-primary">
-                        <nav class="list navigable bg-primary bg/20 primary order-2">
+                <div class="show-code" data-title="Basic Horizontal Tabs">
+                    <div class="tabs column primary outline">
+                        <nav class="list row navigable bg-faint content-center">
                             <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
                             <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
                             <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 3 lorem ipsum</button>
@@ -6873,8 +6846,14 @@ $borders: (
                         </nav>
                         <div>
                             <div class="p-3 open"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
-                            <div class="p-3"><p>Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
-                            <div class="p-3">Tab 3 asldkf </div>
+                            <div class="p-3">
+                                <p>Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                            </div>
+                            <div class="p-3"><p>Tab 3 asldkf</p></div>
                             <div class="p-3">Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                             <div class="p-3">Tab 5 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                             <div class="p-3">Tab 6 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
@@ -6882,8 +6861,64 @@ $borders: (
                     </div>
                 </div>
 
+                <div class="show-code" data-title="Responsive Tabs">
+                    <div class="container">
+                        <div class="tabs column primary c-md:row outline">
+                            <nav class="list row c-md:column text-center navigable bg-faint">
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 3 With Long Title</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 4</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 5</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 6</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 7 With Long Title</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 8</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 9 With Longer Title</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 10</button>
+                            </nav>
+                            <ul class="p-4">
+                                <li class="open"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></li>
+                                <li><h3>Tab 2 Content.</h3><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><h3>Another Heading</h3><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></li>
+                                <li>Tab 3 content. Dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur. </li>
+                                <li>Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+                                <li>Tab 5 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+                                <li>Tab 6 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+                                <li>Tab 7 content. Duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+                                <li><p>Tab 8 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></li>
+                                <li>Tab 9 content. Duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+                                <li><p>Tab 10 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-code" data-title="Vertical Right Tabs with Accent">
+                    <div class="tabs outline primary border-primary">
+                        <nav class="list navigable bg-primary bg/2 primary order-2">
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 3 lorem ipsum</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 4</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 5</button>
+                            <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 6</button>
+                        </nav>
+                        <ul class="p-4">
+                            <li class="open"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></li>
+                            <li><h3>Tab 2 Content.</h3><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><h3>Another Heading</h3><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></li>
+                            <li>Tab 3 content. Dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur. </li>
+                            <li>Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+                            <li>Tab 5 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+                            <li>Tab 6 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+                            <li>Tab 7 content. Duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+                            <li><p>Tab 8 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></li>
+                            <li>Tab 9 content. Duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
+                            <li><p>Tab 10 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="show-code" data-title="Bottom Fixed Tabs">
-                    <div class="tabs column outline">
+                    <div class="tabs column primary outline">
                         <nav class="list row order-2 navigable content-center text-center bg-faint">
                             <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
                             <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
@@ -6901,15 +6936,15 @@ $borders: (
                     <div class="tabs outline row">
                         <nav class="list">
                             <label class="button link" data-toggle="{.tabs} .list + * > :nth-child(1)" data-toggle-close="{.tabs} .open">
-                                <input class="ml-0 mr-2" name="list-item-tabs2" type="radio" />
+                                <input class="ml-0 mr-2" name="list-item-tabs2" type="radio">
                                 Option 1
                             </label>
                             <label class="button link" data-toggle="{.tabs} .list + * > :nth-child(2)" data-toggle-close="{.tabs} .open">
-                                <input class="ml-0 mr-2" name="list-item-tabs2" type="radio" />
+                                <input class="ml-0 mr-2" name="list-item-tabs2" type="radio">
                                 Option 2
                             </label>
                             <label class="button link" data-toggle="{.tabs} .list + * > :nth-child(3)" data-toggle-close="{.tabs} .open">
-                                <input class="ml-0 mr-2" name="list-item-tabs2" type="radio" />
+                                <input class="ml-0 mr-2" name="list-item-tabs2" type="radio">
                                 Option 3
                             </label>
                         </nav>
@@ -6923,11 +6958,10 @@ $borders: (
                 </div>
                 
             </section>
-            <!------------------------------------
-            -----------    TOOLTIPS    -----------
-            ------------------------------------->
+            <!--
+            -----------    TOOLTIPS    ------------->
             <section id="tooltip" class="bg-inherit pt-0">
-                <h2 class="sticky index-3 pt-3 bg-theme bg/70 bg-blur bb-1 pb-1 mx-n2 px-2 mb-2">
+                <h2 class="sticky index-3 pt-4 bg-theme bg/7 bg-blur bb-1 pb-2 mx-n3 px-3 mb-3 glow-theme glow-2 glow/10">
                     <i class="icon mr-1">
                         <svg viewBox="0 0 24 24"><path d="M9 22a1 1 0 0 1-1-1v-3H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6.1l-3.7 3.71c-.2.19-.45.29-.7.29H9m1-6v3.08L13.08 16H20V4H4v12h6z" /></svg>
                     </i>
@@ -7061,9 +7095,21 @@ $borders: (
         </main>
     </div>
     <div id="copy-code-modal" class="modal bg-none">
-        <div class="alert primary lg absolute top right from-right md max-w-300 px-2 pr-1 flex m-1">
+        <div class="alert success lg absolute top right from-right md px-2 pr-1 flex m-1" style="max-width: 240px">
             <svg viewBox="0 0 24 24" class="icon mr-1"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg>
             <div>Copied To Clipboard!</div>
+        </div>
+    </div>
+    <div id="copy-code-error-modal" class="modal bg-none">
+        <div class="alert error lg absolute top right from-right md max-w-400 px-2 pr-1 flex m-1">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
+            <div>
+                <h5 class="bold">Copy Failed!</h5>
+                <p>Try selecting the code and use Ctrl + C to copy</p>
+            </div>
+            <button class="toggle button hazy light circle absolute top right icon close sm m-1" onclick="this.closest('.modal').classList.remove('open')">
+                <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
+            </button>
         </div>
     </div>
     <footer class="bg-faint color-gray p-2 text-right sm">

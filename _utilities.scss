@@ -39,9 +39,17 @@ General Utility Classes
 	cursor: pointer
 }
 
+.circle,
+.square {
+	aspect-ratio: 1;
+}
+
 .circle {
 	border-radius: 50%;
-	aspect-ratio: 1;
+}
+
+.widescreen {
+	aspect-ratio: 16 / 9;
 }
 
 @for $i from 1 through 5 {
@@ -110,12 +118,17 @@ General Utility Classes
 	color: inherit
 }
 
-.shy {
-	opacity: 0.6;
-}
+.glow {
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: inherit;
+		filter: blur(1em);
+		clip-path: polygon(-2em -2em, -2em calc(100% + 2em), 0 calc(100% + 2em), 0 0, 100% 0, 100% 100%, 0% 100%, 0 calc(100% + 2em), calc(100% + 2em) calc(100% + 2em), calc(100% + 2em) -2em);
+	}
 
-.shy:is(:hover, :focus) {
-	opacity: 1
 }
 
 .snug {
@@ -308,7 +321,8 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	}
 
 	#{$prefix}items-stretch {
-		place-items: stretch
+		place-items: stretch;
+		grid-auto-rows: 1fr;
 	}
 
 	#{$prefix}content-center {
@@ -585,7 +599,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	}
 
 	#{$prefix}shadow {
-		box-shadow: 1px 3px 6px rgba(0, 0, 0, var(--shadow-o))
+		box-shadow: 1px 3px 6px rgba(0, 0, 0, var(--shadow))
 	}
 
 	#{$prefix}shadow-none {
@@ -728,8 +742,28 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	}
 }
 
+[class*=h\:glow-] {
+	transition: box-shadow var(--speed) var(--ease);
+}
+
 .h\:o-0:hover {
 	opacity: 0
+}
+
+.peek,
+.shy {
+	transition: opacity var(--speed) var(--ease);
+}
+
+:has(>.peek):hover > .peek {
+	opacity: 1;
+}
+
+.shy {
+	opacity: 0.6;
+	&:is(:hover, :focus) {
+		opacity: 1
+	}
 }
 
 @for $i from 1 through 10 {
@@ -737,8 +771,16 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		opacity: #{calc($i / 10)};
 	}
 
-	.shadow\/#{calc($i * 10)} {
-		--shadow-o: #{calc($i / 10)};
+	.shadow\/#{$i} {
+		--shadow: #{calc($i / 10)};
+	}
+
+	.glow\/#{$i} {
+		--glow-o: #{calc($i / 10)};
+	}
+
+	.glow-#{$i} {
+		--glow-s: #{calc($i / 10)};
 	}
 }
 

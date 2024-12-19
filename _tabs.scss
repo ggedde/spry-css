@@ -4,36 +4,41 @@
 */
 
 .tabs {
-	overflow    : hidden;
-	display     : flex;
-	--gapx: 0em;
-	--gapy: 0em;
+	overflow: hidden;
+	display : flex;
+	--gapx  : 0em;
+	--gapy  : 0em;
+	> * {
+		margin: 0;
+	}
 
 	.list {
-		overflow    : hidden;
-		flex        : none;
-		width       : auto;
-		--gapx: 0em;
-		--gapy: 0em;
+		overflow  : hidden;
+		flex      : none;
+		width     : auto;
+		--gapx    : 0em;
+		--gapy    : 0em;
+
 		&+* {
 			flex: 1;
+			list-style: none;
 		}
 
 		&+*>* {
 			transition: none;
 			transform : translateY(3px);
+
 			&:not(.open) {
-				height: 0;
-				opacity: 0;
-				padding-block: 0;
-				margin-block: 0;
+				height        : 0;
+				opacity       : 0;
+				padding-block : 0;
+				margin-block  : 0;
 				pointer-events: none;
 			}
 
 			&.open {
 				transition: opacity .2s ease-in-out, transform .3s ease-out;
 				transform : none;
-				max-height: none;
 			}
 		}
 	}

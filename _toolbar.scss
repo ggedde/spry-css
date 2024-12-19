@@ -7,11 +7,13 @@
 	@extend %ui;
 	@extend %ui-roomy;
 	@extend %ui-border-radius;
+	padding-inline: 1em;
 	justify-content: space-between;
 	transition: none;
 	width: 100%;
 	> * {
 		width: auto;
 		background-color: inherit;
+		place-items: center;
 	}
 }

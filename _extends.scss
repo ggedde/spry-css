@@ -12,14 +12,14 @@
 	color           : inherit;
 	display         : inline-flex;
 	font-size       : 100%;
-	justify-content : space-between;
+	justify-content : center;
 	gap             : 1em;
 	min-height      : 2.32em;
 	min-width       : 2.3em;
 	outline         : 0 solid rgb(from var(--ui-accent) r g b / 0.5);
 	outline-offset  : 2px;
 	padding-block   : .3em;
-	padding-inline  : 1em;
+	padding-inline  : 1.1em;
 	position        : relative;
 	text-decoration : none;
 	transition      : 
@@ -62,7 +62,7 @@
 %ui-border {
 	border-width: 1px;
 	border-style: solid;
-	border-color: hsl(from var(--ui-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+	border-color: hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 100%));
 }
 
 %ui-border-radius {

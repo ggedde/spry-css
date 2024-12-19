@@ -20,31 +20,35 @@ $gaps: (
 
 $themes: (
     default: (
-        scheme: light,
-        accent: #555,
-        border: #ccc,
-        color : #555,
-        input : #888,
-        bg    : #fff,
-        ui    : #ddd,
-    ),
-    dark: (
         scheme: dark,
-        accent: #ccc,
-        border: #444,
-        color : #ccc,
-        input : #888,
-        bg    : #111,
-        ui    : #333,
-    )
-);
+        accent: light-dark(#555, #ccc),
+        border: light-dark(#ccc, #444),
+        color : light-dark(#555, #ccc),
+        input : light-dark(#888, #888),
+        bg    : light-dark(#fff, #000),
+        ui    : light-dark(#ddd, #333),
+        surface    : light-dark(-6, 10),
+    ),
+    // dark: (
+    //     scheme: dark,
+    //     accent: #ccc,
+    //     border: #444,
+    //     color : #ccc,
+    //     input : #888,
+    //     bg    : #111,
+    //     ui    : #333,
+    // )
+) !default;
 
 $colors: (
-    gray     : (default: #999, dark: #888),
-    contrast : (default: #333, dark: #eee),
-    faint    : (default: #eee, dark: #333),
+    // surface  : (default: light-dark(#eee, #000)),
+    faint    : (default: light-dark(#eee, #333)),
+    contrast : (default: light-dark(#333, #eee)),
     light    : (default: #eee),
     dark     : (default: #333),
+    // white    : (default: #fff),
+    // black    : (default: #000),
+    gray     : (default: #888),
     primary  : (default: #19d),
     success  : (default: #0a0),
     warning  : (default: #e90),
@@ -67,11 +71,12 @@ $types: (
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc.
 $spacing: (
     0  : 0em, // Needs unit to be used in calc().
-    1  : .5em,
-    2  : 1em,
-    3  : 2em,
-    4  : 4em,
-    5  : 6em,
+    1  : .25em,
+    2  : .5em,
+    3  : 1em,
+    4  : 2em,
+    5  : 4em,
+    6  : 6em,
     200: 200px, // Used for Sidebars
 ) !default;
 
@@ -106,17 +111,21 @@ $sizes: (
 ) !default;
 
 :root {
-    --invert     : 50;
-    --gapx       : #{map.get($gaps, 'default')};
-    --gapy       : #{map.get($gaps, 'default')};
-    --ease       : cubic-bezier(.45, .45, 0, 1); //cubic-bezier(.25, .8, .25, 1);
-    --speed      : .4s;
-    --radius     : .25em;
-    --transform  : translate3d(0, -2px, 0);
-    --origin     : top;
-    --max-height : 1900px;
-    --shadow-o   : .12;
+    --bdr-from   : 150deg;
     --bg-from    : 150deg;
     --clr-from   : 150deg;
-    --bdr-from   : 150deg;
+    --ease       : cubic-bezier(.45, .45, 0, 1); //cubic-bezier(.25, .8, .25, 1);
+    --gapx       : #{map.get($gaps, 'default')};
+    --gapy       : #{map.get($gaps, 'default')};
+    --invert     : 50;
+    --max-height : 1900px;
+    --origin     : top;
+    --radius     : .25em;
+    --shadow     : .12;
+    --glow-o     : .5;
+    --glow-s     : .5;
+    --speed      : .4s;
+    --transform  : translate3d(0, -2px, 0);
+    --surface-start-light: -6;
+    --surface-start-dark: 10;
 }

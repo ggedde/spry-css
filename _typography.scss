@@ -15,11 +15,11 @@
     }
 }
 
-:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label) + :where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label) {
+:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label, pre, article) + :where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label, pre, article) {
     @extend %ui-margin-above-lg;
 }
 
-:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, div) + :where(dfn, cite, .note) {
+:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, div) + :is(dfn, cite, .note) {
     @extend %ui-margin-above;
 }
 
@@ -35,4 +35,8 @@ blockquote {
 cite, dfn {
     display: inline-block;
     opacity: .75;
+}
+
+code {
+    font-size: .9em;
 }

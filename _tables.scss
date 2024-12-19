@@ -25,6 +25,9 @@ table {
 thead {
 	box-shadow: 0 2px 0 hsl(from var(--ui-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
 	color: var(--ui-color);
+	&.sticky {
+		top: -1px;
+	}
 
 	th {
 		font-weight: 500;

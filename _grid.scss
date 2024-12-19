@@ -9,6 +9,8 @@
 :root {
     --gapx       : #{map.get(variables.$gaps, 'default')};
     --gapy       : #{map.get(variables.$gaps, 'default')};
+	--span        : 1;
+	--cols        : 1;
 
     @each $breakpoint, $breakpoint_width in variables.$breakpoints {
         @media screen and (min-width: $breakpoint_width) {
@@ -18,93 +20,59 @@
     }
 }
 
-.column,
 .row,
+[class*=":row "],
+[class$=\:row],
+.column,
+[class*=":column "],
+[class$=\:column],
 .grid,
-.slider-slides,
+[class*=":grid "],
+[class$=\:grid],
 [class^=grid-],
 [class*=\ grid-] {
-	--gapx        : #{map.get(variables.$gaps, 'default')};
-	--gapy        : #{map.get(variables.$gaps, 'default')};
+	// --gapx        : #{map.get(variables.$gaps, 'default')};
+	// --gapy        : #{map.get(variables.$gaps, 'default')};
 	--span        : 1;
 	--cols        : 1;
 	gap           : var(--gapy) var(--gapx);
 }
 
-.column {
-	display       : flex;
-	flex-direction: column;
+
+.row > *,
+[class*=":row "] > *,
+[class$=\:row] > *,
+.grid > *,
+[class*=":grid "] > *,
+[class$=\:grid] > * {
+	// grid: auto-flow / repeat(var(--cols), minmax(0, 1fr));
+	// flex: 0 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--gapx))/(var(--cols)/var(--span))));
+	min-width: 0;
+	margin-top: 0;
+	// flex: 1;
 }
 
-.row {
-	display       : flex;
-	flex-wrap     : wrap;
-	flex-direction: row;
+// .column > *,
+// [class*=":column "] > *,
+// [class$=\:column] > * {
+// 	flex: 1 auto;
+// }
 
-	>* {
-		flex  : 1;
-		--span: 1;
-	}
-}
 
-.grid {
-	display: grid;
-    grid: none / auto-flow minmax(0, 1fr);
-}
-
-.equal[class] {
-	grid-auto-rows: 1fr;
-}
-
-@if (list.length(variables.$breakpoints) > 0) {
-	@media screen and (max-width: #{list.nth(list.nth(variables.$breakpoints, 1), 2)}) {
-		.row>* {
-			flex: 100%;
-			min-width: 100%;
-		}
-		.grid {
-			grid: auto / auto;
-		}
-	}
-}
-
-@if (list.length(variables.$breakpoints) > 0) {
-	@container (max-width: #{list.nth(list.nth(variables.$breakpoints, 1), 2)}) {
-		.row>* {
-			flex: 100%;
-			min-width: 100%;
-		}
-		.grid {
-			grid: auto / auto;
-		}
-	}
-}
-
-.column>*,
-.row>* {
-	@extend %ui-margin-above-none;
+.grid,
+[class^="grid "],
+[class$=" grid"] {
+	grid: auto-flow / repeat(var(--cols), minmax(0, 1fr));
 }
 
 [class^=grid-],
 [class*=\ grid-] {
 	display: grid;
-	grid: auto-flow / repeat(auto-fit, minmax(calc(var(--span) * 100px), 1fr));
+	grid: auto-flow / repeat(auto-fit, minmax(calc(var(--span) * 4em), 1fr));
 	> * {
 		margin-top: 0;
+		max-width: calc(100vw - (var(--gapx) * 2))
 	}
-}
-
-[class^=columns-],
-[class*=\ columns-] {
-	grid: auto-flow / repeat(var(--cols), minmax(0, 1fr));
-}
-
-[class^=span-],
-[class*=\ span-],
-[class^=columns-]>*,
-[class*=\ columns-]>* {
-	flex: 0 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--gapx))/(var(--cols)/var(--span))));
-	min-width: 0;
 }
 
 [class^=span-],
@@ -114,42 +82,66 @@
 
 .span {
 	grid-column: 1 / -1;
-	flex       : 0 0 100%;
+	--span: var(--cols)
 }
 
-.columns-auto {
-	grid: none / auto-flow auto;
-}
-.columns-fixed {
-    grid: none / auto-flow minmax(0, 1fr);
-}
-
-:is(.columns-auto>*,.span-auto) {
-	flex : 0 auto;
-	width: auto;
-}
-
-:is(.columns-fixed>*,.span-fixed) {
-	flex: 1;
-}
-
-:is(.columns-fill>*,.span-fill) {
-	flex: 1 auto;
-}
-
-@for $i from 1 through 12 {
-
-	.span-#{$i},
+@for $i from 1 through 6 {
 	.grid-#{$i}00 {
 		--span: #{$i};
-	}
-
-	.columns-#{$i} {
-		--cols: #{$i};
 	}
 }
 
 @mixin grid-query-styles($prefix, $noDotPrefix) {
+
+	#{$prefix}column {
+		display       : flex;
+		flex-direction: column;
+		> * {
+			flex: 0 0 auto;
+		}
+	}
+
+	#{$prefix}row {
+		display       : flex;
+		flex-wrap     : wrap;
+		flex-direction: row;
+		> * {
+			flex: 1 auto;
+		}
+	}
+
+	#{$prefix}grid {
+		display: grid;
+	}
+
+	[class^="#{$noDotPrefix}columns-"] > *,
+	[class*=" #{$noDotPrefix}columns-"] > * {
+		flex: 0 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--gapx))/(var(--cols)/var(--span))));
+		// grid: auto-flow / repeat(var(--cols), minmax(0, 1fr));
+	}
+
+	#{$prefix}columns-fixed {
+		grid: none / auto-flow minmax(0, 1fr);
+	}
+	#{$prefix}columns-fixed>*,
+	#{$prefix}span-fixed {
+		flex: 1;
+	}
+	
+	#{$prefix}columns-auto {
+		grid: none / auto-flow auto;
+	}
+	#{$prefix}columns-auto>*,
+	#{$prefix}span-auto {
+		flex : 0 auto;
+		width: auto;
+	}
+	
+	#{$prefix}columns-fill>*,
+	#{$prefix}span-fill {
+		flex: 1 auto;
+	}
+
 	@for $i from 1 through 12 {
 
 		#{$prefix}span-#{$i} {
@@ -160,79 +152,13 @@
 			--cols: #{$i};
 		}
 	}
-
-	#{$prefix}column,
-	#{$prefix}row,
-	#{$prefix}grid {
-		--gapx        : #{map.get(variables.$gaps, 'default')};
-		--gapy        : #{map.get(variables.$gaps, 'default')};
-		gap           : var(--gapy) var(--gapx);
-	}
-
-	#{$prefix}column {
-		display       : flex;
-		flex-direction: column;
-	}
-
-	#{$prefix}row {
-		display       : flex;
-		flex-wrap     : wrap;
-		flex-direction: row;
-		>* {
-			flex  : 1;
-			--span: 1;
-		}
-	}
-
-	[class^=#{$noDotPrefix}columns-],
-	[class*=\ #{$noDotPrefix}columns-] {
-		grid: auto-flow / repeat(var(--cols), minmax(0, 1fr));
-	}
-
-	[class^=#{$noDotPrefix}columns-]>*,
-	[class*=\ #{$noDotPrefix}columns-]>* {
-		flex: 0 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--gapx))/(var(--cols)/var(--span))));
-		min-width: 0;
-	}
-
-	#{$prefix}equal[class] {
-		grid-auto-rows: 1fr;
-	}
-
-	#{$prefix}grid,
-	.grid#{$prefix}columns-fixed {
-		display       : grid;
-		grid: none / auto-flow minmax(0, 1fr);
-	}
-	
-	.grid#{$prefix}columns-auto {
-		grid: none / auto-flow auto;
-	}
-
-	:is(#{$prefix}columns-auto>*,#{$prefix}span-auto) {
-		flex : 0 auto;
-		width: auto;
-	}
-	
-	:is(#{$prefix}columns-fixed>*,#{$prefix}span-fixed) {
-		flex: 1;
-	}
-	
-	:is(#{$prefix}columns-fill>*,#{$prefix}span-fill) {
-		flex: 1 auto;
-	}
 }
+
+
+@include grid-query-styles('.', '');
 
 @each $breakpoint, $breakpoint_width in variables.$breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
-		.column,
-		.row,
-		.grid,
-		[class^=grid-],
-		[class*=\ grid-] {
-			--gapx: #{map.get(variables.$gaps, $breakpoint)};
-            --gapy: #{map.get(variables.$gaps, $breakpoint)};
-		}
 		@include grid-query-styles('.#{$breakpoint}\\:', '#{$breakpoint}\\:');
 	}
 	@container (min-width: #{$breakpoint_width}) {

@@ -707,7 +707,6 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
     Spry.loadToggles();
     Spry.loadSliders();
     Spry.loadLists();
-
 } else {
     document.addEventListener('DOMContentLoaded', Spry.loadScrollSpy);
     document.addEventListener('DOMContentLoaded', Spry.loadToggles);

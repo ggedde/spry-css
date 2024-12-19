@@ -19,7 +19,7 @@
 	}
 }
 
-body:has(.modal.open:not(.no-bg)) {
+body:has(.modal.open:not(.bg-none)) {
 	overflow: hidden;
 }
 

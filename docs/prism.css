@@ -35,8 +35,9 @@ html:has(.code-content-container:target) {
 }
 
 .code-content-container {
-	min-width: 300px;
+	min-width: min(450px, 100vw - 2.5em);
 	max-width: 100%;
+	gap: 0;
 }
 
 .code-content {
@@ -95,12 +96,10 @@ html:has(.code-content-container:target) {
 	opacity: 1;
 }
 
-code[class*="language-"],
-pre[class*="language-"] {
-	color: black;
-	background: none;
+
+
+code[class*="language-"] {
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 0.9em;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -108,99 +107,14 @@ pre[class*="language-"] {
 	word-wrap: normal;
 	line-height: 1.5;
 	margin-top: 0;
-
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
 	tab-size: 4;
-
 	-webkit-hyphens: none;
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
 }
-
-code[class*="language-"].pre-wrap,
-pre[class*="language-"].pre-wrap {
-	white-space: pre-wrap;
-}
-
-.theme-dark code[class*="language-"],
-.theme-dark pre[class*="language-"] {
-	color: #e7e7e7;
-}
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-.theme-dark pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-.theme-dark code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	background: rgba(150,150,150,0.2);
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	text-shadow: none;
-	background: #b3d4fc;
-}
-
-.theme-dark pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-.theme-dark code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	background: rgba(150,150,150,0.2);
-}
-
-.theme-light code[class*="language-"],
-.theme-light pre[class*="language-"] {
-	color: black;
-}
-
-.theme-light pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-.theme-light code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	background: #b3d4fc;
-}
-
-.theme-light pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-.theme-light code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	background: #b3d4fc;
-}
-
-@media print {
-	code[class*="language-"],
-	pre[class*="language-"] {
-		text-shadow: none;
-	}
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #F6F6F6;
-}
-
-.theme-dark :not(pre) > code[class*="language-"],
-.theme-dark pre[class*="language-"] {
-	background: #000000;
-}
-
-.theme-light :not(pre) > code[class*="language-"],
-.theme-light pre[class*="language-"] {
-	background: #F6F6F6;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
-}
-code[class*="language-"] {
-	/* border-left: 3px solid #0D7FBF;  */
-	overflow: scroll;
-	display: block;
-	padding: 1rem 1.5rem;
-}
-
 
 .token.comment,
 .token.prolog,
@@ -247,7 +161,7 @@ code[class*="language-"] {
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-	color: #07a;
+	color: #09c;
 }
 
 .token.function,
@@ -271,95 +185,4 @@ code[class*="language-"] {
 
 .token.entity {
 	cursor: help;
-}
-div.code-toolbar {
-	position: relative;
-}
-div.code-toolbar::after {
-	content: '';
-	display: block;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	/* box-shadow: inset -10px 0px 10px rgba(245, 242, 240, 1); */
-	pointer-events: none;
-}
-
-div.code-toolbar > .toolbar {
-	position: absolute;
-	top: .3em;
-	right: .2em;
-	transition: opacity 0.3s ease-in-out;
-	opacity: 0;
-	justify-content: flex-end;
-	height: 20px;
-	width: 40px;
-	min-height: 20px;
-}
-div.code-toolbar > .toolbar button {
-	height: 20px;
-	min-height: 20px;
-}
-
-div.code-toolbar:hover > .toolbar {
-	opacity: 1;
-}
-
-/* Separate line b/c rules are thrown out if selector is invalid.
-   IE11 and old Edge versions don't support :focus-within. */
-div.code-toolbar:focus-within > .toolbar {
-	opacity: 1;
-}
-
-div.code-toolbar > .toolbar .toolbar-item {
-	display: inline-block;
-	margin-right: 1rem;
-}
-
-div.code-toolbar > .toolbar a {
-	cursor: pointer;
-}
-
-div.code-toolbar > .toolbar button {
-	background: none;
-	border: 0;
-	color: inherit;
-	font: inherit;
-	line-height: normal;
-	overflow: visible;
-	padding: 0;
-}
-
-div.code-toolbar > .toolbar a,
-div.code-toolbar > .toolbar button {
-	color: #eee;
-	font-size: .7em;
-	padding: .2em .7em .4em;
-	background: #777 !important;
-	border-radius: .5em;
-	cursor: pointer;
-	-webkit-user-select: none; /* for button */
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-
-div.code-toolbar > .toolbar a:hover,
-div.code-toolbar > .toolbar a:focus,
-div.code-toolbar > .toolbar button:hover,
-div.code-toolbar > .toolbar button:focus {
-	text-decoration: none;
-	background: #555 !important;
-}
-
-div.code-toolbar > .toolbar a:active,
-div.code-toolbar > .toolbar button:active {
-	text-decoration: none;
-	background: #777 !important;
-}
-
-.code-container {
-	overflow-x: hidden;
 }

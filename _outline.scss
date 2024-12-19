@@ -6,6 +6,7 @@
 
 .outline {
 	@extend %ui-border;
+
 	>ul,
 	>ul ul,
 	>li,
@@ -33,9 +34,9 @@
 	}
 
 	&.tabs .list {
-		margin         : -1px 0;
-		border-width   : 1px 0;
-		border-style   : solid;
+		margin      : -1px;
+		border-width: 1px;
+		border-style: solid;
 
 		> :not(ul) {
 			border-width: 0 0 1px 0;
@@ -70,43 +71,24 @@
 		}
 	}
 
-	&.tabs .list+* {
-		margin      : 0 -1px;
-		border-width: 0 1px;
-		position    : relative;
-	}
-
-	&.tabs.column .list+* {
-		border-width: 0;
-	}
-
-	@each $breakpoint,
-	$breakpoint_width in variables.$breakpoints {
-		@media screen and (min-width: #{$breakpoint_width}) {
-			&.tabs.#{$breakpoint}\:row .list+* {
-				border-width: 0 1px;
-			}
-		}
-
-		@container (min-width: #{$breakpoint_width}) {
-			&.tabs.c-#{$breakpoint}\:row .list+* {
-				border-width: 0 1px;
-			}
-		}
-	}
-
-	&:not(.alert, button, .button, article, .icon)> :not(ul),
-	&.tabs .list> :not(ul),
-	>ul>li,
-	&.tabs .list>ul>li,
+	&:not(.alert, .badge, button, .button, article, .icon, .tabs) > *,
+	&.tabs .list > :not(ul),
+	&.tabs .list > ul > li,
 	>ul ul>li {
-		border-width   : 1px 0 0 1px;
-		border-style   : solid;
-		margin         : -1px 0 0 -1px;
+		border-width: 1px 0 0 1px;
+		border-style: solid;
+		margin      : -1px 0 0 -1px;
 
 		&:last-child {
 			border-bottom-width: 1px;
 			margin-bottom      : -1px;
 		}
 	}
+}
+
+table.outline tbody,
+table.outline tr,
+table.outline th,
+table.outline td {
+	border: inherit;
 }

@@ -45,16 +45,25 @@
 			--gapx : #{$space};
 			--gapy : #{$space};
 			gap    : var(--gapy) var(--gapx);
+			// &:not(.grid, .row, .column, .flex) > * + * {
+			// 	margin-top: #{$space};
+			// }
 		}
 
 		#{$prefix}gx-#{$s} {
 			--gapx    : #{$space};
 			column-gap: var(--gapx);
+			// &:not(.grid, .row, .column, .flex) > * + * {
+			// 	margin-inline-start: #{$space};
+			// }
 		}
 
 		#{$prefix}gy-#{$s} {
 			--gapy : #{$space};
 			row-gap: var(--gapy);
+			// &:not(.grid, .row, .column, .flex) > * + * {
+			// 	margin-top: #{$space};
+			// }
 		}
 	}
 

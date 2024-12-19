@@ -87,7 +87,7 @@ menu menu {
 	}
 
 	#{$prefix}sub\:shadow ul ul {
-		box-shadow: 1px 3px 6px rgba(0, 0, 0, var(--shadow-o));
+		box-shadow: 1px 3px 6px rgba(0, 0, 0, var(--shadow));
 	}
 
 	:is(#{$prefix}open\:down ul, #{$prefix}sub\:open\:down ul ul)>li:has(ul)> :first-child::after {

@@ -11,49 +11,56 @@ let _currentPanel = null;
 let _panelContents = [];
 
 function toggleTheme(element) {
-    var documentMatches = document.documentElement.className.match(/theme\-[a-z0-9\_\-]+/gi);
-    var documentTheme = documentMatches && documentMatches[0] ? documentMatches[0] : 'theme-default';
-    var themeMatches = element.className.match(/theme\-[a-z0-9\_\-]+/gi);
-    var currentTheme = themeMatches && themeMatches[0] ? themeMatches[0] : documentTheme;
-    var theme = currentTheme === 'theme-dark' ? 'theme-default' : 'theme-dark';
-    element.classList.remove(currentTheme);
+    element.classList.toggle('scheme-toggle');
+
     if (element === document.documentElement) {
-        if(theme === 'theme-dark') {
-            element.classList.add(theme);
-        }
-        element.querySelectorAll('.'+theme).forEach(elem => {
-            elem.classList.remove(theme);
+        document.documentElement.querySelectorAll('.scheme-toggle').forEach(elem => {
+            elem.classList.remove('scheme-toggle');
         });
-    } else if (element !== document.documentElement && theme !== documentTheme) {
-        element.classList.add(theme);
-        var children = element.querySelectorAll('.theme-dark,.theme-default');
-        if (children) {
-            children.forEach(child => {
-                child.classList.remove(currentTheme);
-                child.classList.add(theme);
-                var codeValues = element.querySelectorAll('.attr-value');
-                if (codeValues) {
-                    codeValues.forEach(val => {
-                        if (val.innerHTML && (val.innerHTML.indexOf('theme-dark') || val.innerHTML.indexOf('theme-default'))) {
-                            val.innerHTML = val.innerHTML.replace('theme-dark', theme);
-                            val.innerHTML = val.innerHTML.replace('theme-default', theme);
-                        }
-                    });
-                }
-                var codeTitle = element.querySelector('article header h4');
-                if (codeTitle.innerHTML && (codeTitle.innerHTML.indexOf('Dark Theme') > -1 || codeTitle.innerHTML.indexOf('Default Theme') > -1)) {
-                    codeTitle.innerHTML = codeTitle.innerHTML.replace('Dark Theme', theme === 'theme-dark' ? 'Dark Theme' : 'Default Theme');
-                    codeTitle.innerHTML = codeTitle.innerHTML.replace('Default Theme', theme === 'theme-dark' ? 'Dark Theme' : 'Default Theme');
-                }
-            });
-        }
     }
+    // var documentMatches = document.documentElement.className.match(/theme\-[a-z0-9\_\-]+/gi);
+    // var documentTheme = documentMatches && documentMatches[0] ? documentMatches[0] : 'scheme-light';
+    // var themeMatches = element.className.match(/theme\-[a-z0-9\_\-]+/gi);
+    // var currentTheme = themeMatches && themeMatches[0] ? themeMatches[0] : documentTheme;
+    // var theme = currentTheme === 'scheme-dark' ? 'scheme-light' : 'scheme-dark';
+    // element.classList.remove(currentTheme);
+    // if (element === document.documentElement) {
+    //     if(theme === 'scheme-dark') {
+    //         element.classList.add(theme);
+    //     }
+    //     element.querySelectorAll('.'+theme).forEach(elem => {
+    //         elem.classList.remove(theme);
+    //     });
+    // } else if (element !== document.documentElement && theme !== documentTheme) {
+    //     element.classList.add(theme);
+    //     var children = element.querySelectorAll('.scheme-dark,.scheme-light');
+    //     if (children) {
+    //         children.forEach(child => {
+    //             child.classList.remove(currentTheme);
+    //             child.classList.add(theme);
+    //             var codeValues = element.querySelectorAll('.attr-value');
+    //             if (codeValues) {
+    //                 codeValues.forEach(val => {
+    //                     if (val.innerHTML && (val.innerHTML.indexOf('scheme-dark') || val.innerHTML.indexOf('scheme-light'))) {
+    //                         val.innerHTML = val.innerHTML.replace('scheme-dark', theme);
+    //                         val.innerHTML = val.innerHTML.replace('scheme-light', theme);
+    //                     }
+    //                 });
+    //             }
+    //             var codeTitle = element.querySelector('article header h4');
+    //             if (codeTitle.innerHTML && (codeTitle.innerHTML.indexOf('Dark Theme') > -1 || codeTitle.innerHTML.indexOf('Default Theme') > -1)) {
+    //                 codeTitle.innerHTML = codeTitle.innerHTML.replace('Dark Theme', theme === 'scheme-dark' ? 'Dark Theme' : 'Default Theme');
+    //                 codeTitle.innerHTML = codeTitle.innerHTML.replace('Default Theme', theme === 'scheme-dark' ? 'Dark Theme' : 'Default Theme');
+    //             }
+    //         });
+    //     }
+    // }
 }
 
 function cleanContent(html) {
-    html = html.replaceAll(' class="bg-faint round p-1"', '');
-    html = html.replaceAll('bg-faint round p-1 ', '');
-    html = html.replaceAll(' bg-faint round p-1', '');
+    html = html.replaceAll(' class="bg-faint r-1 p-2"', '');
+    html = html.replaceAll('bg-faint r-1 p-2 ', '');
+    html = html.replaceAll(' bg-faint r-1 p-2', '');
     html = html.replaceAll('<div class="code-resize-handle"></div>', '');
     var firsTag = html.indexOf('&lt');
     if (firsTag === -1) {
@@ -92,7 +99,7 @@ function cleanContent(html) {
     html = html.replaceAll('data-wait=""', 'data-wait');
     html = html.replaceAll('data-toggle=""', 'data-toggle');
     html = html.replaceAll('data-toggle-close=""', 'data-toggle-close');
-    html = html.replaceAll('data-theme-dark=""', 'data-theme-dark');
+    html = html.replaceAll('data-scheme-dark=""', 'data-scheme-dark');
     html = html.replaceAll('data-toggle-escapable=""', 'data-toggle-escapable');
     html = html.replaceAll('data-toggle-dismissible=""', 'data-toggle-dismissible');
     html = html.replaceAll('@click.stop=""', '@click.stop');
@@ -130,9 +137,11 @@ function copyCode(event) {
     var code = getContent(event.target);
     code = code.replace('&ltscript src="//unpkg.com/alpinejs" defer&gt&lt/script&gt', '<script src="//unpkg.com/alpinejs" defer></script>');
     navigator.clipboard.writeText(code).then(function() {
-        Spry.toggle('#copy-code-modal');
+        document.getElementById('copy-code-modal').classList.add('open');
+        // Spry.toggle('#copy-code-modal');
         setTimeout(() => {
-            Spry.toggle('#copy-code-modal', 'close');
+            // Spry.toggle('#copy-code-modal', 'close');
+            document.getElementById('copy-code-modal').classList.remove('open');
         }, 2000);
     }, function(err) {
         console.error('Async: Could not copy text: ', err);
@@ -161,7 +170,7 @@ function loadCodeContainer(el) {
     var html = getContent(el);
     html = html.replaceAll('<', '&lt').replaceAll('>', '&gt');
 
-    var codeDivContents = '<pre class="mb-0"><code class="language-html'+(elem.classList.contains('with-wrap')?' pre-wrap':'')+'">' + html + '</code></pre>';
+    var codeDivContents = '<pre class="mb-0"><code class="language-html bg-surface w block p-4 auto'+(elem.classList.contains('with-wrap')?' pre-wrap':'')+'">' + html + '</code></pre>';
 
     codeDiv.innerHTML = codeDivContents;
     Prism.highlightElement(codeDiv.querySelector('.language-html'));
@@ -203,7 +212,7 @@ document.querySelectorAll('.show-code').forEach((elem, index) => {
     var languageFooterNote = '';
 
     if (languages && languages.length) {    
-        languageSelector += '<div class="items-center flex mr-1"><select class="language-selector dense pr-3 border/20" onchange="loadCodeContainer(this)">';
+        languageSelector += '<div class="items-center flex mr-1"><select class="language-selector dense pr-4 border/20" onchange="loadCodeContainer(this)">';
         languages.forEach(language => {
             languageKey = language.getAttribute('data-language');
             languageSelector += '<option value="'+languageKey+'">'+languageNames[languageKey]+'</option>';
@@ -219,7 +228,7 @@ document.querySelectorAll('.show-code').forEach((elem, index) => {
 
     var innerContents = elem.innerHTML;
 
-    elem.outerHTML = '<article class="mb-3 outline g-0 code-content-container" id="code-container-'+index+'"><header class="pr-1 sm md:md"><h4>'+elem.getAttribute('data-title')+' '+badge+tooltipWarning+'</h4><div class="no-wrap flex">'+languageSelector+'<button class="shy icon link" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button onclick="loadCodeContainer(this)" data-toggle="#code-'+toggleId+'" class="shy icon link" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link" title="Copy HTML to Clipboard" onclick="copyCode(event); setTimeout(() => {this.classList.remove(\'open\'); this.classList.remove(\'active\'); this.setAttribute(\'aria-pressed\', false)}, 2000)" data-toggle><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg><svg viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg></button></div></header>'+headerNotes+'<div class="p-0 mt-0"><div id="code-'+toggleId+'" class="code-container toggle-container">'+codeDiv+'</div></div><div class="p-2 code-content">'+innerContents+'<div class="code-resize-handle"></div></div>'+footerNotes+'</article>';
+    elem.outerHTML = '<article class="outline code-content-container bg-theme" id="code-container-'+index+'"><header class="block md:flex"><h4>'+elem.getAttribute('data-title')+' '+badge+tooltipWarning+'</h4><div class="flex content-end mt-2 md:mt-0">'+languageSelector+'<button class="shy icon link" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button onclick="loadCodeContainer(this)" data-toggle="#code-'+toggleId+'" class="shy icon link" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link" title="Copy HTML to Clipboard" onclick="copyCode(event); setTimeout(() => {this.classList.remove(\'open\'); this.classList.remove(\'active\'); this.setAttribute(\'aria-pressed\', false)}, 2000)" data-toggle><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg><svg viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg></button></div></header>'+headerNotes+'<div class="p-0 mt-0"><div id="code-'+toggleId+'" class="code-container toggle-container">'+codeDiv+'</div></div><div class="p-3 md:p-4 code-content">'+innerContents+'<div class="code-resize-handle"></div></div>'+footerNotes+'</article>';
 });
 
 document.querySelectorAll('.code-resize-handle').forEach((elem) => {

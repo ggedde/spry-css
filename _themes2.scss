@@ -8,6 +8,7 @@
 * Spry Colors
 */
 
+
 $colorNames: ();
 $themeNames: ();
 @each $theme_name, $theme_values in variables.$themes {
@@ -23,7 +24,7 @@ $themeNames: ();
 		$themeHandle: ':root';	
 	}
 
-	#{$themeHandle} {
+	#{$themeHandle}, [class*=scheme-] {
 
 		color-scheme: #{map.get($theme_values, 'scheme')};
 		--theme-accent: #{map.get($theme_values, 'accent')};
@@ -33,13 +34,11 @@ $themeNames: ();
 		--theme-input : #{map.get($theme_values, 'input')};
 		--theme-scheme: #{map.get($theme_values, 'scheme')};
 		--theme-color : #{map.get($theme_values, 'color')};
-		--theme-surface : #{map.get($theme_values, 'surface')};
 
 		@if list.index(variables.$themes, ($theme_name $theme_values)) == 1 {
 			--surface-dir: -1;
-			--surface-lvl: 0;
+			--surface-lvl: 1;
 			--surface-val: 7;
-			--surface-start: var(--surface-start-light);
 		}
 
 		@each $color_name, $color_value in variables.$colors {
@@ -47,7 +46,26 @@ $themeNames: ();
 				--#{"" + $color_name}: #{map.get($color_value, $theme_name)};
 			}
 		}
+
+		// @for $i from 0 through 10 {
+		// 	.border\!\-#{$i} {
+		// 		@if (map.get($theme_values, 'scheme') == dark) {
+		// 			--bdr-l: #{calc(1 - ($i / 10))};
+		// 		} @else {
+		// 			--bdr-l: #{calc(($i / 10) + 1)};
+		// 		}
+		// 	}
+		// 	.border\!\+#{$i} {
+		// 		@if (map.get($theme_values, 'scheme') == dark) {
+		// 			--bdr-l: #{calc(($i / 10) + 1)};
+		// 		} @else {
+		// 			--bdr-l: #{calc(1 - ($i / 10))};
+		// 		}
+		// 	}
+		// }
 	}
+
+	
 }
 
 :root, :where(#{$themeNames}) {
@@ -64,6 +82,15 @@ $themeNames: ();
 	.h\:color\/#{$i}:hover {
 		--clr-a: #{calc($i / 10)};
 	}
+	.bg\/#{$i},
+	.h\:bg\/#{$i}:hover {
+		--bg-a: #{calc($i / 10)};
+	}
+	.border\/#{$i},
+	.h\:border\/#{$i}:hover {
+		--bdr-a: #{calc($i / 10)};
+	}
+
 	.color-#{$i},
 	.h\:color\-#{$i}:hover {
 		--clr-l: #{calc(1 - ($i / 10))};
@@ -81,10 +108,6 @@ $themeNames: ();
 	.h\:bg\+#{$i}:hover {
 		--bg-l: #{calc(($i / 10) + 1)};
 	}
-	.bg\/#{$i},
-	.h\:bg\/#{$i}:hover {
-		--bg-a: #{calc($i / 10)};
-	}
 	
 	.border-#{$i},
 	.h\:border\-#{$i}:hover {
@@ -94,13 +117,9 @@ $themeNames: ();
 	.h\:border\+#{$i}:hover {
 		--bdr-l: #{calc(($i / 10) + 1)};
 	}
-	.border\/#{$i},
-	.h\:border\/#{$i}:hover {
-		--bdr-a: #{calc($i / 10)};
-	}
 }
 
-:where(#{$themeNames}, [class*=scheme-]),
+:where(#{$themeNames}),
 :where(#{$themeNames}).outline,
 select option,
 .tooltip {
@@ -144,38 +163,6 @@ hr,
 	}
 }
 
-[class^=glow-],
-[class*=\ glow-],
-[class^=h\:glow-]:is(:hover, :focus, .active),
-[class*=\ h\:glow-]:is(:hover, :focus, .active) {
-	box-shadow: 0px 0px calc(4em * var(--glow-s)) calc(2em * var(--glow-s)) rgb(from var(--ui-glow) r g b / var(--glow-o));
-}
-
-[class^=bg-],
-[class*=\ bg-],
-[class^=h\:bg-]:is(:hover, :focus, .active),
-[class*=\ h\:bg-]:is(:hover, :focus, .active) {
-	background-color: hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 100%));
-}
-
-[class^=border-],
-[class*=\ border-],
-[class^=h\:border-]:is(:hover, :focus, .active),
-[class*=\ h\:border-]:is(:hover, :focus, .active) {
-	border-color: hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 100%));
-}
-
-[class^=links-] :where(a:not(.button)),
-[class*=\ links-] :where(a:not(.button)),
-[class^=h\:links-] a:not(.button,[class*=h\:color-]):is(:hover, :focus, .active),
-[class*=\ h\:links-] a:not(.button,[class*=h\:color-]):is(:hover, :focus, .active),
-[class^=color-],
-[class*=\ color-],
-[class^=h\:color-]:is(:hover, :focus, .active),
-[class*=\ h\:color-]:is(:hover, :focus, .active) {
-	color: var(--ui-text);
-}
-
 @each $color_name, $color_value in variables.$colors {
 	
 	.links-#{"" + $color_name} :where(a:not(.button)),
@@ -183,6 +170,8 @@ hr,
 	.h\:color-#{"" + $color_name}:is(:hover, :focus, .active),
 	.color-#{"" + $color_name} {
 		--ui-text: hsl(from var(--#{$color_name}) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 100%));
+		// color: hsl(from var(--#{$color_name}) h s var(--clr-l, l) / var(--clr-a, 100%));
+		color: var(--ui-text);
 	}
 
 	.color-to-#{"" + $color_name} {
@@ -192,11 +181,14 @@ hr,
 	.h\:bg-#{"" + $color_name}:is(:hover, :focus, .active),
 	.bg-#{"" + $color_name} {
 		--ui-bg: var(--#{$color_name});
+		background-color: hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 100%));
 	}
 
 	.h\:glow-#{"" + $color_name}:is(:hover, :focus, .active),
 	.glow-#{"" + $color_name} {
 		--ui-glow: var(--#{$color_name});
+		--shadow: .8;
+		box-shadow: 0px 0px 2em 0 rgb(from var(--ui-glow) r g b / var(--shadow));
 	}
 
 	.bg-to-#{"" + $color_name} {
@@ -207,6 +199,7 @@ hr,
 	.border-#{"" + $color_name} {
 		--ui-border: var(--#{$color_name});
 		--ui-input: var(--#{$color_name});
+		border-color: hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 100%));
 	}
 
 	.border-to-#{"" + $color_name} {
@@ -215,17 +208,13 @@ hr,
 }
 
 .color-theme {
-	--ui-text: hsl(from var(--theme-color) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 100%));
+	color: hsl(from var(--theme-color) h s var(--clr-l, l) / var(--clr-a, 100%));
 }
 .bg-theme {
-	--ui-bg: var(--theme-bg);
+	background-color: hsl(from var(--theme-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 100%));
 }
 .border-theme {
-	--ui-border: var(--theme-border);
-	--ui-input: var(--theme-border);
-}
-.glow-theme {
-	--ui-glow: var(--theme-bg);
+	border-color: hsl(from var(--theme-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
 }
 
 .color-to-theme {
@@ -303,56 +292,42 @@ hr,
 }
 
 .surface {
-	background-color: hsl(from var(--ui-bg) h s calc(l + var(--surface-start) + (var(--surface-lvl) * var(--surface-val) * var(--surface-dir))) / var(--bg-a, 100%));
+
+	background-color: hsl(from var(--ui-bg) h s calc(l + (var(--surface-lvl) * var(--surface-val) * var(--surface-dir))) / var(--bg-a, 100%));
 	border-color: hsl(from var(--ui-border) h s calc(l * var(--bdr-l, 1) + (((var(--surface-lvl) - 1) * var(--surface-val)) * var(--surface-dir))) / var(--bdr-a, 100%));
 }
 
 .surface .surface {
-	--surface-lvl: 1;
+	--surface-lvl: 2;
 	.surface {
-		--surface-lvl: 2;
+		--surface-lvl: 3;
 		.surface {
-			--surface-lvl: 3;
+			--surface-lvl: 4;
 		}
 	}
 }
 
 .scheme-toggle {
 	--surface-dir: 1;
-	--surface-start: var(--surface-start-dark);
 	color-scheme: dark;
-	.scheme-toggle {
-		--surface-dir: -1;
-		color-scheme: light;
-		--surface-start: var(--surface-start-light);
-	}
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		--surface-dir: 1;
-		--surface-start: var(--surface-start-dark);
 	}
 	.scheme-toggle {
 		--surface-dir: -1;
 		color-scheme: light;
-		--surface-start: var(--surface-start-light);
-		.scheme-toggle {
-			--surface-dir: 1;
-			color-scheme: dark;
-			--surface-start: var(--surface-start-dark);
-		}
 	}
 }
 
 .scheme-light {
 	--surface-dir: -1;
-	--surface-start: var(--surface-start-light);
 	color-scheme: light;
 }
 
 .scheme-dark {
 	--surface-dir: 1;
-	--surface-start: var(--surface-start-dark);
 	color-scheme: dark;
 }
