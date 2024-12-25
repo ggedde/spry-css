@@ -77,14 +77,7 @@ ul ul {
 	background-color: inherit;
 }
 
-.slow {
-    --speed: .8s;
-}
-
-.fast {
-    --speed: .2s;
-}
-
-.instant {
-    --speed: 0s;
+.peek,
+.shy {
+	transition: opacity var(--speed) var(--ease);
 }

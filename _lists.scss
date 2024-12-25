@@ -40,7 +40,7 @@
 		}
 	}
 
-	a {
+	:where(a) {
 		@extend %ui;
 		@extend %ui-border-radius;
 		color: hsl(from var(--ui-accent) h s var(--clr-l, l) / var(--clr-a, 100%));

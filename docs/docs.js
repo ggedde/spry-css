@@ -183,7 +183,7 @@ document.querySelectorAll('.show-code').forEach((elem, index) => {
     var note = (elem.hasAttribute('data-note') ? '<p>'+elem.getAttribute('data-note')+'</p>' : '');
     var warning = (elem.hasAttribute('data-warning') ? '<p class="color-warning">'+elem.getAttribute('data-warning')+'</p>' : '');
     var footerNote = (elem.hasAttribute('data-footer-note') ? '<p>'+elem.getAttribute('data-footer-note')+'</p>' : '');
-    var codeDiv = '<div class="toggle-content"><div class="code-preview-container"></div></div>';
+    var codeDiv = '<div class="collapse"><div class="code-preview-container hidden"></div></div>';
 
     var innerContents = elem.innerHTML;
     _panelContents['code-container-'+index] = innerContents+'';
@@ -218,7 +218,7 @@ document.querySelectorAll('.show-code').forEach((elem, index) => {
             languageSelector += '<option value="'+languageKey+'">'+languageNames[languageKey]+'</option>';
             languageNote = (language.hasAttribute('data-note') ? '<p>'+language.getAttribute('data-note')+'</p>' : '');
             languageWarning = (language.hasAttribute('data-warning') ? '<p class="color-warning">'+language.getAttribute('data-warning')+'</p>' : '');
-            languageFooterNote = (language.hasAttribute('data-footer-note') ? '<div class="language-'+languageKey+' note p-2 bg-faint mt-0">'+language.getAttribute('data-footer-note')+'</div>' : '');
+            languageFooterNote = (language.hasAttribute('data-footer-note') ? '<footer class="language-'+languageKey+' note p-2 bg-faint mt-0">'+language.getAttribute('data-footer-note')+'</footer>' : '');
 
             headerNotes += languageNote || languageWarning ? '<div class="language-'+languageKey+' note bg-faint bb-1 py-2 mt-0">' + languageNote + languageWarning + '</div>' : '';
             footerNotes = languageFooterNote + footerNotes;
@@ -228,7 +228,7 @@ document.querySelectorAll('.show-code').forEach((elem, index) => {
 
     var innerContents = elem.innerHTML;
 
-    elem.outerHTML = '<article class="outline code-content-container bg-theme" id="code-container-'+index+'"><header class="block md:flex"><h4>'+elem.getAttribute('data-title')+' '+badge+tooltipWarning+'</h4><div class="flex content-end mt-2 md:mt-0">'+languageSelector+'<button class="shy icon link" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button onclick="loadCodeContainer(this)" data-toggle="#code-'+toggleId+'" class="shy icon link" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link" title="Copy HTML to Clipboard" onclick="copyCode(event); setTimeout(() => {this.classList.remove(\'open\'); this.classList.remove(\'active\'); this.setAttribute(\'aria-pressed\', false)}, 2000)" data-toggle><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg><svg viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg></button></div></header>'+headerNotes+'<div class="p-0 mt-0"><div id="code-'+toggleId+'" class="code-container toggle-container">'+codeDiv+'</div></div><div class="p-3 md:p-4 code-content">'+innerContents+'<div class="code-resize-handle"></div></div>'+footerNotes+'</article>';
+    elem.outerHTML = '<article class="outline code-content-container bg-theme" id="code-container-'+index+'"><header class="block md:flex"><h4>'+elem.getAttribute('data-title')+' '+badge+tooltipWarning+'</h4><div class="flex content-end mt-2 md:mt-0">'+languageSelector+'<button class="shy icon link" title="Toggle Theme" onclick="toggleTheme(this.parentElement.parentElement.parentElement);"><svg viewBox="0 0 24 24"><path d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" /></svg></button><button onclick="loadCodeContainer(this)" data-toggle="#code-'+toggleId+'" class="shy icon link" title="Show HTML code"><svg class="lg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4m-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4z" /></svg></button><button class="shy icon link" title="Copy HTML to Clipboard" onclick="copyCode(event); setTimeout(() => {this.classList.remove(\'open\'); this.classList.remove(\'active\'); this.setAttribute(\'aria-pressed\', false)}, 2000)" data-toggle><svg viewBox="0 0 24 24"><path d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1z" /></svg><svg viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg></button></div></header>'+headerNotes+'<div class="p-0 mt-0"><div id="code-'+toggleId+'" class="code-container">'+codeDiv+'</div></div><div class="p-3 md:p-4 code-content">'+innerContents+'<div class="code-resize-handle"></div></div>'+footerNotes+'</article>';
 });
 
 document.querySelectorAll('.code-resize-handle').forEach((elem) => {

@@ -54,7 +54,7 @@ article {
 		@extend %ui-margin-above-none;
 	}
 
-	>:is(header, footer) {
+	>:where(header, footer) {
 		@extend %ui;
 		@extend %ui-color;
 		@extend %ui-roomy;

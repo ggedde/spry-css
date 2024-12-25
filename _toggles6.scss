@@ -5,8 +5,7 @@
 * Spry Toggles
 */
 
-.toggle {
-	margin: 0;
+:is(.toggle, .toggle-next) {
 	user-select: none;
 	& :is(svg,img):nth-of-type(2),
 	&:not(:has([type])):focus-within:has(:is(svg,img):nth-of-type(2)) :is(svg,img):first-of-type,
@@ -49,9 +48,12 @@
 * https://caniuse.com/?search=calc-size
 */
 
-@mixin toggle-styles($prefix) {
+@mixin collapse-toggle-styles($prefix) {
 
-	:where(#{$prefix}collapse) > *,
+	#{$prefix}toggle-content {
+		z-index: 1;
+	}
+	#{$prefix}toggle-content > *,
 	:is(#{$prefix}h\:open, #{$prefix}f\:open) ul > li > ul {
 		@if $prefix == '.' {
 			@extend %closed;
@@ -61,8 +63,7 @@
 		}
 	}
 
-	#{$prefix}open:where(.collapse) > *,
-	#{$prefix}open > :where(.collapse) > * {
+	#{$prefix}open > :where(.toggle-content) > * {
 		@if $prefix == '.' {
 			@extend %open;
 		}
@@ -72,88 +73,39 @@
 	}
 }
 
-@include toggle-styles('.');
+@include collapse-toggle-styles('.');
 
 @each $breakpoint, $breakpoint_width in variables.$breakpoints {
 	@media screen and (min-width: #{$breakpoint_width}) {
-		@include toggle-styles('.#{$breakpoint}\\:');
+		@include collapse-toggle-styles('.#{$breakpoint}\\:');
 	}
 
 	@container (min-width: #{$breakpoint_width}) {
-		@include toggle-styles('.c-#{$breakpoint}\\:');
+		@include collapse-toggle-styles('.c-#{$breakpoint}\\:');
 	}
 }
 
-.toggle + ul {
+.toggle-next + * {
 	@extend %closed;
 }
 
-:is(.toggle:checked, .toggle:has(:checked)) + ul,
-:is(.toggle:checked, .toggle:has(:checked)) + :where(.collapse) > *,
+
+li :is(.toggle:checked, .toggle:has(:checked)) + ul,
+.toggle-container:has(> .toggle:checked, > .toggle :checked) > :where(.toggle-content) > *,
 .h\:open li:has(:focus-visible, :hover) > ul,
-.h\:open:hover > :where(.collapse) > *,
-.h\:open:focus-within > :where(.collapse) > *,
+.h\:open:hover > :where(.toggle-content) > *,
+.h\:open:focus-within > :where(.toggle-content) > *,
 .f\:open li:focus-within > ul,
-.f\:open:focus > :where(.collapse) > *,
-:where(.f\:open):has(> :focus, :focus-visible, :active) > :where(.collapse) > * {
+.toggle-next:checked + *,
+.toggle-next:has(:checked) + *,
+.f\:open:focus > :where(.toggle-content) > *,
+.f\:open:has(.toggle:focus, .toggle :focus, :focus-visible, :active) > :where(.toggle-content) > * {
 	@extend %open;
-}
-
-:is(.open,
-:has(> :is(.toggle:checked, .toggle:has(:checked)) + :where(.collapse)),
-.h\:open:hover,
-.h\:open:focus-within,
-.f\:open:focus,
-.f\:open:has(> :focus, :focus-visible, :active)) {
-	> :is(.toggle, label, button) .open\:rotate,
-	> .open\:rotate,
-	&.open\:rotate {
-		rotate: 180deg;
-	}
-	> :is(.toggle, label, button) .open\:flip,
-	> .open\:flip,
-	&.open\:flip {
-		scale: -1;
-	}
-	> :is(.toggle, label, button) .open\:revert,
-	> .open\:revert,
-	&.open\:revert {
-		display: revert;
-	}
-	> :is(.toggle, label, button) .open\:none,
-	> .open\:none,
-	&.open\:none {
-		display: none;
-	}
-	> :is(.toggle, label, button) .open\:pointer-none,
-	> .open\:pointer-none,
-	&.open\:pointer-none {
-		pointer-events: none;
-	}
-	> :is(.toggle, label, button) .open\:close,
-	> .open\:close,
-	&.open\:close {
-
-		&::before,
-		&::after {
-			height          : 1.2em;
-			width           : .12em;
-			box-shadow      : none;
-		}
-
-		&::before {
-			transform: rotate(45deg);
-		}
-
-		&::after {
-			transform: rotate(-45deg);
-		}
-	}
 }
 
 .clip-top, .clip-bottom, .clip-right, .clip-left {
 	clip-path: inset(0 -1900px -1900px -1900px);
-	// z-index: 1;
+	z-index: 1;
 }
 .clip-bottom {
 	clip-path: inset(-1900px -1900px 0 -1900px);

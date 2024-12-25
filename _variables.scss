@@ -25,9 +25,8 @@ $themes: (
         border: light-dark(#ccc, #444),
         color : light-dark(#555, #ccc),
         input : light-dark(#888, #888),
-        bg    : light-dark(#fff, #000),
+        bg    : light-dark(#fff, #111),
         ui    : light-dark(#ddd, #333),
-        surface    : light-dark(-6, 10),
     ),
     // dark: (
     //     scheme: dark,
@@ -41,13 +40,14 @@ $themes: (
 ) !default;
 
 $colors: (
-    // surface  : (default: light-dark(#eee, #000)),
     faint    : (default: light-dark(#eee, #333)),
     contrast : (default: light-dark(#333, #eee)),
+    stark    : (default: light-dark(#fff, #000)),
+    surface  : (default: light-dark(#eee, #000)),
     light    : (default: #eee),
     dark     : (default: #333),
-    // white    : (default: #fff),
-    // black    : (default: #000),
+    white    : (default: #fff),
+    black    : (default: #000),
     gray     : (default: #888),
     primary  : (default: #19d),
     success  : (default: #0a0),
@@ -117,15 +117,14 @@ $sizes: (
     --ease       : cubic-bezier(.45, .45, 0, 1); //cubic-bezier(.25, .8, .25, 1);
     --gapx       : #{map.get($gaps, 'default')};
     --gapy       : #{map.get($gaps, 'default')};
+    --glow-o     : .5;
+    --glow-s     : .5;
     --invert     : 50;
+    --layer      : 6;
     --max-height : 1900px;
     --origin     : top;
     --radius     : .25em;
     --shadow     : .12;
-    --glow-o     : .5;
-    --glow-s     : .5;
     --speed      : .4s;
     --transform  : translate3d(0, -2px, 0);
-    --surface-start-light: -6;
-    --surface-start-dark: 10;
 }

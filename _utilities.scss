@@ -145,6 +145,10 @@ General Utility Classes
 	scale: 1.08
 }
 
+.select-none {
+	user-select: none;
+}
+
 .appearance-none {
 	appearance: none;
 
@@ -153,6 +157,56 @@ General Utility Classes
 	&::-webkit-inner-spin-button {
 		display: none;
 	}
+}
+
+
+[class*=h\:glow-] {
+	transition: box-shadow var(--speed) var(--ease);
+}
+
+.h\:o-0:hover {
+	opacity: 0
+}
+
+:has(>.peek):hover > .peek {
+	opacity: 1;
+}
+
+.shy {
+	opacity: 0.6;
+	&:is(:hover, :focus) {
+		opacity: 1
+	}
+}
+
+@for $i from 1 through 10 {
+	.h\:o-#{$i}0:hover {
+		opacity: #{calc($i / 10)};
+	}
+
+	.shadow\/#{$i} {
+		--shadow: #{calc($i / 10)};
+	}
+
+	.glow\/#{$i} {
+		--glow-o: #{calc($i / 10)};
+	}
+
+	.glow-#{$i} {
+		--glow-s: #{calc($i / 10)};
+	}
+}
+
+.slow {
+    --speed: .8s;
+}
+
+.fast {
+    --speed: .2s;
+}
+
+.instant {
+    --speed: 0s;
 }
 
 /****************************************************************************
@@ -643,12 +697,26 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		rotate: 90deg
 	}
 
+	#{$prefix}rotate,
 	#{$prefix}rotate-180 {
 		rotate: 180deg
 	}
 
 	#{$prefix}rotate-270 {
 		rotate: 270deg
+	}
+	
+	#{$prefix}flip {
+		scale: -1;
+	}
+
+	#{$prefix}transition {
+		transition: var(--speed) var(--ease);
+	}
+
+	#{$prefix}transition-none {
+		--speed: 0s;
+		transition: none;
 	}
 
 	#{$prefix}from-top {
@@ -740,47 +808,23 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	&none {
 		display: none;
 	}
-}
+	&close {
+		background: transparent !important;
+		&::before,
+		&::after {
+			height          : 1.2em;
+			width           : .12em;
+			box-shadow      : none;
+			background-color: currentColor;
+		}
 
-[class*=h\:glow-] {
-	transition: box-shadow var(--speed) var(--ease);
-}
+		&::before {
+			transform: rotate(45deg);
+		}
 
-.h\:o-0:hover {
-	opacity: 0
-}
-
-.peek,
-.shy {
-	transition: opacity var(--speed) var(--ease);
-}
-
-:has(>.peek):hover > .peek {
-	opacity: 1;
-}
-
-.shy {
-	opacity: 0.6;
-	&:is(:hover, :focus) {
-		opacity: 1
-	}
-}
-
-@for $i from 1 through 10 {
-	.h\:o-#{$i}0:hover {
-		opacity: #{calc($i / 10)};
-	}
-
-	.shadow\/#{$i} {
-		--shadow: #{calc($i / 10)};
-	}
-
-	.glow\/#{$i} {
-		--glow-o: #{calc($i / 10)};
-	}
-
-	.glow-#{$i} {
-		--glow-s: #{calc($i / 10)};
+		&::after {
+			transform: rotate(-45deg);
+		}
 	}
 }
 

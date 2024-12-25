@@ -59,7 +59,8 @@ body:has(.modal.open:not(.bg-none)) {
 }
 
 .modal.open,
-:is(.toggle, .toggle-next):has(:checked)+.modal {
+.toggle:checked+.modal,
+.toggle:has(:checked)+.modal {
 	opacity       : 1;
 	pointer-events: all;
 

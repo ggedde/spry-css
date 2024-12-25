@@ -33,13 +33,10 @@ $themeNames: ();
 		--theme-input : #{map.get($theme_values, 'input')};
 		--theme-scheme: #{map.get($theme_values, 'scheme')};
 		--theme-color : #{map.get($theme_values, 'color')};
-		--theme-surface : #{map.get($theme_values, 'surface')};
 
 		@if list.index(variables.$themes, ($theme_name $theme_values)) == 1 {
-			--surface-dir: -1;
-			--surface-lvl: 0;
-			--surface-val: 7;
-			--surface-start: var(--surface-start-light);
+			--layer-dir: -1;
+			--layer-lvl: 1;
 		}
 
 		@each $color_name, $color_value in variables.$colors {
@@ -302,57 +299,50 @@ hr,
 	border-image: radial-gradient(circle, hsl(from var(--ui-border) h s var(--bdr-l, l) / var(--bdr-a, 100%)) 20%, hsl(from var(--bdr-to) h s var(--bdr-l, l) / var(--bdr-a, 100%)) 115%);
 }
 
-.surface {
-	background-color: hsl(from var(--ui-bg) h s calc(l + var(--surface-start) + (var(--surface-lvl) * var(--surface-val) * var(--surface-dir))) / var(--bg-a, 100%));
-	border-color: hsl(from var(--ui-border) h s calc(l * var(--bdr-l, 1) + (((var(--surface-lvl) - 1) * var(--surface-val)) * var(--surface-dir))) / var(--bdr-a, 100%));
+.layer {
+	background-color: hsl(from var(--ui-bg) h s calc(l + (var(--layer-lvl) * var(--layer) * var(--layer-dir))) / var(--bg-a, 100%));
+	border-color: hsl(from var(--ui-border) h s calc(l * var(--bdr-l, 1) + (((var(--layer-lvl) - 1) * var(--layer)) * var(--layer-dir))) / var(--bdr-a, 100%));
 }
 
-.surface .surface {
-	--surface-lvl: 1;
-	.surface {
-		--surface-lvl: 2;
-		.surface {
-			--surface-lvl: 3;
+.layer .layer {
+	--layer-lvl: 2;
+	.layer {
+		--layer-lvl: 3;
+		.layer {
+			--layer-lvl: 4;
 		}
 	}
 }
 
 .scheme-toggle {
-	--surface-dir: 1;
-	--surface-start: var(--surface-start-dark);
+	--layer-dir: 1;
 	color-scheme: dark;
 	.scheme-toggle {
-		--surface-dir: -1;
+		--layer-dir: -1;
 		color-scheme: light;
-		--surface-start: var(--surface-start-light);
 	}
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--surface-dir: 1;
-		--surface-start: var(--surface-start-dark);
+		--layer-dir: 1;
 	}
 	.scheme-toggle {
-		--surface-dir: -1;
+		--layer-dir: -1;
 		color-scheme: light;
-		--surface-start: var(--surface-start-light);
 		.scheme-toggle {
-			--surface-dir: 1;
+			--layer-dir: 1;
 			color-scheme: dark;
-			--surface-start: var(--surface-start-dark);
 		}
 	}
 }
 
 .scheme-light {
-	--surface-dir: -1;
-	--surface-start: var(--surface-start-light);
+	--layer-dir: -1;
 	color-scheme: light;
 }
 
 .scheme-dark {
-	--surface-dir: 1;
-	--surface-start: var(--surface-start-dark);
+	--layer-dir: 1;
 	color-scheme: dark;
 }

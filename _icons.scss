@@ -10,9 +10,9 @@
 .icon,
 .icon> :is(svg, img) {
 	fill: currentColor;
-	transition:
-		rotate var(--speed) var(--ease),
-		scale var(--speed) var(--ease);
+	transition-property: scale, transform, rotate, opacity;
+	transition-duration: var(--speed);
+	transition-timing-function: var(--ease);
 }
 
 :is(button, .button, .alert, .icon) :is(svg, img),
@@ -38,19 +38,26 @@
 .icon {
 	opacity   : 1;
 	box-shadow: none;
+	--speed: .2s;
 
 	&:is(.next, .prev, .up, .down, .close, .menu, .dots) {
 
 		&::before,
 		&::after {
-			content   : '';
-			background: transparent;
-			display   : block;
-			inset     : 0;
-			margin    : auto;
-			opacity   : 1;
-			position  : absolute;
-			transition: all .2s var(--ease);
+			content      : '';
+			background   : transparent;
+			border       : 0;
+			border-radius: .12em;
+			box-shadow   : none;
+			display      : block;
+			height       : 1.2em;
+			inset        : 0;
+			margin       : auto;
+			margin       : auto;
+			opacity      : 1;
+			position     : absolute;
+			transition   : var(--speed) var(--ease);
+			width        : .12em;
 		}
 	}
 
