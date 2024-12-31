@@ -424,26 +424,17 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	}
 
 	#{$prefix}overlay {
-		// width: 100%;
 		position     : absolute;
-		// overflow: hidden;
 		min-width    : 100%;
 		place-content: inherit;
 		text-align   : inherit;
-	}
-
-	// #{$prefix}overlay {
-	// 	width: 100%;
-	// 	position: absolute;
-	// 	overflow: hidden;
-	// 	min-width: min-content;
-	// 	// z-index: 1;
-	// }
-
-	#{$prefix}overlay>* {
-		position : relative;
-		width    : 100%;
-		min-width: min-content;
+		z-index: 1;
+		>* {
+			position : relative;
+			width    : 100%;
+			min-width: min-content;
+			overflow: visible;
+		}
 	}
 
 	#{$prefix}relative {
@@ -745,7 +736,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	}
 
 	#{$prefix}from-default {
-		--transform: translate3d(0, -2px, 0);
+		--transform: translate3d(0, 0, 0);
 		--origin   : top;
 	}
 

@@ -75,7 +75,7 @@
 /// Default Shut State
 /// @output - Contents
 @mixin closed {
-	height                    : calc-size(auto, calc( size - size ));
+	height                    : calc-size(auto, calc(size - size));
 	max-height                : 0;
 	opacity                   : 0;
 	pointer-events            : none;
@@ -84,15 +84,44 @@
 	transition-property       : height, max-height, transform, opacity;
 	transition-duration       : var(--speed);
 	transition-timing-function: var(--ease);
-	// z-index                   : 1;
 }
 
 /// Opened State
 /// @output - Contents
 @mixin open {
+	opacity       : 1;
+	max-height    : var(--max-height);
+	height        : calc-size(auto, size);
+	transform     : translate3d(0, 0, 0);
+	pointer-events: inherit;
+}
+
+/// Default Shut State
+/// @output - Contents
+@mixin closed-inner {
+	opacity           : 0;
+	display           : grid;
+	grid-template-rows: 0fr;
+	pointer-events    : none;
+	transition        : var(--speed) var(--ease);
+
+	>* {
+		overflow        : hidden;
+		transform       : var(--transform);
+		transform-origin: var(--origin);
+		transition      : transform var(--speed) var(--ease);
+	}
+}
+
+/// Opened State
+/// @output - Contents
+@mixin open-inner {
 	opacity           : 1;
-	max-height        : var(--max-height);
-	height            : calc-size(auto, size);
-	transform         : translate3d(0, 0, 0);
+	grid-template-rows: 1fr;
 	pointer-events    : inherit;
+
+	>* {
+
+		transform: translate3d(0, 0, 0);
+	}
 }

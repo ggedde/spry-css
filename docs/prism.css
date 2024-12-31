@@ -6,7 +6,8 @@ https://prismjs.com/download.html#themes=prism&languages=css+scss&plugins=toolba
  * @author Lea Verou
  */
 
-html:has(.code-content-container:target) {
+html:has(.code-content-container:target),
+html:has(#toggle-group:target) {
 	scroll-padding-top: 200px;
 }
 @keyframes blinkTarget {

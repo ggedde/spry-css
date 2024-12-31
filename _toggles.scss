@@ -51,8 +51,8 @@
 
 @mixin toggle-styles($prefix) {
 
-	:where(#{$prefix}collapse) > *,
 	:is(#{$prefix}h\:open, #{$prefix}f\:open) ul > li > ul {
+		z-index: 1;
 		@if $prefix == '.' {
 			@extend %closed;
 		}
@@ -61,13 +61,22 @@
 		}
 	}
 
-	#{$prefix}open:where(.collapse) > *,
-	#{$prefix}open > :where(.collapse) > * {
+	:where(#{$prefix}collapse) {
 		@if $prefix == '.' {
-			@extend %open;
+			@extend %closed-inner;
 		}
 		@else {
-			@include mixins.open;
+			@include mixins.closed-inner;
+		}
+	}
+
+	#{$prefix}open:where(.collapse),
+	#{$prefix}open > :where(.collapse) {
+		@if $prefix == '.' {
+			@extend %open-inner;
+		}
+		@else {
+			@include mixins.open-inner;
 		}
 	}
 }
@@ -89,18 +98,24 @@
 }
 
 :is(.toggle:checked, .toggle:has(:checked)) + ul,
-:is(.toggle:checked, .toggle:has(:checked)) + :where(.collapse) > *,
 .h\:open li:has(:focus-visible, :hover) > ul,
-.h\:open:hover > :where(.collapse) > *,
-.h\:open:focus-within > :where(.collapse) > *,
-.f\:open li:focus-within > ul,
-.f\:open:focus > :where(.collapse) > *,
-:where(.f\:open):has(> :focus, :focus-visible, :active) > :where(.collapse) > * {
+.f\:open li:focus-within > ul {
 	@extend %open;
 }
 
+:is(.toggle:checked, .toggle:has(:checked)) + :where(.collapse),
+.toggle-group:has(.toggle:checked, .toggle :checked) > :where(.collapse),
+.h\:open:hover > :where(.collapse),
+.h\:open:focus-within > :where(.collapse),
+.f\:open:focus > :where(.collapse),
+:where(.f\:open):has(> :focus, :focus-visible, :active) > :where(.collapse) {
+	@extend %open-inner;
+}
+
 :is(.open,
-:has(> :is(.toggle:checked, .toggle:has(:checked)) + :where(.collapse)),
+.toggle-group:has(.toggle:checked, .toggle :checked),
+.toggle:checked,
+.toggle:has(:checked),
 .h\:open:hover,
 .h\:open:focus-within,
 .f\:open:focus,

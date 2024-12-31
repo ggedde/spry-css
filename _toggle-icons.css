@@ -1,11 +1,10 @@
-.open,
-:is(.toggle:checked, .toggle:has(:checked)) + :where(.collapse),
+:is(.open,
 .toggle:checked,
 .toggle:has(:checked),
 .h\:open:hover,
 .h\:open:focus-within,
 .f\:open:focus,
-.f\:open:has(> :focus, :focus-visible, :active) {
+.f\:open:has(> :focus, :focus-visible, :active)) {
 	> :is(.toggle, label, button) .open\:rotate,
 	> .open\:rotate,
 	&.open\:rotate {
@@ -15,36 +14,6 @@
 	> .open\:flip,
 	&.open\:flip {
 		scale: -1;
-	}
-	> :is(.toggle, label, button) .open\:block,
-	> .open\:block,
-	&.open\:block {
-		display: block;
-	}
-	> :is(.toggle, label, button) .open\:flex,
-	> .open\:flex,
-	&.open\:flex {
-		display: flex;
-	}
-	> :is(.toggle, label, button) .open\:grid,
-	> .open\:grid,
-	&.open\:grid {
-		display: grid;
-	}
-	> :is(.toggle, label, button) .open\:inline,
-	> .open\:inline,
-	&.open\:inline {
-		display: inline;
-	}
-	> :is(.toggle, label, button) .open\:inline-block,
-	> .open\:inline-block,
-	&.open\:inline-block {
-		display: inline-block;
-	}
-	> :is(.toggle, label, button) .open\:inline-flex,
-	> .open\:inline-flex,
-	&.open\:inline-flex {
-		display: inline-flex;
 	}
 	> :is(.toggle, label, button) .open\:revert,
 	> .open\:revert,

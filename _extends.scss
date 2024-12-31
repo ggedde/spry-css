@@ -12,6 +12,7 @@
 	color           : inherit;
 	display         : inline-flex;
 	font-size       : 100%;
+	font-family     : inherit;
 	justify-content : center;
 	gap             : 1em;
 	min-height      : 2.32em;
@@ -107,6 +108,13 @@
 }
 %open {
 	@include mixins.open;
+}
+
+%closed-inner {
+	@include mixins.closed-inner;
+}
+%open-inner {
+	@include mixins.open-inner;
 }
 
 %icon-arrow {

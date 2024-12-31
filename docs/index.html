@@ -1253,20 +1253,20 @@ $borders: (
                         </label>
 
                         <div class="collapse"> <!-- Content-->
-                            <div class="hidden">
+                            <div>
                                 <div class="b-2 p-2 mt-1">
                                     <p class="mt-1">Lorem Sed diam nonumy eirm Lorem ipsum dolor sit amet.</p>
                                     <p class="pb-2">Sed diam nonumy eirm Lorem ipsum dolor sit amet.</p>
                                     
                                     <!-- Second Collapse with Toggle -->
-                                    <div class="from-left slow">
+                                    <div class=" slow">
                                         <label class="button toggle"> <!-- Inner Toggle-->
                                             Open Another From the Left Slowly
-                                            <span class="none open:inline">GG</span>
+                                            <span class="none open:revert ml-n2">- Inner Opened</span>
                                             <input id="gggg" type="checkbox">
                                         </label>
-                                        <div class="collapse hidden"> <!-- Inner Content-->
-                                            <div class="hidden">
+                                        <div class="collapse from-left hidden"> <!-- Inner Content-->
+                                            <div>
                                                 <div class="b-2 p-3 mt-2">
                                                     <p class="mt-2">Lorem Sed diam nonumy eirm Lorem ipsum dolor sit amet.</p>
                                                     <p class="pb-2">Sed diam nonumy eirm Lorem ipsum dolor sit amet.</p>
@@ -1276,8 +1276,7 @@ $borders: (
                                         <label class="none button toggle open:block" for="gggg"> <!-- Inner Toggle-->
                                             bbb
                                         </label>
-                                    </div>
-                                    
+                                    </div>        
                                 </div>
                             </div>
                         </div>
@@ -1285,35 +1284,15 @@ $borders: (
                 </div>
 
                 <div class="show-code" data-title="Collapse with Overlay and Focus Open" data-warning="Some browsers require tabindex on the toggle" data-footer-note="* See &lt;a href='#toggles'&gt;Toogles&lt;/a&gt;, &lt;a href='#accordions'&gt;Accordions&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
-                    <span class="h:open relative inline-block">
-                        <button tabindex="0" class="toggle open:pointer-none"> <!-- Toggle - Some browsers require tabindex -->
+                    <span class="relative f:open">
+                        <label class="button open:pointer-none index-2" tabindex="0"> <!-- Toggle - Some browsers require tabindex -->
                             View Items
-                            <svg class="icon xl open:rotate" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                        </button>
-                        <div class="collapse overlay hidden from-top"> <!-- Overlay-->
-                            <div class="hidden">
-                                <nav class="list bg-faint round-bottom shadow p-1 b-1 g-1"> <!-- Content-->
-                                    <ul>
-                                        <li><a href="#" class="plain">Item 1</a></li>
-                                        <li><a href="#" class="plain">Item 2</a></li>
-                                        <li><a href="#" class="plain">Item 3</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </span>
-
-                    <br><br>
-
-                    <span class="relative f:open from-top">
-                        <label class="button open:pointer-none" tabindex="0"> <!-- Toggle - Some browsers require tabindex -->
-                            View Items
-                            <svg class="icon open:rotate lg" viewBox="0 0 24 24">
+                            <svg class="icon open:rotate" viewBox="0 0 24 24">
                                 <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
                             </svg>
                         </label>
-                        <div class="collapse overlay hidden"> <!-- Overlay-->
-                            <nav class="list bg-faint rb-2 shadow p-1 b-1 g-1"> <!-- Content-->
+                        <div class="collapse from-top overlay clip-top mt-n1"> <!-- Overlay-->
+                            <nav class="list bg-faint rb-2 shadow p-1 pt-2 b-1 bt-0 g-1"> <!-- Content-->
                                 <ul>
                                     <li><a href="#" class="plain">Item 1</a></li>
                                     <li><a href="#" class="plain">Item 2</a></li>
@@ -1326,10 +1305,10 @@ $borders: (
 
                 <div class="show-code" data-title="Collapse Nav with Hover Open" data-footer-note="* See &lt;a href='#lists'&gt;Lists&lt;/a&gt; and &lt;a href='#navs'&gt;Navs&lt;/a&gt; for more variations">
                     <div class="container index-1">
-                        <nav class="list indicators f:open open:side c-md:open:down c-md:sub:open:side c-md:row c-md:columns-auto c-md:sub:shadow bg-faint p-1 g-1">
+                        <nav class="list indicators h:open open:side c-md:open:down c-md:sub:open:side c-md:row c-md:columns-auto c-md:sub:shadow bg-faint p-1 g-1">
                             <ul>
                                 <li>
-                                    <a tabindex="0">Bdke 23</a>
+                                    <a tabindex="0">Link 1</a>
                                     <ul>
                                         <li><a href="#">Sub Link 1</a></li>
                                         <li><a href="#">Sub Link 2</a>
@@ -1375,115 +1354,6 @@ $borders: (
                                 </li>
                             </ul>
                         </nav>
-                    </div>
-                </div>
-
-                <div class="show-code" data-title="Material Design Icons">
-                    <div class="xs">
-                        <i class="icon next"></i>
-                        <i class="icon prev"></i>
-                        <i class="icon up"></i>
-                        <i class="icon down"></i>
-                        <i class="icon close"></i>
-                        <i class="icon menu"></i>
-                        <i class="icon dots"></i>
-                    </div>
-                    <div class="sm">
-                        <i class="icon next"></i>
-                        <i class="icon prev"></i>
-                        <i class="icon up"></i>
-                        <i class="icon down"></i>
-                        <i class="icon close"></i>
-                        <i class="icon menu"></i>
-                        <i class="icon dots"></i>
-                    </div>
-                    <div>
-                        <i class="icon next"></i>
-                        <i class="icon prev"></i>
-                        <i class="icon up"></i>
-                        <i class="icon down"></i>
-                        <i class="icon close"></i>
-                        <i class="icon menu"></i>
-                        <i class="icon dots"></i>
-                    </div>
-                    <div class="lg">
-                        <i class="icon next"></i>
-                        <i class="icon prev"></i>
-                        <i class="icon up"></i>
-                        <i class="icon down"></i>
-                        <i class="icon close"></i>
-                        <i class="icon menu"></i>
-                        <i class="icon dots"></i>
-                    </div>
-                    <div class="xl">
-                        <i class="icon next"></i>
-                        <i class="icon prev"></i>
-                        <i class="icon up"></i>
-                        <i class="icon down"></i>
-                        <i class="icon close"></i>
-                        <i class="icon menu"></i>
-                        <i class="icon dots"></i>
-                    </div>
-                </div>
-
-                <div class="show-code" data-title="Material Design Icons">
-                    <div class="xs">
-                        <button class="icon next"></button>
-                        <button class="icon prev"></button>
-                        <button class="icon up"></button>
-                        <button class="icon down"></button>
-                        <button class="icon close"></button>
-                        <button class="icon menu"></button>
-                        <button class="icon dots"></button>
-                    </div>
-                    <div class="sm">
-                        <button class="icon next"></button>
-                        <button class="icon prev"></button>
-                        <button class="icon up"></button>
-                        <button class="icon down"></button>
-                        <button class="icon close"></button>
-                        <button class="icon menu"></button>
-                        <button class="icon dots"></button>
-                    </div>
-                    <div>
-                        <button class="icon next"></button>
-                        <button class="icon prev"></button>
-                        <button class="icon up"></button>
-                        <button class="icon down"></button>
-                        <button class="icon close"></button>
-                        <button class="icon menu"></button>
-                        <button class="icon dots"></button>
-                    </div>
-                    <div class="lg">
-                        <button class="icon next"></button>
-                        <button class="icon prev"></button>
-                        <button class="icon up"></button>
-                        <button class="icon down"></button>
-                        <button class="icon close"></button>
-                        <button class="icon menu"></button>
-                        <button class="icon dots"></button>
-                    </div>
-                    <div class="xl">
-                        <button class="icon next"></button>
-                        <button class="icon prev"></button>
-                        <button class="icon up"></button>
-                        <button class="icon down"></button>
-                        <button class="icon close"></button>
-                        <button class="icon menu"></button>
-                        <button class="icon dots"></button>
-                    </div>
-                    <div class="collapse">
-                        <button onclick="this.parentElement.classList.toggle('open')">V</button>
-                        <div class="content">
-                            asdfasdf
-                        </div>
-                        <button class="icon next"></button>
-                        <button class="icon prev"></button>
-                        <button class="icon up"></button>
-                        <button class="icon down"></button>
-                        <button class="icon close"></button>
-                        <button class="icon menu open:close"></button>
-                        <button class="icon dots open:close"></button>
                     </div>
                 </div>
 
@@ -2130,122 +2000,18 @@ $borders: (
                 <p class="mt-3">Toggles can be a single element which toggle themselves or multiple elements consisting of Toggle Activators for a single Toggle Element</p>
                 <h5 class="mt-3">HTML Toggles with a checkbox or radio default to toggle the nextElementSibling</h5>
 
-<pre><code class="language-html">&lt;!-- HTML Toggle --&gt;
-&lt;label class="button toggle"&gt; &lt;!-- Toggle Activator --&gt;
-    &lt;span class="none checked:revert"&gt;Toggle Closed&lt;/span&gt;
-    &lt;span class="checked:none"&gt;Toggle Open&lt;/span&gt;
+<pre class="bg-surface p-3 r-2 b-1"><code class="language-html">&lt;!-- Toggle Activator --&gt;
+&lt;label class="button toggle"&gt;
+    &lt;span class="checked:none"&gt;Open&lt;/span&gt;
+    &lt;span class="none checked:revert"&gt;Close&lt;/span&gt;
     &lt;input type="checkbox"&gt;
 &lt;/label&gt;
-&lt;div class="collapse"&gt; &lt;!-- Toggle Element --&gt;
+
+&lt;!-- Toggle Element --&gt;
+&lt;div class="collapse"&gt;
     &lt;p&gt;Collapsed Content Here&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
-
-<h5 class="mt-3">HTML Toggles can also use labels with <code class="color-primary">for</code> to target other elements by id allowing you to have multiple activators for a toggled element.</h5>
-
-<pre><code class="language-html">&lt;!-- HTML Toggle with multiple Activators --&gt;
-&lt;label class="button toggle" for="target-1"&gt; &lt;!-- Toggle Activator 1 --&gt;
-    Activator 1
-&lt;/label&gt;
-
-&lt;label class="button toggle" for="target-1"&gt; &lt;!-- Toggle Activator 2 --&gt;
-    Activator 2
-&lt;/label&gt;
-
-&lt;label class="toggle none"&gt; &lt;!-- Hidden Activator --&gt;
-    &lt;input id="target-1" type="checkbox"&gt;
-&lt;/label&gt;
-&lt;div class="collapse"&gt; &lt;!-- Toggle Element --&gt;
-    &lt;p&gt;Collapsed Content Here&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;label class="button toggle" for="target-1"&gt; &lt;!-- Toggle Activator 3 --&gt;
-    Activator 3
-&lt;/label&gt;
-</code></pre>
-
-
-
-
-<h5 class="mt-3">Using Toggles with JS</h5>
-
-<pre><code class="language-html">&lt;!-- JS Toggle with multiple Activators --&gt;
-&lt;button class="toggle for-target-2" onclick="getElementById('target-2').classList.toggle('open'); document.querySelectorAll('.for-target-2').forEach(e =&gt; {e.classList.toggle('active')})"&gt; &lt;!-- Toggle Activator 1 --&gt;
-    Activator 1
-&lt;/button&gt;
-
-&lt;button class="toggle for-target-2" onclick="getElementById('target-2').classList.toggle('open'); document.querySelectorAll('.for-target-2').forEach(e =&gt; {e.classList.toggle('active')})"&gt; &lt;!-- Toggle Activator 2 --&gt;
-    Activator 2
-&lt;/button&gt;
-
-&lt;div class="collapse" id="target-2"&gt; &lt;!-- Toggle Element --&gt;
-    &lt;p&gt;Collapsed Content Here&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;button class="toggle for-target-2" onclick="getElementById('target-2').classList.toggle('open'); document.querySelectorAll('.for-target-2').forEach(e =&gt; {e.classList.toggle('active')})"&gt; &lt;!-- Toggle Activator 3 --&gt;
-    Activator 3
-&lt;/button&gt;
-</code></pre>
-
-                <!-- <table class="mb-2 mt-3 border-faint">
-                    <thead>
-                        <tr>
-                            <th width="320"><h4>Activator Attributes</h4></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="md:pl-2"><code class="color-primary">data-toggle="{selector}"</code></td>
-                            <td>This creates the activator, assigning it to the selector element.
-                                <div class="mt-1"><code class="color-primary">{selector}</code> can be:</div>
-                                <ul>
-                                    <li>Any valid css selector</li>
-                                    <li><code class="color-primary">next</code> which assigns it to the next sibling.</li>
-                                    <li><code class="color-primary">hover</code> which assigns it to the next sibling, but only on hover. Requires class <code class="color-primary">h:open</code>.</li>
-                                    <li><code class="color-gray">empty</code> which assigns it to itself.</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="md:pl-2"><code class="color-primary">data-toggle-action="{action}"</code></td>
-                            <td>Assigns the toggle action.
-                                <div class="mt-1"><code class="color-primary">{action}</code> can be:</div>
-                                <ul>
-                                    <li><code class="color-primary">open</code></li>
-                                    <li><code class="color-primary">close</code></li>
-                                    <li><code class="color-primary">toggle</code> <span class="color-gray">(default)</span> Toggles between open and close.</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="md:pl-2"><code class="color-primary">data-toggle-close="{selector}"</code></td>
-                            <td>Closes Toggle(s) by a valid css selector.
-                                <div class="mt-1"><code class="color-primary">{selector}</code> can be:</div>
-                                <ul>
-                                    <li>Any valid css selector</li>
-                                    <li><code class="color-gray">empty</code> which closes the closest <code class="color-primary">.open</code> ancestor.</li>
-                                </ul>
-                                <div class="my-1 mt-3"><code class="color-primary">{selector}</code> can start with <code class="color-primary">{*}</code> to be used with "closest".</div>
-                                <div><pre><code class="language-html">&lt;button data-toggle-close="{.tabs} .open"&gt;</code></pre>
-                                This will close all <code class="color-primary">.open</code> elements within the closest <code class="color-primary">.tabs</code> ancestor from the activator.</div>
-                            </td>
-                        </tr>
-                       
-                        <tr>
-                            <td class="md:pl-2"><code class="color-primary">data-toggle-timeout="{n}"</code></td>
-                            <td>Automatically closes the toggle after the timeout in milliseconds.</td>
-                        </tr>
-                        <tr>
-                            <td class="md:pl-2"><code class="color-primary">data-toggle-escapable</code></td>
-                            <td>Allows the toggle to close when clicking outside the toggle element or by pressing the ESC key.</td>
-                        </tr>
-                        <tr>
-                            <td class="md:pl-2"><code class="color-primary">data-toggle-dismissible</code></td>
-                            <td>Allows the toggle to close when clicking inside the toggle element on an actionable child element.</td>
-                        </tr>
-                    </tbody>
-                </table> -->
 
                 <table class="mb-2 mt-3 border-faint">
                     <thead>
@@ -2289,300 +2055,120 @@ $borders: (
                 </table>
 
                 <div class="show-code" data-title="Basic Toggle">
-                    <div class="language-select" data-language="html">
-                        <span class="toggle-container">
-                            <label class="button toggle">
-                                <span class="none checked:revert">
-                                    Toggle Closed
-                                </span>
-                                <span class="checked:none">
-                                    Toggle Open
-                                </span>
-                                <input type="checkbox">
-                            </label>
-
-                            <div class="toggle-content">
-                                <div class="hidden">
-                                    <p class="mt-2">
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                        sed diam nonumy eirmod tempor invidunt ut labore et dolore.
-                                        Nonumy eirmod tempor invidunt ut labore et dolore magna erat,
-                                        sed diam voluptua. At vero eos et accusam et justo duo
-                                        dolores et ea rebum. Stet clita kasd gubergren, no sea
-                                        takimata sanctus est Lorem ipsum dolor sit amet.
-                                    </p>
-                                    <p>
-                                        Sed diam nonumy eirm Lorem ipsum dolor sit amet,
-                                        consetetur sadipscing elitr, sed diam nonumy.
-                                    </p>
-                                </div>
-                            </div>
+                    <label class="button toggle">
+                        <span class="open:none">
+                            Open
                         </span>
-                    </div>
-
-                    <div class="language-select" data-language="js">
-                        <span class="collapse">
-                            <button onclick="this.querySelectorAll('span').forEach(element => element.classList.toggle('none'));this.parentElement.classList.toggle('open')">
-                                <span class="none">
-                                    Toggle Closed
-                                </span>
-                                <span>
-                                    Toggle Open
-                                </span>
-                            </button>
-
-                            <div class="content hidden">
-                                <p class="mt-2">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore.
-                                    Nonumy eirmod tempor invidunt ut labore et dolore magna erat,
-                                    sed diam voluptua. At vero eos et accusam et justo duo
-                                    dolores et ea rebum. Stet clita kasd gubergren, no sea
-                                    takimata sanctus est Lorem ipsum dolor sit amet.
-                                </p>
-                                <p>
-                                    Sed diam nonumy eirm Lorem ipsum dolor sit amet,
-                                    consetetur sadipscing elitr, sed diam nonumy.
-                                </p>
-                            </div>
+                        <span class="none open:revert">
+                            Close
                         </span>
-                    </div>
-
-                    <div class="language-select" data-language="petiteVue">
-                        <div id="togglePetiteVue" class="collapse" :class="{open: open}">
-                            <button @click="open = !open">
-                                <span :class="{none: !open}">
-                                    Toggle Closed
-                                </span>
-                                <span :class="{none: open}">
-                                    Toggle Open
-                                </span>
-                            </button>
-
-                            <div class="content hidden">
-                                <p class="mt-2">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore.
-                                    Nonumy eirmod tempor invidunt ut labore et dolore magna erat,
-                                    sed diam voluptua. At vero eos et accusam et justo duo
-                                    dolores et ea rebum. Stet clita kasd gubergren, no sea
-                                    takimata sanctus est Lorem ipsum dolor sit amet.
-                                </p>
-                                <p>
-                                    Sed diam nonumy eirm Lorem ipsum dolor sit amet,
-                                    consetetur sadipscing elitr, sed diam nonumy.
-                                </p>
-                            </div>
-                        </div>
-
-                        <script type="module">
-                            import { createApp } from 'https://unpkg.com/petite-vue?module';
-                            createApp({
-                                open: false
-                            }).mount('#togglePetiteVue');
-                        </script>
-                    </div>
-                    
-                    <div class="language-select" data-language="vueJs">
-                        <div id="toggleVue">
-                            <span class="collapse" :class="{open: open}">
-                                <button @click="open = !open">
-                                    <span :class="{none: !open}">
-                                        Toggle Closed
-                                    </span>
-                                    <span :class="{none: open}">
-                                        Toggle Open
-                                    </span>
-                                </button>
-
-                                <div class="content hidden">
-                                    <p class="mt-2">
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                        sed diam nonumy eirmod tempor invidunt ut labore et dolore.
-                                        Nonumy eirmod tempor invidunt ut labore et dolore magna erat,
-                                        sed diam voluptua. At vero eos et accusam et justo duo
-                                        dolores et ea rebum. Stet clita kasd gubergren, no sea
-                                        takimata sanctus est Lorem ipsum dolor sit amet.
-                                    </p>
-                                    <p>
-                                        Sed diam nonumy eirm Lorem ipsum dolor sit amet,
-                                        consetetur sadipscing elitr, sed diam nonumy.
-                                    </p>
-                                </div>
-                            </span>
-                        </div>
-
-                        <script type="module">
-                            import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
-                            createApp({
-                                setup() {
-                                    const open = ref(false);
-                                    return {
-                                        open
-                                    }
-                                }
-                            }).mount('#toggleVue');
-                        </script>
-                    </div>
-                    
-                    <div class="language-select" data-language="alpineJs">
-                        <div x-data="{ open: false }" class="collapse" :class="{open: open}">
-                            <button @click="open = !open">
-                                <span :class="{none: !open}">
-                                    Toggle Closed
-                                </span>
-                                <span :class="{none: open}">
-                                    Toggle Open
-                                </span>
-                            </button>
-
-                            <div class="content hidden">
-                                <p class="mt-2">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore.
-                                    Nonumy eirmod tempor invidunt ut labore et dolore magna erat,
-                                    sed diam voluptua. At vero eos et accusam et justo duo
-                                    dolores et ea rebum. Stet clita kasd gubergren, no sea
-                                    takimata sanctus est Lorem ipsum dolor sit amet.
-                                </p>
-                                <p>
-                                    Sed diam nonumy eirm Lorem ipsum dolor sit amet,
-                                    consetetur sadipscing elitr, sed diam nonumy.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- AlpineJsScript -->
-                    </div>
-                </div>
-
-                <div class="show-code" data-title="Toggle Distant Siblings">
-                    <div class="language-select" data-language="html">
-                        <span class="toggle-container">
-
-                            <p class="mt-2">Other Content...</p>
-
-                            <div class="toggle-content hidden">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore.
-                                    Nonumy eirmod tempor invidunt ut labore et dolore magna erat,
-                                    sed diam voluptua. At vero eos et accusam et justo duo
-                                    dolores et ea rebum. Stet clita kasd gubergren, no sea
-                                    takimata sanctus est Lorem ipsum dolor sit amet.
-                                </p>
-                                <p>
-                                    Sed diam nonumy eirm Lorem ipsum dolor sit amet,
-                                    consetetur sadipscing elitr, sed diam nonumy.
-                                </p>
-                            </div>
-
-                            <p class="mt-2">Other Content...</p>
-
-                            <label class="button toggle">
-                                <span class="none checked:revert">
-                                    Toggle Closed
-                                </span>
-                                <span class="checked:none">
-                                    Toggle Open
-                                </span>
-                                <input type="checkbox">
-                            </label>
-
-                            <p class="mt-2">Other Content...</p>
-
-                            <div class="toggle-content hidden">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                    sed diam nonumy eirmod tempor invidunt ut labore et dolore.
-                                    Nonumy eirmod tempor invidunt ut labore et dolore magna erat,
-                                    sed diam voluptua. At vero eos et accusam et justo duo
-                                    dolores et ea rebum. Stet clita kasd gubergren, no sea
-                                    takimata sanctus est Lorem ipsum dolor sit amet.
-                                </p>
-                                <p>
-                                    Sed diam nonumy eirm Lorem ipsum dolor sit amet,
-                                    consetetur sadipscing elitr, sed diam nonumy.
-                                </p>
-                            </div>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="show-code mt-4" data-title="Toogle Next Sibling" data-note="Uses &lt;span class='color-primary'&gt;.toggle-next&lt;/span&gt;&lt;br&gt;Does not require a &lt;span class='color-primary'&gt;.collapse&lt;/span&gt; wrapper and automatically collapses the next element sibling.">
-                    <label class="toggle-next button"> <!-- Toggle Next -->
                         <input type="checkbox">
-                        <span class="none checked:inline">Toggle Next Closed</span>
-                        <span class="checked:none">Toggle Next Open</span>
                     </label>
 
-                    <div class="hidden"> <!-- Next Sibling -->
-                        <p class="b-1 border-gray p-2 mt-2 bg-dark">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                            justo duo
-                            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                            sit amet.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="show-code mt-4" data-title="Toggle Element by ID">
-                    <div class="language-select" data-language="html" data-warning="* HTML version is not keyboard accessible. Use JS version instead.">
-                        <label for="toggle2" class="button">
-                            Toggle Content
-                        </label>
-
-                        <p class="mt-2">Middle Content...</p>
-
-                        <div class="collapse">
-                            <input class="toggle-next none" id="toggle2" type="checkbox">
-                            <div class="">
-                                <p class="b-1 p-1">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                    justo duo
-                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                                    sit amet.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="language-select" data-language="js">
-                        <button class="button" onclick="getElementById('toggle3').classList.toggle('open')">
-                            Toggle Content
-                        </button>
-
-                        <p class="mt-2">Middle Content...</p>
-
-                        <div id="toggle3" class="collapse">
-                            <div class="content">
-                                <p class="b-1 p-1">
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                    justo duo
-                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                                    sit amet.
-                                </p>
-                            </div>
+                    <div class="collapse">
+                        <div class="hidden">
+                            <p class="mt-2">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                sed diam nonumy eirmod tempor invidunt ut labore et dolore.
+                                Nonumy eirmod tempor invidunt ut labore et dolore magna erat,
+                                sed diam voluptua. At vero eos et accusam et justo duo
+                                dolores et ea rebum. Stet clita kasd gubergren, no sea
+                                takimata sanctus est Lorem ipsum dolor sit amet.
+                            </p>
+                            <p>
+                                Sed diam nonumy eirm Lorem ipsum dolor sit amet,
+                                consetetur sadipscing elitr, sed diam nonumy.
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="show-code" data-title="Menu">
-                    <div class="toggle-container from-top">
+                <div id="toggle-group" class="my-4">
+                    <div class="show-code mt-4" data-title="Toggle Group">
+                        <div class="toggle-group">
+
+                            <p class="my-2">Top Content...</p>
+
+                            <div class="collapse">
+                                <div>
+                                    <p class="b-1 p-2">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                                        justo duo
+                                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                                        sit amet.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="my-2">Middle Content...</p>
+
+                            <label class="button toggle">
+                                <span class="open:none">
+                                    Open
+                                </span>
+                                <span class="none open:revert">
+                                    Close
+                                </span>
+                                <input type="checkbox">
+                            </label>
+
+                            <p class="my-2">Middle Content...</p>
+
+                            <div class="collapse">
+                                <div>
+                                    <p class="b-1 p-2">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                                        justo duo
+                                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                                        sit amet.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-code mt-4" data-title="Toggle Element by ID" data-warning="* Not keyboard accessible. Use &lt;a href='#toggle-group'&gt;Toggle Group&lt;/a&gt; instead Or use JS.">
+                    <label for="toggleByIdHtml" class="button">
+                        <span class="open:none">
+                            Open
+                        </span>
+                        <span class="none open:revert">
+                            Close
+                        </span>
+                    </label>
+
+                    <p class="my-2">Middle Content...</p>
+
+                    <input class="toggle none" id="toggleByIdHtml" type="checkbox">
+                    <div class="collapse">
+                        <div>
+                            <p class="b-1 p-2">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                                justo duo
+                                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                                sit amet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-code" data-title="Menu" data-footer-note="* See &lt;a href='#toggles'&gt;Toogles&lt;/a&gt;, &lt;a href='#accordions'&gt;Accordions&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+                    <div class="relative">
                         <label class="toggle button link icon menu open:close">
                             <input type="checkbox">
                         </label>
 
-                        <div class="toggle-content overlay hidden">
+                        <div class="collapse from-top overlay clip-top">
                             <nav class="list bg-faint round open:side shadow max-w-200 p-1">
                                 <ul>
                                     <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
                                     <li><a href="#">Link 1</a></li>
                                     <li><a href="#">Link 2</a>
-                                        <input type="checkbox" class="toggle-next button link circle icon down shy open:rotate">
+                                        <input type="checkbox" class="toggle button link circle icon down shy open:rotate">
                                         <ul class="from-default">
                                             <li><a href="#">SubLink 1</a></li>
                                             <li><a href="#">SubLink 2</a></li>
@@ -2597,53 +2183,40 @@ $borders: (
                 </div>
 
                 <div class="show-code mt-4" data-title="As Switch From Left Slow">
-                    <div class="collapse hidden from-left slow">
+                    <div class="from-left slow">
                         <label class="toggle inline">
                             <input class="switch" type="checkbox">
-                            <span class="none checked:inline">On</span>
+                            <span class="none checked:revert">On</span>
                             <span class="checked:none">Off</span>
                         </label>
-                        <div class="content hidden">
-                            <p class="b-1 border-gray p-2 mt-2 bg-dark">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                justo duo
-                                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                                sit amet.
-                            </p>
+                        <div class="collapse hidden">
+                            <div>
+                                <p class="b-1 border-gray p-2 mt-2 bg-dark">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                                    justo duo
+                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                                    sit amet.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
                
-                <div class="show-code mb-4" data-title="Used for Modals" data-footer-note="* See &lt;a href='#modals'&gt;Modals&lt;/a&gt; for more variations">
-                    <div class="language-select" data-language="html" data-warning="* HTML version is not keyboard accessible. Use JS version instead.">
-                        <label class="toggle button">
-                            Open Modal with HTML
-                            <input id="toggleModal" type="checkbox">
-                        </label>
-                        <div class="modal blur">
-                            <label for="toggleModal" class="fixed inset w"></label>
-                            <article class="max-w-400 bg-theme">
-                                <p>HTML Modal</p>
-                                <label for="toggleModal" class="button hazy">
-                                    Close Toggle
-                                </label>
-                            </article>
-                        </div>
-                    </div>
+                <div class="show-code mb-4" data-title="Used for Modals" data-warning="* Not keyboard accessible. Use &lt;a href='#modals'&gt;Modals&lt;/a&gt; for other variations." data-footer-note="* See &lt;a href='#modals'&gt;Modals&lt;/a&gt; for more variations">
+                    <label class="toggle button">
+                        Open Modal with HTML
+                        <input id="toggleModal" type="checkbox">
+                    </label>
 
-                    <div class="language-select" data-language="js">
-                        <button onclick="this.nextElementSibling.classList.toggle('open')">
-                            Open Modal
-                        </button>
-                        <div class="modal blur" onclick="event.target !== this || this.classList.toggle('open')">
-                            <article class="max-w-400 bg-theme">
-                                <p>HTML Modal</p>
-                                <button class="button hazy" onclick="this.closest('.modal').classList.remove('open')">
-                                    Close Toggle
-                                </button>
-                            </article>
-                        </div>
+                    <div class="modal blur">
+                        <label for="toggleModal" class="fixed inset w"></label>
+                        <article class="max-w-400 bg-theme b-1 r-3">
+                            <p>HTML Modal</p>
+                            <label for="toggleModal" class="button">
+                                Close Toggle
+                            </label>
+                        </article>
                     </div>
                 </div>
     
@@ -3085,12 +2658,12 @@ $borders: (
                 </table>
 
                 <div class="show-code" data-title="Basic Accordion">
-                    <label class="toggle-next button mb-1 w">
+                    <label class="toggle content-between button mb-1 w">
                         Question 1
                         <input type="checkbox">
                         <svg class="icon open:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                     </label>
-                    <div>
+                    <div class="collapse">
                         <div class="p-2 pt-0">
                             <p>
                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
@@ -3106,27 +2679,29 @@ $borders: (
                         </div>
                     </div>
 
-                    <label class="toggle-next button mb-1 w">
-                        Question 2
-                        <input type="checkbox">
-                        <svg class="icon open:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                    </label>
                     <div>
-                        <div class="p-2 pt-0">
-                            <p>
-                                At vero eos et accusam
-                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-                                Lorem ipsum dolor sit amet.
-                            </p>
+                        <label class="toggle content-between button mb-1 w">
+                            Question 2
+                            <input type="checkbox">
+                            <svg class="icon open:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                        </label>
+                        <div class="collapse">
+                            <div class="p-2 pt-0">
+                                <p>
+                                    At vero eos et accusam
+                                    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                            </div>
                         </div>
                     </div>
                     
-                    <label class="toggle-next button w">
+                    <label class="toggle content-between button w">
                         Question 3
                         <input type="checkbox">
                         <svg class="icon open:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                     </label>
-                    <div>
+                    <div class="collapse">
                         <div class="p-2">
                             <p>
                                 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor
@@ -4902,12 +4477,12 @@ $borders: (
                 <div class="show-code" data-title="Toggle Icons" data-footer-note="* See &lt;a href='#toggles'&gt;Toggles&lt;/a&gt; for more details">
                     <span class="h5 inline-block min-w-200 mr-n4">With Focus</span>
 
-                    <button class="toggle icon link">
-                        <svg class="focus:rotate" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
+                    <button class="icon link">
+                        <svg class="f:rotate" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
                     </button>
 
-                    <button class="toggle icon link">
-                        <svg class="focus:flip" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
+                    <button class="icon link">
+                        <svg class="f:flip" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
                     </button>
 
                     <button class="toggle icon link">
@@ -5013,7 +4588,7 @@ $borders: (
                         <li>
                             <a href="#">List Item 2</a>
                             <input class="button icon down link circle shy toggle checked:close" type="checkbox">
-                            <ul class="collapse px-1">
+                            <ul class="px-1">
                                 <li><a href="#">Sub Link 1</a></li>
                                 <li><a href="#">Sub Link 2</a></li>
                                 <li><a href="#">Sub Link 3</a></li>
