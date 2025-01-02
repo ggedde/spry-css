@@ -21,10 +21,6 @@ input::file-selector-button,
 	font-family   : inherit;
 	font-weight   : inherit;
 
-	&:hover {
-		outline-width: 0;
-	}
-
 	&:is(:hover, :focus, :focus-within):not(.icon) {
 		--ui-input: hsl(from var(--ui-accent) h s var(--bdr-l, l) / var(--bdr-a, 1));
 	}
@@ -242,6 +238,7 @@ input[type=file] {
 }
 
 label {
+	display: block;
 	&:focus-within .input> :not(input, select, textarea),
 	&:focus-within input::file-selector-button {
 		background-color: var(--ui-border);

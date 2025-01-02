@@ -141,38 +141,6 @@ hr,
 	}
 }
 
-[class^=glow-],
-[class*=\ glow-],
-[class^=h\:glow-]:is(:hover, :focus, .active),
-[class*=\ h\:glow-]:is(:hover, :focus, .active) {
-	box-shadow: 0px 0px calc(4em * var(--glow-s)) calc(2em * var(--glow-s)) rgb(from var(--ui-glow) r g b / var(--glow-o));
-}
-
-[class^=bg-],
-[class*=\ bg-],
-[class^=h\:bg-]:is(:hover, :focus, .active),
-[class*=\ h\:bg-]:is(:hover, :focus, .active) {
-	background-color: hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 100%));
-}
-
-[class^=border-],
-[class*=\ border-],
-[class^=h\:border-]:is(:hover, :focus, .active),
-[class*=\ h\:border-]:is(:hover, :focus, .active) {
-	border-color: hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 100%));
-}
-
-[class^=links-] :where(a:not(.button)),
-[class*=\ links-] :where(a:not(.button)),
-[class^=h\:links-] a:not(.button,[class*=h\:color-]):is(:hover, :focus, .active),
-[class*=\ h\:links-] a:not(.button,[class*=h\:color-]):is(:hover, :focus, .active),
-[class^=color-],
-[class*=\ color-],
-[class^=h\:color-]:is(:hover, :focus, .active),
-[class*=\ h\:color-]:is(:hover, :focus, .active) {
-	color: var(--ui-text);
-}
-
 @each $color_name, $color_value in variables.$colors {
 	
 	.links-#{"" + $color_name} :where(a:not(.button)),
@@ -180,6 +148,7 @@ hr,
 	.h\:color-#{"" + $color_name}:is(:hover, :focus, .active),
 	.color-#{"" + $color_name} {
 		--ui-text: hsl(from var(--#{$color_name}) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 100%));
+		color: var(--ui-text);
 	}
 
 	.color-to-#{"" + $color_name} {
@@ -189,11 +158,13 @@ hr,
 	.h\:bg-#{"" + $color_name}:is(:hover, :focus, .active),
 	.bg-#{"" + $color_name} {
 		--ui-bg: var(--#{$color_name});
+		background-color: hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 100%));
 	}
 
 	.h\:glow-#{"" + $color_name}:is(:hover, :focus, .active),
 	.glow-#{"" + $color_name} {
 		--ui-glow: var(--#{$color_name});
+		box-shadow: 0px 0px calc(4em * var(--glow-s)) calc(2em * var(--glow-s)) rgb(from var(--ui-glow) r g b / var(--glow-o));
 	}
 
 	.bg-to-#{"" + $color_name} {
@@ -204,6 +175,7 @@ hr,
 	.border-#{"" + $color_name} {
 		--ui-border: var(--#{$color_name});
 		--ui-input: var(--#{$color_name});
+		border-color: hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 100%));
 	}
 
 	.border-to-#{"" + $color_name} {
@@ -213,16 +185,20 @@ hr,
 
 .color-theme {
 	--ui-text: hsl(from var(--theme-color) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 100%));
+	color: var(--ui-text);
 }
 .bg-theme {
 	--ui-bg: var(--theme-bg);
+	background-color: hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 100%));
 }
 .border-theme {
 	--ui-border: var(--theme-border);
 	--ui-input: var(--theme-border);
+	border-color: hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 100%));
 }
 .glow-theme {
 	--ui-glow: var(--theme-bg);
+	box-shadow: 0px 0px calc(4em * var(--glow-s)) calc(2em * var(--glow-s)) rgb(from var(--ui-glow) r g b / var(--glow-o));
 }
 
 .color-to-theme {

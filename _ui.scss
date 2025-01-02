@@ -21,8 +21,8 @@ $color_value in variables.$colors {
 }
 
 label:has(.hide:focus-visible),
-:is(.toggle, .toggle-next, .input):has(:focus-visible),
-:focus-visible {
+:is(.toggle, .input):has(:focus-visible),
+:focus-visible:not(:hover) {
 	outline-width: 2px;
 }
 

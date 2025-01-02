@@ -93,15 +93,19 @@ General Utility Classes
 }
 
 .bg-blur-sm {
-	backdrop-filter: blur(2px)
+	backdrop-filter: blur(1px)
 }
 
 .bg-blur,
 .bg-blur-md {
-	backdrop-filter: blur(8px)
+	backdrop-filter: blur(2px)
 }
 
 .bg-blur-lg {
+	backdrop-filter: blur(8px)
+}
+
+.bg-blur-xl {
 	backdrop-filter: blur(16px)
 }
 
@@ -800,7 +804,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		display: none;
 	}
 	&close {
-		background: transparent !important;
+		// background: transparent !important;
 		&::before,
 		&::after {
 			height          : 1.2em;

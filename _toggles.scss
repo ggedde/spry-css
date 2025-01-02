@@ -70,6 +70,11 @@
 		}
 	}
 
+	
+	#{$prefix}h\:open:hover > :where(.collapse),
+	#{$prefix}h\:open:focus-within > :where(.collapse),
+	#{$prefix}f\:open:focus > :where(.collapse),
+	:where(#{$prefix}f\:open):has(> :focus, :focus-visible, :active) > :where(.collapse),
 	#{$prefix}open:where(.collapse),
 	#{$prefix}open > :where(.collapse) {
 		@if $prefix == '.' {
@@ -77,6 +82,67 @@
 		}
 		@else {
 			@include mixins.open-inner;
+		}
+	}
+
+	#{$prefix}h\:open li:has(:focus-visible, :hover) > ul,
+	#{$prefix}f\:open li:focus-within > ul {
+		@if $prefix == '.' {
+			@extend %open;
+		}
+		@else {
+			@include mixins.open;
+		}
+	}
+
+	:is(#{$prefix}open,
+	#{$prefix}h\:open:hover,
+	#{$prefix}h\:open:focus-within,
+	#{$prefix}f\:open:focus,
+	#{$prefix}f\:open:has(> :focus, :focus-visible, :active)) {
+		> :is(.toggle, label, button) .open\:rotate,
+		> .open\:rotate,
+		&.open\:rotate {
+			rotate: 180deg;
+		}
+		> :is(.toggle, label, button) .open\:flip,
+		> .open\:flip,
+		&.open\:flip {
+			scale: -1;
+		}
+		> :is(.toggle, label, button) .open\:revert,
+		> .open\:revert,
+		&.open\:revert {
+			display: revert;
+		}
+		> :is(.toggle, label, button) .open\:none,
+		> .open\:none,
+		&.open\:none {
+			display: none;
+		}
+		> :is(.toggle, label, button) .open\:pointer-none,
+		> .open\:pointer-none,
+		&.open\:pointer-none {
+			pointer-events: none;
+		}
+		> :is(.toggle, label, button) .open\:close,
+		> .open\:close,
+		&.open\:close {
+
+			&::before,
+			&::after {
+				height          : 1.2em;
+				width           : .12em;
+				box-shadow      : none;
+			}
+
+			&::before {
+				transform: rotate(45deg);
+			}
+
+			&::after {
+				transform: rotate(-45deg);
+			}
 		}
 	}
 }
@@ -97,29 +163,18 @@
 	@extend %closed;
 }
 
-:is(.toggle:checked, .toggle:has(:checked)) + ul,
-.h\:open li:has(:focus-visible, :hover) > ul,
-.f\:open li:focus-within > ul {
+:is(.toggle:checked, .toggle:has(:checked)) + ul {
 	@extend %open;
 }
 
 :is(.toggle:checked, .toggle:has(:checked)) + :where(.collapse),
-.toggle-group:has(.toggle:checked, .toggle :checked) > :where(.collapse),
-.h\:open:hover > :where(.collapse),
-.h\:open:focus-within > :where(.collapse),
-.f\:open:focus > :where(.collapse),
-:where(.f\:open):has(> :focus, :focus-visible, :active) > :where(.collapse) {
+.toggle-group:has(.toggle:checked, .toggle :checked) > :where(.collapse) {
 	@extend %open-inner;
 }
 
-:is(.open,
-.toggle-group:has(.toggle:checked, .toggle :checked),
+:is(.toggle-group:has(.toggle:checked, .toggle :checked),
 .toggle:checked,
-.toggle:has(:checked),
-.h\:open:hover,
-.h\:open:focus-within,
-.f\:open:focus,
-.f\:open:has(> :focus, :focus-visible, :active)) {
+.toggle:has(:checked)) {
 	> :is(.toggle, label, button) .open\:rotate,
 	> .open\:rotate,
 	&.open\:rotate {

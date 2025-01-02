@@ -1,4 +1,5 @@
 @use "variables";
+@use "sass:math";
 /*!
 * Spry Sizing
 */
@@ -9,12 +10,28 @@
 		height: 100%
 	}
 
+	#{$prefix}max-h {
+		max-height: 100%
+	}
+
+	#{$prefix}min-h {
+		min-height: 100%
+	}
+
 	#{$prefix}vh {
 		height: 100svh
 	}
 
 	#{$prefix}w {
 		width: 100%
+	}
+
+	#{$prefix}max-w {
+		max-width: 100%
+	}
+
+	#{$prefix}min-w {
+		min-width: 100%
 	}
 
 	#{$prefix}vw {
@@ -31,6 +48,34 @@
 
 	#{$prefix}w-content {
 		width: max-content;
+	}
+
+	@for $i from 1 through 10 {
+		#{$prefix}h-#{$i}0 {
+			height: math.percentage(math.div($i, 10));
+		}
+
+		#{$prefix}max-h-#{$i}0 {
+			--max-height: #{$i}0%;
+			max-height: math.percentage(math.div($i, 10))
+		}
+
+		#{$prefix}min-h-#{$i}0 {
+			min-height: math.percentage(math.div($i, 10))
+		}
+
+		#{$prefix}w-#{$i}0 {
+			width: math.percentage(math.div($i, 10));
+			flex : 0 math.percentage(math.div($i, 10))
+		}
+
+		#{$prefix}max-w-#{$i}0 {
+			max-width: math.percentage(math.div($i, 10))
+		}
+
+		#{$prefix}min-w-#{$i}0 {
+			min-width: math.percentage(math.div($i, 10))
+		}
 	}
 
 	@for $i from 1 through 12 {

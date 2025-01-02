@@ -105,6 +105,7 @@ function cleanContent(html) {
     html = html.replaceAll('@click.stop=""', '@click.stop');
     html = html.replaceAll(' data-v-app=""', '');
     html = html.replaceAll('defer=""', 'defer');
+    html = html.replaceAll('popover=""', 'popover');
     // html = html.replaceAll('&lt!-- nl --&gt', "\n");
     // html = html.replaceAll('&lt!----&gt', "\t");
     // html = html.replaceAll('<!-- nl -->', "\n");
