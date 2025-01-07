@@ -37,7 +37,7 @@
 	#{$prefix}h\:open:hover > :where(.collapse),
 	#{$prefix}h\:open:focus-within > :where(.collapse),
 	#{$prefix}f\:open:focus > :where(.collapse),
-	:where(#{$prefix}f\:open):has(> :focus, :focus-visible, :active) > :where(.collapse),
+	:where(#{$prefix}f\:open):has(> :focus, .toggle:focus, :focus-visible, :active) > :where(.collapse),
 	#{$prefix}open:where(.collapse),
 	#{$prefix}open > :where(.collapse) {
 		@if $prefix == '.' {
@@ -62,7 +62,7 @@
 	#{$prefix}h\:open:hover,
 	#{$prefix}h\:open:focus-within,
 	#{$prefix}f\:open:focus,
-	#{$prefix}f\:open:has(> :focus, :focus-visible, :active)) {
+	#{$prefix}f\:open:has(> :focus, .toggle:focus, :focus-visible, :active)) {
 		> :is(.toggle, label, button) .open\:rotate,
 		> .open\:rotate,
 		&.open\:rotate {
