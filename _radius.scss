@@ -30,6 +30,6 @@
 		@include radius-styles('.#{$breakpoint}\\:');
 	}
 	@container (min-width: #{$breakpoint_width}) {
-		@include radius-styles('.c-#{$breakpoint}\\:');
+		@include radius-styles('.\\@#{$breakpoint}\\:');
 	}
 }

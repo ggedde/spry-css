@@ -12,7 +12,7 @@ table {
 
 	td,
 	th {
-		padding   : 1em .5em;
+		padding   : 1em;
 		text-align: left;
 	}
 
@@ -24,7 +24,7 @@ table {
 
 thead {
 	box-shadow: 0 2px 0 hsl(from var(--ui-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
-	color: var(--ui-color);
+	color: var(--ui-text);
 	&.sticky {
 		top: -1px;
 	}
@@ -37,13 +37,13 @@ thead {
 .striped tbody tr:nth-child(even),
 .striped-expand tbody tr:nth-child(4n -1),
 .striped-expand tbody tr:nth-child(4n -1) + tr {
-	background-color: rgb(from var(--ui-color) r g b / .04);
+	background-color: rgb(from var(--ui-color) r g b / .15);
 }
 
 .h\:striped tbody tr:hover,
 .h\:striped-expand tbody tr:nth-child(odd):hover,
 .h\:striped-expand tbody tr:nth-child(odd):hover + tr {
-	background-color: rgb(from var(--ui-color) r g b / .07);
+	background-color: rgb(from var(--ui-color) r g b / .3);
 }
 
 
@@ -80,7 +80,7 @@ thead {
 		}
 
 		@container (max-width: #{$breakpoint_width}) {
-			@include table-responsive-styles('.c-#{$breakpoint}\\:');
+			@include table-responsive-styles('.\\@#{$breakpoint}\\:');
 		}
 	}
 }

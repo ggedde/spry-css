@@ -159,6 +159,6 @@
 	}
 
 	@container (min-width: #{$breakpoint_width}) {
-		@include sizingUtility-styles('.c-#{$breakpoint}\\:');
+		@include sizingUtility-styles('.\\@#{$breakpoint}\\:');
 	}
 }

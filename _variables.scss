@@ -40,15 +40,15 @@ $themes: (
 ) !default;
 
 $colors: (
-    faint    : (default: light-dark(#eee, #333)),
     contrast : (default: light-dark(#333, #eee)),
+    faint    : (default: light-dark(#eee, #333)),
     stark    : (default: light-dark(#fff, #000)),
     surface  : (default: light-dark(#eee, #000)),
-    light    : (default: #eee),
-    dark     : (default: #333),
-    white    : (default: #fff),
     black    : (default: #000),
+    dark     : (default: #333),
     gray     : (default: #888),
+    light    : (default: #eee),
+    white    : (default: #fff),
     primary  : (default: #19d),
     success  : (default: #0a0),
     warning  : (default: #e90),

@@ -137,7 +137,7 @@
 		@include spacing-styles('.#{$breakpoint}\\:');
 	}
 	@container (min-width: #{$breakpoint_width}) {
-		@include spacing-styles('.c-#{$breakpoint}\\:');
+		@include spacing-styles('.\\@#{$breakpoint}\\:');
 	}
 }
 

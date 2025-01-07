@@ -14,6 +14,7 @@
 @use "button";
 @use "toolbar";
 @use "cards";        // Has Nesting
+@use "loader";
 @use "forms";        // Has Nesting
 @use "tables";       // Has Nesting
 @use "tooltips";
@@ -25,13 +26,12 @@
 @use "toggles";
 // @use "toggle-icons.css";
 @use "modals";       // Has Nesting
+@use "icons";        // Has Nesting
 @use "spacing";
 @use "borders";
 @use "radius";
-@use "icons";        // Has Nesting
 @use "utilities";
 @use "sizing";
 // @use "dark";         // Has Nesting
 // @use "colors";
 @use "themes";
-@use "loader";

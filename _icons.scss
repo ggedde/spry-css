@@ -4,41 +4,45 @@
 */
 
 .icon {
-	@extend %ui-icon;
-}
+	border        : 0;
+	box-shadow    : none;
+	display       : inline-flex;
+	flex          : 0 1 auto;
+	height        : 1.25em;
+	margin        : 0;
+	padding       : 0;
+	position      : relative;
+	vertical-align: middle;
+	width         : 1.25em;
+	--speed       : .2s;
 
-.icon,
-.icon> :is(svg, img) {
-	fill: currentColor;
-	transition-property: scale, transform, rotate, opacity;
-	transition-duration: var(--speed);
-	transition-timing-function: var(--ease);
-}
+	:is(svg, img) {
+		inset           : 50%;
+		margin          : auto;
+		position        : absolute;
+		transform       : translateZ(0) translate(-50%);
+		transform-origin: 0 center;
+	}
 
-:is(button, .button, .alert, .icon) :is(svg, img),
-.icon:is(svg, img) {
-	width : 1.25em;
-	height: 1.25em;
-}
+	&,
+	:is(svg, img) {
+		backface-visibility       : hidden;
+		fill                      : currentColor;
+		transition-duration       : var(--speed);
+		transition-property       : scale, transform, rotate, opacity;
+		transition-timing-function: var(--ease);
+	}
 
-:is(nav, .list) li>.icon:nth-child(2) {
-	position: absolute;
-	right   : 0.5em;
-	top     : 0.25em;
-}
+	&:is(svg, img),
+	:is(svg, img) {
+		width : 1.25em;
+		height: 1.25em;
+	}
 
-:where(nav, .list) li>:where(.icon):nth-child(2) {
-	font-size: 80%;
-}
-
-:is(nav, .list) li:has(> .icon:nth-child(2))> :not(.icon):first-child {
-	padding-right: 2.5em;
-}
-
-.icon {
-	opacity   : 1;
-	box-shadow: none;
-	--speed: .2s;
+	&:is(.outline, .hazy) {
+		min-height: 2.3em;
+		min-width : 2.3em;
+	}
 
 	&:is(.next, .prev, .up, .down, .close, .menu, .dots) {
 

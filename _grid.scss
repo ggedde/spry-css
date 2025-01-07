@@ -31,34 +31,10 @@
 [class$=\:grid],
 [class^=grid-],
 [class*=\ grid-] {
-	// --gapx        : #{map.get(variables.$gaps, 'default')};
-	// --gapy        : #{map.get(variables.$gaps, 'default')};
 	--span        : 1;
 	--cols        : 1;
 	gap           : var(--gapy) var(--gapx);
 }
-
-
-.column > *,
-.row > *,
-[class*=":row "] > *,
-[class$=\:row] > *,
-.grid > *,
-[class*=":grid "] > *,
-[class$=\:grid] > * {
-	// grid: auto-flow / repeat(var(--cols), minmax(0, 1fr));
-	// flex: 0 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--gapx))/(var(--cols)/var(--span))));
-	min-width: 0;
-	margin-top: 0;
-	// flex: 1;
-}
-
-// .column > *,
-// [class*=":column "] > *,
-// [class$=\:column] > * {
-// 	flex: 1 auto;
-// }
-
 
 .grid,
 [class^="grid "],
@@ -115,6 +91,13 @@
 		display: grid;
 	}
 
+	#{$prefix}column > *,
+	#{$prefix}row > *,
+	#{$prefix}grid > * {
+		min-width: 0;
+		margin-top: 0;
+	}
+
 	[class^="#{$noDotPrefix}columns-"] > *,
 	[class*=" #{$noDotPrefix}columns-"] > * {
 		flex: 0 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--gapx))/(var(--cols)/var(--span))));
@@ -163,6 +146,6 @@
 		@include grid-query-styles('.#{$breakpoint}\\:', '#{$breakpoint}\\:');
 	}
 	@container (min-width: #{$breakpoint_width}) {
-		@include grid-query-styles('.c-#{$breakpoint}\\:', 'c-#{$breakpoint}\\:');
+		@include grid-query-styles('.\\@#{$breakpoint}\\:', '\\@#{$breakpoint}\\:');
 	}
 }

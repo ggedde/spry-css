@@ -15,15 +15,17 @@
     }
 }
 
-:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label, pre, article) + :where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label, pre, article) {
+:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, pre, code, article, figure) + :where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label, pre, code, article, .button, button, figure) {
     @extend %ui-margin-above-lg;
 }
 
-:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, div) + :is(dfn, cite, .note) {
+:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, div) + :is(dfn, cite, .note),
+figcaption {
     @extend %ui-margin-above;
 }
 
-.note {
+.note,
+figcaption {
     font-style: italic;
     opacity   : .75
 }
@@ -38,5 +40,9 @@ cite, dfn {
 }
 
 code {
-    font-size: .9em;
+    font-family: monospace;
+	text-align: left;
+	white-space: pre;
+    tab-size: 4;
+    hyphens: none;
 }

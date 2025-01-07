@@ -1,9 +1,5 @@
-/* PrismJS 1.23.1
-https://prismjs.com/download.html#themes=prism&languages=css+scss&plugins=toolbar+copy-to-clipboard */
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
+/*!
+ * Spry Docs Custom CSS
  */
 
 html:has(.code-content-container:target),
@@ -41,8 +37,8 @@ html:has(#toggle-group:target) {
 	gap: 0;
 }
 
-.code-content {
-	position: relative;
+.code-content-container .copy-button {
+	display: none;
 }
 
 .language-select, .note[class*="language-"] {
@@ -95,26 +91,6 @@ html:has(#toggle-group:target) {
 .code-resize-handle.moving,
 .code-resize-handle:hover {
 	opacity: 1;
-}
-
-
-
-code[class*="language-"] {
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
-	margin-top: 0;
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
 }
 
 .token.comment,

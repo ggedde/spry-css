@@ -110,6 +110,6 @@ $breakpoint_width in variables.$breakpoints {
 	}
 
 	@container (min-width: #{$breakpoint_width}) {
-		@include hoverOpen-styles('.c-#{$breakpoint}\\:');
+		@include hoverOpen-styles('.\\@#{$breakpoint}\\:');
 	}
 }

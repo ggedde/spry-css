@@ -122,17 +122,15 @@ General Utility Classes
 	color: inherit
 }
 
-.glow {
-	position: relative;
-	&::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: inherit;
-		filter: blur(1em);
-		clip-path: polygon(-2em -2em, -2em calc(100% + 2em), 0 calc(100% + 2em), 0 0, 100% 0, 100% 100%, 0% 100%, 0 calc(100% + 2em), calc(100% + 2em) calc(100% + 2em), calc(100% + 2em) -2em);
-	}
-
+.blur,
+.blur-md {
+	filter: blur(1em);
+}
+.blur-sm {
+	filter: blur(.2em);
+}
+.blur-lg {
+	filter: blur(2em);
 }
 
 .snug {
@@ -213,6 +211,23 @@ General Utility Classes
     --speed: 0s;
 }
 
+.\@container {
+	container-type: inline-size;
+	position      : relative
+}
+
+.\@container-none {
+	container-type: initial
+}
+
+.text-shadow {
+	text-shadow: 1px 2px 0px rgba(0, 0, 0, .2);
+}
+
+.drop-shadow {
+	filter: drop-shadow( 2px 2px 3px rgba(0, 0, 0, .3));
+}
+
 /****************************************************************************
 Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 ****************************************************************************/
@@ -222,15 +237,6 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		#{$prefix}mw {
 			max-width: #{$breakpoint_width};
 		}
-	}
-
-	#{$prefix}container {
-		container-type: inline-size;
-		position      : relative
-	}
-
-	#{$prefix}container-none {
-		container-type: initial
 	}
 
 	#{$prefix}text-left {
@@ -325,30 +331,10 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		display: none
 	}
 
-	// #{$prefix}table {
-	// 	display: table
-	// }
-
 	#{$prefix}table-cell {
 		display: table-cell;
 		width  : auto;
 	}
-
-	// #{$prefix}table-row {
-	// 	display: table-row
-	// }
-
-	// #{$prefix}table-row-group {
-	// 	display: table-row-group
-	// }
-
-	// #{$prefix}table-header-group {
-	// 	display: table-header-group
-	// }
-
-	// #{$prefix}table-footer-group {
-	// 	display: table-footer-group
-	// }
 
 	#{$prefix}flex-wrap {
 		flex-wrap: wrap
@@ -535,80 +521,60 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		pointer-events: all
 	}
 
-	#{$prefix}pointer-inherit {
-		pointer-events: inherit
-	}
+	// #{$prefix}pointer-inherit {
+	// 	pointer-events: inherit
+	// }
 
-	#{$prefix}align-baseline {
-		vertical-align: baseline
-	}
+	// #{$prefix}align-baseline {
+	// 	vertical-align: baseline
+	// }
 
-	#{$prefix}align-top {
-		vertical-align: top
-	}
+	// #{$prefix}align-top {
+	// 	vertical-align: top
+	// }
 
-	#{$prefix}align-text-top {
-		vertical-align: text-top
-	}
+	// #{$prefix}align-text-top {
+	// 	vertical-align: text-top
+	// }
 
-	#{$prefix}align-middle {
-		vertical-align: middle
-	}
+	// #{$prefix}align-middle {
+	// 	vertical-align: middle
+	// }
 
-	#{$prefix}align-center {
-		align-content: center;
-	}
+	// #{$prefix}align-center {
+	// 	align-content: center;
+	// }
 
-	#{$prefix}align-bottom {
-		vertical-align: bottom
-	}
+	// #{$prefix}align-bottom {
+	// 	vertical-align: bottom
+	// }
 
-	#{$prefix}align-text-bottom {
-		vertical-align: text-bottom
-	}
+	// #{$prefix}align-text-bottom {
+	// 	vertical-align: text-bottom
+	// }
 
-	#{$prefix}align-super {
-		vertical-align: super
-	}
+	// #{$prefix}align-super {
+	// 	vertical-align: super
+	// }
 
-	#{$prefix}align-sub {
-		vertical-align: sub
-	}
+	// #{$prefix}align-sub {
+	// 	vertical-align: sub
+	// }
 
-	#{$prefix}align-none {
-		vertical-align: initial
-	}
+	// #{$prefix}align-none {
+	// 	vertical-align: initial
+	// }
 
-	#{$prefix}visibility-hidden {
-		visibility: hidden
-	}
+	// #{$prefix}visibility-hidden {
+	// 	visibility: hidden
+	// }
 
-	#{$prefix}visibility-visible {
-		visibility: visible
-	}
+	// #{$prefix}visibility-visible {
+	// 	visibility: visible
+	// }
 
 	#{$prefix}hidden {
 		overflow: hidden
-	}
-
-	#{$prefix}hidden-y {
-		overflow-y: hidden
-	}
-
-	#{$prefix}hidden-x {
-		overflow-x: hidden
-	}
-
-	#{$prefix}clip {
-		overflow: clip
-	}
-
-	#{$prefix}clip-y {
-		overflow-y: clip
-	}
-
-	#{$prefix}clip-x {
-		overflow-x: clip
 	}
 
 	#{$prefix}scroll {
@@ -621,6 +587,18 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 	#{$prefix}visible {
 		overflow: visible
+	}
+
+	#{$prefix}clip {
+		overflow: clip
+	}
+
+	#{$prefix}clip-y {
+		overflow-y: clip
+	}
+
+	#{$prefix}clip-x {
+		overflow-x: clip
 	}
 
 	#{$prefix}order-first {
@@ -644,7 +622,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	}
 
 	#{$prefix}order-last {
-		order: 99999
+		order: 999
 	}
 
 	#{$prefix}shadow {
@@ -764,12 +742,31 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 
 @include utility-styles('.', 0);
 
+@each $breakpoint,
+$breakpoint_width in variables.$breakpoints {
+	@media screen and (min-width: #{$breakpoint_width}) {
+		@include utility-styles('.#{$breakpoint}\\:', $breakpoint_width);
+	}
+
+	@container (min-width: #{$breakpoint_width}) {
+		@include utility-styles('.\\@#{$breakpoint}\\:', $breakpoint_width);
+	}
+}
+
+:is(.f\:swap, .h\:swap, .checked\:swap) > :last-child {
+	opacity: 0;
+	scale: .5;
+}
+
 // Checked Utilities
+:focus.f\:,
+:focus > .f\:,
+:hover.h\:,
+:focus-visible.h\:,
+:is(label, .button, button, .toggle, .badge):is(:hover, :focus-visible) > .h\:,
 :checked.checked\:,
-:has(:checked)>.checked\:,
-:has(:checked).checked\:,
-:has([value=""]:checked)>.checked-empty\:,
-:not(:has(:checked))>.checked-empty\: {
+label:has(:checked)>.checked\:,
+label:has(:checked).checked\: {
 	&rotate {
 		rotate: 180deg;
 	}
@@ -777,25 +774,6 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	&flip {
 		scale: -1;
 	}
-
-	// &block {
-	// 	display: block;
-	// }
-	// &flex {
-	// 	display: flex;
-	// }
-	// &grid {
-	// 	display: grid;
-	// }
-	// &inline {
-	// 	display: inline;
-	// }
-	// &inline-block {
-	// 	display: inline-block;
-	// }
-	// &inline-flex {
-	// 	display: inline-flex;
-	// }
 	&revert {
 		display: revert;
 	}
@@ -804,7 +782,6 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		display: none;
 	}
 	&close {
-		// background: transparent !important;
 		&::before,
 		&::after {
 			height          : 1.2em;
@@ -821,15 +798,14 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 			transform: rotate(-45deg);
 		}
 	}
-}
-
-@each $breakpoint,
-$breakpoint_width in variables.$breakpoints {
-	@media screen and (min-width: #{$breakpoint_width}) {
-		@include utility-styles('.#{$breakpoint}\\:', $breakpoint_width);
-	}
-
-	@container (min-width: #{$breakpoint_width}) {
-		@include utility-styles('.c-#{$breakpoint}\\:', $breakpoint_width);
+	&swap {
+		> :first-child {
+			opacity: 0;
+			scale  : .5
+		}
+		> :last-child {
+			opacity: 1;
+			scale  : 1
+		}
 	}
 }

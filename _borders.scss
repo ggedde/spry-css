@@ -76,6 +76,6 @@
 		@include border-styles('.#{$breakpoint}\\:');
 	}
 	@container (min-width: #{$breakpoint_width}) {
-		@include border-styles('.c-#{$breakpoint}\\:');
+		@include border-styles('.\\@#{$breakpoint}\\:');
 	}
 }

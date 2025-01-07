@@ -5,43 +5,6 @@
 * Spry Toggles
 */
 
-.toggle {
-	margin: 0;
-	user-select: none;
-	& :is(svg,img):nth-of-type(2),
-	&:not(:has([type])):focus-within:has(:is(svg,img):nth-of-type(2)) :is(svg,img):first-of-type,
-	&:is(.active, :has(:checked)):has(:is(svg,img):nth-of-type(2)) :is(svg,img):first-of-type {
-		opacity: 0;
-		scale  : .5
-	}
-
-	&:not(:has([type])):focus-within :is(svg,img):nth-of-type(2),
-	&:is(.active, :has(:checked)) :is(svg,img):nth-of-type(2) {
-		opacity: 1;
-		scale  : 1
-	}
-
-	& > :is(input[type=checkbox], input[type=radio]):not(.switch) {
-		width     : 0;
-		min-width : 0;
-		min-height: 0;
-		margin    : 0;
-		padding   : 0;
-		border    : 0;
-		outline   : 0;
-		margin-right: -1em;
-	}
-
-	&:has( > .switch) {
-		height: 1.15em;
-	}
-}
-
-// Delay on hover to prevent accidental showing
-[class*="hover:open"] {
-	transition-delay: .1s;
-}
-
 /*
 * Collapse
 * 
@@ -155,12 +118,25 @@
 	}
 
 	@container (min-width: #{$breakpoint_width}) {
-		@include toggle-styles('.c-#{$breakpoint}\\:');
+		@include toggle-styles('.\\@#{$breakpoint}\\:');
 	}
 }
 
-.toggle + ul {
-	@extend %closed;
+.toggle {
+	margin: 0;
+	user-select: none;
+	+ ul {
+		@extend %closed;
+	}
+}
+
+:is(nav, .list) li:has(> .toggle + ul)> :not(.toggle):first-child {
+	padding-right: 2.5em;
+}
+
+// Delay on hover to prevent accidental showing
+[class*="h:open"] {
+	transition-delay: .1s;
 }
 
 :is(.toggle:checked, .toggle:has(:checked)) + ul {
@@ -168,7 +144,7 @@
 }
 
 :is(.toggle:checked, .toggle:has(:checked)) + :where(.collapse),
-.toggle-group:has(.toggle:checked, .toggle :checked) > :where(.collapse) {
+.toggle-group:has(.toggle:checked, .toggle :checked) :where(.collapse) {
 	@extend %open-inner;
 }
 
@@ -223,7 +199,6 @@
 
 .clip-top, .clip-bottom, .clip-right, .clip-left {
 	clip-path: inset(0 -1900px -1900px -1900px);
-	// z-index: 1;
 }
 .clip-bottom {
 	clip-path: inset(-1900px -1900px 0 -1900px);

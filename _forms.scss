@@ -29,7 +29,7 @@ input::file-selector-button,
 
 
 :where(h1, h2, h3, h4, h5, h6, label, p)+ :where(input, select, textarea, .input),
-label > :is(input, select, textarea):not([type=radio], [type=checkbox]):only-child {
+label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-child {
 	@extend %ui-margin-above;
 }
 
@@ -83,28 +83,21 @@ label > :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chi
 	display        : inline-flex;
 	align-items    : center;
 	justify-content: center;
-	vertical-align : text-top;
+	vertical-align : text-bottom;
 
 	&::after {
 		content         : "";
 		position        : absolute;
-		display         : block;
-		inset           : 12px;
-		opacity         : 0;
-		transition      : all .1s ease-in-out;
+		transition      : .1s ease-in-out;
 		background-color: var(--ui-accent);
 		border-radius   : 2px;
 	}
+}
 
-	&[class].loading::after {
-		height       : 0.7em;
-		width        : 0.7em;
-		background   : transparent;
-		inset        : 0;
-		margin-inline: auto;
-		opacity      : 1;
-		--ui-text    : var(--ui-accent);
-	}
+:is([type=radio], [type=checkbox]).loading:after {
+	height    : 0.7em;
+	width     : 0.7em;
+	--ui-text : var(--ui-accent);
 }
 
 .switch {
@@ -113,20 +106,26 @@ label > :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chi
 	border-radius  : 1em;
 	justify-content: left;
 
-	&:not(:checked)::after {
+	&:not(:checked, .loading)::after {
 		background-color: var(--input-color);
 		opacity         : 0.5;
 	}
 
 	&::after {
-		margin  : .15em;
-		position: absolute;
-		inset   : 0 calc(100% - 1.05em) 0 0;
+		margin      : auto;
+		position    : absolute;
+		inset       : 0 auto 0 .2em;
+		aspect-ratio: 1;
+		height: 70%;
 	}
 
 	&:checked::after {
-		left : calc(100% - 1.05em);
-		right: 0;
+		left: calc(100% - .9em);
+	}
+
+	&.loading::after {
+		background: transparent;
+		left: calc(50% - .3em);
 	}
 }
 
@@ -136,10 +135,6 @@ label > :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chi
 
 :not(.icon, .switch):checked::after {
 	inset: 2px;
-}
-
-:checked::after {
-	opacity: 1;
 }
 
 [type=radio],
@@ -239,6 +234,7 @@ input[type=file] {
 
 label {
 	display: block;
+
 	&:focus-within .input> :not(input, select, textarea),
 	&:focus-within input::file-selector-button {
 		background-color: var(--ui-border);
