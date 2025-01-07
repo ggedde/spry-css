@@ -182,7 +182,7 @@ General Utility Classes
 }
 
 @for $i from 1 through 10 {
-	.h\:o-#{$i}0:hover {
+	.h\:o-#{$i}:hover {
 		opacity: #{calc($i / 10)};
 	}
 
@@ -727,7 +727,7 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 	}
 
 	@for $i from 1 through 10 {
-		#{$prefix}o-#{$i}0 {
+		#{$prefix}o-#{$i} {
 			opacity: #{calc($i / 10)};
 		}
 	}
