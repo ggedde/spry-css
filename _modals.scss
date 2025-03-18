@@ -19,10 +19,6 @@
 	}
 }
 
-body:has(.modal.open:not(.bg-none)) {
-	overflow: hidden;
-}
-
 .modal {
 	--transform     : scale(.8, .8) translate3d(0, 0, 0);
 	--origin        : center;
@@ -45,6 +41,7 @@ body:has(.modal.open:not(.bg-none)) {
 	z-index         : 10;
 
 	>* {
+		user-select: text;
 		box-sizing      : border-box;
 		max-height      : 90%;
 		overflow        : auto;
@@ -63,6 +60,10 @@ body:has(.modal.open:not(.bg-none)) {
 body:has(.modal:not(.bg-none)[popover]:popover-open) {
 	pointer-events: none;
 	user-select: none;
+}
+
+body:has(.modal.open.scroll-none, .modal[open].scroll-none, .modal.scroll-none:popover-open) {
+	overflow: hidden;
 }
 
 .modal.open,

@@ -37,6 +37,7 @@
 	#{$prefix}h\:open:hover > :where(.collapse),
 	#{$prefix}h\:open:focus-within > :where(.collapse),
 	#{$prefix}f\:open:focus > :where(.collapse),
+	#{$prefix}f\:open.collapse:has(:focus-visible, :active),
 	:where(#{$prefix}f\:open):has(> :focus, .toggle:focus, :focus-visible, :active) > :where(.collapse),
 	#{$prefix}open:where(.collapse),
 	#{$prefix}open > :where(.collapse) {
@@ -59,6 +60,7 @@
 	}
 
 	:is(#{$prefix}open,
+	// #{$prefix}active,
 	#{$prefix}h\:open:hover,
 	#{$prefix}h\:open:focus-within,
 	#{$prefix}f\:open:focus,
@@ -72,6 +74,16 @@
 		> .open\:flip,
 		&.open\:flip {
 			scale: -1;
+		}
+		> :is(.toggle, label, button) .open\:flip-x,
+		> .open\:flip-x,
+		&.open\:flip-x {
+			scale: -1 1;
+		}
+		> :is(.toggle, label, button) .open\:flip-y,
+		> .open\:flip-y,
+		&.open\:flip-y {
+			scale: 1 -1;
 		}
 		> :is(.toggle, label, button) .open\:revert,
 		> .open\:revert,
@@ -117,12 +129,14 @@
 		@include toggle-styles('.#{$breakpoint}\\:');
 	}
 
-	@container (min-width: #{$breakpoint_width}) {
-		@include toggle-styles('.\\@#{$breakpoint}\\:');
+	@if variables.$useContainerQueries {
+		@container (min-width: #{$breakpoint_width}) {
+			@include toggle-styles('.\\@#{$breakpoint}\\:');
+		}
 	}
 }
 
-.toggle {
+:where(.toggle) {
 	margin: 0;
 	user-select: none;
 	+ ul {
@@ -161,6 +175,16 @@
 	&.open\:flip {
 		scale: -1;
 	}
+	> :is(.toggle, label, button) .open\:flip-x,
+	> .open\:flip-x,
+	&.open\:flip-x {
+		scale: -1 1;
+	}
+	> :is(.toggle, label, button) .open\:flip-y,
+	> .open\:flip-y,
+	&.open\:flip-y {
+		scale: 1 -1;
+	}
 	> :is(.toggle, label, button) .open\:revert,
 	> .open\:revert,
 	&.open\:revert {
@@ -195,17 +219,4 @@
 			transform: rotate(-45deg);
 		}
 	}
-}
-
-.clip-top, .clip-bottom, .clip-right, .clip-left {
-	clip-path: inset(0 -1900px -1900px -1900px);
-}
-.clip-bottom {
-	clip-path: inset(-1900px -1900px 0 -1900px);
-}
-.clip-right {
-	clip-path: inset(-1900px 0 -1900px -1900px);
-}
-.clip-left {
-	clip-path: inset(-1900px -1900px -1900px 0);
 }

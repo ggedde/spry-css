@@ -2,13 +2,13 @@
 * Spry Functions
 */
 @function color($n) {
-	@return hsl(from $n h s var(--clr-l, l) / var(--clr-a, 100%));
+	@return hsl(from $n h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 1));
 }
 
 @function bg($n) {
-	@return hsl(from $n h s var(--bg-l, l) / var(--bg-a, 100%));
+	@return hsl(from $n h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
 }
 
 @function border($n) {
-	@return hsl(from $n h s var(--bdr-l, l) / var(--bdr-a, 100%));
+	@return hsl(from $n h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 }

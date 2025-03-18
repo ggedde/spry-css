@@ -15,7 +15,7 @@
     }
 }
 
-:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, pre, code, article, figure) + :where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label, pre, code, article, .button, button, figure) {
+:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, pre, code, article, figure, table) + :where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label, pre, code, article, .button, button, figure, table) {
     @extend %ui-margin-above-lg;
 }
 
@@ -45,4 +45,22 @@ code {
 	white-space: pre;
     tab-size: 4;
     hyphens: none;
+}
+
+@for $i from 1 through 9 {
+    .fw-#{$i}00 {
+        font-weight: #{$i}00
+    }
+}
+
+.uppercase {
+	text-transform: uppercase
+}
+
+.lowercase {
+	text-transform: lowercase
+}
+
+.capitalize {
+	text-transform: capitalize
 }

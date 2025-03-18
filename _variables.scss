@@ -10,6 +10,8 @@ $breakpoints: (
     // lg: 80em,
 ) !default;
 
+$useContainerQueries: false;
+
 // Specify each breakpoint gap size. <section> tags with get padding based on gap size.
 // You must include one for each Breakpoint otherwise it will result in a Compile Error.
 $gaps: (
@@ -74,10 +76,10 @@ $spacing: (
     1  : .25em,
     2  : .5em,
     3  : 1em,
-    4  : 2em,
-    5  : 4em,
-    6  : 6em,
-    200: 200px, // Used for Sidebars
+    4  : 2.25em,
+    5  : 5em,
+    // 6  : 6em,
+    // 200: 200px, // Used for Sidebars
 ) !default;
 
 // Specify each border size Ex .b-0, .b-1, .bt-3, .bx-3, .br-2, etc.
@@ -88,7 +90,7 @@ $borders: (
     3: 3px,
 ) !default;
 
-// Specify each border radius sizes Ex .r-0, .r-1, .rt-3, .rl-3, etc.
+// Specify each border radius size Ex .r-0, .r-1, .rt-3, .rl-3, etc.
 $radius: (
     0: 0,
     1: .25em,
@@ -96,18 +98,27 @@ $radius: (
     3: .75em,
     4: 1em,
     5: 2em,
-    full: 999px,
+    // full: 999px,
+) !default;
+
+// Specify each blur size Ex .blur-0, .blur-bg-3, etc.
+$blur: (
+    0: 0,
+    1: 1px,
+    2: 2px,
+    3: 8px,
+    4: 16px,
 ) !default;
 
 // Specify each size that applies font-size and all elements using "em".
 $sizes: (
-    xxl: 165%,
-    xl: 140%,
-    lg: 120%,
+    xxl: 130%,
+    xl: 120%,
+    lg: 115%,
     md: 100%,
-    sm: 80%,
-    xs: 65%,
-    xxs: 50%,
+    sm: 85%,
+    xs: 70%,
+    xxs: 60%,
 ) !default;
 
 :root {

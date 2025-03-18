@@ -53,7 +53,7 @@ $themeNames: ();
 	--ui-color : var(--theme-ui);
 	--ui-input : var(--theme-input);
 	--ui-accent: var(--theme-accent);
-	--ui-text  : hsl(from var(--theme-ui) 0 0 clamp(15%, calc((l - var(--invert))* -1000%), 98%) / var(--clr-a, 100%));
+	--ui-text  : hsl(from var(--theme-ui) 0 0 clamp(15%, calc((l - var(--invert))* -1000%), 98%) / var(--clr-a, 1));
 }
 
 @for $i from 0 through 10 {
@@ -95,6 +95,14 @@ $themeNames: ();
 	.h\:border\/#{$i}:hover {
 		--bdr-a: #{calc($i / 10)};
 	}
+
+	.glow\/#{$i} {
+		--glow-o: #{calc($i / 10)};
+	}
+
+	.glow-#{$i} {
+		--glow-s: #{calc($i / 10)};
+	}
 }
 
 :where(#{$themeNames}, [class*=scheme-]),
@@ -102,9 +110,9 @@ $themeNames: ();
 select option,
 .tooltip {
 	color-scheme    : var(--theme-scheme);
-	color           : hsl(from var(--theme-color) h s var(--clr-l, l) / var(--clr-a, 100%));
-	background-color: hsl(from var(--ui-bg) h s var(--bg-l, l) / var(--bg-a, 100%));
-	border-color    : hsl(from var(--ui-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+	color           : hsl(from var(--theme-color) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 1));
+	background-color: hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
+	border-color    : hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 }
 
 hr,
@@ -116,7 +124,7 @@ hr,
 [class*=br-],
 [class*=bb-],
 [class*=bl-] {
-	border-color: hsl(from var(--ui-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+	border-color: hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 }
 
 @each $color_name, $color_value in variables.$colors {
@@ -137,8 +145,35 @@ hr,
 	--ui-accent: var(--ui-color);
 	&:where(.link,.plain,.hazy,.outline, .buttons-link a, .buttons-outline a, .buttons-hazy a, .buttons-plain a),
 	:where(.link,.plain,.hazy,.outline, .buttons-link a, .buttons-outline a, .buttons-hazy a, .buttons-plain a) {
-		--ui-text: hsl(from var(--ui-accent) h s var(--clr-l, l) / var(--clr-a, 100%));
+		--ui-text: hsl(from var(--ui-accent) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 1));
 	}
+}
+
+[class*="h\:color-"]:is(:hover, :focus, .active),
+[class*="h\:links-"] a:not(.button,[class*=h\:color-]):is(:hover, :focus, .active),
+[class^="links-"] :where(a:not(.button)),
+[class*=" links-"] :where(a:not(.button)),
+[class^="color-"],
+[class*=" color-"] {
+	color: var(--ui-text);
+}
+
+[class*="h\:bg-"]:is(:hover, :focus, .active),
+[class^="bg-"],
+[class*=" bg-"] {
+	background-color: hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
+}
+
+[class*="h\:border-"]:is(:hover, :focus, .active),
+[class^="border-"],
+[class*=" border-"] {
+	border-color: hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
+}
+
+[class*="h\:glow-"]:is(:hover, :focus, .active),
+[class^="glow-"],
+[class*=" glow-"] {
+	box-shadow: 0px 0px calc(4em * var(--glow-s)) calc(2em * var(--glow-s)) rgb(from var(--ui-glow) r g b / var(--glow-o));
 }
 
 @each $color_name, $color_value in variables.$colors {
@@ -147,24 +182,20 @@ hr,
 	.h\:links-#{"" + $color_name} a:not(.button,[class*=h\:color-]):is(:hover, :focus, .active),
 	.h\:color-#{"" + $color_name}:is(:hover, :focus, .active),
 	.color-#{"" + $color_name} {
-		--ui-text: hsl(from var(--#{$color_name}) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 100%));
-		color: var(--ui-text);
-	}
-
-	.color-to-#{"" + $color_name} {
-		--clr-to: var(--#{$color_name});
+		--ui-text: hsl(from var(--#{$color_name}) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 1));
+		// color: var(--ui-text);
 	}
 	
 	.h\:bg-#{"" + $color_name}:is(:hover, :focus, .active),
 	.bg-#{"" + $color_name} {
 		--ui-bg: var(--#{$color_name});
-		background-color: hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 100%));
+		// background-color: hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
 	}
 
 	.h\:glow-#{"" + $color_name}:is(:hover, :focus, .active),
 	.glow-#{"" + $color_name} {
 		--ui-glow: var(--#{$color_name});
-		box-shadow: 0px 0px calc(4em * var(--glow-s)) calc(2em * var(--glow-s)) rgb(from var(--ui-glow) r g b / var(--glow-o));
+		// box-shadow: 0px 0px calc(4em * var(--glow-s)) calc(2em * var(--glow-s)) rgb(from var(--ui-glow) r g b / var(--glow-o));
 	}
 
 	.bg-to-#{"" + $color_name} {
@@ -175,55 +206,34 @@ hr,
 	.border-#{"" + $color_name} {
 		--ui-border: var(--#{$color_name});
 		--ui-input: var(--#{$color_name});
-		border-color: hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 100%));
-	}
-
-	.border-to-#{"" + $color_name} {
-		--bdr-to: var(--#{$color_name});
+		// border-color: hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 	}
 }
 
+[class*=h\:glow-] {
+	transition: box-shadow var(--speed) var(--ease);
+}
+
 .color-theme {
-	--ui-text: hsl(from var(--theme-color) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 100%));
+	--ui-text: hsl(from var(--theme-color) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 1));
 	color: var(--ui-text);
 }
 .bg-theme {
 	--ui-bg: var(--theme-bg);
-	background-color: hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 100%));
+	background-color: hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
 }
 .border-theme {
 	--ui-border: var(--theme-border);
 	--ui-input: var(--theme-border);
-	border-color: hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 100%));
+	border-color: hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 }
 .glow-theme {
 	--ui-glow: var(--theme-bg);
 	box-shadow: 0px 0px calc(4em * var(--glow-s)) calc(2em * var(--glow-s)) rgb(from var(--ui-glow) r g b / var(--glow-o));
 }
-
-.color-to-theme {
-	--clr-to: var(--theme-color);
-}
 .bg-to-theme {
 	--bg-to: var(--theme-bg);
 }
-.border-to-theme {
-	--bdr-to: var(--theme-border);
-}
-
-.color-from-top {
-	--clr-from: 180deg;
-}
-.color-from-top-left {
-	--clr-from: 150deg;
-}
-.color-from-left {
-	--clr-from: 90deg;
-}
-.color-from-left-bottom {
-	--clr-from: 30deg;
-}
-
 .bg-from-top {
 	--bg-from: 180deg;
 }
@@ -237,47 +247,18 @@ hr,
 	--bg-from: 30deg;
 }
 
-.border-from-top {
-	--bdr-from: 180deg;
-}
-.border-from-top-left {
-	--bdr-from: 150deg;
-}
-.border-from-left {
-	--bdr-from: 90deg;
-}
-.border-from-left-bottom {
-	--bdr-from: 30deg;
-}
-
 [class*=bg-to-] {
 	background-origin: border-box;
-	background-image: linear-gradient(var(--bg-from), hsl(from var(--ui-bg) h s var(--bg-l, l) / var(--bg-a, 100%)), hsl(from var(--bg-to) h s var(--bg-l, l) / var(--bg-a, 100%)));
-}
-
-[class*=border-to-] {
-	border-image: linear-gradient(var(--bdr-from), hsl(from var(--ui-border) h s var(--bdr-l, l) / var(--bdr-a, 100%)), hsl(from var(--bdr-to) h s var(--bdr-l, l) / var(--bdr-a, 100%))) 1;
-}
-
-[class*=color-to-] {
-	background-image: linear-gradient(var(--clr-from), hsl(from var(--ui-text) h s var(--clr-l, l) / var(--clr-a, 100%)), hsl(from var(--clr-to) h s var(--clr-l, l) / var(--clr-a, 100%)));
-    color: transparent;
-    background-clip: text;
+	background-image: linear-gradient(var(--bg-from), hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1)), hsl(from var(--bg-to) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1)));
 }
 
 .bg-from-center {
-	background-image: radial-gradient(circle, hsl(from var(--ui-bg) h s var(--bg-l, l) / var(--bg-a, 100%)) 20%, hsl(from var(--bg-to) h s var(--bg-l, l) / var(--bg-a, 100%)) 115%);
-}
-.color-from-center {
-	background-image: radial-gradient(circle, hsl(from var(--ui-text) h s var(--clr-l, l) / var(--clr-a, 100%)) 20%, hsl(from var(--clr-to) h s var(--clr-l, l) / var(--clr-a, 100%)) 115%);
-}
-.border-from-center {
-	border-image: radial-gradient(circle, hsl(from var(--ui-border) h s var(--bdr-l, l) / var(--bdr-a, 100%)) 20%, hsl(from var(--bdr-to) h s var(--bdr-l, l) / var(--bdr-a, 100%)) 115%);
+	background-image: radial-gradient(circle, hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1)) 20%, hsl(from var(--bg-to) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1)) 115%);
 }
 
 .layer {
-	background-color: hsl(from var(--ui-bg) h s calc(l + (var(--layer-lvl) * var(--layer) * var(--layer-dir))) / var(--bg-a, 100%));
-	border-color: hsl(from var(--ui-border) h s calc(l * var(--bdr-l, 1) + (((var(--layer-lvl) - 1) * var(--layer)) * var(--layer-dir))) / var(--bdr-a, 100%));
+	background-color: hsl(from var(--ui-bg) h s calc(l + (var(--layer-lvl) * var(--layer) * var(--layer-dir))) / var(--bg-a, 1));
+	border-color: hsl(from var(--ui-border) h s calc(l * var(--bdr-l, 1) + (((var(--layer-lvl) - 1) * var(--layer)) * var(--layer-dir))) / var(--bdr-a, 1));
 }
 
 .layer .layer {

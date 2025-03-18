@@ -1,0 +1,133 @@
+/*!
+* Spry General Utilities
+*/
+
+.pointer {
+	cursor: pointer
+}
+
+.circle,
+.square {
+	aspect-ratio: 1;
+}
+
+.circle {
+	border-radius: 50%;
+}
+
+.widescreen {
+	aspect-ratio: 16 / 9;
+}
+
+@for $i from 1 through 5 {
+	.index-#{$i} {
+		z-index: #{$i}
+	}
+}
+
+.truncate-1 {
+	overflow-wrap: break-word;
+	word-break   : break-all;
+}
+
+.truncate,
+[class*="truncate-"] {
+	max-width         : 100%;
+	overflow          : hidden;
+	text-overflow     : ellipsis;
+	display           : -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	line-clamp        : 1;
+}
+
+@for $i from 2 through 5 {
+	.truncate-#{$i} {
+		-webkit-line-clamp: #{$i};
+		line-clamp        : #{$i};
+		white-space       : normal;
+		word-break        : break-word;
+	}
+}
+
+.truncate {
+	white-space: nowrap;
+	display    : inline-block
+}
+
+.inherit-border {
+	border: inherit
+}
+
+.inherit-bg {
+	background: inherit
+}
+
+.inherit-color {
+	color: inherit
+}
+
+.snug {
+	translate: -1em -.7em
+}
+
+.select-none {
+	user-select: none;
+}
+
+.select-text {
+	user-select: text;
+}
+
+.appearance-none {
+	appearance: none;
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-calendar-picker-indicator,
+	&::-webkit-inner-spin-button {
+		display: none;
+	}
+}
+
+.slow {
+    --speed: .8s;
+}
+
+.medium {
+    --speed: .4s;
+}
+
+.fast {
+    --speed: .2s;
+}
+
+.instant {
+    --speed: 0s;
+}
+
+.transition,
+.transition-inner > * {
+	transition: var(--speed) var(--ease);
+}
+
+.transition-none {
+	--speed: 0s;
+	transition: none;
+}
+
+.clip-text {
+	color: transparent;
+    background-clip: text;
+}
+.clip-top, .clip-bottom, .clip-right, .clip-left {
+	clip-path: inset(0 -1900px -1900px -1900px);
+}
+.clip-bottom {
+	clip-path: inset(-1900px -1900px 0 -1900px);
+}
+.clip-right {
+	clip-path: inset(-1900px 0 -1900px -1900px);
+}
+.clip-left {
+	clip-path: inset(-1900px -1900px -1900px 0);
+}

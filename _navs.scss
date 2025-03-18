@@ -70,7 +70,7 @@ menu menu {
 	#{$prefix}open\:side ul ul,
 	#{$prefix}sub\:open\:side ul ul ul {
 		position : absolute;
-		min-width: calc(100% + 1px);
+		// min-width: calc(100% + 1px);
 		max-width: 260px;
 		width    : max-content;
 	}
@@ -109,7 +109,9 @@ $breakpoint_width in variables.$breakpoints {
 		@include hoverOpen-styles('.#{$breakpoint}\\:');
 	}
 
-	@container (min-width: #{$breakpoint_width}) {
-		@include hoverOpen-styles('.\\@#{$breakpoint}\\:');
+	@if variables.$useContainerQueries {
+		@container (min-width: #{$breakpoint_width}) {
+			@include hoverOpen-styles('.\\@#{$breakpoint}\\:');
+		}
 	}
 }

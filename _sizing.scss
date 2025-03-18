@@ -6,6 +6,14 @@
 
 @mixin sizingUtility-styles($prefix) {
 
+	#{$prefix}h-0 {
+		height: 0
+	}
+
+	#{$prefix}w-0 {
+		width: 0
+	}
+
 	#{$prefix}h {
 		height: 100%
 	}
@@ -36,14 +44,6 @@
 
 	#{$prefix}vw {
 		width: 100dvw
-	}
-
-	#{$prefix}h-0 {
-		height: 0
-	}
-
-	#{$prefix}w-0 {
-		width: 0
 	}
 
 	#{$prefix}w-content {
@@ -158,7 +158,9 @@
 		@include sizingUtility-styles('.#{$breakpoint}\\:');
 	}
 
-	@container (min-width: #{$breakpoint_width}) {
-		@include sizingUtility-styles('.\\@#{$breakpoint}\\:');
+	@if variables.$useContainerQueries {
+		@container (min-width: #{$breakpoint_width}) {
+			@include sizingUtility-styles('.\\@#{$breakpoint}\\:');
+		}
 	}
 }

@@ -29,7 +29,9 @@
 	@media screen and (min-width: $breakpoint_width) {
 		@include radius-styles('.#{$breakpoint}\\:');
 	}
-	@container (min-width: #{$breakpoint_width}) {
-		@include radius-styles('.\\@#{$breakpoint}\\:');
+	@if variables.$useContainerQueries {
+		@container (min-width: #{$breakpoint_width}) {
+			@include radius-styles('.\\@#{$breakpoint}\\:');
+		}
 	}
 }

@@ -7,7 +7,7 @@
 input::file-selector-button,
 .input>*,
 .input {
-	--input-color: hsl(from var(--ui-input) h s var(--bdr-l, l) / var(--bdr-a, 1));
+	--input-color: hsl(from var(--ui-input) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 }
 
 :where(input, textarea, select, .is-select),
@@ -22,7 +22,7 @@ input::file-selector-button,
 	font-weight   : inherit;
 
 	&:is(:hover, :focus, :focus-within):not(.icon) {
-		--ui-input: hsl(from var(--ui-accent) h s var(--bdr-l, l) / var(--bdr-a, 1));
+		--ui-input: hsl(from var(--ui-accent) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 	}
 }
 
@@ -184,7 +184,7 @@ input[type=file] {
 	border          : 0;
 	--bdr-a         : .5;
 	border-right    : 1px solid var(--input-color);
-	background-color: hsl(from var(--theme-ui) h s var(--bg-l, l) / var(--bg-a, 1));
+	background-color: hsl(from var(--theme-ui) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
 	color           : var(--ui-text);
 	height          : 2.3em;
 	padding-inline  : 1em;
@@ -202,7 +202,7 @@ input[type=file] {
 	> :not(input, select, textarea) {
 		@extend %ui;
 		--bg-a          : 1;
-		background-color: hsl(from var(--theme-ui) h s var(--bg-l, l) / var(--bg-a, 1));
+		background-color: hsl(from var(--theme-ui) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
 		color           : var(--ui-text);
 		justify-content : center;
 		min-width       : max-content;
@@ -239,7 +239,7 @@ label {
 	&:focus-within input::file-selector-button {
 		background-color: var(--ui-border);
 		opacity         : 1;
-		--ui-text       : hsl(from var(--ui-color) 0 0 clamp(15%, calc((l - var(--invert))* -1000%), 98%) / var(--clr-a, 100%));
+		--ui-text       : hsl(from var(--ui-color) 0 0 clamp(15%, calc((l - var(--invert))* -1000%), 98%) / var(--clr-a, 1));
 	}
 
 	&:hover .input> :not(input, select, textarea) {

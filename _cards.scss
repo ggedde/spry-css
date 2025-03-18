@@ -40,12 +40,12 @@ article {
 
 		>header {
 			border-bottom: inherit;
-			border-image: inherit;
+			// border-image: inherit;
 		}
 
 		>footer {
 			border-top: inherit;
-			border-image: inherit;
+			// border-image: inherit;
 		}
 	}
 
@@ -58,7 +58,7 @@ article {
 		@extend %ui;
 		@extend %ui-color;
 		@extend %ui-roomy;
-		background-color: hsl(from var(--ui-color) h s var(--bg-l, l) / var(--bg-a, 100%));
+		background-color: hsl(from var(--ui-color) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
 		display         : flex;
 		justify-content : space-between;
 		align-items     : center;

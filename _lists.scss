@@ -33,7 +33,7 @@
 	li {
 		margin-block: 0;
 		position    : relative;
-		max-width   : 100%;
+		// max-width   : 100%;
 
 		li {
 			width: 100%;
@@ -43,7 +43,7 @@
 	:where(a) {
 		@extend %ui;
 		@extend %ui-border-radius;
-		color: hsl(from var(--ui-accent) h s var(--clr-l, l) / var(--clr-a, 100%));
+		color: hsl(from var(--ui-accent) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 1));
 	}
 
 	li:not(.button, .row)>*:first-child {

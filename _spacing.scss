@@ -33,8 +33,7 @@
 		margin-right: auto;
 	}
 
-	@each $s,
-	$space in variables.$spacing {
+	@each $s, $space in variables.$spacing {
 		@each $prop in (padding, margin) {
 			#{$prefix}#{string.slice($prop, 0, 1)}-#{$s} {
 				#{$prop}: #{$space};
@@ -42,28 +41,10 @@
 		}
 
 		#{$prefix}g-#{$s} {
-			--gapx : #{$space};
-			--gapy : #{$space};
-			gap    : var(--gapy) var(--gapx);
-			// &:not(.grid, .row, .column, .flex) > * + * {
-			// 	margin-top: #{$space};
-			// }
-		}
-
-		#{$prefix}gx-#{$s} {
 			--gapx    : #{$space};
+			--gapy    : #{$space};
 			column-gap: var(--gapx);
-			// &:not(.grid, .row, .column, .flex) > * + * {
-			// 	margin-inline-start: #{$space};
-			// }
-		}
-
-		#{$prefix}gy-#{$s} {
-			--gapy : #{$space};
-			row-gap: var(--gapy);
-			// &:not(.grid, .row, .column, .flex) > * + * {
-			// 	margin-top: #{$space};
-			// }
+			row-gap   : var(--gapy);
 		}
 	}
 
@@ -128,16 +109,32 @@
 			}
 		}
 	}
+
+	@each $s, $space in variables.$spacing {
+		#{$prefix}gx-#{$s} {
+			--gapx    : #{$space};
+			column-gap: var(--gapx);
+		}
+
+		#{$prefix}gy-#{$s} {
+			--gapy : #{$space};
+			row-gap: var(--gapy);
+		}
+	}
 }
 
 @include spacing-styles('.');
 
-@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+@each $breakpoint,
+$breakpoint_width in variables.$breakpoints {
 	@media screen and (min-width: $breakpoint_width) {
 		@include spacing-styles('.#{$breakpoint}\\:');
 	}
-	@container (min-width: #{$breakpoint_width}) {
-		@include spacing-styles('.\\@#{$breakpoint}\\:');
+
+	@if variables.$useContainerQueries {
+		@container (min-width: #{$breakpoint_width}) {
+			@include spacing-styles('.\\@#{$breakpoint}\\:');
+		}
 	}
 }
 

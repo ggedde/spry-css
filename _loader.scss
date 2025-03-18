@@ -13,31 +13,38 @@
 	}
 }
 
-.loading {
+:is(.loading,.loading-2,.loading-3):is(button, .button, .badge, a) {
+	color: transparent;
+}
+
+:where(.loading,.loading-2,.loading-3) {
 	position      : relative;
 	pointer-events: none;
 	user-select   : none;
 	cursor        : default;
 	opacity       : .8;
 
+	* {
+		pointer-events: none;
+		user-select   : none;
+	}
 	&::after {
 		content       : '';
 		animation     : spinner calc(var(--speed) * 2) ease infinite;
+		aspect-ratio  : 1;
 		border        : .16em solid transparent;
 		border-color  : var(--ui-text) var(--ui-text) transparent transparent;
 		border-radius : 50%;
-		background    : transparent;
-		box-sizing    : border-box;
-		height        : 1.1em;
-		width         : 1.1em;
+		height        : min(50%, 100px);
 		inset         : 0;
 		margin        : auto;
-		pointer-events: none;
 		position      : absolute;
 		transition    : opacity var(--speed) ease-in-out .1s;
 	}
-
-	&[class] {
-		color: transparent;
-	}
+}
+.loading-2::after {
+	border-width: .3em;
+}
+.loading-3::after {
+	border-width: .4em;
 }

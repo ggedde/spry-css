@@ -17,13 +17,13 @@ table {
 	}
 
 	td {
-		border-top: 1px solid hsl(from var(--ui-border) h s var(--bdr-l, l) / var(--bdr-a, 50%));
+		border-top: 1px solid hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, .5));
 		vertical-align: top;
 	}
 }
 
 thead {
-	box-shadow: 0 2px 0 hsl(from var(--ui-border) h s var(--bdr-l, l) / var(--bdr-a, 100%));
+	box-shadow: 0 2px 0 hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 	color: var(--ui-text);
 	&.sticky {
 		top: -1px;
@@ -32,6 +32,10 @@ thead {
 	th {
 		font-weight: 500;
 	}
+}
+
+tbody {
+	--bdr-a: .5;
 }
 
 .striped tbody tr:nth-child(even),
@@ -78,9 +82,10 @@ thead {
 		@media screen and (max-width: #{$breakpoint_width}) {
 			@include table-responsive-styles('.#{$breakpoint}\\:');
 		}
-
-		@container (max-width: #{$breakpoint_width}) {
-			@include table-responsive-styles('.\\@#{$breakpoint}\\:');
+		@if variables.$useContainerQueries {
+			@container (max-width: #{$breakpoint_width}) {
+				@include table-responsive-styles('.\\@#{$breakpoint}\\:');
+			}
 		}
 	}
 }

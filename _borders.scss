@@ -75,7 +75,9 @@
 	@media screen and (min-width: $breakpoint_width) {
 		@include border-styles('.#{$breakpoint}\\:');
 	}
-	@container (min-width: #{$breakpoint_width}) {
-		@include border-styles('.\\@#{$breakpoint}\\:');
+	@if variables.$useContainerQueries {
+		@container (min-width: #{$breakpoint_width}) {
+			@include border-styles('.\\@#{$breakpoint}\\:');
+		}
 	}
 }

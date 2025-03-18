@@ -6,46 +6,7 @@
 .slider {
 	position: relative;
 
-	&-slides {
-		display           : flex;
-		overflow-x        : scroll;
-		scroll-behavior   : smooth;
-		scroll-snap-type  : x mandatory;
-		-ms-overflow-style: none;
-		scrollbar-width   : none;
-
-		&[class] {
-			flex-wrap    : nowrap;
-			place-content: start;
-		}
-
-		&::-webkit-scrollbar {
-			width  : 0;
-			display: none;
-		}
-
-		&::-webkit-scrollbar-track {
-			background: transparent;
-		}
-
-		&::-webkit-scrollbar-thumb {
-			background: transparent;
-			border    : none;
-		}
-
-		>* {
-			display             : flex;
-			flex-direction      : column;
-			position            : relative;
-			flex                : 0 0 100%;
-			// width            : 100%;
-			min-width           : 100%;
-			scroll-snap-align   : start;
-			justify-content     : center;
-		}
-	}
-
-	&[data-snap] .slider-slides>* {
+	&[data-slider-snap] .slides>* {
 		scroll-snap-stop: always;
 	}
 
@@ -53,8 +14,8 @@
 		width: 100%;
 	}
 
-	.slider-prev,
-	.slider-next {
+	.prev,
+	.next {
 		content   : '';
 		z-index   : 1;
 		position  : absolute;
@@ -64,18 +25,18 @@
 		transition: opacity .2s ease-in-out;
 	}
 
-	.slider-next {
+	.next {
 		right: 0;
 		left : auto;
 	}
 
-	&[data-position="start"] .slider-prev,
-	&[data-position="end"] .slider-next {
+	&.slider-start .prev,
+	&.slider-end .next {
 		opacity       : 0;
 		pointer-events: none;
 	}
 
-	.slider-pagination {
+	.pagination {
 		display        : flex;
 		justify-content: center;
 		align-items    : center;
@@ -97,5 +58,43 @@
 				opacity: 1;
 			}
 		}
+	}
+}
+
+.slides {
+	display           : flex;
+	overflow-x        : scroll;
+	scroll-behavior   : smooth;
+	scroll-snap-type  : x mandatory;
+	-ms-overflow-style: none;
+	scrollbar-width   : none;
+
+	&[class] {
+		flex-wrap    : nowrap;
+		place-content: start;
+	}
+
+	&::-webkit-scrollbar {
+		width  : 0;
+		display: none;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: transparent;
+		border    : none;
+	}
+
+	>* {
+		display             : flex;
+		flex-direction      : column;
+		position            : relative;
+		flex                : 0 0 100%;
+		min-width           : 100%;
+		scroll-snap-align   : start;
+		justify-content     : center;
 	}
 }

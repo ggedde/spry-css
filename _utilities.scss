@@ -1,236 +1,32 @@
 @use "variables";
-@use "sass:map";
 /*!
-* Spry Utilities
+* Spry Responsive Utilities
 */
 
-/*************************************
-General Utility Classes
-**************************************/
-.thin {
-	font-weight: 300
+:root {
+	--sa: calc(.5em*var(--shadow)) calc(.75em * var(--shadow)) calc(1.75em * var(--shadow)) rgba(0, 0, 0, var(--shadow));
 }
 
-.normal {
-	font-weight: 400
+[class^="shadow-"],
+[class*=" shadow-"] {
+	box-shadow: calc(.5em*var(--shadow)) calc(.75em * var(--shadow)) calc(1.75em * var(--shadow)) rgba(0, 0, 0, var(--shadow))
 }
 
-.bold {
-	font-weight: 600
-}
-
-.italic {
-	font-style: italic
-}
-
-.uppercase {
-	text-transform: uppercase
-}
-
-.lowercase {
-	text-transform: lowercase
-}
-
-.capitalize {
-	text-transform: capitalize
-}
-
-.pointer {
-	cursor: pointer
-}
-
-.circle,
-.square {
-	aspect-ratio: 1;
-}
-
-.circle {
-	border-radius: 50%;
-}
-
-.widescreen {
-	aspect-ratio: 16 / 9;
-}
-
-@for $i from 1 through 5 {
-	.index-#{$i} {
-		z-index: #{$i}
-	}
-}
-
-.truncate-1 {
-	overflow-wrap: break-word;
-	word-break   : break-all;
-}
-
-.truncate,
-[class*="truncate-"] {
-	max-width         : 100%;
-	overflow          : hidden;
-	text-overflow     : ellipsis;
-	display           : -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 1;
-	line-clamp        : 1;
-}
-
-@for $i from 2 through 5 {
-	.truncate-#{$i} {
-		-webkit-line-clamp: #{$i};
-		line-clamp        : #{$i};
-		white-space       : normal;
-		word-break        : break-word;
-	}
-}
-
-.truncate {
-	white-space: nowrap;
-	display    : inline-block
-}
-
-.bg-inherit {
-	background-color: inherit
-}
-
-.bg-blur-sm {
-	backdrop-filter: blur(1px)
-}
-
-.bg-blur,
-.bg-blur-md {
-	backdrop-filter: blur(2px)
-}
-
-.bg-blur-lg {
-	backdrop-filter: blur(8px)
-}
-
-.bg-blur-xl {
-	backdrop-filter: blur(16px)
-}
-
-.bg-none {
-	background     : transparent;
-	backdrop-filter: none
-}
-
-.border-none {
-	border-color: transparent;
-}
-
-.color-inherit {
-	color: inherit
-}
-
-.blur,
-.blur-md {
-	filter: blur(1em);
-}
-.blur-sm {
-	filter: blur(.2em);
-}
-.blur-lg {
-	filter: blur(2em);
-}
-
-.snug {
-	translate: -1em -.7em
-}
-
-.h\:scale {
-	scale     : 1.00001;
-	transition: scale var(--speed) var(--ease)
-}
-
-.scale,
-.h\:scale:hover {
-	scale: 1.08
-}
-
-.select-none {
-	user-select: none;
-}
-
-.select-text {
-	user-select: text;
-}
-
-.appearance-none {
-	appearance: none;
-
-	&::-webkit-outer-spin-button,
-	&::-webkit-calendar-picker-indicator,
-	&::-webkit-inner-spin-button {
-		display: none;
-	}
-}
-
-
-[class*=h\:glow-] {
-	transition: box-shadow var(--speed) var(--ease);
-}
-
-.h\:o-0:hover {
-	opacity: 0
-}
-
-:has(>.peek):hover > .peek {
-	opacity: 1;
-}
-
-.shy {
-	opacity: 0.6;
-	&:is(:hover, :focus) {
-		opacity: 1
-	}
-}
-
-@for $i from 1 through 10 {
-	.h\:o-#{$i}:hover {
-		opacity: #{calc($i / 10)};
-	}
-
-	.shadow\/#{$i} {
-		--shadow: #{calc($i / 10)};
-	}
-
-	.glow\/#{$i} {
-		--glow-o: #{calc($i / 10)};
-	}
-
-	.glow-#{$i} {
-		--glow-s: #{calc($i / 10)};
-	}
-}
-
-.slow {
-    --speed: .8s;
-}
-
-.fast {
-    --speed: .2s;
-}
-
-.instant {
-    --speed: 0s;
-}
-
-.\@container {
-	container-type: inline-size;
-	position      : relative
-}
-
-.\@container-none {
-	container-type: initial
-}
-
-.text-shadow {
+[class*="text-shadow-"] {
 	text-shadow: 1px 2px 0px rgba(0, 0, 0, .2);
 }
 
-.drop-shadow {
+[class*="drop-shadow-"] {
 	filter: drop-shadow( 2px 2px 3px rgba(0, 0, 0, .3));
 }
+
+// .text-shadow {
+// 	text-shadow: 1px 2px 0px rgba(0, 0, 0, .2);
+// }
+
+// .drop-shadow {
+// 	filter: drop-shadow( 2px 2px 3px rgba(0, 0, 0, .3));
+// }
 
 /****************************************************************************
 Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
@@ -303,6 +99,10 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		hyphens      : auto;
 	}
 
+	#{$prefix}none {
+		display: none
+	}
+
 	#{$prefix}block {
 		display: block;
 		width  : 100%
@@ -331,10 +131,6 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		display: revert
 	}
 
-	#{$prefix}none {
-		display: none
-	}
-
 	#{$prefix}table-cell {
 		display: table-cell;
 		width  : auto;
@@ -356,49 +152,124 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		pointer-events: inherit;
 	}
 
-	#{$prefix}items-center {
-		place-items: center
+	#{$prefix}center,
+	#{$prefix}block-center,
+	#{$prefix}column.inline-center,
+	#{$prefix}column#{$prefix}inline-center,
+	.column#{$prefix}inline-center {
+		align-content  : center;
+		align-items    : center;
 	}
 
-	#{$prefix}items-end {
-		place-items: end
+	#{$prefix}center,
+	#{$prefix}inline-center, 
+	#{$prefix}column.block-center,
+	#{$prefix}column#{$prefix}block-center,
+	.column#{$prefix}block-center  {
+		justify-content: center;
 	}
 
-	#{$prefix}items-start {
-		place-items: start
+	#{$prefix}start,
+	#{$prefix}block-start,
+	#{$prefix}column.inline-start,
+	#{$prefix}column#{$prefix}inline-start,
+	.column#{$prefix}inline-start {
+		align-content: start;
+		align-items  : start;
 	}
 
-	#{$prefix}items-stretch {
-		place-items: stretch;
+	#{$prefix}start,
+	#{$prefix}inline-start,
+	#{$prefix}column.block-start,
+	#{$prefix}column#{$prefix}block-start,
+	.column#{$prefix}block-start {
+		justify-content: start;
+	}
+
+	#{$prefix}end,
+	#{$prefix}block-end,
+	#{$prefix}column.inline-end,
+	#{$prefix}column#{$prefix}inline-end,
+	.column#{$prefix}inline-end {
+		align-content: end;
+		align-items  : end;
+	}
+
+	#{$prefix}end,
+	#{$prefix}inline-end,
+	#{$prefix}column.block-end,
+	#{$prefix}column#{$prefix}block-end,
+	.column#{$prefix}block-end {
+		justify-content: end;
+	}
+
+	#{$prefix}stretch,
+	#{$prefix}block-stretch,
+	#{$prefix}column.inline-stretch,
+	#{$prefix}column#{$prefix}inline-stretch,
+	.column#{$prefix}inline-stretch {
+		align-content: stretch;
+		align-items  : stretch;
+	}
+
+	#{$prefix}stretch,
+	#{$prefix}inline-stretch,
+	#{$prefix}column.block-stretch,
+	#{$prefix}column#{$prefix}block-stretch,
+	.column#{$prefix}block-stretch {
+		justify-content: stretch;
 		grid-auto-rows: 1fr;
 	}
 
-	#{$prefix}content-center {
-		place-content: center
+	#{$prefix}between,
+	#{$prefix}block-between,
+	#{$prefix}column.inline-between,
+	#{$prefix}column#{$prefix}inline-between,
+	.column#{$prefix}inline-between {
+		align-content: space-between;
+		align-items  : space-between;
 	}
 
-	#{$prefix}content-end {
-		place-content: end
+	#{$prefix}between,
+	#{$prefix}inline-between,
+	#{$prefix}column.block-between,
+	#{$prefix}column#{$prefix}block-between,
+	.column#{$prefix}block-between {
+		justify-content: space-between;
 	}
 
-	#{$prefix}content-start {
-		place-content: start
+	#{$prefix}around,
+	#{$prefix}block-around,
+	#{$prefix}column.inline-around,
+	#{$prefix}column#{$prefix}inline-around,
+	.column#{$prefix}inline-around {
+		align-content: space-around;
+		align-items  : space-around;
 	}
 
-	#{$prefix}content-stretch {
-		place-content: stretch
+	#{$prefix}around,
+	#{$prefix}inline-around,
+	#{$prefix}column.block-around,
+	#{$prefix}column#{$prefix}block-around,
+	.column#{$prefix}block-around {
+		justify-content: space-around;
 	}
 
-	#{$prefix}content-between {
-		place-content: space-between
+	#{$prefix}evenly,
+	#{$prefix}block-evenly,
+	#{$prefix}column.inline-evenly,
+	#{$prefix}column#{$prefix}inline-evenly,
+	.column#{$prefix}inline-evenly {
+		align-content: space-evenly;
+		align-items  : space-evenly;
 	}
 
-	#{$prefix}content-around {
-		place-content: space-around
-	}
-
-	#{$prefix}content-evenly {
-		place-content: space-evenly
+	#{$prefix}evenly,
+	#{$prefix}inline-evenly,
+	#{$prefix}column.block-evenly,
+	#{$prefix}column#{$prefix}block-evenly,
+	.column#{$prefix}block-evenly {
+		justify-content: space-evenly;
 	}
 
 	#{$prefix}self-center {
@@ -456,18 +327,18 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		inset: 0
 	}
 
-	#{$prefix}center {
+	#{$prefix}translate-center {
 		inset    : 50% auto auto 50%;
 		translate: -50% -50%
 	}
 
-	#{$prefix}center-y {
+	#{$prefix}translate-block-center {
 		top      : 50%;
 		bottom   : auto;
 		translate: 0 -50%
 	}
 
-	#{$prefix}center-x {
+	#{$prefix}translate-inline-center {
 		left     : 50%;
 		right    : auto;
 		translate: -50% 0
@@ -629,12 +500,10 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		order: 999
 	}
 
-	#{$prefix}shadow {
-		box-shadow: 1px 3px 6px rgba(0, 0, 0, var(--shadow))
-	}
-
-	#{$prefix}shadow-none {
-		box-shadow: none
+	@for $i from 0 through 10 {
+		#{$prefix}shadow-#{$i} {
+			--shadow: #{calc($i / 10)};
+		}
 	}
 
 	#{$prefix}cover {
@@ -687,14 +556,22 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		scale: -1;
 	}
 
-	#{$prefix}transition {
-		transition: var(--speed) var(--ease);
+	#{$prefix}flip-y {
+		scale: 1 -1;
 	}
 
-	#{$prefix}transition-none {
-		--speed: 0s;
-		transition: none;
+	#{$prefix}flip-x {
+		scale: -1 1;
 	}
+
+	// #{$prefix}transition {
+	// 	transition: var(--speed) var(--ease);
+	// }
+
+	// #{$prefix}transition-none {
+	// 	--speed: 0s;
+	// 	transition: none;
+	// }
 
 	#{$prefix}from-top {
 		--transform: translate3d(0, -80px, 0);
@@ -726,14 +603,27 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		--origin   : top;
 	}
 
-	#{$prefix}o-0 {
-		opacity: 0
-	}
-
-	@for $i from 1 through 10 {
-		#{$prefix}o-#{$i} {
+	@for $i from 0 through 9 {
+		#{$prefix}opacity\/#{$i},
+		#{$prefix}h\:opacity\/#{$i}:hover {
 			opacity: #{calc($i / 10)};
 		}
+		#{$prefix}scale\/#{$i},
+		#{$prefix}h\:scale\/#{$i}:hover {
+			scale: #{calc($i / 10)};
+		}
+		#{$prefix}scale\+#{$i},
+		#{$prefix}h\:scale\+#{$i}:hover {
+			scale: #{calc($i / 10)+1};
+		}
+	}
+
+	#{$prefix}opacity {
+		opacity: 1;
+	}
+	
+	#{$prefix}scale {
+		scale: 1;
 	}
 
 	@each $size_name,
@@ -752,8 +642,10 @@ $breakpoint_width in variables.$breakpoints {
 		@include utility-styles('.#{$breakpoint}\\:', $breakpoint_width);
 	}
 
-	@container (min-width: #{$breakpoint_width}) {
-		@include utility-styles('.\\@#{$breakpoint}\\:', $breakpoint_width);
+	@if variables.$useContainerQueries {
+		@container (min-width: #{$breakpoint_width}) {
+			@include utility-styles('.\\@#{$breakpoint}\\:', $breakpoint_width);
+		}
 	}
 }
 
@@ -777,6 +669,12 @@ label:has(:checked).checked\: {
 
 	&flip {
 		scale: -1;
+	}
+	&flip-x {
+		scale: -1 1;
+	}
+	&flip-y {
+		scale: 1 -1;
 	}
 	&revert {
 		display: revert;
