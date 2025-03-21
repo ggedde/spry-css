@@ -1,5 +1,6 @@
 @use "variables";
 @use "extends";
+@use "sass:meta";
 /*!
 * Spry Navs
 */
@@ -52,13 +53,21 @@ menu menu {
 		padding-right: 2.3em;
 		position     : relative;
 
-		@extend %icon-arrow;
-
 		&::after {
+			content: "";
+			background-color: transparent;
+			border: .15em solid currentColor;
+			border-bottom: 0;
+			border-left: 0;
+			display: block;
+			height: .5em;
+			margin: -.35em auto auto;
+			opacity   : .5;
+			position: absolute;
 			right     : 1em;
 			rotate    : 90deg;
-			margin-top: -.35em;
-			opacity   : .5;
+			transform: rotate(45deg);
+			width: .5em;
 		}
 	}
 }
@@ -103,15 +112,18 @@ menu menu {
 
 @include hoverOpen-styles('.');
 
-@each $breakpoint,
-$breakpoint_width in variables.$breakpoints {
-	@media screen and (min-width: $breakpoint_width) {
-		@include hoverOpen-styles('.#{$breakpoint}\\:');
-	}
+@if meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
+	@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+		@if meta.global-variable-exists('useMediaQueries', variables) and variables.$useMediaQueries {
+			@media screen and (min-width: $breakpoint_width) {
+				@include hoverOpen-styles('.#{$breakpoint}\\:');
+			}
+		}
 
-	@if variables.$useContainerQueries {
-		@container (min-width: #{$breakpoint_width}) {
-			@include hoverOpen-styles('.\\@#{$breakpoint}\\:');
+		@if meta.global-variable-exists('useContainerQueries', variables) and variables.$useContainerQueries {
+			@container (min-width: #{$breakpoint_width}) {
+				@include hoverOpen-styles('.\\@#{$breakpoint}\\:');
+			}
 		}
 	}
 }

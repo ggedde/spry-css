@@ -3,13 +3,11 @@
 * Spry Buttons
 */
 
-// :is(button, .button, [type=submit], [type=reset]),
 :is(button, .button, [type=submit], [type=reset]),
 :where(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a {
 
 	@extend %ui;
 	@extend %ui-bg;
-	// @extend %ui-color;
 	@extend %ui-border;
 	@extend %ui-border-radius;
 	position       : relative;
@@ -23,10 +21,6 @@
 	@extend %ui-color;
 }
 
-:is(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a {
-	color: var(--ui-text);
-}
-
 :where(button, .button, [type=submit], [type=reset]) {
 
 	> :where(.icon, svg, img) {
@@ -37,7 +31,8 @@
 		@extend %ui-hover;
 	}
 }
-:is(.buttons-link, .buttons-plain, .buttons-hazy, .buttons-outline) a {
+
+:is(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a {
 	color: var(--ui-text);
 }
 

@@ -2,22 +2,28 @@
 @use "extends";
 @use "sass:map";
 @use 'sass:list';
+@use "sass:meta";
 /*!
 * Spry Grid
 */
 
 :root {
-	--gapx : #{map.get(variables.$gaps, 'default')};
-	--gapy : #{map.get(variables.$gaps, 'default')};
+	@if meta.global-variable-exists('gaps', variables) and variables.$gaps {
+        --gapx   : #{map.get(variables.$gaps, 'default')};
+        --gapy   : #{map.get(variables.$gaps, 'default')};
+    }
 	--span : 1;
 	--cols : 1;
 	--rows : 1;
 
-	@each $breakpoint,
-	$breakpoint_width in variables.$breakpoints {
-		@media screen and (min-width: $breakpoint_width) {
-			--gapx: #{map.get(variables.$gaps, $breakpoint)};
-			--gapy: #{map.get(variables.$gaps, $breakpoint)};
+	@if meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
+		@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+			@if meta.global-variable-exists('gaps', variables) and variables.$gaps {
+				@media screen and (min-width: $breakpoint_width) {
+					--gapx: #{map.get(variables.$gaps, $breakpoint)};
+					--gapy: #{map.get(variables.$gaps, $breakpoint)};
+				}
+			}
 		}
 	}
 }
@@ -56,9 +62,11 @@
 	.grid-#{$i}00 {
 		--span: #{$i};
 	}
+
 	.columns-#{$i}00 {
 		columns: #{$i}00px;
 	}
+
 	.columns-#{$i} {
 		columns: #{$i};
 	}
@@ -68,8 +76,7 @@
 
 	#{$prefix}column,
 	#{$prefix}row {
-		display  : flex;
-		flex-wrap: wrap;
+		display: flex;
 
 		>* {
 			flex: 1;
@@ -78,6 +85,7 @@
 
 	#{$prefix}row {
 		flex-direction: row;
+		flex-wrap     : wrap;
 	}
 
 	#{$prefix}column {
@@ -189,28 +197,29 @@
 
 @include grid-query-styles('.', '');
 
-@each $breakpoint,
-$breakpoint_width in variables.$breakpoints {
+@if meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
+	@each $breakpoint, $breakpoint_width in variables.$breakpoints {
 
-	@if list.index(variables.$breakpoints, ($breakpoint $breakpoint_width))==1 {
-		@media screen and (max-width: ($breakpoint_width - .01)) {
-
-			.column:not([class^="rows-"], [class*=" rows-"])>*,
-			.row:not([class^="columns-"], [class*=" columns-"])>* {
-				flex: 0 0 100%;
+		@if list.index(variables.$breakpoints, ($breakpoint $breakpoint_width))==1 {
+			@media screen and (max-width: ($breakpoint_width - .01)) {
+				.column:not([class^="rows-"], [class*=" rows-"])>*,
+				.row:not([class^="columns-"], [class*=" columns-"])>* {
+					flex: 0 0 100%;
+				}
 			}
 		}
-	}
 
-	@media screen and (min-width: $breakpoint_width) {
+		@if meta.global-variable-exists('useMediaQueries', variables) and variables.$useMediaQueries {
+			@media screen and (min-width: $breakpoint_width) {
+				@include grid-query-styles('.#{$breakpoint}\\:', '#{$breakpoint}\\:');
+			}
+		}
 
-		@include grid-query-styles('.#{$breakpoint}\\:', '#{$breakpoint}\\:');
-	}
+		@if meta.global-variable-exists('useContainerQueries', variables) and variables.$useContainerQueries {
+			@container (min-width: #{$breakpoint_width}) {
 
-	@if variables.$useContainerQueries {
-		@container (min-width: #{$breakpoint_width}) {
-
-			@include grid-query-styles('.\\@#{$breakpoint}\\:', '\\@#{$breakpoint}\\:');
+				@include grid-query-styles('.\\@#{$breakpoint}\\:', '\\@#{$breakpoint}\\:');
+			}
 		}
 	}
 }

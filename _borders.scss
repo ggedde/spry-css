@@ -1,4 +1,5 @@
 @use "variables";
+@use "sass:meta";
 /*!
 * Spry Borders
 */
@@ -69,15 +70,21 @@
 	}
 }
 
-@include border-styles('.');
+@if meta.global-variable-exists('borders', variables) {
+	@include border-styles('.');
 
-@each $breakpoint, $breakpoint_width in variables.$breakpoints {
-	@media screen and (min-width: $breakpoint_width) {
-		@include border-styles('.#{$breakpoint}\\:');
-	}
-	@if variables.$useContainerQueries {
-		@container (min-width: #{$breakpoint_width}) {
-			@include border-styles('.\\@#{$breakpoint}\\:');
+	@if meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
+		@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+			@if meta.global-variable-exists('useMediaQueries', variables) and variables.$useMediaQueries {
+				@media screen and (min-width: $breakpoint_width) {
+					@include border-styles('.#{$breakpoint}\\:');
+				}
+			}
+			@if meta.global-variable-exists('useContainerQueries', variables) and variables.$useContainerQueries {
+				@container (min-width: #{$breakpoint_width}) {
+					@include border-styles('.\\@#{$breakpoint}\\:');
+				}
+			}
 		}
 	}
 }

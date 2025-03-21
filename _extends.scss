@@ -67,18 +67,6 @@
 	color: var(--ui-text);
 }
 
-%ui-margin-above {
-	margin-top: .5em;
-}
-
-%ui-margin-above-lg {
-	margin-top: 1em;
-}
-
-%ui-margin-above-none {
-	margin-top: 0;
-}
-
 %closed {
 	@include mixins.closed;
 }
@@ -91,20 +79,4 @@
 }
 %open-inner {
 	@include mixins.open-inner;
-}
-
-%icon-arrow {
-	&::after {
-		content: "";
-		background-color: transparent;
-		border: .15em solid currentColor;
-		border-bottom: 0;
-		border-left: 0;
-		display: block;
-		height: .5em;
-		margin: auto;
-		position: absolute;
-		transform: rotate(45deg);
-		width: .5em;
-	}
 }

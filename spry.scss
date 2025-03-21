@@ -12,18 +12,21 @@
 @use "badge";
 @use "button";
 @use "cards";        // Has Nesting
-@use "loader";
 @use "forms";        // Has Nesting
+@use "loader";
 @use "tables";       // Has Nesting
 @use "tooltips";
 @use "sliders";      // Has Nesting
+// @use "sliders.css";      // Has Nesting
 @use "grid";
 @use "navs";         // Has Nesting
 @use "comfort";
 @use "toggles";
-// @use "toggle-icons.css";
+@use "toggle-icons.css";
 @use "modals";       // Has Nesting
+// @use "modals.css";       // Has Nesting
 @use "icons";        // Has Nesting
+// @use "icons.css";        // Has Nesting
 @use "spacing";
 @use "borders";
 @use "radius";

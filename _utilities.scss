@@ -1,4 +1,5 @@
 @use "variables";
+@use "sass:meta";
 /*!
 * Spry Responsive Utilities
 */
@@ -626,25 +627,29 @@ Layout Utility Classes - Can include Grid Prefix Ex. .md:right, etc
 		scale: 1;
 	}
 
-	@each $size_name,
-	$size_value in variables.$sizes {
-		#{$prefix}#{$size_name} {
-			font-size: $size_value;
+	@if meta.global-variable-exists('sizes', variables) and variables.$sizes {
+		@each $size_name, $size_value in variables.$sizes {
+			#{$prefix}#{$size_name} {
+				font-size: $size_value;
+			}
 		}
 	}
 }
 
 @include utility-styles('.', 0);
 
-@each $breakpoint,
-$breakpoint_width in variables.$breakpoints {
-	@media screen and (min-width: #{$breakpoint_width}) {
-		@include utility-styles('.#{$breakpoint}\\:', $breakpoint_width);
-	}
+@if meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
+	@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+		@if meta.global-variable-exists('useMediaQueries', variables) and variables.$useMediaQueries {
+			@media screen and (min-width: #{$breakpoint_width}) {
+				@include utility-styles('.#{$breakpoint}\\:', $breakpoint_width);
+			}
+		}
 
-	@if variables.$useContainerQueries {
-		@container (min-width: #{$breakpoint_width}) {
-			@include utility-styles('.\\@#{$breakpoint}\\:', $breakpoint_width);
+		@if meta.global-variable-exists('useContainerQueries', variables) and variables.$useContainerQueries {
+			@container (min-width: #{$breakpoint_width}) {
+				@include utility-styles('.\\@#{$breakpoint}\\:', $breakpoint_width);
+			}
 		}
 	}
 }

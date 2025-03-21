@@ -1,27 +1,28 @@
 @use "variables";
 @use "extends";
+@use "sass:meta";
 /*!
 * Spry Typography
 */
 
 // Heading Font Sizes and Classes
-@each $type_name, $type in variables.$types {
-
-    .#{$type_name}, #{$type_name} {
-
-        @each $type_field, $type_value in $type {
-            #{$type_field}: $type_value;
+@if meta.global-variable-exists('types', variables) and variables.$types {
+    @each $type_name, $type in variables.$types {
+        .#{$type_name}, #{$type_name} {
+            @each $type_field, $type_value in $type {
+                #{$type_field}: $type_value;
+            }
         }
     }
 }
 
 :where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, pre, code, article, figure, table) + :where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label, pre, code, article, .button, button, figure, table) {
-    @extend %ui-margin-above-lg;
+    margin-top: var(--pad-lg);
 }
 
 :where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, div) + :is(dfn, cite, .note),
 figcaption {
-    @extend %ui-margin-above;
+    margin-top: var(--pad);
 }
 
 .note,
@@ -31,7 +32,7 @@ figcaption {
 }
 
 blockquote {
-    @extend .q;
+    @extend q;
 }
 
 cite, dfn {

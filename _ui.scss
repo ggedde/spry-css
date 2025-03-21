@@ -1,16 +1,7 @@
-@use "variables";
 @use "extends";
-@use 'sass:list';
 /*!
 * Spry UI
 */
-
-$color_names: ();
-
-@each $color_name,
-$color_value in variables.$colors {
-	$color_names: list.append($color_names, '.#{$color_name}', 'comma');
-}
 
 .ui {
 	@extend %ui;
@@ -65,18 +56,18 @@ hr {
 	border-bottom: 1px solid;
 }
 
-li,
-ul {
-	justify-content: inherit;
-	text-align     : inherit;
-}
+// li,
+// ul {
+// 	justify-content: inherit;
+// 	text-align     : inherit;
+// }
 
-li,
-ul ul {
-	width          : inherit;
-	flex-direction : column;
-}
+// li,
+// ul ul {
+// 	width          : inherit;
+// 	flex-direction : column;
+// }
 
-ul ul {
-	background-color: inherit;
-}
+// ul ul {
+// 	background-color: inherit;
+// }

@@ -40,18 +40,16 @@ article {
 
 		>header {
 			border-bottom: inherit;
-			// border-image: inherit;
 		}
 
 		>footer {
 			border-top: inherit;
-			// border-image: inherit;
 		}
 	}
 
 	>* {
 		width     : 100%;
-		@extend %ui-margin-above-none;
+		margin-top: 0;
 	}
 
 	>:where(header, footer) {
@@ -66,11 +64,7 @@ article {
 
 		>* {
 			@extend %ui-color;
-			@extend %ui-margin-above-none;
+			margin-top: 0;
 		}
 	}
-}
-
-:where(article) + :where(article) {
-    margin-top: var(--gapy);
 }

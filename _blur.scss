@@ -1,16 +1,18 @@
 @use "variables";
+@use 'sass:meta';
 /*!
 * Spry Blur
 */
-
-@each $b, $blur in variables.$blur {
-	.blur-#{$b} {
-		filter: blur(#{$blur})
-	}
-	.blur-inner-#{$b} > * {
-		filter: blur(#{$blur})
-	}
-	.blur-bg-#{$b} {
-		backdrop-filter: blur(#{$blur})
+@if meta.global-variable-exists('blur', variables) and variables.$blur {
+	@each $b, $blur in variables.$blur {
+		.blur-#{$b} {
+			filter: blur(#{$blur})
+		}
+		.blur-inner-#{$b} > * {
+			filter: blur(#{$blur})
+		}
+		.blur-bg-#{$b} {
+			backdrop-filter: blur(#{$blur})
+		}
 	}
 }

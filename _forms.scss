@@ -30,7 +30,7 @@ input::file-selector-button,
 
 :where(h1, h2, h3, h4, h5, h6, label, p)+ :where(input, select, textarea, .input),
 label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-child {
-	@extend %ui-margin-above;
+	margin-top: var(--pad);
 }
 
 [type=range] {
@@ -95,8 +95,8 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 }
 
 :is([type=radio], [type=checkbox]).loading:after {
-	height    : 0.7em;
-	width     : 0.7em;
+	max-height    : 75%;
+	max-width     : 75%;
 	--ui-text : var(--ui-accent);
 }
 
