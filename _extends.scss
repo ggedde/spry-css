@@ -80,3 +80,52 @@
 %open-inner {
 	@include mixins.open-inner;
 }
+
+%e-rotate {
+	rotate: 180deg;
+}
+%e-flip {
+	scale: -1;
+}
+%e-flip-x {
+	scale: -1 1;
+}
+%e-flip-y {
+	scale: 1 -1;
+}
+%e-revert {
+	display: revert;
+}
+%e-no-display {
+	display: none;
+}
+%e-no-pointer {
+	pointer-events: none;
+}
+%e-close {
+	&::before,
+	&::after {
+		height          : 1.2em;
+		width           : .12em;
+		box-shadow      : none;
+		background-color: currentColor;
+	}
+
+	&::before {
+		transform: rotate(45deg);
+	}
+
+	&::after {
+		transform: rotate(-45deg);
+	}
+}
+%e-swap {
+	> :first-child {
+		opacity: 0;
+		scale  : .5
+	}
+	> :last-child {
+		opacity: 1;
+		scale  : 1
+	}
+}

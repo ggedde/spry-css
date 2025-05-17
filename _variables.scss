@@ -59,7 +59,7 @@ $themes: (
 $colors: (
     contrast  : (default: light-dark(#333, #eee)),
     faint     : (default: light-dark(#eee, #333)),
-    stark     : (default: light-dark(#fff, #000)),
+    stark     : (default: light-dark(#000, #fff)),
     surface   : (default: light-dark(#eee, #000)),
     black     : (default: #000),
     dark      : (default: #333),
@@ -177,6 +177,12 @@ $percentages: (
     @if meta.variable-exists('gaps') and $gaps {
         --gapx: #{map.get($gaps, 'default')};
         --gapy: #{map.get($gaps, 'default')};
+    }
+
+    @if meta.variable-exists('breakpoints') and $breakpoints {
+        @each $breakpoint, $breakpoint_width in $breakpoints {
+            --#{$breakpoint}: #{$breakpoint_width};
+        }
     }
 
     --bg-from    : 150deg;

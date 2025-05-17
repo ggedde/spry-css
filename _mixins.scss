@@ -9,7 +9,7 @@
 /// @param {String | Unit} $min - Minimum Value. String must be included in $breakpoints.
 /// @output - Contents
 @mixin min($min) {
-	@if type-of($min)==string and meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
+	@if meta.type-of($min)==string and meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
 		@media only screen and (min-width: map.get(variables.$breakpoints, $min)) {
 			@content;
 		}
@@ -26,7 +26,7 @@
 /// @param {String | Unit} $max - Max Value. String must be included in $breakpoints.
 /// @output - Contents
 @mixin max($max) {
-	@if type-of($max)==string and meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
+	@if meta.type-of($max)==string and meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
 		@media only screen and (max-width: map.get(variables.$breakpoints, $max)) {
 			@content;
 		}
@@ -44,7 +44,7 @@
 /// @param {String | Unit} $max - Max Value. String must be included in $breakpoints.
 /// @output - Contents
 @mixin in($min, $max) {
-	@if type-of($min)==string and meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
+	@if meta.type-of($min)==string and meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
 		@if type-of($max)==string {
 			@media only screen and (min-width: map.get(variables.$breakpoints, $min)) and (max-width: map.get(variables.$breakpoints, $max)) {
 				@content;
@@ -59,7 +59,7 @@
 	}
 
 	@else {
-		@if type-of($max)==string and meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
+		@if meta.type-of($max)==string and meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
 			@media only screen and (min-width: $min) and (max-width: map.get(variables.$breakpoints, $max)) {
 				@content;
 			}
