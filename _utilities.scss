@@ -143,10 +143,11 @@ Layout Utility Classes - Ex. .md:text-right, etc
 		white-space: pre-wrap
 	}
 
-	#{$prefix}break-words {
+	#{$prefix}break {
 		overflow-wrap: break-word;
 		word-break   : break-word;
 		hyphens      : auto;
+		white-space  : break-spaces;
 	}
 
 	#{$prefix}block {

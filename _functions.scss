@@ -1,14 +1,14 @@
 /*
 * Spry Functions
 */
-@function color($n) {
-	@return hsl(from $n h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 1));
-}
-
-@function bg($n) {
-	@return hsl(from $n h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
-}
-
-@function border($n) {
-	@return hsl(from $n h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
+@function color-to-hsla($n, $type: 'color') {
+	@if $type == 'color' {
+		@return hsl(from $n h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 1));
+	}
+	@if $type == 'bg' {
+		@return hsl(from $n h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
+	}
+	@if $type == 'border' {
+		@return hsl(from $n h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
+	}
 }

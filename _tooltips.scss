@@ -6,31 +6,32 @@
 .tooltip {
 	@extend %ui-border-radius;
 	@extend %ui-border;
-	--transform       : scale(.8, .8) translate3d(0, 0, 0);
-	--origin: center;
-	cursor                   : text;
-	bottom                   : 80%;
-	box-shadow               : 1px 3px 4px rgba(0, 0, 0, .12);
-	font-style               : normal;
-	// left                     : 50%;
-	max-width                : 280px;
-	padding                  : .8em 1.2em;
-	position                 : absolute;
-	text-align               : left;
-	text-transform           : none;
-	transition               : opacity var(--speed) var(--ease), transform var(--speed) var(--ease); // In
-	user-select              : text;
-	width                    : max-content;
-	backface-visibility      : hidden;
-	transform                : none;
-	transform-origin         : var(--origin);
+	--transform        : scale(.8, .8) translate3d(0, 0, 0);
+	--origin           : center;
+	cursor             : text;
+	backface-visibility: hidden;
+	bottom             : calc(100% - .25em);
+	box-shadow         : 1px 3px 4px rgba(0, 0, 0, .12);
+	font-style         : normal;
+	max-height         : 280px;
+	max-width          : 280px;
+	overflow           : auto;
+	padding            : .8em 1.2em;
+	position           : absolute;
+	text-align         : left;
+	text-transform     : none;
+	transform          : none;
+	transform-origin   : var(--origin);
+	transition         : opacity var(--speed) var(--ease), transform var(--speed) var(--ease);
+	user-select        : text;
+	width              : max-content;
 }
 
 :has(>.tooltip) {
 	position: relative;
 
 	&:is(:hover, :focus) {
-		z-index: 2;
+		z-index: 3;
 
 		&:not(:active) {
 			filter: none;

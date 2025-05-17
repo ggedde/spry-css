@@ -5,23 +5,32 @@
 * Spry Variables
 */
 
+// Specify `true` or `false` if you wish to use default breakpoints with Media Queries.
+// If you do not require Breakpoints with Media Queries, then setting this to `false` will decrease your bundle size.
+$useMediaQueries: true !default;
+
+// Specify `true` or `false` if you wish to use default breakpoints with Container Queries.
+// If you do not require Breakpoints with Container Queries, then setting this to `false` will decrease your bundle size.
+$useContainerQueries: true !default;
+
 // Specify each breakpoint size
+// Adding breakpoints will increase bundle size so add cautiously.
 $breakpoints: (
     md: 40em,
     // lg: 80em,
 ) !default;
 
-$useMediaQueries    : true !default;
-$useContainerQueries: true !default;
-
-// Specify each breakpoint gap size. <section> tags with get padding based on gap size.
-// You must include one for each Breakpoint otherwise it will result in a Compile Error.
+// Specify each breakpoint gap size.
+// <section> tags with get padding based on gap size.
+// * You must include one for each Breakpoint otherwise it will result in a Compile Error.
 $gaps: (
     default: 1.25em, // required
     md     : 2em,
     // lg: 2.25em,
 ) !default;
 
+// Specify each theme with their default theme colors.
+// Adding Themes will increase bundle size so add cautiously.
 $themes: (
     default: (
         scheme: dark,
@@ -43,6 +52,10 @@ $themes: (
     // )
 ) !default;
 
+// Specify each Color and their relation to each theme.
+// Adding colors will increase bundle size so add cautiously.
+// Use css light-dark() function to specify the colors for light and dark schemes.
+// See: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark
 $colors: (
     contrast  : (default: light-dark(#333, #eee)),
     faint     : (default: light-dark(#eee, #333)),
@@ -60,25 +73,48 @@ $colors: (
     error     : (default: #e20),
 ) !default;
 
-// Specify each type tag and class like <h3> and .h3 etc.
+// Specify each tag type like <h3> etc. Each type will get a corresponding class added. Ex. .h3
 $types: (
     body: (font-family: (system-ui, sans-serif), font-size: clamp(.9em, 3vw, 1.0em), background-color: var(--theme-bg), color: var(--theme-color), font-weight: 300, line-height: 1.5),
-    h1:   (font-size: 3.2em, font-weight: 400, line-height: 1.20, color: functions.color(var(--contrast))),
-    h2:   (font-size: 2.3em, font-weight: 300, line-height: 1.25, color: functions.color(var(--contrast))),
-    h3:   (font-size: 1.8em, font-weight: 300, line-height: 1.30, color: functions.color(var(--contrast))),
-    h4:   (font-size: 1.4em, font-weight: 300, line-height: 1.35, color: functions.color(var(--contrast))),
-    h5:   (font-size: 1.1em, font-weight: 300, line-height: 1.5, color: functions.color(var(--contrast))),
-    h6:   (font-size: 1.0em, font-weight: 300, line-height: 1.4, color: functions.color(var(--contrast))),
-    q:    (font-size: 1.6em, font-weight: 300, font-style: italic, line-height: 1.4, color: functions.color(var(--contrast)), margin-block: 2em),
-    a:    (color: functions.color(var(--primary))),
+    h1:   (font-size: 3.2em, font-weight: 400, line-height: 1.20, color: functions.color-to-hsla(var(--contrast))),
+    h2:   (font-size: 2.3em, font-weight: 300, line-height: 1.25, color: functions.color-to-hsla(var(--contrast))),
+    h3:   (font-size: 1.8em, font-weight: 300, line-height: 1.30, color: functions.color-to-hsla(var(--contrast))),
+    h4:   (font-size: 1.4em, font-weight: 300, line-height: 1.35, color: functions.color-to-hsla(var(--contrast))),
+    h5:   (font-size: 1.1em, font-weight: 300, line-height: 1.5, color: functions.color-to-hsla(var(--contrast))),
+    h6:   (font-size: 1.0em, font-weight: 300, line-height: 1.4, color: functions.color-to-hsla(var(--contrast))),
+    q:    (font-size: 1.6em, font-weight: 300, font-style: italic, line-height: 1.4, color: functions.color-to-hsla(var(--contrast)), margin-block: 2em),
+    a:    (color: functions.color-to-hsla(var(--primary))),
 ) !default;
 
+// Specify each blur size.
+// Ex .blur-0, .blur-bg-3, etc.
+$blur: (
+    0: 0,
+    1: 1px,
+    2: 2px,
+    3: 8px,
+    4: 16px,
+    5: 32px,
+) !default;
 
-//////////////////////////
-/// Responsive Variables
-//////////////////////////
+// Specify the loader thickness.
+// Ex .loading-sm, .loading-lg, etc.
+$loading: (
+    sm: .16em, // First one is default - ex. ".loading"
+    md: .25em,
+    lg: .5em,
+) !default;
 
-// Specify each border size Ex .b-0, .b-1, .bt-3, .bx-3, .br-2, etc.
+/**************************************************************************************************************
+ *
+ * Responsive Variables
+ * All Variables below will be included in each Breakpoint which will greatly increase the size of your bundle.
+ * Add or Remove values cautiously.
+ *
+ **************************************************************************************************************/
+
+// Specify each border size.
+// Ex .b-0, .b-1, .bt-3, .bx-3, .br-2, etc.
 $borders: (
     0: 0,
     1: 1px,
@@ -88,7 +124,8 @@ $borders: (
     5: 5px,
 ) !default;
 
-// Specify each border radius size Ex .r-0, .r-1, .rt-3, .rl-3, etc.
+// Specify each border radius size
+// Ex .r-0, .r-1, .rt-3, .rl-3, etc.
 $radius: (
     0: 0,
     1: .25em,
@@ -98,7 +135,8 @@ $radius: (
     5: 5em,
 ) !default;
 
-// Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc.
+// Specify each spacing that applies to Margin and Padding.
+// Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc.
 $spacing: (
     0: 0em, // Needs unit to be used in calc().
     1: .25em,
@@ -119,6 +157,8 @@ $sizes: (
     xxs: 60%,
 ) !default;
 
+// Percentages are used for opacities and sizes.
+// Ex. o/50, bg/20, border/70, color/80, h/40, w/100, vh/40 etc.
 $percentages: (
     0,
     10,
@@ -131,27 +171,6 @@ $percentages: (
     80,
     90,
     100
-) !default;
-
-//////////////////////////////
-/// Non-Responsive Variables
-//////////////////////////////
-
-// Specify each blur size Ex .blur-0, .blur-bg-3, etc.
-$blur: (
-    0: 0,
-    1: 1px,
-    2: 2px,
-    3: 8px,
-    4: 16px,
-    5: 32px,
-) !default;
-
-// Specify the loader thickness Ex .loading-sm, .loading-lg, etc.
-$loading: (
-    sm: .16em, // First one is default - ex. ".loading"
-    md: .25em,
-    lg: .5em,
 ) !default;
 
 :root {
