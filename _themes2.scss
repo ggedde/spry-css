@@ -75,43 +75,24 @@ $themeNames: ();
 $colorNames: ();
 @if meta.global-variable-exists('colors', variables) and variables.$colors {
 
-	.color\/0,
-	.h\:color\/0:hover {
-		--clr-a: 0;
-	}
-
-	.bg\/0,
-	.h\:bg\/0:hover {
-		--bg-a: 0;
-	}
-	
-	.border\/0,
-	.h\:border\/0:hover {
-		--bdr-a: 0;
-	}
-
-	.glow\/0 {
-		--glow-a: 0;
-	}
-
-	@each $i in variables.$percentages {
+	@for $i from 0 through 10 {
 		.color\/#{$i},
 		.h\:color\/#{$i}:hover {
-			--clr-a: #{calc($i / 100)};
+			--clr-a: #{calc($i / 10)};
 		}
 
 		.bg\/#{$i},
 		.h\:bg\/#{$i}:hover {
-			--bg-a: #{calc($i / 100)};
+			--bg-a: #{calc($i / 10)};
 		}
 		
 		.border\/#{$i},
 		.h\:border\/#{$i}:hover {
-			--bdr-a: #{calc($i / 100)};
+			--bdr-a: #{calc($i / 10)};
 		}
 
 		.glow\/#{$i} {
-			--glow-a: #{calc($i / 100)};
+			--glow-a: #{calc($i / 10)};
 		}
 	}
 
@@ -241,18 +222,26 @@ $colorNames: ();
 		}
 	}
 
+	[class*=h\:glow-] {
+		transition: box-shadow var(--speed) var(--ease);
+	}
+
 	.color-theme {
 		--ui-text: hsl(from var(--theme-color) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 1));
+		color: var(--ui-text);
 	}
 	.bg-theme {
 		--ui-bg: var(--theme-bg);
+		background-color: hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
 	}
 	.border-theme {
 		--ui-border: var(--theme-border);
 		--ui-input: var(--theme-border);
+		border-color: hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 	}
 	.glow-theme {
 		--ui-glow: var(--theme-bg);
+		box-shadow: 0px 0px calc(4em * var(--glow)) calc(2em * var(--glow)) rgb(from var(--ui-glow) r g b / var(--glow-a));
 	}
 	.bg-to-theme {
 		--bg-to: var(--theme-bg);

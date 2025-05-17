@@ -1,3 +1,5 @@
+@use "variables";
+@use "sass:meta";
 /*!
 * Spry General Utilities
 */
@@ -71,22 +73,8 @@
 	translate: -1em -.7em
 }
 
-.select-none {
-	user-select: none;
-}
-
 .select-text {
 	user-select: text;
-}
-
-.appearance-none {
-	appearance: none;
-
-	&::-webkit-outer-spin-button,
-	&::-webkit-calendar-picker-indicator,
-	&::-webkit-inner-spin-button {
-		display: none;
-	}
 }
 
 .slow {
@@ -110,24 +98,82 @@
 	transition: var(--speed) var(--ease);
 }
 
-.transition-none {
-	--speed: 0s;
-	transition: none;
-}
-
 .clip-text {
 	color: transparent;
     background-clip: text;
 }
-.clip-top, .clip-bottom, .clip-right, .clip-left {
-	clip-path: inset(0 -1900px -1900px -1900px);
+
+@if meta.global-variable-exists('useContainerQueries', variables) and variables.$useContainerQueries {
+	.\@container {
+		container-type: inline-size;
+		position      : relative
+	}
+
+	.no-container {
+		container-type: initial
+	}
 }
-.clip-bottom {
-	clip-path: inset(-1900px -1900px 0 -1900px);
+
+.cover {
+	background-size: cover;
+	object-fit     : cover
 }
-.clip-right {
-	clip-path: inset(-1900px 0 -1900px -1900px);
+
+.contain {
+	background-size: contain;
+	object-fit     : contain
 }
-.clip-left {
-	clip-path: inset(-1900px -1900px -1900px 0);
+
+.resize {
+	overflow: auto;
+	resize  : both
+}
+
+.resize-x {
+	overflow-x: auto;
+	resize    : horizontal
+}
+
+.resize-y {
+	overflow-y: auto;
+	resize    : vertical
+}
+
+.text-shadow {
+	text-shadow: 1px 2px 0px rgba(0, 0, 0, .2);
+}
+
+.drop-shadow {
+	filter: drop-shadow( 2px 2px 3px rgba(0, 0, 0, .3));
+}
+
+.no-bg {
+	background: none;
+}
+
+.no-color {
+	color: transparent;
+}
+
+.no-resize {
+	resize: none
+}
+
+.no-select {
+	user-select: none;
+}
+
+.no-transition {
+	--speed: 0s;
+	transition: none;
+}
+
+.no-appearance {
+	appearance: none;
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-calendar-picker-indicator,
+	&::-webkit-inner-spin-button {
+		display: none;
+	}
 }

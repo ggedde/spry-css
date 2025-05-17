@@ -3,7 +3,6 @@
 */
 
 .icon {
-	// border        : 0;
 	box-shadow    : none;
 	display       : inline-flex;
 	flex          : 0 1 auto;
@@ -32,13 +31,13 @@
 		transition-timing-function: var(--ease);
 	}
 
-	&:is(svg, img),
-	:is(svg, img) {
+	&:where(svg, img),
+	:where(svg, img) {
 		width : 1.25em;
 		height: 1.25em;
 	}
 
-	&:is(.outline, .hazy) {
+	&:where(.outline, .hazy) {
 		min-height: 2.3em;
 		min-width : 2.3em;
 	}

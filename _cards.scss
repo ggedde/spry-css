@@ -3,7 +3,7 @@
 * Spry Cards
 */
 
-article {
+.card {
 	@extend %ui-border-radius;
 	align-items     : flex-start;
 	display         : flex;
@@ -13,14 +13,6 @@ article {
 	padding         : 2em;
 	position        : relative;
 	transition      : none;
-
-	&:has(>header, >footer) {
-		padding: 0;
-
-		>:is(p, div) {
-			padding-inline: 1em;
-		}
-	}
 
 	&:has(>img) {
 		overflow: hidden;
@@ -66,5 +58,17 @@ article {
 			@extend %ui-color;
 			margin-top: 0;
 		}
+	}
+	+ :where(.card) {
+		margin-top: var(--pad-xl);
+	}
+}
+
+.card:has(>:where(header, footer)) {
+	padding: 0;
+
+	>p,
+	>div {
+		padding-inline: 1em;
 	}
 }

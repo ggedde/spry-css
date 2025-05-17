@@ -1,0 +1,225 @@
+/*!
+* Spry States
+*/
+:is(.f\:swap, .h\:swap, .checked\:swap) > :last-child {
+	opacity: 0;
+	scale: .5;
+}
+
+:is(.open, .h\:open:hover, .h\:open:focus-within, .f\:open:focus, .f\:open:has(> :focus, .toggle:focus, :focus-visible, :active)),
+.a\:open:has(.active, :active),
+:is(.toggle-group:has(.toggle:checked, .toggle :checked), .toggle:checked, .toggle:has(:checked)) {
+	> :is(.toggle, label, button) .o\:rotate,
+	> .o\:rotate,
+	&.o\:rotate {
+		rotate: 180deg;
+	}
+	> :is(.toggle, label, button) .o\:flip,
+	> .o\:flip,
+	&.o\:flip {
+		scale: -1;
+	}
+	> :is(.toggle, label, button) .o\:flip-x,
+	> .o\:flip-x,
+	&.o\:flip-x {
+		scale: -1 1;
+	}
+	> :is(.toggle, label, button) .o\:flip-y,
+	> .o\:flip-y,
+	&.o\:flip-y {
+		scale: 1 -1;
+	}
+	> :is(.toggle, label, button) .o\:revert,
+	> .o\:revert,
+	&.o\:revert {
+		display: revert;
+	}
+	> :is(.toggle, label, button) .o\:none,
+	> .o\:none,
+	&.o\:none {
+		display: none;
+	}
+	> :is(.toggle, label, button) .o\:no-pointer,
+	> .o\:no-pointer,
+	&.o\:no-pointer {
+		pointer-events: none;
+	}
+	> :is(.toggle, label, button) .o\:close,
+	> .o\:close,
+	&.o\:close {
+
+		&::before,
+		&::after {
+			height          : 1.2em;
+			width           : .12em;
+			box-shadow      : none;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+	> :is(.toggle, label, button) .o\:swap,
+	> .o\:swap,
+	&.o\:swap {
+		> :first-child {
+			opacity: 0;
+			scale  : .5
+		}
+		> :last-child {
+			opacity: 1;
+			scale  : 1
+		}
+	}
+}
+
+/* Checked Utilities */
+:focus,
+:focus > * {
+	&.f\:rotate {
+		rotate: 180deg;
+	}
+	&.f\:flip {
+		scale: -1;
+	}
+	&.f\:flip-x {
+		scale: -1 1;
+	}
+	&.f\:flip-y {
+		scale: 1 -1;
+	}
+	&.f\:revert {
+		display: revert;
+	}
+	&.f\:none {
+		display: none;
+	}
+	&.f\:close::before,
+	&.f\:close::after {
+		height          : 1.2em;
+		width           : .12em;
+		box-shadow      : none;
+		background-color: currentColor;
+	}
+	&.f\:close::before {
+		transform: rotate(45deg);
+	}
+
+	&.f\:close::after {
+		transform: rotate(-45deg);
+	}
+	&.f\:swap {
+		> :first-child {
+			opacity: 0;
+			scale  : .5
+		}
+		> :last-child {
+			opacity: 1;
+			scale  : 1
+		}
+	}
+}
+
+:hover,
+:focus-visible,
+:is(label, .button, button, .toggle, .badge):is(:hover, :focus-visible) > * {
+	&.h\:rotate {
+		rotate: 180deg;
+	}
+	&.h\:flip {
+		scale: -1;
+	}
+	&.h\:flip-x {
+		scale: -1 1;
+	}
+	&.h\:flip-y {
+		scale: 1 -1;
+	}
+	&.h\:revert {
+		display: revert;
+	}
+	&.h\:none {
+		display: none;
+	}
+	&.h\:close {
+		&::before,
+		&::after {
+			height          : 1.2em;
+			width           : .12em;
+			box-shadow      : none;
+			background-color: currentColor;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+	&.h\:swap {
+		> :first-child {
+			opacity: 0;
+			scale  : .5
+		}
+		> :last-child {
+			opacity: 1;
+			scale  : 1
+		}
+	}
+}
+
+:checked,
+label:has(:checked) > *,
+label:has(:checked) {
+	&.c\:rotate {
+		rotate: 180deg;
+	}
+	&.c\:flip {
+		scale: -1;
+	}
+	&.c\:flip-x {
+		scale: -1 1;
+	}
+	&.c\:flip-y {
+		scale: 1 -1;
+	}
+	&.c\:revert {
+		display: revert;
+	}
+	&.c\:none {
+		display: none;
+	}
+	&.c\:close {
+		&::before,
+		&::after {
+			height          : 1.2em;
+			width           : .12em;
+			box-shadow      : none;
+			background-color: currentColor;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+	&.c\:swap {
+		> :first-child {
+			opacity: 0;
+			scale  : .5
+		}
+		> :last-child {
+			opacity: 1;
+			scale  : 1
+		}
+	}
+}

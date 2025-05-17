@@ -3,15 +3,14 @@
 * Spry Forms
 */
 
-:where(input, textarea, select, .is-select),
+:where(input, textarea, select),
 input::file-selector-button,
 .input>*,
 .input {
 	--input-color: hsl(from var(--ui-input) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 }
 
-:where(input, textarea, select, .is-select),
-.input {
+:where(input, textarea, select, .input){
 	@extend %ui;
 	@extend %ui-border;
 	@extend %ui-border-radius;
@@ -25,8 +24,6 @@ input::file-selector-button,
 		--ui-input: hsl(from var(--ui-accent) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 	}
 }
-
-
 
 :where(h1, h2, h3, h4, h5, h6, label, p)+ :where(input, select, textarea, .input),
 label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-child {
@@ -159,8 +156,7 @@ select,
 }
 
 input,
-select,
-.is-select {
+select {
 	text-overflow: ellipsis;
 }
 
@@ -173,7 +169,7 @@ textarea {
 	line-height: 1.2;
 }
 
-input[type=file] {
+[type=file] {
 	padding-left : .5em;
 	text-overflow: revert;
 	overflow     : hidden;
@@ -283,8 +279,8 @@ label {
 .show-invalid {
 
 	:not(:focus-within):has([type=radio][required][value=""]:checked),
-	:user-invalid,
-	.input:has(:user-invalid) {
+	.input:has(:user-invalid),
+	:user-invalid {
 		border-color : var(--error, #c33);
 		outline-color: rgba(from var(--error, #c33) r g b / .4);
 	}

@@ -33,7 +33,6 @@
 			@include mixins.closed-inner;
 		}
 	}
-
 	
 	#{$prefix}h\:open:hover > :where(.collapse),
 	#{$prefix}h\:open:focus-within > :where(.collapse),
@@ -59,68 +58,6 @@
 			@include mixins.open;
 		}
 	}
-
-	// :is(#{$prefix}open,
-	// // #{$prefix}active,
-	// #{$prefix}h\:open:hover,
-	// #{$prefix}h\:open:focus-within,
-	// #{$prefix}f\:open:focus,
-	// #{$prefix}f\:open:has(> :focus, .toggle:focus, :focus-visible, :active)) {
-	// 	> :is(.toggle, label, button) .open\:rotate,
-	// 	> .open\:rotate,
-	// 	&.open\:rotate {
-	// 		rotate: 180deg;
-	// 	}
-	// 	> :is(.toggle, label, button) .open\:flip,
-	// 	> .open\:flip,
-	// 	&.open\:flip {
-	// 		scale: -1;
-	// 	}
-	// 	> :is(.toggle, label, button) .open\:flip-x,
-	// 	> .open\:flip-x,
-	// 	&.open\:flip-x {
-	// 		scale: -1 1;
-	// 	}
-	// 	> :is(.toggle, label, button) .open\:flip-y,
-	// 	> .open\:flip-y,
-	// 	&.open\:flip-y {
-	// 		scale: 1 -1;
-	// 	}
-	// 	> :is(.toggle, label, button) .open\:revert,
-	// 	> .open\:revert,
-	// 	&.open\:revert {
-	// 		display: revert;
-	// 	}
-	// 	> :is(.toggle, label, button) .open\:none,
-	// 	> .open\:none,
-	// 	&.open\:none {
-	// 		display: none;
-	// 	}
-	// 	> :is(.toggle, label, button) .open\:pointer-none,
-	// 	> .open\:pointer-none,
-	// 	&.open\:pointer-none {
-	// 		pointer-events: none;
-	// 	}
-	// 	> :is(.toggle, label, button) .open\:close,
-	// 	> .open\:close,
-	// 	&.open\:close {
-
-	// 		&::before,
-	// 		&::after {
-	// 			height          : 1.2em;
-	// 			width           : .12em;
-	// 			box-shadow      : none;
-	// 		}
-
-	// 		&::before {
-	// 			transform: rotate(45deg);
-	// 		}
-
-	// 		&::after {
-	// 			transform: rotate(-45deg);
-	// 		}
-	// 	}
-	// }
 }
 
 @include toggle-styles('.');
@@ -166,62 +103,3 @@
 .toggle-group:has(.toggle:checked, .toggle :checked) :where(.collapse) {
 	@extend %open-inner;
 }
-
-// :is(.toggle-group:has(.toggle:checked, .toggle :checked),
-// .toggle:checked,
-// .toggle:has(:checked)) {
-// 	> :is(.toggle, label, button) .open\:rotate,
-// 	> .open\:rotate,
-// 	&.open\:rotate {
-// 		rotate: 180deg;
-// 	}
-// 	> :is(.toggle, label, button) .open\:flip,
-// 	> .open\:flip,
-// 	&.open\:flip {
-// 		scale: -1;
-// 	}
-// 	> :is(.toggle, label, button) .open\:flip-x,
-// 	> .open\:flip-x,
-// 	&.open\:flip-x {
-// 		scale: -1 1;
-// 	}
-// 	> :is(.toggle, label, button) .open\:flip-y,
-// 	> .open\:flip-y,
-// 	&.open\:flip-y {
-// 		scale: 1 -1;
-// 	}
-// 	> :is(.toggle, label, button) .open\:revert,
-// 	> .open\:revert,
-// 	&.open\:revert {
-// 		display: revert;
-// 	}
-// 	> :is(.toggle, label, button) .open\:none,
-// 	> .open\:none,
-// 	&.open\:none {
-// 		display: none;
-// 	}
-// 	> :is(.toggle, label, button) .open\:pointer-none,
-// 	> .open\:pointer-none,
-// 	&.open\:pointer-none {
-// 		pointer-events: none;
-// 	}
-// 	> :is(.toggle, label, button) .open\:close,
-// 	> .open\:close,
-// 	&.open\:close {
-
-// 		&::before,
-// 		&::after {
-// 			height          : 1.2em;
-// 			width           : .12em;
-// 			box-shadow      : none;
-// 		}
-
-// 		&::before {
-// 			transform: rotate(45deg);
-// 		}
-
-// 		&::after {
-// 			transform: rotate(-45deg);
-// 		}
-// 	}
-// }

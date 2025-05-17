@@ -65,6 +65,12 @@
 
 	.columns-#{$i}00 {
 		columns: #{$i}00px;
+		> * {
+			margin-bottom: var(--gapy);
+		}
+		:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	.columns-#{$i} {
@@ -162,6 +168,7 @@
 		flex: 1 auto;
 	}
 
+	#{$prefix}span, // Alias for col-span
 	#{$prefix}col-span {
 		grid-column: 1 / -1;
 		--span     : var(--cols)
@@ -174,6 +181,7 @@
 
 	@for $i from 1 through 12 {
 
+		#{$prefix}span-#{$i}, // Alias for col-span
 		#{$prefix}col-span-#{$i} {
 			--span     : #{$i};
 			grid-column: span var(--span);
@@ -207,6 +215,13 @@
 					flex: 0 0 100%;
 				}
 			}
+
+			// @container (max-width: ($breakpoint_width - .01)) {
+			// 	.column:not([class^="rows-"], [class*=" rows-"])>*,
+			// 	.row:not([class^="columns-"], [class*=" columns-"])>* {
+			// 		flex: 0 0 100%;
+			// 	}
+			// }
 		}
 
 		@if meta.global-variable-exists('useMediaQueries', variables) and variables.$useMediaQueries {

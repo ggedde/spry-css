@@ -57,12 +57,12 @@
 	}
 }
 
-body:has(.modal:not(.bg-none)[popover]:popover-open) {
+body:has(.modal:not(.no-bg)[popover]:popover-open) {
 	pointer-events: none;
 	user-select: none;
 }
 
-body:has(.modal.open.scroll-none, .modal[open].scroll-none, .modal.scroll-none:popover-open) {
+body:has(.modal.open.no-body-scroll, .modal[open].no-body-scroll, .modal.no-body-scroll:popover-open) {
 	overflow: hidden;
 }
 
@@ -75,7 +75,7 @@ body:has(.modal.open.scroll-none, .modal[open].scroll-none, .modal.scroll-none:p
 	>* {
 		transform: none;
 	}
-	&.bg-none {
+	&.no-bg {
 		pointer-events: none;
 		>* {
 			pointer-events: all;

@@ -5,16 +5,61 @@
 * Spry Sizing
 */
 
+[class^="h-"],
+[class^="h/"],
+[class*=":h-"],
+[class*=":h/"],
+[class*=" h-"],
+[class*=" h/"],
+[class*="vh/"] {
+	height: var(--h)
+}
+
+// [class*="max-h-"],
+// [class*="max-h/"],
+// [class*="max-vh/"] {
+// 	--mxheight: var(--mxh);
+// 	max-height: var(--mxh)
+// }
+
+// [class*="min-h-"],
+// [class*="min-h/"],
+// [class*="min-vh/"] {
+// 	min-height: var(--mnh)
+// }
+
+[class^="w-"],
+[class^="w/"],
+[class*=":w-"],
+[class*=":w/"],
+[class*=" w-"],
+[class*=" w/"],
+[class*="vw/"] {
+	flex : 0 var(--w);
+	width: var(--w)
+}
+
+// [class*="max-w-"],
+// [class*="max-w/"],
+// [class*="max-vw/"] {
+// 	max-width: var(--mxw)
+// }
+
+// [class*="min-w"],
+// [class*="min-w/"],
+// [class*="min-vw/"] {
+// 	min-width: var(--mnw)
+// }
+
 @mixin sizingUtility-styles($prefix) {
 
-	@each $i in (0, 10, 20, 30, 40, 50, 60, 70, 80, 90) {
-		#{$prefix}w-#{$i} {
-			width: #{$i}px;
-			flex: 0 #{$i}px;
+	@for $i from 1 through 9 {
+		#{$prefix}w-#{$i}0 {
+			--w: #{$i}0px;
 		}
 
-		#{$prefix}h-#{$i} {
-			height: #{$i}px;
+		#{$prefix}h-#{$i}0 {
+			--h: #{$i}0px;
 		}
 
 		// #{$prefix}min-w#{$i}0 {
@@ -34,15 +79,14 @@
 		// }
 	}
 
-	@each $i in variables.$percentages {
+	@for $i from 1 through 10 {
 	
-		#{$prefix}w\/#{$i} {
-			width: math.percentage(math.div($i, 100));
-			flex: 0 math.percentage(math.div($i, 100))
+		#{$prefix}w\/#{$i}0 {
+			--w: #{$i}0%;
 		}
 
-		#{$prefix}h\/#{$i} {
-			height: math.percentage(math.div($i, 100));
+		#{$prefix}h\/#{$i}0 {
+			--h: #{$i}0%;
 		}
 
 		// #{$prefix}min-w\/#{$i}0 {
@@ -61,8 +105,8 @@
 		// 	--mxh: #{$i}0%;
 		// }
 
-		#{$prefix}vw\/#{$i} {
-			width: #{$i}dvw;
+		#{$prefix}vw\/#{$i}0 {
+			--w: #{$i}0dvw;
 		}
 		// #{$prefix}min-vw\/#{$i}0 {
 		// 	--mnw: #{$i}0dvw;
@@ -71,8 +115,8 @@
 		// 	--mxw: #{$i}0dvw;
 		// }
 
-		#{$prefix}vh\/#{$i} {
-			height: #{$i}svh;
+		#{$prefix}vh\/#{$i}0 {
+			--h: #{$i}0svh;
 		}
 
 		// #{$prefix}min-vh\/#{$i}0 {
@@ -85,12 +129,11 @@
 	
 	@for $i from 1 through 12 {
 		#{$prefix}w-#{$i}00 {
-			width: #{$i}00px;
-			flex: 0 #{$i}00px
+			--w: #{$i}00px;
 		}
 
 		#{$prefix}h-#{$i}00 {
-			height: #{$i}00px;
+			--h: #{$i}00px;
 		}
 
 		// #{$prefix}min-w#{$i}00 {
@@ -119,7 +162,7 @@
 	}
 
 	#{$prefix}w-content {
-		width: max-content;
+		--w: max-content;
 	}
 	// #{$prefix}max-w-content {
 	// 	--mxw: max-content;
@@ -128,7 +171,7 @@
 	// 	--mnw: min-content;
 	// }
 	#{$prefix}h-content {
-		height: max-content;
+		--h: max-content;
 	}
 	// #{$prefix}max-h-content {
 	// 	--mxh: max-content;

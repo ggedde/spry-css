@@ -1,0 +1,226 @@
+@use "variables";
+@use "sass:meta";
+@use "sass:math";
+/*!
+* Spry Sizing
+*/
+
+@mixin sizingUtility-styles($prefix) {
+
+	#{$prefix}w-0 {
+		width: 0;
+	}
+
+	#{$prefix}h-0 {
+		height: 0;
+	}
+
+	#{$prefix}w-auto {
+		width: auto;
+	}
+
+	#{$prefix}h-auto {
+		height: auto;
+	}
+
+	#{$prefix}h {
+		height: 100%
+	}
+
+	#{$prefix}vh {
+		height: 100svh
+	}
+
+	#{$prefix}w {
+		width: 100%
+	}
+
+	#{$prefix}vw {
+		width: 100dvw
+	}
+
+	#{$prefix}w-content {
+		width: max-content;
+	}
+
+	#{$prefix}h-content {
+		height: max-content;
+	}
+
+	@for $i from 1 through 9 {
+		#{$prefix}h-#{$i}0 {
+			height: #{$i}0px;
+			flex : 0 #{$i}0px
+		}
+
+		#{$prefix}max-h-#{$i}0 {
+			--max-height: #{$i}0px;
+			max-height: #{$i}0px
+		}
+
+		#{$prefix}min-h-#{$i}0 {
+			min-height: #{$i}0px
+		}
+
+		#{$prefix}w-#{$i}0 {
+			width: #{$i}0px;
+			flex : 0 #{$i}0px
+		}
+
+		#{$prefix}max-w-#{$i}0 {
+			max-width: #{$i}0px
+		}
+
+		#{$prefix}min-w-#{$i}0 {
+			min-width: #{$i}0px
+		}
+
+		#{$prefix}vh-#{$i}0 {
+			height: #{$i}0svh
+		}
+
+		#{$prefix}max-vh-#{$i}0 {
+			max-height: #{$i}0svh
+		}
+
+		#{$prefix}min-vh-#{$i}0 {
+			min-height: #{$i}0svh
+		}
+
+		#{$prefix}vw-#{$i}0 {
+			width: #{$i}0svw
+		}
+
+		#{$prefix}max-vw-#{$i}0 {
+			max-width: #{$i}0svw
+		}
+
+		#{$prefix}min-vw-#{$i}0 {
+			min-width: #{$i}0svw
+		}
+	}
+
+	@for $i from 1 through 12 {
+		#{$prefix}h-#{$i}00 {
+			height: #{$i}00px;
+			flex : 0 #{$i}00px
+		}
+
+		#{$prefix}max-h-#{$i}00 {
+			--max-height: #{$i}00px;
+			max-height: #{$i}00px
+		}
+
+		#{$prefix}min-h-#{$i}00 {
+			min-height: #{$i}00px
+		}
+
+		#{$prefix}w-#{$i}00 {
+			width: #{$i}00px;
+			flex : 0 #{$i}00px
+		}
+
+		#{$prefix}max-w-#{$i}00 {
+			max-width: #{$i}00px
+		}
+
+		#{$prefix}min-w-#{$i}00 {
+			min-width: #{$i}00px
+		}
+	}
+
+	@for $i from 0 through 10 {
+		#{$prefix}h\/#{$i}0 {
+			height: math.percentage(math.div($i, 10));
+			flex : 0 math.percentage(math.div($i, 10))
+		}
+
+		#{$prefix}max-h\/#{$i}0 {
+			--max-height: math.percentage(math.div($i, 10));
+			max-height: math.percentage(math.div($i, 10))
+		}
+
+		#{$prefix}min-h\/#{$i}0 {
+			min-height: math.percentage(math.div($i, 10))
+		}
+
+		#{$prefix}w\/#{$i}0 {
+			width: math.percentage(math.div($i, 10));
+			flex : 0 math.percentage(math.div($i, 10))
+		}
+
+		#{$prefix}max-w\/#{$i}0 {
+			max-width: math.percentage(math.div($i, 10))
+		}
+
+		#{$prefix}min-w\/#{$i}0 {
+			min-width: math.percentage(math.div($i, 10))
+		}
+	}
+
+	#{$prefix}min-w-0 {
+		min-width: 0;
+	}
+
+	#{$prefix}min-h-0 {
+		min-height: 0;
+	}
+
+	#{$prefix}max-h {
+		max-height: 100%
+	}
+
+	#{$prefix}min-h {
+		min-height: 100%
+	}
+
+	#{$prefix}max-w {
+		max-width: 100%
+	}
+
+	#{$prefix}min-w {
+		min-width: 100%
+	}
+
+	#{$prefix}min-w-content {
+		min-width: min-content;
+	}
+
+	#{$prefix}min-h-content {
+		min-height: min-content;
+	}
+
+	#{$prefix}no-max-w {
+		max-width: none;
+	}
+
+	#{$prefix}no-max-h {
+		max-height: none;
+	}
+
+	#{$prefix}max-w-content {
+		max-width: max-content;
+	}
+
+	#{$prefix}max-h-content {
+		max-height: max-content;
+	}
+}
+
+@include sizingUtility-styles('.');
+
+@if meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
+	@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+		@if meta.global-variable-exists('useMediaQueries', variables) and variables.$useMediaQueries {
+			@media screen and (min-width: #{$breakpoint_width}) {
+				@include sizingUtility-styles('.#{$breakpoint}\\:');
+			}
+		}
+
+		@if meta.global-variable-exists('useContainerQueries', variables) and variables.$useContainerQueries {
+			@container (min-width: #{$breakpoint_width}) {
+				@include sizingUtility-styles('.\\@#{$breakpoint}\\:');
+			}
+		}
+	}
+}

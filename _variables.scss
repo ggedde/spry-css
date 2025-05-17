@@ -11,14 +11,14 @@ $breakpoints: (
     // lg: 80em,
 ) !default;
 
-$useMediaQueries: true;
-$useContainerQueries: true;
+$useMediaQueries    : true !default;
+$useContainerQueries: true !default;
 
 // Specify each breakpoint gap size. <section> tags with get padding based on gap size.
 // You must include one for each Breakpoint otherwise it will result in a Compile Error.
 $gaps: (
     default: 1.25em, // required
-    md: 2em,
+    md     : 2em,
     // lg: 2.25em,
 ) !default;
 
@@ -32,31 +32,32 @@ $themes: (
         bg    : light-dark(#fff, #111),
         ui    : light-dark(#ddd, #333),
     ),
-    my-custom-theme: (
-        scheme: light,
-        accent: rgb(226, 14, 194),
-        border: #2307f6,
-        color : #555,
-        input : #888,
-        bg    : #cbf0da,
-        ui    : #b6c3c0,
-    )
+    // my-custom-theme: (
+    //     scheme: light,
+    //     accent: rgb(226, 14, 194),
+    //     border: #2307f6,
+    //     color : #555,
+    //     input : #888,
+    //     bg    : #cbf0da,
+    //     ui    : #b6c3c0,
+    // )
 ) !default;
 
 $colors: (
-    contrast : (default: light-dark(#333, #eee)),
-    faint    : (default: light-dark(#eee, #333)),
-    stark    : (default: light-dark(#fff, #000)),
-    surface  : (default: light-dark(#eee, #000)),
-    black    : (default: #000),
-    dark     : (default: #333),
-    gray     : (default: #888),
-    light    : (default: #eee),
-    white    : (default: #fff),
-    primary  : (default: #19d),
-    success  : (default: #0a0),
-    warning  : (default: #e90),
-    error    : (default: #e20),
+    contrast  : (default: light-dark(#333, #eee)),
+    faint     : (default: light-dark(#eee, #333)),
+    stark     : (default: light-dark(#fff, #000)),
+    surface   : (default: light-dark(#eee, #000)),
+    black     : (default: #000),
+    dark      : (default: #333),
+    gray      : (default: #888),
+    light     : (default: #eee),
+    white     : (default: #fff),
+    primary   : (default: #18d),
+    secondary : (default: #96c),
+    success   : (default: #0a0),
+    warning   : (default: #e90),
+    error     : (default: #e20),
 ) !default;
 
 // Specify each type tag and class like <h3> and .h3 etc.
@@ -83,6 +84,8 @@ $borders: (
     1: 1px,
     2: 2px,
     3: 3px,
+    4: 4px,
+    5: 5px,
 ) !default;
 
 // Specify each border radius size Ex .r-0, .r-1, .rt-3, .rl-3, etc.
@@ -90,22 +93,19 @@ $radius: (
     0: 0,
     1: .25em,
     2: .5em,
-    3: .75em,
-    4: 1em,
-    5: 2em,
-    // full: 999px,
+    3: 1em,
+    4: 2em,
+    5: 5em,
 ) !default;
 
 // Specify each spacing that applies to Margin and Padding.  Ex .m-0, .m-1, .mx-3, .pt-3, .mt-n3, etc.
 $spacing: (
-    0  : 0em, // Needs unit to be used in calc().
-    1  : .25em,
-    2  : .5em,
-    3  : 1em,
-    4  : 2.25em,
-    5  : 5em,
-    // 6  : 6em,
-    // 200: 200px, // Used for Sidebars
+    0: 0em, // Needs unit to be used in calc().
+    1: .25em,
+    2: .5em,
+    3: 1em,
+    4: 2em,
+    5: 5em,
 ) !default;
 
 // Specify each size that applies font-size to all elements using "em".
@@ -119,6 +119,20 @@ $sizes: (
     xxs: 60%,
 ) !default;
 
+$percentages: (
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100
+) !default;
+
 //////////////////////////////
 /// Non-Responsive Variables
 //////////////////////////////
@@ -130,13 +144,14 @@ $blur: (
     2: 2px,
     3: 8px,
     4: 16px,
+    5: 32px,
 ) !default;
 
 // Specify the loader thickness Ex .loading-sm, .loading-lg, etc.
 $loading: (
     sm: .16em, // First one is default - ex. ".loading"
-    md: .2em,
-    lg: .4em,
+    md: .25em,
+    lg: .5em,
 ) !default;
 
 :root {
@@ -144,10 +159,11 @@ $loading: (
         --gapx: #{map.get($gaps, 'default')};
         --gapy: #{map.get($gaps, 'default')};
     }
+
     --bg-from    : 150deg;
     --ease       : cubic-bezier(.45, .45, 0, 1); //cubic-bezier(.25, .8, .25, 1);
-    --glow-o     : .5;
-    --glow-s     : .5;
+    --glow       : .5;
+    --glow-a     : .5;
     --invert     : 50;
     --layer      : 6;
     --max-height : 1900px;
@@ -158,4 +174,5 @@ $loading: (
     --transform  : translate3d(0, 0, 0);
     --pad        : .5em;
     --pad-lg     : 1em;
+    --pad-xl     : 2em;
 }

@@ -16,11 +16,13 @@
     }
 }
 
-:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, pre, code, article, figure, table) + :where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label, pre, code, article, .button, button, figure, table) {
+:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, div, pre, code, figure, table, article, .card) + :where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label, pre, code, article, button, figure, table, .card, .button) {
     margin-top: var(--pad-lg);
 }
 
-:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, div) + :is(dfn, cite, .note),
+:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, div) + :is(dfn, cite, code, .note),
+:where(dfn, cite, .note) + article,
+:where(dfn, cite, .note, code, .card) + :where(dfn, cite, .note, figure),
 figcaption {
     margin-top: var(--pad);
 }
