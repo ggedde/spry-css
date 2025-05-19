@@ -147,7 +147,7 @@ $spacing: (
 ) !default;
 
 // Specify each size that applies font-size to all elements using "em".
-$sizes: (
+$proportions: (
     xxl: 130%,
     xl: 120%,
     lg: 115%,
@@ -171,6 +171,33 @@ $percentages: (
     80,
     90,
     100
+) !default;
+
+// Lengths are used for widths and heights.
+// Ex. w-40, w-1200, h-400 etc.
+$lengths: (
+    0: 0,
+    10: 10px,
+    20: 20px,
+    30: 30px,
+    40: 40px,
+    50: 50px,
+    60: 60px,
+    70: 70px,
+    80: 80px,
+    90: 90px,
+    100: 100px,
+    200: 200px,
+    300: 300px,
+    400: 400px,
+    500: 500px,
+    600: 600px,
+    700: 700px,
+    800: 800px,
+    900: 900px,
+    1000: 1000px,
+    1100: 1100px,
+    1200: 1200px,
 ) !default;
 
 :root {

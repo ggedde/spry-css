@@ -578,8 +578,8 @@ Layout Utility Classes - Ex. .md:text-right, etc
 		}
 	}
 
-	@if meta.global-variable-exists('sizes', variables) and variables.$sizes {
-		@each $size_name, $size_value in variables.$sizes {
+	@if meta.global-variable-exists('proportions', variables) and variables.$proportions {
+		@each $size_name, $size_value in variables.$proportions {
 			#{$prefix}#{$size_name} {
 				font-size: $size_value;
 			}

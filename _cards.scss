@@ -66,7 +66,9 @@
 
 .card:has(>:where(header, footer)) {
 	padding: 0;
+}
 
+:where(.card):has(>:where(header, footer)) {
 	>p,
 	>div {
 		padding-inline: 1em;
