@@ -54,12 +54,12 @@
 	background-color: hsl(from var(--ui-color) h s clamp(0, (l * var(--bg-l, 1)) + 10, 100) / var(--bg-a, 1));
 
 	&:where(.hazy, .outline, .plain, .link) {
-		background-color: hsl(from var(--ui-color) h s clamp(0, (l * var(--bg-l, 1)) + 10, 100) / 15%);
+		background-color: hsl(from var(--ui-color) h s clamp(0, (l * var(--bg-l, 1)) + 10, 100) / 16%);
 	}
 }
 
 %ui-bg-hover {
-	background-color: hsl(from var(--ui-accent) h s clamp(0, l * var(--bg-l, 1), 100) / 15%);
+	background-color: hsl(from var(--ui-accent) h s clamp(0, l * var(--bg-l, 1), 100) / 16%);
 }
 
 %ui-color {

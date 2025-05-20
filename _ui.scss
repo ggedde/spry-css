@@ -42,7 +42,7 @@ a {
 
 .hazy,
 .buttons-hazy a {
-	background-color: hsl(from var(--ui-color) h s clamp(0, l * var(--bg-l, 1), 100) / 10%);
+	background-color: hsl(from var(--ui-color) h s clamp(0, l * var(--bg-l, 1), 100) / 13%);
 }
 
 .outline {

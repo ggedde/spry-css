@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="spry.min.css?v=3.0.0-rc.3">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-js/docs/docs.min.css">
+    <link rel="stylesheet" href="https://spryjs.local.com/docs.min.css">
     <script defer src="https://spryjs.local.com/docs.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-js/dist/spry.js?v=1.0.0&load=spryJs"></script>
@@ -332,7 +332,7 @@
 
                 <p class="mt-4 mb-1 h4">Accessing Variables in CSS</p>
                 <figure class="relative">
-                    <code class="language-css relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
+                    <code class="language-scss relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
                         p {
                             color: var(--primary);
                         }
@@ -569,7 +569,7 @@
                 <h4 class="mt-3 mb-1">Accessing Variables in SCSS</h4>
                 <p>You can access variables using <code class="color-primary">map.get()</code></p>
                 <figure class="relative">
-                    <code class="language-css block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
+                    <code class="language-scss block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
                         @use "variables";
                         @use "sass:map";
                         p {
@@ -582,7 +582,7 @@
 
                 <h5 class="mt-3 mb-1">Using it with a Media Query</h5>
                 <figure class="relative">
-                    <code class="language-css block w/100 auto bg-surface b-1 rt-2 p-3 pr-5 sm">
+                    <code class="language-scss block w/100 auto bg-surface b-1 rt-2 p-3 pr-5 sm">
                         @use "variables";
                         @use "sass:map";
                         p {
@@ -594,7 +594,7 @@
                 </figure>
                 <div class="p-2 bl-1 br-1 bg-faint bg/50"><span class="color-warning">OR</span> use a SpryCSS pre-built mixin</div>
                 <figure class="relative mt-0 mb-4">
-                    <code class="language-css block w/100 auto bg-surface b-1 rb-2 p-3 pr-5 sm">
+                    <code class="language-scss block w/100 auto bg-surface b-1 rb-2 p-3 pr-5 sm">
                         @use "mixins";
                         p {
                             @include mixins.min('md') {
@@ -710,35 +710,35 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">{color}</code></td>
+                                <td class="pl-2"><code class="color-primary">{color}</code></td>
                                 <td>Set component accent color. Used on Alerts, Buttons, Cards, Forms, Lists, Sliders, Tables, and Tabs</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">color-{color}</code></td>
+                                <td class="pl-2"><code class="color-primary">color-{color}</code></td>
                                 <td>Set text color</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">h:color-{color}</code></td>
+                                <td class="pl-2"><code class="color-primary">h:color-{color}</code></td>
                                 <td>Set text hover color on Hover</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">bg-{color}</code></td>
+                                <td class="pl-2"><code class="color-primary">bg-{color}</code></td>
                                 <td>Set background color</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">h:bg-{color}</code></td>
+                                <td class="pl-2"><code class="color-primary">h:bg-{color}</code></td>
                                 <td>Set background color on Hover</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">border-{color}</code></td>
+                                <td class="pl-2"><code class="color-primary">border-{color}</code></td>
                                 <td>Set border color</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">h:border-{color}</code></td>
+                                <td class="pl-2"><code class="color-primary">h:border-{color}</code></td>
                                 <td>Set border color on Hover</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">links-{color}</code></td>
+                                <td class="pl-2"><code class="color-primary">links-{color}</code></td>
                                 <td>Set child links color</td>
                             </tr>
                             <tr>
@@ -835,7 +835,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">.theme-{theme}</code></td>
+                                <td class="pl-2"><code class="color-primary">.theme-{theme}</code></td>
                                 <td>Used to set the theme of the element and child elements.<br>SpryCSS comes with 2 themes: <code class="color-primary">dark</code> and <code class="color-primary">default</code> <span class="color-gray">(light)</span>.
                                     <br><br>Feel free to add on your own themes 
                                 </td>
@@ -874,15 +874,15 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">text</code></td>
+                                <td class="pl-2"><code class="color-primary">text</code></td>
                                 <td>Color of the body text.<br>This will change depending on the theme being applied.</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">contrast</code></td>
+                                <td class="pl-2"><code class="color-primary">contrast</code></td>
                                 <td>Contrast Color.<br>This will change depending on the theme being applied.</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">faint</code></td>
+                                <td class="pl-2"><code class="color-primary">faint</code></td>
                                 <td>Faint Color.<br>This will change depending on the theme being applied.</td>
                             </tr>
                         </tbody>
@@ -1118,23 +1118,23 @@
                                 <td>Top</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">r</code></td>
+                                <td class="pl-2"><code class="color-primary">r</code></td>
                                 <td>Right</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">b</code></td>
+                                <td class="pl-2"><code class="color-primary">b</code></td>
                                 <td>Bottom</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">l</code></td>
+                                <td class="pl-2"><code class="color-primary">l</code></td>
                                 <td>Left</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">x</code></td>
+                                <td class="pl-2"><code class="color-primary">x</code></td>
                                 <td>Inline <span class="color-gray ml-1">(Left & Right)</span></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">y</code></td>
+                                <td class="pl-2"><code class="color-primary">y</code></td>
                                 <td>Block <span class="color-gray ml-1">(Top & Bottom)</span></td>
                             </tr>
                         </tbody>
@@ -1198,42 +1198,41 @@
                     <table class="@md:responsive my-3">
                         <thead>
                             <tr>
-                                <th class="w-200 h3 pl-0"><a id="breakpoints.usedin" href="#breakpoints.usedin" class="inherit-color">Used In</a></th>
-                                <th></th>
+                                <th colspan="2" class="w-200 h3 pl-0"><a id="breakpoints.usedin" href="#breakpoints.usedin" class="inherit-color">Used In</a></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="md:pl-2"><a href="#borders">Borders</a></td>
+                                <td class="pl-2"><a href="#borders">Borders</a></td>
                                 <td><span class="color-gray note">Example:</span> <code class="ml-3">b-0 md:b-2</code></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><a href="#collapse">Collapse</a></td>
+                                <td class="pl-2"><a href="#collapse">Collapse</a></td>
                                 <td><span class="color-gray note">Example:</span> <code class="ml-3">md:collapse</code><br>
                                 <span class="color-gray note">Example:</span> <code class="ml-3">collapse md:open</code></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><a href="#gaps">Gaps</a></td>
+                                <td class="pl-2"><a href="#gaps">Gaps</a></td>
                                 <td><span class="color-gray note">Example:</span> <code class="ml-3">g-0 md:g-2</code></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><a href="#grid">Grid</a></td>
+                                <td class="pl-2"><a href="#grid">Grid</a></td>
                                 <td><span class="color-gray note">Example:</span> <code class="ml-3">row columns-1 md:columns-2</code></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><a href="#radius">Radius</a></td>
+                                <td class="pl-2"><a href="#radius">Radius</a></td>
                                 <td><span class="color-gray note">Example:</span> <code class="ml-3">r-0 md:r-2</code></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><a href="#sizing">Sizing</a></td>
+                                <td class="pl-2"><a href="#sizing">Sizing</a></td>
                                 <td><span class="color-gray note">Example:</span> <code class="ml-3">w-200 md:w-500</code></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><a href="#spacing">Spacing</a></td>
+                                <td class="pl-2"><a href="#spacing">Spacing</a></td>
                                 <td><span class="color-gray note">Example:</span> <code class="ml-3">p-0 md:pt-2</code></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><a href="#utilities-layout">Layout Utility Classes</a></td>
+                                <td class="pl-2"><a href="#utilities-layout">Layout Utility Classes</a></td>
                                 <td><span class="color-gray note">Example:</span> <code class="ml-3">none md:inline-flex</code></td>
                             </tr>
                         </tbody>
@@ -1280,23 +1279,23 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">c:</code><code class="color-primary">none</code></td>
+                                <td class="pl-2"><code class="color-gray">c:</code><code class="color-primary">none</code></td>
                                 <td><h5>Hide</h5><code class="note sm">display: none</code></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">c:</code><code class="color-primary">revert</code></td>
+                                <td class="pl-2"><code class="color-gray">c:</code><code class="color-primary">revert</code></td>
                                 <td><h5>Revert</h5><code class="note sm">display: revert</code></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">c:</code><code class="color-primary">flip</code></td>
+                                <td class="pl-2"><code class="color-gray">c:</code><code class="color-primary">flip</code></td>
                                 <td><h5>Flip</h5><code class="note sm">scale: -1</code></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">c:</code><code class="color-primary">rotate</code></td>
+                                <td class="pl-2"><code class="color-gray">c:</code><code class="color-primary">rotate</code></td>
                                 <td><h5>Rotate</h5><code class="note sm">rotate: 180deg</code></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">c:</code><code class="color-primary">close</code></td>
+                                <td class="pl-2"><code class="color-gray">c:</code><code class="color-primary">close</code></td>
                                 <td><h5>Close</h5>
                                     <p>Only works on Icons that support the close icon.<br><cite>* See <a href="#icons">Icons</a> for the SpryCSS close icon.</cite></p>
                                 </td>
@@ -1484,7 +1483,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:<span class="color-primary">collapse</span></code></td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:<span class="color-primary">collapse</span></code></td>
                                 <td>
                                     Initiate the toggle element in the collapsed state and animates on max-height or close the element on breakpoints. Allows for multiple children which makes it good for &lt;ul&gt;. <span class="color-primary">open</span> always has priority, but if you use breakpoints you must match or beat with a breakpoint.
                                     <br>
@@ -1493,59 +1492,59 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">open</code></code></td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">open</code></code></td>
                                 <td>Opens the element at breakpoint</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">h:open</code></code></td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">h:open</code></code></td>
                                 <td>Opens the element on hover or focus-visible. Opens all children that have <code class="color-primary">collapse</code> or hidden nav items.</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">f:open</code></code></td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">f:open</code></code></td>
                                 <td>Opens the element on focus-within. Opens all children that have <code class="color-primary">collapse</code>.<br>* Also is dismissible without javascript.</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">overlay</code></code></td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">overlay</code></code></td>
                                 <td>Overlays the element on top of the other content. This is an alias for using <code class="color-primary">relative</code> and <code class="color-primary">absolute</code> containers and adds a few other styles making it easy to use.</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">hidden</code></code></td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">hidden</code></code></td>
                                 <td>Adds <code class="color-primary">overflow: hidden</code> to hide unwanted padding, margins, borders, etc from taking space before open. Useful when adding animations with <code class="color-primary">from-{direction}</code>, etc</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">from-default</code></td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">from-default</code></td>
                                 <td>Subtle animation from the top. <span class="color-gray">(Default)</span></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">from-top</code></td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">from-top</code></td>
                                 <td>Animates the element from the top. <br>
                                     <span class="note color-gray">Best when used with <code class="color-primary">overlay</code> to prevent overlapping content when animated.</span></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">from-left</code></td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">from-left</code></td>
                                 <td>Animates the element from the left. <br>
                                     <span class="note color-gray">Best when used with <code class="color-primary">overlay</code> to prevent overlapping content when animated.</span></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">from-right</code></td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">from-right</code></td>
                                 <td>Animates the element from the right. <br>
                                     <span class="note color-gray">Best when used with <code class="color-primary">overlay</code> to prevent overlapping content when animated.</span></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">from-bottom</code></td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">from-bottom</code></td>
                                 <td>Animates the element from the bottom. <br>
                                     <span class="note color-gray">Best when used with <code class="color-primary">overlay</code> to prevent overlapping content when animated.</span></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">slow</code></td>
+                                <td class="pl-2"><code class="color-primary">slow</code></td>
                                 <td>Sets the transition to a slower speed</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">fast</code></td>
+                                <td class="pl-2"><code class="color-primary">fast</code></td>
                                 <td>Sets the transition to a faster speed</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">instant</code></td>
+                                <td class="pl-2"><code class="color-primary">instant</code></td>
                                 <td>Sets the transition speed to instant</td>
                             </tr>
                         </tbody>
@@ -1715,7 +1714,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary"><span class="color-gray">{breakpoint}:</span>g-{n}</code></td>
+                                <td class="pl-2"><code class="color-primary"><span class="color-gray">{breakpoint}:</span>g-{n}</code></td>
                                 <td>Gap for columns within <code class="color-primary">grid</code> or <code class="color-primary">row</code>
                                     <p>See <a href="#spacing">Spacing</a> for available <code class="color-primary">{n}</code> values.</p>
                                 </td>
@@ -1808,7 +1807,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary"><span class="color-gray">{breakpoint}:</span>span-{n}</code>
+                                <td class="pl-2"><code class="color-primary"><span class="color-gray">{breakpoint}:</span>span-{n}</code>
                                     <div class="mt-3 ml-1 note">See <a href="#breakpoints">Breakpoints</a></div></td>
                                 <td>Span the column based on a number of columns set.<br>
                                     <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, or <code class="color-primary">fixed</code>
@@ -2353,15 +2352,15 @@
                                 <td>Top</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">r</code></td>
+                                <td class="pl-2"><code class="color-primary">r</code></td>
                                 <td>Right</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">b</code></td>
+                                <td class="pl-2"><code class="color-primary">b</code></td>
                                 <td>Bottom</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">l</code></td>
+                                <td class="pl-2"><code class="color-primary">l</code></td>
                                 <td>Left</td>
                             </tr>
                         </tbody>
@@ -2578,21 +2577,21 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">m<span class="color-gray">{side}</span>-{n}</code></td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">m<span class="color-gray">{side}</span>-{n}</code></td>
                                 <td>
                                     <p><h5>Margin</h5></p>
                                     <p>Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-5</code>. Can be modified in SCSS Variables.</p>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">m<span class="color-gray">{side}</span>-n{n}</code></td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">m<span class="color-gray">{side}</span>-n{n}</code></td>
                                 <td>
                                     <p><h5>Negative Margin</h5></p>
                                     <p>Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-5</code>. Can be modified in SCSS Variables.</p>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">g<span class="color-gray">{side}</span>-{n}</code></td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">g<span class="color-gray">{side}</span>-{n}</code></td>
                                 <td>
                                     <p><h5>Gap</h5></p>
                                     <p>Default options for <code class="color-primary">{n}</code> are <code class="color-primary">0-5</code>. Can be modified in SCSS Variables.</p>
@@ -2617,23 +2616,23 @@
                                 <td>Top</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">r</code></td>
+                                <td class="pl-2"><code class="color-primary">r</code></td>
                                 <td>Right</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">b</code></td>
+                                <td class="pl-2"><code class="color-primary">b</code></td>
                                 <td>Bottom</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">l</code></td>
+                                <td class="pl-2"><code class="color-primary">l</code></td>
                                 <td>Left</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">x</code></td>
+                                <td class="pl-2"><code class="color-primary">x</code></td>
                                 <td>Inline <span class="color-gray ml-1">(Left & Right)</span></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">y</code></td>
+                                <td class="pl-2"><code class="color-primary">y</code></td>
                                 <td>Block <span class="color-gray ml-1">(Top & Bottom)</span></td>
                             </tr>
                         </tbody>
@@ -2692,7 +2691,8 @@
                     <a class="button pill outline border/60" href="#tabs">Tabs</a>
                 </div>
                 
-                <h5 class="mt-3">Example HTML Toggle with collapse element.</h5>
+                <h3 class="mt-3"><a id="toggles.usage" href="#toggles.usage">Usage</a></h3>
+
                 <figure class="relative">
                     <code class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
                         &lt;!-- Toggle Activator --&gt;
@@ -2707,21 +2707,20 @@
                             &lt;p&gt;Collapsed Content Here&lt;/p&gt;
                         &lt;/div&gt;
                     </code>
+                    <figcaption>* See <a href="#collapse">Collapse</a> for all Collapse Classes and Attributes.</figcaption>
                 </figure>
 
-                <cite>* See <a href="#collapse">Collapse</a> for all Collapse Classes and Attributes.</cite>
 
                 <div class="@container">
                     <table class="@md:responsive my-3">
                         <thead>
                             <tr>
-                                <th class="w-200 h4">Toggle Classes</th>
-                                <th></th>
+                                <th colspan="2" class="w-200 h3 pl-0"><a id="toggles.classes" href="#toggles.classes" class="inherit-color">Classes</a></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">toggle</code></td>
+                                <td class="pl-2"><code class="color-primary">toggle</code></td>
                                 <td>Initiate the toggle activator. Input elements inside a toggle are automatically hidden.
                                     <br>
                                     A toggle can contain <code class="color-primary">.none c:revert</code> and <code class="color-primary">.c:none</code> child elements that will change their display based on if the toggle is active or not.
@@ -2730,6 +2729,8 @@
                         </tbody>
                     </table>
                 </div>
+
+                <h3 class="mt-3"><a id="toggles.examples" href="#toggles.examples">Examples</a></h3>
 
                 <article class="card show-code" data-title="Basic Toggle">
 					<div class="code-content relative p-3 md:p-4">
@@ -2898,76 +2899,100 @@
                     <a href="#utilities">General Utility Classes</a>
                 </h2>
 
+                <h3><a id="utilities.general.usage" href="#utilities.general.usage">Usage</a></h3>
+                <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm mb-4">
+                    &lt;div class="uppercase fw-600"&gt;
+                        uppercase text
+                    &lt;/div&gt;
+                </code>
+
                 <div class="@container">
                     <table class="@md:responsive mb-3">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="h3 pl-0">
+                                    <a id="utilities.general.classes" href="#utilities.general.classes" class="inherit-color">Classes</a>
+                                </th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr>
-                                <td class="md:w-200 md:pl-2"><code class="color-primary">bold</code></td>
-                                <td>font-weight: bold</td>
+                                <td class="pl-2"><code class="color-primary">normal</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">font-weight: normal</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">normal</code></td>
-                                <td>font-weight: normal</td>
+                                <td class="pl-2"><code class="color-primary">italic</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">font-style: italic</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">italic</code></td>
-                                <td>font-style: italic</td>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">fw-{weight}</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm break"><span class="color-secondary">font-weight:</span> <span class="color-primary">{weight}</span> <span class="ml-2 color-gray block @md:inline">/* 100 - 900 */</span></code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">uppercase</code></td>
-                                <td>text-transform: uppercase</td>
+                                <td class="pl-2"><code class="color-primary">uppercase</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">text-transform: uppercase</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">lowercase</code></td>
-                                <td>text-transform: lowercase</td>
+                                <td class="pl-2"><code class="color-primary">lowercase</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">text-transform: lowercase</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">capitalize</code></td>
-                                <td>text-transform: capitalize</td>
+                                <td class="pl-2"><code class="color-primary">capitalize</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">text-transform: capitalize</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">pointer </code></td>
-                                <td>cursor: pointer</td>
+                                <td class="pl-2"><code class="color-primary">circle</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">border-radius: 50%<br> aspect-ratio: 1</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">round</code>
-                                <td>border-radius: 5px; overflow: hidden</td>
+                                <td class="pl-2"><code class="color-primary">square</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">border-radius: 0<br> aspect-ratio: 1</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">round-bottom</code></td>
-                                <td>border-radius: 0 0 5px 5px</td>
+                                <td class="pl-2"><code class="color-primary">widescreen</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">aspect-ratio: 16/9</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">circle</code></td>
-                                <td>border-radius: 50%</td>
+                                <td class="pl-2"><code class="color-primary">index-{n}</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">z-index: <span class="color-primary">{n}</span> <span class="ml-2 color-gray">/* 1-5 */</span></code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">square</code></td>
-                                <td>border-radius: 0</td>
+                                <td class="pl-2"><code class="color-primary">note</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">font-style: italic<br> font-size: 90%<br> &nbsp; opacity: 0.8</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">index-1</code></td>
-                                <td>z-index: 1</td>
+                                <td class="pl-2"><code class="color-primary">truncate</code></td>
+                                <td>
+                                    <h5 class="mb-3">Truncate Single Line Text</h5>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">index-2</code></td>
-                                <td>z-index: 2</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-primary">index-3</code></td>
-                                <td>z-index: 3</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-primary">note </code></td>
-                                <td>font-style: italic; font-size: 90%; opacity: 0.8</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-primary">truncate</code></td>
-                                <td>Truncate Single Line Text<span class="note"> (display: inline-block;)</span><br>display: inline-block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-primary">truncate-{n}</code><br>n can be 1-5</td>
-                                <td>Truncate Multi Line Text or with Flexbox or Css Grid<span class="note"> (display: -webkit-box;)</span><br>display: -webkit-box; -webkit-line-clamp: {n}; -webkit-box-orient: vertical; word-break: break-word;</td>
+                                <td class="pl-2"><code class="color-primary">truncate-{n}</code></td>
+                                <td>
+                                    <h5 class="mb-3">Truncate Multi Line Text <code class="color-primary ml-2">{n}<span class="color-gray pl-2 sm">1 - 5</span></code></h5>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -2981,26 +3006,20 @@
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M22 13v6H6v-6h16M6 5v6h10V5H6M2 2v20h2V2H2" /></svg>
                     <a href="#utilities.layout">Layout Utility Classes</a>
                 </h2>
-                <p>* All Layout Utility Classes can be used with breakpoints 
-                    ex <code class="color-primary"><span class="color-gray">{breakpoint}:</span>{layout-class}</code>
+                <p class="h5">All Layout Utility Classes can be used with breakpoints 
+                    <br>Ex <code class="color-primary"><span class="color-gray">{breakpoint}:</span>{layout-class}</code>
                 </p>
 
-                <h5>Example Hide on All</h5>
-                <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
+                <h3><a id="utilities.layout.usage" href="#utilities.layout.usage">Usage</a></h3>
+                <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm mb-4">
                     &lt;div class="none"&gt;
                         Always Hidden
                     &lt;/div&gt;
-                </code>
 
-                <h5>Example Hide on Mobile</h5>
-                <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
                     &lt;div class="none md:block"&gt;
                         Shown on Medium
                     &lt;/div&gt;
-                </code>
 
-                <h5>Example Hide on Medium</h5>
-                <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
                     &lt;div class="md:none"&gt;
                         Hide on Medium
                     &lt;/div&gt;
@@ -3008,292 +3027,384 @@
 
                 <div class="@container">
                     <table class="@md:responsive mb-3">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="h3 pl-0">
+                                    <a id="utilities.layout.classes" href="#utilities.layout.classes" class="inherit-color">Classes</a>
+                                </th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr>
-                                <td class="md:w-400 md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">text-left</code></td>
-                                <td>text-align: left</td>
+                                <td class="@md:w-300 pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">text-left</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">text-align: left</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">text-center</code></td>
-                                <td>text-align: center</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">text-center</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">text-align: center</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">text-right</code></td>
-                                <td>text-align: right</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">text-right</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">text-align: right</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">text-justify</code></td>
-                                <td>text-align: justify</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">text-justify</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">text-align: justify</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">wrap-none</code></td>
-                                <td>white-space: nowrap; flex-wrap: nowrap;</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">wrap-none</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">white-space: nowrap; flex-wrap: nowrap;</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">pre-wrap</code></td>
-                                <td>white-space: pre-wrap</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">pre-wrap</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">white-space: pre-wrap</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">break-word</code></td>
-                                <td>word-wrap: break-word</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">break-word</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">word-wrap: break-word</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">inline</code></td>
-                                <td>display: inline; width: auto</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">inline</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">display: inline; width: auto</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">flex</code></td>
-                                <td>display: flex</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">flex</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">display: flex</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">block</code></td>
-                                <td>display: block</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">block</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">display: block</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">none</code></td>
-                                <td>display: none</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">none</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">display: none</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">inline-block</code></td>
-                                <td>display: inline-block; width: auto</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">inline-block</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">display: inline-block; width: auto</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">inline-flex</code></td>
-                                <td>display: inline-flex; width: auto</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">inline-flex</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">display: inline-flex; width: auto</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">table</code></td>
-                                <td>display: table</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">table</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">display: table</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">table-cell</code></td>
-                                <td>display: table-cell</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">table-cell</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">display: table-cell</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">relative</code></td>
-                                <td>position: relative</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">relative</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">position: relative</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">absolute</code></td>
-                                <td>position: absolute</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">absolute</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">position: absolute</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">collapse</code></td>
-                                <td>position: relative</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">collapse</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">position: relative</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">collapse > *</code></td>
-                                <td>position: absolute</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">collapse > *</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">position: absolute</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">sticky</code></td>
-                                <td>position: sticky; top: 0</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">sticky</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">position: sticky; top: 0</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">fixed</code></td>
-                                <td>position: fixed</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">fixed</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">position: fixed</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">inset </code></td>
-                                <td>inset: 0</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">inset </code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">inset: 0</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">top </code></td>
-                                <td>top: 0; bottom: auto</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">top </code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">top: 0; bottom: auto</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">right </code></td>
-                                <td>right: 0; left: auto</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">right </code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">right: 0; left: auto</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">bottom </code></td>
-                                <td>bottom: 0; top: auto</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">bottom </code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">bottom: 0; top: auto</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">left </code></td>
-                                <td>left: 0; right: auto</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">left </code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">left: 0; right: auto</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">outer-top </code></td>
-                                <td>bottom: 100%; top: auto</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">outer-top </code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">bottom: 100%; top: auto</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">outer-right </code></td>
-                                <td>left: 100%; right: auto</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">outer-right </code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">left: 100%; right: auto</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">outer-bottom </code></td>
-                                <td>top: 100%; bottom: auto</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">outer-bottom </code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">top: 100%; bottom: auto</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">outer-left </code></td>
-                                <td>right: 100%; left: auto</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">outer-left </code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">right: 100%; left: auto</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">pointer-none </code></td>
-                                <td>pointer-events: none</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">pointer-none </code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">pointer-events: none</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">align-baseline</code></td>
-                                <td>vertical-align: baseline</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">align-baseline</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">vertical-align: baseline</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">align-top</code></td>
-                                <td>vertical-align: top</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">align-top</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">vertical-align: top</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">align-middle</code></td>
-                                <td>vertical-align: middle</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">align-middle</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">vertical-align: middle</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">align-bottom</code></td>
-                                <td>vertical-align: bottom</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">align-bottom</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">vertical-align: bottom</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">overflow-hidden</code></td>
-                                <td>overflow: hidden</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">overflow-hidden</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">overflow: hidden</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">scroll</code></td>
-                                <td>overflow: scroll</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">scroll</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">overflow: scroll</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">auto</code></td>
-                                <td>overflow: auto</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">auto</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">overflow: auto</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">order-first</code></td>
-                                <td>order:-1</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">order-first</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">order:-1</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">order-0</code></td>
-                                <td>order:0</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">order-0</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">order:0</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">order-1</code></td>
-                                <td>order:1</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">order-1</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">order:1</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">order-2</code></td>
-                                <td>order:2</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">order-2</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">order:2</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">order-3</code></td>
-                                <td>order:3</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">order-3</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">order:3</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">order-last</code></td>
-                                <td>order:99999</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">order-last</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">order:99999</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">items-start</code></td>
-                                <td>place-items: start</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">items-start</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">place-items: start</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">items-end</code></td>
-                                <td>place-items: end</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">items-end</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">place-items: end</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">block-center</code></td>
-                                <td>place-items: center</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">block-center</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">place-items: center</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">items-stretch</code></td>
-                                <td>place-items: stretch</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">items-stretch</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">place-items: stretch</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">content-start</code></td>
-                                <td>place-content: start</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">content-start</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">place-content: start</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">content-end</code></td>
-                                <td>place-content: end</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">content-end</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">place-content: end</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">block-center</code></td>
-                                <td>place-content: center</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">block-center</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">place-content: center</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">between</code></td>
-                                <td>place-content: space-between</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">between</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">place-content: space-between</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">content-around</code></td>
-                                <td>place-content: space-around</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">content-around</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">place-content: space-around</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">content-evenly</code></td>
-                                <td>place-content: space-evenly</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">content-evenly</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">place-content: space-evenly</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">self-stretch</code></td>
-                                <td>place-self: stretch</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">self-stretch</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">place-self: stretch</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">self-start</code></td>
-                                <td>place-self: start</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">self-start</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">place-self: start</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">self-end</code></td>
-                                <td>place-self: end</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">self-end</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">place-self: end</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">self-center</code></td>
-                                <td>place-self: center</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">self-center</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">place-self: center</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">flex-wrap</code></td>
-                                <td>flex-wrap: wrap</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">flex-wrap</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">flex-wrap: wrap</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">shadow</code></td>
-                                <td>box-shadow: 1px 3px 4px rgba(0,0,0,.12)</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">shadow</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">box-shadow: 1px 3px 4px rgba(0,0,0,.12)</code></i>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">h-***</code></td>
-                                <td>height: ***px; min-height: ***px; max-height: ***px</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">max-h-***</code></td>
-                                <td>max-height: ***px</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">vh-**</code></td>
-                                <td>height: **vh</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">mvh-**</code></td>
-                                <td>max-height: **vh</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">w-***</code></td>
-                                <td>width: ***px; min-width: ***px; max-width: ***px</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">max-w-***</code></td>
-                                <td>max-width: ***px</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">vw-**</code></td>
-                                <td>width: **vw</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">mvw-**</code></td>
-                                <td>max-width: **vw</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">o-**</code></td>
-                                <td>opacity: .**</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">o/{percentage}</code></td>
+                                <td>
+                                    <i><code class="color-secondary sm">opacity: {percentage}%</code></i>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-    
-                <p class="pt-3 pl-2 note">** = 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100</p>
-                <p class="pt-0 pl-2 note">*** = 0, 100, 200, 300, 400, 500, 600, 700, 800, 900</p>
-    
-                <h4 class="mt-4">Max Width Classes</h4>
-                <p>This requires a breakpoint. ex <code class="color-primary">{breakpoint}:mw</code></p>    
+
             </section>
 
             <!-- ACCORDION -->
@@ -3303,11 +3414,21 @@
                     <a href="#accordions">Accordions</a>
                 </h2>
 
-                <h5 class="mb-2">Accordions use Toggles to add the collapsing functionality. View <a href="#toggles">Toggles</a> for more details.</h5>
+                <p class="mb-2 h5">Accordions are just an accumulation of other components used together:</p>
+
+                <p> See:</p>
+                <div class="row primary columns-auto g-1 mt-1 mb-3 content-start">
+                    <a class="button pill outline border/60 sm" href="#buttons">Buttons</a>
+                    <a class="button pill outline border/60 sm" href="#collapse">Collapse</a>
+                    <a class="button pill outline border/60 sm" href="#icons">Icons</a>
+                    <a class="button pill outline border/60 sm" href="#toggles">Toggles</a>
+                </div>
+
+                <h3><a id="accordions.usage" href="#accordions.usage">Usage</a></h3>
                 <figure class="relative">
                     <code class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
                         &lt;!-- Basic Accordion Item --&gt;
-                        &lt;label class="button toggle w/100"&gt;
+                        &lt;label class="button toggle flex between"&gt;
                             Question 1
                             &lt;input class="hide" type="checkbox"&gt;
                         &lt;/label&gt;
@@ -3324,33 +3445,11 @@
                     </code>
                 </figure>
 
-                <div class="@container">
-                    <table class="@md:responsive mb-3">
-                        <thead>
-                            <tr>
-                                <th colspan="2" class="h4">Variation Classes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="md:w-200 md:pl-2"><code class="color-primary">outline</code></td>
-                                <td>Adds Outline variant to container</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-primary">{color}</code></td>
-                                <td>Assigns the Accent color to the container and children.</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-primary">border-{color}</code></td>
-                                <td>Assigns the Accent color to the outline borders.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <h3><a id="accordions.examples" href="#accordions.examples">Examples</a></h3>
 
-                <article class="card show-code" data-title="Basic Accordion">
+                <article id="accordions.example1" class="card show-code" data-title="Basic Accordion">
 					<div class="code-content relative p-3 md:p-4">
-                        <label class="toggle between button mb-1 w/100">
+                        <label class="button toggle flex between mb-1">
                             Question 1
                             <input class="hide" type="checkbox">
                             <svg class="icon o:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
@@ -3372,7 +3471,7 @@
                         </div>
 
                         <div>
-                            <label class="toggle between button mb-1 w/100">
+                            <label class="button toggle flex between mb-1">
                                 Question 2
                                 <input class="hide" type="checkbox">
                                 <svg class="icon o:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
@@ -3388,7 +3487,7 @@
                             </div>
                         </div>
                         
-                        <label class="toggle between button w/100">
+                        <label class="button toggle flex between">
                             Question 3
                             <input class="hide" type="checkbox">
                             <svg class="icon o:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
@@ -3409,17 +3508,17 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Single Opening Accordion" data-note="Uses Radios with a grouped name instead of Checkboxes">
+                <article id="accordions.example2" class="card show-code" data-title="Single Opening Accordion" data-note="Uses Radios with a grouped name instead of Checkboxes">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="r-3 hidden">
-                            <label class="toggle button sharp hazy link contrast w/100 between r-0 b-0 bb-1 border-theme border/5">
+                            <label class="button toggle hazy link contrast flex between r-0 b-0 bb-1 border-theme border/5">
                                 Question 1
                                 <input class="hide" type="radio" name="accordionGroup1">
                                 <svg class="icon o:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <div class="collapse">
                                 <div>
-                                    <div class="p-3 bx-1 border/5 my-n1">
+                                    <div class="p-3 bx-1 border/50 my-n1">
                                         <p>
                                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                             invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
@@ -3435,14 +3534,14 @@
                                 </div>
                             </div>
 
-                            <label class="toggle button sharp hazy link contrast w/100 between r-0 b-0 bb-1 border-theme border/5">
+                            <label class="button toggle hazy link contrast flex between r-0 b-0 bb-1 border-theme border/5">
                                 Question 2
                                 <input class="hide" type="radio" name="accordionGroup1">
                                 <svg class="icon o:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <div class="collapse">
                                 <div>
-                                    <div class="p-3 bx-1 border/5 my-n1">
+                                    <div class="p-3 bx-1 border/50 my-n1">
                                         <p>
                                             At vero eos et accusam
                                             et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
@@ -3452,14 +3551,14 @@
                                 </div>
                             </div>
                             
-                            <label class="toggle button sharp hazy link contrast w/100 between r-0">
+                            <label class="button toggle hazy link contrast flex between r-0">
                                 Question 3
                                 <input class="hide" type="radio" name="accordionGroup1">
                                 <svg class="icon o:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <div class="collapse">
                                 <div>
-                                    <div class="p-3 bx-1 bb-1 border/5 mt-n2 rb-4">
+                                    <div class="p-3 bx-1 bb-1 border/50 mt-n2 rb-4">
                                         <p>
                                             Consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                                             invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
@@ -3476,7 +3575,7 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Outlined Accordion with Accent">
+                <article id="accordions.example3" class="card show-code" data-title="Outlined Accordion with Accent">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="primary b-1 border-primary r-3 hidden">
                             <label class="toggle button round-op link w/100 between b-0 bb-1 r-0">
@@ -3551,6 +3650,7 @@
                     <a href="#alerts">Alerts</a>
                 </h2>
 
+                <h3><a id="alerts.usage" href="#alerts.usage">Usage</a></h3>
                 <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
                     &lt;!-- Basic Alert --&gt;
                     &lt;div class="alert"&gt;
@@ -3558,24 +3658,28 @@
                     &lt;/div&gt;
                 </code>
 
-                <div class="@container">
+                <div class="@container mt-4">
                     <table class="@md:responsive mb-3">
                         <thead>
                             <tr>
-                                <th colspan="2" class="h4">Classes</th>
+                                <th colspan="2" class="h3 pl-0">
+                                    <a id="alerts.classes" href="#alerts.classes" class="inherit-color">Classes</a>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="md:w-200 md:pl-2"><code class="color-primary">alert</code></td>
-                                <td>Assigns the element as Alert.</td>
+                                <td>Assigns the element as an Alert.</td>
                             </tr>
                         </tbody>
                     </table>
                     <table class="@md:responsive mb-3">
                         <thead>
                             <tr>
-                                <th colspan="2" class="h4">Variation Classes</th>
+                                <th colspan="2" class="h4 pl-0">
+                                    <a id="alerts.variations" href="#alerts.variations" class="inherit-color">Variation Classes</a>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -3584,11 +3688,11 @@
                                 <td>Adds Outline variant</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">hazy</code></td>
+                                <td class="pl-2"><code class="color-primary">hazy</code></td>
                                 <td>Adds Hazy variant</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">{color}</code></td>
+                                <td class="pl-2"><code class="color-primary">{color}</code></td>
                                 <td>Assigns the Accent color to the Alert.</td>
                             </tr>
                         </tbody>
@@ -3649,23 +3753,23 @@
 
                 <article class="card show-code" data-title="Hazy with Accent Border">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="alert hazy flex b-0 bl-3 sharp">
+                        <div class="alert hazy flex b-0 bl-3 r-0">
                             <svg class="icon lg" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert primary hazy flex b-0 bl-3 sharp">
+                        <div class="alert primary hazy flex b-0 bl-3 r-0">
                             <svg class="icon lg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert success hazy flex b-0 bl-3 sharp">
+                        <div class="alert success hazy flex b-0 bl-3 r-0">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M19.78 2.2 24 6.42 8.44 22 0 13.55l4.22-4.22 4.22 4.22L19.78 2.2m0 2.8L8.44 16.36l-4.22-4.17-1.41 1.36 5.63 5.62L21.19 6.42 19.78 5z" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert warning hazy flex b-0 bl-3 sharp">
+                        <div class="alert warning hazy flex b-0 bl-3 r-0">
                             <svg class="icon lg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert error hazy flex b-0 bl-3 sharp">
+                        <div class="alert error hazy flex b-0 bl-3 r-0">
                             <svg class="icon lg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
@@ -3786,7 +3890,7 @@
                     <table class="@md:responsive mb-3">
                         <thead>
                             <tr>
-                                <th colspan="2" class="h4">Classes</th>
+                                <th colspan="2" class="h4 pl-0">Classes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -3799,7 +3903,7 @@
                     <table class="@md:responsive mb-3">
                         <thead>
                             <tr>
-                                <th colspan="2" class="h4">Variation Classes</th>
+                                <th colspan="2" class="h4 pl-0">Variation Classes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -3808,35 +3912,35 @@
                                 <td>Adds Outline variant</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">hazy</code></td>
+                                <td class="pl-2"><code class="color-primary">hazy</code></td>
                                 <td>Adds Hazy variant</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">snug</code></td>
+                                <td class="pl-2"><code class="color-primary">snug</code></td>
                                 <td>Moves badge up left</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">dense</code></td>
+                                <td class="pl-2"><code class="color-primary">dense</code></td>
                                 <td>Greatly Reduces Padding, Line Height and Minimum Size</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">compact</code></td>
+                                <td class="pl-2"><code class="color-primary">compact</code></td>
                                 <td>Reduces Padding, Line Height and Minimum Size</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">cozy</code></td>
+                                <td class="pl-2"><code class="color-primary">cozy</code></td>
                                 <td>Resets Padding, Line Height and Minimum Size</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">roomy</code></td>
+                                <td class="pl-2"><code class="color-primary">roomy</code></td>
                                 <td>Increases Padding, Line Height and Minimum Size</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">circle</code></td>
+                                <td class="pl-2"><code class="color-primary">circle</code></td>
                                 <td>Rounds the button</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">{color}</code></td>
+                                <td class="pl-2"><code class="color-primary">{color}</code></td>
                                 <td>Assigns the Accent color to the Badge.</td>
                             </tr>
                         </tbody>
@@ -3952,13 +4056,13 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">button</code></td>
+                                <td class="pl-2"><code class="color-primary">button</code></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">type="submit"</code></td>
+                                <td class="pl-2"><code class="color-primary">type="submit"</code></td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">type="reset"</code></td>
+                                <td class="pl-2"><code class="color-primary">type="reset"</code></td>
                             </tr>
                         </tbody>
                     </table>
@@ -3966,7 +4070,7 @@
                     <table class="@md:responsive mb-3">
                         <thead>
                             <tr>
-                                <th colspan="2" class="h4">Classes</th>
+                                <th colspan="2" class="h4 pl-0">Classes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -3979,7 +4083,7 @@
                     <table class="@md:responsive mb-3">
                         <thead>
                             <tr>
-                                <th colspan="2" class="h4">Variation Classes</th>
+                                <th colspan="2" class="h4 pl-0">Variation Classes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -3988,61 +4092,44 @@
                                 <td>Adds Outline variant</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">hazy</code></td>
+                                <td class="pl-2"><code class="color-primary">hazy</code></td>
                                 <td>Adds Hazy variant</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">plain</code></td>
+                                <td class="pl-2"><code class="color-primary">plain</code></td>
                                 <td>Adds Plain variant</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">link</code></td>
+                                <td class="pl-2"><code class="color-primary">link</code></td>
                                 <td>Adds Link variant</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">dense</code></td>
+                                <td class="pl-2"><code class="color-primary">dense</code></td>
                                 <td>Greatly Reduces Padding, Line Height and Minimum Size</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">compact</code></td>
+                                <td class="pl-2"><code class="color-primary">compact</code></td>
                                 <td>Reduces Padding, Line Height and Minimum Size</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">cozy</code></td>
+                                <td class="pl-2"><code class="color-primary">cozy</code></td>
                                 <td>Resets Padding, Line Height and Minimum Size</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">roomy</code></td>
+                                <td class="pl-2"><code class="color-primary">roomy</code></td>
                                 <td>Increases Padding, Line Height and Minimum Size</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">icon</code></td>
+                                <td class="pl-2"><code class="color-primary">icon</code></td>
                                 <td>Assigns button as a single icon element</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">circle</code></td>
+                                <td class="pl-2"><code class="color-primary">circle</code></td>
                                 <td>Rounds the button</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">{color}</code></td>
+                                <td class="pl-2"><code class="color-primary">{color}</code></td>
                                 <td>Assigns the Accent color to the Button.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="@md:responsive mb-3">
-                        <thead>
-                            <tr>
-                                <th colspan="2" class="h4">Attributes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="md:w-200 md:pl-2"><code class="color-primary">aria-busy="false"</code></td>
-                                <td>Prepares button for Loading</td>
-                            </tr>
-                            <tr>
-                                <td class="md:pl-2"><code class="color-primary">aria-busy="true"</code></td>
-                                <td>Shows Loading</td>
                             </tr>
                         </tbody>
                     </table>
@@ -4053,6 +4140,7 @@
                         <div>Buttons</div>
                         <button>Default</button>
                         <button class="loading">Default</button>
+                        <button class="secondary">Secondary</button>
                         <button class="primary">Primary</button>
                         <button class="primary loading">Primary</button>
                         <button class="success">Success</button>
@@ -4329,7 +4417,7 @@
                     <table class="@md:responsive mb-3">
                         <thead>
                             <tr>
-                                <th colspan="2" class="h4">Tag</th>
+                                <th colspan="2" class="h4 pl-0">Tag</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -4342,7 +4430,7 @@
                     <table class="@md:responsive mb-3">
                         <thead>
                             <tr>
-                                <th colspan="2" class="h4">Variation Classes</th>
+                                <th colspan="2" class="h4 pl-0">Variation Classes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -4351,11 +4439,11 @@
                                 <td>Adds Outline variant</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">shadow</code></td>
+                                <td class="pl-2"><code class="color-primary">shadow</code></td>
                                 <td>Adds Shadow</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">{color}</code></td>
+                                <td class="pl-2"><code class="color-primary">{color}</code></td>
                                 <td>Assigns the Accent color to the Card.</td>
                             </tr>
                         </tbody>
@@ -4550,7 +4638,7 @@
                             <script type="module">
                                 import { createApp } from 'https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/+esm';
                                 createApp({
-                                    o: false,
+                                    open: false,
                                     toggleValue: 'Select',
                                     items: [
                                         'Item 1',
@@ -4621,7 +4709,7 @@
 
                         <div class="l-select" data-language="alpineJs">
                             <span x-data="{
-                                    o: false,
+                                    open: false,
                                     toggleValue: 'Select',
                                     items: ['Item 1', 'Item 2', 'Item 3']
                                 }">
@@ -4737,7 +4825,7 @@
                     <table class="@md:responsive my-3">
                         <thead>
                             <tr>
-                                <th colspan="2" class="h4">Classes</th>
+                                <th colspan="2" class="h4 pl-0">Classes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -4746,11 +4834,11 @@
                                 <td>Sets Accent color.</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">border-{color}</code></td>
+                                <td class="pl-2"><code class="color-primary">border-{color}</code></td>
                                 <td>Sets field border colors.</td>
                             </tr>
                             <tr>
-                                <td class="md:pl-2"><code class="color-primary">color-{color}</code></td>
+                                <td class="pl-2"><code class="color-primary">color-{color}</code></td>
                                 <td>Sets Text color.</td>
                             </tr>
                         </tbody>
@@ -4785,9 +4873,9 @@
                                 <input id="dropdown" type="text" class="is-select" value="" readonly>
                                 <div class="collapse from-top overlay hidden">
                                     <ul class="list bg-faint rb-2 shadow-2 w/100">
-                                        <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 1</button></li>
-                                        <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 2</button></li>
-                                        <li><button type="button" class="link contrast sharp" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 3</button></li>
+                                        <li><button type="button" class="link contrast r-0" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 1</button></li>
+                                        <li><button type="button" class="link contrast r-0" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 2</button></li>
+                                        <li><button type="button" class="link contrast r-0" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 3</button></li>
                                     </ul>
                                 </div>
                             </label>
@@ -4797,9 +4885,9 @@
                                 <input id="dropdown2" type="text" class="is-select" value="" readonly="">
                                 <div class="collapse overlay">
                                     <ul class="list bg-faint rb-2 shadow-2 w/100">
-                                        <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_1" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 1</label></li>
-                                        <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_2" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 2</label></li>
-                                        <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_3" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 3</label></li>
+                                        <li><label class="button link contrast r-0"><input class="hide" type="radio" name="d2" value="hidden_value_1" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 1</label></li>
+                                        <li><label class="button link contrast r-0"><input class="hide" type="radio" name="d2" value="hidden_value_2" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 2</label></li>
+                                        <li><label class="button link contrast r-0"><input class="hide" type="radio" name="d2" value="hidden_value_3" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 3</label></li>
                                     </ul>
                                 </div>
                             </label>
@@ -4809,9 +4897,9 @@
                                 <input id="dropdown3" type="text" class="is-select" data-toggle="next" data-toggle-escapable value="" readonly="">
                                 <div class="collapse">
                                     <ul class="list navigable bg-faint round-bottom shadow-2 w/100">
-                                        <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
-                                        <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
-                                        <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
+                                        <li><label class="button link contrast r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
+                                        <li><label class="button link contrast r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
+                                        <li><label class="button link contrast r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
                                     </ul>
                                 </div>
                             </label>
@@ -5021,9 +5109,9 @@
                                 <input id="dropdown4" type="text" class="is-select" data-toggle="next" data-toggle-escapable data-toggle-dismissible value="" readonly="">
                                 <div class="collapse">
                                     <ul class="list navigable bg-faint round-bottom shadow-2 w/100">
-                                        <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_1" onclick="document.getElementById('dropdown4').value = this.parentElement.innerText;">Option 1</label></li>
-                                        <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_2" onclick="document.getElementById('dropdown4').value = this.parentElement.innerText;">Option 2</label></li>
-                                        <li><label class="button link contrast sharp"><input class="hide" type="radio" name="d2" value="hidden_value_3" onclick="document.getElementById('dropdown4').value = this.parentElement.innerText;">Option 3</label></li>
+                                        <li><label class="button link contrast r-0"><input class="hide" type="radio" name="d2" value="hidden_value_1" onclick="document.getElementById('dropdown4').value = this.parentElement.innerText;">Option 1</label></li>
+                                        <li><label class="button link contrast r-0"><input class="hide" type="radio" name="d2" value="hidden_value_2" onclick="document.getElementById('dropdown4').value = this.parentElement.innerText;">Option 2</label></li>
+                                        <li><label class="button link contrast r-0"><input class="hide" type="radio" name="d2" value="hidden_value_3" onclick="document.getElementById('dropdown4').value = this.parentElement.innerText;">Option 3</label></li>
                                     </ul>
                                 </div>
                             </label>
@@ -5033,9 +5121,9 @@
                                 <input id="dropdown5" type="text" class="is-select" data-toggle="next" data-toggle-escapable value="" readonly="">
                                 <div class="collapse">
                                     <ul class="list navigable bg-faint round-bottom shadow-2 w/100">
-                                        <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown5').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
-                                        <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown5').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
-                                        <li><label class="button link contrast sharp"><input class="hide" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown5').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
+                                        <li><label class="button link contrast r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown5').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
+                                        <li><label class="button link contrast r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown5').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
+                                        <li><label class="button link contrast r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown5').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
                                     </ul>
                                 </div>
                             </label>
@@ -5216,8 +5304,7 @@
                     <table class="@md:responsive my-3">
                         <thead>
                             <tr>
-                                <th class="w-200 h4">Classes</th>
-                                <th></th>
+                                <th colspan="2" class="w-200 h3 pl-0">Classes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -6007,8 +6094,7 @@
                     <table class="@md:responsive my-3">
                         <thead>
                             <tr>
-                                <th class="w-200 h4">Classes</th>
-                                <th></th>
+                                <th colspan="2" class="w-200 h3 pl-0">Classes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -6093,7 +6179,7 @@
                             <script type="module">
                                 import { createApp } from 'https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/+esm';
                                 createApp({
-                                    o: false,
+                                    open: false,
                                     clickClose(event) {
                                         event.target === this.$refs.modal ? this.open = false : null;
                                     }
@@ -6636,8 +6722,7 @@
                     <table class="@md:responsive my-3">
                         <thead>
                             <tr>
-                                <th class="w-200 h4">Classes</th>
-                                <th></th>
+                                <th colspan="2" class="w-200 h3 pl-0">Classes</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -6671,8 +6756,7 @@
                     <table class="@md:responsive my-3">
                         <thead>
                             <tr>
-                                <th class="w-200 h4">Data Options</th>
-                                <th></th>
+                                <th colspan="2" class="w-200 h3 pl-0">Data Options</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -7618,8 +7702,7 @@
                     <table class="@md:responsive my-3">
                         <thead>
                             <tr>
-                                <th class="w-200 h4">Classes</th>
-                                <th></th>
+                                <th colspan="2" class="w-200 h3 pl-0">Classes</th>
                             </tr>
                         </thead>
                         <tbody>

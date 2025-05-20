@@ -57,6 +57,11 @@ $themes: (
 // Use css light-dark() function to specify the colors for light and dark schemes.
 // See: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark
 $colors: (
+    primary   : (default: light-dark(#18d, #09d)),
+    secondary : (default: light-dark(#a4b, #b5c)),
+    success   : (default: light-dark(#283, #0a0)),
+    warning   : (default: light-dark(#c70, #e90)),
+    error     : (default: light-dark(#d00, #f20)),
     contrast  : (default: light-dark(#333, #eee)),
     faint     : (default: light-dark(#eee, #333)),
     stark     : (default: light-dark(#000, #fff)),
@@ -66,11 +71,6 @@ $colors: (
     gray      : (default: #888),
     light     : (default: #eee),
     white     : (default: #fff),
-    primary   : (default: #18d),
-    secondary : (default: #96c),
-    success   : (default: #0a0),
-    warning   : (default: #e90),
-    error     : (default: #e20),
 ) !default;
 
 // Specify each tag type like <h3> etc. Each type will get a corresponding class added. Ex. .h3
@@ -216,7 +216,7 @@ $lengths: (
     --ease       : cubic-bezier(.45, .45, 0, 1); //cubic-bezier(.25, .8, .25, 1);
     --glow       : .5;
     --glow-a     : .5;
-    --invert     : 50;
+    --invert     : 60;
     --layer      : 6;
     --max-height : 1900px;
     --origin     : top;

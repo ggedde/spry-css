@@ -12,9 +12,13 @@
 	display        : block;
 	justify-content: flex-start;
 	padding        : .5em 1em;
+
+	&:where(.outline) {
+		--bdr-a: .6;
+	}
 }
 
-:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label, .alert) + .alert,
+:where(h1, h2, h3, h4, h5, h6, ul, ol, p, q, label, .alert)+.alert,
 .alert+* {
 	margin-top: var(--pad-lg);
 }

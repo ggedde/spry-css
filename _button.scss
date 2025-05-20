@@ -32,6 +32,11 @@
 	}
 }
 
+:where(button, .button, [type=submit], [type=reset]):where(.outline),
+:where(.buttons-outline) a {
+	--bdr-a: .7;
+}
+
 :is(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a {
 	color: var(--ui-text);
 }
