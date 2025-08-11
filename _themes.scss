@@ -75,24 +75,29 @@ $themeNames: ();
 $colorNames: ();
 @if meta.global-variable-exists('colors', variables) and variables.$colors {
 
-	.color\/0,
-	.h\:color\/0:hover {
-		--clr-a: 0;
-	}
+	// .color\/0,
+	// .h\:color\/0:hover {
+	// 	--clr-a: 0;
+	// }
 
-	.bg\/0,
-	.h\:bg\/0:hover {
-		--bg-a: 0;
-	}
+	// .bg\/0,
+	// .h\:bg\/0:hover {
+	// 	--bg-a: 0;
+	// }
+
+	// .bg-to\/0,
+	// .h\:bg-to\/0:hover {
+	// 	--bg-to-a: 0;
+	// }
 	
-	.border\/0,
-	.h\:border\/0:hover {
-		--bdr-a: 0;
-	}
+	// .border\/0,
+	// .h\:border\/0:hover {
+	// 	--bdr-a: 0;
+	// }
 
-	.glow\/0 {
-		--glow-a: 0;
-	}
+	// .glow\/0 {
+	// 	--glow-a: 0;
+	// }
 
 	@each $i in variables.$percentages {
 		.color\/#{$i},
@@ -103,6 +108,11 @@ $colorNames: ();
 		.bg\/#{$i},
 		.h\:bg\/#{$i}:hover {
 			--bg-a: #{calc($i / 100)};
+		}
+
+		.bg-to\/#{$i},
+		.h\:bg-to\/#{$i}:hover {
+			--bg-to-a: #{calc($i / 100)};
 		}
 		
 		.border\/#{$i},
@@ -119,7 +129,7 @@ $colorNames: ();
 	@for $i from 0 through 5 {
 		
 		.color-#{$i},
-		.h\:color\-#{$i}:hover {
+		.h\:color-#{$i}:hover {
 			--clr-l: #{calc(1 - ($i / 10))};
 		}
 		.color\+#{$i},
@@ -128,16 +138,25 @@ $colorNames: ();
 		}
 
 		.bg-#{$i},
-		.h\:bg\-#{$i}:hover {
+		.h\:bg-#{$i}:hover {
 			--bg-l: #{calc(1 - ($i / 10))};
 		}
 		.bg\+#{$i},
 		.h\:bg\+#{$i}:hover {
 			--bg-l: #{calc(($i / 10) + 1)};
 		}
+
+		.bg-to-#{$i},
+		.h\:bg-to-#{$i}:hover {
+			--bg-to-l: #{calc(1 - ($i / 10))};
+		}
+		.bg-to\+#{$i},
+		.h\:bg-to\+#{$i}:hover {
+			--bg-to-l: #{calc(($i / 10) + 1)};
+		}
 		
 		.border-#{$i},
-		.h\:border\-#{$i}:hover {
+		.h\:border-#{$i}:hover {
 			--bdr-l: #{calc(1 - ($i / 10))};
 		}
 		.border\+#{$i},
@@ -257,33 +276,87 @@ $colorNames: ();
 	.bg-to-theme {
 		--bg-to: var(--theme-bg);
 	}
-	.bg-from-top {
-		--bg-from: 180deg;
+
+	.bg-from-bottom {
+		--bg-from: 0deg;
 	}
-	.bg-from-top-left {
-		--bg-from: 150deg;
+	.bg-from-bottom-left {
+		--bg-from: 30deg;
 	}
 	.bg-from-left {
 		--bg-from: 90deg;
 	}
-	.bg-from-left-bottom {
-		--bg-from: 30deg;
+	.bg-from-top-left {
+		--bg-from: 150deg;
+		&.pattern-3 {
+			--bg-from: 135deg;
+		}
+	}
+	.bg-from-top {
+		--bg-from: 180deg;
+	}
+	.bg-from-top-right {
+		--bg-from: 210deg;
+	}
+	.bg-from-right {
+		--bg-from: 270deg;
+	}
+	.bg-from-bottom-right {
+		--bg-from: 330deg;
 	}
 
-	[class*=bg-to-] {
+	[class*=bg-to-],
+	[class*="bg-to+"],
+	[class*="bg-to/"],
+	[class*=pattern-] {
+		--bg1: hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
+		--bg2: hsl(from var(--bg-to, var(--ui-bg)) h s clamp(0, l * var(--bg-to-l, 1), 100) / var(--bg-to-a, 1));
 		background-origin: border-box;
-		background-image: linear-gradient(var(--bg-from), hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1)), hsl(from var(--bg-to) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1)));
+		background-color: transparent;
+		background-image: linear-gradient(var(--bg-from), var(--bg1), var(--bg2));
+		--pattern-size: 100px;
+	}
+
+	.pattern-size-1 {
+		--pattern-size: 20px;
+	}
+
+	.pattern-size-2 {
+		--pattern-size: 50px;
+	}
+
+	.pattern-size-3 {
+		--pattern-size: 100px;
+	}
+	.pattern-size-4 {
+		--pattern-size: 300px;
+	}
+	.pattern-size-5 {
+		--pattern-size: 500px;
 	}
 
 	.bg-from-center {
-		background-image: radial-gradient(circle, hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1)) 20%, hsl(from var(--bg-to) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1)) 115%);
+		background-image: radial-gradient(circle,var(--bg1) 20%,var(--bg2) 115%);
 	}
 
 	.layer {
 		background-color: hsl(from var(--ui-bg) h s calc(l + (var(--layer-lvl) * var(--layer) * var(--layer-dir))) / var(--bg-a, 1));
 		border-color: hsl(from var(--ui-border) h s calc(l * var(--bdr-l, 1) + (((var(--layer-lvl) - 1) * var(--layer)) * var(--layer-dir))) / var(--bdr-a, 1));
 	}
+
+	.pattern-1 {
+		background: linear-gradient(calc(var(--bg-from) + 3deg),var(--bg1) 33%,var(--bg2) 33.5% 66.5%,var(--bg1) 67%) 0 / var(--pattern-size) var(--pattern-size);
+	}
+
+	.pattern-2 {
+		background: repeating-linear-gradient(var(--bg-from), var(--bg1) 0 var(--pattern-size), var(--bg2) 0 calc(var(--pattern-size) * 2));
+	}
+
+	.pattern-3 {
+		background: conic-gradient(var(--bg1) var(--bg-from), var(--bg2) 0 calc(var(--bg-from) * 2), var(--bg1) 0 315deg,var(--bg2) 0) 0 / var(--pattern-size) var(--pattern-size);
+	}
 }
+
 
 .layer .layer {
 	--layer-lvl: 2;

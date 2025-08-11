@@ -286,7 +286,7 @@ label {
 	}
 
 	label:has(:user-invalid) .invalid {
-		display: block;
+		display: revert;
 	}
 
 	.input:has(:user-invalid)> :not(input, select, textarea) {

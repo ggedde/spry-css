@@ -178,6 +178,14 @@
 	}
 }
 
+.hyphens {
+	hyphens: auto;
+}
+
+.no-hyphens {
+	hyphens: none;
+}
+
 // .bbb {
 // 	@extend .icon;
 // 	@extend .o\:rotate;
