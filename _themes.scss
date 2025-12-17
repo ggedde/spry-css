@@ -57,6 +57,7 @@ $themeNames: ();
 			--ui-color : var(--theme-ui);
 			--ui-input : var(--theme-input);
 			--ui-accent: var(--theme-accent);
+			--ui-shadow: rgba(0, 0, 0, var(--shadow-a, .2));
 			--ui-text  : hsl(from var(--theme-ui) 0 0 clamp(15%, calc((l - var(--invert))* -1000%), 98%) / var(--clr-a, 1));
 		}
 
@@ -66,8 +67,8 @@ $themeNames: ();
 		.tooltip {
 			color-scheme    : var(--theme-scheme);
 			color           : hsl(from var(--theme-color) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 1));
-			background-color: hsl(from var(--ui-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
-			border-color    : hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
+			background-color: hsl(from var(--theme-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
+			border-color    : hsl(from var(--theme-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 		}
 	}
 }
@@ -123,6 +124,10 @@ $colorNames: ();
 		.glow\/#{$i} {
 			--glow-a: #{calc($i / 100)};
 		}
+
+		.placeholder\/#{$i} {
+			--ph-a: #{calc($i / 100)};
+		}
 	}
 
 
@@ -138,10 +143,12 @@ $colorNames: ();
 		}
 
 		.bg-#{$i},
+		.scheme-toggle .\^bg-#{$i},
 		.h\:bg-#{$i}:hover {
 			--bg-l: #{calc(1 - ($i / 10))};
 		}
 		.bg\+#{$i},
+		.scheme-toggle .\^bg\+#{$i},
 		.h\:bg\+#{$i}:hover {
 			--bg-l: #{calc(($i / 10) + 1)};
 		}
@@ -179,6 +186,9 @@ $colorNames: ();
 	[class*=bb-],
 	[class*=bl-] {
 		border-color: hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
+		&:where(input, textarea, select, .input) {
+			border-color: hsl(from var(--ui-input) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
+		}
 	}
 
 	@each $color_name, $color_value in variables.$colors {
@@ -249,6 +259,11 @@ $colorNames: ();
 			--ui-glow: var(--#{$color_name});
 		}
 
+		.h\:shadow-#{"" + $color_name}:is(:hover, :focus, .active),
+		.shadow-#{"" + $color_name} {
+			--ui-shadow: var(--#{$color_name});
+		}
+
 		.bg-to-#{"" + $color_name} {
 			--bg-to: var(--#{$color_name});
 		}
@@ -257,6 +272,10 @@ $colorNames: ();
 		.border-#{"" + $color_name} {
 			--ui-border: var(--#{$color_name});
 			--ui-input: var(--#{$color_name});
+		}
+
+		.placeholder-#{"" + $color_name}::placeholder {
+			color: hsl(from var(--#{$color_name}) h s clamp(0, l * var(--clr-l, 1), 100) / var(--ph-a, 1));
 		}
 	}
 
@@ -339,10 +358,14 @@ $colorNames: ();
 		background-image: radial-gradient(circle,var(--bg1) 20%,var(--bg2) 115%);
 	}
 
-	.layer {
-		background-color: hsl(from var(--ui-bg) h s calc(l + (var(--layer-lvl) * var(--layer) * var(--layer-dir))) / var(--bg-a, 1));
-		border-color: hsl(from var(--ui-border) h s calc(l * var(--bdr-l, 1) + (((var(--layer-lvl) - 1) * var(--layer)) * var(--layer-dir))) / var(--bdr-a, 1));
-	}
+	// .layer {
+	// 	--layer-lvl: 1;
+	// 	--layer-bdr-lvl: 1;
+	// 	// --ui-bg: hsl(from var(--ui-bg) h s calc(l + (var(--layer-lvl) * var(--layer) * var(--layer-dir))) / var(--bg-a, 1));
+	// 	// --ui-border: var(--ui-bg);
+	// 	background-color: hsl(from var(--ui-bg) h s calc(l + (var(--layer-lvl) * var(--layer) * var(--layer-dir))) / var(--bg-a, 1));
+	// 	border-color: hsl(from var(--ui-bg) h s calc(l + (var(--layer-bdr-lvl) * (var(--layer) + 6) * var(--layer-dir))) / var(--bg-a, 1));
+	// }
 
 	.pattern-1 {
 		background: linear-gradient(calc(var(--bg-from) + 3deg),var(--bg1) 33%,var(--bg2) 33.5% 66.5%,var(--bg1) 67%) 0 / var(--pattern-size) var(--pattern-size);
@@ -358,45 +381,48 @@ $colorNames: ();
 }
 
 
-.layer .layer {
-	--layer-lvl: 2;
-	.layer {
-		--layer-lvl: 3;
-		.layer {
-			--layer-lvl: 4;
-		}
-	}
-}
+// .layer .layer {
+// 	--layer-lvl: 2;
+// 	--layer-bdr-lvl: 2;
+// 	.layer {
+// 		--layer-lvl: 3;
+// 		--layer-bdr-lvl: 2.5;
+// 		.layer {
+// 			--layer-lvl: 4;
+// 			--layer-bdr-lvl: 3;
+// 		}
+// 	}
+// }
 
 .scheme-toggle {
-	--layer-dir: 1;
+	// --layer-dir: 1;
 	color-scheme: dark;
 	.scheme-toggle {
-		--layer-dir: -1;
+		// --layer-dir: -1;
 		color-scheme: light;
 	}
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		--layer-dir: 1;
-	}
+	// :root {
+	// 	--layer-dir: 1;
+	// }
 	.scheme-toggle {
-		--layer-dir: -1;
+		// --layer-dir: -1;
 		color-scheme: light;
 		.scheme-toggle {
-			--layer-dir: 1;
+			// --layer-dir: 1;
 			color-scheme: dark;
 		}
 	}
 }
 
 .scheme-light {
-	--layer-dir: -1;
+	// --layer-dir: -1;
 	color-scheme: light;
 }
 
 .scheme-dark {
-	--layer-dir: 1;
+	// --layer-dir: 1;
 	color-scheme: dark;
 }

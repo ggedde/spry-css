@@ -25,7 +25,7 @@
 		}
 	}
 
-	:is(button, .button) {
+	:where(button, .button) {
 		text-align     : inherit;
 		justify-content: inherit;
 	}

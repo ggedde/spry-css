@@ -60,6 +60,7 @@
 // :has(> [class*="p:h:"]):hover .p\:h\:,
 // :has(> [class*="p:f:"]):is(:focus, :focus-within) .p\:f\:,
 :is(.active, :active).a\:,
+:has( + .open).n\:o\:,
 :is(:hover, :focus-visible).h\:,
 :is(label, .button, button, .toggle, .badge):is(:hover, :focus-visible) > .h\:,
 :is(:checked, label:has(:checked) > *, label:has(:checked)).c\: {
@@ -81,7 +82,7 @@
 	&none {
 		@extend %e-no-display;
 	}
-	&close {
+	&close.icon {
 		@extend %e-close;
 	}
 	&swap {

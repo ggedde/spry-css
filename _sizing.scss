@@ -10,6 +10,7 @@
 	@each $l, $value in variables.$lengths {
 		#{$prefix}w-#{$l} {
 			width: #{$value};
+			min-width: #{$value};
 			flex: 0 #{$value};
 		}
 		#{$prefix}h-#{$l} {
@@ -35,6 +36,7 @@
 
 	#{$prefix}w-auto {
 		width: auto;
+		flex: 0 auto;
 	}
 	#{$prefix}h-auto {
 		height: auto;

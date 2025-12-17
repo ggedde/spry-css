@@ -54,11 +54,13 @@
                                     <hr class="m-2">
                                 </li>
                                 <li><a href="#styles.backgrounds">Backgrounds</a></li>
+                                <li><a href="#styles.blur">Blur</a></li>
                                 <li><a href="#styles.borders">Borders</a></li>
                                 <li><a href="#styles.colors">Colors</a></li>
                                 <li><a href="#styles.glow">Glow</a></li>
                                 <li><a href="#styles.gradients">Gradients</a></li>
                                 <li><a href="#styles.opacity">Opacity</a></li>
+                                <li><a href="#styles.patterns">Patterns</a></li>
                                 <li><a href="#styles.radius">Radius</a></li>
                                 <li><a href="#styles.shadows">Shadows</a></li>
                                 <li><a href="#styles.themes">Themes</a></li>
@@ -182,10 +184,10 @@
                 <h3 id="installation.package-manager" class="flex">
                     <a href="#installation.package-manager">Using a Package Manager with SCSS</a>
                 </h3>
-                <figure class="row columns-2 g-0 mb-4">
+                <figure class="row cols-2 g-0 mb-4">
                     <div class="flex span-auto">
-                        <div class="flex bg-primary bg-to-secondary bg/4 b-1 border/0 rl-1">
-                            <select title="Select Package Manager" id="installation.package-manager" class="l-selector rl-1 pr-4 bg-theme b-0 pr-4 pl-3 py-1 bg/90 border/100 border-secondary color-primary relative index-1" onchange="SpryJsDocs.loadSingleCodeContainers(null, this.value)">
+                        <div class="flex bg-primary bg-to-secondary b-1 border/50 rl-1">
+                            <select title="Select Package Manager" id="installation.package-manager" class="l-selector r-0 rl-1 pr-4 bg-theme b-0 pr-4 pl-3 py-1 bg/90 border/100 border-secondary color-primary relative index-1 no-transition" onchange="SpryJsDocs.loadSingleCodeContainers(null, this.value)">
                                 <option value="npm">npm</option>
                                 <option value="yarn">yarn</option>
                                 <option value="pnpm">pnpm</option>
@@ -266,7 +268,7 @@
 
                 <p>You can report issues or make feature requests on the <a target="_blank" href="https://github.com/ggedde/spry-css/issues">GitHub Issues</a> page.</p>
                 <p>If you like to help us grow, then please add a star on the <a target="_blank" href="https://github.com/ggedde/spry-css">SpryCSS GitHub Repository</a> or by sharing us on social media.</p>
-                <div class="row columns-auto pt-3 g-3 relative mb-5">
+                <div class="row cols-auto pt-3 g-3 relative mb-5">
                     <a class="button circle icon contrast hazy" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookShare','width=626,height=436');return false;" onkeypress="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebookShare','width=626,height=436');return false;">
                         <svg class="xl" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z" /></svg>
                     </a>
@@ -752,6 +754,69 @@
     
             </section>
 
+            <!-- BLUR -->
+            <section id="styles.blur" class="inherit-bg py-0 pb-4">
+                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                    <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M14,8.5A1.5,1.5 0 0,0 12.5,10A1.5,1.5 0 0,0 14,11.5A1.5,1.5 0 0,0 15.5,10A1.5,1.5 0 0,0 14,8.5M14,12.5A1.5,1.5 0 0,0 12.5,14A1.5,1.5 0 0,0 14,15.5A1.5,1.5 0 0,0 15.5,14A1.5,1.5 0 0,0 14,12.5M10,17A1,1 0 0,0 9,18A1,1 0 0,0 10,19A1,1 0 0,0 11,18A1,1 0 0,0 10,17M10,8.5A1.5,1.5 0 0,0 8.5,10A1.5,1.5 0 0,0 10,11.5A1.5,1.5 0 0,0 11.5,10A1.5,1.5 0 0,0 10,8.5M14,20.5A0.5,0.5 0 0,0 13.5,21A0.5,0.5 0 0,0 14,21.5A0.5,0.5 0 0,0 14.5,21A0.5,0.5 0 0,0 14,20.5M14,17A1,1 0 0,0 13,18A1,1 0 0,0 14,19A1,1 0 0,0 15,18A1,1 0 0,0 14,17M21,13.5A0.5,0.5 0 0,0 20.5,14A0.5,0.5 0 0,0 21,14.5A0.5,0.5 0 0,0 21.5,14A0.5,0.5 0 0,0 21,13.5M18,5A1,1 0 0,0 17,6A1,1 0 0,0 18,7A1,1 0 0,0 19,6A1,1 0 0,0 18,5M18,9A1,1 0 0,0 17,10A1,1 0 0,0 18,11A1,1 0 0,0 19,10A1,1 0 0,0 18,9M18,17A1,1 0 0,0 17,18A1,1 0 0,0 18,19A1,1 0 0,0 19,18A1,1 0 0,0 18,17M18,13A1,1 0 0,0 17,14A1,1 0 0,0 18,15A1,1 0 0,0 19,14A1,1 0 0,0 18,13M10,12.5A1.5,1.5 0 0,0 8.5,14A1.5,1.5 0 0,0 10,15.5A1.5,1.5 0 0,0 11.5,14A1.5,1.5 0 0,0 10,12.5M10,7A1,1 0 0,0 11,6A1,1 0 0,0 10,5A1,1 0 0,0 9,6A1,1 0 0,0 10,7M10,3.5A0.5,0.5 0 0,0 10.5,3A0.5,0.5 0 0,0 10,2.5A0.5,0.5 0 0,0 9.5,3A0.5,0.5 0 0,0 10,3.5M10,20.5A0.5,0.5 0 0,0 9.5,21A0.5,0.5 0 0,0 10,21.5A0.5,0.5 0 0,0 10.5,21A0.5,0.5 0 0,0 10,20.5M3,13.5A0.5,0.5 0 0,0 2.5,14A0.5,0.5 0 0,0 3,14.5A0.5,0.5 0 0,0 3.5,14A0.5,0.5 0 0,0 3,13.5M14,3.5A0.5,0.5 0 0,0 14.5,3A0.5,0.5 0 0,0 14,2.5A0.5,0.5 0 0,0 13.5,3A0.5,0.5 0 0,0 14,3.5M14,7A1,1 0 0,0 15,6A1,1 0 0,0 14,5A1,1 0 0,0 13,6A1,1 0 0,0 14,7M21,10.5A0.5,0.5 0 0,0 21.5,10A0.5,0.5 0 0,0 21,9.5A0.5,0.5 0 0,0 20.5,10A0.5,0.5 0 0,0 21,10.5M6,5A1,1 0 0,0 5,6A1,1 0 0,0 6,7A1,1 0 0,0 7,6A1,1 0 0,0 6,5M3,9.5A0.5,0.5 0 0,0 2.5,10A0.5,0.5 0 0,0 3,10.5A0.5,0.5 0 0,0 3.5,10A0.5,0.5 0 0,0 3,9.5M6,9A1,1 0 0,0 5,10A1,1 0 0,0 6,11A1,1 0 0,0 7,10A1,1 0 0,0 6,9M6,17A1,1 0 0,0 5,18A1,1 0 0,0 6,19A1,1 0 0,0 7,18A1,1 0 0,0 6,17M6,13A1,1 0 0,0 5,14A1,1 0 0,0 6,15A1,1 0 0,0 7,14A1,1 0 0,0 6,13Z" /></svg>
+                    <a href="#styles.blur">Blur</a>
+                </h2>
+                
+                <h3><a id="styles.blur.usage" href="#styles.blur.usage">Usage</a></h3>
+                <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
+                    &lt;div class="blur-3"&gt;
+                        Blur 3
+                    &lt;/div&gt;
+                </code>
+
+                <div class="@container mt-4">
+                    <table class="@md:responsive">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="h3 pl-0"><a id="styles.blur.classes" href="#styles.blur.classes" class="inherit-color">Classes</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">blur-{n}</code></td>
+                                <td>
+                                    <h5>Blur.</h5>
+                                    <p><code class="color-primary">{n}</code> <span class="note">Values are from 0-5.</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">blur-bg-{n}</code></td>
+                                <td>
+                                    <h5>Blur Background.</h5>
+                                    <p><code class="color-primary">{n}</code> <span class="note">Values are from 0-5.</span></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="mt-3"><a id="styles.blur.examples" href="#styles.blur.examples">Examples</a></h3>
+
+                <article id="styles.blur.example.basic" class="card show-code" data-title="Basic Blur">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="blur-2 p-4">
+                            blur-2
+                        </div>
+                    </div>
+                </article>
+
+                <article id="styles.blur.example.background" class="card show-code" data-title="Blur Background">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="bg-theme bg-to-primary pattern-1 p-4">
+                            <div class="blur-bg-3 p-4 b-1 r-3">
+                                blur-bg-3
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-resize-handle"></div>
+                </article>
+    
+            </section>
+
             <!-- BORDERS -->
             <section id="styles.borders" class="inherit-bg py-0 pb-4">
                 <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
@@ -856,19 +921,27 @@
                 <dfn>SCSS Variable</dfn>
                 <figure class="relative">
                     <code class="language-scss block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
-                        // Specify each color used in color-, bg-, border-, and in accents.
+                        // Specify each color used in color-, bg-, border-, glow-, and in accents.
                         // Apply each color with ({theme}: {color_value}, {theme}: {color_value}, ...),
-                        // Default theme is "light". If no theme color available the color will then fallback to the default theme "light".
+                        // Use light-dark() to specify the colors for light and dark schemes.
+                        // If not using light-dark() then the color will be the same for both schemes.
                         $colors: (
-                            "gray"      : (light: #808080),                // The First Color in the array is your default color.
-                            "text"      : (light: #555555, dark: #eeeeee), // Variable Theme Color
-                            "contrast"  : (light: #333333, dark: #eeeeee), // Variable Theme Color
-                            "faint"     : (light: #efefef, dark: #333333), // Variable Theme Color
-                            "dark"      : (light: #333333),
-                            "light"     : (light: #efefef),
-                            "primary"   : (light: #1494df),
-                            "secondary" : (light: #df8a22),
-                        );
+                            primary   : (default: light-dark(#18d, #09d)),
+                            secondary : (default: light-dark(#a4b, #b5c)),
+                            success   : (default: light-dark(#283, #0a0)),
+                            warning   : (default: light-dark(#c70, #e90)),
+                            error     : (default: light-dark(#d00, #f20)),
+                            contrast  : (default: light-dark(#333, #eee)),
+                            faint     : (default: light-dark(#eee, #333)),
+                            stark     : (default: light-dark(#000, #fff)),
+                            surface   : (default: light-dark(#eee, #000)),
+                            base      : (default: light-dark(#fff, #000)),
+                            black     : (default: #000),
+                            dark      : (default: #333),
+                            gray      : (default: #888),
+                            light     : (default: #eee),
+                            white     : (default: #fff),
+                        )
                     </code>
                     <figcaption>
                         * You can add as many colors as you want, but each color will be added to all classes above. If you
@@ -876,18 +949,14 @@
                     </figcaption>
                 </figure>
 
-                <div class="glow-primary color-primary bg-theme b-1 border-primary p-4 r-2 m-5">
-                    <p>Glow</p>
-                </div>
-
-                <div class="bg-surface layer b-1 r-3 p-3">
-                    aaaaaaaaaa
-                    <div class="layer b-1 r-3 p-3">
-                        bbbbbbbbb
-                        <div class="layer b-1 r-3 p-3">
-                            cccccccc
-                            <div class="layer b-1 r-3 p-3">
-                                dddddddd
+                <div class="bg-gray bg/10 b-1 border-gray border/30 r-3 p-3 shadow-1">
+                    Layer 1
+                    <div class="inherit">
+                        Layer 2
+                        <div class="inherit">
+                            Layer 3
+                            <div class="inherit">
+                                Layer 4
                             </div>
                         </div>
                     </div>
@@ -901,12 +970,6 @@
                     <code class="language-scss block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
                         :root {
                             --{color}: {new_color};
-                            --{color}-rgb: {new_rgb_color};
-                        }
-
-                        [data-theme=dark] {
-                            --{color}: {new_color};
-                            --{color}-rgb: {new_rgb_color};
                         }
                     </code>
                     <figcaption>* These values can be overridden, but for adding new values it is best to do that with a pre-processor in SCSS.</figcaption>
@@ -948,6 +1011,10 @@
                             <tr>
                                 <td class="pl-2"><code class="color-primary">h:border-{color}</code></td>
                                 <td>Set border color on Hover</td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-primary">glow-{color}</code></td>
+                                <td>Set glow color</td>
                             </tr>
                             <tr>
                                 <td class="pl-2"><code class="color-primary">links-{color}</code></td>
@@ -1028,6 +1095,376 @@
                     </div>
 			    </article>
 
+            </section>
+
+            <!-- GLOW -->
+            <section id="styles.glow" class="inherit-bg py-0 pb-4">
+                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                    <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M3.55 19.09L4.96 20.5L6.76 18.71L5.34 17.29M12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12C18 8.68 15.31 6 12 6M20 13H23V11H20M17.24 18.71L19.04 20.5L20.45 19.09L18.66 17.29M20.45 5L19.04 3.6L17.24 5.39L18.66 6.81M13 1H11V4H13M6.76 5.39L4.96 3.6L3.55 5L5.34 6.81L6.76 5.39M1 13H4V11H1M13 20H11V23H13" /></svg>
+                    <a href="#styles.glow">Glow</a>
+                </h2>
+
+                <h3><a id="styles.backgrounds.usage" href="#styles.backgrounds.usage">Usage</a></h3>
+                <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
+                    &lt;div class="bg-primary bg+2 bg/50"&gt;
+                        Primary Color Background Plus 2 Lightness and 50% Alpha
+                    &lt;/div&gt;
+                </code>
+
+                <div class="@container mt-4">
+                    <table class="@md:responsive">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="h3 pl-0"><a id="styles.backgrounds.classes" href="#styles.backgrounds.classes" class="inherit-color">Classes</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">glow-{color}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set Glow Color.</h5>
+                                        <a class="button primary link note sm h:o/100 dense" href="#styles.colors">See Colors</a>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">h:glow-{color}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set Glow Color on Hover.</h5>
+                                        <a class="button primary link note sm h:o/100 dense" href="#styles.colors">See Colors</a>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">glow-{n}</code></td>
+                                <td>
+                                    <h5>Glow Strength.</h5>
+                                    <p class="ml-2 color-gray">Default: <code class="color-primary">5</code></p>
+                                    <p class="ml-2"><code class="color-primary">{n}</code> <span class="note">Values are from 0-5.</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">glow/{n}</code></td>
+                                <td>
+                                    <h5>Set Alpha Percent.</h5>
+                                    <p class="ml-2 color-gray">Default: <code class="color-primary">50</code></p>
+                                    <p class="ml-2"><code class="color-primary">{n}</code> <span class="note">Default values are 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100. Can be modified in SCSS Variables.</span></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="mt-3"><a id="styles.glow.examples" href="#styles.glow.examples">Examples</a></h3>
+
+                <article id="styles.glow.example1" class="card show-code" data-title="Basic Glow">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="glow/80 glow-3 glow-primary h:glow-success transition p-4 code">
+                            glow/80 glow-3 glow-primary h:glow-success transition
+                        </div>
+                    </div>
+                </article>
+    
+            </section>
+
+            <!-- GRADIENTS -->
+            <section id="styles.gradients" class="inherit-bg py-0 pb-4">
+                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                    <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M9 13V11H11V13M11 15V13H13V15M11 11V9H13V11M9 9V7H11V9M9 17V15H11V17M3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5M18 15V17H16V15M18 11V13H16V11M18 7V9H16V7M11 5V7H13V5H15V7H13V9H15V11H13V13H15V15H13V17H15V19H13V17H11V19H5V5Z" /></svg>
+                    <a href="#styles.gradients">Gradients</a>
+                </h2>
+
+                <h3><a id="styles.backgrounds.usage" href="#styles.backgrounds.usage">Usage</a></h3>
+                <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
+                    &lt;div class="bg-primary bg-to-success"&gt;
+                        Primary Color Background to Success Color
+                    &lt;/div&gt;
+                </code>
+
+                <div class="@container mt-4">
+                    <table class="@md:responsive">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="h3 pl-0"><a id="styles.backgrounds.classes" href="#styles.backgrounds.classes" class="inherit-color">Classes</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">bg-{color}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set Background Color Start.</h5>
+                                        <a class="button primary link note sm h:o/100 dense" href="#styles.colors">See Colors</a>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">bg/{n}</code></td>
+                                <td>
+                                    <h5>Set Background Color Start Alpha Percent.</h5>
+                                    <p><code class="color-primary">{n}</code> <span class="note">Default values are 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100. Can be modified in SCSS Variables.</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">bg-to-{color}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set Background Color End.</h5>
+                                        <a class="button primary link note sm h:o/100 dense" href="#styles.colors">See Colors</a>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">bg-to/{n}</code></td>
+                                <td>
+                                    <h5>Set Background Color End Alpha Percent.</h5>
+                                    <p><code class="color-primary">{n}</code> <span class="note">Default values are 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100. Can be modified in SCSS Variables.</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2 start pt-4"><code class="color-primary">bg-from-{direction}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set Gradient Direction.</h5>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-top-left</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-top</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-top-right</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-right</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-bottom-right</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-bottom</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-bottom-left</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-left</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-default</code></p>
+                                        <p class="ml-2 color-gray">Default: <code class="color-primary">bg-from-top-left</code></p>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">clip-text</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Clip Text to Background Color.</h5>
+                                        <p class="ml-2 color-gray">Requires <code class="color-primary">bg-{color}</code> and <code class="color-primary">bg-to-{color}</code> classes.</p>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="mt-3"><a id="styles.gradients.examples" href="#styles.gradients.examples">Examples</a></h3>
+
+                <article id="styles.gradients.example.basic" class="card show-code" data-title="Basic Gradient">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="bg-primary bg-to-secondary p-4 code">
+                            bg-primary bg-to-secondary
+                        </div>
+                    </div>
+                </article>
+
+                <article id="styles.gradients.example.from-bottom" class="card show-code" data-title="Gradient From Bottom">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="bg-primary bg-to-secondary bg-from-bottom p-4 code">
+                            bg-primary bg-to-secondary bg-from-bottom
+                        </div>
+                    </div>
+                </article>
+
+                <article id="styles.gradients.example.alpha" class="card show-code" data-title="Gradient Alpha">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="bg/0 bg-to-secondary bg-to/60 bg-from-right p-4 code">
+                            bg/0 bg-to-secondary bg-to/60 bg-from-right
+                        </div>
+                    </div>
+                </article>
+
+                <article id="styles.gradients.example.text" class="card show-code" data-title="Text Gradient">
+					<div class="code-content relative p-3 md:p-4">
+                        <span class="bg-primary bg-to-error bg-from-left clip-text code">
+                            bg-primary bg-to-error bg-from-left clip-text
+                        </span>
+                    </div>
+                </article>
+    
+            </section>
+
+            <!-- OPACITY -->
+            <section id="styles.opacity" class="inherit-bg py-0 pb-4">
+                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                    <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M18 10V8H20V10H18M18 12V10H16V12H18M18 8V6H16V8H18M16 2.84V4H18C17.37 3.54 16.71 3.15 16 2.84M18 4V6H20C19.42 5.25 18.75 4.58 18 4M20 6V8H21.16C20.85 7.29 20.46 6.63 20 6M22 12C22 11.32 21.93 10.65 21.8 10H20V12H22M16 6V4H14V6H16M16 16H18V14H16V16M18 18H20L20 18V16H18V18M16 20H18L18 20V18H16V20M14 21.8C14.7 21.66 15.36 21.44 16 21.16V20H14V21.8M18 14H20V12H18V14M16 8H14V10H16V8M20 16H21.16C21.44 15.36 21.66 14.7 21.8 14H20V16M16 12H14V14H16V12M12 18V16H14V14H12V12H14V10H12V8H14V6H12V4H14V2.2C13.35 2.07 12.69 2 12 2C6.5 2 2 6.5 2 12S6.5 22 12 22V20H14V18H12M14 18H16V16H14V18Z" /></svg>
+                    <a href="#styles.opacity">Opacity</a>
+                </h2>
+                
+                <h3><a id="styles.opacity.usage" href="#styles.opacity.usage">Usage</a></h3>
+                <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
+                    &lt;div class="o/50"&gt;
+                        Opacity 50%
+                    &lt;/div&gt;
+                </code>
+
+                <div class="@container mt-4">
+                    <table class="@md:responsive">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="h3 pl-0"><a id="styles.opacity.classes" href="#styles.opacity.classes" class="inherit-color">Classes</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">o/{n}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set Opacity.</h5>
+                                        <p><code class="color-primary">{n}</code> <span class="note">Default values are 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100. Can be modified in SCSS Variables.</span></p>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">h:o/{n}</code></td>
+                                <td>
+                                    <h5>Set Opacity on Hover.</h5>
+                                    <p><code class="color-primary">{n}</code> <span class="note">Default values are 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100. Can be modified in SCSS Variables.</span></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="mt-3"><a id="styles.opacity.examples" href="#styles.opacity.examples">Examples</a></h3>
+
+                <article id="styles.opacity.basic" class="card show-code" data-title="Basic Opacity">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="bg-primary o/50 p-4">
+                            bg-primary o/50
+                        </div>
+                    </div>
+                </article>
+
+                <article id="styles.opacity.basic" class="card show-code" data-title="Basic Opacity">
+					<div class="code-content relative p-3 md:p-4">
+                        <button class="primary o/50 h:o/100 transition">Hover Me</button>
+                    </div>
+                </article>
+    
+            </section>
+
+            <!-- PATTERNS -->
+            <section id="styles.patterns" class="inherit-bg py-0 pb-4">
+                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                    <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M2 2V22H22V2H2M20 12H16V16H20V20H16V16H12V20H8V16H4V12H8V8H4V4H8V8H12V4H16V8H20V12M16 8V12H12V8H16M12 12V16H8V12H12Z" /></svg>
+                    <a href="#styles.patterns">Patterns</a>
+                </h2>
+                
+                <h3><a id="styles.patterns.usage" href="#styles.patterns.usage">Usage</a></h3>
+                <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
+                    &lt;div class="bg-primary bg-to-secondary pattern-1"&gt;
+                        Primary Background Secondary Pattern 1
+                    &lt;/div&gt;
+                </code>
+
+                <div class="@container mt-4">
+                    <table class="@md:responsive">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="h3 pl-0"><a id="styles.patterns.classes" href="#styles.patterns.classes" class="inherit-color">Classes</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">pattern-{n}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set Pattern.</h5>
+                                        <p><code class="color-primary">{n}</code> <span class="note">Values are 1-5.</span></p>
+                                        <p><span class="note">Requires <code class="color-primary">bg-{color}</code> and <code class="color-primary">bg-to-{color}</code> classes.</span></p>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">pattern-size-{n}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set Pattern Size.</h5>
+                                        <p><code class="color-primary">{n}</code> <span class="note">Values are 1-5.</span></p>
+                                        <p><code class="note">Default:</code> <span class="color-primary">3</span></p>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">bg-{color}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set first pattern color.</h5>
+                                        <a class="button primary link note sm h:o/100 dense" href="#styles.colors">See Colors</a>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">bg/{n}</code></td>
+                                <td>
+                                    <h5>Set first pattern color alpha percent.</h5>
+                                    <p><code class="color-primary">{n}</code> <span class="note">Default values are 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100. Can be modified in SCSS Variables.</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">bg-to-{color}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set second pattern color.</h5>
+                                        <a class="button primary link note sm h:o/100 dense" href="#styles.colors">See Colors</a>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">bg-to/{n}</code></td>
+                                <td>
+                                    <h5>Set second pattern color alpha percent.</h5>
+                                    <p><code class="color-primary">{n}</code> <span class="note">Default values are 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100. Can be modified in SCSS Variables.</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2 start pt-4"><code class="color-primary">bg-from-{direction}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set Pattern Direction Variant.</h5>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-top-left</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-top</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-top-right</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-right</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-bottom-right</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-bottom</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-bottom-left</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-left</code></p>
+                                        <p class="ml-2 color-gray"><code class="color-primary">bg-from-default</code></p>
+                                        <p class="ml-2 color-gray">Default: <code class="color-primary">bg-from-top-left</code></p>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="mt-3"><a id="styles.patterns.examples" href="#styles.patterns.examples">Examples</a></h3>
+
+                <article id="styles.patterns.basic" class="card show-code" data-title="Basic Pattern">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="pattern-1 bg-primary bg-to-secondary p-4 color-light">
+                            pattern-1 bg-primary bg-to-secondary
+                        </div>
+                    </div>
+                </article>
+
+                <article id="styles.patterns.basic" class="card show-code" data-title="Subtle Pattern">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="pattern-2 pattern-size-1 bg-theme bg-to-gray bg-to/10 bg-from-bottom-left p-4">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </article>
+    
             </section>
 
             <!-- RADIUS -->
@@ -1111,6 +1548,97 @@
 					<div class="code-content relative p-3 md:p-4">
                         <div class="b-1 rl-4 rr-5 border-secondary p-4">
                             Hello World!
+                        </div>
+                    </div>
+                </article>
+    
+            </section>
+
+            <!-- SHADOWS -->
+            <section id="styles.shadows" class="inherit-bg py-0 pb-4">
+                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                    <svg class="icon mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,3H18V18H3V3M19,19H21V21H19V19M19,16H21V18H19V16M19,13H21V15H19V13M19,10H21V12H19V10M19,7H21V9H19V7M16,19H18V21H16V19M13,19H15V21H13V19M10,19H12V21H10V19M7,19H9V21H7V19Z" /></svg>
+                    <a href="#styles.shadows">Shadows</a>
+                </h2>
+                
+                <h3><a id="styles.shadows.usage" href="#styles.shadows.usage">Usage</a></h3>
+                <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
+                    &lt;div class="bg-faint b-1 shadow"&gt;
+                        Shadow
+                    &lt;/div&gt;
+                </code>
+
+                <div class="@container mt-4">
+                    <table class="@md:responsive">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="h3 pl-0"><a id="styles.shadows.classes" href="#styles.shadows.classes" class="inherit-color">Classes</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-gray">{breakpoint}:<span class="color-primary"><code class="color-primary">shadow</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set Default Shadow.</h5>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-gray">{breakpoint}:<span class="color-primary"><code class="color-primary">shadow-{n}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set Shadow Size.</h5>
+                                        <p><code class="color-primary">{n}</code> <span class="note">Values are 1-5.</span></p>
+                                        <p class="ml-2 color-gray">Default: <code class="color-primary">2</code></p>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-gray">{breakpoint}:<span class="color-primary"><code class="color-primary">shadow/{n}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set Shadow Alpha Percent.</h5>
+                                        <p><code class="color-primary">{n}</code> <span class="note">Default values are 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100. Can be modified in SCSS Variables.</span></p>
+                                        <p class="ml-2 color-gray">Default: <code class="color-primary">20</code></p>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-gray">{breakpoint}:<span class="color-primary"><code class="color-primary">no-shadow</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Remove Shadow.</h5>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">shadow-{color}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set Shadow Color.</h5>
+                                        <a class="button primary link note sm h:o/100 dense" href="#styles.colors">See colors</a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="mt-3"><a id="styles.shadows.examples" href="#styles.shadows.examples">Examples</a></h3>
+
+                <article id="styles.shadows.example.basic" class="card show-code" data-title="Basic Shadow">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="bg-faint b-1 shadow p-4">
+                            Shadow
+                        </div>
+                    </div>
+                </article>
+
+                <article id="styles.shadows.example.large" class="card show-code" data-title="Large Color Shadow">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="bg-faint b-1 shadow-primary shadow-5 shadow/100 p-4">
+                            Large Primary Color Shadow
                         </div>
                     </div>
                 </article>
@@ -1535,7 +2063,7 @@
                 </h5>
 
                 <h5 class="mt-2">Components that can use collapse:</h5>
-                <div class="row primary columns-auto g-1 mt-1 mb-3 content-start">
+                <div class="row primary cols-auto g-1 mt-1 mb-3 content-start">
                     <a class="button pill outline border/60" href="#components.accordions">Accordions</a>
                     <a class="button pill outline border/60" href="#components.dropdowns">Dropdowns</a>
                     <a class="button pill outline border/60" href="#components.lists">Lists</a>
@@ -1733,7 +2261,7 @@
                 <article class="card show-code mb-5" data-title="Collapse Nav with Hover Open" data-footer-note="* See &lt;a href='#lists'&gt;Lists&lt;/a&gt; and &lt;a href='#navs'&gt;Navs&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="@container index-1">
-                            <nav class="list indicators h:open o:side @md:o:down @md:sub:o:side @md:row @md:columns-auto @md:sub:shadow bg-faint p-1 g-1">
+                            <nav class="list indicators h:open o:side @md:o:down @md:sub:o:side @md:row @md:cols-auto @md:sub:shadow bg-faint p-1 g-1">
                                 <ul>
                                     <li>
                                         <a tabindex="0">Link 1</a>
@@ -1798,7 +2326,7 @@
                 <h5>Toggles are HTML only elements that switch other elements that have
                     an <b>ON</b> or <b>OFF</b> state like <a href="#collapse">Collapse</a> and <a href="#components.icons">Icons</a>.</h5>
                 <h5 class="mt-2">Supported Components:</h5>
-                <div class="row primary columns-auto g-1 mt-1 content-start">
+                <div class="row primary cols-auto g-1 mt-1 content-start">
                     <a class="button pill outline border/60" href="#components.accordions">Accordions</a>
                     <a class="button pill outline border/60" href="#button pills">Buttons</a>
                     <a class="button pill outline border/60" href="#components.dropdowns">Dropdowns</a>
@@ -2073,7 +2601,7 @@
                             </tr>
                             <tr>
                                 <td class="pl-2"><a href="#layout.grid">Grid</a></td>
-                                <td><span class="color-gray note">Example:</span> <code class="ml-3">row columns-1 md:columns-2</code></td>
+                                <td><span class="color-gray note">Example:</span> <code class="ml-3">row cols-1 md:cols-2</code></td>
                             </tr>
                             <tr>
                                 <td class="pl-2"><a href="#styles.radius">Radius</a></td>
@@ -2179,41 +2707,25 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><code class="color-primary">grid</code></td>
+                                <td>
+                                    <code class="color-primary"><span class="color-gray">{breakpoint}:</span>grid</code>
+                                    <div class="mt-3 ml-1 note">See <a href="#layout.breakpoints">Breakpoints</a></div>
+                                </td>
                                 <td>CSS Grid of columns auto width.<br>Uses variable <a href="#layout.gaps">Gaps</a> for spacing</td>
                             </tr>
                             <tr>
-                                <td><code class="color-primary">grid-{n}00</code></td>
                                 <td>
-                                    CSS Grid of columns using minmax() for column widths in px's.
-                                    <br><code class="color-primary">{n}</code> can be <code class="color-primary">1-6</code>
-                                    <br><code class="color-primary">{n}00</code> is the estimation in px size, but it uses em's under the hood.
+                                    <code class="color-primary"><span class="color-gray">{breakpoint}:</span>row</code>
+                                    <div class="mt-3 ml-1 note">See <a href="#layout.breakpoints">Breakpoints</a></div>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td><code class="color-primary">row</code></td>
                                 <td>CSS Flexbox Row of columns auto width.<br>Uses variable <a href="#layout.gaps">Gaps</a> for spacing</td>
                             </tr>
                             <tr>
-                                <td><code class="color-primary">column</code></td>
-                                <td>CSS Flexbox Column of rows auto width.<br>Uses variable <a href="#layout.gaps">Gaps</a> for spacing</td>
-                            </tr>
-                            <tr>
                                 <td>
-                                    <code class="color-primary"><span class="color-gray">{breakpoint}:</span>columns-{n}</code>
+                                    <code class="color-primary"><span class="color-gray">{breakpoint}:</span>column</code>
                                     <div class="mt-3 ml-1 note">See <a href="#layout.breakpoints">Breakpoints</a></div>
                                 </td>
-                                <td>
-                                    <p>
-                                        Specify the columns.<br>
-                                        <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">fixed</code>, <code class="color-primary">auto</code>, or <code class="color-primary">fill</code>
-                                    </p>
-                                    <p class="ml-2 color-gray">Default: <code class="color-primary">1</code> then <code class="color-primary">fixed</code> on first breakpoint</p>
-                                    <p class="ml-2"><code class="color-primary">1-12</code> = Number of columns to span.</p>
-                                    <p class="ml-2"><code class="color-primary">fixed</code> = Equally spaced.</p>
-                                    <p class="ml-2"><code class="color-primary">auto</code> = Minimum width based on content. <span class="color-gray sm note mt-l">(Does not apply to <code class="color-primary">grid</code>)</span></p>
-                                    <p class="ml-2"><code class="color-primary">fill</code> = Fills space based on content. <span class="color-gray sm note mt-l">(Does not apply to <code class="color-primary">grid</code>)</span></p>
-                                </td>
+                                <td>CSS Flexbox Column of rows auto width.<br>Uses variable <a href="#layout.gaps">Gaps</a> for spacing</td>
                             </tr>
                             <tr>
                                 <td><code class="color-primary"><span class="color-gray">{breakpoint}:</span>g-{n}</code>
@@ -2222,184 +2734,161 @@
                                     <p>See <a href="#layout.spacing">Spacing</a> for available <code class="color-primary">{n}</code> values.</p>
                                 </td>
                             </tr>
-                        </tbody>
-                    </table>
-
-                    <table class="@md:responsive mt-2">
-                        <thead>
                             <tr>
-                                <th class="md:w-300 h4">Column Classes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="pl-2"><code class="color-primary"><span class="color-gray">{breakpoint}:</span>span-{n}</code>
-                                    <div class="mt-3 ml-1 note">See <a href="#layout.breakpoints">Breakpoints</a></div></td>
-                                <td>Span the column based on a number of columns set.<br>
-                                    <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, or <code class="color-primary">fixed</code>
-                                    <p class="color-gray mt-2">* Requires container to have <code class="color-primary">columns-{n}</code></p>
-                                    <p class="color-gray mt-1">* fixed and auto only apply to <code class="color-primary">row</code> <span class="color-gray">(flexbox)</span></p>
-                                    <p class="sm color-gray">* Custom gaps will not always work correctly with <code
-                                        class="color-primary">row</code> when setting specific column sizes. It works best if you
-                                    specify all breakpoint column sizes or use it with <code class="color-primary">grid</code> instead
-                                </p>
+                                <td class="block-start">
+                                    <code class="color-primary"><span class="color-gray">{breakpoint}:</span>cols-{n}</code>
+                                    <div class="mt-3 ml-1 note">See <a href="#layout.breakpoints">Breakpoints</a></div>
+                                </td>
+                                <td>
+                                    <p>
+                                        Specify the columns.<br>
+                                        <code class="color-primary">{n}</code> can be 
+                                        <code class="color-primary">1-12</code>,
+                                        <code class="color-primary">100</code>, 
+                                        <code class="color-primary">200</code>, 
+                                        <code class="color-primary">300</code>, 
+                                        <code class="color-primary">400</code>, 
+                                        <code class="color-primary">500</code>,
+                                        <code class="color-primary">fit</code>,
+                                        <code class="color-primary">auto</code>, or
+                                        <code class="color-primary">fill</code>
+                                    </p>
+                                    <p class="ml-2 color-gray">Default: <code class="color-primary">1</code> then <code class="color-primary">fit</code> on first breakpoint</p>
+                                    <p class="ml-2"><code class="color-primary">1-12</code><br>Number of columns to span.</p>
+                                    <p class="ml-2"><code class="color-primary">100, 200, 300, 400, 500</code>
+                                        <br>Span columns based on approximate pixel width.
+                                        <div class="alert hazy success mt-2 mb-4 dense r-2">Good choice when not using Media or Container Queries</div>
+                                    </p>
+                                    <p class="ml-2"><code class="color-primary">fit</code><br>Equally spaced.</p>
+                                    <p class="ml-2"><code class="color-primary">auto</code><br>Minimum width based on content. <span class="color-gray sm note mt-l"><br>(Does not apply to <code class="color-primary">grid</code>)</span></p>
+                                    <p class="ml-2"><code class="color-primary">fill</code><br>Fills space based on content. <span class="color-gray sm note mt-l"><br>(Does not apply to <code class="color-primary">grid</code>)</span></p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+
+                    <div class="@container">
+                        <table class="@md:responsive mb-2">
+                            <thead>
+                                <tr>
+                                    <th colspan="2" class="h4 pl-0">Column Classes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="pl-2 block-start"><code class="color-primary"><span class="color-gray">{breakpoint}:</span>span-{n}</code>
+                                        <div class="mt-3 ml-1 note">See <a href="#layout.breakpoints">Breakpoints</a></div>
+                                    </td>
+                                    <td>Span the column based on a number of columns set.<br>
+                                        <code class="color-primary">{n}</code> can be <code class="color-primary">1-12</code>, <code class="color-primary">auto</code>, or <code class="color-primary">fixed</code>
+                                        <p class="color-gray mt-2">* Requires container to have <code class="color-primary">cols-{n}</code></p>
+                                        <p class="color-gray mt-1">* fixed and auto only apply to <code class="color-primary">row</code> <span class="color-gray">(flexbox)</span></p>
+                                        <p class="sm color-gray">* Custom gaps will not always work correctly with
+                                            <code class="color-primary">row</code> when setting specific column sizes. It works best if you
+                                            specify all breakpoint column sizes or use it with <code class="color-primary">grid</code> instead
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
-                <h4 class="mt-2"><code class="color-primary">grid</code> Classes</h4>
-    
-                <article class="card show-code" data-title="Auto Fit minimum 300px">
-					<div class="code-content relative p-3 md:p-4">
-                        <div class="grid-300">
-                            <div class="bg-faint r-1 p-2">
-                                col
-                            </div>
-                            <div class="bg-faint r-1 p-2">
-                                col
-                            </div>
-                            <div class="bg-faint r-1 p-2">
-                                col
-                            </div>
-                            <div class="bg-faint r-1 p-2">
-                                col
-                            </div>
-                            <div class="bg-faint r-1 p-2">
-                                col
-                            </div>
-                        </div>
-                    </div>
-                    <div class="code-resize-handle"></div>
-                </article>
+                <h3 class="mt-3"><a id="layout.grid.examples" href="#layout.grid.examples">Examples</a></h3>
 
-                <article class="card show-code" data-title="Auto Fit minimum 300px Right Aligned">
+                <article class="card show-code" id="layout.grid.basic" data-title="Basic Grid" data-hide-theme>
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="grid-300 rtl text-left">
-                            <div class="bg-faint r-1 p-2">
-                                col
-                            </div>
-                            <div class="bg-faint r-1 p-2">
-                                col
-                            </div>
-                            <div class="bg-faint r-1 p-2">
-                                col
-                            </div>
-                            <div class="bg-faint r-1 p-2">
-                                col
-                            </div>
-                            <div class="bg-faint r-1 p-2">
-                                col
+                        <div class="@container">
+                            <div class="grid">
+                                <div class="col-preview"></div>
+                                <div class="col-preview"></div>
+                                <div class="col-preview"></div>
+                                <div class="col-preview"></div>
                             </div>
                         </div>
                     </div>
                     <div class="code-resize-handle"></div>
                 </article>
     
-                <article class="card show-code" data-title="Specify number of columns">
+                <article class="card show-code" id="layout.grid.grid-auto-fit" data-title="Grid Auto Fit ~300px" data-note="Works without media queries" data-hide-theme>
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="grid cols-300">
+                            <div class="col-preview"></div>
+                            <div class="col-preview"></div>
+                            <div class="col-preview"></div>
+                            <div class="col-preview"></div>
+                            <div class="col-preview"></div>
+                        </div>
+                    </div>
+                    <div class="code-resize-handle"></div>
+                </article>
+
+                <article class="card show-code" id="layout.grid.row-auto-fit" data-title="Row Auto Fit ~300px Centered" data-note="Works without media queries" data-hide-theme>
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="row cols-300 center">
+                            <div class="col-preview"></div>
+                            <div class="col-preview"></div>
+                            <div class="col-preview"></div>
+                            <div class="col-preview"></div>
+                            <div class="col-preview"></div>
+                        </div>
+                    </div>
+                    <div class="code-resize-handle"></div>
+                </article>
+    
+                <article class="card show-code" id="layout.grid.set-columns" data-title="Set number of columns" data-note="2 small - 3 medium up" data-hide-theme>
 					<div class="code-content relative p-3 md:p-4">
                         <div class="@container">
-                            <div class="grid columns-1 @md:columns-2">
-                                <div class="bg-faint r-1 p-2">
-                                    col big
-                                </div>
-                                <div class="grid">
-                                    <div class="bg-faint r-1 p-2">
-                                        col
-                                    </div>
-                                    <div class="bg-faint r-1 p-2">
-                                        col
-                                    </div>
-                                    <div class="bg-faint r-1 p-2">
-                                        col
-                                    </div>
-                                    <div class="bg-faint r-1 p-2">
-                                        col
-                                    </div>
-                                    <div class="bg-faint r-1 p-2">
-                                        col
-                                    </div>
-                                </div>
+                            <div class="grid cols-2 @md:cols-3">
+                                <div class="col-preview"></div>
+                                <div class="col-preview"></div>
+                                <div class="col-preview"></div>
+                                <div class="col-preview"></div>
+                                <div class="col-preview"></div>    
                             </div>
                         </div>
                     </div>
                     <div class="code-resize-handle"></div>
                 </article>
 
-                <article class="card show-code" data-title="Spanning Columns">
+                <article class="card show-code" id="layout.grid.spanning-columns" data-title="Spanning Columns" data-hide-theme>
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="@container">
-                            <div class="grid columns-2 @md:columns-3">
-                                <div class="bg-faint r-1 p-2">
-                                    col
-                                </div>
-                                <div class="bg-faint r-1 p-2">
-                                    col
-                                </div>
-                                <div class="bg-faint r-1 p-2 span-2 @md:span-1">
-                                    col
-                                </div>
-                                <div class="bg-faint r-1 p-2 span-2 @md:span-3">
-                                    col
-                                </div>
-                                <div class="bg-faint r-1 p-2 span-2 @md:span-1">
-                                    col
-                                </div>
-                                <div class="bg-faint r-1 p-2">
-                                    col
-                                </div>
-                                <div class="bg-faint r-1 p-2">
-                                    col
-                                </div>
-                            </div>
+                        <div class="grid cols-3">
+                            <div class="col-preview row-span-2">row-span-2</div>
+                            <div class="col-preview col-span-2">col-span-2</div>
+                            <div class="col-preview"></div>
+                            <div class="col-preview"></div>
+                            <div class="col-preview col-span">col-span</div>
+                            <div class="col-preview"></div>
+                            <div class="span-fill note pt-2">offset with span-fill</div>
+                            <div class="col-preview"></div>
                         </div>
                     </div>
                     <div class="code-resize-handle"></div>
                 </article>
 
-                <article class="card show-code" data-title="Nested Rows with different Gap Sizes">
+                <article class="card show-code" id="layout.grid.nested-rows" data-title="Nested Rows with different Gap Sizes" data-hide-theme>
 					<div class="code-content relative p-3 md:p-4">
                         <div class="@container">
-                            <div class="grid columns-2 @md:columns-4">
-                                <div class="bg-faint r-1 p-2">
-                                    col
+                            <div class="grid cols-2 @md:cols-4">
+                                <div class="col-preview"></div>
+                                <div class="col-preview"></div>
+                                <div class="col-preview"></div>
+                                <div class="col-preview"></div>
+                                <div class="span-2 grid g-3 cols-3">
+                                    <div class="col-preview"></div>
+                                    <div class="col-preview"></div>
+                                    <div class="col-preview"></div>
                                 </div>
-                                <div class="bg-faint r-1 p-2">
-                                    col
+                                <div class="span-2 grid g-1 cols-2 @md:cols-4">
+                                    <div class="col-preview"></div>
+                                    <div class="col-preview"></div>
+                                    <div class="col-preview"></div>
+                                    <div class="col-preview"></div>
                                 </div>
-                                <div class="bg-faint r-1 p-2">
-                                    col
-                                </div>
-                                <div class="bg-faint r-1 p-2">
-                                    col
-                                </div>
-                                <div class="bg-faint r-1 p-2 span-2">
-                                    col
-                                </div>
-                                <div class="span-2 grid g-1 columns-2 @md:columns-4">
-                                    <div class="bg-faint r-1 p-2">
-                                        col
-                                    </div>
-                                    <div class="bg-faint r-1 p-2">
-                                        col
-                                    </div>
-                                    <div class="bg-faint r-1 p-2">
-                                        col
-                                    </div>
-                                    <div class="bg-faint r-1 p-2">
-                                        col
-                                    </div>
-                                </div>
-                                <div class="bg-faint r-1 p-2">
-                                    col
-                                </div>
-                                <div class="bg-faint r-1 p-2">
-                                    col
-                                </div>
-                                <div class="bg-faint r-1 p-2 span-2">
-                                    col
-                                </div>
+                                <div class="col-preview"></div>
+                                <div class="col-preview"></div>
+                                <div class="col-preview span-2"></div>
                             </div>
                         </div>
                     </div>
@@ -2408,32 +2897,12 @@
 
                 <h4 class="mt-4"><code class="color-primary">row</code> Classes</h4>
     
-                <article class="card show-code" data-title="Fixed columns single row above mobile">
-					<div class="code-content relative p-3 md:p-4">
-                        <div class="@container">
-                            <div class="row">
-                                <div class="bg-faint r-1 p-2">
-                                    fixed
-                                </div>
-                                <div class="bg-faint r-1 p-2">
-                                    fixed
-                                </div>
-                                <div class="bg-faint r-1 p-2">
-                                    fixed
-                                </div>
-                                <div class="bg-faint r-1 p-2">
-                                    fixed
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="code-resize-handle"></div>
-                </article>
+                
 
                 <article class="card show-code" data-title="Auto columns with block-center on all sizes">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="@container">
-                            <div class="row columns-auto block-center">
+                            <div class="row cols-auto block-center">
                                 <div class="bg-faint r-1 p-2">
                                     auto
                                 </div>
@@ -2455,7 +2924,7 @@
                 <article class="card show-code" data-title="Specify number of columns centered">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="@container">
-                            <div class="row columns-2 @md:columns-4 block-center">
+                            <div class="row cols-2 @md:cols-4 block-center">
                                 <div class="bg-faint r-1 p-2">
                                     col
                                 </div>
@@ -2518,7 +2987,7 @@
                 <article class="card show-code" data-title="Custom Ordering with Space between">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="@container">
-                            <div class="row columns-auto between">
+                            <div class="row cols-auto between">
                                 <div class="@md:order-1 bg-faint r-1 p-2">
                                     col C
                                 </div>
@@ -2537,7 +3006,7 @@
                 <article class="card show-code" data-title="Columns multi row with column spanning">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="@container">
-                            <div class="row columns-12">
+                            <div class="row cols-12">
                                 <div class="span-6 bg-faint r-1 p-2">
                                     .span-6
                                 </div>
@@ -2565,7 +3034,7 @@
                 <article class="card show-code" data-title="Nested rows and auto height">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="@container">
-                            <div class="row columns-12">
+                            <div class="row cols-12">
                                 <div class="@md:span-4 bg-faint r-1 p-2">
                                     .@md:span-4
                                 </div>
@@ -2597,7 +3066,7 @@
                 <article class="card show-code" data-title="Nested rows with different gap sizing" data-note="* With flexbox, nested rows need .span-fixed or need to be nested in an a column container.">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="@container">
-                            <div class="row columns-12 g-1 @md:g-4">
+                            <div class="row cols-12 g-1 @md:g-4">
                                 <div class="span-6 bg-faint r-1 p-2">
                                     .span-6
                                 </div>
@@ -2607,7 +3076,7 @@
                                 <div class="span-6 @md:span-3 bg-faint r-1 p-2">
                                     .span-6 .@md:span-3
                                 </div>
-                                <div class="span-fixed row g-2 @md:columns-fill">
+                                <div class="span-fixed row g-2 @md:cols-fill">
                                     <div class="bg-faint r-1 p-2">
                                         auto
                                     </div>
@@ -2622,7 +3091,7 @@
                                     .@md:span-3
                                 </div>
                                 <div class="span-12">
-                                    <div class="row columns-3 g-1">
+                                    <div class="row cols-3 g-1">
                                         <div class="bg-faint r-1 p-2">auto</div>
                                         <div class="bg-faint r-1 p-2">auto</div>
                                         <div class="bg-faint r-1 p-2">auto</div>
@@ -2844,7 +3313,7 @@
                 <article id="layout.sizing.example1" class="card show-code" data-title="Sidebar">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="@container">
-                            <div class="row columns-1">
+                            <div class="row cols-1">
                                 <div class="@md:w-200 r-2 p-3 b-1 border-secondary">
                                     Sidebar
                                 </div>
@@ -3535,7 +4004,7 @@
                 <p class="mb-2 h5">Accordions are just an accumulation of other components used together:</p>
 
                 <p> See:</p>
-                <div class="row primary columns-auto g-1 mt-1 mb-3 content-start">
+                <div class="row primary cols-auto g-1 mt-1 mb-3 content-start">
                     <a class="button pill outline border/60 sm" href="#components.buttons">Buttons</a>
                     <a class="button pill outline border/60 sm" href="#collapse">Collapse</a>
                     <a class="button pill outline border/60 sm" href="#components.icons">Icons</a>
@@ -3825,19 +4294,19 @@
                         <div class="alert primary">
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert success flex">
+                        <div class="alert success">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M19.78 2.2 24 6.42 8.44 22 0 13.55l4.22-4.22 4.22 4.22L19.78 2.2m0 2.8L8.44 16.36l-4.22-4.17-1.41 1.36 5.63 5.62L21.19 6.42 19.78 5z" /></svg>
                             With Icon - Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert warning flex">
+                        <div class="alert warning">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
                             With Icon - Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert contrast flex">
+                        <div class="alert contrast">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-14a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4z" /></svg>
                             Contrast Colors - Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore ma.
                         </div>
-                        <div class="alert error flex">
+                        <div class="alert error">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                             Error Colors - Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore ma.
                         </div>
@@ -3846,23 +4315,23 @@
 
                 <article class="card show-code" data-title="Outline">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="alert outline flex">
+                        <div class="alert outline">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert primary outline flex">
+                        <div class="alert primary outline">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M19 19H5V5h14m0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-8 12h2v2h-2v-2m0-8h2v6h-2V7" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert success outline flex">
+                        <div class="alert success outline">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert warning outline flex">
+                        <div class="alert warning outline">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert error outline flex">
+                        <div class="alert error outline">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
@@ -3871,23 +4340,23 @@
 
                 <article class="card show-code" data-title="Hazy with Accent Border">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="alert hazy flex b-0 bl-3 r-0">
+                        <div class="alert hazy b-0 bl-3 r-0">
                             <svg class="icon lg" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2v2m1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2z" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert primary hazy flex b-0 bl-3 r-0">
+                        <div class="alert primary hazy b-0 bl-3 r-0">
                             <svg class="icon lg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert success hazy flex b-0 bl-3 r-0">
+                        <div class="alert success hazy b-0 bl-3 r-0">
                             <svg class="icon" viewBox="0 0 24 24"><path d="M19.78 2.2 24 6.42 8.44 22 0 13.55l4.22-4.22 4.22 4.22L19.78 2.2m0 2.8L8.44 16.36l-4.22-4.17-1.41 1.36 5.63 5.62L21.19 6.42 19.78 5z" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert warning hazy flex b-0 bl-3 r-0">
+                        <div class="alert warning hazy b-0 bl-3 r-0">
                             <svg class="icon lg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
-                        <div class="alert error hazy flex b-0 bl-3 r-0">
+                        <div class="alert error hazy b-0 bl-3 r-0">
                             <svg class="icon lg" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                         </div>
@@ -3902,7 +4371,7 @@
                                 <input class="toggle none" type="checkbox" checked id="htmlAlertToggle">
                                 <div class="collapse from-center">
                                     <div class="hidden">
-                                        <div class="alert lg primary flex pr-4">
+                                        <div class="alert lg primary pr-4">
                                             <svg class="icon lg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
                                             Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
                                             <label for="htmlAlertToggle" title="Close Alert" tabindex="0" class="button hazy light circle absolute top right icon close sm m-1"></label>
@@ -3919,9 +4388,9 @@
                         <div class="l-select" data-language="js" data-footer-note="* See &lt;a href='#collapse'&gt;Collapse&lt;/a&gt; for more details">
                             <div class="collapse open from-center">
                                 <div class="hidden">
-                                    <div class="alert lg primary flex pr-4">
+                                    <div class="alert lg primary pr-4">
                                         <svg class="icon lg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.
+                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.</p>
                                         <button onclick="this.closest('.open').nextElementSibling.classList.remove('none'); this.closest('.open').classList.remove('open')" class="button hazy light circle absolute top right icon close sm m-1"></button>
                                     </div>
                                 </div>
@@ -3941,7 +4410,7 @@
                         </label>
                         <div class="modal">
                             <label for="alertModal" class="fixed inset"></label>
-                            <div class="alert primary lg max-w-400 flex shadow-2 shadow/100">
+                            <div class="alert primary lg max-w-400 shadow-2 shadow/100">
                                 <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z" /></svg>
                                 <div>
                                     <h5 class="bold">Info</h5>
@@ -3960,11 +4429,11 @@
                         <div class="l-select" data-language="html">
                             <button title="Open Popup" data-toggle="next" data-toggle-action="open">Show Alert Popup</button>
                             <div class="modal no-bg m-1">
-                                <div class="alert flex primary lg absolute top right max-w-400 from-right">
-                                    <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
+                                <div class="alert primary absolute top right w-300 from-right mr-2">
+                                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
                                     <div>
                                         <h5 class="bold">Info!</h5>
-                                        This message will Autoclose.
+                                        This is an HTML Message.
                                     </div>
                                     <button class="icon hazy light xs circle absolute top right m-1" title="Close Popup" data-toggle-close>
                                         <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
@@ -3973,10 +4442,10 @@
                             </div>
                         </div>
                         <div class="l-select" data-language="js">
-                            <button title="Open Popup" onclick="this.nextElementSibling.classList.add('open'); setTimeout(() => this.nextElementSibling.classList.remove('open'), 2000)">Show Alert Popup</button>
+                            <button title="Open Popup" onclick="this.nextElementSibling.classList.add('open'); setTimeout(() => this.nextElementSibling.classList.remove('open'), 2000)">Show Autoclose Alert Popup</button>
                             <div class="modal no-bg m-1">
-                                <div class="alert flex primary lg absolute top right max-w-400 from-right">
-                                    <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
+                                <div class="alert primary absolute top right w-300 from-right mr-2">
+                                    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
                                     <div>
                                         <h5 class="bold">Info!</h5>
                                         This message will Autoclose.
@@ -4120,6 +4589,7 @@
                 <article class="card show-code" data-title="Comfort">
 					<div class="code-content relative p-3 md:p-4">
                         <span class="badge dense">Dense</span>
+                        <span class="badge compact">Compact</span>
                         <span class="badge cozy">Cozy</span>
                         <span class="badge roomy">Roomy</span>
                     </div>
@@ -4368,6 +4838,7 @@
                 <article class="card show-code" data-title="Comfort">
 					<div class="code-content relative p-3 md:p-4">
                         <button class="dense">Dense</button>
+                        <button class="compact">Compact</button>
                         <button class="cozy">Cozy</button>
                         <button class="roomy">Roomy</button>
                     </div>
@@ -4965,11 +5436,64 @@
 
                 <article class="card show-code" data-title="Simple form with some Required Fields">
 					<div class="code-content relative p-3 md:p-4">
-                        <form id="form1" class="grid-400 p-2 g-3 md:gy-4">
+                        <form id="form1" class="grid-400 p-2 g-3 md:gy-4 bg-light">
 
                             <label>
                                 <h5>Text Field *</h5>
-                                <input type="text" required>
+                                <input type="text" class="placeholder-primary" placeholder="Whoopty Doo" required>
+                            </label>
+
+                            <label>
+                                <h5>File Upload</h5>
+                                <input type="file">
+                            </label>
+
+                            <label>
+                                <h5>Field with Prefix</h5>
+                                <div class="input">
+                                    <span>Prefix</span>
+                                    <input type="text" required>
+                                </div>
+                            </label>
+
+                            <label>
+                                <h5>Text Field *</h5>
+                                <input type="text" class="placeholder-primary b-5" placeholder="Whoopty Doo" required>
+                            </label>
+                            
+                            <label>
+                                <h5>File Upload</h5>
+                                <input type="file" class="b-5">
+                            </label>
+
+                            <label>
+                                <h5>Field with Prefix</h5>
+                                <div class="input b-5">
+                                    <span>Prefix</span>
+                                    <input type="text" required>
+                                </div>
+                            </label>
+
+                            <label class="roomy">
+                                <h5>Text Field *</h5>
+                                <input type="text" class="placeholder-primary b-5" placeholder="Whoopty Doo" required>
+                            </label>
+                            
+                            <label class="roomy">
+                                <h5>File Upload</h5>
+                                <input type="file" class="b-5">
+                            </label>
+
+                            <label class="roomy">
+                                <h5>Field with Prefix</h5>
+                                <div class="input b-5">
+                                    <span>Prefix</span>
+                                    <input type="text" required>
+                                </div>
+                            </label>
+
+                            <label>
+                                <input type="color" oninput="this.nextElementSibling.value = this.value">
                             </label>
                         
                             <label>
@@ -5161,7 +5685,7 @@
 
                 <article class="card show-code" data-title="Form with Accent Color, Alternate Grid and Show Invalid">
 					<div class="code-content relative p-3 md:p-4">
-                        <form class="primary show-invalid row columns-1 md:columns-12 g-3 md:gy-4 p-2 block-center">
+                        <form class="primary show-invalid row cols-1 md:cols-12 g-3 md:gy-4 p-2 block-center">
                     
                             <label class="md:span-4">
                                 <h5>Text Field *</h5>
@@ -5285,7 +5809,7 @@
 
                             <label class="md:span-12">
                                 <h5>File Upload</h5>
-                                <input type="file">
+                                <input type="file" required>
                             </label>
 
                             <label class="md:span-4">
@@ -5357,7 +5881,7 @@
 
                 <article class="card show-code" data-title="Responsive Labels">
                     <div class="code-content relative p-3 md:p-4">
-                        <form class="row columns-1 block-center" onsubmit="return false;">
+                        <form class="row cols-1 block-center" onsubmit="return false;">
                             <label>
                                 <sup>Label Above</sup>
                                 <input type="text" required placeholder=" ">
@@ -5372,7 +5896,7 @@
 
                 <article class="card show-code" data-title="Compact with Loading Button and Disabled Fields on Submit">
 					<div class="code-content relative p-3 md:p-4">
-                        <form class="show-invalid row columns-1 md:columns-3 block-center sm gy-1" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').setAttribute('aria-busy', 'true'); this.classList.add('disabled'); setTimeout(() => {this.reset(); this.querySelector('[type=submit]').setAttribute('aria-busy', 'false'); this.classList.remove('disabled');}, 4000)">
+                        <form class="show-invalid row cols-1 md:cols-3 block-center sm gy-1" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').setAttribute('aria-busy', 'true'); this.classList.add('disabled'); setTimeout(() => {this.reset(); this.querySelector('[type=submit]').setAttribute('aria-busy', 'false'); this.classList.remove('disabled');}, 4000)">
                             <label>
                                 <sup>Name *</sup>
                                 <input type="text" required placeholder=" ">
@@ -5794,7 +6318,7 @@
                                     <h4>List Item 1</h4>
                                     <h6 class="sm mt-1">Sub List Data</h6>
                                 </span>
-                                <span class="row md:span-auto columns-auto block-center">
+                                <span class="row md:span-auto cols-auto block-center">
                                     <span class="badge primary px-1">12</span>
                                     <button class="icon hazy secondary circle" data-toggle="next">
                                         <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
@@ -5848,7 +6372,7 @@
                                     <h4>List Item 2</h4>
                                     <h6 class="sm mt-1">Sub List Data</h6>
                                 </span>
-                                <span class="row md:span-auto columns-auto block-center">
+                                <span class="row md:span-auto cols-auto block-center">
                                     <span class="badge primary px-1">12</span>
                                     <button class="icon hazy secondary circle" data-toggle="next">
                                         <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
@@ -5902,7 +6426,7 @@
                                     <h4>List Item 3</h4>
                                     <h6 class="sm mt-1">Sub List Data</h6>
                                 </span>
-                                <span class="row md:span-auto columns-auto block-center">
+                                <span class="row md:span-auto cols-auto block-center">
                                     <span class="badge primary px-1">12</span>
                                     <button class="icon hazy secondary circle" data-toggle="next">
                                         <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
@@ -5963,7 +6487,7 @@
                                     <h4>List Item 1</h4>
                                     <h6 class="sm mt-1">Sub List Data</h6>
                                 </span>
-                                <span class="row sm md:span-auto columns-auto block-center">
+                                <span class="row sm md:span-auto cols-auto block-center">
                                     <span class="badge primary px-1">12</span>
                                     <span class="badge secondary p-1">
                                         <svg viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
@@ -5976,7 +6500,7 @@
                                     <h4>List Item 2</h4>
                                     <h6 class="sm mt-1">Sub List Data</h6>
                                 </span>
-                                <span class="row sm md:span-auto columns-auto block-center">
+                                <span class="row sm md:span-auto cols-auto block-center">
                                     <span class="badge primary px-1">12</span>
                                     <span class="badge secondary p-1">
                                         <svg viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
@@ -5989,7 +6513,7 @@
                                     <h4>List Item 3</h4>
                                     <h6 class="sm mt-1">Sub List Data</h6>
                                 </span>
-                                <span class="row sm md:span-auto columns-auto block-center">
+                                <span class="row sm md:span-auto cols-auto block-center">
                                     <span class="badge primary px-1">12</span>
                                     <span class="badge secondary p-1">
                                         <svg viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
@@ -6453,7 +6977,7 @@
                                 <header>
                                     <h4>Lorem ipsum dolor</h4>
                                 </header>
-                                <div class="px-3 max-h-500 auto">
+                                <div class="px-3 auto" style="max-height: 500px;">
                                     <h4>Modal Heading Content</h4>
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                                         tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
@@ -6750,7 +7274,7 @@
                                 <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                                 <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                             </button>
-                            <ul class="list @md:row @md:columns-auto @md:open inherit-bg absolute @md:relative right outer-bottom @md:top @md:h:open">
+                            <ul class="list @md:row @md:cols-auto @md:open inherit-bg absolute @md:relative right outer-bottom @md:top @md:h:open">
                                 <li>
                                     <a href="#">Link 1</a>
                                 </li>
@@ -7000,7 +7524,7 @@
                         </div>
 
                         <div class="slider @container mt-2" data-snap>
-                            <div class="slides columns-3 @md:columns-5 @md:g-2">
+                            <div class="slides cols-3 @md:cols-5 @md:g-2">
                                 <a href="#with-thumbnail-slide1"><img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
                                 <a href="#with-thumbnail-slide2"><img src="/placeholder-2.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
                                 <a href="#with-thumbnail-slide3"><img src="/placeholder-3.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
@@ -7039,7 +7563,7 @@
                             <button class="slider-next link icon circle xl">
                                 <svg viewBox="0 0 24 24" class="xl"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" /></svg>
                             </button>
-                            <div class="slides @md:columns-3 @md:g-2">
+                            <div class="slides @md:cols-3 @md:g-2">
                                 <div>
                                     <h5>Image 1</h5>
                                     <img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy">
@@ -7124,7 +7648,7 @@
                                 <button class="slider-next gray link icon circle">
                                     <svg viewBox="0 0 24 24" class="xl"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" /></svg>
                                 </button>
-                                <div class="slides columns-3 g-1 @md:columns-5 @md:g-2">
+                                <div class="slides cols-3 g-1 @md:cols-5 @md:g-2">
                                     <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(1)').offsetLeft, 0);"><img src="/placeholder-1.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
                                     <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(2)').offsetLeft, 0);"><img src="/placeholder-2.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
                                     <a onclick="document.querySelector('#featured-slides').scrollTo(document.querySelector('#featured-slides > :nth-child(3)').offsetLeft, 0);"><img src="/placeholder-3.jpg" height="768" width="1366" alt="Placeholder Image" loading="lazy"></a>
@@ -7225,7 +7749,7 @@
 
                 <article class="card show-code" data-title="Sticky Header, Striped, Responsive, Hover Rows">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="@container max-h-500 auto">
+                        <div class="@container auto" style="max-height: 500px;">
                             <table class="@md:responsive striped h:striped">
                                 <thead class="sticky bg-theme">
                                     <tr>
@@ -7665,7 +8189,7 @@
                 <article class="card show-code" data-title="Basic Horizontal Tabs">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="column g-0 primary outline">
-                            <nav class="list row columns-fill outline navigable bg-faint inline-center text-center">
+                            <nav class="list row cols-fill outline navigable bg-faint inline-center text-center">
                                 <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
                                 <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
                                 <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 3 lorem ipsum</button>

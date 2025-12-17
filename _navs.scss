@@ -50,7 +50,7 @@ menu menu {
 .indicators li:has(ul),
 .sub\:indicators ul ul li:has(ul) {
 	> :first-child {
-		padding-right: 2.3em;
+		padding-right: var(--comfort);
 		position     : relative;
 
 		&::after {

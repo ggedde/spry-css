@@ -33,23 +33,23 @@ $gaps: (
 // Adding Themes will increase bundle size so add cautiously.
 $themes: (
     default: (
-        scheme: dark,
+        scheme: light dark,
         accent: light-dark(#555, #ccc),
         border: light-dark(#ccc, #444),
         color : light-dark(#555, #ccc),
-        input : light-dark(#888, #888),
+        input : light-dark(#aaa, #666),
         bg    : light-dark(#fff, #111),
         ui    : light-dark(#ddd, #333),
     ),
-    // my-custom-theme: (
-    //     scheme: light,
-    //     accent: rgb(226, 14, 194),
-    //     border: #2307f6,
-    //     color : #555,
-    //     input : #888,
-    //     bg    : #cbf0da,
-    //     ui    : #b6c3c0,
-    // )
+    custom: (
+        scheme: light,
+        accent: rgb(226, 14, 194),
+        border: #2307f6,
+        color : #555,
+        input : #888,
+        bg    : #cbf0da,
+        ui    : #f00,
+    )
 ) !default;
 
 // Specify each Color and their relation to each theme.
@@ -57,20 +57,21 @@ $themes: (
 // Use css light-dark() function to specify the colors for light and dark schemes.
 // See: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark
 $colors: (
-    primary   : (default: light-dark(#18d, #09d)),
-    secondary : (default: light-dark(#a4b, #b5c)),
-    success   : (default: light-dark(#283, #0a0)),
-    warning   : (default: light-dark(#c70, #e90)),
-    error     : (default: light-dark(#d00, #f20)),
-    contrast  : (default: light-dark(#333, #eee)),
-    faint     : (default: light-dark(#eee, #333)),
-    stark     : (default: light-dark(#000, #fff)),
-    surface   : (default: light-dark(#eee, #000)),
-    black     : (default: #000),
-    dark      : (default: #333),
-    gray      : (default: #888),
-    light     : (default: #eee),
-    white     : (default: #fff),
+    primary   : (default: light-dark(#18d, #09d), custom: #f00),
+    secondary : (default: light-dark(#a4b, #b5c), custom: #f0f),
+    success   : (default: light-dark(#283, #0a0), custom: #0f0),
+    warning   : (default: light-dark(#c70, #e90), custom: #ff0),
+    error     : (default: light-dark(#d00, #f20), custom: #f00),
+    contrast  : (default: light-dark(#333, #eee), custom: #888),
+    faint     : (default: light-dark(#eee, #333), custom: #eee),
+    stark     : (default: light-dark(#000, #fff), custom: #111),
+    surface   : (default: light-dark(#eee, #000), custom: #fff),
+    base      : (default: light-dark(#fff, #000), custom: #fff),
+    black     : (default: #000, custom: #000),
+    dark      : (default: #333, custom: #333),
+    gray      : (default: #888, custom: #888),
+    light     : (default: #eee, custom: #eee),
+    white     : (default: #fff, custom: #fff),
 ) !default;
 
 // Specify each tag type like <h3> etc. Each type will get a corresponding class added. Ex. .h3
@@ -150,11 +151,11 @@ $spacing: (
 $proportions: (
     xxl: 130%,
     xl: 120%,
-    lg: 115%,
+    lg: 110%,
     md: 100%,
-    sm: 85%,
-    xs: 70%,
-    xxs: 60%,
+    sm: 90%,
+    xs: 80%,
+    xxs: 70%,
 ) !default;
 
 // Percentages are used for opacities and sizes.
@@ -221,10 +222,15 @@ $lengths: (
     --max-height : 1900px;
     --origin     : top;
     --radius     : .25em;
-    --shadow     : .12;
+    --shadow     : .2;
+    --shadow-a   : .2;
     --speed      : .4s;
     --transform  : translate3d(0, 0, 0);
     --pad        : .5em;
     --pad-lg     : 1em;
     --pad-xl     : 2em;
+    --comfort    : 2.3em;
+    --comfort-py : .3em;
+    --comfort-px : 1.1em;
+    --comfort-lh : 1.3;
 }

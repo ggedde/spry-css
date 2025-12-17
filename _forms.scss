@@ -10,7 +10,7 @@ input::file-selector-button,
 	--input-color: hsl(from var(--ui-input) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 }
 
-:where(input, textarea, select, .input){
+:where(input, textarea, select, .input) {
 	@extend %ui;
 	@extend %ui-border;
 	@extend %ui-border-radius;
@@ -20,7 +20,7 @@ input::file-selector-button,
 	font-family   : inherit;
 	font-weight   : inherit;
 
-	&:is(:hover, :focus, :focus-within):not(.icon) {
+	&:is(:hover, :focus, :focus-within):not(.icon, .switch) {
 		--ui-input: hsl(from var(--ui-accent) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 	}
 }
@@ -92,8 +92,8 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 }
 
 :is([type=radio], [type=checkbox]).loading:after {
-	max-height    : 75%;
-	max-width     : 75%;
+	max-height: 75%;
+	max-width : 75%;
 	--ui-text : var(--ui-accent);
 }
 
@@ -105,7 +105,7 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 
 	&:not(:checked, .loading)::after {
 		background-color: var(--input-color);
-		opacity         : 0.5;
+		opacity         : 0.7;
 	}
 
 	&::after {
@@ -113,7 +113,7 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 		position    : absolute;
 		inset       : 0 auto 0 .2em;
 		aspect-ratio: 1;
-		height: 70%;
+		height      : 70%;
 	}
 
 	&:checked::after {
@@ -122,7 +122,7 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 
 	&.loading::after {
 		background: transparent;
-		left: calc(50% - .3em);
+		left      : calc(50% - .3em);
 	}
 }
 
@@ -148,11 +148,12 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 
 select,
 .is-select {
-	text-align     : left;
-	padding-right  : 1.7em;
-	line-height    : 1.55;
-	background     : linear-gradient(45deg, transparent 50%, var(--select-arrow) 0 calc(50% + 1px), transparent calc(50% + 2px)) no-repeat calc(100% - 1.2em), linear-gradient(-45deg, transparent 50%, var(--select-arrow) 0 calc(50% + .065em), transparent calc(50% + 2px)) no-repeat calc(100% - 0.82em);
-	background-size: .4em .4em;
+	text-align        : left;
+	padding-right     : 1.7em;
+	// line-height    : 1.55;
+	line-height       : var(--comfort-lh);
+	background        : linear-gradient(45deg, transparent 50%, var(--select-arrow) 0 calc(50% + 1px), transparent calc(50% + 2px)) no-repeat calc(100% - 1.2em), linear-gradient(-45deg, transparent 50%, var(--select-arrow) 0 calc(50% + .065em), transparent calc(50% + 2px)) no-repeat calc(100% - 0.82em);
+	background-size   : .4em .4em;
 }
 
 input,
@@ -173,6 +174,8 @@ textarea {
 	padding-left : .5em;
 	text-overflow: revert;
 	overflow     : hidden;
+	padding-block: 0;
+	align-content: center;
 }
 
 ::file-selector-button {
@@ -182,42 +185,40 @@ textarea {
 	border-right    : 1px solid var(--input-color);
 	background-color: hsl(from var(--theme-ui) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
 	color           : var(--ui-text);
-	height          : 2.3em;
+	height          : auto;
+	line-height     : 2;
 	padding-inline  : 1em;
-	margin          : -.4em 1em -.4em -.6em;
+	margin          : calc(-1 * var(--comfort-py)) 1em calc(-1 * var(--comfort-py)) -.6em;
 	font            : inherit;
 	opacity         : .8;
+	padding-block   : calc(var(--comfort-py) * 2);
+}
+
+::-webkit-calendar-picker-indicator {
+	padding-block: 0;
 }
 
 .input {
-	display : flex;
-	gap     : 0;
-	overflow: hidden;
-	padding : 0;
+	display    : flex;
+	gap        : 0;
+	overflow   : hidden;
+	padding    : 0;
+	align-items: stretch;
 
 	> :not(input, select, textarea) {
-		@extend %ui;
-		--bg-a          : 1;
-		background-color: hsl(from var(--theme-ui) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
-		color           : var(--ui-text);
-		justify-content : center;
-		min-width       : max-content;
-		opacity         : .8;
-		border-radius   : 0;
-
-		--bdr-a: .7;
-
-		&:first-child {
-			border-right: 1px solid var(--input-color);
-		}
-
-		&:last-child {
-			border-left: 1px solid var(--input-color);
-		}
+		min-width    : max-content;
+		border-radius: 0;
+		min-height   : 0;
+		height       : auto;
+		min-width    : var(--comfort);
 	}
 
 	[type=color]+output {
 		min-width: 100px;
+	}
+
+	:is(input, select, textarea) {
+		outline: 0;
 	}
 
 	>* {
@@ -225,8 +226,49 @@ textarea {
 		border-radius: 0;
 		outline      : 0;
 		box-shadow   : none;
+		min-height   : 0;
+		height       : auto;
+		padding-block: var(--comfort-py);
+		min-width    : var(--comfort);
+
+		&:where(:not(input, select, textarea)) {
+
+			@extend %ui;
+
+			--bg-a         : 1;
+			color          : var(--ui-text);
+			justify-content: center;
+			opacity        : .8;
+			padding-block  : 0;
+			min-width      : var(--comfort);
+			--bdr-a        : .7;
+
+			background-color: hsl(from var(--theme-ui) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
+
+			&:first-child {
+				border-right: 1px solid var(--input-color);
+			}
+
+			&:last-child {
+				border-left: 1px solid var(--input-color);
+			}
+		}
+
 	}
 }
+
+// .input > :where(:not(input, select, textarea)) {
+
+// 	background-color: hsl(from var(--theme-ui) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
+
+// 	&:first-child {
+// 		border-right: 1px solid var(--input-color);
+// 	}
+
+// 	&:last-child {
+// 		border-left: 1px solid var(--input-color);
+// 	}
+// }
 
 label {
 	display: block;
@@ -278,21 +320,22 @@ label {
 
 .show-invalid {
 
-	:not(:focus-within):has([type=radio][required][value=""]:checked),
-	.input:has(:user-invalid),
-	:user-invalid {
-		border-color : var(--error, #c33);
-		outline-color: rgba(from var(--error, #c33) r g b / .4);
-	}
+	/* This is costly only on Chrome because of :has(), Maybe remove it */
+	// :not(:focus-within):has([type=radio][required][value=""]:checked),
+	// .input:has(:user-invalid),
+	// :user-invalid {
+	// 	border-color : var(--error, #c33);
+	// 	outline-color: rgba(from var(--error, #c33) r g b / .4);
+	// }
 
-	label:has(:user-invalid) .invalid {
-		display: revert;
-	}
+	// label:has(:user-invalid) .invalid {
+	// 	display: revert;
+	// }
 
-	.input:has(:user-invalid)> :not(input, select, textarea) {
-		background-color: var(--error, #c33);
-		border-color    : var(--error, #c33);
-		--ui-color      : var(--error, #c33);
-		@extend %ui-color;
-	}
+	// .input:has(:user-invalid)> :not(input, select, textarea) {
+	// 	background-color: var(--error, #c33);
+	// 	border-color    : var(--error, #c33);
+	// 	--ui-color      : var(--error, #c33);
+	// 	@extend %ui-color;
+	// }
 }

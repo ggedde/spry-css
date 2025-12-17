@@ -408,6 +408,43 @@ Layout Utility Classes - Ex. .md:text-right, etc
 		left : auto
 	}
 
+	#{$prefix}position-left {
+		background-position: center left;
+		object-position: center left;
+	}
+	#{$prefix}position-right {
+		background-position: center right;
+		object-position: center right;
+	}
+	#{$prefix}position-center {
+		background-position: center;
+		object-position: center;
+	}
+	#{$prefix}position-top-left {
+		background-position: top left;
+		object-position: top left;
+	}
+	#{$prefix}position-top-center {
+		background-position: top center;
+		object-position: top center;
+	}
+	#{$prefix}position-top-right {
+		background-position: top right;
+		object-position: top right;
+	}
+	#{$prefix}position-bottom-left {
+		background-position: bottom left;
+		object-position: bottom left;
+	}
+	#{$prefix}position-bottom-center {
+		background-position: bottom center;
+		object-position: bottom center;
+	}
+	#{$prefix}position-bottom-right {
+		background-position: bottom right;
+		object-position: bottom right;
+	}
+
 	#{$prefix}no-pointer {
 		pointer-events: none
 	}
@@ -418,6 +455,14 @@ Layout Utility Classes - Ex. .md:text-right, etc
 
 	#{$prefix}hidden {
 		overflow: hidden
+	}
+
+	#{$prefix}block-hidden {
+		overflow-y: hidden
+	}
+
+	#{$prefix}inline-hidden {
+		overflow-x: hidden
 	}
 
 	#{$prefix}scroll {
@@ -481,17 +526,6 @@ Layout Utility Classes - Ex. .md:text-right, etc
 		order: 999
 	}
 
-	@for $i from 0 through 5 {
-		#{$prefix}shadow-#{$i} {
-			--shadow: #{calc($i / 10)};
-			box-shadow: calc(.5em*var(--shadow)) calc(.75em * var(--shadow)) calc(1.75em * var(--shadow)) rgba(0, 0, 0, var(--shadow))
-		}
-	}
-
-	#{$prefix}no-shadow {
-		box-shadow: none;
-	}
-
 	#{$prefix}rotate-0 {
 		rotate: 0deg
 	}
@@ -552,28 +586,33 @@ Layout Utility Classes - Ex. .md:text-right, etc
 	}
 
 	#{$prefix}o\/0,
-	#{$prefix}h\:o\/0:hover {
+	#{$prefix}h\:o\/0:hover,
+	#{$prefix}h\:o\/0:focus {
 		opacity: 0;
 	}
 
 	@each $i in variables.$percentages {
+		/* This is costly only on Chrome because of :has(), Maybe remove it */
+		:has(> [class*="p:h"]):where(:hover) > #{$prefix}p\:h\:o\/#{$i},
 		#{$prefix}o\/#{$i},
 		#{$prefix}h\:o\/#{$i}:hover,
-		:has(> [class*="p:h"]):where(:hover) > #{$prefix}p\:h\:o\/#{$i} {
+		#{$prefix}h\:o\/#{$i}:focus {
 			opacity: #{calc($i / 100)};
 		}
 	}
 
 	@for $i from 0 through 5 {
 		#{$prefix}s\/#{$i},
-		#{$prefix}h\:s\/#{$i}:hover {
+		#{$prefix}h\:s\/#{$i}:hover,
+		#{$prefix}h\:s\/#{$i}:focus {
 			scale: #{calc($i / 10)};
 		}
 	}
 
 	@for $i from 0 through 5 {
 		#{$prefix}s\+#{$i},
-		#{$prefix}h\:s\+#{$i}:hover {
+		#{$prefix}h\:s\+#{$i}:hover,
+		#{$prefix}h\:s\+#{$i}:focus {
 			scale: #{calc($i / 10)+1};
 		}
 	}

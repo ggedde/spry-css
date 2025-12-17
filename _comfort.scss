@@ -1,36 +1,82 @@
 @use "extends";
+@use "variables";
+@use "sass:meta";
 /*!
 * Spry Comfort
 */
 
 :root {
-    --dense: 1.7em;
+	// Dense
+    --dense: 1.75em;
+    --dense-py: .15em;
+    --dense-px: 0.75em;
+    --dense-lh: 1.1;
+	// Compact
     --compact: 2em;
+    --compact-py: .25em;
+    --compact-px: 0.9em;
+    --compact-lh: 1.2;
+	// Cozy
     --cozy: 2.3em;
-    --roomy: 2.9em;
+    --cozy-py: .3em;
+    --cozy-px: 1.1em;
+    --cozy-lh: 1.25;
+	// Roomy
+    --roomy: 2.5em;
+    --roomy-py: .5em;
+    --roomy-px: 1.5em;
+    --roomy-lh: 1.3;
 }
 
-.dense {
-	min-height    : var(--dense);
-	min-width     : var(--dense);
-	padding-block : .25em;
-	padding-inline: 0.5em;
-	line-height: 1;
+@mixin comfort-styles($prefix) {
+
+	#{$prefix}text-left {
+		text-align: left
+	}
+
+    #{$prefix}dense {
+        --comfort: var(--dense);
+        --comfort-py : var(--dense-py);
+        --comfort-px : var(--dense-px);
+        --comfort-lh : var(--dense-lh);
+    }
+
+    #{$prefix}compact {
+        --comfort: var(--compact);
+        --comfort-py : var(--compact-py);
+        --comfort-px : var(--compact-px);
+        --comfort-lh : var(--compact-lh);
+    }
+
+    #{$prefix}cozy {
+        --comfort: var(--cozy);
+        --comfort-py : var(--cozy-py);
+        --comfort-px : var(--cozy-px);
+        --comfort-lh : var(--cozy-lh);
+    }
+
+    #{$prefix}roomy {
+        --comfort: var(--roomy);
+        --comfort-py : var(--roomy-py);
+        --comfort-px : var(--roomy-px);
+        --comfort-lh : var(--roomy-lh);
+    }
 }
 
-.compact {
-	min-height: var(--compact);
-	min-width : var(--compact);
-	padding-inline: 0.9em;
-	padding-block : 0.25em;
-	line-height: 1.2;
-}
+@include comfort-styles('.');
 
-.cozy {
-	min-height: var(--cozy);
-	min-width : var(--cozy);
-}
+@if meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
+	@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+		@if meta.global-variable-exists('useMediaQueries', variables) and variables.$useMediaQueries {
+			@media screen and (min-width: #{$breakpoint_width}) {
+				@include comfort-styles('.#{$breakpoint}\\:');
+			}
+		}
 
-.roomy {
-	@extend %ui-roomy;
+		@if meta.global-variable-exists('useContainerQueries', variables) and variables.$useContainerQueries {
+			@container (min-width: #{$breakpoint_width}) {
+				@include comfort-styles('.\\@#{$breakpoint}\\:');
+			}
+		}
+	}
 }

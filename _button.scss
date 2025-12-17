@@ -13,7 +13,6 @@
 	position       : relative;
 	cursor         : pointer;
 	font-weight    : 400;
-	text-transform : uppercase;
 }
 
 :is(button, .button, [type=submit], [type=reset]),
@@ -32,6 +31,11 @@
 	}
 }
 
+:where(button, .button, [type=submit], [type=reset]),
+:where(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a {
+	text-transform : uppercase;
+}
+
 :where(button, .button, [type=submit], [type=reset]):where(.outline),
 :where(.buttons-outline) a {
 	--bdr-a: .7;
@@ -41,8 +45,8 @@
 	color: var(--ui-text);
 }
 
-:is(button, .button, [type=submit], [type=reset]).link,
-.buttons-link a {
+:where(button, .button, [type=submit], [type=reset]):where(.link),
+:where(.buttons-link) a {
 	text-transform: none;
 }
 

@@ -9,8 +9,12 @@
 @if meta.global-variable-exists('loading', variables) {
 
 	$loaderNames: ('.loading');
-	@each $loaderName, $loaderSize in variables.$loading {
+	$linearLoaderNames: ('.linear-loading');
+
+	@each $loaderName,
+	$loaderSize in variables.$loading {
 		$loaderNames: list.append($loaderNames, '.loading-#{$loaderName}', 'comma');
+		$linearLoaderNames: list.append($linearLoaderNames, '.linear-loading-#{$loaderName}', 'comma');
 	}
 
 	@keyframes spinner {
@@ -21,6 +25,16 @@
 		90%,
 		100% {
 			transform: rotate(360deg)
+		}
+	}
+
+	@keyframes slide {
+		from {
+			transform: translateX(-110%);
+		}
+
+		to {
+			transform: translateX(220%);
 		}
 	}
 
@@ -35,7 +49,7 @@
 		cursor        : default;
 		opacity       : .8;
 
-		> * {
+		>* {
 			filter: blur(1px)
 		}
 
@@ -43,26 +57,48 @@
 			pointer-events: none;
 			user-select   : none;
 		}
+
 		&::after {
-			content       : '';
-			animation     : spinner calc(var(--speed) * 2) ease infinite;
-			aspect-ratio  : 1;
-			background    : none;
-			border        : map.get(variables.$loading, list.nth(list.nth(variables.$loading, 1), 1)) solid transparent;
-			border-color  : var(--ui-text) var(--ui-text) transparent transparent;
-			border-radius : 50%;
-			max-height    : min(50%, 150px);
-			max-width     : min(50%, 150px);
-			inset         : 0;
-			margin        : auto;
-			position      : absolute;
-			transition    : opacity var(--speed) ease-in-out .1s;
+			content      : '';
+			animation    : spinner calc(var(--speed) * 2) ease infinite;
+			aspect-ratio : 1;
+			background   : none;
+			border       : map.get(variables.$loading, list.nth(list.nth(variables.$loading, 1), 1)) solid transparent;
+			border-color : var(--ui-text) var(--ui-text) transparent transparent;
+			border-radius: 50%;
+			max-height   : min(50%, 150px);
+			max-width    : min(50%, 150px);
+			inset        : 0;
+			margin       : auto;
+			position     : absolute;
+			transition   : opacity var(--speed) ease-in-out .1s;
 		}
 	}
 
-	@each $loaderName, $loaderSize in variables.$loading {
+	:where(#{$linearLoaderNames}) {
+		position: relative;
+		overflow-x: clip;
+		width: 100%;
+		&::after {
+			content    : "";
+			position   : absolute;
+			top        : 0;
+			left       : 0;
+			width      : 50%;
+			height     : calc(map.get(variables.$loading, list.nth(list.nth(variables.$loading, 1), 1)) / 1.5);
+			background : rgba(from var(--ui-text) r g b / .7);
+			animation  : slide calc(var(--speed) * 2.5) ease-in-out infinite;
+			will-change: transform;
+		}
+	}
+
+	@each $loaderName,
+	$loaderSize in variables.$loading {
 		.loading-#{$loaderName}::after {
 			border-width: #{$loaderSize};
+		}
+		.linear-loading-#{$loaderName}::after {
+			height: calc(#{$loaderSize} / 2);
 		}
 	}
 }

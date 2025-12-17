@@ -9,68 +9,41 @@
 
 :root {
 	@if meta.global-variable-exists('gaps', variables) and variables.$gaps {
-        --gapx   : #{map.get(variables.$gaps, 'default')};
-        --gapy   : #{map.get(variables.$gaps, 'default')};
-    }
-	--span : 1;
-	--cols : 1;
-	--rows : 1;
+		--gapx       : #{map.get(variables.$gaps, 'default')};
+		--gapy       : #{map.get(variables.$gaps, 'default')};
+		--inner-gapx : #{map.get(variables.$gaps, 'default')};
+		--inner-gapy : #{map.get(variables.$gaps, 'default')};
+	}
+
+	--span      : 1;
+	--cols      : 1;
+	--rows      : 1;
+	--inner-cols: 1;
+	--inner-rows: 1;
 
 	@if meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
-		@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+
+		@each $breakpoint,
+		$breakpoint_width in variables.$breakpoints {
 			@if meta.global-variable-exists('gaps', variables) and variables.$gaps {
 				@media screen and (min-width: $breakpoint_width) {
-					--gapx: #{map.get(variables.$gaps, $breakpoint)};
-					--gapy: #{map.get(variables.$gaps, $breakpoint)};
+					--gapx      : #{map.get(variables.$gaps, $breakpoint)};
+					--gapy      : #{map.get(variables.$gaps, $breakpoint)};
+					--inner-gapx: #{map.get(variables.$gaps, $breakpoint)};
+					--inner-gapy: #{map.get(variables.$gaps, $breakpoint)};
 				}
 			}
 		}
 	}
 }
 
-.row,
-[class*=":row "],
-[class$=\:row],
-.column,
-[class*=":column "],
-[class$=\:column],
-.grid,
-[class*=":grid "],
-[class$=\:grid],
-[class^=grid-],
-[class*=\ grid-],
-[class^=columns-],
-[class*=\ columns-] {
-	--span: 1;
-	--cols: 1;
-	--rows: 1;
-	gap   : var(--gapy) var(--gapx);
-}
-
-[class^=grid-],
-[class*=\ grid-] {
-	display: grid;
-	grid   : auto-flow / repeat(auto-fit, minmax(calc(var(--span) * 4em), 1fr));
-
-	>* {
-		margin-top: 0;
-		max-width : calc(100vw - (var(--gapx) * 2))
-	}
-}
-
-@for $i from 1 through 6 {
-	.grid-#{$i}00 {
+@for $i from 1 through 5 {
+	.cols-#{$i}00 {
 		--span: #{$i};
 	}
 
 	.columns-#{$i}00 {
 		columns: #{$i}00px;
-		> * {
-			margin-bottom: var(--gapy);
-		}
-		:last-child {
-			margin-bottom: 0;
-		}
 	}
 
 	.columns-#{$i} {
@@ -83,6 +56,7 @@
 	#{$prefix}column,
 	#{$prefix}row {
 		display: flex;
+		gap    : var(--gapy) var(--gapx);
 
 		>* {
 			flex: 1;
@@ -100,6 +74,10 @@
 
 	#{$prefix}grid {
 		display: grid;
+		gap    : var(--gapy) var(--gapx);
+		--rows : auto-fit;
+		--cols : auto-fit;
+		grid   : repeat(var(--rows), minmax(0, 1fr)) / repeat(var(--cols), minmax(0, 1fr));
 	}
 
 	#{$prefix}column>*,
@@ -110,36 +88,43 @@
 		margin-top: 0;
 	}
 
-	[class^="#{$noDotPrefix}columns-"]>*,
-	[class*=" #{$noDotPrefix}columns-"]>* {
-		flex: 0 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--gapx))/(var(--cols)/var(--span))));
+	[class^="#{$noDotPrefix}cols-"]>*,
+	[class*=" #{$noDotPrefix}cols-"]>* {
+		flex: 0 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--inner-gapx))/(var(--cols)/var(--span))));
 	}
 
 	[class^="#{$noDotPrefix}rows-"]>*,
 	[class*=" #{$noDotPrefix}rows-"]>* {
-		flex: 0 0 calc(var(--span)/var(--rows)*100% - ((var(--rows)/var(--span) - 1)*(var(--gapx))/(var(--rows)/var(--span))));
+		flex: 0 0 calc(var(--span)/var(--rows)*100% - ((var(--rows)/var(--span) - 1)*(var(--inner-gapy))/(var(--rows)/var(--span))));
 	}
 
-	#{$prefix}grid {
-		grid: repeat(var(--rows), minmax(0, 1fr)) / repeat(var(--cols), minmax(0, 1fr));
+	#{$prefix}cols-100,
+	#{$prefix}cols-200,
+	#{$prefix}cols-300,
+	#{$prefix}cols-400,
+	#{$prefix}cols-500 {
+		grid: auto-flow / repeat(auto-fit, minmax(calc(var(--span) * 5em), 1fr));
+
+		>* {
+			flex: 0 0 calc(var(--span) * 100px);
+		}
 	}
 
-	#{$prefix}rows-fixed {
-		grid-auto-flow    : row;
-		grid-auto-rows    : 1fr;
-		grid-template-rows: 1fr;
+	#{$prefix}rows-fit {
+		grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
 	}
 
-	#{$prefix}columns-fixed {
-		grid-auto-flow       : column;
-		grid-auto-columns    : 1fr;
-		grid-template-columns: 1fr;
-
+	#{$prefix}cols-fit {
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 	}
 
-	#{$prefix}columns-fixed>*,
-	#{$prefix}rows-fixed>*,
-	#{$prefix}span-fixed {
+	#{$prefix}cols-fill {
+		grid-template-columns: repeat(auto-fill, minmax(0, 1fr));
+	}
+
+	#{$prefix}cols-fit>*,
+	#{$prefix}rows-fit>*,
+	#{$prefix}span-fit {
 		flex: 1;
 	}
 
@@ -149,29 +134,31 @@
 		grid-auto-rows    : auto;
 	}
 
-	#{$prefix}columns-auto {
+	#{$prefix}cols-auto {
 		grid-auto-flow       : column;
 		grid-template-columns: auto;
 		grid-auto-columns    : auto;
 	}
 
-	#{$prefix}columns-auto>*,
+	#{$prefix}cols-auto>*,
 	#{$prefix}rows-auto>*,
 	#{$prefix}span-auto {
 		flex : 0 auto;
 		width: auto;
 	}
 
-	#{$prefix}columns-fill>*,
+	#{$prefix}cols-fill>*,
 	#{$prefix}rows-fill>*,
 	#{$prefix}span-fill {
 		flex: 1 auto;
 	}
 
-	#{$prefix}span, // Alias for col-span
+	// Alias for col-span
+	#{$prefix}span,
 	#{$prefix}col-span {
 		grid-column: 1 / -1;
-		--span     : var(--cols)
+		flex: 0 0 100%;
+		--span     : var(--cols);
 	}
 
 	#{$prefix}row-span {
@@ -181,7 +168,8 @@
 
 	@for $i from 1 through 12 {
 
-		#{$prefix}span-#{$i}, // Alias for col-span
+		// Alias for col-span
+		#{$prefix}span-#{$i},
 		#{$prefix}col-span-#{$i} {
 			--span     : #{$i};
 			grid-column: span var(--span);
@@ -192,36 +180,49 @@
 			grid-row: span var(--span);
 		}
 
-		#{$prefix}columns-#{$i} {
+		#{$prefix}cols-#{$i}:is([class^=grid], [class*=\ grid]),
+		#{$prefix}cols-#{$i}>* {
 			--cols: #{$i};
 		}
 
-		#{$prefix}rows-#{$i} {
+		#{$prefix}rows-#{$i}:is([class^=grid], [class*=\ grid]),
+		#{$prefix}rows-#{$i}>* {
 			--rows: #{$i};
 		}
 	}
 }
 
-
 @include grid-query-styles('.', '');
 
 @if meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
-	@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+
+	@each $breakpoint,
+	$breakpoint_width in variables.$breakpoints {
 
 		@if list.index(variables.$breakpoints, ($breakpoint $breakpoint_width))==1 {
 			@media screen and (max-width: ($breakpoint_width - .01)) {
+
 				.column:not([class^="rows-"], [class*=" rows-"])>*,
-				.row:not([class^="columns-"], [class*=" columns-"])>* {
+				.row:not([class^="cols-"], [class*=" cols-"])>* {
 					flex: 0 0 100%;
+				}
+
+				.grid:not([class^="cols-"], [class*=" cols-"]) {
+					--cols: 1;
 				}
 			}
 
-			// @container (max-width: ($breakpoint_width - .01)) {
-			// 	.column:not([class^="rows-"], [class*=" rows-"])>*,
-			// 	.row:not([class^="columns-"], [class*=" columns-"])>* {
-			// 		flex: 0 0 100%;
-			// 	}
-			// }
+			@container (max-width: #{($breakpoint_width - .01)}) {
+
+				.column:not([class^="rows-"], [class*=" rows-"])>*,
+				.row:not([class^="cols-"], [class*=" cols-"])>* {
+					flex: 0 0 100%;
+				}
+
+				.grid:not([class^="cols-"], [class*=" cols-"]) {
+					--cols: 1;
+				}
+			}
 		}
 
 		@if meta.global-variable-exists('useMediaQueries', variables) and variables.$useMediaQueries {
@@ -232,7 +233,6 @@
 
 		@if meta.global-variable-exists('useContainerQueries', variables) and variables.$useContainerQueries {
 			@container (min-width: #{$breakpoint_width}) {
-
 				@include grid-query-styles('.\\@#{$breakpoint}\\:', '\\@#{$breakpoint}\\:');
 			}
 		}

@@ -46,6 +46,10 @@
 			--gapy    : #{$space};
 			column-gap: var(--gapx);
 			row-gap   : var(--gapy);
+			> * {
+				--inner-gapx: #{$space};
+				--inner-gapy: #{$space};
+			}
 		}
 	}
 
@@ -115,11 +119,17 @@
 		#{$prefix}gx-#{$s} {
 			--gapx    : #{$space};
 			column-gap: var(--gapx);
+			> * {
+				--inner-gapx: #{$space};
+			}
 		}
 
 		#{$prefix}gy-#{$s} {
 			--gapy : #{$space};
 			row-gap: var(--gapy);
+			> * {
+				--inner-gapy: #{$space};
+			}
 		}
 	}
 }

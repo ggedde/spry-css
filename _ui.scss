@@ -71,3 +71,47 @@ hr {
 // ul ul {
 // 	background-color: inherit;
 // }
+
+.inherit-padding,
+.inherit {
+	padding: inherit;
+}
+
+.inherit-margin,
+.inherit {
+	margin: inherit;
+}
+
+.inherit-border-radius,
+.inherit {
+	border-radius: inherit;
+}
+
+.inherit-border,
+.inherit {
+	border: inherit
+}
+
+.inherit-bg,
+.inherit {
+	background: inherit
+}
+
+.inherit-color,
+.inherit {
+	color: inherit
+}
+
+.inherit-blur,
+.inherit {
+	filter: inherit
+}
+
+.inherit-blur-bg,
+.inherit {
+	backdrop-filter: inherit
+}
+.inherit-shadow,
+.inherit {
+	box-shadow: inherit
+}

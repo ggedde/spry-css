@@ -13,6 +13,7 @@
 	font-weight: 500;
 	line-height: 1;
 	--radius   : 2em;
+	transition: none;
 
 	&:where(.outline) {
 		--bdr-a: .7;

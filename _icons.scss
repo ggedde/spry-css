@@ -3,23 +3,29 @@
 */
 
 .icon {
-	box-shadow    : none;
-	display       : inline-flex;
-	flex          : 0 1 auto;
-	height        : 1.25em;
-	margin        : 0;
-	padding       : 0;
-	position      : relative;
-	vertical-align: middle;
-	width         : 1.25em;
-	--speed       : .2s;
+	box-shadow     : none;
+	display        : inline-flex;
+	flex           : 0 1 auto;
+	height         : 1.25em;
+	margin         : 0;
+	padding        : 0;
+	position       : relative;
+	vertical-align : middle;
+	justify-content: center;
+	align-items    : center;
+	width          : 1.25em;
+	--speed        : .2s;
 
 	:is(svg, img) {
-		inset           : 50%;
-		margin          : auto;
-		position        : absolute;
-		transform       : translateZ(0) translate(-50%);
-		transform-origin: 0 center;
+		// inset           : 50%;
+		margin             : auto;
+		position           : absolute;
+		// transform       : translateZ(0) translate(-50%);
+		transform-origin   : 0 center;
+	}
+
+	&.thin svg {
+		stroke-width: 1;
 	}
 
 	&,
@@ -38,11 +44,11 @@
 	}
 
 	&:where(.outline, .hazy) {
-		min-height: 2.3em;
-		min-width : 2.3em;
+		min-height: var(--comfort);
+		min-width : var(--comfort);
 	}
 
-	&:is(.next, .prev, .up, .down, .close, .menu, .dots) {
+	&:is(.next, .prev, .up, .down, .menu, .dots, .close) {
 
 		&::before,
 		&::after {
@@ -59,17 +65,22 @@
 			opacity      : 1;
 			position     : absolute;
 			transition   : var(--speed) var(--ease);
+			transition-property       : scale, transform, rotate, opacity;
 			width        : .12em;
 		}
 	}
 
-	&:is(.up, .down, .prev, .next, .close, .menu, .dots)::after {
+	&:is(.up, .down, .prev, .next, .menu, .dots, .close)::after {
 		border       : .16em solid currentColor;
 		border-bottom: 0;
 		border-left  : 0;
 		height       : .7em;
 		transform    : rotate(135deg) translate(-.1em, .1em);
 		width        : .7em;
+	}
+
+	&.thin::after {
+		border-width: .06em;
 	}
 
 	&.prev::after {
@@ -84,7 +95,7 @@
 		rotate: 270deg;
 	}
 
-	&:is(.menu, .close, .dots) {
+	&:is(.menu, .dots, .close) {
 
 		&::before,
 		&::after {
@@ -93,18 +104,17 @@
 			border          : 0;
 			border-radius   : .12em;
 			box-shadow      : none;
-			height          : 1.2em;
 			margin          : auto;
 			width           : .12em;
 		}
 
 		&::before {
-			order    : 1;
-			transform: rotate(45deg);
+			order: 1;
 		}
 
-		&::after {
-			transform: rotate(-45deg);
+		&.thin::before,
+		&.thin::after {
+			width: .06em;
 		}
 	}
 
@@ -128,6 +138,36 @@
 		&::after {
 			height: .18em;
 			width : .18em;
+		}
+
+		&.thin::before,
+		&.thin::after {
+			height: .12em;
+			width : .12em;
+		}
+	}
+
+	&.close {
+
+		&::before,
+		&::after {
+			height: 1.2em;
+			width : .12em;
+		}
+
+		&.thin::before,
+		&.thin::after {
+			height: 1.2em;
+			width : .06em;
+		}
+
+		&::before {
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			transform : rotate(-45deg);
+			box-shadow: none;
 		}
 	}
 }

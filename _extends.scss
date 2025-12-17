@@ -15,25 +15,19 @@
 	font-family     : inherit;
 	justify-content : center;
 	gap             : 1em;
-	min-height      : 2.32em;
-	min-width       : 2.3em;
+	min-height      : var(--comfort);
+	min-width       : var(--comfort);
 	outline         : 0 solid rgb(from var(--ui-accent) r g b / 0.5);
 	outline-offset  : 2px;
-	padding-block   : .3em;
-	padding-inline  : 1.1em;
+	padding-block   : var(--comfort-py);
+	padding-inline  : var(--comfort-px);
 	position        : relative;
 	text-decoration : none;
 	transition      : 
 		opacity .1s ease-in-out,
-		color .1s ease-in-out,
 		background-color .1s ease-in-out,
 		border-color .1s ease-in-out;
 	vertical-align  : middle;
-}
-
-%ui-roomy {
-	min-height: var(--roomy);
-	min-width : var(--roomy);
 }
 
 %ui-border {

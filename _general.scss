@@ -57,18 +57,6 @@
 	display    : inline-block
 }
 
-.inherit-border {
-	border: inherit
-}
-
-.inherit-bg {
-	background: inherit
-}
-
-.inherit-color {
-	color: inherit
-}
-
 .snug {
 	translate: -1em -.7em
 }
@@ -151,6 +139,10 @@
 	background: none;
 }
 
+.no-border {
+	border-color: transparent;
+}
+
 .no-color {
 	color: transparent;
 }
@@ -164,6 +156,10 @@
 }
 
 .no-transition {
+	--speed: 0s;
+	transition: none;
+}
+.no-transition-inner * {
 	--speed: 0s;
 	transition: none;
 }
@@ -185,9 +181,3 @@
 .no-hyphens {
 	hyphens: none;
 }
-
-// .bbb {
-// 	@extend .icon;
-// 	@extend .o\:rotate;
-// 	@extend .xl;
-// }

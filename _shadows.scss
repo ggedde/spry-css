@@ -1,0 +1,50 @@
+@use "variables";
+@use "sass:meta";
+/*!
+* Spry Shadows
+*/
+
+
+
+@mixin shadow-styles($prefix, $noDotPrefix) {
+
+	[class^="#{$noDotPrefix}shadow-"],
+	[class*=" #{$noDotPrefix}shadow-"],
+	#{$prefix}shadow {
+		box-shadow: calc(.5em*var(--shadow)) calc(.75em * var(--shadow)) calc(1.75em * var(--shadow)) rgb(from var(--ui-shadow) r g b / var(--shadow-a, .2));
+	}
+
+	@each $i in variables.$percentages {
+		#{$prefix}shadow\/#{$i} {
+			--shadow-a: #{calc($i / 100)};
+		}
+	}
+
+	@for $i from 0 through 5 {
+		#{$prefix}shadow-#{$i} {
+			--shadow: #{calc($i / 10)};
+		}
+	}
+
+	#{$prefix}no-shadow {
+		box-shadow: none;
+	}
+}
+
+@include shadow-styles('.', '');
+
+@if meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
+	@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+		@if meta.global-variable-exists('useMediaQueries', variables) and variables.$useMediaQueries {
+			@media screen and (min-width: #{$breakpoint_width}) {
+				@include shadow-styles('.#{$breakpoint}\\:', '#{$breakpoint}\\:');
+			}
+		}
+
+		@if meta.global-variable-exists('useContainerQueries', variables) and variables.$useContainerQueries {
+			@container (min-width: #{$breakpoint_width}) {
+				@include shadow-styles('.\\@#{$breakpoint}\\:', '\\@#{$breakpoint}\\:');
+			}
+		}
+	}
+}

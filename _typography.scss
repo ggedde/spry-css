@@ -46,12 +46,16 @@ cite, dfn {
     opacity: .75;
 }
 
-code {
+code,
+.code {
     font-family: monospace;
-	text-align: left;
-	white-space: pre;
-    tab-size: 4;
     hyphens: none;
+}
+
+code {
+    white-space: pre;
+	text-align: left;
+    tab-size: 4;
 }
 
 @for $i from 1 through 9 {

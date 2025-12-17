@@ -14,27 +14,26 @@
 	position        : relative;
 	transition      : none;
 
-	&:has(>img) {
-		overflow: hidden;
-	}
+	// &:has(>img) {
+	// 	overflow: hidden;
+	// }
 
-	>header {
+	>:where(header) {
 		padding-inline: 1em;
-		padding-right: .5em;
 	}
 
-	>footer {
+	>:where(footer) {
 		padding-inline: 1em;
 		margin-top: auto;
 	}
 
 	&.outline {
 
-		>header {
+		>:where(header) {
 			border-bottom: inherit;
 		}
 
-		>footer {
+		>:where(footer) {
 			border-top: inherit;
 		}
 	}
@@ -47,12 +46,14 @@
 	>:where(header, footer) {
 		@extend %ui;
 		@extend %ui-color;
-		@extend %ui-roomy;
 		background-color: hsl(from var(--ui-color) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
 		display         : flex;
 		justify-content : space-between;
 		align-items     : center;
 		transition      : none;
+		// --comfort       : var(--roomy);
+		min-height      : var(--roomy);
+		min-width       : var(--roomy);
 
 		>* {
 			@extend %ui-color;

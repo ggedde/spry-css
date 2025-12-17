@@ -11,45 +11,81 @@ table {
 	width          : 100%;
 	border-collapse: collapse;
 
-	td,
-	th {
-		padding   : 1em;
-		text-align: left;
+	&:has(> thead.sticky) {
+		border-collapse: separate;
+		border-spacing: 0;
 	}
 
-	td {
-		border-top: 1px solid hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, .5));
-		vertical-align: top;
+	td,
+	th {
+		text-align: left;
+		vertical-align: middle;
 	}
 }
 
+:where(table td, table th){
+	padding: calc(var(--comfort-py) * 3) var(--comfort-px);
+}
+
+:where(table td, table th){
+	border-top: 1px solid hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, .5));
+}
+
+:where(table):not(:has(> tbody:nth-of-type(2))) :where(tr:first-child td, table tr:first-child th, tbody:first-child) {
+	border-top-width: 0;
+}
+
+:where(table tr:last-child th) {
+	border-bottom: 2px solid hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, .5));
+}
+
 thead {
-	box-shadow: 0 2px 0 hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
 	color: var(--ui-text);
-	&.sticky {
-		top: -1px;
-	}
 
 	th {
 		font-weight: 500;
 	}
 }
 
-tbody {
+tbody td {
 	--bdr-a: .5;
+
+	> * {
+		--bdr-a: 1;
+	}
 }
 
-.striped tbody tr:nth-child(even),
-.striped-expand tbody tr:nth-child(4n -1),
-.striped-expand tbody tr:nth-child(4n -1) + tr {
+thead {
+	--bdr-a: .75;
+
+	th > *, td > * {
+		--bdr-a: 1;
+	}
+}
+
+:where(.striped):not(:has(> tbody:nth-of-type(2))) tbody tr:nth-child(even),
+:where(.striped):has(> tbody:nth-of-type(2)) tbody:nth-child(odd) {
+	background-color: rgb(from var(--ui-color) r g b / .05);
+}
+
+:where(.h\:striped):not(:has(> tbody:nth-of-type(2))) tbody tr:hover,
+:where(.h\:striped):has(> tbody:nth-of-type(2)) tbody:hover {
 	background-color: rgb(from var(--ui-color) r g b / .15);
 }
 
-.h\:striped tbody tr:hover,
-.h\:striped-expand tbody tr:nth-child(odd):hover,
-.h\:striped-expand tbody tr:nth-child(odd):hover + tr {
-	background-color: rgb(from var(--ui-color) r g b / .3);
-}
+// .striped tbody:nth-child(odd),
+// .striped tbody tr:nth-child(odd),
+// .striped-expand tbody tr:nth-child(4n -1),
+// .striped-expand tbody tr:nth-child(4n -1) + tr {
+// 	background-color: rgb(from var(--ui-color) r g b / .15);
+// }
+
+// .h\:striped tbody:nth-child(odd) tr:hover,
+// .h\:striped tbody tr:hover,
+// .h\:striped-expand tbody tr:nth-child(even):hover,
+// .h\:striped-expand tbody tr:nth-child(even):hover + tr {
+// 	background-color: rgb(from var(--ui-color) r g b / .3);
+// }
 
 
 @mixin table-responsive-styles($prefix) {
