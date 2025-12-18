@@ -62,6 +62,7 @@
                                 <li><a href="#styles.opacity">Opacity</a></li>
                                 <li><a href="#styles.patterns">Patterns</a></li>
                                 <li><a href="#styles.radius">Radius</a></li>
+                                <li><a href="#styles.scale">Scale</a></li>
                                 <li><a href="#styles.shadows">Shadows</a></li>
                                 <li><a href="#styles.themes">Themes</a></li>
                                 <li><a href="#styles.typography">Typography</a></li>
@@ -225,9 +226,9 @@
                     <figcaption>* Note: you may need to change the path to match your project's node_modules folder</figcaption>
                 </figure>
 
-                <div class="alert warning outline border/50 mt-4 py-3">
-                    SpryCSS uses <a target="_blank" href="https://sass-lang.com/documentation/at-rules/use"><code class="color-primary">@use</code></a> instead of <a target="_blank" href="https://sass-lang.com/blog/import-is-deprecated"><code class="color-primary">@import</code></a> as @import is deprecated.
-                    <p class="mt-3">
+                <div class="alert column g-3 start warning outline border/50 mt-4 py-3">
+                    <p>SpryCSS uses <a target="_blank" href="https://sass-lang.com/documentation/at-rules/use"><code class="color-primary">@use</code></a> instead of <a target="_blank" href="https://sass-lang.com/blog/import-is-deprecated"><code class="color-primary">@import</code></a> as @import is deprecated.</p>
+                    <p>
                         <span class="color-theme color/80">For more details see:</span><br>
                         <a target="_blank" href="https://sass-lang.com/documentation/at-rules/use">https://sass-lang.com/documentation/at-rules/use</a><br>
                         <a target="_blank" href="https://sass-lang.com/blog/import-is-deprecated">https://sass-lang.com/blog/import-is-deprecated</a>
@@ -294,6 +295,9 @@
 
                 <h4>Compatibility</h4>
                 <p>SpryCSS uses modern css properties and native css nesting which is supported by all major browsers since April 2024</p>
+                <p class="alert warning outline border/40">
+                    If you need support for older browsers, then SpryCSS might not be the best choice for you.
+                </p>
 
             </section>
 
@@ -440,49 +444,39 @@
                                 // lg: 2.25em,
                             ),
 
-                            // Specify each theme with their default theme colors.
-                            // Adding Themes will increase bundle size so add cautiously.
+                            // Specify each theme with their ui theme colors.
+                            // Use css light-dark() function to specify the colors for light and dark schemes.
                             $themes: (
-                                default: (
-                                    scheme: dark,
-                                    accent: light-dark(#555, #ccc),
-                                    border: light-dark(#ccc, #444),
-                                    color : light-dark(#555, #ccc),
-                                    input : light-dark(#888, #888),
-                                    bg    : light-dark(#fff, #111),
-                                    ui    : light-dark(#ddd, #333),
-                                ),
-                                // my-custom-theme: (
-                                //     scheme: light,
-                                //     accent: rgb(226, 14, 194),
-                                //     border: #2307f6,
-                                //     color : #555,
-                                //     input : #888,
-                                //     bg    : #cbf0da,
-                                //     ui    : #b6c3c0,
-                                // )
-                            ),
+                                scheme: (default: light dark),
+                                accent: (default: light-dark(#555, #ccc)),
+                                border: (default: light-dark(#ccc, #444)),
+                                color : (default: light-dark(#555, #ccc)),
+                                input : (default: light-dark(#aaa, #666)),
+                                bg    : (default: light-dark(#fff, #111)),
+                                ui    : (default: light-dark(#ddd, #333)),
+                            );
 
                             // Specify each Color and their relation to each theme.
                             // Adding colors will increase bundle size so add cautiously.
                             // Use css light-dark() function to specify the colors for light and dark schemes.
                             // See: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark
                             $colors: (
+                                primary   : (default: light-dark(#18d, #09d)),
+                                secondary : (default: light-dark(#a4b, #b5c)),
+                                success   : (default: light-dark(#283, #0a0)),
+                                warning   : (default: light-dark(#c70, #e90)),
+                                error     : (default: light-dark(#d00, #f20)),
                                 contrast  : (default: light-dark(#333, #eee)),
                                 faint     : (default: light-dark(#eee, #333)),
-                                stark     : (default: light-dark(#fff, #000)),
+                                stark     : (default: light-dark(#000, #fff)),
                                 surface   : (default: light-dark(#eee, #000)),
+                                base      : (default: light-dark(#fff, #000)),
                                 black     : (default: #000),
                                 dark      : (default: #333),
                                 gray      : (default: #888),
                                 light     : (default: #eee),
                                 white     : (default: #fff),
-                                primary   : (default: #18d),
-                                secondary : (default: #96c),
-                                success   : (default: #0a0),
-                                warning   : (default: #e90),
-                                error     : (default: #e20),
-                            ),
+                            );
 
                             // Specify each tag type like &lt;h3&gt; etc. Each type will get a corresponding class added. Ex. .h3
                             $types: (
@@ -918,13 +912,16 @@
                     <a href="#styles.colors">Colors</a>
                 </h2>
 
-                <dfn>SCSS Variable</dfn>
+                <h3><a id="styles.colors.usage" href="#styles.colors.usage">Usage</a></h3>
+                <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
+                    &lt;div class="bg-primary color-light"&gt;
+                        Primary Color Background and Light Text
+                    &lt;/div&gt;
+                </code>
+
+                <h3 class="mt-4"><a id="styles.colors.scss" href="#styles.colors.scss">SCSS Variable</a></h3>
                 <figure class="relative">
                     <code class="language-scss block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
-                        // Specify each color used in color-, bg-, border-, glow-, and in accents.
-                        // Apply each color with ({theme}: {color_value}, {theme}: {color_value}, ...),
-                        // Use light-dark() to specify the colors for light and dark schemes.
-                        // If not using light-dark() then the color will be the same for both schemes.
                         $colors: (
                             primary   : (default: light-dark(#18d, #09d)),
                             secondary : (default: light-dark(#a4b, #b5c)),
@@ -944,32 +941,37 @@
                         )
                     </code>
                     <figcaption>
-                        * You can add as many colors as you want, but each color will be added to all classes above. If you
-                        only need it for a small thing then it would be better to create a custom variable for it.
+                        * You can add as many colors as you want, but adding colors will increase bundle size so add cautiously.
                     </figcaption>
                 </figure>
 
-                <div class="bg-gray bg/10 b-1 border-gray border/30 r-3 p-3 shadow-1">
-                    Layer 1
-                    <div class="inherit">
-                        Layer 2
-                        <div class="inherit">
-                            Layer 3
-                            <div class="inherit">
-                                Layer 4
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h4 class="mt-3">Color Values</h4>
-                <p>Each color can have different values depending on the theme being applied. If the color is missing a value for the current theme, then it will fallback to the default theme <code class="color-primary">light</code>.</p>
-
-                <p class="note">Overridable CSS Variables</p>
+                <h3 class="mt-4"><a id="styles.colors.css" href="#styles.colors.css">CSS Variables</a></h3>
+                <p>These are generated from the SCSS Variables and are used to set the colors for the components.</p>
                 <figure class="relative">
                     <code class="language-scss block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
                         :root {
-                            --{color}: {new_color};
+                            --theme-scheme: light dark;
+                            --theme-accent: light-dark(#555,#ccc);
+                            --theme-border: light-dark(#ccc,#444);
+                            --theme-color: light-dark(#555,#ccc);
+                            --theme-input: light-dark(#aaa,#666);
+                            --theme-bg: light-dark(#fff,#111);
+                            --theme-ui: light-dark(#ddd,#333);
+                            --primary: light-dark(#18d,#09d);
+                            --secondary: light-dark(#a4b,#b5c);
+                            --success: light-dark(#283,#0a0);
+                            --warning: light-dark(#c70,#e90);
+                            --error: light-dark(#d00,#f20);
+                            --contrast: light-dark(#333,#eee);
+                            --faint: light-dark(#eee,#333);
+                            --stark: light-dark(#000,#fff);
+                            --surface: light-dark(#eee,#000);
+                            --base: light-dark(#fff,#000);
+                            --black: #000;
+                            --dark: #333;
+                            --gray: #888;
+                            --light: #eee;
+                            --white: #fff
                         }
                     </code>
                     <figcaption>* These values can be overridden, but for adding new values it is best to do that with a pre-processor in SCSS.</figcaption>
@@ -979,8 +981,7 @@
                     <table class="@md:responsive my-4">
                         <thead>
                             <tr>
-                                <th class="md:w-200 h4">Classes</th>
-                                <th></th>
+                                <th colspan="2" class="h3 pl-0"><a id="styles.colors.classes" href="#styles.colors.classes" class="inherit-color">Classes</a></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1005,6 +1006,10 @@
                                 <td>Set background color on Hover</td>
                             </tr>
                             <tr>
+                                <td class="pl-2"><code class="color-primary">bg-to-{color}</code></td>
+                                <td>Set background to gradient color</td>
+                            </tr>
+                            <tr>
                                 <td class="pl-2"><code class="color-primary">border-{color}</code></td>
                                 <td>Set border color</td>
                             </tr>
@@ -1015,6 +1020,10 @@
                             <tr>
                                 <td class="pl-2"><code class="color-primary">glow-{color}</code></td>
                                 <td>Set glow color</td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-primary">shadow-{color}</code></td>
+                                <td>Set shadow color</td>
                             </tr>
                             <tr>
                                 <td class="pl-2"><code class="color-primary">links-{color}</code></td>
@@ -1028,7 +1037,7 @@
                     </table>
                 </div>
 
-                <article id="styles.colors.text" class="card show-code" data-title="Text Colors">
+                <article id="styles.colors.example.text" class="card show-code" data-title="Text Colors">
 					<div class="code-content relative p-3 md:p-4">
                         <p class="color-gray">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                         <p class="color-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
@@ -1038,7 +1047,7 @@
                     </div>
 			    </article>
 
-                <article class="card show-code" data-title="Hover Text Colors">
+                <article id="styles.colors.example.hover" class="card show-code" data-title="Hover Text Colors">
 					<div class="code-content relative p-3 md:p-4">
                         <a class="color-warning h:color-success">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a><br>
                         <a class="h:color-gray">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a><br>
@@ -1046,35 +1055,40 @@
                     </div>
 			    </article>
 
-                <article class="card show-code" data-title="Change Child Link and Link Hover Colors">
+                <article id="styles.colors.example.links" class="card show-code" data-title="Change Child Link and Link Hover Colors">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="links-gray h:links-success column g-1">
                             <a>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
-                            <a class="button primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                             <a class="color-error h:color-primary">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
                         </div>
                     </div>
 			    </article>
     
-                <article class="card show-code" data-title="Change Background and Text Color">
+                <article id="styles.colors.example.backgrounds" class="card show-code" data-title="Change Background and Text Color" data-footer-note="See &lt;a href='#styles.backgrounds'&gt;Backgrounds&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
                         <p class="bg-primary color-light p-2 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                     </div>
 			    </article>
+
+                <article id="styles.colors.example.gradients" class="card show-code" data-title="Gradients" data-footer-note="See &lt;a href='#styles.gradients'&gt;Gradients&lt;/a&gt; for more variations">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="bg-primary bg-to-success p-2 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</div>
+                    </div>
+			    </article>
     
-                <article class="card show-code" data-title="Border Colors">
+                <article id="styles.colors.example.borders" class="card show-code" data-title="Border Colors" data-footer-note="See &lt;a href='#styles.borders'&gt;Borders&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
                         <p class="border-primary b-1 r-2 p-2 px-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
                     </div>
 			    </article>
     
-                <article class="card show-code" data-title="Button Colors">
+                <article id="styles.colors.example.buttons" class="card show-code" data-title="Button Colors" data-footer-note="See &lt;a href='#components.buttons'&gt;Buttons&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
                         <button class="primary">Lorem Ipsum</button>
                     </div>
 			    </article>
     
-                <article class="card show-code" data-title="Accent Colors">
+                <article id="styles.colors.example.accents" class="card show-code" data-title="Accent Colors">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="primary p-2 mt-1 b-1">
                             <button class="mt-2">Lorem Ipsum</button>
@@ -1095,6 +1109,44 @@
                     </div>
 			    </article>
 
+                <article id="styles.colors.example.shades" class="card show-code" data-title="Shades" data-note="These colors act almost like opposite colors and invert nicely with light and dark scheme transitions.">
+					<div class="code-content relative p-3 md:p-4">
+
+                        <h5>Contrast and Faint</h5>
+                        <div class="row cols-1 g-3 p-3 b-1 r-2">
+                            <p class="bg-faint color-contrast p-3">Faint Background with Contrast Text</p>
+                            <button class="contrast">Contrast Button</button>
+                            <button class="faint">Faint Button</button>
+                        </div>
+
+                        <h5>Base, Surface and Stark</h5>
+                        <div class="row cols-1 g-3 p-3 b-1 r-2">
+                            <p class="bg-base color-stark p-3">Base Background with Stark Text</p>
+                            <p class="bg-surface color-stark p-3">Surface Background with Stark Text</p>
+                            <button class="base">Base Button</button>
+                            <button class="surface">Surface Button</button>
+                            <button class="stark">Stark Button</button>
+                        </div>
+                    </div>
+                </article>
+                
+                <article id="styles.colors.example.layers" class="card show-code" data-title="Inherited Layers">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="bg-gray bg/10 b-1 border-gray border/30 r-3 p-3 shadow-1">
+                            Layer 1
+                            <div class="inherit">
+                                Layer 2
+                                <div class="inherit">
+                                    Layer 3
+                                    <div class="inherit">
+                                        Layer 4
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
             </section>
 
             <!-- GLOW -->
@@ -1104,10 +1156,10 @@
                     <a href="#styles.glow">Glow</a>
                 </h2>
 
-                <h3><a id="styles.backgrounds.usage" href="#styles.backgrounds.usage">Usage</a></h3>
+                <h3><a id="styles.glow.usage" href="#styles.glow.usage">Usage</a></h3>
                 <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
-                    &lt;div class="bg-primary bg+2 bg/50"&gt;
-                        Primary Color Background Plus 2 Lightness and 50% Alpha
+                    &lt;div class="glow-primary"&gt;
+                        Primary Color Glow
                     &lt;/div&gt;
                 </code>
 
@@ -1115,7 +1167,7 @@
                     <table class="@md:responsive">
                         <thead>
                             <tr>
-                                <th colspan="2" class="h3 pl-0"><a id="styles.backgrounds.classes" href="#styles.backgrounds.classes" class="inherit-color">Classes</a></th>
+                                <th colspan="2" class="h3 pl-0"><a id="styles.glow.classes" href="#styles.glow.classes" class="inherit-color">Classes</a></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1554,6 +1606,107 @@
     
             </section>
 
+            <!-- SCALE -->
+            <section id="styles.scale" class="inherit-bg py-0 pb-4">
+                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                    <svg class="icon mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,3H18V18H3V3M19,19H21V21H19V19M19,16H21V18H19V16M19,13H21V15H19V13M19,10H21V12H19V10M19,7H21V9H19V7M16,19H18V21H16V19M13,19H15V21H13V19M10,19H12V21H10V19M7,19H9V21H7V19Z" /></svg>
+                    <a href="#styles.scale">Scale</a>
+                </h2>
+                
+                <h3><a id="styles.scale.usage" href="#styles.scale.usage">Usage</a></h3>
+                <code class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
+                    &lt;div class="bg-faint b-1 s+2"&gt;
+                        Scale + 2
+                    &lt;/div&gt;
+                </code>
+
+                <div class="@container mt-4">
+                    <table class="@md:responsive">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="h3 pl-0"><a id="styles.scale.classes" href="#styles.scale.classes" class="inherit-color">Classes</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-gray">{breakpoint}:<span class="color-primary"><code class="color-primary">s+{n}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Increase Scale by {n}.</h5>
+                                        <p><code class="color-primary">{n}</code> <span class="note">Values are 1-5.</span></p>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-gray">{breakpoint}:<span class="color-primary"><code class="color-primary">s-{n}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Decrease Scale by {n}.</h5>
+                                        <p><code class="color-primary">{n}</code> <span class="note">Values are 1-5.</span></p>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-gray">{breakpoint}:<span class="color-primary"><code class="color-primary">h:s+{n}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Increase Scale by {n} on hover.</h5>
+                                        <p><code class="color-primary">{n}</code> <span class="note">Values are 1-5.</span></p>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-gray">{breakpoint}:<span class="color-primary"><code class="color-primary">h:s-{n}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Decrease Scale by {n} on hover.</h5>
+                                        <p><code class="color-primary">{n}</code> <span class="note">Values are 1-5.</span></p>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="mt-3"><a id="styles.scale.examples" href="#styles.scale.examples">Examples</a></h3>
+
+                <article id="styles.scale.example.basic" class="card show-code" data-title="Basic Scale">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="bg-faint b-1 s+2 p-4">
+                            Scale + 2
+                        </div>
+                    </div>
+                </article>
+
+                <article id="styles.scale.example.responsive" class="card show-code" data-title="Decrease Scale on Small Screens">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="@container">
+                            <div class="bg-faint b-1 s-3 @md:s+0 p-4">
+                                Scale + 2
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-resize-handle"></div>
+                </article>
+
+                <article id="styles.scale.example.hover" class="card show-code" data-title="Increase Scale on Hover">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="bg-faint b-1 h:s+2 transition p-4">
+                            Scale + 2 on hover
+                        </div>
+                    </div>
+                </article>
+
+                <article id="styles.scale.example.reset" class="card show-code" data-title="Scale to reset on Hover">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="bg-faint b-1 s-5 h:s+0 transition p-4">
+                            Reset on hover
+                        </div>
+                    </div>
+                </article>
+    
+            </section>
+
             <!-- SHADOWS -->
             <section id="styles.shadows" class="inherit-bg py-0 pb-4">
                 <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
@@ -1627,7 +1780,7 @@
 
                 <h3 class="mt-3"><a id="styles.shadows.examples" href="#styles.shadows.examples">Examples</a></h3>
 
-                <article id="styles.shadows.example.basic" class="card show-code" data-title="Basic Shadow">
+                <article id="styles.shadows.example.basic" class="card show-code" data-title="Basic Dark Shadow">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="bg-faint b-1 shadow p-4">
                             Shadow
@@ -1652,77 +1805,101 @@
                     <a href="#styles.themes">Themes</a>
                 </h2>
 
-                <div class="@container">
-                    <table class="@md:responsive mb-3">
+                <h5 class="max-w-700">
+                    SpryCSS only comes with 1 theme by default, but you can add your own themes in the SCSS Variables.<br>
+                    Custom themes will override the default theme settings and colors and will inherit from the default theme if not specified.
+                </h5>
+
+                <dfn>SCSS Variable</dfn>
+                <figure class="relative">
+                    <code class="language-scss block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
+                        // Specify each theme with their ui theme colors.
+                        // Use css light-dark() function to specify the colors for light and dark schemes.
+                        $themes: (
+                            scheme: (default: light dark,             my-custom-theme-name: light),
+                            accent: (default: light-dark(#555, #ccc), my-custom-theme-name: #f00),
+                            border: (default: light-dark(#ccc, #444)),
+                            color : (default: light-dark(#555, #ccc), my-custom-theme-name: #f00),
+                            input : (default: light-dark(#aaa, #666)),
+                            bg    : (default: light-dark(#fff, #111)),
+                            ui    : (default: light-dark(#ddd, #333)),
+                        );
+
+                        // Specify each Color and their relation to each theme.
+                        // Adding colors will increase bundle size so add cautiously.
+                        // Use css light-dark() function to specify the colors for light and dark schemes.
+                        // See: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark
+                        $colors: (
+                            primary   : (default: light-dark(#18d, #09d), my-custom-theme-name: #f00),
+                            secondary : (default: light-dark(#a4b, #b5c), my-custom-theme-name: #0f0),
+                            success   : (default: light-dark(#283, #0a0), my-custom-theme-name: #00f),
+                            warning   : (default: light-dark(#c70, #e90)),
+                            error     : (default: light-dark(#d00, #f20), my-custom-theme-name: #f00),
+                            contrast  : (default: light-dark(#333, #eee)),
+                            faint     : (default: light-dark(#eee, #333)),
+                            stark     : (default: light-dark(#000, #fff)),
+                            surface   : (default: light-dark(#eee, #000)),
+                            base      : (default: light-dark(#fff, #000)),
+                            black     : (default: #000),
+                            dark      : (default: #333),
+                            gray      : (default: #888),
+                            light     : (default: #eee),
+                            white     : (default: #fff),
+                        );
+                    </code>
+                </figure>
+
+                <div class="@container mt-4">
+                    <table class="@md:responsive">
                         <thead>
                             <tr>
-                                <th class="w-200 h5">Classes</th>
-                                <th></th>                            
+                                <th colspan="2" class="h3 pl-0"><a id="styles.themes.classes" href="#styles.themes.classes" class="inherit-color">Classes</a></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="pl-2"><code class="color-primary">.theme-{theme}</code></td>
-                                <td>Used to set the theme of the element and child elements.<br>SpryCSS comes with 2 themes: <code class="color-primary">dark</code> and <code class="color-primary">default</code> <span class="color-gray">(light)</span>.
-                                    <br><br>Feel free to add on your own themes 
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">.theme-{name}</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set Custom Theme.</h5>
+                                        <p class="note">This changes the entire element and child elements to the specified theme.</p>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">.scheme-light</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Force Light Scheme</h5>
+                                        <p class="note">This changes the entire element and child elements to light scheme.</p>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">.scheme-dark</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Force Dark Scheme</h5>
+                                        <p class="note">This changes the entire element and child elements to dark scheme.</p>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">.scheme-toggle</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Toggle Light/Dark Scheme based on user preference</h5>
+                                        <p class="note">This changes the entire element and child elements to the opposite of user's preferred scheme.</p>
+                                        <p class="alert plain warning note pl-0">
+                                            <svg class="icon" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
+                                            Only works if theme supports both light and dark schemes.
+                                        </p>
+                                    </p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
-                <article class="card show-code" data-title="Dark Theme">
-					<div class="code-content relative p-3 md:p-4">
-                        <div class="p-2 mt-1 b-1 primary theme-dark">
-                            <button class="mt-2">Lorem Ipsum</button>
-                            <button class="outline mt-2">Lorem Ipsum</button>
-                            <div class="mt-2">
-                                Inputs
-                            </div>
-                            <input type="text">
-                            <div class="my-2">
-                                <input type="checkbox" checked>
-                                <input type="checkbox">
-                            </div>
-                            <div class="my-2">
-                                <input type="radio" name="accent-radio" checked>
-                                <input type="radio" name="accent-radio">
-                            </div>
-                        </div>
-                    </div>
-			    </article>
-
-                <div class="@container">
-                    <table class="@md:responsive mb-3">
-                        <thead>
-                            <tr>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="pl-2"><code class="color-primary">text</code></td>
-                                <td>Color of the body text.<br>This will change depending on the theme being applied.</td>
-                            </tr>
-                            <tr>
-                                <td class="pl-2"><code class="color-primary">contrast</code></td>
-                                <td>Contrast Color.<br>This will change depending on the theme being applied.</td>
-                            </tr>
-                            <tr>
-                                <td class="pl-2"><code class="color-primary">faint</code></td>
-                                <td>Faint Color.<br>This will change depending on the theme being applied.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <article class="card show-code" data-title="Contrast and Faint Colors">
-					<div class="code-content relative p-3 md:p-4">
-                        <div class="color-contrast bg-faint p-2 mb-2">Contrast Text with Faint Background</div>
-                        <button class="contrast">Contrast Button</button>
-                        <button class="faint">Faint Button</button>
-                    </div>
-                </article>
     
             </section>
 
@@ -1867,13 +2044,6 @@
                     </cite>
                 </blockquote>
 
-                <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet.</p>
                 <p>Paragraph - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                     invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
                     duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor

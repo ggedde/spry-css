@@ -602,18 +602,16 @@ Layout Utility Classes - Ex. .md:text-right, etc
 	}
 
 	@for $i from 0 through 5 {
-		#{$prefix}s\/#{$i},
-		#{$prefix}h\:s\/#{$i}:hover,
-		#{$prefix}h\:s\/#{$i}:focus {
-			scale: #{calc($i / 10)};
+		#{$prefix}s-#{$i},
+		#{$prefix}h\:s-#{$i}:hover,
+		#{$prefix}h\:s-#{$i}:focus {
+			scale: #{calc(1 - ($i * .05))};
 		}
-	}
 
-	@for $i from 0 through 5 {
 		#{$prefix}s\+#{$i},
 		#{$prefix}h\:s\+#{$i}:hover,
 		#{$prefix}h\:s\+#{$i}:focus {
-			scale: #{calc($i / 10)+1};
+			scale: #{calc(1 + ($i * .05))};
 		}
 	}
 

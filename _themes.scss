@@ -10,34 +10,47 @@
 */
 
 $themeNames: ();
+$themeClassNames: ();
 @if meta.global-variable-exists('themes', variables) and variables.$themes {
-	@each $theme_name, $theme_values in variables.$themes {
-		$themeNames: list.append($themeNames, '.theme-#{$theme_name}', 'comma');
+	@each $theme_attribute_name, $theme_attribute_values in variables.$themes {
+		@each $theme_name, $theme_value in $theme_attribute_values {
+			@if not list.index($themeNames, $theme_name) {
+				$themeNames: list.append($themeNames, $theme_name, 'comma');
+				$themeClassNames: list.append($themeClassNames, '.theme-#{$theme_name}', 'comma');
+			}
+		}
+	}
+}
+
+@if meta.global-variable-exists('colors', variables) and variables.$colors {
+	@each $color_name, $color_theme_values in variables.$colors {
+		@each $theme_name, $color_theme_value in $color_theme_values {
+			@if not list.index($themeNames, $theme_name) {
+				$themeNames: list.append($themeNames, $theme_name, 'comma');
+				$themeClassNames: list.append($themeClassNames, '.theme-#{$theme_name}', 'comma');
+			}
+		}
+	}
+}
+
+@if list.length($themeNames) > 0 {
+	@each $theme_name in $themeNames {
 
 		$themeHandle: '.theme-#{$theme_name}';
-
-		@if list.index(variables.$themes, ($theme_name $theme_values)) == 1 {
+		@if list.index($themeNames, $theme_name) == 1 {
 			$themeHandle: string.insert($themeHandle, ':root,', 0);
-		}
-
-		@if list.length(variables.$themes) == 1 {
-			$themeHandle: ':root';	
 		}
 
 		#{$themeHandle} {
 
-			color-scheme: #{map.get($theme_values, 'scheme')};
-			--theme-accent: #{map.get($theme_values, 'accent')};
-			--theme-bg    : #{map.get($theme_values, 'bg')};
-			--theme-border: #{map.get($theme_values, 'border')};
-			--theme-ui    : #{map.get($theme_values, 'ui')};
-			--theme-input : #{map.get($theme_values, 'input')};
-			--theme-scheme: #{map.get($theme_values, 'scheme')};
-			--theme-color : #{map.get($theme_values, 'color')};
+			@if list.index($themeNames, $theme_name) == 1 {
+				color-scheme: var(--theme-scheme);
+			}
 
-			@if list.index(variables.$themes, ($theme_name $theme_values)) == 1 {
-				--layer-dir: -1;
-				--layer-lvl: 1;
+			@each $theme_attribute_name, $theme_attribute_values in variables.$themes {
+				@if map.get($theme_attribute_values, $theme_name) {
+					--theme-#{"" + $theme_attribute_name}: #{map.get($theme_attribute_values, $theme_name)};
+				}
 			}
 
 			@if meta.global-variable-exists('colors', variables) and variables.$colors {
@@ -49,9 +62,12 @@ $themeNames: ();
 			}
 		}
 	}
+}
 
-	@if $themeNames {
-		:root, :where(#{$themeNames}) {
+
+@if meta.global-variable-exists('themes', variables) and variables.$themes {
+	@if $themeClassNames {
+		:root, :where(#{$themeClassNames}) {
 			--ui-bg    : var(--theme-bg);
 			--ui-border: var(--theme-border);
 			--ui-color : var(--theme-ui);
@@ -61,11 +77,10 @@ $themeNames: ();
 			--ui-text  : hsl(from var(--theme-ui) 0 0 clamp(15%, calc((l - var(--invert))* -1000%), 98%) / var(--clr-a, 1));
 		}
 
-		:where(#{$themeNames}, [class*=scheme-]),
-		:where(#{$themeNames}).outline,
+		:where(#{$themeClassNames}, [class*=scheme-]),
+		:where(#{$themeClassNames}).outline,
 		select option,
 		.tooltip {
-			color-scheme    : var(--theme-scheme);
 			color           : hsl(from var(--theme-color) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 1));
 			background-color: hsl(from var(--theme-bg) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
 			border-color    : hsl(from var(--theme-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
@@ -75,30 +90,6 @@ $themeNames: ();
 
 $colorNames: ();
 @if meta.global-variable-exists('colors', variables) and variables.$colors {
-
-	// .color\/0,
-	// .h\:color\/0:hover {
-	// 	--clr-a: 0;
-	// }
-
-	// .bg\/0,
-	// .h\:bg\/0:hover {
-	// 	--bg-a: 0;
-	// }
-
-	// .bg-to\/0,
-	// .h\:bg-to\/0:hover {
-	// 	--bg-to-a: 0;
-	// }
-	
-	// .border\/0,
-	// .h\:border\/0:hover {
-	// 	--bdr-a: 0;
-	// }
-
-	// .glow\/0 {
-	// 	--glow-a: 0;
-	// }
 
 	@each $i in variables.$percentages {
 		.color\/#{$i},
@@ -358,15 +349,6 @@ $colorNames: ();
 		background-image: radial-gradient(circle,var(--bg1) 20%,var(--bg2) 115%);
 	}
 
-	// .layer {
-	// 	--layer-lvl: 1;
-	// 	--layer-bdr-lvl: 1;
-	// 	// --ui-bg: hsl(from var(--ui-bg) h s calc(l + (var(--layer-lvl) * var(--layer) * var(--layer-dir))) / var(--bg-a, 1));
-	// 	// --ui-border: var(--ui-bg);
-	// 	background-color: hsl(from var(--ui-bg) h s calc(l + (var(--layer-lvl) * var(--layer) * var(--layer-dir))) / var(--bg-a, 1));
-	// 	border-color: hsl(from var(--ui-bg) h s calc(l + (var(--layer-bdr-lvl) * (var(--layer) + 6) * var(--layer-dir))) / var(--bg-a, 1));
-	// }
-
 	.pattern-1 {
 		background: linear-gradient(calc(var(--bg-from) + 3deg),var(--bg1) 33%,var(--bg2) 33.5% 66.5%,var(--bg1) 67%) 0 / var(--pattern-size) var(--pattern-size);
 	}
@@ -380,49 +362,26 @@ $colorNames: ();
 	}
 }
 
-
-// .layer .layer {
-// 	--layer-lvl: 2;
-// 	--layer-bdr-lvl: 2;
-// 	.layer {
-// 		--layer-lvl: 3;
-// 		--layer-bdr-lvl: 2.5;
-// 		.layer {
-// 			--layer-lvl: 4;
-// 			--layer-bdr-lvl: 3;
-// 		}
-// 	}
-// }
-
 .scheme-toggle {
-	// --layer-dir: 1;
 	color-scheme: dark;
 	.scheme-toggle {
-		// --layer-dir: -1;
 		color-scheme: light;
 	}
 }
 
 @media (prefers-color-scheme: dark) {
-	// :root {
-	// 	--layer-dir: 1;
-	// }
 	.scheme-toggle {
-		// --layer-dir: -1;
 		color-scheme: light;
 		.scheme-toggle {
-			// --layer-dir: 1;
 			color-scheme: dark;
 		}
 	}
 }
 
 .scheme-light {
-	// --layer-dir: -1;
 	color-scheme: light;
 }
 
 .scheme-dark {
-	// --layer-dir: 1;
 	color-scheme: dark;
 }
