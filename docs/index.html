@@ -20,12 +20,12 @@
 
 <body>
     <div class="inherit-bg md:row block-start" style="gap: 0">
-        <div class="relative index-3" style="max-width: 210px;">
+        <div class="relative index-4" style="max-width: 210px;">
             <div class="flex block-center between fixed top w/100 r-0 lg bg-faint pl-2 bb-1 pr-2 glow-theme glow-2 glow/100 p-2">
                 <div class="md:open f:open flex block-center navigable">
                     <button tabindex="0" title="Toggle Menu" class="toggle o:no-pointer button link icon menu o:close md:none"></button>
                     <div class="collapse from-left">
-                        <nav style="max-width: 210px; height: calc(100vh - 3.50em);" class="list indicators open:down g-1 absolute left outer-bottom bg-theme border-alpha-30 auto p-3 pb-4 sm br-1 bt-1 shadow-2 md:no-shadow scrollspy" data-scrollspy-replace>
+                        <nav style="max-width: 210px; height: calc(100vh - 3.50em);" class="list indicators o:down g-1 absolute left outer-bottom bg-theme border-alpha-30 auto p-3 pb-4 sm br-1 bt-1 shadow-2 md:no-shadow scrollspy" data-scrollspy-replace>
                             <ul class="from-default md:sm">
                                 <li>
                                     <label tabindex="0" class="toggle button link pl-2 g-1">
@@ -75,7 +75,7 @@
                                 </li>
                                 <li>
                                     <label tabindex="0" class="toggle button link pl-2 g-1">
-                                        <svg class="icon sm mr-2" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12A10 10 0 0 0 12 22A10 10 0 0 0 22 12A10 10 0 0 0 12 2M12 4A8 8 0 0 1 20 12A8 8 0 0 1 12 20V4Z" /></svg>
+                                        <svg class="icon sm mr-2" viewBox="0 0 24 24"><path d="M21,9L17,5V8H10V10H17V13M7,11L3,15L7,19V16H14V14H7V11Z" /></svg>
                                         States
                                         <input class="hide" type="checkbox">
                                     </label>
@@ -176,7 +176,7 @@
 
             <!-- INSTALLATION -->
             <section id="installation" class="inherit-bg pt-0" style="max-width: 78em">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <a href="#installation" class="flex items-center">
                         <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M16.56,5.44L15.11,6.89C16.84,7.94 18,9.83 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12C6,9.83 7.16,7.94 8.88,6.88L7.44,5.44C5.36,6.88 4,9.28 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12C20,9.28 18.64,6.88 16.56,5.44M13,3H11V13H13" /></svg>
                         Installation
@@ -262,7 +262,7 @@
                     which works well with SpryCSS for additional functionality like Navigable, Observe, Parallax, ScrollSpy, Sliders, Toggles, Cookies, Hash, and Query.
                 </p>
                 <p>
-                    SpryCSS also comes with basic css only <a href="#components.sliders">Sliders</a> and <a href="#toggles">Toggles</a> that have limited functionality, but you can use SpryJS to extend them.
+                    SpryCSS also comes with basic css only <a href="#components.sliders">Sliders</a> and <a href="#states.toggles">Toggles</a> that have limited functionality, but you can use SpryJS to extend them.
                 </p>
 
                 <a class="button primary outline lg flex text-center md:inline-flex mt-4 px-4" target="_blank" href="https://ggedde.github.io/spry-js">
@@ -316,7 +316,7 @@
 
             <!-- CSS CONFIGURATION -->
             <section id="configuration.css" class="inherit-bg py-0 pb-5">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z" /></svg>
                     <a href="#configuration.css">CSS Configuration</a>
                 </h2>
@@ -415,7 +415,7 @@
 
             <!-- SCSS CONFIGURATION -->
             <section id="configuration.scss" class="inherit-bg py-0 pb-5">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z" /></svg>
                     <a href="#configuration.scss">SCSS Configuration</a>
                 </h2>
@@ -683,7 +683,7 @@
 
             <!-- BACKGROUNDS -->
             <section id="styles.backgrounds" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M19,11.5C19,11.5 17,13.67 17,15A2,2 0 0,0 19,17A2,2 0 0,0 21,15C21,13.67 19,11.5 19,11.5M5.21,10L10,5.21L14.79,10M16.56,8.94L7.62,0L6.21,1.41L8.59,3.79L3.44,8.94C2.85,9.5 2.85,10.47 3.44,11.06L8.94,16.56C9.23,16.85 9.62,17 10,17C10.38,17 10.77,16.85 11.06,16.56L16.56,11.06C17.15,10.47 17.15,9.5 16.56,8.94Z" /></svg>
                     <a href="#styles.backgrounds">Backgrounds</a>
                 </h2>
@@ -763,7 +763,7 @@
 
             <!-- BLUR -->
             <section id="styles.blur" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M14,8.5A1.5,1.5 0 0,0 12.5,10A1.5,1.5 0 0,0 14,11.5A1.5,1.5 0 0,0 15.5,10A1.5,1.5 0 0,0 14,8.5M14,12.5A1.5,1.5 0 0,0 12.5,14A1.5,1.5 0 0,0 14,15.5A1.5,1.5 0 0,0 15.5,14A1.5,1.5 0 0,0 14,12.5M10,17A1,1 0 0,0 9,18A1,1 0 0,0 10,19A1,1 0 0,0 11,18A1,1 0 0,0 10,17M10,8.5A1.5,1.5 0 0,0 8.5,10A1.5,1.5 0 0,0 10,11.5A1.5,1.5 0 0,0 11.5,10A1.5,1.5 0 0,0 10,8.5M14,20.5A0.5,0.5 0 0,0 13.5,21A0.5,0.5 0 0,0 14,21.5A0.5,0.5 0 0,0 14.5,21A0.5,0.5 0 0,0 14,20.5M14,17A1,1 0 0,0 13,18A1,1 0 0,0 14,19A1,1 0 0,0 15,18A1,1 0 0,0 14,17M21,13.5A0.5,0.5 0 0,0 20.5,14A0.5,0.5 0 0,0 21,14.5A0.5,0.5 0 0,0 21.5,14A0.5,0.5 0 0,0 21,13.5M18,5A1,1 0 0,0 17,6A1,1 0 0,0 18,7A1,1 0 0,0 19,6A1,1 0 0,0 18,5M18,9A1,1 0 0,0 17,10A1,1 0 0,0 18,11A1,1 0 0,0 19,10A1,1 0 0,0 18,9M18,17A1,1 0 0,0 17,18A1,1 0 0,0 18,19A1,1 0 0,0 19,18A1,1 0 0,0 18,17M18,13A1,1 0 0,0 17,14A1,1 0 0,0 18,15A1,1 0 0,0 19,14A1,1 0 0,0 18,13M10,12.5A1.5,1.5 0 0,0 8.5,14A1.5,1.5 0 0,0 10,15.5A1.5,1.5 0 0,0 11.5,14A1.5,1.5 0 0,0 10,12.5M10,7A1,1 0 0,0 11,6A1,1 0 0,0 10,5A1,1 0 0,0 9,6A1,1 0 0,0 10,7M10,3.5A0.5,0.5 0 0,0 10.5,3A0.5,0.5 0 0,0 10,2.5A0.5,0.5 0 0,0 9.5,3A0.5,0.5 0 0,0 10,3.5M10,20.5A0.5,0.5 0 0,0 9.5,21A0.5,0.5 0 0,0 10,21.5A0.5,0.5 0 0,0 10.5,21A0.5,0.5 0 0,0 10,20.5M3,13.5A0.5,0.5 0 0,0 2.5,14A0.5,0.5 0 0,0 3,14.5A0.5,0.5 0 0,0 3.5,14A0.5,0.5 0 0,0 3,13.5M14,3.5A0.5,0.5 0 0,0 14.5,3A0.5,0.5 0 0,0 14,2.5A0.5,0.5 0 0,0 13.5,3A0.5,0.5 0 0,0 14,3.5M14,7A1,1 0 0,0 15,6A1,1 0 0,0 14,5A1,1 0 0,0 13,6A1,1 0 0,0 14,7M21,10.5A0.5,0.5 0 0,0 21.5,10A0.5,0.5 0 0,0 21,9.5A0.5,0.5 0 0,0 20.5,10A0.5,0.5 0 0,0 21,10.5M6,5A1,1 0 0,0 5,6A1,1 0 0,0 6,7A1,1 0 0,0 7,6A1,1 0 0,0 6,5M3,9.5A0.5,0.5 0 0,0 2.5,10A0.5,0.5 0 0,0 3,10.5A0.5,0.5 0 0,0 3.5,10A0.5,0.5 0 0,0 3,9.5M6,9A1,1 0 0,0 5,10A1,1 0 0,0 6,11A1,1 0 0,0 7,10A1,1 0 0,0 6,9M6,17A1,1 0 0,0 5,18A1,1 0 0,0 6,19A1,1 0 0,0 7,18A1,1 0 0,0 6,17M6,13A1,1 0 0,0 5,14A1,1 0 0,0 6,15A1,1 0 0,0 7,14A1,1 0 0,0 6,13Z" /></svg>
                     <a href="#styles.blur">Blur</a>
                 </h2>
@@ -826,7 +826,7 @@
 
             <!-- BORDERS -->
             <section id="styles.borders" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M15,5H17V3H15M19,21H21V19H19M19,13H21V11H19M19,5H21V3H19M19,17H21V15H19M15,21H17V19H15M19,9H21V7H19M3,21H5V3H3M7,5H9V3H7M7,21H9V19H7M11,5H13V3H11M11,21H13V19H11V21Z" /></svg>
                     <a href="#styles.borders">Borders</a>
                 </h2>
@@ -920,7 +920,7 @@
 
             <!-- COLORS -->
             <section id="styles.colors" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M12 22A10 10 0 0 1 2 12 10 10 0 0 1 12 2c5.5 0 10 4 10 9a6 6 0 0 1-6 6h-1.8c-.3 0-.5.2-.5.5 0 .1.1.2.1.3.4.5.6 1.1.6 1.7.1 1.4-1 2.5-2.4 2.5m0-18a8 8 0 0 0-8 8 8 8 0 0 0 8 8c.3 0 .5-.2.5-.5 0-.2-.1-.3-.1-.4-.4-.5-.6-1-.6-1.6 0-1.4 1.1-2.5 2.5-2.5H16a4 4 0 0 0 4-4c0-3.9-3.6-7-8-7m-5.5 6c.8 0 1.5.7 1.5 1.5S7.3 13 6.5 13 5 12.3 5 11.5 5.7 10 6.5 10m3-4c.8 0 1.5.7 1.5 1.5S10.3 9 9.5 9 8 8.3 8 7.5 8.7 6 9.5 6m5 0c.8 0 1.5.7 1.5 1.5S15.3 9 14.5 9 13 8.3 13 7.5 13.7 6 14.5 6m3 4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5z" /></svg>
                     <a href="#styles.colors">Colors</a>
                 </h2>
@@ -1164,7 +1164,7 @@
 
             <!-- GLOW -->
             <section id="styles.glow" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M3.55 19.09L4.96 20.5L6.76 18.71L5.34 17.29M12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12C18 8.68 15.31 6 12 6M20 13H23V11H20M17.24 18.71L19.04 20.5L20.45 19.09L18.66 17.29M20.45 5L19.04 3.6L17.24 5.39L18.66 6.81M13 1H11V4H13M6.76 5.39L4.96 3.6L3.55 5L5.34 6.81L6.76 5.39M1 13H4V11H1M13 20H11V23H13" /></svg>
                     <a href="#styles.glow">Glow</a>
                 </h2>
@@ -1236,7 +1236,7 @@
 
             <!-- GRADIENTS -->
             <section id="styles.gradients" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M9 13V11H11V13M11 15V13H13V15M11 11V9H13V11M9 9V7H11V9M9 17V15H11V17M3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5M18 15V17H16V15M18 11V13H16V11M18 7V9H16V7M11 5V7H13V5H15V7H13V9H15V11H13V13H15V15H13V17H15V19H13V17H11V19H5V5Z" /></svg>
                     <a href="#styles.gradients">Gradients</a>
                 </h2>
@@ -1357,7 +1357,7 @@
 
             <!-- OPACITY -->
             <section id="styles.opacity" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M18 10V8H20V10H18M18 12V10H16V12H18M18 8V6H16V8H18M16 2.84V4H18C17.37 3.54 16.71 3.15 16 2.84M18 4V6H20C19.42 5.25 18.75 4.58 18 4M20 6V8H21.16C20.85 7.29 20.46 6.63 20 6M22 12C22 11.32 21.93 10.65 21.8 10H20V12H22M16 6V4H14V6H16M16 16H18V14H16V16M18 18H20L20 18V16H18V18M16 20H18L18 20V18H16V20M14 21.8C14.7 21.66 15.36 21.44 16 21.16V20H14V21.8M18 14H20V12H18V14M16 8H14V10H16V8M20 16H21.16C21.44 15.36 21.66 14.7 21.8 14H20V16M16 12H14V14H16V12M12 18V16H14V14H12V12H14V10H12V8H14V6H12V4H14V2.2C13.35 2.07 12.69 2 12 2C6.5 2 2 6.5 2 12S6.5 22 12 22V20H14V18H12M14 18H16V16H14V18Z" /></svg>
                     <a href="#styles.opacity">Opacity</a>
                 </h2>
@@ -1417,7 +1417,7 @@
 
             <!-- PATTERNS -->
             <section id="styles.patterns" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M2 2V22H22V2H2M20 12H16V16H20V20H16V16H12V20H8V16H4V12H8V8H4V4H8V8H12V4H16V8H20V12M16 8V12H12V8H16M12 12V16H8V12H12Z" /></svg>
                     <a href="#styles.patterns">Patterns</a>
                 </h2>
@@ -1534,7 +1534,7 @@
 
             <!-- RADIUS -->
             <section id="styles.radius" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M3 16C3 18.8 5.2 21 8 21H10V19H8C6.3 19 5 17.7 5 16V14H3V16M21 8C21 5.2 18.8 3 16 3H14V5H16C17.7 5 19 6.3 19 8V10H21V8M16 21C18.8 21 21 18.8 21 16V14H19V16C19 17.7 17.7 19 16 19H14V21H16M8 3C5.2 3 3 5.2 3 8V10H5V8C5 6.3 6.3 5 8 5H10V3H8Z" /></svg>
                     <a href="#styles.radius">Radius</a>
                 </h2>
@@ -1621,7 +1621,7 @@
 
             <!-- SCALE -->
             <section id="styles.scale" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,3H18V18H3V3M19,19H21V21H19V19M19,16H21V18H19V16M19,13H21V15H19V13M19,10H21V12H19V10M19,7H21V9H19V7M16,19H18V21H16V19M13,19H15V21H13V19M10,19H12V21H10V19M7,19H9V21H7V19Z" /></svg>
                     <a href="#styles.scale">Scale</a>
                 </h2>
@@ -1722,7 +1722,7 @@
 
             <!-- SHADOWS -->
             <section id="styles.shadows" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,3H18V18H3V3M19,19H21V21H19V19M19,16H21V18H19V16M19,13H21V15H19V13M19,10H21V12H19V10M19,7H21V9H19V7M16,19H18V21H16V19M13,19H15V21H13V19M10,19H12V21H10V19M7,19H9V21H7V19Z" /></svg>
                     <a href="#styles.shadows">Shadows</a>
                 </h2>
@@ -1813,7 +1813,7 @@
 
             <!-- THEMES -->
             <section id="styles.themes" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M22 22H10v-2h12v2M2 22v-2h7v2H2m16-4v-8h4v8h-4m0-15h4v6h-4V3M2 18V3h14v15H2m7-3.44a3 3 0 0 0 3-3c0-2-3-5.37-3-5.37s-3 3.37-3 5.37a3 3 0 0 0 3 3z" /></svg>
                     <a href="#styles.themes">Themes</a>
                 </h2>
@@ -1920,7 +1920,7 @@
 
             <!-- TYPOGRAPHY -->
             <section id="styles.typography" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M2 4v3h5v12h3V7h5V4H2m19 5h-9v3h3v7h3v-7h3V9z" /></svg>
                     <a href="#styles.typography">Typography</a>
                 </h2>
@@ -2071,11 +2071,11 @@
                 
             </section>
 
-            <!-- CHECKED UTILITIES -->
+            <!-- CHECKED -->
             <section id="states.checked" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><title>checkbox-outline</title><path d="M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,5V19H5V5H19M10,17L6,13L7.41,11.58L10,14.17L16.59,7.58L18,9" /></svg>
-                    <a href="#state.checked">Checked Classes</a>
+                    <a href="#states.checked">Checked</a>
                 </h2>
 
                 <h5>
@@ -2083,7 +2083,7 @@
                     <br>This allows you to swap labels or elements based on the state of a checked or unchecked sibling.
                 </h5>
 
-                <h3 class="mt-3"><a id="states.checked.usage" href="#state.checked.usage">Usage</a></h3>
+                <h3 class="mt-3"><a id="states.checked.usage" href="#states.checked.usage">Usage</a></h3>
                 <label class="my-2">
                     <input type="checkbox">
                     <span class="none c:revert">On</span>
@@ -2104,7 +2104,7 @@
                     <table class="@md:responsive mb-3">
                         <thead>
                             <tr>
-                                <th colspan="2" class="h3 pl-0"><a id="states.checked.classes" href="#state.checked.classes" class="inherit-color">Classes</a></th>
+                                <th colspan="2" class="h3 pl-0"><a id="states.checked.classes" href="#states.checked.classes" class="inherit-color">Classes</a></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -2130,13 +2130,19 @@
                                     <p>Only works on Icons that support the close icon.<br><cite>* See <a href="#components.icons">Icons</a> for the SpryCSS close icon.</cite></p>
                                 </td>
                             </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">c:</code><code class="color-primary">open</code></td>
+                                <td><h5>Opens a <code class="color-primary">.collapse</code> element</h5>
+                                    <p>This is the only checked class that works on a parent element to open a inner <code class="color-primary">.collapse</code> element. See <a href="#states.checked.example.menu">Menu with Checked Toggle</a> for more an example.</p>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <h3 class="mt-3"><a id="states.checked.examples" href="#state.checked.examples">Examples</a></h3>
+                <h3 class="mt-3"><a id="states.checked.examples" href="#states.checked.examples">Examples</a></h3>
 
-                <article id="states.checked.example1" class="card show-code" data-title="Checkboxes">
+                <article id="states.checked.example.checkboxes" class="card show-code" data-title="Checkboxes">
 					<div class="code-content relative p-3 md:p-4">
                         <label>
                             <input type="checkbox">
@@ -2156,7 +2162,7 @@
                     </div>
                 </article>
 
-                <article id="states.checked.example2" class="card show-code" data-title="Radios">
+                <article id="states.checked.example.radios" class="card show-code" data-title="Radios">
 					<div class="code-content relative p-3 md:p-4">
                         <label>
                             <input name="state-radio" type="radio">
@@ -2176,7 +2182,7 @@
                     </div>
                 </article>
 
-                <article id="states.checked.example3" class="card show-code" data-title="Label as Button">
+                <article id="states.checked.example.swap" class="card show-code" data-title="Swap Icons and Text">
 					<div class="code-content relative p-3 md:p-4">
                         <label class="toggle button">
                             <input type="checkbox">
@@ -2190,25 +2196,25 @@
                     </div>
                 </article>
 
-                <article id="states.checked.example4" class="card show-code" data-title="Toggle Icons as Labels">
+                <article id="states.checked.example.labels" class="card show-code" data-title="Toggle Icons as Labels">
 					<div class="code-content relative p-3 md:p-4">
-                        <label class="toggle button p-0">
+                        <label class="button p-0">
                             <input class="icon next c:rotate" type="checkbox">
                         </label>
 
-                        <label class="toggle button p-0">
+                        <label class="button p-0">
                             <input class="icon down c:flip" type="checkbox">
                         </label>
 
-                        <label class="toggle button p-0">
+                        <label class="button p-0">
                             <input class="icon dots c:close" type="checkbox">
                         </label>
 
-                        <label class="toggle button p-0">
+                        <label class="button p-0">
                             <input class="icon menu c:close" type="checkbox">
                         </label>
 
-                        <label class="toggle button">
+                        <label class="button">
                             Toggle
                             <svg class="icon lg c:flip" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             <input type="checkbox">
@@ -2216,12 +2222,32 @@
                     </div>
                 </article>
 
-                <article id="states.checked.example5" class="card show-code" data-title="Toggle Icons as Checkboxes">
+                <article id="states.checked.example.icons" class="card show-code" data-title="Toggle Icons as Checkboxes">
 					<div class="code-content relative p-3 md:p-4">
-                        <input class="toggle button icon next c:rotate" type="checkbox">
-                        <input class="toggle button icon down c:flip" type="checkbox">
-                        <input class="toggle button icon menu c:close" type="checkbox">
-                        <input class="toggle button icon dots c:close" type="checkbox">
+                        <input class="button icon next c:rotate" type="checkbox">
+                        <input class="button icon down c:flip" type="checkbox">
+                        <input class="button icon menu c:close" type="checkbox">
+                        <input class="button icon dots c:close" type="checkbox">
+                    </div>
+                </article>
+
+                <article id="states.checked.example.menu" class="card show-code mb-5" data-title="Menu on Checked" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="relative c:open">
+                            <label class="button link icon menu o:close">
+                                <input type="checkbox">
+                            </label>
+                            <div class="collapse from-top overlay clip-top">
+                                <nav class="list bg-faint w-content shadow p-1 rb-2">
+                                    <ul>
+                                        <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                        <li><a href="#">Link 1</a></li>
+                                        <li><a href="#">Link 2</a></li>
+                                        <li><a href="#">Link 3</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
                     </div>
                 </article>
 
@@ -2229,21 +2255,23 @@
 
             <!-- COLLAPSE -->
             <section id="states.collapse" class="inherit-bg py-0 pb-5 mb-5">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><title>arrow-collapse-vertical</title><path d="M4,12H20V14H4V12M4,9H20V11H4V9M16,4L12,8L8,4H11V1H13V4H16M8,19L12,15L16,19H13V22H11V19H8Z" /></svg>
-                    <a href="#state.collapse">Collapse</a>
+                    <a href="#states.collapse">Collapse</a>
                 </h2>
                 
-                <h5 class="max-w-700">
-                    You can collapse elements with the <code class="color-primary">collapse</code> or
-                    <code class="color-primary">collapse-inner</code> classes. You can open them with
-                    the <code class="color-primary">open</code> class or with the
-                    <code class="color-primary">h:open</code> class either on the collapse element
-                    or the collapse elements parent. You can also use <a href="#state.toggles">Toggles</a>
-                    to control Collapse elements.
+                <h5 class="text-balance">
+                    Elements can be made collapsible by applying the <code class="color-primary">collapse</code> class.
+                    Their visibility state is managed by the <code class="color-primary">open</code> class.
+                    Additionally, SpryCSS provides state utilities such as <a class="color-primary code" href="#states.checked">c:open</a>,
+                    <a class="color-primary code" href="#states.focus">f:open</a>, or <a class="color-primary code" href="#states.hover">h:open</a>,
+                    which can be applied directly to the collapsible element or its parent to control its open state.
+                    For interactive control, <a class="color-primary" href="#states.toggles">Toggles</a> can also be used.
                 </h5>
+                
+                <p class="color-warning">* Requires a single nested element</p>
 
-                <h5 class="mt-2">Components that can use collapse:</h5>
+                <h5 class="mt-4">Components that can use collapse:</h5>
                 <div class="row primary cols-auto g-1 mt-1 mb-3 content-start">
                     <a class="button pill outline border/60" href="#components.accordions">Accordions</a>
                     <a class="button pill outline border/60" href="#components.dropdowns">Dropdowns</a>
@@ -2264,7 +2292,7 @@
 
                 <figure class="relative">
                     <code class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
-                        &lt;!-- Collapse Element in the Open state --&gt;
+                        &lt;!-- Collapse Element default in the Open state --&gt;
                         &lt;div class="collapse open"&gt;
                             &lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.&lt;/p&gt;
                         &lt;/div&gt;
@@ -2273,8 +2301,8 @@
 
                 <figure class="relative">
                     <code class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
-                        &lt;!-- Collapse Element with multiple children with height auto --&gt;
-                        &lt;div class="collapse-inner"&gt;
+                        &lt;!-- Collapse Element with multiple children --&gt;
+                        &lt;div class="collapse"&gt;
                             &lt;div&gt;
                                 &lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.&lt;/p&gt;
                                 &lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.&lt;/p&gt;
@@ -2309,12 +2337,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="pl-2"><code class="color-gray">{breakpoint}:<span class="color-primary">collapse</span></code></td>
+                                <td class="pl-2 pt-4 start"><code class="color-gray">{breakpoint}:<span class="color-primary">collapse</span></code></td>
                                 <td>
-                                    Initiate the toggle element in the collapsed state and animates on max-height or close the element on breakpoints. Allows for multiple children which makes it good for &lt;ul&gt;. <span class="color-primary">open</span> always has priority, but if you use breakpoints you must match or beat with a breakpoint.
-                                    <br>
-                                    <div class="note color-gray mt-1">Can be used with breakpoints</div>
-                                    <div class="alert warning outline b-0 pl-0">*  This will be updated to use <a target="_blank" href="https://caniuse.com/?search=calc-size">calc-size(auto)</a> when browsers fully support it.</div>
+                                    <p>
+                                        Initiate the element in the collapsed state and animates height when opened.
+                                        <span class="color-primary">open</span> always has priority, but if you use breakpoints you must match or beat with a breakpoint.
+                                    </p>
+                                    <p class="color-warning">* Requires a single nested element</p>
+                                    <p class="color-warning">* This will be updated to use <a target="_blank" href="https://caniuse.com/?search=calc-size">calc-size(auto)</a> when browsers fully support it.</p>
                                 </td>
                             </tr>
                             <tr>
@@ -2322,20 +2352,29 @@
                                 <td>Opens the element at breakpoint</td>
                             </tr>
                             <tr>
-                                <td class="pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">h:open</code></code></td>
-                                <td>Opens the element on hover or focus-visible. Opens all children that have <code class="color-primary">collapse</code> or hidden nav items.</td>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">c:open</code></code></td>
+                                <td>
+                                    Opens the element when a sibling or toggle is or contains a checked element. Opens all children that have <code class="color-primary">collapse</code>.
+                                    See <a class="color-primary" href="#states.checked">Checked</a> for more information.
+                                </td>
                             </tr>
                             <tr>
                                 <td class="pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">f:open</code></code></td>
-                                <td>Opens the element on focus-within. Opens all children that have <code class="color-primary">collapse</code>.<br>* Also is dismissible without javascript.</td>
+                                <td>
+                                    Opens the element on focus-within. Opens all children that have <code class="color-primary">collapse</code>.<br>* Is dismissible without javascript.
+                                    See <a class="color-primary" href="#states.focus">Focus</a> for more information.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">h:open</code></code></td>
+                                <td>
+                                    Opens the element on hover or focus-visible. Opens all children that have <code class="color-primary">collapse</code> or hidden nav items.
+                                    See <a class="color-primary" href="#states.hover">Hover</a> for more information.
+                                </td>
                             </tr>
                             <tr>
                                 <td class="pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">overlay</code></code></td>
                                 <td>Overlays the element on top of the other content. This is an alias for using <code class="color-primary">relative</code> and <code class="color-primary">absolute</code> containers and adds a few other styles making it easy to use.</td>
-                            </tr>
-                            <tr>
-                                <td class="pl-2"><code class="color-gray">{breakpoint}:<code class="color-primary">hidden</code></code></td>
-                                <td>Adds <code class="color-primary">overflow: hidden</code> to hide unwanted padding, margins, borders, etc from taking space before open. Useful when adding animations with <code class="color-primary">from-{direction}</code>, etc</td>
                             </tr>
                             <tr>
                                 <td class="pl-2"><code class="color-gray">{breakpoint}:</code><code class="color-primary">from-default</code></td>
@@ -2377,7 +2416,7 @@
                     </table>
                 </div>
 
-                <article class="card show-code" data-title="Collapse with Toggle" data-footer-note="* See &lt;a href='#toggles'&gt;Toggles&lt;/a&gt; for more variations">
+                <article class="card show-code" data-title="Collapse with Toggle" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
                         <div>
                             <label class="button toggle"> <!-- Toggle-->
@@ -2398,7 +2437,7 @@
                                                 <span class="none o:revert ml-n2">- Inner Opened</span>
                                                 <input class="hide" type="checkbox">
                                             </label>
-                                            <div class="collapse from-left hidden"> <!-- Inner Content-->
+                                            <div class="collapse from-left"> <!-- Inner Content-->
                                                 <div>
                                                     <div class="b-2 p-3 mt-2">
                                                         <p class="mt-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
@@ -2414,7 +2453,7 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Collapse with Overlay and Focus Open" data-warning="Some browsers require tabindex to retain focus on buttons" data-footer-note="* See &lt;a href='#toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#accordions'&gt;Accordions&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+                <article class="card show-code" data-title="Collapse with Overlay and Focus Open" data-warning="Some browsers require tabindex to retain focus on buttons" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#accordions'&gt;Accordions&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
                         <span class="relative inline-block f:open">
                         
@@ -2497,11 +2536,364 @@
 
             </section>
 
+            <!-- FOCUS -->
+            <section id="states.focus" class="inherit-bg py-0 pb-4">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                    <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M19,19H15V21H19A2,2 0 0,0 21,19V15H19M19,3H15V5H19V9H21V5A2,2 0 0,0 19,3M5,5H9V3H5A2,2 0 0,0 3,5V9H5M5,15H3V19A2,2 0 0,0 5,21H9V19H5V15Z" /></svg>
+                    <a href="#states.focus">Focus</a>
+                </h2>
+
+                <h5>
+                    Focus State Classes apply to the siblings of an element. Like <code class="color-gray">:has(:focus, :focus-within) > .f:rotate</code>.
+                    <br>This allows you to swap labels or elements based on the focus state of an element or its siblings.
+                </h5>
+
+                <div class="alert warning outline">
+                    <p>Some browsers require <code class="color-primary">tabindex="0"</code> to retain focus on buttons and labels. So it is best to add it when using focus states.</p>
+                </div>
+
+                <h3 class="mt-3"><a id="states.focus.usage" href="#states.focus.usage">Usage</a></h3>
+                <button tabindex="0" class="f:rotate">
+                    Focus on Me
+                </button>
+
+                <figure class="relative mb-4">
+                    <code class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
+                        &lt;button tabindex="0" class="f:rotate"&gt;
+                            Focus on Me
+                        &lt;/button&gt;
+                    </code>
+                </figure>
+
+                <div class="@container">
+                    <table class="@md:responsive mb-3">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="h3 pl-0"><a id="states.focus.classes" href="#states.focus.classes" class="inherit-color">Classes</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">f:</code><code class="color-primary">none</code></td>
+                                <td><h5>Hide</h5><code class="note sm">display: none</code></td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">f:</code><code class="color-primary">revert</code></td>
+                                <td><h5>Revert</h5><code class="note sm">display: revert</code></td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">f:</code><code class="color-primary">flip</code></td>
+                                <td><h5>Flip</h5><code class="note sm">scale: -1</code></td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">f:</code><code class="color-primary">rotate</code></td>
+                                <td><h5>Rotate</h5><code class="note sm">rotate: 180deg</code></td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">f:</code><code class="color-primary">close</code></td>
+                                <td><h5>Close</h5>
+                                    <p>Only works on Icons that support the close icon.<br><cite>* See <a href="#components.icons">Icons</a> for the SpryCSS close icon.</cite></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">f:</code><code class="color-primary">open</code></td>
+                                <td><h5>Opens a <code class="color-primary">.collapse</code> element</h5></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="mt-3"><a id="states.focus.examples" href="#states.focus.examples">Examples</a></h3>
+
+                <article id="states.focus.example.animate" class="card show-code" data-title="Animate on Focus">
+					<div class="code-content relative p-3 md:p-4">
+                        <button tabindex="0" class="button circle icon next f:rotate"></button>
+                        <button tabindex="0" class="button circle icon down f:flip"></button>
+                        <button tabindex="0" class="button circle icon menu f:close"></button>
+                        <button tabindex="0" class="button circle icon dots f:close"></button>
+                    </div>
+                </article>
+
+                <article id="states.hover.example.action" class="card show-code" data-title="Show Action on Focus">
+					<div class="code-content relative p-3 md:p-4">
+                        <label tabindex="0" class="ui plain h5">Focus Me
+                            <button tabindex="0" class="xxs none f:revert">
+                                Do Action
+                            </button>
+                        </label>
+                    </div>
+                </article>
+
+                <article id="states.focus.example.menu" class="card show-code" data-title="Menu Open on Focus" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="relative f:open">
+                            <button tabindex="0" class="link icon menu"></button>
+                            <div class="collapse from-top overlay clip-top">
+                                <nav class="list bg-faint w-content shadow p-1 rb-2">
+                                    <ul>
+                                        <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                        <li><a href="#">Link 1</a></li>
+                                        <li><a href="#">Link 2</a></li>
+                                        <li><a href="#">Link 3</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="states.focus.example.menu" class="card show-code mb-5" data-title="Open on Focus with Close Support" data-note="Use &lt;code class='color-primary'&gt;o:no-pointer&lt;/code&gt; to allow the button to loose focus on second click." data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="relative f:open">
+                            <button tabindex="0" class="link icon menu o:close o:no-pointer"></button>
+                            <div class="collapse from-top overlay clip-top">
+                                <nav class="list bg-faint w-content shadow p-1 rb-2">
+                                    <ul>
+                                        <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                        <li><a href="#">Link 1</a></li>
+                                        <li><a href="#">Link 2</a></li>
+                                        <li><a href="#">Link 3</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- HOVER -->
+            <section id="states.hover" class="inherit-bg py-0 pb-4">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                    <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M13.64,21.97C13.14,22.21 12.54,22 12.31,21.5L10.13,16.76L7.62,18.78C7.45,18.92 7.24,19 7,19A1,1 0 0,1 6,18V3A1,1 0 0,1 7,2C7.24,2 7.47,2.09 7.64,2.23L7.65,2.22L19.14,11.86C19.57,12.22 19.62,12.85 19.27,13.27C19.12,13.45 18.91,13.57 18.7,13.61L15.54,14.23L17.74,18.96C18,19.46 17.76,20.05 17.26,20.28L13.64,21.97Z" /></svg>
+                    <a href="#states.hover">Hover</a>
+                </h2>
+
+                <h5>
+                    Hover State Classes apply to the siblings of an element. Like <code class="color-gray">:has(:hover, :focus, :focus-within) > .h:rotate</code>.
+                    <br>This allows you to swap labels or elements based on the hover state of an element or its siblings.
+                </h5>
+
+                <div class="alert warning outline">
+                    <p>Some browsers require <code class="color-primary">tabindex="0"</code> to retain focus on buttons and labels. So it is best to add it when using hover states if you want them to work on focus as well.</p>
+                </div>
+
+                <h3 class="mt-3"><a id="states.hover.usage" href="#states.hover.usage">Usage</a></h3>
+                <button tabindex="0" class="h:flip">
+                    Hover on Me
+                </button>
+
+                <figure class="relative mb-4">
+                    <code class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
+                        &lt;button tabindex="0" class="h:flip"&gt;
+                            Hover on Me
+                        &lt;/button&gt;
+                    </code>
+                </figure>
+
+                <div class="@container">
+                    <table class="@md:responsive mb-3">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="h3 pl-0"><a id="states.hover.classes" href="#states.hover.classes" class="inherit-color">Classes</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">h:</code><code class="color-primary">none</code></td>
+                                <td><h5>Hide</h5><code class="note sm">display: none</code></td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">h:</code><code class="color-primary">revert</code></td>
+                                <td><h5>Revert</h5><code class="note sm">display: revert</code></td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">h:</code><code class="color-primary">flip</code></td>
+                                <td><h5>Flip</h5><code class="note sm">scale: -1</code></td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">h:</code><code class="color-primary">rotate</code></td>
+                                <td><h5>Rotate</h5><code class="note sm">rotate: 180deg</code></td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">h:</code><code class="color-primary">close</code></td>
+                                <td><h5>Close</h5>
+                                    <p>Only works on Icons that support the close icon.<br><cite>* See <a href="#components.icons">Icons</a> for the SpryCSS close icon.</cite></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">h:</code><code class="color-primary">open</code></td>
+                                <td><h5>Opens a <code class="color-primary">.collapse</code> element</h5></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="mt-3"><a id="states.hover.examples" href="#states.hover.examples">Examples</a></h3>
+
+                <article id="states.hover.example.animate" class="card show-code" data-title="Animate on Hover">
+					<div class="code-content relative p-3 md:p-4">
+                        <button tabindex="0" class="button circle icon next h:rotate"></button>
+                        <button tabindex="0" class="button circle icon down h:flip"></button>
+                        <button tabindex="0" class="button circle icon menu h:close"></button>
+                        <button tabindex="0" class="button circle icon dots h:close"></button>
+                    </div>
+                </article>
+
+                <article id="states.hover.example.action" class="card show-code" data-title="Show Action on Hover">
+					<div class="code-content relative p-3 md:p-4">
+                        <label tabindex="0" class="ui plain h5">Hover Me
+                            <button tabindex="0" class="xxs none h:revert">
+                                Do Action
+                            </button>
+                        </label>
+                    </div>
+                </article>
+
+                <article id="states.hover.example.menu" class="card show-code mb-5" data-title="Menu Open on Hover" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="relative h:open w-content">
+                            <button tabindex="0" class="link icon menu"></button>
+                            <div class="collapse from-top overlay clip-top">
+                                <nav class="list bg-faint w-content shadow p-1 rb-2">
+                                    <ul>
+                                        <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                        <li><a href="#">Link 1</a></li>
+                                        <li><a href="#">Link 2</a></li>
+                                        <li><a href="#">Link 3</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- OPEN -->
+            <section id="states.open" class="inherit-bg py-0 pb-4">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                    <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M8,18H11V15H2V13H22V15H13V18H16L12,22L8,18M12,2L8,6H11V9H2V11H22V9H13V6H16L12,2Z" /></svg>
+                    <a href="#states.open">Open</a>
+                </h2>
+
+                <h4>
+                    Open State Classes apply only when the element or parent element is opened from a <a class="color-primary" href="#states.collapse">collapse</a> state.
+                    <br>This allows you to swap labels or elements based on the open state of an element or its parent.
+                </h4>
+
+                <h3 class="mt-3"><a id="states.open.usage" href="#states.open.usage">Usage</a></h3>
+
+                <div class="f:open">
+                    <button>
+                        <span class="o:none">Focus Me</span>
+                        <span class="none o:revert">Blur Me</span>
+                    </button>
+                    <div class="collapse">
+                        Show me when button is focused on
+                    </div>
+                </div>
+
+                <figure class="relative mb-4">
+                    <code class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
+                        &lt;div class="f:open"&gt;
+                            &lt;button&gt;
+                                &lt;span class="o:none">Focus Me&lt;/span&gt;
+                                &lt;span class="none o:revert">Blur Me&lt;/span&gt;
+                            &lt;/button&gt;
+                            &lt;div class="collapse"&gt;
+                                Show me when button is focused on
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </figure>
+
+                <div class="@container">
+                    <table class="@md:responsive mb-3">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="h3 pl-0"><a id="states.open.classes" href="#states.open.classes" class="inherit-color">Classes</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">o:</code><code class="color-primary">none</code></td>
+                                <td><h5>Hide</h5><code class="note sm">display: none</code></td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">o:</code><code class="color-primary">revert</code></td>
+                                <td><h5>Revert</h5><code class="note sm">display: revert</code></td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">o:</code><code class="color-primary">flip</code></td>
+                                <td><h5>Flip</h5><code class="note sm">scale: -1</code></td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">o:</code><code class="color-primary">rotate</code></td>
+                                <td><h5>Rotate</h5><code class="note sm">rotate: 180deg</code></td>
+                            </tr>
+                            <tr>
+                                <td class="pl-2"><code class="color-gray">o:</code><code class="color-primary">close</code></td>
+                                <td><h5>Close</h5>
+                                    <p>Only works on Icons that support the close icon.<br><cite>* See <a href="#components.icons">Icons</a> for the SpryCSS close icon.</cite></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="mt-3"><a id="states.open.examples" href="#states.open.examples">Examples</a></h3>
+
+                <article class="card show-code" data-note="&lt;code&gt;o:rotate&lt;/code&gt;" data-title="Rotate Arrow when Menu is Open" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#accordions'&gt;Accordions&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+					<div class="code-content relative p-3 md:p-4">
+                        <span class="relative inline-block f:open">
+                        
+                            <button class="o:no-pointer index-2" tabindex="0"> <!-- Toggle - Some browsers require tabindex -->
+                                View Items
+                                <svg class="icon o:rotate" viewBox="0 0 24 24">
+                                    <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
+                                </svg>
+                            </button>
+                            
+                            <div class="collapse from-top overlay clip-top mt-n1"> <!-- Overlay-->
+                                <nav class="list bg-faint rb-2 shadow-5 p-1 pt-2 b-1 bt-0 g-1"> <!-- Content-->
+                                    <ul>
+                                        <li><a href="#" class="plain">Item 1</a></li>
+                                        <li><a href="#" class="plain">Item 2</a></li>
+                                        <li><a href="#" class="plain">Item 3</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                        </span>
+                    </div>
+                </article>
+
+                <article id="states.open.example.menu" class="card show-code mb-5" data-note="&lt;code&gt;o:close o:no-pointer&lt;/code&gt;" data-title="Show Close Icon when Menu is Open and don't allow pointer events" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="relative f:open w-content">
+                            <button tabindex="0" class="link icon menu o:close o:no-pointer"></button>
+                            <div class="collapse from-top overlay clip-top">
+                                <nav class="list bg-faint w-content shadow p-1 rb-2">
+                                    <ul>
+                                        <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                        <li><a href="#">Link 1</a></li>
+                                        <li><a href="#">Link 2</a></li>
+                                        <li><a href="#">Link 3</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+
             <!-- TOGGLES -->
             <section id="states.toggles" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M7,10L12,15L17,10H7Z" /></svg>
-                    <a href="#state.toggles">Toggles</a>
+                    <a href="#states.toggles">Toggles</a>
                 </h2>
 
                 <h5>Toggles are HTML only elements that switch other elements that have
@@ -2517,7 +2909,7 @@
                     <a class="button pill outline border/60" href="#components.tabs">Tabs</a>
                 </div>
                 
-                <h3 class="mt-3"><a id="states.toggles.usage" href="#state.toggles.usage">Usage</a></h3>
+                <h3 class="mt-3"><a id="states.toggles.usage" href="#states.toggles.usage">Usage</a></h3>
 
                 <figure class="relative">
                     <code class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
@@ -2533,7 +2925,7 @@
                             &lt;p&gt;Collapsed Content Here&lt;/p&gt;
                         &lt;/div&gt;
                     </code>
-                    <figcaption>* See <a href="#state.collapse">Collapse</a> for all Collapse Classes and Attributes.</figcaption>
+                    <figcaption>* See <a href="#states.collapse">Collapse</a> for all Collapse Classes and Attributes.</figcaption>
                 </figure>
 
 
@@ -2541,7 +2933,7 @@
                     <table class="@md:responsive my-3">
                         <thead>
                             <tr>
-                                <th colspan="2" class="w-200 h3 pl-0"><a id="states.toggles.classes" href="#state.toggles.classes" class="inherit-color">Classes</a></th>
+                                <th colspan="2" class="w-200 h3 pl-0"><a id="states.toggles.classes" href="#states.toggles.classes" class="inherit-color">Classes</a></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -2556,7 +2948,7 @@
                     </table>
                 </div>
 
-                <h3 class="mt-3"><a id="states.toggles.examples" href="#state.toggles.examples">Examples</a></h3>
+                <h3 class="mt-3"><a id="states.toggles.examples" href="#states.toggles.examples">Examples</a></h3>
 
                 <article id="states.toggles.example.basic-toggle" class="card show-code" data-title="Basic Toggle">
 					<div class="code-content relative p-3 md:p-4">
@@ -2584,6 +2976,43 @@
                                     Sed diam nonumy eirm Lorem ipsum dolor sit amet,
                                     consetetur sadipscing elitr, sed diam nonumy.
                                 </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card show-code" data-title="Nested Toggles">
+					<div class="code-content relative p-3 md:p-4">
+                        <div>
+                            <label class="button toggle"> <!-- Toggle-->
+                                Open
+                                <input class="hide" type="checkbox">
+                            </label>
+
+                            <div class="collapse"> <!-- Content-->
+                                <div>
+                                    <div class="b-2 p-2 mt-1">
+                                        <p class="mt-1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                                        <p class="pb-2">Sed diam nonumy eirm Lorem ipsum dolor sit amet.</p>
+                                        
+                                        <!-- Second Collapse with Toggle -->
+                                        <div class="slow">
+                                            <label class="button toggle"> <!-- Inner Toggle-->
+                                                Open Another From the Left Slowly
+                                                <span class="none o:revert ml-n2">- Inner Opened</span>
+                                                <input class="hide" type="checkbox">
+                                            </label>
+                                            <div class="collapse from-left"> <!-- Inner Content-->
+                                                <div>
+                                                    <div class="b-2 p-3 mt-2">
+                                                        <p class="mt-2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+                                                        <p class="pb-2">Sed diam nonumy eirm Lorem ipsum dolor sit amet.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>        
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2665,20 +3094,20 @@
                     </div>
                 </article>
 
-                <article id="states.toggles.example.menu" class="card show-code" data-title="Menu" data-footer-note="* See &lt;a href='#toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#accordions'&gt;Accordions&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+                <article id="states.toggles.example.menu" class="card show-code" data-title="Menu" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#accordions'&gt;Accordions&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="relative">
+                        <div class="relative w-content">
                             <label class="toggle button link icon menu o:close">
                                 <input class="hide" type="checkbox">
                             </label>
 
                             <div class="collapse from-top overlay clip-top">
-                                <nav class="list bg-faint round o:side shadow-2 max-w-200 p-1">
+                                <nav class="list bg-faint round o:side shadow-2 w-content p-1">
                                     <ul>
                                         <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
                                         <li><a href="#">Link 1</a></li>
                                         <li><a href="#">Link 2</a>
-                                            <input type="checkbox" class="toggle button link circle icon down shy o:rotate absolute right sm m-1">
+                                            <input type="checkbox" class="toggle button link circle primary icon down shy o:rotate absolute right sm">
                                             <ul class="from-default">
                                                 <li><a href="#">SubLink 1</a></li>
                                                 <li><a href="#">SubLink 2</a></li>
@@ -2720,7 +3149,7 @@
 
             <!-- BREAKPOINTS -->
             <section id="layout.breakpoints" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M3,4H20A2,2 0 0,1 22,6V8H18V6H5V18H14V20H3A2,2 0 0,1 1,18V6A2,2 0 0,1 3,4M17,10H23A1,1 0 0,1 24,11V21A1,1 0 0,1 23,22H17A1,1 0 0,1 16,21V11A1,1 0 0,1 17,10M18,12V19H22V12H18Z" /></svg>
                     <a href="#layout.breakpoints">Breakpoints</a>
                 </h2>
@@ -2808,7 +3237,7 @@
 
             <!-- GAPS -->
             <section id="layout.gaps" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M9,11H15V8L19,12L15,16V13H9V16L5,12L9,8V11M2,20V4H4V20H2M20,20V4H22V20H20Z" /></svg>
                     <a href="#layout.gaps">Gaps</a>
                 </h2>
@@ -2874,7 +3303,7 @@
 
             <!-- GRID --->
             <section id="layout.grid" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M12 16C13.1 16 14 16.9 14 18S13.1 20 12 20 10 19.1 10 18 10.9 16 12 16M12 10C13.1 10 14 10.9 14 12S13.1 14 12 14 10 13.1 10 12 10.9 10 12 10M12 4C13.1 4 14 4.9 14 6S13.1 8 12 8 10 7.1 10 6 10.9 4 12 4M6 16C7.1 16 8 16.9 8 18S7.1 20 6 20 4 19.1 4 18 4.9 16 6 16M6 10C7.1 10 8 10.9 8 12S7.1 14 6 14 4 13.1 4 12 4.9 10 6 10M6 4C7.1 4 8 4.9 8 6S7.1 8 6 8 4 7.1 4 6 4.9 4 6 4M18 16C19.1 16 20 16.9 20 18S19.1 20 18 20 16 19.1 16 18 16.9 16 18 16M18 10C19.1 10 20 10.9 20 12S19.1 14 18 14 16 13.1 16 12 16.9 10 18 10M18 4C19.1 4 20 4.9 20 6S19.1 8 18 8 16 7.1 16 6 16.9 4 18 4Z" /></svg>
                     <a href="#layout.grid">Grid</a>
                 </h2>
@@ -3288,7 +3717,7 @@
 
             <!-- PROPORTIONS -->
             <section id="layout.proportions" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M11,21H3V13H5V17.59L17.59,5H13V3H21V11H19V6.41L6.41,19H11V21Z" /></svg>
                     <a href="#layout.proportions">Proportions</a>
                 </h2>
@@ -3370,7 +3799,7 @@
 
             <!-- SIZING -->
             <section id="layout.sizing" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M10 21v-2H6.41l4.5-4.5-1.41-1.41-4.5 4.5V14H3v7h7m4.5-10.09 4.5-4.5V10h2V3h-7v2h3.59l-4.5 4.5 1.41 1.41z" /></svg>
                     <a href="#layout.sizing">Sizing</a>
                 </h2>
@@ -3522,7 +3951,7 @@
 
             <!-- SPACING  -->
             <section id="layout.spacing" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M9 11h6V8l4 4-4 4v-3H9v3l-4-4 4-4v3m-7 9V4h2v16H2m18 0V4h2v16h-2z" /></svg>
                     <a href="#layout.spacing">Spacing</a>
                 </h2>
@@ -3662,7 +4091,7 @@
 
             <!-- UTILITIES -->
             <section id="layout.utilities" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M16.06 13.09L21.69 18.68L18.37 21.96L12.78 16.37V15.45L15.14 13.09H16.06M16.97 10.56L16 9.6L11.21 14.4V16.37L5.58 22L2.3 18.68L7.89 13.09H9.86L10.64 12.31L6.8 8.46H5.5L2.69 5.62L5.31 3L8.11 5.8V7.11L12 10.95L14.66 8.29L13.7 7.28L15 5.97H12.34L11.69 5.32L15 2L15.66 2.66V5.32L16.97 4L20.25 7.28C21.34 8.38 21.34 10.17 20.25 11.26L18.28 9.25L16.97 10.56Z" /></svg>
                     <a href="#layout.utilities.genernal">General Utility Classes</a>
                 </h2>
@@ -3770,7 +4199,7 @@
 
             <!-- LAYOUT UTILITIES -->
             <section id="layout.utilities" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M22 13v6H6v-6h16M6 5v6h10V5H6M2 2v20h2V2H2" /></svg>
                     <a href="#layout.utilities">Layout Utility Classes</a>
                 </h2>
@@ -4177,7 +4606,7 @@
 
             <!-- ACCORDION -->
             <section id="components.accordions" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M2,3V6H21V3M20,8H3A1,1 0 0,0 2,9V15A1,1 0 0,0 3,16H20A1,1 0 0,0 21,15V9A1,1 0 0,0 20,8M2,21H21V18H2V21Z" /></svg>
                     <a href="#components.accordions">Accordions</a>
                 </h2>
@@ -4189,7 +4618,7 @@
                     <a class="button pill outline border/60 sm" href="#components.buttons">Buttons</a>
                     <a class="button pill outline border/60 sm" href="#collapse">Collapse</a>
                     <a class="button pill outline border/60 sm" href="#components.icons">Icons</a>
-                    <a class="button pill outline border/60 sm" href="#toggles">Toggles</a>
+                    <a class="button pill outline border/60 sm" href="#states.toggles">Toggles</a>
                 </div>
 
                 <h3><a id="components.accordions.usage" href="#components.accordions.usage">Usage</a></h3>
@@ -4413,7 +4842,7 @@
 
             <!-- ALERTS -->
             <section id="components.alerts" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M11 15h2v2h-2v-2m0-8h2v6h-2V7m1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8z" /></svg>
                     <a href="#components.alerts">Alerts</a>
                 </h2>
@@ -4546,7 +4975,7 @@
 
                 <article class="card show-code" data-title="Closable Large Alert">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="l-select" data-language="html" data-footer-note="* HTML version uses Toggles. See &lt;a href='#collapse'&gt;Collapse&lt;/a&gt; and &lt;a href='#toggles'&gt;Toggles&lt;/a&gt; for more details">
+                        <div class="l-select" data-language="html" data-footer-note="* HTML version uses Toggles. See &lt;a href='#collapse'&gt;Collapse&lt;/a&gt; and &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more details">
                             <div class="toggle-group">
                                 
                                 <input class="toggle none" type="checkbox" checked id="htmlAlertToggle">
@@ -4583,7 +5012,7 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Popup Alert Example" data-badge="Uses Toggles" data-badge-link="#toggles">
+                <article class="card show-code" data-title="Popup Alert Example" data-badge="Uses Toggles" data-badge-link="#states.toggles">
 					<div class="code-content relative p-3 md:p-4">
                         <label class="toggle-next button" title="Open Popup">
                             Show Alert Popup
@@ -4644,7 +5073,7 @@
 
             <!-- BADGES -->
             <section id="components.badges" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M19.5 8C21.43 8 23 6.43 23 4.5C23 2.57 21.43 1 19.5 1C17.57 1 16 2.57 16 4.5C16 6.43 17.57 8 19.5 8M21 16V9.79C20.5 9.93 20 10 19.5 10C19.33 10 19.17 10 19 10V16C19 17.66 17.66 19 16 19H8C6.34 19 5 17.66 5 16V8C5 6.34 6.34 5 8 5H14C14 4.84 14 4.67 14 4.5C14 4 14.07 3.5 14.21 3H8C5.24 3 3 5.24 3 8V16C3 18.76 5.24 21 8 21H16C18.76 21 21 18.76 21 16Z" /></svg>
                     <a href="#components.badges">Badges</a>
                 </h2>
@@ -4801,7 +5230,7 @@
 
             <!-- BUTTONS -->
             <section id="components.buttons" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M20 20H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2M4 6v12h16V6H4z" /></svg>
                     <a href="#components.buttons">Buttons</a>
                 </h2>
@@ -5158,7 +5587,7 @@
 
             <!-- CARDS -->
             <section id="components.cards" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path onclick="alert(123)" d="M18 2H6C4.89 2 4 2.9 4 4V20C4 21.11 4.89 22 6 22H18C19.11 22 20 21.11 20 20V4C20 2.9 19.11 2 18 2M18 20H6V16H18V20M18 8H6V4H18V8Z" /></svg>
                     <a href="#components.cards">Cards</a>
                 </h2>
@@ -5299,12 +5728,12 @@
             
             <!-- DROPDOWNS -->
             <section id="components.dropdowns" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M17 5H20L18.5 7L17 5M3 2H21C22.11 2 23 2.9 23 4V8C23 9.11 22.11 10 21 10H16V20C16 21.11 15.11 22 14 22H3C1.9 22 1 21.11 1 20V4C1 2.9 1.9 2 3 2M3 4V8H14V4H3M21 8V4H16V8H21M3 20H14V10H3V20M5 12H12V14H5V12M5 16H12V18H5V16Z" /></svg>
                     <a href="#components.dropdowns">Dropdowns</a>
                 </h2>
 
-                <h5>Dropdowns use Toggles to add the collapsing functionality. View <a href="#toggles">Toggles</a> for more details.</h5>
+                <h5>Dropdowns use Toggles to add the collapsing functionality. View <a href="#states.toggles">Toggles</a> for more details.</h5>
 
                 <figure class="relative">
                     <code class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
@@ -5547,7 +5976,7 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Dismissible Menu" data-footer-note="* See &lt;a href='#menus'&gt;Menus&lt;/a&gt; and &lt;a href='#toggles'&gt;Toggles&lt;/a&gt; for more variations">
+                <article class="card show-code" data-title="Dismissible Menu" data-footer-note="* See &lt;a href='#menus'&gt;Menus&lt;/a&gt; and &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
                         <span class="relative">
                             <button class="toggle f:open icon dots o:close o:no-pointer link circle"></button>
@@ -5568,7 +5997,7 @@
 
             <!-- FORMS -->
             <section id="components.forms" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M15 5H18L16.5 7L15 5M5 2H19C20.11 2 21 2.9 21 4V20C21 21.11 20.11 22 19 22H5C3.9 22 3 21.11 3 20V4C3 2.9 3.9 2 5 2M5 4V8H19V4H5M5 20H19V10H5V20M7 12H17V14H7V12M7 16H17V18H7V16Z" /></svg>
                     <a href="#components.forms">Forms</a>
                 </h2>
@@ -6107,7 +6536,7 @@
 
             <!-- ICONS -->
             <section id="components.icons" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M14 7v2h-1v6h1v2h-4v-2h1V9h-1V7h4M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m0 2v14h14V5H5z" /></svg>
                     <a href="#components.icons">Icons</a>
                 </h2>
@@ -6240,7 +6669,7 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Toggle SVG Icons" data-footer-note="* See &lt;a href='#toggles'&gt;Toggles&lt;/a&gt; for more details">
+                <article class="card show-code" data-title="Toggle SVG Icons" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more details">
 					<div class="code-content relative p-3 md:p-4">
                         <span class="h5 inline-block min-w-200 mr-n4">With Focus</span>
 
@@ -6308,7 +6737,7 @@
 
             <!-- LISTS -->
             <section id="components.lists" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M7,5H21V7H7V5M7,13V11H21V13H7M4,4.5A1.5,1.5 0 0,1 5.5,6A1.5,1.5 0 0,1 4,7.5A1.5,1.5 0 0,1 2.5,6A1.5,1.5 0 0,1 4,4.5M4,10.5A1.5,1.5 0 0,1 5.5,12A1.5,1.5 0 0,1 4,13.5A1.5,1.5 0 0,1 2.5,12A1.5,1.5 0 0,1 4,10.5M7,19V17H21V19H7M4,16.5A1.5,1.5 0 0,1 5.5,18A1.5,1.5 0 0,1 4,19.5A1.5,1.5 0 0,1 2.5,18A1.5,1.5 0 0,1 4,16.5Z" /></svg>
                     <a href="#components.lists">Lists</a>
                 </h2>
@@ -6709,7 +7138,7 @@
 
             <!-- LOADER -->
             <section id="components.loader" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" /></svg>
                     <a href="#components.loader">Loader</a>
                 </h2>
@@ -6742,7 +7171,7 @@
 
             <!-- MENUS -->
             <section id="components.menus" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                     <a href="#components.menus">Menus</a>
                 </h2>
@@ -6771,7 +7200,7 @@
                 </nav>
 
                 
-                <h5>Menus use Toggles to add the collapsing functionality. View <a href="#toggles">Toggles</a> for more details.</h5>
+                <h5>Menus use Toggles to add the collapsing functionality. View <a href="#states.toggles">Toggles</a> for more details.</h5>
 
                 <figure class="relative">
                     <code class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pr-5 sm">
@@ -6897,7 +7326,7 @@
 
             <!-- MODALS -->
             <section id="components.modals" class="inherit-bg py-0 pb-3 mt-2">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M4,4H20V20H4V4M6,8V18H18V8H6Z" /></svg>
                     <a href="#components.modals">Modals</a>
                 </h2>
@@ -7281,7 +7710,7 @@
 
             <!-- NAVS -->
             <section id="components.navs" class="inherit-bg py-0 pb-3 mt-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                     <a href="#components.navs">Navs</a>
                 </h2>
@@ -7494,7 +7923,7 @@
 
             <!-- SLIDERS -->
             <section id="components.sliders" class="inherit-bg py-0 pb-3 mt-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M9,11H15V8L19,12L15,16V13H9V16L5,12L9,8V11M2,20V4H4V20H2M20,20V4H22V20H20Z" /></svg>
                     <a href="#components.sliders">Sliders</a>
                 </h2>
@@ -7849,7 +8278,7 @@
 
             <!-- TABLES -->
             <section id="components.tables" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M5,4H19A2,2 0 0,1 21,6V18A2,2 0 0,1 19,20H5A2,2 0 0,1 3,18V6A2,2 0 0,1 5,4M5,8V12H11V8H5M13,8V12H19V8H13M5,14V18H11V14H5M13,14V18H19V14H13Z" /></svg>
                     <a href="#components.tables">Tables</a>
                 </h2>
@@ -8323,7 +8752,7 @@
 
             <!-- TABS -->
             <section id="components.tabs" class="inherit-bg py-0 pb-4">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M21 3H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H3V5h10v4h8v10z" /></svg>
                     <a href="#components.tabs">Tabs</a>
                 </h2>
@@ -8504,7 +8933,7 @@
 
             <!-- TOOLTIPS -->
             <section id="components.tooltip" class="inherit-bg pt-0">
-                <h2 class="sticky flex index-2 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
+                <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M9 22a1 1 0 0 1-1-1v-3H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6.1l-3.7 3.71c-.2.19-.45.29-.7.29H9m1-6v3.08L13.08 16H20V4H4v12h6z" /></svg>
                     <a href="#components.tooltip">ToolTips</a>
                 </h2>

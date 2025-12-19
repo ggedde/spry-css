@@ -15,7 +15,7 @@
 
 @mixin toggle-styles($prefix) {
 
-	:is(#{$prefix}h\:open, #{$prefix}f\:open) ul > li > ul {
+	:where(#{$prefix}h\:open, #{$prefix}f\:open) :where(ul > li > ul) {
 		z-index: 1;
 		@if $prefix == '.' {
 			@extend %closed;
@@ -35,8 +35,10 @@
 	}
 	
 	#{$prefix}h\:open:hover > :where(.collapse),
+	#{$prefix}c\:open:has(> .toggle :checked, > label :checked, > :checked) > :where(.collapse),
 	#{$prefix}h\:open:focus-within > :where(.collapse),
-	#{$prefix}f\:open:focus > :where(.collapse),
+	// #{$prefix}f\:open:focus > :where(.collapse),
+	// #{$prefix}f\:open:focus-within > :where(.collapse),
 	#{$prefix}f\:open.collapse:has(:focus-visible, :active),
 	:where(#{$prefix}f\:open):has(> :focus, .toggle:focus, :focus-visible, :focus-within, :active) > :where(.collapse),
 	#{$prefix}open:where(.collapse),
@@ -49,9 +51,9 @@
 		}
 	}
 
-	#{$prefix}h\:open > nav li:has(:focus-visible, :hover) > ul,
-	#{$prefix}c\:open > nav li:has(:checked) > ul,
-	#{$prefix}f\:open > nav li:has(:focus-visible, :hover) > ul {
+	#{$prefix}h\:open > :where(nav, ul) li:has(:focus-visible, :hover) > ul,
+	#{$prefix}c\:open > :where(nav, ul) li:has(:checked) > ul,
+	#{$prefix}f\:open > :where(nav, ul) li:has(:focus-visible, :hover) > ul {
 		@if $prefix == '.' {
 			@extend %open;
 		}
@@ -85,15 +87,15 @@
 	+ ul {
 		@extend %closed;
 	}
-	input {
-		border: 0;
-		outline: 0;
-		&:not(.icon,.switch,.button,.tooltip) {
-			// visibility: hidden;
-			opacity: 0;
-			pointer-events: none;
-			position: absolute;
-		}
+}
+
+:where(.toggle, label):where(.button, .icon) > :where([type="checkbox"], [type="radio"]) {
+	border: 0;
+	outline: 0;
+	&:not(.icon,.switch,.button,.tooltip) {
+		opacity: 0;
+		pointer-events: none;
+		position: absolute;
 	}
 }
 
