@@ -76,14 +76,14 @@
 /// Default Shut State
 /// @output - Contents
 @mixin closed {
-	height                    : calc-size(auto, calc(size - size));
 	max-height                : 0;
 	opacity                   : 0;
+	overflow                  : hidden;
 	pointer-events            : none;
 	transform                 : var(--transform);
 	transform-origin          : var(--origin);
-	transition-property       : height, max-height, transform, opacity;
 	transition-duration       : var(--speed);
+	transition-property       : height, max-height, transform, opacity;
 	transition-timing-function: var(--ease);
 }
 
@@ -92,7 +92,6 @@
 @mixin open {
 	opacity       : 1;
 	max-height    : var(--max-height);
-	height        : calc-size(auto, size);
 	transform     : translate3d(0, 0, 0);
 	pointer-events: inherit;
 }

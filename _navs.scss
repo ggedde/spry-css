@@ -67,6 +67,7 @@ menu menu {
 			right     : 1em;
 			rotate    : 90deg;
 			transform: rotate(45deg);
+			transition: rotate .2s ease-in-out, margin .2s ease-in-out, scale .2s ease-in-out;
 			width: .5em;
 		}
 	}
@@ -101,7 +102,12 @@ menu menu {
 
 	:is(#{$prefix}open\:down ul, #{$prefix}sub\:open\:down ul ul)>li:has(ul)> :first-child::after {
 		rotate    : 90deg;
-		margin-top: -.35em;
+		margin-top: -.3em;
+	}
+
+	:is(#{$prefix}open\:down ul, #{$prefix}sub\:open\:down ul ul)>li:has(:checked):has(ul)> :first-child::after {
+		scale: -1;
+		margin-top: .2em;
 	}
 
 	:is(#{$prefix}open\:side ul, #{$prefix}sub\:open\:side ul ul)>li:has(ul)> :first-child::after {

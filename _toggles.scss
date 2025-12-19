@@ -38,7 +38,7 @@
 	#{$prefix}h\:open:focus-within > :where(.collapse),
 	#{$prefix}f\:open:focus > :where(.collapse),
 	#{$prefix}f\:open.collapse:has(:focus-visible, :active),
-	:where(#{$prefix}f\:open):has(> :focus, .toggle:focus, :focus-visible, :active) > :where(.collapse),
+	:where(#{$prefix}f\:open):has(> :focus, .toggle:focus, :focus-visible, :focus-within, :active) > :where(.collapse),
 	#{$prefix}open:where(.collapse),
 	#{$prefix}open > :where(.collapse) {
 		@if $prefix == '.' {
@@ -49,8 +49,9 @@
 		}
 	}
 
-	#{$prefix}h\:open li:has(:focus-visible, :hover) > ul,
-	#{$prefix}f\:open li:focus-within > ul {
+	#{$prefix}h\:open > nav li:has(:focus-visible, :hover) > ul,
+	#{$prefix}c\:open > nav li:has(:checked) > ul,
+	#{$prefix}f\:open > nav li:has(:focus-visible, :hover) > ul {
 		@if $prefix == '.' {
 			@extend %open;
 		}
@@ -83,6 +84,16 @@
 	user-select: none;
 	+ ul {
 		@extend %closed;
+	}
+	input {
+		border: 0;
+		outline: 0;
+		&:not(.icon,.switch,.button,.tooltip) {
+			// visibility: hidden;
+			opacity: 0;
+			pointer-events: none;
+			position: absolute;
+		}
 	}
 }
 
