@@ -23,18 +23,18 @@ $breakpoints: (
 // Specify each breakpoint gap size.
 // <section> tags with get padding based on gap size.
 // * You must include one for each Breakpoint otherwise it will result in a Compile Error.
+// * default is 1.25em and can be set in the css :root variable --gx and --gy
 $gaps: (
-    default: 1.25em, // required
-    md     : 2em,
+    md : 2em,
     // lg: 2.25em,
 ) !default;
 
 // Specify each theme with their ui theme colors.
 // Use css light-dark() function to specify the colors for light and dark schemes.
 $themes: (
-    scheme: (default: light dark, my-custom-theme-name: light),
-    accent: (default: light-dark(#555, #ccc), my-custom-theme-name: #f00),
-    border: (default: light-dark(#ccc, #444), my-custom-theme-name: #f00),
+    scheme: (default: light dark),
+    accent: (default: light-dark(#555, #ccc)),
+    border: (default: light-dark(#ccc, #444)),
     color : (default: light-dark(#555, #ccc)),
     input : (default: light-dark(#aaa, #666)),
     bg    : (default: light-dark(#fff, #111)),
@@ -46,9 +46,9 @@ $themes: (
 // Use css light-dark() function to specify the colors for light and dark schemes.
 // See: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark
 $colors: (
-    primary   : (default: light-dark(#18d, #09d), my-custom-theme-name: #f00),
-    secondary : (default: light-dark(#a4b, #b5c), my-custom-theme-name: #0f0),
-    success   : (default: light-dark(#283, #0a0), my-custom-theme-name: #00f),
+    primary   : (default: light-dark(#18d, #09d)),
+    secondary : (default: light-dark(#a4b, #b5c)),
+    success   : (default: light-dark(#283, #0a0)),
     warning   : (default: light-dark(#c70, #e90)),
     error     : (default: light-dark(#d00, #f20)),
     contrast  : (default: light-dark(#333, #eee)),
@@ -89,7 +89,7 @@ $blur: (
 
 // Specify the loader thickness.
 // Ex .loading-sm, .loading-lg, etc.
-$loading: (
+$loaders: (
     sm: .16em, // First one is default - ex. ".loading"
     md: .25em,
     lg: .5em,
@@ -141,7 +141,9 @@ $proportions: (
     xxl: 130%,
     xl: 120%,
     lg: 110%,
+    ml: 105%,
     md: 100%,
+    ms: 95%,
     sm: 90%,
     xs: 80%,
     xxs: 70%,
@@ -191,35 +193,31 @@ $lengths: (
 ) !default;
 
 :root {
-    @if meta.variable-exists('gaps') and $gaps {
-        --gapx: #{map.get($gaps, 'default')};
-        --gapy: #{map.get($gaps, 'default')};
-    }
-
     @if meta.variable-exists('breakpoints') and $breakpoints {
         @each $breakpoint, $breakpoint_width in $breakpoints {
             --#{$breakpoint}: #{$breakpoint_width};
         }
     }
-
     --bg-from    : 150deg;
-    --ease       : cubic-bezier(.45, .45, 0, 1); //cubic-bezier(.25, .8, .25, 1);
+    --comfort    : 2.3em;
+    --comfort-lh : 1.3;
+    --comfort-px : 1.1em;
+    --comfort-py : .3em;
+    --ease       : cubic-bezier(.45, .45, 0, 1);
+    --gx         : 1.25em;
+    --gy         : 1.25em;
     --glow       : .5;
     --glow-a     : .5;
     --invert     : 60;
-    --layer      : 6;
     --max-height : 1900px;
     --origin     : top;
+    --pad        : .5em;
+    --pad-lg     : 1em;
+    --pad-xl     : 2em;
     --radius     : .25em;
     --shadow     : .2;
     --shadow-a   : .2;
     --speed      : .4s;
+    --thickness  : .14em;
     --transform  : translate3d(0, 0, 0);
-    --pad        : .5em;
-    --pad-lg     : 1em;
-    --pad-xl     : 2em;
-    --comfort    : 2.3em;
-    --comfort-py : .3em;
-    --comfort-px : 1.1em;
-    --comfort-lh : 1.3;
 }

@@ -5,6 +5,21 @@
 * Spry Sizing
 */
 
+@each $l, $value in variables.$lengths {
+	.max-w-#{$l} {
+		max-width: #{$value};
+	}
+	.min-w-#{$l} {
+		min-width: #{$value};
+	}
+	.max-h-#{$l} {
+		max-height: #{$value};
+	}
+	.min-h-#{$l} {
+		min-height: #{$value};
+	}
+}
+
 @mixin sizingUtility-styles($prefix) {
 
 	@each $l, $value in variables.$lengths {

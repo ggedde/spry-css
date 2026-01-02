@@ -135,16 +135,12 @@
 	filter: drop-shadow( 2px 2px 3px rgba(0, 0, 0, .3));
 }
 
+.hyphens {
+	hyphens: auto;
+}
+
 .no-bg {
 	background: none;
-}
-
-.no-border {
-	border-color: transparent;
-}
-
-.no-color {
-	color: transparent;
 }
 
 .no-resize {
@@ -172,10 +168,6 @@
 	&::-webkit-inner-spin-button {
 		display: none;
 	}
-}
-
-.hyphens {
-	hyphens: auto;
 }
 
 .no-hyphens {

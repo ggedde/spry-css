@@ -9,10 +9,10 @@
 
 :root {
 	@if meta.global-variable-exists('gaps', variables) and variables.$gaps {
-		--gapx       : #{map.get(variables.$gaps, 'default')};
-		--gapy       : #{map.get(variables.$gaps, 'default')};
-		--inner-gapx : #{map.get(variables.$gaps, 'default')};
-		--inner-gapy : #{map.get(variables.$gaps, 'default')};
+		--gx       : #{map.get(variables.$gaps, 'default')};
+		--gy       : #{map.get(variables.$gaps, 'default')};
+		--inner-gx : #{map.get(variables.$gaps, 'default')};
+		--inner-gy : #{map.get(variables.$gaps, 'default')};
 	}
 
 	--span      : 1;
@@ -27,10 +27,10 @@
 		$breakpoint_width in variables.$breakpoints {
 			@if meta.global-variable-exists('gaps', variables) and variables.$gaps {
 				@media screen and (min-width: $breakpoint_width) {
-					--gapx      : #{map.get(variables.$gaps, $breakpoint)};
-					--gapy      : #{map.get(variables.$gaps, $breakpoint)};
-					--inner-gapx: #{map.get(variables.$gaps, $breakpoint)};
-					--inner-gapy: #{map.get(variables.$gaps, $breakpoint)};
+					--gx      : #{map.get(variables.$gaps, $breakpoint)};
+					--gy      : #{map.get(variables.$gaps, $breakpoint)};
+					--inner-gx: #{map.get(variables.$gaps, $breakpoint)};
+					--inner-gy: #{map.get(variables.$gaps, $breakpoint)};
 				}
 			}
 		}
@@ -56,7 +56,7 @@
 	#{$prefix}column,
 	#{$prefix}row {
 		display: flex;
-		gap    : var(--gapy) var(--gapx);
+		gap    : var(--gy) var(--gx);
 
 		>* {
 			flex: 1;
@@ -74,7 +74,7 @@
 
 	#{$prefix}grid {
 		display: grid;
-		gap    : var(--gapy) var(--gapx);
+		gap    : var(--gy) var(--gx);
 		--rows : auto-fit;
 		--cols : auto-fit;
 		grid   : repeat(var(--rows), minmax(0, 1fr)) / repeat(var(--cols), minmax(0, 1fr));
@@ -90,12 +90,12 @@
 
 	[class^="#{$noDotPrefix}cols-"]>*,
 	[class*=" #{$noDotPrefix}cols-"]>* {
-		flex: 0 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--inner-gapx))/(var(--cols)/var(--span))));
+		flex: 0 0 calc(var(--span)/var(--cols)*100% - ((var(--cols)/var(--span) - 1)*(var(--inner-gx))/(var(--cols)/var(--span))));
 	}
 
 	[class^="#{$noDotPrefix}rows-"]>*,
 	[class*=" #{$noDotPrefix}rows-"]>* {
-		flex: 0 0 calc(var(--span)/var(--rows)*100% - ((var(--rows)/var(--span) - 1)*(var(--inner-gapy))/(var(--rows)/var(--span))));
+		flex: 0 0 calc(var(--span)/var(--rows)*100% - ((var(--rows)/var(--span) - 1)*(var(--inner-gy))/(var(--rows)/var(--span))));
 	}
 
 	#{$prefix}cols-100,

@@ -1,0 +1,225 @@
+@use "variables";
+@use "sass:meta";
+@use "sass:map";
+@use "sass:list";
+/*!
+* Spry Loader
+*/
+
+@if meta.global-variable-exists('loaders', variables) {
+
+	@keyframes spinning {
+		0% {
+			transform: rotate(0deg)
+		}
+
+		90%,
+		100% {
+			transform: rotate(360deg)
+		}
+	}
+
+	@keyframes spinning-linear {
+		0% {
+			transform: rotate(0deg)
+		}
+
+		100% {
+			transform: rotate(360deg)
+		}
+	}
+
+	@keyframes sliding {
+		0% {
+			transform: translateX(-120%);
+		}
+
+		90%,
+		100% {
+			transform: translateX(220%);
+		}
+	}
+
+	@keyframes sliding-linear {
+		0% {
+			transform: translateX(-120%);
+		}
+
+		100% {
+			transform: translateX(220%);
+		}
+	}
+
+	.loading,
+	.loading-spinner,
+	.loading-line {
+		position      : relative;
+		pointer-events: none;
+		overflow-x    : clip;
+		user-select   : none;
+		cursor        : default;
+
+		&::after {
+			content         : "";
+			position        : absolute;
+			opacity         : 1;
+			background-color: transparent;
+			box-shadow      : none;
+		}
+
+		&:before {
+			display: none;
+		}
+
+		&:is(button, .button, .badge, a) {
+			color     : transparent;
+			transition: color .1s ease-in-out;
+		}
+
+		>* {
+			filter: blur(1px)
+		}
+
+		* {
+			pointer-events: none;
+			user-select   : none;
+		}
+	}
+
+	:is(.loading, .loading-spinner, .loading-line)::after {
+		animation   : sliding calc(var(--speed) * 2.5) ease-in-out infinite;
+		border-color: var(--ui-text) transparent transparent var(--ui-text);
+		border-width: var(--thickness);
+		border-style: solid;
+		margin      : auto;
+		left        : 0;
+		max-height  : 50%;
+		max-width   : 50%;
+		top         : 0;
+		transition  : opacity var(--speed) ease-in-out;
+		width       : 50%;
+		will-change : transform;
+	}
+
+	.loading::after,
+	.loading-line::after {
+		border-left-width: 0;
+	}
+
+	.loading:is(button, .button, [type=submit], [type=reset], .icon)::after,
+	.loading-spinner::after {
+		aspect-ratio     : 1;
+		height           : 100%;
+		inset            : 0;
+		max-height       : min(50%, 100px);
+		max-width        : min(50%, 100px);
+		width            : fit-content;
+		border-left-width: var(--thickness);
+	}
+
+	.icon.loading:not(.button, button, [type=submit], [type=reset])::after {
+		max-height: 70%;
+		max-width : 70%;
+	}
+
+	.loading-line:where(button, .button, [type=submit], [type=reset])::after {
+		border-radius: 0;
+	}
+
+	.spin,
+	.loading-spinner::after,
+	:is(.button, button, [type=submit], [type=reset], .icon).loading::after {
+		animation-name: spinning;
+	}
+
+	.linear:is(.loading-line, .loading)::after {
+		animation-name: sliding-linear;
+	}
+
+	.spin.linear,
+	.linear:is(.loading-spinner)::after,
+	:is(.button, button, [type=submit], [type=reset], .icon).loading.linear::after {
+		animation-name: spinning-linear;
+	}
+
+	.linear,
+	.linear:where(.loading, .loading-spinner, .loading-line)::after {
+		animation-timing-function: linear;
+	}
+
+	.comet::after {
+		border-radius    : 50% 0 0 0;
+		border-left-width: 0;
+	}
+
+	.shimmer::after {
+		border-radius     : 50%;
+		border-left-width : 0;
+		border-right-width: 0;
+	}
+
+	.loading:is(button, .button, [type=submit], [type=reset], .icon)::after,
+	.loading-spinner::after {
+		border-radius: 50%;
+	}
+
+	@keyframes progress-stripes {
+		to {
+			background-position: 36px 0;
+		}
+	}
+
+	@-webkit-keyframes progress-stripes {
+		to {
+			background-position: 36px 0;
+		}
+	}
+
+	progress.loading {
+		--prg-bak: repeating-linear-gradient(135deg,
+				hsl(from var(--theme-ui) h s l / .4) 0,
+				hsl(from var(--theme-ui) h s l / .4) 12px,
+				transparent 12px,
+				transparent 24px);
+		--prg-anm: progress-stripes calc(var(--speed) * 2) ease-in-out infinite;
+
+		&::after {
+			content         : "";
+			display         : block;
+			position        : absolute;
+			inset           : 0;
+			animation       : var(--prg-anm);
+			background-image: var(--prg-bak);
+			background-size : 36px 36px;
+			border          : 0;
+			width           : 100%;
+			max-width       : calc(100% - 2px);
+			max-height      : calc(100% - 2px);
+		}
+
+		&.linear::after {
+			animation-name           : progress-stripes;
+			animation-timing-function: linear;
+		}
+
+		&::-moz-progress-bar {
+			animation       : var(--prg-anm);
+			background-image: var(--prg-bak);
+			background-size : 36px 36px;
+			border          : 1px solid var(--ui-accent);
+		}
+	}
+
+	@supports (hanging-punctuation: first) and (font: -apple-system-body) and (-webkit-appearance: none) {
+
+		/* kill native stripes */
+		progress::-webkit-progress-value {
+			animation       : var(--prg-anm);
+			background-image: var(--prg-bak);
+			background-size : 36px 36px;
+			max-width       : 100%;
+			max-height      : 100%;
+			border          : 1px solid var(--ui-accent);
+		}
+	}
+}

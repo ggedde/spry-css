@@ -26,7 +26,7 @@
                     <button tabindex="0" title="Toggle Menu" class="toggle o:no-pointer button link icon menu o:close md:none"></button>
                     <div class="collapse from-left">
                         <nav style="max-width: 210px; height: calc(100vh - 3.50em);" class="list indicators o:down g-1 absolute left outer-bottom bg-theme border-alpha-30 auto p-3 pb-4 sm br-1 bt-1 shadow-2 md:no-shadow scrollspy" data-scrollspy-replace>
-                            <ul class="from-default md:sm">
+                            <ul class="from-default">
                                 <li>
                                     <label tabindex="0" class="toggle button link pl-2 g-1">
                                         <svg class="icon mr-1" viewBox="0 0 24 24"><path d="M15,20A1,1 0 0,0 16,19V4H8A1,1 0 0,0 7,5V16H5V5A3,3 0 0,1 8,2H19A3,3 0 0,1 22,5V6H20V5A1,1 0 0,0 19,4A1,1 0 0,0 18,5V9L18,19A3,3 0 0,1 15,22H5A3,3 0 0,1 2,19V18H13A2,2 0 0,0 15,20M9,6H14V8H9V6M9,10H14V12H9V10M9,14H14V16H9V14Z" /></svg>
@@ -120,7 +120,7 @@
                                         <li><a class="pl-4" href="#components.forms">Forms</a></li>
                                         <li><a class="pl-4" href="#components.icons">Icons</a></li>
                                         <li><a class="pl-4" href="#components.lists">Lists</a></li>
-                                        <li><a class="pl-4" href="#components.loader">Loader</a></li>
+                                        <li><a class="pl-4" href="#components.loaders">Loaders</a></li>
                                         <li><a class="pl-4" href="#components.menus">Menus</a></li>
                                         <li><a class="pl-4" href="#components.modals">Modals</a></li>
                                         <li><a class="pl-4" href="#components.navs">Navs</a></li>
@@ -192,7 +192,11 @@
                         &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ggedde/spry-css@3.0.0-rc.3/dist/spry.min.css"&gt;
                     </code>
                 </figure>
-                <p class="note mb-5 o/100">That's it. Have Fun!</p>
+                <p class="note o/100 lg color-contrast">That's it. Have Fun!</p>
+
+                <p class="note mb-5 o/100">
+                    Or see below to use a Package Manager for custom builds.                    
+                </p>
 
                 <!-- Using a Package Manager -->
                 <h3 id="installation.package-manager" class="flex">
@@ -334,8 +338,8 @@
                             --bg-from   : 150deg;
                             --cols      : 1;
                             --ease      : cubic-bezier(.45,.45,0,1);
-                            --gapx      : 1.25em;
-                            --gapy      : 1.25em;
+                            --gx        : 1.25em;
+                            --gy        : 1.25em;
                             --glow-a    : .5;
                             --glow      : .5;
                             --invert    : 50;
@@ -451,9 +455,9 @@
                             // Specify each breakpoint gap size.
                             // &lt;section&gt; tags with get padding based on gap size.
                             // * You must include one for each Breakpoint otherwise it will result in a Compile Error.
+                            // * default is 1.25em and can be set in the css :root variable --gx and --gy
                             $gaps: (
-                                default: 1.25em, // required
-                                md     : 2em,
+                                md: 2em,
                                 // lg: 2.25em,
                             ),
 
@@ -3218,12 +3222,16 @@
                                 <td><span class="color-gray note">Example:</span> <code class="ml-3">r-0 md:r-2</code></td>
                             </tr>
                             <tr>
+                                <td class="pl-2"><a href="#styles.radius">Shadows</a></td>
+                                <td><span class="color-gray note">Example:</span> <code class="ml-3">shadow-0 md:shadow-2</code></td>
+                            </tr>
+                            <tr>
                                 <td class="pl-2"><a href="#layout.sizing">Sizing</a></td>
                                 <td><span class="color-gray note">Example:</span> <code class="ml-3">w-200 md:w-500</code></td>
                             </tr>
                             <tr>
                                 <td class="pl-2"><a href="#layout.spacing">Spacing</a></td>
-                                <td><span class="color-gray note">Example:</span> <code class="ml-3">p-0 md:pt-2</code></td>
+                                <td><span class="color-gray note">Example:</span> <code class="ml-3">p-0 md:pt-2 md:mb-3 md:mt-n2</code></td>
                             </tr>
                             <tr>
                                 <td class="pl-2"><a href="#layout.utilities">Layout Utility Classes</a></td>
@@ -3249,14 +3257,16 @@
                     // Specify each breakpoint gap size.
                     // &lt;section&gt; tags with get padding based on gap size.
                     // * You must include one for each Breakpoint otherwise it will result in a Compile Error.
+                    // * default is 1.25em and can be set in the css :root variable --gx and --gy
                     $gaps: (
-                        default: 1.25em, // required
-                        md     : 2em,
+                        md: 2em,
                         // lg: 2.25em,
                     );
                 </code>
 
-                <div class="alert warning outline mt-4 border/50">* You need to make sure the gaps match the <a href="#layout.breakpoints">breakpoints</a> otherwise you will receive a SCSS compile error.</div>
+                <div class="alert warning outline mt-4 border/50">
+                    <p>* You need to make sure the gaps match the <a href="#layout.breakpoints">breakpoints</a> otherwise you will receive a SCSS compile error.</p>
+                </div>
 
                 <h3><a id="layout.gaps.usage" href="#layout.gaps.usage">Usage</a></h3>
                 <figure class="relative">
@@ -6413,7 +6423,7 @@
                                 <h5>Field with Button</h5>
                                 <div class="input">
                                     <input type="text" required>
-                                    <button type="button" onclick="this.classList.add('loading');setTimeout(() => {this.classList.remove('loading');this.previousElementSibling.value = 'Good Job!';}, 2000);">Click Me</button>
+                                    <button class="no-wrap" type="button" onclick="this.classList.add('loading');setTimeout(() => {this.classList.remove('loading');this.previousElementSibling.value = 'Good Job!';}, 2000);">Click Me</button>
                                 </div>
                             </label>
 
@@ -6437,9 +6447,22 @@
                                 <input type="number">
                             </label>
 
-                            <label class="md:span-4">
+                            <label class="md:span-12">
                                 <h5>Website</h5>
-                                <input type="url">
+                                <span class="input">
+                                    <span>https://</span>
+                                    <input type="url">
+                                </span>
+                            </label>
+
+                            <label class="md:span-4">
+                                <h5>Progress</h5>
+                                <progress value="0.5">50%</progress>
+                            </label>
+
+                            <label class="md:span-4">
+                                <h5>Progress with Loading</h5>
+                                <progress class="loading" value="0.5">50%</progress>
                             </label>
 
                             <label class="md:span-4">
@@ -6568,6 +6591,14 @@
                                 <td><code class="color-primary">color-{color}</code></td>
                                 <td>Sets icon color</td>
                             </tr>
+                            <tr>
+                                <td><code class="color-primary">thin</code></td>
+                                <td>Uses a thinner stroke width. For SVG it sets the stroke-width to 1.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="color-primary">thick</code></td>
+                                <td>Uses a thicker stroke width. For SVG it sets the stroke-width to 3.</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -6581,6 +6612,33 @@
                         <span class="icon close"></span>
                         <span class="icon menu"></span>
                         <span class="icon dots"></span>
+                        <span class="icon loading"></span>
+                    </div>
+                </article>
+
+                <article class="card show-code" data-title="Thin">
+					<div class="code-content relative p-3 md:p-4">
+                        <span class="icon thin next"></span>
+                        <span class="icon thin prev"></span>
+                        <span class="icon thin up"></span>
+                        <span class="icon thin down"></span>
+                        <span class="icon thin close"></span>
+                        <span class="icon thin menu"></span>
+                        <span class="icon thin dots"></span>
+                        <span class="icon thin loading"></span>
+                    </div>
+                </article>
+
+                <article class="card show-code" data-title="Thick">
+					<div class="code-content relative p-3 md:p-4">
+                        <span class="icon thick next"></span>
+                        <span class="icon thick prev"></span>
+                        <span class="icon thick up"></span>
+                        <span class="icon thick down"></span>
+                        <span class="icon thick close"></span>
+                        <span class="icon thick menu"></span>
+                        <span class="icon thick dots"></span>
+                        <span class="icon thick loading"></span>
                     </div>
                 </article>
 
@@ -7136,16 +7194,93 @@
 
             </section>
 
-            <!-- LOADER -->
-            <section id="components.loader" class="inherit-bg py-0 pb-4">
+            <!-- LOADERS -->
+            <section id="components.loaders" class="inherit-bg py-0 pb-4">
                 <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:pl-3 mb-3 mx-n2 md:ml-n3 md:mr-n2">
                     <svg class="icon mr-2" viewBox="0 0 24 24"><path d="M12,4V2A10,10 0 0,0 2,12H4A8,8 0 0,1 12,4Z" /></svg>
-                    <a href="#components.loader">Loader</a>
+                    <a href="#components.loaders">Loaders</a>
                 </h2>
+
+                <div class="@container mt-4">
+                    <table class="@md:responsive">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="h3 pl-0"><a id="styles.loaders.classes" href="#styles.loaders.classes" class="inherit-color">Classes</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">loading</code></td>
+                                <td>
+                                    <h5>Adds a loading spinner or line to the element depending on the element type.</h5>
+                                    <p>Default is a line, while buttons, icons, checkboxes, and radio buttons use a spinner. Progress bars use a custom animation.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">loading-spinner</code></td>
+                                <td>
+                                    <h5>Forces the loader to be a spinner.</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">loading-line</code></td>
+                                <td>
+                                    <h5>Forces the loader to be a line on the top of the element.</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">loading-line-bottom</code></td>
+                                <td>
+                                    <h5>Forces the loader to be a line on the bottom of the element.</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">thin</code></td>
+                                <td>
+                                    <h5>Make the loader thinner.</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">thick</code></td>
+                                <td>
+                                    <h5>Make the loader thicker.</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">comet</code></td>
+                                <td>
+                                    <h5>Make the loader a comet shape, essentially giving it a tail on the end.</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">shimmer</code></td>
+                                <td>
+                                    <h5>Make the loader shape have a tail on the end and at the start.</h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <article class="card show-code" data-title="Button Loader">
 					<div class="code-content relative p-3 md:p-4">
-                        <button type="button" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">
+                        <button type="button" class="loading" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">
+                            Click for Loading
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card show-code" data-title="Button Loader">
+					<div class="code-content relative p-3 md:p-4">
+                        <button class="loading-line" type="button">
+                            Click for Loading
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card show-code" data-title="Button Loader">
+					<div class="code-content relative p-3 md:p-4">
+                        <button class="loading-line comet slow" type="button">
                             Click for Loading
                         </button>
                     </div>
@@ -7153,17 +7288,54 @@
 
                 <article class="card show-code" data-title="Div Loader">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="xxl loading color-primary b-1 mb-1 round" style="min-height: 100px;"></div>
+                        <div class="xxl loading comet slow color-primary b-1 mb-1 round" style="min-height: 100px;"></div>
+                    </div>
+                </article>
+
+                <article class="card show-code" data-title="Div Loader">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="xxl loading slow color-primary b-1 mb-1 round" style="min-height: 100px;"></div>
+                    </div>
+                </article>
+
+                <article class="card show-code" data-title="Div Loader">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="xxl loading linear color-primary b-1 mb-1 round" style="min-height: 100px;"></div>
+                    </div>
+                </article>
+
+                <article class="card show-code" data-title="Div Loader Spinner">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="xxl loading-spinner color-primary b-1 mb-1 round" style="min-height: 500px;"></div>
+                    </div>
+                </article>
+
+                <article class="card show-code" data-title="Div Loader Spinner">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="xxl loading-spinner linear color-primary b-1 mb-1 round" style="min-height: 100px;"></div>
+                    </div>
+                </article>
+
+                <article class="card show-code" data-title="Div Loader Spinner Large">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="xxl loading-spinner color-primary b-1 mb-1 round" style="min-height: 100px;"></div>
                     </div>
                 </article>
 
                 <article class="card show-code" data-title="Button Loaders">
 					<div class="code-content relative p-3 md:p-4">
                         <button class="sm loading"></button>
+                        <button class="sm loading loader"></button>
                         <button class="hazy primary loading"></button>
                         <button class="lg outline secondary loading"></button>
                         <button type="button" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">Click for Loading</button>
                         <button class="outline primary" type="button" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">Click for Loading</button>
+                    </div>
+                </article>
+
+                <article class="card show-code" data-title="Progress Loader">
+					<div class="code-content relative p-3 md:p-4">
+                        <progress class="loading primary" value="0.5">50%</progress>
                     </div>
                 </article>
 

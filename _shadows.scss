@@ -4,8 +4,6 @@
 * Spry Shadows
 */
 
-
-
 @mixin shadow-styles($prefix, $noDotPrefix) {
 
 	[class^="#{$noDotPrefix}shadow-"],

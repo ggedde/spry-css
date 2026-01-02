@@ -42,13 +42,13 @@
 		}
 
 		#{$prefix}g-#{$s} {
-			--gapx    : #{$space};
-			--gapy    : #{$space};
-			column-gap: var(--gapx);
-			row-gap   : var(--gapy);
+			--gx    : #{$space};
+			--gy    : #{$space};
+			column-gap: var(--gx);
+			row-gap   : var(--gy);
 			> * {
-				--inner-gapx: #{$space};
-				--inner-gapy: #{$space};
+				--inner-gx: #{$space};
+				--inner-gy: #{$space};
 			}
 		}
 	}
@@ -117,18 +117,18 @@
 
 	@each $s, $space in variables.$spacing {
 		#{$prefix}gx-#{$s} {
-			--gapx    : #{$space};
-			column-gap: var(--gapx);
+			--gx    : #{$space};
+			column-gap: var(--gx);
 			> * {
-				--inner-gapx: #{$space};
+				--inner-gx: #{$space};
 			}
 		}
 
 		#{$prefix}gy-#{$s} {
-			--gapy : #{$space};
-			row-gap: var(--gapy);
+			--gy : #{$space};
+			row-gap: var(--gy);
 			> * {
-				--inner-gapy: #{$space};
+				--inner-gy: #{$space};
 			}
 		}
 	}
@@ -155,5 +155,5 @@
 }
 
 section {
-	padding: (calc(var(--gapy) * 2)) var(--gapx);
+	padding: (calc(var(--gy) * 2)) var(--gx);
 }

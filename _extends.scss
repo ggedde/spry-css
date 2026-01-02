@@ -100,7 +100,7 @@
 	&::before,
 	&::after {
 		height          : 1.2em;
-		width           : .12em;
+		width           : var(--thickness);
 		box-shadow      : none;
 		background-color: currentColor;
 	}

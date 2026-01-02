@@ -51,26 +51,10 @@ a {
 
 hr {
 	height       : 0;
-	margin       : var(--gapy) var(--gapx);
+	margin       : var(--gy) var(--gx);
 	border       : 0;
 	border-bottom: 1px solid;
 }
-
-// li,
-// ul {
-// 	justify-content: inherit;
-// 	text-align     : inherit;
-// }
-
-// li,
-// ul ul {
-// 	width          : inherit;
-// 	flex-direction : column;
-// }
-
-// ul ul {
-// 	background-color: inherit;
-// }
 
 .inherit-padding,
 .inherit {
@@ -114,4 +98,12 @@ hr {
 .inherit-shadow,
 .inherit {
 	box-shadow: inherit
+}
+
+.thin {
+	--thickness: .08em;
+}
+
+.thick {
+	--thickness: .18em;
 }
