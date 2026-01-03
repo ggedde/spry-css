@@ -50,9 +50,14 @@
 		}
 	}
 
+	svg {
+		transition: all 3s ease-in-out;
+	}
+
 	.loading,
 	.loading-spinner,
-	.loading-line {
+	.loading-line,
+	.loading-line-bottom {
 		position      : relative;
 		pointer-events: none;
 		overflow-x    : clip;
@@ -71,11 +76,6 @@
 			display: none;
 		}
 
-		&:is(button, .button, .badge, a) {
-			color     : transparent;
-			transition: color .1s ease-in-out;
-		}
-
 		>* {
 			filter: blur(1px)
 		}
@@ -84,11 +84,23 @@
 			pointer-events: none;
 			user-select   : none;
 		}
+
+		svg {
+			color: transparent;
+		}
+
+		select {
+			background: none;
+		}
+
+		&.thick {
+			--thickness: .24em;
+		}
 	}
 
-	:is(.loading, .loading-spinner, .loading-line)::after {
+	:is(.loading, .loading-spinner, .loading-line, .loading-line-bottom)::after {
 		animation   : sliding calc(var(--speed) * 2.5) ease-in-out infinite;
-		border-color: var(--ui-text) transparent transparent var(--ui-text);
+		border-color: var(--ui-loader) transparent transparent var(--ui-loader);
 		border-width: var(--thickness);
 		border-style: solid;
 		margin      : auto;
@@ -102,17 +114,18 @@
 	}
 
 	.loading::after,
-	.loading-line::after {
+	.loading-line::after,
+	.loading-line-bottom::after {
 		border-left-width: 0;
 	}
 
-	.loading:is(button, .button, [type=submit], [type=reset], .icon)::after,
+	.loading:is(button, .button, [type=submit], [type=reset], .icon, .switch, [type=radio], [type=checkbox])::after,
 	.loading-spinner::after {
 		aspect-ratio     : 1;
 		height           : 100%;
 		inset            : 0;
-		max-height       : min(50%, 100px);
-		max-width        : min(50%, 100px);
+		max-height       : min(50%, 60px);
+		max-width        : min(50%, 60px);
 		width            : fit-content;
 		border-left-width: var(--thickness);
 	}
@@ -122,54 +135,75 @@
 		max-width : 70%;
 	}
 
-	.loading-line:where(button, .button, [type=submit], [type=reset])::after {
+	:where(.loading-line, .loading-line-bottom):where(button, .button, [type=submit], [type=reset], .switch, [type=radio], [type=checkbox])::after {
 		border-radius: 0;
 	}
 
 	.spin,
 	.loading-spinner::after,
-	:is(.button, button, [type=submit], [type=reset], .icon).loading::after {
+	:is(.button, button, [type=submit], [type=reset], .icon, .switch, [type=radio], [type=checkbox]).loading::after {
 		animation-name: spinning;
+	}
+
+	:is(.loading, .loading-spinner):is(.button, .badge, button, [type=submit], [type=reset], .icon, a),
+	.loading-spinner > input {
+		color     : transparent;
+		transition: color .1s ease-in-out;
 	}
 
 	.linear:is(.loading-line, .loading)::after {
 		animation-name: sliding-linear;
 	}
 
+	:is([type=radio], [type=checkbox]).loading::after {
+		max-height: 90%;
+		max-width : 90%;
+	}
+
+	:is(.button, button, [type=submit], [type=reset], .icon) .loading-spinner::after {
+		max-height: 70%;
+		max-width : 70%;
+	}
+
 	.spin.linear,
 	.linear:is(.loading-spinner)::after,
-	:is(.button, button, [type=submit], [type=reset], .icon).loading.linear::after {
+	:is(.button, button, [type=submit], [type=reset], .icon, .switch, [type=radio], [type=checkbox]).loading.linear::after {
 		animation-name: spinning-linear;
 	}
 
 	.linear,
-	.linear:where(.loading, .loading-spinner, .loading-line)::after {
+	.linear:where(.loading, .loading-spinner, .loading-line, .loading-line-bottom)::after {
 		animation-timing-function: linear;
+	}
+
+	.loading-line-bottom::after {
+		bottom: -2px;
+		top: auto;
 	}
 
 	.comet::after {
 		border-radius    : 50% 0 0 0;
 		border-left-width: 0;
+		border-bottom-width: 0;
 	}
 
 	.shimmer::after {
 		border-radius     : 50%;
 		border-left-width : 0;
 		border-right-width: 0;
+		border-bottom-width: 0;
 	}
 
-	.loading:is(button, .button, [type=submit], [type=reset], .icon)::after,
+	.loading:is(button, .button, [type=submit], [type=reset], .icon, .switch, [type=radio], [type=checkbox])::after,
 	.loading-spinner::after {
 		border-radius: 50%;
 	}
 
-	@keyframes progress-stripes {
-		to {
-			background-position: 36px 0;
-		}
+	.loading-spinner:has(> select):after {
+		margin-right: .75em;
 	}
 
-	@-webkit-keyframes progress-stripes {
+	@keyframes progress-stripes {
 		to {
 			background-position: 36px 0;
 		}

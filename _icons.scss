@@ -36,7 +36,6 @@
 
 	&,
 	:where(svg, img) {
-		backface-visibility       : hidden;
 		fill                      : currentColor;
 		transition-duration       : var(--speed);
 		transition-property       : scale, transform, rotate, opacity;
@@ -95,6 +94,10 @@
 
 	&.next::after {
 		rotate: 270deg;
+	}
+
+	&:is(button, .button, [type=submit], [type=reset]) {
+		min-width: var(--comfort);
 	}
 
 	&:where(.menu, .dots, .close) {

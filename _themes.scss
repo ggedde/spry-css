@@ -73,6 +73,7 @@ $themeClassNames: ();
 			--ui-color : var(--theme-ui);
 			--ui-input : var(--theme-input);
 			--ui-accent: var(--theme-accent);
+			--ui-loader: var(--theme-accent);
 			--ui-shadow: rgba(0, 0, 0, var(--shadow-a, .2));
 			--ui-text  : hsl(from var(--theme-ui) 0 0 clamp(15%, calc((l - var(--invert))* -1000%), 98%) / var(--clr-a, 1));
 		}
@@ -189,6 +190,7 @@ $colorNames: ();
 			--ui-color: var(--#{$color_name});
 			--ui-border: var(--#{$color_name});
 			--ui-bg: var(--#{$color_name});
+			--ui-loader: var(--#{$color_name});
 		}
 	}
 
@@ -238,6 +240,10 @@ $colorNames: ();
 		.h\:color-#{"" + $color_name}:is(:hover, :focus, .active),
 		.color-#{"" + $color_name} {
 			--ui-text: hsl(from var(--#{$color_name}) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 1));
+		}
+
+		.loading-#{"" + $color_name} {
+			--ui-loader: var(--#{$color_name});
 		}
 		
 		.h\:bg-#{"" + $color_name}:is(:hover, :focus, .active),

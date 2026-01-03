@@ -49,7 +49,7 @@ menu menu {
 
 .indicators li:has(ul),
 .sub\:indicators ul ul li:has(ul) {
-	> :first-child {
+	> :first-child:not(.loading, .loading-spinner, .loading-line, .loading-line-bottom) {
 		padding-right: var(--comfort);
 		position     : relative;
 
@@ -104,7 +104,7 @@ menu menu {
 		box-shadow: 1px 3px 6px rgba(0, 0, 0, var(--shadow));
 	}
 
-	:is(#{$prefix}o\:down ul, #{$prefix}sub\:o\:down ul ul)>li:has(ul)> :first-child::after {
+	:is(#{$prefix}o\:down ul, #{$prefix}sub\:o\:down ul ul)>li:has(ul)> :first-child:not(.loading, .loading-spinner, .loading-line, .loading-line-bottom)::after {
 		rotate    : 90deg;
 		margin-top: -.3em;
 	}

@@ -150,7 +150,6 @@ select,
 .is-select {
 	text-align        : left;
 	padding-right     : 1.7em;
-	// line-height    : 1.55;
 	line-height       : var(--comfort-lh);
 	background        : linear-gradient(45deg, transparent 50%, var(--select-arrow) 0 calc(50% + 1px), transparent calc(50% + 2px)) no-repeat calc(100% - 1.2em), linear-gradient(-45deg, transparent 50%, var(--select-arrow) 0 calc(50% + .065em), transparent calc(50% + 2px)) no-repeat calc(100% - 0.82em);
 	background-size   : .4em .4em;
@@ -219,6 +218,7 @@ textarea {
 
 	:is(input, select, textarea) {
 		outline: 0;
+		width: 100%;
 	}
 
 	>* {

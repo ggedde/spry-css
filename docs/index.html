@@ -7217,6 +7217,13 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td class="md:w-200 md:pl-2"><code class="color-primary">loading-{color}</code></td>
+                                <td>
+                                    <h5>Set the color of the loader</h5>
+                                    <a class="primary link note sm h:o/100 dense" href="#styles.colors">See Colors</a>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td class="md:w-200 md:pl-2"><code class="color-primary">loading-spinner</code></td>
                                 <td>
                                     <h5>Forces the loader to be a spinner.</h5>
@@ -7262,80 +7269,121 @@
                     </table>
                 </div>
 
-                <article class="card show-code" data-title="Button Loader">
+                <article class="card show-code" data-title="Default Loaders">
 					<div class="code-content relative p-3 md:p-4">
-                        <button type="button" class="loading" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">
-                            Click for Loading
-                        </button>
+                        <div class="loading b-1 mb-3 p-3">
+                            Default
+                        </div>
+
+                        <div class="loading-line-bottom loading-primary shimmer thin b-1 mb-3 p-3">
+                            Primary Shimmer Thin Bottom
+                        </div>
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Button Loader">
+                <article class="card show-code" data-title="Content Spinner Loader">
 					<div class="code-content relative p-3 md:p-4">
-                        <button class="loading-line" type="button">
-                            Click for Loading
-                        </button>
+                        <div class="b-1 mb-3 p-3 max-w-300 transition-inner">
+                            <p>
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            </p>
+
+                            <button type="button" onclick="this.parentElement.classList.add('loading-spinner'); setTimeout(() => {this.parentElement.classList.remove('loading-spinner');}, 2000);">Click for Loading</button>
+                        </div>
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Button Loader">
-					<div class="code-content relative p-3 md:p-4">
-                        <button class="loading-line comet slow" type="button">
-                            Click for Loading
-                        </button>
+                <article class="card show-code" data-title="Spinners">
+					<div class="code-content relative p-3 md:p-4 row g-3">
+                        <label>Default
+                            <div class="loading-spinner b-1 mb-1 p-4"></div>
+                        </label>
+
+                        <label>Thick
+                            <div class="loading-spinner thick b-1 mb-1 p-4"></div>
+                        </label>
+
+                        <label>Thin
+                            <div class="loading-spinner thin b-1 mb-1 p-4"></div>
+                        </label>
+
+                        <label>Linear
+                            <div class="loading-spinner linear b-1 mb-1 p-4"></div>
+                        </label>
+
+                        <label>Comet
+                            <div class="loading-spinner comet b-1 mb-1 p-4"></div>
+                        </label>
+
+                        <label>Shimmer
+                            <div class="loading-spinner shimmer b-1 mb-1 p-4"></div>
+                        </label>
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Div Loader">
-					<div class="code-content relative p-3 md:p-4">
-                        <div class="xxl loading comet slow color-primary b-1 mb-1 round" style="min-height: 100px;"></div>
-                    </div>
-                </article>
+                <article class="card show-code" data-title="Inputs">
+					<div class="code-content relative p-3 md:p-4 row g-3">
+                        <label>Checkbox
+                            <input type="checkbox" class="loading">
+                        </label>
 
-                <article class="card show-code" data-title="Div Loader">
-					<div class="code-content relative p-3 md:p-4">
-                        <div class="xxl loading slow color-primary b-1 mb-1 round" style="min-height: 100px;"></div>
-                    </div>
-                </article>
+                        <label>Radio
+                            <input type="radio" class="loading">
+                        </label>
 
-                <article class="card show-code" data-title="Div Loader">
-					<div class="code-content relative p-3 md:p-4">
-                        <div class="xxl loading linear color-primary b-1 mb-1 round" style="min-height: 100px;"></div>
-                    </div>
-                </article>
+                        <label>Switch
+                            <input type="checkbox" class="switch loading">
+                        </label>
 
-                <article class="card show-code" data-title="Div Loader Spinner">
-					<div class="code-content relative p-3 md:p-4">
-                        <div class="xxl loading-spinner color-primary b-1 mb-1 round" style="min-height: 500px;"></div>
-                    </div>
-                </article>
+                        <label>Input
+                            <div class="loading">
+                                <input type="text">
+                            </div>
+                        </label>
 
-                <article class="card show-code" data-title="Div Loader Spinner">
-					<div class="code-content relative p-3 md:p-4">
-                        <div class="xxl loading-spinner linear color-primary b-1 mb-1 round" style="min-height: 100px;"></div>
-                    </div>
-                </article>
+                        <label>Input Spinner
+                            <div class="loading-spinner">
+                                <input type="text">
+                            </div>
+                        </label>
 
-                <article class="card show-code" data-title="Div Loader Spinner Large">
-					<div class="code-content relative p-3 md:p-4">
-                        <div class="xxl loading-spinner color-primary b-1 mb-1 round" style="min-height: 100px;"></div>
+                        <label>
+                            Select
+                            <div class="loading-spinner">
+                                <select required>
+                                    <option value="" selected disabled>Select</option>
+                                    <option>One</option>
+                                    <option>Two</option>
+                                </select>
+                            </div>
+                        </label>
                     </div>
                 </article>
 
                 <article class="card show-code" data-title="Button Loaders">
-					<div class="code-content relative p-3 md:p-4">
-                        <button class="sm loading"></button>
-                        <button class="sm loading loader"></button>
-                        <button class="hazy primary loading"></button>
-                        <button class="lg outline secondary loading"></button>
+					<div class="code-content relative p-3 md:p-4 row cols-auto g-2">
+                        <button class="icon" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">
+                            <svg class="icon" viewBox="0 0 24 24"><path d="M9 16v-6H5l7-7 7 7h-4v6H9m-4 4v-2h14v2H5z" /></svg>
+                        </button>
+
+                        <button onclick="this.children[0].classList.add('loading-spinner'); setTimeout(() => {this.children[0].classList.remove('loading-spinner');}, 2000);">
+                            Submit
+                            <span><svg class="icon" viewBox="0 0 24 24"><path d="M9 16v-6H5l7-7 7 7h-4v6H9m-4 4v-2h14v2H5z" /></svg></span>
+                        </button>
+
                         <button type="button" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">Click for Loading</button>
-                        <button class="outline primary" type="button" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading');}, 2000);">Click for Loading</button>
+
+                        <div class="input inline-flex">
+                            <input type="text" required>
+                            <button class="no-wrap" type="button" onclick="this.classList.add('loading');setTimeout(() => {this.classList.remove('loading');this.previousElementSibling.value = 'Good Job!';}, 2000);">Click Me</button>
+                        </div>
                     </div>
-                </article>
+                </article>                
 
                 <article class="card show-code" data-title="Progress Loader">
 					<div class="code-content relative p-3 md:p-4">
-                        <progress class="loading primary" value="0.5">50%</progress>
+                        <progress class="loading" value="0.5">50%</progress>
                     </div>
                 </article>
 
