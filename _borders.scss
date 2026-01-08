@@ -42,14 +42,14 @@
 			#{$prefix}bt-0 {
 				border-top: #{$border};
 			}
-			#{$prefix}br-0 {
-				border-right: #{$border};
+			#{$prefix}be-0 {
+				border-inline-end: #{$border};
 			}
 			#{$prefix}bb-0 {
 				border-bottom: #{$border};
 			}
-			#{$prefix}bl-0 {
-				border-left: #{$border};
+			#{$prefix}bs-0 {
+				border-inline-start: #{$border};
 			}
 		}
 	
@@ -57,14 +57,14 @@
 			#{$prefix}bt-#{$b} {
 				border-top: #{$border} solid;
 			}
-			#{$prefix}br-#{$b} {
-				border-right: #{$border} solid;
+			#{$prefix}be-#{$b} {
+				border-inline-end: #{$border} solid;
 			}
 			#{$prefix}bb-#{$b} {
 				border-bottom: #{$border} solid;
 			}
-			#{$prefix}bl-#{$b} {
-				border-left: #{$border} solid;
+			#{$prefix}bs-#{$b} {
+				border-inline-start: #{$border} solid;
 			}
 		}
 	}

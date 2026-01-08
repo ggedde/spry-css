@@ -48,6 +48,7 @@ $themes: (
 $colors: (
     primary   : (default: light-dark(#18d, #09d)),
     secondary : (default: light-dark(#a4b, #b5c)),
+    info      : (default: light-dark(#18d, #09d)),
     success   : (default: light-dark(#283, #0a0)),
     warning   : (default: light-dark(#c70, #e90)),
     error     : (default: light-dark(#d00, #f20)),
@@ -85,14 +86,6 @@ $blur: (
     3: 8px,
     4: 16px,
     5: 32px,
-) !default;
-
-// Specify the loader thickness.
-// Ex .loading-sm, .loading-lg, etc.
-$loaders: (
-    sm: .16em, // First one is default - ex. ".loading"
-    md: .25em,
-    lg: .5em,
 ) !default;
 
 /**************************************************************************************************************
@@ -206,6 +199,8 @@ $lengths: (
     --ease       : cubic-bezier(.45, .45, 0, 1);
     --gx         : 1.25em;
     --gy         : 1.25em;
+    --inner-gx   : 1.25em;
+    --inner-gy   : 1.25em;
     --glow       : .5;
     --glow-a     : .5;
     --invert     : 60;

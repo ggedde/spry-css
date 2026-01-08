@@ -135,12 +135,10 @@ $colorNames: ();
 		}
 
 		.bg-#{$i},
-		.scheme-toggle .\^bg-#{$i},
 		.h\:bg-#{$i}:hover {
 			--bg-l: #{calc(1 - ($i / 10))};
 		}
 		.bg\+#{$i},
-		.scheme-toggle .\^bg\+#{$i},
 		.h\:bg\+#{$i}:hover {
 			--bg-l: #{calc(($i / 10) + 1)};
 		}
@@ -190,7 +188,7 @@ $colorNames: ();
 			--ui-color: var(--#{$color_name});
 			--ui-border: var(--#{$color_name});
 			--ui-bg: var(--#{$color_name});
-			--ui-loader: var(--#{$color_name});
+			// --ui-loader: var(--#{$color_name});
 		}
 	}
 
@@ -203,6 +201,7 @@ $colorNames: ();
 		&:where(.link,.plain,.hazy,.outline, .buttons-link a, .buttons-outline a, .buttons-hazy a, .buttons-plain a),
 		:where(.link,.plain,.hazy,.outline, .buttons-link a, .buttons-outline a, .buttons-hazy a, .buttons-plain a) {
 			--ui-text: hsl(from var(--ui-accent) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 1));
+			--ui-loader: var(--ui-text);
 		}
 	}
 
@@ -240,6 +239,7 @@ $colorNames: ();
 		.h\:color-#{"" + $color_name}:is(:hover, :focus, .active),
 		.color-#{"" + $color_name} {
 			--ui-text: hsl(from var(--#{$color_name}) h s clamp(0, l * var(--clr-l, 1), 100) / var(--clr-a, 1));
+			--ui-loader: var(--ui-text);
 		}
 
 		.loading-#{"" + $color_name} {
@@ -295,14 +295,26 @@ $colorNames: ();
 
 	.bg-from-bottom {
 		--bg-from: 0deg;
+		&.pattern-1 {
+			--bg-from: 160deg;
+		}
 	}
-	.bg-from-bottom-left {
+	.bg-from-bottom-start,
+	[dir="rtl"] .bg-from-bottom-end {
 		--bg-from: 30deg;
+		&.pattern-1 {
+			--bg-from: 24deg;
+		}
 	}
-	.bg-from-left {
+	.bg-from-start,
+	[dir="rtl"] .bg-from-end {
 		--bg-from: 90deg;
+		&.pattern-1 {
+			--bg-from: 114deg;
+		}
 	}
-	.bg-from-top-left {
+	.bg-from-top-start,
+	[dir="rtl"] .bg-from-top-end {
 		--bg-from: 150deg;
 		&.pattern-3 {
 			--bg-from: 135deg;
@@ -310,14 +322,26 @@ $colorNames: ();
 	}
 	.bg-from-top {
 		--bg-from: 180deg;
+		&.pattern-1 {
+			--bg-from: 190deg;
+		}
 	}
-	.bg-from-top-right {
+	.bg-from-top-end,
+	[dir="rtl"] .bg-from-top-start {
 		--bg-from: 210deg;
 	}
-	.bg-from-right {
-		--bg-from: 270deg;
+	[dir="rtl"] .bg-from-top-start.pattern-1 {
+		--bg-from: 204deg;
 	}
-	.bg-from-bottom-right {
+	.bg-from-end,
+	[dir="rtl"] .bg-from-start {
+		--bg-from: 270deg;
+		&.pattern-1 {
+			--bg-from: 60deg;
+		}
+	}
+	.bg-from-bottom-end,
+	[dir="rtl"] .bg-from-bottom-start {
 		--bg-from: 330deg;
 	}
 

@@ -97,20 +97,20 @@
 }
 
 /****************************************************************************
-Layout Utility Classes - Ex. .md:text-right, etc
+Layout Utility Classes - Ex. .md:text-end, etc
 ****************************************************************************/
 @mixin utility-styles($prefix) {
 
-	#{$prefix}text-left {
-		text-align: left
+	#{$prefix}text-start {
+		text-align: start
 	}
 
 	#{$prefix}text-center {
 		text-align: center
 	}
 
-	#{$prefix}text-right {
-		text-align: right
+	#{$prefix}text-end {
+		text-align: end
 	}
 
 	#{$prefix}text-justify {
@@ -359,8 +359,8 @@ Layout Utility Classes - Ex. .md:text-right, etc
 	}
 
 	#{$prefix}translate-inline-center {
-		left     : 50%;
-		right    : auto;
+		inset-inline-start     : 50%;
+		inset-inline-end    : auto;
 		translate: -50% 0
 	}
 
@@ -368,24 +368,24 @@ Layout Utility Classes - Ex. .md:text-right, etc
 		translate: initial
 	}
 
-	#{$prefix}top {
+	#{$prefix}inset-top {
 		top   : 0;
 		bottom: auto
 	}
 
-	#{$prefix}right {
-		right: 0;
-		left : auto
+	#{$prefix}inset-end {
+		inset-inline-end: 0;
+		inset-inline-start : auto
 	}
 
-	#{$prefix}bottom {
+	#{$prefix}inset-bottom {
 		bottom: 0;
 		top   : auto
 	}
 
-	#{$prefix}left {
-		left : 0;
-		right: auto
+	#{$prefix}inset-start {
+		inset-inline-start: 0;
+		inset-inline-end : auto
 	}
 
 	#{$prefix}outer-top {
@@ -393,9 +393,9 @@ Layout Utility Classes - Ex. .md:text-right, etc
 		top   : auto
 	}
 
-	#{$prefix}outer-right {
-		left : 100%;
-		right: auto
+	#{$prefix}outer-end {
+		inset-inline-start : 100%;
+		inset-inline-end : auto
 	}
 
 	#{$prefix}outer-bottom {
@@ -403,46 +403,46 @@ Layout Utility Classes - Ex. .md:text-right, etc
 		bottom: auto
 	}
 
-	#{$prefix}outer-left {
-		right: 100%;
-		left : auto
+	#{$prefix}outer-start {
+		inset-inline-end: 100%;
+		inset-inline-start : auto
 	}
 
-	#{$prefix}position-left {
-		background-position: center left;
-		object-position: center left;
+	#{$prefix}position-start {
+		background-position: start center;
+		object-position: start center;
 	}
-	#{$prefix}position-right {
-		background-position: center right;
-		object-position: center right;
+	#{$prefix}position-end {
+		background-position: end center;
+		object-position: end center;
 	}
 	#{$prefix}position-center {
 		background-position: center;
 		object-position: center;
 	}
-	#{$prefix}position-top-left {
-		background-position: top left;
-		object-position: top left;
+	#{$prefix}position-start-top {
+		background-position: start top;
+		object-position: start top;
 	}
-	#{$prefix}position-top-center {
-		background-position: top center;
-		object-position: top center;
+	#{$prefix}position-top {
+		background-position: center top;
+		object-position: center top;
 	}
-	#{$prefix}position-top-right {
-		background-position: top right;
-		object-position: top right;
+	#{$prefix}position-end-top {
+		background-position: end top;
+		object-position: end top;
 	}
-	#{$prefix}position-bottom-left {
-		background-position: bottom left;
-		object-position: bottom left;
+	#{$prefix}position-start-bottom {
+		background-position: start bottom;
+		object-position: start bottom;
 	}
-	#{$prefix}position-bottom-center {
-		background-position: bottom center;
-		object-position: bottom center;
+	#{$prefix}position-bottom {
+		background-position: center bottom;
+		object-position: center bottom;
 	}
-	#{$prefix}position-bottom-right {
-		background-position: bottom right;
-		object-position: bottom right;
+	#{$prefix}position-end-bottom {
+		background-position: end bottom;
+		object-position: end bottom;
 	}
 
 	#{$prefix}no-pointer {
@@ -489,16 +489,18 @@ Layout Utility Classes - Ex. .md:text-right, etc
 		overflow-x: clip
 	}
 
-	#{$prefix}clip-top, #{$prefix}clip-bottom, #{$prefix}clip-right, #{$prefix}clip-left {
+	#{$prefix}clip-top {
 		clip-path: inset(0 -300vw -300vw -300vw);
 	}
 	#{$prefix}clip-bottom {
 		clip-path: inset(-300vw -300vw 0 -300vw);
 	}
-	#{$prefix}clip-right {
+	#{$prefix}clip-end,
+	[dir="rtl"] #{$prefix}clip-start {
 		clip-path: inset(-300vw 0 -300vw -300vw);
 	}
-	#{$prefix}clip-left {
+	#{$prefix}clip-start,
+	[dir="rtl"] #{$prefix}clip-end {
 		clip-path: inset(-300vw -300vw -300vw 0);
 	}
 
@@ -556,7 +558,7 @@ Layout Utility Classes - Ex. .md:text-right, etc
 	}
 
 	#{$prefix}from-top {
-		--transform: translate3d(0, -80px, 0);
+		--transform: translate3d(0, -2.3em, 0);
 		--origin   : top;
 	}
 
@@ -565,18 +567,26 @@ Layout Utility Classes - Ex. .md:text-right, etc
 		--origin   : center;
 	}
 
-	#{$prefix}from-left {
+	#{$prefix}from-start {
 		--transform: translate3d(-80px, 0, 0);
-		--origin   : left;
+		--origin   : start;
 	}
 
-	#{$prefix}from-right {
+	[dir="rtl"] #{$prefix}from-start {
 		--transform: translate3d(80px, 0, 0);
-		--origin   : right;
+	}
+
+	#{$prefix}from-end {
+		--transform: translate3d(80px, 0, 0);
+		--origin   : end;
+	}
+
+	[dir="rtl"] #{$prefix}from-end {
+		--transform: translate3d(-80px, 0, 0);
 	}
 
 	#{$prefix}from-bottom {
-		--transform: translate3d(0, 80px, 0);
+		--transform: translate3d(0, 2.3em, 0);
 		--origin   : bottom;
 	}
 
@@ -585,15 +595,16 @@ Layout Utility Classes - Ex. .md:text-right, etc
 		--origin   : top;
 	}
 
-	#{$prefix}o\/0,
-	#{$prefix}h\:o\/0:hover,
-	#{$prefix}h\:o\/0:focus {
-		opacity: 0;
-	}
+	// #{$prefix}o\/0,
+	// #{$prefix}h\:o\/0:hover,
+	// #{$prefix}h\:o\/0:focus {
+	// 	opacity: 0;
+	// }
 
 	@each $i in variables.$percentages {
 		/* This is costly only on Chrome because of :has(), Maybe remove it */
-		:has(> [class*="p:h"]):where(:hover) > #{$prefix}p\:h\:o\/#{$i},
+		:has(> [class*="p:h"]):hover > #{$prefix}p\:h\:o\/#{$i},
+		:has(> [class*="p:f"]):focus-within > #{$prefix}p\:f\:o\/#{$i},
 		#{$prefix}o\/#{$i},
 		#{$prefix}h\:o\/#{$i}:hover,
 		#{$prefix}h\:o\/#{$i}:focus {
@@ -608,6 +619,8 @@ Layout Utility Classes - Ex. .md:text-right, etc
 			scale: #{calc(1 - ($i * .05))};
 		}
 
+		:has(> [class*="p:h"]):hover > #{$prefix}p\:h\:s\+#{$i},
+		:has(> [class*="p:f"]):focus-within > #{$prefix}p\:f\:s\+#{$i},
 		#{$prefix}s\+#{$i},
 		#{$prefix}h\:s\+#{$i}:hover,
 		#{$prefix}h\:s\+#{$i}:focus {

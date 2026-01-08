@@ -8,13 +8,6 @@
 */
 
 :root {
-	@if meta.global-variable-exists('gaps', variables) and variables.$gaps {
-		--gx       : #{map.get(variables.$gaps, 'default')};
-		--gy       : #{map.get(variables.$gaps, 'default')};
-		--inner-gx : #{map.get(variables.$gaps, 'default')};
-		--inner-gy : #{map.get(variables.$gaps, 'default')};
-	}
-
 	--span      : 1;
 	--cols      : 1;
 	--rows      : 1;
@@ -34,20 +27,6 @@
 				}
 			}
 		}
-	}
-}
-
-@for $i from 1 through 5 {
-	.cols-#{$i}00 {
-		--span: #{$i};
-	}
-
-	.columns-#{$i}00 {
-		columns: #{$i}00px;
-	}
-
-	.columns-#{$i} {
-		columns: #{$i};
 	}
 }
 
@@ -83,7 +62,7 @@
 	#{$prefix}column>*,
 	#{$prefix}row>*,
 	#{$prefix}grid>* {
-		min-width : 0;
+		min-width : min-content;
 		max-width : 100%;
 		margin-top: 0;
 	}
@@ -110,8 +89,21 @@
 		}
 	}
 
+	#{$prefix}rows-100,
+	#{$prefix}rows-200,
+	#{$prefix}rows-300,
+	#{$prefix}rows-400,
+	#{$prefix}rows-500 {
+		grid: repeat(auto-fit, minmax(calc(var(--span) * 5em), 1fr)) / auto-flow;
+
+		>* {
+			flex: 0 0 calc(var(--span) * 100px);
+		}
+	}
+
 	#{$prefix}rows-fit {
 		grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+		grid-auto-rows: 1fr;
 	}
 
 	#{$prefix}cols-fit {
@@ -188,6 +180,24 @@
 		#{$prefix}rows-#{$i}:is([class^=grid], [class*=\ grid]),
 		#{$prefix}rows-#{$i}>* {
 			--rows: #{$i};
+		}
+	}
+
+	@for $i from 1 through 5 {
+		#{$prefix}cols-#{$i}00 {
+			--span: #{$i};
+		}
+
+		#{$prefix}rows-#{$i}00 {
+			--span: #{$i};
+		}
+	
+		#{$prefix}text-columns-#{$i}00 {
+			columns: #{calc($i - 1)}50px;
+		}
+
+		#{$prefix}text-columns-#{$i}{
+			columns: #{$i};
 		}
 	}
 }

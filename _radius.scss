@@ -10,20 +10,20 @@
 			border-radius: #{$radius};
 		}
 		#{$prefix}rt-#{$r} {
-			border-top-left-radius: #{$radius};
-			border-top-right-radius: #{$radius};
+			border-start-start-radius: #{$radius};
+			border-start-end-radius: #{$radius};
 		}
-		#{$prefix}rr-#{$r} {
-			border-top-right-radius: #{$radius};
-			border-bottom-right-radius: #{$radius};
+		#{$prefix}re-#{$r} {
+			border-start-end-radius: #{$radius};
+			border-end-end-radius: #{$radius};
 		}
 		#{$prefix}rb-#{$r} {
-			border-bottom-left-radius: #{$radius};
-			border-bottom-right-radius: #{$radius};
+			border-end-start-radius: #{$radius};
+			border-end-end-radius: #{$radius};
 		}
-		#{$prefix}rl-#{$r} {
-			border-top-left-radius: #{$radius};
-			border-bottom-left-radius: #{$radius};
+		#{$prefix}rs-#{$r} {
+			border-start-start-radius: #{$radius};
+			border-end-start-radius: #{$radius};
 		}
 	}
 }

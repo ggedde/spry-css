@@ -26,12 +26,12 @@
 		margin-bottom: auto;
 	}
 
-	#{$prefix}ml-auto {
-		margin-left: auto;
+	#{$prefix}ms-auto {
+		margin-inline-start: auto;
 	}
 
-	#{$prefix}mr-auto {
-		margin-right: auto;
+	#{$prefix}me-auto {
+		margin-inline-end: auto;
 	}
 
 	@each $s, $space in variables.$spacing {
@@ -79,12 +79,12 @@
 	@each $s,
 	$space in variables.$spacing {
 		@each $prop in (padding, margin) {
-			#{$prefix}#{string.slice($prop, 0, 1)}l-#{$s} {
-				#{$prop}-left: #{$space};
+			#{$prefix}#{string.slice($prop, 0, 1)}s-#{$s} {
+				#{$prop}-inline-start: #{$space};
 			}
 
-			#{$prefix}#{string.slice($prop, 0, 1)}r-#{$s} {
-				#{$prop}-right: #{$space};
+			#{$prefix}#{string.slice($prop, 0, 1)}e-#{$s} {
+				#{$prop}-inline-end: #{$space};
 			}
 
 			#{$prefix}#{string.slice($prop, 0, 1)}t-#{$s} {
@@ -96,12 +96,12 @@
 			}
 
 			@if $prop==margin and $s {
-				#{$prefix}#{string.slice($prop, 0, 1)}l-n#{$s} {
-					#{$prop}-left: -#{$space};
+				#{$prefix}#{string.slice($prop, 0, 1)}s-n#{$s} {
+					#{$prop}-inline-start: -#{$space};
 				}
 
-				#{$prefix}#{string.slice($prop, 0, 1)}r-n#{$s} {
-					#{$prop}-right: -#{$space};
+				#{$prefix}#{string.slice($prop, 0, 1)}e-n#{$s} {
+					#{$prop}-inline-end: -#{$space};
 				}
 
 				#{$prefix}#{string.slice($prop, 0, 1)}t-n#{$s} {

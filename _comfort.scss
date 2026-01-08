@@ -30,10 +30,6 @@
 
 @mixin comfort-styles($prefix) {
 
-	#{$prefix}text-left {
-		text-align: left
-	}
-
     #{$prefix}dense {
         --comfort: var(--dense);
         --comfort-py : var(--dense-py);

@@ -53,7 +53,7 @@
 
 	#{$prefix}h\:open > :where(nav, ul) li:has(:focus-visible, :hover) > ul,
 	#{$prefix}c\:open > :where(nav, ul) li:has(:checked) > ul,
-	#{$prefix}f\:open > :where(nav, ul) li:has(:focus-visible, :hover) > ul {
+	#{$prefix}f\:open > :where(nav, ul) li:has(:focus-within) > ul {
 		@if $prefix == '.' {
 			@extend %open;
 		}
@@ -100,7 +100,7 @@
 }
 
 :is(nav, .list) li:has(> .toggle + ul)> :not(.toggle):first-child {
-	padding-right: 2.5em;
+	padding-inline-end: 2.5em;
 }
 
 // Delay on hover to prevent accidental showing

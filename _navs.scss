@@ -49,26 +49,37 @@ menu menu {
 
 .indicators li:has(ul),
 .sub\:indicators ul ul li:has(ul) {
-	> :first-child:not(.loading, .loading-spinner, .loading-line, .loading-line-bottom) {
-		padding-right: var(--comfort);
-		position     : relative;
+	> :first-child {
+		padding-inline-end: calc(var(--comfort) + .25em);
+		position          : relative;
 
 		&::after {
-			content: "";
+			content         : "";
+			rotate          : 90deg;
+			position        : absolute;
 			background-color: transparent;
-			border: .15em solid currentColor;
-			border-bottom: 0;
-			border-left: 0;
-			display: block;
-			height: .5em;
-			margin: -.35em auto auto;
-			opacity   : .5;
-			position: absolute;
-			right     : 1em;
-			rotate    : 90deg;
-			transform: rotate(45deg);
-			transition: rotate .2s ease-in-out, margin .2s ease-in-out, scale .2s ease-in-out;
-			width: .5em;
+		}
+
+		&:not(.loading-spinner, .loading-line, .loading-line-bottom)::after {
+			display            : block;
+			width              : .6em;
+			border             : .15em solid currentColor;
+			border-bottom-color: transparent;
+			border-left-color  : transparent;
+			height             : .6em;
+			inset-inline-end   : 1em;
+			margin             : -.35em auto auto;
+			opacity            : .5;
+			transform          : rotate(45deg);
+			transition         : rotate .2s ease-in-out, margin .2s ease-in-out, scale .2s ease-in-out;
+		}
+
+		&.loading::after {
+			width             : .8em;
+			height            : .8em;
+			margin            : auto;
+			inset-inline-start: auto;
+			inset-inline-end  : .8em;
 		}
 	}
 }
@@ -79,21 +90,21 @@ menu menu {
 	:is(#{$prefix}h\:open, #{$prefix}f\:open)>li>ul,
 	#{$prefix}o\:side ul ul,
 	#{$prefix}sub\:o\:side ul ul ul {
-		position : absolute;
 		// min-width: calc(100% + 1px);
 		max-width: 260px;
+		position : absolute;
 		width    : max-content;
 	}
 
 	:where(#{$prefix}o\:down ul ul, #{$prefix}sub\:o\:down ul ul ul) {
-		position: static;
-		top     : auto;
-		left    : auto;
+		inset-inline-start: auto;
+		position          : static;
+		top               : auto;
 	}
 
 	:where(#{$prefix}o\:side ul ul, #{$prefix}sub\:o\:side ul ul ul) {
-		top : 0;
-		left: 100%;
+		inset-inline-start: 100%;
+		top               : 0;
 	}
 
 	:where(#{$prefix}o\:side ul, #{$prefix}sub\:o\:side ul ul) {
@@ -105,25 +116,27 @@ menu menu {
 	}
 
 	:is(#{$prefix}o\:down ul, #{$prefix}sub\:o\:down ul ul)>li:has(ul)> :first-child:not(.loading, .loading-spinner, .loading-line, .loading-line-bottom)::after {
-		rotate    : 90deg;
 		margin-top: -.3em;
+		rotate    : 90deg;
 	}
 
-	:is(#{$prefix}o\:down ul, #{$prefix}sub\:o\:down ul ul)>li:has(:checked):has(ul)> :first-child::after {
-		scale: -1;
+	:is(#{$prefix}o\:down ul, #{$prefix}sub\:o\:down ul ul)>li:has(:checked):has(ul)> :first-child:not(.loading, .loading-spinner, .loading-line, .loading-line-bottom)::after {
 		margin-top: .2em;
+		scale     : -1;
 	}
 
-	:is(#{$prefix}o\:side ul, #{$prefix}sub\:o\:side ul ul)>li:has(ul)> :first-child::after {
-		rotate    : 0deg;
+	:is(#{$prefix}o\:side ul, #{$prefix}sub\:o\:side ul ul)>li:has(ul)> :first-child:not(.loading, .loading-spinner, .loading-line, .loading-line-bottom)::after {
 		margin-top: 0;
+		rotate    : 0deg;
 	}
 }
 
 @include hoverOpen-styles('.');
 
 @if meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
-	@each $breakpoint, $breakpoint_width in variables.$breakpoints {
+
+	@each $breakpoint,
+	$breakpoint_width in variables.$breakpoints {
 		@if meta.global-variable-exists('useMediaQueries', variables) and variables.$useMediaQueries {
 			@media screen and (min-width: $breakpoint_width) {
 				@include hoverOpen-styles('.#{$breakpoint}\\:');

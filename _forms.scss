@@ -19,6 +19,7 @@ input::file-selector-button,
 	--select-arrow: var(--input-color);
 	font-family   : inherit;
 	font-weight   : inherit;
+	min-width     : 0;
 
 	&:is(:hover, :focus, :focus-within):not(.icon, .switch) {
 		--ui-input: hsl(from var(--ui-accent) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, 1));
@@ -65,22 +66,26 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 	opacity: .7;
 }
 
-[type=number],
+[type=number] {
+	padding-inline-end: 0.5em;
+}
+
 [type=date],
 [type=time] {
 	padding-right: 0.5em;
 }
 
 :where([type=radio], [type=checkbox]) {
-	min-height     : 1em;
-	min-width      : 1em;
-	width          : 1em;
-	padding        : 0;
-	margin         : 0 .6em 0 0;
-	display        : inline-flex;
-	align-items    : center;
-	justify-content: center;
-	vertical-align : text-bottom;
+	min-height       : 1em;
+	min-width        : 1em;
+	width            : 1em;
+	padding          : 0;
+	margin           : 0;
+	margin-inline-end: 0.6em;
+	display          : inline-flex;
+	align-items      : center;
+	justify-content  : center;
+	vertical-align   : text-bottom;
 
 	&::after {
 		content         : "";
@@ -101,7 +106,7 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 	width          : 2.25em;
 	height         : 1.15em;
 	border-radius  : 1em;
-	justify-content: left;
+	justify-content: start;
 
 	&:not(:checked, .loading)::after {
 		background-color: var(--input-color);
@@ -147,12 +152,19 @@ label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-chil
 }
 
 select,
-.is-select {
-	text-align        : left;
-	padding-right     : 1.7em;
-	line-height       : var(--comfort-lh);
-	background        : linear-gradient(45deg, transparent 50%, var(--select-arrow) 0 calc(50% + 1px), transparent calc(50% + 2px)) no-repeat calc(100% - 1.2em), linear-gradient(-45deg, transparent 50%, var(--select-arrow) 0 calc(50% + .065em), transparent calc(50% + 2px)) no-repeat calc(100% - 0.82em);
-	background-size   : .4em .4em;
+.select {
+	text-align         : start;
+	padding-inline-end : 1.7em;
+	line-height        : var(--comfort-lh);
+	background         : linear-gradient(45deg, transparent 50%, var(--select-arrow) 0 calc(50% + 1px), transparent calc(50% + 2px)), linear-gradient(-45deg, transparent 50%, var(--select-arrow) 0 calc(50% + .065em), transparent calc(50% + 2px));
+	background-size    : .4em .4em;
+	background-position: calc(100% - 1.2em), calc(100% - 0.82em);
+	background-repeat  : no-repeat;
+}
+
+[dir="rtl"] select,
+[dir="rtl"] .select {
+	background-position: 0.82em, 1.2em;
 }
 
 input,
@@ -170,27 +182,28 @@ textarea {
 }
 
 [type=file] {
-	padding-left : .5em;
-	text-overflow: revert;
-	overflow     : hidden;
-	padding-block: 0;
-	align-content: center;
+	padding-inline-start: .5em;
+	text-overflow       : revert;
+	overflow            : hidden;
+	padding-block       : 0;
+	align-content       : center;
 }
 
 ::file-selector-button {
-	appearance      : none;
-	border          : 0;
-	--bdr-a         : .5;
-	border-right    : 1px solid var(--input-color);
-	background-color: hsl(from var(--theme-ui) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
-	color           : var(--ui-text);
-	height          : auto;
-	line-height     : 2;
-	padding-inline  : 1em;
-	margin          : calc(-1 * var(--comfort-py)) 1em calc(-1 * var(--comfort-py)) -.6em;
-	font            : inherit;
-	opacity         : .8;
-	padding-block   : calc(var(--comfort-py) * 2);
+	appearance       : none;
+	border           : 0;
+	--bdr-a          : .5;
+	border-inline-end: 1px solid var(--input-color);
+	background-color : hsl(from var(--theme-ui) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
+	color            : var(--ui-text);
+	height           : auto;
+	line-height      : 2;
+	padding-inline   : 1em;
+	margin-block     : calc(-1 * var(--comfort-py));
+	margin-inline    : -.6em 1em;
+	font             : inherit;
+	opacity          : .8;
+	padding-block    : calc(var(--comfort-py) * 2);
 }
 
 ::-webkit-calendar-picker-indicator {
@@ -218,7 +231,7 @@ textarea {
 
 	:is(input, select, textarea) {
 		outline: 0;
-		width: 100%;
+		width  : 100%;
 	}
 
 	>* {
@@ -247,29 +260,16 @@ textarea {
 			background-color: hsl(from var(--theme-ui) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
 
 			&:first-child {
-				border-right: 1px solid var(--input-color);
+				border-inline-end: 1px solid var(--input-color);
 			}
 
 			&:last-child {
-				border-left: 1px solid var(--input-color);
+				border-inline-start: 1px solid var(--input-color);
 			}
 		}
 
 	}
 }
-
-// .input > :where(:not(input, select, textarea)) {
-
-// 	background-color: hsl(from var(--theme-ui) h s clamp(0, l * var(--bg-l, 1), 100) / var(--bg-a, 1));
-
-// 	&:first-child {
-// 		border-right: 1px solid var(--input-color);
-// 	}
-
-// 	&:last-child {
-// 		border-left: 1px solid var(--input-color);
-// 	}
-// }
 
 label {
 	display: block;
@@ -286,6 +286,7 @@ label {
 	}
 
 	:is(sup, sub) {
+		pointer-events: none;
 		position  : relative;
 		display   : inline-block;
 		opacity   : 0.7;
@@ -315,6 +316,26 @@ label {
 	}
 }
 
+[dir="rtl"] label {
+	:is(sup, sub) {
+		transform: translate(-1em, 2.6em);
+	}
+
+	sub {
+		transform: translate(-1em, -2.65em);
+	}
+
+	&:focus-within,
+	&:has(input:not(:placeholder-shown)),
+	&:has(textarea:not(:placeholder-shown)),
+	&:has(select option:not(:empty):checked) {
+
+		:is(sup, sub) {
+			transform: translate(-.1em, 0) scale(0.85);
+		}
+	}
+}
+
 .invalid {
 	display: none;
 }
@@ -322,23 +343,23 @@ label {
 .show-invalid {
 
 	/* This is costly only on Chrome because of :has(), Maybe remove it */
-	// :not(:focus-within):has([type=radio][required][value=""]:checked),
-	// .input:has(:user-invalid),
-	// :user-invalid {
-	// 	border-color : var(--error, #c33);
-	// 	outline-color: rgba(from var(--error, #c33) r g b / .4);
-	// }
+	:not(:focus-within):has([type=radio][required][value=""]:checked),
+	.input:has(:user-invalid),
+	:user-invalid {
+		border-color : var(--error, #c33);
+		outline-color: rgba(from var(--error, #c33) r g b / .4);
+	}
 
-	// label:has(:user-invalid) .invalid {
-	// 	display: revert;
-	// }
+	label:has(:user-invalid) .invalid {
+		display: revert;
+	}
 
-	// .input:has(:user-invalid)> :not(input, select, textarea) {
-	// 	background-color: var(--error, #c33);
-	// 	border-color    : var(--error, #c33);
-	// 	--ui-color      : var(--error, #c33);
-	// 	@extend %ui-color;
-	// }
+	.input:has(:user-invalid)> :not(input, select, textarea) {
+		background-color: var(--error, #c33);
+		border-color    : var(--error, #c33);
+		--ui-color      : var(--error, #c33);
+		@extend %ui-color;
+	}
 }
 
 progress {
@@ -358,13 +379,17 @@ progress {
 	}
 
 	&::-webkit-progress-value {
-		border-radius   : var(--radius) 0 0 var(--radius);
-		background-color: var(--ui-accent);
+		border-start-end-radius: 0;
+		border-end-end-radius  : 0;
+		background-color       : var(--ui-accent);
+		border                 : 3px solid var(--ui-accent);
 	}
 
 	/* Firefox */
 	&::-moz-progress-bar {
-		border-radius   : var(--radius) 0 0 var(--radius);
-		background-color: var(--ui-accent);
+		border-start-end-radius: 0;
+		border-end-end-radius  : 0;
+		background-color       : var(--ui-accent);
+		border                 : 3px solid var(--ui-accent);
 	}
 }
