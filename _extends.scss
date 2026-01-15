@@ -47,7 +47,7 @@
 %ui-hover {
 	background-color: hsl(from var(--ui-color) h s clamp(0, (l * var(--bg-l, 1)) + 10, 100) / var(--bg-a, 1));
 
-	&:where(.hazy, .outline, .plain, .link) {
+	&:where(.hazy, .outline, .plain) {
 		background-color: hsl(from var(--ui-color) h s clamp(0, (l * var(--bg-l, 1)) + 10, 100) / 16%);
 	}
 }

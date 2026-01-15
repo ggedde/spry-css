@@ -172,13 +172,11 @@
 			grid-row: span var(--span);
 		}
 
-		#{$prefix}cols-#{$i}:is([class^=grid], [class*=\ grid]),
-		#{$prefix}cols-#{$i}>* {
+		#{$prefix}cols-#{$i} {
 			--cols: #{$i};
 		}
 
-		#{$prefix}rows-#{$i}:is([class^=grid], [class*=\ grid]),
-		#{$prefix}rows-#{$i}>* {
+		#{$prefix}rows-#{$i} {
 			--rows: #{$i};
 		}
 	}

@@ -3,7 +3,7 @@
 */
 @use "extends";
 
-:is(.f\:swap, .h\:swap, .checked\:swap) > :last-child {
+:is(.f\:swap, .h\:swap, .c\:swap) > :last-child {
 	opacity: 0;
 	scale: .5;
 }
@@ -49,11 +49,11 @@
 	&.o\:close {
 		@extend %e-close;
 	}
-	// > :is(.toggle, label, button) .o\:swap,
-	// > .o\:swap,
-	// &.o\:swap {
-	// 	@extend %e-swap;
-	// }
+	> :is(.toggle, label, button) .o\:swap,
+	> .o\:swap,
+	&.o\:swap {
+		@extend %e-swap;
+	}
 }
 
 :is(:focus).f\:,
@@ -61,7 +61,8 @@
 :is(:hover, :focus-visible).h\:,
 :is(label, .button, button, .toggle, .badge):is(:focus, :focus-within) > .f\:,
 :is(label, .button, button, .toggle, .badge):is(:hover, :focus-visible) > .h\:,
-:is(:checked, label:has(:checked) > *).c\:{
+:is(:checked, label:has(:checked)).c\:,
+label:has(:checked) > .c\:{
 	&rotate {
 		@extend %e-rotate;
 	}
@@ -83,7 +84,7 @@
 	&close.icon {
 		@extend %e-close;
 	}
-	// &swap {
-	// 	@extend %e-swap;
-	// }
+	&swap {
+		@extend %e-swap;
+	}
 }

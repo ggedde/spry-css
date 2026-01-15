@@ -52,12 +52,12 @@
 	color: var(--ui-text);
 }
 
-:where(button, .button, [type=submit], [type=reset]):where(.link),
+.link,
 :where(.buttons-link) a {
 	text-transform: none;
 }
 
-:is(button, .button, [type=submit], [type=reset]):is(:hover, :focus, :focus-within, .active):is(.link, .outline, .hazy, .plain):not(:active),
-:is(.buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a:is(:hover, :focus, :focus-within, .active):not(:active) {
+:is(button, .button, [type=submit], [type=reset]):is(:hover, :focus, :focus-within, .active):is(.outline, .hazy, .plain):not(:active),
+:is(.buttons-outline, .buttons-hazy, .buttons-plain) a:is(:hover, :focus, :focus-within, .active):not(:active) {
 	@extend %ui-bg-hover;
 }

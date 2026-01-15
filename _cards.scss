@@ -10,22 +10,13 @@
 	flex-direction  : column;
 	row-gap         : var(--gy);
 	justify-content : flex-start;
-	padding         : 2em;
+	padding         : var(--gy);
 	position        : relative;
 	transition      : none;
 
 	// &:has(>img) {
 	// 	overflow: hidden;
 	// }
-
-	>:where(header) {
-		padding-inline: 1em;
-	}
-
-	>:where(footer) {
-		padding-inline: 1em;
-		margin-top: auto;
-	}
 
 	&.outline {
 
@@ -41,6 +32,15 @@
 	>* {
 		width     : 100%;
 		margin-top: 0;
+	}
+
+	>:where(header) {
+		padding-inline: 1em;
+	}
+
+	>:where(footer) {
+		padding-inline: 1em;
+		margin-top: auto;
 	}
 
 	>:where(header, footer) {
@@ -69,9 +69,6 @@
 	padding: 0;
 }
 
-:where(.card):has(>:where(header, footer)) {
-	>p,
-	>div {
-		padding-inline: 1em;
-	}
+:where(.card):has(>:where(header, footer))>:where(p, div) {
+	padding-inline: var(--gx);
 }

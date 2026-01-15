@@ -89,7 +89,8 @@
 	}
 }
 
-:where(.toggle, label):where(.button, .icon) > :where([type="checkbox"], [type="radio"]) {
+:where(.toggle, label):where(.button, .icon) > :where([type="checkbox"], [type="radio"]),
+.toggle :where([type="checkbox"], [type="radio"]) {
 	border: 0;
 	outline: 0;
 	&:not(.icon,.switch,.button,.tooltip) {

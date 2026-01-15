@@ -20,10 +20,12 @@ label:has(.hide:focus-visible),
 a {
 	cursor         : pointer;
 	text-decoration: none;
+}
 
-	&:is(:hover, :focus):not(button, .button, :has(img), :active) {
-		filter: brightness(1.15);
-	}
+a:is(:hover, :focus):not(button, .button, :has(img), :active),
+.link:is(:hover, :focus):not(:active) {
+	filter: brightness(1.15);
+	--clr-l: 1.1;
 }
 
 .link,
@@ -34,10 +36,18 @@ a {
 }
 
 .link,
+.link:is(:hover, :focus),
+.buttons-link a:is(:hover, :focus),
 .plain,
 .outline,
 :where(.buttons-link, .buttons-plain, .buttons-outline) a {
 	background-color: transparent;
+}
+
+.buttons-link a,
+.link {
+	padding: 0;
+	min-height: auto;
 }
 
 .hazy,
