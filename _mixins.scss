@@ -85,6 +85,7 @@
 	transition-duration       : var(--speed);
 	transition-property       : height, max-height, transform, opacity;
 	transition-timing-function: var(--ease);
+	visibility                : hidden;
 }
 
 /// Opened State
@@ -94,6 +95,7 @@
 	max-height    : var(--max-height);
 	transform     : translate3d(0, 0, 0);
 	pointer-events: inherit;
+	visibility    : visible;
 }
 
 /// Default Shut State
@@ -104,6 +106,7 @@
 	grid-template-rows: 0fr;
 	pointer-events    : none;
 	transition        : var(--speed) var(--ease);
+	visibility        : hidden;
 
 	>* {
 		overflow        : hidden;
@@ -119,6 +122,7 @@
 	opacity           : 1;
 	grid-template-rows: 1fr;
 	pointer-events    : inherit;
+	visibility        : visible;
 
 	>* {
 

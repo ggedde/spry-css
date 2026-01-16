@@ -56,7 +56,7 @@
 		min-width       : var(--roomy);
 
 		>* {
-			@extend %ui-color;
+			// @extend %ui-color;
 			margin-top: 0;
 		}
 	}

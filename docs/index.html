@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://spryjs.local.com/docs.min.css">
     <script defer src="https://spryjs.local.com/docs.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/gh/ggedde/spry-js/dist/spry.js?v=1.0.0&load=spryJs"></script>
+    <script defer src="https://spryjs.local.com/spry.js?v=1.0.0&load=spryJs"></script>
     <!-- <script defer src="https://buttons.github.io/buttons.js"></script> -->
 </head>
 
@@ -3208,18 +3208,18 @@
 
                 <article id="states.toggles.example.menu" class="card show-code" data-title="Menu" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#accordions'&gt;Accordions&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="relative w-content">
-                            <label class="toggle button link icon menu o:close">
+                        <span class="relative">
+                            <label class="toggle button plain icon menu o:close">
                                 <input class="hide" type="checkbox">
                             </label>
 
-                            <div class="collapse from-top overlay clip-top">
+                            <span class="collapse from-top overlay clip-top">
                                 <nav class="list bg-faint round o:side shadow-2 w-content p-1">
                                     <ul>
                                         <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
                                         <li><a href="#">Link 1</a></li>
                                         <li><a href="#">Link 2</a>
-                                            <input type="checkbox" class="toggle button link circle primary icon down shy o:rotate absolute inset-end sm">
+                                            <input type="checkbox" class="toggle button plain circle icon down o:rotate absolute inset-end xs m-1">
                                             <ul class="from-default">
                                                 <li><a href="#">SubLink 1</a></li>
                                                 <li><a href="#">SubLink 2</a></li>
@@ -3229,8 +3229,8 @@
                                         <li><a href="#">Link 3</a></li>
                                     </ul>
                                 </nav>
-                            </div>
-                        </div>
+                            </span>
+                        </span>
                     </div>
                 </article>
 
@@ -5870,7 +5870,7 @@
             </section>
             
             <!-- DROPDOWNS -->
-            <section id="components.dropdowns" class="inherit-bg py-0 pb-4">
+            <section id="components.dropdowns" class="inherit-bg py-0 pb-5">
                 <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:ps-3 mb-3 mx-n2 md:ms-n3 md:me-n2">
                     <svg class="icon me-2" viewBox="0 0 24 24"><path d="M17 5H20L18.5 7L17 5M3 2H21C22.11 2 23 2.9 23 4V8C23 9.11 22.11 10 21 10H16V20C16 21.11 15.11 22 14 22H3C1.9 22 1 21.11 1 20V4C1 2.9 1.9 2 3 2M3 4V8H14V4H3M21 8V4H16V8H21M3 20H14V10H3V20M5 12H12V14H5V12M5 16H12V18H5V16Z" /></svg>
                     <a href="#components.dropdowns">Dropdowns</a>
@@ -5896,92 +5896,85 @@
 
                 <article class="card show-code" data-title="Basic Dropdown">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="l-select" data-language="html">
-                            <span class="relative">
-                                <button class="toggle f:open">
+                        <div class="l-select" data-language="css" data-footer-note="See &lt;a href='#states.open'&gt;Open States&lt;/a&gt; for more options when using CSS-only.">
+                            <span class="relative f:open">
+                                <button class="o:no-pointer index-2" tabindex="0"> <!-- Toggle - Some browsers require tabindex -->
                                     View Items
-                                    <svg class="icon o:rotate lg" viewBox="0 0 24 24">
-                                        <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
-                                    </svg>
+                                    <i class="icon down thick o:flip xs"></i>
                                 </button>
-                                <div class="toggle-content overlay hidden from-top">
-                                    <nav class="list bg-faint round-bottom shadow-2 p-1 b-1 g-1">
+                                <span class="collapse from-top overlay mt-n1"> <!-- Overlay-->
+                                    <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1"> <!-- Content-->
                                         <ul>
-                                            <li><button class="link">Item 1</button></li>
-                                            <li><button class="link">Item 2</button></li>
-                                            <li><button class="link">Item 3</button></li>
+                                            <li><a href="#">Item 1</a></li>
+                                            <li><a href="#">Item 2</a></li>
+                                            <li><a href="#">Item 3</a></li>
                                         </ul>
                                     </nav>
-                                </div>
+                                </span>
+                            </span>
+                        </div>
+
+                        <div class="l-select" data-language="js">
+                            <span class="relative inline-block" onkeyup="if(event.keyCode === 27){ this.classList.remove('open')}">
+                                <button
+                                class="index-2"
+                                tabindex="0"
+                                onblur="setTimeout(() => {if (!this.parentElement.contains(document.activeElement)){ this.parentElement.classList.remove('open');}})"
+                                onclick="this.parentElement.classList.toggle('open')">
+                                    View Items
+                                    <i class="icon down thick o:flip xs"></i>
+                                </button>
+                                <span class="collapse from-top overlay mt-n1">
+                                    <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
+                                        <ul>
+                                            <li><a href="#" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('open');}})">Item 1</a></li>
+                                            <li><a href="#" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('open');}})">Item 2</a></li>
+                                            <li><a href="#" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('open');}})">Item 3</a></li>
+                                        </ul>
+                                    </nav>
+                                </span>
                             </span>
                         </div>
 
                         <div class="l-select" data-language="spryJs">
                             <span class="relative navigable">
-                                <button class="relative index-1" data-toggle="next" data-toggle-dismissible data-toggle-escapable>
+                                <button class="relative index-2" data-toggle="parent" data-toggle-dismissible data-toggle-escapable>
                                     View Items
-                                    <svg class="icon o:rotate lg" viewBox="0 0 24 24">
-                                        <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
-                                    </svg>
+                                    <i class="icon down thick o:flip xs"></i>
                                 </button>
-                                <div class="collapse overlay hidden from-top">
-                                    <nav class="list bg-faint round-bottom shadow-2 p-1 b-1 g-1">
+                                <span class="collapse from-top overlay mt-n1">
+                                    <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
                                         <ul>
-                                            <li><button data-toggle-close class="link">Item 1</button></li>
-                                            <li><button data-toggle-close onclick="alert(123)" class="link">Item 2</button></li>
-                                            <li><button data-toggle-close class="link">Item 3</button></li>
+                                            <li><a href="#">Item 1</a></li>
+                                            <li><a href="#">Item 2</a></li>
+                                            <li><a href="#">Item 3</a></li>
                                         </ul>
                                     </nav>
-                                </div>
-                            </span>
-                        </div>
-
-                        <div class="l-select" data-language="js">
-                            <span class="collapse" onkeyup="if(event.keyCode === 27){ this.classList.remove('open')}">
-                                <button
-                                    onblur="setTimeout(() => {if (!this.parentElement.contains(document.activeElement)){ this.parentElement.classList.remove('open');}})"
-                                    onclick="this.parentElement.classList.toggle('open')">
-                                    View Items
-                                    <svg class="icon o:rotate lg" viewBox="0 0 24 24">
-                                        <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
-                                    </svg>
-                                </button>
-                                <div class="overlay hidden from-top">
-                                    <nav class="content list bg-faint round-bottom shadow-2 p-1 b-1 g-1">
-                                        <ul>
-                                            <li><button class="link" onclick="this.closest('.collapse').classList.remove('open')">Item 1</button></li>
-                                            <li><button class="link" onclick="this.closest('.collapse').classList.remove('open')">Item 2</button></li>
-                                            <li><button class="link" onclick="this.closest('.collapse').classList.remove('open')">Item 3</button></li>
-                                        </ul>
-                                    </nav>
-                                </div>
+                                </span>
                             </span>
                         </div>
 
                         <div class="l-select" data-language="petiteVue">
-                            <span id="dropdownTogglePetiteVue" class="relative" @vue:mounted="mounted($el)" @keyup="event.keyCode === 27 ? open = false : null">
-                                <button :class="{active: open}" @click="open = !open">
+                            <span id="dropdownTogglePetiteVue" class="relative" :class="{open: open}" @vue:mounted="mounted($el)" @keyup="event.keyCode === 27 ? open = false : null">
+                                <button class="relative index-2" @click="open = !open">
                                     View Items
-                                    <svg class="icon active:rotate lg" viewBox="0 0 24 24">
-                                        <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
-                                    </svg>
+                                    <i class="icon down thick o:flip xs"></i>
                                 </button>
-                                <div class="collapse overlay hidden from-top" :class="{o: open}">
-                                    <nav class="content list bg-faint round-bottom shadow-2 p-1 b-1 g-1" :class="{o: open}">
+                                <span class="collapse from-top overlay mt-n1">
+                                    <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
                                         <ul>
                                             <li v-for="item in items">
-                                                <button class="link" :class="{active: (toggleValue === item)}" @click="toggleValue = item; open = false">{{ item }}</button>
+                                                <a href="#">{{ item }}</a>
                                             </li>
                                         </ul>
                                     </nav>
-                                </div>
+                                </span>
                             </span>
 
                             <script type="module">
                                 import { createApp } from 'https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/+esm';
                                 createApp({
                                     open: false,
-                                    toggleValue: 'Select',
                                     items: [
                                         'Item 1',
                                         'Item 2',
@@ -6000,32 +5993,29 @@
 
                         <div class="l-select" data-language="vueJs">
                             <span id="dropdownToggleVueJs">
-                                <span class="relative" ref="el" @keyup.esc="open = false">
-                                    <button :class="{active: open}" @click="open = !open">
+                                <span class="relative" ref="el" :class="{open: open}">
+                                    <button class="relative index-2" @click="open = !open">
                                         View Items
-                                        <svg class="icon active:rotate lg" viewBox="0 0 24 24">
-                                            <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
-                                        </svg>
+                                        <i class="icon down thick o:flip xs"></i>
                                     </button>
-                                    <div class="collapse overlay hidden from-top" :class="{o: open}">
-                                        <nav class="content list bg-faint round-bottom shadow-2 p-1 b-1 g-1" :class="{o: open}">
+                                    <span class="collapse from-top overlay mt-n1">
+                                        <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
                                             <ul>
                                                 <li v-for="item in items">
-                                                    <button class="link" :class="{active: (toggleValue === item)}" @click="toggleValue = item; open = false">{{ item }}</button>
+                                                    <a href="#">{{ item }}</a>
                                                 </li>
                                             </ul>
                                         </nav>
-                                    </div>
+                                    </span>
                                 </span>
                             </span>
 
                             <script type="module">
-                            import { createApp, ref, onMounted } from 'https://cdn.jsdelivr.net/npm/vue@3.5.13/+esm';
+                            import { createApp, ref, onMounted } from 'https://cdn.jsdelivr.net/npm/vue@3.5.26/dist/vue.esm-browser.js';
                                 createApp({
                                     setup(props, context) {
                                         const el = ref(null);
                                         const open = ref(false);
-                                        const toggleValue = ref('Select');
                                         const items = [
                                             'Item 1',
                                             'Item 2',
@@ -6037,12 +6027,16 @@
                                                     open.value = false;
                                                 }
                                             });
+                                            document.documentElement.addEventListener('keyup', e => {
+                                                if (e.keyCode === 27) {
+                                                    open.value = false;
+                                                }
+                                            });
                                         });
                                         return {
                                             el,
                                             open,
                                             items,
-                                            toggleValue,
                                         }
                                     }
                                 }).mount('#dropdownToggleVueJs');
@@ -6052,27 +6046,24 @@
                         <div class="l-select" data-language="alpineJs">
                             <span x-data="{
                                     open: false,
-                                    toggleValue: 'Select',
                                     items: ['Item 1', 'Item 2', 'Item 3']
                                 }">
-                                <span class="relative" @keyup.esc="open = false" @click.outside="open = false">
-                                    <button :class="{active: open}" @click="open = !open">
+                                <span class="relative" :class="{open: open}" @keyup.esc="open = false" @click.outside="open = false">
+                                    <button class="relative index-2" @click="open = !open">
                                         View Items
-                                        <svg class="icon active:rotate lg" viewBox="0 0 24 24">
-                                            <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
-                                        </svg>
+                                        <i class="icon down thick o:flip xs"></i>
                                     </button>
-                                    <div class="collapse overlay hidden from-top" :class="{o: open}">
-                                        <nav class="content list bg-faint round-bottom shadow-2 p-1 b-1 g-1" :class="{o: open}">
+                                    <span class="collapse from-top overlay mt-n1">
+                                        <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
                                             <ul>
                                                 <template x-for="item in items">
                                                     <li>
-                                                        <button class="link" :class="{active: (toggleValue === item)}" @click="toggleValue = item; open = false" x-text="item"></button>
+                                                        <a href="#" x-text="item"></a>
                                                     </li>
                                                 </template>
                                             </ul>
                                         </nav>
-                                    </div>
+                                    </span>
                                 </span>
                             </span>
 
@@ -6084,55 +6075,223 @@
 
                 <article class="card show-code" data-title="Custom Select">
 					<div class="code-content relative p-3 md:p-4">
-                        <span class="toggle-container">
-                            <label class="toggle f:open g-0 select pe-4 inline-flex min-w-200 content-start bb" tabindex="0">
-                                <span>
-                                    <span class="none c:revert">Select</span>
-                                    <input id="selectHtmlNone" class="hide" type="radio" name="selectHtmlValue" value="" checked>
+                        <div class="l-select" data-language="css" data-footer-note="See &lt;a href='#states.open'&gt;Open States&lt;/a&gt; for more options when using CSS-only.">
+                            <span class="relative f:open">
+                                <input type="text" class="select index-2" value="" readonly placeholder="- Select">
+                                <span class="collapse from-top overlay hidden">
+                                    <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
+                                        <ul>
+                                            <li><button type="button" class="plain contrast r-0">Option 1</button></li>
+                                            <li><button type="button" class="plain contrast r-0">Option 2</button></li>
+                                            <li><button type="button" class="plain contrast r-0">Option 3</button></li>
+                                        </ul>
+                                    </nav>
                                 </span>
-                                <span>
-                                    <span class="none c:revert">Option 1</span>
-                                    <input id="selectHtml1" class="hide" type="radio" name="selectHtmlValue" value="Option 1">
+                            </span>
+                        </div>
+
+                        <div class="l-select" data-language="js">
+                            <span id="custom-select-js" class="relative" onkeyup="if(event.keyCode === 27){ this.classList.remove('open')}">
+                                <input
+                                    type="text"
+                                    class="select index-2"
+                                    onclick="document.getElementById('custom-select-js').classList.toggle('open')"
+                                    onblur="setTimeout(() => {if (!this.parentElement.contains(document.activeElement)){this.parentElement.classList.remove('open');}})"
+                                    onkeyup="if([13, 32].includes(parseInt(event.keyCode))){ event.preventDefault(); document.getElementById('custom-select-js').classList.toggle('open')}"
+                                    value=""
+                                    placeholder="- Select"
+                                    readonly>
+                                <span class="collapse from-top overlay clip-top" onkeyup="if([13, 32, 9].includes(parseInt(event.keyCode))){ event.preventDefault(); document.getElementById('custom-select-js').classList.add('open')}">
+                                    <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
+                                        <ul>
+                                            <li><button type="button" class="plain contrast r-0" onclick="this.closest('ul').querySelectorAll('button').forEach(btn => btn.classList.remove('active'));this.classList.add('active');document.querySelector('#custom-select-js input').value = this.innerHTML;document.querySelector('#custom-select-js input').focus();setTimeout(function(){document.getElementById('custom-select-js').classList.remove('open')},100);" onblur="setTimeout(() => {if (!document.getElementById('custom-select-js').contains(document.activeElement)){document.getElementById('custom-select-js').classList.remove('open');}})">Option 1</button></li>
+                                            <li><button type="button" class="plain contrast r-0" onclick="this.closest('ul').querySelectorAll('button').forEach(btn => btn.classList.remove('active'));this.classList.add('active');document.querySelector('#custom-select-js input').value = this.innerHTML;document.querySelector('#custom-select-js input').focus();setTimeout(function(){document.getElementById('custom-select-js').classList.remove('open')},100);" onblur="setTimeout(() => {if (!document.getElementById('custom-select-js').contains(document.activeElement)){document.getElementById('custom-select-js').classList.remove('open');}})">Option 2</button></li>
+                                            <li><button type="button" class="plain contrast r-0" onclick="this.closest('ul').querySelectorAll('button').forEach(btn => btn.classList.remove('active'));this.classList.add('active');document.querySelector('#custom-select-js input').value = this.innerHTML;document.querySelector('#custom-select-js input').focus();setTimeout(function(){document.getElementById('custom-select-js').classList.remove('open')},100);" onblur="setTimeout(() => {if (!document.getElementById('custom-select-js').contains(document.activeElement)){document.getElementById('custom-select-js').classList.remove('open');}})">Option 3</button></li>
+                                        </ul>
+                                    </nav>
                                 </span>
-                                <span>
-                                    <span class="none c:revert">Option 2</span>
-                                    <input id="selectHtml2" class="hide" type="radio" name="selectHtmlValue" value="Option 2">
+                            </span>
+                        </div>
+
+                        <div class="l-select" data-language="spryJs">
+                            <span id="custom-select-spryjs" class="relative">
+                                <input
+                                    type="text"
+                                    class="select index-2"
+                                    data-toggle="parent"
+                                    data-toggle-dismissible
+                                    data-toggle-escapable
+                                    value=""
+                                    placeholder="- Select"
+                                    readonly>
+                                <span class="collapse from-top overlay clip-top navigable">
+                                    <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
+                                        <ul>
+                                            <li><button type="button" class="plain capitalize r-0" onclick="spry('#custom-select-spryjs input').el.value = this.innerText" data-toggle-close data-toggle-close-active>Option 1</button></li>
+                                            <li><button type="button" class="plain capitalize r-0" onclick="spry('#custom-select-spryjs input').el.value = this.innerText" data-toggle-close data-toggle-close-active>Option 2</button></li>
+                                            <li><button type="button" class="plain capitalize r-0" onclick="spry('#custom-select-spryjs input').el.value = this.innerText" data-toggle-close data-toggle-close-active>Option 3</button></li>
+                                        </ul>
+                                    </nav>
                                 </span>
-                                <span>
-                                    <span class="none c:revert">Option 3</span>
-                                    <input id="selectHtml3" class="hide" type="radio" name="selectHtmlValue" value="Option 3">
+                            </span>
+                        </div>
+
+                        <div class="l-select" data-language="petiteVue">
+                            <span id="custom-select-petite-vue" class="relative" :class="{open: open}" @vue:mounted="mounted($el)" @keyup="event.keyCode === 27 ? open = false : null">
+                                <input
+                                    type="text"
+                                    class="select index-2"
+                                    v-model="active"
+                                    placeholder="- Select"
+                                    @click="open = !open"
+                                    @keyup="if(event.keyCode === 13){open = !open}"
+                                    readonly>
+                                <span class="collapse from-top overlay clip-top">
+                                    <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
+                                        <ul>
+                                            <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 1'}" @click="active = 'Option 1'; open = false">Option 1</button></li>
+                                            <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 2'}" @click="active = 'Option 2'; open = false">Option 2</button></li>
+                                            <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 3'}" @click="active = 'Option 3'; open = false">Option 3</button></li>
+                                        </ul>
+                                    </nav>
                                 </span>
-                                <label class="checked-empty:none button absolute inset-end icon circle pointer-all shy xxs me-4" for="selectHtmlNone">
-                                    <svg class="xl" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                                </label>
-                            </label>
-                            <div class="toggle-content overlay hidden from-top">
-                                <nav class="list bg-faint round-bottom shadow-2 p-1 b-1 g-1">
-                                    <ul>
-                                        <li><label tabindex="0" class="button link" for="selectHtml1">Option 1</label></li>
-                                        <li><label tabindex="0" class="button link" for="selectHtml2">Option 2</label></li>
-                                        <li><label tabindex="0" class="button link" for="selectHtml3">Option 3</label></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </span>
+                            </span>
+
+                            <script type="module">
+                                import { createApp } from 'https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/+esm';
+                                createApp({
+                                    open: false,
+                                    active: '',
+                                    mounted(el) {
+                                        document.documentElement.addEventListener('click', e => {
+                                            if (el !== e.target && !el.contains(e.target)) {
+                                                this.open = false;
+                                            }
+                                        });
+                                    }
+                                }).mount('#custom-select-petite-vue');
+                            </script>
+                        </div>
+
+                        <div class="l-select" data-language="vueJs">
+                            <span id="custom-select-vue-js">
+                                <span ref="el" class="relative" :class="{open: open}">
+                                    <input
+                                        type="text"
+                                        class="select index-2"
+                                        v-model="active"
+                                        placeholder="- Select"
+                                        @click="open = !open"
+                                        @keyup.enter="open = !open"
+                                        readonly>
+                                    <span class="collapse from-top overlay clip-top">
+                                        <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
+                                            <ul>
+                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 1'}" @click="active = 'Option 1'; open = false">Option 1</button></li>
+                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 2'}" @click="active = 'Option 2'; open = false">Option 2</button></li>
+                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 3'}" @click="active = 'Option 3'; open = false">Option 3</button></li>
+                                            </ul>
+                                        </nav>
+                                    </span>
+                                </span>
+                            </span>
+
+                            <script type="module">
+                                import { createApp, ref, onMounted } from 'https://cdn.jsdelivr.net/npm/vue@3.5.26/dist/vue.esm-browser.js';
+                                createApp({
+                                    setup(props, context) {
+                                        const el = ref(null);
+                                        const open = ref(false);
+                                        const active = ref('');
+                                        onMounted(() => {
+                                            document.documentElement.addEventListener('click', e => {
+                                                if (el.value !== e.target && el.value && !el.value.contains(e.target)) {
+                                                    open.value = false;
+                                                }
+                                            });
+                                            document.documentElement.addEventListener('keyup', e => {
+                                                if (e.keyCode === 27) {
+                                                    open.value = false;
+                                                }
+                                            });
+                                        });
+                                        return {
+                                            el,
+                                            open,
+                                            active,
+                                        }
+                                    }
+                                }).mount('#custom-select-vue-js');
+                            </script>
+                        </div>
+
+                        <div class="l-select" data-language="alpineJs">
+                            <span x-data="{
+                                open: false,
+                                active: '',
+                            }">
+                                <span class="relative" :class="{open: open}" @keyup.esc="open = false" @click.outside="open = false">
+                                    <input
+                                        type="text"
+                                        class="select index-2"
+                                        x-model="active"
+                                        placeholder="- Select"
+                                        @click="open = !open"
+                                        @keyup.enter="open = !open"
+                                        readonly>
+                                    <span class="collapse from-top overlay clip-top">
+                                        <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
+                                            <ul>
+                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 1'}" @click="active = 'Option 1'; open = false">Option 1</button></li>
+                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 2'}" @click="active = 'Option 2'; open = false">Option 2</button></li>
+                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 3'}" @click="active = 'Option 3'; open = false">Option 3</button></li>
+                                            </ul>
+                                        </nav>
+                                    </span>
+                                </span>
+                            </span>
+
+                            <!-- AlpineJsScript -->
+
+                        </div>
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Dismissible Menu" data-footer-note="* See &lt;a href='#menus'&gt;Menus&lt;/a&gt; and &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more variations">
+                <article class="card show-code mb-5" data-title="Dismissible Menu" data-footer-note="* See &lt;a href='#menus'&gt;Menus&lt;/a&gt; and &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
-                        <span class="relative">
-                            <button class="toggle f:open icon dots o:close o:no-pointer link circle"></button>
-                            <div class="toggle-content clip absolute">
-                                <nav class="list bg-faint r-1 p-2 w-content">
-                                    <ul>
-                                        <li><button class="link ps-1" href="#">Link 1</button></li>
-                                        <li><button class="link ps-1" href="#">Link 2</button></li>
-                                        <li><button class="link ps-1" href="#">Link 3</button></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </span>
+                        <div class="l-select" data-language="css" data-note="Opens on focus">
+                            <span class="relative c:open">
+                                <label class="toggle button plain icon menu o:close" tabindex="0">
+                                    <input class="hide" type="checkbox">
+                                </label>
+                                <span class="collapse from-top overlay clip-top">
+                                    <nav class="list bg-faint round o:side shadow-2 w-content p-1">
+                                        <ul>
+                                            <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                            <li><a href="#">Link 1</a></li>
+                                            <li><a href="#">Link 2</a></li>
+                                            <li><a href="#">Link 3</a></li>
+                                        </ul>
+                                    </nav>
+                                </span>
+                            </span>
+                        </div>
+
+                        <div class="l-select" data-language="js">
+                            <span class="relative" onkeyup="if(event.keyCode === 27){ this.classList.remove('open')}">
+                                <button class="plain icon menu o:close" onclick="this.parentElement.classList.toggle('open')" onblur="setTimeout(() => {if (!this.parentElement.contains(document.activeElement)){ this.parentElement.classList.remove('open');}})"></button>
+                                <span class="collapse from-top overlay clip-top">
+                                    <nav class="list bg-faint round o:side shadow-2 w-content p-1">
+                                        <ul>
+                                            <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                            <li><a href="#" onclick="this.closest('.relative').classList.remove('open')" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('open');}})">Link 1</a></li>
+                                            <li><a href="#" onclick="this.closest('.relative').classList.remove('open')" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('open');}})">Link 2</a></li>
+                                            <li><a href="#" onclick="this.closest('.relative').classList.remove('open')" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('open');}})">Link 3</a></li>
+                                        </ul>
+                                    </nav>
+                                </span>
+                            </span>
+                        </div>
                     </div>
                 </article>
 
