@@ -62,11 +62,11 @@ body:has(.modal:not(.no-bg)[popover]:popover-open) {
 	user-select: none;
 }
 
-body:has(.modal.open.no-body-scroll, .modal[open].no-body-scroll, .modal.no-body-scroll:popover-open) {
+body:has(.modal.show.no-body-scroll, .modal[open].no-body-scroll, .modal.no-body-scroll:popover-open) {
 	overflow: hidden;
 }
 
-.modal.open,
+.modal.show,
 .modal[open],
 .modal:popover-open {
 	opacity       : 1;

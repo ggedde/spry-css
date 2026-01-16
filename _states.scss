@@ -8,50 +8,50 @@
 	scale: .5;
 }
 
-:is(.open, .h\:open:hover, .h\:open:focus-within, .f\:open:focus, .f\:open:has(> :focus, .toggle:focus, :focus-visible, :focus-within, :active), .toggle-group:has(.toggle:checked, .toggle :checked), .toggle:checked, :where(.toggle, label):has(:checked)){
-	> :is(.toggle, label, button) .o\:rotate,
-	> .o\:rotate,
-	&.o\:rotate {
+:is(.show, .h\:show:hover, .h\:show:focus-within, .f\:show:focus, .f\:show:has(> :focus, .toggle:focus, :focus-visible, :focus-within, :active), .toggle-group:has(.toggle:checked, .toggle :checked), .toggle:checked, :where(.toggle, label):has(:checked)){
+	> :is(.toggle, label, button) .s\:rotate,
+	> .s\:rotate,
+	&.s\:rotate {
 		@extend %e-rotate;
 	}
-	> :is(.toggle, label, button) .o\:flip,
-	> .o\:flip,
-	&.o\:flip {
+	> :is(.toggle, label, button) .s\:flip,
+	> .s\:flip,
+	&.s\:flip {
 		@extend %e-flip;
 	}
-	> :is(.toggle, label, button) .o\:flip-x,
-	> .o\:flip-x,
-	&.o\:flip-x {
+	> :is(.toggle, label, button) .s\:flip-x,
+	> .s\:flip-x,
+	&.s\:flip-x {
 		@extend %e-flip-x;
 	}
-	> :is(.toggle, label, button) .o\:flip-y,
-	> .o\:flip-y,
-	&.o\:flip-y {
+	> :is(.toggle, label, button) .s\:flip-y,
+	> .s\:flip-y,
+	&.s\:flip-y {
 		@extend %e-flip-y;
 	}
-	> :is(.toggle, label, button) .o\:revert,
-	> .o\:revert,
-	&.o\:revert {
+	> :is(.toggle, label, button) .s\:revert,
+	> .s\:revert,
+	&.s\:revert {
 		@extend %e-revert;
 	}
-	> :is(.toggle, label, button) .o\:none,
-	> .o\:none,
-	&.o\:none {
+	> :is(.toggle, label, button) .s\:none,
+	> .s\:none,
+	&.s\:none {
 		@extend %e-no-display;
 	}
-	> :is(.toggle, label, button) .o\:no-pointer,
-	> .o\:no-pointer,
-	&.o\:no-pointer {
+	> :is(.toggle, label, button) .s\:no-pointer,
+	> .s\:no-pointer,
+	&.s\:no-pointer {
 		@extend %e-no-pointer;
 	}
-	> :is(.toggle, label, button) .o\:close,
-	> .o\:close,
-	&.o\:close {
+	> :is(.toggle, label, button) .s\:close,
+	> .s\:close,
+	&.s\:close {
 		@extend %e-close;
 	}
-	> :is(.toggle, label, button) .o\:swap,
-	> .o\:swap,
-	&.o\:swap {
+	> :is(.toggle, label, button) .s\:swap,
+	> .s\:swap,
+	&.s\:swap {
 		@extend %e-swap;
 	}
 }

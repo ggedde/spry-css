@@ -73,9 +73,8 @@
 	}
 }
 
-/// Default Shut State
 /// @output - Contents
-@mixin closed {
+@mixin collapse {
 	max-height                : 0;
 	opacity                   : 0;
 	overflow                  : hidden;
@@ -88,9 +87,8 @@
 	visibility                : hidden;
 }
 
-/// Opened State
 /// @output - Contents
-@mixin open {
+@mixin expand {
 	opacity       : 1;
 	max-height    : var(--max-height);
 	transform     : translate3d(0, 0, 0);
@@ -98,9 +96,8 @@
 	visibility    : visible;
 }
 
-/// Default Shut State
 /// @output - Contents
-@mixin closed-inner {
+@mixin collapse-inner {
 	opacity           : 0;
 	display           : grid;
 	grid-template-rows: 0fr;
@@ -116,9 +113,8 @@
 	}
 }
 
-/// Opened State
 /// @output - Contents
-@mixin open-inner {
+@mixin expand-inner {
 	opacity           : 1;
 	grid-template-rows: 1fr;
 	pointer-events    : inherit;

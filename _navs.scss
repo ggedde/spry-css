@@ -84,10 +84,10 @@ menu menu {
 	}
 }
 
-@mixin hoverOpen-styles($prefix) {
+@mixin hoverShow-styles($prefix) {
 
-	:is(#{$prefix}h\:open, #{$prefix}f\:open)>ul>li>ul,
-	:is(#{$prefix}h\:open, #{$prefix}f\:open)>li>ul,
+	:is(#{$prefix}h\:show, #{$prefix}f\:show)>ul>li>ul,
+	:is(#{$prefix}h\:show, #{$prefix}f\:show)>li>ul,
 	#{$prefix}o\:side ul ul,
 	#{$prefix}sub\:o\:side ul ul ul {
 		// min-width: calc(100% + 1px);
@@ -131,7 +131,7 @@ menu menu {
 	}
 }
 
-@include hoverOpen-styles('.');
+@include hoverShow-styles('.');
 
 @if meta.global-variable-exists('breakpoints', variables) and variables.$breakpoints {
 
@@ -139,13 +139,13 @@ menu menu {
 	$breakpoint_width in variables.$breakpoints {
 		@if meta.global-variable-exists('useMediaQueries', variables) and variables.$useMediaQueries {
 			@media screen and (min-width: $breakpoint_width) {
-				@include hoverOpen-styles('.#{$breakpoint}\\:');
+				@include hoverShow-styles('.#{$breakpoint}\\:');
 			}
 		}
 
 		@if meta.global-variable-exists('useContainerQueries', variables) and variables.$useContainerQueries {
 			@container (min-width: #{$breakpoint_width}) {
-				@include hoverOpen-styles('.\\@#{$breakpoint}\\:');
+				@include hoverShow-styles('.\\@#{$breakpoint}\\:');
 			}
 		}
 	}

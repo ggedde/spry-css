@@ -38,11 +38,6 @@
 	}
 }
 
-:where(button, .button, [type=submit], [type=reset]),
-:where(.buttons, .buttons-link, .buttons-outline, .buttons-hazy, .buttons-plain) a {
-	text-transform : uppercase;
-}
-
 :where(button, .button, [type=submit], [type=reset]):where(.outline),
 :where(.buttons-outline) a {
 	--bdr-a: .7;

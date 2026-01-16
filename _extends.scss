@@ -61,18 +61,18 @@
 	color: var(--ui-text);
 }
 
-%closed {
-	@include mixins.closed;
+%collapse {
+	@include mixins.collapse;
 }
-%open {
-	@include mixins.open;
+%expand {
+	@include mixins.expand;
 }
 
-%closed-inner {
-	@include mixins.closed-inner;
+%collapse-inner {
+	@include mixins.collapse-inner;
 }
-%open-inner {
-	@include mixins.open-inner;
+%expand-inner {
+	@include mixins.expand-inner;
 }
 
 %e-rotate {

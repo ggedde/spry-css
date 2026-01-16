@@ -22,10 +22,10 @@
     <div class="inherit-bg md:row block-start" style="gap: 0">
         <div class="relative index-4" style="max-width: 210px;">
             <div class="flex block-center between fixed inset-top w/100 r-0 lg bg-faint ps-2 bb-1 pe-2 glow-theme glow-2 glow/100 p-2">
-                <div class="md:open f:open flex block-center navigable">
-                    <button tabindex="0" title="Toggle Menu" class="toggle o:no-pointer button link icon menu o:close md:none"></button>
+                <div class="md:show f:show flex block-center">
+                    <button tabindex="0" title="Toggle Menu" class="toggle s:no-pointer button link icon menu s:close md:none"></button>
                     <div class="collapse from-start">
-                        <nav style="max-width: 210px; height: calc(100vh - 3.50em);" class="list indicators o:down g-1 absolute inset-start outer-bottom bg-theme border-alpha-30 auto p-3 pb-4 sm be-1 bt-1 shadow-2 md:no-shadow scrollspy" data-scrollspy-replace>
+                        <nav style="max-width: 210px; height: calc(100vh - 3.50em);" class="list indicators s:down g-1 absolute inset-start outer-bottom bg-theme border-alpha-30 auto p-3 pb-4 sm be-1 bt-1 shadow-2 md:no-shadow scrollspy" data-scrollspy-replace>
                             <ul class="from-default">
                                 <li>
                                     <label tabindex="0" class="toggle button plain capitalize ps-2 g-1">
@@ -85,7 +85,7 @@
                                         <li><a class="ps-4" href="#states.collapse">Collapse</a></li>
                                         <li><a class="ps-4" href="#states.focus">Focus</a></li>
                                         <li><a class="ps-4" href="#states.hover">Hover</a></li>
-                                        <li><a class="ps-4" href="#states.open">Open</a></li>
+                                        <li><a class="ps-4" href="#states.show">Show</a></li>
                                         <li><a class="ps-4 mb-2" href="#states.toggles">Toggles</a></li>
                                     </ul>
                                 </li>
@@ -2243,9 +2243,9 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="ps-2"><code class="color-gray">c:</code><code class="color-primary">open</code></td>
-                                <td><h5>Opens a <code class="color-primary">.collapse</code> element</h5>
-                                    <p>This is the only checked class that works on a parent element to open a inner <code class="color-primary">.collapse</code> element. See <a href="#states.checked.example.menu">Menu with Checked Toggle</a> for more an example.</p>
+                                <td class="ps-2"><code class="color-gray">c:</code><code class="color-primary">show</code></td>
+                                <td><h5>Show a <code class="color-primary">.collapse</code> element</h5>
+                                    <p>This is the only checked class that works on a parent element to show an inner <code class="color-primary">.collapse</code> element. See <a href="#states.checked.example.menu">Menu with Checked Toggle</a> for more an example.</p>
                                 </td>
                             </tr>
                         </tbody>
@@ -2345,8 +2345,8 @@
 
                 <article id="states.checked.example.menu" class="card show-code mb-5" data-title="Menu on Checked" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="relative c:open">
-                            <label class="button link icon menu o:close">
+                        <div class="relative c:show">
+                            <label class="button link icon menu s:close">
                                 <input type="checkbox">
                             </label>
                             <div class="collapse from-top overlay clip-top">
@@ -2374,10 +2374,10 @@
                 
                 <h5 class="text-balance">
                     Elements can be made collapsible by applying the <code class="color-primary">collapse</code> class.
-                    Their visibility state is managed by the <code class="color-primary">open</code> class.
-                    Additionally, SpryCSS provides state utilities such as <a class="color-primary code" href="#states.checked">c:open</a>,
-                    <a class="color-primary code" href="#states.focus">f:open</a>, or <a class="color-primary code" href="#states.hover">h:open</a>,
-                    which can be applied directly to the collapsible element or its parent to control its open state.
+                    Their visibility state is managed by the <code class="color-primary">show</code> class.
+                    Additionally, SpryCSS provides state utilities such as <a class="color-primary code" href="#states.checked">c:show</a>,
+                    <a class="color-primary code" href="#states.focus">f:show</a>, or <a class="color-primary code" href="#states.hover">h:show</a>,
+                    which can be applied directly to the collapsible element or its parent to control its show state.
                     For interactive control, <a class="color-primary" href="#states.toggles">Toggles</a> can also be used.
                 </h5>
                 
@@ -2404,8 +2404,8 @@
 
                 <figure class="relative">
                     <code dir="ltr" class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pe-5 sm">
-                        &lt;!-- Collapse Element default in the Open state --&gt;
-                        &lt;div class="collapse open"&gt;
+                        &lt;!-- Collapse Element default in the Show state --&gt;
+                        &lt;div class="collapse show"&gt;
                             &lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr.&lt;/p&gt;
                         &lt;/div&gt;
                     </code>
@@ -2452,35 +2452,35 @@
                                 <td class="ps-2 pt-4 start"><code class="color-gray">{breakpoint}:<span class="color-primary">collapse</span></code></td>
                                 <td>
                                     <p>
-                                        Initiate the element in the collapsed state and animates height when opened.
-                                        <span class="color-primary">open</span> always has priority, but if you use breakpoints you must match or beat with a breakpoint.
+                                        Initiate the element in the collapsed state and animates height when shown.
+                                        <span class="color-primary">show</span> always has priority, but if you use breakpoints you must match or beat with a breakpoint.
                                     </p>
                                     <p class="color-warning">* Requires a single nested element</p>
                                     <p class="color-warning">* This will be updated to use <a target="_blank" href="https://caniuse.com/?search=calc-size">calc-size(auto)</a> when browsers fully support it.</p>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="ps-2"><code class="color-gray">{breakpoint}:<code class="color-primary">open</code></code></td>
-                                <td>Opens the element at breakpoint</td>
+                                <td class="ps-2"><code class="color-gray">{breakpoint}:<code class="color-primary">show</code></code></td>
+                                <td>Shows the element at breakpoint</td>
                             </tr>
                             <tr>
-                                <td class="ps-2"><code class="color-gray">{breakpoint}:<code class="color-primary">c:open</code></code></td>
+                                <td class="ps-2"><code class="color-gray">{breakpoint}:<code class="color-primary">c:show</code></code></td>
                                 <td>
-                                    Opens the element when a sibling or toggle is or contains a checked element. Opens all children that have <code class="color-primary">collapse</code>.
+                                    Shows the element when a sibling or toggle is or contains a checked element. Shows all children that have <code class="color-primary">collapse</code>.
                                     See <a class="color-primary" href="#states.checked">Checked</a> for more information.
                                 </td>
                             </tr>
                             <tr>
-                                <td class="ps-2"><code class="color-gray">{breakpoint}:<code class="color-primary">f:open</code></code></td>
+                                <td class="ps-2"><code class="color-gray">{breakpoint}:<code class="color-primary">f:show</code></code></td>
                                 <td>
-                                    Opens the element on focus-within. Opens all children that have <code class="color-primary">collapse</code>.<br>* Is dismissible without javascript.
+                                    Shows the element on focus-within. Shows all children that have <code class="color-primary">collapse</code>.<br>* Is dismissible without javascript.
                                     See <a class="color-primary" href="#states.focus">Focus</a> for more information.
                                 </td>
                             </tr>
                             <tr>
-                                <td class="ps-2"><code class="color-gray">{breakpoint}:<code class="color-primary">h:open</code></code></td>
+                                <td class="ps-2"><code class="color-gray">{breakpoint}:<code class="color-primary">h:show</code></code></td>
                                 <td>
-                                    Opens the element on hover or focus-visible. Opens all children that have <code class="color-primary">collapse</code> or hidden nav items.
+                                    Shows the element on hover or focus-visible. Shows all children that have <code class="color-primary">collapse</code> or hidden nav items.
                                     See <a class="color-primary" href="#states.hover">Hover</a> for more information.
                                 </td>
                             </tr>
@@ -2532,7 +2532,7 @@
 					<div class="code-content relative p-3 md:p-4">
                         <div>
                             <label class="button toggle"> <!-- Toggle-->
-                                Open
+                                Show
                                 <input class="hide" type="checkbox">
                             </label>
 
@@ -2545,8 +2545,8 @@
                                         <!-- Second Collapse with Toggle -->
                                         <div class="slow">
                                             <label class="button toggle"> <!-- Inner Toggle-->
-                                                Open Another From the Left Slowly
-                                                <span class="none o:revert ms-n2">- Inner Opened</span>
+                                                Show Another From the Left Slowly
+                                                <span class="none s:revert ms-n2">- Inner Shown</span>
                                                 <input class="hide" type="checkbox">
                                             </label>
                                             <div class="collapse from-start"> <!-- Inner Content-->
@@ -2565,13 +2565,13 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Collapse with Overlay and Focus Open" data-warning="Some browsers require tabindex to retain focus on buttons" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#accordions'&gt;Accordions&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+                <article class="card show-code" data-title="Collapse with Overlay and Focus Show" data-warning="Some browsers require tabindex to retain focus on buttons" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#accordions'&gt;Accordions&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
-                        <span class="relative inline-block f:open">
+                        <span class="relative inline-block f:show">
                         
-                            <button class="o:no-pointer index-2" tabindex="0"> <!-- Toggle - Some browsers require tabindex -->
+                            <button class="s:no-pointer index-2" tabindex="0"> <!-- Toggle - Some browsers require tabindex -->
                                 View Items
-                                <svg class="icon o:rotate" viewBox="0 0 24 24">
+                                <svg class="icon s:rotate" viewBox="0 0 24 24">
                                     <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
                                 </svg>
                             </button>
@@ -2590,10 +2590,10 @@
                     </div>
                 </article>
 
-                <article class="card show-code mb-5" data-title="Collapse Nav with Hover Open" data-footer-note="* See &lt;a href='#lists'&gt;Lists&lt;/a&gt; and &lt;a href='#navs'&gt;Navs&lt;/a&gt; for more variations">
+                <article class="card show-code mb-5" data-title="Collapse Nav with Hover Show" data-footer-note="* See &lt;a href='#lists'&gt;Lists&lt;/a&gt; and &lt;a href='#navs'&gt;Navs&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="@container index-1">
-                            <nav class="list indicators f:open @md:h:open o:down @md:sub:o:side @md:row @md:cols-auto @md:sub:shadow bg-faint p-1 g-1">
+                            <nav class="list indicators f:show @md:h:show s:down @md:sub:s:side @md:row @md:cols-auto @md:sub:shadow bg-faint p-1 g-1">
                                 <ul>
                                     <li>
                                         <a tabindex="0">Link 1</a>
@@ -2708,8 +2708,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="ps-2"><code class="color-gray">f:</code><code class="color-primary">open</code></td>
-                                <td><h5>Opens a <code class="color-primary">.collapse</code> element</h5></td>
+                                <td class="ps-2"><code class="color-gray">f:</code><code class="color-primary">show</code></td>
+                                <td><h5>Shows a <code class="color-primary">.collapse</code> element</h5></td>
                             </tr>
                         </tbody>
                     </table>
@@ -2736,9 +2736,9 @@
                     </div>
                 </article>
 
-                <article id="states.focus.example.menu" class="card show-code" data-title="Menu Open on Focus" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+                <article id="states.focus.example.menu" class="card show-code" data-title="Menu Show on Focus" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="relative f:open">
+                        <div class="relative f:show">
                             <button tabindex="0" class="link icon menu"></button>
                             <div class="collapse from-top overlay clip-top">
                                 <nav class="list bg-faint w-content shadow p-1 rb-2">
@@ -2754,10 +2754,10 @@
                     </div>
                 </article>
 
-                <article id="states.focus.example.menu" class="card show-code mb-5" data-title="Open on Focus with Close Support" data-note="Use &lt;code class='color-primary'&gt;o:no-pointer&lt;/code&gt; to allow the button to loose focus on second click." data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+                <article id="states.focus.example.menu" class="card show-code mb-5" data-title="Show on Focus with Close Support" data-note="Use &lt;code class='color-primary'&gt;s:no-pointer&lt;/code&gt; to allow the button to loose focus on second click." data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="relative f:open">
-                            <button tabindex="0" class="link icon menu o:close o:no-pointer"></button>
+                        <div class="relative f:show">
+                            <button tabindex="0" class="link icon menu s:close s:no-pointer"></button>
                             <div class="collapse from-top overlay clip-top">
                                 <nav class="list bg-faint w-content shadow p-1 rb-2">
                                     <ul>
@@ -2834,8 +2834,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="ps-2"><code class="color-gray">h:</code><code class="color-primary">open</code></td>
-                                <td><h5>Opens a <code class="color-primary">.collapse</code> element</h5></td>
+                                <td class="ps-2"><code class="color-gray">h:</code><code class="color-primary">show</code></td>
+                                <td><h5>Shows a <code class="color-primary">.collapse</code> element</h5></td>
                             </tr>
                         </tbody>
                     </table>
@@ -2862,9 +2862,9 @@
                     </div>
                 </article>
 
-                <article id="states.hover.example.menu" class="card show-code mb-5" data-title="Menu Open on Hover" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+                <article id="states.hover.example.menu" class="card show-code mb-5" data-title="Menu Show on Hover" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="relative h:open w-content">
+                        <div class="relative h:show w-content">
                             <button tabindex="0" class="link icon menu"></button>
                             <div class="collapse from-top overlay clip-top">
                                 <nav class="list bg-faint w-content shadow p-1 rb-2">
@@ -2882,24 +2882,24 @@
 
             </section>
 
-            <!-- OPEN -->
-            <section id="states.open" class="inherit-bg py-0 pb-4">
+            <!-- SHOW -->
+            <section id="states.show" class="inherit-bg py-0 pb-4">
                 <h2 class="sticky flex index-3 bg-theme bg/70 blur-bg-3 glow-theme glow-2 glow/100 bb-1 p-2 pt-4 md:ps-3 mb-3 mx-n2 md:ms-n3 md:me-n2">
                     <svg class="icon me-2" viewBox="0 0 24 24"><path d="M8,18H11V15H2V13H22V15H13V18H16L12,22L8,18M12,2L8,6H11V9H2V11H22V9H13V6H16L12,2Z" /></svg>
-                    <a href="#states.open">Open</a>
+                    <a href="#states.show">Show</a>
                 </h2>
 
                 <h4>
-                    Open State Classes apply only when the element or parent element is opened from a <a class="color-primary" href="#states.collapse">collapse</a> state.
-                    <br>This allows you to swap labels or elements based on the open state of an element or its parent.
+                    Show State Classes apply only when the element or parent element is shown from a <a class="color-primary" href="#states.collapse">collapse</a> state.
+                    <br>This allows you to swap labels or elements based on the show state of an element or its parent.
                 </h4>
 
-                <h3 class="mt-3"><a id="states.open.usage" href="#states.open.usage">Usage</a></h3>
+                <h3 class="mt-3"><a id="states.show.usage" href="#states.show.usage">Usage</a></h3>
 
-                <div class="f:open">
+                <div class="f:show">
                     <button>
-                        <span class="o:none">Focus Me</span>
-                        <span class="none o:revert">Blur Me</span>
+                        <span class="s:none">Focus Me</span>
+                        <span class="none s:revert">Blur Me</span>
                     </button>
                     <div class="collapse">
                         Show me when button is focused on
@@ -2908,10 +2908,10 @@
 
                 <figure class="relative mb-4">
                     <code dir="ltr" class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pe-5 sm">
-                        &lt;div class="f:open"&gt;
+                        &lt;div class="f:show"&gt;
                             &lt;button&gt;
-                                &lt;span class="o:none">Focus Me&lt;/span&gt;
-                                &lt;span class="none o:revert">Blur Me&lt;/span&gt;
+                                &lt;span class="s:none">Focus Me&lt;/span&gt;
+                                &lt;span class="none s:revert">Blur Me&lt;/span&gt;
                             &lt;/button&gt;
                             &lt;div class="collapse"&gt;
                                 Show me when button is focused on
@@ -2924,28 +2924,36 @@
                     <table class="@md:responsive mb-3">
                         <thead>
                             <tr>
-                                <th colspan="2" class="h3 ps-0"><a id="states.open.classes" href="#states.open.classes" class="inherit-color">Classes</a></th>
+                                <th colspan="2" class="h3 ps-0"><a id="states.show.classes" href="#states.show.classes" class="inherit-color">Classes</a></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="ps-2"><code class="color-gray">o:</code><code class="color-primary">none</code></td>
+                                <td class="ps-2"><code class="color-gray">{breakpoint}:</code><code class="color-gray">{s}:</code><code class="color-primary">show</code></td>
+                                <td>
+                                    <h5>Shows a Collapse element</h5>
+                                    <p><code class="color-gray">{s}</code> is the state and can be <code class="color-primary">f</code> for focus, <code class="color-primary">h</code> for hover or <code class="color-primary">c</code> for checked</p>
+                                    <p>See <a href="#layout.breakpoints">Breakpoints</a>, <a href="#states.collapse">Collapse</a>, <a href="#states.focus">Focus</a>, <a href="#states.hover">Hover</a> and <a href="#states.checked">Checked</a> for more information.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ps-2"><code class="color-gray">s:</code><code class="color-primary">none</code></td>
                                 <td><h5>Hide</h5><code class="note sm">display: none</code></td>
                             </tr>
                             <tr>
-                                <td class="ps-2"><code class="color-gray">o:</code><code class="color-primary">revert</code></td>
+                                <td class="ps-2"><code class="color-gray">s:</code><code class="color-primary">revert</code></td>
                                 <td><h5>Revert</h5><code class="note sm">display: revert</code></td>
                             </tr>
                             <tr>
-                                <td class="ps-2"><code class="color-gray">o:</code><code class="color-primary">flip</code></td>
+                                <td class="ps-2"><code class="color-gray">s:</code><code class="color-primary">flip</code></td>
                                 <td><h5>Flip</h5><code class="note sm">scale: -1</code></td>
                             </tr>
                             <tr>
-                                <td class="ps-2"><code class="color-gray">o:</code><code class="color-primary">rotate</code></td>
+                                <td class="ps-2"><code class="color-gray">s:</code><code class="color-primary">rotate</code></td>
                                 <td><h5>Rotate</h5><code class="note sm">rotate: 180deg</code></td>
                             </tr>
                             <tr>
-                                <td class="ps-2"><code class="color-gray">o:</code><code class="color-primary">close</code></td>
+                                <td class="ps-2"><code class="color-gray">s:</code><code class="color-primary">close</code></td>
                                 <td><h5>Close</h5>
                                     <p>Only works on Icons that support the close icon.<br><cite>* See <a href="#components.icons">Icons</a> for the SpryCSS close icon.</cite></p>
                                 </td>
@@ -2954,15 +2962,15 @@
                     </table>
                 </div>
 
-                <h3 class="mt-3"><a id="states.open.examples" href="#states.open.examples">Examples</a></h3>
+                <h3 class="mt-3"><a id="states.show.examples" href="#states.show.examples">Examples</a></h3>
 
-                <article class="card show-code" data-note="&lt;code&gt;o:rotate&lt;/code&gt;" data-title="Rotate Arrow when Menu is Open" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#accordions'&gt;Accordions&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+                <article class="card show-code" data-note="&lt;code&gt;s:rotate&lt;/code&gt;" data-title="Rotate Arrow when Menu is Shown" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#accordions'&gt;Accordions&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
-                        <span class="relative inline-block f:open">
+                        <span class="relative inline-block f:show">
                         
-                            <button class="o:no-pointer index-2" tabindex="0"> <!-- Toggle - Some browsers require tabindex -->
+                            <button class="s:no-pointer index-2" tabindex="0"> <!-- Toggle - Some browsers require tabindex -->
                                 View Items
-                                <svg class="icon o:rotate" viewBox="0 0 24 24">
+                                <svg class="icon s:rotate" viewBox="0 0 24 24">
                                     <path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" />
                                 </svg>
                             </button>
@@ -2981,10 +2989,10 @@
                     </div>
                 </article>
 
-                <article id="states.open.example.menu" class="card show-code mb-5" data-note="&lt;code&gt;o:close o:no-pointer&lt;/code&gt;" data-title="Show Close Icon when Menu is Open and don't allow pointer events" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
+                <article id="states.show.example.menu" class="card show-code mb-5" data-note="&lt;code&gt;s:close s:no-pointer&lt;/code&gt;" data-title="Show Close Icon when Menu is Shown and don't allow pointer events" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="relative f:open w-content">
-                            <button tabindex="0" class="link icon menu o:close o:no-pointer"></button>
+                        <div class="relative f:show w-content">
+                            <button tabindex="0" class="link icon menu s:close s:no-pointer"></button>
                             <div class="collapse from-top overlay clip-top">
                                 <nav class="list bg-faint w-content shadow p-1 rb-2">
                                     <ul>
@@ -3027,7 +3035,7 @@
                     <code dir="ltr" class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pe-5 sm">
                         &lt;!-- Toggle Activator --&gt;
                         &lt;label class="button toggle"&gt;
-                            &lt;span class="c:none"&gt;Open&lt;/span&gt;
+                            &lt;span class="c:none"&gt;Show&lt;/span&gt;
                             &lt;span class="none c:revert"&gt;Close&lt;/span&gt;
                             &lt;input type="checkbox"&gt;
                         &lt;/label&gt;
@@ -3065,10 +3073,10 @@
                 <article id="states.toggles.example.basic-toggle" class="card show-code" data-title="Basic Toggle">
 					<div class="code-content relative p-3 md:p-4">
                         <label class="button toggle">
-                            <span class="o:none">
-                                Open
+                            <span class="s:none">
+                                Show
                             </span>
-                            <span class="none o:revert">
+                            <span class="none s:revert">
                                 Close
                             </span>
                             <input class="hide" type="checkbox">
@@ -3097,7 +3105,7 @@
 					<div class="code-content relative p-3 md:p-4">
                         <div>
                             <label class="button toggle"> <!-- Toggle-->
-                                Open
+                                Show
                                 <input class="hide" type="checkbox">
                             </label>
 
@@ -3110,8 +3118,8 @@
                                         <!-- Second Collapse with Toggle -->
                                         <div class="slow">
                                             <label class="button toggle"> <!-- Inner Toggle-->
-                                                Open Another From the Left Slowly
-                                                <span class="none o:revert ms-n2">- Inner Opened</span>
+                                                Show Another From the Left Slowly
+                                                <span class="none s:revert ms-n2">- Inner Shown</span>
                                                 <input class="hide" type="checkbox">
                                             </label>
                                             <div class="collapse from-start"> <!-- Inner Content-->
@@ -3152,10 +3160,10 @@
                             <p class="my-2">Middle Content...</p>
 
                             <label class="button toggle">
-                                <span class="o:none">
-                                    Open
+                                <span class="s:none">
+                                    Show
                                 </span>
-                                <span class="none o:revert">
+                                <span class="none s:revert">
                                     Close
                                 </span>
                                 <input class="hide" type="checkbox">
@@ -3181,10 +3189,10 @@
                 <article id="states.toggles.example.by-id" class="card show-code" data-title="Toggle Element by ID" data-warning="* Not keyboard accessible. Use &lt;a href='#toggle-group'&gt;Toggle Group&lt;/a&gt; instead Or use JS.">
 					<div class="code-content relative p-3 md:p-4">
                         <label for="toggleByIdHtml" class="button">
-                            <span class="o:none">
-                                Open
+                            <span class="s:none">
+                                Show
                             </span>
-                            <span class="none o:revert">
+                            <span class="none s:revert">
                                 Close
                             </span>
                         </label>
@@ -3209,17 +3217,17 @@
                 <article id="states.toggles.example.menu" class="card show-code" data-title="Menu" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt;, &lt;a href='#accordions'&gt;Accordions&lt;/a&gt;, &lt;a href='#dropdowns'&gt;Dropdowns&lt;/a&gt; and &lt;a href='#menus'&gt;Menus&lt;/a&gt; for more variations">
 					<div class="code-content relative p-3 md:p-4">
                         <span class="relative">
-                            <label class="toggle button plain icon menu o:close">
+                            <label class="toggle button plain icon menu s:close">
                                 <input class="hide" type="checkbox">
                             </label>
 
                             <span class="collapse from-top overlay clip-top">
-                                <nav class="list bg-faint round o:side shadow-2 w-content p-1">
+                                <nav class="list bg-faint round s:side shadow-2 w-content p-1">
                                     <ul>
                                         <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
                                         <li><a href="#">Link 1</a></li>
                                         <li><a href="#">Link 2</a>
-                                            <input type="checkbox" class="toggle button plain circle icon down o:rotate absolute inset-end xs m-1">
+                                            <input type="checkbox" class="toggle button plain circle icon down s:rotate absolute inset-end xs m-1">
                                             <ul class="from-default">
                                                 <li><a href="#">SubLink 1</a></li>
                                                 <li><a href="#">SubLink 2</a></li>
@@ -3315,7 +3323,7 @@
                             <tr>
                                 <td class="ps-2"><a href="#states.collapse">Collapse</a></td>
                                 <td><span class="color-gray note">Example:</span> <code class="ms-3">md:collapse</code><br>
-                                <span class="color-gray note">Example:</span> <code class="ms-3">collapse md:open</code></td>
+                                <span class="color-gray note">Example:</span> <code class="ms-3">collapse md:show</code></td>
                             </tr>
                             <tr>
                                 <td class="ps-2"><a href="#layout.gaps">Gaps</a></td>
@@ -4705,7 +4713,7 @@
                         <!-- Basic Accordion Item -->
                         <label class="button toggle flex between mb-1">
                             Question 1
-                            <input class="icon down o:rotate" type="checkbox">
+                            <input class="icon down s:rotate" type="checkbox">
                         </label>
                         <div class="collapse">
                             <div>
@@ -4725,7 +4733,7 @@
                         <label class="button toggle flex between mb-1">
                             Question 1
                             <input class="hide" type="checkbox">
-                            <svg class="icon o:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            <svg class="icon s:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                         </label>
                         <div class="collapse">
                             <div class="p-2 pt-0">
@@ -4747,7 +4755,7 @@
                             <label class="button toggle flex between mb-1">
                                 Question 2
                                 <input class="hide" type="checkbox">
-                                <svg class="icon o:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                <svg class="icon s:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <div class="collapse">
                                 <div class="p-2 pt-0">
@@ -4763,7 +4771,7 @@
                         <label class="button toggle flex between">
                             Question 3
                             <input class="hide" type="checkbox">
-                            <svg class="icon o:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                            <svg class="icon s:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                         </label>
                         <div class="collapse">
                             <div class="p-2">
@@ -4787,7 +4795,7 @@
                             <label class="button toggle hazy link contrast flex between r-0 b-0 bb-1 border-theme border/5">
                                 Question 1
                                 <input class="hide" type="radio" name="accordionGroup1">
-                                <svg class="icon o:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                <svg class="icon s:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <div class="collapse">
                                 <div>
@@ -4810,7 +4818,7 @@
                             <label class="button toggle hazy link contrast flex between r-0 b-0 bb-1 border-theme border/5">
                                 Question 2
                                 <input class="hide" type="radio" name="accordionGroup1">
-                                <svg class="icon o:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                <svg class="icon s:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <div class="collapse">
                                 <div>
@@ -4827,7 +4835,7 @@
                             <label class="button toggle hazy link contrast flex between r-0">
                                 Question 3
                                 <input class="hide" type="radio" name="accordionGroup1">
-                                <svg class="icon o:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                <svg class="icon s:flip xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <div class="collapse">
                                 <div>
@@ -4854,7 +4862,7 @@
                             <label class="toggle button round-op link w/100 between b-0 bb-1 r-0">
                                 Question 1
                                 <input class="hide" type="checkbox">
-                                <svg class="icon o:rotate xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                <svg class="icon s:rotate xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <div class="collapse bb-1">
                                 <div>
@@ -4876,7 +4884,7 @@
                             <label class="toggle button sharp link w/100 between b-0 bb-1 r-0">
                                 Question 2
                                 <input class="hide" type="checkbox">
-                                <svg class="icon o:rotate xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                <svg class="icon s:rotate xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <div class="collapse hidden bb-1">
                                 <div>
@@ -4893,7 +4901,7 @@
                             <label class="toggle button sharp link w/100 between r-0">
                                 Question 3
                                 <input class="hide" type="checkbox">
-                                <svg class="icon o:rotate xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
+                                <svg class="icon s:rotate xl" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                             </label>
                             <div class="collapse hidden bt-1">
                                 <div>
@@ -5065,24 +5073,24 @@
                                     </div>
                                 </div>
 
-                                <label for="htmlAlertToggle" class="button o:none">
-                                    Re-Open
+                                <label for="htmlAlertToggle" class="button s:none">
+                                    Re-Show
                                 </label>
                             </div>
                         </div>
 
                         <div class="l-select" data-language="js" data-footer-note="* See &lt;a href='#collapse'&gt;Collapse&lt;/a&gt; for more details">
-                            <div class="collapse open from-center">
+                            <div class="collapse show from-center">
                                 <div class="hidden">
                                     <div class="alert lg primary pe-4">
                                         <svg class="icon lg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
                                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing ut labore et dolore magna aliquyam erat.</p>
-                                        <button onclick="this.closest('.open').nextElementSibling.classList.remove('none'); this.closest('.open').classList.remove('open')" class="button hazy light circle absolute inset-top inset-end icon close sm m-1"></button>
+                                        <button onclick="this.closest('.show').nextElementSibling.classList.remove('none'); this.closest('.show').classList.remove('show')" class="button hazy light circle absolute inset-top inset-end icon close sm m-1"></button>
                                     </div>
                                 </div>
                             </div>
-                            <button class="none" onclick="this.classList.add('none'); this.previousElementSibling.classList.add('open')">
-                                Re-Open
+                            <button class="none" onclick="this.classList.add('none'); this.previousElementSibling.classList.add('show')">
+                                Re-Show
                             </button>
                         </div>
                     </div>
@@ -5090,7 +5098,7 @@
 
                 <article class="card show-code" data-title="Popup Alert Example" data-badge="Uses Toggles" data-badge-link="#states.toggles">
 					<div class="code-content relative p-3 md:p-4">
-                        <label class="toggle-next button" title="Open Popup">
+                        <label class="toggle-next button" title="Show Popup">
                             Show Alert Popup
                             <input id="alertModal" type="checkbox">
                         </label>
@@ -5113,7 +5121,7 @@
                 <article class="card show-code" data-title="Popup Alert Top Right with No Backdrop and Autoclose">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="l-select" data-language="html">
-                            <button title="Open Popup" data-toggle="next" data-toggle-action="open">Show Alert Popup</button>
+                            <button title="Show Popup" data-toggle="next" data-toggle-action="open">Show Alert Popup</button>
                             <div class="modal no-bg m-1">
                                 <div class="alert primary absolute inset-top inset-end w-300 from-end me-2">
                                     <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
@@ -5128,7 +5136,7 @@
                             </div>
                         </div>
                         <div class="l-select" data-language="js">
-                            <button title="Open Popup" onclick="this.nextElementSibling.classList.add('open'); setTimeout(() => this.nextElementSibling.classList.remove('open'), 2000)">Show Autoclose Alert Popup</button>
+                            <button title="Show Popup" onclick="this.nextElementSibling.classList.add('show'); setTimeout(() => this.nextElementSibling.classList.remove('show'), 2000)">Show Autoclose Alert Popup</button>
                             <div class="modal no-bg m-1">
                                 <div class="alert primary absolute inset-top inset-end w-300 from-end me-2">
                                     <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
@@ -5136,7 +5144,7 @@
                                         <h5 class="bold">Info!</h5>
                                         This message will Autoclose.
                                     </div>
-                                    <button class="icon hazy light xs circle absolute inset-top inset-end m-1" title="Close Popup" onclick="this.closest('.open').classList.remove('open')">
+                                    <button class="icon hazy light xs circle absolute inset-top inset-end m-1" title="Close Popup" onclick="this.closest('.show').classList.remove('show')">
                                         <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                                     </button>
                                 </div>
@@ -5876,31 +5884,52 @@
                     <a href="#components.dropdowns">Dropdowns</a>
                 </h2>
 
-                <h5>Dropdowns use Toggles to add the collapsing functionality. View <a href="#states.toggles">Toggles</a> for more details.</h5>
+                <h5 class="mb-2">Dropdowns are just an accumulation of other components used together:</h5>
 
-                <figure class="relative">
-                    <code dir="ltr" class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pe-5 sm">
-                        &lt;!-- Basic Dropdown --&gt;
-                        &lt;button data-toggle="next" data-toggle-escapable data-toggle-dismissible&gt;
-                            Dropdown
-                        &lt;/button&gt;
-                        &lt;div class="collapse"&gt;
-                            &lt;nav class="list bg-faint round-bottom shadow-2"&gt;
-                                &lt;a href="#"&gt;Item 1&lt;/a&gt;
-                                &lt;a href="#"&gt;Item 2&lt;/a&gt;
-                                &lt;a href="#"&gt;Item 3&lt;/a&gt;
-                            &lt;/nav&gt;
-                        &lt;/div&gt;
-                    </code>
-                </figure>
+                <div class="row primary cols-auto g-1 mt-1 mb-4 content-start buttons-plain">
+                    See:
+                    <a class="border/60 dense sm ms-2" href="#states.collapse">Collapse</a>
+                    <a class="border/60 dense sm" href="#states.show">Show States</a>
+                    <a class="border/60 dense sm" href="#states.toggles">Toggles</a>
+                    <a class="border/60 dense sm" href="#components.buttons">Buttons</a>
+                    <a class="border/60 dense sm" href="#components.icons">Icons</a>
+                    <a class="border/60 dense sm" href="#components.forms">Forms</a>
+                    <a class="border/60 dense sm" href="#components.lists">Lists</a>
+                    <a class="border/60 dense sm" href="#components.menus">Menus</a>
+                </div>
+
+                <article id="components.dropdowns.usage" class="card show-code" data-title="Usage" data-code-only data-footer-note="See &lt;a href='#states.show'&gt;Show States&lt;/a&gt;, &lt;a href='#menus'&gt;Menus&lt;/a&gt; and &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more options for CSS-only.">
+					<div class="code-content relative p-3 md:p-4">
+                        <span class="relative f:show">
+                            <!-- Toggler -->
+                            <button type="button" class="s:no-pointer index-2">
+                                View Items
+                                <i class="icon down thick s:flip xs"></i>
+                            </button>
+                            <!-- Overlay-->
+                            <span class="collapse from-top overlay mt-n1">
+                                <!-- Content-->
+                                <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
+                                    <ul>
+                                        <li><a href="#">Item 1</a></li>
+                                        <li><a href="#">Item 2</a></li>
+                                        <li><a href="#">Item 3</a></li>
+                                    </ul>
+                                </nav>
+                            </span>
+                        </span>
+                    </div>
+                </article>
+
+                <h3 class="mt-3"><a id="components.dropdowns.examples" href="#components.dropdowns.examples">Examples</a></h3>
 
                 <article class="card show-code" data-title="Basic Dropdown">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="l-select" data-language="css" data-footer-note="See &lt;a href='#states.open'&gt;Open States&lt;/a&gt; for more options when using CSS-only.">
-                            <span class="relative f:open">
-                                <button class="o:no-pointer index-2" tabindex="0"> <!-- Toggle - Some browsers require tabindex -->
+                        <div class="l-select" data-language="css" data-footer-note="See &lt;a href='#states.show'&gt;Show States&lt;/a&gt;, &lt;a href='#menus'&gt;Menus&lt;/a&gt; and &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more options for CSS-only.">
+                            <span class="relative f:show">
+                                <button class="s:no-pointer index-2" tabindex="0"> <!-- Toggle - Some browsers require tabindex -->
                                     View Items
-                                    <i class="icon down thick o:flip xs"></i>
+                                    <i class="icon down thick s:flip xs"></i>
                                 </button>
                                 <span class="collapse from-top overlay mt-n1"> <!-- Overlay-->
                                     <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1"> <!-- Content-->
@@ -5915,21 +5944,21 @@
                         </div>
 
                         <div class="l-select" data-language="js">
-                            <span class="relative inline-block" onkeyup="if(event.keyCode === 27){ this.classList.remove('open')}">
+                            <span class="relative inline-block" onkeyup="if(event.keyCode === 27){ this.classList.remove('show')}">
                                 <button
                                 class="index-2"
                                 tabindex="0"
-                                onblur="setTimeout(() => {if (!this.parentElement.contains(document.activeElement)){ this.parentElement.classList.remove('open');}})"
-                                onclick="this.parentElement.classList.toggle('open')">
+                                onblur="setTimeout(() => {if (!this.parentElement.contains(document.activeElement)){ this.parentElement.classList.remove('show');}})"
+                                onclick="this.parentElement.classList.toggle('show')">
                                     View Items
-                                    <i class="icon down thick o:flip xs"></i>
+                                    <i class="icon down thick s:flip xs"></i>
                                 </button>
                                 <span class="collapse from-top overlay mt-n1">
                                     <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
                                         <ul>
-                                            <li><a href="#" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('open');}})">Item 1</a></li>
-                                            <li><a href="#" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('open');}})">Item 2</a></li>
-                                            <li><a href="#" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('open');}})">Item 3</a></li>
+                                            <li><a href="#" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('show');}})">Item 1</a></li>
+                                            <li><a href="#" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('show');}})">Item 2</a></li>
+                                            <li><a href="#" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('show');}})">Item 3</a></li>
                                         </ul>
                                     </nav>
                                 </span>
@@ -5940,7 +5969,7 @@
                             <span class="relative navigable">
                                 <button class="relative index-2" data-toggle="parent" data-toggle-dismissible data-toggle-escapable>
                                     View Items
-                                    <i class="icon down thick o:flip xs"></i>
+                                    <i class="icon down thick s:flip xs"></i>
                                 </button>
                                 <span class="collapse from-top overlay mt-n1">
                                     <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
@@ -5955,10 +5984,10 @@
                         </div>
 
                         <div class="l-select" data-language="petiteVue">
-                            <span id="dropdownTogglePetiteVue" class="relative" :class="{open: open}" @vue:mounted="mounted($el)" @keyup="event.keyCode === 27 ? open = false : null">
-                                <button class="relative index-2" @click="open = !open">
+                            <span id="dropdownTogglePetiteVue" class="relative" :class="{show: show}" @vue:mounted="mounted($el)" @keyup="event.keyCode === 27 ? show = false : null">
+                                <button class="relative index-2" @click="show = !show">
                                     View Items
-                                    <i class="icon down thick o:flip xs"></i>
+                                    <i class="icon down thick s:flip xs"></i>
                                 </button>
                                 <span class="collapse from-top overlay mt-n1">
                                     <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
@@ -5974,7 +6003,7 @@
                             <script type="module">
                                 import { createApp } from 'https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/+esm';
                                 createApp({
-                                    open: false,
+                                    show: false,
                                     items: [
                                         'Item 1',
                                         'Item 2',
@@ -5983,7 +6012,7 @@
                                     mounted(el) {
                                         document.documentElement.addEventListener('click', e => {
                                             if (el !== e.target && !el.contains(e.target)) {
-                                                this.open = false;
+                                                this.show = false;
                                             }
                                         });
                                     }
@@ -5993,10 +6022,10 @@
 
                         <div class="l-select" data-language="vueJs">
                             <span id="dropdownToggleVueJs">
-                                <span class="relative" ref="el" :class="{open: open}">
-                                    <button class="relative index-2" @click="open = !open">
+                                <span class="relative" ref="el" :class="{show: show}">
+                                    <button class="relative index-2" @click="show = !show">
                                         View Items
-                                        <i class="icon down thick o:flip xs"></i>
+                                        <i class="icon down thick s:flip xs"></i>
                                     </button>
                                     <span class="collapse from-top overlay mt-n1">
                                         <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
@@ -6015,7 +6044,7 @@
                                 createApp({
                                     setup(props, context) {
                                         const el = ref(null);
-                                        const open = ref(false);
+                                        const show = ref(false);
                                         const items = [
                                             'Item 1',
                                             'Item 2',
@@ -6024,18 +6053,18 @@
                                         onMounted(() => {
                                             document.documentElement.addEventListener('click', e => {
                                                 if (el.value !== e.target && el.value && !el.value.contains(e.target)) {
-                                                    open.value = false;
+                                                    show.value = false;
                                                 }
                                             });
                                             document.documentElement.addEventListener('keyup', e => {
                                                 if (e.keyCode === 27) {
-                                                    open.value = false;
+                                                    show.value = false;
                                                 }
                                             });
                                         });
                                         return {
                                             el,
-                                            open,
+                                            show,
                                             items,
                                         }
                                     }
@@ -6045,13 +6074,13 @@
 
                         <div class="l-select" data-language="alpineJs">
                             <span x-data="{
-                                    open: false,
+                                    show: false,
                                     items: ['Item 1', 'Item 2', 'Item 3']
                                 }">
-                                <span class="relative" :class="{open: open}" @keyup.esc="open = false" @click.outside="open = false">
-                                    <button class="relative index-2" @click="open = !open">
+                                <span class="relative" :class="{show: show}" @keyup.esc="show = false" @click.outside="show = false">
+                                    <button class="relative index-2" @click="show = !show">
                                         View Items
-                                        <i class="icon down thick o:flip xs"></i>
+                                        <i class="icon down thick s:flip xs"></i>
                                     </button>
                                     <span class="collapse from-top overlay mt-n1">
                                         <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
@@ -6075,8 +6104,8 @@
 
                 <article class="card show-code" data-title="Custom Select">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="l-select" data-language="css" data-footer-note="See &lt;a href='#states.open'&gt;Open States&lt;/a&gt; for more options when using CSS-only.">
-                            <span class="relative f:open">
+                        <div class="l-select" data-language="css" data-footer-note="See &lt;a href='#states.show'&gt;Show States&lt;/a&gt; for more options when using CSS-only.">
+                            <span class="relative f:show">
                                 <input type="text" class="select index-2" value="" readonly placeholder="- Select">
                                 <span class="collapse from-top overlay hidden">
                                     <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
@@ -6091,22 +6120,22 @@
                         </div>
 
                         <div class="l-select" data-language="js">
-                            <span id="custom-select-js" class="relative" onkeyup="if(event.keyCode === 27){ this.classList.remove('open')}">
+                            <span id="custom-select-js" class="relative" onkeyup="if(event.keyCode === 27){ this.classList.remove('show')}">
                                 <input
                                     type="text"
                                     class="select index-2"
-                                    onclick="document.getElementById('custom-select-js').classList.toggle('open')"
-                                    onblur="setTimeout(() => {if (!this.parentElement.contains(document.activeElement)){this.parentElement.classList.remove('open');}})"
-                                    onkeyup="if([13, 32].includes(parseInt(event.keyCode))){ event.preventDefault(); document.getElementById('custom-select-js').classList.toggle('open')}"
+                                    onclick="document.getElementById('custom-select-js').classList.toggle('show')"
+                                    onblur="setTimeout(() => {if (!this.parentElement.contains(document.activeElement)){this.parentElement.classList.remove('show');}})"
+                                    onkeyup="if([13, 32].includes(parseInt(event.keyCode))){ event.preventDefault(); document.getElementById('custom-select-js').classList.toggle('show')}"
                                     value=""
                                     placeholder="- Select"
                                     readonly>
-                                <span class="collapse from-top overlay clip-top" onkeyup="if([13, 32, 9].includes(parseInt(event.keyCode))){ event.preventDefault(); document.getElementById('custom-select-js').classList.add('open')}">
+                                <span class="collapse from-top overlay clip-top" onkeyup="if([13, 32, 9].includes(parseInt(event.keyCode))){ event.preventDefault(); document.getElementById('custom-select-js').classList.add('show')}">
                                     <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
                                         <ul>
-                                            <li><button type="button" class="plain contrast r-0" onclick="this.closest('ul').querySelectorAll('button').forEach(btn => btn.classList.remove('active'));this.classList.add('active');document.querySelector('#custom-select-js input').value = this.innerHTML;document.querySelector('#custom-select-js input').focus();setTimeout(function(){document.getElementById('custom-select-js').classList.remove('open')},100);" onblur="setTimeout(() => {if (!document.getElementById('custom-select-js').contains(document.activeElement)){document.getElementById('custom-select-js').classList.remove('open');}})">Option 1</button></li>
-                                            <li><button type="button" class="plain contrast r-0" onclick="this.closest('ul').querySelectorAll('button').forEach(btn => btn.classList.remove('active'));this.classList.add('active');document.querySelector('#custom-select-js input').value = this.innerHTML;document.querySelector('#custom-select-js input').focus();setTimeout(function(){document.getElementById('custom-select-js').classList.remove('open')},100);" onblur="setTimeout(() => {if (!document.getElementById('custom-select-js').contains(document.activeElement)){document.getElementById('custom-select-js').classList.remove('open');}})">Option 2</button></li>
-                                            <li><button type="button" class="plain contrast r-0" onclick="this.closest('ul').querySelectorAll('button').forEach(btn => btn.classList.remove('active'));this.classList.add('active');document.querySelector('#custom-select-js input').value = this.innerHTML;document.querySelector('#custom-select-js input').focus();setTimeout(function(){document.getElementById('custom-select-js').classList.remove('open')},100);" onblur="setTimeout(() => {if (!document.getElementById('custom-select-js').contains(document.activeElement)){document.getElementById('custom-select-js').classList.remove('open');}})">Option 3</button></li>
+                                            <li><button type="button" class="plain contrast r-0" onclick="this.closest('ul').querySelectorAll('button').forEach(btn => btn.classList.remove('active'));this.classList.add('active');document.querySelector('#custom-select-js input').value = this.innerHTML;document.querySelector('#custom-select-js input').focus();setTimeout(function(){document.getElementById('custom-select-js').classList.remove('show')},100);" onblur="setTimeout(() => {if (!document.getElementById('custom-select-js').contains(document.activeElement)){document.getElementById('custom-select-js').classList.remove('show');}})">Option 1</button></li>
+                                            <li><button type="button" class="plain contrast r-0" onclick="this.closest('ul').querySelectorAll('button').forEach(btn => btn.classList.remove('active'));this.classList.add('active');document.querySelector('#custom-select-js input').value = this.innerHTML;document.querySelector('#custom-select-js input').focus();setTimeout(function(){document.getElementById('custom-select-js').classList.remove('show')},100);" onblur="setTimeout(() => {if (!document.getElementById('custom-select-js').contains(document.activeElement)){document.getElementById('custom-select-js').classList.remove('show');}})">Option 2</button></li>
+                                            <li><button type="button" class="plain contrast r-0" onclick="this.closest('ul').querySelectorAll('button').forEach(btn => btn.classList.remove('active'));this.classList.add('active');document.querySelector('#custom-select-js input').value = this.innerHTML;document.querySelector('#custom-select-js input').focus();setTimeout(function(){document.getElementById('custom-select-js').classList.remove('show')},100);" onblur="setTimeout(() => {if (!document.getElementById('custom-select-js').contains(document.activeElement)){document.getElementById('custom-select-js').classList.remove('show');}})">Option 3</button></li>
                                         </ul>
                                     </nav>
                                 </span>
@@ -6137,21 +6166,21 @@
                         </div>
 
                         <div class="l-select" data-language="petiteVue">
-                            <span id="custom-select-petite-vue" class="relative" :class="{open: open}" @vue:mounted="mounted($el)" @keyup="event.keyCode === 27 ? open = false : null">
+                            <span id="custom-select-petite-vue" class="relative" :class="{show: show}" @vue:mounted="mounted($el)" @keyup="event.keyCode === 27 ? show = false : null">
                                 <input
                                     type="text"
                                     class="select index-2"
                                     v-model="active"
                                     placeholder="- Select"
-                                    @click="open = !open"
-                                    @keyup="if(event.keyCode === 13){open = !open}"
+                                    @click="show = !show"
+                                    @keyup="if(event.keyCode === 13){show = !show}"
                                     readonly>
                                 <span class="collapse from-top overlay clip-top">
                                     <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
                                         <ul>
-                                            <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 1'}" @click="active = 'Option 1'; open = false">Option 1</button></li>
-                                            <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 2'}" @click="active = 'Option 2'; open = false">Option 2</button></li>
-                                            <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 3'}" @click="active = 'Option 3'; open = false">Option 3</button></li>
+                                            <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 1'}" @click="active = 'Option 1'; show = false">Option 1</button></li>
+                                            <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 2'}" @click="active = 'Option 2'; show = false">Option 2</button></li>
+                                            <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 3'}" @click="active = 'Option 3'; show = false">Option 3</button></li>
                                         </ul>
                                     </nav>
                                 </span>
@@ -6160,12 +6189,12 @@
                             <script type="module">
                                 import { createApp } from 'https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/+esm';
                                 createApp({
-                                    open: false,
+                                    show: false,
                                     active: '',
                                     mounted(el) {
                                         document.documentElement.addEventListener('click', e => {
                                             if (el !== e.target && !el.contains(e.target)) {
-                                                this.open = false;
+                                                this.show = false;
                                             }
                                         });
                                     }
@@ -6175,21 +6204,21 @@
 
                         <div class="l-select" data-language="vueJs">
                             <span id="custom-select-vue-js">
-                                <span ref="el" class="relative" :class="{open: open}">
+                                <span ref="el" class="relative" :class="{show: show}">
                                     <input
                                         type="text"
                                         class="select index-2"
                                         v-model="active"
                                         placeholder="- Select"
-                                        @click="open = !open"
-                                        @keyup.enter="open = !open"
+                                        @click="show = !show"
+                                        @keyup.enter="show = !show"
                                         readonly>
                                     <span class="collapse from-top overlay clip-top">
                                         <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
                                             <ul>
-                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 1'}" @click="active = 'Option 1'; open = false">Option 1</button></li>
-                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 2'}" @click="active = 'Option 2'; open = false">Option 2</button></li>
-                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 3'}" @click="active = 'Option 3'; open = false">Option 3</button></li>
+                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 1'}" @click="active = 'Option 1'; show = false">Option 1</button></li>
+                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 2'}" @click="active = 'Option 2'; show = false">Option 2</button></li>
+                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 3'}" @click="active = 'Option 3'; show = false">Option 3</button></li>
                                             </ul>
                                         </nav>
                                     </span>
@@ -6201,23 +6230,23 @@
                                 createApp({
                                     setup(props, context) {
                                         const el = ref(null);
-                                        const open = ref(false);
+                                        const show = ref(false);
                                         const active = ref('');
                                         onMounted(() => {
                                             document.documentElement.addEventListener('click', e => {
                                                 if (el.value !== e.target && el.value && !el.value.contains(e.target)) {
-                                                    open.value = false;
+                                                    show.value = false;
                                                 }
                                             });
                                             document.documentElement.addEventListener('keyup', e => {
                                                 if (e.keyCode === 27) {
-                                                    open.value = false;
+                                                    show.value = false;
                                                 }
                                             });
                                         });
                                         return {
                                             el,
-                                            open,
+                                            show,
                                             active,
                                         }
                                     }
@@ -6227,24 +6256,24 @@
 
                         <div class="l-select" data-language="alpineJs">
                             <span x-data="{
-                                open: false,
+                                show: false,
                                 active: '',
                             }">
-                                <span class="relative" :class="{open: open}" @keyup.esc="open = false" @click.outside="open = false">
+                                <span class="relative" :class="{show: show}" @keyup.esc="show = false" @click.outside="show = false">
                                     <input
                                         type="text"
                                         class="select index-2"
                                         x-model="active"
                                         placeholder="- Select"
-                                        @click="open = !open"
-                                        @keyup.enter="open = !open"
+                                        @click="show = !show"
+                                        @keyup.enter="show = !show"
                                         readonly>
                                     <span class="collapse from-top overlay clip-top">
                                         <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
                                             <ul>
-                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 1'}" @click="active = 'Option 1'; open = false">Option 1</button></li>
-                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 2'}" @click="active = 'Option 2'; open = false">Option 2</button></li>
-                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 3'}" @click="active = 'Option 3'; open = false">Option 3</button></li>
+                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 1'}" @click="active = 'Option 1'; show = false">Option 1</button></li>
+                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 2'}" @click="active = 'Option 2'; show = false">Option 2</button></li>
+                                                <li><button type="button" class="plain capitalize r-0" :class="{active: active == 'Option 3'}" @click="active = 'Option 3'; show = false">Option 3</button></li>
                                             </ul>
                                         </nav>
                                     </span>
@@ -6257,15 +6286,13 @@
                     </div>
                 </article>
 
-                <article class="card show-code mb-5" data-title="Dismissible Menu" data-footer-note="* See &lt;a href='#menus'&gt;Menus&lt;/a&gt; and &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more variations">
+                <article class="card show-code mb-5" data-title="Dismissible Menu" data-footer-note="See &lt;a href='#states.show'&gt;Show States&lt;/a&gt;, &lt;a href='#menus'&gt;Menus&lt;/a&gt; and &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more options for CSS-only.">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="l-select" data-language="css" data-note="Opens on focus">
-                            <span class="relative c:open">
-                                <label class="toggle button plain icon menu o:close" tabindex="0">
-                                    <input class="hide" type="checkbox">
-                                </label>
+                        <div class="l-select" data-language="css">
+                            <span class="relative f:show">
+                                <button class="plain icon menu s:no-pointer s:close"></button>
                                 <span class="collapse from-top overlay clip-top">
-                                    <nav class="list bg-faint round o:side shadow-2 w-content p-1">
+                                    <nav class="list bg-faint round s:side shadow-2 w-content p-1">
                                         <ul>
                                             <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
                                             <li><a href="#">Link 1</a></li>
@@ -6278,20 +6305,135 @@
                         </div>
 
                         <div class="l-select" data-language="js">
-                            <span class="relative" onkeyup="if(event.keyCode === 27){ this.classList.remove('open')}">
-                                <button class="plain icon menu o:close" onclick="this.parentElement.classList.toggle('open')" onblur="setTimeout(() => {if (!this.parentElement.contains(document.activeElement)){ this.parentElement.classList.remove('open');}})"></button>
+                            <span class="relative" onkeyup="if(event.keyCode === 27){ this.classList.remove('show')}">
+                                <button class="plain icon menu s:close" onclick="this.parentElement.classList.toggle('show')" onblur="setTimeout(() => {if (!this.parentElement.contains(document.activeElement)){ this.parentElement.classList.remove('show');}})"></button>
                                 <span class="collapse from-top overlay clip-top">
-                                    <nav class="list bg-faint round o:side shadow-2 w-content p-1">
+                                    <nav class="list bg-faint round s:side shadow-2 w-content p-1">
                                         <ul>
                                             <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
-                                            <li><a href="#" onclick="this.closest('.relative').classList.remove('open')" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('open');}})">Link 1</a></li>
-                                            <li><a href="#" onclick="this.closest('.relative').classList.remove('open')" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('open');}})">Link 2</a></li>
-                                            <li><a href="#" onclick="this.closest('.relative').classList.remove('open')" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('open');}})">Link 3</a></li>
+                                            <li><a href="#" onclick="this.closest('.relative').classList.remove('show')" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('show');}})">Link 1</a></li>
+                                            <li><a href="#" onclick="this.closest('.relative').classList.remove('show')" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('show');}})">Link 2</a></li>
+                                            <li><a href="#" onclick="this.closest('.relative').classList.remove('show')" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('show');}})">Link 3</a></li>
                                         </ul>
                                     </nav>
                                 </span>
                             </span>
                         </div>
+
+                        <div class="l-select" data-language="spryJs">
+                            <span class="relative">
+                                <button class="plain icon menu s:close" data-toggle="parent" data-toggle-dismissible data-toggle-escapable></button>
+                                <span class="collapse from-top overlay clip-top">
+                                    <nav class="list bg-faint round s:side shadow-2 w-content p-1">
+                                        <ul>
+                                            <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                            <li><a href="#" data-toggle-close>Link 1</a></li>
+                                            <li><a href="#" data-toggle-close>Link 2</a></li>
+                                            <li><a href="#" data-toggle-close>Link 3</a></li>
+                                        </ul>
+                                    </nav>
+                                </span>
+                            </span>
+                        </div>
+
+                        <div class="l-select" data-language="petiteVue">
+                            <span id="dismissible-menu-petite-vue" class="relative" :class="{show: show}" @vue:mounted="mounted($el)" @keyup="event.keyCode === 27 ? show = false : null">
+                                <button class="plain icon menu s:close" @click="show = !show"></button>
+                                <span class="collapse from-top overlay clip-top">
+                                    <nav class="list bg-faint round s:side shadow-2 w-content p-1">
+                                        <ul>
+                                            <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                            <li><a href="#" @click="show = false">Link 1</a></li>
+                                            <li><a href="#" @click="show = false">Link 2</a></li>
+                                            <li><a href="#" @click="show = false">Link 3</a></li>
+                                        </ul>
+                                    </nav>
+                                </span>
+                            </span>
+
+                            <script type="module">
+                                import { createApp } from 'https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/+esm';
+                                createApp({
+                                    show: false,
+                                    mounted(el) {
+                                        document.documentElement.addEventListener('click', e => {
+                                            if (el !== e.target && !el.contains(e.target)) {
+                                                this.show = false;
+                                            }
+                                        });
+                                    }
+                                }).mount('#dismissible-menu-petite-vue');
+                            </script>
+                        </div>
+
+                        <div class="l-select" data-language="vueJs">
+                            <span id="dismissible-menu-vue-js">
+                                <span ref="el" class="relative" :class="{show: show}">
+                                    <button class="plain icon menu s:close" @click="show = !show"></button>
+                                    <span class="collapse from-top overlay clip-top">
+                                        <nav class="list bg-faint round s:side shadow-2 w-content p-1">
+                                            <ul>
+                                                <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                                <li><a href="#" @click="show = false">Link 1</a></li>
+                                                <li><a href="#" @click="show = false">Link 2</a></li>
+                                                <li><a href="#" @click="show = false">Link 3</a></li>
+                                            </ul>
+                                        </nav>
+                                    </span>
+                                </span>
+                            </span>
+
+                            <script type="module">
+                                import { createApp, ref, onMounted } from 'https://cdn.jsdelivr.net/npm/vue@3.5.26/dist/vue.esm-browser.js';
+                                createApp({
+                                    setup(props, context) {
+                                        const el = ref(null);
+                                        const show = ref(false);
+                                        onMounted(() => {
+                                            document.documentElement.addEventListener('click', e => {
+                                                if (el.value !== e.target && el.value && !el.value.contains(e.target)) {
+                                                    show.value = false;
+                                                }
+                                            });
+                                            document.documentElement.addEventListener('keyup', e => {
+                                                if (e.keyCode === 27) {
+                                                    show.value = false;
+                                                }
+                                            });
+                                        });
+                                        return {
+                                            el,
+                                            show,
+                                        }
+                                    }
+                                }).mount('#dismissible-menu-vue-js');
+                            </script>
+                        </div>
+
+                        <div class="l-select" data-language="alpineJs">
+                            <span x-data="{
+                                show: false,
+                            }">
+                                <span class="relative" :class="{show: show}" @keyup.esc="show = false" @click.outside="show = false">
+                                    <button class="plain icon menu s:close" @click="show = !show"></button>
+                                    <span class="collapse from-top overlay clip-top">
+                                        <nav class="list bg-faint round s:side shadow-2 w-content p-1">
+                                            <ul>
+                                                <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                                <li><a href="#" @click="show = false">Link 1</a></li>
+                                                <li><a href="#" @click="show = false">Link 2</a></li>
+                                                <li><a href="#" @click="show = false">Link 3</a></li>
+                                            </ul>
+                                        </nav>
+                                    </span>
+                                </span>
+                            </span>
+
+                            <!-- AlpineJsScript -->
+
+                        </div>
+
+                        
                     </div>
                 </article>
 
@@ -6304,23 +6446,28 @@
                     <a href="#components.forms">Forms</a>
                 </h2>
 
-                <code dir="ltr" class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
-                    &lt;!-- Basic Form --&gt;
-                    &lt;form class="grid-300"&gt;
-                        &lt;label&gt;
-                            Label
-                            &lt;input type="text" /&gt;
-                        &lt;/label&gt;
-                         &lt;label&gt;
-                            Label
-                            &lt;input type="text" /&gt;
-                        &lt;/label&gt;
-                         &lt;label&gt;
-                            Label
-                            &lt;input type="text" /&gt;
-                        &lt;/label&gt;
-                    &lt;/form&gt;
-                </code>
+
+                <article class="card show-code" data-title="Usage" data-code-only>
+					<div class="code-content relative p-3 md:p-4">
+                        <!-- Simple Contact Form -->
+                        <form action="/submit" method="post" class="column">
+                            <label>
+                                Name *
+                                <input type="text" name="name" required />
+                            </label>
+                            <label>
+                                Email *
+                                <input type="email" name="email" required />
+                            </label>
+                            <label>
+                                Message *
+                                <textarea name="message"></textarea>
+                            </label>
+
+                            <button type="submit" class="me-auto">Submit</button>
+                        </form>
+                    </div>
+                </article>
 
                 <div class="@container">
                     <table class="@md:responsive my-3">
@@ -6342,17 +6489,21 @@
                                 <td class="ps-2"><code class="color-primary">color-{color}</code></td>
                                 <td>Sets Text color.</td>
                             </tr>
+                            <tr>
+                                <td class="ps-2"><code class="color-primary">show-invalid</code></td>
+                                <td>Highlight invalid fields.</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <article class="card show-code" data-title="Simple form with some Required Fields">
 					<div class="code-content relative p-3 md:p-4">
-                        <form id="form1" class="grid-400 p-2 g-3 md:gy-4 bg-light">
+                        <form id="form1" class="grid cols-400 p-2 g-3 md:gy-4">
 
                             <label>
                                 <h5>Text Field *</h5>
-                                <input type="text" class="placeholder-primary" placeholder="Whoopty Doo" required>
+                                <input type="text" class="placeholder-primary" placeholder="Whoop De Do" required>
                             </label>
 
                             <label>
@@ -6370,7 +6521,7 @@
 
                             <label>
                                 <h5>Text Field *</h5>
-                                <input type="text" class="placeholder-primary b-5" placeholder="Whoopty Doo" required>
+                                <input type="text" class="placeholder-primary b-5" placeholder="Whoop De Do" required>
                             </label>
                             
                             <label>
@@ -6388,7 +6539,7 @@
 
                             <label class="roomy">
                                 <h5>Text Field *</h5>
-                                <input type="text" class="placeholder-primary b-5" placeholder="Whoopty Doo" required>
+                                <input type="text" class="placeholder-primary b-5" placeholder="Whoop De Do" required>
                             </label>
                             
                             <label class="roomy">
@@ -6422,7 +6573,7 @@
                                 </select>
                             </label>
 
-                            <label class="relative f:open">
+                            <label class="relative f:show">
                                 <h5>Custom Dropdown</h5>
                                 <input id="dropdown" type="text" class="select" value="" readonly>
                                 <div class="collapse from-top overlay hidden">
@@ -6434,7 +6585,7 @@
                                 </div>
                             </label>
 
-                            <label class="relative f:open">
+                            <label class="relative f:show">
                                 <h5>Custom Radio Dropdown</h5>
                                 <input id="dropdown2" type="text" class="select" value="" readonly="">
                                 <div class="collapse overlay">
@@ -6622,7 +6773,7 @@
 
                             <div class="md:span-3">
                                 <h5>Custom Dropdown</h5>
-                                <span class="collapse f:open relative">
+                                <span class="collapse f:show relative">
                                     <label class="toggle g-0 select pe-4 inline-flex min-w-200 content-start bb" tabindex="0">
                                         <span>
                                             <span class="none c:revert">Select</span>
@@ -7229,8 +7380,8 @@
 
                 <article class="card show-code" data-title="Outline Horizontal List">
 					<div class="code-content relative p-3 md:p-4">
-                        <nav class="list primary outline row open bg-faint relative index-1">
-                            <ul class="open">
+                        <nav class="list primary outline row show bg-faint relative index-1">
+                            <ul class="show">
                                 <li><button class="link contrast">List Item 1</button></li>
                                 <li><button class="link contrast">List Item 2 With Dropdown</button>
                                     <ul class="rb-3 clip shadow-2">
@@ -7688,7 +7839,7 @@
                     <a href="#components.menus">Menus</a>
                 </h2>
 
-                <span class="menu h:open">
+                <span class="menu h:show">
                     <button class="link icon toggle">
                         <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                         <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
@@ -7717,7 +7868,7 @@
                 <figure class="relative">
                     <code dir="ltr" class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pe-5 sm">
                         &lt;!-- Basic Menu --&gt;
-                        &lt;button class="link icon" data-toggle="next" data-toggle-escapable data-toggle-dismissible>Open Menu&lt;/button&gt;
+                        &lt;button class="link icon" data-toggle="next" data-toggle-escapable data-toggle-dismissible>Show Menu&lt;/button&gt;
                         &lt;nav class="absolute list bg-faint round shadow-2 p-1 w-100"&gt;
                             &lt;a href="#"&gt;Link 1&lt;/a&gt;
                             &lt;a href="#"&gt;Link 2&lt;/a&gt;
@@ -7744,7 +7895,7 @@
 
                 <article class="card show-code" data-title="Basic Menu" data-badge="No JS">
 					<div class="code-content relative p-3 md:p-4">
-                        <span class="menu keep-open">
+                        <span class="menu show">
                             <button class="link icon toggle">
                                 <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                                 <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
@@ -7760,7 +7911,7 @@
 
                 <article class="card show-code" data-title="Hoverable Menu" data-badge="No JS">
 					<div class="code-content relative p-3 md:p-4">
-                        <span class="menu h:open">
+                        <span class="menu h:show">
                             <button class="link icon toggle">
                                 <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                             </button>
@@ -7812,7 +7963,7 @@
                 <article class="card show-code" data-title="Hoverable User Menu">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="text-end">
-                            <span class="menu h:open">
+                            <span class="menu h:show">
                                 <button class="hazy icon circle toggle">
                                     <svg viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
                                 </button>
@@ -7847,7 +7998,7 @@
 
                 <code dir="ltr" class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
                     &lt;!-- Basic Modal --&gt;
-                    &lt;div class="modal open"&gt;
+                    &lt;div class="modal show"&gt;
                         &lt;div style="max-width: 400px"&gt;
                             Content Here
                         &lt;/div&gt;
@@ -7867,8 +8018,8 @@
                                 <td>Main Modal Element</td>
                             </tr>
                             <tr>
-                                <td><code class="color-primary">open</code></td>
-                                <td>Opens the modal</td>
+                                <td><code class="color-primary">show</code></td>
+                                <td>Shows the modal</td>
                             </tr>
                             <tr>
                                 <td>
@@ -7878,7 +8029,7 @@
                                     <code class="color-primary">blur-bg-3</code><br>
                                     <code class="color-primary">blur-bg-4</code>
                                 </td>
-                                <td>Adds blur to background when open</td>
+                                <td>Adds blur to background when modal is shown</td>
                             </tr>
                             <tr>
                                 <td><code class="color-primary">bounce</code></td>
@@ -7896,7 +8047,7 @@
 					<div class="code-content relative p-3 md:p-4">
                         <div class="l-select" data-language="html">
                             <button popovertarget="popoverModal">
-                                Open Modal with HTML Popover
+                                Show Modal with HTML Popover
                             </button>
 
                             <div id="popoverModal" class="modal blur-bg-2" popover>
@@ -7910,14 +8061,14 @@
                         </div>
 
                         <div class="l-select" data-language="js">
-                            <button onkeyup="event.keyCode !== 27 || this.nextElementSibling.classList.remove('open')" onclick="this.nextElementSibling.classList.add('open')">
-                                Open Modal with JS
+                            <button onkeyup="event.keyCode !== 27 || this.nextElementSibling.classList.remove('show')" onclick="this.nextElementSibling.classList.add('show')">
+                                Show Modal with JS
                             </button>
 
-                            <div class="modal blur-bg-2" onclick="this !== event.target || this.classList.remove('open')">
+                            <div class="modal blur-bg-2" onclick="this !== event.target || this.classList.remove('show')">
                                 <article class="card bg-theme shadow-2 b-1 r-3" style="max-width: 400px;">
                                     <p>JS Modal</p>
-                                    <button onclick="this.closest('.modal').classList.remove('open')">
+                                    <button onclick="this.closest('.modal').classList.remove('show')">
                                         Close Modal
                                     </button>
                                 </article>
@@ -7925,15 +8076,15 @@
                         </div>
 
                         <div class="l-select" data-language="petiteVue">
-                            <div id="modalPetiteVue" @keyup="event.keyCode === 27 ? open = false : null">
-                                <button @click="open = true">
-                                    Open Modal with Petite Vue
+                            <div id="modalPetiteVue" @keyup="event.keyCode === 27 ? show = false : null">
+                                <button @click="show = true">
+                                    Show Modal with Petite Vue
                                 </button>
 
-                                <div class="modal blur-bg-2" ref="modal" :class="{o: open}" @click="clickClose(event)">
+                                <div class="modal blur-bg-2" ref="modal" :class="{show: show}" @click="clickClose(event)">
                                     <article class="card bg-theme shadow-2 b-1 r-3" style="max-width: 400px;">
                                         <p>Petite Vue Modal</p>
-                                        <button @click="open = false">
+                                        <button @click="show = false">
                                             Close Modal
                                         </button>
                                     </article>
@@ -7943,9 +8094,9 @@
                             <script type="module">
                                 import { createApp } from 'https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/+esm';
                                 createApp({
-                                    open: false,
+                                    show: false,
                                     clickClose(event) {
-                                        event.target === this.$refs.modal ? this.open = false : null;
+                                        event.target === this.$refs.modal ? this.show = false : null;
                                     }
                                 }).mount('#modalPetiteVue');
                             </script>
@@ -7953,14 +8104,14 @@
 
                         <div class="l-select" data-language="vueJs">
                             <div id="modalVueJs">
-                                <button @click="open = true" @keyup.esc="open = false">
-                                    Open Modal with VueJS
+                                <button @click="show = true" @keyup.esc="show = false">
+                                    Show Modal with VueJS
                                 </button>
 
-                                <div class="modal blur-bg-2" ref="modal" :class="{o: open}" @click="clickClose($event)">
+                                <div class="modal blur-bg-2" ref="modal" :class="{show: show}" @click="clickClose($event)">
                                     <article class="card bg-theme shadow-2 b-1 r-3" style="max-width: 400px;">
                                         <p>VueJS Modal</p>
-                                        <button @click="open = false">
+                                        <button @click="show = false">
                                             Close Modal
                                         </button>
                                     </article>
@@ -7972,12 +8123,12 @@
                                 createApp({
                                     setup(props, context) {
                                         const modal = ref();
-                                        const open = ref(false);
+                                        const show = ref(false);
                                         function clickClose(event) {
-                                            event.target === modal.value ? open.value = false : null;
+                                            event.target === modal.value ? show.value = false : null;
                                         }
                                         return {
-                                            open,
+                                            show,
                                             modal,
                                             clickClose,
                                         }
@@ -7987,15 +8138,15 @@
                         </div>
 
                         <div class="l-select" data-language="alpineJs">
-                            <div x-data="{o: false}">
-                                <button @click="open = true" @keyup.esc="open = false">
-                                    Open Modal with Alpine.js
+                            <div x-data="{show: false}">
+                                <button @click="show = true" @keyup.esc="show = false">
+                                    Show Modal with Alpine.js
                                 </button>
 
-                                <div class="modal blur-bg-2" x-ref="modal" :class="{o: open}" @click="event.target === $refs.modal ? open = false : null">
+                                <div class="modal blur-bg-2" x-ref="modal" :class="{show: show}" @click="event.target === $refs.modal ? show = false : null">
                                     <article class="card bg-theme shadow-2 b-1 r-3" style="max-width: 400px;">
                                         <p>Alpine.js Modal</p>
-                                        <button @click="open = false">
+                                        <button @click="show = false">
                                             Close Modal
                                         </button>
                                     </article>
@@ -8045,7 +8196,7 @@
                 <article class="card show-code" data-title="Required Modal with Blur">
 					<div class="code-content relative p-3 md:p-4">
                         <button popovertarget="requiredModal">
-                            Open Required Modal
+                            Show Required Modal
                         </button>
 
                         <div id="requiredModal" class="modal blur-bg-2 bounce" popover="manual">
@@ -8073,7 +8224,7 @@
                 <article class="card show-code" data-title="No Backdrop">
 					<div class="code-content relative p-3 md:p-4">
                         <button popovertarget="noBackDropModal">
-                            Open No Backdrop Modal
+                            Show No Backdrop Modal
                         </button>
 
                         <div id="noBackDropModal" class="modal no-bg" popover>
@@ -8091,7 +8242,7 @@
                 <article class="card show-code" data-title="Large Content Model">
 					<div class="code-content relative p-3 md:p-4">
                         <button popovertarget="largeModal">
-                            Open Large Modal
+                            Show Large Modal
                         </button>
 
                         <div id="largeModal" class="modal" popover>
@@ -8301,8 +8452,8 @@
                                 <td>Layout the Items Vertically and change UI to a List Format.</td>
                             </tr>
                             <tr>
-                                <td><code class="color-primary">h:open</code></td>
-                                <td>Allows Sub menus to show with Hover. You can use breakpoints with {breakpoint}:h:open</td>
+                                <td><code class="color-primary">h:show</code></td>
+                                <td>Allows Sub menus to show with Hover. You can use breakpoints with {breakpoint}:h:show</td>
                             </tr>
                         </tbody>
                     </table>
@@ -8333,7 +8484,7 @@
                 <article class="card show-code" data-title="Drop down Navigation Menu Right Aligned">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="@container index-1">
-                            <nav class="bg-faint @md:h:open @md:row @md:content-end g-0 text-end">
+                            <nav class="bg-faint @md:h:show @md:row @md:content-end g-0 text-end">
                                 <ul>
                                     <li>
                                         <a class="pe-0" href="#">Link with Dropdown
@@ -8396,7 +8547,7 @@
                                 <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
                                 <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                             </button>
-                            <ul class="list @md:row @md:cols-auto @md:open inherit-bg absolute @md:relative inset-end outer-bottom @md:inset-top @md:h:open">
+                            <ul class="list @md:row @md:cols-auto @md:show inherit-bg absolute @md:relative inset-end outer-bottom @md:inset-top @md:h:show">
                                 <li>
                                     <a href="#">Link 1</a>
                                 </li>
@@ -8831,7 +8982,7 @@
                                 <td>Adds background color to each even tbody row when adding expanding rows</td>
                             </tr>
                             <tr>
-                                <td><code class="color-primary">h:open</code></td>
+                                <td><code class="color-primary">h:show</code></td>
                                 <td>Makes each even tbody row have a hover color</td>
                             </tr>
                         </tbody>
@@ -9029,8 +9180,8 @@
                                         <td class="none @md:table-cell">Red</td>
                                         <td class="none @md:table-cell">1/12/2024</td>
                                         <td class="text-end">
-                                            <div class="f:open index-1">
-                                                <button class="link icon circle f:swap o:no-pointer">
+                                            <div class="f:show index-1">
+                                                <button class="link icon circle f:swap s:no-pointer">
                                                     <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
                                                     <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
                                                 </button>
@@ -9083,7 +9234,7 @@
                                         <td class="none @md:table-cell">Blue</td>
                                         <td class="none @md:table-cell">1/22/2024</td>
                                         <td class="text-end">
-                                            <div class="toggle-container f:open">
+                                            <div class="toggle-container f:show">
                                                 <button class="toggle link icon circle">
                                                     <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
                                                     <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
@@ -9134,7 +9285,7 @@
                                         <td class="none @md:table-cell">Yellow</td>
                                         <td class="none @md:table-cell">2/02/2024</td>
                                         <td class="text-end">
-                                            <div class="toggle-container f:open">
+                                            <div class="toggle-container f:show">
                                                 <button class="toggle link icon circle">
                                                     <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
                                                     <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
@@ -9185,7 +9336,7 @@
                                         <td class="none @md:table-cell">Green</td>
                                         <td class="none @md:table-cell">2/12/2024</td>
                                         <td class="text-end">
-                                            <div class="toggle-container f:open">
+                                            <div class="toggle-container f:show">
                                                 <button class="toggle link icon circle">
                                                     <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z"></path></svg>
                                                     <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
@@ -9273,18 +9424,18 @@
 					<div class="code-content relative p-3 md:p-4">
                         <div class="row g-0 primary outline fast">
                             <nav class="list span-auto outline navigable bg-faint">
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
-                                <button class="link active" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 3 lorem ipsum</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 4</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 5</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 6</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show" aria-pressed="true">Tab 1</button>
+                                <button class="link active" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 2</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 3 lorem ipsum</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 4</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 5</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 6</button>
                             </nav>
                             <div class="p-3">
                                 <div class="collapse">
                                     <p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                                 </div>
-                                <div class="collapse open">
+                                <div class="collapse show">
                                     <div>
                                         <p>Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                                         <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
@@ -9312,15 +9463,15 @@
 					<div class="code-content relative p-3 md:p-4">
                         <div class="column g-0 primary outline">
                             <nav class="list row cols-fill outline navigable bg-faint inline-center text-center">
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 3 lorem ipsum</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 4</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 5</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 6</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show" aria-pressed="true">Tab 1</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 2</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 3 lorem ipsum</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 4</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 5</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 6</button>
                             </nav>
                             <div>
-                                <div class="p-3 open"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
+                                <div class="p-3 show"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></div>
                                 <div class="p-3">
                                     <p>Tab 2 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
                                     <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
@@ -9342,19 +9493,19 @@
                         <div class="@container">
                             <div class="column primary @md:row outline">
                                 <nav class="list outline row @md:column text-center navigable bg-faint">
-                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
-                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
-                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 3 With Long Title</button>
-                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 4</button>
-                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 5</button>
-                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 6</button>
-                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 7 With Long Title</button>
-                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 8</button>
-                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 9 With Longer Title</button>
-                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 10</button>
+                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show" aria-pressed="true">Tab 1</button>
+                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 2</button>
+                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 3 With Long Title</button>
+                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 4</button>
+                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 5</button>
+                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 6</button>
+                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 7 With Long Title</button>
+                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 8</button>
+                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 9 With Longer Title</button>
+                                    <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 10</button>
                                 </nav>
                                 <ul class="p-4">
-                                    <li class="open"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></li>
+                                    <li class="show"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></li>
                                     <li><h3>Tab 2 Content.</h3><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><h3>Another Heading</h3><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></li>
                                     <li>Tab 3 content. Dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur. </li>
                                     <li>Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
@@ -9374,15 +9525,15 @@
 					<div class="code-content relative p-3 md:p-4">
                         <div class="outline primary border-primary">
                             <nav class="list outline navigable bg-primary bg/2 primary order-2">
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 3 lorem ipsum</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 4</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 5</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 6</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show" aria-pressed="true">Tab 1</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 2</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 3 lorem ipsum</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 4</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 5</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 6</button>
                             </nav>
                             <ul class="p-4">
-                                <li class="open"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></li>
+                                <li class="show"><p>Tab 1 content. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></li>
                                 <li><h3>Tab 2 Content.</h3><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><h3>Another Heading</h3><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p></li>
                                 <li>Tab 3 content. Dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur. </li>
                                 <li>Tab 4 content. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</li>
@@ -9401,12 +9552,12 @@
 					<div class="code-content relative p-3 md:p-4">
                         <div class="column primary outline">
                             <nav class="list outline row order-2 navigable block-center text-center bg-faint">
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open" aria-pressed="true">Tab 1</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 2</button>
-                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .open">Tab 3 With Long Title</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show" aria-pressed="true">Tab 1</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 2</button>
+                                <button class="link" data-toggle="{.list} + * > :nth-child({n})" data-toggle-close="{.tabs} .show">Tab 3 With Long Title</button>
                             </nav>
                             <div>
-                                <div class="p-4 open text-center"><h3>Tab 1 Content.</h3></div>
+                                <div class="p-4 show text-center"><h3>Tab 1 Content.</h3></div>
                                 <div class="p-4 text-center"><h3>Tab 2 Content.</h3></div>
                                 <div class="p-4 text-center"><h3>Tab 3 Content.</h3></div>
                             </div>
@@ -9418,15 +9569,15 @@
 					<div class="code-content relative p-3 md:p-4">
                         <div class="outline row">
                             <nav class="list outline">
-                                <label class="button link" data-toggle="{.tabs} .list + * > :nth-child(1)" data-toggle-close="{.tabs} .open">
+                                <label class="button link" data-toggle="{.tabs} .list + * > :nth-child(1)" data-toggle-close="{.tabs} .show">
                                     <input class="ms-0 me-2" name="list-item-tabs2" type="radio">
                                     Option 1
                                 </label>
-                                <label class="button link" data-toggle="{.tabs} .list + * > :nth-child(2)" data-toggle-close="{.tabs} .open">
+                                <label class="button link" data-toggle="{.tabs} .list + * > :nth-child(2)" data-toggle-close="{.tabs} .show">
                                     <input class="ms-0 me-2" name="list-item-tabs2" type="radio">
                                     Option 2
                                 </label>
-                                <label class="button link" data-toggle="{.tabs} .list + * > :nth-child(3)" data-toggle-close="{.tabs} .open">
+                                <label class="button link" data-toggle="{.tabs} .list + * > :nth-child(3)" data-toggle-close="{.tabs} .show">
                                     <input class="ms-0 me-2" name="list-item-tabs2" type="radio">
                                     Option 3
                                 </label>
@@ -9435,7 +9586,7 @@
                                 <div class="p-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
                                 <div class="p-3">At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
                                 <div class="p-3">Stet clita kasd gubergren, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</div>
-                                <div class="p-3 open color-gray">Select one to see details.</div>
+                                <div class="p-3 show color-gray">Select one to see details.</div>
                             </div>
                         </div>
                     </div>
@@ -9600,7 +9751,7 @@
                 <h5 class="bold">Copy Failed!</h5>
                 <p>Try selecting the code and use Ctrl + C to copy</p>
             </div>
-            <button class="toggle button hazy light circle absolute inset-top inset-end icon close sm m-1" onclick="this.closest('.modal').classList.remove('open')">
+            <button class="toggle button hazy light circle absolute inset-top inset-end icon close sm m-1" onclick="this.closest('.modal').classList.remove('show')">
                 <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
             </button>
         </div>

@@ -160,6 +160,7 @@ select,
 	background-size    : .4em .4em;
 	background-position: calc(100% - 1.2em), calc(100% - 0.82em);
 	background-repeat  : no-repeat;
+	cursor: default;
 }
 
 [dir="rtl"] select,
