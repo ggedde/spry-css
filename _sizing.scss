@@ -5,6 +5,38 @@
 * Spry Sizing
 */
 
+.resize {
+	overflow: auto;
+	resize  : both
+}
+
+.resize-x {
+	overflow-x: auto;
+	resize    : horizontal;
+	max-width: 100%;
+}
+
+.resize-y {
+	overflow-y: auto;
+	resize    : vertical
+}
+
+.min-w-content {
+	min-width: min-content;
+}
+
+.max-w-content {
+	max-width: max-content;
+}
+
+.min-h-content {
+	min-height: min-content;
+}
+
+.max-h-content {
+	max-height: max-content;
+}
+
 @each $l, $value in variables.$lengths {
 	.max-w-#{$l} {
 		max-width: #{$value};

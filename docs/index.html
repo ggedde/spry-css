@@ -6437,6 +6437,60 @@
                     </div>
                 </article>
 
+                <article class="card show-code mb-5" data-title="Advanced Custom Select CSS Only" data-footer-note="See &lt;a href='#states.show'&gt;Show States&lt;/a&gt;, &lt;a href='#menus'&gt;Menus&lt;/a&gt; and &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more options for CSS-only.">
+					<div class="code-content relative p-3 md:p-4">
+                        <span class="f:show relative">
+                            <label class="toggle g-0 select pe-4 inline-flex min-w-200 block-start bb-1" tabindex="0">
+                                <span>
+                                    <span class="none c:revert">Select</span>
+                                    <input id="selectFormHtmlNone" class="hide" type="radio" name="selectFormHtmlValue" value="" checked="">
+                                </span>
+                                <span>
+                                    <span class="none c:revert">Option 1</span>
+                                    <input id="selectFormHtml1" class="hide" type="radio" name="selectFormHtmlValue" value="Option 1">
+                                </span>
+                                <span>
+                                    <span class="none c:revert">Option 2</span>
+                                    <input id="selectFormHtml2" class="hide" type="radio" name="selectFormHtmlValue" value="Option 2">
+                                </span>
+                                <span>
+                                    <span class="none c:revert">Option 3</span>
+                                    <input id="selectFormHtml3" class="hide" type="radio" name="selectFormHtmlValue" value="Option 3">
+                                </span>
+                                <label class="checked-empty:none button absolute inset-end icon circle pointer-all shy xxs me-4" for="selectFormHtmlNone">
+                                    <svg class="xl" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+                                </label>
+                            </label>
+                            <div class="overlay hidden">
+                                <div class="content from-top">
+                                    <nav class="list bg-faint round-bottom shadow-2 p-1 b-1 g-1">
+                                        <ul>
+                                            <li><label class="button link" for="selectFormHtml1">Option 1</label></li>
+                                            <li><label class="button link" for="selectFormHtml2">Option 2</label></li>
+                                            <li><label class="button link" for="selectFormHtml3">Option 3</label></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </article>
+
+                <article class="card show-code mb-5" data-title="Advanced Multi Checkbox Dropdown CSS Only" data-footer-note="See &lt;a href='#states.show'&gt;Show States&lt;/a&gt;, &lt;a href='#menus'&gt;Menus&lt;/a&gt; and &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more options for CSS-only.">
+					<div class="code-content relative p-3 md:p-4">
+                        <span class="relative f:show">
+                            <input id="dropdown5" type="text" class="select index-2" data-toggle="next" data-toggle-escapable value="" readonly="">
+                            <span class="collapse from-top overlay">
+                                <ul class="list navigable bg-faint round-bottom shadow-2 w/100">
+                                    <li><label class="button r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown5').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
+                                    <li><label class="button r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown5').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
+                                    <li><label class="button r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown5').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
+                                </ul>
+                            </span>
+                        </span>
+                    </div>
+                </article>
+
             </section>
 
             <!-- FORMS -->
@@ -6479,358 +6533,118 @@
                         <tbody>
                             <tr>
                                 <td class="md:w-200 md:ps-2"><code class="color-primary">{color}</code></td>
-                                <td>Sets Accent color.</td>
+                                <td>
+                                    <h5>Sets Accent color.</h5>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="ps-2"><code class="color-primary">border-{color}</code></td>
-                                <td>Sets field border colors.</td>
+                                <td>
+                                    <h5>Sets field border colors.</h5>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="ps-2"><code class="color-primary">color-{color}</code></td>
-                                <td>Sets Text color.</td>
+                                <td>
+                                    <h5>Sets Text color.</h5>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="ps-2"><code class="color-primary">show-invalid</code></td>
-                                <td>Highlight invalid fields.</td>
+                                <td class="ps-2"><code class="color-primary">show-invalid</code></h5>
+
+                                <td>
+                                    <h5>Highlight invalid fields.</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ps-2"><code class="color-primary">dense</code></td>
+                                <td>
+                                    <h5>Set comfort to Dense</h5>
+                                    <p class="note">See <a href="#styles.comfort">Comfort</a> for more details.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ps-2"><code class="color-primary">compact</code></td>
+                                <td>
+                                    <h5>Set comfort to Compact</h5>
+                                    <p class="note">See <a href="#styles.comfort">Comfort</a> for more details.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ps-2"><code class="color-primary">cozy</code></td>
+                                <td>
+                                    <h5>Set comfort to Cozy</h5>
+                                    <p class="note">See <a href="#styles.comfort">Comfort</a> for more details.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ps-2"><code class="color-primary">roomy</code></td>
+                                <td>
+                                    <h5>Set comfort to Roomy</h5>
+                                    <p class="note">See <a href="#styles.comfort">Comfort</a> for more details.</p>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <article class="card show-code" data-title="Simple form with some Required Fields">
-					<div class="code-content relative p-3 md:p-4">
-                        <form id="form1" class="grid cols-400 p-2 g-3 md:gy-4">
+                <h3><a id="components.forms.examples" href="#components.forms.examples">Examples</a></h3>
 
-                            <label>
-                                <h5>Text Field *</h5>
-                                <input type="text" class="placeholder-primary" placeholder="Whoop De Do" required>
-                            </label>
-
-                            <label>
-                                <h5>File Upload</h5>
-                                <input type="file">
-                            </label>
-
-                            <label>
-                                <h5>Field with Prefix</h5>
-                                <div class="input">
-                                    <span>Prefix</span>
-                                    <input type="text" required>
-                                </div>
-                            </label>
-
-                            <label>
-                                <h5>Text Field *</h5>
-                                <input type="text" class="placeholder-primary b-5" placeholder="Whoop De Do" required>
-                            </label>
-                            
-                            <label>
-                                <h5>File Upload</h5>
-                                <input type="file" class="b-5">
-                            </label>
-
-                            <label>
-                                <h5>Field with Prefix</h5>
-                                <div class="input b-5">
-                                    <span>Prefix</span>
-                                    <input type="text" required>
-                                </div>
-                            </label>
-
-                            <label class="roomy">
-                                <h5>Text Field *</h5>
-                                <input type="text" class="placeholder-primary b-5" placeholder="Whoop De Do" required>
-                            </label>
-                            
-                            <label class="roomy">
-                                <h5>File Upload</h5>
-                                <input type="file" class="b-5">
-                            </label>
-
-                            <label class="roomy">
-                                <h5>Field with Prefix</h5>
-                                <div class="input b-5">
-                                    <span>Prefix</span>
-                                    <input type="text" required>
-                                </div>
-                            </label>
-
-                            <label>
-                                <input type="color" oninput="this.nextElementSibling.value = this.value">
-                            </label>
-                        
-                            <label>
-                                <h5>Email *</h5>
-                                <input type="email" required>
-                            </label>
-                        
-                            <label>
-                                <h5>Select *</h5>
-                                <select required>
-                                    <option value="" disabled>Select</option>
-                                    <option>One</option>
-                                    <option>Two</option>
-                                </select>
-                            </label>
-
-                            <label class="relative f:show">
-                                <h5>Custom Dropdown</h5>
-                                <input id="dropdown" type="text" class="select" value="" readonly>
-                                <div class="collapse from-top overlay hidden">
-                                    <ul class="list bg-faint rb-2 shadow-2 w/100">
-                                        <li><button type="button" class="link contrast r-0" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 1</button></li>
-                                        <li><button type="button" class="link contrast r-0" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 2</button></li>
-                                        <li><button type="button" class="link contrast r-0" onclick="document.getElementById('dropdown').value = this.innerHTML;">Option 3</button></li>
-                                    </ul>
-                                </div>
-                            </label>
-
-                            <label class="relative f:show">
-                                <h5>Custom Radio Dropdown</h5>
-                                <input id="dropdown2" type="text" class="select" value="" readonly="">
-                                <div class="collapse overlay">
-                                    <ul class="list bg-faint rb-2 shadow-2 w/100">
-                                        <li><label class="button link contrast r-0"><input class="hide" type="radio" name="d2" value="hidden_value_1" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 1</label></li>
-                                        <li><label class="button link contrast r-0"><input class="hide" type="radio" name="d2" value="hidden_value_2" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 2</label></li>
-                                        <li><label class="button link contrast r-0"><input class="hide" type="radio" name="d2" value="hidden_value_3" onclick="document.getElementById('dropdown2').value = this.parentElement.innerText;">Option 3</label></li>
-                                    </ul>
-                                </div>
-                            </label>
-
-                            <label>
-                                <h5>Multi Checkbox Dropdown</h5>
-                                <input id="dropdown3" type="text" class="select" data-toggle="next" data-toggle-escapable value="" readonly="">
-                                <div class="collapse">
-                                    <ul class="list navigable bg-faint round-bottom shadow-2 w/100">
-                                        <li><label class="button link contrast r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
-                                        <li><label class="button link contrast r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
-                                        <li><label class="button link contrast r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown3').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
-                                    </ul>
-                                </div>
-                            </label>
-
-                            <label>
-                                <h5>Field with Prefix</h5>
-                                <div class="input">
-                                    <span>Prefix</span>
-                                    <input type="text" required>
-                                </div>
-                            </label>
-
-                            <label>
-                                <h5>Field with Suffix</h5>
-                                <div class="input">
-                                    <input type="text" required>
-                                    <span>Suffix</span>
-                                </div>
-                            </label>
-
-                            <label>
-                                <h5>File Upload</h5>
-                                <input type="file">
-                            </label>
-
-                            <label>
-                                <h5>Date</h5>
-                                <input type="date">
-                            </label>
-
-                            <label>
-                                <h5>Time</h5>
-                                <input type="time">
-                            </label>
-
-                            <label>
-                                <h5>Number</h5>
-                                <input type="number">
-                            </label>
-
-                            <label>
-                                <h5>Website</h5>
-                                <input type="url">
-                            </label>
-
-                            <label>
-                                <h5>Color with Value</h5>
-                                <div class="input">
-                                    <input type="color" oninput="this.nextElementSibling.value = this.value">
-                                    <output>#000000</output>
-                                </div>
-                            </label>
-
-                            <label>
-                                <h5>Range with Value</h5>
-                                <div class="input">
-                                    <input type="range" min="0" max="100" value="0" oninput="this.nextElementSibling.value = this.value">
-                                    <output style="width:26px">0</output>
-                                </div>
-                            </label>
-
-                            <div>
-                                <h5 class="mb-1">Horizontal Radios *</h5>
-                                <label class="inline mx-1"><input type="radio" name="rad" required>Why</label>
-                                <label class="inline mx-1"><input type="radio" name="rad" required>When</label>
-                                <label class="inline mx-1"><input type="radio" name="rad" required>Where</label>
-                            </div>
-
-                            <div>
-                                <h5 class="mb-1">Responsive Radios *</h5>
-                                <label class="mx-1">
-                                    <input type="radio" class="loading" name="rad" required>
-                                    <span class="none c:revert">Selected</span>
-                                    <span class="c:none">Not Selected</span>
-                                </label>
-                                <label class="mx-1">
-                                    <input type="radio" name="rad" required>
-                                    <span class="none c:revert">Selected</span>
-                                    <span class="c:none">Not Selected</span>
-                                </label>
-                                <label class="mx-1">
-                                    <input type="radio" name="rad" required onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading')}, 2000);">
-                                    <span class="none c:revert">Selected</span>
-                                    <span class="c:none">Not Selected</span>
-                                </label>
-                            </div>
-
-                            <div>
-                                <h5>Checkboxes</h5>
-                                <label>
-                                    <input type="checkbox" class="loading">
-                                    <span class="none c:revert">Checked</span>
-                                    <span class="c:none">Unchecked</span>
-                                </label>
-                                <label>
-                                    <input type="checkbox">
-                                    <span class="none c:revert">Checked</span>
-                                    <span class="c:none">Unchecked</span>
-                                </label>
-                                <label>
-                                    <input type="checkbox" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading')}, 2000);">
-                                    <span class="none c:revert">Checked</span>
-                                    <span class="c:none">Unchecked</span>
-                                </label>
-                            </div>
-
-                            <div>
-                                <h5>Switches</h5>
-                                <label>
-                                    <input class="switch" type="checkbox" onclick="this.classList.add('loading'); setTimeout(() => {this.classList.remove('loading')}, 2000);">
-                                    <span class="none c:revert">On</span>
-                                    <span class="c:none">Off</span>
-                                </label>
-
-                                <label>
-                                    <input class="switch loading" type="checkbox">
-                                    <span class="none c:revert">On</span>
-                                    <span class="c:none">Off</span>
-                                </label>
-
-                                <label>
-                                    <input class="switch" type="checkbox">
-                                    <span class="none c:revert">On</span>
-                                    <span class="c:none">Off</span>
-                                </label>
-                                <label>
-                                    <input class="switch" type="checkbox">
-                                    <span class="none c:revert">On</span>
-                                    <span class="c:none">Off</span>
-                                </label>
-                            </div>
-                    
-                            <label class="span"><h5>Message</h5>
-                                <textarea></textarea>
-                            </label>
-
-                            <button type="submit" class="mxw-200 span mnw-300">Submit</button>
-                        </form>
-                    </div>
-                </article>
-
-                <article class="card show-code" data-title="Form with Accent Color, Alternate Grid and Show Invalid">
+                <article id="components.forms.example.form" class="card show-code" data-title="Form with Accent Color, Alternate Grid and Show Invalid">
 					<div class="code-content relative p-3 md:p-4">
                         <form class="primary show-invalid row cols-1 md:cols-12 g-3 md:gy-4 p-2 block-center">
                     
                             <label class="md:span-4">
-                                <h5>Text Field *</h5>
-                                <input type="text" required>
-                                <small class="invalid color-error absolute mt-1">This field is required</small>
+                                <h5>Name *</h5>
+                                <input type="text" name="name" required>
+                                <div class="invalid color-error mt-1 overlay sm">This field is required</div>
                             </label>
                         
                             <label class="md:span-8">
                                 <h5>Email *</h5>
-                                <input type="email" required>
-                                <small class="invalid color-error absolute mt-1">Invalid Email Address</small>
+                                <input type="email" name="email" required>
+                                <div class="invalid color-error mt-1 overlay sm">Invalid Email Address</div>
                             </label>
                         
-                            <label class="md:span-3">
+                            <label class="md:span-4">
                                 <h5>Select *</h5>
-                                <select required>
+                                <select name="select" required>
                                     <option value="" disabled>Select</option>
                                     <option>One</option>
                                     <option>Two</option>
                                 </select>
                             </label>
 
-                            <div class="md:span-3">
-                                <h5>Custom Dropdown</h5>
-                                <span class="collapse f:show relative">
-                                    <label class="toggle g-0 select pe-4 inline-flex min-w-200 content-start bb" tabindex="0">
-                                        <span>
-                                            <span class="none c:revert">Select</span>
-                                            <input id="selectFormHtmlNone" class="hide" type="radio" name="selectFormHtmlValue" value="" checked="">
-                                        </span>
-                                        <span>
-                                            <span class="none c:revert">Option 1</span>
-                                            <input id="selectFormHtml1" class="hide" type="radio" name="selectFormHtmlValue" value="Option 1">
-                                        </span>
-                                        <span>
-                                            <span class="none c:revert">Option 2</span>
-                                            <input id="selectFormHtml2" class="hide" type="radio" name="selectFormHtmlValue" value="Option 2">
-                                        </span>
-                                        <span>
-                                            <span class="none c:revert">Option 3</span>
-                                            <input id="selectFormHtml3" class="hide" type="radio" name="selectFormHtmlValue" value="Option 3">
-                                        </span>
-                                        <label class="checked-empty:none button absolute inset-end icon circle pointer-all shy xxs me-4" for="selectFormHtmlNone">
-                                            <svg class="xl" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-                                        </label>
-                                    </label>
-                                    <div class="overlay hidden">
-                                        <div class="content from-top">
-                                            <nav class="list bg-faint round-bottom shadow-2 p-1 b-1 g-1">
-                                                <ul>
-                                                    <li><label class="button link" for="selectFormHtml1">Option 1</label></li>
-                                                    <li><label class="button link" for="selectFormHtml2">Option 2</label></li>
-                                                    <li><label class="button link" for="selectFormHtml3">Option 3</label></li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
+                            <label class="md:span-4">
+                                <h5>Custom Select *</h5>
+                                <span class="relative f:show">
+                                    <input type="text" class="select index-2 mt-2" name="custom-select" value="" readonly="" placeholder="- Select">
+                                    <span class="collapse from-top overlay hidden">
+                                        <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
+                                            <ul>
+                                                <li><button type="button" class="plain contrast r-0">Option 1</button></li>
+                                                <li><button type="button" class="plain contrast r-0">Option 2</button></li>
+                                                <li><button type="button" class="plain contrast r-0">Option 3</button></li>
+                                            </ul>
+                                        </nav>
+                                    </span>
                                 </span>
-                            </div>
-
-                            <label class="md:span-3">
-                                <h5>Custom Radio Dropdown</h5>
-                                <input id="dropdown4" type="text" class="select" data-toggle="next" data-toggle-escapable data-toggle-dismissible value="" readonly="">
-                                <div class="collapse">
-                                    <ul class="list navigable bg-faint round-bottom shadow-2 w/100">
-                                        <li><label class="button link contrast r-0"><input class="hide" type="radio" name="d2" value="hidden_value_1" onclick="document.getElementById('dropdown4').value = this.parentElement.innerText;">Option 1</label></li>
-                                        <li><label class="button link contrast r-0"><input class="hide" type="radio" name="d2" value="hidden_value_2" onclick="document.getElementById('dropdown4').value = this.parentElement.innerText;">Option 2</label></li>
-                                        <li><label class="button link contrast r-0"><input class="hide" type="radio" name="d2" value="hidden_value_3" onclick="document.getElementById('dropdown4').value = this.parentElement.innerText;">Option 3</label></li>
-                                    </ul>
-                                </div>
                             </label>
 
-                            <label class="md:span-3">
-                                <h5>Multi Checkbox Dropdown</h5>
-                                <input id="dropdown5" type="text" class="select" data-toggle="next" data-toggle-escapable value="" readonly="">
-                                <div class="collapse">
-                                    <ul class="list navigable bg-faint round-bottom shadow-2 w/100">
-                                        <li><label class="button link contrast r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_1" onclick="document.getElementById('dropdown5').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 1</label></li>
-                                        <li><label class="button link contrast r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_2" onclick="document.getElementById('dropdown5').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 2</label></li>
-                                        <li><label class="button link contrast r-0"><input class="hide" type="checkbox" name="d3" value="hidden_value_3" onclick="document.getElementById('dropdown5').value = (Array.from(document.querySelectorAll('[type=checkbox][name=d3]:checked'), e => e.parentElement.innerText)).join(',');">Option 3</label></li>
-                                    </ul>
-                                </div>
+                            <label class="md:span-4">
+                                <h5>Custom Multi Select *</h5>
+                                <span class="relative f:show">
+                                    <input type="text" class="select index-2 mt-2" name="custom-select" value="" readonly="" placeholder="- Select">
+                                    <span class="collapse from-top overlay hidden">
+                                        <nav class="list bg-faint rb-2 shadow-1 p-1 pt-2 b-1 bt-0 g-1">
+                                            <ul>
+                                                <li><button type="button" class="plain contrast r-0">Option 1</button></li>
+                                                <li><button type="button" class="plain contrast r-0">Option 2</button></li>
+                                                <li><button type="button" class="plain contrast r-0">Option 3</button></li>
+                                            </ul>
+                                        </nav>
+                                    </span>
+                                </span>
                             </label>
 
                             <label class="md:span-6">
@@ -6901,11 +6715,6 @@
                             <label class="md:span-4">
                                 <h5>Progress</h5>
                                 <progress value="0.5">50%</progress>
-                            </label>
-
-                            <label class="md:span-4">
-                                <h5>Progress with Loading</h5>
-                                <progress class="loading" value="0.5">50%</progress>
                             </label>
 
                             <label class="md:span-4">

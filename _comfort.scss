@@ -21,11 +21,16 @@
     --cozy-py: .3em;
     --cozy-px: 1.1em;
     --cozy-lh: 1.25;
+    // Relaxed
+    --relaxed: 2.5em;
+    --relaxed-py: .5em;
+    --relaxed-px: 1.5em;
+    --relaxed-lh: 1.3;
 	// Roomy
-    --roomy: 2.5em;
-    --roomy-py: .5em;
-    --roomy-px: 1.5em;
-    --roomy-lh: 1.3;
+    --roomy: 2.75em;
+    --roomy-py: .55em;
+    --roomy-px: 1.55em;
+    --roomy-lh: 1.35;
 }
 
 @mixin comfort-styles($prefix) {
@@ -49,6 +54,13 @@
         --comfort-py : var(--cozy-py);
         --comfort-px : var(--cozy-px);
         --comfort-lh : var(--cozy-lh);
+    }
+
+    #{$prefix}relaxed {
+        --comfort: var(--relaxed);
+        --comfort-py : var(--relaxed-py);
+        --comfort-px : var(--relaxed-px);
+        --comfort-lh : var(--relaxed-lh);
     }
 
     #{$prefix}roomy {

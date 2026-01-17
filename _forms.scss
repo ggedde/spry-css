@@ -26,9 +26,82 @@ input::file-selector-button,
 	}
 }
 
+:where(label input, label select, label textarea) {
+	width: 100%;
+}
+
+
+:is(input, textarea, select).w-content {
+	field-sizing: content;
+	width: auto;
+	max-width: 100%;
+	resize: none;
+}
+
 :where(h1, h2, h3, h4, h5, h6, label, p)+ :where(input, select, textarea, .input),
 label> :is(input, select, textarea):not([type=radio], [type=checkbox]):only-child {
 	margin-top: var(--pad);
+}
+
+label {
+	display: block;
+
+	&:focus-within .input> :not(input, select, textarea),
+	&:focus-within input::file-selector-button {
+		background-color: var(--ui-border);
+		opacity         : 1;
+		--ui-text       : hsl(from var(--ui-color) 0 0 clamp(15%, calc((l - var(--invert))* -1000%), 98%) / var(--clr-a, 1));
+	}
+
+	&:hover .input> :not(input, select, textarea) {
+		--theme-input: var(--ui-border);
+	}
+
+	:is(sup, sub) {
+		pointer-events: none;
+		position  : relative;
+		display   : inline-block;
+		opacity   : 0.7;
+		transform : translate(1em, 2.6em);
+		transition: all .2s ease-in-out;
+		z-index   : 1;
+	}
+
+	sub {
+		transform: translate(1em, -2.65em);
+	}
+
+	&:focus-within,
+	&:has(input:not(:placeholder-shown)),
+	&:has(textarea:not(:placeholder-shown)),
+	&:has(select option:not(:empty):checked) {
+
+		:is(sup, sub) {
+			opacity    : 0.7;
+			transform  : translate(.1em, 0) scale(0.85);
+			font-weight: 500;
+		}
+	}
+}
+
+[dir="rtl"] label {
+	:is(sup, sub) {
+		transform: translate(-1em, 2.6em);
+	}
+
+	sub {
+		transform: translate(-1em, -2.65em);
+	}
+
+	&:focus-within,
+	&:has(input:not(:placeholder-shown)),
+	&:has(textarea:not(:placeholder-shown)),
+	&:has(select option:not(:empty):checked) {
+
+		:is(sup, sub) {
+			transform: translate(-.1em, 0) scale(0.85);
+		}
+	}
 }
 
 [type=range] {
@@ -174,12 +247,18 @@ select {
 }
 
 textarea {
-	min-height : 8em;
-	max-height : 500px;
-	padding    : .75rem;
+	min-height : calc(var(--comfort) * 3);
+	max-height : 400px;
 	max-width  : 100%;
 	min-width  : 100%;
-	line-height: 1.2;
+	padding    : var(--comfort-px);
+	line-height: var(--comfort-lh);
+	resize: vertical;
+	&.h-content {
+		field-sizing: content;
+		height: auto;
+		resize: none;
+	}
 }
 
 [type=file] {
@@ -269,71 +348,6 @@ textarea {
 			}
 		}
 
-	}
-}
-
-label {
-	display: block;
-
-	&:focus-within .input> :not(input, select, textarea),
-	&:focus-within input::file-selector-button {
-		background-color: var(--ui-border);
-		opacity         : 1;
-		--ui-text       : hsl(from var(--ui-color) 0 0 clamp(15%, calc((l - var(--invert))* -1000%), 98%) / var(--clr-a, 1));
-	}
-
-	&:hover .input> :not(input, select, textarea) {
-		--theme-input: var(--ui-border);
-	}
-
-	:is(sup, sub) {
-		pointer-events: none;
-		position  : relative;
-		display   : inline-block;
-		opacity   : 0.7;
-		transform : translate(1em, 2.6em);
-		transition: all .2s ease-in-out;
-		z-index   : 1;
-	}
-
-	sub {
-		transform: translate(1em, -2.65em);
-	}
-
-	&:focus-within,
-	&:has(input:not(:placeholder-shown)),
-	&:has(textarea:not(:placeholder-shown)),
-	&:has(select option:not(:empty):checked) {
-
-		:is(sup, sub) {
-			opacity    : 0.7;
-			transform  : translate(.1em, 0) scale(0.85);
-			font-weight: 500;
-		}
-	}
-
-	:is(input, select, textarea):not([type=radio], [type=checkbox]) {
-		width: 100%;
-	}
-}
-
-[dir="rtl"] label {
-	:is(sup, sub) {
-		transform: translate(-1em, 2.6em);
-	}
-
-	sub {
-		transform: translate(-1em, -2.65em);
-	}
-
-	&:focus-within,
-	&:has(input:not(:placeholder-shown)),
-	&:has(textarea:not(:placeholder-shown)),
-	&:has(select option:not(:empty):checked) {
-
-		:is(sup, sub) {
-			transform: translate(-.1em, 0) scale(0.85);
-		}
 	}
 }
 
