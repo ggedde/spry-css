@@ -8,15 +8,11 @@
 	align-items     : flex-start;
 	display         : flex;
 	flex-direction  : column;
-	row-gap         : var(--gy);
+	row-gap         : calc(var(--comfort-px) * 1.5);
 	justify-content : flex-start;
-	padding         : var(--gy);
+	padding         : calc(var(--comfort-px) * 1.5);
 	position        : relative;
 	transition      : none;
-
-	// &:has(>img) {
-	// 	overflow: hidden;
-	// }
 
 	&.outline {
 
@@ -51,9 +47,8 @@
 		justify-content : space-between;
 		align-items     : center;
 		transition      : none;
-		// --comfort       : var(--roomy);
-		min-height      : var(--roomy);
-		min-width       : var(--roomy);
+		min-height      : var(--comfort);
+		min-width       : var(--comfort);
 
 		>* {
 			// @extend %ui-color;
@@ -70,5 +65,5 @@
 }
 
 :where(.card):has(>:where(header, footer))>:where(p, div) {
-	padding-inline: var(--gx);
+	padding-inline: calc(var(--comfort-px) * 1.5);
 }

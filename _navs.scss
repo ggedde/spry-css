@@ -86,14 +86,14 @@ menu menu {
 
 @mixin hoverShow-styles($prefix) {
 
-	:is(#{$prefix}h\:show, #{$prefix}f\:show)>ul>li>ul,
-	:is(#{$prefix}h\:show, #{$prefix}f\:show)>li>ul,
+	:where(#{$prefix}h\:show, #{$prefix}f\:show)>ul>li>ul,
+	:where(#{$prefix}h\:show, #{$prefix}f\:show)>li>ul,
 	#{$prefix}o\:side ul ul,
 	#{$prefix}sub\:o\:side ul ul ul {
 		// min-width: calc(100% + 1px);
-		max-width: 260px;
+		// max-width: 260px;
 		position : absolute;
-		width    : max-content;
+		width    : 100%;
 	}
 
 	:where(#{$prefix}o\:down ul ul, #{$prefix}sub\:o\:down ul ul ul) {

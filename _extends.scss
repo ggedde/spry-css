@@ -15,6 +15,7 @@
 	font-family     : inherit;
 	justify-content : center;
 	gap             : 1em;
+	line-height     : var(--comfort-lh);
 	min-height      : var(--comfort);
 	min-width       : var(--comfort);
 	outline         : 0 solid rgb(from var(--ui-accent) r g b / 0.5);

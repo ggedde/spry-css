@@ -27,36 +27,6 @@
 	}
 }
 
-.truncate-1 {
-	overflow-wrap: break-word;
-	word-break   : break-all;
-}
-
-.truncate,
-[class*="truncate-"] {
-	max-width         : 100%;
-	overflow          : hidden;
-	text-overflow     : ellipsis;
-	display           : -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 1;
-	line-clamp        : 1;
-}
-
-@for $i from 2 through 5 {
-	.truncate-#{$i} {
-		-webkit-line-clamp: #{$i};
-		line-clamp        : #{$i};
-		white-space       : normal;
-		word-break        : break-word;
-	}
-}
-
-.truncate {
-	white-space: nowrap;
-	display    : inline-block
-}
-
 .snug {
 	translate: -1em -.7em
 }
@@ -120,10 +90,6 @@
 	filter: drop-shadow( 2px 2px 3px rgba(0, 0, 0, .3));
 }
 
-.hyphens {
-	hyphens: auto;
-}
-
 .no-bg {
 	background: none;
 }
@@ -159,18 +125,3 @@
 	hyphens: none;
 }
 
-.italic {
-	font-style: italic;
-}
-
-.bold {
-	font-weight: bold;
-}
-
-.underline {
-	text-decoration: underline;
-}
-
-.strikethrough {
-	text-decoration: line-through;
-}

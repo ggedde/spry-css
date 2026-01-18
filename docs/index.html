@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://spryjs.local.com/docs.min.css">
     <script defer src="https://spryjs.local.com/docs.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
-    <script defer src="https://spryjs.local.com/spry.js?v=1.0.0&load=spryJs"></script>
+    <script defer src="https://spryjs.local.com/spry.js?v=1.0.0&load"></script>
     <!-- <script defer src="https://buttons.github.io/buttons.js"></script> -->
 </head>
 
@@ -1317,6 +1317,18 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td class="md:w-200 md:ps-2"><code class="color-primary">relaxed</code></td>
+                                <td>
+                                    <p>
+                                        <h5>Set UI Element to be Relaxed</h5>
+                                        <p class="color-gray sm"><code class="italic">Uses:</code> <code class="color-primary">--relaxed</code></p>
+                                        <p class="color-gray sm mt-0"><code class="italic o/0">Uses:</code> <code class="color-primary">--relaxed-py</code></p>
+                                        <p class="color-gray sm mt-0"><code class="italic o/0">Uses:</code> <code class="color-primary">--relaxed-px</code></p>
+                                        <p class="color-gray sm mt-0"><code class="italic o/0">Uses:</code> <code class="color-primary">--relaxed-lh</code></p>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td class="md:w-200 md:ps-2"><code class="color-primary">roomy</code></td>
                                 <td>
                                     <p>
@@ -1339,16 +1351,18 @@
                             <button class="dense">Dense Button</button>
                             <button class="compact">Compact Button</button>
                             <button class="cozy">Cozy Button</button>
+                            <button class="relaxed">Relaxed Button</button>
                             <button class="roomy">Roomy Button</button>
                         </div>
                 </article>
 
                 <article id="styles.comfort.inputs" class="card show-code" data-title="Inputs">
                     <div class="code-content relative p-3 md:p-4">
-                        <input class="dense" type="text" placeholder="Dense Input">
-                        <input class="compact" type="text" placeholder="Compact Input">
-                        <input class="cozy" type="text" placeholder="Cozy Input">
-                        <input class="roomy" type="text" placeholder="Roomy Input">
+                        <input class="max-w-200 dense" type="text" placeholder="Dense Input">
+                        <input class="max-w-200 compact" type="text" placeholder="Compact Input">
+                        <input class="max-w-200 cozy" type="text" placeholder="Cozy Input">
+                        <input class="max-w-200 relaxed" type="text" placeholder="Relaxed Input">
+                        <input class="max-w-200 roomy" type="text" placeholder="Roomy Input">
                     </div>
             </article>
     
@@ -2308,7 +2322,7 @@
                     </div>
                 </article>
 
-                <article id="states.checked.example.labels" class="card show-code" data-title="Toggle Icons as Labels">
+                <article id="states.checked.example.labels" class="card show-code" data-title="Toggle Icons as Labels" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more details">
 					<div class="code-content relative p-3 md:p-4">
                         <label class="button p-0">
                             <input class="icon next c:rotate" type="checkbox">
@@ -5285,6 +5299,7 @@
                         <span class="badge dense">Dense</span>
                         <span class="badge compact">Compact</span>
                         <span class="badge cozy">Cozy</span>
+                        <span class="badge relaxed">Relaxed</span>
                         <span class="badge roomy">Roomy</span>
                     </div>
                 </article>
@@ -5398,8 +5413,12 @@
                                 <td>Resets Padding, Line Height and Minimum Size</td>
                             </tr>
                             <tr>
-                                <td class="ps-2"><code class="color-primary">roomy</code></td>
+                                <td class="ps-2"><code class="color-primary">relaxed</code></td>
                                 <td>Increases Padding, Line Height and Minimum Size</td>
+                            </tr>
+                            <tr>
+                                <td class="ps-2"><code class="color-primary">roomy</code></td>
+                                <td>Maximum Padding, Line Height and Minimum Size</td>
                             </tr>
                             <tr>
                                 <td class="ps-2"><code class="color-primary">icon</code></td>
@@ -5587,6 +5606,7 @@
                         <button class="dense">Dense</button>
                         <button class="compact">Compact</button>
                         <button class="cozy">Cozy</button>
+                        <button class="relaxed">Relaxed</button>
                         <button class="roomy">Roomy</button>
                     </div>
                 </article>
@@ -5680,7 +5700,7 @@
 
                         <label class="button toggle">
                             Select Me
-                            <span class="icon ms-2 c:swap">
+                            <span class="icon c:swap">
                                 <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v14H5V5h14z" /></svg>
                                 <input type="checkbox">
                                 <svg viewBox="0 0 24 24"><path d="M19 19H5V5h10V3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8h-2m-11.09-.92L6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09z" /></svg>
@@ -5688,7 +5708,7 @@
                         </label>
 
                         <label class="button toggle">
-                            <span class="icon me-2 c:swap">
+                            <span class="icon c:swap">
                                 <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v14H5V5h14z" /></svg>
                                 <input type="checkbox">
                                 <svg viewBox="0 0 24 24"><path d="M19 19H5V5h10V3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8h-2m-11.09-.92L6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09z" /></svg>
@@ -5697,10 +5717,10 @@
                         </label>
 
                         <label class="button toggle c:swap">
-                            <svg class="icon me-2 lg" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z" /></svg>
+                            <svg class="icon lg" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z" /></svg>
                             Direction
                             <input type="checkbox">
-                            <svg class="icon ms-2 lg" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" /></svg>
+                            <svg class="icon lg" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" /></svg>
                         </label>
                     </div>
                 </article>
@@ -6578,6 +6598,13 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td class="ps-2"><code class="color-primary">relaxed</code></td>
+                                <td>
+                                    <h5>Set comfort to Relaxed</h5>
+                                    <p class="note">See <a href="#styles.comfort">Comfort</a> for more details.</p>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td class="ps-2"><code class="color-primary">roomy</code></td>
                                 <td>
                                     <h5>Set comfort to Roomy</h5>
@@ -6779,34 +6806,6 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Compact with Loading Button and Disabled Fields on Submit">
-					<div class="code-content relative p-3 md:p-4">
-                        <form class="show-invalid row cols-1 md:cols-3 block-center sm gy-1" onsubmit="event.preventDefault(); this.querySelector('[type=submit]').classList.add('loading'); this.classList.add('disabled'); setTimeout(() => {this.reset(); this.querySelector('[type=submit]').classList.remove('loading'); this.classList.remove('disabled');}, 2000)">
-                            <label>
-                                <sup>Name *</sup>
-                                <input type="text" required placeholder=" ">
-                            </label>
-                            <label>
-                                <input type="email" placeholder=" ">
-                                <sub>Email</sub>
-                            </label>
-                            <label>
-                                <sup>Select</sup>
-                                <select>
-                                    <option value="" selected></option>
-                                    <option>Two</option>
-                                    <option>Three</option>
-                                </select>
-                            </label>
-                            <label class="span">
-                                <sup>Message</sup>
-                                <textarea placeholder=" "></textarea>
-                            </label>
-                            <button type="submit" aria-busy="false" class="mt-2">Submit with Loading Icon</button>
-                        </form>
-                    </div>
-                </article>
-
             </section>
 
             <!-- ICONS -->
@@ -6831,13 +6830,22 @@
                     <table class="@md:responsive my-3">
                         <thead>
                             <tr>
-                                <th colspan="2" class="w-200 h3 ps-0">Classes</th>
+                                <th colspan="2" class="w-200 h3 ps-0">
+                                    <a id="components.icons.classes" href="#components.icons.classes" class="inherit-color">Classes</a>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><code class="color-primary">icon</code></td>
+                                <td class="md:w-200"><code class="color-primary">icon</code></td>
                                 <td>Main Icon container. Set the initial SVG's size inside the container.</td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200"><code class="color-primary">icon</code> <code class="color-gray">{icon-name}</code></td>
+                                <td>
+                                    Uses SpryCSS Icons
+                                    <p>See <a href="#components.icons.names" class="color-primary">SpryCSS Icon Names</a> for the list of available icon names.</p>
+                                </td>
                             </tr>
                             <tr>
                                 <td><code class="color-primary">color-{color}</code></td>
@@ -6855,7 +6863,88 @@
                     </table>
                 </div>
 
-                <article class="card show-code" data-title="SpryCSS Icons">
+                <div class="@container">
+                    <table class="@md:responsive my-3">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="w-200 ps-0">
+                                    <h3><a id="components.icons.names" href="#components.icons.names" class="inherit-color">SpryCSS Icon Names</a></h3>
+                                    <p class="note mt-3 lg">In order to use the icons, you need to include the <code class="color-primary">icon</code> class.</p>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="md:w-200">
+                                    <code class="color-gray">icon</code> <code class="color-primary">next</code>
+                                </td>
+                                <td>
+                                    <i class="icon next"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200">
+                                    <code class="color-gray">icon</code> <code class="color-primary">prev</code>
+                                </td>
+                                <td>
+                                    <i class="icon prev"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200">
+                                    <code class="color-gray">icon</code> <code class="color-primary">up</code>
+                                </td>
+                                <td>
+                                    <i class="icon up"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200">
+                                    <code class="color-gray">icon</code> <code class="color-primary">down</code>
+                                </td>
+                                <td>
+                                    <i class="icon down"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200">
+                                    <code class="color-gray">icon</code> <code class="color-primary">close</code>
+                                </td>
+                                <td>
+                                    <i class="icon close"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200">
+                                    <code class="color-gray">icon</code> <code class="color-primary">menu</code>
+                                </td>
+                                <td>
+                                    <i class="icon menu"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200">
+                                    <code class="color-gray">icon</code> <code class="color-primary">dots</code>
+                                </td>
+                                <td>
+                                    <i class="icon dots"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="md:w-200">
+                                    <code class="color-gray">icon</code> <code class="color-primary">loading</code>
+                                </td>
+                                <td>
+                                    <i class="icon loading"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3><a id="components.icons.examples" href="#components.icons.examples" class="inherit-color">Examples</a></h3>
+
+                <article id="components.icons.example.sprycss" class="card show-code" data-title="SpryCSS Icons">
 					<div class="code-content relative p-3 md:p-4">
                         <span class="icon next"></span>
                         <span class="icon prev"></span>
@@ -6868,7 +6957,7 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Thin">
+                <article id="components.icons.example.thin" class="card show-code" data-title="Thin">
 					<div class="code-content relative p-3 md:p-4">
                         <span class="icon thin next"></span>
                         <span class="icon thin prev"></span>
@@ -6881,7 +6970,7 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Thick">
+                <article id="components.icons.example.thick" class="card show-code" data-title="Thick">
 					<div class="code-content relative p-3 md:p-4">
                         <span class="icon thick next"></span>
                         <span class="icon thick prev"></span>
@@ -6894,7 +6983,7 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="SVG Icons">
+                <article id="components.icons.example.svg" class="card show-code" data-title="SVG Icons">
 					<div class="code-content relative p-3 md:p-4">
                         <h5>Material Design Icons</h5>
                         <svg class="icon" viewBox="0 0 24 24"><path d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
@@ -6917,7 +7006,7 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Sizing & Colors">
+                <article id="components.icons.example.sizing" class="card show-code" data-title="Sizing & Colors">
 					<div class="code-content relative p-3 md:p-4">
                         <i class="icon xxl">
                             <svg viewBox="0 0 24 24">
@@ -6952,7 +7041,7 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Animate on Hover">
+                <article id="components.icons.example.animate.hover" class="card show-code" data-title="Animate on Hover">
 					<div class="code-content relative p-3 md:p-4">
                         <button class="button circle icon next h:rotate"></button>
                         <button class="button circle icon down h:flip"></button>
@@ -6961,7 +7050,7 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Animate on Focus">
+                <article id="components.icons.example.animate.focus" class="card show-code" data-title="Animate on Focus">
 					<div class="code-content relative p-3 md:p-4">
                         <button class="button circle icon next f:rotate" tabindex="0"></button>
                         <button class="button circle icon down f:flip" tabindex="0"></button>
@@ -6970,7 +7059,7 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Animate on Checked">
+                <article id="components.icons.example.animate.checked" class="card show-code" data-title="Animate on Checked">
 					<div class="code-content relative p-3 md:p-4">
                         <input type="checkbox" class="button circle icon next c:rotate">
                         <input type="checkbox" class="button circle icon down c:flip">
@@ -6979,66 +7068,37 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Toggle SVG Icons" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more details">
+                <article id="components.icons.example.toggle.svg" class="card show-code" data-title="Toggle SVG Icons" data-footer-note="* See &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more details">
 					<div class="code-content relative p-3 md:p-4">
-                        <span class="h5 inline-block min-w-200 me-n4">With Focus</span>
-
-                        <button class="icon link">
-                            <svg class="f:rotate" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
-                        </button>
-
-                        <button class="icon link">
-                            <svg class="f:flip" viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z" /></svg>
-                        </button>
-
-                        <button class="toggle icon link h:swap">
+                        <label class="button toggle icon c:swap">
                             <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
-                            <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                        </button>
-
-                        <button class="toggle icon link h:swap">
-                            <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
-                            <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                        </button>
-
-                        <br>
-
-                        <span class="h5 inline-block min-w-200 me-n4">With Toggles</span>
-
-                        <label class="toggle button icon link">
-                            <input class="hide" type="checkbox">
-                            <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
+                            <input type="checkbox">
                             <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
                         </label>
 
-                        <label class="toggle button icon link">
-                            <input class="hide" type="checkbox">
-                            <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
-                            <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                        </label>
-
-                        <button class="link">
+                        <label class="button toggle">
                             Select Me
-                            <span class="icon h:swap">
-                                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v14H5V5h14z"></path></svg>
-                                <svg viewBox="0 0 24 24"><path d="M19 19H5V5h10V3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8h-2m-11.09-.92L6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09z"></path></svg>
-                            </span>
-                        </button>
-                        
-                        <label class="toggle button link">
                             <span class="icon c:swap">
-                                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v14H5V5h14z"></path></svg>
-                                <svg viewBox="0 0 24 24"><path d="M19 19H5V5h10V3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8h-2m-11.09-.92L6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09z"></path></svg>
+                                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v14H5V5h14z" /></svg>
+                                <input type="checkbox">
+                                <svg viewBox="0 0 24 24"><path d="M19 19H5V5h10V3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8h-2m-11.09-.92L6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09z" /></svg>
                             </span>
-                            <input class="hide" type="checkbox">
+                        </label>
+
+                        <label class="button toggle">
+                            <span class="icon c:swap">
+                                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v14H5V5h14z" /></svg>
+                                <input type="checkbox">
+                                <svg viewBox="0 0 24 24"><path d="M19 19H5V5h10V3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8h-2m-11.09-.92L6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09z" /></svg>
+                            </span>
                             Select Me
                         </label>
-                        
-                        <label class="toggle button link c:swap">
-                            <svg class="lg icon" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z"></path></svg>
+
+                        <label class="button toggle c:swap">
+                            <svg class="icon lg" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42z" /></svg>
                             Direction
-                            <input class="hide" type="checkbox">
-                            <svg class="lg icon" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+                            <input type="checkbox">
+                            <svg class="icon lg" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z" /></svg>
                         </label>
                     </div>
                 </article>
@@ -7052,46 +7112,14 @@
                     <a href="#components.lists">Lists</a>
                 </h2>
 
-                <figure class="relative">
-                    <code dir="ltr" class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pe-5 sm">
-                        &lt;!-- Basic List --&gt;
-                        &lt;div class="list"&gt;
-                            &lt;button class="link contrast"&gt;List Item 1&lt;/button&gt;
-                            &lt;button class="link contrast"&gt;List Item 2&lt;/button&gt;
-                            &lt;button class="link contrast"&gt;List Item 3&lt;/button&gt;
-                        &lt;/div&gt;
-                    </code>
-                </figure>
-
-                <article class="card show-code" data-title="Basic List with Buttons">
+                <article id="components.lists.usage" class="card show-code" data-title="Usage" data-code-only>
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="list">
-                            <button class="link contrast">List Item 1</button>
-                            <button class="link contrast">List Item 2</button>
-                            <button class="link contrast">List Item 3</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card show-code" data-title="Basic UL List with Text">
-					<div class="code-content relative p-3 md:p-4">
+                        <!-- Basic List -->
                         <ul class="list">
-                            <li>Text Item 1</li>
-                            <li>Text Item 2</li>
-                            <li>Text Item 3</li>
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 2</a></li>
+                            <li><a href="#">Link 3</a></li>
                         </ul>
-                    </div>
-                </article>
-
-                <article class="card show-code" data-title="Nav List">
-					<div class="code-content relative p-3 md:p-4">
-                        <nav class="list">
-                            <ul>
-                                <li><a href="#">Link 1</a></li>
-                                <li><a href="#">Link 2</a></li>
-                                <li><a href="#">Link 3</a></li>
-                            </ul>
-                        </nav>
                     </div>
                 </article>
 
@@ -7103,7 +7131,7 @@
                             </li>
                             <li>
                                 <a href="#">List Item 2</a>
-                                <input class="button icon down link circle absolute inset-end sm m-1 shy toggle c:flip" type="checkbox">
+                                <input class="button icon down plain circle absolute inset-end sm m-1 shy toggle c:flip" type="checkbox">
                                 <ul class="px-1">
                                     <li><a href="#">Sub Link 1</a></li>
                                     <li><a href="#">Sub Link 2</a></li>
@@ -7112,7 +7140,7 @@
                             </li>
                             <li>
                                 <a href="#">List Item 3v</a>
-                                <label class="button toggle icon link circle absolute inset-end sm m-1 shy">
+                                <label class="button toggle icon plain circle absolute inset-end sm m-1 shy">
                                     <input class="hide" type="checkbox">
                                     <svg class="xxl c:flip" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                                 </label>
@@ -7124,7 +7152,7 @@
                             </li>
                             <li>
                                 <a href="#" class="pe-4">List Item 4 With a very long text</a>
-                                <label class="button toggle icon link circle shy absolute inset-end sm m-1">
+                                <label class="button toggle icon plain circle shy absolute inset-end sm m-1">
                                     <input class="hide" type="checkbox">
                                     <svg class="xxl c:flip" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                                 </label>
@@ -7136,7 +7164,7 @@
                             </li>
                             <li>
                                 <a href="#" class="truncate pe-4">List Item 5 Truncated Text</a>
-                                <label class="button toggle icon link circle shy absolute inset-end sm m-1">
+                                <label class="button toggle icon plain circle shy absolute inset-end sm m-1">
                                     <input class="hide" type="checkbox">
                                     <svg class="xxl c:flip" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                                 </label>
@@ -7159,7 +7187,7 @@
                             <hr class="my-1 mx-1">
                             <li class="sm">
                                 <a href="#">Small List Item 1</a>
-                                <label class="button toggle icon link circle shy absolute inset-end sm m-1">
+                                <label class="button toggle icon plain circle shy absolute inset-end sm m-1">
                                     <input class="hide" type="checkbox">
                                     <svg class="xxl c:flip" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                                 </label>
@@ -7167,7 +7195,7 @@
                                     <li><a href="#">Sub Link 1</a></li>
                                     <li>
                                         <a href="#">Sub Link 2</a>
-                                        <label class="button toggle icon link circle shy absolute inset-end sm m-1">
+                                        <label class="button toggle icon plain circle shy absolute inset-end sm m-1">
                                             <input class="hide" type="checkbox">
                                             <svg class="xxl c:flip" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
                                         </label>
@@ -7189,17 +7217,17 @@
 
                 <article class="card show-code" data-title="Outline Horizontal List">
 					<div class="code-content relative p-3 md:p-4">
-                        <nav class="list primary outline row show bg-faint relative index-1">
-                            <ul class="show">
-                                <li><button class="link contrast">List Item 1</button></li>
-                                <li><button class="link contrast">List Item 2 With Dropdown</button>
-                                    <ul class="rb-3 clip shadow-2">
-                                        <li><button class="link contrast">List Item 1</button></li>
-                                        <li><button class="link contrast">List Item 2</button></li>
-                                        <li><button class="link contrast">List Item 3</button></li>
+                        <nav class="list primary outline row h:show bg-faint relative index-1">
+                            <ul>
+                                <li><button class="plain">List Item 1</button></li>
+                                <li><button class="plain">List Item 2 With Dropdown</button>
+                                    <ul class="rb-3 shadow-2 b-1 w/100">
+                                        <li><button class="plain">List Item 1</button></li>
+                                        <li><button class="plain">List Item 2</button></li>
+                                        <li><button class="plain">List Item 3</button></li>
                                     </ul>
                                 </li>
-                                <li><button class="link contrast">List Item 3</button></li>
+                                <li><button class="plain">List Item 3</button></li>
                             </ul>
                         </nav>
                     </div>
@@ -7975,8 +8003,8 @@
                         </button>
 
                         <div id="loginModal" class="modal" popover>
-                            <article class="card outline bg-theme shadow-2 g-0" style="max-width: 400px;">
-                                <header>
+                            <article class="card outline bg-theme shadow-2 g-0 draggable" style="max-width: 400px;">
+                                <header class="draggable-handle">
                                     <h4>Login or Sign Up</h4>
                                     <button class="link icon close circle" popovertarget="loginModal"></button>
                                 </header>
@@ -9548,13 +9576,13 @@
         </main>
     </div>
     <div id="copy-code-modal" class="modal no-bg">
-        <div class="alert success lg absolute inset-top inset-end from-end md px-2 pe-1 flex m-1" style="max-width: 240px">
+        <div class="alert success lg fixed inset-top inset-end from-end md px-2 pe-1 flex m-1" style="max-width: 240px">
             <svg viewBox="0 0 24 24" class="icon me-1"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z" /></svg>
             <div>Copied To Clipboard!</div>
         </div>
     </div>
     <div id="copy-code-error-modal" class="modal no-bg">
-        <div class="alert error lg absolute inset-top inset-end from-end md max-w-400 px-2 pe-1 flex m-1">
+        <div class="alert error lg fixed inset-top inset-end from-end md max-w-400 px-2 pe-1 flex m-1">
             <svg class="icon" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
             <div>
                 <h5 class="bold">Copy Failed!</h5>
@@ -9570,6 +9598,7 @@
             &copy; 2025 - SpryCSS <span class="px-3 xs">|</span>Created by <a target="_blank" class="ms-2 color-gray" href="https://gedde.dev">Gedde Development</a>
         </div>
     </footer>
+
 </body>
 
 </html>

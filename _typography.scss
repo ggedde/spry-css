@@ -64,6 +64,19 @@ code {
     }
 }
 
+.fw-lighter {
+	font-weight: lighter;
+}
+
+.fw-bold
+.bold {
+	font-weight: bold;
+}
+
+.fw-bolder {
+	font-weight: bolder;
+}
+
 .uppercase {
 	text-transform: uppercase
 }
@@ -74,4 +87,50 @@ code {
 
 .capitalize {
 	text-transform: capitalize
+}
+
+.italic {
+	font-style: italic;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.strikethrough {
+	text-decoration: line-through;
+}
+
+.hyphens {
+	hyphens: auto;
+}
+
+.truncate-1 {
+	overflow-wrap: break-word;
+	word-break   : break-all;
+}
+
+.truncate,
+[class*="truncate-"] {
+	max-width         : 100%;
+	overflow          : hidden;
+	text-overflow     : ellipsis;
+	display           : -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	line-clamp        : 1;
+}
+
+@for $i from 2 through 5 {
+	.truncate-#{$i} {
+		-webkit-line-clamp: #{$i};
+		line-clamp        : #{$i};
+		white-space       : normal;
+		word-break        : break-word;
+	}
+}
+
+.truncate {
+	white-space: nowrap;
+	display    : inline-block
 }

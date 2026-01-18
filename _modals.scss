@@ -55,6 +55,10 @@
 		animation-name    : modalBounce;
 		animation-duration: .4s;
 	}
+
+	&.show {
+		position: fixed;
+	}
 }
 
 body:has(.modal:not(.no-bg)[popover]:popover-open) {

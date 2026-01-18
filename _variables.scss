@@ -71,7 +71,7 @@ $types: (
     h2:   (font-size: 2.3em, font-weight: 300, line-height: 1.25, color: functions.color-to-hsla(var(--contrast))),
     h3:   (font-size: 1.8em, font-weight: 300, line-height: 1.30, color: functions.color-to-hsla(var(--contrast))),
     h4:   (font-size: 1.4em, font-weight: 300, line-height: 1.35, color: functions.color-to-hsla(var(--contrast))),
-    h5:   (font-size: 1.1em, font-weight: 300, line-height: 1.5, color: functions.color-to-hsla(var(--contrast))),
+    h5:   (font-size: 1.2em, font-weight: 300, line-height: 1.5, color: functions.color-to-hsla(var(--contrast))),
     h6:   (font-size: 1.0em, font-weight: 300, line-height: 1.4, color: functions.color-to-hsla(var(--contrast))),
     q:    (font-size: 1.6em, font-weight: 300, font-style: italic, line-height: 1.4, color: functions.color-to-hsla(var(--contrast)), margin-block: 2em),
     a:    (color: functions.color-to-hsla(var(--primary))),
@@ -195,7 +195,7 @@ $lengths: (
     --comfort    : 2.3em;
     --comfort-lh : 1.3;
     --comfort-px : 1.1em;
-    --comfort-py : .3em;
+    --comfort-py : .4em;
     --ease       : cubic-bezier(.45, .45, 0, 1);
     --gx         : 1.25em;
     --gy         : 1.25em;

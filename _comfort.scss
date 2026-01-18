@@ -18,19 +18,19 @@
     --compact-lh: 1.2;
 	// Cozy
     --cozy: 2.3em;
-    --cozy-py: .3em;
+    --cozy-py: .4em;
     --cozy-px: 1.1em;
-    --cozy-lh: 1.25;
+    --cozy-lh: 1.3;
     // Relaxed
     --relaxed: 2.5em;
     --relaxed-py: .5em;
     --relaxed-px: 1.5em;
-    --relaxed-lh: 1.3;
+    --relaxed-lh: 1.5;
 	// Roomy
     --roomy: 2.75em;
-    --roomy-py: .55em;
+    --roomy-py: .6em;
     --roomy-px: 1.55em;
-    --roomy-lh: 1.35;
+    --roomy-lh: 1.6;
 }
 
 @mixin comfort-styles($prefix) {
