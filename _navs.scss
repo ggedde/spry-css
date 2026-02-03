@@ -12,6 +12,7 @@
 
 	a {
 		@extend %ui;
+		justify-content: inherit;
 	}
 
 	>a {
@@ -40,10 +41,15 @@ menu menu {
 nav ul ul,
 menu ul,
 menu menu {
-	width: 100%;
+	width: max-content;
+	max-width: max(100%, 240px);
+	min-width: 100%;
 
 	>li {
 		width: 100%;
+		a {
+			width: 100%;
+		}
 	}
 }
 
@@ -88,26 +94,23 @@ menu menu {
 
 	:where(#{$prefix}h\:show, #{$prefix}f\:show)>ul>li>ul,
 	:where(#{$prefix}h\:show, #{$prefix}f\:show)>li>ul,
-	#{$prefix}o\:side ul ul,
-	#{$prefix}sub\:o\:side ul ul ul {
-		// min-width: calc(100% + 1px);
-		// max-width: 260px;
+	#{$prefix}s\:side ul ul,
+	#{$prefix}sub\:s\:side ul ul ul {
 		position : absolute;
-		width    : 100%;
 	}
 
-	:where(#{$prefix}o\:down ul ul, #{$prefix}sub\:o\:down ul ul ul) {
+	:where(#{$prefix}s\:down ul ul, #{$prefix}sub\:s\:down ul ul ul) {
 		inset-inline-start: auto;
 		position          : static;
 		top               : auto;
 	}
 
-	:where(#{$prefix}o\:side ul ul, #{$prefix}sub\:o\:side ul ul ul) {
+	:where(#{$prefix}s\:side ul ul, #{$prefix}sub\:s\:side ul ul ul) {
 		inset-inline-start: 100%;
 		top               : 0;
 	}
 
-	:where(#{$prefix}o\:side ul, #{$prefix}sub\:o\:side ul ul) {
+	:where(#{$prefix}s\:side ul, #{$prefix}sub\:s\:side ul ul) {
 		overflow: visible;
 	}
 
@@ -115,17 +118,17 @@ menu menu {
 		box-shadow: 1px 3px 6px rgba(0, 0, 0, var(--shadow));
 	}
 
-	:is(#{$prefix}o\:down ul, #{$prefix}sub\:o\:down ul ul)>li:has(ul)> :first-child:not(.loading, .loading-spinner, .loading-line, .loading-line-bottom)::after {
+	:is(#{$prefix}s\:down ul, #{$prefix}sub\:s\:down ul ul)>li:has(ul)> :first-child:not(.loading, .loading-spinner, .loading-line, .loading-line-bottom)::after {
 		margin-top: -.3em;
 		rotate    : 90deg;
 	}
 
-	:is(#{$prefix}o\:down ul, #{$prefix}sub\:o\:down ul ul)>li:has(:checked):has(ul)> :first-child:not(.loading, .loading-spinner, .loading-line, .loading-line-bottom)::after {
+	:is(#{$prefix}s\:down ul, #{$prefix}sub\:s\:down ul ul)>li:has(:checked):has(ul)> :first-child:not(.loading, .loading-spinner, .loading-line, .loading-line-bottom)::after {
 		margin-top: .2em;
 		scale     : -1;
 	}
 
-	:is(#{$prefix}o\:side ul, #{$prefix}sub\:o\:side ul ul)>li:has(ul)> :first-child:not(.loading, .loading-spinner, .loading-line, .loading-line-bottom)::after {
+	:is(#{$prefix}s\:side ul, #{$prefix}sub\:s\:side ul ul)>li:has(ul)> :first-child:not(.loading, .loading-spinner, .loading-line, .loading-line-bottom)::after {
 		margin-top: 0;
 		rotate    : 0deg;
 	}

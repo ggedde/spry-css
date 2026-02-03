@@ -6306,7 +6306,7 @@
                     </div>
                 </article>
 
-                <article class="card show-code mb-5" data-title="Dismissible Menu" data-footer-note="See &lt;a href='#states.show'&gt;Show States&lt;/a&gt;, &lt;a href='#menus'&gt;Menus&lt;/a&gt; and &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more options for CSS-only.">
+                <article class="card show-code mb-5" data-title="Dismissible Dropdown Menu" data-footer-note="See &lt;a href='#states.show'&gt;Show States&lt;/a&gt;, &lt;a href='#menus'&gt;Menus&lt;/a&gt; and &lt;a href='#states.toggles'&gt;Toggles&lt;/a&gt; for more options for CSS-only.">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="l-select" data-language="css">
                             <span class="relative f:show">
@@ -6357,7 +6357,7 @@
                         </div>
 
                         <div class="l-select" data-language="petiteVue">
-                            <span id="dismissible-menu-petite-vue" class="relative" :class="{show: show}" @vue:mounted="mounted($el)" @keyup="event.keyCode === 27 ? show = false : null">
+                            <span id="dismissible-dropdown-petite-vue" class="relative" :class="{show: show}" @vue:mounted="mounted($el)" @keyup="event.keyCode === 27 ? show = false : null">
                                 <button class="plain icon menu s:close" @click="show = !show"></button>
                                 <span class="collapse from-top overlay clip-top">
                                     <nav class="list bg-faint round s:side shadow-2 w-content p-1">
@@ -6382,12 +6382,12 @@
                                             }
                                         });
                                     }
-                                }).mount('#dismissible-menu-petite-vue');
+                                }).mount('#dismissible-dropdown-petite-vue');
                             </script>
                         </div>
 
                         <div class="l-select" data-language="vueJs">
-                            <span id="dismissible-menu-vue-js">
+                            <span id="dismissible-dropdown-vue-js">
                                 <span ref="el" class="relative" :class="{show: show}">
                                     <button class="plain icon menu s:close" @click="show = !show"></button>
                                     <span class="collapse from-top overlay clip-top">
@@ -6426,7 +6426,7 @@
                                             show,
                                         }
                                     }
-                                }).mount('#dismissible-menu-vue-js');
+                                }).mount('#dismissible-dropdown-vue-js');
                             </script>
                         </div>
 
@@ -7220,8 +7220,8 @@
                         <nav class="list primary outline row h:show bg-faint relative index-1">
                             <ul>
                                 <li><button class="plain">List Item 1</button></li>
-                                <li><button class="plain">List Item 2 With Dropdown</button>
-                                    <ul class="rb-3 shadow-2 b-1 w/100">
+                                <li><button class="plain">List With Dropdown</button>
+                                    <ul class="rb-3 shadow-2 b-1 w/100 clip">
                                         <li><button class="plain">List Item 1</button></li>
                                         <li><button class="plain">List Item 2</button></li>
                                         <li><button class="plain">List Item 3</button></li>
@@ -7237,9 +7237,9 @@
 					<div class="code-content relative p-3 md:p-4">
                         <nav class="list">
                             <menu class="outline">
-                                <li><label class="button link contrast"><input name="list-item-menu" type="radio" checked>List Item 1</label></li>
-                                <li><label class="button link contrast"><input name="list-item-menu" type="radio">List Item 2</label></li>
-                                <li><label class="button link contrast"><input name="list-item-menu" type="radio">List Item 3</label></li>
+                                <li><label class="button plain"><input name="list-item-menu" type="radio" checked>List Item 1</label></li>
+                                <li><label class="button plain"><input name="list-item-menu" type="radio">List Item 2</label></li>
+                                <li><label class="button plain"><input name="list-item-menu" type="radio">List Item 3</label></li>
                             </menu>
                         </nav>
                     </div>
@@ -7248,224 +7248,71 @@
                 <article class="card show-code" data-title="Accented Multi Selection List">
 					<div class="code-content relative p-3 md:p-4">
                         <menu class="list outline primary border-primary">
-                            <li><label class="button link"><input name="list-item-menu" type="checkbox" checked>List Item 1</label></li>
-                            <li><label class="button link"><input name="list-item-menu" type="checkbox">List Item 2</label></li>
-                            <li><label class="button link"><input name="list-item-menu" type="checkbox">List Item 3</label></li>
+                            <li><label class="button plain"><input name="list-item-menu" type="checkbox" checked>List Item 1</label></li>
+                            <li><label class="button plain"><input name="list-item-menu" type="checkbox">List Item 2</label></li>
+                            <li><label class="button plain"><input name="list-item-menu" type="checkbox">List Item 3</label></li>
                         </menu>
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Outlined Itemized List">
+                <article class="card show-code resize-x" data-title="Outlined Itemized List">
 					<div class="code-content relative p-3 md:p-4">
-                        <ul class="list outline round clip">
+                        <ul class="list outline round clip @container">
+                            <!-- Item -->
                             <li class="row block-center p-2">
-                                <i class="span-auto icon xxl outline circle">
+                                <i class="span-auto icon xxl outline circle ms-2">
                                     <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
                                 </i>
                                 <span class="span-fill">
                                     <h4>List Item 1</h4>
                                     <h6 class="sm mt-1">Sub List Data</h6>
                                 </span>
-                                <span class="row md:span-auto cols-auto block-center">
-                                    <span class="badge primary px-1">12</span>
-                                    <button class="icon hazy secondary circle" data-toggle="next">
+                                <span class="row @md:span-auto cols-auto center g-3 mb-3 @md:mb-0">
+                                    <span class="badge primary px-2">12</span>
+                                    <button class="icon hazy circle">
                                         <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
                                     </button>
-                                    <div class="modal blur-bg-2" data-toggle>
-                                        <form class="max-w-400">
-                                            <article class="card shadow-2 outline">
-                                                <header>
-                                                    <h4>Edit User</h4>
-                                                    <button type="button" class="icon link circle" data-toggle-close>
-                                                        <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                                                    </button>
-                                                </header>
-                                                <div>
-                                                    <label>
-                                                        <h5>New Username:</h5>
-                                                        <input type="text" value="List Item 1">
-                                                    </label>
-                                                </div>
-                                                <footer class="content-end">
-                                                    <button type="button" class="sm primary" data-toggle-close>Update</button>
-                                                </footer>
-                                            </article>
-                                        </form>
-                                    </div>
-                                    <button class="icon hazy contrast circle" data-toggle="next">
+                                    <button class="icon hazy error circle">
                                         <svg viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
                                     </button>
-                                    <div class="modal blur-bg-2" data-toggle>
-                                        <article class="max-w-400 shadow-2 outline">
-                                            <header>
-                                                <h4>Are You Sure?</h4>
-                                                <button class="icon link circle" data-toggle-close>
-                                                    <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                                                </button>
-                                            </header>
-                                            <div>
-                                                <p>You are about to delete this user. Please make sure you really want to delete them.</p>
-                                                <p class="alert secondary outline">This cannot be undown!</p>
-                                            </div>
-                                            <footer class="content-end">
-                                                <button class="sm secondary" data-toggle-close>Yes, Delete</button>
-                                            </footer>
-                                        </article>
-                                    </div>
                                 </span>
                             </li>
-                            <li class="row block-center p-2">
-                                <i class="span-auto icon xxl outline circle"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
+                            <!-- Item -->
+                            <li class="row block-center p-2 bt-1">
+                                <i class="span-auto icon xxl outline circle ms-2">
+                                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
+                                </i>
                                 <span class="span-fill">
                                     <h4>List Item 2</h4>
                                     <h6 class="sm mt-1">Sub List Data</h6>
                                 </span>
-                                <span class="row md:span-auto cols-auto block-center">
-                                    <span class="badge primary px-1">12</span>
-                                    <button class="icon hazy secondary circle" data-toggle="next">
+                                <span class="row @md:span-auto cols-auto center g-3 mb-3 @md:mb-0">
+                                    <span class="badge primary px-2">12</span>
+                                    <button class="icon hazy circle">
                                         <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
                                     </button>
-                                    <div class="modal blur-bg-2" data-toggle>
-                                        <form class="max-w-400">
-                                            <article class="shadow-2 outline">
-                                                <header>
-                                                    <h4>Edit User</h4>
-                                                    <button type="button" class="icon link circle" data-toggle-close>
-                                                        <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                                                    </button>
-                                                </header>
-                                                <div>
-                                                    <label>
-                                                        <h5>New Username:</h5>
-                                                        <input type="text" value="List Item 2">
-                                                    </label>
-                                                </div>
-                                                <footer class="content-end">
-                                                    <button type="button" class="sm primary" data-toggle-close>Update</button>
-                                                </footer>
-                                            </article>
-                                        </form>
-                                    </div>
-                                    <button class="icon hazy contrast circle" data-toggle="next">
+                                    <button class="icon hazy error circle">
                                         <svg viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
                                     </button>
-                                    <div class="modal blur-bg-2" data-toggle>
-                                        <article class="max-w-400 shadow-2 outline">
-                                            <header>
-                                                <h4>Are You Sure?</h4>
-                                                <button class="icon link circle" data-toggle-close>
-                                                    <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                                                </button>
-                                            </header>
-                                            <div>
-                                                <p>You are about to delete this user. Please make sure you really want to delete them.</p>
-                                                <p class="alert secondary outline">This cannot be undown!</p>
-                                            </div>
-                                            <footer class="content-end">
-                                                <button class="sm secondary" data-toggle-close>Yes, Delete</button>
-                                            </footer>
-                                        </article>
-                                    </div>
                                 </span>
                             </li>
-                            <li class="row block-center p-2">
-                                <i class="span-auto icon xxl outline circle"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
+                            <!-- Item -->
+                            <li class="row block-center p-2 bt-1">
+                                <i class="span-auto icon xxl outline circle ms-2">
+                                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
+                                </i>
                                 <span class="span-fill">
                                     <h4>List Item 3</h4>
                                     <h6 class="sm mt-1">Sub List Data</h6>
                                 </span>
-                                <span class="row md:span-auto cols-auto block-center">
-                                    <span class="badge primary px-1">12</span>
-                                    <button class="icon hazy secondary circle" data-toggle="next">
+                                <span class="row @md:span-auto cols-auto center g-3 mb-3 @md:mb-0">
+                                    <span class="badge primary px-2">12</span>
+                                    <button class="icon hazy circle">
                                         <svg viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
                                     </button>
-                                    <div class="modal blur-bg-2" data-toggle>
-                                        <form class="max-w-400">
-                                            <article class="shadow-2 outline">
-                                                <header>
-                                                    <h4>Edit User</h4>
-                                                    <button type="button" class="icon link circle" data-toggle-close>
-                                                        <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                                                    </button>
-                                                </header>
-                                                <div>
-                                                    <label>
-                                                        <h5>New Username:</h5>
-                                                        <input type="text" value="List Item 3">
-                                                    </label>
-                                                </div>
-                                                <footer class="content-end">
-                                                    <button type="button" class="sm primary" data-toggle-close>Update</button>
-                                                </footer>
-                                            </article>
-                                        </form>
-                                    </div>
-                                    <button class="icon hazy contrast circle" data-toggle="next">
+                                    <button class="icon hazy error circle">
                                         <svg viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
                                     </button>
-                                    <div class="modal blur-bg-2" data-toggle>
-                                        <article class="max-w-400 shadow-2 outline">
-                                            <header>
-                                                <h4>Are You Sure?</h4>
-                                                <button class="icon link circle" data-toggle-close>
-                                                    <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                                                </button>
-                                            </header>
-                                            <div>
-                                                <p>You are about to delete this user. Please make sure you really want to delete them.</p>
-                                                <p class="alert secondary outline">This cannot be undown!</p>
-                                            </div>
-                                            <footer class="content-end">
-                                                <button class="sm secondary" data-toggle-close>Yes, Delete</button>
-                                            </footer>
-                                        </article>
-                                    </div>
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-
-                <article class="card show-code" data-title="Selectable Outlined User List">
-					<div class="code-content relative p-3 md:p-4">
-                        <ul class="list outline round clip">
-                            <li class="row block-center p-2 button link" onclick="alert('User has been selected')">
-                                <i class="span-auto icon xxl outline circle"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
-                                <span class="span-fill">
-                                    <h4>List Item 1</h4>
-                                    <h6 class="sm mt-1">Sub List Data</h6>
-                                </span>
-                                <span class="row sm md:span-auto cols-auto block-center">
-                                    <span class="badge primary px-1">12</span>
-                                    <span class="badge secondary p-1">
-                                        <svg viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
-                                    </span>
-                                </span>
-                            </li>
-                            <li class="row block-center p-2 button link">
-                                <i class="span-auto icon xxl outline circle"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
-                                <span class="span-fill">
-                                    <h4>List Item 2</h4>
-                                    <h6 class="sm mt-1">Sub List Data</h6>
-                                </span>
-                                <span class="row sm md:span-auto cols-auto block-center">
-                                    <span class="badge primary px-1">12</span>
-                                    <span class="badge secondary p-1">
-                                        <svg viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
-                                    </span>
-                                </span>
-                            </li>
-                            <li class="row block-center p-2 button link">
-                                <i class="span-auto icon xxl outline circle"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 014 4 4 4 0 01-4 4 4 4 0 01-4-4 4 4 0 014-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg></i>
-                                <span class="span-fill">
-                                    <h4>List Item 3</h4>
-                                    <h6 class="sm mt-1">Sub List Data</h6>
-                                </span>
-                                <span class="row sm md:span-auto cols-auto block-center">
-                                    <span class="badge primary px-1">12</span>
-                                    <span class="badge secondary p-1">
-                                        <svg viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z" /></svg>
-                                    </span>
                                 </span>
                             </li>
                         </ul>
@@ -7676,147 +7523,242 @@
                     <a href="#components.menus">Menus</a>
                 </h2>
 
-                <span class="menu h:show">
-                    <button class="link icon toggle">
-                        <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
-                        <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                    </button>
-                    <nav class="absolute list bg-faint round-bottom shadow-2 w-content p-1">
-                        <a href="#">Item 1</a>
-                        <a href="#">Item 1</a>
-                        <a href="#">Item 1</a>
-                    </nav>
-                </span>
+                <h5 class="mb-2">Menus are just an accumulation of other components used together:</h5>
 
-                <label class="button link icon toggle">
-                    <input type="checkbox" onkeydown="![27,13].includes(event.keyCode) || this.click();document.activeElement.blur();">
-                    <svg viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
-                    <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                </label>
-                <nav class="absolute list bg-faint round-bottom shadow-2 w-content p-1" onclick="this.previousElementSibling.querySelector('[type=checkbox]').click();">
-                    <a href="#">Item 1</a>
-                    <a href="#">Item 1</a>
-                    <a href="#">Item 1</a>
-                </nav>
+                <div class="row primary cols-auto g-0 mt-1 mb-4 content-start buttons-plain">
+                    See:
+                    <a class="border/60 dense sm ms-2" href="#states.collapse">Collapse</a>
+                    <a class="border/60 dense sm" href="#states.checked">Checked States</a>
+                    <a class="border/60 dense sm" href="#states.focus">Focus States</a>
+                    <a class="border/60 dense sm" href="#states.hover">Hover States</a>
+                    <a class="border/60 dense sm" href="#states.show">Show States</a>
+                    <a class="border/60 dense sm" href="#states.toggles">Toggles</a>
+                    <a class="border/60 dense sm" href="#components.buttons">Buttons</a>
+                    <a class="border/60 dense sm" href="#components.dropdowns">Dropdowns</a>
+                    <a class="border/60 dense sm" href="#components.icons">Icons</a>
+                    <a class="border/60 dense sm" href="#components.lists">Lists</a>
+                </div>
 
-                
-                <h5>Menus use Toggles to add the collapsing functionality. View <a href="#states.toggles">Toggles</a> for more details.</h5>
-
-                <figure class="relative">
-                    <code dir="ltr" class="language-html block w/100 auto bg-surface b-1 r-2 p-3 pe-5 sm">
-                        &lt;!-- Basic Menu --&gt;
-                        &lt;button class="link icon" data-toggle="next" data-toggle-escapable data-toggle-dismissible>Show Menu&lt;/button&gt;
-                        &lt;nav class="absolute list bg-faint round shadow-2 p-1 w-100"&gt;
-                            &lt;a href="#"&gt;Link 1&lt;/a&gt;
-                            &lt;a href="#"&gt;Link 2&lt;/a&gt;
-                            &lt;a href="#"&gt;Link 3&lt;/a&gt;
-                        &lt;/nav&gt;
-                    </code>
-                </figure>
-
-                <article class="card show-code" data-title="Basic Menu" data-badge="No JS">
-					<div class="code-content relative p-3 md:p-4">
-                        <span class="menu">
-                            <button class="link icon toggle">
-                                <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
-                                <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                            </button>
-                            <nav class="absolute list bg-faint round-bottom shadow-2 w-content p-1">
-                                <a href="#">Item 1</a>
-                                <a href="#">Item 1</a>
-                                <a href="#">Item 1</a>
-                            </nav>
-                        </span>
-                    </div>
-                </article>
-
-                <article class="card show-code" data-title="Basic Menu" data-badge="No JS">
-					<div class="code-content relative p-3 md:p-4">
-                        <span class="menu show">
-                            <button class="link icon toggle">
-                                <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
-                                <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" /></svg>
-                            </button>
-                            <nav class="absolute list bg-faint round-bottom shadow-2 w-content p-1">
-                                <a href="#">Item 1</a>
-                                <a href="#">Item 1</a>
-                                <a href="#">Item 1</a>
-                            </nav>
-                        </span>
-                    </div>
-                </article>
-
-                <article class="card show-code" data-title="Hoverable Menu" data-badge="No JS">
-					<div class="code-content relative p-3 md:p-4">
-                        <span class="menu h:show">
-                            <button class="link icon toggle">
-                                <svg class="lg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" /></svg>
-                            </button>
-                            <nav class="absolute list bg-faint round-bottom shadow-2 w-content p-1">
-                                <a href="#">Item 1</a>
-                                <a href="#">Item 1</a>
-                                <a href="#">Item 1</a>
-                            </nav>
-                        </span>
-                    </div>
-                </article>
-
-                <article class="card show-code" data-title="Toggle Dots List on Right">
-					<div class="code-content relative p-3 md:p-4">
-                        <div class="text-end">
-                            <span class="menu">
-                                <button class="link icon circle toggle">
-                                    <svg viewBox="0 0 24 24"><path d="M12 16a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2z" /></svg>
-                                    <svg class="lg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-                                </button>
-                                <nav>
-                                    <ul class="absolute inset-end list navigable bg-faint round shadow-2 p-1 me-1 text-start max-w-200">
-                                        <li class="p-1">
-                                            Pick an Item
-                                            <hr class="m-0 mt-1">
-                                        </li>
-                                        <li>
-                                            <button class="link ps-1" href="#">
-                                            <svg class="icon me-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
-                                            Link 1</button>
-                                        </li>
-                                        <li>
-                                            <button class="link ps-1" href="#">
-                                            <svg class="icon me-2 sm" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2h9m3-4v-2H6v2h12z" /></svg>
-                                            Link 2</button>
-                                        </li>
-                                        <li>
-                                            <button class="link ps-1" href="#">
-                                            <svg class="icon me-2 sm" viewBox="0 0 24 24"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12z" /></svg>
-                                            Link 3</button>
-                                        </li>
+                <article id="components.menus.usage" class="card show-code" data-title="Usage" data-code-only>
+                    <div class="code-content relative p-3 md:p-4">
+                        <span class="relative f:show">
+                            <button class="plain icon menu s:no-pointer s:close"></button>
+                            <span class="collapse from-top overlay clip-top">
+                                <nav class="list bg-faint round s:side shadow-2 w-content p-1">
+                                    <ul>
+                                        <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                        <li><a href="#">Link 1</a></li>
+                                        <li><a href="#">Link 2</a></li>
+                                        <li><a href="#">Link 3</a></li>
                                     </ul>
                                 </nav>
                             </span>
+                        </span>
+                    </div>
+                </article>
+
+
+                <article id="components.menus.example.dismissible" class="card show-code" data-title="Dismissible Menu">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="l-select" data-language="css">
+                            <span class="relative f:show">
+                                <button class="plain icon menu s:no-pointer s:close"></button>
+                                <span class="collapse from-top overlay clip-top">
+                                    <nav class="list bg-faint round s:side shadow-2 w-content p-1">
+                                        <ul>
+                                            <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                            <li><a href="#">Link 1</a></li>
+                                            <li><a href="#">Link 2</a></li>
+                                            <li><a href="#">Link 3</a></li>
+                                        </ul>
+                                    </nav>
+                                </span>
+                            </span>
+                        </div>
+
+                        <div class="l-select" data-language="js">
+                            <span class="relative" onkeyup="if(event.keyCode === 27){ this.classList.remove('show')}">
+                                <button class="plain icon menu s:close" onclick="this.parentElement.classList.toggle('show')" onblur="setTimeout(() => {if (!this.parentElement.contains(document.activeElement)){ this.parentElement.classList.remove('show');}})"></button>
+                                <span class="collapse from-top overlay clip-top">
+                                    <nav class="list bg-faint round s:side shadow-2 w-content p-1">
+                                        <ul>
+                                            <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                            <li><a href="#" onclick="this.closest('.relative').classList.remove('show')" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('show');}})">Link 1</a></li>
+                                            <li><a href="#" onclick="this.closest('.relative').classList.remove('show')" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('show');}})">Link 2</a></li>
+                                            <li><a href="#" onclick="this.closest('.relative').classList.remove('show')" onblur="setTimeout(() => {if (!this.closest('.relative').contains(document.activeElement)){ this.closest('.relative').classList.remove('show');}})">Link 3</a></li>
+                                        </ul>
+                                    </nav>
+                                </span>
+                            </span>
+                        </div>
+
+                        <div class="l-select" data-language="spryJs">
+                            <span class="relative">
+                                <button class="plain icon menu s:close" data-toggle="parent" data-toggle-dismissible data-toggle-escapable></button>
+                                <span class="collapse from-top overlay clip-top">
+                                    <nav class="list bg-faint round s:side shadow-2 w-content p-1">
+                                        <ul>
+                                            <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                            <li><a href="#" data-toggle-close>Link 1</a></li>
+                                            <li><a href="#" data-toggle-close>Link 2</a></li>
+                                            <li><a href="#" data-toggle-close>Link 3</a></li>
+                                        </ul>
+                                    </nav>
+                                </span>
+                            </span>
+                        </div>
+
+                        <div class="l-select" data-language="petiteVue">
+                            <span id="dismissible-menu-petite-vue" class="relative" :class="{show: show}" @vue:mounted="mounted($el)" @keyup="event.keyCode === 27 ? show = false : null">
+                                <button class="plain icon menu s:close" @click="show = !show"></button>
+                                <span class="collapse from-top overlay clip-top">
+                                    <nav class="list bg-faint round s:side shadow-2 w-content p-1">
+                                        <ul>
+                                            <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                            <li><a href="#" @click="show = false">Link 1</a></li>
+                                            <li><a href="#" @click="show = false">Link 2</a></li>
+                                            <li><a href="#" @click="show = false">Link 3</a></li>
+                                        </ul>
+                                    </nav>
+                                </span>
+                            </span>
+
+                            <script type="module">
+                                import { createApp } from 'https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/+esm';
+                                createApp({
+                                    show: false,
+                                    mounted(el) {
+                                        document.documentElement.addEventListener('click', e => {
+                                            if (el !== e.target && !el.contains(e.target)) {
+                                                this.show = false;
+                                            }
+                                        });
+                                    }
+                                }).mount('#dismissible-menu-petite-vue');
+                            </script>
+                        </div>
+
+                        <div class="l-select" data-language="vueJs">
+                            <span id="dismissible-menu-vue-js">
+                                <span ref="el" class="relative" :class="{show: show}">
+                                    <button class="plain icon menu s:close" @click="show = !show"></button>
+                                    <span class="collapse from-top overlay clip-top">
+                                        <nav class="list bg-faint round s:side shadow-2 w-content p-1">
+                                            <ul>
+                                                <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                                <li><a href="#" @click="show = false">Link 1</a></li>
+                                                <li><a href="#" @click="show = false">Link 2</a></li>
+                                                <li><a href="#" @click="show = false">Link 3</a></li>
+                                            </ul>
+                                        </nav>
+                                    </span>
+                                </span>
+                            </span>
+
+                            <script type="module">
+                                import { createApp, ref, onMounted } from 'https://cdn.jsdelivr.net/npm/vue@3.5.26/dist/vue.esm-browser.js';
+                                createApp({
+                                    setup(props, context) {
+                                        const el = ref(null);
+                                        const show = ref(false);
+                                        onMounted(() => {
+                                            document.documentElement.addEventListener('click', e => {
+                                                if (el.value !== e.target && el.value && !el.value.contains(e.target)) {
+                                                    show.value = false;
+                                                }
+                                            });
+                                            document.documentElement.addEventListener('keyup', e => {
+                                                if (e.keyCode === 27) {
+                                                    show.value = false;
+                                                }
+                                            });
+                                        });
+                                        return {
+                                            el,
+                                            show,
+                                        }
+                                    }
+                                }).mount('#dismissible-menu-vue-js');
+                            </script>
+                        </div>
+
+                        <div class="l-select" data-language="alpineJs">
+                            <span x-data="{
+                                show: false,
+                            }">
+                                <span class="relative" :class="{show: show}" @keyup.esc="show = false" @click.outside="show = false">
+                                    <button class="plain icon menu s:close" @click="show = !show"></button>
+                                    <span class="collapse from-top overlay clip-top">
+                                        <nav class="list bg-faint round s:side shadow-2 w-content p-1">
+                                            <ul>
+                                                <li class="p-1">Pick an Item<hr class="m-0 mt-1"></li>
+                                                <li><a href="#" @click="show = false">Link 1</a></li>
+                                                <li><a href="#" @click="show = false">Link 2</a></li>
+                                                <li><a href="#" @click="show = false">Link 3</a></li>
+                                            </ul>
+                                        </nav>
+                                    </span>
+                                </span>
+                            </span>
+
+                            <!-- AlpineJsScript -->
+
                         </div>
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="Hoverable User Menu">
+
+                <article id="components.menus.example.hover" class="card show-code" data-title="Hover User Menu">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="text-end">
-                            <span class="menu h:show">
-                                <button class="hazy icon circle toggle">
-                                    <svg viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z" /></svg>
-                                </button>
-                                <nav class="absolute inset-end bg-faint round clip shadow-2 list p-1 w-content max-w-200">
+                        <span class="relative h:show">
+                            <button class="plain icon circle">
+                                <svg viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z"></path></svg>
+                            </button>
+                            <span class="collapse from-top overlay clip-top">
+                                <nav class="list bg-faint r-2 shadow-2 w-content p-1">
                                     <ul>
-                                        <li>
-                                            <a class="link ps-1" href="#">
-                                            <svg class="icon me-2 sm" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
-                                            Link 1</a></li>
-                                        <li>
-                                            <a class="link ps-1" href="#">
-                                            <svg class="icon me-2 sm" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m9 16v-2H6v2h9m3-4v-2H6v2h12z" /></svg>
-                                            Link 2</a>
-                                        </li>
+                                        <li><a href="#">
+                                            <svg class="icon" viewBox="0 0 24 24"><path d="M16 17v-3H9v-4h7V7l5 5-5 5M14 2a2 2 0 0 1 2 2v2h-2V4H5v16h9v-2h2v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9z" /></svg>
+                                            Logout
+                                        </a></li>
+                                        <li><a href="#">
+                                            <svg class="icon" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z" /></svg>
+                                            Settings
+                                        </a></li>
+                                        <li><a href="#">
+                                            <svg class="icon" viewBox="0 0 24 24"><path d="M10 19h3v3h-3v-3m2-17c5.35.22 7.68 5.62 4.5 9.67-.83 1-2.17 1.66-2.83 2.5C13 15 13 16 13 17h-3c0-1.67 0-3.08.67-4.08.66-1 2-1.59 2.83-2.25C15.92 8.43 15.32 5.26 12 5a3 3 0 0 0-3 3H6a6 6 0 0 1 6-6z" /></svg>
+                                            Help
+                                        </a></li>
                                     </ul>
                                 </nav>
+                            </span>
+                        </span>
+                    </div>
+                </article>
+
+                <article id="components.menus.example.dots" class="card show-code mb-4" data-title="Dots Menu Right Aligned">
+					<div class="code-content relative p-3 md:p-4">
+                        <div class="text-end">
+                            <span class="relative f:show">
+                                <button class="plain icon dots s:close circle"></button>
+                                <span class="collapse from-top overlay clip-top inset-end">
+                                    <nav class="list bg-faint r-2 shadow-2 w-content p-1">
+                                        <ul>
+                                            <li>
+                                                <button class="plain ps-1">
+                                                    <svg class="icon" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" /></svg>
+                                                    Edit
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button class="plain ps-1">
+                                                    <svg class="icon" viewBox="0 0 24 24"><path d="M9 3v1H4v2h1v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V3H9m0 5h2v9H9V8m4 0h2v9h-2V8z" /></svg>
+                                                    Delete
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </span>
                             </span>
                         </div>
                     </div>
@@ -7833,20 +7775,22 @@
                 
                 <h5>Modals consist of a container with the class <code class="color-primary">modal</code> and a child element considered as the modal box. Add max-width classes to the modal box to restrain the width.</h5>
 
-                <code dir="ltr" class="language-html relative block w/100 auto bg-surface b-1 r-2 p-3 sm">
-                    &lt;!-- Basic Modal --&gt;
-                    &lt;div class="modal show"&gt;
-                        &lt;div style="max-width: 400px"&gt;
-                            Content Here
+                <article id="components.modals.usage" class="card show-code" data-code-only data-title="Usage">
+					<div class="code-content relative p-3 md:p-4 none">
+                        &lt;!-- Basic Modal --&gt;
+                        &lt;div class="modal show"&gt;
+                            &lt;div class="card bg-theme shadow-2 b-1 r-3 max-w-400"&gt;
+                                Content Here
+                            &lt;/div&gt;
                         &lt;/div&gt;
-                    &lt;/div&gt;
-                </code>
+                    </div>
+                </article>
 
                 <div class="@container">
                     <table class="@md:responsive my-3">
                         <thead>
                             <tr>
-                                <th colspan="2" class="w-200 h3 ps-0">Classes</th>
+                                <th colspan="2" class="w-200 h3 ps-0"><a id="components.modals.classes" href="#components.modals.classes" class="inherit-color">Classes</a></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -7860,36 +7804,44 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <code class="color-primary">blur-bg-0</code><br>
-                                    <code class="color-primary">blur-bg-1</code><br>
-                                    <code class="color-primary">blur-bg-2</code><br>
-                                    <code class="color-primary">blur-bg-3</code><br>
-                                    <code class="color-primary">blur-bg-4</code>
+                                    <code class="color-primary">blur-bg-{n}</code>
                                 </td>
-                                <td>Adds blur to background when modal is shown</td>
+                                <td>Adds blur to background when modal is shown
+                                    <p><code class="color-primary">{n}</code> <span class="note">Values are from 0-5.</span></p>
+                                </td>
                             </tr>
                             <tr>
                                 <td><code class="color-primary">bounce</code></td>
-                                <td>Adds bounce animation. Only occurs once.</td>
+                                <td>Adds bounce animation when user clicks outside the modal.</td>
                             </tr>
                             <tr>
                                 <td><code class="color-primary">no-bg</code></td>
                                 <td>Removes the Backdrop and allows to click through the background.</td>
                             </tr>
+                            <tr>
+                                <td><code class="color-primary">max-w-{size}</code></td>
+                                <td>When placed on the Modal content container, it will set the maximum width of the modal.
+                                    <p class="note">See <a class="color-primary" href='#layout.sizing'>Sizing</a> for available sizes.</p></td>
+                            </tr>
+                            <tr>
+                                <td><code class="color-primary">auto max-h-{size}</code></td>
+                                <td>When placed inside the Modal content area, it will set the maximum height and allow scrolling if needed.
+                                    <p class="note">See <a class="color-primary" href='#layout.sizing'>Sizing</a> for available sizes.</p></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <article class="card show-code" data-title="Basic Modal">
+                <article id="components.modals.example.basic" class="card show-code" data-title="Basic Modal">
 					<div class="code-content relative p-3 md:p-4">
-                        <div class="l-select" data-language="html">
+                        <div class="l-select" data-language="css">
                             <button popovertarget="popoverModal">
                                 Show Modal with HTML Popover
                             </button>
 
                             <div id="popoverModal" class="modal blur-bg-2" popover>
-                                <article class="card bg-theme shadow-2 b-1 r-3" style="max-width: 400px;">
-                                    <p>HTML Popover Modal</p>
+                                <article class="card bg-theme shadow-2 b-1 r-3 max-w-400">
+                                    <p>CSS-Only Popover Modal</p>
                                     <button popovertarget="popoverModal">
                                         Close Toggle
                                     </button>
@@ -7903,11 +7855,31 @@
                             </button>
 
                             <div class="modal blur-bg-2" onclick="this !== event.target || this.classList.remove('show')">
-                                <article class="card bg-theme shadow-2 b-1 r-3" style="max-width: 400px;">
+                                <article class="card bg-theme shadow-2 b-1 r-3 max-w-400">
                                     <p>JS Modal</p>
                                     <button onclick="this.closest('.modal').classList.remove('show')">
                                         Close Modal
                                     </button>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="l-select" data-language="spryJs" data-note="SpryJS comes with .draggable">
+                            <button data-toggle="next">
+                                Show Modal with SpryJS
+                            </button>
+
+                            <div class="modal blur-bg-2" data-toggle-close>
+                                <article class="card bg-theme shadow-2 b-1 r-3 max-w-400 draggable">
+                                    <header class="draggable-handle">
+                                        <h4>Drag Me</h4>
+                                    </header>
+                                    <div class="p-4">
+                                        <p>SpryJS Modal</p>
+                                        <button data-toggle-close>
+                                            Close Modal
+                                        </button>
+                                    </div>
                                 </article>
                             </div>
                         </div>
@@ -7919,7 +7891,7 @@
                                 </button>
 
                                 <div class="modal blur-bg-2" ref="modal" :class="{show: show}" @click="clickClose(event)">
-                                    <article class="card bg-theme shadow-2 b-1 r-3" style="max-width: 400px;">
+                                    <article class="card bg-theme shadow-2 b-1 r-3 max-w-400">
                                         <p>Petite Vue Modal</p>
                                         <button @click="show = false">
                                             Close Modal
@@ -7946,7 +7918,7 @@
                                 </button>
 
                                 <div class="modal blur-bg-2" ref="modal" :class="{show: show}" @click="clickClose($event)">
-                                    <article class="card bg-theme shadow-2 b-1 r-3" style="max-width: 400px;">
+                                    <article class="card bg-theme shadow-2 b-1 r-3 max-w-400">
                                         <p>VueJS Modal</p>
                                         <button @click="show = false">
                                             Close Modal
@@ -7956,8 +7928,8 @@
                             </div>
 
                             <script type="module">
-                                import { createApp, ref } from 'https://cdn.jsdelivr.net/npm/vue@3.5.13/+esm';
-                                createApp({
+                               import { createApp, ref, onMounted } from 'https://cdn.jsdelivr.net/npm/vue@3.5.26/dist/vue.esm-browser.js';
+                               createApp({
                                     setup(props, context) {
                                         const modal = ref();
                                         const show = ref(false);
@@ -7981,7 +7953,7 @@
                                 </button>
 
                                 <div class="modal blur-bg-2" x-ref="modal" :class="{show: show}" @click="event.target === $refs.modal ? show = false : null">
-                                    <article class="card bg-theme shadow-2 b-1 r-3" style="max-width: 400px;">
+                                    <article class="card bg-theme shadow-2 b-1 r-3 max-w-400">
                                         <p>Alpine.js Modal</p>
                                         <button @click="show = false">
                                             Close Modal
@@ -7996,15 +7968,15 @@
                 </article>
 
 
-                <article class="card show-code" data-title="Login Modal Example">
+                <article id="components.modals.example.login" class="card show-code" data-title="Login Modal with Large Blur">
 					<div class="code-content relative p-3 md:p-4">
                         <button popovertarget="loginModal">
                             Login
                         </button>
 
-                        <div id="loginModal" class="modal" popover>
-                            <article class="card outline bg-theme shadow-2 g-0 draggable" style="max-width: 400px;">
-                                <header class="draggable-handle">
+                        <div id="loginModal" class="modal blur-bg-3" popover>
+                            <article class="card outline bg-theme shadow-2 g-0 max-w-400">
+                                <header>
                                     <h4>Login or Sign Up</h4>
                                     <button class="link icon close circle" popovertarget="loginModal"></button>
                                 </header>
@@ -8029,65 +8001,19 @@
                         </div>
                     </div>
                 </article>
-
-                <article class="card show-code" data-title="Required Modal with Blur">
-					<div class="code-content relative p-3 md:p-4">
-                        <button popovertarget="requiredModal">
-                            Show Required Modal
-                        </button>
-
-                        <div id="requiredModal" class="modal blur-bg-2 bounce" popover="manual">
-                            <form style="max-width: 400px;">
-                                <article class="card outline bg-theme shadow-2">
-                                    <header>
-                                        <h4>Required Modal Example</h4>
-                                    </header>
-                                    <div class="px-4">
-                                        <p>This Modal is Required!</p>
-                                        <label>
-                                            <input type="checkbox" name="accept" required value="yes"> I Agree to the Terms
-                                        </label>
-                                    </div>
-                                    <footer>
-                                        <button type="button" class="outline sm" popovertarget="requiredModal">Cancel</button>
-                                        <button type="submit" class="primary sm">Accept</button>
-                                    </footer>
-                                </article>
-                            </form>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card show-code" data-title="No Backdrop">
-					<div class="code-content relative p-3 md:p-4">
-                        <button popovertarget="noBackDropModal">
-                            Show No Backdrop Modal
-                        </button>
-
-                        <div id="noBackDropModal" class="modal no-bg" popover>
-                            <article class="card bg-theme shadow-2 outline pb-4" style="max-width: 400px;">
-                                <header>
-                                    <h4>No Backdrop Modal Example</h4>
-                                    <button class="link icon close circle" popovertarget="noBackDropModal"></button>
-                                </header>
-                                <p class="px-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
-                            </article>
-                        </div>
-                    </div>
-                </article>
     
-                <article class="card show-code" data-title="Large Content Model">
+                <article id="components.modals.example.large" class="card show-code" data-title="Large Required Modal with No Backdrop">
 					<div class="code-content relative p-3 md:p-4">
                         <button popovertarget="largeModal">
                             Show Large Modal
                         </button>
 
-                        <div id="largeModal" class="modal" popover>
-                            <article class="card bg-theme outline shadow-2" style="max-width: 1000px;">
+                        <div id="largeModal" class="modal bounce no-bg" popover="manual">
+                            <article class="card bg-theme outline shadow-2 max-w-1000">
                                 <header>
                                     <h4>Lorem ipsum dolor</h4>
                                 </header>
-                                <div class="px-3 auto" style="max-height: 500px;">
+                                <div class="px-3 auto max-h-500">
                                     <h4>Modal Heading Content</h4>
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                                         tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
@@ -8198,7 +8124,6 @@
                                         Lorem ipsum dolor sit amet.</p>
                                 </div>
                                 <footer class="px-2">
-                                    <button type="button" class="sm outline" popovertarget="largeModal">Cancel</button>
                                     <button type="button" class="primary sm ms-1 md:ms-3" popovertarget="largeModal">Accept</button>
                                 </footer>
                             </article>
@@ -8292,11 +8217,15 @@
                                 <td><code class="color-primary">h:show</code></td>
                                 <td>Allows Sub menus to show with Hover. You can use breakpoints with {breakpoint}:h:show</td>
                             </tr>
+                            <tr>
+                                <td><code class="color-primary">indicators</code></td>
+                                <td>Adds indicators to the navigation items that have sub menus.</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
     
-                <article class="card show-code" data-title="Basic Nav Bar Menu">
+                <article class="card show-code" data-title="Basic Nav Bar">
 					<div class="code-content relative p-3 md:p-4">
                         <nav class="bg-faint">
                             <a href="#">Link 1</a>
@@ -8307,9 +8236,9 @@
                     </div>
                 </article>
 
-                <article class="card show-code" data-title="List Nav Bar Menu">
+                <article class="card show-code" data-title="List Nav Bar as Row">
 					<div class="code-content relative p-3 md:p-4">
-                        <nav class="bg-faint list">
+                        <nav class="bg-faint list row">
                             <a href="#">Link 1</a>
                             <a href="#">Link 2</a>
                             <a href="#">Link 3</a>
@@ -8318,22 +8247,17 @@
                     </div>
                 </article>
     
-                <article class="card show-code" data-title="Drop down Navigation Menu Right Aligned">
+                <article class="card show-code" data-title="Drop down Navigation with Indicators">
 					<div class="code-content relative p-3 md:p-4">
                         <div class="@container index-1">
-                            <nav class="bg-faint @md:h:show @md:row @md:content-end g-0 text-end">
+                            <nav class="indicators bg-faint h:show sub:s:side @md:row g-0">
                                 <ul>
                                     <li>
-                                        <a class="pe-0" href="#">Link with Dropdown
-                                            <svg class="icon lg color-gray ms-1 none @md:inline" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                                        </a>
+                                        <a class="pe-0" href="#">Link with Dropdown</a>
                                         <ul class="bg-faint round-bottom @md:shadow">
                                             <li><a href="#">Sub Link 1</a></li>
                                             <li>
                                                 <a href="#">Sub Link with Menu</a>
-                                                <button class="icon link circle sm active:flip" data-toggle="next">
-                                                    <svg class="xl shy" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                                                </button>
                                                 <ul class="bg-faint round">
                                                     <li><a href="#">Sub Sub Link 1</a></li>
                                                     <li><a href="#">Sub Sub Link 2</a></li>
@@ -8349,15 +8273,12 @@
                                     <li><a href="#">Link 3</a></li>
                                     <li><a href="#">Link 4</a></li>
                                     <li>
-                                        <a class="pe-0" href="#">Link with Dropdown
-                                            <svg class="icon lg color-gray ms-1 none @md:inline" viewBox="0 0 24 24"><path d="M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6 1.41-1.42z" /></svg>
-                                        </a>
+                                        <a class="pe-0" href="#">Link with Dropdown</a>
                                         <ul class="bg-faint round-bottom @md:shadow">
                                             <li><a href="#">Sub Link 1</a></li>
                                             <li><a href="#">Sub Link 2</a></li>
                                             <li>
                                                 <a href="#">Sub Link with Menu</a>
-                                                <button class="icon down link circle sm" data-toggle="next"></button>
                                                 <ul class="bg-faint round">
                                                     <li><a href="#">Sub Sub Link 1</a></li>
                                                     <li><a href="#">Sub Sub Link 2</a></li>

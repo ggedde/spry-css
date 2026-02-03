@@ -47,46 +47,17 @@ thead {
 	}
 }
 
-tbody td {
-	--bdr-a: .5;
-
-	> * {
-		--bdr-a: 1;
-	}
+table {
+	--row-bg-a: var(--bg-a, .2);
 }
 
-thead {
-	--bdr-a: .75;
-
-	th > *, td > * {
-		--bdr-a: 1;
-	}
-}
-
+:where(nav,ul).striped li:nth-child(even),
 :where(.striped):not(:has(> tbody:nth-of-type(2))) tbody tr:nth-child(even),
-:where(.striped):has(> tbody:nth-of-type(2)) tbody:nth-child(odd) {
-	background-color: rgb(from var(--ui-color) r g b / .05);
-}
-
+:where(.striped):has(> tbody:nth-of-type(2)) tbody:nth-child(odd),
 :where(.h\:striped):not(:has(> tbody:nth-of-type(2))) tbody tr:hover,
 :where(.h\:striped):has(> tbody:nth-of-type(2)) tbody:hover {
-	background-color: rgb(from var(--ui-color) r g b / .15);
+	background-color: rgb(from var(--ui-color) r g b / var(--row-bg-a, .2));
 }
-
-// .striped tbody:nth-child(odd),
-// .striped tbody tr:nth-child(odd),
-// .striped-expand tbody tr:nth-child(4n -1),
-// .striped-expand tbody tr:nth-child(4n -1) + tr {
-// 	background-color: rgb(from var(--ui-color) r g b / .15);
-// }
-
-// .h\:striped tbody:nth-child(odd) tr:hover,
-// .h\:striped tbody tr:hover,
-// .h\:striped-expand tbody tr:nth-child(even):hover,
-// .h\:striped-expand tbody tr:nth-child(even):hover + tr {
-// 	background-color: rgb(from var(--ui-color) r g b / .3);
-// }
-
 
 @mixin table-responsive-styles($prefix) {
 	#{$prefix}responsive {
@@ -103,7 +74,7 @@ thead {
 
 		tbody tr {
 			padding-block: 1em;
-			border-top: 1px solid var(--ui-border);
+			border-top: 1px solid hsl(from var(--ui-border) h s clamp(0, l * var(--bdr-l, 1), 100) / var(--bdr-a, .5));
 		}
 
 		td {

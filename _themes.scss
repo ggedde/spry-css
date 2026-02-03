@@ -205,6 +205,19 @@ $colorNames: ();
 		}
 	}
 
+	.striped:where(#{$colorNames}) {
+		--bg-a: .05;
+	}
+
+	table:where(#{$colorNames}) {
+		--bdr-a: .3;
+	}
+
+	:where(.h\:striped):not(:has(> tbody:nth-of-type(2))) tbody tr:hover,
+	:where(.h\:striped):has(> tbody:nth-of-type(2)) tbody:hover {
+		--row-bg-a: calc(var(--bg-a, .2) + 0.05);
+	}
+
 	[class*="h\:color-"]:is(:hover, :focus, .active),
 	[class*="h\:links-"] a:not(.button,[class*=h\:color-]):is(:hover, :focus, .active),
 	[class^="links-"] :where(a:not(.button)),

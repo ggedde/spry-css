@@ -210,24 +210,26 @@
 		@if list.index(variables.$breakpoints, ($breakpoint $breakpoint_width))==1 {
 			@media screen and (max-width: ($breakpoint_width - .01)) {
 
-				.column:not([class^="rows-"], [class*=" rows-"])>*,
-				.row:not([class^="cols-"], [class*=" cols-"])>* {
+				.column:not([class^="rows-"], [class*=" rows-"])>:not([class^="span-"], [class*=" span-"]),
+				.row:not([class^="cols-"], [class*=" cols-"])>:not([class^="span-"], [class*=" span-"]) {
 					flex: 0 0 100%;
 				}
 
-				.grid:not([class^="cols-"], [class*=" cols-"]) {
+				.grid:not([class^="cols-"], [class*=" cols-"]),
+				:not([class^="span-"], [class*=" span-"]) {
 					--cols: 1;
 				}
 			}
 
 			@container (max-width: #{($breakpoint_width - .01)}) {
 
-				.column:not([class^="rows-"], [class*=" rows-"])>*,
-				.row:not([class^="cols-"], [class*=" cols-"])>* {
+				.column:not([class^="rows-"], [class*=" rows-"])>:not([class^="span-"], [class*=" span-"]),
+				.row:not([class^="cols-"], [class*=" cols-"])>:not([class^="span-"], [class*=" span-"]) {
 					flex: 0 0 100%;
 				}
 
-				.grid:not([class^="cols-"], [class*=" cols-"]) {
+				.grid:not([class^="cols-"], [class*=" cols-"]),
+				:not([class^="span-"], [class*=" span-"]) {
 					--cols: 1;
 				}
 			}
